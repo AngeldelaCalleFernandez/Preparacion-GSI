@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["metadata", "updates"],
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema_version", "data_version", "updated_at"],
+      "properties": {
+        "schema_version": {"type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$"},
+        "data_version": {"type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$"},
+        "updated_at": {"type": "string", "format": "date"}
+      }
+    },
+    "updates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "title", "block_id", "topic_ids", "source_id", "previous_version", "new_version", "effective_date", "reviewed_at", "summary", "affected_question_ids"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^UPD-\\d{4}-\\d{3}$"},
+          "title": {"type": "string", "minLength": 1},
+          "block_id": {"type": "string", "pattern": "^B[1-4]$"},
+          "topic_ids": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^B[1-4]-T\\d{2}$"}},
+          "source_id": {"type": "string", "pattern": "^SRC-[A-Z0-9-]+$"},
+          "previous_version": {"type": "string"},
+          "new_version": {"type": "string"},
+          "effective_date": {"type": "string", "format": "date"},
+          "reviewed_at": {"type": "string", "format": "date"},
+          "summary": {"type": "string", "minLength": 1},
+          "affected_question_ids": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    }
+  }
+}

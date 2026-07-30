@@ -49,8 +49,7 @@ AZURE_OCR_INSTALL_COMMAND = (
     '.\\.venv\\Scripts\\python -m pip install "markitdown[az-doc-intel]"'
 )
 OCR_ENVIRONMENT_VARIABLES = (
-    "AZURE_DOCUMENT_INTELLIGENCE_ENDPOINT",
-    "AZURE_DOCUMENT_INTELLIGENCE_KEY",
+    "AZURE_API_KEY",
 )
 
 
@@ -64,8 +63,10 @@ class Diagnostic:
     environment_variables: dict[str, bool]
 
 
-def iso_now() -> str:
-    return datetime.now().astimezone().isoformat(timespec="seconds")
+def iso_from_mtime(path: Path) -> str:
+    return datetime.fromtimestamp(path.stat().st_mtime).astimezone().isoformat(
+        timespec="seconds"
+    )
 
 
 def project_path(path: Path, project_root: Path) -> str:
@@ -109,7 +110,6 @@ def diagnose_markitdown(log_path: Path) -> Diagnostic:
         else shutil.which("markitdown")
     )
     output_lines = [
-        f"Diagnóstico generado: {iso_now()}",
         "Comando requerido: markitdown --list-plugins",
     ]
     command_output = ""
@@ -185,6 +185,7 @@ def diagnose_markitdown(log_path: Path) -> Diagnostic:
         (
             "",
             "Nota: no se han leído ni registrado valores de variables de entorno.",
+            "Document Intelligence requiere además indicar el endpoint con --endpoint.",
             "OCR no se ejecuta automáticamente.",
         )
     )
@@ -227,6 +228,7 @@ def record(
     requires_ocr: bool,
     error: str | None,
 ) -> dict[str, object]:
+    timestamp_source = output if status in {"converted", "skipped"} and output.is_file() else source
     return {
         "source_file": project_path(source, project_root),
         "output_file": project_path(output, project_root),
@@ -234,7 +236,7 @@ def record(
         "method": method,
         "requires_ocr": requires_ocr,
         "error": error,
-        "converted_at": iso_now(),
+        "converted_at": iso_from_mtime(timestamp_source),
     }
 
 
@@ -244,17 +246,6 @@ def convert_one(
     project_root: Path,
     diagnostic: Diagnostic,
 ) -> dict[str, object]:
-    if output.is_file() and markdown_text_length(output) > 0:
-        return record(
-            source,
-            output,
-            project_root,
-            status="converted",
-            method="markitdown",
-            requires_ocr=False,
-            error=None,
-        )
-
     if not diagnostic.available or not diagnostic.executable:
         return record(
             source,
@@ -331,7 +322,8 @@ def convert_one(
                 else ""
             )
             + f"instalación opcional de Azure: {AZURE_OCR_INSTALL_COMMAND}. "
-            "Después debe configurarse el endpoint y la credencial fuera del repositorio."
+            "Después debe configurarse AZURE_API_KEY fuera del repositorio y "
+            "proporcionar el endpoint mediante --endpoint."
         )
         return record(
             source,
@@ -380,7 +372,9 @@ def convert_one(
                     if missing_variables
                     else ""
                 )
-                + f"instalación opcional de Azure: {AZURE_OCR_INSTALL_COMMAND}."
+                + f"instalación opcional de Azure: {AZURE_OCR_INSTALL_COMMAND}. "
+                "Después debe configurarse AZURE_API_KEY fuera del repositorio y "
+                "proporcionar el endpoint mediante --endpoint."
             ),
         )
 
@@ -438,7 +432,6 @@ def write_reports(
     lines = [
         "# Informe de conversión",
         "",
-        f"- Generado: {iso_now()}",
         f"- Documentos detectados: {len(records)}",
         f"- MarkItDown disponible: {'sí' if diagnostic.available else 'no'}",
         f"- Convertidos: {counts['converted']}",

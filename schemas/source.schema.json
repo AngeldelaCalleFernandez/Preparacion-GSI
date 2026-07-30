@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["metadata", "sources"],
+  "properties": {
+    "metadata": {"$ref": "#/$defs/metadata"},
+    "sources": {"type": "array", "items": {"$ref": "#/$defs/source"}}
+  },
+  "$defs": {
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "schema_version", "data_version", "updated_at"],
+      "properties": {
+        "title": {"type": "string", "minLength": 1},
+        "schema_version": {"type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$"},
+        "data_version": {"type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$"},
+        "updated_at": {"type": "string", "format": "date"}
+      }
+    },
+    "document": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "path", "kind", "conversion_status"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^DOC-[A-Z0-9-]+$"},
+        "path": {"type": "string", "pattern": "^(?!/)(?!.*\\.\\.)documents/markdown/.+\\.md$"},
+        "kind": {"enum": ["project_index", "links_index", "convocatoria", "program", "legal_basis", "normative_compendium", "exam_questionnaire", "answer_key", "exam_criteria", "score_notice", "readme"]},
+        "conversion_status": {"const": "converted"}
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "title", "publisher", "official_status", "url", "published_at", "reviewed_at", "block_ids", "topic_ids", "mapping_status", "documents"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^SRC-[A-Z0-9-]+$"},
+        "title": {"type": "string", "minLength": 1},
+        "publisher": {"type": "string", "minLength": 1},
+        "official_status": {"enum": ["official", "official_provisional", "official_archive", "reference"]},
+        "url": {"type": ["string", "null"], "format": "uri"},
+        "published_at": {"type": ["string", "null"], "format": "date"},
+        "reviewed_at": {"type": "string", "format": "date"},
+        "block_ids": {"type": "array", "items": {"type": "string", "pattern": "^B[1-4]$"}},
+        "topic_ids": {"type": "array", "items": {"type": "string", "pattern": "^B[1-4]-T\\d{2}$"}},
+        "mapping_status": {"enum": ["mapped", "partial", "pending_review"]},
+        "documents": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/document"}}
+      }
+    }
+  }
+}
