@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Aplicación estática para consultar el temario TAI y realizar entrenamientos básicos.">
+    <title>TAI · Temario y entrenamiento</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+
+    <header class="site-header">
+      <div class="shell header-content">
+        <div>
+          <p class="eyebrow">Preparación TAI</p>
+          <p class="site-title">Temario y entrenamiento</p>
+        </div>
+        <nav aria-label="Navegación principal">
+          <ul class="primary-nav">
+            <li><a href="#inicio" data-route="inicio">Inicio</a></li>
+            <li><a href="#temario" data-route="temario">Temario</a></li>
+            <li><a href="#entrenamiento" data-route="entrenamiento">Entrenamiento</a></li>
+            <li><a href="#examen" data-route="examen">Examen</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" class="shell" tabindex="-1">
+      <div id="app-status" class="status-message" role="status" aria-live="polite"></div>
+
+      <aside id="demo-banner" class="notice notice--demo" aria-label="Modo demostración" hidden>
+        <strong>Modo demostración activo.</strong> Las preguntas visibles son ficticias, generadas para probar la interfaz;
+        no son oficiales ni pertenecen a los bancos reales.
+      </aside>
+
+      <section data-view="inicio" aria-labelledby="home-title">
+        <p class="eyebrow">Aplicación estática</p>
+        <h1 id="home-title">Prepara el temario TAI a tu ritmo</h1>
+        <p class="lead">Consulta el programa oficial catalogado y entrena con las preguntas disponibles, manteniendo siempre visible su procedencia.</p>
+        <div class="summary-grid" aria-label="Resumen de datos cargados">
+          <article class="summary-card">
+            <p class="summary-card__value" id="home-block-count">—</p>
+            <p class="summary-card__label">bloques</p>
+          </article>
+          <article class="summary-card">
+            <p class="summary-card__value" id="home-topic-count">—</p>
+            <p class="summary-card__label">temas</p>
+          </article>
+          <article class="summary-card">
+            <p class="summary-card__value" id="home-question-count">—</p>
+            <p class="summary-card__label">preguntas reales activas</p>
+          </article>
+          <article class="summary-card">
+            <p class="summary-card__value" id="home-update-count">—</p>
+            <p class="summary-card__label">actualizaciones catalogadas</p>
+          </article>
+        </div>
+        <div class="action-row">
+          <a class="button" href="#temario">Consultar temario</a>
+          <a class="button button--secondary" href="#entrenamiento">Ir a entrenamiento</a>
+        </div>
+        <p class="muted">Para cargar los datos, sirve esta carpeta con <code>python -m http.server 8000</code>; la apertura mediante <code>file://</code> no permite usar <code>fetch</code>.</p>
+      </section>
+
+      <section data-view="temario" aria-labelledby="syllabus-title" hidden>
+        <p class="eyebrow">Programa catalogado</p>
+        <h1 id="syllabus-title">Temario</h1>
+        <p class="lead" id="syllabus-summary">Cargando bloques y temas…</p>
+        <div id="syllabus-blocks" class="block-list" aria-live="polite"></div>
+      </section>
+
+      <section data-view="entrenamiento" aria-labelledby="training-title" hidden>
+        <p class="eyebrow">Práctica guiada</p>
+        <h1 id="training-title">Entrenamiento</h1>
+        <p class="lead">Elige qué preguntas practicar. La corrección aparece inmediatamente y la respuesta queda guardada solo en este navegador.</p>
+
+        <form id="training-form" class="training-form" novalidate>
+          <fieldset>
+            <legend>Configurar sesión</legend>
+            <div class="form-grid">
+              <div class="field">
+                <label for="training-block">Bloque</label>
+                <select id="training-block" name="block">
+                  <option value="">Todos los bloques</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="training-topic">Tema</label>
+                <select id="training-topic" name="topic" disabled>
+                  <option value="">Todos los temas</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="training-origin">Origen</label>
+                <select id="training-origin" name="origin">
+                  <option value="">Todos los orígenes</option>
+                  <option value="official">Oficial</option>
+                  <option value="ai">IA</option>
+                  <option value="manual">Manual o adaptada</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="training-quantity">Cantidad</label>
+                <input id="training-quantity" name="quantity" type="number" min="1" value="1" inputmode="numeric" required>
+              </div>
+            </div>
+          </fieldset>
+          <p id="training-availability" class="form-help" aria-live="polite"></p>
+          <button class="button" type="submit">Iniciar entrenamiento</button>
+        </form>
+
+        <section id="training-session" class="training-session" aria-live="polite" hidden></section>
+
+        <section class="local-progress" aria-labelledby="progress-title">
+          <h2 id="progress-title">Respuestas guardadas en este navegador</h2>
+          <p id="storage-summary">Aún no hay respuestas guardadas.</p>
+          <div class="action-row">
+            <button id="clear-demo-progress" class="button button--secondary" type="button">Borrar solo respuestas demo</button>
+            <button id="clear-all-progress" class="button button--danger" type="button">Borrar todas las respuestas locales</button>
+          </div>
+        </section>
+      </section>
+
+      <section data-view="examen" aria-labelledby="exam-title" hidden>
+        <p class="eyebrow">Simulación cronometrada</p>
+        <h1 id="exam-title">Modo examen</h1>
+        <p class="lead">Configura una sesión. Durante el examen no se muestran soluciones, feedback ni fuentes.</p>
+
+        <form id="exam-config-form" class="training-form" novalidate>
+          <fieldset>
+            <legend>Configurar examen</legend>
+            <div class="form-grid">
+              <div class="field">
+                <label for="exam-mode">Modalidad</label>
+                <select id="exam-mode" name="mode">
+                  <option value="boe">Solo BOE</option>
+                  <option value="ai-validated">Solo IA validada</option>
+                  <option value="mixed">Mixto</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="exam-question-count">Número de preguntas</label>
+                <input id="exam-question-count" name="questionCount" type="number" min="1" value="10" inputmode="numeric" required>
+              </div>
+              <div class="field">
+                <label for="exam-duration">Duración (minutos)</label>
+                <input id="exam-duration" name="duration" type="number" min="1" value="30" inputmode="numeric" required>
+              </div>
+              <div class="field">
+                <label for="exam-penalty">Penalización por error</label>
+                <input id="exam-penalty" name="penalty" type="number" min="0" max="1" step="0.01" value="0.33" inputmode="decimal" required>
+              </div>
+            </div>
+            <fieldset class="exam-blocks-fieldset">
+              <legend>Bloques incluidos</legend>
+              <div id="exam-blocks" class="checkbox-grid"></div>
+            </fieldset>
+            <div id="exam-mixed-settings" class="form-grid" hidden>
+              <div class="field">
+                <label for="exam-boe-percentage">Porcentaje BOE</label>
+                <input id="exam-boe-percentage" name="boePercentage" type="number" min="1" max="99" value="50" inputmode="numeric">
+              </div>
+              <p id="exam-mixed-summary" class="form-help">La cuota exacta se calculará antes de iniciar.</p>
+            </div>
+            <div class="checkbox-grid checkbox-grid--options">
+              <label><input id="exam-shuffle-questions" type="checkbox" checked> Barajar preguntas</label>
+              <label><input id="exam-shuffle-options" type="checkbox" checked> Barajar opciones</label>
+            </div>
+            <p class="form-help">Preguntas en blanco: permitidas y con 0 puntos.</p>
+          </fieldset>
+          <p id="exam-availability" class="form-help" aria-live="polite"></p>
+          <div class="action-row">
+            <button class="button" type="submit">Iniciar examen</button>
+            <button id="exam-demo-start" class="button button--secondary" type="button" hidden>Probar sesión ficticia</button>
+          </div>
+        </form>
+
+        <section id="exam-recovery" class="local-progress" aria-labelledby="exam-recovery-title" hidden>
+          <h2 id="exam-recovery-title">Examen pendiente de reanudar</h2>
+          <div id="exam-recovery-options"></div>
+        </section>
+
+        <section id="exam-active" class="exam-active" aria-labelledby="exam-active-title" hidden>
+          <div class="exam-session-header">
+            <p id="exam-progress" class="question-progress"></p>
+            <p id="exam-timer" class="exam-timer" role="timer" aria-live="off"></p>
+          </div>
+          <h2 id="exam-active-title" class="visually-hidden">Pregunta de examen</h2>
+          <div id="exam-question"></div>
+          <div id="exam-navigation" class="action-row"></div>
+          <div id="exam-index" class="exam-index" aria-label="Navegación entre preguntas"></div>
+        </section>
+
+        <section id="exam-results" class="exam-results" aria-labelledby="exam-results-title" hidden>
+          <h2 id="exam-results-title">Resultado del examen</h2>
+          <div id="exam-result-summary" class="summary-grid" aria-live="polite"></div>
+          <section aria-labelledby="exam-block-results-title">
+            <h3 id="exam-block-results-title">Resultado por bloque</h3>
+            <div id="exam-block-results"></div>
+          </section>
+          <section aria-labelledby="exam-topic-results-title">
+            <h3 id="exam-topic-results-title">Resultado por tema</h3>
+            <div id="exam-topic-results"></div>
+          </section>
+          <section aria-labelledby="exam-review-title">
+            <h3 id="exam-review-title">Revisión de preguntas</h3>
+            <div id="exam-review"></div>
+          </section>
+          <div class="action-row">
+            <button id="exam-new" class="button" type="button">Configurar otro examen</button>
+          </div>
+        </section>
+
+        <dialog id="exam-finish-dialog" aria-labelledby="exam-finish-title">
+          <h2 id="exam-finish-title">¿Finalizar examen?</h2>
+          <p id="exam-finish-message"></p>
+          <div class="action-row">
+            <button id="exam-cancel-finish" class="button button--secondary" type="button">Volver al examen</button>
+            <button id="exam-confirm-finish" class="button" type="button">Finalizar y corregir</button>
+          </div>
+        </dialog>
+      </section>
+    </main>
+
+    <noscript>
+      <p class="noscript-message">Esta aplicación necesita JavaScript para cargar los datos y mostrar el entrenamiento.</p>
+    </noscript>
+    <script type="module" src="assets/js/app.js"></script>
+  </body>
+</html>
