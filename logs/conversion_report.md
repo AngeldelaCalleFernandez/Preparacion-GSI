@@ -1,6 +1,5 @@
 # Informe de conversión
 
-- Generado: 2026-07-30T12:41:00+02:00
 - Documentos detectados: 34
 - MarkItDown disponible: sí
 - Convertidos: 31
@@ -65,7 +64,7 @@
 - Salida: `documents/markdown/03_TEST_OFICIALES/2017_FORMATO_ANTIGUO/TAI-LI-2017.md`
 - Método: `markitdown`
 - Requiere OCR: sí
-- Error: La conversión no produjo texto. Posible documento escaneado. OCR no ejecutado. Falta el plugin OCR de terceros; falta el cliente azure.ai.documentintelligence; faltan las variables AZURE_DOCUMENT_INTELLIGENCE_ENDPOINT, AZURE_DOCUMENT_INTELLIGENCE_KEY; instalación opcional de Azure: .\.venv\Scripts\python -m pip install "markitdown[az-doc-intel]". Después debe configurarse el endpoint y la credencial fuera del repositorio.
+- Error: La conversión no produjo texto. Posible documento escaneado. OCR no ejecutado. Falta el plugin OCR de terceros; falta el cliente azure.ai.documentintelligence; faltan las variables AZURE_API_KEY; instalación opcional de Azure: .\.venv\Scripts\python -m pip install "markitdown[az-doc-intel]". Después debe configurarse AZURE_API_KEY fuera del repositorio y proporcionar el endpoint mediante --endpoint.
 
 ### `documents/originals/03_TEST_OFICIALES/2018_FORMATO_ANTIGUO/07TAIL_154AB89SD658.pdf`
 
@@ -73,7 +72,7 @@
 - Salida: `documents/markdown/03_TEST_OFICIALES/2018_FORMATO_ANTIGUO/07TAIL_154AB89SD658.md`
 - Método: `markitdown`
 - Requiere OCR: sí
-- Error: La conversión no produjo texto. Posible documento escaneado. OCR no ejecutado. Falta el plugin OCR de terceros; falta el cliente azure.ai.documentintelligence; faltan las variables AZURE_DOCUMENT_INTELLIGENCE_ENDPOINT, AZURE_DOCUMENT_INTELLIGENCE_KEY; instalación opcional de Azure: .\.venv\Scripts\python -m pip install "markitdown[az-doc-intel]". Después debe configurarse el endpoint y la credencial fuera del repositorio.
+- Error: La conversión no produjo texto. Posible documento escaneado. OCR no ejecutado. Falta el plugin OCR de terceros; falta el cliente azure.ai.documentintelligence; faltan las variables AZURE_API_KEY; instalación opcional de Azure: .\.venv\Scripts\python -m pip install "markitdown[az-doc-intel]". Después debe configurarse AZURE_API_KEY fuera del repositorio y proporcionar el endpoint mediante --endpoint.
 
 ### `documents/originals/03_TEST_OFICIALES/2018_FORMATO_ANTIGUO/2jer_Plantilla_definitiva TAILI_OEP2018__154AB89SD658.pdf`
 
@@ -105,7 +104,7 @@
 - Salida: `documents/markdown/03_TEST_OFICIALES/2018_FORMATO_ANTIGUO/CUESTIONARIO__SEGUNDO_EJERCICIO_TAILI_ OEP_2018_154AB89SD658.md`
 - Método: `markitdown`
 - Requiere OCR: sí
-- Error: La conversión no produjo texto. Posible documento escaneado. OCR no ejecutado. Falta el plugin OCR de terceros; falta el cliente azure.ai.documentintelligence; faltan las variables AZURE_DOCUMENT_INTELLIGENCE_ENDPOINT, AZURE_DOCUMENT_INTELLIGENCE_KEY; instalación opcional de Azure: .\.venv\Scripts\python -m pip install "markitdown[az-doc-intel]". Después debe configurarse el endpoint y la credencial fuera del repositorio.
+- Error: La conversión no produjo texto. Posible documento escaneado. OCR no ejecutado. Falta el plugin OCR de terceros; falta el cliente azure.ai.documentintelligence; faltan las variables AZURE_API_KEY; instalación opcional de Azure: .\.venv\Scripts\python -m pip install "markitdown[az-doc-intel]". Después debe configurarse AZURE_API_KEY fuera del repositorio y proporcionar el endpoint mediante --endpoint.
 
 ### `documents/originals/03_TEST_OFICIALES/2018_FORMATO_ANTIGUO/LEEME.txt`
 
