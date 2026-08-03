@@ -1,4 +1,4 @@
-const VALID_ROUTES = new Set(["inicio", "temario", "entrenamiento", "examen"]);
+const VALID_ROUTES = new Set(["inicio", "temario", "entrenamiento", "examen", "refuerzo"]);
 
 function routeFromHash() {
   const route = window.location.hash.replace(/^#/, "").trim();

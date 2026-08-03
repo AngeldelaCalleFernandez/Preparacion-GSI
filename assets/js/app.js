@@ -3,6 +3,8 @@ import { initRouter } from "./router.js";
 import { renderSyllabus } from "./syllabus-view.js";
 import { initTraining } from "./training.js";
 import { initExam } from "./exam.js";
+import { migratePhase3Training } from "./reinforcement-migration.js";
+import { initReinforcement } from "./reinforcement.js";
 import { clearStatus, setStatus, setText } from "./ui.js";
 
 function renderHomeSummary(data) {
@@ -29,8 +31,15 @@ async function start() {
     const data = await loadAppData();
     renderHomeSummary(data);
     renderSyllabus(data);
+    const realMigration = migratePhase3Training(data, false);
+    const demoMigration = data.demoEnabled ? migratePhase3Training(data, true) : null;
     initTraining(data);
     initExam(data);
+    initReinforcement(data);
+    if (realMigration.error || demoMigration?.error) {
+      setStatus(realMigration.error || demoMigration?.error || "No se pudo migrar el historial de refuerzo.", "error");
+      return;
+    }
     if (data.demoEnabled) {
       setStatus("Datos cargados en modo demostración. Las preguntas demo son ficticias y no oficiales.", "success");
     } else {

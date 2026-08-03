@@ -1,5 +1,6 @@
 import { describeQuestionSource } from "./data-service.js";
 import { clearAllResponses, clearDemoResponses, getProgressSummary, saveResponse } from "./storage.js";
+import { applyStoredReinforcementEvents, createReinforcementEvent } from "./reinforcement-storage.js";
 import { createElement, setStatus } from "./ui.js";
 
 function originLabel(question) {
@@ -143,6 +144,40 @@ export function initTraining(data) {
     panel.append(createElement("h2", "", correct ? "Respuesta correcta" : "Respuesta incorrecta"));
     panel.append(createElement("p", "", `La opción correcta es ${correctOption.id}: ${correctOption.text}`));
     panel.append(createElement("p", "", feedbackFor(question, selectedOption, correct)));
+    const savedResponse = saveResponse(question, selectedOption, correct);
+    const responseRecord = savedResponse.record;
+    const responseEvent = createReinforcementEvent(`training:${responseRecord.responseId}:response`, "response", question, {
+      result: correct ? "correct" : "incorrect",
+      occurredAt: responseRecord.answeredAt,
+    });
+    function saveReinforcement(events, button, message) {
+      const result = applyStoredReinforcementEvents(question.isDemo, events);
+      if (!result.saved) {
+        setStatus(result.error || "No se pudo guardar el refuerzo en este navegador.", "error");
+        return;
+      }
+      button.disabled = true;
+      setStatus(message, "success");
+    }
+    if (!correct) {
+      const reinforcement = applyStoredReinforcementEvents(question.isDemo, [responseEvent]);
+      if (!reinforcement.saved) setStatus(reinforcement.error || "La respuesta se corrigió, pero no se pudo actualizar el refuerzo.", "error");
+    }
+    const reinforcementActions = createElement("div", "action-row");
+    const doubt = createElement("button", "button button--secondary", "Dudé");
+    doubt.type = "button";
+    doubt.addEventListener("click", () => {
+      const assessment = createReinforcementEvent(`training:${responseRecord.responseId}:assessment:doubt`, "assessment", question, { assessment: "doubt" });
+      saveReinforcement([responseEvent, assessment], doubt, "La pregunta se ha programado para refuerzo por duda.");
+    });
+    const add = createElement("button", "button button--secondary", "Añadir a refuerzo");
+    add.type = "button";
+    add.addEventListener("click", () => {
+      const manual = createReinforcementEvent(`training:${responseRecord.responseId}:manual`, "manual", question);
+      saveReinforcement([manual], add, "La pregunta se ha añadido al refuerzo.");
+    });
+    reinforcementActions.append(doubt, add);
+    panel.append(reinforcementActions);
     const next = createElement("button", "button", state.index + 1 === state.questions.length ? "Finalizar entrenamiento" : "Siguiente pregunta");
     next.type = "button";
     next.addEventListener("click", () => {
@@ -156,7 +191,7 @@ export function initTraining(data) {
     });
     panel.append(next);
     session.append(panel);
-    if (!saveResponse(question, selectedOption, correct)) {
+    if (!savedResponse.saved) {
       setStatus("La respuesta se corrigió, pero no se pudo guardar localmente en este navegador.", "error");
     }
     updateProgressSummary();

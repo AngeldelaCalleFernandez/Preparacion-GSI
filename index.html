@@ -22,6 +22,7 @@
             <li><a href="#temario" data-route="temario">Temario</a></li>
             <li><a href="#entrenamiento" data-route="entrenamiento">Entrenamiento</a></li>
             <li><a href="#examen" data-route="examen">Examen</a></li>
+            <li><a href="#refuerzo" data-route="refuerzo">Refuerzo</a></li>
           </ul>
         </nav>
       </div>
@@ -221,6 +222,148 @@
             <button id="exam-confirm-finish" class="button" type="button">Finalizar y corregir</button>
           </div>
         </dialog>
+      </section>
+
+      <section data-view="refuerzo" aria-labelledby="reinforcement-title" hidden>
+        <p class="eyebrow">Repaso dirigido</p>
+        <h1 id="reinforcement-title">Refuerzo</h1>
+        <p class="lead">Revisa preguntas pendientes y registra si la sabías, dudaste o no la sabías. Los datos se guardan solo en este navegador.</p>
+
+        <section class="reinforcement-overview" aria-labelledby="reinforcement-summary-title">
+          <h2 id="reinforcement-summary-title">Estado del refuerzo</h2>
+          <div id="reinforcement-summary" class="summary-grid" aria-live="polite"></div>
+          <p id="reinforcement-demo-summary" class="muted"></p>
+        </section>
+
+        <form id="reinforcement-filters" class="training-form" novalidate>
+          <fieldset>
+            <legend>Consultar cola</legend>
+            <div class="form-grid">
+              <div class="field">
+                <label for="reinforcement-store">Datos</label>
+                <select id="reinforcement-store" name="store">
+                  <option value="real">Refuerzo real</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="reinforcement-block">Bloque</label>
+                <select id="reinforcement-block" name="block"><option value="">Todos los bloques</option></select>
+              </div>
+              <div class="field">
+                <label for="reinforcement-topic">Tema</label>
+                <select id="reinforcement-topic" name="topic" disabled><option value="">Todos los temas</option></select>
+              </div>
+              <div class="field">
+                <label for="reinforcement-origin">Origen</label>
+                <select id="reinforcement-origin" name="origin">
+                  <option value="">Todos los orígenes</option>
+                  <option value="official">Oficial</option>
+                  <option value="ai">IA</option>
+                  <option value="manual">Manual</option>
+                  <option value="adapted">Adaptada</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="reinforcement-priority">Prioridad</label>
+                <select id="reinforcement-priority" name="priority">
+                  <option value="">Todas</option>
+                  <option value="critical">Crítica</option>
+                  <option value="high">Alta</option>
+                  <option value="medium">Media</option>
+                  <option value="low">Baja</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="reinforcement-status">Estado</label>
+                <select id="reinforcement-status" name="status">
+                  <option value="">Todos</option>
+                  <option value="scheduled">Programada</option>
+                  <option value="paused">Pausada</option>
+                  <option value="completed">Completada</option>
+                  <option value="defective">Incidencia</option>
+                </select>
+              </div>
+            </div>
+            <div class="checkbox-grid checkbox-grid--options">
+              <label><input id="reinforcement-only-due" type="checkbox"> Solo pendientes hoy</label>
+              <label><input id="reinforcement-only-defective" type="checkbox"> Solo incidencias</label>
+            </div>
+          </fieldset>
+        </form>
+
+        <section aria-labelledby="reinforcement-list-title">
+          <h2 id="reinforcement-list-title">Cola de refuerzo</h2>
+          <div id="reinforcement-list" class="reinforcement-list" aria-live="polite"></div>
+        </section>
+
+        <form id="reinforcement-session-form" class="training-form" novalidate>
+          <fieldset>
+            <legend>Iniciar sesión</legend>
+            <div class="form-grid">
+              <div class="field">
+                <label for="reinforcement-session-block">Bloque</label>
+                <select id="reinforcement-session-block" name="block"><option value="">Todos los bloques</option></select>
+              </div>
+              <div class="field">
+                <label for="reinforcement-session-topic">Tema</label>
+                <select id="reinforcement-session-topic" name="topic" disabled><option value="">Todos los temas</option></select>
+              </div>
+              <div class="field">
+                <label for="reinforcement-session-origin">Origen</label>
+                <select id="reinforcement-session-origin" name="origin">
+                  <option value="">Todos los orígenes</option>
+                  <option value="official">Oficial</option>
+                  <option value="ai">IA</option>
+                  <option value="manual">Manual</option>
+                  <option value="adapted">Adaptada</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="reinforcement-quantity">Número de preguntas</label>
+                <input id="reinforcement-quantity" name="quantity" type="number" min="1" value="5" inputmode="numeric" required>
+              </div>
+              <div class="field">
+                <label for="reinforcement-order">Orden</label>
+                <select id="reinforcement-order" name="order">
+                  <option value="priority">Por prioridad</option>
+                  <option value="random">Aleatorio</option>
+                </select>
+              </div>
+            </div>
+            <div class="checkbox-grid checkbox-grid--options">
+              <label><input id="reinforcement-session-only-due" type="checkbox" checked> Solo vencidas</label>
+              <label><input id="reinforcement-include-future" type="checkbox"> Incluir programadas futuras</label>
+            </div>
+          </fieldset>
+          <p id="reinforcement-availability" class="form-help" aria-live="polite"></p>
+          <button class="button" type="submit">Iniciar refuerzo</button>
+        </form>
+
+        <section id="reinforcement-recovery" class="local-progress" aria-labelledby="reinforcement-recovery-title" hidden>
+          <h2 id="reinforcement-recovery-title">Sesión de refuerzo pendiente</h2>
+          <div class="action-row">
+            <button id="reinforcement-resume" class="button" type="button">Reanudar</button>
+            <button id="reinforcement-discard" class="button button--secondary" type="button">Descartar</button>
+          </div>
+        </section>
+
+        <section id="reinforcement-active" class="training-session" aria-labelledby="reinforcement-active-title" hidden>
+          <h2 id="reinforcement-active-title">Pregunta de refuerzo</h2>
+          <div id="reinforcement-question"></div>
+        </section>
+
+        <section id="reinforcement-incidents" aria-labelledby="reinforcement-incidents-title">
+          <h2 id="reinforcement-incidents-title">Incidencias</h2>
+          <div id="reinforcement-incidents-list" class="reinforcement-list"></div>
+        </section>
+
+        <section class="local-progress" aria-labelledby="reinforcement-storage-title">
+          <h2 id="reinforcement-storage-title">Controles locales</h2>
+          <div class="action-row">
+            <button id="clear-demo-reinforcement" class="button button--secondary" type="button">Borrar refuerzo demo</button>
+            <button id="clear-all-reinforcement" class="button button--danger" type="button">Borrar todo el refuerzo</button>
+          </div>
+        </section>
       </section>
     </main>
 

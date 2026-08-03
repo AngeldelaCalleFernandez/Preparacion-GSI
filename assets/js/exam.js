@@ -14,6 +14,7 @@ import {
   loadActiveExamState,
   saveActiveExamState,
 } from "./exam-storage.js";
+import { applyStoredReinforcementEvents, createReinforcementEvent } from "./reinforcement-storage.js";
 import { createElement, setStatus } from "./ui.js";
 
 function formatNumber(value) {
@@ -286,7 +287,39 @@ export function initExam(data) {
     return details;
   }
 
-  function renderResults(result, state, questions, finishedAt, timedOut) {
+  function examResponseEvent(state, question, outcome) {
+    return createReinforcementEvent(`exam:${state.examId}:${question.collection}:${question.id}:response`, "response", question, {
+      result: outcome,
+    });
+  }
+
+  function updateExamReinforcement(state, question, item, action, button) {
+    const response = item.outcome === "blank" ? null : examResponseEvent(state, question, item.outcome === "correct" ? "correct" : "incorrect");
+    const events = [];
+    if (action === "doubt") {
+      if (response) events.push(response);
+      events.push(createReinforcementEvent(`exam:${state.examId}:${question.collection}:${question.id}:assessment:doubt`, "assessment", question, { assessment: "doubt" }));
+    } else {
+      events.push(createReinforcementEvent(`exam:${state.examId}:${question.collection}:${question.id}:manual`, "manual", question));
+    }
+    const saved = applyStoredReinforcementEvents(state.isDemo, events);
+    if (!saved.saved) {
+      setStatus(saved.error || "No se pudo actualizar el refuerzo en este navegador.", "error");
+      return;
+    }
+    button.disabled = true;
+    setStatus(action === "doubt" ? "La duda se ha añadido al refuerzo." : "La pregunta se ha añadido al refuerzo.", "success");
+  }
+
+  function integrateExamErrors(state, result) {
+    const events = result.review
+      .filter((item) => item.outcome === "incorrect")
+      .map((item) => examResponseEvent(state, item.question, "incorrect"));
+    if (events.length === 0) return { saved: true };
+    return applyStoredReinforcementEvents(state.isDemo, events);
+  }
+
+  function renderResults(result, state, questions, finishedAt, timedOut, reinforcementError = null) {
     activeNode.hidden = true;
     form.hidden = false;
     resultsNode.hidden = false;
@@ -316,10 +349,19 @@ export function initExam(data) {
       card.append(createElement("p", "", item.question.feedback?.correct || "Sin feedback disponible."));
       const sourceTitle = createElement("h5", "", "Fuente");
       card.append(sourceTitle, sourceDetails(item.question));
+      const actions = createElement("div", "action-row");
+      const doubt = createElement("button", "button button--secondary", "Dudé");
+      doubt.type = "button";
+      doubt.addEventListener("click", () => updateExamReinforcement(state, item.question, item, "doubt", doubt));
+      const add = createElement("button", "button button--secondary", "Añadir a refuerzo");
+      add.type = "button";
+      add.addEventListener("click", () => updateExamReinforcement(state, item.question, item, "manual", add));
+      actions.append(doubt, add);
+      card.append(actions);
       if (item.question.isDemo) card.append(createElement("p", "exam-flagged", "Contenido ficticio de demostración; no oficial."));
       reviewNode.append(card);
     }
-    setStatus(timedOut ? "Tiempo agotado. El examen se ha finalizado y corregido." : "Examen finalizado y corregido.", "success");
+    setStatus(reinforcementError || (timedOut ? "Tiempo agotado. El examen se ha finalizado y corregido." : "Examen finalizado y corregido."), reinforcementError ? "error" : "success");
     document.querySelector("#exam-results-title")?.focus();
   }
 
@@ -329,10 +371,11 @@ export function initExam(data) {
     stopTimer();
     const completed = active;
     active = null;
-    clearActiveExamState(completed.state.isDemo);
     const result = calculateExamResults(completed.questions, completed.state.answersByQuestionId, completed.state.config.penaltyPerError);
+    const reinforcement = integrateExamErrors(completed.state, result);
+    clearActiveExamState(completed.state.isDemo);
     if (finishDialog.open) finishDialog.close();
-    renderResults(result, completed.state, completed.questions, finishedAt, timedOut);
+    renderResults(result, completed.state, completed.questions, finishedAt, timedOut, reinforcement.saved ? null : reinforcement.error);
   }
 
   function requestFinish() {
