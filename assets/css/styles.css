@@ -114,7 +114,7 @@ code { padding: 0.1em 0.25em; border-radius: 0.2rem; background: #e9edf3; color:
 
 .summary-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-2); margin-block: var(--space-4); }
 
-.summary-card, .block-card, .training-form, .training-session, .local-progress {
+.summary-card, .block-card, .training-form, .training-session, .local-progress, .syllabus-filters, .topic-detail__content {
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   background: var(--color-surface);
@@ -173,6 +173,36 @@ code { padding: 0.1em 0.25em; border-radius: 0.2rem; background: #e9edf3; color:
 .pill { display: inline-flex; align-items: center; padding: 0.15rem 0.5rem; border-radius: 99rem; background: #e8edf5; color: #26364e; font-size: 0.88rem; }
 
 .pill--official { background: #dbeef9; color: #07476a; }
+
+.pill--coverage-pending { background: #fff0d6; color: #6d3e00; }
+.pill--coverage-partial { background: #e7f0fb; color: #07476a; }
+.pill--coverage-complete, .pill--review-reviewed { background: var(--color-success-bg); color: #0f5132; }
+.pill--review-needs-review { background: #f5eafe; color: #5d247d; }
+.pill--review-not-reviewed, .pill--count { background: #e8edf5; color: #26364e; }
+
+.syllabus-filters, .topic-detail__content { margin-block: var(--space-4); padding: var(--space-4); }
+
+.topic-actions { margin-top: var(--space-2); }
+
+.breadcrumbs ol { display: flex; flex-wrap: wrap; gap: var(--space-1); margin: 0 0 var(--space-3); padding: 0; list-style: none; color: var(--color-muted); }
+.breadcrumbs li + li::before { content: "/"; margin-right: var(--space-1); }
+
+.topic-detail__content { overflow-wrap: anywhere; }
+.topic-content > :first-child { margin-top: 0; }
+.topic-content__status, .topic-content__pendiente, .topic-content__ejemplo, .topic-content__derivado, .topic-content__resumen, .topic-content__explicacion { margin-block: var(--space-3); padding: var(--space-3); border-left: 0.3rem solid var(--color-primary); background: #eef5fe; }
+.topic-content__status--pending, .topic-content__pendiente { border-color: var(--color-demo); background: var(--color-demo-bg); }
+.topic-content__status--partial { border-color: var(--color-primary); background: #e7f0fb; }
+.topic-content__ejemplo { border-color: #5d247d; background: #f5eafe; }
+.topic-content__kind { margin-top: 0; font-weight: 800; text-transform: uppercase; font-size: 0.86rem; letter-spacing: 0.04em; }
+.topic-content__toc { margin-block: var(--space-4); padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius); background: #f7f9fc; }
+.topic-content__toc h2 { margin-top: 0; }
+.topic-content__toc ol { margin-bottom: 0; }
+.topic-content__toc-level-3 { margin-left: var(--space-3); }
+.topic-source-ref { display: flex; flex-wrap: wrap; gap: var(--space-1); padding: var(--space-1); border-radius: 0.35rem; background: #f1f5fa; font-size: 0.94rem; }
+.topic-source-ref__label { font-weight: 700; }
+.topic-table-wrap { overflow-x: auto; }
+.topic-table-wrap table { width: 100%; border-collapse: collapse; }
+.topic-table-wrap th, .topic-table-wrap td { padding: var(--space-2); border: 1px solid var(--color-border); text-align: left; vertical-align: top; }
 
 .training-form, .training-session, .local-progress { margin-top: var(--space-4); padding: var(--space-4); }
 

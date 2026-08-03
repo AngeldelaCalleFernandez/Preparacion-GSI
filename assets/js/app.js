@@ -1,6 +1,7 @@
 import { isDemoMode, loadAppData } from "./data-service.js";
-import { initRouter, syncRouter } from "./router.js";
-import { renderSyllabus } from "./syllabus-view.js";
+import { initRouter, syncRouter } from "./router.js?phase7a";
+import { loadTopicContentIndex } from "./topic-content-service.js?phase7a";
+import { initSyllabusView } from "./syllabus-view.js?phase7a";
 import { initTraining } from "./training.js";
 import { initExam } from "./exam.js";
 import { migratePhase3Training } from "./reinforcement-migration.js";
@@ -30,9 +31,9 @@ async function start() {
   }
   setStatus("Cargando temario, fuentes, actualizaciones y bancos de preguntas…");
   try {
-    const data = await loadAppData();
+    const [data, topicContentIndex] = await Promise.all([loadAppData(), loadTopicContentIndex()]);
     renderHomeSummary(data);
-    renderSyllabus(data);
+    initSyllabusView(data, topicContentIndex);
     const realMigration = migratePhase3Training(data, false);
     const demoMigration = data.demoEnabled ? migratePhase3Training(data, true) : null;
     const realAnalyticsMigration = migrateAnalytics(data, false);

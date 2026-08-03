@@ -77,10 +77,49 @@
       </section>
 
       <section data-view="temario" aria-labelledby="syllabus-title" hidden>
-        <p class="eyebrow">Programa catalogado</p>
+        <p id="syllabus-eyebrow" class="eyebrow">Programa catalogado</p>
         <h1 id="syllabus-title">Temario</h1>
-        <p class="lead" id="syllabus-summary">Cargando bloques y temas…</p>
-        <div id="syllabus-blocks" class="block-list" aria-live="polite"></div>
+        <div id="syllabus-list">
+          <p class="lead" id="syllabus-summary">Cargando bloques y temas…</p>
+          <form id="syllabus-filters" class="syllabus-filters" aria-label="Filtrar temario">
+            <div class="form-grid">
+              <div class="field">
+                <label for="syllabus-filter-block">Bloque</label>
+                <select id="syllabus-filter-block">
+                  <option value="">Todos los bloques</option>
+                  <option value="B1">B1</option>
+                  <option value="B2">B2</option>
+                  <option value="B3">B3</option>
+                  <option value="B4">B4</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="syllabus-filter-coverage">Cobertura</label>
+                <select id="syllabus-filter-coverage">
+                  <option value="">Toda la cobertura</option>
+                  <option value="pending">Pendiente</option>
+                  <option value="partial">Parcial</option>
+                  <option value="complete">Completa</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="syllabus-filter-review">Revisión</label>
+                <select id="syllabus-filter-review">
+                  <option value="">Todos los estados</option>
+                  <option value="not-reviewed">Sin revisión</option>
+                  <option value="needs-review">Pendiente de revisión</option>
+                  <option value="reviewed">Revisado</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="syllabus-search">Buscar por título o sección</label>
+                <input id="syllabus-search" type="search" autocomplete="off" placeholder="Ej.: Corona">
+              </div>
+            </div>
+          </form>
+          <div id="syllabus-blocks" class="block-list" aria-live="polite"></div>
+        </div>
+        <section id="topic-detail" aria-live="polite" hidden></section>
       </section>
 
       <section data-view="entrenamiento" aria-labelledby="training-title" hidden>
