@@ -30,7 +30,10 @@ def read(path: str) -> str:
 def validate_manual_cases(document: str) -> list[str]:
     """Validate the manual-test register without changing the document."""
     errors: list[str] = []
-    cases = [(case_id, status.strip()) for case_id, status in MANUAL_CASE_PATTERN.findall(document)]
+    section = re.search(r"^## Casos\s*$([\s\S]*?)(?=^## |\Z)", document, flags=re.MULTILINE)
+    if not section:
+        return ["ERROR: falta la sección de casos de pruebas manuales."]
+    cases = [(case_id, status.strip()) for case_id, status in MANUAL_CASE_PATTERN.findall(section.group(1))]
     if len(cases) < 20:
         errors.append("ERROR: deben existir al menos 20 casos de prueba manual.")
     case_ids = [case_id for case_id, _ in cases]
@@ -54,7 +57,7 @@ def manual_validation_regressions() -> list[str]:
         rows = "\n".join(
             f"| R-{number:02d} | {status} | Paso | Resultado |" for number in range(1, 22)
         )
-        return f"## Registro de ejecución\n\n{rows}\n\n24 pruebas aprobadas; 0 fallidas.\n"
+        return f"## Casos\n\n{rows}\n\n## Registro de ejecución\n\n24 pruebas aprobadas; 0 fallidas.\n"
 
     errors: list[str] = []
     for name, status in (("inicial", "NO EJECUTADA"), ("final", "APROBADA")):
@@ -87,7 +90,7 @@ def main() -> int:
         training = read("assets/js/training.js").lower()
         exam = read("assets/js/exam.js").lower()
         tests = read("tests/phase5-tests.js").lower()
-        manual = read("docs/PRUEBAS_MANUALES_FASE_5.md").lower()
+        manual = read("docs/PRUEBAS_MANUALES_FASE_5.md")
     except OSError as error:
         print(f"ERROR: no se pudieron leer archivos de Fase 5: {error}")
         return 1
