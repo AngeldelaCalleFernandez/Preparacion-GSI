@@ -14,6 +14,13 @@ import {
   loadActiveExamState,
   saveActiveExamState,
 } from "./exam-storage.js";
+import {
+  createAnalyticsAnnotationEvent,
+  createAnalyticsAttemptEvent,
+  createAnalyticsSession,
+  createAnalyticsSessionEvent,
+} from "./analytics-events.js";
+import { applyStoredAnalyticsEvents } from "./analytics-storage.js";
 import { applyStoredReinforcementEvents, createReinforcementEvent } from "./reinforcement-storage.js";
 import { createElement, setStatus } from "./ui.js";
 
@@ -132,6 +139,9 @@ export function initExam(data) {
       availabilityNode.textContent = `Disponibles para Solo BOE: ${available.boe.length}.`;
     } else if (config.mode === EXAM_MODES.AI_VALIDATED) {
       availabilityNode.textContent = `Disponibles para Solo IA validada: ${available.ai.length}.`;
+    } else if (config.mode === EXAM_MODES.DEMO) {
+      const origins = [...new Set(available.demo.map((question) => question.origin))].join(", ");
+      availabilityNode.textContent = `Disponibles para sesión ficticia: ${available.demo.length}. Orígenes simulados: ${origins || "sin datos"}.`;
     } else {
       const quota = getMixedQuota(config.questionCount, config.boePercentage);
       mixedSummary.textContent = `Cuota prevista: ${quota.boeCount} BOE y ${quota.aiCount} IA validada.`;
@@ -293,6 +303,35 @@ export function initExam(data) {
     });
   }
 
+  function examAnalyticsEventId(state, question) {
+    return `exam:${state.examId}:${question.collection}:${question.id}:analytics`;
+  }
+
+  function analyticsEventsForExam(state, result, finishedAt) {
+    const attempts = result.review.map((item) => createAnalyticsAttemptEvent(examAnalyticsEventId(state, item.question), item.question, {
+      sessionId: state.examId,
+      sessionType: "exam",
+      selectedOption: item.selectedOption,
+      correct: item.outcome === "correct",
+      blank: item.outcome === "blank",
+      answeredAt: new Date(finishedAt).toISOString(),
+      durationSeconds: null,
+      penaltyApplied: state.config.penaltyPerError,
+      netContribution: item.outcome === "correct" ? 1 : item.outcome === "incorrect" ? -state.config.penaltyPerError : 0,
+    }));
+    const summary = createAnalyticsSession({
+      sessionId: state.examId,
+      sessionType: "exam",
+      isDemo: state.isDemo,
+      startedAt: state.startedAt,
+      finishedAt: new Date(finishedAt).toISOString(),
+      configuredQuestions: state.config.questionCount,
+      attempts: attempts.map((event) => event.attempt),
+      penalty: state.config.penaltyPerError,
+    });
+    return [...attempts, createAnalyticsSessionEvent(`exam:${state.examId}:summary`, summary)];
+  }
+
   function updateExamReinforcement(state, question, item, action, button) {
     const response = item.outcome === "blank" ? null : examResponseEvent(state, question, item.outcome === "correct" ? "correct" : "incorrect");
     const events = [];
@@ -305,6 +344,17 @@ export function initExam(data) {
     const saved = applyStoredReinforcementEvents(state.isDemo, events);
     if (!saved.saved) {
       setStatus(saved.error || "No se pudo actualizar el refuerzo en este navegador.", "error");
+      return;
+    }
+    const annotation = createAnalyticsAnnotationEvent(
+      `exam:${state.examId}:${question.collection}:${question.id}:annotation:${action}`,
+      state.isDemo,
+      examAnalyticsEventId(state, question),
+      action === "doubt" ? { doubted: true } : { addedToReinforcement: true },
+    );
+    const analytics = applyStoredAnalyticsEvents(state.isDemo, [annotation]);
+    if (!analytics.saved) {
+      setStatus(analytics.error || "El refuerzo se actualizó, pero no se pudo anotar la estadística.", "error");
       return;
     }
     button.disabled = true;
@@ -372,10 +422,18 @@ export function initExam(data) {
     const completed = active;
     active = null;
     const result = calculateExamResults(completed.questions, completed.state.answersByQuestionId, completed.state.config.penaltyPerError);
+    const analytics = applyStoredAnalyticsEvents(completed.state.isDemo, analyticsEventsForExam(completed.state, result, finishedAt));
     const reinforcement = integrateExamErrors(completed.state, result);
     clearActiveExamState(completed.state.isDemo);
     if (finishDialog.open) finishDialog.close();
-    renderResults(result, completed.state, completed.questions, finishedAt, timedOut, reinforcement.saved ? null : reinforcement.error);
+    renderResults(
+      result,
+      completed.state,
+      completed.questions,
+      finishedAt,
+      timedOut,
+      !analytics.saved ? analytics.error : reinforcement.saved ? null : reinforcement.error,
+    );
   }
 
   function requestFinish() {
@@ -488,9 +546,10 @@ export function initExam(data) {
       setStatus("No hay preguntas ficticias activas para iniciar la sesión de demostración.", "error");
       return;
     }
-    if (preview.questionCount > available) {
-      questionCount.value = String(available);
-      setStatus(`La sesión ficticia se ajustará a sus ${available} preguntas disponibles.`, "info");
+    const desired = Math.min(20, available);
+    if (preview.questionCount !== desired) {
+      questionCount.value = String(desired);
+      setStatus(`La sesión ficticia se iniciará con ${desired} preguntas de demostración disponibles.`, "info");
     }
     startNewExam(EXAM_MODES.DEMO);
   }

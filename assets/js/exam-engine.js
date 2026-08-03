@@ -95,6 +95,22 @@ export function getExamAvailability(questions, config) {
   return { boe, ai, demo };
 }
 
+function selectBalancedDemoQuestions(questions, config) {
+  const configuredBlocks = [...new Set(config.blockIds)];
+  const baseQuota = Math.floor(config.questionCount / configuredBlocks.length);
+  const remainder = config.questionCount % configuredBlocks.length;
+  const selected = [];
+  for (const [index, blockId] of configuredBlocks.entries()) {
+    const quota = baseQuota + (index < remainder ? 1 : 0);
+    const candidates = questions.filter((question) => question.block_id === blockId);
+    if (candidates.length < quota) {
+      return { errors: [`La sesión ficticia necesita ${quota} preguntas del bloque ${blockId} y solo hay ${candidates.length}; no se completará con otro bloque.`] };
+    }
+    selected.push(...candidates.slice(0, quota));
+  }
+  return { questions: selected };
+}
+
 function createOptionOrders(questions, shuffleOptions, random) {
   return Object.fromEntries(questions.map((question) => [
     question.id,
@@ -138,7 +154,9 @@ export function selectExamQuestions(questions, config, random = Math.random) {
     if (availability.demo.length < config.questionCount) {
       return { errors: [`La sesión ficticia necesita ${config.questionCount} preguntas demo y solo hay ${availability.demo.length}.`] };
     }
-    selected = availability.demo.slice(0, config.questionCount);
+    const demoSelection = selectBalancedDemoQuestions(availability.demo, config);
+    if (demoSelection.errors) return demoSelection;
+    selected = demoSelection.questions;
   }
 
   const ordered = config.shuffleQuestions ? shuffleCopy(selected, random) : selected;

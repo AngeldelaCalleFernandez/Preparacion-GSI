@@ -1,10 +1,12 @@
 import { isDemoMode, loadAppData } from "./data-service.js";
-import { initRouter } from "./router.js";
+import { initRouter, syncRouter } from "./router.js";
 import { renderSyllabus } from "./syllabus-view.js";
 import { initTraining } from "./training.js";
 import { initExam } from "./exam.js";
 import { migratePhase3Training } from "./reinforcement-migration.js";
 import { initReinforcement } from "./reinforcement.js";
+import { migrateAnalytics } from "./analytics-migration.js";
+import { initStatistics, renderAnalyticsHome } from "./statistics.js";
 import { clearStatus, setStatus, setText } from "./ui.js";
 
 function renderHomeSummary(data) {
@@ -33,11 +35,19 @@ async function start() {
     renderSyllabus(data);
     const realMigration = migratePhase3Training(data, false);
     const demoMigration = data.demoEnabled ? migratePhase3Training(data, true) : null;
+    const realAnalyticsMigration = migrateAnalytics(data, false);
+    const demoAnalyticsMigration = data.demoEnabled ? migrateAnalytics(data, true) : null;
     initTraining(data);
     initExam(data);
     initReinforcement(data);
-    if (realMigration.error || demoMigration?.error) {
-      setStatus(realMigration.error || demoMigration?.error || "No se pudo migrar el historial de refuerzo.", "error");
+    initStatistics(data);
+    renderAnalyticsHome(data);
+    // Las vistas se resuelven exclusivamente desde el hash. Esta segunda
+    // sincronización mantiene la ruta inicial si cualquier módulo de carga
+    // ha actualizado el DOM durante la inicialización asíncrona.
+    syncRouter(false);
+    if (realMigration.error || demoMigration?.error || realAnalyticsMigration.error || demoAnalyticsMigration?.error) {
+      setStatus(realMigration.error || demoMigration?.error || realAnalyticsMigration.error || demoAnalyticsMigration?.error || "No se pudo migrar el historial local.", "error");
       return;
     }
     if (data.demoEnabled) {

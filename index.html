@@ -23,6 +23,7 @@
             <li><a href="#entrenamiento" data-route="entrenamiento">Entrenamiento</a></li>
             <li><a href="#examen" data-route="examen">Examen</a></li>
             <li><a href="#refuerzo" data-route="refuerzo">Refuerzo</a></li>
+            <li><a href="#estadisticas" data-route="estadisticas">Estadísticas</a></li>
           </ul>
         </nav>
       </div>
@@ -61,7 +62,17 @@
         <div class="action-row">
           <a class="button" href="#temario">Consultar temario</a>
           <a class="button button--secondary" href="#entrenamiento">Ir a entrenamiento</a>
+          <a class="button button--secondary" href="#estadisticas">Ver estadísticas</a>
         </div>
+        <section class="local-progress" aria-labelledby="home-analytics-title">
+          <h2 id="home-analytics-title">Progreso reciente</h2>
+          <div class="summary-grid" aria-label="Resumen de progreso reciente">
+            <article class="summary-card"><p id="home-answered-count" class="summary-card__value">—</p><p class="summary-card__label">respondidas</p></article>
+            <article class="summary-card"><p id="home-recent-accuracy" class="summary-card__value">—</p><p class="summary-card__label">precisión reciente</p></article>
+            <article class="summary-card"><p id="home-overdue-count" class="summary-card__value">—</p><p class="summary-card__label">refuerzos vencidos</p></article>
+            <article class="summary-card"><p id="home-priority-topic" class="summary-card__value">—</p><p class="summary-card__label">tema prioritario</p></article>
+          </div>
+        </section>
         <p class="muted">Para cargar los datos, sirve esta carpeta con <code>python -m http.server 8000</code>; la apertura mediante <code>file://</code> no permite usar <code>fetch</code>.</p>
       </section>
 
@@ -362,6 +373,73 @@
           <div class="action-row">
             <button id="clear-demo-reinforcement" class="button button--secondary" type="button">Borrar refuerzo demo</button>
             <button id="clear-all-reinforcement" class="button button--danger" type="button">Borrar todo el refuerzo</button>
+          </div>
+        </section>
+      </section>
+
+      <section id="statistics-view" data-view="estadisticas" aria-labelledby="statistics-title" hidden>
+        <p class="eyebrow">Historial local</p>
+        <h1 id="statistics-title">Estadísticas y progreso</h1>
+        <p class="lead">Los cálculos se realizan en este navegador. No se guardan enunciados ni opciones completas en las estadísticas.</p>
+
+        <form class="training-form" aria-label="Filtros de estadísticas">
+          <fieldset>
+            <legend>Filtrar resultados</legend>
+            <div class="form-grid">
+              <div class="field">
+                <label for="analytics-store">Datos</label>
+                <select id="analytics-store"><option value="real">Datos reales</option><option value="demo">Datos demo</option></select>
+              </div>
+              <div class="field">
+                <label for="analytics-period">Periodo</label>
+                <select id="analytics-period">
+                  <option value="7">Últimos 7 días</option><option value="30" selected>Últimos 30 días</option><option value="90">Últimos 90 días</option><option value="all">Todo el historial</option><option value="custom">Rango personalizado</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="analytics-block">Bloque</label>
+                <select id="analytics-block"><option value="">Todos los bloques</option></select>
+              </div>
+              <div class="field">
+                <label for="analytics-topic">Tema</label>
+                <select id="analytics-topic"><option value="">Todos los temas</option></select>
+              </div>
+              <div class="field">
+                <label for="analytics-origin">Origen</label>
+                <select id="analytics-origin"><option value="">Todos los orígenes</option><option value="official">Oficial</option><option value="ai">IA</option><option value="manual">Manual</option><option value="adapted">Adaptada</option></select>
+              </div>
+              <div class="field">
+                <label for="analytics-session-type">Modalidad</label>
+                <select id="analytics-session-type"><option value="">Todas las modalidades</option><option value="training">Entrenamiento</option><option value="exam">Examen</option><option value="reinforcement">Refuerzo</option></select>
+              </div>
+            </div>
+            <div id="analytics-custom-range" class="form-grid" hidden>
+              <div class="field"><label for="analytics-from">Desde</label><input id="analytics-from" type="date"></div>
+              <div class="field"><label for="analytics-to">Hasta</label><input id="analytics-to" type="date"></div>
+            </div>
+            <div class="checkbox-grid checkbox-grid--options"><label><input id="analytics-include-incidents" type="checkbox"> Incluir preguntas pausadas o con incidencia en errores recurrentes</label></div>
+          </fieldset>
+        </form>
+
+        <p id="analytics-active-period" class="form-help" aria-live="polite">Últimos 30 días</p>
+        <p id="analytics-storage-status" class="analytics-storage-status" role="status" aria-live="polite"></p>
+        <section aria-labelledby="analytics-summary-title"><h2 id="analytics-summary-title">Resumen general</h2><div id="analytics-summary" class="analytics-summary-grid" aria-live="polite"></div><div id="analytics-insights" class="analytics-summary-grid" aria-live="polite"></div></section>
+        <section id="analytics-timeline" class="analytics-section" aria-live="polite"></section>
+        <section id="analytics-block-table" class="analytics-section" aria-live="polite"></section>
+        <section id="analytics-topic-table" class="analytics-section" aria-live="polite"></section>
+        <section id="analytics-origin-table" class="analytics-section" aria-live="polite"></section>
+        <section id="analytics-mode-table" class="analytics-section" aria-live="polite"></section>
+        <section id="analytics-weaknesses" class="analytics-section" aria-live="polite"></section>
+        <section id="analytics-recurrent" class="analytics-section" aria-live="polite"></section>
+        <section id="analytics-sessions" class="analytics-section" aria-live="polite"></section>
+        <section id="analytics-storage" class="analytics-section" aria-live="polite"></section>
+        <section class="local-progress" aria-labelledby="analytics-controls-title">
+          <h2 id="analytics-controls-title">Controles de estadísticas</h2>
+          <p>La reconstrucción usa solo historiales compatibles. Los exámenes finalizados antes de la Fase 6 no pueden reconstruirse porque no se guardaban.</p>
+          <div class="action-row">
+            <button id="analytics-rebuild" class="button button--secondary" type="button">Reconstruir estadísticas</button>
+            <button id="analytics-clear-demo" class="button button--secondary" type="button">Borrar estadísticas demo</button>
+            <button id="analytics-clear-all" class="button button--danger" type="button">Borrar todas las estadísticas</button>
           </div>
         </section>
       </section>

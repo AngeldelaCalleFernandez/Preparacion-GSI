@@ -159,6 +159,7 @@ export function createReinforcementSession(isDemo, entries, config) {
     questionRefs: entries.map(({ question }) => createQuestionReference(question)),
     currentIndex: 0,
     responsesByQuestionId: {},
+    questionStartedAtByQuestionId: {},
     startedAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
   };

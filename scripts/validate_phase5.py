@@ -21,6 +21,13 @@ REQUIRED = (
 FORBIDDEN = ("react", "vue", "angular", "express", "cdn", "unpkg", "jsdelivr")
 VALID_MANUAL_STATUSES = frozenset({"APROBADA", "FALLIDA", "NO EJECUTADA"})
 MANUAL_CASE_PATTERN = re.compile(r"^\|\s*(R-\d+)\s*\|\s*([^|]*)\|", re.MULTILINE)
+REAL_DATA_PATHS = (
+    "data/questions-official.json",
+    "data/questions-ai.json",
+    "data/questions-manual.json",
+    "data/updates.json",
+    "schemas",
+)
 
 
 def read(path: str) -> str:
@@ -115,7 +122,7 @@ def main() -> int:
             errors.append(f"ERROR: falta el mecanismo obligatorio de Fase 5: {term}.")
     if 'item.outcome === "incorrect"' not in exam:
         errors.append("ERROR: el examen no limita la incorporación automática a errores.")
-    if "training:${responserecord.responseid}:response" not in training:
+    if "training:${response.responseid}:response" not in training:
         errors.append("ERROR: el entrenamiento no produce IDs estables de evento.")
     if "window.confirm" not in read("assets/js/reinforcement.js"):
         errors.append("ERROR: faltan confirmaciones explícitas de borrado.")
@@ -144,9 +151,9 @@ def main() -> int:
         errors.append("ERROR: se ha detectado un posible secreto en el código de la aplicación.")
     if re.search(r"(?:src|href)=['\"]/", index):
         errors.append("ERROR: index.html contiene una ruta absoluta no compatible con GitHub Pages.")
-    changed_data = subprocess.run(["git", "diff", "--quiet", "--", "data", "schemas"], cwd=ROOT, check=False)
+    changed_data = subprocess.run(["git", "diff", "--quiet", "--", *REAL_DATA_PATHS], cwd=ROOT, check=False)
     if changed_data.returncode != 0:
-        errors.append("ERROR: la Fase 5 no debe modificar JSON ni esquemas.")
+        errors.append("ERROR: no se pueden modificar los bancos reales, actualizaciones ni esquemas.")
     if errors:
         print("\n".join(errors))
         return 1

@@ -55,6 +55,7 @@ REQUIRED_DATA_LOADS = (
 )
 FORBIDDEN_FRAMEWORKS = re.compile(r"\b(?:React|Vue|Angular|node_modules|npm|express)\b", re.IGNORECASE)
 SECRET_PATTERN = re.compile(r"(?:api[_-]?key|secret|access[_-]?token|password)\s*[:=]", re.IGNORECASE)
+DEMO_PREFIXES = {"official": "OFF-DEMO-", "ai": "AI-DEMO-", "manual": "MAN-DEMO-", "adapted": "MAN-DEMO-"}
 
 
 class AppHtmlParser(HTMLParser):
@@ -100,10 +101,12 @@ def validate_demo(schema_validator: Draft202012Validator, errors: list[str]) -> 
         errors.append(f"ERROR: {relative_path}:{location}: {error.message}")
     for question in demo.get("questions", []):
         question_id = question.get("id", "<sin id>")
-        if not question_id.startswith("AI-DEMO-"):
-            errors.append(f"ERROR: pregunta demo {question_id} no usa el prefijo AI-DEMO-.")
-        if question.get("origin") != "ai":
-            errors.append(f"ERROR: pregunta demo {question_id} no tiene origen ai.")
+        origin = question.get("origin")
+        expected_prefix = DEMO_PREFIXES.get(origin)
+        if expected_prefix is None or not question_id.startswith(expected_prefix):
+            errors.append(f"ERROR: pregunta demo {question_id} no usa un prefijo estable compatible con su origen simulado.")
+        if origin not in DEMO_PREFIXES:
+            errors.append(f"ERROR: pregunta demo {question_id} tiene un origen simulado no permitido.")
         if question.get("official_status") != "not_official":
             errors.append(f"ERROR: pregunta demo {question_id} no está marcada como no oficial.")
         if question.get("validation_status") != "draft":

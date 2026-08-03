@@ -10,7 +10,9 @@ const DATA_FILES = Object.freeze({
 const DEMO_FILE = "./data/demo/questions-ai-demo.json";
 
 async function fetchJson(path) {
-  const response = await fetch(path, { headers: { Accept: "application/json" } });
+  // Los bancos siguen siendo estáticos; evitar una respuesta cacheada permite
+  // que el modo demo cargue siempre su colección aislada al recargar.
+  const response = await fetch(path, { cache: "no-store", headers: { Accept: "application/json" } });
   if (!response.ok) {
     throw new Error(`No se pudo cargar ${path} (HTTP ${response.status}).`);
   }

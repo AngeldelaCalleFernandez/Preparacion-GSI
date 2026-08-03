@@ -15,6 +15,13 @@ import {
   loadReinforcementStore,
   saveReinforcementSession,
 } from "./reinforcement-storage.js";
+import {
+  createAnalyticsAnnotationEvent,
+  createAnalyticsAttemptEvent,
+  createAnalyticsSession,
+  createAnalyticsSessionEvent,
+} from "./analytics-events.js";
+import { applyStoredAnalyticsEvents } from "./analytics-storage.js";
 import { createElement, setStatus } from "./ui.js";
 
 function originLabel(origin) {
@@ -120,6 +127,38 @@ export function initReinforcement(data) {
 
   function currentStore() {
     return loadReinforcementStore(isDemoStore());
+  }
+
+  function analyticsAttemptId(session, question) {
+    return `reinforcement:${session.sessionId}:${question.collection}:${question.id}:analytics`;
+  }
+
+  function analyticsEventsForSession(session) {
+    const attempts = [];
+    for (const reference of session.questionRefs) {
+      const question = questionForReference(data, reference);
+      const response = session.responsesByQuestionId[recordKey(reference)];
+      if (!question || !response) continue;
+      attempts.push(createAnalyticsAttemptEvent(analyticsAttemptId(session, question), question, {
+        sessionId: session.sessionId,
+        sessionType: "reinforcement",
+        selectedOption: response.selectedOption,
+        correct: response.correct,
+        answeredAt: response.answeredAt,
+        durationSeconds: response.durationSeconds,
+        doubted: response.assessment === "doubt",
+      }));
+    }
+    const summary = createAnalyticsSession({
+      sessionId: session.sessionId,
+      sessionType: "reinforcement",
+      isDemo: session.isDemo,
+      startedAt: session.startedAt,
+      finishedAt: new Date().toISOString(),
+      configuredQuestions: session.questionRefs.length,
+      attempts: attempts.map((event) => event.attempt),
+    });
+    return [...attempts, createAnalyticsSessionEvent(`reinforcement:${session.sessionId}:summary`, summary)];
   }
 
   function populateTopics(blockId, topicSelect) {
@@ -272,11 +311,15 @@ export function initReinforcement(data) {
   }
 
   function finishActive() {
+    const analytics = applyStoredAnalyticsEvents(activeSession.isDemo, analyticsEventsForSession(activeSession));
     clearReinforcementSession(activeSession.isDemo);
     activeSession = null;
     activeNode.hidden = true;
     sessionForm.hidden = false;
-    setStatus("Sesión de refuerzo finalizada.", "success");
+    setStatus(
+      analytics.saved ? "Sesión de refuerzo finalizada." : analytics.error || "La sesión finalizó, pero no se pudo guardar su resumen estadístico.",
+      analytics.saved ? "success" : "error",
+    );
     renderAll();
   }
 
@@ -303,6 +346,11 @@ export function initReinforcement(data) {
     questionNode.append(createElement("p", "pill", `${originLabel(question.origin)} · ${question.block_id} · ${question.topic_id}`));
     questionNode.append(createElement("p", "question-statement", question.statement));
     if (!response) {
+      activeSession.questionStartedAtByQuestionId ||= {};
+      if (!activeSession.questionStartedAtByQuestionId[responseKey]) {
+        activeSession.questionStartedAtByQuestionId[responseKey] = new Date().toISOString();
+        persistActive();
+      }
       const options = createElement("div", "question-options");
       options.setAttribute("role", "group");
       options.setAttribute("aria-label", "Opciones de respuesta");
@@ -368,7 +416,21 @@ export function initReinforcement(data) {
     const event = createReinforcementEvent(attemptId, "response", question, { result: correct ? "correct" : "incorrect" });
     const saved = applyStoredReinforcementEvents(activeSession.isDemo, [event]);
     if (!saved.saved) setStatus(saved.error || "No se pudo guardar la respuesta de refuerzo.", "error");
-    activeSession.responsesByQuestionId[key] = { attemptId, selectedOption, correct, answeredAt: event.occurredAt, assessment: null, assessedAt: null };
+    const startedAt = activeSession.questionStartedAtByQuestionId?.[key];
+    const durationSeconds = Number.isFinite(Date.parse(startedAt))
+      ? Math.max(0, (Date.now() - Date.parse(startedAt)) / 1000)
+      : null;
+    activeSession.responsesByQuestionId[key] = { attemptId, selectedOption, correct, answeredAt: event.occurredAt, durationSeconds, assessment: null, assessedAt: null };
+    const analyticsEvent = createAnalyticsAttemptEvent(analyticsAttemptId(activeSession, question), question, {
+      sessionId: activeSession.sessionId,
+      sessionType: "reinforcement",
+      selectedOption,
+      correct,
+      answeredAt: event.occurredAt,
+      durationSeconds,
+    });
+    const analyticsSaved = applyStoredAnalyticsEvents(activeSession.isDemo, [analyticsEvent]);
+    if (!analyticsSaved.saved) setStatus(analyticsSaved.error || "La respuesta se corrigió, pero no se pudo actualizar la estadística.", "error");
     persistActive();
     renderActive();
   }
@@ -384,6 +446,16 @@ export function initReinforcement(data) {
     if (!saved.saved) {
       setStatus(saved.error || "No se pudo guardar la valoración de refuerzo.", "error");
       return;
+    }
+    if (assessment === "doubt") {
+      const annotation = createAnalyticsAnnotationEvent(
+        `reinforcement:${activeSession.sessionId}:${question.collection}:${question.id}:annotation:doubt`,
+        activeSession.isDemo,
+        analyticsAttemptId(activeSession, question),
+        { doubted: true },
+      );
+      const analytics = applyStoredAnalyticsEvents(activeSession.isDemo, [annotation]);
+      if (!analytics.saved) setStatus(analytics.error || "El refuerzo se actualizó, pero no se pudo anotar la duda.", "error");
     }
     response.assessment = assessment;
     response.assessedAt = event.occurredAt;
