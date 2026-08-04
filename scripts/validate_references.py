@@ -76,17 +76,26 @@ def main() -> int:
         if source_id in source_ids:
             errors.append(f"ERROR: fuente duplicada {source_id}.")
         source_ids.add(source_id)
-        for block_id in source["block_ids"]:
+        block_values = source.get("block_ids", source.get("blockIds", []))
+        topic_values = source.get("topic_ids", source.get("topicIds", []))
+        for block_id in block_values:
             if block_id not in block_ids:
                 errors.append(f"ERROR: {source_id} referencia un bloque inexistente {block_id}.")
-        if len(set(source["block_ids"])) != len(source["block_ids"]):
+        if len(set(block_values)) != len(block_values):
             errors.append(f"ERROR: {source_id} repite identificadores de bloque.")
-        for topic_id in source["topic_ids"]:
+        for topic_id in topic_values:
             if topic_id not in topic_ids:
                 errors.append(f"ERROR: {source_id} referencia un tema inexistente {topic_id}.")
-        if len(set(source["topic_ids"])) != len(source["topic_ids"]):
+        if len(set(topic_values)) != len(topic_values):
             errors.append(f"ERROR: {source_id} repite identificadores de tema.")
-        for document in source["documents"]:
+        if source.get("sourceKind") == "technical-primary-source":
+            document_id = source["documentId"]
+            if document_id in document_ids:
+                errors.append(f"ERROR: documento duplicado {document_id}.")
+            document_ids.add(document_id)
+            document_to_source[document_id] = source_id
+            continue
+        for document in source.get("documents", []):
             document_id = document["id"]
             path = document["path"]
             if document_id in document_ids:

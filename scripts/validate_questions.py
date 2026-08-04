@@ -41,12 +41,12 @@ def main() -> int:
     documents_by_id = {
         document["id"]: document
         for source in sources["sources"]
-        for document in source["documents"]
+        for document in source.get("documents", [])
     }
     document_to_source = {
         document["id"]: source["id"]
         for source in sources["sources"]
-        for document in source["documents"]
+        for document in source.get("documents", [])
     }
     errors: list[str] = []
     all_ids: set[str] = set()

@@ -35,7 +35,8 @@ def schema_errors(data_path: Path, schema_path: Path) -> list[str]:
 def coverage_errors(manifest: dict[str, object], coverage: object) -> list[str]:
     if not isinstance(coverage, dict):
         return ["ERROR: la matriz de cobertura no es un objeto."]
-    known = {item.get("sourceId") for item in manifest.get("sources", []) if isinstance(item, dict)}
+    by_id = {item.get("sourceId"): item for item in manifest.get("sources", []) if isinstance(item, dict)}
+    known = set(by_id)
     errors: list[str] = []
     topic_ids: list[object] = []
     for topic in coverage.get("topics", []):
@@ -53,6 +54,10 @@ def coverage_errors(manifest: dict[str, object], coverage: object) -> list[str]:
             for source_id in section.get("sourceIds", []):
                 if source_id not in known:
                     errors.append(f"ERROR: {topic.get('topicId')}:{section.get('id')} usa fuente inexistente {source_id}.")
+                elif section.get("status") in {"covered", "partially-covered"}:
+                    source = by_id[source_id]
+                    if source.get("authorityStatus") != "official-primary" or source.get("publicationStatus") != "current":
+                        errors.append(f"ERROR: {topic.get('topicId')}:{section.get('id')} no puede contar una fuente no vigente o no primaria.")
         if topic.get("assessment") == "sufficient-for-partial-pilot":
             if not any(section.get("status") == "covered" for section in traced):
                 errors.append(f"ERROR: {topic.get('topicId')} requiere una sección central covered.")
@@ -60,6 +65,8 @@ def coverage_errors(manifest: dict[str, object], coverage: object) -> list[str]:
                 errors.append(f"ERROR: {topic.get('topicId')} requiere varias secciones trazables.")
             if not topic.get("gaps"):
                 errors.append(f"ERROR: {topic.get('topicId')} requiere lagunas documentadas.")
+            if topic.get("manualReview") != "reviewed":
+                errors.append(f"ERROR: {topic.get('topicId')} sufficient-for-partial-pilot requiere revisión manual.")
     if topic_ids != ["B2-T04", "B3-T07", "B4-T08"]:
         errors.append("ERROR: la matriz debe contener B2-T04, B3-T07 y B4-T08 en ese orden.")
     return errors

@@ -158,6 +158,8 @@ def staging_paths(source_id: str) -> tuple[Path, Path]:
 def planned_summary(source: dict[str, Any]) -> dict[str, object]:
     planned = source.get("plannedRevision")
     if not isinstance(planned, dict):
+        if source.get("acquisitionMode") == "manual":
+            raise TechnicalSourceError(f"manual-acquisition-required: {source.get('sourceId')}")
         raise TechnicalSourceError(f"{source.get('sourceId')} no tiene una revisión planificada.")
     return {
         "sourceId": source["sourceId"],

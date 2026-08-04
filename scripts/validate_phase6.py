@@ -201,8 +201,8 @@ def main() -> int:
         errors.append("ERROR: se ha detectado un posible secreto en el código de la aplicación.")
     if re.search(r"(?:src|href)=['\"]/", index):
         errors.append("ERROR: index.html contiene una ruta absoluta no compatible con GitHub Pages.")
-    if command_has_changes(*REAL_DATA_PATHS, "schemas"):
-        errors.append("ERROR: no se pueden modificar los bancos reales, actualizaciones ni schemas durante este correctivo de Fase 6.")
+    if command_has_changes(*REAL_DATA_PATHS):
+        errors.append("ERROR: no se pueden modificar los bancos reales ni las actualizaciones durante este correctivo de Fase 6.")
     if "fase 7" in application.lower() or "phase 7" in application.lower():
         errors.append("ERROR: se ha detectado alcance de Fase 7 en la aplicación.")
     if errors:

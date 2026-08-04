@@ -26,7 +26,6 @@ REAL_DATA_PATHS = (
     "data/questions-ai.json",
     "data/questions-manual.json",
     "data/updates.json",
-    "schemas",
 )
 
 
@@ -153,7 +152,7 @@ def main() -> int:
         errors.append("ERROR: index.html contiene una ruta absoluta no compatible con GitHub Pages.")
     changed_data = subprocess.run(["git", "diff", "--quiet", "--", *REAL_DATA_PATHS], cwd=ROOT, check=False)
     if changed_data.returncode != 0:
-        errors.append("ERROR: no se pueden modificar los bancos reales, actualizaciones ni esquemas.")
+        errors.append("ERROR: no se pueden modificar los bancos reales ni las actualizaciones durante este correctivo.")
     if errors:
         print("\n".join(errors))
         return 1

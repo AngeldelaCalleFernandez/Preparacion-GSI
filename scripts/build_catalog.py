@@ -26,7 +26,7 @@ def main() -> int:
     catalog_paths = {
         document["path"]
         for source in catalog["sources"]
-        for document in source["documents"]
+        for document in source.get("documents", [])
     }
     markdown_paths = {
         path.relative_to(ROOT).as_posix()

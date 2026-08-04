@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 from hashlib import sha256
+from copy import deepcopy
 import json
 from pathlib import Path
 import re
@@ -28,6 +29,7 @@ from topic_content_lib import (
 
 
 BASE_TAG = "fase-6-completada"
+SOURCE_BASE_TAG = "fase-7a-completada"
 REQUIRED = (
     "PLAN_FASE_7.md",
     "assets/js/topic-content-service.js",
@@ -45,13 +47,11 @@ REQUIRED = (
 )
 PROTECTED = (
     "data/syllabus.json",
-    "data/sources.json",
     "data/questions-official.json",
     "data/questions-ai.json",
     "data/questions-manual.json",
     "data/updates.json",
     "schemas/question.schema.json",
-    "schemas/source.schema.json",
     "schemas/syllabus.schema.json",
     "schemas/update.schema.json",
 )
@@ -98,6 +98,52 @@ def validate_protected_files(errors: list[str]) -> None:
             continue
         if sha256(baseline.stdout).digest() != sha256(current_path.read_bytes()).digest():
             errors.append(f"ERROR: se modificó un archivo protegido de fases anteriores: {relative_path}.")
+
+
+def validate_source_migration(errors: list[str]) -> None:
+    """Allow only manifest-verified technical additions after Fase 7A."""
+    baseline = subprocess.run(
+        ["git", "show", f"{SOURCE_BASE_TAG}:data/sources.json"], cwd=ROOT,
+        capture_output=True, text=True, encoding="utf-8", check=False,
+    )
+    if baseline.returncode:
+        errors.append(f"ERROR: no se pudo leer {SOURCE_BASE_TAG} para proteger el catálogo histórico.")
+        return
+    try:
+        old_catalog = json.loads(baseline.stdout)
+        current_catalog = json.loads(read_text("data/sources.json"))
+        manifest = json.loads(read_text("documents/sources/technical/manifest.json"))
+        source_schema = json.loads(read_text("schemas/source.schema.json"))
+        validator = Draft202012Validator(source_schema, format_checker=FormatChecker())
+    except (OSError, ValueError, json.JSONDecodeError) as error:
+        errors.append(f"ERROR: no se pudo comprobar la migración de fuentes: {error}")
+        return
+    old_by_id = {item["id"]: item for item in old_catalog["sources"]}
+    current_by_id = {item.get("id"): item for item in current_catalog.get("sources", []) if isinstance(item, dict)}
+    for source_id, old_source in old_by_id.items():
+        if current_by_id.get(source_id) != old_source:
+            errors.append(f"ERROR: el registro histórico {source_id} fue eliminado o modificado tras Fase 7A.")
+    verified = {
+        item.get("sourceId") for item in manifest.get("sources", [])
+        if isinstance(item, dict) and item.get("publicationStatus") == "current" and item.get("revisions")
+    }
+    for source_id, source in current_by_id.items():
+        if source_id in old_by_id:
+            continue
+        if source.get("sourceKind") != "technical-primary-source":
+            errors.append(f"ERROR: la fuente nueva {source_id} no usa la rama técnica estricta.")
+        elif source.get("manifestSourceId") != source_id or source_id not in verified:
+            errors.append(f"ERROR: la fuente nueva {source_id} no está verificada en el manifiesto técnico.")
+    if list(validator.iter_errors(old_catalog)):
+        errors.append("ERROR: el esquema ampliado ya no admite datos históricos.")
+    sample = deepcopy(next(iter(old_by_id.values())))
+    sample["documents"][0]["path"] = "documents/sources/technical/public/B3-T07/falso.html"
+    if not list(validator.iter_errors({"metadata": old_catalog["metadata"], "sources": [sample]})):
+        errors.append("ERROR: el esquema ampliado relajó la ruta de un documento convertido.")
+    sample = deepcopy(next(iter(old_by_id.values())))
+    sample["sourceKind"] = "technical-primary-source"
+    if not list(validator.iter_errors({"metadata": old_catalog["metadata"], "sources": [sample]})):
+        errors.append("ERROR: un registro histórico puede declararse técnico para eludir restricciones.")
 
 
 def validate_schema(index: object, errors: list[str]) -> None:
@@ -241,6 +287,7 @@ def main() -> int:
             errors.append(f"ERROR: falta el entregable de Fase 7A: {relative_path}.")
     if not errors:
         validate_protected_files(errors)
+        validate_source_migration(errors)
         validate_artifacts(errors)
         validate_static_files(errors)
         validate_manual_and_tests(errors)

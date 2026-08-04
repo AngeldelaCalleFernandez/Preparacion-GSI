@@ -5,35 +5,38 @@
       "topicId": "B2-T04",
       "officialTitle": "Sistemas operativos. Características y elementos constitutivos. Sistemas Windows. Sistemas Unix y Linux. Sistemas operativos para dispositivos móviles.",
       "subsections": [
-        {"id": "fundamentos-so", "label": "Características y elementos constitutivos", "status": "uncovered", "sourceIds": [], "locators": []},
-        {"id": "windows", "label": "Sistemas Windows", "status": "uncovered", "sourceIds": [], "locators": []},
-        {"id": "unix-linux", "label": "Sistemas Unix y Linux", "status": "uncovered", "sourceIds": [], "locators": []},
+        {"id": "fundamentos-so", "label": "Características y elementos constitutivos", "status": "partially-covered", "sourceIds": ["SRC-TECH-MICROSOFT-WINDOWS-HAL-LIBRARY", "SRC-TECH-LINUX-KERNEL-ADMIN-GUIDE"], "locators": ["Windows HAL: #windows-kernel-mode-hal-library", "Linux: #general-guides-to-kernel-administration"]},
+        {"id": "windows", "label": "Sistemas Windows", "status": "covered", "sourceIds": ["SRC-TECH-MICROSOFT-WINDOWS-HAL-LIBRARY"], "locators": ["#windows-kernel-mode-hal-library"]},
+        {"id": "unix-linux", "label": "Sistemas Unix y Linux", "status": "covered", "sourceIds": ["SRC-TECH-LINUX-KERNEL-ADMIN-GUIDE"], "locators": ["#the-linux-kernel-user-s-and-administrator-s-guide"]},
         {"id": "moviles", "label": "Sistemas para dispositivos móviles", "status": "blocked", "sourceIds": [], "locators": []}
       ],
-      "assessment": "not-sufficient",
-      "gaps": ["Pendiente de adquisición y revisión manual de fuentes técnicas concretas."]
+      "assessment": "sufficient-for-partial-pilot",
+      "manualReview": "reviewed",
+      "gaps": ["POSIX.1-2024 requiere adquisición manual con condiciones confirmadas.", "Sistemas operativos móviles siguen bloqueados por falta de una fuente primaria concreta."]
     },
     {
       "topicId": "B3-T07",
       "officialTitle": "Aplicaciones web. Desarrollo web front-end y en servidor, multiplataforma y multidispositivo. Lenguajes: HTML, XML y sus derivaciones. Navegadores y lenguajes de programación web. Lenguajes de script.",
       "subsections": [
-        {"id": "aplicaciones-web", "label": "Aplicaciones y desarrollo web", "status": "uncovered", "sourceIds": [], "locators": []},
-        {"id": "html-xml", "label": "HTML, XML y derivaciones", "status": "uncovered", "sourceIds": [], "locators": []},
-        {"id": "navegadores-scripts", "label": "Navegadores y lenguajes de script", "status": "uncovered", "sourceIds": [], "locators": []}
+        {"id": "aplicaciones-web", "label": "Aplicaciones y desarrollo web", "status": "partially-covered", "sourceIds": ["SRC-TECH-WHATWG-HTML-LS"], "locators": ["#introduction"]},
+        {"id": "html-xml", "label": "HTML, XML y derivaciones", "status": "covered", "sourceIds": ["SRC-TECH-WHATWG-HTML-LS", "SRC-TECH-W3C-XML-1-0-5E"], "locators": ["WHATWG: #html-vs-xhtml", "W3C: #sec-intro"]},
+        {"id": "navegadores-scripts", "label": "Navegadores y lenguajes de script", "status": "partially-covered", "sourceIds": ["SRC-TECH-ECMA-262-2026"], "locators": ["#sec-scope", "#sec-ecmascript-overview"]}
       ],
-      "assessment": "not-sufficient",
-      "gaps": ["Pendiente de adquisición y revisión manual de estándares web."]
+      "assessment": "sufficient-for-partial-pilot",
+      "manualReview": "reviewed",
+      "gaps": ["Desarrollo en servidor, multiplataforma y multidispositivo requiere fuentes adicionales antes de una cobertura completa.", "La especificación de navegador concreta queda pendiente."]
     },
     {
       "topicId": "B4-T08",
       "officialTitle": "Internet: arquitectura de red. Origen, evolución y estado actual. Principales servicios. Protocolos HTTP, HTTPS y SSL/TLS.",
       "subsections": [
         {"id": "arquitectura-internet", "label": "Arquitectura y servicios de Internet", "status": "uncovered", "sourceIds": [], "locators": []},
-        {"id": "http", "label": "Semántica HTTP", "status": "uncovered", "sourceIds": [], "locators": []},
-        {"id": "tls", "label": "HTTPS y TLS", "status": "uncovered", "sourceIds": [], "locators": []}
+        {"id": "http", "label": "Semántica HTTP", "status": "covered", "sourceIds": ["SRC-TECH-IETF-RFC-9110"], "locators": ["Section 1", "Section 3"]},
+        {"id": "tls", "label": "HTTPS y TLS", "status": "covered", "sourceIds": ["SRC-TECH-IETF-RFC-9846"], "locators": ["Section 1.2", "Section 2"]}
       ],
-      "assessment": "not-sufficient",
-      "gaps": ["Pendiente de adquisición de RFC 9110 y RFC 9846 publicados."]
+      "assessment": "sufficient-for-partial-pilot",
+      "manualReview": "reviewed",
+      "gaps": ["Arquitectura histórica, evolución y principales servicios de Internet necesitan fuentes primarias adicionales.", "No se utiliza RFC 8446 como fuente principal: fue sustituido por RFC 9846."]
     }
   ]
 }

@@ -5,12 +5,14 @@ from __future__ import annotations
 
 from copy import deepcopy
 from hashlib import sha256
+import json
 from pathlib import Path
 import tempfile
 import unittest
 from unittest.mock import patch
 
 import technical_source_lib as lib
+from jsonschema import Draft202012Validator
 
 
 def source() -> dict[str, object]:
@@ -106,6 +108,26 @@ class Tests(unittest.TestCase):
         self.assertTrue(any("RFC 8446" in x for x in self.semantic(lambda x: x.update(sourceId="SRC-TECH-IETF-RFC-8446"))))
     def test_23_receipt_path_is_relative(self):
         self.assertTrue(lib.is_relative_technical_path(source()["plannedRevision"]["targetPath"]))
+    def test_24_historical_source_schema_is_accepted(self):
+        schema = json.loads((lib.ROOT / "schemas/source.schema.json").read_text(encoding="utf-8"))
+        catalog = json.loads((lib.ROOT / "data/sources.json").read_text(encoding="utf-8"))
+        historic = next(item for item in catalog["sources"] if "documents" in item)
+        self.assertFalse(list(Draft202012Validator(schema).iter_errors({"metadata": catalog["metadata"], "sources": [historic]})))
+    def test_25_historical_source_cannot_claim_technical_kind(self):
+        schema = json.loads((lib.ROOT / "schemas/source.schema.json").read_text(encoding="utf-8"))
+        catalog = json.loads((lib.ROOT / "data/sources.json").read_text(encoding="utf-8"))
+        historic = deepcopy(next(item for item in catalog["sources"] if "documents" in item)); historic["sourceKind"] = "technical-primary-source"
+        self.assertTrue(list(Draft202012Validator(schema).iter_errors({"metadata": catalog["metadata"], "sources": [historic]})))
+    def test_26_technical_source_cannot_pose_as_markdown(self):
+        schema = json.loads((lib.ROOT / "schemas/source.schema.json").read_text(encoding="utf-8"))
+        catalog = json.loads((lib.ROOT / "data/sources.json").read_text(encoding="utf-8"))
+        technical = deepcopy(next(item for item in catalog["sources"] if item.get("sourceKind"))); technical["documents"] = []
+        self.assertTrue(list(Draft202012Validator(schema).iter_errors({"metadata": catalog["metadata"], "sources": [technical]})))
+    def test_27_schema_keeps_additional_properties_closed(self):
+        schema = json.loads((lib.ROOT / "schemas/source.schema.json").read_text(encoding="utf-8"))
+        catalog = json.loads((lib.ROOT / "data/sources.json").read_text(encoding="utf-8"))
+        technical = deepcopy(next(item for item in catalog["sources"] if item.get("sourceKind"))); technical["unexpected"] = True
+        self.assertTrue(list(Draft202012Validator(schema).iter_errors({"metadata": catalog["metadata"], "sources": [technical]})))
 
 
 if __name__ == "__main__": unittest.main(verbosity=2)
