@@ -33,7 +33,7 @@ Todos los casos comienzan como `NO EJECUTADA`. Servir el repositorio con
 | M-26 | NO EJECUTADA | Activar `prefers-reduced-motion`; el salto de sección no debe animarse. |
 | M-27 | NO EJECUTADA | Navegar los tres pilotos y comprobar consola sin errores. |
 | M-28 | NO EJECUTADA | Comprobar Red: índice y tres HTML responden 200 mediante rutas relativas. |
-| M-29 | NO EJECUTADA | Abrir `/tests/phase7b2-runner.html`; debe terminar sin fallos. |
+| M-29 | APROBADA | Ejecutada en navegador integrado: `/tests/phase7b2-runner.html` terminó con 44 aprobadas y 0 fallidas tras corregir la regresión de alcance. |
 | M-30 | NO EJECUTADA | Ejecutar dos veces el constructor; la segunda no debe producir diferencias. |
 | M-31 | NO EJECUTADA | Ejecutar `validate_phase7b2.py`; debe terminar con código cero. |
 | M-32 | NO EJECUTADA | Comparar bancos y fuentes con `fase-7b1-completada`; deben permanecer iguales. |
@@ -43,3 +43,12 @@ Todos los casos comienzan como `NO EJECUTADA`. Servir el repositorio con
 
 La revisión doctrinal de `docs/REVISION_EDITORIAL_FASE_7B_2.md` es un control
 separado y no puede aprobarse a partir del resultado de estas pruebas técnicas.
+
+## Registro de ejecución
+
+- Fecha: 2026-08-04.
+- M-29 fue el único caso manual ejecutado en esta entrega. La primera pasada
+  mostró 43 aprobadas y 1 fallida por una aserción autorreferencial del propio
+  runner; tras corregirla y recargar por HTTP, terminó con 44 aprobadas y 0
+  fallidas.
+- Los restantes casos no se ejecutaron y conservan el estado `NO EJECUTADA`.

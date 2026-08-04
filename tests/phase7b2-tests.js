@@ -70,7 +70,13 @@ await test("la aplicación conserva exactamente 33 temas", () => assert(index.to
 await test("el parser rechaza scripts", () => { let rejected = false; try { parseSafeTopicFragment("<script>x</script>"); } catch { rejected = true; } assert(rejected, "Script aceptado"); });
 await test("el constructor determinista está cubierto por el validador", async () => { const validator = await fetchText("../scripts/validate_phase7b2.py"); assert(validator.includes("first.outputs != second.outputs"), "Sin control determinista"); });
 await test("los datos protegidos están cubiertos", async () => { const validator = await fetchText("../scripts/validate_phase7b2.py"); assert(validator.includes("data/questions-official.json") && validator.includes("documents/sources/technical/manifest.json"), "Protección incompleta"); });
-await test("no hay contenido de 7B.3 o Fase 8", () => assert(!testsSource.includes("validate_phase8") && !testsSource.includes("PLAN_FASE_7B_3"), "Alcance posterior detectado"));
+await test("no hay contenido de 7B.3 o Fase 8", async () => {
+  const [phase7b3, phase8] = await Promise.all([
+    fetch("../PLAN_FASE_7B_3.md", { cache: "no-store" }),
+    fetch("../PLAN_FASE_8.md", { cache: "no-store" }),
+  ]);
+  assert(!phase7b3.ok && !phase8.ok, "Existe un entregable de una fase posterior");
+});
 
 summary.textContent = `${passed} pruebas aprobadas y ${failed} fallidas.`;
 summary.dataset.state = failed ? "error" : "success";

@@ -4,9 +4,7 @@
 from __future__ import annotations
 
 from hashlib import sha256
-from html import unescape
 import json
-from pathlib import Path
 import re
 import subprocess
 import sys
@@ -162,12 +160,33 @@ def validate_protection(errors: list[str]) -> None:
         errors.append("ERROR: se detectaron entregables de 7B.3 o Fase 8.")
 
 
+def validate_documentation_and_tests(errors: list[str]) -> None:
+    manual = read_text("docs/PRUEBAS_MANUALES_FASE_7B_2.md")
+    cases = re.findall(r"^\|\s*M-\d+\s*\|\s*([^|]+)\|", manual, flags=re.MULTILINE)
+    if len(cases) < 30 or any(status.strip() not in {"NO EJECUTADA", "APROBADA", "FALLIDA"} for status in cases):
+        errors.append("ERROR: las pruebas manuales 7B.2 no están documentadas con estados honestos.")
+    review = read_text("docs/REVISION_EDITORIAL_FASE_7B_2.md")
+    if "- [x]" in review.lower() or review.count("PENDIENTE") < 20:
+        errors.append("ERROR: la revisión doctrinal no debe autoaprobarse en 7B.2.")
+    tests = read_text("tests/phase7b2-tests.js")
+    if len(re.findall(r"\btest\(", tests)) < 35:
+        errors.append("ERROR: el runner 7B.2 debe incluir al menos 35 pruebas automáticas.")
+    for required in (
+        "RFC 9846 aparece", "ECMA-262 aparece una sola vez", "no aparecen rutas privadas",
+        "el filtro partial tiene cuatro temas", "las rutas anteriores siguen funcionando",
+        "el constructor determinista", "los datos protegidos", "no hay contenido de 7B.3",
+    ):
+        if required not in tests:
+            errors.append(f"ERROR: falta la regresión automática {required!r}.")
+
+
 def main() -> int:
     errors: list[str] = []
     run_prerequisites(errors)
     validate_protection(errors)
     validate_markdown(errors)
     validate_artifacts(errors)
+    validate_documentation_and_tests(errors)
     if errors:
         print("\n".join(errors))
         return 1
