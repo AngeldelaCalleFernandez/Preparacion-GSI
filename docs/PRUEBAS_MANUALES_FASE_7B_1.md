@@ -1,7 +1,6 @@
 # Pruebas manuales — Fase 7B.1
 
-Ningún caso ha sido ejecutado todavía. Solo una ejecución real puede cambiar
-su estado a `APROBADA` o `FALLIDA`.
+Solo cambian de estado los casos realmente comprobados.
 
 | Caso | Estado | Instrucciones exactas |
 | --- | --- | --- |
@@ -10,7 +9,7 @@ su estado a `APROBADA` o `FALLIDA`.
 | M-03 | NO EJECUTADA | Limitación: `--apply` falla antes, al no existir una revisión pendiente; no permite aislar el supuesto concreto de localizadores ausentes. |
 | M-04 | APROBADA | Ejecutada: POSIX devolvió `manual-acquisition-required`; no se automatizó aceptación alguna de condiciones. |
 | M-05 | APROBADA | Ejecutada: `private/` está ignorado, no contiene archivos rastreados y no aparece como cambio ordinario en Git. |
-| M-06 | FALLIDA | Ejecutada en clon sin `private/`: la validación falló con `core.autocrlf=true` por alteración de bytes de copias verificadas e históricos. |
+| M-06 | APROBADA | Ejecutada en clon limpio sin `private/` y con `core.autocrlf=true`: validación pública, runner y estado Git correctos. |
 | M-07 | APROBADA | Ejecutada en esta máquina: `validate_technical_sources.py --require-private-local --check-catalog` finalizó correctamente. |
 | M-08 | APROBADA | Ejecutada: `data/sources.json` no contiene rutas bajo `documents/sources/technical/private/`. |
 | M-09 | APROBADA | Ejecutada: B2-T04, B3-T07 y B4-T08 continúan con estado `pending`, sin contenido doctrinal nuevo. |
@@ -35,8 +34,22 @@ su estado a `APROBADA` o `FALLIDA`.
   en bancos, interfaz y contenido generado fueron validadas por los
   validadores de Fase 2 a 7B.1. La matriz mantiene revisión manual `reviewed`.
 - `test_technical_sources.py` terminó con 27 pruebas aprobadas y 0 fallidas.
-- Incidencia M-06: un clon sin `private/` con `core.autocrlf=true` transformó
-  bytes de artefactos con checksum y falló la validación pública. Se añadió en
-  `.gitattributes` la preservación binaria de copias públicas y LF explícito
-  para contenido histórico/generado; falta comprobarla en un clon que incluya
-  ese cambio antes de cerrar M-06.
+- M-06 — Comprobación realizada en un clon limpio sin
+  `documents/sources/technical/private/`, creado con `core.autocrlf=true`.
+  La versión clonada ya incluía la nueva `.gitattributes`; el checkout no
+  modificó los bytes protegidos. `validate_phase7b1.py` terminó correctamente,
+  `test_technical_sources.py` terminó con 27 pruebas aprobadas y 0 fallidas, y
+  `git status` permaneció limpio.
+- M-02 y M-03 permanecen **NO EJECUTADA**: son escenarios de adquisición
+  anteriores a la revisión ya aplicada y no se repetirán alterando el catálogo
+  definitivo.
+
+## Resumen final
+
+- APROBADAS: M-01 y M-04 a M-10.
+- NO EJECUTADAS: M-02 y M-03.
+- FALLIDAS: ninguna.
+- Runner Python: 27 aprobadas y 0 fallidas.
+- Validación pública correcta en clon sin `private/`.
+- Validación privada correcta en la máquina responsable.
+- No se inició Fase 7B.2 ni Fase 8.
