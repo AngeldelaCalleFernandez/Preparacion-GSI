@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["metadata", "topics"],
+  "properties": {
+    "metadata": {"type": "object", "additionalProperties": false, "required": ["title", "updatedAt"], "properties": {"title": {"type": "string", "minLength": 1}, "updatedAt": {"type": "string", "format": "date"}}},
+    "topics": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/topic"}}
+  },
+  "$defs": {
+    "subsection": {"type": "object", "additionalProperties": false, "required": ["id", "label", "status", "sourceIds", "locators"], "properties": {"id": {"type": "string", "pattern": "^[a-z0-9-]+$"}, "label": {"type": "string", "minLength": 1}, "status": {"enum": ["covered", "partially-covered", "uncovered", "blocked"]}, "sourceIds": {"type": "array", "items": {"type": "string", "pattern": "^SRC-TECH-[A-Z0-9-]+$"}, "uniqueItems": true}, "locators": {"type": "array", "items": {"type": "string", "minLength": 1}}}},
+    "topic": {"type": "object", "additionalProperties": false, "required": ["topicId", "officialTitle", "subsections", "assessment", "gaps"], "properties": {"topicId": {"enum": ["B2-T04", "B3-T07", "B4-T08"]}, "officialTitle": {"type": "string", "minLength": 1}, "subsections": {"type": "array", "minItems": 2, "items": {"$ref": "#/$defs/subsection"}}, "assessment": {"enum": ["not-sufficient", "sufficient-for-partial-pilot"]}, "gaps": {"type": "array", "items": {"type": "string", "minLength": 1}}}}
+  }
+}

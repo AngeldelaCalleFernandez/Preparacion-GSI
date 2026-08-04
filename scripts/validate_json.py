@@ -25,6 +25,8 @@ SCHEMAS = {
     "data/questions-ai.json": "schemas/question.schema.json",
     "data/questions-manual.json": "schemas/question.schema.json",
     "data/updates.json": "schemas/update.schema.json",
+    "documents/sources/technical/manifest.json": "schemas/technical-source-manifest.schema.json",
+    "documents/sources/technical/coverage-matrix.json": "schemas/technical-coverage.schema.json",
 }
 
 
