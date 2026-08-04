@@ -68,7 +68,10 @@ await test("B1-T01 contiene referencias verificables", () => {
   const pilot = index.topics.find((topic) => topic.topicId === "B1-T01");
   assert(pilot.status === "partial" && pilot.reviewStatus === "needs-review" && pilot.sections.some((section) => section.sourceRefs.length), "El piloto no es trazable.");
 });
-await test("los otros 32 temas permanecen pendientes", () => assert(index.topics.filter((topic) => topic.topicId !== "B1-T01").every((topic) => topic.status === "pending" && topic.reviewStatus === "not-reviewed"), "Hay cobertura no autorizada."));
+await test("solo los cuatro pilotos autorizados tienen cobertura parcial", () => {
+  const partialIds = index.topics.filter((topic) => topic.status === "partial").map((topic) => topic.topicId).sort();
+  assert(JSON.stringify(partialIds) === JSON.stringify(["B1-T01", "B2-T04", "B3-T07", "B4-T08"]), "Hay cobertura no autorizada.");
+});
 await test("ningún tema se marca automáticamente como reviewed", () => assert(index.topics.every((topic) => topic.reviewStatus !== "reviewed"), "Hay una revisión automática."));
 await test("el modo demo no duplica el índice editorial", () => assert(!serviceSource.includes("demo/questions") && !serviceSource.includes("isDemo"), "El servicio editorial depende del banco demo."));
 await test("la ruta #temario muestra el listado", () => assert(parseRoute("#temario").route === "temario" && !parseRoute("#temario").topicId, "No se resolvió el listado."));

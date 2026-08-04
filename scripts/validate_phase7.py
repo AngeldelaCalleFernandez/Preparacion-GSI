@@ -58,6 +58,7 @@ PROTECTED = (
 FORBIDDEN_HTML_RE = re.compile(r"<\s*(?:script|style|iframe|object|embed|form)\b|\bon[a-z]+\s*=|(?:javascript|data|vbscript):", re.IGNORECASE)
 ABSOLUTE_PATH_RE = re.compile(r"(?:[A-Za-z]:\\|C:/TAI-proyecto)", re.IGNORECASE)
 POSSIBLE_SECRET_RE = re.compile(r"(?:api[_-]?key|secret|token|password)\s*[:=]\s*['\"]?[A-Za-z0-9_-]{12,}", re.IGNORECASE)
+TECHNICAL_PILOTS = frozenset({"B2-T04", "B3-T07", "B4-T08"})
 
 
 def read_bytes(relative_path: str) -> bytes:
@@ -201,10 +202,16 @@ def validate_artifacts(errors: list[str]) -> None:
     for topic in artifacts.topics:
         if topic.topic_id == "B1-T01":
             continue
+        if topic.topic_id in TECHNICAL_PILOTS:
+            if topic.metadata["status"] != "partial" or topic.metadata["reviewStatus"] != "needs-review":
+                errors.append(f"ERROR: {topic.topic_id} debe ser partial y needs-review tras Fase 7B.2.")
+            if not topic.source_ids or not topic.pending_sections:
+                errors.append(f"ERROR: {topic.topic_id} requiere referencias y lagunas explícitas.")
+            continue
         if topic.metadata["status"] != "pending" or topic.metadata["reviewStatus"] != "not-reviewed":
-            errors.append(f"ERROR: {topic.topic_id} debe permanecer pending y not-reviewed durante la Fase 7A.")
+            errors.append(f"ERROR: {topic.topic_id} debe permanecer pending y not-reviewed fuera de los pilotos autorizados.")
         if topic.source_ids:
-            errors.append(f"ERROR: {topic.topic_id} no puede incorporar texto doctrinal o fuentes durante la Fase 7A.")
+            errors.append(f"ERROR: {topic.topic_id} no puede incorporar texto doctrinal fuera de los pilotos autorizados.")
 
 
 def validate_static_files(errors: list[str]) -> None:

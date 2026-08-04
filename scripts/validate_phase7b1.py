@@ -10,9 +10,19 @@ import sys
 
 
 ROOT = Path(__file__).resolve().parents[1]
-BASE_TAG = "fase-7a-completada"
-TARGETS = ("content/topics/B2-T04.md", "content/topics/B3-T07.md", "content/topics/B4-T08.md")
+BASE_TAG = "fase-7b1-completada"
 REQUIRED = ("PLAN_FASE_7B_1.md", "documents/sources/technical/manifest.json", "documents/sources/technical/coverage-matrix.json", "schemas/technical-source-manifest.schema.json", "schemas/technical-coverage.schema.json", "scripts/technical_source_lib.py", "scripts/acquire_primary_sources.py", "scripts/validate_technical_sources.py", "scripts/test_technical_sources.py", "docs/FUENTES_TECNICAS_FASE_7B.md", "docs/PRUEBAS_MANUALES_FASE_7B_1.md")
+PROTECTED = (
+    "data/sources.json",
+    "schemas/source.schema.json",
+    "documents/sources/technical/manifest.json",
+    "documents/sources/technical/coverage-matrix.json",
+    "documents/sources/technical/public/B3-T07/whatwg-html-living-standard-introduction.html",
+    "documents/sources/technical/public/B3-T07/w3c-xml-1-0-fifth-edition.html",
+    "documents/sources/technical/public/B3-T07/ecma-262-17th-edition.html",
+    "documents/sources/technical/public/B4-T08/rfc9110.txt",
+    "documents/sources/technical/public/B4-T08/rfc9846.txt",
+)
 
 
 def unchanged(path: str) -> bool:
@@ -29,9 +39,9 @@ def main() -> int:
     for path in REQUIRED:
         if not (ROOT / path).is_file():
             errors.append(f"ERROR: falta el entregable 7B.1 {path}.")
-    for path in TARGETS:
+    for path in PROTECTED:
         if not unchanged(path):
-            errors.append(f"ERROR: 7B.1 no puede modificar contenido doctrinal: {path}.")
+            errors.append(f"ERROR: un activo o catálogo cerrado en 7B.1 cambió: {path}.")
     if subprocess.run([sys.executable, str(ROOT / "scripts" / "validate_technical_sources.py"), "--check-catalog"], cwd=ROOT, check=False).returncode:
         errors.append("ERROR: la validación pública de fuentes técnicas ha fallado.")
     if errors:

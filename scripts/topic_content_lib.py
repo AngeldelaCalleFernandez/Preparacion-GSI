@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Shared deterministic compiler for the Phase 7A editorial content."""
+"""Shared deterministic compiler for the Phase 7 editorial content."""
 
 from __future__ import annotations
 
@@ -187,6 +187,15 @@ def _safe_href(value: str, path: Path) -> str:
     return value
 
 
+def _source_url(source: dict[str, object]) -> str | None:
+    """Resolve historical and technical catalog URLs without exposing local copies."""
+    for field in ("url", "canonicalUrl"):
+        value = source.get(field)
+        if isinstance(value, str) and value:
+            return value
+    return None
+
+
 def _render_inline(text: str, path: Path, source_map: dict[str, dict[str, object]]) -> str:
     if UNSAFE_MARKUP_RE.search(text) or UNSAFE_SCHEME_RE.search(text):
         raise _error(path, "contiene HTML o un esquema de URL no admitido.")
@@ -208,8 +217,8 @@ def _render_inline(text: str, path: Path, source_map: dict[str, dict[str, object
             f'<span class="topic-source-ref__label">Fuente: {label}</span>',
             f'<span class="topic-source-ref__locator">Localizador: {safe_locator}</span>',
         ]
-        source_url = source.get("url")
-        if isinstance(source_url, str) and source_url:
+        source_url = _source_url(source)
+        if source_url:
             href = _safe_href(source_url, path)
             pieces.append(
                 f'<a href="{escape(href, quote=True)}" target="_blank" rel="noopener noreferrer">Abrir fuente oficial (nueva pestaña)</a>'
@@ -452,8 +461,8 @@ def _compile_topic(
         for source_id in source_ids:
             source = source_map[source_id]
             title = escape(str(source.get("title", source_id)))
-            url = source.get("url")
-            if isinstance(url, str) and url:
+            url = _source_url(source)
+            if url:
                 href = _safe_href(url, path)
                 items.append(
                     f'<li><a href="{escape(href, quote=True)}" target="_blank" rel="noopener noreferrer">{title} (nueva pestaña)</a></li>'
@@ -526,10 +535,18 @@ def build_artifacts(root: Path = ROOT) -> BuildArtifacts:
 
 
 def _coverage_report(topics: tuple[CompiledTopic, ...], generated_at: str) -> str:
+    counts = {status: sum(topic.metadata["status"] == status for topic in topics) for status in STATUS_VALUES}
+    review_counts = {status: sum(topic.metadata["reviewStatus"] == status for topic in topics) for status in REVIEW_VALUES}
     rows = [
-        "# Cobertura del temario — Fase 7A",
+        "# Cobertura del temario — Fase 7B.2",
         "",
         f"Generado determinísticamente: `{generated_at}`.",
+        "",
+        (
+            f"Resumen: {counts['partial']} temas `partial`, {counts['pending']} `pending` y "
+            f"{counts['complete']} `complete`; {review_counts['needs-review']} `needs-review`, "
+            f"{review_counts['not-reviewed']} `not-reviewed` y {review_counts['reviewed']} `reviewed`."
+        ),
         "",
         "| Tema | Cobertura | Revisión | Secciones | Referencias | Fuentes | Secciones pendientes | Advertencias |",
         "| --- | --- | --- | ---: | ---: | --- | --- | --- |",
@@ -554,9 +571,13 @@ def _coverage_report(topics: tuple[CompiledTopic, ...], generated_at: str) -> st
         )
     rows.extend([
         "",
-        "## Alcance pendiente",
+        "## Lagunas de los pilotos técnicos",
         "",
-        "Los pilotos técnicos de B2, B3 y B4 pertenecen a la Fase 7B. Requieren fuentes primarias locales verificadas y catalogadas mediante el procedimiento descrito en `PLAN_FASE_7.md`.",
+        "- B2-T04: definición general exhaustiva, procesos, Unix/POSIX, Windows completo y sistemas móviles.",
+        "- B3-T07: servidor, CSS, frameworks, navegadores concretos, APIs y desarrollo multiplataforma o multidispositivo.",
+        "- B4-T08: arquitectura y servicios de Internet, métodos y estados concretos, DNS, correo, PKI y versiones anteriores.",
+        "",
+        "Las lagunas se conservan expresamente: Fase 7B.2 no incorpora fuentes nuevas ni inicia 7B.3 o Fase 8.",
         "",
     ])
     return "\n".join(rows)

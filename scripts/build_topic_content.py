@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build Phase 7A topic fragments, index and coverage report."""
+"""Build Phase 7 topic fragments, index and coverage report."""
 
 from __future__ import annotations
 
@@ -13,7 +13,7 @@ def main() -> int:
     except TopicContentError as error:
         print(f"ERROR: {error}")
         return 1
-    print(f"OK: generados {len(artifacts.topics)} fragmentos, índice e informe de cobertura de Fase 7A.")
+    print(f"OK: generados {len(artifacts.topics)} fragmentos, índice e informe de cobertura de Fase 7B.2.")
     return 0
 
 
