@@ -48,7 +48,34 @@ function assertDataShape(data) {
   }
 }
 
-function buildIndexes(syllabus, sources) {
+function safeUrl(value) {
+  if (typeof value !== "string") return null;
+  try {
+    const url = new URL(value);
+    return url.protocol === "https:" ? url.href : null;
+  } catch {
+    return null;
+  }
+}
+
+export function getSourceDisplayData(source) {
+  if (!source || typeof source !== "object") {
+    return { title: "Fuente no disponible", publisher: "", url: null, documents: [], warning: "Fuente no válida." };
+  }
+  if (source.sourceKind === "technical-primary-source") {
+    return {
+      ...source,
+      title: source.title || "Fuente técnica no disponible",
+      publisher: source.publisher || "",
+      url: safeUrl(source.canonicalUrl),
+      documents: [],
+      warning: safeUrl(source.canonicalUrl) ? null : "La fuente técnica no tiene una URL canónica válida.",
+    };
+  }
+  return { ...source, url: safeUrl(source.url), documents: Array.isArray(source.documents) ? source.documents : [], warning: null };
+}
+
+export function buildIndexes(syllabus, sources) {
   const blocksById = new Map();
   const topicsById = new Map();
   const sourcesById = new Map();
@@ -60,10 +87,11 @@ function buildIndexes(syllabus, sources) {
       topicsById.set(topic.id, { ...topic, blockId: block.id, blockTitle: block.title });
     }
   }
-  for (const source of sources.sources) {
-    sourcesById.set(source.id, source);
-    for (const document of source.documents) {
-      documentsById.set(document.id, { ...document, sourceId: source.id });
+  for (const rawSource of sources.sources) {
+    const displaySource = getSourceDisplayData(rawSource);
+    sourcesById.set(displaySource.id, displaySource);
+    for (const document of displaySource.documents) {
+      documentsById.set(document.id, { ...document, sourceId: displaySource.id });
     }
   }
   return { blocksById, topicsById, sourcesById, documentsById };

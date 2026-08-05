@@ -1,10 +1,14 @@
 import { parseRoute, resolveRoute } from "../assets/js/router.js?phase7b2runner=1";
 import { parseSafeTopicFragment } from "../assets/js/topic-content-service.js?phase7b2runner=1";
+import { buildIndexes, getSourceDisplayData } from "../assets/js/data-service.js?phase7b2runner=1";
 
 const results = document.querySelector("#results");
 const summary = document.querySelector("#summary");
 let passed = 0;
 let failed = 0;
+const unhandled = [];
+window.addEventListener("error", (event) => unhandled.push(event.error || event.message));
+window.addEventListener("unhandledrejection", (event) => unhandled.push(event.reason));
 
 function assert(condition, message) { if (!condition) throw new Error(message); }
 async function test(name, callback) {
@@ -25,12 +29,47 @@ async function fetchText(path) { const response = await fetch(path, { cache: "no
 async function fetchJson(path) { return JSON.parse(await fetchText(path)); }
 
 const PILOTS = ["B2-T04", "B3-T07", "B4-T08"];
-const [index, syllabus, report, service, testsSource, ...html] = await Promise.all([
+const [index, syllabus, sources, report, service, testsSource, ...html] = await Promise.all([
   fetchJson("../data/topic-content.json"), fetchJson("../data/syllabus.json"),
+  fetchJson("../data/sources.json"),
   fetchText("../docs/COBERTURA_TEMARIO_FASE_7.md"), fetchText("../assets/js/topic-content-service.js"),
   fetchText("../tests/phase7b2-tests.js"), ...PILOTS.map((id) => fetchText(`../content/generated/${id}.html`)),
 ]);
 const byId = new Map(index.topics.map((topic) => [topic.topicId, topic]));
+const sourceIndexes = buildIndexes(syllabus, sources);
+const technicalPublic = sources.sources.find((source) => source.id === "SRC-TECH-ECMA-262-2026");
+const technicalPrivate = sources.sources.find((source) => source.id === "SRC-TECH-MICROSOFT-WINDOWS-HAL-LIBRARY");
+const historical = sources.sources.find((source) => Array.isArray(source.documents) && source.documents.length);
+const originalSources = JSON.stringify(sources);
+
+await test("el adaptador conserva fuentes históricas y técnicas reales", () => {
+  assert(historical && technicalPublic && technicalPrivate, "Faltan variantes reales");
+  assert(getSourceDisplayData(historical).documents.length === historical.documents.length, "Documentos históricos perdidos");
+  assert(getSourceDisplayData(technicalPublic).documents.length === 0 && getSourceDisplayData(technicalPublic).url?.startsWith("https://"), "Fuente pública no normalizada");
+  assert(getSourceDisplayData(technicalPrivate).documents.length === 0 && getSourceDisplayData(technicalPrivate).url?.startsWith("https://"), "Fuente privada no segura");
+  assert(sourceIndexes.documentsById.size === 31, "Documentos históricos no indexados exactamente una vez");
+});
+await test("el adaptador tolera fuentes técnicas inválidas sin bloquear índices", () => {
+  const invalid = getSourceDisplayData({ sourceKind: "technical-primary-source", id: "bad", title: "Bad", canonicalUrl: "file:///private" });
+  assert(invalid.warning && invalid.documents.length === 0 && invalid.url === null, "Fuente inválida no controlada");
+});
+await test("las fuentes técnicas reales resuelven sin documents ni rutas privadas", () => {
+  for (const source of [technicalPublic, technicalPrivate]) {
+    const display = getSourceDisplayData(source);
+    assert(!display.url?.includes("documents/sources/technical/private/"), "Ruta privada expuesta");
+    assert(Array.isArray(display.documents), "Documents no normalizado");
+  }
+  assert(["B2-T04", "B3-T07", "B4-T08"].every((topicId) => sourceIndexes.topicsById.has(topicId)), "Piloto no resuelto");
+});
+await test("buildIndexes conserva objetos, relaciones y documentos históricos", () => {
+  assert(JSON.stringify(sources) === originalSources, "buildIndexes modificó sources.json");
+  assert(historical.documents.every((document) => sourceIndexes.documentsById.get(document.id)?.sourceId === historical.id), "Documento histórico no resuelto");
+  assert(sourceIndexes.sourcesById.get("SRC-BOE-2026-CODIGO-TAI")?.documents.length, "B1-T01 perdió fuentes históricas");
+});
+await test("no hay iteración directa incompatible de source.documents", async () => {
+  assert(!/for\s*\([^)]*of\s+source\.documents\)/.test(testsSource), "Prueba usa iteración insegura");
+  assert(!/for\s*\([^)]*of\s+source\.documents\)/.test(await fetchText("../assets/js/data-service.js")), "Consumidor incompatible");
+});
 
 for (const id of PILOTS) await test(`${id} carga como partial`, () => assert(byId.get(id)?.status === "partial", `${id} no es partial`));
 for (const id of PILOTS) await test(`${id} muestra needs-review`, () => assert(byId.get(id)?.reviewStatus === "needs-review", `${id} no está pendiente de revisión`));
@@ -77,6 +116,7 @@ await test("no hay contenido de 7B.3 o Fase 8", async () => {
   ]);
   assert(!phase7b3.ok && !phase8.ok, "Existe un entregable de una fase posterior");
 });
+await test("el runner no registra excepciones ni promesas rechazadas", () => assert(unhandled.length === 0, "Excepción no controlada: " + unhandled.join(" | ")));
 
 summary.textContent = `${passed} pruebas aprobadas y ${failed} fallidas.`;
 summary.dataset.state = failed ? "error" : "success";
