@@ -1,0 +1,473 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "baseline_id",
+    "created_at",
+    "origin",
+    "technical_status",
+    "protected_artifacts",
+    "protection_rules",
+    "migration_constraints"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "baseline_id": {
+      "$ref": "#/$defs/non_empty_string"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date"
+    },
+    "origin": {
+      "$ref": "#/$defs/origin"
+    },
+    "technical_status": {
+      "$ref": "#/$defs/technical_status"
+    },
+    "protected_artifacts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/protected_artifact"
+      }
+    },
+    "protection_rules": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "explicit-authorization-required",
+          "preserve-historical-identifiers",
+          "no-silent-editorial-state-changes",
+          "hash-verified",
+          "no-regeneration"
+        ]
+      }
+    },
+    "migration_constraints": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "future-canonical-identifiers-are-reservations-only",
+          "no-operational-multiopposition-fields",
+          "no-automatic-front-matter-reconciliation",
+          "no-gsi-content-in-m0",
+          "preserve-relations-and-historical-aliases"
+        ]
+      }
+    }
+  },
+  "$defs": {
+    "non_empty_string": {
+      "type": "string",
+      "minLength": 1
+    },
+    "git_object_id": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{40}$"
+    },
+    "relative_path": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!/)(?![A-Za-z]:)(?!.*(?:^|/)\\.\\.(?:/|$))[A-Za-z0-9._/-]+$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "origin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "branch",
+        "baseline_commit",
+        "baseline_tag",
+        "tag_object",
+        "tag_target_commit"
+      ],
+      "properties": {
+        "branch": {
+          "$ref": "#/$defs/non_empty_string"
+        },
+        "baseline_commit": {
+          "$ref": "#/$defs/git_object_id"
+        },
+        "baseline_tag": {
+          "$ref": "#/$defs/non_empty_string"
+        },
+        "tag_object": {
+          "$ref": "#/$defs/git_object_id"
+        },
+        "tag_target_commit": {
+          "$ref": "#/$defs/git_object_id"
+        }
+      }
+    },
+    "validator_record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["command", "exit_code", "mode"],
+      "properties": {
+        "command": {
+          "$ref": "#/$defs/non_empty_string"
+        },
+        "exit_code": {
+          "type": "integer",
+          "const": 0
+        },
+        "mode": {
+          "const": "read-only"
+        }
+      }
+    },
+    "technical_status": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "working_tree_at_capture", "validators"],
+      "properties": {
+        "state": {
+          "enum": ["phase7b2-validated", "validation-pending", "validation-failed"]
+        },
+        "working_tree_at_capture": {
+          "enum": ["clean", "dirty"]
+        },
+        "validators": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "$ref": "#/$defs/validator_record"
+          }
+        }
+      }
+    },
+    "opposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["code", "scope"],
+      "properties": {
+        "code": {
+          "type": "string",
+          "pattern": "^[A-Z0-9-]+$"
+        },
+        "scope": {
+          "const": "documentary-baseline-only"
+        }
+      }
+    },
+    "future_id": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "status"],
+      "properties": {
+        "value": {
+          "type": "string",
+          "pattern": "^[A-Z0-9-]+$"
+        },
+        "status": {
+          "const": "informational-reservation"
+        }
+      }
+    },
+    "governance_status": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "scope"],
+      "properties": {
+        "state": {
+          "enum": ["approved", "initiated", "not-approved", "withdrawn"]
+        },
+        "scope": {
+          "const": "external-project-governance"
+        }
+      }
+    },
+    "editorial_status": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["content_status", "review_status", "content_version_present"],
+      "properties": {
+        "content_status": {
+          "enum": ["pending", "partial", "complete"]
+        },
+        "review_status": {
+          "enum": ["not-reviewed", "needs-review", "reviewed"]
+        },
+        "content_version_present": {
+          "type": "boolean"
+        }
+      }
+    },
+    "baseline_version": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "status"],
+      "properties": {
+        "value": {
+          "type": ["string", "null"],
+          "minLength": 1
+        },
+        "status": {
+          "enum": ["externally-declared", "repository-declared", "not-declared"]
+        }
+      }
+    },
+    "declaration_source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "description", "repository_evidence"],
+      "properties": {
+        "kind": {
+          "enum": ["external-project-governance", "repository-evidence", "not-declared"]
+        },
+        "description": {
+          "$ref": "#/$defs/non_empty_string"
+        },
+        "repository_evidence": {
+          "enum": ["absent", "partial", "present"]
+        }
+      }
+    },
+    "file_record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "role", "sha256"],
+      "properties": {
+        "path": {
+          "$ref": "#/$defs/relative_path"
+        },
+        "role": {
+          "enum": [
+            "syllabus-catalog",
+            "markdown-content",
+            "generated-html",
+            "topic-content-index",
+            "source-catalog",
+            "source-document",
+            "test-suite",
+            "validator",
+            "supporting-document"
+          ]
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "syllabus_relationship": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["catalog_path", "topic_id", "source_ids"],
+      "properties": {
+        "catalog_path": {
+          "$ref": "#/$defs/relative_path"
+        },
+        "topic_id": {
+          "type": "string",
+          "pattern": "^[A-Z][0-9]+-T[0-9]{2}$"
+        },
+        "source_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^SRC-[A-Z0-9-]+$"
+          }
+        }
+      }
+    },
+    "topic_content_relationship": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["index_path", "topic_id", "markdown_path", "html_path"],
+      "properties": {
+        "index_path": {
+          "$ref": "#/$defs/relative_path"
+        },
+        "topic_id": {
+          "type": "string",
+          "pattern": "^[A-Z][0-9]+-T[0-9]{2}$"
+        },
+        "markdown_path": {
+          "$ref": "#/$defs/relative_path"
+        },
+        "html_path": {
+          "$ref": "#/$defs/relative_path"
+        }
+      }
+    },
+    "source_relationship": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_id", "relation_types", "document_ids"],
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "pattern": "^SRC-[A-Z0-9-]+$"
+        },
+        "relation_types": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": ["syllabus-source", "content-citation"]
+          }
+        },
+        "document_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^DOC-[A-Z0-9-]+$"
+          }
+        }
+      }
+    },
+    "test_relationship": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "relation"],
+      "properties": {
+        "path": {
+          "$ref": "#/$defs/relative_path"
+        },
+        "relation": {
+          "$ref": "#/$defs/non_empty_string"
+        }
+      }
+    },
+    "relationships": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["syllabus", "topic_content", "sources", "tests"],
+      "properties": {
+        "syllabus": {
+          "$ref": "#/$defs/syllabus_relationship"
+        },
+        "topic_content": {
+          "$ref": "#/$defs/topic_content_relationship"
+        },
+        "sources": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/source_relationship"
+          }
+        },
+        "tests": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/test_relationship"
+          }
+        }
+      }
+    },
+    "policies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["modification", "rename", "regeneration"],
+      "properties": {
+        "modification": {
+          "const": "explicit-authorization-required"
+        },
+        "rename": {
+          "const": "prohibited-without-authorized-migration"
+        },
+        "regeneration": {
+          "const": "prohibited-in-m0"
+        }
+      }
+    },
+    "protected_artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "logical_id",
+        "opposition",
+        "historic_id",
+        "proposed_future_canonical_id",
+        "artifact_type",
+        "governance_status",
+        "repository_editorial_status",
+        "baseline_version",
+        "declaration_source",
+        "reconciliation_note",
+        "files",
+        "relationships",
+        "policies",
+        "historical_aliases"
+      ],
+      "properties": {
+        "logical_id": {
+          "type": "string",
+          "pattern": "^[A-Z0-9_]+$"
+        },
+        "opposition": {
+          "$ref": "#/$defs/opposition"
+        },
+        "historic_id": {
+          "type": "string",
+          "pattern": "^[A-Z][0-9]+-T[0-9]{2}$"
+        },
+        "proposed_future_canonical_id": {
+          "$ref": "#/$defs/future_id"
+        },
+        "artifact_type": {
+          "enum": [
+            "topic-content-baseline",
+            "source-baseline",
+            "data-catalog-baseline",
+            "test-suite-baseline",
+            "document-baseline"
+          ]
+        },
+        "governance_status": {
+          "$ref": "#/$defs/governance_status"
+        },
+        "repository_editorial_status": {
+          "$ref": "#/$defs/editorial_status"
+        },
+        "baseline_version": {
+          "$ref": "#/$defs/baseline_version"
+        },
+        "declaration_source": {
+          "$ref": "#/$defs/declaration_source"
+        },
+        "reconciliation_note": {
+          "$ref": "#/$defs/non_empty_string"
+        },
+        "files": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/file_record"
+          }
+        },
+        "relationships": {
+          "$ref": "#/$defs/relationships"
+        },
+        "policies": {
+          "$ref": "#/$defs/policies"
+        },
+        "historical_aliases": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/non_empty_string"
+          }
+        }
+      }
+    }
+  }
+}
