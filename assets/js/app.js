@@ -1,4 +1,4 @@
-import { isDemoMode, loadAppData } from "./data-service.js";
+import { isDemoMode, loadAppData } from "./data-service.js?phase7b2";
 import { initRouter, syncRouter } from "./router.js?phase7a";
 import { loadTopicContentIndex } from "./topic-content-service.js?phase7a";
 import { initSyllabusView } from "./syllabus-view.js?phase7a";
