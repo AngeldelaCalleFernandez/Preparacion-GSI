@@ -46,3 +46,59 @@ Codex no aprueba exactitud doctrinal completa, claridad pedagógica definitiva,
 suficiencia para estudiar ni ausencia absoluta de errores conceptuales. Hasta
 que esta lista se revise en un commit editorial posterior, los tres pilotos
 permanecen `needs-review`.
+
+## Revisión de solo lectura realizada
+
+Se efectuó una revisión asistida de solo lectura, sin modificar los temas ni
+aprobar doctrinalmente su contenido.
+
+### Resultado general
+
+- No se encontraron hallazgos críticos.
+- B2-T04, B3-T07 y B4-T08 permanecen `partial`.
+- Los tres permanecen `needs-review`.
+- Las lagunas documentales continúan visibles.
+- No se publican rutas ni contenidos privados.
+- La revisión realizada no equivale a aprobación doctrinal.
+
+### B2-T04
+
+- El alcance está correctamente limitado.
+- No se generaliza Linux a Unix.
+- La HAL no se presenta como toda la arquitectura de Windows.
+- POSIX, procesos, móviles, Android e iOS continúan pendientes.
+- Queda pendiente contrastar literalmente la expresión «oculta detalles de
+  bajo nivel» con la copia local exacta de Microsoft.
+- Queda pendiente contrastar personalmente las paráfrasis dependientes de las
+  copias privadas de Windows y Linux.
+
+### B3-T07
+
+- HTML, XML y ECMAScript aparecen diferenciados.
+- Los ejemplos son breves, originales, didácticos y no ejecutables.
+- No se atribuye cobertura completa de CSS, servidor, frameworks,
+  navegadores o multiplataforma.
+- La expresión «estructura documental y comportamiento programado» se
+  presenta como separación conceptual, no como arquitectura completa.
+- Queda pendiente la valoración humana definitiva de claridad y utilidad para
+  estudiar.
+
+### B4-T08
+
+- HTTP, HTTPS y TLS aparecen diferenciados.
+- RFC 9110 respalda HTTP.
+- RFC 9846 respalda TLS 1.3.
+- RFC 8446 aparece únicamente como antecedente sustituido.
+- DNS, correo, PKI, certificados, OSI/TCP-IP y versiones anteriores continúan
+  pendientes.
+- Queda pendiente confirmar humanamente que la formulación «HTTP protegido
+  mediante TLS» tiene precisión y claridad suficientes para el nivel del
+  temario.
+
+### Decisión
+
+La revisión de solo lectura aporta observaciones editoriales, pero no permite
+marcar controles doctrinales como completados.
+
+Todos los controles permanecen `PENDIENTE` hasta una revisión editorial
+posterior específicamente destinada a aprobarlos.
