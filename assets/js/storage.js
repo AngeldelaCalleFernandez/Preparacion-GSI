@@ -1,6 +1,12 @@
+import { getConfiguredPersistenceAdapter } from "./persistence-v2.js?m3";
+
 const STORAGE_KEY = "tai.phase3.training.v1";
 
-export function getStoredResponses(storage = window.localStorage) {
+function browserStorage() {
+  return getConfiguredPersistenceAdapter();
+}
+
+export function getStoredResponses(storage = browserStorage()) {
   try {
     const raw = storage.getItem(STORAGE_KEY);
     if (!raw) return [];
@@ -11,9 +17,9 @@ export function getStoredResponses(storage = window.localStorage) {
   }
 }
 
-function setStoredRecords(records) {
+function setStoredRecords(records, storage = browserStorage()) {
   try {
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify({ version: 1, responses: records }));
+    storage.setItem(STORAGE_KEY, JSON.stringify({ version: 1, responses: records }));
     return true;
   } catch {
     return false;
@@ -52,7 +58,7 @@ export function clearDemoResponses() {
 
 export function clearAllResponses() {
   try {
-    window.localStorage.removeItem(STORAGE_KEY);
+    browserStorage().removeItem(STORAGE_KEY);
     return true;
   } catch {
     return false;

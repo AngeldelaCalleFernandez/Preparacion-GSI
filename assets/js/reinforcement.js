@@ -14,14 +14,14 @@ import {
   getReinforcementSummary,
   loadReinforcementStore,
   saveReinforcementSession,
-} from "./reinforcement-storage.js";
+} from "./reinforcement-storage.js?m3";
 import {
   createAnalyticsAnnotationEvent,
   createAnalyticsAttemptEvent,
   createAnalyticsSession,
   createAnalyticsSessionEvent,
 } from "./analytics-events.js";
-import { applyStoredAnalyticsEvents } from "./analytics-storage.js";
+import { applyStoredAnalyticsEvents } from "./analytics-storage.js?m3";
 import { createElement, setStatus } from "./ui.js";
 
 function originLabel(origin) {

@@ -1,6 +1,6 @@
-import { getStoredResponses } from "./storage.js";
+import { getStoredResponses } from "./storage.js?m3";
 import { applyReinforcementEvents, createQuestionReference } from "./reinforcement-engine.js";
-import { loadReinforcementStore, saveReinforcementStore } from "./reinforcement-storage.js";
+import { loadReinforcementStore, saveReinforcementStore } from "./reinforcement-storage.js?m3";
 
 function legacyId(record) {
   if (typeof record.responseId === "string" && record.responseId) return `training:${record.responseId}:response`;

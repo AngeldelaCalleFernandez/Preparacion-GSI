@@ -5,12 +5,13 @@ import {
   createAnalyticsStore,
   normaliseAnalyticsStore,
 } from "./analytics-engine.js";
+import { getConfiguredPersistenceAdapter } from "./persistence-v2.js?m3";
 
 export const ANALYTICS_REAL_KEY = "tai.analytics.real.v1";
 export const ANALYTICS_DEMO_KEY = "tai.analytics.demo.v1";
 
 function browserStorage() {
-  return window.localStorage;
+  return getConfiguredPersistenceAdapter();
 }
 
 function isQuotaError(error) {

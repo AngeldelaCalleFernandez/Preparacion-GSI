@@ -1,10 +1,10 @@
 import { describeQuestionSource } from "./data-service.js";
-import { clearAllResponses, clearDemoResponses, getProgressSummary, saveResponse } from "./storage.js";
+import { clearAllResponses, clearDemoResponses, getProgressSummary, saveResponse } from "./storage.js?m3";
 import {
   applyStoredReinforcementEvents,
   createReinforcementEvent,
   loadReinforcementStore,
-} from "./reinforcement-storage.js";
+} from "./reinforcement-storage.js?m3";
 import {
   createAnalyticsAnnotationEvent,
   createAnalyticsAttemptEvent,
@@ -15,7 +15,7 @@ import {
   applyStoredAnalyticsEvents,
   loadActiveTrainingSession,
   saveActiveTrainingSession,
-} from "./analytics-storage.js";
+} from "./analytics-storage.js?m3";
 import { createElement, setStatus } from "./ui.js";
 
 function originLabel(question) {

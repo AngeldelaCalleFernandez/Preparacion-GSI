@@ -2,12 +2,14 @@ import { isDemoMode, loadAppData } from "./data-service.js?m2";
 import { initRouter, syncRouter } from "./router.js?m2";
 import { loadTopicContentIndex } from "./topic-content-service.js?phase7a";
 import { initSyllabusView } from "./syllabus-view.js?m2";
-import { initTraining } from "./training.js";
-import { initExam } from "./exam.js";
-import { migratePhase3Training } from "./reinforcement-migration.js";
-import { initReinforcement } from "./reinforcement.js";
-import { migrateAnalytics } from "./analytics-migration.js";
-import { initStatistics, renderAnalyticsHome } from "./statistics.js";
+import { configurePersistenceV2 } from "./persistence-v2.js?m3";
+import { migrateV1ToV2 } from "./persistence-migration-v2.js?m3";
+import { initTraining } from "./training.js?m3";
+import { initExam } from "./exam.js?m3";
+import { migratePhase3Training } from "./reinforcement-migration.js?m3";
+import { initReinforcement } from "./reinforcement.js?m3";
+import { migrateAnalytics } from "./analytics-migration.js?m3";
+import { initStatistics, renderAnalyticsHome } from "./statistics.js?m3";
 import { clearStatus, setStatus, setText } from "./ui.js";
 
 function renderHomeSummary(data) {
@@ -32,12 +34,22 @@ async function start() {
   setStatus("Cargando temario, fuentes, actualizaciones y bancos de preguntas…");
   try {
     const [data, topicContentIndex] = await Promise.all([loadAppData(), loadTopicContentIndex()]);
+    configurePersistenceV2(data.runtimeContext, window.localStorage);
+    const persistenceMigration = migrateV1ToV2(data.runtimeContext, window.localStorage);
+    if (!persistenceMigration.ok) {
+      setStatus(persistenceMigration.error || "No se pudo migrar el historial local a persistencia v2.", "error");
+      return;
+    }
     renderHomeSummary(data);
     initSyllabusView(data, topicContentIndex);
     const realMigration = migratePhase3Training(data, false);
     const demoMigration = data.demoEnabled ? migratePhase3Training(data, true) : null;
     const realAnalyticsMigration = migrateAnalytics(data, false);
     const demoAnalyticsMigration = data.demoEnabled ? migrateAnalytics(data, true) : null;
+    if (realMigration.error || demoMigration?.error || realAnalyticsMigration.error || demoAnalyticsMigration?.error) {
+      setStatus(realMigration.error || demoMigration?.error || realAnalyticsMigration.error || demoAnalyticsMigration?.error || "No se pudo migrar el historial local.", "error");
+      return;
+    }
     initTraining(data);
     initExam(data);
     initReinforcement(data);
@@ -47,10 +59,6 @@ async function start() {
     // sincronización mantiene la ruta inicial si cualquier módulo de carga
     // ha actualizado el DOM durante la inicialización asíncrona.
     syncRouter(false);
-    if (realMigration.error || demoMigration?.error || realAnalyticsMigration.error || demoAnalyticsMigration?.error) {
-      setStatus(realMigration.error || demoMigration?.error || realAnalyticsMigration.error || demoAnalyticsMigration?.error || "No se pudo migrar el historial local.", "error");
-      return;
-    }
     if (data.demoEnabled) {
       setStatus("Datos cargados en modo demostración. Las preguntas demo son ficticias y no oficiales.", "success");
     } else {

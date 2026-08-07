@@ -1,3 +1,5 @@
+import { getConfiguredPersistenceAdapter } from "./persistence-v2.js?m3";
+
 const STORAGE_VERSION = 1;
 const REAL_SESSION_KEY = "tai.phase4.exam.active.real.v1";
 const DEMO_SESSION_KEY = "tai.phase4.exam.active.demo.v1";
@@ -10,9 +12,13 @@ function clone(value) {
   return JSON.parse(JSON.stringify(value));
 }
 
-function safeRead(key) {
+function browserStorage() {
+  return getConfiguredPersistenceAdapter();
+}
+
+function safeRead(key, storage = browserStorage()) {
   try {
-    const raw = window.localStorage.getItem(key);
+    const raw = storage.getItem(key);
     return raw ? JSON.parse(raw) : null;
   } catch {
     return null;
@@ -73,24 +79,24 @@ export function createActiveExamState({ config, questions, optionOrderByQuestion
   };
 }
 
-export function saveActiveExamState(state) {
+export function saveActiveExamState(state, storage = browserStorage()) {
   try {
     const next = { ...state, savedAt: new Date().toISOString() };
-    window.localStorage.setItem(getExamStorageKey(next.isDemo), JSON.stringify(next));
+    storage.setItem(getExamStorageKey(next.isDemo), JSON.stringify(next));
     return { saved: true, state: next };
   } catch {
     return { saved: false, state };
   }
 }
 
-export function loadActiveExamState(isDemo) {
-  const result = validateActiveExamState(safeRead(getExamStorageKey(isDemo)));
+export function loadActiveExamState(isDemo, storage = browserStorage()) {
+  const result = validateActiveExamState(safeRead(getExamStorageKey(isDemo), storage));
   return result.valid ? result : { valid: false, error: result.error };
 }
 
-export function clearActiveExamState(isDemo) {
+export function clearActiveExamState(isDemo, storage = browserStorage()) {
   try {
-    window.localStorage.removeItem(getExamStorageKey(isDemo));
+    storage.removeItem(getExamStorageKey(isDemo));
     return true;
   } catch {
     return false;

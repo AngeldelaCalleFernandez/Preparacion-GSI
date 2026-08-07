@@ -13,15 +13,15 @@ import {
   createActiveExamState,
   loadActiveExamState,
   saveActiveExamState,
-} from "./exam-storage.js";
+} from "./exam-storage.js?m3";
 import {
   createAnalyticsAnnotationEvent,
   createAnalyticsAttemptEvent,
   createAnalyticsSession,
   createAnalyticsSessionEvent,
 } from "./analytics-events.js";
-import { applyStoredAnalyticsEvents } from "./analytics-storage.js";
-import { applyStoredReinforcementEvents, createReinforcementEvent } from "./reinforcement-storage.js";
+import { applyStoredAnalyticsEvents } from "./analytics-storage.js?m3";
+import { applyStoredReinforcementEvents, createReinforcementEvent } from "./reinforcement-storage.js?m3";
 import { createElement, setStatus } from "./ui.js";
 
 function formatNumber(value) {

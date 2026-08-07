@@ -10,9 +10,9 @@ import {
   clearAnalyticsStore,
   getAnalyticsSummary,
   loadAnalyticsStore,
-} from "./analytics-storage.js";
-import { rebuildAnalytics } from "./analytics-migration.js";
-import { loadReinforcementStore } from "./reinforcement-storage.js";
+} from "./analytics-storage.js?m3";
+import { rebuildAnalytics } from "./analytics-migration.js?m3";
+import { loadReinforcementStore } from "./reinforcement-storage.js?m3";
 import { getTemporalState } from "./reinforcement-engine.js";
 
 const PERIOD_LABELS = { "7": "Últimos 7 días", "30": "Últimos 30 días", "90": "Últimos 90 días", all: "Todo el historial", custom: "Rango personalizado" };
