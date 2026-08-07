@@ -1,5 +1,6 @@
 import { loadTopicFragment } from "./topic-content-service.js?phase7a";
-import { parseRoute } from "./router.js?phase7a";
+import { resolveTopicReference } from "./catalog-service.js?m2";
+import { parseRoute } from "./router.js?m2";
 
 let viewState = null;
 let requestVersion = 0;
@@ -171,8 +172,9 @@ function focusTarget(detail, routeState, topic) {
 }
 
 async function renderDetail(routeState) {
-  const topic = viewState.data.indexes.topicsById.get(routeState.topicId);
-  const entry = getEntry(routeState.topicId);
+  const operationalTopicId = resolveTopicReference(viewState.data.runtimeContext, routeState.topicId);
+  const topic = operationalTopicId ? viewState.data.indexes.topicsById.get(operationalTopicId) : null;
+  const entry = operationalTopicId ? getEntry(operationalTopicId) : null;
   if (!topic || !entry) {
     showDetailError("El tema solicitado no existe en el temario oficial catalogado.");
     return;
@@ -213,7 +215,7 @@ async function renderDetail(routeState) {
   detail.append(createBreadcrumbs(topic), actions, official, meta, message, content);
   document.title = `Tema ${topic.number} · TAI`;
   try {
-    const fragment = await loadTopicFragment(viewState.index, topic.id);
+    const fragment = await loadTopicFragment(viewState.index, operationalTopicId);
     if (version !== requestVersion) return;
     content.replaceChildren(fragment);
     focusTarget(detail, routeState, topic);

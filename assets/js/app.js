@@ -1,7 +1,7 @@
-import { isDemoMode, loadAppData } from "./data-service.js?phase7b2";
-import { initRouter, syncRouter } from "./router.js?phase7a";
+import { isDemoMode, loadAppData } from "./data-service.js?m2";
+import { initRouter, syncRouter } from "./router.js?m2";
 import { loadTopicContentIndex } from "./topic-content-service.js?phase7a";
-import { initSyllabusView } from "./syllabus-view.js?phase7a";
+import { initSyllabusView } from "./syllabus-view.js?m2";
 import { initTraining } from "./training.js";
 import { initExam } from "./exam.js";
 import { migratePhase3Training } from "./reinforcement-migration.js";

@@ -1,6 +1,7 @@
 export const VALID_ROUTES = new Set(["inicio", "temario", "entrenamiento", "examen", "refuerzo", "estadisticas"]);
 
 const TOPIC_ID_RE = /^B[1-4]-T\d{2}$/;
+const QUALIFIED_TOPIC_ID_RE = /^[A-Z][A-Z0-9-]*-B[1-4]-T\d{2}$/;
 const SECTION_ID_RE = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
 let routerInitialised = false;
@@ -13,7 +14,7 @@ export function parseRoute(hash = window.location.hash) {
     return { route: VALID_ROUTES.has(raw) ? raw : "inicio", topicId: null, sectionId: null, error: null };
   }
   if (parts.length === 1) return { route: "temario", topicId: null, sectionId: null, error: null };
-  if (parts.length > 3 || !TOPIC_ID_RE.test(parts[1])) {
+  if (parts.length > 3 || !(TOPIC_ID_RE.test(parts[1]) || QUALIFIED_TOPIC_ID_RE.test(parts[1]))) {
     return { route: "temario", topicId: null, sectionId: null, error: "La ruta de tema no es válida." };
   }
   if (parts.length === 3 && !SECTION_ID_RE.test(parts[2])) {

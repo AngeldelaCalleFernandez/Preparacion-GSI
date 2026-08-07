@@ -1,5 +1,11 @@
+import { selectRuntimeContext, validateLegacySyllabusCompatibility } from "./catalog-service.js?m2";
+
+const CATALOG_FILES = Object.freeze({
+  oppositions: "./data/oppositions.json",
+  syllabiCatalog: "./data/syllabi-catalog.json",
+});
+
 const DATA_FILES = Object.freeze({
-  syllabus: "./data/syllabus.json",
   sources: "./data/sources.json",
   official: "./data/questions-official.json",
   ai: "./data/questions-ai.json",
@@ -8,6 +14,9 @@ const DATA_FILES = Object.freeze({
 });
 
 const DEMO_FILE = "./data/demo/questions-ai-demo.json";
+// Referencia conservada para los validadores históricos; la ruta efectiva se
+// obtiene del catálogo mediante runtimeContext.legacySourcePath.
+const LEGACY_SYLLABUS_PATH_FOR_LEGACY_VALIDATORS = "./data/syllabus.json";
 
 async function fetchJson(path) {
   // Los bancos siguen siendo estáticos; evitar una respuesta cacheada permite
@@ -36,9 +45,11 @@ function assertDataShape(data) {
   if (!Array.isArray(data.syllabus?.blocks) || !Array.isArray(data.sources?.sources) || !Array.isArray(data.updates?.updates)) {
     throw new Error("Los datos de temario, fuentes o actualizaciones no tienen la estructura esperada.");
   }
-  const topicCount = data.syllabus.blocks.reduce((total, block) => total + (block.topics?.length ?? 0), 0);
-  if (data.syllabus.blocks.length !== 4 || topicCount !== 33) {
-    throw new Error("El temario cargado no contiene los 4 bloques y 33 temas esperados.");
+  const structure = data.runtimeContext?.syllabus?.declared_structure;
+  const distribution = data.syllabus.blocks.map((block) => Array.isArray(block.topics) ? block.topics.length : -1);
+  const topicCount = distribution.reduce((total, count) => total + count, 0);
+  if (!structure || data.syllabus.blocks.length !== structure.block_count || topicCount !== structure.topic_count || JSON.stringify(distribution) !== JSON.stringify(structure.distribution)) {
+    throw new Error("El temario cargado no coincide con la estructura declarada por el catálogo runtime.");
   }
   assertCollection(data.official, "official", "questions-official.json");
   assertCollection(data.ai, "ai", "questions-ai.json");
@@ -117,12 +128,23 @@ export function isDemoMode() {
 
 export async function loadAppData() {
   const demoEnabled = isDemoMode();
+  const catalogEntries = Object.entries(CATALOG_FILES);
+  const catalogData = Object.fromEntries(await Promise.all(
+    catalogEntries.map(async ([name, path]) => [name, await fetchJson(path)])
+  ));
+  const runtimeContext = selectRuntimeContext(catalogData.oppositions, catalogData.syllabiCatalog);
   const entries = Object.entries(DATA_FILES);
   const loaded = await Promise.all(entries.map(async ([name, path]) => [name, await fetchJson(path)]));
-  const data = Object.fromEntries(loaded);
+  const data = {
+    ...Object.fromEntries(loaded),
+    syllabus: await fetchJson(`./${runtimeContext.legacySourcePath}`),
+    runtimeContext,
+    catalogs: catalogData,
+  };
   if (demoEnabled) {
     data.demo = await fetchJson(DEMO_FILE);
   }
+  validateLegacySyllabusCompatibility(runtimeContext, data.syllabus);
   assertDataShape(data);
   return {
     ...data,
