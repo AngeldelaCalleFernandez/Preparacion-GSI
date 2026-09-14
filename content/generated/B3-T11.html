@@ -1,0 +1,67 @@
+<article class="topic-content" data-topic-id="B3-T11" data-coverage-status="complete">
+<p>Material curado del corpus GSI A2 · apuntes V2.1 revisados. Procedencia editorial, no documento oficial.</p>
+<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B3-T11/estudio">Apuntes de estudio</a></li><li><a href="#temario/B3-T11/estudio-01">1. Ecosistema</a></li><li><a href="#temario/B3-T11/estudio-02">2. CLR y IL</a></li><li><a href="#temario/B3-T11/estudio-03">3. C#</a></li><li><a href="#temario/B3-T11/estudio-04">4. ASP.NET Core</a></li><li><a href="#temario/B3-T11/estudio-05">5. Entity Framework Core</a></li><li><a href="#temario/B3-T11/estudio-06">6. LINQ</a></li><li><a href="#temario/B3-T11/estudio-07">7. Async</a></li><li><a href="#temario/B3-T11/estudio-08">8. Despliegue</a></li><li><a href="#temario/B3-T11/estudio-09">8.1 Servicios y herramientas</a></li><li><a href="#temario/B3-T11/estudio-10">8.2 CLR, CTS, CLS y assemblies</a></li><li><a href="#temario/B3-T11/estudio-11">8.3 Servicios web</a></li><li><a href="#temario/B3-T11/estudio-12">8.4 Persistencia</a></li><li><a href="#temario/B3-T11/estudio-13">8.5 Seguridad</a></li><li><a href="#temario/B3-T11/estudio-14">8.6 Despliegue y observabilidad</a></li><li><a href="#temario/B3-T11/estudio-15">8.7 Trampas de test</a></li><li><a href="#temario/B3-T11/estudio-16">9. Test</a></li><li><a href="#temario/B3-T11/estudio-17">10. Supuesto</a></li><li><a href="#temario/B3-T11/estudio-18">11. Resumen</a></li><li><a href="#temario/B3-T11/repaso">Resumen de repaso</a></li><li><a href="#temario/B3-T11/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B3-T11/repaso-02">Claves de test</a></li><li><a href="#temario/B3-T11/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B3-T11/repaso-04">Actualización 2026</a></li><li><a href="#temario/B3-T11/repaso-05">Fuentes base del material</a></li></ol></nav>
+<h2 id="estudio">Apuntes de estudio</h2>
+<p>Cobertura oficial que debe quedar dominada: Plataforma .NET: modelo de programación, servicios y herramientas. Persistencia y seguridad.</p>
+<h3 id="estudio-01">1. Ecosistema</h3>
+<p>.NET moderno incluye runtime, SDK, bibliotecas, C#, F#/VB, ASP.NET Core y Entity Framework Core. El material A1 066 de 2023 aporta base, pero la referencia actual en agosto de 2026 es <strong>.NET 10 LTS</strong>, soporte hasta noviembre de 2028.</p>
+<h3 id="estudio-02">2. CLR y IL</h3>
+<p>Código se compila a Intermediate Language y CLR ejecuta/JIT. CTS define sistema común de tipos; CLS facilita interoperabilidad entre lenguajes.</p>
+<h3 id="estudio-03">3. C#</h3>
+<p>Tipado estático, OO/multiparadigma, genéricos, LINQ, async/await, records, pattern matching, nullable reference types. IDisposable/using gestionan recursos.</p>
+<h3 id="estudio-04">4. ASP.NET Core</h3>
+<p>Framework web multiplataforma para MVC, Razor, Minimal APIs y servicios HTTP. Middleware compone pipeline. DI está integrada.</p>
+<h3 id="estudio-05">5. Entity Framework Core</h3>
+<p>ORM con DbContext, entidades, LINQ, tracking y migraciones. Riesgos: N+1, queries no eficientes, tracking innecesario y migraciones incompatibles.</p>
+<h3 id="estudio-06">6. LINQ</h3>
+<p>Modelo declarativo de consultas sobre colecciones/proveedores. Deferred execution puede sorprender; el proveedor traduce expresiones cuando corresponde.</p>
+<h3 id="estudio-07">7. Async</h3>
+<p>async/await simplifica operaciones asíncronas; no convierte automáticamente trabajo CPU-bound en paralelo. Evitar bloqueos sync-over-async.</p>
+<h3 id="estudio-08">8. Despliegue</h3>
+<p>Framework-dependent o self-contained según escenario; contenedores; Kestrel tras reverse proxy o directamente según arquitectura; configuración y secretos externos.</p>
+<h3 id="estudio-09">8.1 Servicios y herramientas</h3>
+<p><strong>Base A1:</strong> 066 (2023), útil para CLR, bibliotecas, ADO.NET, EF y LINQ. <strong>Actualización oficial:</strong> a 21/08/2026 .NET 10 es LTS activo hasta 14/11/2028; .NET 8 y .NET 9 terminan soporte en noviembre de 2026. No estudiar .NET 6 como “LTS vigente”.</p>
+<p>Herramientas: <strong>dotnet CLI</strong> (crear, restaurar, compilar, probar, publicar), MSBuild, NuGet, Visual Studio/VS Code/Rider como ejemplos, depurador/profilers y herramientas de diagnóstico. Un paquete NuGet es dependencia, no un ensamblado necesariamente uno-a-uno.</p>
+<h3 id="estudio-10">8.2 CLR, CTS, CLS y assemblies</h3>
+<p>CLR administra ejecución, JIT, GC, excepciones, threads y metadatos. <strong>CTS</strong> define tipos comunes; <strong>CLS</strong> un subconjunto de reglas para interoperabilidad entre lenguajes. <strong>Assembly</strong> es unidad de despliegue/versionado con IL, metadatos y manifiesto.</p>
+<h3 id="estudio-11">8.3 Servicios web</h3>
+<p>ASP.NET Core: pipeline de <strong>middleware</strong>, routing, controllers/minimal APIs, model binding, filtros según modelo, inyección de dependencias, configuración y logging. Kestrel es servidor web multiplataforma. Para servicios legacy puede aparecer WCF en material antiguo; en .NET moderno se priorizan HTTP APIs/gRPC y soluciones compatibles según necesidad.</p>
+<h3 id="estudio-12">8.4 Persistencia</h3>
+<p><strong>ADO.NET</strong> ofrece acceso de bajo nivel mediante conexiones, comandos, readers/datasets. <strong>Entity Framework Core</strong> es ORM: DbContext, LINQ, tracking, relaciones, migrations y transacciones. Distingue consultas materializadas de deferred execution y controla N+1, tracking y proyecciones.</p>
+<h3 id="estudio-13">8.5 Seguridad</h3>
+<p>ASP.NET Core Authentication/Authorization, esquemas cookies/bearer, Identity para gestión de usuarios cuando procede, políticas/claims/roles, Data Protection para protección de datos de aplicación, antiforgery en flujos cookie, HTTPS/HSTS, secretos y gestión de claves. En APIs modernas, OAuth 2.0/OIDC suelen integrarse mediante proveedor de identidad, pero OAuth 2.0 por sí solo es autorización, no autenticación.</p>
+<h3 id="estudio-14">8.6 Despliegue y observabilidad</h3>
+<p>Framework-dependent vs self-contained, single-file/native AOT en casos compatibles, contenedores, IIS/reverse proxy/Kestrel, health checks, logging estructurado, métricas/trazas vía OpenTelemetry según arquitectura.</p>
+<h3 id="estudio-15">8.7 Trampas de test</h3>
+<ul>
+<li>CLR ≠ CTS ≠ CLS.</li>
+<li>ADO.NET ≠ EF Core.</li>
+<li>NuGet ≠ MSBuild.</li>
+<li>ASP.NET Core ≠ ASP.NET clásico.</li>
+<li>.NET 10 LTS vigente no significa que toda aplicación deba migrar inmediatamente; depende de soporte y compatibilidad.</li>
+</ul>
+<h3 id="estudio-16">9. Test</h3>
+<ul>
+<li>CLR ≠ .NET Framework.</li>
+<li>.NET moderno ≠ .NET Framework clásico.</li>
+<li>LINQ ≠ SQL aunque pueda traducirse.</li>
+<li>async ≠ paralelismo.</li>
+<li>.NET 10 es LTS actual en 2026.</li>
+</ul>
+<h3 id="estudio-17">10. Supuesto</h3>
+<p>Arquitectura ASP.NET Core, DI, EF Core, APIs, identidad, logging, health checks, caché, resiliencia, contenedor y CI/CD.</p>
+<h3 id="estudio-18">11. Resumen</h3>
+<p>La plataforma actual se centra en .NET multiplataforma; conserva conceptos CLR/C#/ASP.NET/EF pero actualiza versiones y ciclo de soporte.</p>
+<h2 id="repaso">Resumen de repaso</h2>
+<h3 id="repaso-01">Núcleo de estudio</h3>
+<p>.NET es plataforma multiplataforma con runtime, bibliotecas, SDK y lenguajes como C#, F# y Visual Basic. CLR ejecuta código gestionado y ofrece GC, tipos, excepciones y JIT/AOT. ASP.NET Core desarrolla web/APIs; dependency injection y configuración están integradas. Entity Framework Core es ORM para persistencia; LINQ permite consultas integradas en lenguaje. Seguridad web se apoya en middleware de autenticación/autorización, Identity y protocolos estándares. Herramientas: .NET CLI, NuGet, Visual Studio/VS Code, testing y CI/CD. Diferencia .NET moderno de .NET Framework clásico ligado principalmente a Windows.</p>
+<h3 id="repaso-02">Claves de test</h3>
+<p>IL/CIL no es código máquina final; CLR ≈ runtime administrado; NuGet gestiona paquetes; EF Core es ORM, no SGBD. .NET 10 es LTS vigente en 2026, mientras .NET 9 es STS. No confundir ASP.NET Core con IIS, aunque puedan integrarse.</p>
+<h3 id="repaso-03">Enfoque para supuesto práctico</h3>
+<p>En supuesto plantea ASP.NET Core API/MVC, EF Core, DI, logging, configuración/secrets, Identity/OIDC, contenedores y pipeline. Justifica LTS para sistemas públicos de larga vida.</p>
+<h3 id="repaso-04">Actualización 2026</h3>
+<p>Actualización 2026: .NET 10 LTS está soportado hasta noviembre de 2028.</p>
+<h3 id="repaso-05">Fuentes base del material</h3>
+<p>A1 066 + documentación oficial Microsoft.</p>
+<section class="topic-content__sources"><h2 id="fuentes">Fuentes y localizadores</h2><ul><li><a href="https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)</a> · III.11 · 2026-08-21</li><li><a href="https://docs.google.com/document/d/1l0nl4fc451Tl3XB9XZ4LRLZGLZEJxUueQvaMZoF8gcA/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE III — RESUMEN MAESTRO DE REPASO (15 temas)</a> · III.11 · 2026-08-21</li></ul></section>
+</article>

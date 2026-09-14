@@ -1,0 +1,411 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GSI A2 — PRÁCTICA ACTIVA 10 — DATOS, BIG DATA Y NoSQL — SOLUCIONARIO RAZONADO</title><link rel="stylesheet" href="../../assets/css/styles.css"></head><body><main class="shell topic-content"><p><a href="../../index.html#practica">Volver a práctica escrita</a></p><p>Material curado GSI A2. Fuente: <a href="https://docs.google.com/document/d/1C0TLaIzcD0xbxWPTZZ26V3j7OphgkyjFe5Y5Uv4HwIw/edit">documento original de Drive</a>.</p><h1>GSI A2 - PRACTICA ACTIVA 10</h1>
+<h2>Mineria de datos, OLAP, Big Data, Hadoop y NoSQL - SOLUCIONARIO RAZONADO</h2>
+<p><strong>Criterio:</strong> las respuestas siguen III.15 V2.1. Cuando una tecnologia es solo un ejemplo moderno del apunte, se trata como ejemplo y no como obligacion. La respuesta correcta puede ser mantener una arquitectura relacional/convencional si satisface mejor los requisitos.</p>
+<h1>Mapa maestro de decision</h1>
+<table>
+<tr>
+<th scope="col"><p>Problema dominante</p></th>
+<th scope="col"><p>Opcion que debes considerar</p></th>
+<th scope="col"><p>Pregunta de control</p></th>
+</tr>
+<tr>
+<td><p>Transacciones estructuradas, integridad y joins</p></td>
+<td><p>Relacional / OLTP</p></td>
+<td><p>¿Realmente necesito abandonar ACID/modelo relacional?</p></td>
+</tr>
+<tr>
+<td><p>Analisis historico curado y BI</p></td>
+<td><p>Data warehouse / OLAP</p></td>
+<td><p>¿Necesito dimensiones, medidas, historico y consultas analiticas?</p></td>
+</tr>
+<tr>
+<td><p>Datos heterogeneos en formatos flexibles</p></td>
+<td><p>Data lake</p></td>
+<td><p>¿Existe gobierno, catalogo, linaje y control de calidad?</p></td>
+</tr>
+<tr>
+<td><p>Lookup muy simple por clave</p></td>
+<td><p>Key-value</p></td>
+<td><p>¿El patron dominante es clave -&gt; valor?</p></td>
+</tr>
+<tr>
+<td><p>Agregados JSON-like / esquema flexible</p></td>
+<td><p>Documental</p></td>
+<td><p>¿Las consultas siguen el agregado/documento?</p></td>
+</tr>
+<tr>
+<td><p>Gran escala distribuida por claves</p></td>
+<td><p>Wide-column</p></td>
+<td><p>¿La clave de particion evita hot spots?</p></td>
+</tr>
+<tr>
+<td><p>Relaciones y recorridos complejos</p></td>
+<td><p>Grafo</p></td>
+<td><p>¿La consulta dominante navega relaciones?</p></td>
+</tr>
+<tr>
+<td><p>Batch distribuido clasico</p></td>
+<td><p>Hadoop/HDFS + YARN + MapReduce</p></td>
+<td><p>¿El problema justifica distribucion y procesamiento batch?</p></td>
+</tr>
+<tr>
+<td><p>Procesamiento distribuido general</p></td>
+<td><p>Spark u otros motores</p></td>
+<td><p>¿Necesito batch/SQL/streaming/ML distribuido?</p></td>
+</tr>
+<tr>
+<td><p>Eventos continuos</p></td>
+<td><p>Streaming/event processing</p></td>
+<td><p>¿Importan event time, ventanas, late events y semantica extremo a extremo?</p></td>
+</tr>
+</table>
+<h1>PARTE A - Mineria de datos, tareas y proceso</h1>
+<p>1 - Mineria de datos</p>
+<p>Define mineria de datos segun III.15.</p>
+<p><strong>Respuesta modelo:</strong> Descubrir patrones o modelos utiles a partir de datos para apoyar una necesidad o decision.</p>
+<p>2 - Clasificacion</p>
+<p>Se quiere predecir si un expediente sera &#x27;riesgo alto&#x27; o &#x27;riesgo bajo&#x27;. ¿Que tarea es?</p>
+<p><strong>Respuesta modelo:</strong> Clasificacion supervisada.</p>
+<p>3 - Regresion</p>
+<p>Se quiere estimar el numero de llamadas que recibira un servicio manana. ¿Que tarea?</p>
+<p><strong>Respuesta modelo:</strong> Regresion si el objetivo es un valor numerico continuo.</p>
+<p>4 - Clustering</p>
+<p>Se quieren descubrir grupos de ciudadanos con patrones similares sin etiquetas previas. ¿Que tarea?</p>
+<p><strong>Respuesta modelo:</strong> Clustering/no supervisado.</p>
+<p>5 - Asociacion</p>
+<p>Se quieren descubrir reglas del tipo &#x27;quien consulta A tambien suele consultar B&#x27;. ¿Que tarea?</p>
+<p><strong>Respuesta modelo:</strong> Reglas de asociacion.</p>
+<p>6 - Anomalias</p>
+<p>Se quieren detectar operaciones muy distintas del comportamiento habitual. ¿Que tarea?</p>
+<p><strong>Respuesta modelo:</strong> Deteccion de anomalias.</p>
+<p>7 - Reduccion dimensional</p>
+<p>¿Para que sirve conceptualmente la reduccion dimensional?</p>
+<p><strong>Respuesta modelo:</strong> Reducir numero de variables conservando informacion relevante, facilitando modelado, visualizacion o eficiencia segun el caso.</p>
+<p>8 - CRISP-DM</p>
+<p>Ordena el proceso que recoge III.15.</p>
+<p><strong>Respuesta modelo:</strong> Entender negocio -&gt; entender datos -&gt; preparar -&gt; modelar -&gt; evaluar -&gt; desplegar/monitorizar.</p>
+<p>9 - Negocio primero</p>
+<p>¿Por que no se debe empezar por elegir algoritmo?</p>
+<p><strong>Respuesta modelo:</strong> Porque primero hay que definir objetivo, decision, datos, restricciones y metrica; un algoritmo sin problema claro no aporta valor.</p>
+<p>10 - Preparacion</p>
+<p>Cita tareas de preparacion que aparecen en los apuntes.</p>
+<p><strong>Respuesta modelo:</strong> Limpieza, missing values, outliers, codificacion, escalado, seleccion/creacion de features y particion train/validation/test.</p>
+<p>11 - Leakage</p>
+<p>Un campo contiene informacion generada despues del resultado que se quiere predecir y se usa para entrenar. ¿Problema?</p>
+<p><strong>Respuesta modelo:</strong> Data leakage: informacion futura o del conjunto de test influye en entrenamiento/preprocesamiento.</p>
+<p>12 - Train/validation/test</p>
+<p>¿Por que separar conjuntos?</p>
+<p><strong>Respuesta modelo:</strong> Entrenamiento ajusta el modelo; validacion ayuda a seleccionar/ajustar; test estima rendimiento final sobre datos no usados en esas decisiones.</p>
+<p>13 - Despliegue</p>
+<p>¿El trabajo termina cuando la metrica de validacion es buena?</p>
+<p><strong>Respuesta modelo:</strong> No. Hay que desplegar, monitorizar calidad, sesgo/drift cuando proceda, coste, seguridad y adecuacion de negocio.</p>
+<p>14 - Modelo no es decision</p>
+<p>¿Por que una prediccion no debe confundirse con una decision administrativa automatica?</p>
+<p><strong>Respuesta modelo:</strong> Porque el modelo produce una estimacion; la decision requiere reglas, contexto, gobernanza y, cuando afecta derechos, supervision humana y garantias.</p>
+<p>15 - Algoritmo adecuado</p>
+<p>¿Que criterio manda sobre &#x27;usar el algoritmo mas moderno&#x27;?</p>
+<p><strong>Respuesta modelo:</strong> La tarea, los datos, la metrica, interpretabilidad, coste, operacion y riesgo.</p>
+<p>16 - No todo es ML</p>
+<p>¿Todo problema de datos requiere machine learning?</p>
+<p><strong>Respuesta modelo:</strong> No. Reglas, SQL, estadistica o agregacion pueden resolver mejor problemas simples y mas explicables.</p>
+<p>17 - Calidad de datos</p>
+<p>¿Por que la calidad de datos es arquitectonica y no solo &#x27;limpieza previa&#x27;?</p>
+<p><strong>Respuesta modelo:</strong> Porque afecta ingestión, linaje, validaciones, propiedad y confiabilidad continua de los resultados.</p>
+<p>18 - Gobernanza</p>
+<p>Cita elementos de gobierno que III.15 exige contemplar.</p>
+<p><strong>Respuesta modelo:</strong> Catalogo, linaje, calidad, privacidad, retencion, seguridad, costes y ownership.</p>
+<h1>PARTE B - Algoritmos y metricas de mineria</h1>
+<p>19 - Clasificacion: algoritmos</p>
+<p>Cita algoritmos/conceptos que III.15 asocia a clasificacion.</p>
+<p><strong>Respuesta modelo:</strong> Arboles, regresion logistica, SVM, k-NN y redes, entre otros.</p>
+<p>20 - Regresion: algoritmos</p>
+<p>Cita opciones recogidas para regresion.</p>
+<p><strong>Respuesta modelo:</strong> Regresion lineal y arboles/ensembles, entre otros.</p>
+<p>21 - Clustering</p>
+<p>¿Que algoritmos de clustering aparecen?</p>
+<p><strong>Respuesta modelo:</strong> k-means, jerarquico y DBSCAN.</p>
+<p>22 - Asociacion</p>
+<p>¿Que algoritmos aparecen para reglas de asociacion?</p>
+<p><strong>Respuesta modelo:</strong> Apriori y FP-Growth.</p>
+<p>23 - Anomalias</p>
+<p>¿Que familias cita el apunte?</p>
+<p><strong>Respuesta modelo:</strong> Metodos estadisticos, isolation forest y metodos basados en densidad, entre otros.</p>
+<p>24 - Precision</p>
+<p>Con TP=80 y FP=20, calcula precision.</p>
+<p><strong>Respuesta modelo:</strong> 80/(80+20)=0,80 = 80%.</p>
+<p>25 - Recall</p>
+<p>Con TP=80 y FN=40, calcula recall.</p>
+<p><strong>Respuesta modelo:</strong> 80/(80+40)=0,6667, aproximadamente 66,7%.</p>
+<p>26 - F1</p>
+<p>Si precision=0,80 y recall=0,667, calcula F1 aproximado.</p>
+<p><strong>Respuesta modelo:</strong> 2*0,80*0,667/(0,80+0,667) ≈ 0,727, es decir, 72,7%.</p>
+<p>27 - Desbalance</p>
+<p>En fraude, 99,9% de operaciones son normales. Un modelo que siempre predice &#x27;normal&#x27; tiene gran accuracy. ¿Por que no basta?</p>
+<p><strong>Respuesta modelo:</strong> Porque el desbalance hace que accuracy sea engañosa; interesan precision/recall/F1 y coste de errores segun caso.</p>
+<p>28 - Recall prioritario</p>
+<p>Si es muy costoso dejar escapar un fraude real, ¿que metrica suele cobrar especial importancia?</p>
+<p><strong>Respuesta modelo:</strong> Recall/sensibilidad de la clase fraude, sin ignorar precision y coste de falsos positivos.</p>
+<p>29 - Precision prioritaria</p>
+<p>Si una alerta provoca una investigacion humana muy cara, ¿que metrica conviene vigilar especialmente?</p>
+<p><strong>Respuesta modelo:</strong> Precision de las alertas, junto a recall para no optimizar de forma miope.</p>
+<p>30 - Regresion: MAE</p>
+<p>¿Que interpreta MAE?</p>
+<p><strong>Respuesta modelo:</strong> Error absoluto medio en las unidades del objetivo, facilitando una interpretacion directa.</p>
+<p>31 - RMSE</p>
+<p>¿Que diferencia conceptual tiene RMSE frente a MAE?</p>
+<p><strong>Respuesta modelo:</strong> Penaliza mas los errores grandes al elevar al cuadrado antes de promediar; luego vuelve a las unidades originales.</p>
+<p>32 - R2</p>
+<p>¿R2 por si solo demuestra que un modelo es util?</p>
+<p><strong>Respuesta modelo:</strong> No. Debe interpretarse con datos, baseline, error, validacion y objetivo de negocio.</p>
+<p>33 - Silhouette</p>
+<p>¿Que combina silhouette en clustering?</p>
+<p><strong>Respuesta modelo:</strong> Cohesion dentro del cluster y separacion respecto a otros; aun asi III.15 exige validacion de negocio.</p>
+<p>34 - Support</p>
+<p>En 1.000 transacciones, A y B aparecen juntos en 120. ¿Support(A∩B)?</p>
+<p><strong>Respuesta modelo:</strong> 120/1000=12%.</p>
+<p>35 - Confidence</p>
+<p>A aparece en 200 transacciones y A+B juntos en 120. ¿Confidence A-&gt;B?</p>
+<p><strong>Respuesta modelo:</strong> 120/200=60%.</p>
+<p>36 - Lift</p>
+<p>Si support(B)=30% y confidence(A-&gt;B)=60%, ¿lift?</p>
+<p><strong>Respuesta modelo:</strong> 0,60/0,30=2. Un lift &gt;1 indica asociacion positiva bajo esas definiciones; no implica causalidad.</p>
+<h1>PARTE C - OLAP, warehouse, lake y lakehouse</h1>
+<p>37 - OLAP</p>
+<p>¿Que caracteriza OLAP?</p>
+<p><strong>Respuesta modelo:</strong> Analitica multidimensional con medidas, dimensiones y jerarquias.</p>
+<p>38 - Medida</p>
+<p>Ventas totales, numero de expedientes o coste son ejemplos de que elemento OLAP?</p>
+<p><strong>Respuesta modelo:</strong> Medidas.</p>
+<p>39 - Dimension</p>
+<p>Tiempo, territorio y tipo de tramite son ejemplos de que elemento?</p>
+<p><strong>Respuesta modelo:</strong> Dimensiones.</p>
+<p>40 - Jerarquia</p>
+<p>Año -&gt; trimestre -&gt; mes -&gt; dia es que concepto?</p>
+<p><strong>Respuesta modelo:</strong> Jerarquia dentro de una dimension.</p>
+<p>41 - Slice</p>
+<p>¿Que hace slice conceptualmente?</p>
+<p><strong>Respuesta modelo:</strong> Fija un valor de una dimension para obtener una porcion del cubo.</p>
+<p>42 - Dice</p>
+<p>¿Que hace dice?</p>
+<p><strong>Respuesta modelo:</strong> Selecciona un subconjunto mediante varios valores/rangos de dimensiones.</p>
+<p>43 - Drill-down</p>
+<p>¿Que hace drill-down?</p>
+<p><strong>Respuesta modelo:</strong> Baja a mayor nivel de detalle en una jerarquia.</p>
+<p>44 - Roll-up</p>
+<p>¿Que hace roll-up?</p>
+<p><strong>Respuesta modelo:</strong> Agrega hacia niveles mas resumidos.</p>
+<p>45 - Pivot</p>
+<p>¿Que hace pivot?</p>
+<p><strong>Respuesta modelo:</strong> Reorienta dimensiones para cambiar la perspectiva de analisis.</p>
+<p>46 - OLAP vs OLTP</p>
+<p>¿Por que no conviene ejecutar reporting pesado indiscriminadamente sobre OLTP?</p>
+<p><strong>Respuesta modelo:</strong> Porque OLTP prioriza transacciones operativas; analitica pesada puede competir por recursos. Un DW/replica/arquitectura analitica puede aislar cargas.</p>
+<p>47 - Data warehouse</p>
+<p>Define warehouse segun el apunte.</p>
+<p><strong>Respuesta modelo:</strong> Almacen de datos curados/modelados para analitica y BI.</p>
+<p>48 - Data lake</p>
+<p>Define data lake.</p>
+<p><strong>Respuesta modelo:</strong> Almacen de datos heterogeneos en formatos flexibles; requiere gobierno para no convertirse en acumulacion sin control.</p>
+<p>49 - Lakehouse</p>
+<p>¿Que intenta combinar un lakehouse?</p>
+<p><strong>Respuesta modelo:</strong> Almacenamiento abierto/flexible de lake con capacidades de gestion, tablas y SQL mas propias de warehouse.</p>
+<p>50 - Lake no sustituye gobierno</p>
+<p>¿Por que &#x27;guardar todo por si acaso&#x27; no es una buena arquitectura?</p>
+<p><strong>Respuesta modelo:</strong> Por costes, privacidad, retencion, calidad, linaje y dificultad de uso. El gobierno es requisito.</p>
+<p>51 - Eleccion</p>
+<p>Para informes financieros curados con dimensiones estables, ¿warehouse o lake como primera opcion?</p>
+<p><strong>Respuesta modelo:</strong> Warehouse/OLAP suele ser mas natural, salvo requisitos adicionales que justifiquen otra arquitectura.</p>
+<p>52 - Raw heterogeneo</p>
+<p>Para conservar eventos, ficheros y datos semiestructurados a gran escala antes de usos diversos, ¿que opcion considerar?</p>
+<p><strong>Respuesta modelo:</strong> Data lake con catalogo, seguridad, retencion, calidad y ownership.</p>
+<h1>PARTE D - Big Data, Hadoop y Spark</h1>
+<p>53 - 5V</p>
+<p>Enumera las 5V del marco habitual recogido.</p>
+<p><strong>Respuesta modelo:</strong> Volumen, velocidad, variedad, veracidad y valor.</p>
+<p>54 - Big Data no es volumen solo</p>
+<p>¿Tener una tabla de 2 TB obliga a usar Hadoop?</p>
+<p><strong>Respuesta modelo:</strong> No. Hay que valorar volumen, velocidad, variedad, SLA, patrones de acceso y si una BD/warehouse convencional resuelve mejor.</p>
+<p>55 - Hadoop</p>
+<p>¿Hadoop equivale a HDFS?</p>
+<p><strong>Respuesta modelo:</strong> No. HDFS es almacenamiento distribuido dentro del ecosistema clasico; Hadoop incluye otros componentes.</p>
+<p>56 - HDFS</p>
+<p>¿Que funcion cumple HDFS?</p>
+<p><strong>Respuesta modelo:</strong> Almacenamiento distribuido por bloques, con replicacion para tolerancia a fallos.</p>
+<p>57 - NameNode</p>
+<p>¿Que gestiona NameNode?</p>
+<p><strong>Respuesta modelo:</strong> Namespace y metadatos del sistema de ficheros HDFS.</p>
+<p>58 - DataNode</p>
+<p>¿Que hace DataNode?</p>
+<p><strong>Respuesta modelo:</strong> Almacena bloques de datos de HDFS.</p>
+<p>59 - YARN</p>
+<p>¿Que papel cumple YARN?</p>
+<p><strong>Respuesta modelo:</strong> Gestion de recursos y ejecucion en el cluster.</p>
+<p>60 - MapReduce</p>
+<p>Resume sus fases principales.</p>
+<p><strong>Respuesta modelo:</strong> Map -&gt; shuffle/sort -&gt; reduce, orientado al procesamiento batch distribuido clasico.</p>
+<p>61 - Data locality</p>
+<p>¿Que idea expresa data locality?</p>
+<p><strong>Respuesta modelo:</strong> Mover computo hacia donde estan los datos para reducir transferencias costosas cuando la arquitectura lo permite.</p>
+<p>62 - Replicacion HDFS</p>
+<p>¿La replicacion HDFS convierte HDFS en backup?</p>
+<p><strong>Respuesta modelo:</strong> No. Aporta tolerancia a fallos del almacenamiento distribuido; no sustituye una estrategia de backup/retencion/recuperacion.</p>
+<p>63 - MapReduce no tiempo real</p>
+<p>¿Por que no debe presentarse MapReduce clasico como solucion natural para baja latencia interactiva?</p>
+<p><strong>Respuesta modelo:</strong> Porque esta orientado principalmente a procesamiento batch; la necesidad de baja latencia puede requerir otros motores/arquitecturas.</p>
+<p>64 - Spark</p>
+<p>¿Como caracteriza III.15 a Spark?</p>
+<p><strong>Respuesta modelo:</strong> Motor distribuido general con procesamiento en memoria cuando es posible y APIs para batch, streaming, SQL y ML.</p>
+<p>65 - Spark y HDFS</p>
+<p>¿Spark requiere HDFS obligatoriamente?</p>
+<p><strong>Respuesta modelo:</strong> No. Puede usar HDFS u otros almacenamientos.</p>
+<p>66 - Hadoop vigente en examen</p>
+<p>¿Debe eliminarse Hadoop de los apuntes porque existan tecnologias mas modernas?</p>
+<p><strong>Respuesta modelo:</strong> No. El BOE lo menciona expresamente; hay que dominar su nucleo clasico y contextualizar alternativas actuales.</p>
+<p>67 - Objeto vs HDFS</p>
+<p>¿El apunte dice que almacenamiento de objetos sustituye conceptualmente a HDFS en el temario?</p>
+<p><strong>Respuesta modelo:</strong> No. Lo presenta como ejemplo actual del ecosistema &#x27;o similares&#x27;; HDFS sigue siendo materia propia.</p>
+<p>68 - Parquet/ORC</p>
+<p>¿Que papel tienen Parquet/ORC en los apuntes?</p>
+<p><strong>Respuesta modelo:</strong> Ejemplos de formatos columnares comunes en plataformas de datos actuales; no sustituyen los conceptos Hadoop.</p>
+<p>69 - Kafka</p>
+<p>¿Como aparece Kafka en III.15?</p>
+<p><strong>Respuesta modelo:</strong> Como ejemplo de log/broker usado para ingestion/event streaming; no como sustituto universal de Hadoop o Spark.</p>
+<p>70 - Arquitectura minima</p>
+<p>Antes de proponer cluster distribuido, ¿que debes justificar?</p>
+<p><strong>Respuesta modelo:</strong> Volumen/velocidad/variedad, SLA, procesamiento, coste, operacion, resiliencia, seguridad y que una solucion mas simple no sea suficiente.</p>
+<h1>PARTE E - NoSQL, CAP, consistencia, sharding y replicacion</h1>
+<p>71 - NoSQL</p>
+<p>¿NoSQL significa necesariamente &#x27;sin SQL&#x27;?</p>
+<p><strong>Respuesta modelo:</strong> No. En el tema se usa como familia de modelos no relacionales; algunos productos pueden ofrecer lenguajes tipo SQL.</p>
+<p>72 - Key-value</p>
+<p>Caso natural para key-value.</p>
+<p><strong>Respuesta modelo:</strong> Sesiones, cache o lookup simple por clave.</p>
+<p>73 - Documental</p>
+<p>Caso natural para documental.</p>
+<p><strong>Respuesta modelo:</strong> Agregados JSON-like con estructura flexible y acceso centrado en el documento.</p>
+<p>74 - Wide-column</p>
+<p>Caso natural para wide-column.</p>
+<p><strong>Respuesta modelo:</strong> Gran escala distribuida organizada por claves/column families.</p>
+<p>75 - Grafo</p>
+<p>Caso natural para grafo.</p>
+<p><strong>Respuesta modelo:</strong> Relaciones complejas y recorridos entre entidades.</p>
+<p>76 - Relacional sigue valido</p>
+<p>Sistema contable con transacciones, restricciones y joins complejos. ¿Migrarias a NoSQL solo por volumen?</p>
+<p><strong>Respuesta modelo:</strong> No. Primero evaluar escalado/particionado del relacional; el modelo de acceso e integridad puede favorecer mantener relacional.</p>
+<p>77 - CAP</p>
+<p>Formula correctamente CAP segun III.15.</p>
+<p><strong>Respuesta modelo:</strong> Ante una particion de red, un sistema distribuido debe decidir como prioriza consistencia o disponibilidad en ese contexto; no es el lema simplista &#x27;elige siempre dos de tres&#x27;.</p>
+<p>78 - Partition tolerance</p>
+<p>¿Por que la discusion C/A aparece especialmente cuando existe particion?</p>
+<p><strong>Respuesta modelo:</strong> Porque CAP trata el comportamiento del sistema distribuido cuando la comunicacion entre nodos se particiona.</p>
+<p>79 - Consistencia fuerte</p>
+<p>Define conceptualmente consistencia fuerte.</p>
+<p><strong>Respuesta modelo:</strong> Lecturas observan un estado coherente/actual segun las garantias del sistema, a costa potencial de disponibilidad/latencia en ciertos fallos.</p>
+<p>80 - Eventual</p>
+<p>Define consistencia eventual.</p>
+<p><strong>Respuesta modelo:</strong> Si cesan actualizaciones, las replicas convergen con el tiempo; pueden existir lecturas temporalmente desactualizadas segun garantia.</p>
+<p>81 - BASE vs ACID</p>
+<p>¿Son mutuamente excluyentes de forma absoluta?</p>
+<p><strong>Respuesta modelo:</strong> No. El apunte advierte que es un contraste conceptual, no dos normas incompatibles en todo sistema.</p>
+<p>82 - Sharding</p>
+<p>¿Que es sharding?</p>
+<p><strong>Respuesta modelo:</strong> Distribuir datos entre nodos/particiones segun una clave, rango, hash u otra estrategia.</p>
+<p>83 - Hot spot</p>
+<p>¿Que causa una mala clave de sharding?</p>
+<p><strong>Respuesta modelo:</strong> Distribucion desigual de carga/datos, creando particiones calientes.</p>
+<p>84 - Replicacion</p>
+<p>¿Que aporta replicacion?</p>
+<p><strong>Respuesta modelo:</strong> Puede mejorar disponibilidad y lectura, pero introduce lag, consistencia y complejidad de failover/conflictos.</p>
+<p>85 - Replica no es backup</p>
+<p>¿Una replica actualizada sustituye backups?</p>
+<p><strong>Respuesta modelo:</strong> No. Puede replicar borrados, corrupcion o errores; continuidad y recuperacion historica requieren estrategia propia.</p>
+<p>86 - Patron de acceso</p>
+<p>¿Por que el modelo de acceso debe decidir el tipo de NoSQL?</p>
+<p><strong>Respuesta modelo:</strong> Porque cada familia optimiza operaciones distintas; elegir por moda genera modelos y consultas ineficientes.</p>
+<p>87 - Join complejo</p>
+<p>Necesitas numerosos joins ad hoc y consistencia transaccional amplia. ¿Que advertencia?</p>
+<p><strong>Respuesta modelo:</strong> Puede ser una señal de que un relacional/warehouse sea mas apropiado que forzar un modelo NoSQL.</p>
+<p>88 - Grafo vs documental</p>
+<p>Un caso consulta &#x27;amigos de amigos&#x27;, rutas y conexiones repetidamente. ¿Documental o grafo?</p>
+<p><strong>Respuesta modelo:</strong> Grafo es mas natural porque la operacion dominante es recorrer relaciones.</p>
+<h1>PARTE F - Batch, streaming y tiempo de eventos</h1>
+<p>89 - Batch</p>
+<p>Define batch.</p>
+<p><strong>Respuesta modelo:</strong> Procesa conjuntos finitos de datos.</p>
+<p>90 - Streaming</p>
+<p>Define streaming.</p>
+<p><strong>Respuesta modelo:</strong> Procesa eventos continuos a medida que llegan, con semantica temporal y de estado.</p>
+<p>91 - Event time</p>
+<p>¿Que es event time?</p>
+<p><strong>Respuesta modelo:</strong> Momento en que el evento ocurrio en el dominio/origen.</p>
+<p>92 - Processing time</p>
+<p>¿Que es processing time?</p>
+<p><strong>Respuesta modelo:</strong> Momento en que el sistema procesa el evento.</p>
+<p>93 - Late event</p>
+<p>¿Que es un late event?</p>
+<p><strong>Respuesta modelo:</strong> Evento que llega despues de la ventana/umbral temporal esperado segun politica.</p>
+<p>94 - Ventanas</p>
+<p>¿Para que sirven las ventanas en streaming?</p>
+<p><strong>Respuesta modelo:</strong> Agrupar eventos por intervalos/criterios temporales para calcular agregados sobre flujo continuo.</p>
+<p>95 - Orden de llegada</p>
+<p>¿Por que arrival order no siempre coincide con event time?</p>
+<p><strong>Respuesta modelo:</strong> Por retrasos de red, buffers, reintentos, fuentes desconectadas o procesamiento distribuido.</p>
+<p>96 - Exactly-once</p>
+<p>¿Por que III.15 dice que exactly-once no es una casilla magica?</p>
+<p><strong>Respuesta modelo:</strong> Porque la garantia depende de extremo a extremo: fuente, procesamiento, estado, sink, reintentos e idempotencia/transacciones.</p>
+<p>97 - Batch vs streaming</p>
+<p>Informe nocturno de cierre mensual vs deteccion de fraude en segundos. ¿Que enfoque encaja mejor en cada uno?</p>
+<p><strong>Respuesta modelo:</strong> Cierre mensual: batch. Fraude con baja latencia: streaming/event processing, si el requisito lo justifica.</p>
+<p>98 - Lambda/Kappa</p>
+<p>¿III.15 exige memorizar arquitecturas Lambda/Kappa?</p>
+<p><strong>Respuesta modelo:</strong> No en los apuntes V2.1 citados. El foco es batch vs streaming, tiempo, ventanas, eventos tardios y semantica extremo a extremo.</p>
+<h1>PARTE G - Mini-supuestos integradores</h1>
+<p>99 - Expedientes transaccionales</p>
+<p>Sistema de expedientes: 200.000 expedientes/año, relaciones claras, transacciones, integridad y reporting moderado. Un proveedor propone Hadoop+NoSQL. ¿Que respondes?</p>
+<p><strong>Respuesta modelo:</strong> No esta justificado por defecto. Empezaria por relacional/OLTP, indices y reporting separado si hace falta. Exigir evidencia de necesidad distribuida.</p>
+<p>100 - Sesiones web</p>
+<p>Necesitas millones de sesiones con acceso casi exclusivo por identificador. ¿Que familia considerar?</p>
+<p><strong>Respuesta modelo:</strong> Key-value, evaluando TTL, consistencia, replicacion y seguridad.</p>
+<p>101 - Documentos variables</p>
+<p>Cada organismo envia documentos JSON con campos diferentes, se consultan por atributos y por id. ¿Que familia considerar?</p>
+<p><strong>Respuesta modelo:</strong> Documental, si el patron de acceso sigue los agregados y la flexibilidad de esquema aporta valor.</p>
+<p>102 - Relaciones antifraude</p>
+<p>Necesitas recorrer rapidamente relaciones entre cuentas, empresas, personas y transferencias. ¿Que familia considerar?</p>
+<p><strong>Respuesta modelo:</strong> Grafo, por consultas de relaciones/recorridos; podria coexistir con otras BBDD para otros patrones.</p>
+<p>103 - BI ministerial</p>
+<p>Se quieren indicadores historicos por año, territorio, tramite y organismo con drill-down. ¿Arquitectura base?</p>
+<p><strong>Respuesta modelo:</strong> Warehouse/OLAP con dimensiones, jerarquias y medidas, alimentado por procesos de integracion/gobierno.</p>
+<p>104 - Lake sin catalogo</p>
+<p>Un data lake contiene 8 PB sin catalogo, propietario ni retencion. ¿Que problema central?</p>
+<p><strong>Respuesta modelo:</strong> Gobierno: datos dificiles de descubrir/confiar, costes, privacidad, seguridad y retencion. Mas almacenamiento no resuelve calidad.</p>
+<p>105 - Fraude streaming</p>
+<p>Operaciones llegan continuamente y hay que puntuar riesgo en menos de 2 s. Estructura la solucion sin marcas.</p>
+<p><strong>Respuesta modelo:</strong> Ingestion de eventos -&gt; procesamiento streaming -&gt; features/estado -&gt; modelo/reglas -&gt; decision/alerta -&gt; almacenamiento analitico -&gt; monitorizacion; definir event time, late events, idempotencia, privacidad y metrica.</p>
+<p>106 - Pipeline batch</p>
+<p>Cada noche se procesan 20 TB de logs para estadisticas agregadas; la latencia de horas es aceptable. ¿Que enfoque?</p>
+<p><strong>Respuesta modelo:</strong> Batch distribuido puede ser razonable; Hadoop/MapReduce o motores similares segun ecosistema, coste y operacion.</p>
+<p>107 - CAP en practica</p>
+<p>Durante una particion, un servicio de consulta publica prefiere seguir respondiendo aunque temporalmente pueda servir una replica algo atrasada. ¿Que prioridad refleja?</p>
+<p><strong>Respuesta modelo:</strong> Favorece disponibilidad durante la particion aceptando menor consistencia temporal, segun garantias exactas.</p>
+<p>108 - Consistencia prioritaria</p>
+<p>Durante una particion, una operacion de saldo no debe aceptar decisiones contradictorias entre replicas. ¿Que prioridad?</p>
+<p><strong>Respuesta modelo:</strong> Favorecer consistencia, pudiendo rechazar/demorar operaciones si no puede garantizarse.</p>
+<p>109 - Supuesto de arquitectura</p>
+<p>Un organismo pide &#x27;plataforma Big Data&#x27;. ¿Que preguntas haces antes de dibujar tecnologia?</p>
+<p><strong>Respuesta modelo:</strong> Casos de uso, volumen/velocidad/variedad, SLA/latencia, fuentes, calidad, retencion, seguridad/RGPD, consumidores, batch/stream, consultas, consistencia, crecimiento, operacion, costes y skills.</p>
+<p>110 - Supuesto de 20 minutos</p>
+<p>Disena en una pagina una plataforma de datos publica con OLTP, BI historico y eventos en tiempo casi real.</p>
+<p><strong>Respuesta modelo:</strong> Separar OLTP relacional; ingestion batch/stream; lake/warehouse segun usos; motor distribuido solo donde aporte; catalogo/linaje/calidad; IAM/cifrado/retencion; NoSQL por patron concreto; observabilidad y costes; justificar SLA y consistencia. No hacer una &#x27;sopa de productos&#x27;.</p>
+<h1>Patron mental de examen</h1>
+<ul>
+<li>Define el problema: clasificacion, regresion, clustering, asociacion, anomalias o analitica.</li>
+<li>Empieza por negocio/datos; evita data leakage y elige metrica por coste de error.</li>
+<li>OLTP != OLAP; warehouse != lake; lakehouse intenta combinar capacidades.</li>
+<li>Hadoop clasico: HDFS + YARN + MapReduce. Spark es motor distribuido general y no exige HDFS.</li>
+<li>NoSQL se elige por patron de acceso: key-value, documental, wide-column o grafo.</li>
+<li>CAP se razona durante una particion; no repitas &#x27;dos de tres&#x27; sin contexto.</li>
+<li>Sharding distribuye; replicacion copia. Ninguno sustituye por si solo backup/gobierno.</li>
+<li>Batch procesa conjuntos finitos; streaming exige pensar en event time, ventanas, late events e idempotencia.</li>
+<li>En supuesto, justifica cada tecnologia por requisito y explica gobierno, seguridad, calidad, coste y observabilidad.</li>
+</ul>
+<p>Base nuclear: GSI A2 Bloque III V2.1, tema III.15. Se conserva Hadoop porque el BOE lo exige. Spark, Kafka, almacenamiento de objetos y formatos columnares se tratan solo como ejemplos actuales ya incluidos en los apuntes, no como sustitutos del temario.</p></main></body></html>

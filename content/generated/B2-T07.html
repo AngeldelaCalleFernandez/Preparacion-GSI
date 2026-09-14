@@ -1,0 +1,127 @@
+<article class="topic-content" data-topic-id="B2-T07" data-coverage-status="complete">
+<p>Material curado del corpus GSI A2 · apuntes V2.1 revisados. Procedencia editorial, no documento oficial.</p>
+<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B2-T07/estudio">Apuntes de estudio</a></li><li><a href="#temario/B2-T07/estudio-01">1. Alcance y actualización</a></li><li><a href="#temario/B2-T07/estudio-02">2. Contenedores</a></li><li><a href="#temario/B2-T07/estudio-03">3. Construcción de imágenes</a></li><li><a href="#temario/B2-T07/estudio-04">4. Contenedor vs máquina virtual</a></li><li><a href="#temario/B2-T07/estudio-05">5. Microservicios</a></li><li><a href="#temario/B2-T07/estudio-06">6. Monolito modular vs microservicios</a></li><li><a href="#temario/B2-T07/estudio-07">7. Datos y consistencia</a></li><li><a href="#temario/B2-T07/estudio-08">8. Kubernetes: arquitectura</a></li><li><a href="#temario/B2-T07/estudio-09">9. Objetos principales</a></li><li><a href="#temario/B2-T07/estudio-10">10. Recursos, scheduling y salud</a></li><li><a href="#temario/B2-T07/estudio-11">11. Despliegue</a></li><li><a href="#temario/B2-T07/estudio-12">12. Escalado</a></li><li><a href="#temario/B2-T07/estudio-13">13. Observabilidad</a></li><li><a href="#temario/B2-T07/estudio-14">14. Resiliencia</a></li><li><a href="#temario/B2-T07/estudio-15">15. Seguridad</a></li><li><a href="#temario/B2-T07/estudio-16">16. Test</a></li><li><a href="#temario/B2-T07/estudio-17">17. Supuesto</a></li><li><a href="#temario/B2-T07/estudio-18">18. Resumen II.07</a></li><li><a href="#temario/B2-T07/repaso">Resumen de repaso</a></li><li><a href="#temario/B2-T07/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B2-T07/repaso-02">Claves de test</a></li><li><a href="#temario/B2-T07/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B2-T07/repaso-04">Actualización 2026</a></li><li><a href="#temario/B2-T07/repaso-05">Fuentes base del material</a></li></ol></nav>
+<h2 id="estudio">Apuntes de estudio</h2>
+<h3 id="estudio-01">1. Alcance y actualización</h3>
+<p>El BOE pide expresamente modelo de desarrollo basado en contenedores y microservicios, arquitectura/soluciones, despliegue, monitorización y escalado. Las fuentes A1 aportan desarrollo web, integración continua y gestión/configuración; se completan con conceptos actuales de OCI y Kubernetes.</p>
+<p><strong>Actualización 21/08/2026:</strong> Kubernetes mantiene oficialmente las tres ramas menores 1.36, 1.35 y 1.34. La 1.37 está prevista para el 26/08/2026, por lo que no se estudia como versión estable en esta edición. La V2 prioriza objetos y arquitectura estables, no números de parche.</p>
+<h3 id="estudio-02">2. Contenedores</h3>
+<p>Un contenedor empaqueta aplicación, bibliotecas y configuración de ejecución, aislando procesos mediante mecanismos del sistema operativo. Comparte el kernel del host y por ello suele iniciar más rápido y consumir menos que una VM completa. El aislamiento no es idéntico al de una VM: host/kernel y configuración de runtime son parte de la superficie de seguridad.</p>
+<p><strong>Imagen</strong> es una plantilla inmutable por capas; <strong>contenedor</strong> es una instancia en ejecución. Un <strong>registry</strong> almacena y distribuye imágenes. OCI define especificaciones interoperables para imágenes y runtimes.</p>
+<h3 id="estudio-03">3. Construcción de imágenes</h3>
+<p>Buenas prácticas: imágenes mínimas, versiones fijadas, multi-stage builds, usuario no root, dependencias verificadas, no incluir secretos, SBOM, escaneo de vulnerabilidades y firma/procedencia cuando la cadena de suministro lo requiera. El principio es «build once, deploy many»: promover el mismo artefacto entre entornos.</p>
+<h3 id="estudio-04">4. Contenedor vs máquina virtual</h3>
+<table>
+<tr>
+<th scope="col"><p>Aspecto</p></th>
+<th scope="col"><p>Contenedor</p></th>
+<th scope="col"><p>VM</p></th>
+</tr>
+<tr>
+<td><p>Virtualiza</p></td>
+<td><p>SO/procesos</p></td>
+<td><p>Hardware</p></td>
+</tr>
+<tr>
+<td><p>Kernel</p></td>
+<td><p>Comparte host</p></td>
+<td><p>SO invitado propio</p></td>
+</tr>
+<tr>
+<td><p>Arranque</p></td>
+<td><p>Rápido</p></td>
+<td><p>Más pesado</p></td>
+</tr>
+<tr>
+<td><p>Aislamiento</p></td>
+<td><p>Alto, dependiente del kernel/runtime</p></td>
+<td><p>Fuerte frontera de virtualización</p></td>
+</tr>
+<tr>
+<td><p>Densidad</p></td>
+<td><p>Mayor normalmente</p></td>
+<td><p>Menor normalmente</p></td>
+</tr>
+<tr>
+<td><p>Uso</p></td>
+<td><p>Empaquetado y despliegue de apps</p></td>
+<td><p>Aislamiento de SO/cargas completas</p></td>
+</tr>
+</table>
+<p>No son tecnologías excluyentes: es frecuente ejecutar contenedores dentro de máquinas virtuales.</p>
+<h3 id="estudio-05">5. Microservicios</h3>
+<p>Una arquitectura de microservicios divide un sistema en servicios desplegables de forma independiente, alineados con capacidades de negocio y responsables de sus datos/lógica en la medida apropiada. La frontera debe responder al dominio; dividir por tablas, capas técnicas o equipos sin cohesión genera un monolito distribuido.</p>
+<p>Ventajas potenciales: despliegue independiente, escalado selectivo, autonomía tecnológica y aislamiento de fallos. Costes: red, consistencia distribuida, observabilidad, más artefactos, automatización, seguridad este-oeste, gobernanza de APIs y operación.</p>
+<h3 id="estudio-06">6. Monolito modular vs microservicios</h3>
+<p>Un <strong>monolito modular</strong> puede ser una mejor solución si el equipo es pequeño, el dominio aún cambia y no existen necesidades de escalado independiente. Los microservicios se justifican cuando hay fronteras de dominio claras, equipos con autonomía y beneficios operativos reales. No se puntúa mejor un supuesto por escribir «microservicios» sin justificar.</p>
+<h3 id="estudio-07">7. Datos y consistencia</h3>
+<p>Evita una base de datos compartida usada directamente por todos los servicios porque acopla esquemas y despliegues. Patrones: database-per-service, APIs/eventos, Saga para transacciones distribuidas, outbox para publicación fiable, CQRS en casos justificados. La consistencia eventual requiere diseñar estados intermedios, compensaciones y experiencia de usuario.</p>
+<h3 id="estudio-08">8. Kubernetes: arquitectura</h3>
+<p>Kubernetes es un orquestador declarativo. En el <strong>control plane</strong> destacan API Server, scheduler, controller manager y almacenamiento de estado del clúster. En los nodos se ejecutan kubelet, runtime de contenedores y componentes de red/proxy según implementación.</p>
+<h3 id="estudio-09">9. Objetos principales</h3>
+<ul>
+<li><strong>Pod</strong>: unidad mínima de despliegue; uno o varios contenedores que comparten red y volúmenes.</li>
+<li><strong>Deployment</strong>: gestiona despliegues declarativos de cargas normalmente stateless y ReplicaSets.</li>
+<li><strong>ReplicaSet</strong>: mantiene el número deseado de réplicas.</li>
+<li><strong>StatefulSet</strong>: identidades estables y patrones adecuados para determinadas cargas con estado.</li>
+<li><strong>DaemonSet</strong>: una instancia por nodo seleccionado, típico para agentes.</li>
+<li><strong>Job/CronJob</strong>: trabajo finito/periódico.</li>
+<li><strong>Service</strong>: identidad/acceso de red estable a un conjunto de pods.</li>
+<li><strong>Ingress/Gateway</strong>: entrada HTTP/otros según controlador/API.</li>
+<li><strong>ConfigMap</strong>: configuración no secreta.</li>
+<li><strong>Secret</strong>: objeto para datos sensibles; debe protegerse adicionalmente con políticas, cifrado y gestión de secretos.</li>
+<li><strong>Namespace</strong>: partición lógica y ámbito de nombres/políticas.</li>
+</ul>
+<p>Un <strong>Service de Kubernetes</strong> no es un microservicio de negocio. Un Pod tampoco equivale necesariamente a un contenedor.</p>
+<h3 id="estudio-10">10. Recursos, scheduling y salud</h3>
+<p>Los <strong>requests</strong> expresan recursos necesarios para planificación; los <strong>limits</strong> restringen consumo según recurso/runtime. Un dimensionamiento incorrecto produce infrautilización, throttling u OOM. El scheduler considera recursos, afinidades, taints/tolerations y otras restricciones.</p>
+<p>Probes: <strong>startup</strong> para inicio lento, <strong>readiness</strong> para decidir si recibe tráfico y <strong>liveness</strong> para detectar necesidad de reinicio. Una liveness mal diseñada puede empeorar una incidencia.</p>
+<h3 id="estudio-11">11. Despliegue</h3>
+<p>Estrategias: rolling update, recreate, blue/green y canary. Rolling reduce interrupción progresivamente; blue/green facilita conmutación entre dos entornos; canary expone una parte del tráfico a la nueva versión. Debe existir rollback y compatibilidad de cambios de esquema.</p>
+<p>La CI crea/valida artefactos; la entrega/despliegue automatiza promoción. GitOps utiliza un repositorio declarativo como fuente de estado deseado y un reconciliador aplica cambios.</p>
+<h3 id="estudio-12">12. Escalado</h3>
+<ul>
+<li><strong>Horizontal Pod Autoscaler</strong>: ajusta réplicas según métricas.</li>
+<li><strong>Vertical</strong>: ajusta recursos por pod mediante mecanismos apropiados.</li>
+<li><strong>Cluster autoscaling</strong>: ajusta capacidad de nodos.</li>
+<li><strong>Escalado de aplicación</strong>: requiere stateless o externalización/partición adecuada del estado.</li>
+</ul>
+<p>Escalar una capa no resuelve cuellos de botella en BD, colas, terceros o almacenamiento. Se debe medir la cadena completa.</p>
+<h3 id="estudio-13">13. Observabilidad</h3>
+<p>Tres señales clásicas: <strong>logs, métricas y trazas</strong>. Añade eventos y perfiles cuando sean útiles. En microservicios es esencial correlacionar peticiones con trace/request IDs. Métricas: latencia, tráfico, errores, saturación, CPU/memoria, cola, disponibilidad y objetivos SLI/SLO.</p>
+<p>Monitorización indica estado conocido; observabilidad busca poder inferir causas internas a partir de señales. Alertas deben orientarse a impacto/SLI y evitar ruido.</p>
+<h3 id="estudio-14">14. Resiliencia</h3>
+<p>Timeouts, retries con backoff/jitter, circuit breaker, bulkheads, rate limiting e idempotencia. Reintentar sin límites puede amplificar una caída. Un retry solo es seguro si la operación es idempotente o se implementa deduplicación.</p>
+<h3 id="estudio-15">15. Seguridad</h3>
+<p>RBAC de mínimo privilegio, aislamiento por namespaces/políticas de red, protección del API, imágenes verificadas, escaneo, secrets externos cuando proceda, admission policies, runtime security, logs y actualizaciones. Proteger la cadena de suministro desde repositorio hasta registry y clúster.</p>
+<h3 id="estudio-16">16. Test</h3>
+<ul>
+<li>Imagen ≠ contenedor.</li>
+<li>Contenedor ≠ VM.</li>
+<li>Microservicio ≠ API pequeña.</li>
+<li>Pod ≠ contenedor.</li>
+<li>Service Kubernetes ≠ microservicio.</li>
+<li>Deployment gestiona ReplicaSets; ReplicaSet mantiene réplicas.</li>
+<li>Readiness ≠ liveness ≠ startup.</li>
+<li>Request ≠ limit.</li>
+<li>Stateless facilita escalado, pero no significa «sin datos».</li>
+<li>Autoscaling no elimina cuellos de botella externos.</li>
+<li>Rolling/blue-green/canary son estrategias distintas.</li>
+</ul>
+<h3 id="estudio-17">17. Supuesto</h3>
+<p>Primero decide si microservicios aportan valor. Después: registry, pipeline, despliegue declarativo, recursos, probes, redes, secrets, persistencia, HA, autoscaling, logs/métricas/trazas, backups y DR. Añade compatibilidad de versiones, estrategia de datos, rollback y controles de supply chain.</p>
+<h3 id="estudio-18">18. Resumen II.07</h3>
+<p>Domina contenedor/imagen/registry, ventajas y costes de microservicios, objetos Kubernetes, despliegue, probes, escalado, observabilidad y resiliencia. No memorices parches: razona arquitectura.</p>
+<h2 id="repaso">Resumen de repaso</h2>
+<h3 id="repaso-01">Núcleo de estudio</h3>
+<p>Un contenedor empaqueta aplicación y dependencias compartiendo el kernel del host; una VM virtualiza hardware y ejecuta un SO invitado completo. Imágenes inmutables se instancian como contenedores; OCI estandariza formatos/runtime. Microservicios dividen el sistema en servicios pequeños, autónomos y desplegables de forma independiente, normalmente alineados con capacidades de negocio. Beneficios: despliegue independiente, escalado selectivo y autonomía; costes: complejidad distribuida, red, observabilidad, consistencia y operación. Kubernetes orquesta pods, deployments, services, config/secrets, namespaces, scheduling, autoescalado y recuperación. Añade service mesh como opción, health checks, rolling updates, logs/métricas/trazas y autoscaling.</p>
+<h3 id="repaso-02">Claves de test</h3>
+<p>Contenedor ≠ VM; pod ≠ contenedor; Service de Kubernetes ≠ microservicio de negocio. ReplicaSet mantiene réplicas; Deployment gestiona despliegues declarativos. Stateless facilita escalado; estado persistente requiere almacenamiento y diseño específico. No uses “microservicios” como sinónimo de “muchas APIs”.</p>
+<h3 id="repaso-03">Enfoque para supuesto práctico</h3>
+<p>En supuesto valora si microservicios están justificados. Incluye registro de imágenes, CI/CD, escaneo, secretos, redes, observabilidad, límites de recursos, HA, persistencia, backup y estrategia de despliegue. Kubernetes está en versiones 1.36/1.35/1.34 soportadas en 2026, pero el examen debe centrarse en conceptos, no en una versión concreta.</p>
+<h3 id="repaso-04">Actualización 2026</h3>
+<p>Actualización 2026: Kubernetes mantiene las ramas 1.36, 1.35 y 1.34; estudiar objetos y arquitectura estable, no números de parche.</p>
+<h3 id="repaso-05">Fuentes base del material</h3>
+<p>A1 065 + 097 + 100 + 132 y RELEASE Microservicios.</p>
+<section class="topic-content__sources"><h2 id="fuentes">Fuentes y localizadores</h2><ul><li><a href="https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)</a> · II.07 · 2026-08-21</li><li><a href="https://docs.google.com/document/d/1h7n4dFYafS_3VMuL55TnEuVKhqaTheUoL-thDFQSr9w/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE II — RESUMEN MAESTRO DE REPASO (16 temas)</a> · II.07 · 2026-08-21</li></ul></section>
+</article>

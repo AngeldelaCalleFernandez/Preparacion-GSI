@@ -1,0 +1,1170 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GSI A2 — PRÁCTICA ACTIVA 16 — LICENCIAS, PROTECCIÓN JURÍDICA Y DRM — CUADERNO</title><link rel="stylesheet" href="../../assets/css/styles.css"></head><body><main class="shell topic-content"><p><a href="../../index.html#practica">Volver a práctica escrita</a></p><p>Material curado GSI A2. Fuente: <a href="https://docs.google.com/document/d/1nygM7RC9yie9EoEYnIZiBfCfnQSq5V3YdZNYqZFkLY8/edit">documento original de Drive</a>.</p><p>GSI A2 — PRÁCTICA ACTIVA 16</p>
+<p><strong>LICENCIAS · SOFTWARE LIBRE/PROPIETARIO · PROTECCIÓN JURÍDICA · DRM</strong></p>
+<p>160 preguntas · 4 opciones · II.14 cierre del último hueco rojo</p>
+<p><strong>CUADERNO DE TRABAJO</strong></p>
+<h1>Cómo usar esta práctica</h1>
+<p>Objetivo: cerrar II.14 como último tema sin práctica específica y entrenar tanto discriminación conceptual como decisión contractual y de arquitectura.</p>
+<p>Método: responde sin consultar apuntes. Marca además cada fallo como concepto, licencia/compatibilidad, regla jurídica, DRM/riesgo o decisión de contratación. Repite a 48–72 h solo las preguntas falladas o dudosas.</p>
+<p>Base nuclear: GSI A2 — Bloque II — Apuntes completos V2.1 revisados. Las ampliaciones sensibles se han contrastado con fuentes oficiales vigentes a 24/08/2026.</p>
+<h2>Distribución</h2>
+<table>
+<tr>
+<th scope="col"><p><strong>Preguntas</strong></p></th>
+<th scope="col"><p><strong>Bloque</strong></p></th>
+<th scope="col"><p><strong>Función</strong></p></th>
+</tr>
+<tr>
+<td><p><strong>1–20</strong></p></td>
+<td><p><strong>Software libre, propietario y open source</strong></p></td>
+<td><p>Conceptos base y trampas: libre ≠ gratis; source-available ≠ libre.</p></td>
+</tr>
+<tr>
+<td><p><strong>21–40</strong></p></td>
+<td><p><strong>Licencias permisivas</strong></p></td>
+<td><p>MIT, BSD, Apache-2.0, avisos, patentes y reutilización.</p></td>
+</tr>
+<tr>
+<td><p><strong>41–60</strong></p></td>
+<td><p><strong>Copyleft</strong></p></td>
+<td><p>GPL, LGPL, AGPL, distribución, linking y red.</p></td>
+</tr>
+<tr>
+<td><p><strong>61–80</strong></p></td>
+<td><p><strong>EUPL, compatibilidad y dominio público</strong></p></td>
+<td><p>EUPL-1.2, SPDX, CC y compatibilidad de licencias.</p></td>
+</tr>
+<tr>
+<td><p><strong>81–100</strong></p></td>
+<td><p><strong>Protección jurídica</strong></p></td>
+<td><p>TRLPI, expresión/ideas, titularidad, contratos y explotación.</p></td>
+</tr>
+<tr>
+<td><p><strong>101–120</strong></p></td>
+<td><p><strong>Límites e interoperabilidad</strong></p></td>
+<td><p>Usuario legítimo, copia, descompilación limitada, patentes, marcas y secretos.</p></td>
+</tr>
+<tr>
+<td><p><strong>121–140</strong></p></td>
+<td><p><strong>DRM</strong></p></td>
+<td><p>Medidas técnicas, privacidad, accesibilidad, continuidad y reversibilidad.</p></td>
+</tr>
+<tr>
+<td><p><strong>141–160</strong></p></td>
+<td><p><strong>Casos integradores</strong></p></td>
+<td><p>SBOM, SAM, TCO, lock-in, contratación y supply chain.</p></td>
+</tr>
+</table>
+<h2>Fuentes oficiales de contraste</h2>
+<ul>
+<li><a href="https://www.gnu.org/philosophy/free-sw.es">FSF — Definición de software libre</a></li>
+<li><a href="https://opensource.org/osd">OSI — Open Source Definition</a></li>
+<li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-1996-8930">BOE — RDL 1/1996, TRLPI (programas de ordenador)</a></li>
+<li><a href="https://interoperable-europe.ec.europa.eu/collection/eupl/eupl-text-eupl-12">Interoperable Europe — EUPL-1.2</a></li>
+<li><a href="https://www.gnu.org/licenses/gpl-faq.html">GNU — FAQ GPL/AGPL</a></li>
+<li><a href="https://www.apache.org/licenses/LICENSE-2.0">Apache Software Foundation — Apache License 2.0</a></li>
+</ul>
+<h1>1. Software libre, propietario y open source</h1>
+<p><strong>1. ¿Qué caracteriza mejor al software propietario?</strong></p>
+<p><strong>A) </strong>El titular conserva los derechos y concede facultades de uso según la licencia y la ley.</p>
+<p><strong>B) </strong>Debe ser necesariamente de pago.</p>
+<p><strong>C) </strong>Nunca puede distribuirse gratuitamente.</p>
+<p><strong>D) </strong>Siempre impide cualquier copia de seguridad.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>2. ¿Cuál de estas afirmaciones sobre software libre es correcta?</strong></p>
+<p><strong>A) </strong>Debe entregarse siempre sin coste.</p>
+<p><strong>B) </strong>Prohíbe cobrar por soporte.</p>
+<p><strong>C) </strong>Puede ser comercial y venderse, siempre que se respeten las libertades y la licencia.</p>
+<p><strong>D) </strong>Obliga a que todo software que se ejecute junto a él sea libre.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>3. Según la definición de la FSF, la libertad 0 consiste en:</strong></p>
+<p><strong>A) </strong>Acceder gratuitamente al código fuente.</p>
+<p><strong>B) </strong>Ejecutar el programa como se desee, para cualquier propósito.</p>
+<p><strong>C) </strong>Redistribuir únicamente copias sin modificar.</p>
+<p><strong>D) </strong>Publicar siempre cualquier modificación privada.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>4. Para que la libertad de estudiar y modificar un programa sea efectiva, ¿qué es condición necesaria?</strong></p>
+<p><strong>A) </strong>Que el programa esté en dominio público.</p>
+<p><strong>B) </strong>Que la licencia sea necesariamente GPL.</p>
+<p><strong>C) </strong>Que el programa sea gratuito.</p>
+<p><strong>D) </strong>Acceso al código fuente en una forma adecuada para modificarlo.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>5. ¿Qué libertad de software libre permite redistribuir copias del programa?</strong></p>
+<p><strong>A) </strong>La libertad 0.</p>
+<p><strong>B) </strong>La libertad 2.</p>
+<p><strong>C) </strong>La libertad 1.</p>
+<p><strong>D) </strong>La libertad 3 exclusivamente para versiones modificadas.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>6. ¿Qué libertad se refiere específicamente a distribuir versiones modificadas?</strong></p>
+<p><strong>A) </strong>La libertad 0.</p>
+<p><strong>B) </strong>La libertad 1 únicamente.</p>
+<p><strong>C) </strong>La libertad 2 exclusivamente.</p>
+<p><strong>D) </strong>La libertad 3.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>7. Un programa cuyo código puede verse en GitHub, pero cuya licencia prohíbe modificarlo, ¿es automáticamente software libre?</strong></p>
+<p><strong>A) </strong>No; ver el código no basta si faltan libertades esenciales.</p>
+<p><strong>B) </strong>Sí, porque source-available equivale a libre.</p>
+<p><strong>C) </strong>Sí, si la descarga es gratuita.</p>
+<p><strong>D) </strong>Sí, siempre que no tenga DRM.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>8. ¿Qué afirma la Open Source Definition respecto al concepto “open source”?</strong></p>
+<p><strong>A) </strong>Equivale a dominio público.</p>
+<p><strong>B) </strong>Obliga a usar siempre copyleft fuerte.</p>
+<p><strong>C) </strong>No se reduce a poder ver el código: las condiciones de distribución deben cumplir criterios adicionales.</p>
+<p><strong>D) </strong>Prohíbe el uso comercial.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>9. ¿Cuál de estas condiciones es coherente con la Open Source Definition?</strong></p>
+<p><strong>A) </strong>La licencia puede prohibir todo uso comercial.</p>
+<p><strong>B) </strong>La licencia puede exigir una tasa por cada redistribución.</p>
+<p><strong>C) </strong>La licencia no debe discriminar a personas, grupos o campos de actividad.</p>
+<p><strong>D) </strong>El código fuente puede omitirse siempre sin forma de obtenerlo.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>10. ¿Qué relación existe normalmente entre software libre y open source?</strong></p>
+<p><strong>A) </strong>Hay gran solapamiento práctico, aunque las definiciones y el énfasis filosófico no son idénticos.</p>
+<p><strong>B) </strong>Son categorías jurídicamente idénticas en todo caso.</p>
+<p><strong>C) </strong>Todo open source es dominio público.</p>
+<p><strong>D) </strong>El software libre nunca puede ser open source.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>11. ¿Cuál de estas frases es una trampa de examen?</strong></p>
+<p><strong>A) </strong>“El software libre puede ser comercial”.</p>
+<p><strong>B) </strong>“El acceso al fuente es necesario para estudiar y modificar”.</p>
+<p><strong>C) </strong>“Una licencia establece derechos y condiciones”.</p>
+<p><strong>D) </strong>“Si es gratuito, entonces es software libre”.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>12. Una aplicación propietaria se ofrece sin coste a todos los ciudadanos. ¿Qué puede afirmarse?</strong></p>
+<p><strong>A) </strong>Pasa automáticamente a ser software libre.</p>
+<p><strong>B) </strong>Puede seguir siendo propietaria aunque su precio sea cero.</p>
+<p><strong>C) </strong>Queda en dominio público.</p>
+<p><strong>D) </strong>Su código debe publicarse obligatoriamente.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>13. ¿Cuál es una diferencia correcta entre “propietario” y “comercial”?</strong></p>
+<p><strong>A) </strong>Todo software comercial es propietario.</p>
+<p><strong>B) </strong>Todo software propietario se vende.</p>
+<p><strong>C) </strong>El software libre no admite actividad económica.</p>
+<p><strong>D) </strong>No son sinónimos: puede haber software libre comercial y software propietario gratuito.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>14. ¿Qué describe mejor una licencia de software?</strong></p>
+<p><strong>A) </strong>Un mecanismo técnico de cifrado.</p>
+<p><strong>B) </strong>El instrumento que fija facultades, condiciones y obligaciones de uso, copia, modificación o distribución según el caso.</p>
+<p><strong>C) </strong>Una garantía de ausencia de vulnerabilidades.</p>
+<p><strong>D) </strong>Un registro obligatorio en todos los casos.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>15. ¿Qué afirmación sobre modificaciones privadas es más correcta en términos generales de software libre?</strong></p>
+<p><strong>A) </strong>Toda modificación debe subirse a Internet en 24 horas.</p>
+<p><strong>B) </strong>Solo las licencias permisivas permiten modificar en privado.</p>
+<p><strong>C) </strong>Una licencia libre no convierte automáticamente toda modificación privada en una publicación obligatoria.</p>
+<p><strong>D) </strong>La libertad 1 prohíbe usar una versión modificada internamente.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>16. ¿Qué significa “source-available” de forma prudente?</strong></p>
+<p><strong>A) </strong>Que el código puede estar disponible para consulta, pero hay que revisar la licencia para saber qué derechos se conceden.</p>
+<p><strong>B) </strong>Que la licencia es OSI-approved automáticamente.</p>
+<p><strong>C) </strong>Que es necesariamente copyleft.</p>
+<p><strong>D) </strong>Que está en dominio público.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>17. Una licencia que prohíbe utilizar el programa en un sector económico concreto, ¿encaja bien con la Open Source Definition?</strong></p>
+<p><strong>A) </strong>No, porque la OSD impide discriminar por campo de actividad.</p>
+<p><strong>B) </strong>Sí, si permite ver el código.</p>
+<p><strong>C) </strong>Sí, si no cobra royalties.</p>
+<p><strong>D) </strong>Sí, si la prohibición solo afecta a empresas.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>18. ¿Qué opción contiene solo conceptos que conviene separar?</strong></p>
+<p><strong>A) </strong>GPL/AGPL como sinónimos exactos.</p>
+<p><strong>B) </strong>Precio/licencia como la misma dimensión.</p>
+<p><strong>C) </strong>Código fuente/binario como términos equivalentes.</p>
+<p><strong>D) </strong>Libre/gratuito, open source/dominio público y licencia/DRM.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>19. En una comparación para una Administración, ¿qué criterio es inadecuado?</strong></p>
+<p><strong>A) </strong>Evaluar TCO.</p>
+<p><strong>B) </strong>Elegir “libre” únicamente porque se presupone coste de licencia cero.</p>
+<p><strong>C) </strong>Valorar soporte y comunidad.</p>
+<p><strong>D) </strong>Revisar interoperabilidad y reversibilidad.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>20. ¿Qué enfoque demuestra mejor comprensión del tema?</strong></p>
+<p><strong>A) </strong>Clasificar todo solo como gratis o de pago.</p>
+<p><strong>B) </strong>Asumir que código visible equivale a dominio público.</p>
+<p><strong>C) </strong>Separar libertades, licencia, titularidad, modelo económico y mecanismo técnico.</p>
+<p><strong>D) </strong>Usar “open source”, “freeware” y “libre” como sinónimos.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<h1>2. Licencias permisivas: MIT, BSD y Apache-2.0</h1>
+<p><strong>21. ¿Qué rasgo general caracteriza a una licencia permisiva?</strong></p>
+<p><strong>A) </strong>Obliga siempre a publicar todo el código de la aplicación final.</p>
+<p><strong>B) </strong>Permite reutilización amplia con obligaciones relativamente reducidas, incluso dentro de software propietario según sus términos.</p>
+<p><strong>C) </strong>Prohíbe la distribución comercial.</p>
+<p><strong>D) </strong>Equivale a renunciar a todos los derechos.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>22. ¿Cuál es un ejemplo habitual de licencia permisiva?</strong></p>
+<p><strong>A) </strong>AGPL-3.0.</p>
+<p><strong>B) </strong>GPL-3.0.</p>
+<p><strong>C) </strong>EUPL-1.2.</p>
+<p><strong>D) </strong>MIT.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>23. ¿Qué familia incluye ejemplos como BSD y MIT?</strong></p>
+<p><strong>A) </strong>Copyleft fuerte.</p>
+<p><strong>B) </strong>DRM contractual.</p>
+<p><strong>C) </strong>Licencias permisivas.</p>
+<p><strong>D) </strong>Dominio público necesariamente.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>24. ¿Qué debe hacerse antes de reutilizar código MIT o BSD en un producto?</strong></p>
+<p><strong>A) </strong>Leer y cumplir sus avisos y condiciones; “permisiva” no significa “sin obligaciones”.</p>
+<p><strong>B) </strong>Suprimir siempre todos los avisos de copyright.</p>
+<p><strong>C) </strong>Relicenciar el código original como propietario eliminando atribución.</p>
+<p><strong>D) </strong>Asumir que no existe copyright.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>25. ¿Qué afirmación sobre Apache License 2.0 es correcta?</strong></p>
+<p><strong>A) </strong>No concede ningún derecho de copyright.</p>
+<p><strong>B) </strong>Es copyleft fuerte idéntico a GPL.</p>
+<p><strong>C) </strong>Incluye una concesión explícita de licencia de patentes bajo sus condiciones.</p>
+<p><strong>D) </strong>Prohíbe uso comercial.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>26. ¿Qué distingue de forma útil Apache-2.0 frente a una descripción mínima de MIT?</strong></p>
+<p><strong>A) </strong>Apache-2.0 regula expresamente cuestiones de patentes con más detalle.</p>
+<p><strong>B) </strong>Apache-2.0 impide crear obras derivadas.</p>
+<p><strong>C) </strong>MIT obliga a publicar fuente de cualquier derivado.</p>
+<p><strong>D) </strong>MIT es una licencia de contenido, no de software.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>27. Una organización integra una biblioteca permisiva en un producto cerrado. ¿Qué conclusión es prudente?</strong></p>
+<p><strong>A) </strong>Es imposible con cualquier licencia permisiva.</p>
+<p><strong>B) </strong>Puede ser posible, pero deben respetarse exactamente la licencia, avisos y demás obligaciones aplicables.</p>
+<p><strong>C) </strong>La biblioteca pasa automáticamente a dominio público.</p>
+<p><strong>D) </strong>No hace falta conservar evidencia de licencia.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>28. ¿Qué error debe evitarse con licencias permisivas?</strong></p>
+<p><strong>A) </strong>Reconocer que puede existir atribución.</p>
+<p><strong>B) </strong>Mantener inventario de dependencias.</p>
+<p><strong>C) </strong>Revisar patentes cuando proceda.</p>
+<p><strong>D) </strong>Interpretar “permisiva” como “puedo borrar copyright y condiciones”.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>29. ¿Qué documento interno ayuda a cumplir avisos de terceros?</strong></p>
+<p><strong>A) </strong>Un listado de contraseñas.</p>
+<p><strong>B) </strong>Un diagrama de red.</p>
+<p><strong>C) </strong>Una copia del ejecutable sin metadatos.</p>
+<p><strong>D) </strong>Un inventario de componentes y sus licencias, acompañado de ficheros NOTICE/licencias cuando proceda.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>30. ¿Qué es más correcto sobre el uso comercial bajo MIT/BSD/Apache-2.0?</strong></p>
+<p><strong>A) </strong>Está prohibido por definición.</p>
+<p><strong>B) </strong>Generalmente está permitido conforme a sus términos.</p>
+<p><strong>C) </strong>Solo lo permite Apache-2.0.</p>
+<p><strong>D) </strong>Convierte automáticamente la licencia en propietaria.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>31. Si una dependencia está bajo Apache-2.0, ¿qué no debería asumirse?</strong></p>
+<p><strong>A) </strong>Que todas las patentes del mundo quedan licenciadas sin límites.</p>
+<p><strong>B) </strong>Que existe una sección específica de patente.</p>
+<p><strong>C) </strong>Que hay condiciones de redistribución.</p>
+<p><strong>D) </strong>Que conviene conservar avisos aplicables.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>32. ¿Qué ventaja organizativa suele aportar una licencia permisiva?</strong></p>
+<p><strong>A) </strong>Garantía de soporte de por vida.</p>
+<p><strong>B) </strong>Ausencia total de vulnerabilidades.</p>
+<p><strong>C) </strong>Menor fricción para combinar código con otros modelos de licencia, aunque sigue siendo necesario revisar compatibilidad.</p>
+<p><strong>D) </strong>Eliminación del riesgo de cadena de suministro.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>33. ¿Cuál es la mejor práctica al incorporar una librería BSD?</strong></p>
+<p><strong>A) </strong>Registrar versión, origen, licencia y avisos que deban conservarse.</p>
+<p><strong>B) </strong>Copiarla y eliminar cualquier referencia al origen.</p>
+<p><strong>C) </strong>Confiar en que el nombre “BSD” basta sin leer texto/licencia exacta.</p>
+<p><strong>D) </strong>Usar siempre la versión más nueva sin pruebas.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>34. ¿Qué afirmación sobre las licencias permisivas es falsa?</strong></p>
+<p><strong>A) </strong>Pueden permitir integración en software propietario.</p>
+<p><strong>B) </strong>Suelen exigir mantener determinadas notas de copyright/licencia.</p>
+<p><strong>C) </strong>Obligan necesariamente a que todo el programa combinado se distribuya bajo la misma licencia.</p>
+<p><strong>D) </strong>Deben analizarse por su texto y versión concreta.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>35. En un expediente de contratación, ¿qué conviene exigir respecto a componentes permisivos?</strong></p>
+<p><strong>A) </strong>Solo el nombre comercial de la aplicación.</p>
+<p><strong>B) </strong>Que no exista ningún componente de terceros.</p>
+<p><strong>C) </strong>Que todos los componentes sean GPL.</p>
+<p><strong>D) </strong>Inventario/SBOM y cumplimiento de atribuciones y condiciones.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>36. ¿Qué concepto se relaciona directamente con saber qué licencias llevan las dependencias?</strong></p>
+<p><strong>A) </strong>RPO.</p>
+<p><strong>B) </strong>SBOM e inventario de componentes.</p>
+<p><strong>C) </strong>BGP.</p>
+<p><strong>D) </strong>CPI de valor ganado.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>37. ¿Por qué no basta con saber que una licencia es “permisiva”?</strong></p>
+<p><strong>A) </strong>Porque todas son jurídicamente inválidas en Europa.</p>
+<p><strong>B) </strong>Porque hay que conocer la licencia y versión exactas y sus requisitos concretos.</p>
+<p><strong>C) </strong>Porque ninguna permite redistribución.</p>
+<p><strong>D) </strong>Porque todas incluyen idéntica cláusula de patentes.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>38. ¿Cuál de estas parejas está bien clasificada?</strong></p>
+<p><strong>A) </strong>MIT → permisiva; GPL → copyleft.</p>
+<p><strong>B) </strong>MIT → copyleft fuerte; GPL → permisiva.</p>
+<p><strong>C) </strong>Apache-2.0 → dominio público; BSD → DRM.</p>
+<p><strong>D) </strong>BSD → licencia propietaria; MIT → AGPL.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>39. Una empresa modifica código Apache-2.0 y lo distribuye dentro de un producto. ¿Qué enfoque es correcto?</strong></p>
+<p><strong>A) </strong>Asumir que puede eliminar toda referencia a terceros.</p>
+<p><strong>B) </strong>Publicar obligatoriamente todo el producto bajo AGPL.</p>
+<p><strong>C) </strong>Revisar y cumplir las condiciones de Apache-2.0, incluidos avisos y las reglas aplicables a modificaciones/NOTICE.</p>
+<p><strong>D) </strong>Tratar Apache-2.0 como si fuera una licencia sin texto.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>40. ¿Qué frase resume mejor las permisivas para test?</strong></p>
+<p><strong>A) </strong>Permisiva significa dominio público.</p>
+<p><strong>B) </strong>Permisiva significa sin uso comercial.</p>
+<p><strong>C) </strong>Permisiva significa copyleft de red.</p>
+<p><strong>D) </strong>Amplia reutilización no equivale a ausencia de copyright ni de obligaciones.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<h1>3. Copyleft: GPL, LGPL y AGPL</h1>
+<p><strong>41. ¿Qué busca el copyleft, de forma simplificada?</strong></p>
+<p><strong>A) </strong>Prohibir toda actividad comercial.</p>
+<p><strong>B) </strong>Convertir automáticamente el software en dominio público.</p>
+<p><strong>C) </strong>Preservar determinadas libertades y obligaciones al redistribuir el programa o trabajos sujetos a sus condiciones.</p>
+<p><strong>D) </strong>Sustituir el copyright por DRM.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>42. ¿Cuál es una licencia de copyleft fuerte muy conocida?</strong></p>
+<p><strong>A) </strong>GNU GPL.</p>
+<p><strong>B) </strong>MIT.</p>
+<p><strong>C) </strong>BSD-2-Clause.</p>
+<p><strong>D) </strong>Apache-2.0.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>43. ¿Qué afirmación sobre GPL y uso interno es correcta en términos generales?</strong></p>
+<p><strong>A) </strong>Todo uso interno obliga a publicar el repositorio en Internet.</p>
+<p><strong>B) </strong>GPL prohíbe modificar para uso interno.</p>
+<p><strong>C) </strong>GPL impide cobrar por el software.</p>
+<p><strong>D) </strong>El mero uso interno sin distribución/conveying no activa por sí solo las obligaciones de entrega de fuente propias de la distribución.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>44. ¿Qué diferencia conceptual conviene recordar entre GPL y AGPL?</strong></p>
+<p><strong>A) </strong>GPL es permisiva y AGPL propietaria.</p>
+<p><strong>B) </strong>AGPL añade una obligación específica para usuarios que interactúan remotamente por red con versiones modificadas en los supuestos de la licencia.</p>
+<p><strong>C) </strong>AGPL elimina el copyleft.</p>
+<p><strong>D) </strong>GPL solo sirve para documentación.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>45. Una empresa modifica un servidor AGPL y ofrece esa versión modificada a usuarios mediante una aplicación web. ¿Qué idea debe revisar?</strong></p>
+<p><strong>A) </strong>Que AGPL permite ocultar siempre las modificaciones si no entrega binarios.</p>
+<p><strong>B) </strong>Que la licencia se convierte en MIT.</p>
+<p><strong>C) </strong>Que el uso por red elimina cualquier obligación.</p>
+<p><strong>D) </strong>La obligación de ofrecer a esos usuarios acceso al código fuente correspondiente de la versión modificada, según AGPL.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>46. ¿Qué afirmación describe mejor LGPL?</strong></p>
+<p><strong>A) </strong>Es idéntica a MIT.</p>
+<p><strong>B) </strong>Es un copyleft más débil pensado para permitir determinados enlaces/usos con software no LGPL bajo condiciones.</p>
+<p><strong>C) </strong>Prohíbe enlazar con software propietario en todos los casos.</p>
+<p><strong>D) </strong>Es una licencia de contenidos Creative Commons.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>47. ¿Qué error de examen aparece a menudo con copyleft?</strong></p>
+<p><strong>A) </strong>Distinguir distribución de uso interno.</p>
+<p><strong>B) </strong>Revisar licencia y versión.</p>
+<p><strong>C) </strong>Pensar que copyleft significa “no comercial”.</p>
+<p><strong>D) </strong>Comprobar obligaciones de fuente.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>48. ¿Qué ocurre con el copyright en una obra GPL?</strong></p>
+<p><strong>A) </strong>Sigue existiendo; el titular concede derechos bajo condiciones de la licencia.</p>
+<p><strong>B) </strong>Desaparece automáticamente.</p>
+<p><strong>C) </strong>Se transfiere al dominio público.</p>
+<p><strong>D) </strong>Pasa siempre a la FSF.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>49. ¿Qué hecho es especialmente relevante al analizar obligaciones GPL?</strong></p>
+<p><strong>A) </strong>Cómo se combina el código y si existe distribución/conveying de la obra resultante.</p>
+<p><strong>B) </strong>El color del logotipo.</p>
+<p><strong>C) </strong>El precio de adquisición exclusivamente.</p>
+<p><strong>D) </strong>El sistema operativo del desarrollador exclusivamente.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>50. ¿Cuál de estas afirmaciones sobre AGPL es correcta?</strong></p>
+<p><strong>A) </strong>Convierte todo el hardware del servidor en software libre.</p>
+<p><strong>B) </strong>Solo se aplica si el programa es gratuito.</p>
+<p><strong>C) </strong>No significa que cualquier software del mismo servidor pase automáticamente a AGPL.</p>
+<p><strong>D) </strong>No permite modificar el programa.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>51. ¿Cuál es la mejor regla para una dependencia GPL?</strong></p>
+<p><strong>A) </strong>Tratar GPL como MIT.</p>
+<p><strong>B) </strong>No decidir por intuición: revisar licencia, versión, forma de enlace/combinación y modelo de distribución.</p>
+<p><strong>C) </strong>Eliminar el fichero LICENSE.</p>
+<p><strong>D) </strong>Suponer que SaaS y distribución son siempre idénticos.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>52. ¿Qué licencia fue creada específicamente para abordar el “vacío” de modificaciones usadas a través de red sin distribuir copias?</strong></p>
+<p><strong>A) </strong>MIT.</p>
+<p><strong>B) </strong>BSD-3-Clause.</p>
+<p><strong>C) </strong>Apache-1.1.</p>
+<p><strong>D) </strong>AGPL.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>53. Si solo se ejecuta una copia GPL sin distribuirla a terceros, la FAQ de GNU indica, de forma general, que:</strong></p>
+<p><strong>A) </strong>Debe publicarse todo el código propio del equipo.</p>
+<p><strong>B) </strong>No hay requisitos de distribución por ese mero hecho.</p>
+<p><strong>C) </strong>Hay que relicenciar la base de datos.</p>
+<p><strong>D) </strong>Se prohíbe modificar el programa.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>54. ¿Qué afirmación sobre GPL es falsa?</strong></p>
+<p><strong>A) </strong>Es una licencia de software libre.</p>
+<p><strong>B) </strong>Usa copyleft.</p>
+<p><strong>C) </strong>Puede imponer obligaciones al distribuir versiones modificadas.</p>
+<p><strong>D) </strong>Prohíbe vender copias.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>55. ¿Por qué LGPL suele considerarse útil para bibliotecas?</strong></p>
+<p><strong>A) </strong>Porque permite ciertos modelos de enlace con aplicaciones bajo otras licencias sin extender idénticamente el copyleft a toda la aplicación, bajo condiciones.</p>
+<p><strong>B) </strong>Porque elimina toda obligación de atribución y fuente.</p>
+<p><strong>C) </strong>Porque no tiene copyright.</p>
+<p><strong>D) </strong>Porque es una licencia de patente exclusivamente.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>56. ¿Qué pareja es correcta?</strong></p>
+<p><strong>A) </strong>GPL → permisiva; LGPL → dominio público.</p>
+<p><strong>B) </strong>AGPL → permisiva; MIT → copyleft fuerte.</p>
+<p><strong>C) </strong>GPL → copyleft fuerte; LGPL → copyleft más débil.</p>
+<p><strong>D) </strong>BSD → AGPL de red.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>57. ¿Qué debe hacer una organización si detecta una dependencia AGPL en un servicio?</strong></p>
+<p><strong>A) </strong>Borrarla siempre, sin análisis.</p>
+<p><strong>B) </strong>Ignorarla porque no se entregan binarios.</p>
+<p><strong>C) </strong>Analizar cómo se usa/modifica, quién interactúa con ella por red y qué obligaciones concretas resultan.</p>
+<p><strong>D) </strong>Asumir que toda la infraestructura debe publicarse.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>58. ¿Qué afirmación sobre “viralidad” de GPL es técnicamente más prudente?</strong></p>
+<p><strong>A) </strong>Cualquier fichero almacenado en el mismo disco pasa a GPL.</p>
+<p><strong>B) </strong>Es mejor hablar de obligaciones de copyleft según combinación y distribución que usar “viral” como regla automática.</p>
+<p><strong>C) </strong>Toda API que llame a GPL pasa siempre a GPL sin excepción.</p>
+<p><strong>D) </strong>La licencia no depende nunca de cómo se combinan obras.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>59. Una aplicación propietaria llama a una herramienta GPL como proceso separado. ¿Qué debe hacerse?</strong></p>
+<p><strong>A) </strong>Declarar automáticamente toda la aplicación GPL.</p>
+<p><strong>B) </strong>Eliminar el copyright del componente GPL.</p>
+<p><strong>C) </strong>Cambiar la herramienta a AGPL sin permiso.</p>
+<p><strong>D) </strong>Analizar la arquitectura, interfaces y distribución concretas; no inferir automáticamente el resultado solo por coexistencia.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>60. ¿Qué frase resume la diferencia de red de forma útil?</strong></p>
+<p><strong>A) </strong>GPL se centra en obligaciones asociadas a distribución/conveying; AGPL añade el escenario de interacción remota con software modificado.</p>
+<p><strong>B) </strong>GPL obliga siempre en SaaS y AGPL nunca.</p>
+<p><strong>C) </strong>Ambas son permisivas.</p>
+<p><strong>D) </strong>AGPL no contiene copyleft.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<h1>4. EUPL, compatibilidad, dominio público y Creative Commons</h1>
+<p><strong>61. ¿Qué es la EUPL?</strong></p>
+<p><strong>A) </strong>Una licencia propietaria de Microsoft.</p>
+<p><strong>B) </strong>Un estándar de DRM.</p>
+<p><strong>C) </strong>Una licencia exclusiva para fotografías.</p>
+<p><strong>D) </strong>La European Union Public Licence, una licencia libre/open source de la Unión Europea con carácter recíproco/copyleft.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>62. ¿Qué versión de EUPL aparece como texto oficial vigente en el portal europeo utilizado en estos apuntes?</strong></p>
+<p><strong>A) </strong>EUPL-3.0.</p>
+<p><strong>B) </strong>EUPL-1.2.</p>
+<p><strong>C) </strong>EUPL-2.5.</p>
+<p><strong>D) </strong>EUPL-0.9 únicamente.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>63. ¿En cuántas lenguas oficiales de la UE está disponible EUPL-1.2 según el portal oficial?</strong></p>
+<p><strong>A) </strong>23.</p>
+<p><strong>B) </strong>4.</p>
+<p><strong>C) </strong>12.</p>
+<p><strong>D) </strong>27 versiones no equivalentes.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>64. ¿Qué rasgo hace especialmente relevante la EUPL para Administraciones europeas?</strong></p>
+<p><strong>A) </strong>Prohíbe reutilización por empresas.</p>
+<p><strong>B) </strong>Es una licencia de pago por usuario.</p>
+<p><strong>C) </strong>Fue concebida en el marco de la UE, es multilingüe y contempla compatibilidad/interoperabilidad con otras licencias.</p>
+<p><strong>D) </strong>Solo sirve para software sin red.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>65. ¿Qué significa que una licencia sea compatible en este contexto?</strong></p>
+<p><strong>A) </strong>Que puede existir una vía jurídicamente prevista para combinar componentes y distribuir la obra resultante bajo condiciones compatibles.</p>
+<p><strong>B) </strong>Que dos programas compilan en el mismo sistema operativo.</p>
+<p><strong>C) </strong>Que ambos usan el mismo lenguaje.</p>
+<p><strong>D) </strong>Que ambas licencias son idénticas palabra por palabra.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>66. ¿Qué debe hacerse antes de combinar dos dependencias copyleft distintas?</strong></p>
+<p><strong>A) </strong>Asumir que todo copyleft es compatible entre sí.</p>
+<p><strong>B) </strong>Eliminar las licencias originales.</p>
+<p><strong>C) </strong>Comprobar compatibilidad de las licencias y versiones concretas.</p>
+<p><strong>D) </strong>Relicenciar siempre ambas como MIT.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>67. ¿Qué afirmación sobre EUPL-1.2 y compatibilidad es correcta?</strong></p>
+<p><strong>A) </strong>Es incompatible por definición con toda licencia GNU.</p>
+<p><strong>B) </strong>Permite relicenciar libremente el código original sin límites.</p>
+<p><strong>C) </strong>Elimina cualquier obligación copyleft al combinar.</p>
+<p><strong>D) </strong>Incluye un apéndice/listado de licencias compatibles que debe consultarse para el caso concreto.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>68. ¿Qué es el dominio público?</strong></p>
+<p><strong>A) </strong>Un tipo de copyleft fuerte.</p>
+<p><strong>B) </strong>Una situación jurídica distinta de una licencia open source; no deben tratarse como sinónimos.</p>
+<p><strong>C) </strong>Un DRM sin servidor.</p>
+<p><strong>D) </strong>Una licencia de Apache.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>69. ¿Qué afirmación sobre Creative Commons y software es la más adecuada para este tema?</strong></p>
+<p><strong>A) </strong>CC-BY es la licencia estándar recomendada por OSI para código ejecutable.</p>
+<p><strong>B) </strong>Creative Commons se orienta principalmente a contenidos/obras culturales y no suele ser la familia recomendada para licenciar software.</p>
+<p><strong>C) </strong>Creative Commons es idéntica a GPL.</p>
+<p><strong>D) </strong>CC0 convierte cualquier patente en dominio público automáticamente.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>70. ¿Qué riesgo existe al copiar un fragmento de Internet sin información de licencia?</strong></p>
+<p><strong>A) </strong>Ninguno si el repositorio es público.</p>
+<p><strong>B) </strong>Ninguno si son menos de 100 líneas.</p>
+<p><strong>C) </strong>Solo un riesgo de rendimiento.</p>
+<p><strong>D) </strong>No saber si se tiene derecho a incorporarlo, modificarlo o redistribuirlo.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>71. ¿Qué herramienta conceptual ayuda a comprobar combinaciones de licencias en el ecosistema EUPL?</strong></p>
+<p><strong>A) </strong>Un escáner de puertos.</p>
+<p><strong>B) </strong>Un compilador Java.</p>
+<p><strong>C) </strong>El Licensing Assistant / compatibility checker del portal Interoperable Europe.</p>
+<p><strong>D) </strong>Un sistema DRM.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>72. ¿Qué identificador estandarizado es útil para registrar una licencia como EUPL-1.2 o Apache-2.0?</strong></p>
+<p><strong>A) </strong>Un identificador SPDX.</p>
+<p><strong>B) </strong>Una dirección MAC.</p>
+<p><strong>C) </strong>Un OID de certificado de usuario.</p>
+<p><strong>D) </strong>Un CVE.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>73. ¿Cuál de estas afirmaciones sobre compatibilidad es falsa?</strong></p>
+<p><strong>A) </strong>Hay que considerar versión concreta.</p>
+<p><strong>B) </strong>El modo de combinación y distribución importa.</p>
+<p><strong>C) </strong>Si dos licencias son open source, entonces siempre son compatibles sin revisar nada más.</p>
+<p><strong>D) </strong>Las obligaciones de patentes/NOTICE/fuente pueden influir.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>74. ¿Qué relación entre EUPL y red/SaaS destaca el portal europeo?</strong></p>
+<p><strong>A) </strong>EUPL contempla obligaciones para distribución/uso en red dentro de su régimen de reciprocidad.</p>
+<p><strong>B) </strong>EUPL se vuelve permisiva si se usa por red.</p>
+<p><strong>C) </strong>EUPL prohíbe cualquier SaaS.</p>
+<p><strong>D) </strong>EUPL solo cubre software de escritorio.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>75. ¿Qué significa “recíproca” al describir EUPL?</strong></p>
+<p><strong>A) </strong>Que obliga a pagar una tasa a la UE.</p>
+<p><strong>B) </strong>Que determinadas mejoras/derivados distribuidos o puestos a disposición según sus términos deben mantener obligaciones de compartir código.</p>
+<p><strong>C) </strong>Que el programa solo puede usarse por organismos públicos.</p>
+<p><strong>D) </strong>Que no puede combinarse con ninguna otra licencia.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>76. Una Administración quiere publicar código propio para reutilización europea. ¿Qué consideración es especialmente pertinente?</strong></p>
+<p><strong>A) </strong>Publicar sin LICENSE porque es una Administración.</p>
+<p><strong>B) </strong>Usar Creative Commons para todo código por defecto.</p>
+<p><strong>C) </strong>Eliminar avisos de terceros.</p>
+<p><strong>D) </strong>Elegir conscientemente licencia, versión y compatibilidad con dependencias, pudiendo considerar EUPL.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>77. ¿Qué afirmación sobre el código original EUPL al usar una cláusula de compatibilidad es más prudente?</strong></p>
+<p><strong>A) </strong>La licencia original desaparece automáticamente.</p>
+<p><strong>B) </strong>Todo pasa a dominio público.</p>
+<p><strong>C) </strong>Se eliminan las obligaciones de fuente.</p>
+<p><strong>D) </strong>La compatibilidad no implica que el código original deje mágicamente de estar cubierto por EUPL.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>78. ¿Qué diferencia hay entre compatibilidad jurídica e interoperabilidad técnica?</strong></p>
+<p><strong>A) </strong>Son el mismo concepto.</p>
+<p><strong>B) </strong>La interoperabilidad solo se refiere a copyright.</p>
+<p><strong>C) </strong>La primera trata de si licencias permiten una combinación/distribución; la segunda de si sistemas pueden intercambiar/funcionar juntos.</p>
+<p><strong>D) </strong>La compatibilidad jurídica solo se refiere a protocolos de red.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>79. ¿Qué debería contener una política OSS madura?</strong></p>
+<p><strong>A) </strong>Lista de licencias permitidas/restringidas, proceso de aprobación, inventario/SBOM y reglas de cumplimiento.</p>
+<p><strong>B) </strong>Solo una lista de repositorios favoritos.</p>
+<p><strong>C) </strong>Únicamente el precio de las herramientas.</p>
+<p><strong>D) </strong>Una prohibición genérica de todo open source.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>80. ¿Qué frase resume mejor este bloque?</strong></p>
+<p><strong>A) </strong>Todo open source está en dominio público.</p>
+<p><strong>B) </strong>Open source, copyleft, compatibilidad y dominio público son conceptos relacionados pero no intercambiables.</p>
+<p><strong>C) </strong>Toda licencia copyleft es compatible con cualquier otra.</p>
+<p><strong>D) </strong>EUPL es una licencia propietaria.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<h1>5. Protección jurídica del software en España y la UE</h1>
+<p><strong>81. ¿Qué norma española contiene un título específico sobre programas de ordenador dentro de la propiedad intelectual?</strong></p>
+<p><strong>A) </strong>El texto refundido de la Ley de Propiedad Intelectual, aprobado por Real Decreto Legislativo 1/1996.</p>
+<p><strong>B) </strong>La Ley 39/2015 exclusivamente.</p>
+<p><strong>C) </strong>El Código de Comercio como única norma.</p>
+<p><strong>D) </strong>La Ley General de Telecomunicaciones exclusivamente.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>82. ¿Qué protege el derecho de autor sobre software según el TRLPI?</strong></p>
+<p><strong>A) </strong>Cualquier idea informática aunque nunca se materialice.</p>
+<p><strong>B) </strong>Solo el nombre comercial.</p>
+<p><strong>C) </strong>Las formas de expresión del programa, no las ideas y principios abstractos en que se basa.</p>
+<p><strong>D) </strong>Exclusivamente el soporte físico.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>83. ¿Qué incluye el concepto de programa de ordenador a efectos del artículo 96?</strong></p>
+<p><strong>A) </strong>Solo el ejecutable firmado.</p>
+<p><strong>B) </strong>También su documentación preparatoria, además de la secuencia de instrucciones en cualquiera de sus formas de expresión/fijación.</p>
+<p><strong>C) </strong>Solo el código fuente publicado.</p>
+<p><strong>D) </strong>Únicamente los manuales de usuario.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>84. ¿Qué requisito menciona el TRLPI para que un programa sea protegido como tal?</strong></p>
+<p><strong>A) </strong>Que esté registrado obligatoriamente antes de publicarse.</p>
+<p><strong>B) </strong>Que sea software propietario.</p>
+<p><strong>C) </strong>Que tenga al menos 10.000 líneas de código.</p>
+<p><strong>D) </strong>Que sea original, como creación intelectual propia de su autor.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>85. ¿Están protegidas por derecho de autor las ideas y principios que sirven de fundamento a las interfaces de un programa?</strong></p>
+<p><strong>A) </strong>Sí, siempre y de forma automática.</p>
+<p><strong>B) </strong>No, no como tales por el derecho de autor sobre programas de ordenador.</p>
+<p><strong>C) </strong>Solo si el software es libre.</p>
+<p><strong>D) </strong>Solo si existe DRM.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>86. ¿Qué derechos exclusivos enumera el artículo 99, con las limitaciones legales correspondientes?</strong></p>
+<p><strong>A) </strong>Solo el derecho a registrar una marca.</p>
+<p><strong>B) </strong>Únicamente el derecho a cobrar soporte.</p>
+<p><strong>C) </strong>El derecho a impedir toda interoperabilidad.</p>
+<p><strong>D) </strong>Reproducción, transformación y distribución pública, entre otros actos descritos.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>87. ¿Qué afirmación sobre el registro de un programa es correcta?</strong></p>
+<p><strong>A) </strong>Puede inscribirse en el Registro de la Propiedad Intelectual, pero la protección no se plantea como dependiente de un registro constitutivo obligatorio.</p>
+<p><strong>B) </strong>Sin registro nunca existe derecho de autor.</p>
+<p><strong>C) </strong>Registrar el programa lo convierte en patente.</p>
+<p><strong>D) </strong>Solo puede registrarse el binario, nunca versiones derivadas.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>88. Un empleado crea un programa dentro de las funciones que le han sido confiadas. Salvo pacto en contrario, el TRLPI atribuye los derechos de explotación:</strong></p>
+<p><strong>A) </strong>Siempre al empleado de forma exclusiva.</p>
+<p><strong>B) </strong>Al Registro de la Propiedad Intelectual.</p>
+<p><strong>C) </strong>Al empresario, tanto respecto del programa fuente como del programa objeto, en el supuesto legal descrito.</p>
+<p><strong>D) </strong>A la Administración tributaria.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>89. ¿Por qué conviene regular expresamente la titularidad en un contrato de desarrollo externo?</strong></p>
+<p><strong>A) </strong>Porque todo proveedor pierde automáticamente todos sus derechos sin contrato.</p>
+<p><strong>B) </strong>Porque el copyright no se aplica al software contratado.</p>
+<p><strong>C) </strong>Para dejar claros derechos de uso, modificación, evolución, entrega de fuente/documentación y reutilización, evitando dependencia contractual.</p>
+<p><strong>D) </strong>Para sustituir la licencia por un DRM.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>90. ¿Qué distinción es correcta entre código fuente y código objeto?</strong></p>
+<p><strong>A) </strong>Ambos son formas del programa; el régimen legal puede abarcar las distintas formas de expresión.</p>
+<p><strong>B) </strong>Solo el código objeto puede tener copyright.</p>
+<p><strong>C) </strong>El fuente nunca está protegido.</p>
+<p><strong>D) </strong>El código objeto es una idea abstracta.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>91. ¿Qué significa que la cesión de derechos debe analizarse por modalidades de explotación?</strong></p>
+<p><strong>A) </strong>Que comprar un portátil transfiere el copyright del software instalado.</p>
+<p><strong>B) </strong>Que una licencia siempre transmite la propiedad intelectual completa.</p>
+<p><strong>C) </strong>Que el derecho de autor desaparece al pagar una factura.</p>
+<p><strong>D) </strong>Que no debe presumirse una cesión ilimitada de cualquier derecho no expresado; el contrato y la ley delimitan alcance.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>92. ¿Qué afirmación es correcta sobre la documentación técnica y manuales de uso?</strong></p>
+<p><strong>A) </strong>Nunca pueden estar protegidos.</p>
+<p><strong>B) </strong>El artículo 96 indica que gozan de la protección que el título dispensa a los programas en los términos legales.</p>
+<p><strong>C) </strong>Son automáticamente dominio público.</p>
+<p><strong>D) </strong>Solo se protegen si usan Creative Commons.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>93. ¿Qué ocurre si un programa forma parte de una invención que puede recibir protección industrial?</strong></p>
+<p><strong>A) </strong>El copyright desaparece automáticamente.</p>
+<p><strong>B) </strong>Toda línea de código se convierte en patente europea.</p>
+<p><strong>C) </strong>Las patentes sustituyen siempre a cualquier licencia.</p>
+<p><strong>D) </strong>La protección por derecho de autor puede coexistir, sin perjuicio del régimen de propiedad industrial que corresponda.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>94. ¿Qué afirmación sobre “comprar software” es más correcta?</strong></p>
+<p><strong>A) </strong>Comprar una copia siempre transfiere todo el código fuente y copyright.</p>
+<p><strong>B) </strong>Normalmente se adquieren facultades de uso conforme a licencia/contrato, no necesariamente la titularidad del copyright.</p>
+<p><strong>C) </strong>La compra elimina cualquier condición de licencia.</p>
+<p><strong>D) </strong>El precio determina si hay derecho de autor.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>95. ¿Qué es una obra derivada o transformación en el contexto de software?</strong></p>
+<p><strong>A) </strong>Cualquier ejecución sin cambios.</p>
+<p><strong>B) </strong>Un simple cambio de contraseña siempre.</p>
+<p><strong>C) </strong>Una modificación/adaptación que puede implicar derechos de transformación y las condiciones de la licencia aplicable.</p>
+<p><strong>D) </strong>Solo una copia de seguridad.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>96. ¿Cuál es una buena cláusula de continuidad en desarrollo para el sector público?</strong></p>
+<p><strong>A) </strong>Entrega de código fuente, documentación, dependencias, instrucciones de despliegue y derechos suficientes para mantenimiento/evolución según el contrato.</p>
+<p><strong>B) </strong>Dependencia exclusiva de una cuenta personal del proveedor.</p>
+<p><strong>C) </strong>Prohibición de exportar datos.</p>
+<p><strong>D) </strong>Ausencia de inventario de terceros.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>97. ¿Qué riesgo hay si el contrato dice solo “se entrega la aplicación” sin concretar derechos?</strong></p>
+<p><strong>A) </strong>Puede quedar ambiguo qué puede modificar, redistribuir, encargar a terceros o reutilizar el cliente.</p>
+<p><strong>B) </strong>Ninguno: la propiedad intelectual siempre se transmite automáticamente.</p>
+<p><strong>C) </strong>Solo un riesgo estético.</p>
+<p><strong>D) </strong>El contrato pasa a ser una licencia MIT.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>98. ¿Qué combinación refleja correctamente distintas capas de protección?</strong></p>
+<p><strong>A) </strong>Copyright sobre cualquier idea; DRM sobre marcas; patente sobre toda interfaz.</p>
+<p><strong>B) </strong>Marca y copyright son sinónimos.</p>
+<p><strong>C) </strong>Secreto empresarial equivale a dominio público.</p>
+<p><strong>D) </strong>Copyright sobre expresión del software; marcas sobre signos distintivos; secretos sobre información confidencial; patentes bajo su régimen específico.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>99. ¿Qué frase es falsa?</strong></p>
+<p><strong>A) </strong>La expresión concreta del programa puede estar protegida.</p>
+<p><strong>B) </strong>“Si el algoritmo es una idea abstracta, el copyright del programa me concede monopolio sobre cualquier implementación de esa idea”.</p>
+<p><strong>C) </strong>Las ideas/principios subyacentes no se protegen como tales por copyright de software.</p>
+<p><strong>D) </strong>Puede haber otros regímenes jurídicos además del copyright.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>100. ¿Qué regla mental es más útil para examen sobre protección jurídica?</strong></p>
+<p><strong>A) </strong>Registro obligatorio = nacimiento del copyright.</p>
+<p><strong>B) </strong>Compra = cesión de todos los derechos.</p>
+<p><strong>C) </strong>Protección del programa ≠ protección absoluta de ideas; licencia de uso ≠ transmisión de titularidad.</p>
+<p><strong>D) </strong>Código fuente = sin protección.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<h1>6. Límites, interoperabilidad, patentes, marcas y secretos</h1>
+<p><strong>101. ¿Puede el usuario legítimo corregir errores necesarios para usar el programa conforme a su finalidad?</strong></p>
+<p><strong>A) </strong>Nunca, ni siquiera el usuario legítimo.</p>
+<p><strong>B) </strong>El artículo 100 contempla reproducción/transformación necesaria, incluida corrección de errores, salvo disposición contractual en contrario en el marco indicado.</p>
+<p><strong>C) </strong>Solo si publica el código.</p>
+<p><strong>D) </strong>Solo si el programa está en dominio público.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>102. ¿Qué regla establece el TRLPI sobre la copia de seguridad necesaria?</strong></p>
+<p><strong>A) </strong>Está prohibida siempre.</p>
+<p><strong>B) </strong>Solo puede hacerla el fabricante.</p>
+<p><strong>C) </strong>Transforma la licencia en copyleft.</p>
+<p><strong>D) </strong>No puede impedirse por contrato a quien tiene derecho a utilizar el programa cuando resulte necesaria para esa utilización.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>103. ¿Puede el usuario legítimo observar o estudiar el funcionamiento del programa para determinar ideas y principios?</strong></p>
+<p><strong>A) </strong>No, está prohibido en todo caso.</p>
+<p><strong>B) </strong>Solo con autorización judicial previa.</p>
+<p><strong>C) </strong>Sí, durante operaciones que tiene derecho a realizar, en los términos del artículo 100.</p>
+<p><strong>D) </strong>Solo si el software es GPL.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>104. ¿La descompilación está autorizada de forma general para cualquier finalidad?</strong></p>
+<p><strong>A) </strong>No; la excepción legal está limitada, especialmente a obtener información necesaria para interoperabilidad bajo requisitos.</p>
+<p><strong>B) </strong>Sí, cualquier comprador puede descompilar para copiar el producto.</p>
+<p><strong>C) </strong>Sí, si no vende el resultado.</p>
+<p><strong>D) </strong>Sí, siempre que cambie el nombre del programa.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>105. Una condición para la excepción de interoperabilidad es:</strong></p>
+<p><strong>A) </strong>Que el usuario quiera desarrollar un clon sustancialmente similar.</p>
+<p><strong>B) </strong>Que se descompile el programa completo aunque no sea necesario.</p>
+<p><strong>C) </strong>Que la información necesaria no haya sido puesta previamente de manera fácil y rápida a disposición de quien puede invocar la excepción.</p>
+<p><strong>D) </strong>Que el programa sea gratuito.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>106. ¿Hasta dónde deben limitarse los actos de descompilación para interoperabilidad?</strong></p>
+<p><strong>A) </strong>A las partes del programa original necesarias para conseguirla.</p>
+<p><strong>B) </strong>A todo el código sin límite.</p>
+<p><strong>C) </strong>Solo al manual, nunca al código.</p>
+<p><strong>D) </strong>A las partes que generen más valor comercial.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>107. La información obtenida por la excepción de interoperabilidad puede usarse:</strong></p>
+<p><strong>A) </strong>Para crear y comercializar un clon sustancialmente similar en expresión.</p>
+<p><strong>B) </strong>Únicamente para conseguir la interoperabilidad del programa creado independientemente y dentro de los límites legales.</p>
+<p><strong>C) </strong>Para publicarla indiscriminadamente.</p>
+<p><strong>D) </strong>Para eliminar cualquier DRM ajeno sin relación con interoperabilidad.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>108. ¿Qué diferencia hay entre una patente y el copyright del software?</strong></p>
+<p><strong>A) </strong>Son exactamente el mismo derecho.</p>
+<p><strong>B) </strong>La patente nace automáticamente al escribir código.</p>
+<p><strong>C) </strong>El copyright requiere novedad técnica industrial.</p>
+<p><strong>D) </strong>Son regímenes distintos; el copyright protege expresión y la patente, cuando proceda, una invención bajo requisitos específicos.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>109. ¿Qué protege principalmente una marca?</strong></p>
+<p><strong>A) </strong>El código fuente como tal.</p>
+<p><strong>B) </strong>Toda idea de negocio.</p>
+<p><strong>C) </strong>Una copia de seguridad.</p>
+<p><strong>D) </strong>Signos que distinguen productos o servicios en el mercado.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>110. ¿Qué protege un secreto empresarial?</strong></p>
+<p><strong>A) </strong>Cualquier dato publicado en GitHub.</p>
+<p><strong>B) </strong>Información valiosa mantenida confidencial bajo condiciones legales, como know-how no divulgado.</p>
+<p><strong>C) </strong>Únicamente logotipos registrados.</p>
+<p><strong>D) </strong>Todo algoritmo aunque sea público.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>111. ¿Qué error debe evitarse al usar una licencia open source?</strong></p>
+<p><strong>A) </strong>Suponer que la licencia de copyright concede automáticamente cualquier patente imaginable.</p>
+<p><strong>B) </strong>Revisar cláusulas de patente.</p>
+<p><strong>C) </strong>Registrar la licencia exacta.</p>
+<p><strong>D) </strong>Conservar avisos.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>112. ¿Qué afirmación sobre Apache-2.0 y patentes es correcta?</strong></p>
+<p><strong>A) </strong>No menciona patentes.</p>
+<p><strong>B) </strong>Concede cualquier patente de terceros del mundo.</p>
+<p><strong>C) </strong>La licencia contiene una concesión de patentes de cada contribuyente limitada a las reivindicaciones cubiertas por sus términos.</p>
+<p><strong>D) </strong>Convierte todas las patentes en dominio público.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>113. ¿Qué afirmación refleja el artículo 104 del TRLPI?</strong></p>
+<p><strong>A) </strong>El régimen de programas se entiende sin perjuicio de normas sobre patentes, marcas, competencia desleal, secretos y obligaciones, entre otras.</p>
+<p><strong>B) </strong>El software solo puede protegerse por copyright.</p>
+<p><strong>C) </strong>Las marcas quedan derogadas para software.</p>
+<p><strong>D) </strong>Los secretos empresariales no pueden coexistir con copyright.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>114. Un proveedor entrega binarios pero ninguna información para integrar el sistema con terceros. ¿Qué enfoque es correcto?</strong></p>
+<p><strong>A) </strong>Descompilar todo y publicar el resultado por defecto.</p>
+<p><strong>B) </strong>Asumir que pagar la licencia permite cualquier uso.</p>
+<p><strong>C) </strong>Revisar primero contrato, documentación disponible y, si procede, los límites legales de interoperabilidad; no asumir libertad total para descompilar.</p>
+<p><strong>D) </strong>Copiar la interfaz y el código completo sin análisis.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>115. ¿Cuál de estas actividades está más claramente fuera de la excepción de interoperabilidad descrita?</strong></p>
+<p><strong>A) </strong>Limitarse a las partes necesarias.</p>
+<p><strong>B) </strong>Actuar siendo usuario legítimo.</p>
+<p><strong>C) </strong>Usar la información solo para interoperar.</p>
+<p><strong>D) </strong>Usar la información para desarrollar y comercializar un programa sustancialmente similar en su expresión.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>116. ¿Qué relación hay entre ingeniería inversa e interoperabilidad?</strong></p>
+<p><strong>A) </strong>Son siempre ilegales sin excepción.</p>
+<p><strong>B) </strong>La ley puede permitir actos concretos y limitados para interoperabilidad; no existe una autorización genérica de ingeniería inversa para cualquier fin.</p>
+<p><strong>C) </strong>Son siempre libres sin condiciones.</p>
+<p><strong>D) </strong>Solo dependen del precio del software.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>117. ¿Qué debe comprobar una Administración ante una solución con algoritmos propietarios críticos?</strong></p>
+<p><strong>A) </strong>Solo la marca del proveedor.</p>
+<p><strong>B) </strong>Derechos de auditoría, interoperabilidad, exportación, documentación, continuidad y condiciones de acceso, además de seguridad.</p>
+<p><strong>C) </strong>Únicamente el coste inicial.</p>
+<p><strong>D) </strong>Que tenga el DRM más restrictivo posible.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>118. ¿Cuál es una buena práctica con secretos del proveedor?</strong></p>
+<p><strong>A) </strong>Delimitar confidencialidad sin impedir al cliente obtener la información y derechos necesarios para operar, mantener y migrar según contrato.</p>
+<p><strong>B) </strong>Publicarlos siempre.</p>
+<p><strong>C) </strong>Confundirlos con patentes concedidas.</p>
+<p><strong>D) </strong>Asumir que secreto permite incumplir obligaciones de transparencia en cualquier caso.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>119. ¿Qué frase distingue bien patente y marca?</strong></p>
+<p><strong>A) </strong>Ambas protegen exactamente el código fuente.</p>
+<p><strong>B) </strong>Marca protege el algoritmo y patente el logotipo.</p>
+<p><strong>C) </strong>Patente puede proteger una invención bajo requisitos; marca identifica origen empresarial de productos/servicios.</p>
+<p><strong>D) </strong>Ninguna tiene relación con propiedad industrial.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>120. ¿Qué regla mental resume este bloque?</strong></p>
+<p><strong>A) </strong>Comprar una copia autoriza cualquier descompilación.</p>
+<p><strong>B) </strong>La interoperabilidad elimina todo copyright.</p>
+<p><strong>C) </strong>Una licencia cubre automáticamente todos los derechos posibles.</p>
+<p><strong>D) </strong>Usuario legítimo no significa libertad ilimitada: hay límites y excepciones concretas; copyright no agota patentes, marcas ni secretos.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<h1>7. DRM, medidas técnicas y riesgos</h1>
+<p><strong>121. ¿Qué significa DRM en este contexto?</strong></p>
+<p><strong>A) </strong>Una licencia jurídica concreta de software libre.</p>
+<p><strong>B) </strong>Un registro de propiedad intelectual.</p>
+<p><strong>C) </strong>Digital Rights Management: mecanismos técnicos para controlar acceso, uso o explotación digital.</p>
+<p><strong>D) </strong>Un estándar de SBOM.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>122. ¿Cuál es un ejemplo de mecanismo DRM o control técnico de licencias?</strong></p>
+<p><strong>A) </strong>Activación mediante servidor y clave vinculada a una licencia.</p>
+<p><strong>B) </strong>Una licencia MIT escrita en un fichero LICENSE.</p>
+<p><strong>C) </strong>Un contrato de mantenimiento sin control técnico.</p>
+<p><strong>D) </strong>Un inventario SBOM.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>123. ¿Qué diferencia fundamental hay entre licencia y DRM?</strong></p>
+<p><strong>A) </strong>Son sinónimos exactos.</p>
+<p><strong>B) </strong>DRM concede copyright y la licencia cifra archivos.</p>
+<p><strong>C) </strong>La licencia solo existe en software propietario.</p>
+<p><strong>D) </strong>La licencia define derechos/obligaciones jurídicas; el DRM intenta hacer cumplir o restringir técnicamente determinados usos.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>124. ¿Puede existir software propietario sin DRM?</strong></p>
+<p><strong>A) </strong>No, todo propietario tiene DRM por definición.</p>
+<p><strong>B) </strong>Sí; propiedad/licencia y presencia de controles técnicos son dimensiones distintas.</p>
+<p><strong>C) </strong>Solo si es gratuito.</p>
+<p><strong>D) </strong>No, porque DRM es el copyright.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>125. ¿Puede existir DRM en contenidos o software con un modelo de licencia concreto sin que DRM sea la licencia?</strong></p>
+<p><strong>A) </strong>No, DRM sustituye jurídicamente cualquier licencia.</p>
+<p><strong>B) </strong>Solo en dominio público.</p>
+<p><strong>C) </strong>Solo en GPL.</p>
+<p><strong>D) </strong>Sí; el mecanismo técnico y la licencia siguen siendo conceptos separados.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>126. ¿Qué riesgo de continuidad introduce un servidor de activación externo?</strong></p>
+<p><strong>A) </strong>Que el código se vuelva automáticamente open source.</p>
+<p><strong>B) </strong>Que la indisponibilidad o desaparición del proveedor impida usar software legítimamente adquirido.</p>
+<p><strong>C) </strong>Que se reduzca siempre el consumo de CPU.</p>
+<p><strong>D) </strong>Que desaparezca el copyright.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>127. ¿Qué riesgo de privacidad puede asociarse a ciertos DRM?</strong></p>
+<p><strong>A) </strong>Que la licencia MIT exija datos biométricos.</p>
+<p><strong>B) </strong>Que no exista nunca conexión de red.</p>
+<p><strong>C) </strong>Telemetría o comunicación frecuente con servidores de licencia que recoja datos de dispositivo/uso.</p>
+<p><strong>D) </strong>Que el copyright se transfiera al usuario.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>128. ¿Qué problema puede causar DRM en preservación digital?</strong></p>
+<p><strong>A) </strong>Impedir acceso futuro si desaparecen claves, servidores o entornos compatibles.</p>
+<p><strong>B) </strong>Garantizar conservación indefinida.</p>
+<p><strong>C) </strong>Convertir automáticamente formatos a estándares abiertos.</p>
+<p><strong>D) </strong>Eliminar dependencia de proveedor.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>129. ¿Qué relación puede haber entre DRM y accesibilidad?</strong></p>
+<p><strong>A) </strong>Un control técnico puede impedir herramientas de asistencia, adaptación o copia necesaria si está mal diseñado.</p>
+<p><strong>B) </strong>DRM garantiza por definición WCAG AAA.</p>
+<p><strong>C) </strong>No existe ninguna interacción posible.</p>
+<p><strong>D) </strong>Accesibilidad solo depende del precio.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>130. ¿Qué riesgo de interoperabilidad puede introducir un DRM cerrado?</strong></p>
+<p><strong>A) </strong>Obligar a usar estándares abiertos.</p>
+<p><strong>B) </strong>Eliminar formatos propietarios.</p>
+<p><strong>C) </strong>Bloquear integración, migración o uso con herramientas de terceros.</p>
+<p><strong>D) </strong>Garantizar APIs públicas.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>131. ¿Qué debe evaluar especialmente una Administración antes de aceptar DRM crítico?</strong></p>
+<p><strong>A) </strong>Solo si el icono es visible.</p>
+<p><strong>B) </strong>Continuidad, reversibilidad, dependencia de servidores, privacidad, accesibilidad e interoperabilidad.</p>
+<p><strong>C) </strong>Únicamente el número de usuarios.</p>
+<p><strong>D) </strong>Solo si el proveedor es grande.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>132. ¿Qué significa “reversibilidad” en este contexto?</strong></p>
+<p><strong>A) </strong>Revertir cada actualización de Windows.</p>
+<p><strong>B) </strong>Eliminar cualquier licencia de terceros.</p>
+<p><strong>C) </strong>Convertir automáticamente software propietario en libre.</p>
+<p><strong>D) </strong>Poder abandonar o sustituir la solución conservando datos, funcionalidad esencial y capacidad operativa razonable.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>133. Un DRM impide exportar datos en formato utilizable. ¿Cuál es el principal problema?</strong></p>
+<p><strong>A) </strong>Exceso de software libre.</p>
+<p><strong>B) </strong>Lock-in y dificultad de migración/reversibilidad.</p>
+<p><strong>C) </strong>Falta de copyleft.</p>
+<p><strong>D) </strong>Incompatibilidad con copyright por definición.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>134. ¿Qué medida contractual reduce riesgo de un servidor de licencias que pueda desaparecer?</strong></p>
+<p><strong>A) </strong>Prohibir copias de seguridad.</p>
+<p><strong>B) </strong>Eliminar la documentación.</p>
+<p><strong>C) </strong>Aceptar activación personal no transferible sin contingencia.</p>
+<p><strong>D) </strong>Cláusulas de continuidad, mecanismos offline/escrow cuando proceda y derecho de uso/transición ante fin de servicio.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>135. ¿Qué es un “watermark” o marca de agua digital en este contexto?</strong></p>
+<p><strong>A) </strong>Un mecanismo técnico que puede identificar o rastrear copias/usuarios sin ser por sí mismo la licencia jurídica.</p>
+<p><strong>B) </strong>Una licencia copyleft.</p>
+<p><strong>C) </strong>Un registro de patentes.</p>
+<p><strong>D) </strong>Un formato de SBOM.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>136. ¿Qué error es frecuente con DRM?</strong></p>
+<p><strong>A) </strong>Separar lo técnico de lo jurídico.</p>
+<p><strong>B) </strong>Revisar contrato y ley.</p>
+<p><strong>C) </strong>Pensar que si una acción está técnicamente permitida por el software, necesariamente está jurídicamente autorizada.</p>
+<p><strong>D) </strong>Analizar accesibilidad.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>137. ¿Qué otro error inverso debe evitarse?</strong></p>
+<p><strong>A) </strong>Comprobar que el mecanismo técnico es compatible con derechos concedidos.</p>
+<p><strong>B) </strong>Probar escenarios offline.</p>
+<p><strong>C) </strong>Pensar que una licencia concede un derecho y por ello el producto nunca puede tener una barrera técnica que dificulte ejercerlo.</p>
+<p><strong>D) </strong>Documentar dependencias.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>138. ¿Qué relación hay entre medidas de protección y el TRLPI de programas?</strong></p>
+<p><strong>A) </strong>La ley obliga a todo software a incluir DRM.</p>
+<p><strong>B) </strong>La ley contempla infracciones relacionadas con instrumentos destinados a suprimir o neutralizar sin autorización dispositivos técnicos de protección, en el supuesto regulado.</p>
+<p><strong>C) </strong>La ley define DRM como licencia libre.</p>
+<p><strong>D) </strong>Eliminar cualquier DRM es siempre lícito por ser usuario legítimo.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>139. ¿Qué opción refleja una evaluación equilibrada de DRM?</strong></p>
+<p><strong>A) </strong>Maximizar restricciones sin análisis.</p>
+<p><strong>B) </strong>Prohibir siempre DRM sin excepciones.</p>
+<p><strong>C) </strong>Confiar solo en el marketing del proveedor.</p>
+<p><strong>D) </strong>Valorar protección de activos junto con impacto en disponibilidad, privacidad, accesibilidad, interoperabilidad y preservación.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>140. ¿Qué frase resume mejor el bloque específico de DRM?</strong></p>
+<p><strong>A) </strong>DRM es un mecanismo técnico con efectos operativos; no sustituye el análisis de licencia, derechos, continuidad y riesgos.</p>
+<p><strong>B) </strong>DRM y licencia son exactamente lo mismo.</p>
+<p><strong>C) </strong>DRM elimina el lock-in.</p>
+<p><strong>D) </strong>Todo software libre carece de cualquier medida técnica de control.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<h1>8. Casos mixtos, SBOM, cumplimiento y contratación</h1>
+<p><strong>141. Una Administración recibe una aplicación con 300 dependencias de terceros. ¿Qué debería exigir primero para gobernar licencias y vulnerabilidades?</strong></p>
+<p><strong>A) </strong>Solo una captura del repositorio.</p>
+<p><strong>B) </strong>Únicamente el ejecutable.</p>
+<p><strong>C) </strong>Un listado de usuarios finales.</p>
+<p><strong>D) </strong>Una SBOM/inventario con componentes, versiones, origen y licencias, más proceso de actualización.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>142. ¿Qué es una SBOM?</strong></p>
+<p><strong>A) </strong>Un contrato de licencia propietaria.</p>
+<p><strong>B) </strong>Un inventario estructurado de componentes de software que ayuda a conocer dependencias y versiones; debe complementarse con información fiable de licencias y seguridad.</p>
+<p><strong>C) </strong>Un DRM.</p>
+<p><strong>D) </strong>Un tipo de patente.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>143. Detectas una dependencia sin licencia identificable en producción. ¿Cuál es la mejor actuación?</strong></p>
+<p><strong>A) </strong>Detener su incorporación/redistribución hasta aclarar procedencia, derechos y alternativa, según política.</p>
+<p><strong>B) </strong>Asumir MIT porque está en GitHub.</p>
+<p><strong>C) </strong>Eliminar el fichero README y continuar.</p>
+<p><strong>D) </strong>Clasificarla como dominio público.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>144. ¿Qué debe registrar un proceso de Software Asset Management?</strong></p>
+<p><strong>A) </strong>Solo contraseñas de administrador.</p>
+<p><strong>B) </strong>Únicamente incidencias de red.</p>
+<p><strong>C) </strong>Software instalado/adquirido, licencias, derechos de uso, evidencias, versiones y condiciones relevantes.</p>
+<p><strong>D) </strong>Solo software de código abierto.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>145. Una dependencia deja de tener soporte. ¿Por qué interesa además de la licencia?</strong></p>
+<p><strong>A) </strong>Porque el riesgo de seguridad y mantenimiento también forma parte de la gobernanza de componentes.</p>
+<p><strong>B) </strong>Porque pierde automáticamente su copyright.</p>
+<p><strong>C) </strong>Porque se convierte en dominio público.</p>
+<p><strong>D) </strong>Porque toda licencia caduca al terminar soporte.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>146. ¿Qué debe incluir una política de dependencias open source?</strong></p>
+<p><strong>A) </strong>Prohibición total sin excepciones.</p>
+<p><strong>B) </strong>Solo una lista de precios.</p>
+<p><strong>C) </strong>Criterios de aprobación, licencias aceptables, revisión de seguridad, inventario, actualización y obligaciones de redistribución.</p>
+<p><strong>D) </strong>Únicamente el nombre del desarrollador.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>147. Un equipo copia código de Stack Overflow o un blog. ¿Qué debe verificar antes de incorporarlo?</strong></p>
+<p><strong>A) </strong>Nada si el texto era visible públicamente.</p>
+<p><strong>B) </strong>Solo que compile.</p>
+<p><strong>C) </strong>Solo que tenga menos de 20 líneas.</p>
+<p><strong>D) </strong>Licencia/derechos aplicables, atribución y compatibilidad, además de calidad y seguridad.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>148. ¿Qué es “lock-in” de proveedor?</strong></p>
+<p><strong>A) </strong>Un tipo de copyleft.</p>
+<p><strong>B) </strong>Dependencia que hace costoso o difícil cambiar de proveedor/tecnología por barreras técnicas, contractuales, de datos o licencia.</p>
+<p><strong>C) </strong>Una garantía de continuidad.</p>
+<p><strong>D) </strong>Un estándar abierto.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>149. ¿Qué factor NO debería omitirse al comparar software libre y propietario?</strong></p>
+<p><strong>A) </strong>El coste inicial como único criterio.</p>
+<p><strong>B) </strong>Coste total de propiedad, soporte, capacidades, seguridad, interoperabilidad, dependencia, comunidad/proveedor y reversibilidad.</p>
+<p><strong>C) </strong>La disponibilidad de documentación.</p>
+<p><strong>D) </strong>El ciclo de vida.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>150. ¿Qué significa TCO?</strong></p>
+<p><strong>A) </strong>Technical Copyright Obligation.</p>
+<p><strong>B) </strong>Trusted Code Ownership.</p>
+<p><strong>C) </strong>Transfer Control Option.</p>
+<p><strong>D) </strong>Total Cost of Ownership: coste total de propiedad a lo largo del ciclo de vida.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>151. Un pliego exige que al terminar contrato puedan migrarse datos y continuar el servicio. ¿Qué está reforzando?</strong></p>
+<p><strong>A) </strong>Copyleft fuerte.</p>
+<p><strong>B) </strong>Dominio público.</p>
+<p><strong>C) </strong>Reversibilidad y continuidad.</p>
+<p><strong>D) </strong>DRM obligatorio.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>152. ¿Qué evidencia debería conservar una organización respecto a software adquirido?</strong></p>
+<p><strong>A) </strong>Contratos, facturas/suscripciones, métricas/licencias asignadas y condiciones aplicables.</p>
+<p><strong>B) </strong>Solo capturas de pantalla.</p>
+<p><strong>C) </strong>Ninguna una vez instalado.</p>
+<p><strong>D) </strong>Únicamente el número de serie del PC.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>153. ¿Qué riesgo hay en usar una cuenta personal de un proveedor para repositorios, firma o activación críticos?</strong></p>
+<p><strong>A) </strong>Ninguno si el proveedor es conocido.</p>
+<p><strong>B) </strong>Convierte el software en libre.</p>
+<p><strong>C) </strong>Dependencia y pérdida de control/continuidad si la relación termina.</p>
+<p><strong>D) </strong>Elimina necesidad de contrato.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>154. ¿Qué debería exigir un contrato sobre componentes de terceros?</strong></p>
+<p><strong>A) </strong>Identificación, licencias, cumplimiento, actualizaciones, vulnerabilidades y responsabilidad/proceso de sustitución cuando proceda.</p>
+<p><strong>B) </strong>Que se oculten para no complicar el inventario.</p>
+<p><strong>C) </strong>Que todos sean necesariamente propietarios.</p>
+<p><strong>D) </strong>Que no se documente su versión.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>155. Una aplicación usa MIT, Apache-2.0, GPL y componentes propietarios. ¿Qué enfoque es correcto?</strong></p>
+<p><strong>A) </strong>Decir que todo es MIT porque es la licencia más permisiva.</p>
+<p><strong>B) </strong>Analizar cada componente, su forma de combinación/distribución y compatibilidad; no clasificar la aplicación por una sola etiqueta.</p>
+<p><strong>C) </strong>Decir que todo es propietario porque existe un componente cerrado.</p>
+<p><strong>D) </strong>Ignorar versiones y arquitectura.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>156. ¿Qué dato es especialmente importante en una SBOM para reproducir un análisis de licencia?</strong></p>
+<p><strong>A) </strong>El fondo de pantalla del desarrollador.</p>
+<p><strong>B) </strong>La resolución del monitor.</p>
+<p><strong>C) </strong>La contraseña de producción.</p>
+<p><strong>D) </strong>Versión/identificador exacto del componente y su procedencia.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>157. ¿Qué práctica reduce el riesgo de introducir una licencia incompatible en CI/CD?</strong></p>
+<p><strong>A) </strong>Desactivar los gestores de paquetes.</p>
+<p><strong>B) </strong>Eliminar ficheros LICENSE durante el build.</p>
+<p><strong>C) </strong>Permitir cualquier dependencia sin revisión.</p>
+<p><strong>D) </strong>Escaneo de dependencias/licencias y políticas automáticas con revisión humana para excepciones.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>158. ¿Qué pregunta contractual es clave si se usa un SaaS con fuerte dependencia del proveedor?</strong></p>
+<p><strong>A) </strong>¿Qué color tiene el panel?</p>
+<p><strong>B) </strong>¿Usan más de un lenguaje de programación?</p>
+<p><strong>C) </strong>¿Cómo exportamos datos/configuración, cuánto dura la transición y qué ocurre si el servicio cesa?</p>
+<p><strong>D) </strong>¿El proveedor permite cambiar el logotipo?</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>159. Un sistema crítico requiere activación online permanente. ¿Qué combinación de controles es más sensata?</strong></p>
+<p><strong>A) </strong>Plan offline/contingencia, cláusulas de continuidad, monitorización de dependencia y prueba periódica de recuperación/migración.</p>
+<p><strong>B) </strong>Confiar en que el proveedor existirá siempre.</p>
+<p><strong>C) </strong>Prohibir copias de seguridad.</p>
+<p><strong>D) </strong>No documentar la activación.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<p><strong>160. Caso final: se quiere reutilizar software en varias AAPP, incorporar dependencias OSS y garantizar continuidad. ¿Qué enfoque es el más completo?</strong></p>
+<p><strong>A) </strong>Elegir solo por precio inicial.</p>
+<p><strong>B) </strong>Inventariar/SBOM, seleccionar licencia y comprobar compatibilidad, fijar derechos y entregables, revisar seguridad/soporte y diseñar reversibilidad.</p>
+<p><strong>C) </strong>Publicar todo sin revisar licencias de terceros.</p>
+<p><strong>D) </strong>Usar DRM como sustituto de contrato y gobernanza.</p>
+<p><em>Respuesta: ____     Seguridad: alta / media / baja</em></p>
+<h1>Registro de errores</h1>
+<p>Anota solo los fallos o dudas. La última columna debe contener una regla breve que puedas recordar sin volver a leer todo el tema.</p>
+<table>
+<tr>
+<th scope="col"><p><strong>N.º</strong></p></th>
+<th scope="col"><p><strong>Tema</strong></p></th>
+<th scope="col"><p><strong>Tipo de error</strong></p></th>
+<th scope="col"><p><strong>Regla correcta</strong></p></th>
+<th scope="col"><p><strong>Revisión</strong></p></th>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table></main></body></html>

@@ -1,0 +1,265 @@
+{
+  "schema_version": "1.0.0",
+  "baseline_id": "TAI-M0-2026-08-06",
+  "created_at": "2026-08-06",
+  "origin": {
+    "branch": "main",
+    "baseline_commit": "56f6d4fc7c330a33d9a6c0a9bf4860b634cb11d4",
+    "baseline_tag": "fase-7b2-completada",
+    "tag_object": "296038518e257aef50fbcfb7b139dc962a843af8",
+    "tag_target_commit": "56f6d4fc7c330a33d9a6c0a9bf4860b634cb11d4"
+  },
+  "technical_status": {
+    "state": "phase7b2-validated",
+    "working_tree_at_capture": "clean",
+    "validators": [
+      {
+        "command": "git diff --check",
+        "exit_code": 0,
+        "mode": "read-only"
+      },
+      {
+        "command": "python scripts/validate_phase7b2.py",
+        "exit_code": 0,
+        "mode": "read-only"
+      }
+    ]
+  },
+  "protected_artifacts": [
+    {
+      "logical_id": "TAI_B1_T01",
+      "opposition": {
+        "code": "TAI",
+        "scope": "documentary-baseline-only"
+      },
+      "historic_id": "B1-T01",
+      "proposed_future_canonical_id": {
+        "value": "TAI-B1-T01",
+        "status": "informational-reservation"
+      },
+      "artifact_type": "topic-content-baseline",
+      "governance_status": {
+        "state": "approved",
+        "scope": "external-project-governance"
+      },
+      "repository_editorial_status": {
+        "content_status": "partial",
+        "review_status": "needs-review",
+        "content_version_present": false
+      },
+      "baseline_version": {
+        "value": "1.0.0",
+        "status": "externally-declared"
+      },
+      "declaration_source": {
+        "kind": "external-project-governance",
+        "description": "Declaración externa de la dirección del proyecto: tema terminado y aprobado como versión 1.0.0.",
+        "repository_evidence": "absent"
+      },
+      "reconciliation_note": "La aprobación y la versión 1.0.0 pertenecen a la capa de gobierno externa. En el commit base el Markdown y el índice conservan partial y needs-review, no existe contentVersion en el front matter y no existe una etiqueta Git 1.0.0. M0 registra ambas capas sin modificar ni promover automáticamente el estado editorial del repositorio.",
+      "files": [
+        {
+          "path": "data/syllabus.json",
+          "role": "syllabus-catalog",
+          "sha256": "02c5606b7e03dc9ff88f495353e6620d9589cedb573c48b5745bf174c321e720"
+        },
+        {
+          "path": "content/topics/B1-T01.md",
+          "role": "markdown-content",
+          "sha256": "348ed0d52adb85336f84f099cebdd0a18412eb0195c9d1d8a8135df94f71fafa"
+        },
+        {
+          "path": "content/generated/B1-T01.html",
+          "role": "generated-html",
+          "sha256": "91785a3886b9f93c686f482ad1844d41429fcc88785c68a8f9f132c1f3a84804"
+        },
+        {
+          "path": "data/topic-content.json",
+          "role": "topic-content-index",
+          "sha256": "db75fe356948e13284efb74788b89455a3a6baa1482a632e1fd786798532ff34"
+        },
+        {
+          "path": "data/sources.json",
+          "role": "source-catalog",
+          "sha256": "b0158a3a22a7fcfde04b416f20fac47e52a596d96173ca64fcac94863702655b"
+        },
+        {
+          "path": "documents/markdown/01_TEMARIO_Y_CONVOCATORIA/01_temario_oficial_TAI_33_temas_extracto_BOE.md",
+          "role": "source-document",
+          "sha256": "eaacfb0572016f35c9c6cd01cd8eafcc5cd23c08d5ba5d075ecbb521a41465be"
+        },
+        {
+          "path": "documents/markdown/02_NORMATIVA/01_Codigo_BOE_normativa_TAI_actualizado_2026-06-03.md",
+          "role": "source-document",
+          "sha256": "83a2d34f30dd068f280c42da6dacc229b73bb3dbf48bf51affb850f526e32b52"
+        },
+        {
+          "path": "tests/phase7-tests.js",
+          "role": "test-suite",
+          "sha256": "da193d7c2bb5ecf048d56495beee03c8ebee3e24295e9bc6c0db36cd9798b5bb"
+        },
+        {
+          "path": "tests/phase7b2-tests.js",
+          "role": "test-suite",
+          "sha256": "6b249e18f9b5c6abe7f4bdbb06e7e8cf61f885b94a03ad843d501e018c8fbfb2"
+        }
+      ],
+      "relationships": {
+        "syllabus": {
+          "catalog_path": "data/syllabus.json",
+          "topic_id": "B1-T01",
+          "source_ids": ["SRC-BOE-2025-CONVOCATORIA"]
+        },
+        "topic_content": {
+          "index_path": "data/topic-content.json",
+          "topic_id": "B1-T01",
+          "markdown_path": "content/topics/B1-T01.md",
+          "html_path": "content/generated/B1-T01.html"
+        },
+        "sources": [
+          {
+            "source_id": "SRC-BOE-2025-CONVOCATORIA",
+            "relation_types": ["syllabus-source"],
+            "document_ids": ["DOC-BOE-2025-PROGRAMA-MD"]
+          },
+          {
+            "source_id": "SRC-BOE-2026-CODIGO-TAI",
+            "relation_types": ["content-citation"],
+            "document_ids": ["DOC-BOE-2026-CODIGO-TAI-MD"]
+          }
+        ],
+        "tests": [
+          {
+            "path": "tests/phase7-tests.js",
+            "relation": "Prueba el contenido, las referencias, los estados y las rutas históricas de B1-T01."
+          },
+          {
+            "path": "tests/phase7b2-tests.js",
+            "relation": "Protege la relación histórica de B1-T01 con SRC-BOE-2026-CODIGO-TAI."
+          }
+        ]
+      },
+      "policies": {
+        "modification": "explicit-authorization-required",
+        "rename": "prohibited-without-authorized-migration",
+        "regeneration": "prohibited-in-m0"
+      },
+      "historical_aliases": ["TAI_B1_T01", "B1-T01"]
+    },
+    {
+      "logical_id": "TAI_B1_T02",
+      "opposition": {
+        "code": "TAI",
+        "scope": "documentary-baseline-only"
+      },
+      "historic_id": "B1-T02",
+      "proposed_future_canonical_id": {
+        "value": "TAI-B1-T02",
+        "status": "informational-reservation"
+      },
+      "artifact_type": "topic-content-baseline",
+      "governance_status": {
+        "state": "initiated",
+        "scope": "external-project-governance"
+      },
+      "repository_editorial_status": {
+        "content_status": "pending",
+        "review_status": "not-reviewed",
+        "content_version_present": false
+      },
+      "baseline_version": {
+        "value": null,
+        "status": "not-declared"
+      },
+      "declaration_source": {
+        "kind": "external-project-governance",
+        "description": "Declaración externa de la dirección del proyecto: tema iniciado y no aprobado.",
+        "repository_evidence": "partial"
+      },
+      "reconciliation_note": "La dirección del proyecto declara B1-T02 iniciado, por lo que una migración futura no puede reiniciarlo ni sustituirlo. El repositorio conserva la cadena syllabus, Markdown, HTML e índice, con pending y not-reviewed y sin versión aprobada; M0 protege esa situación sin cambiarla.",
+      "files": [
+        {
+          "path": "data/syllabus.json",
+          "role": "syllabus-catalog",
+          "sha256": "02c5606b7e03dc9ff88f495353e6620d9589cedb573c48b5745bf174c321e720"
+        },
+        {
+          "path": "content/topics/B1-T02.md",
+          "role": "markdown-content",
+          "sha256": "71cf20faea8a714c10aa7324999d6616d4d7a37af0ddefa3379baf28005dc511"
+        },
+        {
+          "path": "content/generated/B1-T02.html",
+          "role": "generated-html",
+          "sha256": "0cca4a4dab18f552612f56026bcf28dbd9c9fa898237a376ef2083391b0fbf2c"
+        },
+        {
+          "path": "data/topic-content.json",
+          "role": "topic-content-index",
+          "sha256": "db75fe356948e13284efb74788b89455a3a6baa1482a632e1fd786798532ff34"
+        },
+        {
+          "path": "data/sources.json",
+          "role": "source-catalog",
+          "sha256": "b0158a3a22a7fcfde04b416f20fac47e52a596d96173ca64fcac94863702655b"
+        },
+        {
+          "path": "documents/markdown/01_TEMARIO_Y_CONVOCATORIA/01_temario_oficial_TAI_33_temas_extracto_BOE.md",
+          "role": "source-document",
+          "sha256": "eaacfb0572016f35c9c6cd01cd8eafcc5cd23c08d5ba5d075ecbb521a41465be"
+        },
+        {
+          "path": "tests/phase6-tests.js",
+          "role": "test-suite",
+          "sha256": "7ff887bb4eb3bbf31d91ad811355fcd72e3bc5ad09d90bfdd21acd2084670fa3"
+        }
+      ],
+      "relationships": {
+        "syllabus": {
+          "catalog_path": "data/syllabus.json",
+          "topic_id": "B1-T02",
+          "source_ids": ["SRC-BOE-2025-CONVOCATORIA"]
+        },
+        "topic_content": {
+          "index_path": "data/topic-content.json",
+          "topic_id": "B1-T02",
+          "markdown_path": "content/topics/B1-T02.md",
+          "html_path": "content/generated/B1-T02.html"
+        },
+        "sources": [
+          {
+            "source_id": "SRC-BOE-2025-CONVOCATORIA",
+            "relation_types": ["syllabus-source"],
+            "document_ids": ["DOC-BOE-2025-PROGRAMA-MD"]
+          }
+        ],
+        "tests": [
+          {
+            "path": "tests/phase6-tests.js",
+            "relation": "Conserva el identificador histórico B1-T02 en una relación de prueba existente."
+          }
+        ]
+      },
+      "policies": {
+        "modification": "explicit-authorization-required",
+        "rename": "prohibited-without-authorized-migration",
+        "regeneration": "prohibited-in-m0"
+      },
+      "historical_aliases": ["TAI_B1_T02", "B1-T02"]
+    }
+  ],
+  "protection_rules": [
+    "explicit-authorization-required",
+    "preserve-historical-identifiers",
+    "no-silent-editorial-state-changes",
+    "hash-verified",
+    "no-regeneration"
+  ],
+  "migration_constraints": [
+    "future-canonical-identifiers-are-reservations-only",
+    "no-operational-multiopposition-fields",
+    "no-automatic-front-matter-reconciliation",
+    "no-gsi-content-in-m0",
+    "preserve-relations-and-historical-aliases"
+  ]
+}

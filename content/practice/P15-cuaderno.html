@@ -1,0 +1,1138 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — CUADERNO</title><link rel="stylesheet" href="../../assets/css/styles.css"></head><body><main class="shell topic-content"><p><a href="../../index.html#practica">Volver a práctica escrita</a></p><p>Material curado GSI A2. Fuente: <a href="https://docs.google.com/document/d/1ZCt0kYg1LqPNHQc-vz6CrbqcafVSQ7tJODDkmQwSoUo/edit">documento original de Drive</a>.</p><p>GSI A2 - PRACTICA ACTIVA 15</p>
+<p><strong>.NET + COMPARATIVA JAKARTA EE</strong></p>
+<p>160 preguntas - 4 opciones - III.11 cierre + III.10 refuerzo</p>
+<p><strong>CUADERNO DE TRABAJO</strong></p>
+<h1>Como usar esta practica</h1>
+<p>Objetivo: cerrar III.11 (.NET) como hueco de practica activa y convertir III.10 (Jakarta EE) en entrenamiento dedicado mediante un bloque especifico y comparativo.</p>
+<p>Base nuclear: GSI A2 - Bloque III - Apuntes completos V2.1 revisados. Se conserva su terminologia y se corrigen referencias antiguas de los materiales 2023/legacy cuando chocan con el stack vigente.</p>
+<p>Control de actualidad: las preguntas de version usan .NET 10 LTS y Jakarta EE 11, verificados en fuentes oficiales a 24/08/2026.</p>
+<p>Metodo: responde sin consultar apuntes. Marca cada fallo como concepto, capa confundida, sigla/tecnologia, arquitectura o exceso de confianza. Repite a 48-72 h solo las falladas y dudosas.</p>
+<h2>Distribucion</h2>
+<table>
+<tr>
+<th scope="col"><p><strong>Bloque</strong></p></th>
+<th scope="col"><p><strong>Preguntas</strong></p></th>
+<th scope="col"><p><strong>Funcion</strong></p></th>
+</tr>
+<tr>
+<td><p>1. .NET moderno y arquitectura base</p></td>
+<td><p>1-20</p></td>
+<td><p>Fundamentos de plataforma</p></td>
+</tr>
+<tr>
+<td><p>2. CLR, IL, CTS, CLS, assemblies y gestión de recursos</p></td>
+<td><p>21-40</p></td>
+<td><p>Runtime y sistema de tipos</p></td>
+</tr>
+<tr>
+<td><p>3. C#, LINQ, asincronía, herramientas y paquetes</p></td>
+<td><p>41-60</p></td>
+<td><p>Lenguaje, consultas y tooling</p></td>
+</tr>
+<tr>
+<td><p>4. ASP.NET Core: pipeline, DI, APIs y configuración</p></td>
+<td><p>61-80</p></td>
+<td><p>Web/API y composicion</p></td>
+</tr>
+<tr>
+<td><p>5. Datos: ADO.NET, EF Core, LINQ y rendimiento</p></td>
+<td><p>81-100</p></td>
+<td><p>Persistencia y rendimiento</p></td>
+</tr>
+<tr>
+<td><p>6. Seguridad, identidad, despliegue y observabilidad .NET</p></td>
+<td><p>101-120</p></td>
+<td><p>Seguridad y operacion</p></td>
+</tr>
+<tr>
+<td><p>7. Jakarta EE 11: plataforma, perfiles y servicios empresariales</p></td>
+<td><p>121-140</p></td>
+<td><p>Cobertura dedicada Jakarta EE</p></td>
+</tr>
+<tr>
+<td><p>8. Comparativa .NET / Jakarta EE y casos de arquitectura</p></td>
+<td><p>141-160</p></td>
+<td><p>Transferencia entre stacks y casos</p></td>
+</tr>
+</table>
+<p><strong>Fuentes de contraste 2026: </strong><a href="https://learn.microsoft.com/en-us/dotnet/core/releases-and-support">Microsoft .NET releases/support</a> | <a href="https://learn.microsoft.com/en-us/dotnet/standard/clr">CLR</a> | <a href="https://learn.microsoft.com/en-us/aspnet/core/">ASP.NET Core</a> | <a href="https://learn.microsoft.com/en-us/ef/core/">EF Core</a> | <a href="https://jakarta.ee/specifications/platform/11/">Jakarta EE 11</a></p>
+<h1>1. .NET moderno y arquitectura base</h1>
+<p><strong>1. </strong>En el ecosistema actual de Microsoft, ¿qué implementación es la principal para nuevo desarrollo multiplataforma?</p>
+<p><strong>A. </strong>.NET moderno (.NET 5 y posteriores, actualmente .NET 10 como LTS).</p>
+<p><strong>B. </strong>.NET Framework 4.x como única opción recomendada para nuevos proyectos.</p>
+<p><strong>C. </strong>Silverlight.</p>
+<p><strong>D. </strong>ASP clásico.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>2. </strong>¿Cuál es la diferencia más importante entre .NET moderno y .NET Framework?</p>
+<p><strong>A. </strong>.NET moderno solo sirve para aplicaciones móviles.</p>
+<p><strong>B. </strong>.NET moderno es multiplataforma y es la línea principal de evolución; .NET Framework está ligado principalmente a Windows y a compatibilidad heredada.</p>
+<p><strong>C. </strong>No existe diferencia técnica ni de ciclo de vida.</p>
+<p><strong>D. </strong>.NET Framework es más reciente que .NET moderno.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>3. </strong>A fecha de 2026, ¿qué versión se considera LTS activa y de referencia en los apuntes V2.1?</p>
+<p><strong>A. </strong>.NET 10.</p>
+<p><strong>B. </strong>.NET 7.</p>
+<p><strong>C. </strong>.NET 6.</p>
+<p><strong>D. </strong>.NET Framework 4.8.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>4. </strong>¿Qué componente proporciona el entorno de ejecución administrado en .NET?</p>
+<p><strong>A. </strong>Kestrel.</p>
+<p><strong>B. </strong>NuGet.</p>
+<p><strong>C. </strong>MSBuild.</p>
+<p><strong>D. </strong>El CLR (Common Language Runtime).</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>5. </strong>¿Qué incluye normalmente el SDK de .NET que no es necesario en una máquina que solo ejecuta una aplicación publicada adecuadamente?</p>
+<p><strong>A. </strong>El servidor DNS.</p>
+<p><strong>B. </strong>El protocolo HTTP.</p>
+<p><strong>C. </strong>Herramientas de compilación, plantillas y CLI de desarrollo.</p>
+<p><strong>D. </strong>El sistema operativo.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>6. </strong>¿Para qué sirve principalmente el comando `dotnet`?</p>
+<p><strong>A. </strong>Para sustituir al CLR durante la ejecución.</p>
+<p><strong>B. </strong>Para compilar, ejecutar, probar, publicar y gestionar proyectos .NET desde la CLI.</p>
+<p><strong>C. </strong>Para actuar como base de datos relacional.</p>
+<p><strong>D. </strong>Para reemplazar a Git.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>7. </strong>¿Qué representa la BCL en .NET?</p>
+<p><strong>A. </strong>La biblioteca base de tipos y APIs comunes que usan las aplicaciones .NET.</p>
+<p><strong>B. </strong>Un servidor web incluido en Windows exclusivamente.</p>
+<p><strong>C. </strong>Un formato de bytecode distinto de IL.</p>
+<p><strong>D. </strong>Un gestor de paquetes externo.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>8. </strong>¿Qué significa que una aplicación .NET ejecute código administrado?</p>
+<p><strong>A. </strong>Que todo el código se interpreta línea a línea.</p>
+<p><strong>B. </strong>Que el código se ejecuta bajo los servicios del runtime, como GC, sistema de tipos y manejo de excepciones.</p>
+<p><strong>C. </strong>Que el código se ejecuta únicamente con privilegios de administrador.</p>
+<p><strong>D. </strong>Que no puede acceder a recursos del sistema operativo.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>9. </strong>¿Qué afirmación sobre la portabilidad de .NET moderno es correcta?</p>
+<p><strong>A. </strong>Puede ejecutarse en varios sistemas operativos compatibles, como Windows, Linux y macOS.</p>
+<p><strong>B. </strong>Solo puede ejecutarse dentro de IIS.</p>
+<p><strong>C. </strong>Solo puede ejecutarse en Windows Server.</p>
+<p><strong>D. </strong>Es portable únicamente si se utiliza Visual Studio.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>10. </strong>¿Cuál es la función principal de NuGet?</p>
+<p><strong>A. </strong>Gestionar paquetes y dependencias del ecosistema .NET.</p>
+<p><strong>B. </strong>Servir peticiones HTTP.</p>
+<p><strong>C. </strong>Administrar usuarios de ASP.NET Core.</p>
+<p><strong>D. </strong>Compilar IL a código máquina durante la ejecución.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>11. </strong>¿Cuál es la función principal de MSBuild?</p>
+<p><strong>A. </strong>Gestionar autenticación y autorización.</p>
+<p><strong>B. </strong>Alojar aplicaciones web en producción.</p>
+<p><strong>C. </strong>Ser el ORM oficial de .NET.</p>
+<p><strong>D. </strong>Orquestar el proceso de compilación a partir de proyectos y objetivos de build.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>12. </strong>¿Qué es ASP.NET Core dentro del ecosistema .NET?</p>
+<p><strong>A. </strong>El sistema de paquetes de .NET.</p>
+<p><strong>B. </strong>Un framework para aplicaciones y servicios web modernos.</p>
+<p><strong>C. </strong>El recolector de basura del CLR.</p>
+<p><strong>D. </strong>Una versión de SQL Server.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>13. </strong>En una publicación framework-dependent, ¿qué se espera normalmente del entorno de destino?</p>
+<p><strong>A. </strong>Que use obligatoriamente IIS.</p>
+<p><strong>B. </strong>Que el ejecutable incluya siempre todo el sistema operativo.</p>
+<p><strong>C. </strong>Que tenga instalado un runtime .NET compatible.</p>
+<p><strong>D. </strong>Que no exista ningún runtime .NET.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>14. </strong>En una publicación self-contained, ¿qué ventaja principal se obtiene?</p>
+<p><strong>A. </strong>NuGet deja de utilizarse.</p>
+<p><strong>B. </strong>La aplicación incluye el runtime necesario y reduce la dependencia de una instalación global compatible.</p>
+<p><strong>C. </strong>No necesita sistema operativo.</p>
+<p><strong>D. </strong>El código deja de ser administrado.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>15. </strong>¿Qué diferencia conceptual hay entre una versión LTS y una STS de .NET?</p>
+<p><strong>A. </strong>La LTS solo sirve para escritorio.</p>
+<p><strong>B. </strong>La STS siempre es más segura que la LTS.</p>
+<p><strong>C. </strong>La STS no recibe actualizaciones de seguridad.</p>
+<p><strong>D. </strong>La LTS tiene una ventana de soporte más larga; la STS una ventana más corta.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>16. </strong>Si un servidor solo debe ejecutar una aplicación .NET y no compilarla, ¿qué instalación suele ser suficiente si la publicación es framework-dependent?</p>
+<p><strong>A. </strong>El código fuente del proyecto.</p>
+<p><strong>B. </strong>MSBuild instalado de forma independiente siempre.</p>
+<p><strong>C. </strong>El runtime correspondiente, no necesariamente el SDK completo.</p>
+<p><strong>D. </strong>Visual Studio Enterprise.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>17. </strong>Para una API HTTP nueva en .NET, ¿qué tecnología encaja mejor como base general?</p>
+<p><strong>A. </strong>ASP clásico.</p>
+<p><strong>B. </strong>Windows Forms.</p>
+<p><strong>C. </strong>WCF como única opción obligatoria.</p>
+<p><strong>D. </strong>ASP.NET Core.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>18. </strong>¿Para qué se utiliza un Target Framework Moniker como `net10.0` en un proyecto?</p>
+<p><strong>A. </strong>Para definir el nombre de la base de datos.</p>
+<p><strong>B. </strong>Para seleccionar el servidor DNS.</p>
+<p><strong>C. </strong>Para indicar el framework objetivo contra el que se compila el proyecto.</p>
+<p><strong>D. </strong>Para fijar la versión de Git.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>19. </strong>¿Qué describe mejor Native AOT en .NET?</p>
+<p><strong>A. </strong>Una característica exclusiva de .NET Framework 2.0.</p>
+<p><strong>B. </strong>Un modo de NuGet para descargar paquetes sin red.</p>
+<p><strong>C. </strong>Un intérprete de C# que elimina la compilación.</p>
+<p><strong>D. </strong>Una modalidad que compila anticipadamente a código nativo para ciertos escenarios y puede mejorar arranque y huella, con limitaciones de compatibilidad.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>20. </strong>¿Qué afirmación es correcta al elegir tecnología .NET para un sistema nuevo?</p>
+<p><strong>A. </strong>Debe elegirse siempre .NET Framework por tener más años.</p>
+<p><strong>B. </strong>La elección del IDE determina el runtime de producción.</p>
+<p><strong>C. </strong>Debe partirse de los requisitos y del stack moderno soportado, evitando asumir que .NET Framework es la opción por defecto.</p>
+<p><strong>D. </strong>El lenguaje determina por sí solo toda la arquitectura.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<h1>2. CLR, IL, CTS, CLS, assemblies y gestión de recursos</h1>
+<p><strong>21. </strong>¿Qué suele generar el compilador de C# antes de la ejecución tradicional en el CLR?</p>
+<p><strong>A. </strong>HTML.</p>
+<p><strong>B. </strong>Código SQL.</p>
+<p><strong>C. </strong>Bytecode de la JVM.</p>
+<p><strong>D. </strong>IL/CIL junto con metadatos dentro de assemblies.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>22. </strong>¿Qué hace la compilación JIT?</p>
+<p><strong>A. </strong>Convierte IL en código máquina cuando el código va a ejecutarse.</p>
+<p><strong>B. </strong>Convierte SQL en C#.</p>
+<p><strong>C. </strong>Genera archivos de configuración.</p>
+<p><strong>D. </strong>Descarga paquetes de NuGet.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>23. </strong>¿Qué diferencia fundamental existe entre JIT y AOT?</p>
+<p><strong>A. </strong>AOT interpreta el código y JIT nunca compila.</p>
+<p><strong>B. </strong>Son dos nombres del mismo mecanismo.</p>
+<p><strong>C. </strong>JIT solo sirve para Java y AOT solo para .NET.</p>
+<p><strong>D. </strong>JIT compila durante la ejecución; AOT compila anticipadamente antes de ejecutar en el destino.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>24. </strong>¿Qué define principalmente el CTS?</p>
+<p><strong>A. </strong>El protocolo de Kestrel.</p>
+<p><strong>B. </strong>Cómo se declaran, usan y gestionan los tipos en el entorno .NET para favorecer interoperabilidad entre lenguajes.</p>
+<p><strong>C. </strong>Las reglas de estilo de C#.</p>
+<p><strong>D. </strong>Los comandos de NuGet.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>25. </strong>¿Qué es el CLS?</p>
+<p><strong>A. </strong>El compilador JIT.</p>
+<p><strong>B. </strong>La biblioteca de acceso a datos.</p>
+<p><strong>C. </strong>Un subconjunto de reglas del sistema de tipos orientado a que APIs públicas sean interoperables entre lenguajes .NET.</p>
+<p><strong>D. </strong>El recolector de basura.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>26. </strong>¿Cuál es la relación correcta entre CLR, CTS y CLS?</p>
+<p><strong>A. </strong>Son tres nombres equivalentes.</p>
+<p><strong>B. </strong>CTS ejecuta el código y CLR solo define nombres de tipos.</p>
+<p><strong>C. </strong>CLR y CTS son gestores de paquetes y CLS es un servidor web.</p>
+<p><strong>D. </strong>CLR es el runtime; CTS define el sistema común de tipos; CLS define reglas de interoperabilidad sobre un subconjunto del CTS.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>27. </strong>¿Qué es un assembly en .NET?</p>
+<p><strong>A. </strong>Una tabla de base de datos.</p>
+<p><strong>B. </strong>Un paquete Docker.</p>
+<p><strong>C. </strong>Un archivo de configuración de Kestrel.</p>
+<p><strong>D. </strong>Una unidad lógica de código y recursos con IL, metadatos y manifiesto, normalmente en DLL o EXE.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>28. </strong>¿Qué información se asocia al manifiesto de un assembly?</p>
+<p><strong>A. </strong>Reglas de firewall del sistema operativo.</p>
+<p><strong>B. </strong>Únicamente contraseñas de usuarios.</p>
+<p><strong>C. </strong>Identidad del assembly, archivos, versión y referencias/dependencias relevantes.</p>
+<p><strong>D. </strong>Consultas SQL precalculadas.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>29. </strong>¿Para qué sirven los metadatos incluidos en un assembly?</p>
+<p><strong>A. </strong>Para almacenar únicamente logs de ejecución.</p>
+<p><strong>B. </strong>Para cifrar automáticamente todos los datos.</p>
+<p><strong>C. </strong>Para sustituir completamente al código IL.</p>
+<p><strong>D. </strong>Para describir tipos, miembros, referencias y otra información que el runtime y herramientas pueden inspeccionar.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>30. </strong>¿Qué responsabilidad principal tiene el Garbage Collector?</p>
+<p><strong>A. </strong>Liberar recursos no administrados aunque sigan referenciados.</p>
+<p><strong>B. </strong>Gestionar automáticamente la memoria de objetos administrados que ya no son alcanzables.</p>
+<p><strong>C. </strong>Eliminar archivos temporales del sistema operativo.</p>
+<p><strong>D. </strong>Cerrar de forma determinista cualquier socket en el instante exacto deseado.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>31. </strong>Para liberar de forma determinista un recurso que implementa `IDisposable`, ¿qué patrón es el más apropiado?</p>
+<p><strong>A. </strong>Usar `using`/`await using` o llamar correctamente a `Dispose` según el caso.</p>
+<p><strong>B. </strong>Reiniciar el proceso.</p>
+<p><strong>C. </strong>Esperar siempre a que actúe el GC.</p>
+<p><strong>D. </strong>Forzar `GC.Collect()` después de cada operación.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>32. </strong>¿Por qué no debe confiarse en un finalizador para cerrar inmediatamente un recurso externo?</p>
+<p><strong>A. </strong>Porque los finalizadores se ejecutan antes que el constructor.</p>
+<p><strong>B. </strong>Porque su ejecución no es determinista y depende del GC.</p>
+<p><strong>C. </strong>Porque sustituyen a `Dispose` en todos los casos.</p>
+<p><strong>D. </strong>Porque solo funcionan en Linux.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>33. </strong>¿Qué diferencia básica hay entre tipos valor y tipos referencia?</p>
+<p><strong>A. </strong>Los tipos referencia nunca se gestionan por el GC.</p>
+<p><strong>B. </strong>No existe diferencia en asignación ni semántica.</p>
+<p><strong>C. </strong>Los tipos valor contienen su valor directamente según su semántica; las variables de tipo referencia contienen una referencia a un objeto.</p>
+<p><strong>D. </strong>Los tipos valor solo existen en C++.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>34. </strong>¿Qué es boxing?</p>
+<p><strong>A. </strong>Comprimir un assembly.</p>
+<p><strong>B. </strong>Convertir IL en SQL.</p>
+<p><strong>C. </strong>Convertir un tipo valor para tratarlo como `object` o una interfaz compatible, normalmente implicando una envoltura/objeto.</p>
+<p><strong>D. </strong>Crear un contenedor Docker.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>35. </strong>¿Qué aporta el CLR respecto al manejo de excepciones?</p>
+<p><strong>A. </strong>Un modelo estructurado y común de excepciones para código administrado.</p>
+<p><strong>B. </strong>La garantía de que nunca se produce una excepción.</p>
+<p><strong>C. </strong>La conversión automática de cualquier error en código HTTP 200.</p>
+<p><strong>D. </strong>El reemplazo de todas las validaciones de entrada.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>36. </strong>¿Qué es un delegado en C#/.NET?</p>
+<p><strong>A. </strong>Un servidor de aplicaciones.</p>
+<p><strong>B. </strong>Un tipo seguro que representa referencias a métodos con una firma compatible.</p>
+<p><strong>C. </strong>Un proceso del sistema operativo.</p>
+<p><strong>D. </strong>Un paquete NuGet.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>37. </strong>¿Qué ventaja aportan los genéricos?</p>
+<p><strong>A. </strong>Permiten reutilización con seguridad de tipos evitando muchas conversiones y casts en tiempo de ejecución.</p>
+<p><strong>B. </strong>Obligan a usar `object` para todo.</p>
+<p><strong>C. </strong>Eliminan por completo la compilación.</p>
+<p><strong>D. </strong>Solo funcionan en colecciones de strings.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>38. </strong>¿Qué permite la reflexión?</p>
+<p><strong>A. </strong>Inspeccionar tipos, miembros y metadatos en tiempo de ejecución y, cuando procede, invocarlos dinámicamente.</p>
+<p><strong>B. </strong>Desactivar el sistema de tipos.</p>
+<p><strong>C. </strong>Evitar todos los metadatos.</p>
+<p><strong>D. </strong>Transformar automáticamente una base de datos SQL en NoSQL.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>39. </strong>Si una aplicación mantiene referencias a objetos que ya no necesita, ¿el GC garantiza que no exista consumo excesivo de memoria?</p>
+<p><strong>A. </strong>No, porque .NET no tiene GC.</p>
+<p><strong>B. </strong>No; mientras los objetos sigan alcanzables, el GC no puede considerarlos basura.</p>
+<p><strong>C. </strong>Sí; el GC elimina cualquier objeto que lleve más de un minuto creado.</p>
+<p><strong>D. </strong>Sí; el GC identifica la intención del programador.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>40. </strong>¿Qué afirmación sobre IL y código máquina es correcta?</p>
+<p><strong>A. </strong>El CLR ejecuta C# fuente directamente sin etapa intermedia.</p>
+<p><strong>B. </strong>IL es siempre el código máquina final x86.</p>
+<p><strong>C. </strong>IL es independiente de una CPU concreta en un grado mayor; el runtime/JIT o AOT produce código adecuado para el destino.</p>
+<p><strong>D. </strong>IL solo se usa en archivos de texto.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<h1>3. C#, LINQ, asincronía, herramientas y paquetes</h1>
+<p><strong>41. </strong>¿Qué expresa principalmente `async`/`await` en C#?</p>
+<p><strong>A. </strong>Un modelo para componer operaciones asíncronas sin bloquear innecesariamente el hilo mientras se espera.</p>
+<p><strong>B. </strong>Que se crea un proceso independiente.</p>
+<p><strong>C. </strong>Que el código se ejecutará siempre en varios núcleos en paralelo.</p>
+<p><strong>D. </strong>Que se desactiva el manejo de excepciones.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>42. </strong>¿Qué representa normalmente `Task` o `Task&lt;T&gt;`?</p>
+<p><strong>A. </strong>Un assembly.</p>
+<p><strong>B. </strong>Un hilo físico dedicado obligatorio.</p>
+<p><strong>C. </strong>Una transacción SQL.</p>
+<p><strong>D. </strong>Una operación asíncrona que puede completarse en el futuro, con o sin resultado.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>43. </strong>¿Qué problema puede causar abusar de `.Result` o `.Wait()` sobre operaciones asíncronas?</p>
+<p><strong>A. </strong>Que la base de datos pierda índices.</p>
+<p><strong>B. </strong>Bloqueos, pérdida de escalabilidad y, en ciertos contextos, interbloqueos.</p>
+<p><strong>C. </strong>Que el compilador convierta el proyecto en Java.</p>
+<p><strong>D. </strong>Que NuGet elimine paquetes.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>44. </strong>¿Qué significa ejecución diferida en muchas consultas LINQ?</p>
+<p><strong>A. </strong>Que la consulta se ejecuta dos veces obligatoriamente.</p>
+<p><strong>B. </strong>Que la consulta siempre se ejecuta al compilar.</p>
+<p><strong>C. </strong>Que la consulta no se evalúa hasta que se enumera o materializa.</p>
+<p><strong>D. </strong>Que LINQ solo funciona con bases de datos.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>45. </strong>Cuando se usa LINQ sobre `IQueryable` de EF Core, ¿qué ocurre normalmente?</p>
+<p><strong>A. </strong>El CLR delega la consulta en NuGet.</p>
+<p><strong>B. </strong>El proveedor intenta traducir la expresión a una consulta del origen, por ejemplo SQL.</p>
+<p><strong>C. </strong>LINQ se convierte en JavaScript.</p>
+<p><strong>D. </strong>Todo se descarga siempre a memoria antes de filtrar.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>46. </strong>¿Qué diferencia general hay entre `IEnumerable&lt;T&gt;` e `IQueryable&lt;T&gt;` en acceso a datos?</p>
+<p><strong>A. </strong>`IEnumerable` solo admite SQL y `IQueryable` solo archivos.</p>
+<p><strong>B. </strong>Son tipos idénticos.</p>
+<p><strong>C. </strong>`IQueryable` obliga a cargar toda la tabla antes de filtrar.</p>
+<p><strong>D. </strong>`IEnumerable` opera sobre enumeración .NET; `IQueryable` puede representar una consulta que un proveedor traduzca a otro lenguaje/origen.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>47. </strong>¿Qué aporta una instrucción `using` sobre un objeto `IDisposable`?</p>
+<p><strong>A. </strong>Convierte el objeto en estático.</p>
+<p><strong>B. </strong>Garantiza la llamada a `Dispose` al salir del ámbito, incluso ante excepciones, según el patrón generado.</p>
+<p><strong>C. </strong>Crea un nuevo proceso.</p>
+<p><strong>D. </strong>Hace que el objeto nunca se recoja por GC.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>48. </strong>¿Cuál de estas afirmaciones es correcta?</p>
+<p><strong>A. </strong>`await` desactiva el scheduler.</p>
+<p><strong>B. </strong>`await` solo funciona con CPU-bound.</p>
+<p><strong>C. </strong>`await` obliga a crear un hilo por petición.</p>
+<p><strong>D. </strong>`await` no significa que una operación sea paralela; permite suspender lógicamente el método hasta que la tarea finalice.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>49. </strong>¿Qué característica definen principalmente los `record` de C#?</p>
+<p><strong>A. </strong>Una forma concisa de modelar datos con semántica de igualdad por valor especialmente útil para modelos inmutables o DTOs.</p>
+<p><strong>B. </strong>Un sustituto del CLR.</p>
+<p><strong>C. </strong>Un archivo de logging.</p>
+<p><strong>D. </strong>Un tipo exclusivo para acceder a SQL Server.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>50. </strong>¿Para qué sirven las nullable reference types?</p>
+<p><strong>A. </strong>Para permitir que cualquier tipo valor sea siempre null sin `?`.</p>
+<p><strong>B. </strong>Para cifrar referencias.</p>
+<p><strong>C. </strong>Para expresar y analizar en compilación si una referencia puede ser nula, reduciendo errores de null.</p>
+<p><strong>D. </strong>Para desactivar todas las advertencias del compilador.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>51. </strong>¿Qué permite el pattern matching moderno de C#?</p>
+<p><strong>A. </strong>Gestionar paquetes NuGet.</p>
+<p><strong>B. </strong>Compilar a JVM.</p>
+<p><strong>C. </strong>Comprobar formas, tipos y propiedades de datos con patrones expresivos en `is` y `switch`.</p>
+<p><strong>D. </strong>Ejecutar consultas SQL sin proveedor.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>52. </strong>¿Cuál es una ventaja de los genéricos en APIs y colecciones?</p>
+<p><strong>A. </strong>Eliminar la necesidad de compilar.</p>
+<p><strong>B. </strong>Mantener información de tipos y reducir casts inseguros.</p>
+<p><strong>C. </strong>Convertir todos los tipos a string.</p>
+<p><strong>D. </strong>Obligar a serializar todos los valores.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>53. </strong>¿Qué hace `dotnet restore`?</p>
+<p><strong>A. </strong>Restaura las dependencias de paquetes necesarias para el proyecto.</p>
+<p><strong>B. </strong>Ejecuta las pruebas unitarias.</p>
+<p><strong>C. </strong>Publica la aplicación en producción.</p>
+<p><strong>D. </strong>Repara el sistema operativo.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>54. </strong>¿Cuál es la relación correcta entre NuGet y MSBuild?</p>
+<p><strong>A. </strong>Son dos nombres para la misma herramienta.</p>
+<p><strong>B. </strong>NuGet gestiona paquetes; MSBuild ejecuta el proceso de construcción del proyecto.</p>
+<p><strong>C. </strong>NuGet aloja ASP.NET Core y MSBuild autentica usuarios.</p>
+<p><strong>D. </strong>NuGet es un compilador JIT y MSBuild un ORM.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>55. </strong>¿Qué contiene normalmente un archivo `.csproj` moderno?</p>
+<p><strong>A. </strong>El almacenamiento de sesiones de Kestrel.</p>
+<p><strong>B. </strong>El código máquina generado por el JIT.</p>
+<p><strong>C. </strong>La definición del proyecto, TFM, propiedades y referencias, entre otros elementos de build.</p>
+<p><strong>D. </strong>Las credenciales de todos los usuarios.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>56. </strong>¿Qué diferencia práctica hay entre `dotnet build` y `dotnet publish`?</p>
+<p><strong>A. </strong>`build` compila; `publish` prepara un conjunto desplegable con los artefactos necesarios según la modalidad elegida.</p>
+<p><strong>B. </strong>`build` instala el sistema operativo de destino.</p>
+<p><strong>C. </strong>`publish` solo ejecuta tests y `build` sube a Internet.</p>
+<p><strong>D. </strong>Son exactamente equivalentes.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>57. </strong>¿Qué comando está orientado específicamente a ejecutar la suite de pruebas de un proyecto?</p>
+<p><strong>A. </strong>`dotnet nuget push`.</p>
+<p><strong>B. </strong>`dotnet pack`.</p>
+<p><strong>C. </strong>`dotnet clean`.</p>
+<p><strong>D. </strong>`dotnet test`.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>58. </strong>¿Qué hace habitualmente `dotnet run` durante desarrollo?</p>
+<p><strong>A. </strong>Compila si es necesario y ejecuta el proyecto seleccionado.</p>
+<p><strong>B. </strong>Publica automáticamente en producción.</p>
+<p><strong>C. </strong>Ejecuta únicamente migraciones de base de datos.</p>
+<p><strong>D. </strong>Crea una imagen Docker obligatoriamente.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>59. </strong>¿Para qué sirven herramientas como `dotnet-counters` o `dotnet-trace`?</p>
+<p><strong>A. </strong>Para sustituir al control de versiones.</p>
+<p><strong>B. </strong>Para gestionar DNS.</p>
+<p><strong>C. </strong>Para diagnóstico y observación del comportamiento de aplicaciones .NET en ejecución.</p>
+<p><strong>D. </strong>Para crear esquemas de base de datos.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>60. </strong>¿Qué afirmación sobre Visual Studio, VS Code y Rider es correcta?</p>
+<p><strong>A. </strong>VS Code sustituye al runtime de producción.</p>
+<p><strong>B. </strong>Una aplicación compilada con Rider solo puede ejecutarse dentro de Rider.</p>
+<p><strong>C. </strong>El CLR forma parte exclusivamente de Visual Studio.</p>
+<p><strong>D. </strong>Son herramientas de desarrollo; la aplicación .NET no depende conceptualmente de un IDE concreto para ejecutarse.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<h1>4. ASP.NET Core: pipeline, DI, APIs y configuración</h1>
+<p><strong>61. </strong>¿Qué es el pipeline de middleware de ASP.NET Core?</p>
+<p><strong>A. </strong>Un gestor de paquetes.</p>
+<p><strong>B. </strong>Una tabla de base de datos.</p>
+<p><strong>C. </strong>Un compilador alternativo de C#.</p>
+<p><strong>D. </strong>Una secuencia de componentes que procesan la petición y la respuesta HTTP.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>62. </strong>¿Qué característica incorpora ASP.NET Core de forma nativa para componer servicios?</p>
+<p><strong>A. </strong>Un contenedor de inyección de dependencias integrado.</p>
+<p><strong>B. </strong>Un lenguaje diferente de C#.</p>
+<p><strong>C. </strong>Un servidor Oracle embebido.</p>
+<p><strong>D. </strong>Un sistema operativo propio.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>63. </strong>¿Qué función cumple el routing?</p>
+<p><strong>A. </strong>Descargar paquetes NuGet.</p>
+<p><strong>B. </strong>Compilar assemblies.</p>
+<p><strong>C. </strong>Gestionar el GC.</p>
+<p><strong>D. </strong>Relacionar una petición HTTP con el endpoint que debe atenderla.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>64. </strong>¿Qué afirmación distingue razonablemente Minimal APIs y MVC Controllers?</p>
+<p><strong>A. </strong>Minimal APIs no pueden devolver HTTP.</p>
+<p><strong>B. </strong>MVC Controllers no admiten inyección de dependencias.</p>
+<p><strong>C. </strong>Solo Minimal APIs funcionan en .NET moderno.</p>
+<p><strong>D. </strong>Ambos sirven para APIs; Minimal APIs reducen ceremonia en escenarios simples y controllers aportan una estructura más clásica y rica para aplicaciones complejas.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>65. </strong>¿Qué es Kestrel?</p>
+<p><strong>A. </strong>El compilador de C#.</p>
+<p><strong>B. </strong>El gestor de paquetes.</p>
+<p><strong>C. </strong>El servidor web multiplataforma utilizado por ASP.NET Core.</p>
+<p><strong>D. </strong>El ORM de .NET.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>66. </strong>¿Por qué se coloca a menudo ASP.NET Core detrás de un reverse proxy?</p>
+<p><strong>A. </strong>Porque ASP.NET Core solo funciona con Apache.</p>
+<p><strong>B. </strong>Porque Kestrel no soporta HTTP.</p>
+<p><strong>C. </strong>Para integrar terminación TLS, balanceo, políticas de borde u otras capacidades de infraestructura, según el despliegue.</p>
+<p><strong>D. </strong>Porque el CLR exige IIS.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>67. </strong>¿Qué finalidad tiene `appsettings.json`?</p>
+<p><strong>A. </strong>Sustituir a la base de datos.</p>
+<p><strong>B. </strong>Proporcionar configuración de aplicación que puede combinarse con otras fuentes y entornos.</p>
+<p><strong>C. </strong>Almacenar assemblies compilados.</p>
+<p><strong>D. </strong>Contener únicamente contraseñas en texto claro.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>68. </strong>¿Cuál es una práctica correcta con secretos de producción?</p>
+<p><strong>A. </strong>Incluirlos en mensajes de log para facilitar soporte.</p>
+<p><strong>B. </strong>Mantenerlos fuera del código y de repositorios, usando almacenes de secretos o mecanismos seguros del entorno.</p>
+<p><strong>C. </strong>Guardarlos en `appsettings.json` y subirlos a Git.</p>
+<p><strong>D. </strong>Codificarlos en Base64 y considerarlos cifrados.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>69. </strong>¿Para qué sirven los entornos Development, Staging y Production en ASP.NET Core?</p>
+<p><strong>A. </strong>Para variar configuración y comportamiento según el contexto de ejecución.</p>
+<p><strong>B. </strong>Para definir el tipo de CPU.</p>
+<p><strong>C. </strong>Para elegir el lenguaje de programación.</p>
+<p><strong>D. </strong>Para reemplazar el control de versiones.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>70. </strong>En un pipeline típico con autenticación y autorización, ¿qué orden conceptual es correcto?</p>
+<p><strong>A. </strong>Autenticar antes de autorizar, porque la autorización necesita una identidad establecida.</p>
+<p><strong>B. </strong>Autorizar antes de autenticar siempre.</p>
+<p><strong>C. </strong>No importa el orden de middleware.</p>
+<p><strong>D. </strong>Ejecutar autorización después de devolver la respuesta.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>71. </strong>¿Qué diferencia hay entre autenticación y autorización?</p>
+<p><strong>A. </strong>Autenticación decide permisos y autorización crea la contraseña.</p>
+<p><strong>B. </strong>Son sinónimos exactos.</p>
+<p><strong>C. </strong>Autorización ocurre únicamente en la base de datos.</p>
+<p><strong>D. </strong>Autenticación determina quién es el usuario; autorización decide qué puede hacer.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>72. </strong>¿Qué ciclos de vida ofrece típicamente el contenedor DI de ASP.NET Core?</p>
+<p><strong>A. </strong>GET, POST y DELETE.</p>
+<p><strong>B. </strong>Read, Write y Execute.</p>
+<p><strong>C. </strong>Transient, Scoped y Singleton.</p>
+<p><strong>D. </strong>Local, Remote y Hybrid.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>73. </strong>En una aplicación web típica, ¿qué lifetime se usa habitualmente para `DbContext` cuando se registra con EF Core?</p>
+<p><strong>A. </strong>Singleton obligatorio.</p>
+<p><strong>B. </strong>Scoped, normalmente una instancia por ámbito/petición.</p>
+<p><strong>C. </strong>Static global compartido entre todas las peticiones.</p>
+<p><strong>D. </strong>Transient obligatorio en cualquier caso.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>74. </strong>¿Qué finalidad tiene un Controller en ASP.NET Core MVC/API?</p>
+<p><strong>A. </strong>Agrupar acciones/endpoints y coordinar entrada HTTP con la lógica de aplicación.</p>
+<p><strong>B. </strong>Definir el esquema físico de la base de datos.</p>
+<p><strong>C. </strong>Ejecutar el GC.</p>
+<p><strong>D. </strong>Gestionar paquetes NuGet.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>75. </strong>¿Qué es model binding?</p>
+<p><strong>A. </strong>La creación de índices SQL.</p>
+<p><strong>B. </strong>La compilación de C# a IL.</p>
+<p><strong>C. </strong>El proceso de obtener datos de la petición y construir/asignar parámetros u objetos del modelo de entrada.</p>
+<p><strong>D. </strong>La autenticación del usuario.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>76. </strong>¿Qué papel cumple la validación de modelos?</p>
+<p><strong>A. </strong>Cifrar la base de datos.</p>
+<p><strong>B. </strong>Comprobar reglas de entrada y detectar datos inválidos antes de procesarlos como válidos.</p>
+<p><strong>C. </strong>Sustituir a la autorización.</p>
+<p><strong>D. </strong>Compilar el proyecto.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>77. </strong>¿Qué precaución existe con los archivos estáticos?</p>
+<p><strong>A. </strong>Kestrel cifra automáticamente cualquier archivo estático.</p>
+<p><strong>B. </strong>Los archivos servidos como públicos no deben contener secretos ni material que requiera autorización sin un diseño específico.</p>
+<p><strong>C. </strong>El middleware de archivos estáticos aplica siempre las mismas políticas de autorización que un controller protegido.</p>
+<p><strong>D. </strong>Los archivos estáticos nunca son accesibles desde Internet.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>78. </strong>¿Qué middleware debe situarse normalmente al principio para capturar excepciones producidas por componentes posteriores?</p>
+<p><strong>A. </strong>Un manejador global de excepciones configurado para el entorno.</p>
+<p><strong>B. </strong>Ninguno; las excepciones no se gestionan en ASP.NET Core.</p>
+<p><strong>C. </strong>El middleware de autorización al final de la respuesta.</p>
+<p><strong>D. </strong>El middleware de archivos estáticos únicamente.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>79. </strong>¿Qué aportan los Health Checks?</p>
+<p><strong>A. </strong>La eliminación de logs.</p>
+<p><strong>B. </strong>La compilación AOT.</p>
+<p><strong>C. </strong>Una copia de seguridad automática de la base de datos.</p>
+<p><strong>D. </strong>Endpoints/sondeos para expresar el estado de salud de la aplicación y dependencias relevantes.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>80. </strong>¿Qué afirmación sobre rate limiting y caching es correcta?</p>
+<p><strong>A. </strong>El caching hace innecesaria la consistencia de datos.</p>
+<p><strong>B. </strong>El rate limiting sustituye siempre al firewall y a la autenticación.</p>
+<p><strong>C. </strong>Son capacidades de infraestructura/aplicación que deben configurarse según el comportamiento y riesgos del servicio; no sustituyen autenticación ni autorización.</p>
+<p><strong>D. </strong>Ambos son funciones exclusivas de EF Core.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<h1>5. Datos: ADO.NET, EF Core, LINQ y rendimiento</h1>
+<p><strong>81. </strong>¿Qué describe mejor ADO.NET?</p>
+<p><strong>A. </strong>El servidor web de ASP.NET Core.</p>
+<p><strong>B. </strong>Un conjunto de APIs de acceso a datos de bajo nivel relativo, con conexiones, comandos, lectores y adaptadores/proveedores.</p>
+<p><strong>C. </strong>El ORM de alto nivel obligatorio de .NET.</p>
+<p><strong>D. </strong>El sistema de autenticación de .NET.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>82. </strong>¿Qué es Entity Framework Core?</p>
+<p><strong>A. </strong>Un ORM moderno para .NET que permite mapear entidades y consultar/persistir datos mediante un modelo de objetos.</p>
+<p><strong>B. </strong>Una implementación de OAuth 2.0.</p>
+<p><strong>C. </strong>Un gestor de paquetes.</p>
+<p><strong>D. </strong>Un reemplazo del CLR.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>83. </strong>¿Qué representa normalmente `DbContext`?</p>
+<p><strong>A. </strong>Un servidor HTTP.</p>
+<p><strong>B. </strong>Una caché distribuida obligatoria.</p>
+<p><strong>C. </strong>Un assembly de sistema.</p>
+<p><strong>D. </strong>Una unidad de trabajo/sesión con el modelo y la base de datos, responsable de consultas, tracking y persistencia.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>84. </strong>¿Qué representa `DbSet&lt;TEntity&gt;`?</p>
+<p><strong>A. </strong>Un middleware de autenticación.</p>
+<p><strong>B. </strong>Un paquete NuGet comprimido.</p>
+<p><strong>C. </strong>Un punto de acceso a un conjunto de entidades de un tipo dentro del modelo de EF Core.</p>
+<p><strong>D. </strong>Una conexión TCP.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>85. </strong>¿Qué ventaja aporta usar LINQ con EF Core?</p>
+<p><strong>A. </strong>Garantizar que cualquier método C# se traduzca a SQL.</p>
+<p><strong>B. </strong>Expresar consultas con tipos .NET que el proveedor intenta traducir al origen de datos.</p>
+<p><strong>C. </strong>Eliminar siempre la necesidad de índices.</p>
+<p><strong>D. </strong>Evitar cualquier acceso a la red.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>86. </strong>¿Qué es el change tracking de EF Core?</p>
+<p><strong>A. </strong>El seguimiento del estado y cambios de entidades para determinar qué debe persistirse.</p>
+<p><strong>B. </strong>Un sistema de control de versiones Git.</p>
+<p><strong>C. </strong>Un log de Kestrel.</p>
+<p><strong>D. </strong>Una auditoría de seguridad automática completa.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>87. </strong>¿Cuándo es especialmente útil `AsNoTracking()`?</p>
+<p><strong>A. </strong>En consultas de solo lectura donde no se necesita que el contexto detecte cambios de las entidades.</p>
+<p><strong>B. </strong>Cuando se va a modificar y guardar cada entidad necesariamente.</p>
+<p><strong>C. </strong>Para iniciar una transacción distribuida.</p>
+<p><strong>D. </strong>Para desactivar la seguridad SQL.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>88. </strong>¿Qué son las migraciones de EF Core?</p>
+<p><strong>A. </strong>Un sistema para migrar .NET a Java.</p>
+<p><strong>B. </strong>Un reemplazo de las pruebas de integración.</p>
+<p><strong>C. </strong>Un mecanismo para versionar y aplicar cambios del esquema derivados del modelo de datos.</p>
+<p><strong>D. </strong>Una copia de seguridad completa de la base de datos.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>89. </strong>¿Qué problema describe el patrón N+1 en acceso a datos?</p>
+<p><strong>A. </strong>Crear N índices automáticamente.</p>
+<p><strong>B. </strong>Ejecutar exactamente N consultas en paralelo de forma óptima.</p>
+<p><strong>C. </strong>Guardar N entidades en una sola transacción.</p>
+<p><strong>D. </strong>Realizar una consulta inicial y después muchas consultas adicionales, por ejemplo una por cada elemento, generando sobrecoste.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>90. </strong>¿Qué técnica puede ayudar a evitar un N+1 cuando realmente se necesitan relaciones asociadas?</p>
+<p><strong>A. </strong>Añadir `ToString()` a cada entidad.</p>
+<p><strong>B. </strong>Crear un DbContext singleton global.</p>
+<p><strong>C. </strong>Diseñar la consulta para traer los datos necesarios de forma controlada, por ejemplo con proyección o carga eager adecuada.</p>
+<p><strong>D. </strong>Desactivar todos los índices.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>91. </strong>¿Qué riesgo tiene activar lazy loading sin analizar el patrón de acceso?</p>
+<p><strong>A. </strong>Impide completamente consultar relaciones.</p>
+<p><strong>B. </strong>Puede ocultar consultas adicionales y favorecer N+1 o acceso inesperado a la base de datos.</p>
+<p><strong>C. </strong>Deshabilita todas las transacciones.</p>
+<p><strong>D. </strong>Convierte EF Core en ADO.NET puro.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>92. </strong>Cuando `SaveChanges` ejecuta varias modificaciones en una sola llamada y el proveedor admite transacciones, ¿qué comportamiento ofrece normalmente EF Core?</p>
+<p><strong>A. </strong>Crea una transacción distribuida obligatoria.</p>
+<p><strong>B. </strong>Nunca usa transacciones.</p>
+<p><strong>C. </strong>Hace un commit por propiedad individual.</p>
+<p><strong>D. </strong>Usa una transacción para que la llamada se aplique de forma atómica según las capacidades del proveedor.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>93. </strong>¿Cuándo puede ser necesario controlar una transacción explícitamente?</p>
+<p><strong>A. </strong>Siempre, incluso para cualquier SELECT.</p>
+<p><strong>B. </strong>Nunca, porque las transacciones no existen en EF Core.</p>
+<p><strong>C. </strong>Solo si se usa Kestrel.</p>
+<p><strong>D. </strong>Cuando una unidad de negocio abarca varias operaciones/SaveChanges o recursos y se necesita delimitar la atomicidad de forma concreta.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>94. </strong>¿Qué precaución debe tomarse al ejecutar SQL sin procesar?</p>
+<p><strong>A. </strong>Concatenar siempre strings para mayor velocidad.</p>
+<p><strong>B. </strong>Desactivar validación y permisos.</p>
+<p><strong>C. </strong>Parametrizar correctamente valores y evitar concatenar entrada del usuario para reducir riesgo de inyección.</p>
+<p><strong>D. </strong>Usar Base64 como sustituto de parametrización.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>95. </strong>¿Qué afirmación sobre connection pooling es correcta?</p>
+<p><strong>A. </strong>Cada `Open` crea obligatoriamente una conexión física nueva sin reutilización.</p>
+<p><strong>B. </strong>EF Core no puede usar pooling de conexiones.</p>
+<p><strong>C. </strong>Los proveedores de datos pueden reutilizar conexiones físicas mediante pools; abrir/cerrar lógicamente una conexión no implica siempre crear/destruir una conexión física.</p>
+<p><strong>D. </strong>El pooling elimina la necesidad de cerrar conexiones.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>96. </strong>¿Para qué sirve un token de concurrencia en EF Core?</p>
+<p><strong>A. </strong>Para autenticar al usuario HTTP.</p>
+<p><strong>B. </strong>Para detectar conflictos cuando otro proceso modifica una fila entre lectura y actualización, según la estrategia elegida.</p>
+<p><strong>C. </strong>Para cifrar paquetes NuGet.</p>
+<p><strong>D. </strong>Para compilar consultas LINQ.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>97. </strong>Si una expresión LINQ no puede traducirse al proveedor de EF Core en una parte esencial de la consulta, ¿qué debe hacer el desarrollador?</p>
+<p><strong>A. </strong>Revisar la consulta y separar o reformular lo que deba ejecutarse en servidor o cliente de forma consciente.</p>
+<p><strong>B. </strong>Cambiar Kestrel por IIS.</p>
+<p><strong>C. </strong>Suponer que siempre se ejecutará correctamente en SQL.</p>
+<p><strong>D. </strong>Desactivar el compilador.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>98. </strong>¿Qué efecto suele tener `ToList()` sobre una consulta LINQ?</p>
+<p><strong>A. </strong>Materializa los resultados en ese punto y ejecuta la consulta si era diferida.</p>
+<p><strong>B. </strong>Hace que la consulta deje de usar memoria.</p>
+<p><strong>C. </strong>Activa una transacción distribuida.</p>
+<p><strong>D. </strong>Convierte la consulta en una migración.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>99. </strong>Para paginar grandes conjuntos de datos, ¿qué enfoque es mejor que cargar todo y recortar en memoria?</p>
+<p><strong>A. </strong>Desactivar índices.</p>
+<p><strong>B. </strong>Crear un DbContext global para toda la aplicación.</p>
+<p><strong>C. </strong>Usar `ToList()` de toda la tabla y después `Skip/Take` en memoria.</p>
+<p><strong>D. </strong>Aplicar paginación en la consulta del origen, con orden estable y estrategia adecuada al caso.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>100. </strong>¿Cuál es la diferencia conceptual más correcta entre ADO.NET y EF Core?</p>
+<p><strong>A. </strong>ADO.NET solo sirve para archivos de texto.</p>
+<p><strong>B. </strong>ADO.NET ofrece acceso más directo a proveedor/comandos; EF Core añade abstracción ORM, tracking y LINQ sobre un modelo de entidades.</p>
+<p><strong>C. </strong>EF Core sustituye al motor de base de datos.</p>
+<p><strong>D. </strong>ADO.NET es un lenguaje y EF Core un sistema operativo.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<h1>6. Seguridad, identidad, despliegue y observabilidad .NET</h1>
+<p><strong>101. </strong>¿Qué debe ocurrir antes de aplicar una regla de autorización basada en identidad?</p>
+<p><strong>A. </strong>Debe haberse publicado self-contained.</p>
+<p><strong>B. </strong>La petición debe haberse autenticado o disponer de una identidad establecida de forma válida.</p>
+<p><strong>C. </strong>Debe haberse descargado un paquete NuGet.</p>
+<p><strong>D. </strong>Debe haberse ejecutado una migración de EF Core.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>102. </strong>¿Qué diferencia general existe entre autenticación por cookie y bearer token?</p>
+<p><strong>A. </strong>Bearer solo puede usarse en aplicaciones de escritorio.</p>
+<p><strong>B. </strong>La cookie suele mantener una sesión web mediante cookie; un bearer token se envía como credencial en cada petición, común en APIs.</p>
+<p><strong>C. </strong>La cookie cifra automáticamente toda la base de datos y bearer no.</p>
+<p><strong>D. </strong>Son exactamente el mismo mecanismo de transporte.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>103. </strong>¿Qué es un claim en el modelo de identidad?</p>
+<p><strong>A. </strong>Un tipo de middleware para archivos estáticos.</p>
+<p><strong>B. </strong>Una tabla obligatoria de EF Core.</p>
+<p><strong>C. </strong>Un assembly nativo.</p>
+<p><strong>D. </strong>Una afirmación sobre una identidad, como identificador, rol, ámbito u otro atributo.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>104. </strong>¿Qué ventaja tienen las políticas de autorización frente a dispersar comprobaciones manuales?</p>
+<p><strong>A. </strong>Impiden usar roles.</p>
+<p><strong>B. </strong>Sustituyen a HTTPS.</p>
+<p><strong>C. </strong>Permiten centralizar requisitos y combinaciones de claims/roles de forma reutilizable y comprobable.</p>
+<p><strong>D. </strong>Eliminan la necesidad de autenticar.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>105. </strong>¿Qué es ASP.NET Core Identity?</p>
+<p><strong>A. </strong>El CLR.</p>
+<p><strong>B. </strong>El ORM EF Core.</p>
+<p><strong>C. </strong>Un sistema de pertenencia/gestión de usuarios y credenciales para aplicaciones ASP.NET Core, opcional según arquitectura.</p>
+<p><strong>D. </strong>El protocolo OAuth 2.0.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>106. </strong>¿Cuál es el propósito principal de OAuth 2.0?</p>
+<p><strong>A. </strong>Definir por sí solo la identidad del usuario como protocolo de autenticación completo.</p>
+<p><strong>B. </strong>Delegar autorización para acceso a recursos mediante tokens y scopes.</p>
+<p><strong>C. </strong>Cifrar conexiones TLS.</p>
+<p><strong>D. </strong>Gestionar paquetes NuGet.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>107. </strong>¿Qué aporta OpenID Connect sobre OAuth 2.0?</p>
+<p><strong>A. </strong>Un compilador AOT.</p>
+<p><strong>B. </strong>Una capa de identidad/autenticación estandarizada, incluyendo ID Token y endpoints asociados.</p>
+<p><strong>C. </strong>Un formato de assembly.</p>
+<p><strong>D. </strong>Un ORM para .NET.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>108. </strong>¿Para qué sirve ASP.NET Core Data Protection?</p>
+<p><strong>A. </strong>Para proteger criptográficamente datos de aplicación como cookies o tokens internos según el sistema de claves y propósito.</p>
+<p><strong>B. </strong>Para generar contraseñas de usuarios automáticamente.</p>
+<p><strong>C. </strong>Para reemplazar TLS.</p>
+<p><strong>D. </strong>Para cifrar toda base de datos sin configuración.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>109. </strong>¿Qué riesgo combate principalmente la protección antiforgery en aplicaciones web basadas en cookies?</p>
+<p><strong>A. </strong>Ataques de fuerza bruta sobre SSH.</p>
+<p><strong>B. </strong>Fugas de memoria del GC.</p>
+<p><strong>C. </strong>Inyección SQL en consultas ADO.NET.</p>
+<p><strong>D. </strong>Ataques CSRF que aprovechan credenciales enviadas automáticamente por el navegador.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>110. </strong>¿Qué papel tiene HTTPS/TLS?</p>
+<p><strong>A. </strong>Autorizar automáticamente cada acción del usuario.</p>
+<p><strong>B. </strong>Cifrar datos almacenados en la base de datos por defecto.</p>
+<p><strong>C. </strong>Proteger la confidencialidad e integridad del tráfico en tránsito y autenticar el endpoint según la configuración de certificados.</p>
+<p><strong>D. </strong>Eliminar la necesidad de validar certificados.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>111. </strong>¿Cuál es una práctica correcta para secretos como cadenas de conexión o claves API?</p>
+<p><strong>A. </strong>Imprimirlos en logs de diagnóstico.</p>
+<p><strong>B. </strong>Usar mecanismos de secretos/variables/gestores seguros y limitar permisos, evitando incorporarlos al repositorio.</p>
+<p><strong>C. </strong>Codificarlos en hexadecimal y subirlos a Git.</p>
+<p><strong>D. </strong>Guardar los secretos en comentarios del código.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>112. </strong>¿Qué ventaja aporta el logging estructurado?</p>
+<p><strong>A. </strong>Sustituir las métricas.</p>
+<p><strong>B. </strong>Eliminar la necesidad de IDs de correlación.</p>
+<p><strong>C. </strong>Registrar eventos con campos y propiedades que facilitan búsqueda, correlación y análisis automatizado.</p>
+<p><strong>D. </strong>Garantizar que nunca se almacenen datos sensibles.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>113. </strong>¿Qué debe comprobar un health check bien diseñado?</p>
+<p><strong>A. </strong>Todas las contraseñas configuradas.</p>
+<p><strong>B. </strong>El contenido completo de la base de datos.</p>
+<p><strong>C. </strong>El estado de la aplicación y solo las dependencias relevantes para el tipo de sonda, sin exponer información sensible.</p>
+<p><strong>D. </strong>La versión de cada paquete de desarrollo al usuario anónimo.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>114. </strong>¿Qué aporta OpenTelemetry?</p>
+<p><strong>A. </strong>Un estándar/ecosistema para instrumentar y exportar trazas, métricas y logs de forma interoperable.</p>
+<p><strong>B. </strong>Un sistema operativo.</p>
+<p><strong>C. </strong>Un gestor de paquetes.</p>
+<p><strong>D. </strong>Un ORM.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>115. </strong>¿Qué ventaja ofrece contenerizar una aplicación .NET?</p>
+<p><strong>A. </strong>Eliminar la necesidad de aplicar parches al runtime.</p>
+<p><strong>B. </strong>Hacer que la aplicación sea inmune a vulnerabilidades.</p>
+<p><strong>C. </strong>Convertir automáticamente una aplicación monolítica en microservicios.</p>
+<p><strong>D. </strong>Empaquetar aplicación y dependencias de ejecución en una imagen reproducible y desplegable en entornos compatibles.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>116. </strong>¿Qué publicación suele producir artefactos más pequeños: framework-dependent o self-contained?</p>
+<p><strong>A. </strong>Framework-dependent, porque reutiliza un runtime instalado en el destino.</p>
+<p><strong>B. </strong>Native AOT y framework-dependent son sinónimos.</p>
+<p><strong>C. </strong>Self-contained siempre.</p>
+<p><strong>D. </strong>Ambas pesan exactamente lo mismo.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>117. </strong>¿Qué es single-file publishing?</p>
+<p><strong>A. </strong>Una opción de publicación que agrupa gran parte de los artefactos de la aplicación en un único archivo para facilitar distribución.</p>
+<p><strong>B. </strong>Un tipo de base de datos.</p>
+<p><strong>C. </strong>Un reemplazo de NuGet.</p>
+<p><strong>D. </strong>Un protocolo de autenticación.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>118. </strong>¿Qué consideración existe al usar Native AOT?</p>
+<p><strong>A. </strong>Obliga a usar Windows.</p>
+<p><strong>B. </strong>Elimina la necesidad de pruebas.</p>
+<p><strong>C. </strong>Hace que reflection sea siempre ilimitada.</p>
+<p><strong>D. </strong>Puede mejorar arranque y huella, pero ciertas técnicas dinámicas o librerías pueden requerir adaptación y pruebas de compatibilidad.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>119. </strong>Si Kestrel está detrás de un reverse proxy, ¿qué información debe configurarse con cuidado?</p>
+<p><strong>A. </strong>El código IL de los assemblies.</p>
+<p><strong>B. </strong>La configuración del GC del navegador.</p>
+<p><strong>C. </strong>Los paquetes NuGet del cliente.</p>
+<p><strong>D. </strong>Cabeceras reenviadas y confianza en proxies para reconstruir correctamente esquema, IP y host cuando proceda.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>120. </strong>¿Qué principio de seguridad debe aplicarse a la identidad del proceso y credenciales de una aplicación?</p>
+<p><strong>A. </strong>Mínimo privilegio: conceder solo permisos necesarios y separar responsabilidades.</p>
+<p><strong>B. </strong>Guardar permisos en el código fuente.</p>
+<p><strong>C. </strong>Compartir una cuenta con otras aplicaciones para simplificar.</p>
+<p><strong>D. </strong>Ejecutar siempre como administrador/root para evitar errores.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<h1>7. Jakarta EE 11: plataforma, perfiles y servicios empresariales</h1>
+<p><strong>Nota de actualidad: </strong>este bloque usa Jakarta EE 11 y Java SE 17+ como referencia, no material Java EE antiguo.</p>
+<p><strong>121. </strong>¿Qué versión mínima de Java SE requiere Jakarta EE 11?</p>
+<p><strong>A. </strong>Java SE 17.</p>
+<p><strong>B. </strong>Java SE 11 obligatoriamente.</p>
+<p><strong>C. </strong>Java SE 8.</p>
+<p><strong>D. </strong>Java SE 6.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>122. </strong>¿Qué perfiles forman la estructura de Jakarta EE 11?</p>
+<p><strong>A. </strong>Servlet, JDBC y JVM como únicos perfiles.</p>
+<p><strong>B. </strong>Desktop, Mobile y Cloud.</p>
+<p><strong>C. </strong>Basic, Pro y Enterprise.</p>
+<p><strong>D. </strong>Core Profile, Web Profile y Platform.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>123. </strong>¿Qué función cumple CDI?</p>
+<p><strong>A. </strong>Compilación de bytecode.</p>
+<p><strong>B. </strong>Mapeo objeto-relacional.</p>
+<p><strong>C. </strong>Inyección de dependencias y gestión contextual del ciclo de vida de componentes.</p>
+<p><strong>D. </strong>Gestión de paquetes Maven.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>124. </strong>¿Qué especificación se ocupa del mapeo objeto-relacional en Jakarta EE?</p>
+<p><strong>A. </strong>Jakarta Validation.</p>
+<p><strong>B. </strong>Jakarta Persistence.</p>
+<p><strong>C. </strong>Jakarta REST.</p>
+<p><strong>D. </strong>Jakarta Mail.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>125. </strong>¿Qué objeto es central en Jakarta Persistence para gestionar entidades?</p>
+<p><strong>A. </strong>`HttpContext`.</p>
+<p><strong>B. </strong>`NuGetClient`.</p>
+<p><strong>C. </strong>`EntityManager`.</p>
+<p><strong>D. </strong>`DbContext`.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>126. </strong>¿Qué es JPQL?</p>
+<p><strong>A. </strong>El lenguaje de configuración de Maven.</p>
+<p><strong>B. </strong>El compilador de Java.</p>
+<p><strong>C. </strong>Un servidor de aplicaciones.</p>
+<p><strong>D. </strong>Un lenguaje de consulta orientado al modelo de entidades de Jakarta Persistence, no al esquema SQL físico directamente.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>127. </strong>¿Qué especificación coordina transacciones empresariales en Jakarta EE?</p>
+<p><strong>A. </strong>Jakarta Servlet.</p>
+<p><strong>B. </strong>Jakarta JSON Binding.</p>
+<p><strong>C. </strong>Jakarta Faces.</p>
+<p><strong>D. </strong>Jakarta Transactions.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>128. </strong>¿Qué especificación se usa para servicios RESTful en Jakarta EE?</p>
+<p><strong>A. </strong>Jakarta Persistence.</p>
+<p><strong>B. </strong>Jakarta REST.</p>
+<p><strong>C. </strong>Jakarta Mail.</p>
+<p><strong>D. </strong>Jakarta Batch.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>129. </strong>¿Qué ofrece Jakarta Security?</p>
+<p><strong>A. </strong>Un motor SQL.</p>
+<p><strong>B. </strong>Un compilador JIT.</p>
+<p><strong>C. </strong>Un gestor de dependencias.</p>
+<p><strong>D. </strong>APIs y mecanismos estandarizados de autenticación/autorización integrados con la plataforma.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>130. </strong>¿Qué finalidad tiene Jakarta Validation?</p>
+<p><strong>A. </strong>Declarar y comprobar restricciones de validación sobre datos/beans.</p>
+<p><strong>B. </strong>Gestionar transacciones distribuidas.</p>
+<p><strong>C. </strong>Administrar paquetes.</p>
+<p><strong>D. </strong>Servir archivos estáticos.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>131. </strong>¿Qué es Jakarta Servlet?</p>
+<p><strong>A. </strong>La especificación base para componentes web que procesan peticiones/respuestas HTTP en el contenedor web.</p>
+<p><strong>B. </strong>Un gestor de paquetes.</p>
+<p><strong>C. </strong>Un ORM.</p>
+<p><strong>D. </strong>Un protocolo de autenticación.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>132. </strong>¿Qué es Jakarta Faces?</p>
+<p><strong>A. </strong>El reemplazo de CDI.</p>
+<p><strong>B. </strong>Un framework de componentes de interfaz web del lado servidor incluido en el ámbito de Jakarta EE.</p>
+<p><strong>C. </strong>Un servidor de aplicaciones.</p>
+<p><strong>D. </strong>Un sistema de colas.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>133. </strong>¿Qué incorpora Jakarta Data 1.0 en Jakarta EE 11?</p>
+<p><strong>A. </strong>Un servidor de base de datos incluido.</p>
+<p><strong>B. </strong>Un compilador nativo obligatorio.</p>
+<p><strong>C. </strong>Un lenguaje nuevo que sustituye Java.</p>
+<p><strong>D. </strong>Una especificación para facilitar acceso a datos mediante repositorios y abstracciones estandarizadas.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>134. </strong>¿Cuál de estos es un runtime/servidor compatible con Jakarta EE, según versiones y certificación correspondientes?</p>
+<p><strong>A. </strong>NuGet.</p>
+<p><strong>B. </strong>Kestrel como implementación de Jakarta EE.</p>
+<p><strong>C. </strong>WildFly, Payara, GlassFish u Open Liberty, entre otros.</p>
+<p><strong>D. </strong>MSBuild.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>135. </strong>¿Qué función tienen Maven o Gradle en un proyecto Jakarta EE?</p>
+<p><strong>A. </strong>Implementar Jakarta Persistence.</p>
+<p><strong>B. </strong>Gestionar build y dependencias; no son el servidor/runtime Jakarta EE.</p>
+<p><strong>C. </strong>Ejecutar el contenedor web de Jakarta EE por definición.</p>
+<p><strong>D. </strong>Sustituir a la JVM.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>136. </strong>¿Qué cambio de namespace es característico al migrar de Java EE antiguo a Jakarta EE moderno?</p>
+<p><strong>A. </strong>De `javax.*` a `jakarta.*` para las APIs transferidas a Jakarta.</p>
+<p><strong>B. </strong>De `java.*` a `dotnet.*`.</p>
+<p><strong>C. </strong>No cambió ningún paquete.</p>
+<p><strong>D. </strong>De `jakarta.*` a `javax.*`.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>137. </strong>En Jakarta EE moderno, ¿qué tecnología se prefiere para inyección y componentes gestionados frente al antiguo enfoque de Managed Beans?</p>
+<p><strong>A. </strong>Jakarta Mail.</p>
+<p><strong>B. </strong>CDI.</p>
+<p><strong>C. </strong>JDBC exclusivamente.</p>
+<p><strong>D. </strong>Servlet Filters como contenedor DI.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>138. </strong>¿Cuál es la diferencia entre una especificación Jakarta EE y una implementación?</p>
+<p><strong>A. </strong>La especificación define contratos/semántica; una implementación concreta proporciona el runtime que los ejecuta.</p>
+<p><strong>B. </strong>Son exactamente el mismo producto.</p>
+<p><strong>C. </strong>Una implementación no necesita cumplir ninguna especificación.</p>
+<p><strong>D. </strong>La especificación es un IDE y la implementación un lenguaje.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>139. </strong>¿Qué relación hay entre Java SE y Jakarta EE?</p>
+<p><strong>A. </strong>Jakarta EE 11 significa Java SE 11.</p>
+<p><strong>B. </strong>Java SE es un perfil de Jakarta EE.</p>
+<p><strong>C. </strong>Jakarta EE se construye sobre Java SE y añade especificaciones empresariales; no son versiones equivalentes.</p>
+<p><strong>D. </strong>Jakarta EE sustituye completamente a la JVM.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>140. </strong>En un servicio empresarial Jakarta EE, ¿por qué es importante definir correctamente el límite transaccional?</p>
+<p><strong>A. </strong>Para que Maven descargue dependencias.</p>
+<p><strong>B. </strong>Para seleccionar el perfil Core.</p>
+<p><strong>C. </strong>Para asegurar que las operaciones que forman una unidad de negocio confirmen o reviertan de forma coherente.</p>
+<p><strong>D. </strong>Para activar el GC.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<h1>8. Comparativa .NET / Jakarta EE y casos de arquitectura</h1>
+<p>En estas preguntas importa identificar capas equivalentes sin asumir que las plataformas son identicas.</p>
+<p><strong>141. </strong>¿Qué pareja representa mecanismos de inyección de dependencias comparables conceptualmente en ambos stacks?</p>
+<p><strong>A. </strong>EF Core y Jakarta REST.</p>
+<p><strong>B. </strong>DI integrada de ASP.NET Core y CDI en Jakarta EE.</p>
+<p><strong>C. </strong>NuGet y Jakarta Security.</p>
+<p><strong>D. </strong>Kestrel y JPQL.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>142. </strong>¿Qué pareja representa tecnologías ORM comparables?</p>
+<p><strong>A. </strong>CLR y CDI.</p>
+<p><strong>B. </strong>NuGet y Maven.</p>
+<p><strong>C. </strong>ASP.NET Core y Jakarta Servlet.</p>
+<p><strong>D. </strong>EF Core y Jakarta Persistence.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>143. </strong>¿Qué pareja representa frameworks/especificaciones para APIs REST?</p>
+<p><strong>A. </strong>ASP.NET Core (controllers/Minimal APIs) y Jakarta REST.</p>
+<p><strong>B. </strong>NuGet y Jakarta Faces.</p>
+<p><strong>C. </strong>MSBuild y CDI.</p>
+<p><strong>D. </strong>ADO.NET y Jakarta Transactions.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>144. </strong>¿Qué afirmación compara correctamente la seguridad en ambos stacks?</p>
+<p><strong>A. </strong>Solo .NET tiene autorización.</p>
+<p><strong>B. </strong>Solo Jakarta EE admite OAuth/OIDC.</p>
+<p><strong>C. </strong>Ambos distinguen autenticación y autorización y pueden integrarse con identidades externas; los mecanismos concretos son distintos.</p>
+<p><strong>D. </strong>En ambos autenticación y autorización son sinónimos.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>145. </strong>¿Qué comparación de runtime web es más precisa?</p>
+<p><strong>A. </strong>ASP.NET Core suele ejecutarse sobre Kestrel dentro del proceso .NET; Jakarta EE ejecuta componentes en un runtime/contenedor que implementa sus especificaciones.</p>
+<p><strong>B. </strong>Kestrel implementa Jakarta EE y WildFly implementa ASP.NET Core.</p>
+<p><strong>C. </strong>Ambos requieren IIS obligatoriamente.</p>
+<p><strong>D. </strong>Ninguno necesita un runtime.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>146. </strong>¿Qué equivalencia de herramientas es más razonable?</p>
+<p><strong>A. </strong>NuGet es el equivalente de WildFly.</p>
+<p><strong>B. </strong>Kestrel equivale a Maven.</p>
+<p><strong>C. </strong>NuGet gestiona paquetes .NET; Maven/Gradle gestionan dependencias/build en Java/Jakarta; MSBuild orquesta el build .NET.</p>
+<p><strong>D. </strong>EF Core equivale a Gradle.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>147. </strong>Un equipo quiere evitar acoplar lógica de negocio al framework web. ¿Qué diseño es válido en ambos stacks?</p>
+<p><strong>A. </strong>Usar entidades ORM como única capa de negocio.</p>
+<p><strong>B. </strong>Acceder a secretos directamente desde la UI.</p>
+<p><strong>C. </strong>Poner toda la lógica en controllers o servlets por simplicidad.</p>
+<p><strong>D. </strong>Separar capa HTTP/controladores de servicios de aplicación/dominio e inyectar dependencias.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>148. </strong>Una API .NET necesita una consulta SQL muy específica, altamente optimizada y con control fino sobre comandos. ¿Qué opción puede ser razonable?</p>
+<p><strong>A. </strong>Reescribir la API en Jakarta EE obligatoriamente.</p>
+<p><strong>B. </strong>Usar ADO.NET o una técnica de acceso más directa para ese punto, sin obligar a abandonar EF Core en todo el sistema.</p>
+<p><strong>C. </strong>Usar ASP.NET Identity como ORM.</p>
+<p><strong>D. </strong>Forzar siempre EF Core aunque no permita el control requerido.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>149. </strong>Una aplicación Jakarta EE necesita una consulta muy específica que no encaja bien en el ORM. ¿Qué enfoque es razonable?</p>
+<p><strong>A. </strong>Usar CDI para ejecutar SQL sin driver.</p>
+<p><strong>B. </strong>Usar acceso JDBC/SQL nativo de forma controlada en ese caso, manteniendo Jakarta Persistence donde aporte valor.</p>
+<p><strong>C. </strong>Cambiar necesariamente a .NET.</p>
+<p><strong>D. </strong>Desactivar transacciones.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>150. </strong>Para desplegar una API .NET en contenedores, ¿qué afirmación es correcta?</p>
+<p><strong>A. </strong>Debe compilarse necesariamente como .NET Framework.</p>
+<p><strong>B. </strong>Docker sustituye al CLR.</p>
+<p><strong>C. </strong>Puede publicarse framework-dependent o self-contained según imagen/base y estrategia; el contenedor no obliga a una única modalidad.</p>
+<p><strong>D. </strong>No puede usar Kestrel.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>151. </strong>Una organización migra una aplicación .NET Framework antigua a .NET moderno. ¿Qué debe auditar especialmente?</p>
+<p><strong>A. </strong>Solo cambiar el número de versión del archivo y dar por terminada la migración.</p>
+<p><strong>B. </strong>Mantener cualquier tecnología obsoleta aunque no tenga soporte.</p>
+<p><strong>C. </strong>Eliminar todas las pruebas para acelerar.</p>
+<p><strong>D. </strong>APIs y librerías heredadas, compatibilidad, modelo de hosting/configuración y dependencias específicas de Windows.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>152. </strong>Una organización migra de Java EE antiguo a Jakarta EE moderno. ¿Qué cambio suele requerir atención explícita?</p>
+<p><strong>A. </strong>La transición de paquetes `javax.*` a `jakarta.*` y la compatibilidad de librerías/runtime.</p>
+<p><strong>B. </strong>Sustituir Maven por NuGet.</p>
+<p><strong>C. </strong>Cambiar C# por JavaScript.</p>
+<p><strong>D. </strong>Eliminar la JVM.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>153. </strong>Si un ORM en cualquiera de los dos stacks genera N+1, ¿qué respuesta es la adecuada?</p>
+<p><strong>A. </strong>Ignorar el problema porque los ORMs no generan consultas adicionales.</p>
+<p><strong>B. </strong>Desactivar todos los logs de SQL.</p>
+<p><strong>C. </strong>Revisar el patrón de carga/proyección y las consultas generadas; no culpar al lenguaje ni aumentar hardware sin medir.</p>
+<p><strong>D. </strong>Crear un contexto de persistencia singleton compartido globalmente.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>154. </strong>En ambos stacks, ¿qué secuencia conceptual es correcta al proteger un endpoint?</p>
+<p><strong>A. </strong>Validar solo en cliente.</p>
+<p><strong>B. </strong>Autenticar identidad, aplicar autorización, validar entrada y ejecutar lógica con mínimo privilegio, además de proteger el canal y secretos.</p>
+<p><strong>C. </strong>Autorizar sin identidad y después autenticar.</p>
+<p><strong>D. </strong>Confiar en que HTTPS sustituye todas las comprobaciones.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>155. </strong>Un caso de negocio exige que actualizar un pedido y reservar inventario sea una única unidad coherente. ¿Qué diseño es más correcto?</p>
+<p><strong>A. </strong>Usar logs como sustituto de transacción.</p>
+<p><strong>B. </strong>Hacer cada operación sin relación y esperar que nunca falle.</p>
+<p><strong>C. </strong>Mover la lógica al frontend.</p>
+<p><strong>D. </strong>Definir un límite transaccional en la capa de servicio usando EF Core/transacciones en .NET o Jakarta Transactions/Persistence en Jakarta EE según el stack.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>156. </strong>¿Qué tecnología permite una estrategia de observabilidad homogénea entre servicios .NET y Java/Jakarta modernos?</p>
+<p><strong>A. </strong>MSBuild.</p>
+<p><strong>B. </strong>NuGet exclusivamente.</p>
+<p><strong>C. </strong>OpenTelemetry, mediante instrumentación y exportadores compatibles en ambos ecosistemas.</p>
+<p><strong>D. </strong>Jakarta Faces.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>157. </strong>¿Qué afirmación distingue mejor especificación e implementación al comparar stacks?</p>
+<p><strong>A. </strong>Jakarta EE está organizado fuertemente como conjunto de especificaciones con múltiples implementaciones; .NET es una plataforma/producto con frameworks de Microsoft y ecosistema asociado.</p>
+<p><strong>B. </strong>.NET es una especificación Jakarta.</p>
+<p><strong>C. </strong>Jakarta EE es un único servidor propietario.</p>
+<p><strong>D. </strong>No hay ninguna diferencia de modelo.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>158. </strong>Si el objetivo es portabilidad entre proveedores de runtime Jakarta EE, ¿qué práctica ayuda?</p>
+<p><strong>A. </strong>Compilar contra una versión diferente en cada despliegue sin pruebas.</p>
+<p><strong>B. </strong>Priorizar APIs estándar de Jakarta y aislar extensiones específicas del proveedor cuando sean necesarias.</p>
+<p><strong>C. </strong>Evitar especificaciones estándar.</p>
+<p><strong>D. </strong>Usar únicamente APIs internas no documentadas del servidor.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>159. </strong>¿Qué afirmación sobre OAuth 2.0 y OpenID Connect es correcta para ambos stacks?</p>
+<p><strong>A. </strong>OAuth 2.0 se centra en autorización delegada y OIDC añade identidad/autenticación; ambos pueden integrarse tanto en .NET como en Jakarta/Java.</p>
+<p><strong>B. </strong>OAuth 2.0 es un ORM y OIDC un servidor web.</p>
+<p><strong>C. </strong>OIDC sustituye a TLS.</p>
+<p><strong>D. </strong>Solo existen en ASP.NET Core.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<p><strong>160. </strong>Una arquitectura requiere API, persistencia, identidad, transacciones, observabilidad y despliegue en contenedores. ¿Qué enfoque es correcto?</p>
+<p><strong>A. </strong>Evitar revisar versiones porque la plataforma nunca cambia.</p>
+<p><strong>B. </strong>Elegir solo el lenguaje y suponer que resuelve automáticamente todas las capas.</p>
+<p><strong>C. </strong>Usar el ORM como servidor web y el gestor de paquetes como sistema de identidad.</p>
+<p><strong>D. </strong>Elegir componentes coherentes del stack, separar responsabilidades y verificar soporte/versiones: ASP.NET Core + EF Core + seguridad .NET o Jakarta REST/CDI/Persistence/Transactions/Security en un runtime compatible.</p>
+<p>Respuesta: ____    Seguridad: alta / media / baja</p>
+<h1>Registro de errores</h1>
+<p>Usa una fila por error que merezca repeticion. Si fallas por una confusion de capas, escribe la pareja correcta (por ejemplo, NuGet != MSBuild; CLR != CTS != CLS; OAuth 2.0 != OIDC).</p>
+<table>
+<tr>
+<th scope="col"><p><strong>N.</strong></p></th>
+<th scope="col"><p><strong>Tema</strong></p></th>
+<th scope="col"><p><strong>Tipo de error</strong></p></th>
+<th scope="col"><p><strong>Regla correcta</strong></p></th>
+<th scope="col"><p><strong>Revision</strong></p></th>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+<p><strong>Objetivo de dominio: &gt;= 85% global y &gt;= 80% en cada bloque antes de dar PA15 por consolidada.</strong></p></main></body></html>

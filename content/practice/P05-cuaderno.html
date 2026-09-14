@@ -1,0 +1,285 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GSI A2 — PRÁCTICA ACTIVA 05 — SEGURIDAD — CUADERNO DE EJERCICIOS</title><link rel="stylesheet" href="../../assets/css/styles.css"></head><body><main class="shell topic-content"><p><a href="../../index.html#practica">Volver a práctica escrita</a></p><p>Material curado GSI A2. Fuente: <a href="https://docs.google.com/document/d/1QrhwiciJOz2NXy7dN8Uu9aB2EfL1XeDpCg4jhq03V7o/edit">documento original de Drive</a>.</p><h1>GSI A2 — PRÁCTICA ACTIVA 05</h1>
+<h2>Seguridad y ciberseguridad aplicada: riesgos, auditoría, arquitectura, incidentes y forense</h2>
+<p><strong>Ámbito principal:</strong> II.10 (análisis y gestión de riesgos), II.11 (auditoría), II.13 (ciberseguridad, incidentes y forense) e IV.12 (seguridad en redes, criptografía, VPN y puesto de usuario).</p>
+<p><strong>Método:</strong> responde sin consultar el solucionario. En riesgo: activo → amenaza → vulnerabilidad → impacto/probabilidad → riesgo → salvaguarda → riesgo residual. En auditoría: objetivo → alcance → criterio → evidencia → hallazgo → recomendación. En incidentes: preservar servicio y evidencia sin saltarse contención/erradicación/recuperación. En arquitectura: cada control debe mitigar un riesgo concreto.</p>
+<p><strong>Objetivo:</strong> pasar de memorizar siglas a justificar controles, priorizar riesgos, distinguir auditoría de operación y construir respuestas defendibles para el segundo ejercicio.</p>
+<h1>PARTE A — Riesgo, MAGERIT/PILAR y tratamiento</h1>
+<p>1 - Activo, amenaza y vulnerabilidad <strong>II.10
+</strong></p>
+<p>Un portal ciudadano depende de un servidor sin parches expuesto a Internet. Identifica al menos un activo, una amenaza y una vulnerabilidad. Explica por qué no son sinónimos.</p>
+<p>2 - Dimensiones de seguridad <strong>II.10
+</strong></p>
+<p>Para un servicio de registro electrónico, valora qué dimensiones de seguridad pueden ser especialmente relevantes entre confidencialidad, integridad, disponibilidad, autenticidad y trazabilidad. Justifica sin afirmar que solo exista una.</p>
+<p>3 - Impacto vs probabilidad <strong>II.10
+</strong></p>
+<p>Un incidente tendría impacto catastrófico pero probabilidad muy baja. Otro tendría impacto moderado y probabilidad muy alta. ¿Cuál es necesariamente más prioritario? Explica.</p>
+<p>4 - Riesgo inherente y residual <strong>II.10
+</strong></p>
+<p>Un riesgo inicial se reduce con MFA, segmentación y monitorización, pero no desaparece. Define riesgo inherente y residual.</p>
+<p>5 - Tratamiento del riesgo <strong>II.10
+</strong></p>
+<p>Da un ejemplo práctico de evitar, mitigar/reducir, transferir/compartir y aceptar un riesgo de seguridad.</p>
+<p>6 - Salvaguarda y eficacia <strong>II.10
+</strong></p>
+<p>Se despliega un WAF pero nunca se revisan reglas ni alertas. ¿Puedes considerar el riesgo plenamente tratado? Razona.</p>
+<p>7 - MAGERIT como método <strong>II.10
+</strong></p>
+<p>Explica la secuencia conceptual de un análisis MAGERIT sin enumerar una versión concreta del método ni una herramienta.</p>
+<p>8 - PILAR <strong>II.10
+</strong></p>
+<p>¿Qué papel cumple PILAR respecto de MAGERIT? ¿Por qué no deben confundirse método y herramienta?</p>
+<p>9 - Dependencias entre activos <strong>II.10
+</strong></p>
+<p>Una aplicación depende de BD, DNS, identidad corporativa y red. ¿Por qué el impacto de un fallo en un activo de soporte puede propagarse al activo de negocio?</p>
+<p>10 - Matriz de riesgo <strong>II.10
+</strong></p>
+<p>Diseña una matriz cualitativa 3×3 con probabilidad baja/media/alta e impacto bajo/medio/alto. Explica por qué el color resultante no sustituye al juicio profesional.</p>
+<p>11 - Riesgo tecnológico vs riesgo de proyecto <strong>II.10
+</strong></p>
+<p>Una migración puede fallar por retraso del proveedor y, además, por una vulnerabilidad crítica en el sistema destino. ¿Son el mismo tipo de riesgo? Distingue.</p>
+<p>12 - Plan de tratamiento <strong>II.10
+</strong></p>
+<p>Para un riesgo &#x27;credenciales administrativas comprometidas&#x27;, redacta un mini plan: medidas, responsable, plazo, indicador y criterio de riesgo residual aceptable.</p>
+<h1>PARTE B — Auditoría de TI, evidencia y hallazgos</h1>
+<p>13 - Auditoría vs operación <strong>II.11
+</strong></p>
+<p>¿Por qué quien administra diariamente un sistema no debería ser la única persona que audita su propio trabajo? Relaciónalo con independencia/objetividad.</p>
+<p>14 - Objetivo y alcance <strong>II.11
+</strong></p>
+<p>Una auditoría pretende revisar &#x27;la seguridad de la organización&#x27;. Reformula ese objetivo para que sea auditable: alcance, periodo y sistemas.</p>
+<p>15 - Criterio de auditoría <strong>II.11
+</strong></p>
+<p>Da ejemplos de criterios contra los que podría evaluarse un sistema: normativa, política interna, contrato/SLA, baseline técnica o estándar. ¿Por qué una opinión del auditor no basta?</p>
+<p>16 - Evidencia suficiente y adecuada <strong>II.11
+</strong></p>
+<p>Diferencia suficiencia y adecuación de la evidencia. ¿Qué sería más sólido: una entrevista o una muestra de registros acompañada de configuración y procedimiento?</p>
+<p>17 - Muestreo <strong>II.11
+</strong></p>
+<p>Hay 20.000 altas de usuario. ¿Es imprescindible revisar las 20.000? Explica cómo usarías muestreo y por qué debes documentar el criterio.</p>
+<p>18 - Hallazgo <strong>II.11
+</strong></p>
+<p>Redacta la estructura de un hallazgo para: &#x27;cuentas de ex-empleados permanecen activas 30 días después de la baja&#x27;. Incluye condición, criterio, riesgo/impacto y recomendación.</p>
+<p>19 - Auditoría vs pentest <strong>II.11
+</strong></p>
+<p>¿Por qué una prueba de penetración no equivale a una auditoría completa y una auditoría no sustituye necesariamente a un pentest?</p>
+<p>20 - Auditoría ENS / privacidad / física <strong>II.11
+</strong></p>
+<p>Un sistema puede cumplir controles técnicos de red y aun fallar una auditoría de seguridad. Da tres familias de evidencia no puramente técnica que podrían faltar.</p>
+<p>21 - CAATs / herramientas <strong>II.11
+</strong></p>
+<p>¿Qué tipo de tareas pueden automatizar herramientas de auditoría sin sustituir el juicio del auditor? Pon cuatro ejemplos.</p>
+<p>22 - Seguimiento <strong>II.11
+</strong></p>
+<p>Después del informe, la organización marca un hallazgo &#x27;cerrado&#x27; porque &#x27;se ha creado un ticket&#x27;. ¿Es suficiente? Explica qué evidencia esperarías.</p>
+<h1>PARTE C — Arquitectura de seguridad, AAA y criptografía</h1>
+<p>23 - Defensa en profundidad <strong>IV.12
+</strong></p>
+<p>Diseña cinco capas de control para proteger una aplicación web pública sin confiar en un único producto.</p>
+<p>24 - DMZ <strong>IV.12
+</strong></p>
+<p>¿Qué problema resuelve una DMZ? ¿Por qué poner un servidor en DMZ no lo hace &#x27;seguro por definición&#x27;?</p>
+<p>25 - Stateless vs stateful <strong>IV.12
+</strong></p>
+<p>Distingue firewall stateless y stateful mediante un ejemplo de tráfico de retorno.</p>
+<p>26 - Firewall vs WAF <strong>IV.12
+</strong></p>
+<p>Un organismo quiere bloquear SQL injection en una aplicación HTTPS. ¿Por qué un firewall de red tradicional no sustituye al WAF?</p>
+<p>27 - IDS vs IPS <strong>IV.12
+</strong></p>
+<p>Explica la diferencia entre detectar y bloquear. ¿Qué riesgo operativo añade un IPS mal afinado?</p>
+<p>28 - Segmentación <strong>IV.12
+</strong></p>
+<p>Usuarios, servidores, administración y copias están en la misma VLAN. Propón una segmentación mínima y justifica el control interzona.</p>
+<p>29 - Zero Trust <strong>IV.12
+</strong></p>
+<p>Explica por qué Zero Trust no significa &#x27;eliminar la red interna&#x27; ni &#x27;poner MFA a todo y ya está&#x27;.</p>
+<p>30 - AAA <strong>IV.12
+</strong></p>
+<p>Expande AAA y da un ejemplo de autenticación, autorización y accounting en administración de red.</p>
+<p>31 - RADIUS vs TACACS+ <strong>IV.12
+</strong></p>
+<p>¿En qué escenarios son típicos RADIUS y TACACS+ según tus apuntes? Evita presentarlos como mutuamente exclusivos.</p>
+<p>32 - 802.1X <strong>IV.12
+</strong></p>
+<p>Identifica supplicant, authenticator y servidor AAA en un empleado que conecta un portátil corporativo a un switch.</p>
+<p>33 - NAC <strong>IV.12
+</strong></p>
+<p>¿Qué añade NAC respecto de una autenticación 802.1X básica?</p>
+<p>34 - Simétrica vs asimétrica <strong>IV.12
+</strong></p>
+<p>Compara AES con RSA/ECC a nivel conceptual: claves, rendimiento y usos.</p>
+<p>35 - Hash vs cifrado <strong>IV.12
+</strong></p>
+<p>¿Por qué SHA-256 no sirve para &#x27;descifrar&#x27; un dato? ¿Qué propiedades buscamos en un hash criptográfico?</p>
+<p>36 - HMAC <strong>IV.12
+</strong></p>
+<p>¿Qué aporta un HMAC respecto de un hash simple cuando emisor y receptor comparten un secreto?</p>
+<p>37 - Firma digital <strong>IV.12
+</strong></p>
+<p>Explica el flujo conceptual de firma y verificación. ¿Qué clave usa el firmante y cuál el verificador?</p>
+<p>38 - PKI <strong>IV.12
+</strong></p>
+<p>Sitúa CA, certificado, clave privada, CRL/OCSP y ciclo de vida dentro de una PKI.</p>
+<p>39 - TLS vs SSH vs IPsec <strong>IV.12
+</strong></p>
+<p>Asocia cada tecnología con su uso más característico y explica por qué no son intercambiables.</p>
+<p>40 - VPN site-to-site vs acceso remoto <strong>IV.12
+</strong></p>
+<p>Diseña a alto nivel ambos escenarios y señala una diferencia de identidad/endpoint.</p>
+<p>41 - Split tunneling <strong>IV.12
+</strong></p>
+<p>¿Qué ventaja operativa tiene y qué riesgo modifica? ¿Por qué la decisión debe ser política, no dogma?</p>
+<p>42 - Endpoint comprometido <strong>IV.12
+</strong></p>
+<p>Un portátil con malware establece una VPN válida. ¿Por qué la VPN no resuelve el compromiso? Indica controles complementarios.</p>
+<h1>PARTE D — Ciberseguridad operativa, SOC e incidentes</h1>
+<p>43 - SIEM, SOAR y EDR <strong>II.13
+</strong></p>
+<p>Distingue SIEM, SOAR y EDR. Para cada uno indica qué problema resuelve principalmente.</p>
+<p>44 - Alerta vs incidente <strong>II.13
+</strong></p>
+<p>Un SIEM genera una alerta por 30 fallos de login. ¿Es automáticamente un incidente? Describe el proceso de triage.</p>
+<p>45 - Preparación <strong>II.13
+</strong></p>
+<p>Enumera elementos que deberían existir antes de un incidente: contactos, logs, backups, playbooks, capacidades forenses, comunicaciones, etc.</p>
+<p>46 - Detección y análisis <strong>II.13
+</strong></p>
+<p>Se detecta acceso desde una geolocalización anómala y creación de reglas de reenvío de correo. ¿Qué evidencias revisarías antes de concluir causa y alcance?</p>
+<p>47 - Contención <strong>II.13
+</strong></p>
+<p>Un equipo crítico parece comprometido. Compara aislamiento inmediato, segmentación temporal y monitorización reforzada. ¿Por qué la contención depende del impacto de negocio?</p>
+<p>48 - Erradicación <strong>II.13
+</strong></p>
+<p>Después de eliminar un malware, ¿por qué no basta con borrar el ejecutable detectado?</p>
+<p>49 - Recuperación <strong>II.13
+</strong></p>
+<p>¿Qué condiciones deben cumplirse para volver a producción tras un incidente? Incluye validación, monitorización y riesgo de recurrencia.</p>
+<p>50 - Lecciones aprendidas <strong>II.13
+</strong></p>
+<p>¿Qué debe producir una revisión post-incidente además de una cronología?</p>
+<p>51 - Phishing con cuenta comprometida <strong>II.13
+</strong></p>
+<p>Un usuario introduce credenciales en una web falsa. Diseña las primeras acciones defensivas sin entrar en técnicas ofensivas.</p>
+<p>52 - Ransomware <strong>II.13
+</strong></p>
+<p>Los archivos compartidos empiezan a cifrarse. Ordena prioridades: contención, identidad, evidencias, backups, recuperación y comunicación.</p>
+<p>53 - DDoS <strong>II.13
+</strong></p>
+<p>Un servicio público recibe tráfico masivo. ¿Qué controles/actores pueden intervenir y qué diferencia hay entre capacidad, rate limiting, CDN/anti-DDoS y filtrado?</p>
+<p>54 - Credential stuffing <strong>II.13
+</strong></p>
+<p>¿Qué señales y controles defensivos aplicarías: MFA, rate limiting, detección de anomalías, bloqueo, passwords comprometidas?</p>
+<p>55 - Playbook <strong>II.13
+</strong></p>
+<p>Construye un playbook mínimo para &#x27;cuenta privilegiada sospechosa&#x27;: disparadores, triage, contención, erradicación, recuperación y cierre.</p>
+<h1>PARTE E — Informática forense y cadena de custodia</h1>
+<p>56 - Objetivo forense <strong>II.13
+</strong></p>
+<p>Distingue respuesta operativa a incidente e investigación forense. ¿Por qué a veces entran en tensión rapidez y preservación de evidencia?</p>
+<p>57 - Volatilidad <strong>II.13
+</strong></p>
+<p>Ordena conceptualmente qué puede ser más volátil: memoria RAM, conexiones/procesos en ejecución, disco apagado y copia archivada. ¿Qué principio deriva de ello?</p>
+<p>58 - Adquisición <strong>II.13
+</strong></p>
+<p>Diferencia una imagen forense de un simple copiado de archivos. ¿Qué metadatos/evidencias puede perder un copy ordinario?</p>
+<p>59 - Hash de evidencia <strong>II.13
+</strong></p>
+<p>¿Para qué se calcula un hash de una imagen forense? ¿Demuestra por sí solo quién cometió un hecho?</p>
+<p>60 - Cadena de custodia <strong>II.13
+</strong></p>
+<p>Enumera la información mínima que documentarías desde recogida hasta análisis y almacenamiento.</p>
+<p>61 - Live vs dead acquisition <strong>II.13
+</strong></p>
+<p>Explica el compromiso entre adquirir un sistema encendido y analizarlo apagado. No hay una respuesta universal: justifica según objetivo.</p>
+<p>62 - Timeline <strong>II.13
+</strong></p>
+<p>¿Qué utilidad tiene correlacionar logs, timestamps, autenticaciones, procesos y eventos de red en una línea temporal?</p>
+<p>63 - Preservación de logs <strong>II.13
+</strong></p>
+<p>¿Por qué logs locales sin sincronización horaria ni protección pueden ser evidencia débil?</p>
+<p>64 - Conclusiones forenses <strong>II.13
+</strong></p>
+<p>Un indicador coincide con malware conocido. ¿Puedes concluir automáticamente autoría o causa raíz? Explica límites e inferencia.</p>
+<h1>PARTE F — Mini-supuestos integradores</h1>
+<p>65 - Portal público con ENS <strong>INTEGRADOR
+</strong></p>
+<p>Diseña una arquitectura defensiva para un portal ciudadano con datos personales: zonas, WAF/firewall, identidad, cifrado, logs, endpoint, backups, riesgo y controles ENS. Cada componente debe justificar un riesgo.</p>
+<p>66 - Acceso administrativo remoto <strong>INTEGRADOR
+</strong></p>
+<p>Un proveedor debe administrar servidores durante 6 meses. Diseña acceso remoto seguro con identidad nominativa, MFA, bastión/PAM, segmentación, mínimos privilegios, ventanas, logging y revocación.</p>
+<p>67 - Riesgo de proveedor SaaS <strong>INTEGRADOR
+</strong></p>
+<p>Un servicio crítico se externaliza. Construye un análisis de riesgo centrado en disponibilidad, confidencialidad, dependencia, reversibilidad, subencargados, evidencias y continuidad.</p>
+<p>68 - Auditoría de cuentas privilegiadas <strong>INTEGRADOR
+</strong></p>
+<p>Planifica una auditoría de cuentas admin: objetivo, alcance, población, muestra, criterios, evidencias, hallazgos potenciales y seguimiento.</p>
+<p>69 - Incidente de exfiltración <strong>INTEGRADOR
+</strong></p>
+<p>Se observan 40 GB de salida nocturna desde un servidor sensible. Propón triage, contención y evidencias sin asumir automáticamente brecha confirmada.</p>
+<p>70 - Ransomware con backups <strong>INTEGRADOR
+</strong></p>
+<p>La organización tiene copias diarias pero el repositorio está unido al mismo dominio. Diseña mejoras de arquitectura y un orden de recuperación compatible con RPO/RTO.</p>
+<p>71 - Certificado expirado <strong>INTEGRADOR
+</strong></p>
+<p>Un servicio deja de funcionar por expiración de certificado. Clasifica el problema como incidente operativo y extrae acciones preventivas de configuración, inventario, alertas y PKI.</p>
+<p>72 - WAF bloquea usuarios legítimos <strong>INTEGRADOR
+</strong></p>
+<p>Tras activar reglas estrictas, aumenta el 403 y cae la conversión. ¿Cómo equilibras seguridad, falso positivo, evidencia, cambio controlado y rollback?</p>
+<p>73 - Compromiso de identidad cloud <strong>INTEGRADOR
+</strong></p>
+<p>Un administrador detecta inicio de sesión anómalo, token activo y cambios de configuración. Diseña respuesta centrada en identidad, sesiones/tokens, credenciales, logs, alcance y recuperación.</p>
+<p>74 - Nueva sede <strong>INTEGRADOR
+</strong></p>
+<p>Diseña controles de seguridad para una nueva sede: LAN/Wi-Fi, 802.1X/NAC, VLAN, administración, VPN, endpoint, logs y acceso a sistemas centrales.</p>
+<p>75 - Comité de riesgos <strong>INTEGRADOR
+</strong></p>
+<p>Tienes 8 riesgos &#x27;altos&#x27; y presupuesto para tratar 3 este trimestre. Explica cómo priorizarías usando impacto, probabilidad, obligaciones, exposición, dependencias, coste/eficacia de salvaguardas y riesgo residual.</p>
+<p>76 - Supuesto completo de 20 minutos <strong>INTEGRADOR
+</strong></p>
+<p>Un organismo migra una aplicación crítica a una nueva plataforma. Estructura una respuesta de seguridad de máximo una página: requisitos/riesgos → arquitectura → identidad → protección → observabilidad → continuidad → auditoría → incidentes → aceptación.</p>
+<h1>Registro de progreso</h1>
+<table>
+<tr>
+<th scope="col"><p>Bloque</p></th>
+<th scope="col"><p>Intento 1</p></th>
+<th scope="col"><p>Intento 2</p></th>
+<th scope="col"><p>Errores recurrentes</p></th>
+</tr>
+<tr>
+<td><p>A Riesgo</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>B Auditoría</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>C Arquitectura/cripto</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>D Incidentes</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>E Forense</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>F Supuestos</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+<p>Base: apuntes GSI A2 V2.1, temas II.10, II.11, II.13 e IV.12. No se pretende enseñar técnicas ofensivas: el enfoque es evaluación, arquitectura defensiva, operación, auditoría, respuesta y preservación de evidencia.</p></main></body></html>

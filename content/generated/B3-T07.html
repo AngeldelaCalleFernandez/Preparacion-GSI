@@ -1,63 +1,99 @@
-<article class="topic-content" data-topic-id="B3-T07" data-coverage-status="partial">
-<aside class="topic-content__status topic-content__status--partial" role="status"><p>Cobertura parcial: consulta las secciones y fuentes disponibles.</p></aside>
-<nav class="topic-content__toc" aria-label="Índice del tema">
-<h2>Contenido del tema</h2>
-<ol><li class="topic-content__toc-level-2"><a href="#temario/B3-T07/alcance-piloto">Alcance del piloto</a></li><li class="topic-content__toc-level-2"><a href="#temario/B3-T07/aplicaciones-web">Aplicaciones web y separación conceptual</a></li><li class="topic-content__toc-level-2"><a href="#temario/B3-T07/documentos-html">Documentos HTML</a></li><li class="topic-content__toc-level-3"><a href="#temario/B3-T07/elementos-atributos">Elementos, atributos y estructura</a></li><li class="topic-content__toc-level-2"><a href="#temario/B3-T07/sintaxis-html">Sintaxis y procesamiento básico de HTML</a></li><li class="topic-content__toc-level-2"><a href="#temario/B3-T07/xml-bien-formado">XML 1.0 y documentos bien formados</a></li><li class="topic-content__toc-level-2"><a href="#temario/B3-T07/html-frente-xml">HTML frente a XML</a></li><li class="topic-content__toc-level-2"><a href="#temario/B3-T07/ecmascript">ECMAScript</a></li><li class="topic-content__toc-level-2"><a href="#temario/B3-T07/estructura-contenido-comportamiento">Estructura, contenido y comportamiento</a></li><li class="topic-content__toc-level-2"><a href="#temario/B3-T07/ejemplos-didacticos">Ejemplos didácticos</a></li><li class="topic-content__toc-level-2"><a href="#temario/B3-T07/glosario">Glosario breve</a></li><li class="topic-content__toc-level-2"><a href="#temario/B3-T07/contenido-pendiente">Contenido pendiente</a></li></ol>
-</nav>
-<h2 id="alcance-piloto">Alcance del piloto</h2>
-<div class="topic-content__derivado" data-editorial-kind="derivado"><p class="topic-content__kind">Derivado</p><p>El piloto cubre la parte cliente mediante tres piezas trazables: HTML como lenguaje y sintaxis de documentos, XML 1.0 como lenguaje de marcado con reglas de buena formación y ECMAScript como lenguaje de programación de propósito general que puede actuar dentro de un entorno anfitrión. No desarrolla una arquitectura de servidor ni un navegador concreto.</p>
-<p>Actualización editorial: 2026-08-04.</p>
-<p><span class="topic-source-ref"> <span class="topic-source-ref__label">Fuente: HTML Living Standard</span> <span class="topic-source-ref__locator">Localizador: #introduction</span> <a href="https://html.spec.whatwg.org/" target="_blank" rel="noopener noreferrer">Abrir fuente oficial (nueva pestaña)</a> </span> <span class="topic-source-ref"> <span class="topic-source-ref__label">Fuente: Extensible Markup Language (XML) 1.0 (Fifth Edition)</span> <span class="topic-source-ref__locator">Localizador: #abstract</span> <a href="https://www.w3.org/TR/xml/" target="_blank" rel="noopener noreferrer">Abrir fuente oficial (nueva pestaña)</a> </span> <span class="topic-source-ref"> <span class="topic-source-ref__label">Fuente: ECMAScript 2026 Language Specification</span> <span class="topic-source-ref__locator">Localizador: #sec-scope</span> <a href="https://262.ecma-international.org/" target="_blank" rel="noopener noreferrer">Abrir fuente oficial (nueva pestaña)</a> </span></p></div>
-<h2 id="aplicaciones-web">Aplicaciones web y separación conceptual</h2>
-<div class="topic-content__explicacion" data-editorial-kind="explicacion"><p class="topic-content__kind">Explicacion</p><p>Desde el punto de vista del cliente conviene separar estructura documental y comportamiento programado. HTML forma parte de la plataforma web y define una sintaxis para documentos; ECMAScript define un lenguaje independiente del entorno anfitrión concreto. El entorno aporta objetos y servicios que la especificación del lenguaje no define por sí sola.</p>
-<p><span class="topic-source-ref"> <span class="topic-source-ref__label">Fuente: HTML Living Standard</span> <span class="topic-source-ref__locator">Localizador: #introduction</span> <a href="https://html.spec.whatwg.org/" target="_blank" rel="noopener noreferrer">Abrir fuente oficial (nueva pestaña)</a> </span> <span class="topic-source-ref"> <span class="topic-source-ref__label">Fuente: ECMAScript 2026 Language Specification</span> <span class="topic-source-ref__locator">Localizador: #sec-ecmascript-overview</span> <a href="https://262.ecma-international.org/" target="_blank" rel="noopener noreferrer">Abrir fuente oficial (nueva pestaña)</a> </span></p></div>
-<h2 id="documentos-html">Documentos HTML</h2>
-<div class="topic-content__resumen" data-editorial-kind="resumen"><p class="topic-content__kind">Resumen</p><p>Un documento HTML utiliza marcado para organizar contenido. La introducción del estándar presenta ejemplos formados por elementos delimitados mediante etiquetas y atributos asociados a esos elementos. El marcado expresa la estructura del documento; su presentación visual detallada queda fuera de este piloto.</p>
-<p><span class="topic-source-ref"> <span class="topic-source-ref__label">Fuente: HTML Living Standard</span> <span class="topic-source-ref__locator">Localizador: #introduction</span> <a href="https://html.spec.whatwg.org/" target="_blank" rel="noopener noreferrer">Abrir fuente oficial (nueva pestaña)</a> </span></p></div>
-<h3 id="elementos-atributos">Elementos, atributos y estructura</h3>
-<div class="topic-content__explicacion" data-editorial-kind="explicacion"><p class="topic-content__kind">Explicacion</p><p>Los elementos representan partes de la estructura y pueden contener texto u otros elementos. Los atributos aportan información vinculada al elemento de apertura. La anidación debe leerse como una relación estructural, no como una instrucción de programación.</p>
-<p><span class="topic-source-ref"> <span class="topic-source-ref__label">Fuente: HTML Living Standard</span> <span class="topic-source-ref__locator">Localizador: #introduction</span> <a href="https://html.spec.whatwg.org/" target="_blank" rel="noopener noreferrer">Abrir fuente oficial (nueva pestaña)</a> </span></p></div>
-<h2 id="sintaxis-html">Sintaxis y procesamiento básico de HTML</h2>
-<div class="topic-content__resumen" data-editorial-kind="resumen"><p class="topic-content__kind">Resumen</p><p>El estándar distingue la sintaxis HTML de la sintaxis XML. Un recurso servido como <code>text/html</code> se procesa como documento HTML. La especificación advierte que el tratamiento de errores de sintaxis no coincide con el de XML, por lo que no deben intercambiarse sus reglas de forma automática.</p>
-<p><span class="topic-source-ref"> <span class="topic-source-ref__label">Fuente: HTML Living Standard</span> <span class="topic-source-ref__locator">Localizador: #html-vs-xhtml</span> <a href="https://html.spec.whatwg.org/" target="_blank" rel="noopener noreferrer">Abrir fuente oficial (nueva pestaña)</a> </span></p></div>
-<h2 id="xml-bien-formado">XML 1.0 y documentos bien formados</h2>
-<div class="topic-content__explicacion" data-editorial-kind="explicacion"><p class="topic-content__kind">Explicacion</p><p>XML describe documentos compuestos por datos de caracteres y marcado. Un procesador XML lee el documento y proporciona a una aplicación acceso a su contenido y estructura. La especificación denomina bien formado al documento que satisface sus reglas sintácticas; la validez añade restricciones adicionales y no debe confundirse con la buena formación.</p>
-<p><span class="topic-source-ref"> <span class="topic-source-ref__label">Fuente: Extensible Markup Language (XML) 1.0 (Fifth Edition)</span> <span class="topic-source-ref__locator">Localizador: #abstract</span> <a href="https://www.w3.org/TR/xml/" target="_blank" rel="noopener noreferrer">Abrir fuente oficial (nueva pestaña)</a> </span> <span class="topic-source-ref"> <span class="topic-source-ref__label">Fuente: Extensible Markup Language (XML) 1.0 (Fifth Edition)</span> <span class="topic-source-ref__locator">Localizador: #sec-intro</span> <a href="https://www.w3.org/TR/xml/" target="_blank" rel="noopener noreferrer">Abrir fuente oficial (nueva pestaña)</a> </span></p></div>
-<h2 id="html-frente-xml">HTML frente a XML</h2>
-<div class="topic-content__derivado" data-editorial-kind="derivado"><p class="topic-content__kind">Derivado</p><p>HTML y XML son sintaxis distintas aunque ambas utilicen marcado. La fuente WHATWG explica que el tipo de medio determina si un documento se procesa como HTML o mediante un procesador XML y que sus reglas de error difieren. XML, por su parte, define restricciones de buena formación que el procesador debe tratar según la especificación.</p>
-<p><span class="topic-source-ref"> <span class="topic-source-ref__label">Fuente: HTML Living Standard</span> <span class="topic-source-ref__locator">Localizador: #html-vs-xhtml</span> <a href="https://html.spec.whatwg.org/" target="_blank" rel="noopener noreferrer">Abrir fuente oficial (nueva pestaña)</a> </span> <span class="topic-source-ref"> <span class="topic-source-ref__label">Fuente: Extensible Markup Language (XML) 1.0 (Fifth Edition)</span> <span class="topic-source-ref__locator">Localizador: #sec-intro</span> <a href="https://www.w3.org/TR/xml/" target="_blank" rel="noopener noreferrer">Abrir fuente oficial (nueva pestaña)</a> </span></p></div>
-<h2 id="ecmascript">ECMAScript</h2>
-<div class="topic-content__resumen" data-editorial-kind="resumen"><p class="topic-content__kind">Resumen</p><p>ECMA-262 define ECMAScript 2026 como lenguaje de programación de propósito general. Su visión general explica que el lenguaje opera dentro de un entorno anfitrión, que aporta capacidades externas, y que su uso no queda limitado a un navegador. Por tanto, ECMAScript y las APIs particulares de un navegador son conceptos relacionados pero distintos.</p>
-<p><span class="topic-source-ref"> <span class="topic-source-ref__label">Fuente: ECMAScript 2026 Language Specification</span> <span class="topic-source-ref__locator">Localizador: #sec-scope</span> <a href="https://262.ecma-international.org/" target="_blank" rel="noopener noreferrer">Abrir fuente oficial (nueva pestaña)</a> </span> <span class="topic-source-ref"> <span class="topic-source-ref__label">Fuente: ECMAScript 2026 Language Specification</span> <span class="topic-source-ref__locator">Localizador: #sec-ecmascript-overview</span> <a href="https://262.ecma-international.org/" target="_blank" rel="noopener noreferrer">Abrir fuente oficial (nueva pestaña)</a> </span></p></div>
-<h2 id="estructura-contenido-comportamiento">Estructura, contenido y comportamiento</h2>
-<div class="topic-content__derivado" data-editorial-kind="derivado"><p class="topic-content__kind">Derivado</p><p>Para estudiar una aplicación web cliente puede usarse una separación conceptual: HTML organiza la estructura del documento; el contenido aparece dentro de esa estructura; ECMAScript expresa cálculos y comportamiento dentro de un entorno anfitrión. Esta separación es didáctica y no describe por sí sola toda la arquitectura cliente-servidor.</p>
-<p><span class="topic-source-ref"> <span class="topic-source-ref__label">Fuente: HTML Living Standard</span> <span class="topic-source-ref__locator">Localizador: #introduction</span> <a href="https://html.spec.whatwg.org/" target="_blank" rel="noopener noreferrer">Abrir fuente oficial (nueva pestaña)</a> </span> <span class="topic-source-ref"> <span class="topic-source-ref__label">Fuente: ECMAScript 2026 Language Specification</span> <span class="topic-source-ref__locator">Localizador: #sec-ecmascript-overview</span> <a href="https://262.ecma-international.org/" target="_blank" rel="noopener noreferrer">Abrir fuente oficial (nueva pestaña)</a> </span></p></div>
-<h2 id="ejemplos-didacticos">Ejemplos didácticos</h2>
-<div class="topic-content__ejemplo" data-editorial-kind="ejemplo"><p class="topic-content__kind">Ejemplo didáctico</p><p>Ejemplo didáctico de HTML original; representa estructura y contenido, no se ejecuta:</p>
-<pre><code class="language-html">&lt;article&gt;
-  &lt;h2&gt;Aviso&lt;/h2&gt;
-  &lt;p data-prioridad=&quot;alta&quot;&gt;Contenido de ejemplo&lt;/p&gt;
-&lt;/article&gt;</code></pre></div>
-<div class="topic-content__ejemplo" data-editorial-kind="ejemplo"><p class="topic-content__kind">Ejemplo didáctico</p><p>Ejemplo didáctico de XML original y deliberadamente bien formado:</p>
-<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot;?&gt;
-&lt;aviso prioridad=&quot;alta&quot;&gt;
-  &lt;texto&gt;Contenido de ejemplo&lt;/texto&gt;
-&lt;/aviso&gt;</code></pre></div>
-<div class="topic-content__ejemplo" data-editorial-kind="ejemplo"><p class="topic-content__kind">Ejemplo didáctico</p><p>Ejemplo didáctico de ECMAScript original; se muestra como texto y no se ejecuta:</p>
-<pre><code class="language-javascript">const aviso = { prioridad: &quot;alta&quot;, visible: true };
-const etiqueta = aviso.visible ? &quot;Mostrar&quot; : &quot;Ocultar&quot;;</code></pre></div>
-<h2 id="glosario">Glosario breve</h2>
-<div class="topic-content__resumen" data-editorial-kind="resumen"><p class="topic-content__kind">Resumen</p><ul><li><strong>Elemento HTML:</strong> unidad estructural representada mediante marcado HTML.</li><li><strong>Atributo:</strong> información asociada a un elemento en su etiqueta de apertura.</li><li><strong>Documento XML bien formado:</strong> documento que cumple las restricciones sintácticas de buena formación de XML 1.0.</li><li><strong>ECMAScript:</strong> lenguaje de programación de propósito general definido por ECMA-262.</li></ul>
-<p><span class="topic-source-ref"> <span class="topic-source-ref__label">Fuente: HTML Living Standard</span> <span class="topic-source-ref__locator">Localizador: #introduction</span> <a href="https://html.spec.whatwg.org/" target="_blank" rel="noopener noreferrer">Abrir fuente oficial (nueva pestaña)</a> </span> <span class="topic-source-ref"> <span class="topic-source-ref__label">Fuente: Extensible Markup Language (XML) 1.0 (Fifth Edition)</span> <span class="topic-source-ref__locator">Localizador: #sec-intro</span> <a href="https://www.w3.org/TR/xml/" target="_blank" rel="noopener noreferrer">Abrir fuente oficial (nueva pestaña)</a> </span> <span class="topic-source-ref"> <span class="topic-source-ref__label">Fuente: ECMAScript 2026 Language Specification</span> <span class="topic-source-ref__locator">Localizador: #sec-scope</span> <a href="https://262.ecma-international.org/" target="_blank" rel="noopener noreferrer">Abrir fuente oficial (nueva pestaña)</a> </span></p></div>
-<h2 id="contenido-pendiente">Contenido pendiente</h2>
-<div class="topic-content__pendiente" data-editorial-kind="pendiente"><p class="topic-content__kind">Pendiente</p><p>Contenido pendiente de una fuente verificable.</p>
-<p>Quedan fuera la arquitectura cliente-servidor completa, lenguajes y ejecución de servidor, CSS más allá de su mención contextual, frameworks, motores de navegador, APIs no catalogadas, desarrollo multiplataforma y multidispositivo, y una cobertura amplia de XHTML u otras tecnologías web.</p></div>
-<section class="topic-content__sources" aria-labelledby="fuentes">
-<h2 id="fuentes">Fuentes utilizadas</h2>
+<article class="topic-content" data-topic-id="B3-T07" data-coverage-status="complete">
+<p>Material curado del corpus GSI A2 · apuntes V2.1 revisados. Procedencia editorial, no documento oficial.</p>
+<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B3-T07/estudio">Apuntes de estudio</a></li><li><a href="#temario/B3-T07/estudio-01">1. Principios</a></li><li><a href="#temario/B3-T07/estudio-02">2. Error, defecto y fallo</a></li><li><a href="#temario/B3-T07/estudio-03">3. Verificación y validación</a></li><li><a href="#temario/B3-T07/estudio-04">4. Niveles</a></li><li><a href="#temario/B3-T07/estudio-05">5. Tipos</a></li><li><a href="#temario/B3-T07/estudio-06">6. Caja negra</a></li><li><a href="#temario/B3-T07/estudio-07">7. Caja blanca</a></li><li><a href="#temario/B3-T07/estudio-08">8. TDD</a></li><li><a href="#temario/B3-T07/estudio-09">9. Dobles de prueba</a></li><li><a href="#temario/B3-T07/estudio-10">10. Automatización</a></li><li><a href="#temario/B3-T07/estudio-11">11. Criterios de aceptación y salida</a></li><li><a href="#temario/B3-T07/estudio-12">11.1 Plan de pruebas y documentación</a></li><li><a href="#temario/B3-T07/estudio-13">11.2 Datos de prueba</a></li><li><a href="#temario/B3-T07/estudio-14">11.3 Pruebas de hardware</a></li><li><a href="#temario/B3-T07/estudio-15">11.4 Pruebas de procedimientos</a></li><li><a href="#temario/B3-T07/estudio-16">11.5 Pruebas de datos</a></li><li><a href="#temario/B3-T07/estudio-17">11.6 Técnicas de diseño</a></li><li><a href="#temario/B3-T07/estudio-18">11.7 No funcionales</a></li><li><a href="#temario/B3-T07/estudio-19">11.8 Gestión de defectos</a></li><li><a href="#temario/B3-T07/estudio-20">11.9 Norma y proceso</a></li><li><a href="#temario/B3-T07/estudio-21">12. Test</a></li><li><a href="#temario/B3-T07/estudio-22">13. Supuesto</a></li><li><a href="#temario/B3-T07/estudio-23">14. Resumen</a></li><li><a href="#temario/B3-T07/repaso">Resumen de repaso</a></li><li><a href="#temario/B3-T07/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B3-T07/repaso-02">Claves de test</a></li><li><a href="#temario/B3-T07/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B3-T07/repaso-04">Fuentes base del material</a></li></ol></nav>
+<h2 id="estudio">Apuntes de estudio</h2>
+<p>Cobertura oficial que debe quedar dominada: Planificación y documentación de las pruebas. Datos de prueba. Pruebas de software, hardware, procedimientos y datos.</p>
+<h3 id="estudio-01">1. Principios</h3>
+<p>La fuente A1 096 recoge los principios ISTQB: las pruebas muestran presencia de defectos, pruebas exhaustivas son imposibles, testing temprano, agrupación de defectos, paradoja del pesticida, dependencia del contexto y falacia de ausencia de errores.</p>
+<h3 id="estudio-02">2. Error, defecto y fallo</h3>
+<p>Error humano puede introducir defecto; el defecto ejecutado puede causar fallo. No son sinónimos.</p>
+<h3 id="estudio-03">3. Verificación y validación</h3>
+<p>Verificación evalúa producto de trabajo frente a especificación; validación evalúa adecuación a necesidad/uso. Revisiones estáticas también son testing/QA relevante sin ejecutar código.</p>
+<h3 id="estudio-04">4. Niveles</h3>
 <ul>
-<li><a href="https://html.spec.whatwg.org/" target="_blank" rel="noopener noreferrer">HTML Living Standard (nueva pestaña)</a></li>
-<li><a href="https://www.w3.org/TR/xml/" target="_blank" rel="noopener noreferrer">Extensible Markup Language (XML) 1.0 (Fifth Edition) (nueva pestaña)</a></li>
-<li><a href="https://262.ecma-international.org/" target="_blank" rel="noopener noreferrer">ECMAScript 2026 Language Specification (nueva pestaña)</a></li>
+<li>unitarias/componente;</li>
+<li>integración;</li>
+<li>sistema;</li>
+<li>aceptación.</li>
 </ul>
-</section>
+<p>La pirámide de pruebas favorece muchas unitarias rápidas, menos integración y menos E2E costosas, adaptada al contexto.</p>
+<h3 id="estudio-05">5. Tipos</h3>
+<p>Funcionales, rendimiento/carga/estrés, seguridad, usabilidad/accesibilidad, compatibilidad, recuperación, instalación, regresión, smoke/sanity y resiliencia.</p>
+<h3 id="estudio-06">6. Caja negra</h3>
+<p>Particiones de equivalencia, valores límite, tablas de decisión, transición de estados, casos de uso.</p>
+<h3 id="estudio-07">7. Caja blanca</h3>
+<p>Cobertura de sentencias, ramas/decisiones, condiciones y caminos. 100% cobertura de líneas no significa ausencia de defectos.</p>
+<h3 id="estudio-08">8. TDD</h3>
+<p>Red → Green → Refactor. TDD es técnica de desarrollo guiada por tests unitarios, no sustituto de estrategia completa de pruebas.</p>
+<h3 id="estudio-09">9. Dobles de prueba</h3>
+<p>Dummy, stub, spy, mock y fake. El exceso de mocks acopla test a implementación.</p>
+<h3 id="estudio-10">10. Automatización</h3>
+<p>Tests deterministas, rápidos, aislados y con datos controlados. CI ejecuta suites. Gestionar flaky tests como defectos del sistema de pruebas.</p>
+<h3 id="estudio-11">11. Criterios de aceptación y salida</h3>
+<p>Cobertura de requisitos, defectos críticos abiertos, tasa de éxito, rendimiento, seguridad y riesgo residual. “Todos los tests pasan” no basta si faltan escenarios.</p>
+<h3 id="estudio-12">11.1 Plan de pruebas y documentación</h3>
+<p><strong>Base principal:</strong> A1 096 (resumen de 16 páginas). La V2 anterior infrautilizaba esta fuente. Se recuperan planificación, condiciones, diseño, ejecución, criterios de salida, reporting y cierre.</p>
+<p>Un plan identifica alcance, objetos de prueba, riesgos, niveles/tipos, técnicas, entornos, datos, roles, calendario, herramientas, criterios de entrada/salida, gestión de defectos y entregables. Los casos de prueba especifican precondiciones, datos, pasos, resultado esperado y trazabilidad. Un informe de cierre resume ejecución, cobertura, defectos abiertos y riesgo residual.</p>
+<h3 id="estudio-13">11.2 Datos de prueba</h3>
+<p>Los datos deben cubrir particiones, límites, excepciones y combinaciones. En sistemas con datos personales se prefieren datos sintéticos o anonimizados cuando sea viable; copiar producción a test sin control es un riesgo. La <strong>seudonimización</strong> puede seguir siendo dato personal. Es importante poder recrear datasets y conocer su versión.</p>
+<h3 id="estudio-14">11.3 Pruebas de hardware</h3>
+<p>El BOE las menciona expresamente. Incluyen aceptación y verificación de servidores/dispositivos, CPU/RAM, almacenamiento, interfaces, redundancia, sensores/periféricos, rendimiento, burn-in/estrés cuando proceda y comportamiento ante fallos. No se confunden con pruebas unitarias de software.</p>
+<h3 id="estudio-15">11.4 Pruebas de procedimientos</h3>
+<p>Comprueban que procedimientos operativos son ejecutables: alta/baja de usuarios, backup/restauración, recuperación ante desastre, escalado de incidencias, operación batch, cambio, parcheo, gestión de certificados, contingencia y actuación manual. Un runbook que nadie ha probado no es evidencia de recuperabilidad.</p>
+<h3 id="estudio-16">11.5 Pruebas de datos</h3>
+<p>Validan migraciones, integridad, completitud, exactitud, reconciliación, duplicados, formatos, reglas de negocio y calidad. En una migración: conteos origen/destino, sumas/control totals, muestreo de registros, claves/referencias, excepciones y trazabilidad de transformaciones.</p>
+<h3 id="estudio-17">11.6 Técnicas de diseño</h3>
+<table>
+<tr>
+<th scope="col"><p>Caja negra</p></th>
+<th scope="col"><p>Caja blanca</p></th>
+</tr>
+<tr>
+<td><p>partición de equivalencia</p></td>
+<td><p>sentencias</p></td>
+</tr>
+<tr>
+<td><p>valores límite</p></td>
+<td><p>decisiones/ramas</p></td>
+</tr>
+<tr>
+<td><p>tablas de decisión</p></td>
+<td><p>condiciones</p></td>
+</tr>
+<tr>
+<td><p>transición de estados</p></td>
+<td><p>caminos / flujo de control</p></td>
+</tr>
+</table>
+<p>También testing basado en experiencia: error guessing, exploratory testing y checklist, útil pero no sustituto de cobertura sistemática.</p>
+<h3 id="estudio-18">11.7 No funcionales</h3>
+<p><strong>Rendimiento:</strong> carga, estrés, endurance/soak, volumen y capacidad. <strong>Seguridad:</strong> SAST/DAST, revisión, dependencias y pentest según riesgo. <strong>Recuperación:</strong> fallo y restauración real. <strong>Accesibilidad:</strong> automatización + revisión manual/teclado/lector según alcance. <strong>Compatibilidad:</strong> navegadores/dispositivos/versiones.</p>
+<h3 id="estudio-19">11.8 Gestión de defectos</h3>
+<p>Ciclo: registrar → clasificar severidad/prioridad → asignar → corregir → retest → cerrar/reabrir. <strong>Severidad</strong> refleja impacto; <strong>prioridad</strong> urgencia de resolución. La regresión comprueba que cambios no rompen lo existente; el retest confirma el defecto concreto.</p>
+<h3 id="estudio-20">11.9 Norma y proceso</h3>
+<p>ISO/IEC/IEEE 29119 es una familia de referencia para procesos/documentación/técnicas de pruebas. Para examen, prioriza conceptos sobre memorizar todos los números de parte salvo evidencia histórica de pregunta.</p>
+<p><strong>Supuesto:</strong> una estrategia excelente separa objeto (software/hardware/datos/procedimientos), nivel, tipo, técnica, entorno, datos, automatización, criterios y evidencia de aceptación.</p>
+<h3 id="estudio-21">12. Test</h3>
+<ul>
+<li>Pruebas demuestran defectos, no su ausencia.</li>
+<li>Exhaustividad imposible.</li>
+<li>Unit ≠ integración ≠ sistema ≠ aceptación.</li>
+<li>Regresión ≠ re-test.</li>
+<li>Coverage ≠ calidad.</li>
+<li>TDD ≠ testing completo.</li>
+</ul>
+<h3 id="estudio-22">13. Supuesto</h3>
+<p>Define estrategia por riesgo, niveles, técnicas, entornos/datos, automatización, performance/security/accessibility, criterios de entrada/salida, gestión de defectos y trazabilidad requisitos→tests.</p>
+<h3 id="estudio-23">14. Resumen</h3>
+<p>Testing reduce riesgo. Diseña cobertura por riesgo y automatiza sin olvidar pruebas no funcionales y aceptación.</p>
+<h2 id="repaso">Resumen de repaso</h2>
+<h3 id="repaso-01">Núcleo de estudio</h3>
+<p>Proceso de pruebas: estrategia/plan, diseño de casos, preparación de entorno/datos, ejecución, registro de defectos, re-prueba/regresión e informe. Niveles: unitarias, integración, sistema y aceptación. Técnicas de caja negra: particiones de equivalencia, valores límite, tablas de decisión, transición de estados; caja blanca: cobertura de sentencias, ramas y caminos con límites prácticos. Tipos no funcionales: rendimiento/carga/estrés, seguridad, compatibilidad, usabilidad, recuperación, accesibilidad. Hardware y procedimientos también pueden requerir pruebas. Datos de prueba deben ser representativos, controlados y preferentemente sintéticos/anonimizados si proceden de producción.</p>
+<h3 id="repaso-02">Claves de test</h3>
+<p>Verificación pregunta si construimos correctamente; validación si construimos lo correcto. Error/defecto/fallo no son sinónimos estrictos. Smoke test valida estabilidad básica; regresión comprueba que cambios no rompen lo existente. 100% cobertura no garantiza ausencia de defectos.</p>
+<h3 id="repaso-03">Enfoque para supuesto práctico</h3>
+<p>En supuesto crea matriz requisito-prueba, niveles, entorno similar a producción, automatización, rendimiento, seguridad, UAT y criterios de aceptación/salida. Trata datos personales en pruebas de forma explícita.</p>
+<h3 id="repaso-04">Fuentes base del material</h3>
+<p>A1 096. Correspondencia DIRECTA.</p>
+<section class="topic-content__sources"><h2 id="fuentes">Fuentes y localizadores</h2><ul><li><a href="https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)</a> · III.07 · 2026-08-21</li><li><a href="https://docs.google.com/document/d/1l0nl4fc451Tl3XB9XZ4LRLZGLZEJxUueQvaMZoF8gcA/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE III — RESUMEN MAESTRO DE REPASO (15 temas)</a> · III.07 · 2026-08-21</li></ul></section>
 </article>

@@ -44,9 +44,9 @@ def main() -> int:
     }
     topic_id_list = [topic["id"] for topic in topics]
     topic_ids = set(topic_id_list)
-    if len(blocks) != 4 or len(topics) != 33:
-        errors.append(f"ERROR: el temario debe contener 4 bloques y 33 temas; contiene {len(blocks)} y {len(topics)}.")
-    expected_counts = {"B1": 9, "B2": 5, "B3": 9, "B4": 10}
+    if len(blocks) != 4 or len(topics) != 57:
+        errors.append(f"ERROR: el temario debe contener 4 bloques y 57 temas; contiene {len(blocks)} y {len(topics)}.")
+    expected_counts = {"B1": 10, "B2": 16, "B3": 15, "B4": 16}
     if block_id_list != list(expected_counts):
         errors.append("ERROR: los bloques deben ser B1, B2, B3 y B4 en ese orden.")
     if len(block_ids) != len(block_id_list):
@@ -112,9 +112,10 @@ def main() -> int:
 
     markdown_paths = {
         path.relative_to(ROOT).as_posix()
-        for path in (ROOT / "documents" / "markdown").rglob("*.md")
+        for path in (ROOT / "documents" / "markdown" / "gsi").rglob("*.md")
     }
-    for path in sorted(markdown_paths - catalog_paths):
+    registered_paths = {d["path"] for d in load_json("data/gsi-document-register.json")["documents"]}
+    for path in sorted(markdown_paths - catalog_paths - registered_paths):
         errors.append(f"ERROR: Markdown sin catalogar: {path}")
     for path in sorted(catalog_paths - markdown_paths):
         errors.append(f"ERROR: catálogo sin Markdown existente: {path}")
@@ -162,7 +163,7 @@ def main() -> int:
     if errors:
         print("\n".join(errors))
         return 1
-    print(f"OK: 4 bloques, 33 temas y {len(catalog_paths)} Markdown con rutas y referencias válidas.")
+    print(f"OK: 4 bloques, 57 temas y {len(catalog_paths)} Markdown con rutas y referencias válidas.")
     return 0
 
 

@@ -1,11 +1,65 @@
-<article class="topic-content" data-topic-id="B3-T04" data-coverage-status="pending">
-<aside class="topic-content__status topic-content__status--pending" role="status"><p>Contenido pendiente de fuentes verificables.</p></aside>
-<nav class="topic-content__toc" aria-label="Índice del tema">
-<h2>Contenido del tema</h2>
-<ol><li class="topic-content__toc-level-2"><a href="#temario/B3-T04/fuentes-necesarias">Fuentes necesarias</a></li></ol>
-</nav>
-<h2 id="fuentes-necesarias">Fuentes necesarias</h2>
-<div class="topic-content__pendiente" data-editorial-kind="pendiente"><p class="topic-content__kind">Pendiente</p><p>Contenido pendiente de una fuente verificable.</p>
-<p>Fuente necesaria: documentación técnica primaria local sobre diseño orientado a objetos, patrones y UML.</p></div>
-
+<article class="topic-content" data-topic-id="B3-T04" data-coverage-status="complete">
+<p>Material curado del corpus GSI A2 · apuntes V2.1 revisados. Procedencia editorial, no documento oficial.</p>
+<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B3-T04/estudio">Apuntes de estudio</a></li><li><a href="#temario/B3-T04/estudio-01">1. Modelado conceptual</a></li><li><a href="#temario/B3-T04/estudio-02">2. Paso a relacional</a></li><li><a href="#temario/B3-T04/estudio-03">3. Normalización</a></li><li><a href="#temario/B3-T04/estudio-04">4. Integridad</a></li><li><a href="#temario/B3-T04/estudio-05">5. Transacciones/concurrencia</a></li><li><a href="#temario/B3-T04/estudio-06">6. Optimización del diseño</a></li><li><a href="#temario/B3-T04/estudio-07">6.1 Del modelo conceptual al físico</a></li><li><a href="#temario/B3-T04/estudio-08">6.2 Dependencias y normalización con intención</a></li><li><a href="#temario/B3-T04/estudio-09">6.3 Concurrencia: anomalías</a></li><li><a href="#temario/B3-T04/estudio-10">6.4 Técnicas de control</a></li><li><a href="#temario/B3-T04/estudio-11">6.5 Deadlocks y resolución</a></li><li><a href="#temario/B3-T04/estudio-12">6.6 Índices y diseño físico</a></li><li><a href="#temario/B3-T04/estudio-13">7. Test</a></li><li><a href="#temario/B3-T04/estudio-14">8. Supuesto</a></li><li><a href="#temario/B3-T04/estudio-15">9. Resumen</a></li><li><a href="#temario/B3-T04/repaso">Resumen de repaso</a></li><li><a href="#temario/B3-T04/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B3-T04/repaso-02">Claves de test</a></li><li><a href="#temario/B3-T04/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B3-T04/repaso-04">Fuentes base del material</a></li></ol></nav>
+<h2 id="estudio">Apuntes de estudio</h2>
+<p>Cobertura oficial que debe quedar dominada: Modelado de datos y metodologías. Diseño de bases de datos. Modelo relacional, normalización, diseño lógico y físico. Concurrencia y resolución de conflictos.</p>
+<h3 id="estudio-01">1. Modelado conceptual</h3>
+<p>Entidad, atributo, relación, cardinalidad, participación y restricciones. El modelo conceptual debe representar negocio sin contaminarse prematuramente con detalles físicos.</p>
+<h3 id="estudio-02">2. Paso a relacional</h3>
+<p>Entidades → tablas; identificadores → PK; relaciones 1:N → FK en lado N; N:M → tabla asociativa; 1:1 según opcionalidad/semántica.</p>
+<h3 id="estudio-03">3. Normalización</h3>
+<p>1FN, 2FN, 3FN y BCNF reducen redundancia/anomalías. No normalices “por dogma”: el modelo transaccional suele favorecer normalización; cargas analíticas pueden justificar dimensional/desnormalizado.</p>
+<h3 id="estudio-04">4. Integridad</h3>
+<p>PK, UNIQUE, FK, NOT NULL, CHECK y reglas de dominio. La integridad debe vivir lo más cerca posible del dato cuando es universal y estable.</p>
+<h3 id="estudio-05">5. Transacciones/concurrencia</h3>
+<p>ACID, bloqueos, deadlock, MVCC y niveles de aislamiento. Fenómenos: dirty read, non-repeatable read, phantom y lost update.</p>
+<h3 id="estudio-06">6. Optimización del diseño</h3>
+<p>Índices, particionado, tipos, cardinalidad, consultas y estadísticas. Un índice mejora ciertas lecturas y penaliza escrituras/mantenimiento.</p>
+<h3 id="estudio-07">6.1 Del modelo conceptual al físico</h3>
+<p><strong>Base A1 principal:</strong> 063 + 064, ya muy aprovechados en II.05. En este tema el foco no es SQL en general sino el <strong>proceso de diseño</strong> y la concurrencia.</p>
+<ul>
+<li><strong>Conceptual:</strong> entidades, relaciones, atributos, identificadores, cardinalidades y reglas.</li>
+<li><strong>Lógico:</strong> transformación al modelo relacional: tablas, PK/FK, restricciones y normalización.</li>
+<li><strong>Físico:</strong> tipos concretos, índices, particiones, almacenamiento, clustering, parámetros y decisiones dependientes del SGBD.</li>
+</ul>
+<p>La independencia conceptual/física explica por qué una optimización de almacenamiento no debería obligar a rediseñar toda la aplicación.</p>
+<h3 id="estudio-08">6.2 Dependencias y normalización con intención</h3>
+<p><strong>1FN</strong>: dominios atómicos según el modelo aplicado. <strong>2FN</strong>: elimina dependencias parciales respecto a claves compuestas. <strong>3FN</strong>: elimina dependencias transitivas indebidas de atributos no clave. <strong>BCNF</strong>: todo determinante no trivial debe ser superclave. La normalización evita anomalías de inserción, borrado y actualización.</p>
+<p>La desnormalización es una decisión consciente para patrones de lectura/rendimiento; exige controles para coherencia. No debe usarse para “arreglar” consultas mal diseñadas sin medir.</p>
+<h3 id="estudio-09">6.3 Concurrencia: anomalías</h3>
+<ul>
+<li><strong>lectura sucia:</strong> leer cambios no confirmados;</li>
+<li><strong>lectura no repetible:</strong> la misma fila cambia entre lecturas;</li>
+<li><strong>fantasma:</strong> cambia el conjunto de filas que satisface un predicado;</li>
+<li><strong>actualización perdida:</strong> una escritura sobrescribe otra sin detectar conflicto.</li>
+</ul>
+<h3 id="estudio-10">6.4 Técnicas de control</h3>
+<p><strong>Bloqueo pesimista:</strong> evita conflictos bloqueando. <strong>2PL</strong> separa fase de adquisición y liberación y ayuda a serializabilidad, aunque puede producir deadlocks. <strong>MVCC</strong> mantiene versiones para permitir lecturas concurrentes y necesita reglas de visibilidad. <strong>Control optimista</strong> permite trabajar y valida versión/timestamp al confirmar; es útil cuando las colisiones son poco frecuentes.</p>
+<h3 id="estudio-11">6.5 Deadlocks y resolución</h3>
+<p>Prevención mediante orden consistente de adquisición, transacciones cortas y buenos índices; detección por gestor y aborto de una víctima; timeouts como mecanismo auxiliar. En aplicaciones, el error debe manejarse con rollback y reintento seguro cuando sea idempotente.</p>
+<h3 id="estudio-12">6.6 Índices y diseño físico</h3>
+<p>B-tree/B+tree para búsquedas/rangos; hash para igualdad según motor; índice compuesto depende del orden de columnas. Demasiados índices aumentan coste de escritura. Particionado divide grandes tablas por rango/lista/hash u otras estrategias del gestor, pero no sustituye índices ni buen modelo.</p>
+<p><strong>Para supuesto:</strong> dibuja un ER simplificado, justifica normalización, restricciones, transacciones críticas, aislamiento, bloqueo/MVCC, índices y estrategia de crecimiento.</p>
+<h3 id="estudio-13">7. Test</h3>
+<ul>
+<li>Modelo conceptual ≠ físico.</li>
+<li>N:M requiere relación/tablas intermedias en relacional.</li>
+<li>Normalización ≠ optimización siempre.</li>
+<li>PK ≠ índice “solo por rendimiento”.</li>
+<li>MVCC ≠ ausencia de transacciones.</li>
+</ul>
+<h3 id="estudio-14">8. Supuesto</h3>
+<p>Presenta entidades, claves/cardinalidades, reglas, normalización, transacciones críticas, índices, concurrencia y plan de crecimiento.</p>
+<h3 id="estudio-15">9. Resumen</h3>
+<p>Modelar datos es preservar semántica e integridad antes de optimizar.</p>
+<h2 id="repaso">Resumen de repaso</h2>
+<h3 id="repaso-01">Núcleo de estudio</h3>
+<p>Desde requisitos se construye modelo conceptual (entidades, atributos, relaciones), lógico (tablas, claves, restricciones) y físico (tipos, índices, particiones, almacenamiento). Normalización reduce redundancia y anomalías: 1FN elimina grupos repetitivos/valores no atómicos; 2FN elimina dependencias parciales respecto de clave compuesta; 3FN elimina dependencias transitivas de atributos no clave; BCNF endurece determinantes. En concurrencia domina ACID, bloqueos, MVCC, niveles de aislamiento y anomalías: lectura sucia, no repetible y fantasma. Deadlock se gestiona por prevención/detección/rollback. Diseña integridad de entidad, referencial y de dominio.</p>
+<h3 id="repaso-02">Claves de test</h3>
+<p>Clave candidata ≠ primaria; índice no es una restricción de unicidad salvo configuración; normalizar no significa llevar siempre a forma máxima; serializable ofrece mayor aislamiento con coste. Optimista y pesimista son estrategias de concurrencia diferentes.</p>
+<h3 id="repaso-03">Enfoque para supuesto práctico</h3>
+<p>En supuesto incluye diagrama conceptual, tablas/claves, índices y transacciones críticas; justifica aislamiento y consistencia según negocio. Si hay alta concurrencia, menciona locking/MVCC y estrategia de recuperación.</p>
+<h3 id="repaso-04">Fuentes base del material</h3>
+<p>A1 063 + 064 + 089. Correspondencia muy directa.</p>
+<section class="topic-content__sources"><h2 id="fuentes">Fuentes y localizadores</h2><ul><li><a href="https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)</a> · III.04 · 2026-08-21</li><li><a href="https://docs.google.com/document/d/1l0nl4fc451Tl3XB9XZ4LRLZGLZEJxUueQvaMZoF8gcA/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE III — RESUMEN MAESTRO DE REPASO (15 temas)</a> · III.04 · 2026-08-21</li></ul></section>
 </article>

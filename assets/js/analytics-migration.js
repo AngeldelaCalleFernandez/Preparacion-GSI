@@ -1,9 +1,9 @@
-import { applyAnalyticsEvents } from "./analytics-engine.js";
-import { createAnalyticsAttemptEvent } from "./analytics-events.js";
-import { getConfiguredPersistenceAdapter } from "./persistence-v2.js?m3";
-import { getStoredResponses } from "./storage.js?m3";
-import { loadReinforcementStore } from "./reinforcement-storage.js?m3";
-import { loadAnalyticsStore, saveAnalyticsStore } from "./analytics-storage.js?m3";
+import { applyAnalyticsEvents } from "./analytics-engine.js?gsi2";
+import { createAnalyticsAttemptEvent } from "./analytics-events.js?gsi2";
+import { getConfiguredPersistenceAdapter } from "./persistence-v2.js?gsi2";
+import { getStoredResponses } from "./storage.js?gsi2";
+import { loadReinforcementStore } from "./reinforcement-storage.js?gsi2";
+import { loadAnalyticsStore, saveAnalyticsStore } from "./analytics-storage.js?gsi2";
 
 function questionFromData(data, record) {
   return data.questions.find((question) => question.id === record.questionId
@@ -196,7 +196,7 @@ export function migrateAnalytics(data, isDemo, storage = getConfiguredPersistenc
 }
 
 export function rebuildAnalytics(data, isDemo, storage = getConfiguredPersistenceAdapter()) {
-  const key = isDemo ? "tai.analytics.demo.v1" : "tai.analytics.real.v1";
+  const key = isDemo ? "gsi.analytics.demo.v1" : "gsi.analytics.real.v1";
   const isolatedStorage = {
     getItem(candidate) { return candidate === key ? null : storage.getItem(candidate); },
     setItem(candidate, value) { return storage.setItem(candidate, value); },

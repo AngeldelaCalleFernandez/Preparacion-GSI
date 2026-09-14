@@ -1,0 +1,193 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GSI A2 — PRÁCTICA ACTIVA 04 — OPERACIÓN DE SISTEMAS — CUADERNO DE EJERCICIOS</title><link rel="stylesheet" href="../../assets/css/styles.css"></head><body><main class="shell topic-content"><p><a href="../../index.html#practica">Volver a práctica escrita</a></p><p>Material curado GSI A2. Fuente: <a href="https://docs.google.com/document/d/1nCOiDeDzI-LF4vIRjEl32kFQ_KuLUt1fwRTjx-8ju5A/edit">documento original de Drive</a>.</p><h1>GSI A2 - PRÁCTICA ACTIVA 04</h1>
+<h2>Operación de sistemas: administración, backup, almacenamiento, HA y DR</h2>
+<p><strong>Ámbito:</strong> IV.01 a IV.06 del Bloque IV V2.1.</p>
+<p><strong>Objetivo:</strong> entrenar operación real y segundo ejercicio. No basta con reconocer una definición: debes decidir qué medir, qué aislar, qué restaurar, qué cambiar y cómo justificarlo. Intenta cada ejercicio sin mirar el solucionario y escribe siempre el razonamiento, no solo la palabra final.</p>
+<p><strong>Cálculos derivados:</strong> algunos problemas de RAID, crecimiento, PUE, reparto de carga e IOPS/throughput aplican aritmética directa a los conceptos de tus apuntes. Cuando se simplifica un escenario se indican las hipótesis (discos iguales, sin hot spare ni overhead, crecimiento compuesto, etc.).</p>
+<h1>PARTE A - Administración del sistema operativo y software de base (IV.01)</h1>
+<p>1 - Servicio caído: orden de diagnóstico</p>
+<p>Una aplicación deja de responder tras un reinicio nocturno. Enumera un orden de comprobación que permita distinguir proceso detenido, dependencia fallida, puerto ocupado, DNS/red, permisos, certificado, almacenamiento lleno o saturación.</p>
+<p>2 - Proceso vs servicio</p>
+<p>Explica por qué “el proceso existe” no demuestra que el servicio esté sano. Da tres comprobaciones adicionales.</p>
+<p>3 - Disco lleno</p>
+<p>El volumen de sistema está al 100 %. Los usuarios informan de errores y algunos logs han dejado de escribirse. Explica los riesgos inmediatos y qué harías antes de borrar ficheros indiscriminadamente.</p>
+<p>4 - Identidad y privilegios</p>
+<p>Un administrador usa diariamente la misma cuenta con privilegios máximos para correo, navegación y administración. Identifica los problemas y diseña una alternativa operativa más segura.</p>
+<p>5 - POSIX y ACL</p>
+<p>Un fichero Linux tiene permisos rwx para propietario/grupo/otros y además una ACL específica. ¿Por qué no son conceptos equivalentes y qué riesgo existe al revisar solo los bits rwx?</p>
+<p>6 - Secuencia de arranque Linux</p>
+<p>Ordena conceptualmente: systemd/servicios, firmware, kernel/initramfs, cargador de arranque. Explica qué tipo de fallo buscarías en cada etapa.</p>
+<p>7 - Patch management</p>
+<p>Ordena y justifica: verificar, inventariar, desplegar, probar, priorizar, documentar, evaluar compatibilidad/criticidad, preparar rollback.</p>
+<p>8 - Parche urgente</p>
+<p>Aparece una vulnerabilidad crítica, pero el parche puede romper un middleware esencial. ¿Por qué “instalar inmediatamente en todos los servidores” no siempre es la mejor respuesta? Propón un proceso acelerado pero controlado.</p>
+<p>9 - Idempotencia</p>
+<p>Un script “crea el usuario backup, añade una línea a un fichero y reinicia un servicio” cada vez que se ejecuta. ¿Qué parte puede no ser idempotente? Reescribe el comportamiento deseado en términos de estado objetivo.</p>
+<p>10 - Rendimiento</p>
+<p>CPU=92 %, RAM=60 %, disco con latencia baja y usuarios sin degradación. ¿Debes abrir una incidencia de capacidad solo por la CPU? Explica qué otras métricas/relaciones revisarías.</p>
+<h1>PARTE B - Administración de SGBD (IV.02)</h1>
+<p>11 - Base de datos vs instancia</p>
+<p>Distingue conceptualmente datos/estructuras de los procesos, memoria y endpoints que prestan el servicio. ¿Por qué esta distinción importa al diagnosticar “la base de datos está caída”?</p>
+<p>12 - Autenticación y autorización</p>
+<p>Una cuenta puede iniciar sesión correctamente, pero no puede leer una tabla. ¿Qué capa ha funcionado y cuál está fallando?</p>
+<p>13 - Privilegios mínimos</p>
+<p>Una aplicación recibe privilegios administrativos globales “para evitar errores”. Rediseña el acceso usando roles y privilegios sobre objetos.</p>
+<p>14 - Consulta lenta</p>
+<p>Una consulta antes tardaba 200 ms y ahora 9 s. Plantea un diagnóstico que incluya plan de ejecución, estadísticas, cardinalidades, índices, waits/locks, CPU, I/O y concurrencia.</p>
+<p>15 - Índice: ventaja y coste</p>
+<p>Un equipo propone crear índices sobre todas las columnas usadas en filtros. Explica por qué puede mejorar unas lecturas y empeorar otras partes del sistema.</p>
+<p>16 - Deadlock</p>
+<p>Dos transacciones se bloquean mutuamente. Explica qué puede hacer el SGBD, qué debe hacer la aplicación y qué revisarías para reducir recurrencia.</p>
+<p>17 - Réplica no es backup</p>
+<p>Un operador afirma: “tenemos una réplica asíncrona, así que no necesitamos copias”. Refuta la afirmación con al menos tres fallos que pueden propagarse a la réplica.</p>
+<p>18 - PITR</p>
+<p>Un usuario borra datos a las 10:17 y se detecta a las 10:40. Describe qué aporta una copia base más logs/WAL si se dispone de recuperación point-in-time.</p>
+<p>19 - Replicación síncrona vs asíncrona</p>
+<p>Compara pérdida potencial de datos, latencia y separación de dominios de fallo. ¿Cuál elegirías para una réplica remota con enlace de alta latencia? Justifica, sin asumir que existe una respuesta universal.</p>
+<p>20 - Upgrade mayor del motor</p>
+<p>Diseña el plan mínimo para actualizar una versión mayor de SGBD: compatibilidad, pruebas, réplica/piloto, backups, ventana, rollback, monitorización y validación.</p>
+<h1>PARTE C - Mantenimiento, incidencias, backup y recuperación (IV.03)</h1>
+<p>21 - Tipos de mantenimiento</p>
+<p>Clasifica: a) sustituir una batería UPS por degradación medida; b) reparar un ventilador tras avería; c) limpieza programada; d) actualizar software para adaptarlo a una nueva plataforma.</p>
+<p>22 - Incidente, problema, petición y cambio</p>
+<p>Clasifica: a) impresora caída; b) investigar por qué se repite la caída; c) alta estándar de un usuario; d) modificar la VLAN de un servidor.</p>
+<p>23 - Impacto y urgencia</p>
+<p>Compara: A) 800 usuarios sin acceso al sistema de nómina durante cierre mensual; B) 1 usuario sin acceso a una aplicación no crítica. ¿Cuál debe tener mayor prioridad y por qué?</p>
+<p>24 - Escalado funcional y jerárquico</p>
+<p>Un técnico no sabe resolver un fallo de almacenamiento y el SLA está a punto de incumplirse. Distingue qué justificaría escalado funcional y qué justificaría escalado jerárquico.</p>
+<p>25 - Incidente mayor</p>
+<p>Un CPD pierde conectividad externa. Diseña un flujo de las primeras actuaciones: mando, comunicaciones, diagnóstico, recuperación, evidencia y revisión posterior.</p>
+<p>26 - Full, incremental y diferencial</p>
+<p>Define las tres y explica qué información necesita cada restauración. ¿Cuál suele reducir la ventana diaria y cuál simplifica más la cadena de restore?</p>
+<p>27 - Cadena incremental</p>
+<p>Domingo: full. Lunes, martes y miércoles: incrementales. El miércoles por la noche se pierde el servidor. ¿Qué conjuntos de copia necesitas restaurar para llegar al punto del miércoles?</p>
+<p>28 - Cadena diferencial</p>
+<p>Domingo: full. Lunes, martes y miércoles: diferenciales respecto a la full. El miércoles por la noche se pierde el servidor. ¿Qué conjuntos necesitas?</p>
+<p>29 - 3-2-1-1-0</p>
+<p>Explica el significado operativo de la regla y por qué “0 errores” exige verificación/pruebas, no solo que el job aparezca en verde.</p>
+<p>30 - Ransomware y backup</p>
+<p>El malware compromete el dominio administrativo y cifra producción y repositorio de backup montado permanentemente. ¿Qué controles de tus apuntes habrían reducido el impacto?</p>
+<p>31 - RPO y frecuencia</p>
+<p>Un servicio tiene RPO=15 minutos. ¿Es coherente hacer una única copia diaria sin logs/replicación adicional? Explica la relación entre objetivo y mecanismo.</p>
+<p>32 - RTO y automatización</p>
+<p>Dos servicios tienen la misma copia diaria. S1 exige RTO de 30 min; S2, 24 h. ¿Por qué pueden necesitar arquitecturas de recuperación muy diferentes aunque el backup sea igual?</p>
+<p>33 - Prueba de restore</p>
+<p>Una copia se restaura y el fichero “abre”, pero la aplicación no arranca por certificados y configuración ausentes. ¿Qué demuestra este fallo sobre cómo debe probarse la recuperación?</p>
+<h1>PARTE D - Configuración, cambios, automatización, observabilidad y capacidad (IV.04)</h1>
+<p>34 - CI y CMDB</p>
+<p>Da cinco ejemplos de Configuration Item y explica por qué una CMDB no debe confundirse con “una lista de servidores”.</p>
+<p>35 - Baseline y configuration drift</p>
+<p>La baseline indica TLS habilitado y un puerto de administración cerrado. Meses después el puerto aparece abierto manualmente. ¿Cómo clasificarías la situación y qué controles ayudarían a detectarla/corregirla?</p>
+<p>36 - Tipos de cambio</p>
+<p>Clasifica y justifica: a) rotación mensual preaprobada de logs; b) actualización planificada de firmware con riesgo medio; c) cambio urgente para contener una brecha activa.</p>
+<p>37 - RFC bien formada</p>
+<p>Enumera la información mínima que exigirías antes de autorizar un cambio relevante: impacto, riesgo, dependencias, pruebas, ventana, responsable, comunicaciones y rollback.</p>
+<p>38 - Versiones vs configuración</p>
+<p>Git contiene el código y la IaC. ¿Por qué eso no significa que la gestión de configuración esté resuelta?</p>
+<p>39 - Imperativo vs declarativo</p>
+<p>Distingue “ejecuta estos 12 pasos” de “el estado deseado es 3 réplicas y este firewall”. ¿Qué ventaja operativa aporta el enfoque declarativo cuando existe un reconciliador?</p>
+<p>40 - Idempotencia operativa</p>
+<p>Un playbook debe poder ejecutarse 20 veces sin crear 20 usuarios, duplicar reglas ni corromper ficheros. Explica la propiedad buscada.</p>
+<p>41 - Monitorización vs observabilidad</p>
+<p>Un dashboard dice “latencia alta”, pero no permite correlacionar petición, servicio y base de datos. ¿Qué señales añadirías para acercarte a observabilidad?</p>
+<p>42 - SLI, SLO y SLA</p>
+<p>Clasifica: “99,93 % de disponibilidad medida este mes”, “objetivo interno 99,95 %”, “contrato con el proveedor 99,9 % y penalización”.</p>
+<p>43 - CPU alta sin problema</p>
+<p>Un servicio mantiene SLO con CPU al 90 %. Otro incumple SLO con CPU al 35 %. Explica por qué la utilización aislada no identifica el cuello.</p>
+<p>44 - Bottleneck</p>
+<p>Latencia sube, CPU estable, memoria estable, IOPS similares, pero la latencia de disco pasa de 2 ms a 35 ms y la cola crece. ¿Cuál es tu hipótesis inicial y cómo la validarías?</p>
+<p>45 - Crecimiento y headroom - cálculo derivado</p>
+<p>Un pool usa 12 TB hoy. Crece un 25 % anual compuesto. Se desea capacidad para 3 años y además 20 % de headroom sobre la demanda esperada. Calcula la capacidad objetivo aproximada.</p>
+<p>46 - Autoscaling vs capacity planning</p>
+<p>Una plataforma escala automáticamente pods, pero el cluster tiene un límite físico y la base de datos no escala igual. Explica por qué autoscaling no sustituye a la gestión de capacidad.</p>
+<h1>PARTE E - Almacenamiento de datos (IV.05)</h1>
+<p>47 - DAS, NAS, SAN y objeto</p>
+<p>Asocia: a) ficheros compartidos por SMB; b) LUN de bloques por Fibre Channel; c) disco NVMe local; d) repositorio masivo accedido por API de objetos.</p>
+<p>48 - NAS vs SAN</p>
+<p>Refuta: “NAS es almacenamiento en red y SAN no”. Explica la diferencia por abstracción expuesta.</p>
+<p>49 - RAID: identificar</p>
+<p>Relaciona: striping sin redundancia; espejo; paridad distribuida de un fallo; doble paridad; stripe sobre espejos.</p>
+<p>50 - RAID: capacidad útil - cálculo derivado</p>
+<p>Supón 8 discos iguales de 4 TB, sin hot spare ni overhead de metadatos. Calcula la capacidad teórica aproximada de RAID 5, RAID 6 y RAID 10.</p>
+<p>51 - RAID no es backup</p>
+<p>Un RAID 6 sobrevive a dos fallos de disco. ¿Por qué sigue sin proteger frente a borrado lógico, ransomware, incendio o error administrativo?</p>
+<p>52 - Zoning y LUN masking</p>
+<p>Explica qué controla cada mecanismo y por qué no son sinónimos.</p>
+<p>53 - Multipathing</p>
+<p>Un servidor tiene dos HBA y dos caminos hacia la cabina. ¿Qué problema resuelve multipathing y qué no garantiza por sí solo?</p>
+<p>54 - Protocolos</p>
+<p>Asocia: iSCSI, NFS, SMB, Fibre Channel y NVMe-oF con bloque/fichero y transporte/fabric apropiados.</p>
+<p>55 - Thin provisioning - cálculo derivado</p>
+<p>Pool físico 24 TB; capacidad lógica presentada 40 TB; uso real 18 TB; crecimiento 1,5 TB/mes. a) ¿Cuánto falta para llegar al 80 % físico? b) ¿Cuántos meses para agotar el pool si nada cambia?</p>
+<p>56 - Snapshot</p>
+<p>El equipo hace snapshots diarios en la misma cabina y elimina el backup externo. Explica por qué el snapshot puede depender del mismo dominio de fallo.</p>
+<p>57 - IOPS y throughput - cálculo derivado</p>
+<p>Una carga realiza 20.000 IOPS con bloques medios de 8 KiB. Ignorando overhead, calcula throughput aproximado en MiB/s. Explica por qué dos cargas con mismos IOPS pueden requerir throughput diferente.</p>
+<p>58 - Perfil de carga</p>
+<p>Compara una base OLTP aleatoria de bloques pequeños con un backup secuencial de bloques grandes. ¿Qué métricas priorizarías en cada caso?</p>
+<p>59 - Capacidad útil</p>
+<p>Enumera qué debes descontar o reservar antes de afirmar “la cabina tiene 100 TB útiles”: RAID, snapshots, reservas, crecimiento y otros factores operativos.</p>
+<p>60 - Seguridad de storage</p>
+<p>Diseña controles para administración, segmentación de la red de storage, cifrado cuando proceda, firmware, alertas, inmutabilidad/WORM de backup y borrado seguro.</p>
+<h1>PARTE F - CPD, virtualización, alta disponibilidad, balanceo y DR (IV.06)</h1>
+<p>61 - N, N+1 y 2N - cálculo derivado</p>
+<p>Una carga requiere 600 kW y cada módulo aporta 200 kW. En este modelo simplificado, ¿cuántos módulos representan N, N+1 y 2N?</p>
+<p>62 - PUE - cálculo derivado</p>
+<p>El CPD consume 420 kW totales y los equipos TI 280 kW. Calcula PUE e interprétalo.</p>
+<p>63 - PUE no es disponibilidad</p>
+<p>Dos CPD tienen PUE 1,35 y 1,60. ¿Puedes concluir solo con ese dato cuál tiene mayor disponibilidad? Justifica.</p>
+<p>64 - Consolidación y blast radius</p>
+<p>Se migran 30 servidores físicos a 3 hosts potentes. ¿Qué mejora y qué riesgo nuevo aparece? Enumera controles de capacidad/HA/anti-affinity.</p>
+<p>65 - Live migration</p>
+<p>Una VM puede moverse en vivo entre hosts del mismo CPD. ¿Por qué eso facilita mantenimiento pero no constituye backup ni DR?</p>
+<p>66 - SPOF</p>
+<p>Arquitectura: 4 hosts redundantes, storage redundante, pero un único switch de acceso a storage y un único balanceador. Identifica los SPOF y corrige el diseño conceptualmente.</p>
+<p>67 - Activo-activo vs activo-pasivo</p>
+<p>Compara uso de capacidad, complejidad de estado/consistencia y failover. ¿Por qué activo-activo no es automáticamente “mejor”?</p>
+<p>68 - Balanceo L4/L7 y DR - mini caso</p>
+<p>Una aplicación HTTP tiene 3 nodos. El balanceador debe enrutar /api a un pool y /static a otro, retirar nodos enfermos y repartir 900 req/s con pesos 2:1:1. a) ¿Necesitas capacidad L4 o L7 para el routing por path? b) ¿Qué reparto teórico recibe cada nodo del pool ponderado? c) Explica por qué todo ello sigue siendo HA local y no DR si está en un único CPD.</p>
+<h1>Registro de progreso</h1>
+<table>
+<tr>
+<th scope="col"><p>Bloque</p></th>
+<th scope="col"><p>Intento 1</p></th>
+<th scope="col"><p>Intento 2</p></th>
+<th scope="col"><p>Errores recurrentes / regla correcta</p></th>
+</tr>
+<tr>
+<td><p>A SO</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>B DBA</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>C Incidentes/backup</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>D Config/observabilidad</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>E Storage</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>F CPD/HA/DR</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+<p>Fuente principal: GSI A2 - Bloque IV - Apuntes completos V2.1 revisados - IV.01 a IV.06. Los cálculos señalados como “derivados” aplican aritmética sobre conceptos del tema y declaran sus hipótesis.</p></main></body></html>

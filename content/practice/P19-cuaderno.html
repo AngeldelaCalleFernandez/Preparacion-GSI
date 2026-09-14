@@ -1,0 +1,1171 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — CUADERNO</title><link rel="stylesheet" href="../../assets/css/styles.css"></head><body><main class="shell topic-content"><p><a href="../../index.html#practica">Volver a práctica escrita</a></p><p>Material curado GSI A2. Fuente: <a href="https://docs.google.com/document/d/13mzmjq-LCkJ2VtVg2Nk674ex5nTCwb4UhLpJA35Mw6k/edit">documento original de Drive</a>.</p><p>GSI A2 — PRÁCTICA ACTIVA 19</p>
+<p><strong>NGN · IMS · MOVILIDAD · UEM · VIDEOCONFERENCIA · QoS</strong></p>
+<p>160 preguntas · 4 opciones · cierre directo de IV.14, IV.15 e IV.16</p>
+<p><strong>CUADERNO DE TRABAJO</strong></p>
+<h1>Cómo usar esta práctica</h1>
+<p>Objetivo: convertir los tres últimos temas parciales del mapa en cobertura directa: IV.14 NGN/IMS/VoIP/UC, IV.15 comunicaciones móviles y MDM/EMM/UEM, e IV.16 videoconferencia, protocolos, QoS y salas.</p>
+<p>Método: responde sin apuntes. Marca seguridad alta/media/baja. En cálculos escribe la operación. Registra cada fallo con una regla breve y repítelo 24–72 horas después.</p>
+<p>Base nuclear: GSI A2 — Bloque IV — Apuntes completos V2.1 revisados. Contraste oficial: 3GPP IMS/Release 18; IETF SIP/RTP/ICE/STUN/TURN; W3C WebRTC; ITU-T H.323.</p>
+<h2>Distribución</h2>
+<table>
+<tr>
+<th scope="col"><p><strong>Preguntas</strong></p></th>
+<th scope="col"><p><strong>Bloque</strong></p></th>
+<th scope="col"><p><strong>Función</strong></p></th>
+</tr>
+<tr>
+<td><p>1–20</p></td>
+<td><p>NGN e IMS: arquitectura y funciones</p></td>
+<td><p>NGN, capas IMS, CSCF, HSS, separación acceso/control/servicio.</p></td>
+</tr>
+<tr>
+<td><p>21–40</p></td>
+<td><p>SIP, RTP, VoIP, UC, QoS y convergencia</p></td>
+<td><p>SIP/SDP, RTP/RTCP, SBC, VoIP/ToIP, UC, seguridad, QoS.</p></td>
+</tr>
+<tr>
+<td><p>41–60</p></td>
+<td><p>Generaciones móviles: de 2G a 5G-Advanced</p></td>
+<td><p>2G/3G/4G/5G, casos de uso, 5G-Advanced, UE/SIM/handover.</p></td>
+</tr>
+<tr>
+<td><p>61–80</p></td>
+<td><p>LTE/5G: radio, core, movilidad y slicing</p></td>
+<td><p>E-UTRAN/EPC, NR/5GC, SA/NSA, slicing, roaming, operación.</p></td>
+</tr>
+<tr>
+<td><p>81–100</p></td>
+<td><p>MDM, EMM y UEM: gobierno del endpoint móvil</p></td>
+<td><p>MDM/MAM/MCM/EMM/UEM, BYOD/COPE/COBO/CYOD, compliance y privacidad.</p></td>
+</tr>
+<tr>
+<td><p>101–120</p></td>
+<td><p>Videoconferencia: SIP/H.323, WebRTC y medios</p></td>
+<td><p>SIP/H.323/WebRTC, ICE/STUN/TURN, codecs, MCU/SFU, simulcast/SVC.</p></td>
+</tr>
+<tr>
+<td><p>121–140</p></td>
+<td><p>Dimensionamiento, QoS y acondicionamiento de salas</p></td>
+<td><p>Cálculo de ancho de banda, latencia/jitter/pérdida, QoS, sala, seguridad/accesibilidad.</p></td>
+</tr>
+<tr>
+<td><p>141–160</p></td>
+<td><p>Casos integradores de comunicaciones convergentes</p></td>
+<td><p>Supuestos mixtos: continuidad, interoperabilidad, UEM, WebRTC, cálculo y observabilidad.</p></td>
+</tr>
+</table>
+<h2>Fuentes oficiales de contraste</h2>
+<ul>
+<li>3GPP — IMS TS 23.228 / control SIP-SDP TS 24.229</li>
+<li>3GPP — Release 18, primera release de 5G-Advanced</li>
+<li>RFC 3261 — SIP; RFC 3550 — RTP/RTCP</li>
+<li>W3C — WebRTC: Real-Time Communication in Browsers</li>
+<li>RFC 8445 — ICE; RFC 8489 — STUN; RFC 8656 — TURN</li>
+<li>ITU-T H.323 (V8, 03/2022) — multimedia sobre redes de paquetes</li>
+</ul>
+<p>Control de actualidad: 25/08/2026. Se priorizan arquitectura y estándares estables; no se memorizan cifras comerciales de velocidad ni catálogos de fabricante.</p>
+<h1>1. NGN e IMS: arquitectura y funciones</h1>
+<p><strong>1. ¿Qué describe mejor una NGN (Next Generation Network)?</strong></p>
+<p>A) Una red exclusiva de voz analógica.</p>
+<p>B) Una red convergente basada en paquetes/IP que separa transporte de control/servicios y soporta múltiples servicios con QoS y movilidad.</p>
+<p>C) Un estándar de cableado estructurado.</p>
+<p>D) Un protocolo de cifrado de extremo a extremo.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>2. ¿Qué problema arquitectónico intenta superar el enfoque NGN?</strong></p>
+<p>A) La existencia de redes verticales separadas para cada servicio, sustituyéndolas por una plataforma convergente.</p>
+<p>B) La falta de direcciones MAC en Ethernet.</p>
+<p>C) La imposibilidad de usar fibra óptica.</p>
+<p>D) La necesidad de eliminar todo control de calidad.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>3. ¿Qué es IMS?</strong></p>
+<p>A) Un codec de audio.</p>
+<p>B) Una arquitectura 3GPP para control de sesiones y prestación de servicios multimedia IP.</p>
+<p>C) Un protocolo de routing interior.</p>
+<p>D) Una tecnología de almacenamiento SAN.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>4. ¿Cuál es una idea central de IMS?</strong></p>
+<p>A) Separar acceso, control de sesión y servicios para facilitar convergencia e independencia del acceso.</p>
+<p>B) Obligar a transportar voz por circuitos dedicados.</p>
+<p>C) Eliminar la autenticación del abonado.</p>
+<p>D) Usar únicamente Wi-Fi como acceso.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>5. ¿Qué función clásica desempeña P-CSCF en IMS?</strong></p>
+<p>A) Almacenar vídeo grabado.</p>
+<p>B) Codificar audio G.711.</p>
+<p>C) Actuar como primer punto de contacto SIP del terminal con IMS.</p>
+<p>D) Asignar direcciones MAC.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>6. ¿Qué función clásica desempeña I-CSCF?</strong></p>
+<p>A) Servir como punto de entrada/interrogación hacia un dominio IMS y ayudar a localizar la función de servicio adecuada.</p>
+<p>B) Transportar RTP de todos los usuarios obligatoriamente.</p>
+<p>C) Gestionar el switch de acceso Ethernet.</p>
+<p>D) Realizar mezcla de vídeo como MCU.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>7. ¿Qué función clásica desempeña S-CSCF?</strong></p>
+<p>A) Ser un relay TURN.</p>
+<p>B) Controlar la sesión/registro del abonado y aplicar lógica de servicio IMS asociada.</p>
+<p>C) Actuar como servidor DHCP.</p>
+<p>D) Convertir fibra en cobre.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>8. ¿Qué representa HSS en la arquitectura IMS tradicional?</strong></p>
+<p>A) Un protocolo de señalización de vídeo.</p>
+<p>B) Un repositorio de datos de abonado, identidad y perfil utilizado por funciones IMS.</p>
+<p>C) Un switch de voz físico.</p>
+<p>D) Un codec de alta eficiencia.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>9. ¿Qué afirmación es correcta sobre IMS y 5G?</strong></p>
+<p>A) 5G prohíbe IMS.</p>
+<p>B) IMS es exactamente el 5G Core.</p>
+<p>C) IMS solo puede funcionar en 2G.</p>
+<p>D) IMS continúa siendo relevante para servicios multimedia/voz; la arquitectura móvil evoluciona, pero no convierte IMS en un concepto obsoleto.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>10. ¿Qué relación hay entre IMS y SIP?</strong></p>
+<p>A) IMS usa SIP como base de control de sesiones, con perfiles y procedimientos definidos por 3GPP.</p>
+<p>B) IMS sustituye SIP por SNMP.</p>
+<p>C) SIP transporta únicamente el audio de IMS.</p>
+<p>D) No existe relación normativa entre ambos.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>11. ¿Qué relación hay entre IMS y SDP?</strong></p>
+<p>A) SDP cifra medios.</p>
+<p>B) SDP es un codec.</p>
+<p>C) SDP reemplaza a RTP.</p>
+<p>D) SDP describe parámetros de medios/sesión que se intercambian dentro de la señalización, mientras IMS/SIP controla la sesión.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>12. ¿VoIP necesita obligatoriamente IMS?</strong></p>
+<p>A) Sí, toda voz IP es IMS.</p>
+<p>B) Solo si usa UDP.</p>
+<p>C) Solo si existe un SBC.</p>
+<p>D) No. Puede existir VoIP basada en SIP u otras arquitecturas sin desplegar IMS.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>13. ¿Cuál es la relación más correcta entre NGN e IMS?</strong></p>
+<p>A) NGN es un concepto amplio de red convergente; IMS es una arquitectura concreta de control/servicios multimedia IP dentro de ese contexto.</p>
+<p>B) Son dos nombres del mismo codec.</p>
+<p>C) NGN es un protocolo de aplicación y IMS una VLAN.</p>
+<p>D) IMS es el cableado físico de una NGN.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>14. ¿Qué objetivo tiene desacoplar acceso y servicios en IMS/NGN?</strong></p>
+<p>A) Eliminar toda política de seguridad.</p>
+<p>B) Forzar que cada servicio tenga su red física.</p>
+<p>C) Permitir que servicios e identidad se mantengan de forma más independiente de la tecnología de acceso.</p>
+<p>D) Evitar movilidad entre accesos.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>15. ¿Qué debe dominarse para GSI sobre P-CSCF/I-CSCF/S-CSCF?</strong></p>
+<p>A) Las direcciones IP reales de operadores.</p>
+<p>B) Todos los códigos de fabricante.</p>
+<p>C) La función conceptual de cada entidad y el flujo de control, no memorizar cada interfaz de cada release.</p>
+<p>D) Los números de serie de equipos IMS.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>16. ¿Qué aporta el control de políticas/QoS en una arquitectura convergente?</strong></p>
+<p>A) Crear ancho de banda físico nuevo.</p>
+<p>B) Eliminar la congestión sin capacidad.</p>
+<p>C) Sustituir la autenticación.</p>
+<p>D) Permitir tratamiento diferenciado y coherente para servicios sensibles como voz y vídeo.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>17. ¿Qué significa convergencia de servicios en este contexto?</strong></p>
+<p>A) Convertir todos los datos en audio.</p>
+<p>B) Usar un único cable sin redundancia.</p>
+<p>C) Integrar voz, vídeo, mensajería, presencia y otros servicios sobre plataformas e identidades comunes.</p>
+<p>D) Eliminar protocolos de señalización.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>18. ¿Qué riesgo tendría interpretar IMS como “un único servidor”?</strong></p>
+<p>A) Ninguno; IMS es siempre un appliance único.</p>
+<p>B) Ignorar que es una arquitectura distribuida con varias funciones de control, datos de abonado y servicios.</p>
+<p>C) Solo afectaría al cableado.</p>
+<p>D) Únicamente cambiaría el codec.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>19. En un diagrama de IMS, ¿qué capa conviene separar visualmente?</strong></p>
+<p>A) Solo cables y racks.</p>
+<p>B) HTML, CSS y JavaScript.</p>
+<p>C) RAID, SAN y NAS.</p>
+<p>D) Acceso/transporte, control de sesión y servicios/datos de abonado.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>20. Un organismo quiere conservar identidad y servicios de comunicaciones al cambiar entre accesos fijo y móvil. ¿Qué principio es más relevante?</strong></p>
+<p>A) Usar exclusivamente telefonía analógica.</p>
+<p>B) Desactivar movilidad.</p>
+<p>C) Convergencia fijo-móvil con servicios desacoplados del acceso y control de sesión/identidad coherente.</p>
+<p>D) Asignar una VLAN diferente a cada llamada como única medida.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<h1>2. SIP, RTP, VoIP, UC, QoS y convergencia</h1>
+<p><strong>21. ¿Cuál es la función principal de SIP?</strong></p>
+<p>A) Transportar el audio codificado.</p>
+<p>B) Señalizar y controlar el establecimiento, modificación y terminación de sesiones multimedia.</p>
+<p>C) Reservar espacio en disco.</p>
+<p>D) Asignar direcciones IP por DHCP.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>22. ¿Qué método SIP se asocia típicamente al inicio de una sesión?</strong></p>
+<p>A) INVITE.</p>
+<p>B) GET.</p>
+<p>C) PUBLISH de SNMP.</p>
+<p>D) MOUNT.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>23. ¿Qué método SIP se usa para terminar normalmente un diálogo/sesión establecida?</strong></p>
+<p>A) ARP.</p>
+<p>B) COMMIT.</p>
+<p>C) BYE.</p>
+<p>D) PING como método SIP estándar de cierre.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>24. ¿Qué método SIP se relaciona con el registro de la ubicación/contacto de un usuario?</strong></p>
+<p>A) REGISTER.</p>
+<p>B) DELETE.</p>
+<p>C) TRACE de IP.</p>
+<p>D) SUBNET.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>25. ¿Qué indica una respuesta SIP 1xx?</strong></p>
+<p>A) Éxito definitivo siempre.</p>
+<p>B) Una respuesta provisional/informativa.</p>
+<p>C) Error global exclusivamente.</p>
+<p>D) Un paquete RTP.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>26. ¿Qué diferencia esencial existe entre SIP y RTP?</strong></p>
+<p>A) SIP señaliza/controla sesiones; RTP transporta medios en tiempo real.</p>
+<p>B) Ambos son codecs.</p>
+<p>C) RTP registra usuarios y SIP lleva audio.</p>
+<p>D) SIP es un protocolo de almacenamiento.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>27. ¿Qué función cumple RTCP?</strong></p>
+<p>A) Aportar información de control, participantes y calidad asociada a una sesión RTP.</p>
+<p>B) Transportar exclusivamente señalización SIP.</p>
+<p>C) Cifrar automáticamente todo RTP.</p>
+<p>D) Asignar números telefónicos.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>28. ¿RTP garantiza por sí solo QoS?</strong></p>
+<p>A) Sí, siempre garantiza latencia cero.</p>
+<p>B) Solo si usa IPv6.</p>
+<p>C) No. Transporta medios y aporta secuencias/timestamps, pero no reserva recursos ni garantiza QoS.</p>
+<p>D) Sí, porque RTP sustituye a la red IP.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>29. ¿Qué es SDP en una llamada SIP?</strong></p>
+<p>A) Un codec de audio.</p>
+<p>B) Una descripción de los medios y parámetros de sesión, como codecs y puertos/direcciones.</p>
+<p>C) Un algoritmo de cifrado.</p>
+<p>D) Un sistema de directorio.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>30. ¿Qué es un SBC?</strong></p>
+<p>A) Una PBX que obligatoriamente almacena buzones.</p>
+<p>B) Un switch L2 de acceso.</p>
+<p>C) Un elemento de frontera que intermedia señalización/medios, aplica políticas, seguridad, normalización y ayuda con NAT/interconexión.</p>
+<p>D) Un protocolo de compresión de vídeo.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>31. ¿Qué diferencia conceptual hay entre PBX y SBC?</strong></p>
+<p>A) Son siempre el mismo equipo y función.</p>
+<p>B) El SBC solo sirve como codec.</p>
+<p>C) La PBX es un protocolo de routing.</p>
+<p>D) La PBX presta lógica de telefonía; el SBC controla/protege la frontera de sesiones e interconexión.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>32. ¿Qué protege SRTP principalmente?</strong></p>
+<p>A) El registro DNS.</p>
+<p>B) El almacenamiento de la PBX.</p>
+<p>C) Los medios RTP, aportando confidencialidad/integridad según perfil.</p>
+<p>D) La alimentación PoE.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>33. ¿Qué combinación es coherente para proteger señalización y medios?</strong></p>
+<p>A) HTTP sin TLS y RTP abierto como única medida.</p>
+<p>B) SIP sobre TLS cuando aplique y SRTP para medios.</p>
+<p>C) SNMPv1 y FTP.</p>
+<p>D) ARP y STP.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>34. ¿Qué es VoIP?</strong></p>
+<p>A) Transmisión de voz utilizando redes/protocolos IP.</p>
+<p>B) La gestión completa de cualquier endpoint corporativo.</p>
+<p>C) Un único fabricante de PBX.</p>
+<p>D) Una tecnología de radio 5G exclusiva.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>35. ¿Qué suele expresar ToIP en un entorno corporativo?</strong></p>
+<p>A) Solo paquetes RTP individuales.</p>
+<p>B) Una licencia de software.</p>
+<p>C) Un algoritmo de routing.</p>
+<p>D) El sistema completo de telefonía sobre IP: terminales, PBX, numeración, servicios e interconexión.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>36. ¿Qué integra una plataforma de comunicaciones unificadas (UC)?</strong></p>
+<p>A) Solo almacenamiento SAN.</p>
+<p>B) Únicamente correo SMTP.</p>
+<p>C) Solo Wi-Fi de invitados.</p>
+<p>D) Voz, vídeo/reuniones, mensajería, presencia y colaboración alrededor de identidad/directorio.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>37. ¿Qué variables de red perjudican especialmente voz en tiempo real?</strong></p>
+<p>A) Capacidad de disco, inodos y RAID.</p>
+<p>B) Latencia, jitter y pérdida de paquetes.</p>
+<p>C) Tamaño del código fuente.</p>
+<p>D) Número de usuarios de Active Directory sin tráfico.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>38. ¿Qué hace un jitter buffer?</strong></p>
+<p>A) Aumenta el ancho de banda físico.</p>
+<p>B) Elimina cualquier pérdida pasada.</p>
+<p>C) Absorbe variación de llegada almacenando temporalmente paquetes, a costa de añadir algo de retardo.</p>
+<p>D) Sustituye a un SBC.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>39. ¿Qué afirmación es correcta sobre QoS?</strong></p>
+<p>A) Duplica automáticamente la capacidad.</p>
+<p>B) Hace innecesario dimensionar.</p>
+<p>C) Garantiza calidad aunque Internet ignore las marcas.</p>
+<p>D) Clasifica/marca y prioriza tráfico en congestión, pero no crea ancho de banda ni arregla una ruta insuficiente.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>40. Un organismo migra a SIP trunk y UC. ¿Qué conjunto es más completo?</strong></p>
+<p>A) Un único enlace sin SBC ni logs.</p>
+<p>B) Solo comprar teléfonos de mayor resolución.</p>
+<p>C) Deshabilitar cifrado para reducir complejidad.</p>
+<p>D) Redundancia de trunk/PBX o servicio, SBC, QoS, seguridad de señalización/medios, monitorización y plan de continuidad.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<h1>3. Generaciones móviles: de 2G a 5G-Advanced</h1>
+<p><strong>41. ¿Qué caracteriza de forma general a 2G?</strong></p>
+<p>A) Ser una red 5G SA.</p>
+<p>B) Digitalización de la voz y servicios como SMS, con GSM como referencia y datos añadidos posteriormente mediante GPRS/EDGE.</p>
+<p>C) Usar exclusivamente voz sobre IMS.</p>
+<p>D) Introducir network slicing.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>42. ¿Qué aportó 3G de forma característica?</strong></p>
+<p>A) Generalización de datos móviles con UMTS/HSPA y mayor capacidad que 2G.</p>
+<p>B) Eliminar el core móvil.</p>
+<p>C) Introducir Wi-Fi 7.</p>
+<p>D) Convertir toda voz en WebRTC.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>43. ¿Qué rasgo arquitectónico es característico de 4G/LTE?</strong></p>
+<p>A) Uso obligatorio de circuitos TDM para datos.</p>
+<p>B) Una plataforma de banda ancha móvil all-IP apoyada en LTE/EPC.</p>
+<p>C) Ausencia de autenticación SIM.</p>
+<p>D) Sustitución de IP por ATM en el usuario.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>44. ¿Cómo se presta típicamente voz sobre LTE?</strong></p>
+<p>A) Mediante VoLTE apoyado en IMS.</p>
+<p>B) Mediante H.323 obligatorio en cada terminal.</p>
+<p>C) Solo por circuitos 2G sin alternativas.</p>
+<p>D) Mediante SNMP.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>45. ¿Qué elementos generales definen 5G?</strong></p>
+<p>A) 5G NR como acceso radio y 5G Core, con mejoras de capacidad, latencia y densidad según servicio/despliegue.</p>
+<p>B) Solo una nueva tarjeta SIM sin cambios de red.</p>
+<p>C) Una versión de Wi-Fi.</p>
+<p>D) Un protocolo de correo.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>46. ¿Qué significa eMBB en 5G?</strong></p>
+<p>A) Emergency Mobile Backup Bus.</p>
+<p>B) Enhanced Mobile Broadband, orientado a banda ancha móvil de alta capacidad.</p>
+<p>C) Un sistema de gestión MDM.</p>
+<p>D) Un codec de voz.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>47. ¿Qué significa URLLC?</strong></p>
+<p>A) Una red social móvil.</p>
+<p>B) Un protocolo de cifrado de disco.</p>
+<p>C) Ultra-Reliable Low-Latency Communications, orientado a escenarios que requieren alta fiabilidad y baja latencia.</p>
+<p>D) Una versión de LTE solo para voz.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>48. ¿Qué significa mMTC?</strong></p>
+<p>A) Massive Machine-Type Communications, orientado a gran densidad de dispositivos/IoT.</p>
+<p>B) Multimedia Mobile Telephony Codec.</p>
+<p>C) Mobile Managed TLS Certificate.</p>
+<p>D) Un método de SIP.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>49. ¿Qué es 5G-Advanced?</strong></p>
+<p>A) El nombre oficial de 6G.</p>
+<p>B) Una variante de 3G.</p>
+<p>C) Un protocolo Wi-Fi.</p>
+<p>D) La evolución de 5G cuya primera release 3GPP es Release 18.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>50. ¿Release 18 equivale a 6G?</strong></p>
+<p>A) Sí, siempre.</p>
+<p>B) Solo en redes Wi-Fi.</p>
+<p>C) Sí, porque abandona NR.</p>
+<p>D) No; es la primera release de 5G-Advanced, una evolución de 5G.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>51. ¿Qué separación conceptual existe en una red móvil?</strong></p>
+<p>A) HTML y CSS.</p>
+<p>B) Disco y filesystem exclusivamente.</p>
+<p>C) Acceso radio (UE/celdas/estaciones) y core, que gestiona movilidad, sesión, autenticación y salida a servicios/datos.</p>
+<p>D) DMS y CMS.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>52. ¿Qué es el UE?</strong></p>
+<p>A) El servidor de correo del operador.</p>
+<p>B) Una VLAN de voz.</p>
+<p>C) El controlador de una MCU.</p>
+<p>D) El equipo de usuario que se conecta a la red móvil.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>53. ¿Qué es una celda en comunicaciones móviles?</strong></p>
+<p>A) Una tabla de una hoja de cálculo.</p>
+<p>B) Un paquete SIP.</p>
+<p>C) Un LUN de almacenamiento.</p>
+<p>D) Un área/recursos de cobertura radio servidos por infraestructura de acceso, con reutilización y planificación de radio.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>54. ¿Qué es handover?</strong></p>
+<p>A) Una copia de seguridad del móvil.</p>
+<p>B) Un cambio de contraseña de UEM.</p>
+<p>C) El procedimiento para mantener continuidad de servicio/sesión al pasar entre celdas o accesos según tecnología.</p>
+<p>D) Una compresión de vídeo.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>55. ¿Qué función cumple SIM/eSIM?</strong></p>
+<p>A) Sustituir el cifrado del sistema operativo.</p>
+<p>B) Mejorar físicamente la antena.</p>
+<p>C) Alojar/gestionar identidad y credenciales de suscripción para autenticación y acceso a la red.</p>
+<p>D) Actuar como servidor TURN.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>56. ¿Qué diferencia principal introduce eSIM frente a SIM física?</strong></p>
+<p>A) Convierte 4G automáticamente en 5G.</p>
+<p>B) Permite aprovisionar perfiles de suscripción de forma embebida/remota según ecosistema, sin eliminar los mecanismos de autenticación.</p>
+<p>C) Elimina al operador.</p>
+<p>D) Desactiva la identidad del abonado.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>57. ¿Más “G” garantiza siempre menor latencia de aplicación extremo a extremo?</strong></p>
+<p>A) Sí, la latencia siempre es cero en 5G.</p>
+<p>B) No; radio es solo una parte y también influyen core, transporte, Internet/cloud, servidor y aplicación.</p>
+<p>C) Solo depende de la pantalla.</p>
+<p>D) Sí, aunque el servicio esté en otro continente.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>58. ¿Qué debe compararse al elegir 4G/5G como respaldo WAN?</strong></p>
+<p>A) Solo el nombre comercial del plan.</p>
+<p>B) Únicamente el color del router.</p>
+<p>C) Cobertura real, capacidad, latencia, operador, CGNAT/IP, redundancia física, antena y SLA/uso previsto.</p>
+<p>D) Solo la generación sin medir señal.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>59. ¿Qué papel tiene el espectro radioeléctrico en redes móviles?</strong></p>
+<p>A) Es un recurso regulado y limitado cuya banda/ancho condicionan cobertura, capacidad y propagación.</p>
+<p>B) No influye en cobertura.</p>
+<p>C) Es equivalente a almacenamiento SSD.</p>
+<p>D) Solo se usa en telefonía fija.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>60. Un examen pregunta por la evolución 2G→3G→4G→5G. ¿Qué eje es más útil?</strong></p>
+<p>A) Memorizar únicamente marcas de móviles.</p>
+<p>B) Aprender solo precios de tarifas.</p>
+<p>C) Ignorar arquitectura y servicios.</p>
+<p>D) Relacionar voz/datos, acceso radio y evolución del core, en vez de memorizar solo velocidades máximas.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<h1>4. LTE/5G: radio, core, movilidad y slicing</h1>
+<p><strong>61. ¿Qué es E-UTRAN?</strong></p>
+<p>A) La red de acceso radio de LTE.</p>
+<p>B) El core 5G completo.</p>
+<p>C) Un sistema MDM.</p>
+<p>D) Un codec de vídeo.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>62. ¿Qué es EPC?</strong></p>
+<p>A) Un protocolo de correo.</p>
+<p>B) Una plataforma de videoconferencia.</p>
+<p>C) Evolved Packet Core, el core asociado a LTE/4G.</p>
+<p>D) Una técnica de compresión.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>63. ¿Qué es 5G NR?</strong></p>
+<p>A) El 5G Core.</p>
+<p>B) Un sistema de gestión documental.</p>
+<p>C) La tecnología de acceso radio New Radio de 5G.</p>
+<p>D) Una VLAN.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>64. ¿Qué caracteriza una arquitectura 5G SA?</strong></p>
+<p>A) Usa 5G NR con 5G Core de forma autónoma respecto al EPC para la arquitectura principal.</p>
+<p>B) Depende obligatoriamente de EPC como core.</p>
+<p>C) Solo puede usar 2G radio.</p>
+<p>D) Es una modalidad de Wi-Fi.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>65. ¿Qué caracteriza una arquitectura 5G NSA en términos generales?</strong></p>
+<p>A) Elimina LTE por completo.</p>
+<p>B) Combina NR con infraestructura LTE/EPC en un despliegue no autónomo.</p>
+<p>C) No usa radio 5G.</p>
+<p>D) Es sinónimo de 5G-Advanced.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>66. ¿Cuál es la diferencia de examen más importante entre 5G SA y NSA?</strong></p>
+<p>A) SA usa cobre y NSA fibra.</p>
+<p>B) NSA es un sistema operativo.</p>
+<p>C) SA se apoya en 5G Core; NSA mantiene dependencia de LTE/EPC en la arquitectura combinada.</p>
+<p>D) SA significa acceso Wi-Fi.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>67. ¿Qué es network slicing?</strong></p>
+<p>A) Particionar físicamente una SIM con tijeras.</p>
+<p>B) Un método de compresión de audio.</p>
+<p>C) Un tipo de DNS.</p>
+<p>D) Creación de redes lógicas con características/políticas diferenciadas sobre infraestructura común, según capacidades de la plataforma.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>68. ¿Network slicing equivale a una VLAN?</strong></p>
+<p>A) No; una VLAN es segmentación L2, mientras slicing abarca una construcción lógica de servicio/red móvil más amplia.</p>
+<p>B) Sí, son idénticos.</p>
+<p>C) Una VLAN contiene siempre un 5G Core.</p>
+<p>D) Slicing solo se usa en Ethernet cableada.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>69. ¿Qué ventaja puede aportar un core 5G con arquitectura basada en servicios?</strong></p>
+<p>A) Eliminar cualquier función de autenticación.</p>
+<p>B) Obligar a usar TDM.</p>
+<p>C) Mayor modularidad e interacción entre funciones mediante servicios/interfaces definidos.</p>
+<p>D) No necesitar observabilidad.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>70. ¿Qué proceso mantiene una sesión cuando el usuario cambia de celda?</strong></p>
+<p>A) Backup incremental.</p>
+<p>B) Handover/mecanismos de movilidad.</p>
+<p>C) BGP entre navegadores.</p>
+<p>D) XSLT.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>71. ¿Qué es roaming?</strong></p>
+<p>A) Cambio entre dos AP de la misma WLAN exclusivamente.</p>
+<p>B) Prestación de servicio móvil mediante una red visitada distinta de la red doméstica del abonado, con acuerdos y autenticación correspondientes.</p>
+<p>C) Un codec de baja latencia.</p>
+<p>D) Un modo de UEM.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>72. ¿Handover y roaming son sinónimos?</strong></p>
+<p>A) Sí, siempre.</p>
+<p>B) No; handover mantiene movilidad entre celdas/accesos, mientras roaming implica uso de otra red/operador o dominio visitado.</p>
+<p>C) Roaming solo significa reiniciar el móvil.</p>
+<p>D) Handover es una licencia de operador.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>73. ¿Qué función cumple el core móvil respecto al acceso radio?</strong></p>
+<p>A) Solo amplifica señal RF.</p>
+<p>B) Solo alimenta antenas.</p>
+<p>C) Únicamente almacena vídeos.</p>
+<p>D) Gestiona identidad/autenticación, movilidad, sesiones, políticas y conectividad hacia redes/servicios, entre otras funciones.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>74. ¿Qué criterio es correcto al diseñar cobertura móvil en un edificio?</strong></p>
+<p>A) Medir cobertura/capacidad real y considerar bandas, materiales, densidad, operador y soluciones indoor si son necesarias.</p>
+<p>B) Confiar solo en que exista 5G en el mapa nacional.</p>
+<p>C) Instalar un repetidor no autorizado sin estudio.</p>
+<p>D) Medir únicamente junto a una ventana.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>75. ¿Qué problema puede introducir CGNAT para ciertos servicios empresariales móviles?</strong></p>
+<p>A) Dificultar conectividad entrante directa y algunos escenarios de direccionamiento extremo a extremo.</p>
+<p>B) Aumentar físicamente la batería.</p>
+<p>C) Convertir UDP en fibra.</p>
+<p>D) Eliminar necesidad de firewall.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>76. ¿Qué es un APN/DNN conceptualmente?</strong></p>
+<p>A) Un codec de voz.</p>
+<p>B) Un protocolo de videoconferencia.</p>
+<p>C) Un algoritmo de compresión.</p>
+<p>D) Un identificador/configuración que selecciona conectividad/servicio de datos del abonado hacia redes de datos, según generación.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>77. ¿Qué relación hay entre VoLTE e IMS?</strong></p>
+<p>A) VoLTE sustituye IMS por STP.</p>
+<p>B) IMS solo sirve para SMS 2G.</p>
+<p>C) VoLTE es un codec de vídeo.</p>
+<p>D) VoLTE usa IMS para prestar telefonía de voz sobre LTE.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>78. ¿Qué relación puede existir entre 5G y edge computing?</strong></p>
+<p>A) Edge garantiza latencia cero.</p>
+<p>B) 5G obliga a que todas las aplicaciones residan en la antena.</p>
+<p>C) Edge sustituye al core móvil.</p>
+<p>D) Acercar procesamiento a la red/usuario puede reducir latencia y tráfico hacia centros remotos en casos adecuados.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>79. ¿Qué debería monitorizarse en un enlace móvil empresarial crítico?</strong></p>
+<p>A) Solo el icono de barras del teléfono.</p>
+<p>B) Solo la versión del navegador.</p>
+<p>C) Señal/calidad radio, disponibilidad, latencia, pérdida, throughput, consumo, cambios de celda/operador y estado del túnel/servicio.</p>
+<p>D) Solo espacio libre en disco.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>80. Una sede usa 5G como único acceso para un servicio esencial. ¿Qué riesgo debe evaluarse especialmente?</strong></p>
+<p>A) Que 5G no usa IP.</p>
+<p>B) Dependencia de cobertura/capacidad y de un único operador/dominio de fallo; considerar redundancia real.</p>
+<p>C) Que no existe autenticación.</p>
+<p>D) Que no puede transportar datos.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<h1>5. MDM, EMM y UEM: gobierno del endpoint móvil</h1>
+<p><strong>81. ¿Qué es MDM?</strong></p>
+<p>A) Gestión de dispositivos móviles: enrolment, configuración, inventario, cumplimiento y acciones de seguridad sobre el dispositivo.</p>
+<p>B) Un protocolo de radio 5G.</p>
+<p>C) Un codec de vídeo.</p>
+<p>D) Un tipo de IMS.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>82. ¿Qué es MAM?</strong></p>
+<p>A) Gestión del espectro.</p>
+<p>B) Un mecanismo RTP.</p>
+<p>C) Una topología de red.</p>
+<p>D) Mobile Application Management: gestión y políticas sobre aplicaciones móviles corporativas.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>83. ¿Qué es MCM en movilidad empresarial?</strong></p>
+<p>A) Mobile Core Modulation.</p>
+<p>B) Mobile Content Management: control/distribución de contenido corporativo en móviles.</p>
+<p>C) Un método de SIP.</p>
+<p>D) Un tipo de SIM.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>84. ¿Qué es EMM?</strong></p>
+<p>A) Una generación de telefonía.</p>
+<p>B) Un codec de audio.</p>
+<p>C) Enterprise Mobility Management, un paraguas que integra capacidades como MDM, MAM y gestión de contenido/identidad móvil.</p>
+<p>D) Una versión de WebRTC.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>85. ¿Qué es UEM?</strong></p>
+<p>A) Un estándar de radio.</p>
+<p>B) Unified Endpoint Management, gestión unificada de endpoints móviles y tradicionales desde una plataforma/política común.</p>
+<p>C) Una entidad IMS.</p>
+<p>D) Un protocolo de QoS.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>86. ¿Qué relación conceptual es más correcta?</strong></p>
+<p>A) UEM es solo un antivirus.</p>
+<p>B) MDM siempre incluye todos los PCs y servidores.</p>
+<p>C) MDM es una capacidad más acotada; EMM/UEM amplían el gobierno hacia apps, contenido, identidad y otros endpoints.</p>
+<p>D) EMM es un codec.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>87. ¿Qué significa BYOD?</strong></p>
+<p>A) El usuario aporta un dispositivo personal que se usa para fines corporativos bajo políticas definidas.</p>
+<p>B) Dispositivo corporativo solo negocio.</p>
+<p>C) Dispositivo corporativo con uso personal.</p>
+<p>D) Catálogo corporativo obligatorio.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>88. ¿Qué significa COPE?</strong></p>
+<p>A) Dispositivo personal sin gestión.</p>
+<p>B) Corporate Owned, Personally Enabled: dispositivo corporativo con cierto uso personal permitido.</p>
+<p>C) Corporativo solo para negocio.</p>
+<p>D) Elección libre sin catálogo ni propiedad corporativa.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>89. ¿Qué significa COBO?</strong></p>
+<p>A) Dispositivo personal.</p>
+<p>B) Corporativo con uso personal abierto.</p>
+<p>C) Corporate Owned, Business Only: dispositivo corporativo destinado exclusivamente al trabajo.</p>
+<p>D) Una red de invitados.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>90. ¿Qué significa CYOD?</strong></p>
+<p>A) Cualquier equipo sin restricciones.</p>
+<p>B) Un protocolo de VPN.</p>
+<p>C) Choose Your Own Device: el usuario elige entre un catálogo aprobado, normalmente bajo condiciones corporativas definidas.</p>
+<p>D) Un modo de 5G SA.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>91. ¿Qué es enrolment en UEM/MDM?</strong></p>
+<p>A) Cambiar de celda 5G.</p>
+<p>B) Codificar vídeo.</p>
+<p>C) El proceso de registrar/vincular un dispositivo a la gestión corporativa y aplicar identidad/perfiles.</p>
+<p>D) Crear un registro DNS.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>92. ¿Qué es compliance de dispositivo?</strong></p>
+<p>A) Medición del bitrate RTP.</p>
+<p>B) Una prueba de cobertura radio.</p>
+<p>C) Una licencia de software.</p>
+<p>D) Evaluación de si el endpoint cumple requisitos como versión, cifrado, bloqueo, ausencia de root/jailbreak y configuración exigida.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>93. ¿Qué es acceso condicional en este contexto?</strong></p>
+<p>A) Permitir o denegar acceso a recursos según identidad, dispositivo, cumplimiento, riesgo y otras señales.</p>
+<p>B) Abrir siempre desde cualquier terminal.</p>
+<p>C) Un tipo de NAT.</p>
+<p>D) Un codec móvil.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>94. ¿Qué diferencia hay entre remote wipe completo y borrado selectivo?</strong></p>
+<p>A) Son idénticos siempre.</p>
+<p>B) El selectivo borra la SIM físicamente.</p>
+<p>C) El completo solo cierra una aplicación.</p>
+<p>D) El completo intenta eliminar el dispositivo gestionado; el selectivo retira datos/perfil corporativo conservando lo personal cuando procede.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>95. ¿Qué es un perfil/contenedor de trabajo en móviles?</strong></p>
+<p>A) Un nuevo core 5G.</p>
+<p>B) Una VLAN física dentro de la SIM.</p>
+<p>C) Un codec.</p>
+<p>D) Un mecanismo para separar aplicaciones/datos corporativos del ámbito personal con políticas diferenciadas.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>96. ¿Qué debería hacer UEM ante un dispositivo con root/jailbreak detectado si la política lo considera no conforme?</strong></p>
+<p>A) Marcar incumplimiento y restringir/remediar acceso según riesgo y política.</p>
+<p>B) Ignorarlo siempre.</p>
+<p>C) Desactivar logs.</p>
+<p>D) Aumentar el bitrate de videollamada.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>97. ¿Qué papel tienen certificados gestionados por UEM?</strong></p>
+<p>A) Facilitar autenticación fuerte y configuración segura de Wi-Fi, VPN o servicios corporativos.</p>
+<p>B) Aumentar cobertura radio.</p>
+<p>C) Sustituir el cifrado de disco.</p>
+<p>D) Crear backups automáticos de cualquier app.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>98. ¿Qué riesgo de privacidad debe controlarse en BYOD?</strong></p>
+<p>A) Que el dispositivo tenga batería.</p>
+<p>B) Recoger o inspeccionar más datos personales de los necesarios y realizar borrados excesivos.</p>
+<p>C) Que use IPv6.</p>
+<p>D) Que soporte cámaras.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>99. ¿Qué debe ocurrir en el offboarding de un empleado con dispositivo gestionado?</strong></p>
+<p>A) Mantener acceso indefinido.</p>
+<p>B) Revocar tokens/certificados y accesos, retirar apps/datos corporativos según propiedad y conservar evidencias necesarias.</p>
+<p>C) Borrar siempre todos los datos personales.</p>
+<p>D) Dejar certificados activos para facilitar retorno.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>100. Un parque mixto incluye Windows, macOS, iOS y Android. ¿Qué enfoque encaja mejor?</strong></p>
+<p>A) MDM limitado a una única app sin inventario.</p>
+<p>B) Gestionar solo por correo manual.</p>
+<p>C) No aplicar políticas porque los SO son distintos.</p>
+<p>D) UEM con políticas por plataforma, identidad común, compliance y automatización de ciclo de vida.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<h1>6. Videoconferencia: SIP/H.323, WebRTC y medios</h1>
+<p><strong>101. ¿Qué describe mejor una arquitectura de videoconferencia?</strong></p>
+<p>A) Solo una cámara conectada a HDMI.</p>
+<p>B) Únicamente una aplicación de chat.</p>
+<p>C) Captura y codificación, señalización/negociación, transporte de medios, función multipunto si existe y decodificación/presentación.</p>
+<p>D) Un sistema de almacenamiento sin red.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>102. ¿Qué es H.323?</strong></p>
+<p>A) Una recomendación/suite ITU-T para comunicaciones multimedia sobre redes basadas en paquetes.</p>
+<p>B) Un codec único de vídeo.</p>
+<p>C) Un protocolo de almacenamiento.</p>
+<p>D) Una generación móvil.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>103. ¿Qué relación hay entre SIP y H.323?</strong></p>
+<p>A) Son el mismo protocolo.</p>
+<p>B) H.323 transporta siempre HTML.</p>
+<p>C) SIP es un codec de H.323.</p>
+<p>D) Son familias de señalización/control diferentes que pueden encontrarse en videoconferencia y requerir interoperabilidad/gateway.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>104. ¿Qué transporta normalmente audio/vídeo en una solución SIP o H.323?</strong></p>
+<p>A) SIP INVITE como flujo de vídeo.</p>
+<p>B) DNS.</p>
+<p>C) RTP, acompañado por RTCP para control/estadísticas.</p>
+<p>D) SNMP traps.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>105. ¿Qué es WebRTC?</strong></p>
+<p>A) Un codec de vídeo.</p>
+<p>B) Un conjunto de APIs y protocolos para comunicaciones de audio/vídeo/datos en tiempo real entre navegadores o aplicaciones compatibles.</p>
+<p>C) Una PBX física.</p>
+<p>D) Un protocolo de routing.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>106. ¿WebRTC es un codec?</strong></p>
+<p>A) No; utiliza codecs y protocolos, pero WebRTC es una plataforma/conjunto de APIs y mecanismos de comunicación en tiempo real.</p>
+<p>B) Sí, es exactamente AV1.</p>
+<p>C) Sí, es Opus.</p>
+<p>D) Sí, es H.264.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>107. ¿Qué es ICE?</strong></p>
+<p>A) Un codec de audio.</p>
+<p>B) Un marco/protocolo para descubrir y comprobar pares de candidatos de conectividad y atravesar NAT en comunicaciones interactivas.</p>
+<p>C) Un sistema de ficheros.</p>
+<p>D) Un algoritmo de SEO.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>108. ¿Qué función cumple STUN?</strong></p>
+<p>A) Relay obligatorio de todo tráfico.</p>
+<p>B) Cifrar vídeo.</p>
+<p>C) Señalizar sesiones SIP.</p>
+<p>D) Ayudar a un endpoint a conocer su dirección/puerto mapeado por NAT y comprobar conectividad como herramienta de traversal.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>109. ¿Qué función cumple TURN?</strong></p>
+<p>A) Descubrir únicamente la IP local sin relay.</p>
+<p>B) Comprimir vídeo.</p>
+<p>C) Actuar como PBX.</p>
+<p>D) Proporcionar un relay cuando no es posible establecer conectividad directa adecuada entre peers.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>110. ¿Cuál es la distinción correcta entre STUN y TURN?</strong></p>
+<p>A) Son nombres del mismo codec.</p>
+<p>B) TURN solo sirve para DNS.</p>
+<p>C) STUN siempre transporta todo el vídeo.</p>
+<p>D) STUN ayuda a descubrir/comprobar mapeos/conectividad; TURN relaya tráfico cuando es necesario.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>111. ¿Qué papel cumple SDP en WebRTC/SIP?</strong></p>
+<p>A) Ser el canal de vídeo.</p>
+<p>B) Describir capacidades y parámetros de medios que se negocian entre extremos.</p>
+<p>C) Crear usuarios del directorio.</p>
+<p>D) Administrar dispositivos.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>112. ¿Qué es un codec de vídeo?</strong></p>
+<p>A) Un protocolo de señalización.</p>
+<p>B) Un mecanismo para codificar/decodificar vídeo, equilibrando bitrate, calidad, complejidad y compatibilidad.</p>
+<p>C) Un servidor TURN.</p>
+<p>D) Una política UEM.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>113. ¿Qué codec de audio es especialmente habitual en WebRTC moderno?</strong></p>
+<p>A) Opus.</p>
+<p>B) BGP.</p>
+<p>C) XSD.</p>
+<p>D) MPLS.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>114. ¿Qué compromiso suele existir al usar mayor compresión de vídeo?</strong></p>
+<p>A) Siempre reduce CPU.</p>
+<p>B) Elimina necesidad de red.</p>
+<p>C) Hace innecesaria negociación de codecs.</p>
+<p>D) Puede reducir bitrate a costa de más complejidad/CPU, latencia potencial y requisitos de compatibilidad/licencia.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>115. ¿Qué es una MCU en videoconferencia?</strong></p>
+<p>A) Una unidad multipunto que puede recibir, decodificar/mezclar/componer y volver a codificar medios.</p>
+<p>B) Un relay IP que nunca procesa medios.</p>
+<p>C) Un sistema MDM.</p>
+<p>D) Una estación base 5G.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>116. ¿Qué es una SFU?</strong></p>
+<p>A) Un codec de audio.</p>
+<p>B) Una función IMS de registro.</p>
+<p>C) Una unidad de reenvío selectivo que distribuye streams/capas sin mezclar y recodificar todo como una MCU clásica.</p>
+<p>D) Un servidor DHCP.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>117. ¿Qué diferencia esencial hay entre MCU y SFU?</strong></p>
+<p>A) MCU mezcla/transcodifica más en servidor; SFU reenvía selectivamente streams y deja más composición al cliente.</p>
+<p>B) Son idénticas.</p>
+<p>C) SFU es un codec y MCU una VLAN.</p>
+<p>D) MCU solo funciona en 2G.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>118. ¿Qué es simulcast en videoconferencia?</strong></p>
+<p>A) Un único stream sin variantes.</p>
+<p>B) Un método SIP de cierre.</p>
+<p>C) Enviar varias versiones simultáneas del mismo vídeo a distintas resoluciones/bitrates para selección adaptativa.</p>
+<p>D) Un modo de 5G Core.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>119. ¿Qué es SVC conceptualmente?</strong></p>
+<p>A) Un servidor de correo.</p>
+<p>B) Una VLAN de voz.</p>
+<p>C) Codificación escalable en capas que permite adaptar calidad/bitrate seleccionando capas del stream.</p>
+<p>D) Un tipo de SIM.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>120. Un navegador no logra conexión P2P porque ambos extremos están tras NAT restrictivo. ¿Qué recurso es el fallback típico?</strong></p>
+<p>A) Un sitemap.</p>
+<p>B) Un servidor TURN como relay, coordinado normalmente mediante ICE.</p>
+<p>C) Un S-CSCF como relay obligatorio de WebRTC.</p>
+<p>D) Un servidor NTP.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<h1>7. Dimensionamiento, QoS y acondicionamiento de salas</h1>
+<p><strong>121. ¿Qué variables deben incluirse al dimensionar ancho de banda de videoconferencia?</strong></p>
+<p>A) Solo usuarios registrados.</p>
+<p>B) Solo tamaño del edificio.</p>
+<p>C) Únicamente resolución máxima de una cámara sin concurrencia.</p>
+<p>D) Bitrate por flujo, concurrencia real, direcciones subida/bajada, overhead, presentaciones y margen.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>122. Si 20 salas simultáneas envían 3 Mb/s cada una hacia cloud, ¿qué subida agregada aproximada requieren antes de margen?</strong></p>
+<p>A) 6 Mb/s.</p>
+<p>B) 23 Mb/s.</p>
+<p>C) 60 Mb/s.</p>
+<p>D) 600 Mb/s.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>123. Si a 60 Mb/s de tráfico estimado se añade un 30% de margen, ¿qué capacidad resulta aproximadamente?</strong></p>
+<p>A) 78 Mb/s.</p>
+<p>B) 63 Mb/s.</p>
+<p>C) 90 Mb/s.</p>
+<p>D) 180 Mb/s.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>124. ¿Por qué deben dimensionarse subida y bajada por separado?</strong></p>
+<p>A) Porque reuniones cloud y topologías multipunto pueden generar cargas asimétricas y el enlace puede tener capacidades distintas en cada sentido.</p>
+<p>B) Porque IP solo funciona en subida.</p>
+<p>C) Porque RTP no usa bajada.</p>
+<p>D) Porque el vídeo no consume ancho de banda.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>125. ¿Qué es latencia extremo a extremo?</strong></p>
+<p>A) El tiempo total que tarda la información desde captura/origen hasta presentación/destino a través de toda la cadena.</p>
+<p>B) La variación entre paquetes exclusivamente.</p>
+<p>C) La pérdida de paquetes.</p>
+<p>D) El bitrate del codec.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>126. ¿Qué es jitter?</strong></p>
+<p>A) Ancho de banda reservado.</p>
+<p>B) Porcentaje de paquetes perdidos.</p>
+<p>C) Resolución de vídeo.</p>
+<p>D) Variación del retardo de llegada entre paquetes.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>127. ¿Qué es packet loss?</strong></p>
+<p>A) Variación de retardo.</p>
+<p>B) Un codec.</p>
+<p>C) Un método SIP.</p>
+<p>D) Pérdida de paquetes durante el transporte, que puede degradar audio/vídeo y disparar mecanismos de recuperación/adaptación.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>128. ¿Qué relación tiene el jitter buffer con la latencia?</strong></p>
+<p>A) Reduce siempre la latencia a cero.</p>
+<p>B) Aumenta capacidad física.</p>
+<p>C) Elimina la necesidad de codec.</p>
+<p>D) Más buffer puede tolerar mayor variación, pero incrementa el retardo de reproducción.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>129. ¿Qué debe hacer QoS en una red corporativa para voz/vídeo?</strong></p>
+<p>A) Crear capacidad ilimitada.</p>
+<p>B) Confiar en que Internet respete siempre las marcas.</p>
+<p>C) Clasificar y marcar adecuadamente, aplicar colas/prioridades y mantener política coherente en los saltos gestionados.</p>
+<p>D) Eliminar monitorización.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>130. ¿Qué afirmación sobre DSCP es correcta?</strong></p>
+<p>A) Reserva ancho de banda por sí solo.</p>
+<p>B) Es un marcado IP que puede expresar clase/tratamiento deseado, pero la red debe estar configurada para interpretarlo.</p>
+<p>C) Cifra el paquete.</p>
+<p>D) Sustituye a RTP.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>131. ¿Qué métricas son útiles para monitorizar calidad de una reunión?</strong></p>
+<p>A) Solo temperatura de la sala.</p>
+<p>B) Solo número de usuarios del directorio.</p>
+<p>C) Latencia/RTT, jitter, pérdida, bitrate, frame rate y métricas/MOS estimadas según plataforma.</p>
+<p>D) Solo espacio libre en disco.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>132. ¿Qué riesgo tiene usar Wi-Fi congestionado para una sala fija crítica cuando hay cableado disponible?</strong></p>
+<p>A) Variabilidad de medio compartido, interferencia y competencia por aire; cable suele ofrecer mayor previsibilidad.</p>
+<p>B) Wi-Fi no puede transportar vídeo.</p>
+<p>C) Ethernet carece de QoS.</p>
+<p>D) El cableado elimina todo fallo posible.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>133. ¿Qué factor de sala suele ser más crítico para la inteligibilidad que aumentar resolución de cámara?</strong></p>
+<p>A) Añadir más fondos animados.</p>
+<p>B) Buena captación de audio, acústica y cancelación de eco.</p>
+<p>C) Aumentar brillo sin controlar reflejos.</p>
+<p>D) Usar un monitor más pequeño.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>134. ¿Qué objetivo tiene el tratamiento acústico de una sala?</strong></p>
+<p>A) Aumentar el ancho de banda WAN.</p>
+<p>B) Cifrar RTP.</p>
+<p>C) Gestionar la SIM.</p>
+<p>D) Reducir reverberación/ruido y mejorar captación y reproducción de voz.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>135. ¿Cómo debería plantearse la iluminación para videoconferencia?</strong></p>
+<p>A) Solo desde atrás del participante.</p>
+<p>B) Oscuridad total.</p>
+<p>C) Uniforme y preferentemente frontal/adecuada a rostros, evitando contraluces y extremos de exposición.</p>
+<p>D) Depender exclusivamente de la compensación digital.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>136. ¿Qué debe considerar la selección de pantalla/cámara en una sala?</strong></p>
+<p>A) Solo la marca.</p>
+<p>B) Tamaño/distancia, campo de visión, número de participantes, encuadre y legibilidad de contenido.</p>
+<p>C) Únicamente el precio del cable HDMI.</p>
+<p>D) El protocolo SNMP como criterio principal.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>137. ¿Qué controles de seguridad son apropiados para reuniones sensibles?</strong></p>
+<p>A) Enlace público permanente sin control.</p>
+<p>B) Identidad/SSO/MFA donde proceda, lobby/invitados, cifrado en tránsito, permisos de grabación y logs.</p>
+<p>C) Desactivar actualizaciones.</p>
+<p>D) Compartir credenciales de anfitrión.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>138. ¿Qué debe definirse para grabaciones de reuniones?</strong></p>
+<p>A) Guardar para siempre por defecto.</p>
+<p>B) Publicar automáticamente.</p>
+<p>C) Finalidad, permisos, ubicación, acceso, retención, protección y eliminación conforme a política/normativa.</p>
+<p>D) No aplicar control de acceso porque ya estaban en una reunión.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>139. ¿Qué medidas mejoran accesibilidad en videoconferencia?</strong></p>
+<p>A) Eliminar chat y teclado.</p>
+<p>B) Subtitulado/transcripción, compatibilidad con ayudas, interfaces accesibles y alternativas de participación.</p>
+<p>C) Bloquear subtítulos.</p>
+<p>D) Usar solo audio sin alternativa.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>140. Un servicio tiene capacidad suficiente pero usuarios reportan cortes breves y audio robotizado. ¿Qué conviene revisar primero?</strong></p>
+<p>A) Pérdida, jitter, colas/congestión, Wi-Fi/radio y estadísticas RTP/RTCP, además de CPU del endpoint.</p>
+<p>B) Aumentar retención documental.</p>
+<p>C) Cambiar el nombre DNS sin medir.</p>
+<p>D) Comprar más almacenamiento SAN.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<h1>8. Casos integradores de comunicaciones convergentes</h1>
+<p><strong>141. Una Administración quiere sustituir PBX TDM por UC IP con sedes y teletrabajo. ¿Qué diseño es más completo?</strong></p>
+<p>A) Un único trunk sin SBC ni plan de caída.</p>
+<p>B) Solo cambiar teléfonos manteniendo red sin evaluar.</p>
+<p>C) Usar Internet abierto sin autenticación ni logs.</p>
+<p>D) PBX/UC redundante o servicio resiliente, SIP trunks diversos, SBC, QoS, TLS/SRTP cuando aplique, monitorización y continuidad.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>142. Un diagrama de voz muestra SIP y RTP por la misma flecha sin distinguirlos. ¿Qué corrección aporta más claridad?</strong></p>
+<p>A) Eliminar RTP.</p>
+<p>B) Separar señalización/control SIP/SDP del plano de medios RTP/RTCP.</p>
+<p>C) Convertir SIP en codec.</p>
+<p>D) Sustituir todo por SNMP.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>143. Una organización desea continuidad de número, presencia y comunicaciones entre portátil y móvil. ¿Qué enfoque encaja mejor?</strong></p>
+<p>A) Una PBX analógica aislada por dispositivo.</p>
+<p>B) No usar directorio.</p>
+<p>C) Crear cuentas independientes sin federación para cada terminal.</p>
+<p>D) UC con identidad común y convergencia fijo-móvil, integrando políticas, clientes y telefonía/IMS o servicios equivalentes según arquitectura.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>144. Una sede tiene voz IP correcta en LAN pero mala al salir por WAN saturada. ¿Qué acción es más razonable?</strong></p>
+<p>A) Aumentar jitter buffer indefinidamente.</p>
+<p>B) Cambiar todos los teléfonos sin medir la WAN.</p>
+<p>C) Medir capacidad/congestión, aplicar QoS extremo a extremo donde se controle y ampliar/corregir enlace si el tráfico supera capacidad.</p>
+<p>D) Eliminar RTP.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>145. Un organismo quiere usar 5G como respaldo de fibra. ¿Qué prueba es imprescindible antes de declararlo redundante?</strong></p>
+<p>A) Comprobar solo que el router enciende.</p>
+<p>B) Mirar únicamente el icono 5G de un teléfono.</p>
+<p>C) Verificar cobertura/capacidad real y que no comparta el mismo operador, obra, energía o dependencia crítica que el primario según objetivo de continuidad.</p>
+<p>D) Deshabilitar failover para evitar cambios.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>146. Una flota BYOD necesita acceso a correo y expedientes sin invadir privacidad. ¿Qué enfoque es más adecuado?</strong></p>
+<p>A) Wipe total obligatorio ante cualquier incidencia.</p>
+<p>B) Sin gestión ni control porque son personales.</p>
+<p>C) Recoger todos los datos personales del teléfono.</p>
+<p>D) UEM/EMM con perfil de trabajo, acceso condicional, apps gestionadas, borrado selectivo y política transparente de privacidad.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>147. Se pierde un móvil COBO con datos sensibles. ¿Qué respuesta inicial encaja mejor?</strong></p>
+<p>A) Esperar a que aparezca sin revocar nada.</p>
+<p>B) Revocar acceso/tokens, localizar si la política lo permite, bloquear o borrar remotamente y registrar/gestionar el incidente.</p>
+<p>C) Publicar las credenciales.</p>
+<p>D) Desactivar el UEM.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>148. Un dispositivo no cumple versión mínima y está rooteado. ¿Qué combinación es más coherente?</strong></p>
+<p>A) Marcarlo no conforme y bloquear o limitar acceso mediante acceso condicional hasta remediación.</p>
+<p>B) Conceder más privilegios.</p>
+<p>C) Ignorar postura porque tiene MFA.</p>
+<p>D) Aumentar ancho de banda móvil.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>149. Una sala usa WebRTC y falla solo desde ciertas redes con NAT restrictivo. ¿Qué arquitectura debe revisarse?</strong></p>
+<p>A) XSD y namespaces.</p>
+<p>B) BGP del proveedor como única causa posible.</p>
+<p>C) MDM de la cámara exclusivamente.</p>
+<p>D) ICE y disponibilidad/configuración de STUN/TURN y reglas de firewall.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>150. Una plataforma WebRTC envía siempre todo por TURN aunque hay conectividad directa. ¿Qué consecuencia esperable tiene?</strong></p>
+<p>A) Menor tráfico en servidor siempre.</p>
+<p>B) TURN deja de ser relay.</p>
+<p>C) RTP se convierte en SIP.</p>
+<p>D) Mayor consumo de ancho de banda/coste y dependencia del relay; conviene revisar selección ICE.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>151. En una reunión de 100 participantes se quiere escalar sin mezclar todos los vídeos en servidor. ¿Qué arquitectura es candidata natural?</strong></p>
+<p>A) SFU con selección/adaptación de streams, si terminales y producto lo soportan.</p>
+<p>B) MCU obligatoria siempre.</p>
+<p>C) Una PBX TDM.</p>
+<p>D) Un servidor DHCP como mezclador.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>152. Una plataforma debe soportar terminales antiguos H.323 y clientes modernos SIP/WebRTC. ¿Qué elemento/capacidad es clave?</strong></p>
+<p>A) Forzar a H.323 a usar HTML.</p>
+<p>B) Gateway/interworking adecuado entre protocolos y codecs, con pruebas de interoperabilidad.</p>
+<p>C) Desactivar negociación de codecs.</p>
+<p>D) Usar solo una VLAN sin gateway.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>153. Una sede tendrá 30 salas simultáneas a 2,5 Mb/s por sentido. ¿Qué carga base por sentido debe contemplar antes de margen?</strong></p>
+<p>A) 12 Mb/s.</p>
+<p>B) 32,5 Mb/s.</p>
+<p>C) 75 Mb/s.</p>
+<p>D) 750 Mb/s.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>154. Si a 75 Mb/s se añade un margen del 20%, ¿qué reserva aproximada resulta?</strong></p>
+<p>A) 80 Mb/s.</p>
+<p>B) 95 Mb/s.</p>
+<p>C) 90 Mb/s por sentido.</p>
+<p>D) 150 Mb/s.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>155. Una sala tiene vídeo perfecto pero eco y reverberación. ¿Qué inversión suele aportar más valor inmediato?</strong></p>
+<p>A) Mejorar acústica, microfonía, colocación y cancelación de eco antes de aumentar resolución de cámara.</p>
+<p>B) Cambiar a 5G-Advanced.</p>
+<p>C) Aumentar almacenamiento.</p>
+<p>D) Añadir otro sitemap.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>156. Un pliego de videoconferencia pide “QoS garantizada por Internet” solo mediante marcar DSCP. ¿Qué observación es correcta?</strong></p>
+<p>A) DSCP obliga legalmente a todos los ISP a priorizar.</p>
+<p>B) DSCP puede servir en dominios gestionados, pero no garantiza que todos los tránsitos de Internet respeten el tratamiento.</p>
+<p>C) DSCP cifra el vídeo.</p>
+<p>D) Marcado elimina necesidad de capacidad.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>157. Una plataforma graba todas las reuniones de forma indefinida por defecto. ¿Qué problema principal existe?</strong></p>
+<p>A) Ninguno, más retención siempre es mejor.</p>
+<p>B) Solo afecta al codec.</p>
+<p>C) Falta de gobernanza de finalidad, acceso, retención, privacidad y coste; debe definirse un ciclo de vida.</p>
+<p>D) Únicamente reduce jitter.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>158. Un organismo combina UC, móviles gestionados y salas. ¿Qué servicio transversal debe integrarse en los tres?</strong></p>
+<p>A) Identidad/IAM, políticas de acceso, logs/monitorización y gestión de ciclo de vida.</p>
+<p>B) Solo un codec común.</p>
+<p>C) Una única VLAN plana.</p>
+<p>D) Desactivar MFA para simplificar.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>159. ¿Qué conjunto de señales permite diagnosticar una mala experiencia de comunicación extremo a extremo?</strong></p>
+<p>A) Métricas de endpoint, RTP/RTCP/WebRTC, LAN/WLAN, WAN/Internet, SBC/plataforma y servicio, correlacionadas temporalmente.</p>
+<p>B) Solo ping al gateway.</p>
+<p>C) Solo espacio libre del portátil.</p>
+<p>D) Solo número de usuarios registrados.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>160. Caso final: se quiere cerrar IV.14–IV.16 con una arquitectura corporativa moderna. ¿Qué enfoque es más completo?</strong></p>
+<p>A) Elegir un único producto y asumir que cubre red, seguridad y continuidad.</p>
+<p>B) Diseñar UC/IMS-SIP donde aplique, UEM y conectividad móvil, videoconferencia WebRTC/SIP, QoS/capacidad, salas, seguridad, monitorización, redundancia y casos de interoperabilidad.</p>
+<p>C) Estudiar solo definiciones sin cálculos ni casos.</p>
+<p>D) Usar 5G como sustituto universal de LAN/WAN y gestión.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<h1>Registro de errores</h1>
+<p>Revisa los fallos a las 24–72 h. Escribe la regla correcta en una frase y vuelve a resolver la pregunta sin mirar.</p>
+<table>
+<tr>
+<th scope="col"><p><strong>N.º</strong></p></th>
+<th scope="col"><p><strong>Tema</strong></p></th>
+<th scope="col"><p><strong>Tipo de error</strong></p></th>
+<th scope="col"><p><strong>Regla correcta</strong></p></th>
+<th scope="col"><p><strong>Revisión</strong></p></th>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table></main></body></html>

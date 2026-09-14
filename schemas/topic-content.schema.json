@@ -2,55 +2,137 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "additionalProperties": false,
-  "required": ["version", "generatedAt", "topics"],
+  "required": [
+    "version",
+    "generatedAt",
+    "topics"
+  ],
   "properties": {
-    "version": {"const": 1},
-    "generatedAt": {"type": "string", "format": "date-time"},
+    "version": {
+      "const": 1
+    },
+    "generatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
     "topics": {
       "type": "array",
-      "minItems": 33,
-      "maxItems": 33,
-      "items": {"$ref": "#/$defs/topic"}
+      "minItems": 57,
+      "maxItems": 57,
+      "items": {
+        "$ref": "#/$defs/topic"
+      }
     }
   },
   "$defs": {
     "topic": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["topicId", "contentPath", "status", "reviewStatus", "updatedAt", "checksum", "sections"],
+      "required": [
+        "topicId",
+        "contentPath",
+        "status",
+        "reviewStatus",
+        "updatedAt",
+        "checksum",
+        "sections"
+      ],
       "properties": {
-        "topicId": {"type": "string", "pattern": "^B[1-4]-T\\d{2}$"},
-        "contentPath": {"type": "string", "pattern": "^content/generated/B[1-4]-T\\d{2}\\.html$"},
-        "status": {"enum": ["pending", "partial", "complete"]},
-        "reviewStatus": {"enum": ["not-reviewed", "needs-review", "reviewed"]},
-        "updatedAt": {"type": "string", "format": "date"},
-        "checksum": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "topicId": {
+          "type": "string",
+          "pattern": "^B[1-4]-T\\d{2}$"
+        },
+        "contentPath": {
+          "type": "string",
+          "pattern": "^content/generated/B[1-4]-T\\d{2}\\.html$"
+        },
+        "status": {
+          "enum": [
+            "pending",
+            "partial",
+            "complete"
+          ]
+        },
+        "reviewStatus": {
+          "enum": [
+            "not-reviewed",
+            "needs-review",
+            "reviewed"
+          ]
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date"
+        },
+        "checksum": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
         "sections": {
           "type": "array",
           "minItems": 1,
-          "items": {"$ref": "#/$defs/section"}
+          "items": {
+            "$ref": "#/$defs/section"
+          }
         }
       }
     },
     "section": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["sectionId", "title", "level", "sourceRefs"],
+      "required": [
+        "sectionId",
+        "title",
+        "level",
+        "sourceRefs"
+      ],
       "properties": {
-        "sectionId": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
-        "title": {"type": "string", "minLength": 1},
-        "level": {"enum": [2, 3]},
-        "sourceRefs": {"type": "array", "items": {"$ref": "#/$defs/sourceRef"}}
+        "sectionId": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "level": {
+          "enum": [
+            2,
+            3
+          ]
+        },
+        "sourceRefs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/sourceRef"
+          }
+        }
       }
     },
     "sourceRef": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["sourceId", "locator", "officialFragmentUrl"],
+      "required": [
+        "sourceId",
+        "locator",
+        "officialFragmentUrl"
+      ],
       "properties": {
-        "sourceId": {"type": "string", "pattern": "^SRC-[A-Z0-9-]+$"},
-        "locator": {"type": "string", "minLength": 1},
-        "officialFragmentUrl": {"type": ["string", "null"], "format": "uri"}
+        "sourceId": {
+          "type": "string",
+          "pattern": "^SRC-[A-Z0-9-]+$"
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "officialFragmentUrl": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri"
+        }
       }
     }
   }

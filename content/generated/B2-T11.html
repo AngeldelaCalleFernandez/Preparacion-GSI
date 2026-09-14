@@ -1,0 +1,96 @@
+<article class="topic-content" data-topic-id="B2-T11" data-coverage-status="complete">
+<p>Material curado del corpus GSI A2 · apuntes V2.1 revisados. Procedencia editorial, no documento oficial.</p>
+<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B2-T11/estudio">Apuntes de estudio</a></li><li><a href="#temario/B2-T11/estudio-01">1. Concepto y objetivo</a></li><li><a href="#temario/B2-T11/estudio-02">2. Objetivos</a></li><li><a href="#temario/B2-T11/estudio-03">3. Principios de auditoría</a></li><li><a href="#temario/B2-T11/estudio-04">4. Ciclo de auditoría</a></li><li><a href="#temario/B2-T11/estudio-05">5. Evidencia</a></li><li><a href="#temario/B2-T11/estudio-06">6. Técnicas y herramientas</a></li><li><a href="#temario/B2-T11/estudio-07">7. Tipos</a></li><li><a href="#temario/B2-T11/estudio-08">8. Normas y marcos</a></li><li><a href="#temario/B2-T11/estudio-09">9. Auditoría ENS</a></li><li><a href="#temario/B2-T11/estudio-10">10. Auditoría de protección de datos</a></li><li><a href="#temario/B2-T11/estudio-11">11. Auditoría de seguridad física</a></li><li><a href="#temario/B2-T11/estudio-12">12. Hallazgos y criticidad</a></li><li><a href="#temario/B2-T11/estudio-13">13. Test</a></li><li><a href="#temario/B2-T11/estudio-14">14. Supuesto</a></li><li><a href="#temario/B2-T11/estudio-15">15. Resumen II.11</a></li><li><a href="#temario/B2-T11/repaso">Resumen de repaso</a></li><li><a href="#temario/B2-T11/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B2-T11/repaso-02">Claves de test</a></li><li><a href="#temario/B2-T11/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B2-T11/repaso-04">Fuentes base del material</a></li></ol></nav>
+<h2 id="estudio">Apuntes de estudio</h2>
+<h3 id="estudio-01">1. Concepto y objetivo</h3>
+<p>La auditoría informática es un proceso sistemático de obtención y evaluación de evidencias para determinar si los sistemas, controles y procesos protegen activos, mantienen integridad/seguridad, cumplen criterios y apoyan eficazmente los objetivos. El A1 038 es la fuente específica y se complementa con A1 047 para riesgos y A1 048 para ENS.</p>
+<p>Auditar no es «buscar fallos» sin criterio. Debe existir <strong>alcance</strong>, <strong>criterios</strong>, <strong>evidencia</strong>, <strong>hallazgos</strong>, conclusión y seguimiento.</p>
+<h3 id="estudio-02">2. Objetivos</h3>
+<ul>
+<li>Evaluar eficacia y diseño de controles.</li>
+<li>Comprobar cumplimiento legal, normativo, contractual y de políticas.</li>
+<li>Identificar riesgos y debilidades relevantes.</li>
+<li>Evaluar protección de confidencialidad, integridad, disponibilidad, autenticidad y trazabilidad.</li>
+<li>Revisar gobierno, operación, continuidad, cambios y seguridad.</li>
+<li>Proponer acciones correctivas y comprobar su cierre.</li>
+</ul>
+<h3 id="estudio-03">3. Principios de auditoría</h3>
+<p>Independencia y objetividad; competencia profesional; planificación basada en riesgos; evidencia suficiente, pertinente y fiable; confidencialidad; trazabilidad; debido cuidado profesional. El auditor no debería evaluar de forma acrítica controles que él mismo diseñó/operó cuando ello comprometa independencia.</p>
+<h3 id="estudio-04">4. Ciclo de auditoría</h3>
+<ul>
+<li><strong>Mandato y alcance</strong>: sistema, procesos, periodo, ubicaciones, exclusiones.</li>
+<li><strong>Criterios</strong>: ENS, políticas, RGPD/LOPDGDD, ISO, contrato, procedimientos, etc.</li>
+<li><strong>Análisis preliminar de riesgos</strong> y plan de trabajo.</li>
+<li><strong>Trabajo de campo</strong>: entrevistas, documentación, observación, configuración, logs, muestreo y pruebas.</li>
+<li><strong>Contraste de evidencia</strong> y elaboración de hallazgos.</li>
+<li><strong>Informe</strong>: condición, criterio, causa, riesgo/efecto y recomendación.</li>
+<li><strong>Plan de acciones</strong>: responsable, prioridad y fecha.</li>
+<li><strong>Seguimiento</strong> y verificación de cierre.</li>
+</ul>
+<h3 id="estudio-05">5. Evidencia</h3>
+<p>Tipos: documental, observacional, testimonial y técnica/digital. Debe poder ser reproducida o contrastada. Capturas aisladas o declaraciones sin corroboración pueden no ser suficientes. Es importante conservar fecha, fuente, consulta realizada y contexto.</p>
+<p>El muestreo permite obtener conclusión razonable sin revisar el 100%, pero debe definirse población, método y riesgo de muestreo.</p>
+<h3 id="estudio-06">6. Técnicas y herramientas</h3>
+<ul>
+<li>Entrevistas y cuestionarios.</li>
+<li>Revisión de políticas, procedimientos, arquitectura e inventarios.</li>
+<li>Revisión de configuración y hardening.</li>
+<li>Análisis de usuarios, roles, privilegios y segregación de funciones.</li>
+<li>Consulta de logs y SIEM.</li>
+<li>Escáneres de vulnerabilidades y cumplimiento.</li>
+<li>Análisis de red/configuración de firewalls.</li>
+<li>Muestreo de transacciones y pruebas de controles.</li>
+<li>Revisión de backups/restauraciones.</li>
+<li>Pruebas físicas de acceso/energía/ambiente.</li>
+<li>Scripts de auditoría para correlacionar inventario, cuentas, parches o eventos.</li>
+</ul>
+<p>Una auditoría puede utilizar resultados de pentest, pero <strong>auditoría ≠ pentest</strong>. El pentest busca explotar vulnerabilidades dentro de reglas de compromiso; la auditoría evalúa un conjunto más amplio de controles y criterios.</p>
+<h3 id="estudio-07">7. Tipos</h3>
+<p>Interna/primera parte, de proveedor/segunda parte y externa/tercera parte; de cumplimiento, financiera con componente TI, operativa, seguridad, desarrollo, continuidad, datos, etc. El BOE exige específicamente ENS, protección de datos y seguridad física.</p>
+<h3 id="estudio-08">8. Normas y marcos</h3>
+<p><strong>ISO 19011</strong> ofrece directrices para auditoría de sistemas de gestión. <strong>ISO/IEC 27001</strong> contiene requisitos de un SGSI certificable; <strong>ISO/IEC 27002</strong> sirve de guía de controles. COBIT e ISACA aportan gobierno/control y prácticas de auditoría. No debe asumirse que una certificación ISO implica cumplimiento automático del ENS o RGPD.</p>
+<h3 id="estudio-09">9. Auditoría ENS</h3>
+<p>El ENS (RD 311/2022) establece auditorías de seguridad en los casos y periodicidad aplicables. La fuente A1 048 actualizada en marzo de 2026 recuerda que los sistemas de categoría básica se apoyan en autoevaluación para la declaración de conformidad, mientras media/alta requieren los mecanismos de auditoría/certificación previstos. También procede auditoría extraordinaria ante modificaciones sustanciales que puedan repercutir en seguridad.</p>
+<p>La guía CCN-STIC 802 desarrolla auditoría ENS. Debes distinguir:</p>
+<ul>
+<li><strong>Categoría del sistema</strong>: deriva de valoración ENS.</li>
+<li><strong>Auditoría de seguridad</strong>: evaluación periódica y ante cambios relevantes.</li>
+<li><strong>Conformidad ENS</strong>: declaración/certificación conforme al régimen.</li>
+<li><strong>ISO 27001</strong>: certificación de SGSI, relacionada pero no equivalente.</li>
+</ul>
+<p>En auditoría ENS se revisan política, roles, análisis de riesgos, Declaración de Aplicabilidad, medidas del marco organizativo/operacional/protección, evidencias, incidentes, continuidad, terceros y mejora.</p>
+<h3 id="estudio-10">10. Auditoría de protección de datos</h3>
+<p>RGPD no establece una «auditoría bienal general» como la antigua LOPD española. El enfoque actual es <strong>responsabilidad proactiva</strong>: poder demostrar licitud, transparencia, minimización, contratos de encargado, seguridad, gestión de derechos, EIPD cuando proceda, brechas, transferencias, retención y privacidad desde diseño.</p>
+<p>Una auditoría puede revisar: registro de actividades, bases jurídicas, información a interesados, medidas, roles, DPD, contratos, subencargados, evidencias de consentimiento cuando sea base, derechos, supresión/retención, pruebas y datos en no producción.</p>
+<h3 id="estudio-11">11. Auditoría de seguridad física</h3>
+<p>Áreas: perímetro, control de acceso, visitantes, CCTV si procede, cerramientos, racks, energía, UPS/grupos, climatización, detección/extinción de incendios, agua, cableado, inventario, destrucción de soportes, mantenimiento y continuidad. Debe verificarse evidencia: registros de acceso, pruebas de generadores, mantenimientos, sensores, simulacros y restauraciones.</p>
+<h3 id="estudio-12">12. Hallazgos y criticidad</h3>
+<p>Un buen hallazgo relaciona <strong>criterio</strong> incumplido, <strong>condición</strong> observada, <strong>causa</strong>, <strong>impacto/riesgo</strong> y recomendación. Clasificar como crítica/alta/media/baja debe basarse en criterios definidos, no en dramatismo.</p>
+<p>Distingue no conformidad, observación/oportunidad de mejora y riesgo aceptado. Una recomendación debe ser accionable y proporcional.</p>
+<h3 id="estudio-13">13. Test</h3>
+<ul>
+<li>Auditoría ≠ pentest.</li>
+<li>Evidencia ≠ opinión.</li>
+<li>Hallazgo debe referenciar criterio.</li>
+<li>Independencia y trazabilidad son principios clave.</li>
+<li>Auditoría ENS ≠ certificación ISO 27001.</li>
+<li>RGPD se basa en responsabilidad proactiva; no memorices la antigua auditoría bienal de LOPD como regla RGPD.</li>
+<li>Seguridad física incluye energía, clima y acceso, no solo puertas.</li>
+<li>Riesgo determina prioridad del plan de acciones.</li>
+<li>Cerrar una acción requiere verificar efectividad, no solo «marcarla hecha».</li>
+</ul>
+<h3 id="estudio-14">14. Supuesto</h3>
+<p>Define alcance y criterios; selecciona pruebas por riesgo; solicita evidencias; presenta 4–6 hallazgos con riesgo; prioriza remediación; fija responsables/fechas y seguimiento. Si el caso es ENS, añade categoría, análisis de riesgos, DoA, roles y conformidad. Si es datos, añade EIPD, contratos, derechos y brechas.</p>
+<h3 id="estudio-15">15. Resumen II.11</h3>
+<p>Estudia auditoría como método: alcance → criterio → evidencia → hallazgo → informe → remediación → seguimiento. Luego aplica ese ciclo a ENS, protección de datos y seguridad física.</p>
+<h2 id="repaso">Resumen de repaso</h2>
+<h3 id="repaso-01">Núcleo de estudio</h3>
+<p>La auditoría obtiene evidencia objetiva para evaluar controles, cumplimiento, eficacia y riesgos. Fases: planificación y alcance, criterios, trabajo de campo/evidencias, hallazgos, conclusiones, informe y seguimiento. Principios: independencia, competencia, evidencia suficiente y trazabilidad. Técnicas: entrevistas, revisión documental/configuración, muestreo, análisis de logs, pruebas de controles y herramientas automatizadas. Para ENS estudia auditoría regular y extraordinaria y conformidad según categoría; para protección de datos, responsabilidad proactiva, contratos, EIPD, registros, seguridad y derechos. Seguridad física: acceso a CPD, perímetro, energía, climatización, incendio, agua, inventario y continuidad.</p>
+<h3 id="repaso-02">Claves de test</h3>
+<p>Auditoría no es pentest, aunque puede usar sus resultados. Evidencia debe ser pertinente y verificable. No confundir evaluación de conformidad ENS con certificación ISO 27001. ISO 19011 aporta directrices generales de auditoría; ISO 27001 se centra en SGSI.</p>
+<h3 id="repaso-03">Enfoque para supuesto práctico</h3>
+<p>En supuesto define alcance, criterios, pruebas, evidencias y plan de remediación. Separa no conformidad, observación y riesgo; prioriza por criticidad y exige seguimiento.</p>
+<h3 id="repaso-04">Fuentes base del material</h3>
+<p>A1 038 + 047 + 048, RGPD/LOPDGDD y ENS.</p>
+<section class="topic-content__sources"><h2 id="fuentes">Fuentes y localizadores</h2><ul><li><a href="https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)</a> · II.11 · 2026-08-21</li><li><a href="https://docs.google.com/document/d/1h7n4dFYafS_3VMuL55TnEuVKhqaTheUoL-thDFQSr9w/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE II — RESUMEN MAESTRO DE REPASO (16 temas)</a> · II.11 · 2026-08-21</li></ul></section>
+</article>

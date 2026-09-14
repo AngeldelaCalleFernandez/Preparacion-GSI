@@ -1,0 +1,84 @@
+<article class="topic-content" data-topic-id="B2-T12" data-coverage-status="complete">
+<p>Material curado del corpus GSI A2 · apuntes V2.1 revisados. Procedencia editorial, no documento oficial.</p>
+<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B2-T12/estudio">Apuntes de estudio</a></li><li><a href="#temario/B2-T12/estudio-01">1. Alcance y hueco A1</a></li><li><a href="#temario/B2-T12/estudio-02">2. De call center a contact center</a></li><li><a href="#temario/B2-T12/estudio-03">3. Multicanal vs omnicanal</a></li><li><a href="#temario/B2-T12/estudio-04">4. Componentes de voz</a></li><li><a href="#temario/B2-T12/estudio-05">5. Enrutamiento y colas</a></li><li><a href="#temario/B2-T12/estudio-06">6. CRM</a></li><li><a href="#temario/B2-T12/estudio-07">7. CTI y screen-pop</a></li><li><a href="#temario/B2-T12/estudio-08">8. IVR</a></li><li><a href="#temario/B2-T12/estudio-09">9. VoiceXML</a></li><li><a href="#temario/B2-T12/estudio-10">10. Arquitectura multicanal</a></li><li><a href="#temario/B2-T12/estudio-11">11. Identificación y autenticación</a></li><li><a href="#temario/B2-T12/estudio-12">12. Privacidad y grabación</a></li><li><a href="#temario/B2-T12/estudio-13">13. Accesibilidad</a></li><li><a href="#temario/B2-T12/estudio-14">14. KPI</a></li><li><a href="#temario/B2-T12/estudio-15">15. Dimensionamiento</a></li><li><a href="#temario/B2-T12/estudio-16">16. Continuidad</a></li><li><a href="#temario/B2-T12/estudio-17">17. Test</a></li><li><a href="#temario/B2-T12/estudio-18">18. Supuesto</a></li><li><a href="#temario/B2-T12/estudio-19">19. Resumen II.12</a></li><li><a href="#temario/B2-T12/repaso">Resumen de repaso</a></li><li><a href="#temario/B2-T12/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B2-T12/repaso-02">Claves de test</a></li><li><a href="#temario/B2-T12/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B2-T12/repaso-04">Fuentes base del material</a></li></ol></nav>
+<h2 id="estudio">Apuntes de estudio</h2>
+<h3 id="estudio-01">1. Alcance y hueco A1</h3>
+<p>El mapa A1 cubre parcialmente CRM y XML, pero no desarrolla con suficiente profundidad la arquitectura de contact center. Por eso esta sección es una <strong>ampliación específica GSI</strong>, siguiendo los conceptos ya identificados en la auditoría: PBX/SBC/VoIP, colas/enrutado, CTI, IVR, ASR/TTS, VoiceXML, privacidad, accesibilidad, KPI y dimensionamiento.</p>
+<h3 id="estudio-02">2. De call center a contact center</h3>
+<p>Un <strong>call center</strong> se centra principalmente en voz. Un <strong>contact center</strong> integra varios canales: telefonía, email, chat, web, mensajería, videollamada y redes sociales cuando proceda. El objetivo es gestionar interacciones con enrutamiento, contexto, trazabilidad y niveles de servicio.</p>
+<h3 id="estudio-03">3. Multicanal vs omnicanal</h3>
+<p><strong>Multicanal</strong>: existen varios canales, pero pueden funcionar como silos. <strong>Omnicanal</strong>: se intenta conservar contexto, identidad e historial al cambiar de canal. La omnicanalidad requiere un modelo común de interacción, CRM/case management y reglas de privacidad.</p>
+<h3 id="estudio-04">4. Componentes de voz</h3>
+<ul>
+<li><strong>PBX/IP-PBX</strong>: centralita que gestiona extensiones y llamadas.</li>
+<li><strong>SIP</strong>: protocolo de señalización habitual en VoIP.</li>
+<li><strong>SBC</strong>: Session Border Controller, protege/controla el borde de sesiones VoIP.</li>
+<li><strong>ACD</strong>: Automatic Call Distributor, enruta llamadas a colas/agentes.</li>
+<li><strong>CTI</strong>: Computer Telephony Integration, integra telefonía y aplicaciones/CRM.</li>
+<li><strong>IVR</strong>: Interactive Voice Response, diálogo automatizado por teclado DTMF y/o voz.</li>
+<li><strong>Grabación</strong>: registra llamadas cuando existe finalidad/base y controles apropiados.</li>
+<li><strong>WFM</strong>: Workforce Management, predice carga y planifica agentes.</li>
+</ul>
+<h3 id="estudio-05">5. Enrutamiento y colas</h3>
+<p>Estrategias: round-robin, agente más libre, skills-based routing, prioridad, idioma, servicio, valor o urgencia. Las colas necesitan mensajes, tiempo estimado, callback y reglas de desbordamiento. El diseño debe evitar loops y pérdida de contexto.</p>
+<h3 id="estudio-06">6. CRM</h3>
+<p>Customer Relationship Management gestiona información e interacciones de una relación. En sector público puede ser más apropiado hablar de ciudadano/usuario y gestión de casos. Componentes: ficha, contactos, historial, actividades, casos/tickets, comunicaciones, segmentación autorizada, base de conocimiento, reporting e integraciones.</p>
+<p>CRM no debe convertirse en «base de datos donde copiar todo». Minimización, calidad, finalidad, retención y permisos son esenciales.</p>
+<h3 id="estudio-07">7. CTI y screen-pop</h3>
+<p>CTI enlaza llamada y aplicación: identificar número/usuario, abrir ficha o caso, registrar inicio/fin, permitir click-to-call, transferencias y clasificación. El <strong>screen pop</strong> muestra información contextual al agente. Debe aplicarse mínimo privilegio: que llegue una llamada no justifica mostrar datos innecesarios.</p>
+<h3 id="estudio-08">8. IVR</h3>
+<p>Un IVR presenta opciones y recoge entrada. Puede usar DTMF, reconocimiento automático de voz (<strong>ASR</strong>) y síntesis (<strong>TTS</strong>). Diseña menús cortos, salida a agente, repetición, accesibilidad, detección de errores y tratamiento de datos sensibles.</p>
+<p>IVR no equivale a reconocimiento de voz: un IVR puede funcionar solo con tonos DTMF.</p>
+<h3 id="estudio-09">9. VoiceXML</h3>
+<p><strong>VoiceXML</strong> es un lenguaje XML para describir diálogos de voz. Separa lógica de aplicación y presentación de voz y puede controlar prompts, gramáticas, captura y flujo del diálogo mediante un intérprete/plataforma de voz. Para examen importa su naturaleza XML y su uso en aplicaciones de voz, no aprender sintaxis extensa.</p>
+<h3 id="estudio-10">10. Arquitectura multicanal</h3>
+<p>Canales → gateway/telefonía/chat/email → router/ACD → IVR/bots cuando proceda → agentes → CRM/case management → conocimiento → backoffice. Servicios transversales: identidad, grabación, analítica, supervisión, reporting y observabilidad.</p>
+<h3 id="estudio-11">11. Identificación y autenticación</h3>
+<p>Distingue identificar por contexto (número, cookie, correo) de autenticar con garantía suficiente. Para trámites sensibles pueden requerirse factores adicionales. No uses preguntas débiles como único mecanismo si el riesgo es alto. La autenticación debe ser proporcional y no bloquear innecesariamente la atención general.</p>
+<h3 id="estudio-12">12. Privacidad y grabación</h3>
+<p>Si se graban llamadas, define finalidad/base, información, acceso, retención, seguridad y ejercicio de derechos. Evita registrar credenciales o datos de pago/sensibles innecesarios. Los agentes necesitan roles, logs y formación; las exportaciones de grabaciones deben estar controladas.</p>
+<h3 id="estudio-13">13. Accesibilidad</h3>
+<p>Canales alternativos para personas con discapacidad auditiva, visual, del habla o cognitiva; compatibilidad con tecnologías de apoyo; lenguaje claro; tiempos razonables; chat/texto; subtítulos/interpretación cuando el servicio lo exija. Un IVR inaccesible no se corrige únicamente «añadiendo web».</p>
+<h3 id="estudio-14">14. KPI</h3>
+<ul>
+<li><strong>ASA</strong>: tiempo medio de respuesta.</li>
+<li><strong>AHT</strong>: tiempo medio de gestión.</li>
+<li><strong>Abandon rate</strong>: porcentaje de abandonos.</li>
+<li><strong>FCR</strong>: resolución en primer contacto.</li>
+<li><strong>Service level</strong>: porcentaje atendido dentro de umbral.</li>
+<li><strong>Occupancy</strong>: tiempo productivo respecto a disponible.</li>
+<li><strong>CSAT/NPS</strong>: satisfacción/recomendación, interpretados con cautela.</li>
+</ul>
+<p>Optimizar AHT de forma aislada puede empeorar FCR y satisfacción. Los KPI deben equilibrar eficiencia y calidad.</p>
+<h3 id="estudio-15">15. Dimensionamiento</h3>
+<p>Se parte de volumen por franja, duración media, patrón de llegada, objetivo de servicio, shrinkage (pausas/formación/ausencias), canales y concurrencia. En telefonía se emplean modelos de colas como Erlang C en escenarios adecuados. Para GSI basta comprender que «número medio de llamadas / agentes» no es dimensionamiento suficiente.</p>
+<h3 id="estudio-16">16. Continuidad</h3>
+<p>Redundancia de enlaces/telefonía, sedes o agentes remotos, colas, fallback, backup de configuración, capacidad de desbordamiento, monitorización y planes de contingencia. Un fallo del CRM no debería dejar sin mecanismo básico de atención si el servicio es crítico.</p>
+<h3 id="estudio-17">17. Test</h3>
+<ul>
+<li>Call center ≠ contact center.</li>
+<li>Multicanal ≠ omnicanal.</li>
+<li>ACD distribuye; CTI integra telefonía e informática.</li>
+<li>IVR ≠ ASR.</li>
+<li>DTMF ≠ reconocimiento de voz.</li>
+<li>VoiceXML es XML orientado a diálogos de voz.</li>
+<li>CRM ≠ simple agenda.</li>
+<li>Screen-pop ≠ autenticación fuerte.</li>
+<li>AHT bajo no implica mejor calidad.</li>
+<li>Grabación requiere finalidad y controles.</li>
+</ul>
+<h3 id="estudio-18">18. Supuesto</h3>
+<p>Dibuja canales y voz → ACD/IVR → agentes → CRM/casos → backoffice. Define reglas de routing, identificación, escalado a agente, grabación, privacidad, accesibilidad, SLA/KPI, continuidad y monitorización. Para un organismo público, incluye trazabilidad y no fuerces a usar voz para todos los trámites.</p>
+<h3 id="estudio-19">19. Resumen II.12</h3>
+<p>Domina los componentes y sus funciones: ACD, CTI, IVR, CRM, VoiceXML y canales. En supuesto, la diferencia está en privacidad, accesibilidad, routing y métricas.</p>
+<h2 id="repaso">Resumen de repaso</h2>
+<h3 id="repaso-01">Núcleo de estudio</h3>
+<p>Un CRM centraliza información e interacciones para gestionar relaciones con usuarios/clientes; puede incluir gestión de casos, campañas, conocimiento e indicadores. Contact center integra voz, correo, chat, formularios, mensajería y otros canales; omnicanal busca continuidad entre canales, frente a multicanal donde pueden estar aislados. Componentes: ACD para distribución de llamadas, CTI para integrar telefonía-informática, IVR para interacción por voz/teclado, grabación, workforce management y analítica. VoiceXML es un lenguaje XML para aplicaciones de diálogo de voz. En sector público añade accesibilidad, identificación, protección de datos y trazabilidad.</p>
+<h3 id="repaso-02">Claves de test</h3>
+<p>Call center es más limitado que contact center; multicanal no implica omnicanal; IVR no es reconocimiento de voz necesariamente; CRM no es solo una agenda de contactos.</p>
+<h3 id="repaso-03">Enfoque para supuesto práctico</h3>
+<p>En supuesto diseña canales, enrutamiento, identificación, CRM, base de conocimiento, SLA, registro, grabación justificada, privacidad, accesibilidad y continuidad. Incluye métricas: tiempo de respuesta, abandono, resolución en primer contacto y satisfacción.</p>
+<h3 id="repaso-04">Fuentes base del material</h3>
+<p>A1 072 + 077 y material de servicios/atención.</p>
+<section class="topic-content__sources"><h2 id="fuentes">Fuentes y localizadores</h2><ul><li><a href="https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)</a> · II.12 · 2026-08-21</li><li><a href="https://docs.google.com/document/d/1h7n4dFYafS_3VMuL55TnEuVKhqaTheUoL-thDFQSr9w/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE II — RESUMEN MAESTRO DE REPASO (16 temas)</a> · II.12 · 2026-08-21</li></ul></section>
+</article>

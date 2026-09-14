@@ -1,8 +1,8 @@
-import { getConfiguredPersistenceAdapter } from "./persistence-v2.js?m3";
+import { getConfiguredPersistenceAdapter } from "./persistence-v2.js?gsi2";
 
 const STORAGE_VERSION = 1;
-const REAL_SESSION_KEY = "tai.phase4.exam.active.real.v1";
-const DEMO_SESSION_KEY = "tai.phase4.exam.active.demo.v1";
+const REAL_SESSION_KEY = "gsi.phase4.exam.active.real.v1";
+const DEMO_SESSION_KEY = "gsi.phase4.exam.active.demo.v1";
 
 export function getExamStorageKey(isDemo) {
   return isDemo ? DEMO_SESSION_KEY : REAL_SESSION_KEY;

@@ -1,7 +1,7 @@
-import { normaliseAnalyticsStore } from "./analytics-engine.js";
-import { validateActiveExamState } from "./exam-storage.js?m3";
-import { buildPhysicalPersistenceKey, createPersistenceEnvelope, LOGICAL_PERSISTENCE_KEYS, parsePersistenceEnvelope } from "./persistence-v2.js?m3";
-import { validateReinforcementStore } from "./reinforcement-storage.js?m3";
+import { normaliseAnalyticsStore } from "./analytics-engine.js?gsi2";
+import { validateActiveExamState } from "./exam-storage.js?gsi2";
+import { buildPhysicalPersistenceKey, createPersistenceEnvelope, LOGICAL_PERSISTENCE_KEYS, parsePersistenceEnvelope } from "./persistence-v2.js?gsi2";
+import { validateReinforcementStore } from "./reinforcement-storage.js?gsi2";
 
 function validationError(message) {
   throw new Error(`Migración v1→v2: ${message}`);
@@ -38,7 +38,7 @@ function expectedMode(logicalKey) {
 }
 
 function validatePayload(logicalKey, payload) {
-  if (logicalKey === "tai.phase3.training.v1") return validateTrainingV1(payload);
+  if (logicalKey === "gsi.phase3.training.v1") return validateTrainingV1(payload);
   if (logicalKey.includes("exam.active")) {
     const checked = validateActiveExamState(payload);
     return checked.valid && checked.state.isDemo === expectedMode(logicalKey);
@@ -62,6 +62,8 @@ function assertRawStorage(rawStorage) {
 export function planV1ToV2Migration(runtimeContext, rawStorage) {
   const storage = assertRawStorage(rawStorage);
   const entries = [];
+  // GSI nunca importa historial sin identidad certificada.
+  const allowUnscopedImport = runtimeContext.oppositionId !== "OPP-GSI";
   for (const logicalKey of LOGICAL_PERSISTENCE_KEYS) {
     const physicalKey = buildPhysicalPersistenceKey(runtimeContext, logicalKey);
     const existingV2 = storage.getItem(physicalKey);
@@ -73,7 +75,7 @@ export function planV1ToV2Migration(runtimeContext, rawStorage) {
       entries.push({ logicalKey, physicalKey, action: "existing" });
       continue;
     }
-    const rawV1 = storage.getItem(logicalKey);
+    const rawV1 = allowUnscopedImport ? storage.getItem(logicalKey) : null;
     if (rawV1 === null) {
       entries.push({ logicalKey, physicalKey, action: "absent" });
       continue;

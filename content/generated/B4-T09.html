@@ -1,11 +1,49 @@
-<article class="topic-content" data-topic-id="B4-T09" data-coverage-status="pending">
-<aside class="topic-content__status topic-content__status--pending" role="status"><p>Contenido pendiente de fuentes verificables.</p></aside>
-<nav class="topic-content__toc" aria-label="Índice del tema">
-<h2>Contenido del tema</h2>
-<ol><li class="topic-content__toc-level-2"><a href="#temario/B4-T09/fuentes-necesarias">Fuentes necesarias</a></li></ol>
-</nav>
-<h2 id="fuentes-necesarias">Fuentes necesarias</h2>
-<div class="topic-content__pendiente" data-editorial-kind="pendiente"><p class="topic-content__kind">Pendiente</p><p>Contenido pendiente de una fuente verificable.</p>
-<p>Fuente necesaria: documentación técnica primaria local sobre seguridad en redes, perímetro, acceso remoto, VPN y puesto de usuario.</p></div>
-
+<article class="topic-content" data-topic-id="B4-T09" data-coverage-status="complete">
+<p>Material curado del corpus GSI A2 · apuntes V2.1 revisados. Procedencia editorial, no documento oficial.</p>
+<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B4-T09/estudio">Apuntes de estudio</a></li><li><a href="#temario/B4-T09/estudio-01">1. Modelo FCAPS</a></li><li><a href="#temario/B4-T09/estudio-02">2. Inventario y configuración</a></li><li><a href="#temario/B4-T09/estudio-03">3. Usuarios y acceso a red</a></li><li><a href="#temario/B4-T09/estudio-04">4. SNMP: arquitectura</a></li><li><a href="#temario/B4-T09/estudio-05">5. Syslog, flows y telemetría</a></li><li><a href="#temario/B4-T09/estudio-06">6. Monitorización</a></li><li><a href="#temario/B4-T09/estudio-07">7. Control de tráfico y QoS</a></li><li><a href="#temario/B4-T09/estudio-08">8. Troubleshooting por capas</a></li><li><a href="#temario/B4-T09/estudio-09">Resumen</a></li><li><a href="#temario/B4-T09/repaso">Resumen de repaso</a></li><li><a href="#temario/B4-T09/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B4-T09/repaso-02">Claves de test</a></li><li><a href="#temario/B4-T09/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B4-T09/repaso-04">Fuentes base del material</a></li></ol></nav>
+<h2 id="estudio">Apuntes de estudio</h2>
+<p><strong>Cobertura oficial que debe quedar dominada:</strong> Administración de redes locales. Gestión de usuarios y dispositivos. Monitorización y control de tráfico. Gestión SNMP.</p>
+<h3 id="estudio-01">1. Modelo FCAPS</h3>
+<p>FCAPS resume áreas de gestión: Fault, Configuration, Accounting, Performance y Security. No es una herramienta concreta; sirve para estructurar operación: detectar fallos, controlar configuración, contabilizar/uso, medir rendimiento y proteger administración.</p>
+<h3 id="estudio-02">2. Inventario y configuración</h3>
+<p>Mantener modelo, serie/activo, ubicación, versión, interfaces, IP de gestión, dependencias, garantía/soporte y baseline. Respaldar configuraciones, controlar cambios, actualizar firmware y sustituir equipos fuera de soporte. Administración debe usar red/VRF de gestión cuando proceda y AAA central.</p>
+<h3 id="estudio-03">3. Usuarios y acceso a red</h3>
+<p>Directorio/IAM identifica usuarios; 802.1X autentica acceso a puerto/WLAN con supplicant–authenticator–servidor AAA, normalmente RADIUS. NAC añade postura/compliance y políticas. Separar identidad del usuario de cuenta administrativa del dispositivo.</p>
+<h3 id="estudio-04">4. SNMP: arquitectura</h3>
+<p><strong>Manager/NMS</strong> consulta o recibe eventos; <strong>agent</strong> expone objetos; <strong>MIB</strong> describe estructura; <strong>OID</strong> identifica cada objeto. Operaciones: GET, GETNEXT, GETBULK (v2+), SET; TRAP envía notificación sin confirmación de aplicación y INFORM permite confirmación entre entidades según versión.</p>
+<p>SNMPv1/v2c se apoyan en community strings; SNMPv3 añade modelo de seguridad con autenticación e integridad y, opcionalmente, privacidad/cifrado. En producción sensible preferir v3.</p>
+<h3 id="estudio-05">5. Syslog, flows y telemetría</h3>
+<p>Syslog centraliza eventos; NetFlow/IPFIX o tecnologías equivalentes resumen flujos para saber quién habla con quién, cuánto y cuándo; streaming telemetry publica métricas de forma más frecuente/estructurada que polling tradicional. Se complementan, no sustituyen totalmente.</p>
+<h3 id="estudio-06">6. Monitorización</h3>
+<p>Disponibilidad, estado de interfaces, errores/discards, utilización, latencia, pérdida, CPU/memoria, vecinos, rutas, PoE, temperatura y cambios. Usar percentiles/tendencias y umbrales con histéresis. Alertas deben mapearse a una acción y evitar tormentas.</p>
+<h3 id="estudio-07">7. Control de tráfico y QoS</h3>
+<p>Clasificación/marcado, policing, shaping, colas y prioridad. QoS no crea ancho de banda: administra congestión. El control puede detectar top talkers, aplicaciones anómalas y enlaces saturados; primero se corrige causa y luego se amplía capacidad si procede.</p>
+<h3 id="estudio-08">8. Troubleshooting por capas</h3>
+<p>Secuencia útil: físico (enlace, errores) → VLAN/L2 → IP/gateway → routing → DNS/DHCP → transporte/puertos → aplicación. Comparar alcance, rutas, ARP/NDP, latencia/pérdida y logs. Cambiar muchas variables a la vez destruye evidencia.</p>
+<p>Datos y trampas de test</p>
+<ul>
+<li>MIB describe objetos; OID identifica un objeto.</li>
+<li>Polling ≠ trap/inform.</li>
+<li>SNMPv3 ofrece seguridad superior a community strings de v1/v2c.</li>
+<li>SNMP GETBULK aparece desde v2.</li>
+<li>Syslog ≠ SNMP; son complementarios.</li>
+<li>NetFlow/IPFIX describe flujos, no captura necesariamente payload.</li>
+<li>QoS no crea ancho de banda.</li>
+<li>FCAPS es un marco de áreas de gestión.</li>
+</ul>
+<p>Aplicación al supuesto práctico</p>
+<p>Propón NMS redundante, SNMPv3, syslog central, flows/telemetría, inventario y backups de configuración, AAA/RBAC, red de gestión, alertas y dashboards. Describe un flujo de incidencia desde alarma hasta diagnóstico por capas y cierre con actualización de baseline/documentación.</p>
+<h3 id="estudio-09">Resumen</h3>
+<p>Administrar LAN significa conocer y controlar identidad, configuración, estado y tráfico; SNMP es una pieza de una plataforma más amplia de observabilidad y gestión.</p>
+<p><strong>Fuentes base:</strong> A1 118/119 + administración de redes; modernización hacia SNMPv3, flows y telemetría.</p>
+<h2 id="repaso">Resumen de repaso</h2>
+<h3 id="repaso-01">Núcleo de estudio</h3>
+<p>Administrar LAN incluye inventario, configuración, autenticación, direccionamiento, DHCP/DNS, VLAN, Wi-Fi si integrado, firmware, backups de configuración, monitorización y troubleshooting. Gestión de usuarios se apoya en directorio/IAM y NAC/802.1X; dispositivos pueden administrarse por SSH, APIs y plataformas centralizadas. Monitoriza disponibilidad, interfaces, errores, utilización, latencia, pérdida, top talkers y eventos. SNMP usa manager, agents, MIB y OID; SNMPv3 añade autenticación y privacidad frente a versiones anteriores. Syslog y telemetry complementan SNMP.</p>
+<h3 id="repaso-02">Claves de test</h3>
+<p>SNMP trap/inform son notificaciones; polling consulta. MIB describe objetos, OID los identifica. SNMPv1/v2c usan community strings y no ofrecen seguridad equivalente a v3. Saturación de enlace no se resuelve solo cambiando umbral.</p>
+<h3 id="repaso-03">Enfoque para supuesto práctico</h3>
+<p>En supuesto define NMS, SNMPv3, syslog central, NetFlow/IPFIX/telemetría, backups, RBAC, alertas, inventario y procedimientos de cambio/incidente.</p>
+<h3 id="repaso-04">Fuentes base del material</h3>
+<p>A1 118 + 119 y administración de redes.</p>
+<section class="topic-content__sources"><h2 id="fuentes">Fuentes y localizadores</h2><ul><li><a href="https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)</a> · IV.09 · 2026-08-21</li><li><a href="https://docs.google.com/document/d/1PRbZRedDj9j2D4jPlDODZUKkmbCqPWxMM4hhGhjcZIo/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE IV — RESUMEN MAESTRO DE REPASO (16 temas)</a> · IV.09 · 2026-08-21</li></ul></section>
 </article>

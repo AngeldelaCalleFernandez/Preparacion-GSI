@@ -1,0 +1,507 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO</title><link rel="stylesheet" href="../../assets/css/styles.css"></head><body><main class="shell topic-content"><p><a href="../../index.html#practica">Volver a práctica escrita</a></p><p>Material curado GSI A2. Fuente: <a href="https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit">documento original de Drive</a>.</p><p>GSI A2 - PRACTICA ACTIVA 15</p>
+<p><strong>.NET + COMPARATIVA JAKARTA EE</strong></p>
+<p>160 preguntas - 4 opciones - III.11 cierre + III.10 refuerzo</p>
+<p><strong>SOLUCIONARIO COMENTADO</strong></p>
+<h1>Como usar esta practica</h1>
+<p>Este solucionario no se limita a dar la letra: cada respuesta incluye la regla que conviene recordar y la confusion que evita.</p>
+<p>Las respuestas A/B/C/D estan equilibradas: 40 de cada letra en el total y 5 de cada letra dentro de cada bloque de 20 preguntas.</p>
+<p>Los datos dependientes de version se han contrastado con fuentes oficiales vigentes a 24/08/2026.</p>
+<h2>Distribucion</h2>
+<table>
+<tr>
+<th scope="col"><p><strong>Bloque</strong></p></th>
+<th scope="col"><p><strong>Preguntas</strong></p></th>
+<th scope="col"><p><strong>Funcion</strong></p></th>
+</tr>
+<tr>
+<td><p>1. .NET moderno y arquitectura base</p></td>
+<td><p>1-20</p></td>
+<td><p>Fundamentos de plataforma</p></td>
+</tr>
+<tr>
+<td><p>2. CLR, IL, CTS, CLS, assemblies y gestión de recursos</p></td>
+<td><p>21-40</p></td>
+<td><p>Runtime y sistema de tipos</p></td>
+</tr>
+<tr>
+<td><p>3. C#, LINQ, asincronía, herramientas y paquetes</p></td>
+<td><p>41-60</p></td>
+<td><p>Lenguaje, consultas y tooling</p></td>
+</tr>
+<tr>
+<td><p>4. ASP.NET Core: pipeline, DI, APIs y configuración</p></td>
+<td><p>61-80</p></td>
+<td><p>Web/API y composicion</p></td>
+</tr>
+<tr>
+<td><p>5. Datos: ADO.NET, EF Core, LINQ y rendimiento</p></td>
+<td><p>81-100</p></td>
+<td><p>Persistencia y rendimiento</p></td>
+</tr>
+<tr>
+<td><p>6. Seguridad, identidad, despliegue y observabilidad .NET</p></td>
+<td><p>101-120</p></td>
+<td><p>Seguridad y operacion</p></td>
+</tr>
+<tr>
+<td><p>7. Jakarta EE 11: plataforma, perfiles y servicios empresariales</p></td>
+<td><p>121-140</p></td>
+<td><p>Cobertura dedicada Jakarta EE</p></td>
+</tr>
+<tr>
+<td><p>8. Comparativa .NET / Jakarta EE y casos de arquitectura</p></td>
+<td><p>141-160</p></td>
+<td><p>Transferencia entre stacks y casos</p></td>
+</tr>
+</table>
+<p><strong>Fuentes de contraste 2026: </strong><a href="https://learn.microsoft.com/en-us/dotnet/core/releases-and-support">Microsoft .NET releases/support</a> | <a href="https://learn.microsoft.com/en-us/dotnet/standard/clr">CLR</a> | <a href="https://learn.microsoft.com/en-us/aspnet/core/">ASP.NET Core</a> | <a href="https://learn.microsoft.com/en-us/ef/core/">EF Core</a> | <a href="https://jakarta.ee/specifications/platform/11/">Jakarta EE 11</a></p>
+<h1>Plantilla rapida de respuestas</h1>
+<table>
+<tr>
+<th scope="col"><p><strong>1: A</strong></p></th>
+<th scope="col"><p>2: B</p></th>
+<th scope="col"><p>3: A</p></th>
+<th scope="col"><p>4: D</p></th>
+<th scope="col"><p>5: C</p></th>
+<th scope="col"><p>6: B</p></th>
+<th scope="col"><p>7: A</p></th>
+<th scope="col"><p>8: B</p></th>
+</tr>
+<tr>
+<td><p>9: A</p></td>
+<td><p>10: A</p></td>
+<td><p>11: D</p></td>
+<td><p>12: B</p></td>
+<td><p>13: C</p></td>
+<td><p>14: B</p></td>
+<td><p>15: D</p></td>
+<td><p>16: C</p></td>
+</tr>
+<tr>
+<td><p>17: D</p></td>
+<td><p>18: C</p></td>
+<td><p>19: D</p></td>
+<td><p>20: C</p></td>
+<td><p><strong>21: D</strong></p></td>
+<td><p>22: A</p></td>
+<td><p>23: D</p></td>
+<td><p>24: B</p></td>
+</tr>
+<tr>
+<td><p>25: C</p></td>
+<td><p>26: D</p></td>
+<td><p>27: D</p></td>
+<td><p>28: C</p></td>
+<td><p>29: D</p></td>
+<td><p>30: B</p></td>
+<td><p>31: A</p></td>
+<td><p>32: B</p></td>
+</tr>
+<tr>
+<td><p>33: C</p></td>
+<td><p>34: C</p></td>
+<td><p>35: A</p></td>
+<td><p>36: B</p></td>
+<td><p>37: A</p></td>
+<td><p>38: A</p></td>
+<td><p>39: B</p></td>
+<td><p>40: C</p></td>
+</tr>
+<tr>
+<td><p><strong>41: A</strong></p></td>
+<td><p>42: D</p></td>
+<td><p>43: B</p></td>
+<td><p>44: C</p></td>
+<td><p>45: B</p></td>
+<td><p>46: D</p></td>
+<td><p>47: B</p></td>
+<td><p>48: D</p></td>
+</tr>
+<tr>
+<td><p>49: A</p></td>
+<td><p>50: C</p></td>
+<td><p>51: C</p></td>
+<td><p>52: B</p></td>
+<td><p>53: A</p></td>
+<td><p>54: B</p></td>
+<td><p>55: C</p></td>
+<td><p>56: A</p></td>
+</tr>
+<tr>
+<td><p>57: D</p></td>
+<td><p>58: A</p></td>
+<td><p>59: C</p></td>
+<td><p>60: D</p></td>
+<td><p><strong>61: D</strong></p></td>
+<td><p>62: A</p></td>
+<td><p>63: D</p></td>
+<td><p>64: D</p></td>
+</tr>
+<tr>
+<td><p>65: C</p></td>
+<td><p>66: C</p></td>
+<td><p>67: B</p></td>
+<td><p>68: B</p></td>
+<td><p>69: A</p></td>
+<td><p>70: A</p></td>
+<td><p>71: D</p></td>
+<td><p>72: C</p></td>
+</tr>
+<tr>
+<td><p>73: B</p></td>
+<td><p>74: A</p></td>
+<td><p>75: C</p></td>
+<td><p>76: B</p></td>
+<td><p>77: B</p></td>
+<td><p>78: A</p></td>
+<td><p>79: D</p></td>
+<td><p>80: C</p></td>
+</tr>
+<tr>
+<td><p><strong>81: B</strong></p></td>
+<td><p>82: A</p></td>
+<td><p>83: D</p></td>
+<td><p>84: C</p></td>
+<td><p>85: B</p></td>
+<td><p>86: A</p></td>
+<td><p>87: A</p></td>
+<td><p>88: C</p></td>
+</tr>
+<tr>
+<td><p>89: D</p></td>
+<td><p>90: C</p></td>
+<td><p>91: B</p></td>
+<td><p>92: D</p></td>
+<td><p>93: D</p></td>
+<td><p>94: C</p></td>
+<td><p>95: C</p></td>
+<td><p>96: B</p></td>
+</tr>
+<tr>
+<td><p>97: A</p></td>
+<td><p>98: A</p></td>
+<td><p>99: D</p></td>
+<td><p>100: B</p></td>
+<td><p><strong>101: B</strong></p></td>
+<td><p>102: B</p></td>
+<td><p>103: D</p></td>
+<td><p>104: C</p></td>
+</tr>
+<tr>
+<td><p>105: C</p></td>
+<td><p>106: B</p></td>
+<td><p>107: B</p></td>
+<td><p>108: A</p></td>
+<td><p>109: D</p></td>
+<td><p>110: C</p></td>
+<td><p>111: B</p></td>
+<td><p>112: C</p></td>
+</tr>
+<tr>
+<td><p>113: C</p></td>
+<td><p>114: A</p></td>
+<td><p>115: D</p></td>
+<td><p>116: A</p></td>
+<td><p>117: A</p></td>
+<td><p>118: D</p></td>
+<td><p>119: D</p></td>
+<td><p>120: A</p></td>
+</tr>
+<tr>
+<td><p><strong>121: A</strong></p></td>
+<td><p>122: D</p></td>
+<td><p>123: C</p></td>
+<td><p>124: B</p></td>
+<td><p>125: C</p></td>
+<td><p>126: D</p></td>
+<td><p>127: D</p></td>
+<td><p>128: B</p></td>
+</tr>
+<tr>
+<td><p>129: D</p></td>
+<td><p>130: A</p></td>
+<td><p>131: A</p></td>
+<td><p>132: B</p></td>
+<td><p>133: D</p></td>
+<td><p>134: C</p></td>
+<td><p>135: B</p></td>
+<td><p>136: A</p></td>
+</tr>
+<tr>
+<td><p>137: B</p></td>
+<td><p>138: A</p></td>
+<td><p>139: C</p></td>
+<td><p>140: C</p></td>
+<td><p><strong>141: B</strong></p></td>
+<td><p>142: D</p></td>
+<td><p>143: A</p></td>
+<td><p>144: C</p></td>
+</tr>
+<tr>
+<td><p>145: A</p></td>
+<td><p>146: C</p></td>
+<td><p>147: D</p></td>
+<td><p>148: B</p></td>
+<td><p>149: B</p></td>
+<td><p>150: C</p></td>
+<td><p>151: D</p></td>
+<td><p>152: A</p></td>
+</tr>
+<tr>
+<td><p>153: C</p></td>
+<td><p>154: B</p></td>
+<td><p>155: D</p></td>
+<td><p>156: C</p></td>
+<td><p>157: A</p></td>
+<td><p>158: B</p></td>
+<td><p>159: A</p></td>
+<td><p>160: D</p></td>
+</tr>
+</table>
+<p><strong>Control de equilibrio: </strong>40 A - 40 B - 40 C - 40 D; cada bloque de 20 contiene 5 respuestas de cada letra.</p>
+<h1>1. .NET moderno y arquitectura base</h1>
+<p><strong>1. A - </strong><strong>.NET moderno (.NET 5 y posteriores, actualmente .NET 10 como LTS).</strong> .NET moderno es la línea principal multiplataforma; .NET Framework queda principalmente para aplicaciones heredadas de Windows.</p>
+<p><strong>2. B - </strong><strong>.NET moderno es multiplataforma y es la línea principal de evolución; .NET Framework está ligado principalmente a Windows y a compatibilidad heredada.</strong> La confusión entre .NET y .NET Framework es una trampa clásica: son implementaciones distintas y la evolución principal está en .NET moderno.</p>
+<p><strong>3. A - </strong><strong>.NET 10.</strong> .NET 10 es LTS y Microsoft la mantiene soportada hasta noviembre de 2028.</p>
+<p><strong>4. D - </strong><strong>El CLR (Common Language Runtime).</strong> El CLR ejecuta código administrado y aporta servicios como GC, manejo de excepciones, carga de tipos y compilación.</p>
+<p><strong>5. C - </strong><strong>Herramientas de compilación, plantillas y CLI de desarrollo.</strong> El SDK está orientado al desarrollo; el runtime es el subconjunto necesario para ejecutar aplicaciones dependientes del framework.</p>
+<p><strong>6. B - </strong><strong>Para compilar, ejecutar, probar, publicar y gestionar proyectos .NET desde la CLI.</strong> La CLI `dotnet` centraliza tareas del ciclo de desarrollo y publicación.</p>
+<p><strong>7. A - </strong><strong>La biblioteca base de tipos y APIs comunes que usan las aplicaciones .NET.</strong> La Base Class Library aporta colecciones, E/S, redes, texto, concurrencia y muchas APIs fundamentales.</p>
+<p><strong>8. B - </strong><strong>Que el código se ejecuta bajo los servicios del runtime, como GC, sistema de tipos y manejo de excepciones.</strong> Managed code describe la relación con el runtime, no los privilegios de la cuenta del proceso.</p>
+<p><strong>9. A - </strong><strong>Puede ejecutarse en varios sistemas operativos compatibles, como Windows, Linux y macOS.</strong> La portabilidad depende del runtime y de las APIs usadas, no del IDE.</p>
+<p><strong>10. A - </strong><strong>Gestionar paquetes y dependencias del ecosistema .NET.</strong> NuGet es el gestor de paquetes; no debe confundirse con MSBuild, CLR o ASP.NET Core.</p>
+<p><strong>11. D - </strong><strong>Orquestar el proceso de compilación a partir de proyectos y objetivos de build.</strong> MSBuild es el motor de construcción utilizado por los proyectos .NET.</p>
+<p><strong>12. B - </strong><strong>Un framework para aplicaciones y servicios web modernos.</strong> ASP.NET Core construye aplicaciones web, APIs, Razor Pages y otros servicios sobre .NET.</p>
+<p><strong>13. C - </strong><strong>Que tenga instalado un runtime .NET compatible.</strong> Una publicación dependiente del framework es más ligera, pero requiere un runtime compatible instalado.</p>
+<p><strong>14. B - </strong><strong>La aplicación incluye el runtime necesario y reduce la dependencia de una instalación global compatible.</strong> Self-contained empaqueta el runtime para el destino; aumenta tamaño pero simplifica requisitos de ejecución.</p>
+<p><strong>15. D - </strong><strong>La LTS tiene una ventana de soporte más larga; la STS una ventana más corta.</strong> LTS y STS describen políticas de soporte, no categorías funcionales de aplicaciones.</p>
+<p><strong>16. C - </strong><strong>El runtime correspondiente, no necesariamente el SDK completo.</strong> Para ejecutar no suele hacer falta el SDK completo, salvo necesidades específicas de herramientas.</p>
+<p><strong>17. D - </strong><strong>ASP.NET Core.</strong> ASP.NET Core es el framework web actual para APIs y aplicaciones HTTP.</p>
+<p><strong>18. C - </strong><strong>Para indicar el framework objetivo contra el que se compila el proyecto.</strong> El TFM condiciona APIs disponibles, compatibilidad y resolución de dependencias.</p>
+<p><strong>19. D - </strong><strong>Una modalidad que compila anticipadamente a código nativo para ciertos escenarios y puede mejorar arranque y huella, con limitaciones de compatibilidad.</strong> Native AOT es una opción de publicación, no un sustituto general del runtime en todos los escenarios.</p>
+<p><strong>20. C - </strong><strong>Debe partirse de los requisitos y del stack moderno soportado, evitando asumir que .NET Framework es la opción por defecto.</strong> Arquitectura, soporte, plataforma de destino y librerías pesan más que la antigüedad de una tecnología.</p>
+<h1>2. CLR, IL, CTS, CLS, assemblies y gestión de recursos</h1>
+<p><strong>21. D - </strong><strong>IL/CIL junto con metadatos dentro de assemblies.</strong> El código fuente se compila normalmente a IL y metadatos; el runtime se encarga después de su ejecución.</p>
+<p><strong>22. A - </strong><strong>Convierte IL en código máquina cuando el código va a ejecutarse.</strong> JIT significa Just-In-Time y forma parte del proceso de ejecución del código administrado.</p>
+<p><strong>23. D - </strong><strong>JIT compila durante la ejecución; AOT compila anticipadamente antes de ejecutar en el destino.</strong> Ambos buscan código ejecutable, pero difieren en el momento y condiciones de compilación.</p>
+<p><strong>24. B - </strong><strong>Cómo se declaran, usan y gestionan los tipos en el entorno .NET para favorecer interoperabilidad entre lenguajes.</strong> El Common Type System es la base común de tipos de los lenguajes que apuntan al runtime.</p>
+<p><strong>25. C - </strong><strong>Un subconjunto de reglas del sistema de tipos orientado a que APIs públicas sean interoperables entre lenguajes .NET.</strong> CLS no es lo mismo que CTS: limita ciertas características para maximizar interoperabilidad pública.</p>
+<p><strong>26. D - </strong><strong>CLR es el runtime; CTS define el sistema común de tipos; CLS define reglas de interoperabilidad sobre un subconjunto del CTS.</strong> Esta distinción es una de las trampas más frecuentes del tema III.11.</p>
+<p><strong>27. D - </strong><strong>Una unidad lógica de código y recursos con IL, metadatos y manifiesto, normalmente en DLL o EXE.</strong> El assembly es una unidad fundamental de despliegue, versionado y carga de código .NET.</p>
+<p><strong>28. C - </strong><strong>Identidad del assembly, archivos, versión y referencias/dependencias relevantes.</strong> El manifiesto describe el contenido e identidad del assembly.</p>
+<p><strong>29. D - </strong><strong>Para describir tipos, miembros, referencias y otra información que el runtime y herramientas pueden inspeccionar.</strong> Los metadatos permiten carga, reflexión, interoperabilidad y tooling.</p>
+<p><strong>30. B - </strong><strong>Gestionar automáticamente la memoria de objetos administrados que ya no son alcanzables.</strong> El GC gestiona memoria administrada, no sustituye la liberación determinista de recursos externos.</p>
+<p><strong>31. A - </strong><strong>Usar `using`/`await using` o llamar correctamente a `Dispose` según el caso.</strong> IDisposable existe precisamente para liberar recursos de manera explícita y predecible.</p>
+<p><strong>32. B - </strong><strong>Porque su ejecución no es determinista y depende del GC.</strong> Los finalizadores son una red de seguridad limitada, no un mecanismo de cierre puntual.</p>
+<p><strong>33. C - </strong><strong>Los tipos valor contienen su valor directamente según su semántica; las variables de tipo referencia contienen una referencia a un objeto.</strong> La distinción influye en copia, nullabilidad, boxing y comportamiento de memoria.</p>
+<p><strong>34. C - </strong><strong>Convertir un tipo valor para tratarlo como `object` o una interfaz compatible, normalmente implicando una envoltura/objeto.</strong> Boxing y unboxing son operaciones del sistema de tipos, no de despliegue.</p>
+<p><strong>35. A - </strong><strong>Un modelo estructurado y común de excepciones para código administrado.</strong> El runtime ofrece infraestructura de excepciones, pero la aplicación sigue necesitando diseño y manejo adecuados.</p>
+<p><strong>36. B - </strong><strong>Un tipo seguro que representa referencias a métodos con una firma compatible.</strong> Los delegados sustentan callbacks, eventos y muchos patrones funcionales.</p>
+<p><strong>37. A - </strong><strong>Permiten reutilización con seguridad de tipos evitando muchas conversiones y casts en tiempo de ejecución.</strong> Los genéricos permiten código parametrizado por tipo con comprobaciones del compilador/runtime.</p>
+<p><strong>38. A - </strong><strong>Inspeccionar tipos, miembros y metadatos en tiempo de ejecución y, cuando procede, invocarlos dinámicamente.</strong> Reflection usa precisamente los metadatos del runtime; debe emplearse con criterio por coste y compatibilidad AOT.</p>
+<p><strong>39. B - </strong><strong>No; mientras los objetos sigan alcanzables, el GC no puede considerarlos basura.</strong> La memoria administrada puede sufrir fugas lógicas cuando se retienen referencias innecesarias.</p>
+<p><strong>40. C - </strong><strong>IL es independiente de una CPU concreta en un grado mayor; el runtime/JIT o AOT produce código adecuado para el destino.</strong> La separación entre IL y código nativo facilita portabilidad y optimización por runtime.</p>
+<h1>3. C#, LINQ, asincronía, herramientas y paquetes</h1>
+<p><strong>41. A - </strong><strong>Un modelo para componer operaciones asíncronas sin bloquear innecesariamente el hilo mientras se espera.</strong> Asincronía y paralelismo no son sinónimos; `await` facilita esperas no bloqueantes.</p>
+<p><strong>42. D - </strong><strong>Una operación asíncrona que puede completarse en el futuro, con o sin resultado.</strong> Task modela trabajo asíncrono; no implica por sí misma un hilo exclusivo.</p>
+<p><strong>43. B - </strong><strong>Bloqueos, pérdida de escalabilidad y, en ciertos contextos, interbloqueos.</strong> El patrón sync-over-async puede bloquear hilos y romper el beneficio de la asincronía.</p>
+<p><strong>44. C - </strong><strong>Que la consulta no se evalúa hasta que se enumera o materializa.</strong> Comprender cuándo se ejecuta una consulta evita efectos inesperados y trabajo repetido.</p>
+<p><strong>45. B - </strong><strong>El proveedor intenta traducir la expresión a una consulta del origen, por ejemplo SQL.</strong> IQueryable permite que el proveedor procese el árbol de expresión y traduzca operaciones compatibles.</p>
+<p><strong>46. D - </strong><strong>`IEnumerable` opera sobre enumeración .NET; `IQueryable` puede representar una consulta que un proveedor traduzca a otro lenguaje/origen.</strong> La diferencia es crucial para saber dónde se ejecuta el filtrado y qué puede traducirse.</p>
+<p><strong>47. B - </strong><strong>Garantiza la llamada a `Dispose` al salir del ámbito, incluso ante excepciones, según el patrón generado.</strong> `using` expresa gestión determinista de recursos.</p>
+<p><strong>48. D - </strong><strong>`await` no significa que una operación sea paralela; permite suspender lógicamente el método hasta que la tarea finalice.</strong> Asincronía optimiza especialmente esperas de E/S; para paralelismo CPU hay otras técnicas.</p>
+<p><strong>49. A - </strong><strong>Una forma concisa de modelar datos con semántica de igualdad por valor especialmente útil para modelos inmutables o DTOs.</strong> Los records son una característica del lenguaje, no una tecnología de persistencia.</p>
+<p><strong>50. C - </strong><strong>Para expresar y analizar en compilación si una referencia puede ser nula, reduciendo errores de null.</strong> Es una ayuda de análisis estático; no cambia por sí sola todas las garantías del runtime.</p>
+<p><strong>51. C - </strong><strong>Comprobar formas, tipos y propiedades de datos con patrones expresivos en `is` y `switch`.</strong> El pattern matching mejora claridad al discriminar tipos y valores.</p>
+<p><strong>52. B - </strong><strong>Mantener información de tipos y reducir casts inseguros.</strong> La seguridad de tipos es una de las razones centrales de los genéricos.</p>
+<p><strong>53. A - </strong><strong>Restaura las dependencias de paquetes necesarias para el proyecto.</strong> Restore resuelve paquetes; en muchos comandos modernos se ejecuta implícitamente cuando hace falta.</p>
+<p><strong>54. B - </strong><strong>NuGet gestiona paquetes; MSBuild ejecuta el proceso de construcción del proyecto.</strong> Separar gestión de dependencias y build evita una confusión frecuente.</p>
+<p><strong>55. C - </strong><strong>La definición del proyecto, TFM, propiedades y referencias, entre otros elementos de build.</strong> El proyecto SDK-style se describe en XML y guía a MSBuild.</p>
+<p><strong>56. A - </strong><strong>`build` compila; `publish` prepara un conjunto desplegable con los artefactos necesarios según la modalidad elegida.</strong> Publicar añade decisiones de distribución que no forman parte de una compilación normal.</p>
+<p><strong>57. D - </strong><strong>`dotnet test`.</strong> `dotnet test` integra la ejecución de proyectos de prueba compatibles.</p>
+<p><strong>58. A - </strong><strong>Compila si es necesario y ejecuta el proyecto seleccionado.</strong> Es un atajo de desarrollo para iniciar un proyecto desde la CLI.</p>
+<p><strong>59. C - </strong><strong>Para diagnóstico y observación del comportamiento de aplicaciones .NET en ejecución.</strong> El ecosistema incluye herramientas de diagnóstico de métricas, trazas y rendimiento.</p>
+<p><strong>60. D - </strong><strong>Son herramientas de desarrollo; la aplicación .NET no depende conceptualmente de un IDE concreto para ejecutarse.</strong> IDE, SDK y runtime son capas distintas.</p>
+<h1>4. ASP.NET Core: pipeline, DI, APIs y configuración</h1>
+<p><strong>61. D - </strong><strong>Una secuencia de componentes que procesan la petición y la respuesta HTTP.</strong> Cada middleware puede actuar, pasar al siguiente o cortar el pipeline según el caso.</p>
+<p><strong>62. A - </strong><strong>Un contenedor de inyección de dependencias integrado.</strong> La DI integrada permite registrar servicios y resolver dependencias con distintos ciclos de vida.</p>
+<p><strong>63. D - </strong><strong>Relacionar una petición HTTP con el endpoint que debe atenderla.</strong> Routing decide qué endpoint coincide con ruta, método y metadatos aplicables.</p>
+<p><strong>64. D - </strong><strong>Ambos sirven para APIs; Minimal APIs reducen ceremonia en escenarios simples y controllers aportan una estructura más clásica y rica para aplicaciones complejas.</strong> No son tecnologías excluyentes por capacidad básica; la elección depende de estructura y requisitos.</p>
+<p><strong>65. C - </strong><strong>El servidor web multiplataforma utilizado por ASP.NET Core.</strong> Kestrel puede atender HTTP directamente y también operar detrás de un reverse proxy.</p>
+<p><strong>66. C - </strong><strong>Para integrar terminación TLS, balanceo, políticas de borde u otras capacidades de infraestructura, según el despliegue.</strong> Reverse proxy es una decisión de arquitectura, no una obligación absoluta para todos los escenarios.</p>
+<p><strong>67. B - </strong><strong>Proporcionar configuración de aplicación que puede combinarse con otras fuentes y entornos.</strong> El sistema de configuración agrega proveedores; los secretos sensibles no deben tratarse como configuración pública normal.</p>
+<p><strong>68. B - </strong><strong>Mantenerlos fuera del código y de repositorios, usando almacenes de secretos o mecanismos seguros del entorno.</strong> La gestión de secretos debe separar credenciales del artefacto y limitar su exposición.</p>
+<p><strong>69. A - </strong><strong>Para variar configuración y comportamiento según el contexto de ejecución.</strong> El entorno puede condicionar configuración, páginas de error y servicios, pero no debe usarse como excusa para saltarse seguridad.</p>
+<p><strong>70. A - </strong><strong>Autenticar antes de autorizar, porque la autorización necesita una identidad establecida.</strong> Microsoft documenta el orden de middleware; autenticación precede a autorización cuando ambas se usan.</p>
+<p><strong>71. D - </strong><strong>Autenticación determina quién es el usuario; autorización decide qué puede hacer.</strong> Confundir identidad y permisos es una trampa recurrente.</p>
+<p><strong>72. C - </strong><strong>Transient, Scoped y Singleton.</strong> Los lifetimes definen cuántas instancias se crean y cuánto viven.</p>
+<p><strong>73. B - </strong><strong>Scoped, normalmente una instancia por ámbito/petición.</strong> DbContext no está diseñado para uso concurrente compartido; el registro habitual es scoped.</p>
+<p><strong>74. A - </strong><strong>Agrupar acciones/endpoints y coordinar entrada HTTP con la lógica de aplicación.</strong> Los controllers forman parte de la capa HTTP, no deberían absorber toda la lógica de negocio.</p>
+<p><strong>75. C - </strong><strong>El proceso de obtener datos de la petición y construir/asignar parámetros u objetos del modelo de entrada.</strong> Binding transforma fuentes HTTP en valores que las acciones/endpoints pueden usar.</p>
+<p><strong>76. B - </strong><strong>Comprobar reglas de entrada y detectar datos inválidos antes de procesarlos como válidos.</strong> Validación, autenticación y autorización son controles distintos y complementarios.</p>
+<p><strong>77. B - </strong><strong>Los archivos servidos como públicos no deben contener secretos ni material que requiera autorización sin un diseño específico.</strong> La posición del middleware y la naturaleza pública del contenido importan para la seguridad.</p>
+<p><strong>78. A - </strong><strong>Un manejador global de excepciones configurado para el entorno.</strong> El handler global necesita envolver el resto del pipeline para capturar fallos posteriores.</p>
+<p><strong>79. D - </strong><strong>Endpoints/sondeos para expresar el estado de salud de la aplicación y dependencias relevantes.</strong> Son útiles para orquestadores, balanceadores y monitorización; deben diseñarse con cuidado para no filtrar datos sensibles.</p>
+<p><strong>80. C - </strong><strong>Son capacidades de infraestructura/aplicación que deben configurarse según el comportamiento y riesgos del servicio; no sustituyen autenticación ni autorización.</strong> Rendimiento, resiliencia y seguridad requieren controles distintos.</p>
+<h1>5. Datos: ADO.NET, EF Core, LINQ y rendimiento</h1>
+<p><strong>81. B - </strong><strong>Un conjunto de APIs de acceso a datos de bajo nivel relativo, con conexiones, comandos, lectores y adaptadores/proveedores.</strong> ADO.NET permite trabajar directamente con proveedores y comandos; EF Core se apoya en capas de acceso a datos pero ofrece un modelo ORM.</p>
+<p><strong>82. A - </strong><strong>Un ORM moderno para .NET que permite mapear entidades y consultar/persistir datos mediante un modelo de objetos.</strong> EF Core es la opción ORM principal de Microsoft para .NET moderno.</p>
+<p><strong>83. D - </strong><strong>Una unidad de trabajo/sesión con el modelo y la base de datos, responsable de consultas, tracking y persistencia.</strong> DbContext coordina entidades y base de datos y debe tener un ciclo de vida bien controlado.</p>
+<p><strong>84. C - </strong><strong>Un punto de acceso a un conjunto de entidades de un tipo dentro del modelo de EF Core.</strong> DbSet se utiliza para consultar y operar con entidades de un tipo.</p>
+<p><strong>85. B - </strong><strong>Expresar consultas con tipos .NET que el proveedor intenta traducir al origen de datos.</strong> La traducción es potente pero no ilimitada; hay que comprender qué se ejecuta en el servidor.</p>
+<p><strong>86. A - </strong><strong>El seguimiento del estado y cambios de entidades para determinar qué debe persistirse.</strong> El tracking facilita actualizaciones, pero tiene coste y no siempre se necesita en consultas de solo lectura.</p>
+<p><strong>87. A - </strong><strong>En consultas de solo lectura donde no se necesita que el contexto detecte cambios de las entidades.</strong> No tracking puede reducir memoria y coste de seguimiento en escenarios de lectura.</p>
+<p><strong>88. C - </strong><strong>Un mecanismo para versionar y aplicar cambios del esquema derivados del modelo de datos.</strong> Las migraciones ayudan a evolucionar el esquema; no sustituyen estrategia de backup, revisión ni despliegue controlado.</p>
+<p><strong>89. D - </strong><strong>Realizar una consulta inicial y después muchas consultas adicionales, por ejemplo una por cada elemento, generando sobrecoste.</strong> N+1 puede aparecer con ORMs si se acceden relaciones de forma ineficiente.</p>
+<p><strong>90. C - </strong><strong>Diseñar la consulta para traer los datos necesarios de forma controlada, por ejemplo con proyección o carga eager adecuada.</strong> No existe una única receta; la clave es controlar qué datos se cargan y cuántas consultas se generan.</p>
+<p><strong>91. B - </strong><strong>Puede ocultar consultas adicionales y favorecer N+1 o acceso inesperado a la base de datos.</strong> La comodidad de carga diferida puede dificultar ver el coste real de E/S.</p>
+<p><strong>92. D - </strong><strong>Usa una transacción para que la llamada se aplique de forma atómica según las capacidades del proveedor.</strong> EF Core protege una llamada a SaveChanges con transacción cuando es posible; operaciones más amplias pueden requerir control explícito.</p>
+<p><strong>93. D - </strong><strong>Cuando una unidad de negocio abarca varias operaciones/SaveChanges o recursos y se necesita delimitar la atomicidad de forma concreta.</strong> Las transacciones explícitas deben responder a límites de negocio y compatibilidad del proveedor.</p>
+<p><strong>94. C - </strong><strong>Parametrizar correctamente valores y evitar concatenar entrada del usuario para reducir riesgo de inyección.</strong> La parametrización es una defensa esencial; el ORM no protege una consulta que se construye inseguramente.</p>
+<p><strong>95. C - </strong><strong>Los proveedores de datos pueden reutilizar conexiones físicas mediante pools; abrir/cerrar lógicamente una conexión no implica siempre crear/destruir una conexión física.</strong> El pool mejora eficiencia, pero el código debe seguir disponer conexiones/contextos correctamente.</p>
+<p><strong>96. B - </strong><strong>Para detectar conflictos cuando otro proceso modifica una fila entre lectura y actualización, según la estrategia elegida.</strong> La concurrencia optimista necesita una señal, como rowversion u otra propiedad, para detectar cambios competidores.</p>
+<p><strong>97. A - </strong><strong>Revisar la consulta y separar o reformular lo que deba ejecutarse en servidor o cliente de forma consciente.</strong> No todo C# es traducible a SQL; hay que controlar la frontera entre consulta remota y ejecución en memoria.</p>
+<p><strong>98. A - </strong><strong>Materializa los resultados en ese punto y ejecuta la consulta si era diferida.</strong> Materializar marca una frontera importante: a partir de ahí se trabaja sobre datos ya obtenidos.</p>
+<p><strong>99. D - </strong><strong>Aplicar paginación en la consulta del origen, con orden estable y estrategia adecuada al caso.</strong> La paginación debe reducir transferencia y trabajo en el origen; para grandes volúmenes puede valorarse keyset pagination.</p>
+<p><strong>100. B - </strong><strong>ADO.NET ofrece acceso más directo a proveedor/comandos; EF Core añade abstracción ORM, tracking y LINQ sobre un modelo de entidades.</strong> Elegir nivel de abstracción depende del control, complejidad, rendimiento y mantenibilidad requeridos.</p>
+<h1>6. Seguridad, identidad, despliegue y observabilidad .NET</h1>
+<p><strong>101. B - </strong><strong>La petición debe haberse autenticado o disponer de una identidad establecida de forma válida.</strong> Autorización necesita saber qué principal/identidad se está evaluando.</p>
+<p><strong>102. B - </strong><strong>La cookie suele mantener una sesión web mediante cookie; un bearer token se envía como credencial en cada petición, común en APIs.</strong> Ambos pueden ser seguros o inseguros según diseño; la diferencia principal está en el mecanismo de credencial y escenario.</p>
+<p><strong>103. D - </strong><strong>Una afirmación sobre una identidad, como identificador, rol, ámbito u otro atributo.</strong> Los claims alimentan decisiones de autorización y contexto de identidad.</p>
+<p><strong>104. C - </strong><strong>Permiten centralizar requisitos y combinaciones de claims/roles de forma reutilizable y comprobable.</strong> Policy-based authorization ayuda a expresar reglas complejas sin duplicar lógica.</p>
+<p><strong>105. C - </strong><strong>Un sistema de pertenencia/gestión de usuarios y credenciales para aplicaciones ASP.NET Core, opcional según arquitectura.</strong> Identity puede gestionar usuarios, contraseñas, tokens y roles, pero no es obligatorio para todas las soluciones.</p>
+<p><strong>106. B - </strong><strong>Delegar autorización para acceso a recursos mediante tokens y scopes.</strong> OAuth 2.0 es un framework de autorización; para identidad/autenticación suele combinarse con OpenID Connect.</p>
+<p><strong>107. B - </strong><strong>Una capa de identidad/autenticación estandarizada, incluyendo ID Token y endpoints asociados.</strong> OIDC permite autenticar al usuario sobre flujos OAuth compatibles.</p>
+<p><strong>108. A - </strong><strong>Para proteger criptográficamente datos de aplicación como cookies o tokens internos según el sistema de claves y propósito.</strong> Data Protection es infraestructura criptográfica de aplicación; la gestión de claves importa especialmente en granjas y contenedores.</p>
+<p><strong>109. D - </strong><strong>Ataques CSRF que aprovechan credenciales enviadas automáticamente por el navegador.</strong> Antiforgery no sustituye validación, XSS ni autorización; se centra en peticiones forjadas desde otro origen.</p>
+<p><strong>110. C - </strong><strong>Proteger la confidencialidad e integridad del tráfico en tránsito y autenticar el endpoint según la configuración de certificados.</strong> TLS protege el canal; identidad, autorización y protección de datos en reposo son capas diferentes.</p>
+<p><strong>111. B - </strong><strong>Usar mecanismos de secretos/variables/gestores seguros y limitar permisos, evitando incorporarlos al repositorio.</strong> Los secretos deben separarse del código y rotarse/protegerse según el entorno.</p>
+<p><strong>112. C - </strong><strong>Registrar eventos con campos y propiedades que facilitan búsqueda, correlación y análisis automatizado.</strong> El logging estructurado mejora observabilidad, pero debe diseñarse para no filtrar secretos o datos personales.</p>
+<p><strong>113. C - </strong><strong>El estado de la aplicación y solo las dependencias relevantes para el tipo de sonda, sin exponer información sensible.</strong> Liveness y readiness pueden requerir pruebas distintas; no conviene convertir health en un endpoint de diagnóstico público.</p>
+<p><strong>114. A - </strong><strong>Un estándar/ecosistema para instrumentar y exportar trazas, métricas y logs de forma interoperable.</strong> OpenTelemetry facilita observabilidad distribuida y evita acoplar toda la instrumentación a un único proveedor.</p>
+<p><strong>115. D - </strong><strong>Empaquetar aplicación y dependencias de ejecución en una imagen reproducible y desplegable en entornos compatibles.</strong> Los contenedores mejoran consistencia de despliegue, pero no resuelven por sí solos arquitectura o seguridad.</p>
+<p><strong>116. A - </strong><strong>Framework-dependent, porque reutiliza un runtime instalado en el destino.</strong> Self-contained incluye runtime y suele aumentar tamaño, aunque puede simplificar operación.</p>
+<p><strong>117. A - </strong><strong>Una opción de publicación que agrupa gran parte de los artefactos de la aplicación en un único archivo para facilitar distribución.</strong> Single-file es una modalidad de empaquetado y no equivale necesariamente a Native AOT.</p>
+<p><strong>118. D - </strong><strong>Puede mejorar arranque y huella, pero ciertas técnicas dinámicas o librerías pueden requerir adaptación y pruebas de compatibilidad.</strong> AOT cambia supuestos sobre generación dinámica/reflection; debe evaluarse según el stack.</p>
+<p><strong>119. D - </strong><strong>Cabeceras reenviadas y confianza en proxies para reconstruir correctamente esquema, IP y host cuando proceda.</strong> Confiar cabeceras de proxy sin limitar orígenes puede permitir suplantaciones.</p>
+<p><strong>120. A - </strong><strong>Mínimo privilegio: conceder solo permisos necesarios y separar responsabilidades.</strong> El menor privilegio reduce el impacto de errores o compromisos.</p>
+<h1>7. Jakarta EE 11: plataforma, perfiles y servicios empresariales</h1>
+<p><strong>121. A - </strong><strong>Java SE 17.</strong> Jakarta EE 11 tiene Java 17 como mínimo y contempla el uso de Java 21 en su ecosistema.</p>
+<p><strong>122. D - </strong><strong>Core Profile, Web Profile y Platform.</strong> Los perfiles agrupan conjuntos de especificaciones para distintos tipos de aplicación.</p>
+<p><strong>123. C - </strong><strong>Inyección de dependencias y gestión contextual del ciclo de vida de componentes.</strong> CDI es el mecanismo moderno de DI/contextos en Jakarta EE.</p>
+<p><strong>124. B - </strong><strong>Jakarta Persistence.</strong> Jakarta Persistence, heredera conceptual de JPA, define el modelo ORM de la plataforma.</p>
+<p><strong>125. C - </strong><strong>`EntityManager`.</strong> EntityManager permite persistir, buscar, eliminar y consultar entidades dentro del contexto de persistencia.</p>
+<p><strong>126. D - </strong><strong>Un lenguaje de consulta orientado al modelo de entidades de Jakarta Persistence, no al esquema SQL físico directamente.</strong> JPQL opera sobre entidades y atributos, aunque el proveedor normalmente termina generando SQL.</p>
+<p><strong>127. D - </strong><strong>Jakarta Transactions.</strong> Transactions define APIs y semántica para límites transaccionales en la plataforma.</p>
+<p><strong>128. B - </strong><strong>Jakarta REST.</strong> Jakarta REST proporciona anotaciones y APIs para exponer y consumir servicios REST.</p>
+<p><strong>129. D - </strong><strong>APIs y mecanismos estandarizados de autenticación/autorización integrados con la plataforma.</strong> Security forma parte de la capa de seguridad de Jakarta EE; no debe confundirse con TLS o con el servidor concreto.</p>
+<p><strong>130. A - </strong><strong>Declarar y comprobar restricciones de validación sobre datos/beans.</strong> Validation facilita reglas declarativas como límites, formatos y nulabilidad.</p>
+<p><strong>131. A - </strong><strong>La especificación base para componentes web que procesan peticiones/respuestas HTTP en el contenedor web.</strong> Servlet sigue siendo una pieza fundamental del stack web Jakarta.</p>
+<p><strong>132. B - </strong><strong>Un framework de componentes de interfaz web del lado servidor incluido en el ámbito de Jakarta EE.</strong> Faces es una tecnología de UI; no es el mecanismo de DI ni el runtime.</p>
+<p><strong>133. D - </strong><strong>Una especificación para facilitar acceso a datos mediante repositorios y abstracciones estandarizadas.</strong> Jakarta Data entra en Jakarta EE 11 como nueva especificación para patrones de acceso a datos.</p>
+<p><strong>134. C - </strong><strong>WildFly, Payara, GlassFish u Open Liberty, entre otros.</strong> No debe confundirse la especificación Jakarta EE con sus implementaciones/runtime.</p>
+<p><strong>135. B - </strong><strong>Gestionar build y dependencias; no son el servidor/runtime Jakarta EE.</strong> Build tool y runtime son capas distintas, igual que NuGet/MSBuild no equivalen al CLR.</p>
+<p><strong>136. A - </strong><strong>De `javax.*` a `jakarta.*` para las APIs transferidas a Jakarta.</strong> La transición de namespace es uno de los impactos de migración más visibles.</p>
+<p><strong>137. B - </strong><strong>CDI.</strong> CDI es la base moderna para DI y contextos; conviene evitar material antiguo que presente Managed Beans como mecanismo general actual.</p>
+<p><strong>138. A - </strong><strong>La especificación define contratos/semántica; una implementación concreta proporciona el runtime que los ejecuta.</strong> Esta distinción explica por qué existen varios runtimes compatibles con la misma plataforma.</p>
+<p><strong>139. C - </strong><strong>Jakarta EE se construye sobre Java SE y añade especificaciones empresariales; no son versiones equivalentes.</strong> La numeración de Jakarta EE no debe interpretarse como versión de Java SE.</p>
+<p><strong>140. C - </strong><strong>Para asegurar que las operaciones que forman una unidad de negocio confirmen o reviertan de forma coherente.</strong> Transacción es una propiedad de consistencia de la unidad de trabajo, no del proceso de build.</p>
+<h1>8. Comparativa .NET / Jakarta EE y casos de arquitectura</h1>
+<p><strong>141. B - </strong><strong>DI integrada de ASP.NET Core y CDI en Jakarta EE.</strong> Ambos stacks ofrecen contenedores/mecanismos de DI, aunque sus APIs y modelos concretos difieren.</p>
+<p><strong>142. D - </strong><strong>EF Core y Jakarta Persistence.</strong> EF Core y Jakarta Persistence abstraen persistencia objeto-relacional sobre proveedores de datos.</p>
+<p><strong>143. A - </strong><strong>ASP.NET Core (controllers/Minimal APIs) y Jakarta REST.</strong> En ambos casos se construyen endpoints HTTP, aunque .NET es framework de implementación y Jakarta REST es especificación.</p>
+<p><strong>144. C - </strong><strong>Ambos distinguen autenticación y autorización y pueden integrarse con identidades externas; los mecanismos concretos son distintos.</strong> La separación conceptual de identidad y permisos es común a ambas plataformas.</p>
+<p><strong>145. A - </strong><strong>ASP.NET Core suele ejecutarse sobre Kestrel dentro del proceso .NET; Jakarta EE ejecuta componentes en un runtime/contenedor que implementa sus especificaciones.</strong> La topología de hosting difiere: Kestrel es servidor HTTP de ASP.NET Core; Jakarta usa un runtime de plataforma.</p>
+<p><strong>146. C - </strong><strong>NuGet gestiona paquetes .NET; Maven/Gradle gestionan dependencias/build en Java/Jakarta; MSBuild orquesta el build .NET.</strong> Conviene separar gestor de paquetes/build de servidor/runtime.</p>
+<p><strong>147. D - </strong><strong>Separar capa HTTP/controladores de servicios de aplicación/dominio e inyectar dependencias.</strong> La separación de responsabilidades mejora testabilidad y portabilidad conceptual.</p>
+<p><strong>148. B - </strong><strong>Usar ADO.NET o una técnica de acceso más directa para ese punto, sin obligar a abandonar EF Core en todo el sistema.</strong> Las arquitecturas pueden combinar niveles de abstracción donde exista una razón técnica medida.</p>
+<p><strong>149. B - </strong><strong>Usar acceso JDBC/SQL nativo de forma controlada en ese caso, manteniendo Jakarta Persistence donde aporte valor.</strong> La abstracción ORM no impide recurrir a mecanismos más directos cuando existe una necesidad justificada.</p>
+<p><strong>150. C - </strong><strong>Puede publicarse framework-dependent o self-contained según imagen/base y estrategia; el contenedor no obliga a una única modalidad.</strong> Contenedor y modalidad de publicación son decisiones relacionadas pero distintas.</p>
+<p><strong>151. D - </strong><strong>APIs y librerías heredadas, compatibilidad, modelo de hosting/configuración y dependencias específicas de Windows.</strong> Migrar no es un simple retargeting; hay que revisar dependencias y arquitectura.</p>
+<p><strong>152. A - </strong><strong>La transición de paquetes `javax.*` a `jakarta.*` y la compatibilidad de librerías/runtime.</strong> El namespace y la compatibilidad del ecosistema son puntos clave de migración.</p>
+<p><strong>153. C - </strong><strong>Revisar el patrón de carga/proyección y las consultas generadas; no culpar al lenguaje ni aumentar hardware sin medir.</strong> El problema es de patrón de acceso y debe diagnosticarse con observabilidad y consultas reales.</p>
+<p><strong>154. B - </strong><strong>Autenticar identidad, aplicar autorización, validar entrada y ejecutar lógica con mínimo privilegio, además de proteger el canal y secretos.</strong> La seguridad eficaz es por capas; ningún control individual sustituye a los demás.</p>
+<p><strong>155. D - </strong><strong>Definir un límite transaccional en la capa de servicio usando EF Core/transacciones en .NET o Jakarta Transactions/Persistence en Jakarta EE según el stack.</strong> La transacción debe alinearse con la unidad de negocio y los recursos implicados.</p>
+<p><strong>156. C - </strong><strong>OpenTelemetry, mediante instrumentación y exportadores compatibles en ambos ecosistemas.</strong> OpenTelemetry es multiplataforma y facilita trazas/métricas/logs con backend desacoplado.</p>
+<p><strong>157. A - </strong><strong>Jakarta EE está organizado fuertemente como conjunto de especificaciones con múltiples implementaciones; .NET es una plataforma/producto con frameworks de Microsoft y ecosistema asociado.</strong> Entender el modelo de estandarización evita equiparar erróneamente Jakarta EE con un producto concreto.</p>
+<p><strong>158. B - </strong><strong>Priorizar APIs estándar de Jakarta y aislar extensiones específicas del proveedor cuando sean necesarias.</strong> La portabilidad mejora cuando se separan dependencias propietarias de la lógica estándar.</p>
+<p><strong>159. A - </strong><strong>OAuth 2.0 se centra en autorización delegada y OIDC añade identidad/autenticación; ambos pueden integrarse tanto en .NET como en Jakarta/Java.</strong> Los protocolos son independientes del lenguaje y se integran mediante librerías y servidores de identidad.</p>
+<p><strong>160. D - </strong><strong>Elegir componentes coherentes del stack, separar responsabilidades y verificar soporte/versiones: ASP.NET Core + EF Core + seguridad .NET o Jakarta REST/CDI/Persistence/Transactions/Security en un runtime compatible.</strong> El examen busca reconocer capas y equivalencias sin confundir lenguaje, runtime, framework, build, persistencia y seguridad.</p>
+<h1>Mapa de equivalencias .NET / Jakarta EE</h1>
+<table>
+<tr>
+<th scope="col"><p><strong>Capa</strong></p></th>
+<th scope="col"><p><strong>Ecosistema .NET</strong></p></th>
+<th scope="col"><p><strong>Ecosistema Jakarta EE</strong></p></th>
+</tr>
+<tr>
+<td><p>Runtime/plataforma</p></td>
+<td><p>CLR + .NET</p></td>
+<td><p>Java SE + runtime Jakarta EE compatible</p></td>
+</tr>
+<tr>
+<td><p>DI</p></td>
+<td><p>DI integrada de ASP.NET Core</p></td>
+<td><p>CDI</p></td>
+</tr>
+<tr>
+<td><p>Web/API</p></td>
+<td><p>ASP.NET Core Controllers / Minimal APIs</p></td>
+<td><p>Jakarta REST + Servlet</p></td>
+</tr>
+<tr>
+<td><p>Persistencia ORM</p></td>
+<td><p>EF Core</p></td>
+<td><p>Jakarta Persistence</p></td>
+</tr>
+<tr>
+<td><p>Acceso directo</p></td>
+<td><p>ADO.NET/proveedor</p></td>
+<td><p>JDBC</p></td>
+</tr>
+<tr>
+<td><p>Transacciones</p></td>
+<td><p>ADO.NET/EF Core + APIs del proveedor</p></td>
+<td><p>Jakarta Transactions</p></td>
+</tr>
+<tr>
+<td><p>Seguridad</p></td>
+<td><p>Authentication/Authorization/Identity</p></td>
+<td><p>Jakarta Security + integraciones de identidad</p></td>
+</tr>
+<tr>
+<td><p>Build/paquetes</p></td>
+<td><p>dotnet + MSBuild + NuGet</p></td>
+<td><p>Maven o Gradle</p></td>
+</tr>
+<tr>
+<td><p>Hosting</p></td>
+<td><p>Kestrel; opcional reverse proxy</p></td>
+<td><p>Runtime/servidor como WildFly, Payara, GlassFish u Open Liberty</p></td>
+</tr>
+<tr>
+<td><p>Observabilidad</p></td>
+<td><p>Logging/metrics/traces; OpenTelemetry</p></td>
+<td><p>Logging/metrics/traces; OpenTelemetry</p></td>
+</tr>
+</table>
+<h1>Trampas que deben quedar eliminadas</h1>
+<p>- CLR != CTS != CLS.</p>
+<p>- .NET moderno != .NET Framework.</p>
+<p>- NuGet != MSBuild != dotnet CLI.</p>
+<p>- ASP.NET Core != Kestrel: el primero es framework web; el segundo, servidor HTTP.</p>
+<p>- ADO.NET != EF Core.</p>
+<p>- LINQ != SQL y async/await != paralelismo.</p>
+<p>- Autenticacion != autorizacion; OAuth 2.0 != OpenID Connect.</p>
+<p>- Jakarta EE 11 != Java SE 11.</p>
+<p>- Jakarta Persistence != JDBC; CDI != runtime; Maven/Gradle != servidor Jakarta.</p>
+<p>- Especificacion Jakarta EE != implementacion concreta.</p>
+<h1>Fuentes oficiales verificadas</h1>
+<p><a href="https://learn.microsoft.com/en-us/dotnet/core/releases-and-support">Microsoft - Releases and support for .NET</a></p>
+<p><a href="https://learn.microsoft.com/en-us/dotnet/standard/clr">Microsoft - CLR overview</a></p>
+<p><a href="https://learn.microsoft.com/en-us/aspnet/core/">Microsoft - ASP.NET Core</a></p>
+<p><a href="https://learn.microsoft.com/en-us/aspnet/core/security/authentication/?view=aspnetcore-10.0">Microsoft - ASP.NET Core authentication</a></p>
+<p><a href="https://learn.microsoft.com/en-us/ef/core/">Microsoft - EF Core</a></p>
+<p><a href="https://jakarta.ee/specifications/platform/11/">Jakarta EE 11 Platform</a></p>
+<p><a href="https://jakarta.ee/release/11/">Jakarta EE 11 release</a></p>
+<p><strong>Base interna: </strong><a href="https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit">GSI_A2 - BLOQUE III - APUNTES COMPLETOS V2.1 REVISADOS - ESTUDIO</a></p></main></body></html>

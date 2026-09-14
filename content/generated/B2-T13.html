@@ -1,0 +1,143 @@
+<article class="topic-content" data-topic-id="B2-T13" data-coverage-status="complete">
+<p>Material curado del corpus GSI A2 · apuntes V2.1 revisados. Procedencia editorial, no documento oficial.</p>
+<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B2-T13/estudio">Apuntes de estudio</a></li><li><a href="#temario/B2-T13/estudio-01">1. Alcance y fuentes</a></li><li><a href="#temario/B2-T13/estudio-02">2. Objetivos de seguridad</a></li><li><a href="#temario/B2-T13/estudio-03">3. Seguridad física</a></li><li><a href="#temario/B2-T13/estudio-04">4. Seguridad lógica</a></li><li><a href="#temario/B2-T13/estudio-05">5. Tipos de ataque</a></li><li><a href="#temario/B2-T13/estudio-06">6. Vulnerabilidad, exploit e incidente</a></li><li><a href="#temario/B2-T13/estudio-07">7. Herramientas preventivas y de protección</a></li><li><a href="#temario/B2-T13/estudio-08">8. Criptografía aplicada</a></li><li><a href="#temario/B2-T13/estudio-09">9. Gestión de vulnerabilidades</a></li><li><a href="#temario/B2-T13/estudio-10">10. Gestión de incidentes</a></li><li><a href="#temario/B2-T13/estudio-11">10.1 Preparación</a></li><li><a href="#temario/B2-T13/estudio-12">10.2 Detección y análisis</a></li><li><a href="#temario/B2-T13/estudio-13">10.3 Contención</a></li><li><a href="#temario/B2-T13/estudio-14">10.4 Erradicación y recuperación</a></li><li><a href="#temario/B2-T13/estudio-15">10.5 Lecciones aprendidas</a></li><li><a href="#temario/B2-T13/estudio-16">11. CSIRT/SOC y ámbito público</a></li><li><a href="#temario/B2-T13/estudio-17">12. Informática forense</a></li><li><a href="#temario/B2-T13/estudio-18">12.1 Fases</a></li><li><a href="#temario/B2-T13/estudio-19">12.2 Orden de volatilidad</a></li><li><a href="#temario/B2-T13/estudio-20">12.3 Imagen y hash</a></li><li><a href="#temario/B2-T13/estudio-21">12.4 Cadena de custodia</a></li><li><a href="#temario/B2-T13/estudio-22">13. Forense por fuente</a></li><li><a href="#temario/B2-T13/estudio-23">14. Test</a></li><li><a href="#temario/B2-T13/estudio-24">15. Supuesto</a></li><li><a href="#temario/B2-T13/estudio-25">16. Resumen II.13</a></li><li><a href="#temario/B2-T13/repaso">Resumen de repaso</a></li><li><a href="#temario/B2-T13/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B2-T13/repaso-02">Claves de test</a></li><li><a href="#temario/B2-T13/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B2-T13/repaso-04">Fuentes base del material</a></li></ol></nav>
+<h2 id="estudio">Apuntes de estudio</h2>
+<h3 id="estudio-01">1. Alcance y fuentes</h3>
+<p>A1 125 desarrolla seguridad en redes y ataques; A1 126, disponible en versión P31, actualiza el marco de ciberseguridad e incidentes; A1 127 aporta informática forense. Para GSI deben integrarse, no estudiarse como tres listas separadas.</p>
+<h3 id="estudio-02">2. Objetivos de seguridad</h3>
+<p>Los objetivos clásicos son <strong>confidencialidad, integridad y disponibilidad</strong>. En el contexto ENS se añaden de forma expresa <strong>autenticidad y trazabilidad</strong>. La seguridad es un proceso integral: personas, procesos, tecnología, instalaciones, proveedores y ciclo de vida.</p>
+<h3 id="estudio-03">3. Seguridad física</h3>
+<p>Protege instalaciones, personas, equipos y soportes frente a acceso no autorizado, incendio, agua, fallo eléctrico, temperatura, sabotaje y otros eventos. Medidas:</p>
+<ul>
+<li>zonificación y perímetros;</li>
+<li>control de acceso e identificación;</li>
+<li>registro/acompañamiento de visitas;</li>
+<li>racks y salas restringidas;</li>
+<li>UPS, grupos electrógenos y distribución eléctrica redundante;</li>
+<li>climatización y monitorización ambiental;</li>
+<li>detección y extinción de incendios adecuada al entorno;</li>
+<li>protección frente a agua e inundación;</li>
+<li>inventario, custodia y destrucción segura de soportes;</li>
+<li>mantenimiento y pruebas periódicas.</li>
+</ul>
+<p>La continuidad física no consiste solo en tener un SAI: requiere capacidad, autonomía, mantenimiento, pruebas y escenarios de fallo.</p>
+<h3 id="estudio-04">4. Seguridad lógica</h3>
+<p>Controles de identidad, autenticación, autorización, mínimo privilegio, segregación de funciones, hardening, parcheo, EDR/antimalware, cifrado, segmentación, backups, logging y monitorización. El enfoque de <strong>defensa en profundidad</strong> evita depender de una única barrera.</p>
+<p>Zero Trust puede resumirse como no confiar implícitamente por ubicación de red: verificar explícitamente, limitar privilegios y asumir compromiso. No significa «bloquear todo» ni un producto concreto.</p>
+<h3 id="estudio-05">5. Tipos de ataque</h3>
+<p>El A1 125 utiliza la clasificación interrupción/interceptación/modificación/fabricación y categorías de incidentes de CCN-STIC. Debes reconocer:</p>
+<ul>
+<li><strong>Malware</strong>: virus, gusano, troyano, ransomware, spyware, rootkit, RAT.</li>
+<li><strong>DoS/DDoS</strong>: agotamiento de capacidad o recursos.</li>
+<li><strong>Reconocimiento</strong>: scanning, enumeración, fingerprinting.</li>
+<li><strong>Sniffing/MitM</strong>: captura o intermediación del tráfico.</li>
+<li><strong>Spoofing</strong>: suplantación de IP, ARP, DNS, correo, etc.</li>
+<li><strong>Phishing/spear phishing</strong>: ingeniería social para credenciales/acción.</li>
+<li><strong>Explotación</strong>: vulnerabilidades de software/hardware/configuración.</li>
+<li><strong>Aplicación web</strong>: inyección, XSS, CSRF, subida/inclusión insegura, SSRF, etc.</li>
+<li><strong>Credenciales</strong>: fuerza bruta, password spraying, credential stuffing.</li>
+<li><strong>Exfiltración</strong>: extracción no autorizada de información.</li>
+<li><strong>Supply chain</strong>: compromiso de dependencias, build, proveedor o actualización.</li>
+</ul>
+<h3 id="estudio-06">6. Vulnerabilidad, exploit e incidente</h3>
+<p>Una vulnerabilidad es debilidad; un exploit es técnica/código que aprovecha una vulnerabilidad; un incidente es un evento que compromete o amenaza operaciones/seguridad y requiere respuesta según criterios. No todo evento del SIEM es incidente.</p>
+<h3 id="estudio-07">7. Herramientas preventivas y de protección</h3>
+<ul>
+<li><strong>Firewall</strong>: aplica política de filtrado; puede ser stateless/stateful y de aplicación según producto.</li>
+<li><strong>WAF</strong>: protege aplicaciones HTTP frente a patrones/ataques de capa aplicación; no sustituye desarrollo seguro.</li>
+<li><strong>IDS</strong>: detecta y alerta; <strong>IPS</strong>: puede bloquear en línea.</li>
+<li><strong>EDR/XDR</strong>: telemetría y respuesta en endpoints/varios dominios.</li>
+<li><strong>Antimalware</strong>: detección por firmas, comportamiento y otras técnicas.</li>
+<li><strong>SIEM</strong>: centraliza/correlaciona logs y genera detecciones.</li>
+<li><strong>SOAR</strong>: automatiza/orquesta flujos de respuesta.</li>
+<li><strong>Escáner de vulnerabilidades</strong>: identifica exposiciones conocidas/configuración.</li>
+<li><strong>SAST/DAST/SCA</strong>: análisis de código, aplicación ejecutándose y dependencias.</li>
+<li><strong>DLP</strong>: políticas para detectar/controlar salida de datos sensibles.</li>
+<li><strong>PAM</strong>: gestión de accesos privilegiados.</li>
+<li><strong>MFA</strong>: reduce riesgo de credenciales robadas, aunque no elimina phishing avanzado.</li>
+</ul>
+<h3 id="estudio-08">8. Criptografía aplicada</h3>
+<p>Cifrado simétrico: misma clave para cifrar/descifrar, eficiente para volumen. Asimétrico: par pública/privada, útil para intercambio, firma y autenticación. Hash: función unidireccional para integridad/derivaciones; no cifra. MAC/HMAC autentica integridad con clave compartida.</p>
+<p>TLS protege comunicaciones mediante negociación criptográfica, autenticación del servidor con certificados y establecimiento de claves de sesión. Una firma digital proporciona autenticidad/integridad y evidencia en contexto; no confidencialidad por sí sola.</p>
+<h3 id="estudio-09">9. Gestión de vulnerabilidades</h3>
+<ul>
+<li>Inventario de activos y versiones.</li>
+<li>Fuentes de vulnerabilidades/avisos.</li>
+<li>Escaneo y evaluación contextual.</li>
+<li>Priorización por criticidad, exposición y explotación real, no solo CVSS.</li>
+<li>Parche/mitigación o aceptación justificada.</li>
+<li>Validación de remediación.</li>
+<li>Métricas y excepciones.</li>
+</ul>
+<p>Un CVE no implica que el activo sea explotable en tu contexto; y una configuración insegura puede ser crítica sin CVE.</p>
+<h3 id="estudio-10">10. Gestión de incidentes</h3>
+<p>Ciclo práctico: preparación → detección/análisis → contención → erradicación → recuperación → lecciones aprendidas. Algunas guías agrupan fases de otra forma, pero la lógica es estable.</p>
+<h3 id="estudio-11">10.1 Preparación</h3>
+<p>Roles, contactos, playbooks, herramientas, logging, sincronización de tiempo, backups, canales alternativos, formación, ejercicios y criterios de severidad.</p>
+<h3 id="estudio-12">10.2 Detección y análisis</h3>
+<p>Validar alerta, determinar alcance, activos/usuarios, vector, IoC, cronología, impacto y necesidad de notificaciones. Preservar evidencia desde el inicio.</p>
+<h3 id="estudio-13">10.3 Contención</h3>
+<p>Aislar endpoints, bloquear indicadores, revocar credenciales/tokens, segmentar, limitar servicios. Distingue contención inmediata de solución definitiva.</p>
+<h3 id="estudio-14">10.4 Erradicación y recuperación</h3>
+<p>Eliminar persistencia, corregir vulnerabilidad, reconstruir desde fuentes confiables, restaurar, rotar secretos y monitorizar recaídas. Recovery debe tener criterios de aceptación.</p>
+<h3 id="estudio-15">10.5 Lecciones aprendidas</h3>
+<p>Causa raíz, fallos de detección/control, tiempos, evidencia, cambios a playbooks y controles. El objetivo no es buscar culpables sino reducir recurrencia.</p>
+<h3 id="estudio-16">11. CSIRT/SOC y ámbito público</h3>
+<p><strong>SOC</strong> monitoriza/detecta/coordina operaciones de seguridad; <strong>CSIRT/CERT</strong> se centra en respuesta/coordinación ante incidentes. Sus funciones pueden solaparse. En AAPP, CCN-CERT tiene un papel central conforme al ENS y normativa aplicable; otros equipos nacionales actúan según sector/ámbito.</p>
+<h3 id="estudio-17">12. Informática forense</h3>
+<p>Busca identificar, adquirir, preservar, analizar y presentar evidencias digitales de manera técnicamente fiable y con trazabilidad. Principio esencial: <strong>preservar el original</strong> y trabajar sobre copias cuando sea posible.</p>
+<h3 id="estudio-18">12.1 Fases</h3>
+<ul>
+<li>Identificación de fuentes de evidencia.</li>
+<li>Preservación y aislamiento.</li>
+<li>Adquisición forense.</li>
+<li>Verificación mediante hashes.</li>
+<li>Examen y recuperación de artefactos.</li>
+<li>Análisis y correlación temporal.</li>
+<li>Documentación e informe/presentación.</li>
+</ul>
+<h3 id="estudio-19">12.2 Orden de volatilidad</h3>
+<p>Los datos más volátiles se pierden antes: registros CPU/cache, memoria RAM, conexiones/procesos, discos, logs remotos/copias, etc. El orden real depende del incidente y del riesgo de alterar evidencia. Apagar una máquina puede destruir evidencia de memoria; mantenerla encendida también puede permitir daño: se decide según procedimiento.</p>
+<h3 id="estudio-20">12.3 Imagen y hash</h3>
+<p>Una adquisición bit a bit intenta capturar el medio de forma completa, incluyendo áreas no asignadas según caso. Se calculan hashes del original/copia para demostrar integridad. El hash no «certifica quién creó el fichero»; demuestra coincidencia/integridad respecto a la muestra.</p>
+<h3 id="estudio-21">12.4 Cadena de custodia</h3>
+<p>Documenta quién recoge, cuándo, dónde, cómo, identificadores, transferencias, almacenamiento y acceso. Una evidencia técnicamente interesante sin cadena/documentación puede perder valor probatorio.</p>
+<h3 id="estudio-22">13. Forense por fuente</h3>
+<ul>
+<li><strong>Disco</strong>: sistema de archivos, borrados, metadatos, artefactos.</li>
+<li><strong>Memoria</strong>: procesos, conexiones, claves/tokens y malware residente.</li>
+<li><strong>Red</strong>: PCAP, NetFlow y logs de equipos.</li>
+<li><strong>Logs</strong>: sistema, aplicación, IAM, cloud, proxy, EDR, SIEM.</li>
+<li><strong>Móvil</strong>: adquisición lógica/física según dispositivo y autorización.</li>
+<li><strong>Cloud</strong>: snapshots, logs de control plane, auditoría, objetos y proveedor; exige preparación previa.</li>
+</ul>
+<h3 id="estudio-23">14. Test</h3>
+<ul>
+<li>CIA ≠ conjunto completo ENS: ENS añade autenticidad y trazabilidad.</li>
+<li>Amenaza ≠ vulnerabilidad ≠ exploit.</li>
+<li>Firewall ≠ WAF.</li>
+<li>IDS detecta; IPS puede bloquear.</li>
+<li>SIEM ≠ SOAR.</li>
+<li>SAST ≠ DAST ≠ SCA.</li>
+<li>Hash ≠ cifrado.</li>
+<li>SOC ≠ CSIRT aunque se solapen.</li>
+<li>Contención ≠ erradicación.</li>
+<li>Backup ≠ prevención de ransomware por sí solo.</li>
+<li>Forense: preservar, adquirir, verificar, analizar.</li>
+<li>Cadena de custodia ≠ hash; ambos son importantes.</li>
+</ul>
+<h3 id="estudio-24">15. Supuesto</h3>
+<p>Propón controles preventivos, detectivos y correctivos; centraliza logs; define SOC/SIEM/EDR, gestión de vulnerabilidades e incidentes; y si hay compromiso, describe preservación forense, aislamiento, evidencia, recuperación y notificaciones. Une seguridad lógica con CPD, terceros y continuidad.</p>
+<h3 id="estudio-25">16. Resumen II.13</h3>
+<p>Estudia seguridad como ciclo: proteger → detectar → responder → recuperar → aprender. En forense, la prioridad es evidencia íntegra y trazable. Las herramientas tienen funciones distintas; evita presentarlas como una lista intercambiable.</p>
+<h2 id="repaso">Resumen de repaso</h2>
+<h3 id="repaso-01">Núcleo de estudio</h3>
+<p>Seguridad busca confidencialidad, integridad, disponibilidad, autenticidad y trazabilidad. Defensa en profundidad: gobierno, IAM/MFA, mínimo privilegio, segmentación, firewalls, EDR, hardening, parcheo, cifrado, copias, SIEM, gestión de vulnerabilidades y formación. Gestión de incidentes: preparación, detección/análisis, contención, erradicación, recuperación y lecciones aprendidas. En AGE son relevantes ENS y capacidades CCN-CERT; INCIBE es referencia nacional para ciudadanía y empresas. Forense digital exige preservar evidencias, cadena de custodia, adquisición, hash, análisis y documentación. Distingue vulnerabilidad, exploit, amenaza, incidente y brecha de datos.</p>
+<h3 id="repaso-02">Claves de test</h3>
+<p>Hash aporta integridad, no confidencialidad. Cifrado simétrico usa misma clave; asimétrico par pública/privada. MFA combina factores distintos. Backup no sustituye a alta disponibilidad ni EDR. Contención inmediata puede ser más importante que erradicación prematura.</p>
+<h3 id="repaso-03">Enfoque para supuesto práctico</h3>
+<p>En supuesto combina prevención, detección y respuesta; define SOC/SIEM, logging, retención, playbooks, aislamiento, comunicación, notificación RGPD si procede, recuperación y postmortem. Para forense evita alterar evidencia.</p>
+<h3 id="repaso-04">Fuentes base del material</h3>
+<p>A1 125 + 126 + 127, ENS y CCN-CERT.</p>
+<section class="topic-content__sources"><h2 id="fuentes">Fuentes y localizadores</h2><ul><li><a href="https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)</a> · II.13 · 2026-08-21</li><li><a href="https://docs.google.com/document/d/1h7n4dFYafS_3VMuL55TnEuVKhqaTheUoL-thDFQSr9w/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE II — RESUMEN MAESTRO DE REPASO (16 temas)</a> · II.13 · 2026-08-21</li></ul></section>
+</article>

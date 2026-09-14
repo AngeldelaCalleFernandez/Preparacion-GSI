@@ -1,0 +1,135 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GSI A2 — PRÁCTICA ACTIVA 02 — BBDD — SOLUCIONARIO RAZONADO</title><link rel="stylesheet" href="../../assets/css/styles.css"></head><body><main class="shell topic-content"><p><a href="../../index.html#practica">Volver a práctica escrita</a></p><p>Material curado GSI A2. Fuente: <a href="https://docs.google.com/document/d/1Y-d1yxqMyRQ8YgT9aUgSRW2HyJL9W2CPMVPXPxi3azc/edit">documento original de Drive</a>.</p><h1>GSI A2 — PRÁCTICA ACTIVA 02</h1>
+<h2>Solucionario razonado — Bases de datos</h2>
+<p><strong>No memorices las respuestas como recetas.</strong> En modelado puede haber variantes correctas si preservan semántica e integridad. En SQL puede existir más de una consulta equivalente. En concurrencia importa explicar el fenómeno y la garantía requerida.</p>
+<h1>PARTE A — Modelo conceptual y paso a relacional</h1>
+<p>1 — Alumnos y asignaturas</p>
+<p>ALUMNO(id_alumno PK,...), ASIGNATURA(id_asignatura PK,...), MATRICULA(id_alumno FK, id_asignatura FK, fecha, nota, PK(id_alumno,id_asignatura)). La relación N:M se materializa en MATRICULA porque además contiene atributos propios.</p>
+<p>2 — Departamentos y empleados</p>
+<p>DEPARTAMENTO(id_departamento PK, nombre, id_jefe FK nullable UNIQUE) y EMPLEADO(id_empleado PK, ..., id_departamento FK). La FK de pertenencia expresa 1:N. El UNIQUE sobre id_jefe impide que una misma persona dirija varios departamentos si ésa es la regla. También puede modelarse una relación JEFATURA separada.</p>
+<p>3 — Pedidos</p>
+<p>CLIENTE 1:N PEDIDO; PEDIDO N:M PRODUCTO mediante LINEA_PEDIDO. El precio_unitario debe guardarse en la línea si se quiere conservar el precio histórico aplicado aunque cambie el catálogo.</p>
+<p>4 — Biblioteca</p>
+<p>AUTOR N:M LIBRO mediante LIBRO_AUTOR. LIBRO 1:N EJEMPLAR. USUARIO 1:N PRESTAMO y EJEMPLAR 1:N PRESTAMO históricamente. PRESTAMO incluye fecha_prestamo y fecha_devolucion. Para impedir dos préstamos activos simultáneos del mismo ejemplar puede usarse una restricción/índice condicionado si el SGBD lo soporta o control transaccional.</p>
+<p>5 — Citas médicas</p>
+<p>MEDICO 1:N CITA y PACIENTE 1:N CITA. Una restricción UNIQUE(id_medico, fecha, hora) evita dos citas en el mismo hueco discreto. Si las citas tienen intervalos arbitrarios, la prevención de solapamientos requiere lógica adicional o mecanismos específicos del SGBD.</p>
+<p>6 — Equipos y técnicos</p>
+<p>ROL y fecha_incorporacion pertenecen a la relación N:M, por tanto a TECNICO_EQUIPO(id_tecnico,id_equipo,rol,fecha_incorporacion,...).</p>
+<p>7 — Generalización</p>
+<p>Opción A: PERSONA común + EMPLEADO(id_persona PK/FK,salario) + PROVEEDOR(id_persona PK/FK,tarifa). Evita nulos y refleja subtipos claramente. Opción B: tabla única PERSONA con tipo y columnas específicas nullable; simplifica consultas pero introduce nulos y restricciones más complejas.</p>
+<p>8 — Relación ternaria</p>
+<p>SUMINISTRO(id_proveedor FK,id_producto FK,id_almacen FK,precio, PK según reglas). Tres relaciones binarias pueden indicar qué proveedor sirve qué producto, qué producto existe en qué almacén y qué proveedor opera en qué almacén, pero no necesariamente qué combinación exacta proveedor-producto-almacén tiene ese precio.</p>
+<h1>PARTE B — Dependencias y normalización</h1>
+<p>9 — 1FN</p>
+<p>Una lista separada por comas no es un valor atómico útil para el modelo relacional y dificulta integridad/búsqueda. Crear TELEFONO_CLIENTE(id_cliente FK, telefono, tipo..., PK apropiada).</p>
+<p>10 — Matrícula</p>
+<p>Hay dependencias parciales desde alumno_id y asignatura_id respecto de la PK compuesta, y profesor_nombre depende transitivamente de profesor_id. Resultado típico: ALUMNO(alumno_id,alumno_nombre); PROFESOR(profesor_id,profesor_nombre); ASIGNATURA(asignatura_id,asignatura_nombre,profesor_id FK); MATRICULA(alumno_id,asignatura_id,nota). Si una asignatura puede tener varios profesores, la regla de negocio cambia y debe modelarse otra relación.</p>
+<p>11 — Pedido</p>
+<p>PEDIDO(pedido_id,fecha_pedido,cliente_id); CLIENTE(cliente_id,cliente_nombre); PRODUCTO(producto_id,producto_nombre,precio_catalogo); LINEA_PEDIDO(pedido_id,producto_id,cantidad). Los datos de pedido dependen solo de pedido_id; los de producto solo de producto_id; cliente_nombre depende de cliente_id. Si se requiere precio histórico de venta, debe almacenarse precio_unitario en LINEA_PEDIDO, no depender del precio de catálogo actual.</p>
+<p>12 — Empleado/departamento</p>
+<p>No está en 3FN porque emp_id → dept_id y dept_id → dept_nombre,dept_sede, creando dependencia transitiva desde emp_id. Separar DEPARTAMENTO(dept_id,dept_nombre,dept_sede) y EMPLEADO(emp_id,emp_nombre,dept_id FK).</p>
+<p>13 — Clave compuesta</p>
+<p>alumno_email depende solo de alumno_id y curso_titulo solo de curso_id: dependencias parciales. ALUMNO, CURSO e INSCRIPCION(alumno_id,curso_id,fecha,resultado).</p>
+<p>14 — BCNF</p>
+<p>Dependencias: (Alumno,Asignatura)→Profesor y Profesor→Asignatura. Claves candidatas: (Alumno,Asignatura) y (Alumno,Profesor). Profesor no es superclave, pero Asignatura es atributo primo al pertenecer a una clave candidata; por eso la relación puede satisfacer 3FN y violar BCNF. Una descomposición posible separa PROFESOR_ASIGNATURA(Profesor,Asignatura) y ALUMNO_PROFESOR(Alumno,Profesor), revisando preservación de dependencias según el caso.</p>
+<p>15 — Actualización</p>
+<p>Si la dirección se repite en muchas facturas, cambiarla exige múltiples actualizaciones y puede dejar valores inconsistentes. Normalizar CLIENTE y referenciarlo reduce la anomalía. Si la factura debe conservar legalmente la dirección histórica, entonces esa repetición puede ser deliberada como snapshot documental.</p>
+<p>16 — Desnormalización</p>
+<p>Solo tras medir. Valorar patrón de consultas, coste de JOIN, volumen, frecuencia de escritura, mecanismo de sincronización, consistencia aceptable, espacio, complejidad de mantenimiento y posibilidad de resolver con índices/materialized views/cache/DW. Debe existir propietario y mecanismo de reconstrucción.</p>
+<p>17 — Atributo derivado</p>
+<p>Puede quedar inconsistente si cambia cantidad/precio sin recalcular total. Normalmente se calcula al consultar. Puede justificarse por auditoría histórica, rendimiento o documento cerrado, pero entonces debe definirse una única forma transaccional de mantenerlo.</p>
+<p>18 — Natural vs sustituta</p>
+<p>NIF es candidato natural si es estable y siempre disponible, pero expone semántica, puede tener reglas especiales y afectar FKs. Una práctica frecuente es id_persona sustituto como PK y NIF con UNIQUE NOT NULL cuando corresponda. La unicidad de negocio no debe perderse por usar surrogate key.</p>
+<h1>PARTE C — SQL</h1>
+<p>19 — JOIN</p>
+<p>SELECT p.id_pedido, p.fecha, c.nombreFROM PEDIDO pJOIN CLIENTE c ON c.id_cliente = p.id_clienteWHERE p.estado = &#x27;PENDIENTE&#x27;;</p>
+<p>20 — Total por pedido</p>
+<p>SELECT id_pedido,       SUM(cantidad * precio_unitario) AS totalFROM LINEA_PEDIDOGROUP BY id_pedido;</p>
+<p>21 — Clientes con gasto &gt; 1000</p>
+<p>SELECT c.id_cliente, c.nombre,       SUM(l.cantidad * l.precio_unitario) AS gastoFROM CLIENTE cJOIN PEDIDO p ON p.id_cliente = c.id_clienteJOIN LINEA_PEDIDO l ON l.id_pedido = p.id_pedidoGROUP BY c.id_cliente, c.nombreHAVING SUM(l.cantidad * l.precio_unitario) &gt; 1000;</p>
+<p>22 — Sin pedidos</p>
+<p>SELECT c.*FROM CLIENTE cWHERE NOT EXISTS (  SELECT 1 FROM PEDIDO p  WHERE p.id_cliente = c.id_cliente);</p>
+<p>LEFT JOIN ... WHERE p.id_pedido IS NULL es otra solución válida.</p>
+<p>23 — Productos nunca vendidos</p>
+<p>SELECT pr.*FROM PRODUCTO prWHERE NOT EXISTS (  SELECT 1 FROM LINEA_PEDIDO l  WHERE l.id_producto = pr.id_producto);</p>
+<p>24 — WHERE vs HAVING</p>
+<p>WHERE filtra filas antes de agrupar; HAVING filtra grupos después del GROUP BY. Ejemplo: WHERE p.fecha &gt;= ... limita pedidos; HAVING SUM(...) &gt; 1000 selecciona grupos por agregado.</p>
+<p>25 — UNION</p>
+<p>UNION combina conjuntos eliminando duplicados; UNION ALL conserva duplicados y suele evitar el coste adicional de deduplicación. Deben ser compatibles en número/tipos de columnas.</p>
+<p>26 — UPDATE</p>
+<p>UPDATE PRODUCTOSET precio = precio * 1.05WHERE categoria = &#x27;RED&#x27;;</p>
+<p>Antes: SELECT con el mismo WHERE, contar filas, revisar copia/rollback y ejecutar bajo control transaccional/procedimiento de cambio según criticidad.</p>
+<p>27 — Restricciones</p>
+<p>CHECK (cantidad &gt; 0)CHECK (estado IN (&#x27;PENDIENTE&#x27;,&#x27;PAGADO&#x27;,&#x27;CANCELADO&#x27;))UNIQUE (email)</p>
+<p>El soporte exacto y sintaxis puede variar por SGBD.</p>
+<p>28 — Ventana</p>
+<p>SELECT p.*,       ROW_NUMBER() OVER (         PARTITION BY id_cliente         ORDER BY fecha DESC, id_pedido DESC       ) AS nFROM PEDIDO p;</p>
+<p>29 — DELETE/TRUNCATE/DROP</p>
+<p>DELETE elimina filas y puede filtrar. TRUNCATE elimina todas las filas con semántica DDL/optimizada dependiente del SGBD y sin WHERE. DROP elimina el objeto tabla y su definición. Transaccionalidad/identidades/bloqueos de TRUNCATE dependen del producto, por lo que no conviene memorizar una regla universal adicional.</p>
+<p>30 — Inyección SQL</p>
+<p>Concatenar entrada permite alterar la estructura de la sentencia. Control principal: consultas parametrizadas/prepared statements, además de validación y mínimo privilegio.</p>
+<h1>PARTE D — Índices</h1>
+<p>31 — Email</p>
+<p>UNIQUE(email) suele apoyarse en un índice único para comprobar unicidad y acelerar búsquedas exactas, aunque la implementación concreta corresponde al SGBD.</p>
+<p>32 — Compuesto</p>
+<p>Un índice (id_cliente, fecha) es razonable: igualdad por cliente primero y después rango/orden por fecha. El mejor índice depende de selectividad, columnas seleccionadas y plan real.</p>
+<p>33 — Muchos índices</p>
+<p>Cada INSERT/UPDATE/DELETE debe mantener índices, aumentando CPU, I/O, espacio, WAL/log y contención. Hay que justificar cada índice por una carga concreta.</p>
+<p>34 — Baja selectividad</p>
+<p>Si casi todas las filas tienen activo=true, el índice discrimina poco y el optimizador puede preferir scan. Puede ser útil combinado con otras columnas o con índices parciales/filtrados si el SGBD los soporta.</p>
+<p>35 — SARGabilidad</p>
+<p>El rango directo sobre fecha suele permitir navegación por índice. Aplicar YEAR(fecha)=2026 u otra función sobre la columna puede impedir o dificultar ese uso salvo índices funcionales. La idea es formular predicados aprovechables por el índice.</p>
+<h1>PARTE E — Transacciones y aislamiento</h1>
+<p>36 — ACID</p>
+<p><strong>Atomicidad:</strong> todo o nada. <strong>Consistencia:</strong> la transacción válida conserva invariantes. <strong>Aislamiento:</strong> concurrencia no debe producir efectos no permitidos por el nivel elegido. <strong>Durabilidad:</strong> tras COMMIT, el resultado sobrevive a fallos cubiertos por el diseño.</p>
+<p>37 — Dirty read</p>
+<p>T2 lee un cambio no confirmado que finalmente se revierte. Es lectura sucia.</p>
+<p>38 — Non-repeatable read</p>
+<p>T1 lee dos veces la misma fila y obtiene valores distintos debido a un UPDATE confirmado por T2: lectura no repetible.</p>
+<p>39 — Phantom</p>
+<p>Cambia el conjunto de filas que satisface un predicado porque T2 inserta/elimina filas. En non-repeatable cambia una fila ya leída; en phantom cambia el conjunto resultante del predicado.</p>
+<p>40 — Lost update</p>
+<p>Se pretendían dos decrementos (stock final 8), pero el segundo guardado sobrescribe el primero y queda 9. Evitar mediante UPDATE atómico condicionado, bloqueo pesimista/SELECT FOR UPDATE según SGBD, o versión/control optimista con detección de conflicto.</p>
+<p>41 — Niveles SQL clásicos</p>
+<p>READ COMMITTED evita dirty reads; REPEATABLE READ evita además non-repeatable reads; SERIALIZABLE evita también phantoms en el modelo estándar. Las implementaciones reales pueden ofrecer MVCC/snapshot y garantías adicionales/diferentes.</p>
+<p>42 — MVCC</p>
+<p>Mantiene versiones para que lectores vean un snapshot consistente mientras escritores crean nuevas versiones. Aun así pueden existir conflictos escritor-escritor, write skew u otras anomalías según aislamiento; MVCC no equivale a serialización total.</p>
+<p>43 — Optimista/pesimista</p>
+<p>Optimista deja trabajar y valida versión al guardar: adecuado con baja contención. Pesimista bloquea antes para evitar conflicto: puede ser razonable en un recurso escaso/última plaza, aunque una restricción de integridad sigue siendo la defensa definitiva.</p>
+<p>44 — Transacción larga</p>
+<p>Mantenerla durante interacción humana retiene locks/versiones/recursos, aumenta deadlocks y bloquea limpieza. Leer fuera de transacción larga, presentar datos y al confirmar ejecutar una transacción corta que revalide versión/estado y escriba.</p>
+<h1>PARTE F — Deadlocks</h1>
+<p>45 — Deadlock</p>
+<p>Existe espera circular: T1 posee A y espera B; T2 posee B y espera A. El SGBD suele detectar el ciclo/timeout y abortar una transacción víctima para liberar recursos.</p>
+<p>46 — Reducción</p>
+<p>Acceder a recursos en orden consistente; transacciones cortas; índices/consultas eficientes para bloquear menos; evitar interacción humana dentro de transacción; lotes pequeños; aislamiento apropiado; reintentos controlados.</p>
+<p>47 — Reintento</p>
+<p>La operación puede haber ejecutado pasos externos o repetirse varias veces. El reintento debe ser seguro: operación idempotente o clave idempotency/outbox según arquitectura, límites y backoff. En una transacción DB abortada por completo, se vuelve a ejecutar desde un estado conocido.</p>
+<p>48 — Asiento</p>
+<p>Defensa robusta: UNIQUE(evento_id,asiento_id) en RESERVA, más transacción corta que intenta insertar/actualizar. Si dos compiten, una gana y otra recibe violación de unicidad/conflicto. Puede añadirse bloqueo sobre la fila de asiento, pero no sustituir la restricción.</p>
+<h1>PARTE G — Mini-supuestos</h1>
+<p>49 — Avisos</p>
+<p>CLIENTE, AVISO, TECNICO y ASIGNACION_AVISO(id_asignacion,id_aviso,id_tecnico,desde,hasta,motivo...). AVISO puede guardar asignación actual por conveniencia, pero el histórico se conserva en ASIGNACION_AVISO. Índices: estado/fecha, técnico activo, cliente/fecha; FKs e integridad temporal según reglas. Evitar sobrescribir el técnico sin auditar.</p>
+<p>50 — Stock</p>
+<p>Una opción robusta es:</p>
+<p>UPDATE PRODUCTOSET stock = stock - :cantidadWHERE id_producto = :id  AND stock &gt;= :cantidad;</p>
+<p>Comprobar filas afectadas dentro de transacción. Así la condición y decremento son atómicos. Alternativamente bloqueo de fila. Nunca hacer leer-stock y después escribir sin control.</p>
+<p>51 — Legado</p>
+<p>Separar TELEFONO_CLIENTE 1:N y CLIENTE de PEDIDO. ETL: perfilar datos, limpiar/deduplicar, mapear IDs, cargar maestros, cargar hijos, validar conteos, FKs, nulos, duplicados, totales y muestras; conservar snapshot/rollback y reconciliación.</p>
+<p>52 — OLTP/reporting</p>
+<p>Primero medir consultas e índices. Si carga analítica es pesada, réplica de lectura puede aislar consultas con tolerancia a retraso. Para histórico/transformaciones, ETL/ELT a DW es más apropiado. Materialized views/preagregados también pueden servir. La decisión depende de frescura, complejidad, volumen y RPO.</p>
+<p>53 — Agenda con intervalos</p>
+<p>Hay que impedir solapamiento del mismo recurso. Algunos SGBD ofrecen exclusion constraints/range types; otros requieren transacción con bloqueo/serializable y consulta de solapamiento, o modelar slots discretos con UNIQUE. La solución debe ser atómica: comprobar y reservar por separado sin aislamiento adecuado tiene carrera.</p>
+<p>54 — Rendimiento</p>
+<p>Comparar plan actual/anterior; estadísticas y cardinalidad; cambios de volumen/distribución; índices útiles/ausentes; waits, locks y transacciones largas; I/O/CPU/memoria; particionado si procede; parámetros/cambios de versión; capacidad. Cambiar una hipótesis, medir y validar, no “crear índices al azar”.</p>
+<h1>Patrón mental para ejercicios de BBDD</h1>
+<ul>
+<li>Identifica reglas de negocio e invariantes.</li>
+<li>Modela entidades y relaciones antes de pensar en tablas.</li>
+<li>Define PK/FK/UNIQUE/CHECK.</li>
+<li>Normaliza hasta donde reduzca anomalías sin perder semántica.</li>
+<li>Diseña consultas e índices desde patrones reales.</li>
+<li>En concurrencia dibuja T1/T2 y pregunta: ¿qué garantía necesito?</li>
+<li>La integridad debe apoyarse en la BD cuando la regla es universal.</li>
+<li>En rendimiento: medir → hipótesis → cambio → comparación.</li>
+</ul>
+<p>Soluciones elaboradas a partir de III.04, II.05 e IV.02 de los apuntes V2.1. La sintaxis exacta puede variar entre SGBD; se priorizan conceptos relacionales y SQL ampliamente interoperable.</p></main></body></html>

@@ -2,55 +2,259 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "additionalProperties": false,
-  "required": ["metadata", "questions"],
+  "required": [
+    "metadata",
+    "questions"
+  ],
   "properties": {
-    "metadata": {"$ref": "#/$defs/metadata"},
-    "questions": {"type": "array", "items": {"$ref": "#/$defs/question"}}
+    "metadata": {
+      "$ref": "#/$defs/metadata"
+    },
+    "questions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/question"
+      }
+    }
   },
   "$defs": {
     "metadata": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["dataset_type", "schema_version", "data_version", "updated_at"],
+      "required": [
+        "dataset_type",
+        "schema_version",
+        "data_version",
+        "updated_at"
+      ],
       "properties": {
-        "dataset_type": {"enum": ["official", "ai", "manual"]},
-        "schema_version": {"type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$"},
-        "data_version": {"type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$"},
-        "updated_at": {"type": "string", "format": "date"}
+        "dataset_type": {
+          "enum": [
+            "official",
+            "ai",
+            "manual"
+          ]
+        },
+        "schema_version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        },
+        "data_version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date"
+        }
       }
     },
     "option": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["id", "text"],
+      "required": [
+        "id",
+        "text"
+      ],
       "properties": {
-        "id": {"enum": ["A", "B", "C", "D"]},
-        "text": {"type": "string", "minLength": 1}
+        "id": {
+          "enum": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ]
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        }
       }
     },
     "question": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["id", "origin", "official_status", "validation_status", "block_id", "topic_id", "subtopic", "exam", "statement", "options", "correct_option", "feedback", "source", "difficulty", "tags", "is_active", "created_at", "updated_at"],
+      "required": [
+        "id",
+        "origin",
+        "official_status",
+        "validation_status",
+        "block_id",
+        "topic_id",
+        "subtopic",
+        "exam",
+        "statement",
+        "options",
+        "correct_option",
+        "feedback",
+        "source",
+        "difficulty",
+        "tags",
+        "is_active",
+        "created_at",
+        "updated_at",
+        "opposition_id",
+        "provenance"
+      ],
       "properties": {
-        "id": {"type": "string", "pattern": "^(OFF|AI|MAN)-[A-Z0-9-]+$"},
-        "origin": {"enum": ["official", "ai", "manual", "adapted"]},
-        "official_status": {"enum": ["official", "not_official", "adapted"]},
-        "validation_status": {"enum": ["draft", "pending_review", "validated", "needs_revision", "retired"]},
-        "block_id": {"type": "string", "pattern": "^B[1-4]$"},
-        "topic_id": {"type": "string", "pattern": "^B[1-4]-T\\d{2}$"},
-        "subtopic": {"type": "string"},
-        "exam": {"type": ["object", "null"]},
-        "statement": {"type": "string", "minLength": 1},
-        "options": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/option"}},
-        "correct_option": {"enum": ["A", "B", "C", "D"]},
-        "feedback": {"type": "object"},
-        "source": {"type": "object"},
-        "difficulty": {"enum": ["easy", "medium", "hard"]},
-        "tags": {"type": "array", "items": {"type": "string"}},
-        "is_active": {"type": "boolean"},
-        "created_at": {"type": "string", "format": "date"},
-        "updated_at": {"type": "string", "format": "date"}
+        "id": {
+          "type": "string",
+          "pattern": "^(OFF|AI|MAN)-[A-Z0-9-]+$"
+        },
+        "origin": {
+          "enum": [
+            "official",
+            "ai",
+            "manual",
+            "adapted"
+          ]
+        },
+        "official_status": {
+          "enum": [
+            "official",
+            "not_official",
+            "adapted"
+          ]
+        },
+        "validation_status": {
+          "enum": [
+            "draft",
+            "pending_review",
+            "validated",
+            "needs_revision",
+            "retired"
+          ]
+        },
+        "block_id": {
+          "type": "string",
+          "pattern": "^B[1-4]$"
+        },
+        "topic_id": {
+          "type": "string",
+          "pattern": "^B[1-4]-T\\d{2}$"
+        },
+        "subtopic": {
+          "type": "string"
+        },
+        "exam": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "statement": {
+          "type": "string",
+          "minLength": 1
+        },
+        "options": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "$ref": "#/$defs/option"
+          }
+        },
+        "correct_option": {
+          "enum": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ]
+        },
+        "feedback": {
+          "type": "object"
+        },
+        "source": {
+          "type": "object"
+        },
+        "difficulty": {
+          "enum": [
+            "easy",
+            "medium",
+            "hard"
+          ]
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "is_active": {
+          "type": "boolean"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date"
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date"
+        },
+        "opposition_id": {
+          "const": "OPP-GSI"
+        },
+        "provenance": {
+          "$ref": "#/$defs/provenance"
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "source_id",
+        "document_id",
+        "drive_id",
+        "url",
+        "locator",
+        "version",
+        "reviewed_at"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "generated",
+            "curated",
+            "official"
+          ]
+        },
+        "source_id": {
+          "type": "string",
+          "pattern": "^SRC-[A-Z0-9-]+$"
+        },
+        "document_id": {
+          "type": "string",
+          "pattern": "^DOC-[A-Z0-9-]+$"
+        },
+        "drive_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "reviewed_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        }
       }
     }
   }

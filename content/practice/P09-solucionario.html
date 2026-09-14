@@ -1,0 +1,371 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GSI A2 — PRÁCTICA ACTIVA 09 — CALIDAD SOFTWARE — SOLUCIONARIO RAZONADO</title><link rel="stylesheet" href="../../assets/css/styles.css"></head><body><main class="shell topic-content"><p><a href="../../index.html#practica">Volver a práctica escrita</a></p><p>Material curado GSI A2. Fuente: <a href="https://docs.google.com/document/d/1FqHYYeilKgoJaFxx3R46tPY3dK5A6xRNr-Lw5M0pp4U/edit">documento original de Drive</a>.</p><h1>GSI A2 - PRACTICA ACTIVA 09</h1>
+<h2>Calidad del software, ISO/IEC 25010:2023, SQuaRE y metricas - SOLUCIONARIO RAZONADO</h2>
+<p><strong>Criterio:</strong> las respuestas nucleares siguen III.13 V2.1. La actualizacion externa solo confirma la vigencia de ISO/IEC 25010:2023 y de la guia SQuaRE. Las traducciones de algunos nombres pueden variar; para evitar ambiguedad se conservan los nombres ingleses del modelo 2023.</p>
+<h1>FICHA DE PRECISION - ISO/IEC 25010:2023</h1>
+<table>
+<tr>
+<th scope="col"><p>ISO/IEC 25010:2023</p></th>
+<th scope="col"><p>Idea de examen</p></th>
+<th scope="col"><p>Subcaracteristicas de referencia</p></th>
+</tr>
+<tr>
+<td><p>Functional suitability</p></td>
+<td><p>Las funciones cubren y resuelven correctamente las necesidades.</p></td>
+<td><p>Functional completeness, correctness, appropriateness.</p></td>
+</tr>
+<tr>
+<td><p>Performance efficiency</p></td>
+<td><p>Tiempo/throughput, recursos y limites de capacidad.</p></td>
+<td><p>Time behaviour, resource utilization, capacity.</p></td>
+</tr>
+<tr>
+<td><p>Compatibility</p></td>
+<td><p>Coexistir e intercambiar/usar informacion con otros sistemas.</p></td>
+<td><p>Co-existence, interoperability.</p></td>
+</tr>
+<tr>
+<td><p>Interaction capability</p></td>
+<td><p>Interaccion efectiva con usuarios en distintos contextos.</p></td>
+<td><p>Appropriateness recognizability, learnability, operability, user error protection, user engagement, inclusivity, user assistance, self-descriptiveness.</p></td>
+</tr>
+<tr>
+<td><p>Reliability</p></td>
+<td><p>Funcionamiento correcto y continuidad bajo condiciones/tiempo definidos.</p></td>
+<td><p>Faultlessness, availability, fault tolerance, recoverability.</p></td>
+</tr>
+<tr>
+<td><p>Security</p></td>
+<td><p>Proteccion frente a acceso/alteracion/ataques y trazabilidad de acciones.</p></td>
+<td><p>Confidentiality, integrity, non-repudiation, accountability, authenticity, resistance.</p></td>
+</tr>
+<tr>
+<td><p>Maintainability</p></td>
+<td><p>Facilidad/eficiencia de analizar, cambiar, probar y reutilizar.</p></td>
+<td><p>Modularity, reusability, analysability, modifiability, testability.</p></td>
+</tr>
+<tr>
+<td><p>Flexibility</p></td>
+<td><p>Adaptacion a requisitos, contexto o entorno.</p></td>
+<td><p>Adaptability, scalability, installability, replaceability.</p></td>
+</tr>
+<tr>
+<td><p>Safety</p></td>
+<td><p>Evitar estados que pongan en peligro personas, salud, propiedad o entorno.</p></td>
+<td><p>Operational constraint, risk identification, fail safe, hazard warning, safe integration.</p></td>
+</tr>
+</table>
+<h2>Transicion que puede generar trampas de test</h2>
+<table>
+<tr>
+<th scope="col"><p>Edicion 2011</p></th>
+<th scope="col"><p>Edicion 2023</p></th>
+<th scope="col"><p>Clave</p></th>
+</tr>
+<tr>
+<td><p>8 caracteristicas</p></td>
+<td><p>9 caracteristicas</p></td>
+<td><p>Se incorpora Safety.</p></td>
+</tr>
+<tr>
+<td><p>Usability</p></td>
+<td><p>Interaction capability</p></td>
+<td><p>No responder &quot;usability&quot; si preguntan expresamente por el modelo 2023.</p></td>
+</tr>
+<tr>
+<td><p>Portability</p></td>
+<td><p>Flexibility</p></td>
+<td><p>Flexibility incorpora una vision mas amplia y, entre otras, scalability.</p></td>
+</tr>
+<tr>
+<td><p>Quality in use dentro de 25010:2011</p></td>
+<td><p>25010:2023 se centra en product quality</p></td>
+<td><p>Para III.13, priorizar el modelo de calidad de producto que recogen los apuntes.</p></td>
+</tr>
+</table>
+<h1>PARTE A - Modelo ISO/IEC 25010:2023 y transicion</h1>
+<p>1 - Numero de caracteristicas</p>
+<p>¿Cuantas caracteristicas tiene el modelo de calidad de producto ISO/IEC 25010:2023?</p>
+<p><strong>Respuesta modelo:</strong> Nueve.</p>
+<p>2 - Edicion vigente</p>
+<p>¿Que edicion debe usarse como referencia principal en los apuntes?</p>
+<p><strong>Respuesta modelo:</strong> ISO/IEC 25010:2023, edicion 2. El tema advierte que pueden aparecer materiales/preguntas basados en 2011.</p>
+<p>3 - Nueva caracteristica</p>
+<p>¿Que caracteristica de primer nivel se anade en 2023?</p>
+<p><strong>Respuesta modelo:</strong> Safety.</p>
+<p>4 - Usability</p>
+<p>¿Como se denomina en 2023 la caracteristica que en 2011 aparecia como Usability?</p>
+<p><strong>Respuesta modelo:</strong> Interaction capability.</p>
+<p>5 - Portability</p>
+<p>¿Como se denomina en 2023 la caracteristica que en 2011 aparecia como Portability?</p>
+<p><strong>Respuesta modelo:</strong> Flexibility.</p>
+<p>6 - Functional suitability</p>
+<p>Una funcion devuelve resultados incorrectos aunque cubre todos los casos previstos. ¿Que caracteristica principal esta afectada?</p>
+<p><strong>Respuesta modelo:</strong> Functional suitability, especialmente functional correctness.</p>
+<p>7 - Performance efficiency</p>
+<p>p95 supera el objetivo y el consumo CPU es excesivo. ¿Que caracteristica principal?</p>
+<p><strong>Respuesta modelo:</strong> Performance efficiency.</p>
+<p>8 - Compatibility</p>
+<p>Dos sistemas no pueden intercambiar correctamente informacion. ¿Que caracteristica?</p>
+<p><strong>Respuesta modelo:</strong> Compatibility, especialmente interoperability.</p>
+<p>9 - Interaction capability</p>
+<p>Los usuarios no comprenden como operar la interfaz. ¿Que caracteristica?</p>
+<p><strong>Respuesta modelo:</strong> Interaction capability.</p>
+<p>10 - Reliability</p>
+<p>El servicio se cae con frecuencia y tarda demasiado en recuperarse. ¿Que caracteristica?</p>
+<p><strong>Respuesta modelo:</strong> Reliability, con impacto en availability/recoverability.</p>
+<p>11 - Security</p>
+<p>Una cuenta accede a datos para los que no tiene autorizacion. ¿Que caracteristica?</p>
+<p><strong>Respuesta modelo:</strong> Security, por confidencialidad/control de acceso.</p>
+<p>12 - Maintainability</p>
+<p>Un cambio pequeno obliga a modificar diez modulos acoplados. ¿Que caracteristica?</p>
+<p><strong>Respuesta modelo:</strong> Maintainability, especialmente modularity/modifiability.</p>
+<p>13 - Flexibility</p>
+<p>El sistema no puede escalar cuando crece la carga. ¿Que caracteristica 2023 incluye ese problema?</p>
+<p><strong>Respuesta modelo:</strong> Flexibility, mediante scalability.</p>
+<p>14 - Safety</p>
+<p>Un sistema de control puede entrar en un estado que pone en peligro personas ante un fallo. ¿Que caracteristica?</p>
+<p><strong>Respuesta modelo:</strong> Safety.</p>
+<p>15 - Modelo no es metrica</p>
+<p>¿ISO/IEC 25010:2023 proporciona por si sola el valor numerico de calidad de tu aplicacion?</p>
+<p><strong>Respuesta modelo:</strong> No. Proporciona un modelo de caracteristicas/subcaracteristicas que sirve para especificar, medir y evaluar; las medidas y objetivos deben definirse.</p>
+<p>16 - Modelo durante ciclo</p>
+<p>¿El modelo solo se usa al final para aceptar el producto?</p>
+<p><strong>Respuesta modelo:</strong> No. Puede apoyar requisitos, diseno, objetivos de prueba, control de calidad y criterios de aceptacion durante el ciclo.</p>
+<p>17 - Pregunta 2011</p>
+<p>Si una pregunta dice expresamente &#x27;ISO/IEC 25010:2011&#x27;, ¿es correcto contestar que tiene 9 caracteristicas?</p>
+<p><strong>Respuesta modelo:</strong> No. Hay que identificar la edicion preguntada; la V2.1 avisa de la transicion.</p>
+<p>18 - Pregunta 2023</p>
+<p>Si una opcion llama &#x27;Portability&#x27; a una de las 9 caracteristicas de primer nivel de 2023, ¿es correcta?</p>
+<p><strong>Respuesta modelo:</strong> No. En 2023 el nombre de primer nivel es Flexibility.</p>
+<h1>PARTE B - Caracteristicas y subcaracteristicas</h1>
+<p>19 - Functional completeness</p>
+<p>Faltan funciones obligatorias del pliego. ¿Que subcaracteristica?</p>
+<p><strong>Respuesta modelo:</strong> Functional completeness.</p>
+<p>20 - Functional correctness</p>
+<p>La funcion existe pero calcula mal una tasa. ¿Que subcaracteristica?</p>
+<p><strong>Respuesta modelo:</strong> Functional correctness.</p>
+<p>21 - Functional appropriateness</p>
+<p>La funcion es correcta pero obliga a pasos innecesarios que dificultan completar la tarea. ¿Que subcaracteristica dentro de functional suitability?</p>
+<p><strong>Respuesta modelo:</strong> Functional appropriateness.</p>
+<p>22 - Time behaviour</p>
+<p>Tiempo de respuesta y throughput incumplen requisitos. ¿Que subcaracteristica?</p>
+<p><strong>Respuesta modelo:</strong> Time behaviour, dentro de performance efficiency.</p>
+<p>23 - Resource utilization</p>
+<p>El sistema cumple latencia pero consume memoria muy por encima de lo previsto. ¿Que subcaracteristica?</p>
+<p><strong>Respuesta modelo:</strong> Resource utilization.</p>
+<p>24 - Capacity</p>
+<p>El sistema no soporta el maximo de usuarios concurrentes requerido. ¿Que subcaracteristica?</p>
+<p><strong>Respuesta modelo:</strong> Capacity.</p>
+<p>25 - Co-existence</p>
+<p>Una aplicacion degrada a otra al compartir recursos del mismo entorno. ¿Que subcaracteristica?</p>
+<p><strong>Respuesta modelo:</strong> Co-existence.</p>
+<p>26 - Interoperability</p>
+<p>Dos sistemas intercambian mensajes pero no pueden usar correctamente la informacion recibida. ¿Que subcaracteristica?</p>
+<p><strong>Respuesta modelo:</strong> Interoperability.</p>
+<p>27 - Learnability</p>
+<p>Usuarios nuevos necesitan demasiado tiempo para aprender tareas basicas. ¿Que subcaracteristica?</p>
+<p><strong>Respuesta modelo:</strong> Learnability, dentro de interaction capability.</p>
+<p>28 - User error protection</p>
+<p>La interfaz permite borrar sin advertencia ni posibilidad razonable de prevenir errores. ¿Que subcaracteristica?</p>
+<p><strong>Respuesta modelo:</strong> User error protection.</p>
+<p>29 - Inclusivity</p>
+<p>¿Que subcaracteristica 2023 amplia la atencion a usuarios de diversos contextos/capacidades?</p>
+<p><strong>Respuesta modelo:</strong> Inclusivity.</p>
+<p>30 - Availability</p>
+<p>El sistema no esta operativo cuando debe usarse. ¿Que subcaracteristica?</p>
+<p><strong>Respuesta modelo:</strong> Availability.</p>
+<p>31 - Fault tolerance</p>
+<p>Un nodo falla y el servicio deja de funcionar pese a que el requisito era seguir operando. ¿Que subcaracteristica?</p>
+<p><strong>Respuesta modelo:</strong> Fault tolerance.</p>
+<p>32 - Recoverability</p>
+<p>Tras una interrupcion no se recuperan datos/estado en el tiempo previsto. ¿Que subcaracteristica?</p>
+<p><strong>Respuesta modelo:</strong> Recoverability.</p>
+<p>33 - Authenticity</p>
+<p>¿Que subcaracteristica de seguridad busca demostrar que una identidad es la que afirma ser?</p>
+<p><strong>Respuesta modelo:</strong> Authenticity.</p>
+<p>34 - Accountability</p>
+<p>¿Que subcaracteristica permite atribuir acciones de forma trazable a una entidad?</p>
+<p><strong>Respuesta modelo:</strong> Accountability.</p>
+<p>35 - Resistance</p>
+<p>El producto debe mantener operacion bajo condiciones de ataque. ¿Que subcaracteristica 2023?</p>
+<p><strong>Respuesta modelo:</strong> Resistance.</p>
+<p>36 - Modularity</p>
+<p>Cambiar un componente afecta a muchos otros. ¿Que subcaracteristica de maintainability?</p>
+<p><strong>Respuesta modelo:</strong> Modularity.</p>
+<p>37 - Analysability</p>
+<p>Cuesta diagnosticar la causa de un fallo y localizar que debe modificarse. ¿Que subcaracteristica?</p>
+<p><strong>Respuesta modelo:</strong> Analysability.</p>
+<p>38 - Testability</p>
+<p>Es muy dificil establecer criterios y ejecutar pruebas tras cada cambio. ¿Que subcaracteristica?</p>
+<p><strong>Respuesta modelo:</strong> Testability.</p>
+<h1>PARTE C - QA, QC, calidad de producto y proceso</h1>
+<p>39 - QA</p>
+<p>Define QA segun III.13.</p>
+<p><strong>Respuesta modelo:</strong> Quality Assurance se orienta a procesos preventivos para favorecer calidad: estandares, revisiones, formacion, pipeline, auditoria, etc.</p>
+<p>40 - QC</p>
+<p>Define QC segun III.13.</p>
+<p><strong>Respuesta modelo:</strong> Quality Control evalua el producto mediante pruebas, inspecciones y mediciones.</p>
+<p>41 - QA vs testing</p>
+<p>¿Testing es sinonimo de QA?</p>
+<p><strong>Respuesta modelo:</strong> No. Testing es una actividad de evaluacion/QC; QA es mas amplio y preventivo.</p>
+<p>42 - Revision de proceso</p>
+<p>Crear una guia de coding, formar al equipo y automatizar gates. ¿QA o QC?</p>
+<p><strong>Respuesta modelo:</strong> Principalmente QA.</p>
+<p>43 - Prueba de carga</p>
+<p>Ejecutar una prueba de carga contra una version candidata. ¿QA o QC?</p>
+<p><strong>Respuesta modelo:</strong> Principalmente QC, porque evalua el producto.</p>
+<p>44 - RCA</p>
+<p>¿Que papel tiene RCA en la calidad?</p>
+<p><strong>Respuesta modelo:</strong> Analizar causas raiz para evitar recurrencia y alimentar mejora continua.</p>
+<p>45 - Definition of Done</p>
+<p>¿Por que aparece DoD en calidad de proceso?</p>
+<p><strong>Respuesta modelo:</strong> Porque explicita condiciones que deben cumplirse para considerar trabajo terminado y ayuda a incorporar controles de calidad de forma repetible.</p>
+<p>46 - Quality gate</p>
+<p>¿Un quality gate debe existir por acumular herramientas?</p>
+<p><strong>Respuesta modelo:</strong> No. Debe vincularse a riesgo/criterios y tener capacidad de actuar sobre hallazgos; de lo contrario genera ruido.</p>
+<p>47 - Deuda tecnica</p>
+<p>¿Es una metrica unica y objetiva por si misma?</p>
+<p><strong>Respuesta modelo:</strong> No necesariamente. Debe definirse como indicador/criterio con contexto; III.13 la incluye entre posibles metricas de producto/proceso de mejora.</p>
+<p>48 - EFQM/ISO 900x</p>
+<p>¿Deben dominar III.13 como si fuera un tema de calidad organizativa?</p>
+<p><strong>Respuesta modelo:</strong> No. Los apuntes los dejan solo como contexto porque el epigrafe se centra en software y medicion.</p>
+<p>49 - Cobertura</p>
+<p>¿100% de cobertura de lineas demuestra software sin defectos?</p>
+<p><strong>Respuesta modelo:</strong> No. Cobertura no equivale a ausencia de defectos ni a calidad total.</p>
+<p>50 - Complejidad</p>
+<p>¿Una complejidad ciclomática baja garantiza calidad?</p>
+<p><strong>Respuesta modelo:</strong> No. Es una medida util para mantenibilidad/prueba, pero no representa por si sola la calidad total.</p>
+<p>51 - Metrica sin objetivo</p>
+<p>¿Por que una metrica sin objetivo/contexto puede ser perjudicial?</p>
+<p><strong>Respuesta modelo:</strong> Porque puede inducir interpretaciones o comportamientos perversos; debe definirse y relacionarse con una decision.</p>
+<p>52 - Calidad medible</p>
+<p>Convierte &#x27;el sistema sera rapido y fiable&#x27; en dos ejemplos verificables.</p>
+<p><strong>Respuesta modelo:</strong> Ejemplo: p95 &lt; 2 s bajo carga definida; disponibilidad mensual &gt;= 99,9% bajo una convencion de medida explicitada.</p>
+<h1>PARTE D - Metricas y calculos</h1>
+<p>53 - Cinco datos de una metrica</p>
+<p>¿Que debe acompanar a una metrica segun III.13?</p>
+<p><strong>Respuesta modelo:</strong> Definicion, unidad, poblacion, periodo y objetivo.</p>
+<p>54 - Densidad de defectos</p>
+<p>Proyecto A tiene 30 defectos en 60 KLOC; B tiene 20 en 20 KLOC. Calcula defectos/KLOC con esa convencion.</p>
+<p><strong>Respuesta modelo:</strong> A=0,5 defectos/KLOC; B=1 defecto/KLOC. B presenta mayor densidad bajo ese denominador; comparar KLOC entre lenguajes/proyectos exige cautela.</p>
+<p>55 - Cobertura simple</p>
+<p>Si 180 de 200 ramas definidas por la herramienta estan cubiertas, ¿cobertura de ramas?</p>
+<p><strong>Respuesta modelo:</strong> 90%, bajo esa definicion de herramienta.</p>
+<p>56 - Error rate</p>
+<p>Si 2.500 de 5.000.000 peticiones terminan en error segun la definicion operativa, ¿tasa?</p>
+<p><strong>Respuesta modelo:</strong> 0,05%.</p>
+<p>57 - Disponibilidad</p>
+<p>Servicio medido 43.200 min en un mes, con 21,6 min de indisponibilidad contabilizable. Calcula disponibilidad simple.</p>
+<p><strong>Respuesta modelo:</strong> (43.200-21,6)/43.200 x 100 = 99,95%, bajo la convencion indicada.</p>
+<p>58 - Throughput</p>
+<p>Se completan 120.000 operaciones en 10 minutos. ¿Throughput medio por segundo?</p>
+<p><strong>Respuesta modelo:</strong> 120.000 / 600 = 200 operaciones/s.</p>
+<p>59 - Lead time</p>
+<p>Un cambio se solicita el lunes 09:00 y queda disponible el jueves 09:00. ¿Lead time calendario simple?</p>
+<p><strong>Respuesta modelo:</strong> 3 dias, si esa es la convencion adoptada. Debe definirse el inicio/fin exactos de la metrica.</p>
+<p>60 - Cycle time</p>
+<p>¿Por que lead time y cycle time no deben usarse sin definicion?</p>
+<p><strong>Respuesta modelo:</strong> Porque equipos/herramientas pueden definir puntos de inicio/fin distintos; la metrica necesita convencion comun.</p>
+<p>61 - Defect escape</p>
+<p>¿Que idea mide defect escape rate?</p>
+<p><strong>Respuesta modelo:</strong> Defectos que escapan a etapas previas y se detectan posteriormente/produccion respecto al conjunto definido. La formula exacta debe documentarse.</p>
+<p>62 - Change failure rate</p>
+<p>¿Que idea pretende medir change failure rate?</p>
+<p><strong>Respuesta modelo:</strong> La proporcion de cambios/despliegues que provocan fallo o requieren remediacion segun definicion adoptada.</p>
+<p>63 - MTTR</p>
+<p>¿Que cautela introduce III.13 al usar mean time to restore?</p>
+<p><strong>Respuesta modelo:</strong> Definir claramente que evento inicia/finaliza la medida y no asumir que todos los equipos miden lo mismo.</p>
+<p>64 - Complejidad ciclomática: decisiones</p>
+<p>Un componente simple tiene 4 nodos de decision independientes en el grafo. Con la aproximacion decisiones+1, ¿V(G)?</p>
+<p><strong>Respuesta modelo:</strong> 5.</p>
+<p>65 - Complejidad: E-N+2P</p>
+<p>Grafo con E=14, N=11 y P=1. Calcula V(G).</p>
+<p><strong>Respuesta modelo:</strong> 14-11+2=5.</p>
+<p>66 - Consistencia de formulas</p>
+<p>Si para un componente simple el conteo de decisiones da 5 decisiones, ¿que V(G) esperas con decisiones+1?</p>
+<p><strong>Respuesta modelo:</strong> 6.</p>
+<p>67 - Interpretar complejidad</p>
+<p>Un modulo pasa de V(G)=8 a V(G)=22. ¿Puedes concluir que es defectuoso?</p>
+<p><strong>Respuesta modelo:</strong> No. Indica mayor complejidad de control y potencial mayor dificultad de prueba/mantenimiento; requiere contexto.</p>
+<p>68 - Duplicacion</p>
+<p>¿Por que duplicacion puede ser una metrica de producto relevante?</p>
+<p><strong>Respuesta modelo:</strong> Porque repeticion de logica puede aumentar coste y riesgo de cambios inconsistentes; no debe interpretarse aislada.</p>
+<p>69 - Acoplamiento/cohesion</p>
+<p>¿Que direccion suele ser deseable en diseno mantenible?</p>
+<p><strong>Respuesta modelo:</strong> Menor acoplamiento y mayor cohesion, sin convertirlos en numeros aislados fuera de contexto.</p>
+<p>70 - Vulnerabilidades</p>
+<p>¿Por que &#x27;numero de vulnerabilidades&#x27; sin severidad/edad no basta?</p>
+<p><strong>Respuesta modelo:</strong> III.13 propone vulnerabilidades por severidad/edad; el riesgo de una critica explotable no equivale al de varias menores.</p>
+<p>71 - Comparacion LOC</p>
+<p>Dos proyectos usan tecnologias distintas. ¿Es correcto concluir que el de menos lineas es de mayor calidad?</p>
+<p><strong>Respuesta modelo:</strong> No. Los apuntes advierten expresamente contra comparar proyectos con LOC sin contexto.</p>
+<p>72 - Cuadro equilibrado</p>
+<p>Propón un conjunto minimo de metricas para una API publica sin usar una sola &#x27;metrica reina&#x27;.</p>
+<p><strong>Respuesta modelo:</strong> Ej.: p95/throughput, error rate, disponibilidad/SLO, vulnerabilidades, defectos escapados, cobertura contextual y metricas de entrega/mantenibilidad.</p>
+<h1>PARTE E - SQuaRE, requisitos y evaluacion</h1>
+<p>73 - SQuaRE</p>
+<p>¿Que significa SQuaRE?</p>
+<p><strong>Respuesta modelo:</strong> Systems and software Quality Requirements and Evaluation.</p>
+<p>74 - Familia 25000</p>
+<p>¿Que debes memorizar de la familia SQuaRE segun tus apuntes?</p>
+<p><strong>Respuesta modelo:</strong> La finalidad y cadena de uso, no todas las partes: definir modelo/requisitos -&gt; seleccionar medidas -&gt; evaluar -&gt; aceptar/mejorar.</p>
+<p>75 - Modelo a requisito</p>
+<p>Convierte performance efficiency en un requisito medible.</p>
+<p><strong>Respuesta modelo:</strong> Ej.: p95 de respuesta &lt; 2 s con 1.000 usuarios concurrentes y carga definida.</p>
+<p>76 - Modelo a seguridad</p>
+<p>Convierte security en dos criterios medibles/aceptables.</p>
+<p><strong>Respuesta modelo:</strong> Ej.: 0 vulnerabilidades criticas abiertas en release y MFA para perfiles privilegiados; el criterio concreto depende del riesgo.</p>
+<p>77 - Modelo a mantenibilidad</p>
+<p>Convierte maintainability en evidencias, no en adjetivos.</p>
+<p><strong>Respuesta modelo:</strong> Ej.: complejidad/duplicacion bajo umbrales acordados, tests suficientes para cambios, analisis estatico y tiempo de resolucion/impacto medido.</p>
+<p>78 - Requisito vs metrica</p>
+<p>¿Es &#x27;p95&#x27; un requisito por si solo?</p>
+<p><strong>Respuesta modelo:</strong> No. Es una metrica/estadistico. El requisito necesita umbral, condicion de carga, periodo/contexto y criterio de aceptacion.</p>
+<p>79 - Aceptacion</p>
+<p>¿Puede una metrica formar parte del criterio de aceptacion?</p>
+<p><strong>Respuesta modelo:</strong> Si, cuando su definicion, metodo de medida, condiciones y umbral estan acordados.</p>
+<p>80 - Calidad continua</p>
+<p>¿Por que SQuaRE/25010 no deben usarse solo al final?</p>
+<p><strong>Respuesta modelo:</strong> Porque sirven desde definicion de requisitos hasta diseno, pruebas, control y aceptacion, cerrando mejora.</p>
+<h1>PARTE F - Mini-supuestos de calidad</h1>
+<p>81 - Portal publico</p>
+<p>Portal con 99,95% de disponibilidad, p95&lt;2s, interoperabilidad con tres organismos, WCAG y MFA. Clasifica los atributos principales.</p>
+<p><strong>Respuesta modelo:</strong> Reliability (availability), performance efficiency (time behaviour/capacity), compatibility (interoperability), interaction capability/accesibilidad relacionada y security. En supuesto, convertir cada uno en medida/criterio.</p>
+<p>82 - Release con 100% coverage</p>
+<p>Una release tiene 100% line coverage pero una vulnerabilidad critica conocida. ¿Aprobar?</p>
+<p><strong>Respuesta modelo:</strong> No por la cobertura. Un gate debe considerar riesgo/seguridad; cobertura no equivale a calidad ni ausencia de defectos.</p>
+<p>83 - Equipo gamifica LOC</p>
+<p>Un equipo es premiado por lineas de codigo producidas y comienza a generar mas codigo. ¿Que problema ilustra?</p>
+<p><strong>Respuesta modelo:</strong> Metrica sin objetivo/contexto que induce comportamiento perverso. Medir valor/calidad con varias dimensiones.</p>
+<p>84 - Refactor</p>
+<p>Un sistema es funcionalmente correcto pero cada cambio tarda semanas por fuerte acoplamiento. ¿Que caracteristica priorizas y que evidencias usarias?</p>
+<p><strong>Respuesta modelo:</strong> Maintainability: modularity, analysability, modifiability, testability; usar metricas contextualizadas de complejidad, acoplamiento, duplicacion, defectos y tiempos.</p>
+<p>85 - Nuevo hardware</p>
+<p>El software funciona en un entorno pero no puede instalarse ni adaptarse al nuevo. ¿Caracteristica 2023?</p>
+<p><strong>Respuesta modelo:</strong> Flexibility, especialmente adaptability/installability.</p>
+<p>86 - Sistema con riesgo fisico</p>
+<p>Una aplicacion controla una barrera automatica. Ante fallo debe pasar a estado seguro y advertir. ¿Que caracteristica anadida en 2023?</p>
+<p><strong>Respuesta modelo:</strong> Safety; aparecen ideas como fail safe y hazard warning.</p>
+<p>87 - Plan de calidad</p>
+<p>Estructura un plan de calidad para una API de tramitacion en 10 lineas.</p>
+<p><strong>Respuesta modelo:</strong> Requisitos de calidad por modelo 25010 -&gt; metricas/umbrales -&gt; QA (estandares/reviews/pipeline) -&gt; QC (tests/mediciones) -&gt; quality gates -&gt; seguridad/rendimiento -&gt; observabilidad/SLO -&gt; defectos/RCA -&gt; criterios de aceptacion -&gt; mejora continua.</p>
+<p>88 - Comparar proveedores</p>
+<p>Dos proveedores presentan &#x27;calidad 9/10&#x27; sin metodo. ¿Que pedirias?</p>
+<p><strong>Respuesta modelo:</strong> Modelo de calidad usado, caracteristicas, metricas, definiciones, unidades, poblacion, periodo, evidencia, umbrales y metodo de evaluacion.</p>
+<p>89 - Pregunta antigua</p>
+<p>Un test afirma &#x27;ISO/IEC 25010 tiene como caracteristicas Usability y Portability&#x27;. ¿Como respondes?</p>
+<p><strong>Respuesta modelo:</strong> Depende de la edicion. Es compatible con 2011; para 2023 los nombres de primer nivel son Interaction capability y Flexibility, y existen 9 con Safety.</p>
+<p>90 - Supuesto de 20 minutos</p>
+<p>Una Administracion licita un nuevo sistema. Da la estructura de una respuesta de calidad que puntue bien.</p>
+<p><strong>Respuesta modelo:</strong> Derivar NFR del modelo; fijar metricas y umbrales; QA preventivo; QC/pruebas; quality gates CI/CD; rendimiento, seguridad, fiabilidad, mantenibilidad e interaccion; trazabilidad requisito-&gt;medida-&gt;prueba; SLO/operacion; criterios de aceptacion; RCA/mejora.</p>
+<h1>Patron mental de examen</h1>
+<ul>
+<li>Identifica la edicion: 2011 o 2023.</li>
+<li>2023 = 9 caracteristicas; Safety nueva; Usability -&gt; Interaction capability; Portability -&gt; Flexibility.</li>
+<li>Clasifica el requisito en caracteristica/subcaracteristica.</li>
+<li>Convierte el adjetivo en metrica: definicion, unidad, poblacion, periodo y objetivo.</li>
+<li>Distingue QA preventivo de QC evaluativo.</li>
+<li>No confundas cobertura/complejidad con calidad total.</li>
+<li>En supuesto: requisito -&gt; metrica -&gt; prueba/evidencia -&gt; gate/aceptacion -&gt; operacion/mejora.</li>
+</ul>
+<p>Base: GSI A2 Bloque III V2.1, III.13. Verificacion de actualidad: ISO/IEC 25010:2023 sigue publicado como edicion 2 con nueve caracteristicas; ISO/IEC 25000:2014 figura como guia SQuaRE vigente/confirmada en 2026. No se exige memorizar toda la numeracion secundaria 250xx.</p></main></body></html>

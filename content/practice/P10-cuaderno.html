@@ -1,0 +1,340 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GSI A2 — PRÁCTICA ACTIVA 10 — DATOS, BIG DATA Y NoSQL — CUADERNO DE EJERCICIOS</title><link rel="stylesheet" href="../../assets/css/styles.css"></head><body><main class="shell topic-content"><p><a href="../../index.html#practica">Volver a práctica escrita</a></p><p>Material curado GSI A2. Fuente: <a href="https://docs.google.com/document/d/1NTuN5C18vDl1B0fqkEo7yer7LykkNENyOYnNZzvNN7I/edit">documento original de Drive</a>.</p><h1>GSI A2 - PRACTICA ACTIVA 10</h1>
+<h2>Mineria de datos, OLAP, Big Data, Hadoop y NoSQL - CUADERNO DE EJERCICIOS</h2>
+<p><strong>Ambito:</strong> III.15 - Mineria de datos, OLAP, Big Data, Hadoop o similares y bases de datos NoSQL.</p>
+<p><strong>Metodo:</strong> empieza por problema y SLA. Despues decide modelo de datos, consistencia, batch/stream y tecnologia. No uses Hadoop, Spark o NoSQL como sinonimos de &#x27;moderno&#x27;.</p>
+<h1>Mapa maestro de decision</h1>
+<table>
+<tr>
+<th scope="col"><p>Problema dominante</p></th>
+<th scope="col"><p>Opcion que debes considerar</p></th>
+<th scope="col"><p>Pregunta de control</p></th>
+</tr>
+<tr>
+<td><p>Transacciones estructuradas, integridad y joins</p></td>
+<td><p>Relacional / OLTP</p></td>
+<td><p>¿Realmente necesito abandonar ACID/modelo relacional?</p></td>
+</tr>
+<tr>
+<td><p>Analisis historico curado y BI</p></td>
+<td><p>Data warehouse / OLAP</p></td>
+<td><p>¿Necesito dimensiones, medidas, historico y consultas analiticas?</p></td>
+</tr>
+<tr>
+<td><p>Datos heterogeneos en formatos flexibles</p></td>
+<td><p>Data lake</p></td>
+<td><p>¿Existe gobierno, catalogo, linaje y control de calidad?</p></td>
+</tr>
+<tr>
+<td><p>Lookup muy simple por clave</p></td>
+<td><p>Key-value</p></td>
+<td><p>¿El patron dominante es clave -&gt; valor?</p></td>
+</tr>
+<tr>
+<td><p>Agregados JSON-like / esquema flexible</p></td>
+<td><p>Documental</p></td>
+<td><p>¿Las consultas siguen el agregado/documento?</p></td>
+</tr>
+<tr>
+<td><p>Gran escala distribuida por claves</p></td>
+<td><p>Wide-column</p></td>
+<td><p>¿La clave de particion evita hot spots?</p></td>
+</tr>
+<tr>
+<td><p>Relaciones y recorridos complejos</p></td>
+<td><p>Grafo</p></td>
+<td><p>¿La consulta dominante navega relaciones?</p></td>
+</tr>
+<tr>
+<td><p>Batch distribuido clasico</p></td>
+<td><p>Hadoop/HDFS + YARN + MapReduce</p></td>
+<td><p>¿El problema justifica distribucion y procesamiento batch?</p></td>
+</tr>
+<tr>
+<td><p>Procesamiento distribuido general</p></td>
+<td><p>Spark u otros motores</p></td>
+<td><p>¿Necesito batch/SQL/streaming/ML distribuido?</p></td>
+</tr>
+<tr>
+<td><p>Eventos continuos</p></td>
+<td><p>Streaming/event processing</p></td>
+<td><p>¿Importan event time, ventanas, late events y semantica extremo a extremo?</p></td>
+</tr>
+</table>
+<h1>PARTE A - Mineria de datos, tareas y proceso</h1>
+<p>1 - Mineria de datos</p>
+<p>Define mineria de datos segun III.15.</p>
+<p>2 - Clasificacion</p>
+<p>Se quiere predecir si un expediente sera &#x27;riesgo alto&#x27; o &#x27;riesgo bajo&#x27;. ¿Que tarea es?</p>
+<p>3 - Regresion</p>
+<p>Se quiere estimar el numero de llamadas que recibira un servicio manana. ¿Que tarea?</p>
+<p>4 - Clustering</p>
+<p>Se quieren descubrir grupos de ciudadanos con patrones similares sin etiquetas previas. ¿Que tarea?</p>
+<p>5 - Asociacion</p>
+<p>Se quieren descubrir reglas del tipo &#x27;quien consulta A tambien suele consultar B&#x27;. ¿Que tarea?</p>
+<p>6 - Anomalias</p>
+<p>Se quieren detectar operaciones muy distintas del comportamiento habitual. ¿Que tarea?</p>
+<p>7 - Reduccion dimensional</p>
+<p>¿Para que sirve conceptualmente la reduccion dimensional?</p>
+<p>8 - CRISP-DM</p>
+<p>Ordena el proceso que recoge III.15.</p>
+<p>9 - Negocio primero</p>
+<p>¿Por que no se debe empezar por elegir algoritmo?</p>
+<p>10 - Preparacion</p>
+<p>Cita tareas de preparacion que aparecen en los apuntes.</p>
+<p>11 - Leakage</p>
+<p>Un campo contiene informacion generada despues del resultado que se quiere predecir y se usa para entrenar. ¿Problema?</p>
+<p>12 - Train/validation/test</p>
+<p>¿Por que separar conjuntos?</p>
+<p>13 - Despliegue</p>
+<p>¿El trabajo termina cuando la metrica de validacion es buena?</p>
+<p>14 - Modelo no es decision</p>
+<p>¿Por que una prediccion no debe confundirse con una decision administrativa automatica?</p>
+<p>15 - Algoritmo adecuado</p>
+<p>¿Que criterio manda sobre &#x27;usar el algoritmo mas moderno&#x27;?</p>
+<p>16 - No todo es ML</p>
+<p>¿Todo problema de datos requiere machine learning?</p>
+<p>17 - Calidad de datos</p>
+<p>¿Por que la calidad de datos es arquitectonica y no solo &#x27;limpieza previa&#x27;?</p>
+<p>18 - Gobernanza</p>
+<p>Cita elementos de gobierno que III.15 exige contemplar.</p>
+<h1>PARTE B - Algoritmos y metricas de mineria</h1>
+<p>19 - Clasificacion: algoritmos</p>
+<p>Cita algoritmos/conceptos que III.15 asocia a clasificacion.</p>
+<p>20 - Regresion: algoritmos</p>
+<p>Cita opciones recogidas para regresion.</p>
+<p>21 - Clustering</p>
+<p>¿Que algoritmos de clustering aparecen?</p>
+<p>22 - Asociacion</p>
+<p>¿Que algoritmos aparecen para reglas de asociacion?</p>
+<p>23 - Anomalias</p>
+<p>¿Que familias cita el apunte?</p>
+<p>24 - Precision</p>
+<p>Con TP=80 y FP=20, calcula precision.</p>
+<p>25 - Recall</p>
+<p>Con TP=80 y FN=40, calcula recall.</p>
+<p>26 - F1</p>
+<p>Si precision=0,80 y recall=0,667, calcula F1 aproximado.</p>
+<p>27 - Desbalance</p>
+<p>En fraude, 99,9% de operaciones son normales. Un modelo que siempre predice &#x27;normal&#x27; tiene gran accuracy. ¿Por que no basta?</p>
+<p>28 - Recall prioritario</p>
+<p>Si es muy costoso dejar escapar un fraude real, ¿que metrica suele cobrar especial importancia?</p>
+<p>29 - Precision prioritaria</p>
+<p>Si una alerta provoca una investigacion humana muy cara, ¿que metrica conviene vigilar especialmente?</p>
+<p>30 - Regresion: MAE</p>
+<p>¿Que interpreta MAE?</p>
+<p>31 - RMSE</p>
+<p>¿Que diferencia conceptual tiene RMSE frente a MAE?</p>
+<p>32 - R2</p>
+<p>¿R2 por si solo demuestra que un modelo es util?</p>
+<p>33 - Silhouette</p>
+<p>¿Que combina silhouette en clustering?</p>
+<p>34 - Support</p>
+<p>En 1.000 transacciones, A y B aparecen juntos en 120. ¿Support(A∩B)?</p>
+<p>35 - Confidence</p>
+<p>A aparece en 200 transacciones y A+B juntos en 120. ¿Confidence A-&gt;B?</p>
+<p>36 - Lift</p>
+<p>Si support(B)=30% y confidence(A-&gt;B)=60%, ¿lift?</p>
+<h1>PARTE C - OLAP, warehouse, lake y lakehouse</h1>
+<p>37 - OLAP</p>
+<p>¿Que caracteriza OLAP?</p>
+<p>38 - Medida</p>
+<p>Ventas totales, numero de expedientes o coste son ejemplos de que elemento OLAP?</p>
+<p>39 - Dimension</p>
+<p>Tiempo, territorio y tipo de tramite son ejemplos de que elemento?</p>
+<p>40 - Jerarquia</p>
+<p>Año -&gt; trimestre -&gt; mes -&gt; dia es que concepto?</p>
+<p>41 - Slice</p>
+<p>¿Que hace slice conceptualmente?</p>
+<p>42 - Dice</p>
+<p>¿Que hace dice?</p>
+<p>43 - Drill-down</p>
+<p>¿Que hace drill-down?</p>
+<p>44 - Roll-up</p>
+<p>¿Que hace roll-up?</p>
+<p>45 - Pivot</p>
+<p>¿Que hace pivot?</p>
+<p>46 - OLAP vs OLTP</p>
+<p>¿Por que no conviene ejecutar reporting pesado indiscriminadamente sobre OLTP?</p>
+<p>47 - Data warehouse</p>
+<p>Define warehouse segun el apunte.</p>
+<p>48 - Data lake</p>
+<p>Define data lake.</p>
+<p>49 - Lakehouse</p>
+<p>¿Que intenta combinar un lakehouse?</p>
+<p>50 - Lake no sustituye gobierno</p>
+<p>¿Por que &#x27;guardar todo por si acaso&#x27; no es una buena arquitectura?</p>
+<p>51 - Eleccion</p>
+<p>Para informes financieros curados con dimensiones estables, ¿warehouse o lake como primera opcion?</p>
+<p>52 - Raw heterogeneo</p>
+<p>Para conservar eventos, ficheros y datos semiestructurados a gran escala antes de usos diversos, ¿que opcion considerar?</p>
+<h1>PARTE D - Big Data, Hadoop y Spark</h1>
+<p>53 - 5V</p>
+<p>Enumera las 5V del marco habitual recogido.</p>
+<p>54 - Big Data no es volumen solo</p>
+<p>¿Tener una tabla de 2 TB obliga a usar Hadoop?</p>
+<p>55 - Hadoop</p>
+<p>¿Hadoop equivale a HDFS?</p>
+<p>56 - HDFS</p>
+<p>¿Que funcion cumple HDFS?</p>
+<p>57 - NameNode</p>
+<p>¿Que gestiona NameNode?</p>
+<p>58 - DataNode</p>
+<p>¿Que hace DataNode?</p>
+<p>59 - YARN</p>
+<p>¿Que papel cumple YARN?</p>
+<p>60 - MapReduce</p>
+<p>Resume sus fases principales.</p>
+<p>61 - Data locality</p>
+<p>¿Que idea expresa data locality?</p>
+<p>62 - Replicacion HDFS</p>
+<p>¿La replicacion HDFS convierte HDFS en backup?</p>
+<p>63 - MapReduce no tiempo real</p>
+<p>¿Por que no debe presentarse MapReduce clasico como solucion natural para baja latencia interactiva?</p>
+<p>64 - Spark</p>
+<p>¿Como caracteriza III.15 a Spark?</p>
+<p>65 - Spark y HDFS</p>
+<p>¿Spark requiere HDFS obligatoriamente?</p>
+<p>66 - Hadoop vigente en examen</p>
+<p>¿Debe eliminarse Hadoop de los apuntes porque existan tecnologias mas modernas?</p>
+<p>67 - Objeto vs HDFS</p>
+<p>¿El apunte dice que almacenamiento de objetos sustituye conceptualmente a HDFS en el temario?</p>
+<p>68 - Parquet/ORC</p>
+<p>¿Que papel tienen Parquet/ORC en los apuntes?</p>
+<p>69 - Kafka</p>
+<p>¿Como aparece Kafka en III.15?</p>
+<p>70 - Arquitectura minima</p>
+<p>Antes de proponer cluster distribuido, ¿que debes justificar?</p>
+<h1>PARTE E - NoSQL, CAP, consistencia, sharding y replicacion</h1>
+<p>71 - NoSQL</p>
+<p>¿NoSQL significa necesariamente &#x27;sin SQL&#x27;?</p>
+<p>72 - Key-value</p>
+<p>Caso natural para key-value.</p>
+<p>73 - Documental</p>
+<p>Caso natural para documental.</p>
+<p>74 - Wide-column</p>
+<p>Caso natural para wide-column.</p>
+<p>75 - Grafo</p>
+<p>Caso natural para grafo.</p>
+<p>76 - Relacional sigue valido</p>
+<p>Sistema contable con transacciones, restricciones y joins complejos. ¿Migrarias a NoSQL solo por volumen?</p>
+<p>77 - CAP</p>
+<p>Formula correctamente CAP segun III.15.</p>
+<p>78 - Partition tolerance</p>
+<p>¿Por que la discusion C/A aparece especialmente cuando existe particion?</p>
+<p>79 - Consistencia fuerte</p>
+<p>Define conceptualmente consistencia fuerte.</p>
+<p>80 - Eventual</p>
+<p>Define consistencia eventual.</p>
+<p>81 - BASE vs ACID</p>
+<p>¿Son mutuamente excluyentes de forma absoluta?</p>
+<p>82 - Sharding</p>
+<p>¿Que es sharding?</p>
+<p>83 - Hot spot</p>
+<p>¿Que causa una mala clave de sharding?</p>
+<p>84 - Replicacion</p>
+<p>¿Que aporta replicacion?</p>
+<p>85 - Replica no es backup</p>
+<p>¿Una replica actualizada sustituye backups?</p>
+<p>86 - Patron de acceso</p>
+<p>¿Por que el modelo de acceso debe decidir el tipo de NoSQL?</p>
+<p>87 - Join complejo</p>
+<p>Necesitas numerosos joins ad hoc y consistencia transaccional amplia. ¿Que advertencia?</p>
+<p>88 - Grafo vs documental</p>
+<p>Un caso consulta &#x27;amigos de amigos&#x27;, rutas y conexiones repetidamente. ¿Documental o grafo?</p>
+<h1>PARTE F - Batch, streaming y tiempo de eventos</h1>
+<p>89 - Batch</p>
+<p>Define batch.</p>
+<p>90 - Streaming</p>
+<p>Define streaming.</p>
+<p>91 - Event time</p>
+<p>¿Que es event time?</p>
+<p>92 - Processing time</p>
+<p>¿Que es processing time?</p>
+<p>93 - Late event</p>
+<p>¿Que es un late event?</p>
+<p>94 - Ventanas</p>
+<p>¿Para que sirven las ventanas en streaming?</p>
+<p>95 - Orden de llegada</p>
+<p>¿Por que arrival order no siempre coincide con event time?</p>
+<p>96 - Exactly-once</p>
+<p>¿Por que III.15 dice que exactly-once no es una casilla magica?</p>
+<p>97 - Batch vs streaming</p>
+<p>Informe nocturno de cierre mensual vs deteccion de fraude en segundos. ¿Que enfoque encaja mejor en cada uno?</p>
+<p>98 - Lambda/Kappa</p>
+<p>¿III.15 exige memorizar arquitecturas Lambda/Kappa?</p>
+<h1>PARTE G - Mini-supuestos integradores</h1>
+<p>99 - Expedientes transaccionales</p>
+<p>Sistema de expedientes: 200.000 expedientes/año, relaciones claras, transacciones, integridad y reporting moderado. Un proveedor propone Hadoop+NoSQL. ¿Que respondes?</p>
+<p>100 - Sesiones web</p>
+<p>Necesitas millones de sesiones con acceso casi exclusivo por identificador. ¿Que familia considerar?</p>
+<p>101 - Documentos variables</p>
+<p>Cada organismo envia documentos JSON con campos diferentes, se consultan por atributos y por id. ¿Que familia considerar?</p>
+<p>102 - Relaciones antifraude</p>
+<p>Necesitas recorrer rapidamente relaciones entre cuentas, empresas, personas y transferencias. ¿Que familia considerar?</p>
+<p>103 - BI ministerial</p>
+<p>Se quieren indicadores historicos por año, territorio, tramite y organismo con drill-down. ¿Arquitectura base?</p>
+<p>104 - Lake sin catalogo</p>
+<p>Un data lake contiene 8 PB sin catalogo, propietario ni retencion. ¿Que problema central?</p>
+<p>105 - Fraude streaming</p>
+<p>Operaciones llegan continuamente y hay que puntuar riesgo en menos de 2 s. Estructura la solucion sin marcas.</p>
+<p>106 - Pipeline batch</p>
+<p>Cada noche se procesan 20 TB de logs para estadisticas agregadas; la latencia de horas es aceptable. ¿Que enfoque?</p>
+<p>107 - CAP en practica</p>
+<p>Durante una particion, un servicio de consulta publica prefiere seguir respondiendo aunque temporalmente pueda servir una replica algo atrasada. ¿Que prioridad refleja?</p>
+<p>108 - Consistencia prioritaria</p>
+<p>Durante una particion, una operacion de saldo no debe aceptar decisiones contradictorias entre replicas. ¿Que prioridad?</p>
+<p>109 - Supuesto de arquitectura</p>
+<p>Un organismo pide &#x27;plataforma Big Data&#x27;. ¿Que preguntas haces antes de dibujar tecnologia?</p>
+<p>110 - Supuesto de 20 minutos</p>
+<p>Disena en una pagina una plataforma de datos publica con OLTP, BI historico y eventos en tiempo casi real.</p>
+<h1>Registro de progreso</h1>
+<table>
+<tr>
+<th scope="col"><p>Bloque</p></th>
+<th scope="col"><p>Intento 1</p></th>
+<th scope="col"><p>Intento 2</p></th>
+<th scope="col"><p>Errores recurrentes</p></th>
+</tr>
+<tr>
+<td><p>A Mineria/proceso</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>B Algoritmos/metricas</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>C OLAP/lake</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>D Hadoop/Spark</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>E NoSQL/CAP</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>F Streaming</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>G Supuestos</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table></main></body></html>

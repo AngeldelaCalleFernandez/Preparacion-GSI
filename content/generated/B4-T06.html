@@ -1,11 +1,49 @@
-<article class="topic-content" data-topic-id="B4-T06" data-coverage-status="pending">
-<aside class="topic-content__status topic-content__status--pending" role="status"><p>Contenido pendiente de fuentes verificables.</p></aside>
-<nav class="topic-content__toc" aria-label="Índice del tema">
-<h2>Contenido del tema</h2>
-<ol><li class="topic-content__toc-level-2"><a href="#temario/B4-T06/fuentes-necesarias">Fuentes necesarias</a></li></ol>
-</nav>
-<h2 id="fuentes-necesarias">Fuentes necesarias</h2>
-<div class="topic-content__pendiente" data-editorial-kind="pendiente"><p class="topic-content__kind">Pendiente</p><p>Contenido pendiente de una fuente verificable.</p>
-<p>Fuente necesaria: documentación técnica primaria local sobre comunicaciones, medios de transmisión, interconexión y redes inalámbricas.</p></div>
-
+<article class="topic-content" data-topic-id="B4-T06" data-coverage-status="complete">
+<p>Material curado del corpus GSI A2 · apuntes V2.1 revisados. Procedencia editorial, no documento oficial.</p>
+<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B4-T06/estudio">Apuntes de estudio</a></li><li><a href="#temario/B4-T06/estudio-01">1. Dimensionamiento físico</a></li><li><a href="#temario/B4-T06/estudio-02">2. Energía y climatización</a></li><li><a href="#temario/B4-T06/estudio-03">3. Protección física y ambiental</a></li><li><a href="#temario/B4-T06/estudio-04">4. Virtualización y consolidación</a></li><li><a href="#temario/B4-T06/estudio-05">5. Alta disponibilidad</a></li><li><a href="#temario/B4-T06/estudio-06">6. Balanceo de carga</a></li><li><a href="#temario/B4-T06/estudio-07">7. Recuperación ante desastres</a></li><li><a href="#temario/B4-T06/estudio-08">Resumen</a></li><li><a href="#temario/B4-T06/repaso">Resumen de repaso</a></li><li><a href="#temario/B4-T06/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B4-T06/repaso-02">Claves de test</a></li><li><a href="#temario/B4-T06/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B4-T06/repaso-04">Fuentes base del material</a></li></ol></nav>
+<h2 id="estudio">Apuntes de estudio</h2>
+<p><strong>Cobertura oficial que debe quedar dominada:</strong> Planificación física y dimensionamiento de un centro de procesamiento de datos. Virtualización y consolidación de servidores y recursos. Vulnerabilidades, riesgo y protección. Sistemas de alta disponibilidad y balanceo de carga. Recuperación ante desastres.</p>
+<h3 id="estudio-01">1. Dimensionamiento físico</h3>
+<p>Planificar un CPD exige inventariar equipos y crecimiento, RU/racks, potencia eléctrica, refrigeración, peso, cableado de datos/energía, conectividad externa y espacios de operación. No se dimensiona solo por número de servidores: importan kW, disipación térmica, puertos, almacenamiento y redundancia.</p>
+<h3 id="estudio-02">2. Energía y climatización</h3>
+<p>Cadena típica: red eléctrica → cuadros/ATS → UPS → PDU → equipo, con grupo electrógeno para autonomía prolongada. Redundancia N cubre solo carga; N+1 añade un componente; 2N duplica capacidad completa en la parte diseñada. La topología real puede combinar niveles.</p>
+<p>La climatización controla temperatura/humedad y flujo de aire; pasillos frío/caliente y contención mejoran eficiencia. PUE = energía total del CPD / energía TI; cuanto más próximo a 1, menor overhead, pero no mide disponibilidad ni calidad de servicio.</p>
+<h3 id="estudio-03">3. Protección física y ambiental</h3>
+<p>Control de acceso por zonas, CCTV cuando proceda, detección de incendio/humo, extinción compatible con equipos y personas, agua/fugas, sensores ambientales y procedimientos. Los riesgos incluyen incendio, inundación, energía, fallo HVAC, intrusión, obras, dependencia de proveedor y errores humanos.</p>
+<h3 id="estudio-04">4. Virtualización y consolidación</h3>
+<p>Un hipervisor abstrae CPU/memoria/red/storage para VMs. Consolidar aumenta utilización y flexibilidad, pero concentra cargas: un host o storage mal dimensionado puede afectar a muchas VMs. Se requieren reservas/overcommit controlado, anti-affinity, HA y capacidad de evacuar hosts.</p>
+<p>La movilidad en vivo ayuda a mantenimiento, pero no equivale a DR. Contenedores son otra capa de virtualización de SO y no sustituyen por sí solos a la infraestructura física.</p>
+<h3 id="estudio-05">5. Alta disponibilidad</h3>
+<p>HA reduce indisponibilidad eliminando SPOF mediante redundancia de compute, red, alimentación, storage, DNS/balanceadores y dependencias. Activo-activo permite servir desde varios nodos; activo-pasivo mantiene reserva. Quorum/fencing evitan split-brain en clusters según tecnología.</p>
+<h3 id="estudio-06">6. Balanceo de carga</h3>
+<p>L4 decide principalmente por IP/puerto/conexión; L7 comprende protocolo de aplicación (p. ej. HTTP) y puede enrutar por host/path/cabeceras. Algoritmos: round-robin, least connections, ponderados o hashing. Health checks retiran nodos no sanos. La persistencia de sesión debe justificarse; preferir servicios stateless cuando sea posible.</p>
+<h3 id="estudio-07">7. Recuperación ante desastres</h3>
+<p>DR cubre pérdida de sitio/dominio de fallo. Sitio <strong>cold</strong>: infraestructura mínima, más RTO; <strong>warm</strong>: parte preinstalada; <strong>hot</strong>: alta preparación/replicación, mayor coste. Diseñar datos, DNS/routing, identidades, certificados, dependencias externas, backups y runbooks.</p>
+<p>La prueba de DR debe incluir conmutación y <strong>failback</strong>, no solo verificar una copia. RPO/RTO de cada servicio guían replicación y automatización.</p>
+<p>Datos y trampas de test</p>
+<ul>
+<li>HA ≠ DR.</li>
+<li>Dos servidores en el mismo CPD no cubren desastre de sitio.</li>
+<li>N+1 ≠ 2N.</li>
+<li>PUE mide eficiencia energética, no disponibilidad.</li>
+<li>Balanceo L4 ≠ L7.</li>
+<li>Virtualización mejora consolidación pero no crea capacidad física.</li>
+<li>Live migration ≠ backup ni DR.</li>
+<li>Activo-activo exige resolver consistencia/estado.</li>
+</ul>
+<p>Aplicación al supuesto práctico</p>
+<p>Dibuja al menos dos dominios de fallo: energía/red/hosts/storage redundantes, cluster y balanceadores; si el caso exige continuidad ante desastre, añade segunda sede/zona, replicación, backups, DNS/routing y runbook. Justifica N+1/2N, capacidad de fallo, RPO/RTO y pruebas de conmutación.</p>
+<h3 id="estudio-08">Resumen</h3>
+<p>Un CPD fiable combina ingeniería física, eliminación de SPOF, virtualización bien dimensionada, HA local y una estrategia DR probada para fallos de sitio.</p>
+<p><strong>Fuentes base:</strong> A1 053/056/057/128/132 + RELEASE arquitectura; depuración fuerte de material histórico.</p>
+<h2 id="repaso">Resumen de repaso</h2>
+<h3 id="repaso-01">Núcleo de estudio</h3>
+<p>Un CPD requiere espacio/racks, energía, UPS/grupos, climatización, cableado, incendios, control físico, comunicaciones, monitorización y redundancia. Dimensiona por potencia, calor, RU, red, almacenamiento y crecimiento. Virtualización consolida servidores y habilita movilidad/HA, pero concentra riesgos. Alta disponibilidad reduce indisponibilidad mediante redundancia, clúster, balanceo y eliminación de SPOF. Balanceo puede operar L4/L7 y usar health checks/algoritmos. DR define sitio alternativo, replicación, backups, runbooks y pruebas; RPO/RTO determinan solución. Diferencia activo-activo, activo-pasivo y cold/warm/hot site.</p>
+<h3 id="repaso-02">Claves de test</h3>
+<p>HA no equivale a DR; dos servidores en mismo CPD no cubren desastre del sitio. N+1 y 2N son esquemas de redundancia distintos. Balanceo no sustituye persistencia/consistencia. Virtualización no elimina necesidad de capacidad física.</p>
+<h3 id="repaso-03">Enfoque para supuesto práctico</h3>
+<p>En supuesto dibuja dos zonas/sedes, redundancia de red/energía, cluster, balanceo, almacenamiento y backup. Justifica RPO/RTO, coste y pruebas de conmutación.</p>
+<h3 id="repaso-04">Fuentes base del material</h3>
+<p>A1 057 + 053 + 128 + 132 y RELEASE arquitectura física.</p>
+<section class="topic-content__sources"><h2 id="fuentes">Fuentes y localizadores</h2><ul><li><a href="https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)</a> · IV.06 · 2026-08-21</li><li><a href="https://docs.google.com/document/d/1PRbZRedDj9j2D4jPlDODZUKkmbCqPWxMM4hhGhjcZIo/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE IV — RESUMEN MAESTRO DE REPASO (16 temas)</a> · IV.06 · 2026-08-21</li></ul></section>
 </article>

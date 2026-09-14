@@ -1,0 +1,184 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GSI A2 — PRÁCTICA ACTIVA 02 — BBDD — CUADERNO DE EJERCICIOS</title><link rel="stylesheet" href="../../assets/css/styles.css"></head><body><main class="shell topic-content"><p><a href="../../index.html#practica">Volver a práctica escrita</a></p><p>Material curado GSI A2. Fuente: <a href="https://docs.google.com/document/d/1r7Jr6hZFuqae63zp_-Y-y4oJr7xWzzGAypZvbGlUQt4/edit">documento original de Drive</a>.</p><h1>GSI A2 — PRÁCTICA ACTIVA 02</h1>
+<h2>Bases de datos: modelo, normalización, SQL, índices y concurrencia</h2>
+<p><strong>Ámbito:</strong> III.04 como tema principal, con apoyo conceptual de II.05 y operativo de IV.02.</p>
+<p><strong>Cómo usarlo:</strong> resuelve primero sin mirar el solucionario. En modelado escribe siempre entidades, PK, FK, cardinalidades y restricciones. En normalización identifica dependencias funcionales antes de descomponer. En concurrencia dibuja T1/T2 por pasos y nombra exactamente la anomalía.</p>
+<p><strong>Objetivo:</strong> que puedas pasar de un enunciado a un modelo de datos defendible y razonar qué ocurre cuando varias transacciones acceden simultáneamente.</p>
+<h1>PARTE A — Modelo conceptual y paso a relacional</h1>
+<p>Ejercicio 1 — Alumnos y asignaturas</p>
+<p>Un alumno puede matricularse en muchas asignaturas y una asignatura puede tener muchos alumnos. De cada matrícula interesa fecha y nota final. Diseña el modelo E/R y su paso a relacional.</p>
+<p>Ejercicio 2 — Departamentos y empleados</p>
+<p>Cada empleado pertenece a un único departamento; un departamento puede tener muchos empleados. Un empleado puede ser jefe de, como máximo, un departamento. Diseña entidades, relaciones, cardinalidades y claves.</p>
+<p>Ejercicio 3 — Pedidos</p>
+<p>Un cliente realiza pedidos. Cada pedido contiene uno o más productos y debe conservar cantidad y precio unitario aplicado en el momento de la compra. Propón tablas y claves.</p>
+<p>Ejercicio 4 — Biblioteca</p>
+<p>Un libro puede tener varios autores y un autor varios libros. Existen varios ejemplares físicos de cada libro. Los usuarios toman prestados ejemplares, registrándose fecha de préstamo y devolución. Modela el sistema.</p>
+<p>Ejercicio 5 — Citas médicas</p>
+<p>Un médico atiende muchas citas y un paciente puede tener muchas citas. Una cita se identifica por médico, fecha y hora y no puede duplicarse el mismo hueco del médico. Diseña el modelo y una restricción que evite doble reserva.</p>
+<p>Ejercicio 6 — Equipos y técnicos</p>
+<p>Un técnico puede pertenecer a varios equipos y un equipo tiene varios técnicos. En cada pertenencia se guarda rol y fecha de incorporación. ¿Dónde deben almacenarse esos atributos?</p>
+<p>Ejercicio 7 — Generalización</p>
+<p>Una organización maneja personas. Algunas son empleados y otras proveedores autónomos. Todas comparten nombre, NIF y contacto; los empleados tienen salario y los proveedores tarifa. Propón dos formas relacionales de representar la especialización e indica un compromiso de cada una.</p>
+<p>Ejercicio 8 — Relación ternaria</p>
+<p>Una empresa registra qué proveedor suministra qué producto a qué almacén y a qué precio. Explica por qué tres relaciones binarias pueden no conservar toda la semántica y propone una tabla relacional.</p>
+<h1>PARTE B — Dependencias y normalización</h1>
+<p>Ejercicio 9 — ¿Cumple 1FN?</p>
+<p>CLIENTE(id_cliente, nombre, telefonos), donde <em>telefonos</em> almacena &quot;600111111,600222222&quot;. ¿Qué problema existe y cómo lo rediseñarías?</p>
+<p>Ejercicio 10 — Matrícula y 2FN/3FN</p>
+<p>Se parte de:</p>
+<p>MATRICULA(alumno_id, alumno_nombre, asignatura_id, asignatura_nombre,          profesor_id, profesor_nombre, nota)PK = (alumno_id, asignatura_id)Supón: asignatura_id → asignatura_nombre, profesor_id       profesor_id → profesor_nombre       alumno_id → alumno_nombre</p>
+<p>Identifica dependencias parciales/transitivas y normaliza hasta 3FN.</p>
+<p>Ejercicio 11 — Pedido desnormalizado</p>
+<p>DETALLE(pedido_id, fecha_pedido, cliente_id, cliente_nombre,        producto_id, producto_nombre, precio_catalogo, cantidad)PK = (pedido_id, producto_id)</p>
+<p>Indica anomalías y descompón hasta 3FN.</p>
+<p>Ejercicio 12 — Empleado y departamento</p>
+<p>EMPLEADO(emp_id, emp_nombre, dept_id, dept_nombre, dept_sede)</p>
+<p>Si emp_id → emp_nombre, dept_id y dept_id → dept_nombre, dept_sede, ¿está en 3FN? Justifica y corrige.</p>
+<p>Ejercicio 13 — Clave compuesta</p>
+<p>INSCRIPCION(alumno_id, curso_id, alumno_email, curso_titulo, fecha, resultado)PK = (alumno_id, curso_id)</p>
+<p>¿Qué atributos dependen parcialmente de la clave? ¿Qué tablas crearías?</p>
+<p>Ejercicio 14 — BCNF</p>
+<p>En R(Alumno, Asignatura, Profesor), cada pareja (Alumno, Asignatura) determina Profesor y cada Profesor imparte una única Asignatura. Determina claves candidatas y razona si puede estar en 3FN pero no en BCNF.</p>
+<p>Ejercicio 15 — Anomalía de actualización</p>
+<p>Una tabla guarda en cada factura los campos cliente_id, cliente_nombre y cliente_direccion. ¿Qué anomalía aparece cuando el cliente cambia de dirección? ¿Qué principio de diseño la reduce?</p>
+<p>Ejercicio 16 — Desnormalización razonada</p>
+<p>Una consulta analítica tarda mucho por numerosos JOIN y se ejecuta miles de veces al día. ¿Desnormalizarías? Enumera al menos cuatro condiciones/controles que deberías valorar antes.</p>
+<p>Ejercicio 17 — Dependencia derivada</p>
+<p>En una tabla se almacenan cantidad, precio_unitario y total_linea = cantidad × precio_unitario. ¿Qué riesgos genera almacenar total_linea? ¿Cuándo podría justificarse?</p>
+<p>Ejercicio 18 — Natural o sustituta</p>
+<p>Una persona tiene NIF único. ¿Debe usarse necesariamente NIF como PK? Compara clave natural y clave sustituta y propone una solución práctica.</p>
+<h1>PARTE C — SQL relacional</h1>
+<p>Usa este esquema para los ejercicios 19–30:</p>
+<p>CLIENTE(id_cliente PK, nombre, email UNIQUE, provincia)PEDIDO(id_pedido PK, id_cliente FK, fecha, estado)PRODUCTO(id_producto PK, nombre, categoria, precio)LINEA_PEDIDO(id_pedido FK, id_producto FK, cantidad, precio_unitario,             PK(id_pedido,id_producto))</p>
+<p>Ejercicio 19 — JOIN</p>
+<p>Escribe una consulta que muestre id_pedido, fecha y nombre del cliente para pedidos en estado &#x27;PENDIENTE&#x27;.</p>
+<p>Ejercicio 20 — Agregación</p>
+<p>Obtén el importe total de cada pedido como SUM(cantidad × precio_unitario).</p>
+<p>Ejercicio 21 — HAVING</p>
+<p>Muestra clientes cuyo gasto total histórico sea superior a 1.000 €.</p>
+<p>Ejercicio 22 — Clientes sin pedidos</p>
+<p>Resuelve con LEFT JOIN o NOT EXISTS.</p>
+<p>Ejercicio 23 — Productos nunca vendidos</p>
+<p>Escribe una consulta que devuelva productos que no aparecen en LINEA_PEDIDO.</p>
+<p>Ejercicio 24 — WHERE frente a HAVING</p>
+<p>Explica la diferencia y da un ejemplo usando el esquema anterior.</p>
+<p>Ejercicio 25 — UNION frente a UNION ALL</p>
+<p>¿Qué diferencia semántica y de coste suele existir?</p>
+<p>Ejercicio 26 — UPDATE seguro</p>
+<p>Quieres incrementar un 5 % el precio de productos de categoría &#x27;RED&#x27;. Escribe la sentencia y explica qué comprobación harías antes en producción.</p>
+<p>Ejercicio 27 — Restricciones</p>
+<p>Propón restricciones para que cantidad sea positiva, estado solo pueda tomar PENDIENTE/PAGADO/CANCELADO y email no se repita.</p>
+<p>Ejercicio 28 — Ranking por cliente</p>
+<p>Explica cómo usarías una función de ventana para numerar pedidos de cada cliente del más reciente al más antiguo.</p>
+<p>Ejercicio 29 — DELETE vs DROP</p>
+<p>Explica la diferencia entre DELETE FROM PEDIDO WHERE..., TRUNCATE TABLE y DROP TABLE a nivel conceptual.</p>
+<p>Ejercicio 30 — Inyección SQL</p>
+<p>¿Por qué concatenar texto recibido del usuario en una consulta es peligroso? Indica el control principal.</p>
+<h1>PARTE D — Índices y diseño físico</h1>
+<p>Ejercicio 31 — Índice por búsqueda</p>
+<p>Se consulta continuamente CLIENTE por email y el campo es UNIQUE. ¿Qué índice esperarías y por qué?</p>
+<p>Ejercicio 32 — Índice compuesto</p>
+<p>Consulta frecuente: WHERE id_cliente = ? AND fecha BETWEEN ? AND ? ORDER BY fecha. Propón un índice razonable sobre PEDIDO y explica el orden.</p>
+<p>Ejercicio 33 — Índice que sobra</p>
+<p>Una tabla recibe 20.000 INSERT/s y tiene 18 índices. Explica por qué “más índices” puede empeorar el sistema.</p>
+<p>Ejercicio 34 — Baja selectividad</p>
+<p>¿Por qué un índice aislado sobre un booleano activo=true/false puede ser poco útil en una tabla donde el 99 % está activo?</p>
+<p>Ejercicio 35 — SARGabilidad</p>
+<p>Compara WHERE fecha &gt;= &#x27;2026-01-01&#x27; AND fecha &lt; &#x27;2027-01-01&#x27; con aplicar una función sobre la columna fecha. ¿Cuál suele favorecer el uso de índice y por qué?</p>
+<h1>PARTE E — Transacciones, anomalías y aislamiento</h1>
+<p>Ejercicio 36 — ACID</p>
+<p>Define Atomicidad, Consistencia, Aislamiento y Durabilidad con una frase y un ejemplo breve.</p>
+<p>Ejercicio 37 — Dirty read</p>
+<p>T1: UPDATE CUENTA SET saldo=0 WHERE id=1;   -- no COMMITT2: SELECT saldo FROM CUENTA WHERE id=1;    -- lee 0T1: ROLLBACK;</p>
+<p>Nombra la anomalía y explica el problema.</p>
+<p>Ejercicio 38 — Non-repeatable read</p>
+<p>T1: SELECT saldo FROM CUENTA WHERE id=1; -- 100T2: UPDATE ... saldo=80; COMMIT;T1: SELECT saldo FROM CUENTA WHERE id=1; -- 80</p>
+<p>Nombra la anomalía.</p>
+<p>Ejercicio 39 — Phantom</p>
+<p>T1: SELECT COUNT(*) FROM PEDIDO WHERE estado=&#x27;PENDIENTE&#x27;; -- 10T2: INSERT nuevo PENDIENTE; COMMIT;T1: SELECT COUNT(*) ...; -- 11</p>
+<p>Nombra la anomalía y distingue de la anterior.</p>
+<p>Ejercicio 40 — Lost update</p>
+<p>T1 lee stock=10T2 lee stock=10T1 guarda stock=9T2 guarda stock=9</p>
+<p>¿Qué se ha perdido? Da dos estrategias para evitarlo.</p>
+<p>Ejercicio 41 — Nivel mínimo</p>
+<p>Según el modelo SQL clásico, ¿qué nivel mínimo evita dirty reads? ¿Cuál evita non-repeatable reads? ¿Cuál evita también phantoms?</p>
+<p>Ejercicio 42 — MVCC</p>
+<p>Explica por qué MVCC puede permitir lecturas consistentes sin bloquear a los escritores en muchos escenarios, y por qué eso no significa “ausencia de conflictos”.</p>
+<p>Ejercicio 43 — Optimista vs pesimista</p>
+<p>Compara control optimista y bloqueo pesimista. ¿Cuál preferirías para editar un registro con baja contención? ¿Y para reservar la última plaza disponible?</p>
+<p>Ejercicio 44 — Transacción demasiado larga</p>
+<p>Una aplicación abre transacción, solicita al usuario que confirme en pantalla y mantiene la transacción abierta 90 segundos. Explica los riesgos y rediseña.</p>
+<h1>PARTE F — Deadlocks y concurrencia aplicada</h1>
+<p>Ejercicio 45 — Deadlock clásico</p>
+<p>T1 bloquea fila AT2 bloquea fila BT1 solicita B y esperaT2 solicita A y espera</p>
+<p>Explica por qué existe deadlock y cómo suele reaccionar un SGBD.</p>
+<p>Ejercicio 46 — Prevención</p>
+<p>Da cuatro prácticas que reduzcan deadlocks sin afirmar que puedan eliminarse siempre al 100 %.</p>
+<p>Ejercicio 47 — Reintento</p>
+<p>El SGBD aborta una transacción víctima por deadlock. ¿Por qué la aplicación debe diseñar reintentos con cuidado? Relaciónalo con idempotencia.</p>
+<p>Ejercicio 48 — Reserva de asiento</p>
+<p>Dos usuarios intentan reservar simultáneamente el mismo asiento. Diseña una protección robusta combinando restricción de integridad y control transaccional.</p>
+<h1>PARTE G — Mini-supuestos integradores</h1>
+<p>Ejercicio 49 — Sistema de avisos</p>
+<p>Diseña el modelo mínimo para clientes, avisos, técnicos y asignaciones, teniendo en cuenta que un aviso puede reasignarse y se quiere conservar historial. Incluye restricciones e índices.</p>
+<p>Ejercicio 50 — Stock bajo alta concurrencia</p>
+<p>Una tienda vende las últimas unidades de un producto durante una campaña. Debes impedir stock negativo y lost updates. Propón transacción, condición de actualización y estrategia de concurrencia.</p>
+<p>Ejercicio 51 — Migración de legado</p>
+<p>Un sistema antiguo tiene una tabla CLIENTES con cinco teléfonos en columnas telefono1...telefono5 y direcciones duplicadas en cada pedido. Propón modelo destino, pasos de migración y verificaciones de integridad.</p>
+<p>Ejercicio 52 — OLTP y reporting</p>
+<p>Los informes mensuales complejos degradan la BD transaccional. Propón alternativas: índices, réplica de lectura, ETL/DW u otras, indicando cuándo usarías cada una.</p>
+<p>Ejercicio 53 — Agenda sin dobles reservas</p>
+<p>Diseña una agenda de recursos (sala, fecha_inicio, fecha_fin). Una UNIQUE simple no evita todos los solapamientos temporales. Explica cómo abordarías integridad y concurrencia, distinguiendo lo que depende del SGBD.</p>
+<p>Ejercicio 54 — Incidencia de rendimiento</p>
+<p>Una consulta que antes tardaba 100 ms tarda ahora 12 s. La tabla ha pasado de 2 a 80 millones de filas. Describe un diagnóstico ordenado: plan, estadísticas, índices, cardinalidad, I/O, bloqueos, cambios y capacidad.</p>
+<h1>Registro de progreso</h1>
+<table>
+<tr>
+<th scope="col"><p>Bloque</p></th>
+<th scope="col"><p>Intento 1</p></th>
+<th scope="col"><p>Intento 2</p></th>
+<th scope="col"><p>Errores recurrentes</p></th>
+</tr>
+<tr>
+<td><p>A Modelo</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>B Normalización</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>C SQL</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>D Índices</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>E Aislamiento</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>F Deadlocks</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>G Supuestos</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+<p>Fuentes de estudio: GSI A2 Bloque III V2.1, tema III.04; apoyo de Bloque II V2.1, II.05, y Bloque IV V2.1, IV.02. El cuaderno no sustituye los apuntes: los transforma en práctica activa.</p></main></body></html>

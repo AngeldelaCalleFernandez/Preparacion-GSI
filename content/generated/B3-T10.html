@@ -1,0 +1,66 @@
+<article class="topic-content" data-topic-id="B3-T10" data-coverage-status="complete">
+<p>Material curado del corpus GSI A2 · apuntes V2.1 revisados. Procedencia editorial, no documento oficial.</p>
+<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B3-T10/estudio">Apuntes de estudio</a></li><li><a href="#temario/B3-T10/estudio-01">1. Plataforma Java</a></li><li><a href="#temario/B3-T10/estudio-02">2. Lenguaje</a></li><li><a href="#temario/B3-T10/estudio-03">3. JVM</a></li><li><a href="#temario/B3-T10/estudio-04">4. Concurrencia</a></li><li><a href="#temario/B3-T10/estudio-05">5. Jakarta EE 11</a></li><li><a href="#temario/B3-T10/estudio-06">6. CDI</a></li><li><a href="#temario/B3-T10/estudio-07">7. Persistencia</a></li><li><a href="#temario/B3-T10/estudio-08">8. REST</a></li><li><a href="#temario/B3-T10/estudio-09">8.1 Productos y herramientas</a></li><li><a href="#temario/B3-T10/estudio-10">8.2 Perfiles y componentes Jakarta EE 11</a></li><li><a href="#temario/B3-T10/estudio-11">8.3 Persistencia en profundidad</a></li><li><a href="#temario/B3-T10/estudio-12">8.4 Seguridad</a></li><li><a href="#temario/B3-T10/estudio-13">8.5 Mensajería y concurrencia</a></li><li><a href="#temario/B3-T10/estudio-14">8.6 Datos de test adicionales</a></li><li><a href="#temario/B3-T10/estudio-15">9. Test</a></li><li><a href="#temario/B3-T10/estudio-16">10. Supuesto</a></li><li><a href="#temario/B3-T10/estudio-17">11. Resumen</a></li><li><a href="#temario/B3-T10/repaso">Resumen de repaso</a></li><li><a href="#temario/B3-T10/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B3-T10/repaso-02">Claves de test</a></li><li><a href="#temario/B3-T10/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B3-T10/repaso-04">Actualización 2026</a></li><li><a href="#temario/B3-T10/repaso-05">Fuentes base del material</a></li></ol></nav>
+<h2 id="estudio">Apuntes de estudio</h2>
+<p>Cobertura oficial que debe quedar dominada: Plataforma Java EE/Jakarta EE: funcionamiento, elementos, productos y herramientas. Persistencia y seguridad.</p>
+<h3 id="estudio-01">1. Plataforma Java</h3>
+<p>Código fuente → bytecode → JVM. JDK incluye herramientas de desarrollo; JVM ejecuta bytecode; bibliotecas estándar completan plataforma. Java combina compilación y JIT.</p>
+<h3 id="estudio-02">2. Lenguaje</h3>
+<p>Tipado estático, OO/multiparadigma, GC, excepciones, genéricos, colecciones, lambdas/streams, concurrencia. Primitivos y referencias. equals() y hashCode() deben ser coherentes para colecciones hash.</p>
+<h3 id="estudio-03">3. JVM</h3>
+<p>Class loading, bytecode verification, memoria/heap/stacks, GC y JIT. GC libera memoria no alcanzable pero no sustituye cierre de recursos externos; try-with-resources gestiona AutoCloseable.</p>
+<h3 id="estudio-04">4. Concurrencia</h3>
+<p>Thread, Executor, futures, locks, concurrent collections. Java moderno añade virtual threads en Java 21, especialmente útiles para alta concurrencia con modelo thread-per-request en cargas bloqueantes; no aceleran CPU-bound por sí solas.</p>
+<h3 id="estudio-05">5. Jakarta EE 11</h3>
+<p>Plataforma empresarial actual. Soporta Java 17 o superior y mejoras con Java 21. Incluye CDI, REST, Persistence, Transactions, Validation, Security, Servlets, Faces y la nueva Jakarta Data, entre otras especificaciones. Managed Beans antiguos han sido retirados en favor de CDI.</p>
+<h3 id="estudio-06">6. CDI</h3>
+<p>Inyección de dependencias y gestión de ciclo/contextos. Favorece desacoplamiento y testabilidad.</p>
+<h3 id="estudio-07">7. Persistencia</h3>
+<p>Jakarta Persistence: entidades, EntityManager, relaciones, JPQL y transacciones. ORM no elimina necesidad de entender SQL, índices y N+1.</p>
+<h3 id="estudio-08">8. REST</h3>
+<p>Jakarta REST para APIs HTTP. Recursos, métodos, media types, filtros/interceptores. Seguridad y validación siguen siendo responsabilidades explícitas.</p>
+<h3 id="estudio-09">8.1 Productos y herramientas</h3>
+<p><strong>Base A1:</strong> 067, versión 31.1 actualizada el 19/02/2026. Es una fuente especialmente valiosa. <strong>Actualización oficial:</strong> Jakarta EE 11 es la plataforma vigente de referencia y soporta Java SE 17 o superior, con mejoras al usar Java 21.</p>
+<p>Categorías que el epígrafe exige reconocer: JDK y herramientas (javac, java, javadoc, jdeps/jlink según contexto); build/dependencias (Maven, Gradle); IDE (IntelliJ IDEA, Eclipse, VS Code como ejemplos); runtimes/servidores compatibles (Eclipse GlassFish, WildFly, Payara, Open Liberty como ejemplos de mercado, sin memorizar versiones comerciales).</p>
+<h3 id="estudio-10">8.2 Perfiles y componentes Jakarta EE 11</h3>
+<p><strong>Core Profile</strong> para runtimes pequeños/microservicios; <strong>Web Profile</strong> para aplicaciones web; <strong>Platform</strong> incluye el conjunto amplio. Especificaciones relevantes: Servlet 6.1, CDI 4.1, REST 4.0, Persistence 3.2, Transactions, Validation, Security 4.0, Messaging, WebSocket, JSON-P/JSON-B y Jakarta Data 1.0.</p>
+<h3 id="estudio-11">8.3 Persistencia en profundidad</h3>
+<p>Entidad con identidad, estado persistente y relaciones. EntityManager/persistence context controla ciclo; estados típicos new/transient, managed, detached, removed. <strong>Lazy/eager</strong>, cascadas y N+1 afectan rendimiento. Transacciones deben delimitar unidad de trabajo; JTA coordina en entornos empresariales cuando procede.</p>
+<h3 id="estudio-12">8.4 Seguridad</h3>
+<p>Autenticación y autorización declarativa/programática, roles, constraints, Security API, identidad externa/OIDC cuando arquitectura lo requiera, TLS, gestión de secretos, validación y protección de sesiones/tokens. El SecurityManager de Java SE no debe estudiarse como mecanismo actual de seguridad de Jakarta EE 11: la plataforma ha retirado sus referencias.</p>
+<h3 id="estudio-13">8.5 Mensajería y concurrencia</h3>
+<p>Jakarta Messaging desacopla productores/consumidores; transacciones y entrega deben entenderse según broker/configuración. Jakarta Concurrency gestiona tareas/hilos de forma integrada con el runtime, evitando crear hilos arbitrarios sin control del contenedor en aplicaciones empresariales.</p>
+<h3 id="estudio-14">8.6 Datos de test adicionales</h3>
+<ul>
+<li>Jakarta EE 11 ≠ Java SE 11.</li>
+<li>JPA/Persistence ≠ JDBC; JPA suele usar acceso relacional subyacente pero añade ORM.</li>
+<li>Maven/Gradle son herramientas de build, no servidores.</li>
+<li>GlassFish/WildFly/Payara/Open Liberty son implementaciones/runtimes, no especificaciones.</li>
+<li>Java EE cambió de namespace javax.* a jakarta.* en la evolución de la plataforma.</li>
+</ul>
+<h3 id="estudio-15">9. Test</h3>
+<ul>
+<li>JDK ≠ JVM.</li>
+<li>Java ≠ JavaScript.</li>
+<li>GC ≠ gestión automática de todos los recursos.</li>
+<li>Jakarta EE es evolución de Java EE.</li>
+<li>CDI ≠ JPA.</li>
+<li>Virtual thread ≠ proceso.</li>
+</ul>
+<h3 id="estudio-16">10. Supuesto</h3>
+<p>Diseña capas/servicios, CDI, JPA, REST, transacciones, validación, seguridad, pool/conexiones, observabilidad y despliegue en runtime compatible.</p>
+<h3 id="estudio-17">11. Resumen</h3>
+<p>Domina Java/JVM y componentes empresariales Jakarta EE 11; evita memorizar APIs retiradas como si fueran actuales.</p>
+<h2 id="repaso">Resumen de repaso</h2>
+<h3 id="repaso-01">Núcleo de estudio</h3>
+<p>Jakarta EE es la evolución abierta de Java EE para aplicaciones empresariales sobre Java. Arquitectura típica multicapa con web/API, servicios de negocio y persistencia gestionados por contenedor. Especificaciones relevantes: Servlet, RESTful Web Services, CDI, Persistence (JPA), Transactions, Validation, Security, Messaging, WebSocket, JSON-P/JSON-B y otras según perfil. Persistencia JPA mapea entidades a bases relacionales y usa contexto de persistencia/transacciones. CDI gestiona inyección y ciclo de vida. Seguridad integra autenticación/autorización con mecanismos del contenedor y aplicación. Servidores compatibles incluyen GlassFish, Payara, WildFly y Open Liberty, entre otros.</p>
+<h3 id="repaso-02">Claves de test</h3>
+<p>Java EE y Jakarta EE cambian namespace de javax.* a jakarta.* desde Jakarta EE 9. Jakarta EE 11 es la plataforma final vigente en 2026 y requiere Java SE 17 o superior; añade Jakarta Data y elimina tecnologías antiguas del núcleo. JPA es especificación, Hibernate una implementación popular.</p>
+<h3 id="repaso-03">Enfoque para supuesto práctico</h3>
+<p>En supuesto selecciona API REST, CDI, JPA, transacciones, seguridad, mensajería y despliegue; evita EJB pesado por inercia si no aporta valor. Separa estado, configura pools y observabilidad.</p>
+<h3 id="repaso-04">Actualización 2026</h3>
+<p>Actualización 2026: Jakarta EE 11 es la versión final estable; Jakarta EE 12 está en desarrollo.</p>
+<h3 id="repaso-05">Fuentes base del material</h3>
+<p>A1 067 + documentación oficial Jakarta EE.</p>
+<section class="topic-content__sources"><h2 id="fuentes">Fuentes y localizadores</h2><ul><li><a href="https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)</a> · III.10 · 2026-08-21</li><li><a href="https://docs.google.com/document/d/1l0nl4fc451Tl3XB9XZ4LRLZGLZEJxUueQvaMZoF8gcA/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE III — RESUMEN MAESTRO DE REPASO (15 temas)</a> · III.10 · 2026-08-21</li></ul></section>
+</article>

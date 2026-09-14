@@ -4,16 +4,16 @@ import {
   calculateWeakness,
   getPeriodRange,
   selectComparable,
-} from "./analytics-engine.js";
+} from "./analytics-engine.js?gsi2";
 import {
   clearAllAnalyticsStores,
   clearAnalyticsStore,
   getAnalyticsSummary,
   loadAnalyticsStore,
-} from "./analytics-storage.js?m3";
-import { rebuildAnalytics } from "./analytics-migration.js?m3";
-import { loadReinforcementStore } from "./reinforcement-storage.js?m3";
-import { getTemporalState } from "./reinforcement-engine.js";
+} from "./analytics-storage.js?gsi2";
+import { rebuildAnalytics } from "./analytics-migration.js?gsi2";
+import { loadReinforcementStore } from "./reinforcement-storage.js?gsi2";
+import { getTemporalState } from "./reinforcement-engine.js?gsi2";
 
 const PERIOD_LABELS = { "7": "Últimos 7 días", "30": "Últimos 30 días", "90": "Últimos 90 días", all: "Todo el historial", custom: "Rango personalizado" };
 
@@ -449,7 +449,7 @@ export function initStatistics(data) {
     }
   });
   element("analytics-clear-all")?.addEventListener("click", () => {
-    if (window.confirm("¿Borrar todas las estadísticas real y demo? No se borrará el refuerzo ni los historiales originales. Los exámenes anteriores a Fase 6 no podrán recuperarse.")) {
+    if (window.confirm("¿Borrar las estadísticas GSI? Puedes exportar una copia antes. El refuerzo y el historial de entrenamiento se conservan.")) {
       setStorageMessage(clearAllAnalyticsStores() ? "Todas las estadísticas han sido borradas." : "No se pudieron borrar todas las estadísticas.");
       renderStatistics(data);
     }
@@ -460,7 +460,7 @@ export function initStatistics(data) {
     setStorageMessage(report.saved ? "Reconstrucción terminada con fuentes compatibles." : `Reconstrucción parcial: ${report.error || "no se pudo guardar"}.`, report.saved ? "success" : "error");
     renderStatistics(data, report);
   });
-  window.addEventListener("tai:routechange", (event) => {
+  window.addEventListener("gsi:routechange", (event) => {
     if (event.detail?.route === "estadisticas") renderStatistics(data);
   });
   updateCustomRangeVisibility();

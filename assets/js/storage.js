@@ -1,6 +1,6 @@
-import { getConfiguredPersistenceAdapter } from "./persistence-v2.js?m3";
+import { getConfiguredPersistenceAdapter } from "./persistence-v2.js?gsi2";
 
-const STORAGE_KEY = "tai.phase3.training.v1";
+const STORAGE_KEY = "gsi.phase3.training.v1";
 
 function browserStorage() {
   return getConfiguredPersistenceAdapter();

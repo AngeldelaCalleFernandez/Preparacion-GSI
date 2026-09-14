@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Aplicación estática para consultar el temario TAI y realizar entrenamientos básicos.">
-    <title>TAI · Temario y entrenamiento</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <meta name="description" content="Estudia Gestión de Sistemas e Informática de la Administración del Estado, ingreso libre A2: 57 temas, entrenamiento y práctica escrita.">
+    <title>GSI A2 · Temario y entrenamiento</title>
+    <link rel="stylesheet" href="assets/css/styles.css"><link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   </head>
   <body>
     <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
@@ -13,7 +13,7 @@
     <header class="site-header">
       <div class="shell header-content">
         <div>
-          <p class="eyebrow">Preparación TAI</p>
+          <p class="eyebrow">Preparación GSI A2</p>
           <p class="site-title">Temario y entrenamiento</p>
         </div>
         <nav aria-label="Navegación principal">
@@ -22,6 +22,7 @@
             <li><a href="#temario" data-route="temario">Temario</a></li>
             <li><a href="#entrenamiento" data-route="entrenamiento">Entrenamiento</a></li>
             <li><a href="#examen" data-route="examen">Examen</a></li>
+            <li><a href="#practica" data-route="practica">Práctica escrita</a></li>
             <li><a href="#refuerzo" data-route="refuerzo">Refuerzo</a></li>
             <li><a href="#estadisticas" data-route="estadisticas">Estadísticas</a></li>
           </ul>
@@ -39,7 +40,7 @@
 
       <section data-view="inicio" aria-labelledby="home-title">
         <p class="eyebrow">Aplicación estática</p>
-        <h1 id="home-title">Prepara el temario TAI a tu ritmo</h1>
+        <h1 id="home-title">Gestión de Sistemas e Informática de la Administración del Estado — GSI A2</h1>
         <p class="lead">Consulta el programa oficial catalogado y entrena con las preguntas disponibles, manteniendo siempre visible su procedencia.</p>
         <div class="summary-grid" aria-label="Resumen de datos cargados">
           <article class="summary-card">
@@ -52,7 +53,7 @@
           </article>
           <article class="summary-card">
             <p class="summary-card__value" id="home-question-count">—</p>
-            <p class="summary-card__label">preguntas reales activas</p>
+            <p class="summary-card__label">preguntas de estudio activas</p>
           </article>
           <article class="summary-card">
             <p class="summary-card__value" id="home-update-count">—</p>
@@ -73,7 +74,6 @@
             <article class="summary-card"><p id="home-priority-topic" class="summary-card__value">—</p><p class="summary-card__label">tema prioritario</p></article>
           </div>
         </section>
-        <p class="muted">Para cargar los datos, sirve esta carpeta con <code>python -m http.server 8000</code>; la apertura mediante <code>file://</code> no permite usar <code>fetch</code>.</p>
       </section>
 
       <section data-view="temario" aria-labelledby="syllabus-title" hidden>
@@ -148,13 +148,15 @@
                 <select id="training-origin" name="origin">
                   <option value="">Todos los orígenes</option>
                   <option value="official">Oficial</option>
-                  <option value="ai">IA</option>
-                  <option value="manual">Manual o adaptada</option>
+                  <option value="ai">Generadas</option>
+                  <option value="manual">Material curado</option>
                 </select>
               </div>
               <div class="field">
-                <label for="training-quantity">Cantidad</label>
-                <input id="training-quantity" name="quantity" type="number" min="1" value="1" inputmode="numeric" required>
+                <label for="training-history">Selección</label><select id="training-history"><option value="all">Todas · test mixto</option><option value="unseen">Preguntas no vistas</option><option value="failed">Última respuesta incorrecta</option></select>
+              </div>
+              <div class="field"><label for="training-quantity">Cantidad</label>
+                <input id="training-quantity" name="quantity" type="number" min="1" value="20" inputmode="numeric" required>
               </div>
             </div>
           </fieldset>
@@ -168,7 +170,7 @@
           <h2 id="progress-title">Respuestas guardadas en este navegador</h2>
           <p id="storage-summary">Aún no hay respuestas guardadas.</p>
           <div class="action-row">
-            <button id="clear-demo-progress" class="button button--secondary" type="button">Borrar solo respuestas demo</button>
+            <button id="clear-demo-progress" class="button button--secondary" type="button" hidden>Borrar solo respuestas demo</button>
             <button id="clear-all-progress" class="button button--danger" type="button">Borrar todas las respuestas locales</button>
           </div>
         </section>
@@ -177,7 +179,7 @@
       <section data-view="examen" aria-labelledby="exam-title" hidden>
         <p class="eyebrow">Simulación cronometrada</p>
         <h1 id="exam-title">Modo examen</h1>
-        <p class="lead">Configura una sesión. Durante el examen no se muestran soluciones, feedback ni fuentes.</p>
+        <p class="lead">Reproduce el primer ejercicio GSI: 100 preguntas en 90 minutos. Los simulacros usan material de estudio validado con procedencia visible en la corrección.</p>
 
         <form id="exam-config-form" class="training-form" novalidate>
           <fieldset>
@@ -186,22 +188,23 @@
               <div class="field">
                 <label for="exam-mode">Modalidad</label>
                 <select id="exam-mode" name="mode">
-                  <option value="boe">Solo BOE</option>
-                  <option value="ai-validated">Solo IA validada</option>
-                  <option value="mixed">Mixto</option>
+                  <option value="gsi">Simulacro GSI · 100 preguntas / 90 minutos</option>
+                  <option value="custom">Test configurable · banco revisado</option>
+                  <option value="boe">Solo preguntas oficiales</option>
+                  <option value="ai-validated">Solo preguntas generadas revisadas</option>
                 </select>
               </div>
               <div class="field">
                 <label for="exam-question-count">Número de preguntas</label>
-                <input id="exam-question-count" name="questionCount" type="number" min="1" value="10" inputmode="numeric" required>
+                <input id="exam-question-count" name="questionCount" type="number" min="1" value="100" inputmode="numeric" required>
               </div>
               <div class="field">
                 <label for="exam-duration">Duración (minutos)</label>
-                <input id="exam-duration" name="duration" type="number" min="1" value="30" inputmode="numeric" required>
+                <input id="exam-duration" name="duration" type="number" min="1" value="90" inputmode="numeric" required>
               </div>
               <div class="field">
                 <label for="exam-penalty">Penalización por error</label>
-                <input id="exam-penalty" name="penalty" type="number" min="0" max="1" step="0.01" value="0.33" inputmode="decimal" required>
+                <input id="exam-penalty" name="penalty" type="text" value="1/3" readonly aria-describedby="exam-scoring">
               </div>
             </div>
             <fieldset class="exam-blocks-fieldset">
@@ -219,7 +222,7 @@
               <label><input id="exam-shuffle-questions" type="checkbox" checked> Barajar preguntas</label>
               <label><input id="exam-shuffle-options" type="checkbox" checked> Barajar opciones</label>
             </div>
-            <p class="form-help">Preguntas en blanco: permitidas y con 0 puntos.</p>
+            <p id="exam-scoring" class="form-help">Acierto +1; error −1/3 exacto; blanco 0. La nota neta es una puntuación directa de práctica, no la calificación transformada del tribunal.</p>
           </fieldset>
           <p id="exam-availability" class="form-help" aria-live="polite"></p>
           <div class="action-row">
@@ -308,7 +311,7 @@
                 <select id="reinforcement-origin" name="origin">
                   <option value="">Todos los orígenes</option>
                   <option value="official">Oficial</option>
-                  <option value="ai">IA</option>
+                  <option value="ai">Generadas</option>
                   <option value="manual">Manual</option>
                   <option value="adapted">Adaptada</option>
                 </select>
@@ -363,7 +366,7 @@
                 <select id="reinforcement-session-origin" name="origin">
                   <option value="">Todos los orígenes</option>
                   <option value="official">Oficial</option>
-                  <option value="ai">IA</option>
+                  <option value="ai">Generadas</option>
                   <option value="manual">Manual</option>
                   <option value="adapted">Adaptada</option>
                 </select>
@@ -410,7 +413,7 @@
         <section class="local-progress" aria-labelledby="reinforcement-storage-title">
           <h2 id="reinforcement-storage-title">Controles locales</h2>
           <div class="action-row">
-            <button id="clear-demo-reinforcement" class="button button--secondary" type="button">Borrar refuerzo demo</button>
+            <button id="clear-demo-reinforcement" class="button button--secondary" type="button" hidden>Borrar refuerzo demo</button>
             <button id="clear-all-reinforcement" class="button button--danger" type="button">Borrar todo el refuerzo</button>
           </div>
         </section>
@@ -427,7 +430,7 @@
             <div class="form-grid">
               <div class="field">
                 <label for="analytics-store">Datos</label>
-                <select id="analytics-store"><option value="real">Datos reales</option><option value="demo">Datos demo</option></select>
+                <select id="analytics-store"><option value="real">Datos reales</option></select>
               </div>
               <div class="field">
                 <label for="analytics-period">Periodo</label>
@@ -445,7 +448,7 @@
               </div>
               <div class="field">
                 <label for="analytics-origin">Origen</label>
-                <select id="analytics-origin"><option value="">Todos los orígenes</option><option value="official">Oficial</option><option value="ai">IA</option><option value="manual">Manual</option><option value="adapted">Adaptada</option></select>
+                <select id="analytics-origin"><option value="">Todos los orígenes</option><option value="official">Oficial</option><option value="ai">Generadas</option><option value="manual">Manual</option><option value="adapted">Adaptada</option></select>
               </div>
               <div class="field">
                 <label for="analytics-session-type">Modalidad</label>
@@ -474,19 +477,32 @@
         <section id="analytics-storage" class="analytics-section" aria-live="polite"></section>
         <section class="local-progress" aria-labelledby="analytics-controls-title">
           <h2 id="analytics-controls-title">Controles de estadísticas</h2>
-          <p>La reconstrucción usa solo historiales compatibles. Los exámenes finalizados antes de la Fase 6 no pueden reconstruirse porque no se guardaban.</p>
+          <p>La reconstrucción usa los intentos guardados de este programa GSI.</p>
           <div class="action-row">
             <button id="analytics-rebuild" class="button button--secondary" type="button">Reconstruir estadísticas</button>
-            <button id="analytics-clear-demo" class="button button--secondary" type="button">Borrar estadísticas demo</button>
+            <button id="analytics-clear-demo" class="button button--secondary" type="button" hidden>Borrar estadísticas demo</button>
             <button id="analytics-clear-all" class="button button--danger" type="button">Borrar todas las estadísticas</button>
           </div>
         </section>
       </section>
-    </main>
+    <section data-view="practica" aria-labelledby="practice-title" hidden>
+<p class="eyebrow">Segundo ejercicio · respuesta escrita</p>
+<h1 id="practice-title">Supuestos prácticos GSI A2</h1>
+<p class="lead">Elige un supuesto entre dos, con cinco preguntas y 180 minutos. Autoevalúa conocimientos técnicos (30 puntos), análisis (10), sistemática (5) y expresión escrita (5).</p>
+<div id="practice-app"></div></section>
+<section class="local-progress" aria-labelledby="backup-title">
+<h2 id="backup-title">Tu progreso GSI</h2>
+<p>Guardado en este navegador. Descarga una copia para conservarlo o trasladarlo a otro dispositivo.</p>
+<div class="action-row">
+<button id="progress-export" class="button button--secondary" type="button">Exportar progreso</button>
+<label class="button button--secondary" for="progress-import">Importar copia GSI</label>
+<input id="progress-import" type="file" accept="application/json,.json" class="visually-hidden">
+<button id="progress-reset" class="button button--danger" type="button">Reiniciar todo el progreso GSI</button>
+</div><p id="backup-status" role="status" aria-live="polite"></p></section></main>
 
     <noscript>
       <p class="noscript-message">Esta aplicación necesita JavaScript para cargar los datos y mostrar el entrenamiento.</p>
     </noscript>
-    <script type="module" src="assets/js/app.js"></script>
+    <script type="module" src="assets/js/app.js?gsi2"></script>
   </body>
 </html>

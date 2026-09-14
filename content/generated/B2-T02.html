@@ -1,11 +1,65 @@
-<article class="topic-content" data-topic-id="B2-T02" data-coverage-status="pending">
-<aside class="topic-content__status topic-content__status--pending" role="status"><p>Contenido pendiente de fuentes verificables.</p></aside>
-<nav class="topic-content__toc" aria-label="Índice del tema">
-<h2>Contenido del tema</h2>
-<ol><li class="topic-content__toc-level-2"><a href="#temario/B2-T02/fuentes-necesarias">Fuentes necesarias</a></li></ol>
-</nav>
-<h2 id="fuentes-necesarias">Fuentes necesarias</h2>
-<div class="topic-content__pendiente" data-editorial-kind="pendiente"><p class="topic-content__kind">Pendiente</p><p>Contenido pendiente de una fuente verificable.</p>
-<p>Fuente necesaria: documentación técnica primaria local sobre periféricos, conectividad, impresión, almacenamiento, visualización y digitalización.</p></div>
-
+<article class="topic-content" data-topic-id="B2-T02" data-coverage-status="complete">
+<p>Material curado del corpus GSI A2 · apuntes V2.1 revisados. Procedencia editorial, no documento oficial.</p>
+<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B2-T02/estudio">Apuntes de estudio</a></li><li><a href="#temario/B2-T02/estudio-01">1. Alcance y fuente</a></li><li><a href="#temario/B2-T02/estudio-02">2. Funciones de un sistema operativo</a></li><li><a href="#temario/B2-T02/estudio-03">3. Procesos, hilos y planificación</a></li><li><a href="#temario/B2-T02/estudio-04">4. Memoria</a></li><li><a href="#temario/B2-T02/estudio-05">5. Entrada/salida y dispositivos</a></li><li><a href="#temario/B2-T02/estudio-06">6. Sistemas de archivos</a></li><li><a href="#temario/B2-T02/estudio-07">7. Estructuras de SO</a></li><li><a href="#temario/B2-T02/estudio-08">8. Windows</a></li><li><a href="#temario/B2-T02/estudio-09">9. Unix y Linux</a></li><li><a href="#temario/B2-T02/estudio-10">10. Sistemas móviles</a></li><li><a href="#temario/B2-T02/estudio-11">11. Administración y operación</a></li><li><a href="#temario/B2-T02/estudio-12">12. Test</a></li><li><a href="#temario/B2-T02/estudio-13">13. Aplicación al supuesto</a></li><li><a href="#temario/B2-T02/estudio-14">14. Resumen II.02</a></li><li><a href="#temario/B2-T02/repaso">Resumen de repaso</a></li><li><a href="#temario/B2-T02/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B2-T02/repaso-02">Claves de test</a></li><li><a href="#temario/B2-T02/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B2-T02/repaso-04">Fuentes base del material</a></li></ol></nav>
+<h2 id="estudio">Apuntes de estudio</h2>
+<h3 id="estudio-01">1. Alcance y fuente</h3>
+<p>El A1 059, actualizado en marzo de 2026, es una base especialmente útil. Se complementa con los temas A1 específicos de Windows, Unix/Linux y móviles. El objetivo GSI no es memorizar comandos aislados, sino comprender funciones del SO y reconocer cómo se administran las plataformas principales.</p>
+<h3 id="estudio-02">2. Funciones de un sistema operativo</h3>
+<p>El sistema operativo administra hardware y ofrece abstracciones a los programas: procesos e hilos, memoria, E/S, ficheros, usuarios, protección, comunicaciones y servicios. El <strong>kernel</strong> ejecuta operaciones privilegiadas; las aplicaciones trabajan normalmente en modo usuario y solicitan servicios mediante llamadas al sistema.</p>
+<h3 id="estudio-03">3. Procesos, hilos y planificación</h3>
+<p>Un <strong>proceso</strong> es un programa en ejecución con espacio de direcciones, estado y recursos. Un <strong>hilo</strong> es una unidad de ejecución dentro de un proceso y comparte gran parte de sus recursos con otros hilos del mismo proceso. Los hilos facilitan concurrencia, pero exigen sincronización.</p>
+<p>Estados clásicos: nuevo, preparado, ejecución, bloqueado/espera y terminado, con variantes según SO. El planificador decide qué tarea usa CPU. Algoritmos que conviene reconocer: FIFO/FCFS, Round Robin, prioridades, Shortest Job First y Shortest Remaining Time. En tiempo compartido importa combinar respuesta, equidad y utilización.</p>
+<p>Concurrencia introduce condiciones de carrera. Mecanismos: mutex, semáforos, monitores, variables de condición y operaciones atómicas. Un <strong>deadlock</strong> puede aparecer cuando concurren exclusión mutua, retención y espera, no apropiación y espera circular.</p>
+<h3 id="estudio-04">4. Memoria</h3>
+<p>La memoria virtual proporciona a cada proceso un espacio lógico y permite usar almacenamiento secundario como respaldo. La <strong>paginación</strong> divide memoria en páginas/marcos de tamaño fijo; la <strong>segmentación</strong> usa unidades lógicas de tamaño variable. La MMU traduce direcciones y la TLB acelera traducciones.</p>
+<p>Ante falta de marcos, el SO aplica algoritmos de reemplazo, como FIFO o aproximaciones a LRU. Un exceso de fallos de página puede provocar <strong>thrashing</strong>. No confundas memoria virtual con «tener más RAM»: es una abstracción de direccionamiento y gestión.</p>
+<h3 id="estudio-05">5. Entrada/salida y dispositivos</h3>
+<p>Los drivers encapsulan detalles del hardware. Hay dispositivos orientados a bloque y a carácter. DMA permite transferencias entre dispositivos y memoria con menor intervención de CPU. Interrupciones notifican eventos y evitan sondeo continuo en muchos casos.</p>
+<h3 id="estudio-06">6. Sistemas de archivos</h3>
+<p>El sistema de archivos organiza nombres, directorios, metadatos, permisos y asignación de bloques. Debes reconocer conceptos de journaling, enlaces, cuotas, montajes y permisos.</p>
+<ul>
+<li><strong>Windows</strong>: NTFS es el sistema de ficheros corporativo habitual, con ACL, journaling y características avanzadas; FAT/exFAT siguen siendo relevantes en intercambio y medios extraíbles.</li>
+<li><strong>Linux/Unix</strong>: ext4, XFS y otros; árbol único desde /, montajes, permisos rwx para propietario/grupo/otros y ACL cuando se usan.</li>
+<li><strong>macOS</strong>: APFS es el formato moderno principal, con snapshots y cifrado entre sus capacidades.</li>
+</ul>
+<h3 id="estudio-07">7. Estructuras de SO</h3>
+<p>Según diseño pueden hablarse de kernels monolíticos, microkernels e híbridos. Un kernel monolítico concentra muchos servicios en espacio privilegiado; microkernel minimiza el núcleo y desplaza servicios; los sistemas reales combinan ideas. También se distinguen sistemas monousuario/multiusuario, monotarea/multitarea, uniprocesador/multiprocesador, de red y distribuidos.</p>
+<h3 id="estudio-08">8. Windows</h3>
+<p>Windows moderno deriva de la familia NT. Conceptos administrativos: servicios, procesos, registro, Event Log, NTFS, usuarios/grupos, ACL, políticas, PowerShell, actualización y protección del puesto. En entornos corporativos, Active Directory proporciona directorio, autenticación y políticas; no debe confundirse con el sistema operativo en sí.</p>
+<p>La administración segura implica mínimo privilegio, separación de cuentas administrativas, parcheo, firewall, protección de credenciales, cifrado, logging, EDR y gestión centralizada.</p>
+<h3 id="estudio-09">9. Unix y Linux</h3>
+<p>Unix define una tradición de diseño multiusuario con procesos, ficheros y herramientas composables. Linux es un kernel de tipo Unix usado en múltiples distribuciones. Conceptos clave: shell, procesos y señales, demonios/servicios, usuarios/grupos, permisos, sudo, paquetes, /proc y /sys, montaje de sistemas de archivos, logs y automatización.</p>
+<p>En sistemas con systemd, unidades y servicios se gestionan de forma centralizada. El examen no debería prepararse como una lista de comandos, pero sí conviene saber qué problemas resuelven herramientas de procesos, red, almacenamiento, permisos y logs.</p>
+<h3 id="estudio-10">10. Sistemas móviles</h3>
+<p><strong>Android</strong> utiliza kernel Linux y un modelo por aplicaciones con UID/sandbox, permisos y firma. <strong>iOS</strong> deriva de Darwin/XNU y usa sandbox, firma de código y una distribución más controlada. En ambos importan cifrado, permisos, actualización, aislamiento, biometría y administración empresarial mediante soluciones MDM/UEM.</p>
+<h3 id="estudio-11">11. Administración y operación</h3>
+<p>Tareas comunes: instalación, configuración, usuarios y permisos, almacenamiento, red, servicios, actualización, hardening, copias, monitorización y resolución de incidencias. Deben automatizarse cuando sea razonable, manteniendo configuración versionada, trazabilidad y separación de entornos.</p>
+<h3 id="estudio-12">12. Test</h3>
+<ul>
+<li>Proceso ≠ hilo.</li>
+<li>Concurrencia ≠ paralelismo.</li>
+<li>Modo kernel ≠ modo usuario.</li>
+<li>Paginación ≠ segmentación.</li>
+<li>Memoria física ≠ virtual.</li>
+<li>Driver ≠ firmware.</li>
+<li>Servicio Windows ≈ daemon Unix en función, no en implementación.</li>
+<li>NTFS ≠ FAT/exFAT.</li>
+<li>Permisos rwx y ACL no son exactamente lo mismo.</li>
+<li>Android usa kernel Linux; iOS se basa en Darwin/XNU.</li>
+<li>Un SO multitarea no implica que todas las tareas ejecuten simultáneamente en CPU.</li>
+</ul>
+<h3 id="estudio-13">13. Aplicación al supuesto</h3>
+<p>Define plataforma por compatibilidad y soporte. Explica hardening, actualización, cuentas privilegiadas, directorio/SSO, cifrado, logging, EDR, backups, monitorización, automatización y HA. No elijas Windows o Linux por preferencia personal: vincula la decisión a requisitos, competencias, licenciamiento, integración y operación.</p>
+<h3 id="estudio-14">14. Resumen II.02</h3>
+<p>Domina procesos/hilos, planificación, memoria, E/S, ficheros y seguridad; después aprende las diferencias operativas de Windows, Unix/Linux y móvil. Para GSI tiene más valor comprender mecanismos que memorizar comandos o versiones.</p>
+<h2 id="repaso">Resumen de repaso</h2>
+<h3 id="repaso-01">Núcleo de estudio</h3>
+<p>Un sistema operativo gestiona procesador, memoria, procesos/hilos, dispositivos, E/S, ficheros, usuarios y seguridad, ofreciendo abstracciones a aplicaciones. Domina núcleo, modo usuario/kernel, llamadas al sistema, planificación, concurrencia, sincronización, memoria virtual, paginación, sistemas de archivos y gestión de dispositivos. Windows emplea familias NT, servicios, registro, NTFS, Active Directory en entorno corporativo y PowerShell como herramienta de administración. Linux/Unix se apoyan en modelo multiusuario, permisos propietario-grupo-otros, procesos, señales, demonios/servicios, jerarquía de ficheros y shells. En móviles, Android se basa en kernel Linux con runtime y sandbox por aplicación; iOS usa arquitectura derivada de Darwin/XNU y un modelo de sandbox y firma estricta.</p>
+<h3 id="repaso-02">Claves de test</h3>
+<p>Diferencia proceso/hilo; memoria física/virtual; paginación/segmentación; kernel monolítico/microkernel/híbrido; permisos Linux; NTFS/FAT; servicio/daemon; Android/iOS de SO de escritorio. No memorices comandos aislados sin entender su función.</p>
+<h3 id="repaso-03">Enfoque para supuesto práctico</h3>
+<p>En supuesto define hardening, actualización, cuentas privilegiadas, logging, EDR, cifrado, copias, automatización, alta disponibilidad y política de soporte. Si eliges Windows o Linux, justifica por compatibilidad, operación, licencias y capacidades, no por preferencias.</p>
+<h3 id="repaso-04">Fuentes base del material</h3>
+<p>A1 059 + 060 + 061 + 062.</p>
+<section class="topic-content__sources"><h2 id="fuentes">Fuentes y localizadores</h2><ul><li><a href="https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)</a> · II.02 · 2026-08-21</li><li><a href="https://docs.google.com/document/d/1h7n4dFYafS_3VMuL55TnEuVKhqaTheUoL-thDFQSr9w/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE II — RESUMEN MAESTRO DE REPASO (16 temas)</a> · II.02 · 2026-08-21</li></ul></section>
 </article>

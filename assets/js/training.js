@@ -1,22 +1,24 @@
-import { describeQuestionSource } from "./data-service.js";
-import { clearAllResponses, clearDemoResponses, getProgressSummary, saveResponse } from "./storage.js?m3";
+import { loadAnalyticsStore } from "./analytics-storage.js?gsi2";
+import { filterTrainingQuestions } from "./training-engine.js?gsi2";
+import { describeQuestionSource } from "./data-service.js?gsi2";
+import { clearAllResponses, clearDemoResponses, getProgressSummary, getStoredResponses, saveResponse } from "./storage.js?gsi2";
 import {
   applyStoredReinforcementEvents,
   createReinforcementEvent,
   loadReinforcementStore,
-} from "./reinforcement-storage.js?m3";
+} from "./reinforcement-storage.js?gsi2";
 import {
   createAnalyticsAnnotationEvent,
   createAnalyticsAttemptEvent,
   createAnalyticsSession,
   createAnalyticsSessionEvent,
-} from "./analytics-events.js";
+} from "./analytics-events.js?gsi2";
 import {
   applyStoredAnalyticsEvents,
   loadActiveTrainingSession,
   saveActiveTrainingSession,
-} from "./analytics-storage.js?m3";
-import { createElement, setStatus } from "./ui.js";
+} from "./analytics-storage.js?gsi2";
+import { createElement, setStatus } from "./ui.js?gsi2";
 
 function originLabel(question) {
   if (question.isDemo) {
@@ -24,8 +26,8 @@ function originLabel(question) {
     return `Demostración ficticia · origen simulado: ${simulated}`;
   }
   if (question.origin === "official") return "Oficial";
-  if (question.origin === "ai") return "IA";
-  return "Manual o adaptada";
+  if (question.origin === "ai") return "Generada a partir del corpus";
+  return "Material curado";
 }
 
 function shuffle(items) {
@@ -80,6 +82,7 @@ export function initTraining(data) {
   const blockSelect = document.querySelector("#training-block");
   const topicSelect = document.querySelector("#training-topic");
   const originSelect = document.querySelector("#training-origin");
+  const historySelect = document.querySelector("#training-history");
   const quantityInput = document.querySelector("#training-quantity");
   const availability = document.querySelector("#training-availability");
   const session = document.querySelector("#training-session");
@@ -114,13 +117,9 @@ export function initTraining(data) {
   }
 
   function availableQuestions() {
-    return data.questions.filter((question) => {
-      if (!question.is_active || Boolean(question.isDemo) !== Boolean(data.demoEnabled)) return false;
-      if (blockSelect.value && question.block_id !== blockSelect.value) return false;
-      if (topicSelect.value && question.topic_id !== topicSelect.value) return false;
-      if (originSelect.value === "manual" && !["manual", "adapted"].includes(question.origin)) return false;
-      if (originSelect.value && originSelect.value !== "manual" && question.origin !== originSelect.value) return false;
-      return true;
+    return filterTrainingQuestions(data.questions, [...getStoredResponses(), ...loadAnalyticsStore(false).store.attempts], {
+      blockId: blockSelect.value, topicId: topicSelect.value, origin: originSelect.value,
+      history: historySelect.value,
     });
   }
 
@@ -411,6 +410,7 @@ export function initTraining(data) {
   });
   topicSelect.addEventListener("change", updateAvailability);
   originSelect.addEventListener("change", updateAvailability);
+  historySelect.addEventListener("change", updateAvailability);
   quantityInput.addEventListener("input", updateAvailability);
   form.addEventListener("submit", (event) => {
     event.preventDefault();

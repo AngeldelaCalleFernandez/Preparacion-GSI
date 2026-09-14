@@ -1,0 +1,237 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GSI A2 — PRÁCTICA ACTIVA 06 — ALGORITMOS Y TAD — CUADERNO DE EJERCICIOS</title><link rel="stylesheet" href="../../assets/css/styles.css"></head><body><main class="shell topic-content"><p><a href="../../index.html#practica">Volver a práctica escrita</a></p><p>Material curado GSI A2. Fuente: <a href="https://docs.google.com/document/d/1v_pPaZQAI7NPyTHCVystoxcPfA1jxZ1gW1fwsvjBaJU/edit">documento original de Drive</a>.</p><h1>GSI A2 — PRÁCTICA ACTIVA 06</h1>
+<h2>Algoritmos, TAD y complejidad — CUADERNO DE EJERCICIOS</h2>
+<p><strong>Ámbito:</strong> III.05 - Tipos abstractos de datos, estructuras de datos, organización de ficheros, estrategias de diseño de algoritmos, ordenación/búsqueda e IA básica.</p>
+<p><strong>Método:</strong> antes de responder, identifica qué operación domina: acceso, inserción, extracción por prioridad, recorrido, búsqueda, ordenación o camino mínimo. En complejidad, cuenta iteraciones y conserva el término dominante. En grafos, fija representación y si existen pesos. En IA, no confundas una buena métrica de entrenamiento con generalización.</p>
+<p><strong>Objetivo:</strong> convertir III.05 en una competencia práctica: elegir estructura/algoritmo y justificar coste, no memorizar una lista de nombres.</p>
+<h1>PARTE A - TAD y estructuras de datos</h1>
+<p>1 - TAD vs implementación</p>
+<p>Define un TAD y explica por qué una pila puede implementarse tanto con array como con lista enlazada sin dejar de ser el mismo TAD.</p>
+<p>2 - Pila para deshacer</p>
+<p>Una aplicación debe implementar Undo para las últimas acciones del usuario. ¿Qué estructura usarías y qué propiedad la hace adecuada?</p>
+<p>3 - Cola de impresión</p>
+<p>Los trabajos deben procesarse en el orden de llegada. ¿Qué estructura corresponde y qué propiedad aplica?</p>
+<p>4 - Urgencias con prioridad</p>
+<p>Las incidencias críticas deben atenderse antes que las normales, aunque hayan llegado después. ¿Qué estructura abstracta encaja mejor?</p>
+<p>5 - Búsqueda por identificador</p>
+<p>Debes localizar usuarios por un identificador único millones de veces al día. Compara tabla hash y búsqueda lineal.</p>
+<p>6 - Acceso posicional</p>
+<p>Necesitas acceder continuamente al elemento i de una colección por posición. ¿Array o lista enlazada? Justifica con complejidad.</p>
+<p>7 - Inserción conocida</p>
+<p>Tienes ya una referencia a un nodo de una lista enlazada y quieres insertar justo después. ¿Por qué puede ser O(1)? ¿Qué cambia si primero debes localizar la posición?</p>
+<p>8 - Deque</p>
+<p>Un buffer necesita insertar y extraer por ambos extremos. ¿Qué TAD utilizarías?</p>
+<p>9 - Top de prioridades</p>
+<p>Quieres obtener repetidamente el elemento con mayor prioridad. ¿Qué estructura concreta es una implementación habitual de una cola de prioridad?</p>
+<p>10 - BST balanceado</p>
+<p>Compara un árbol binario de búsqueda balanceado con uno degenerado respecto a búsqueda.</p>
+<p>11 - Grafo: matriz o lista</p>
+<p>Una red tiene 100.000 vértices y cada vértice conecta con unos 4 vecinos. ¿Matriz o lista de adyacencia? Justifica.</p>
+<p>12 - B-tree / B+ tree</p>
+<p>¿Por qué árboles B/B+ son adecuados para índices sobre almacenamiento secundario en comparación con árboles binarios simples?</p>
+<p>13 - Traza de pila</p>
+<p>Ejecuta: push(A), push(B), push(C), pop(), push(D), pop(), pop(). ¿Qué valores devuelven los tres pop y qué queda en la pila?</p>
+<p>14 - Traza de cola</p>
+<p>Ejecuta: enqueue(A), enqueue(B), dequeue(), enqueue(C), enqueue(D), dequeue(). ¿Qué valores se extraen y qué elementos quedan?</p>
+<p>15 - Colisiones hash</p>
+<p>Dos claves producen la misma posición hash. ¿Significa que la tabla hash está mal diseñada? Explica cómo puede resolverse conceptualmente.</p>
+<h1>PARTE B - Complejidad temporal y espacial</h1>
+<p>16 - Un bucle</p>
+<p>for i in range(n):    trabajo_constante()</p>
+<p>Determina Big-O.</p>
+<p>17 - Dos bucles anidados</p>
+<p>for i in range(n):    for j in range(n):        trabajo_constante()</p>
+<p>Determina Big-O.</p>
+<p>18 - Bucle logarítmico</p>
+<p>i = 1while i &lt; n:    i *= 2</p>
+<p>Determina Big-O.</p>
+<p>19 - Lineal por logarítmico</p>
+<p>for i in range(n):    j = 1    while j &lt; n:        j *= 2</p>
+<p>Determina Big-O.</p>
+<p>20 - Secuenciales, no anidados</p>
+<p>for i in range(n): passfor j in range(n): pass</p>
+<p>¿O(2n), O(n) u O(n²)? Explica.</p>
+<p>21 - Triangular</p>
+<p>for i in range(n):    for j in range(i):        trabajo_constante()</p>
+<p>Determina Big-O.</p>
+<p>22 - Constantes y términos dominantes</p>
+<p>Ordena y simplifica: 7n² + 50n + 1000. ¿Qué Big-O tiene?</p>
+<p>23 - Búsqueda binaria</p>
+<p>¿Cuál es la complejidad temporal de búsqueda binaria sobre un array ordenado? ¿Qué requisito previo es esencial?</p>
+<p>24 - Hash promedio vs peor caso</p>
+<p>Explica por qué una tabla hash puede tener O(1) promedio para búsqueda pero O(n) en un peor caso.</p>
+<p>25 - Árbol balanceado</p>
+<p>¿Qué complejidad de búsqueda esperas en un BST balanceado con n elementos? ¿Y en uno completamente degenerado?</p>
+<p>26 - BFS con lista de adyacencia</p>
+<p>Indica la complejidad típica de BFS en términos de V y E cuando el grafo se representa mediante listas de adyacencia.</p>
+<p>27 - Matriz de adyacencia</p>
+<p>¿Por qué recorrer vecinos de todos los vértices con una matriz de adyacencia puede llevar O(V²), aunque el grafo sea disperso?</p>
+<p>28 - Merge sort</p>
+<p>La recurrencia aproximada es T(n)=2T(n/2)+O(n). ¿Qué orden temporal resulta?</p>
+<p>29 - Espacio de búsqueda binaria</p>
+<p>Compara la búsqueda binaria iterativa y una versión recursiva respecto a espacio auxiliar.</p>
+<h1>PARTE C - Ordenación y búsqueda</h1>
+<p>30 - Búsqueda lineal</p>
+<p>Tienes una colección no ordenada de 50.000 elementos y realizarás una sola búsqueda. ¿Por qué la búsqueda lineal puede ser razonable?</p>
+<p>31 - Traza de búsqueda binaria</p>
+<p>Busca 12 en [1,4,7,9,12,15,20] usando índice medio entero. Escribe los valores comparados hasta encontrarlo.</p>
+<p>32 - Insertion sort</p>
+<p>¿Por qué insertion sort puede comportarse bien en colecciones pequeñas o casi ordenadas aunque sea O(n²) en caso general?</p>
+<p>33 - Merge sort</p>
+<p>Indica complejidad temporal típica, estabilidad y principal coste de memoria de merge sort según tus apuntes.</p>
+<p>34 - Quicksort</p>
+<p>Indica complejidad media y peor caso. ¿Qué papel juega la elección del pivote?</p>
+<p>35 - Heapsort</p>
+<p>Indica complejidad temporal y una ventaja frente a quicksort respecto al peor caso.</p>
+<p>36 - Estabilidad</p>
+<p>Ordenas empleados por departamento manteniendo el orden previo por antigüedad dentro de cada departamento. ¿Por qué importa que el algoritmo sea estable?</p>
+<p>37 - Elegir ordenación</p>
+<p>Necesitas O(n log n) garantizado en peor caso y poco espacio auxiliar. Entre merge, quick y heap, ¿cuál encaja mejor de forma clásica?</p>
+<p>38 - Top-k</p>
+<p>De un flujo grande quieres mantener los 100 valores más altos sin ordenar todo continuamente. ¿Qué estructura puede ser útil y por qué?</p>
+<p>39 - Ordenar antes de buscar</p>
+<p>Vas a realizar 1.000.000 de búsquedas sobre una colección estática inicialmente desordenada. Compara mantenerla desordenada con ordenar una vez y luego usar búsqueda binaria.</p>
+<h1>PARTE D - Árboles y grafos</h1>
+<p>40 - BFS</p>
+<p>Grafo no dirigido con vecinos en orden alfabético: A:{B,C}; B:{A,D,E}; C:{A,F}; D:{B}; E:{B,F}; F:{C,E}. Recorre BFS desde A.</p>
+<p>41 - DFS</p>
+<p>Sobre el mismo grafo y visitando vecinos en orden alfabético, realiza DFS desde A.</p>
+<p>42 - Camino mínimo no ponderado</p>
+<p>¿Qué algoritmo usarías para hallar el menor número de aristas entre dos nodos en un grafo no ponderado?</p>
+<p>43 - Dijkstra</p>
+<p>Grafo dirigido/ponderado: A-B=4, A-C=1, C-B=2, B-D=1, C-D=5. Calcula el coste mínimo de A a D y el camino.</p>
+<p>44 - Pesos negativos</p>
+<p>¿Por qué Dijkstra no debe asumirse correcto con aristas negativas? ¿Qué algoritmo de tus apuntes admite pesos negativos?</p>
+<p>45 - Floyd-Warshall</p>
+<p>¿Cuándo es conceptualmente adecuado Floyd-Warshall frente a ejecutar una búsqueda desde un único origen?</p>
+<p>46 - Dirigido vs no dirigido</p>
+<p>Da un ejemplo de relación que modelarías como grafo dirigido y otra como no dirigida.</p>
+<p>47 - Heap máximo</p>
+<p>¿Es [9,7,8,2,5,3] una representación válida de max-heap en array? Justifica comparando padres e hijos.</p>
+<p>48 - BST</p>
+<p>Inserta conceptualmente 8,3,10,1,6,14,4,7,13 en un BST sin balanceo. ¿Qué camino sigues para buscar 7?</p>
+<p>49 - Representación de grafo</p>
+<p>¿Qué estructura ocupa normalmente menos memoria para un grafo muy disperso: matriz o lista de adyacencia? ¿Y cuál permite comprobar una arista (u,v) en O(1) directo con la representación básica?</p>
+<p>50 - MST y greedy</p>
+<p>¿Qué dos algoritmos citados en tus apuntes son ejemplos clásicos de enfoque voraz para árbol de expansión mínima?</p>
+<p>51 - BFS vs DFS</p>
+<p>Necesitas encontrar la solución más cercana en número de pasos en un espacio no ponderado. ¿BFS o DFS? ¿Y si solo quieres explorar profundamente con memoria limitada en anchura?</p>
+<h1>PARTE E - Estrategias de diseño de algoritmos</h1>
+<p>52 - Divide y vencerás</p>
+<p>Explica las tres ideas: dividir, resolver subproblemas y combinar. Da dos ejemplos de tus apuntes.</p>
+<p>53 - Greedy que falla</p>
+<p>Monedas {1,3,4}, objetivo 6. Aplica greedy tomando siempre la moneda mayor posible. ¿Cuántas monedas usa? ¿Cuál es la solución óptima? ¿Qué demuestra?</p>
+<p>54 - Programación dinámica</p>
+<p>¿Qué dos propiedades suelen justificar programación dinámica: subproblemas solapados y subestructura óptima? Explica con una frase.</p>
+<p>55 - Memoization vs tabulation</p>
+<p>Distingue enfoque top-down con memoization y bottom-up con tabulation.</p>
+<p>56 - Backtracking</p>
+<p>En N reinas, ¿por qué backtracking puede podar una rama antes de colocar todas las reinas?</p>
+<p>57 - Branch and bound</p>
+<p>¿Qué añade branch and bound respecto a una búsqueda exhaustiva en problemas de optimización?</p>
+<p>58 - Fibonacci</p>
+<p>Compara Fibonacci recursivo ingenuo con una solución de programación dinámica en crecimiento temporal.</p>
+<p>59 - Elegir estrategia</p>
+<p>Asocia: a) merge sort; b) mochila 0/1; c) N reinas; d) Kruskal. Opciones: divide y vencerás, programación dinámica, backtracking, greedy.</p>
+<p>60 - No todo greedy vale</p>
+<p>¿Por qué demostrar que una decisión local parece buena no basta para garantizar optimalidad global?</p>
+<h1>PARTE F - Organización de ficheros</h1>
+<p>61 - Fichero secuencial</p>
+<p>Un proceso nocturno recorre todos los registros de principio a fin. ¿Qué organización puede ser simple y eficiente?</p>
+<p>62 - Acceso directo/hash</p>
+<p>Se consulta principalmente por una clave exacta. ¿Qué organización de fichero descrita en tus apuntes puede ser apropiada y qué problema debe gestionar?</p>
+<p>63 - Secuencial indexado</p>
+<p>¿Qué ventaja aporta añadir un índice a una organización secuencial?</p>
+<p>64 - Registros fijos vs variables</p>
+<p>Compara facilidad de cálculo de posición/gestión entre registros de longitud fija y variable.</p>
+<p>65 - Buffering</p>
+<p>¿Por qué leer/escribir en bloques o buffers suele ser más eficiente que realizar una operación física por cada registro?</p>
+<p>66 - Elección combinada</p>
+<p>Un archivo se procesa completo cada noche, pero también recibe algunas consultas por clave durante el día. ¿Qué compromiso de organización podrías plantear?</p>
+<h1>PARTE G - IA básica dentro de III.05</h1>
+<p>67 - Supervisado, no supervisado, refuerzo</p>
+<p>Clasifica: a) predecir si una solicitud será fraude usando ejemplos etiquetados; b) agrupar expedientes sin etiquetas; c) agente que aprende por recompensa.</p>
+<p>68 - Train/validation/test</p>
+<p>Explica el papel de cada subconjunto y por qué no debes usar el test para ajustar continuamente el modelo.</p>
+<p>69 - Overfitting</p>
+<p>Un modelo obtiene 99% en entrenamiento y 72% en test. ¿Qué sospechas y qué significa generalización?</p>
+<p>70 - Precision vs recall</p>
+<p>En detección de fraude, ¿qué significa priorizar recall? ¿Qué coste puede aumentar?</p>
+<p>71 - F1</p>
+<p>¿Por qué F1 puede ser útil cuando quieres equilibrar precision y recall, especialmente con clases desbalanceadas?</p>
+<p>72 - Data leakage</p>
+<p>Durante entrenamiento se usa accidentalmente una variable que solo existe después de resolver el expediente. ¿Qué problema existe?</p>
+<p>73 - Tipo de tarea</p>
+<p>Asocia: predecir importe futuro; clasificar correo como spam/no spam; agrupar usuarios similares; detectar casos atípicos. Opciones: regresión, clasificación, clustering, anomalías.</p>
+<h1>PARTE H - Mini-supuestos integradores</h1>
+<p>74 - Centro de incidencias</p>
+<p>Diseña las estructuras principales para: registrar incidencias por id, atender primero las críticas y conservar orden de llegada dentro de la misma prioridad. Justifica hash + estructura de prioridad/colas.</p>
+<p>75 - Búsqueda documental</p>
+<p>Tienes 10 millones de documentos estáticos ordenables por id y realizarás millones de búsquedas. Compara búsqueda lineal, ordenar+búsqueda binaria y hash. ¿Qué factores adicionales decidirían?</p>
+<p>76 - Rutas administrativas</p>
+<p>Modela sedes como vértices y enlaces con latencia positiva como aristas ponderadas. ¿Qué algoritmo usarías para ruta mínima desde una sede a todas las demás? ¿Qué cambiaría si hubiera pesos negativos teóricos?</p>
+<p>77 - Procesamiento casi ordenado</p>
+<p>Cada hora recibes una lista pequeña que suele venir casi ordenada y debe quedar ordenada rápidamente. ¿Qué algoritmo clásico de tus apuntes puede ser razonable? Justifica.</p>
+<p>78 - Asignación con decisiones</p>
+<p>Un problema de combinaciones tiene muchas ramas; una solución parcial que viola una restricción ya nunca podrá ser válida. ¿Qué estrategia usarías? ¿Qué diferencia habría si además dispusieras de una cota para descartar soluciones que no superarán la mejor?</p>
+<p>79 - Clasificador público</p>
+<p>Diseñas un clasificador para priorizar expedientes. Estructura una respuesta breve con datos, train/validation/test, métrica, overfitting, sesgo, explicabilidad y supervisión humana.</p>
+<p>80 - Supuesto completo de 20 minutos</p>
+<p>Un organismo necesita procesar millones de registros, ofrecer búsquedas rápidas, priorizar tareas, calcular rutas entre sedes y añadir un modelo de detección de anomalías. En máximo una página, justifica estructuras, algoritmos, complejidad aproximada y controles de IA. No elijas tecnología de producto concreta.</p>
+<h1>Registro de progreso</h1>
+<table>
+<tr>
+<th scope="col"><p>Bloque</p></th>
+<th scope="col"><p>Intento 1</p></th>
+<th scope="col"><p>Intento 2</p></th>
+<th scope="col"><p>Errores recurrentes</p></th>
+</tr>
+<tr>
+<td><p>A TAD/estructuras</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>B Big-O</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>C Ordenación/búsqueda</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>D Árboles/grafos</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>E Estrategias</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>F Ficheros</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>G IA</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>H Supuestos</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+<p>Base: apuntes GSI A2 V2.1, tema III.05. Se prioriza el alcance expresamente recogido en esos apuntes: TAD, Big-O, arrays/listas/pilas/colas/hash/árboles/grafos, búsqueda/ordenación, BFS/DFS/Dijkstra/Bellman-Ford/Floyd-Warshall, divide y vencerás, greedy, programación dinámica, backtracking, branch and bound, organizaciones de ficheros e IA básica.</p></main></body></html>

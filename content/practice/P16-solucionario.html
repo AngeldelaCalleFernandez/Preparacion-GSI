@@ -1,0 +1,524 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GSI A2 — PRÁCTICA ACTIVA 16 — LICENCIAS, PROTECCIÓN JURÍDICA Y DRM — SOLUCIONARIO COMENTADO</title><link rel="stylesheet" href="../../assets/css/styles.css"></head><body><main class="shell topic-content"><p><a href="../../index.html#practica">Volver a práctica escrita</a></p><p>Material curado GSI A2. Fuente: <a href="https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit">documento original de Drive</a>.</p><p>GSI A2 — PRÁCTICA ACTIVA 16</p>
+<p><strong>LICENCIAS · SOFTWARE LIBRE/PROPIETARIO · PROTECCIÓN JURÍDICA · DRM</strong></p>
+<p>160 preguntas · 4 opciones · II.14 cierre del último hueco rojo</p>
+<p><strong>SOLUCIONARIO COMENTADO</strong></p>
+<h1>Cómo usar esta práctica</h1>
+<p>Este solucionario no se limita a dar la letra: cada respuesta incluye la regla que conviene fijar para examen. Las respuestas A/B/C/D están equilibradas: 40 de cada letra en el total y 5 de cada letra en cada bloque de 20.</p>
+<p>Base nuclear: GSI A2 — Bloque II — Apuntes completos V2.1 revisados. Las ampliaciones sensibles se han contrastado con fuentes oficiales vigentes a 24/08/2026.</p>
+<h2>Distribución</h2>
+<table>
+<tr>
+<th scope="col"><p><strong>Preguntas</strong></p></th>
+<th scope="col"><p><strong>Bloque</strong></p></th>
+<th scope="col"><p><strong>Función</strong></p></th>
+</tr>
+<tr>
+<td><p><strong>1–20</strong></p></td>
+<td><p><strong>Software libre, propietario y open source</strong></p></td>
+<td><p>Conceptos base y trampas: libre ≠ gratis; source-available ≠ libre.</p></td>
+</tr>
+<tr>
+<td><p><strong>21–40</strong></p></td>
+<td><p><strong>Licencias permisivas</strong></p></td>
+<td><p>MIT, BSD, Apache-2.0, avisos, patentes y reutilización.</p></td>
+</tr>
+<tr>
+<td><p><strong>41–60</strong></p></td>
+<td><p><strong>Copyleft</strong></p></td>
+<td><p>GPL, LGPL, AGPL, distribución, linking y red.</p></td>
+</tr>
+<tr>
+<td><p><strong>61–80</strong></p></td>
+<td><p><strong>EUPL, compatibilidad y dominio público</strong></p></td>
+<td><p>EUPL-1.2, SPDX, CC y compatibilidad de licencias.</p></td>
+</tr>
+<tr>
+<td><p><strong>81–100</strong></p></td>
+<td><p><strong>Protección jurídica</strong></p></td>
+<td><p>TRLPI, expresión/ideas, titularidad, contratos y explotación.</p></td>
+</tr>
+<tr>
+<td><p><strong>101–120</strong></p></td>
+<td><p><strong>Límites e interoperabilidad</strong></p></td>
+<td><p>Usuario legítimo, copia, descompilación limitada, patentes, marcas y secretos.</p></td>
+</tr>
+<tr>
+<td><p><strong>121–140</strong></p></td>
+<td><p><strong>DRM</strong></p></td>
+<td><p>Medidas técnicas, privacidad, accesibilidad, continuidad y reversibilidad.</p></td>
+</tr>
+<tr>
+<td><p><strong>141–160</strong></p></td>
+<td><p><strong>Casos integradores</strong></p></td>
+<td><p>SBOM, SAM, TCO, lock-in, contratación y supply chain.</p></td>
+</tr>
+</table>
+<h2>Fuentes oficiales de contraste</h2>
+<ul>
+<li><a href="https://www.gnu.org/philosophy/free-sw.es">FSF — Definición de software libre</a></li>
+<li><a href="https://opensource.org/osd">OSI — Open Source Definition</a></li>
+<li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-1996-8930">BOE — RDL 1/1996, TRLPI (programas de ordenador)</a></li>
+<li><a href="https://interoperable-europe.ec.europa.eu/collection/eupl/eupl-text-eupl-12">Interoperable Europe — EUPL-1.2</a></li>
+<li><a href="https://www.gnu.org/licenses/gpl-faq.html">GNU — FAQ GPL/AGPL</a></li>
+<li><a href="https://www.apache.org/licenses/LICENSE-2.0">Apache Software Foundation — Apache License 2.0</a></li>
+</ul>
+<h1>Plantilla rápida de respuestas</h1>
+<table>
+<tr>
+<th scope="col"><p><strong>1</strong></p></th>
+<th scope="col"><p><strong>2</strong></p></th>
+<th scope="col"><p><strong>3</strong></p></th>
+<th scope="col"><p><strong>4</strong></p></th>
+<th scope="col"><p><strong>5</strong></p></th>
+<th scope="col"><p><strong>6</strong></p></th>
+<th scope="col"><p><strong>7</strong></p></th>
+<th scope="col"><p><strong>8</strong></p></th>
+<th scope="col"><p><strong>9</strong></p></th>
+<th scope="col"><p><strong>10</strong></p></th>
+</tr>
+<tr>
+<td><p><strong>1 A</strong></p></td>
+<td><p><strong>2 C</strong></p></td>
+<td><p><strong>3 B</strong></p></td>
+<td><p><strong>4 D</strong></p></td>
+<td><p><strong>5 B</strong></p></td>
+<td><p><strong>6 D</strong></p></td>
+<td><p><strong>7 A</strong></p></td>
+<td><p><strong>8 C</strong></p></td>
+<td><p><strong>9 C</strong></p></td>
+<td><p><strong>10 A</strong></p></td>
+</tr>
+<tr>
+<td><p><strong>11 D</strong></p></td>
+<td><p><strong>12 B</strong></p></td>
+<td><p><strong>13 D</strong></p></td>
+<td><p><strong>14 B</strong></p></td>
+<td><p><strong>15 C</strong></p></td>
+<td><p><strong>16 A</strong></p></td>
+<td><p><strong>17 A</strong></p></td>
+<td><p><strong>18 D</strong></p></td>
+<td><p><strong>19 B</strong></p></td>
+<td><p><strong>20 C</strong></p></td>
+</tr>
+<tr>
+<td><p><strong>21 B</strong></p></td>
+<td><p><strong>22 D</strong></p></td>
+<td><p><strong>23 C</strong></p></td>
+<td><p><strong>24 A</strong></p></td>
+<td><p><strong>25 C</strong></p></td>
+<td><p><strong>26 A</strong></p></td>
+<td><p><strong>27 B</strong></p></td>
+<td><p><strong>28 D</strong></p></td>
+<td><p><strong>29 D</strong></p></td>
+<td><p><strong>30 B</strong></p></td>
+</tr>
+<tr>
+<td><p><strong>31 A</strong></p></td>
+<td><p><strong>32 C</strong></p></td>
+<td><p><strong>33 A</strong></p></td>
+<td><p><strong>34 C</strong></p></td>
+<td><p><strong>35 D</strong></p></td>
+<td><p><strong>36 B</strong></p></td>
+<td><p><strong>37 B</strong></p></td>
+<td><p><strong>38 A</strong></p></td>
+<td><p><strong>39 C</strong></p></td>
+<td><p><strong>40 D</strong></p></td>
+</tr>
+<tr>
+<td><p><strong>41 C</strong></p></td>
+<td><p><strong>42 A</strong></p></td>
+<td><p><strong>43 D</strong></p></td>
+<td><p><strong>44 B</strong></p></td>
+<td><p><strong>45 D</strong></p></td>
+<td><p><strong>46 B</strong></p></td>
+<td><p><strong>47 C</strong></p></td>
+<td><p><strong>48 A</strong></p></td>
+<td><p><strong>49 A</strong></p></td>
+<td><p><strong>50 C</strong></p></td>
+</tr>
+<tr>
+<td><p><strong>51 B</strong></p></td>
+<td><p><strong>52 D</strong></p></td>
+<td><p><strong>53 B</strong></p></td>
+<td><p><strong>54 D</strong></p></td>
+<td><p><strong>55 A</strong></p></td>
+<td><p><strong>56 C</strong></p></td>
+<td><p><strong>57 C</strong></p></td>
+<td><p><strong>58 B</strong></p></td>
+<td><p><strong>59 D</strong></p></td>
+<td><p><strong>60 A</strong></p></td>
+</tr>
+<tr>
+<td><p><strong>61 D</strong></p></td>
+<td><p><strong>62 B</strong></p></td>
+<td><p><strong>63 A</strong></p></td>
+<td><p><strong>64 C</strong></p></td>
+<td><p><strong>65 A</strong></p></td>
+<td><p><strong>66 C</strong></p></td>
+<td><p><strong>67 D</strong></p></td>
+<td><p><strong>68 B</strong></p></td>
+<td><p><strong>69 B</strong></p></td>
+<td><p><strong>70 D</strong></p></td>
+</tr>
+<tr>
+<td><p><strong>71 C</strong></p></td>
+<td><p><strong>72 A</strong></p></td>
+<td><p><strong>73 C</strong></p></td>
+<td><p><strong>74 A</strong></p></td>
+<td><p><strong>75 B</strong></p></td>
+<td><p><strong>76 D</strong></p></td>
+<td><p><strong>77 D</strong></p></td>
+<td><p><strong>78 C</strong></p></td>
+<td><p><strong>79 A</strong></p></td>
+<td><p><strong>80 B</strong></p></td>
+</tr>
+<tr>
+<td><p><strong>81 A</strong></p></td>
+<td><p><strong>82 C</strong></p></td>
+<td><p><strong>83 B</strong></p></td>
+<td><p><strong>84 D</strong></p></td>
+<td><p><strong>85 B</strong></p></td>
+<td><p><strong>86 D</strong></p></td>
+<td><p><strong>87 A</strong></p></td>
+<td><p><strong>88 C</strong></p></td>
+<td><p><strong>89 C</strong></p></td>
+<td><p><strong>90 A</strong></p></td>
+</tr>
+<tr>
+<td><p><strong>91 D</strong></p></td>
+<td><p><strong>92 B</strong></p></td>
+<td><p><strong>93 D</strong></p></td>
+<td><p><strong>94 B</strong></p></td>
+<td><p><strong>95 C</strong></p></td>
+<td><p><strong>96 A</strong></p></td>
+<td><p><strong>97 A</strong></p></td>
+<td><p><strong>98 D</strong></p></td>
+<td><p><strong>99 B</strong></p></td>
+<td><p><strong>100 C</strong></p></td>
+</tr>
+<tr>
+<td><p><strong>101 B</strong></p></td>
+<td><p><strong>102 D</strong></p></td>
+<td><p><strong>103 C</strong></p></td>
+<td><p><strong>104 A</strong></p></td>
+<td><p><strong>105 C</strong></p></td>
+<td><p><strong>106 A</strong></p></td>
+<td><p><strong>107 B</strong></p></td>
+<td><p><strong>108 D</strong></p></td>
+<td><p><strong>109 D</strong></p></td>
+<td><p><strong>110 B</strong></p></td>
+</tr>
+<tr>
+<td><p><strong>111 A</strong></p></td>
+<td><p><strong>112 C</strong></p></td>
+<td><p><strong>113 A</strong></p></td>
+<td><p><strong>114 C</strong></p></td>
+<td><p><strong>115 D</strong></p></td>
+<td><p><strong>116 B</strong></p></td>
+<td><p><strong>117 B</strong></p></td>
+<td><p><strong>118 A</strong></p></td>
+<td><p><strong>119 C</strong></p></td>
+<td><p><strong>120 D</strong></p></td>
+</tr>
+<tr>
+<td><p><strong>121 C</strong></p></td>
+<td><p><strong>122 A</strong></p></td>
+<td><p><strong>123 D</strong></p></td>
+<td><p><strong>124 B</strong></p></td>
+<td><p><strong>125 D</strong></p></td>
+<td><p><strong>126 B</strong></p></td>
+<td><p><strong>127 C</strong></p></td>
+<td><p><strong>128 A</strong></p></td>
+<td><p><strong>129 A</strong></p></td>
+<td><p><strong>130 C</strong></p></td>
+</tr>
+<tr>
+<td><p><strong>131 B</strong></p></td>
+<td><p><strong>132 D</strong></p></td>
+<td><p><strong>133 B</strong></p></td>
+<td><p><strong>134 D</strong></p></td>
+<td><p><strong>135 A</strong></p></td>
+<td><p><strong>136 C</strong></p></td>
+<td><p><strong>137 C</strong></p></td>
+<td><p><strong>138 B</strong></p></td>
+<td><p><strong>139 D</strong></p></td>
+<td><p><strong>140 A</strong></p></td>
+</tr>
+<tr>
+<td><p><strong>141 D</strong></p></td>
+<td><p><strong>142 B</strong></p></td>
+<td><p><strong>143 A</strong></p></td>
+<td><p><strong>144 C</strong></p></td>
+<td><p><strong>145 A</strong></p></td>
+<td><p><strong>146 C</strong></p></td>
+<td><p><strong>147 D</strong></p></td>
+<td><p><strong>148 B</strong></p></td>
+<td><p><strong>149 B</strong></p></td>
+<td><p><strong>150 D</strong></p></td>
+</tr>
+<tr>
+<td><p><strong>151 C</strong></p></td>
+<td><p><strong>152 A</strong></p></td>
+<td><p><strong>153 C</strong></p></td>
+<td><p><strong>154 A</strong></p></td>
+<td><p><strong>155 B</strong></p></td>
+<td><p><strong>156 D</strong></p></td>
+<td><p><strong>157 D</strong></p></td>
+<td><p><strong>158 C</strong></p></td>
+<td><p><strong>159 A</strong></p></td>
+<td><p><strong>160 B</strong></p></td>
+</tr>
+</table>
+<h1>1. Software libre, propietario y open source</h1>
+<p><strong>1. A — </strong>Propietario describe el régimen de derechos/licencia, no el precio ni una prohibición absoluta de todos los actos.</p>
+<p><strong>2. C — </strong>La libertad se refiere a uso, estudio, modificación y redistribución; no equivale a gratuidad.</p>
+<p><strong>3. B — </strong>La libertad 0 es la libertad de ejecutar; no depende del precio ni obliga a publicar modificaciones privadas.</p>
+<p><strong>4. D — </strong>La FSF considera el acceso al código fuente condición necesaria para estudiar y modificar.</p>
+<p><strong>5. B — </strong>La libertad 2 cubre redistribuir copias; la 3 se refiere a versiones modificadas.</p>
+<p><strong>6. D — </strong>La libertad 3 permite distribuir versiones modificadas y exige acceso al código fuente para ser real.</p>
+<p><strong>7. A — </strong>Código visible no implica por sí mismo una licencia libre u open source.</p>
+<p><strong>8. C — </strong>OSI exige criterios como redistribución, fuente, derivados y ausencia de discriminación, entre otros.</p>
+<p><strong>9. C — </strong>Las licencias open source no pueden discriminar por persona o campo de actividad y deben permitir redistribución conforme a la OSD.</p>
+<p><strong>10. A — </strong>Las comunidades comparten mucho software, pero no son conceptos filosóficamente idénticos.</p>
+<p><strong>11. D — </strong>Gratis describe precio; libre describe libertades.</p>
+<p><strong>12. B — </strong>Precio cero no altera por sí mismo el régimen de licencia.</p>
+<p><strong>13. D — </strong>Modelo económico y libertades/licencia son dimensiones distintas.</p>
+<p><strong>14. B — </strong>La licencia es jurídica; no debe confundirse con controles técnicos o calidad.</p>
+<p><strong>15. C — </strong>Las obligaciones de compartir suelen activarse por hechos previstos en la licencia, por ejemplo distribución; no por el mero acto privado de modificar en todos los casos.</p>
+<p><strong>16. A — </strong>La disponibilidad del código no sustituye el análisis de la licencia.</p>
+<p><strong>17. A — </strong>La no discriminación por campo de actividad es un criterio de la OSD.</p>
+<p><strong>18. D — </strong>Estas parejas son trampas clásicas porque describen dimensiones distintas.</p>
+<p><strong>19. B — </strong>El software libre no garantiza coste total cero; deben compararse costes y riesgos completos.</p>
+<p><strong>20. C — </strong>El tema exige discriminar planos jurídicos, económicos y técnicos.</p>
+<h1>2. Licencias permisivas: MIT, BSD y Apache-2.0</h1>
+<p><strong>21. B — </strong>Las permisivas conservan copyright y condiciones, pero no imponen el copyleft fuerte típico de GPL.</p>
+<p><strong>22. D — </strong>MIT es una licencia permisiva clásica.</p>
+<p><strong>23. C — </strong>BSD y MIT son referencias típicas de licencias permisivas.</p>
+<p><strong>24. A — </strong>Las permisivas suelen exigir conservar avisos/licencia u otras condiciones concretas.</p>
+<p><strong>25. C — </strong>Apache-2.0 contiene tanto concesión de copyright como una concesión expresa de patentes.</p>
+<p><strong>26. A — </strong>Para examen, la concesión explícita de patentes de Apache-2.0 es una diferencia relevante.</p>
+<p><strong>27. B — </strong>Permisiva facilita integración, pero no elimina obligaciones.</p>
+<p><strong>28. D — </strong>Permisiva no significa ausencia de condiciones.</p>
+<p><strong>29. D — </strong>La trazabilidad de componentes/licencias facilita atribución y cumplimiento.</p>
+<p><strong>30. B — </strong>Las licencias permisivas permiten ampliamente explotación comercial.</p>
+<p><strong>31. A — </strong>La concesión de patentes está delimitada por los términos y contribuciones contempladas en la licencia.</p>
+<p><strong>32. C — </strong>La permisividad reduce algunas restricciones de redistribución, no otros riesgos técnicos/operativos.</p>
+<p><strong>33. A — </strong>La gobernanza de componentes debe registrar la licencia concreta y su evidencia.</p>
+<p><strong>34. C — </strong>El copyleft de la obra combinada no es el rasgo general de las permisivas.</p>
+<p><strong>35. D — </strong>La trazabilidad de terceros permite gestionar obligaciones y vulnerabilidades.</p>
+<p><strong>36. B — </strong>Una SBOM permite inventariar componentes; debe complementarse con metadatos/licencias fiables.</p>
+<p><strong>37. B — </strong>Las familias ayudan a clasificar, pero el cumplimiento depende del texto concreto.</p>
+<p><strong>38. A — </strong>La distinción permisiva/copyleft es básica.</p>
+<p><strong>39. C — </strong>Apache-2.0 es permisiva, pero impone condiciones de redistribución.</p>
+<p><strong>40. D — </strong>Es la regla mental más útil para evitar errores.</p>
+<h1>3. Copyleft: GPL, LGPL y AGPL</h1>
+<p><strong>41. C — </strong>Copyleft usa el copyright/licencia para mantener libertades en redistribuciones y derivados según los términos.</p>
+<p><strong>42. A — </strong>GPL es la referencia clásica de copyleft fuerte.</p>
+<p><strong>43. D — </strong>GNU aclara que ejecutar copias sin distribuir no impone esas obligaciones de distribución.</p>
+<p><strong>44. B — </strong>AGPL fue diseñada para cubrir el escenario de software interactivo ejecutado como servicio en red.</p>
+<p><strong>45. D — </strong>La cláusula de red es precisamente el rasgo diferenciador de AGPL.</p>
+<p><strong>46. B — </strong>LGPL modera el efecto copyleft para bibliotecas y ciertos escenarios de linking.</p>
+<p><strong>47. C — </strong>Copyleft no prohíbe el comercio; regula libertades/obligaciones.</p>
+<p><strong>48. A — </strong>Copyleft se apoya precisamente en el copyright.</p>
+<p><strong>49. A — </strong>El análisis depende de la relación entre componentes y del acto de distribución, no de etiquetas comerciales.</p>
+<p><strong>50. C — </strong>La obligación se aplica a la obra cubierta y a combinaciones según los términos, no indiscriminadamente a todo lo que comparte infraestructura.</p>
+<p><strong>51. B — </strong>La compatibilidad depende de detalles técnicos y jurídicos.</p>
+<p><strong>52. D — </strong>AGPL añade la cláusula de interacción remota por red.</p>
+<p><strong>53. B — </strong>La GPL condiciona actos como convey/distribución, no el mero uso privado interno.</p>
+<p><strong>54. D — </strong>El software GPL puede distribuirse comercialmente.</p>
+<p><strong>55. A — </strong>Es la razón conceptual para distinguir LGPL de GPL.</p>
+<p><strong>56. C — </strong>La fuerza/alcance del copyleft distingue estas familias.</p>
+<p><strong>57. C — </strong>La respuesta correcta es un análisis de uso y arquitectura, no una reacción automática.</p>
+<p><strong>58. B — </strong>El término “viral” simplifica demasiado y lleva a errores.</p>
+<p><strong>59. D — </strong>La determinación de obra combinada/independiente exige contexto.</p>
+<p><strong>60. A — </strong>Es una distinción de alto rendimiento para test.</p>
+<h1>4. EUPL, compatibilidad, dominio público y Creative Commons</h1>
+<p><strong>61. D — </strong>EUPL es la licencia pública de la UE para software y trabajos cubiertos.</p>
+<p><strong>62. B — </strong>El portal oficial publica EUPL 1.2, difundida en el DOUE en 2017.</p>
+<p><strong>63. A — </strong>EUPL-1.2 se ofrece en 23 versiones lingüísticas oficiales.</p>
+<p><strong>64. C — </strong>Su diseño europeo y cláusulas de compatibilidad la hacen relevante para reutilización pública.</p>
+<p><strong>65. A — </strong>Compatibilidad de licencias es jurídica, no compatibilidad técnica.</p>
+<p><strong>66. C — </strong>Copyleft puede generar conflictos de obligaciones si no existe compatibilidad.</p>
+<p><strong>67. D — </strong>La compatibilidad EUPL está expresamente estructurada y no equivale a borrar la licencia original.</p>
+<p><strong>68. B — </strong>Open source normalmente opera mediante copyright + licencia; dominio público es otro régimen.</p>
+<p><strong>69. B — </strong>Para software se prefieren licencias diseñadas específicamente para código.</p>
+<p><strong>70. D — </strong>Repositorio público no equivale a permiso jurídico de reutilización.</p>
+<p><strong>71. C — </strong>El portal europeo mantiene herramientas para comparar y comprobar compatibilidad.</p>
+<p><strong>72. A — </strong>SPDX normaliza identificadores de licencias y componentes.</p>
+<p><strong>73. C — </strong>Ser open source no garantiza compatibilidad automática.</p>
+<p><strong>74. A — </strong>El portal oficial destaca cobertura de escenarios SaaS/network.</p>
+<p><strong>75. B — </strong>Reciprocity/share-alike es la forma de copyleft de EUPL.</p>
+<p><strong>76. D — </strong>La publicación pública requiere gobernanza de derechos y dependencias.</p>
+<p><strong>77. D — </strong>La compatibilidad opera sobre la obra combinada según términos; no borra la licencia del componente original.</p>
+<p><strong>78. C — </strong>Separar ambos planos evita confundir licencias con arquitectura.</p>
+<p><strong>79. A — </strong>La gobernanza reduce riesgo jurídico y de cadena de suministro.</p>
+<p><strong>80. B — </strong>La discriminación conceptual es el objetivo principal.</p>
+<h1>5. Protección jurídica del software en España y la UE</h1>
+<p><strong>81. A — </strong>El TRLPI dedica su Título VII del Libro I a los programas de ordenador.</p>
+<p><strong>82. C — </strong>El artículo 96 protege la expresión y excluye ideas y principios subyacentes.</p>
+<p><strong>83. B — </strong>La norma incluye documentación preparatoria y protege además documentación técnica/manuales en los términos indicados.</p>
+<p><strong>84. D — </strong>La originalidad es la condición indicada en el artículo 96.2.</p>
+<p><strong>85. B — </strong>El artículo 96.4 excluye las ideas y principios, incluidos los que fundamentan interfaces.</p>
+<p><strong>86. D — </strong>El artículo 99 recoge actos de explotación del programa sujetos a autorización salvo límites.</p>
+<p><strong>87. A — </strong>El artículo 101 permite la inscripción; la protección deriva del régimen de autor y la originalidad.</p>
+<p><strong>88. C — </strong>El artículo 97.4 establece esa regla para programas creados por trabajador asalariado en sus funciones/instrucciones.</p>
+<p><strong>89. C — </strong>La claridad contractual evita conflictos sobre alcance de cesiones/licencias y continuidad.</p>
+<p><strong>90. A — </strong>El artículo 96 protege cualquier forma de expresión y el 97 menciona fuente y objeto en el supuesto laboral.</p>
+<p><strong>91. D — </strong>Uso del software y titularidad de derechos de explotación no son equivalentes.</p>
+<p><strong>92. B — </strong>La norma contempla expresamente documentación técnica y manuales.</p>
+<p><strong>93. D — </strong>El artículo 96 contempla coexistencia con la protección industrial cuando proceda.</p>
+<p><strong>94. B — </strong>Adquisición de una copia/licencia y titularidad de propiedad intelectual son planos distintos.</p>
+<p><strong>95. C — </strong>La transformación es uno de los derechos de explotación regulados.</p>
+<p><strong>96. A — </strong>La reversibilidad requiere tanto artefactos técnicos como derechos jurídicos.</p>
+<p><strong>97. A — </strong>Los derechos de explotación deben quedar claramente definidos.</p>
+<p><strong>98. D — </strong>El temario exige distinguir mecanismos jurídicos complementarios.</p>
+<p><strong>99. B — </strong>El copyright no monopoliza ideas abstractas.</p>
+<p><strong>100. C — </strong>Son dos distinciones nucleares del bloque.</p>
+<h1>6. Límites, interoperabilidad, patentes, marcas y secretos</h1>
+<p><strong>101. B — </strong>El artículo 100.1 establece ese límite a los derechos de explotación.</p>
+<p><strong>102. D — </strong>El artículo 100.2 protege la copia de seguridad necesaria.</p>
+<p><strong>103. C — </strong>El artículo 100.3 reconoce esa facultad al usuario legítimo.</p>
+<p><strong>104. A — </strong>La descompilación/interoperabilidad se regula con condiciones estrictas en el artículo 100.5 y 100.6.</p>
+<p><strong>105. C — </strong>La ley exige necesidad y falta de disponibilidad previa de la información.</p>
+<p><strong>106. A — </strong>La proporcionalidad/limitación es requisito expreso.</p>
+<p><strong>107. B — </strong>El artículo 100.6 limita uso y comunicación de la información obtenida.</p>
+<p><strong>108. D — </strong>Propiedad intelectual e industrial tienen objetos y requisitos diferentes.</p>
+<p><strong>109. D — </strong>La marca protege identificación/distinción, no el contenido del programa.</p>
+<p><strong>110. B — </strong>La confidencialidad es esencial al régimen de secretos.</p>
+<p><strong>111. A — </strong>Las concesiones de patente dependen de la licencia; Apache-2.0, por ejemplo, las regula expresamente.</p>
+<p><strong>112. C — </strong>Su sección 3 contiene una licencia expresa de patentes delimitada.</p>
+<p><strong>113. A — </strong>La ley reconoce expresamente la coexistencia de otros regímenes.</p>
+<p><strong>114. C — </strong>La interoperabilidad tiene un marco legal específico y requisitos.</p>
+<p><strong>115. D — </strong>El artículo 100.6 prohíbe ese uso.</p>
+<p><strong>116. B — </strong>El punto de examen es evitar absolutos.</p>
+<p><strong>117. B — </strong>La dependencia técnica y jurídica debe gestionarse desde contratación.</p>
+<p><strong>118. A — </strong>Hay que equilibrar secreto, contrato y necesidades legítimas de continuidad/obligaciones públicas.</p>
+<p><strong>119. C — </strong>Son figuras de propiedad industrial con funciones distintas.</p>
+<p><strong>120. D — </strong>La precisión de alcance evita errores jurídicos.</p>
+<h1>7. DRM, medidas técnicas y riesgos</h1>
+<p><strong>121. C — </strong>DRM es una capa técnica de control, no una licencia.</p>
+<p><strong>122. A — </strong>Activación/servidores de licencia son ejemplos típicos de control técnico.</p>
+<p><strong>123. D — </strong>Separar norma jurídica y mecanismo técnico es una trampa central del tema.</p>
+<p><strong>124. B — </strong>Un proveedor puede confiar en contrato/licencia sin activación técnica.</p>
+<p><strong>125. D — </strong>DRM puede acompañar a licencias, pero no las reemplaza.</p>
+<p><strong>126. B — </strong>La dependencia de infraestructura del proveedor puede afectar continuidad.</p>
+<p><strong>127. C — </strong>Los controles online pueden introducir tratamiento de datos y trazabilidad.</p>
+<p><strong>128. A — </strong>La preservación exige poder seguir accediendo a largo plazo.</p>
+<p><strong>129. A — </strong>Restricciones técnicas pueden interferir con usos legítimos y tecnologías de apoyo.</p>
+<p><strong>130. C — </strong>DRM puede reforzar lock-in técnico.</p>
+<p><strong>131. B — </strong>El sector público debe asegurar continuidad del servicio y salida.</p>
+<p><strong>132. D — </strong>La reversibilidad reduce lock-in y riesgo de fin de contrato.</p>
+<p><strong>133. B — </strong>La salida y portabilidad de datos deben ser requisitos de contratación.</p>
+<p><strong>134. D — </strong>Debe existir un plan de continuidad y transición.</p>
+<p><strong>135. A — </strong>Es un ejemplo de medida técnica/forense.</p>
+<p><strong>136. C — </strong>Capacidad técnica y permiso jurídico no coinciden necesariamente; tampoco la prohibición técnica resuelve todos los derechos.</p>
+<p><strong>137. C — </strong>La implementación puede introducir barreras que deben detectarse aunque exista un derecho contractual/licenciado.</p>
+<p><strong>138. B — </strong>El artículo 102 contempla específicamente dispositivos técnicos de protección.</p>
+<p><strong>139. D — </strong>Los controles deben ser proporcionales y compatibles con objetivos de servicio.</p>
+<p><strong>140. A — </strong>La separación conceptual es esencial.</p>
+<h1>8. Casos mixtos, SBOM, cumplimiento y contratación</h1>
+<p><strong>141. D — </strong>Sin inventario no puede gestionarse cumplimiento ni cadena de suministro.</p>
+<p><strong>142. B — </strong>Software Bill of Materials es una “lista de materiales” del software.</p>
+<p><strong>143. A — </strong>La ausencia de licencia clara es un riesgo jurídico que requiere resolución.</p>
+<p><strong>144. C — </strong>SAM busca control de activos y cumplimiento de licencias.</p>
+<p><strong>145. A — </strong>Licencia, soporte y vulnerabilidades son dimensiones distintas que deben gestionarse juntas.</p>
+<p><strong>146. C — </strong>La gobernanza debe cubrir legal, seguridad y ciclo de vida.</p>
+<p><strong>147. D — </strong>Accesibilidad pública no equivale a autorización libre de reutilización.</p>
+<p><strong>148. B — </strong>Lock-in es un riesgo de reversibilidad, no una licencia.</p>
+<p><strong>149. B — </strong>La decisión no debe reducirse al precio de licencia.</p>
+<p><strong>150. D — </strong>TCO incluye implantación, soporte, operación, formación, migración, etc.</p>
+<p><strong>151. C — </strong>Son requisitos de salida y continuidad operativa.</p>
+<p><strong>152. A — </strong>La evidencia permite demostrar derechos de uso y gestionar renovaciones.</p>
+<p><strong>153. C — </strong>Los activos críticos deben quedar bajo control organizativo y con mecanismos de transferencia.</p>
+<p><strong>154. A — </strong>La transparencia de terceros es básica para mantener la solución.</p>
+<p><strong>155. B — </strong>Los sistemas reales son composiciones y el cumplimiento se evalúa por componentes/relaciones.</p>
+<p><strong>156. D — </strong>Sin versión exacta no puede saberse qué código/licencia se utilizó.</p>
+<p><strong>157. D — </strong>Los controles automatizados ayudan, pero necesitan políticas y excepciones gobernadas.</p>
+<p><strong>158. C — </strong>La salida debe diseñarse antes de contratar para evitar lock-in.</p>
+<p><strong>159. A — </strong>Los riesgos técnicos y contractuales deben tratarse conjuntamente.</p>
+<p><strong>160. B — </strong>La respuesta integra todos los planos del tema II.14.</p>
+<h1>Mapa mental de alto rendimiento</h1>
+<table>
+<tr>
+<th scope="col"><p><strong>Concepto</strong></p></th>
+<th scope="col"><p><strong>Regla de examen</strong></p></th>
+</tr>
+<tr>
+<td><p><strong>Software libre</strong></p></td>
+<td><p>Libertades; puede ser comercial. Libre ≠ gratuito.</p></td>
+</tr>
+<tr>
+<td><p><strong>Open source</strong></p></td>
+<td><p>No basta ver código: la licencia debe cumplir criterios OSD.</p></td>
+</tr>
+<tr>
+<td><p><strong>Permisivas</strong></p></td>
+<td><p>MIT/BSD/Apache-2.0: amplia reutilización + condiciones/avisos; Apache regula patentes.</p></td>
+</tr>
+<tr>
+<td><p><strong>GPL</strong></p></td>
+<td><p>Copyleft fuerte; foco en distribución/conveying y fuente correspondiente según términos.</p></td>
+</tr>
+<tr>
+<td><p><strong>LGPL</strong></p></td>
+<td><p>Copyleft más débil, especialmente relevante en bibliotecas/linking bajo condiciones.</p></td>
+</tr>
+<tr>
+<td><p><strong>AGPL</strong></p></td>
+<td><p>Añade interacción remota por red con versión modificada como escenario de oferta de fuente.</p></td>
+</tr>
+<tr>
+<td><p><strong>EUPL-1.2</strong></p></td>
+<td><p>Licencia de la UE, recíproca/copyleft, multilingüe y con compatibilidad explícita.</p></td>
+</tr>
+<tr>
+<td><p><strong>Dominio público</strong></p></td>
+<td><p>No es sinónimo de open source ni de licencia permisiva.</p></td>
+</tr>
+<tr>
+<td><p><strong>Copyright software</strong></p></td>
+<td><p>Protege expresión; no ideas/principios abstractos. TRLPI Título VII.</p></td>
+</tr>
+<tr>
+<td><p><strong>Interoperabilidad</strong></p></td>
+<td><p>Excepción de descompilación limitada: necesidad, usuario legitimado, partes necesarias y uso restringido.</p></td>
+</tr>
+<tr>
+<td><p><strong>DRM</strong></p></td>
+<td><p>Mecanismo técnico ≠ licencia jurídica.</p></td>
+</tr>
+<tr>
+<td><p><strong>SBOM/SAM</strong></p></td>
+<td><p>Inventario, versiones, licencias, evidencias, seguridad y ciclo de vida.</p></td>
+</tr>
+<tr>
+<td><p><strong>Contratación</strong></p></td>
+<td><p>Derechos + entregables + reversibilidad + datos + continuidad + dependencias.</p></td>
+</tr>
+</table>
+<h1>Trampas que debes eliminar</h1>
+<ul>
+<li>Software libre ≠ gratuito; software propietario ≠ necesariamente de pago.</li>
+<li>Código visible/source-available ≠ automáticamente libre u open source.</li>
+<li>Permisiva ≠ dominio público; conserva copyright y condiciones.</li>
+<li>Copyleft ≠ prohibición de uso comercial.</li>
+<li>GPL ≠ AGPL: la cláusula de interacción remota de AGPL cambia el escenario de red.</li>
+<li>EUPL compatible ≠ relicenciar sin límites el código original.</li>
+<li>Licencia de copyright ≠ concesión automática de todas las patentes.</li>
+<li>Comprar una copia/licencia ≠ adquirir la titularidad del copyright.</li>
+<li>Usuario legítimo ≠ derecho ilimitado a descompilar.</li>
+<li>DRM ≠ licencia; capacidad técnica ≠ permiso jurídico.</li>
+<li>OSS ≠ ausencia de riesgos de seguridad o supply chain.</li>
+<li>Precio inicial ≠ TCO; contratación sin salida ≠ continuidad.</li>
+</ul>
+<h1>Checklist de decisión para un supuesto</h1>
+<ul>
+<li>Identificar titular, licencia y versión exacta de cada componente.</li>
+<li>Distinguir uso interno, modificación, distribución y prestación por red.</li>
+<li>Comprobar compatibilidad y obligaciones de avisos, fuente, patentes y redistribución.</li>
+<li>Inventariar dependencias/SBOM y revisar vulnerabilidades/fin de soporte.</li>
+<li>Revisar derechos contractuales sobre código, documentación, datos y evolución.</li>
+<li>Evaluar DRM, activación, accesibilidad, privacidad, interoperabilidad y continuidad.</li>
+<li>Diseñar reversibilidad: exportación, transición, cuentas, claves, repositorios y conocimientos.</li>
+<li>Comparar TCO y riesgos, no solo precio de licencia.</li>
+</ul></main></body></html>

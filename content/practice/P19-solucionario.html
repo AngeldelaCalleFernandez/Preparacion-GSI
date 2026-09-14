@@ -1,0 +1,283 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO</title><link rel="stylesheet" href="../../assets/css/styles.css"></head><body><main class="shell topic-content"><p><a href="../../index.html#practica">Volver a práctica escrita</a></p><p>Material curado GSI A2. Fuente: <a href="https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit">documento original de Drive</a>.</p><p>GSI A2 — PRÁCTICA ACTIVA 19</p>
+<p><strong>NGN · IMS · MOVILIDAD · UEM · VIDEOCONFERENCIA · QoS</strong></p>
+<p>160 preguntas · 4 opciones · cierre directo de IV.14, IV.15 e IV.16</p>
+<p><strong>SOLUCIONARIO COMENTADO</strong></p>
+<h1>Cómo usar esta práctica</h1>
+<p>Este solucionario fija arquitectura, protocolos, movilidad y cálculos básicos. Repite sin mirar las preguntas falladas y clasifica el error: IMS/SIP, móvil/UEM, WebRTC/protocolos, QoS/dimensionamiento o sala/seguridad.</p>
+<p>Base nuclear: GSI A2 — Bloque IV — Apuntes completos V2.1 revisados. Contraste oficial: 3GPP IMS/Release 18; IETF SIP/RTP/ICE/STUN/TURN; W3C WebRTC; ITU-T H.323.</p>
+<h2>Distribución</h2>
+<table>
+<tr>
+<th scope="col"><p><strong>Preguntas</strong></p></th>
+<th scope="col"><p><strong>Bloque</strong></p></th>
+<th scope="col"><p><strong>Función</strong></p></th>
+</tr>
+<tr>
+<td><p>1–20</p></td>
+<td><p>NGN e IMS: arquitectura y funciones</p></td>
+<td><p>NGN, capas IMS, CSCF, HSS, separación acceso/control/servicio.</p></td>
+</tr>
+<tr>
+<td><p>21–40</p></td>
+<td><p>SIP, RTP, VoIP, UC, QoS y convergencia</p></td>
+<td><p>SIP/SDP, RTP/RTCP, SBC, VoIP/ToIP, UC, seguridad, QoS.</p></td>
+</tr>
+<tr>
+<td><p>41–60</p></td>
+<td><p>Generaciones móviles: de 2G a 5G-Advanced</p></td>
+<td><p>2G/3G/4G/5G, casos de uso, 5G-Advanced, UE/SIM/handover.</p></td>
+</tr>
+<tr>
+<td><p>61–80</p></td>
+<td><p>LTE/5G: radio, core, movilidad y slicing</p></td>
+<td><p>E-UTRAN/EPC, NR/5GC, SA/NSA, slicing, roaming, operación.</p></td>
+</tr>
+<tr>
+<td><p>81–100</p></td>
+<td><p>MDM, EMM y UEM: gobierno del endpoint móvil</p></td>
+<td><p>MDM/MAM/MCM/EMM/UEM, BYOD/COPE/COBO/CYOD, compliance y privacidad.</p></td>
+</tr>
+<tr>
+<td><p>101–120</p></td>
+<td><p>Videoconferencia: SIP/H.323, WebRTC y medios</p></td>
+<td><p>SIP/H.323/WebRTC, ICE/STUN/TURN, codecs, MCU/SFU, simulcast/SVC.</p></td>
+</tr>
+<tr>
+<td><p>121–140</p></td>
+<td><p>Dimensionamiento, QoS y acondicionamiento de salas</p></td>
+<td><p>Cálculo de ancho de banda, latencia/jitter/pérdida, QoS, sala, seguridad/accesibilidad.</p></td>
+</tr>
+<tr>
+<td><p>141–160</p></td>
+<td><p>Casos integradores de comunicaciones convergentes</p></td>
+<td><p>Supuestos mixtos: continuidad, interoperabilidad, UEM, WebRTC, cálculo y observabilidad.</p></td>
+</tr>
+</table>
+<h2>Fuentes oficiales de contraste</h2>
+<ul>
+<li>3GPP — IMS TS 23.228 / control SIP-SDP TS 24.229</li>
+<li>3GPP — Release 18, primera release de 5G-Advanced</li>
+<li>RFC 3261 — SIP; RFC 3550 — RTP/RTCP</li>
+<li>W3C — WebRTC: Real-Time Communication in Browsers</li>
+<li>RFC 8445 — ICE; RFC 8489 — STUN; RFC 8656 — TURN</li>
+<li>ITU-T H.323 (V8, 03/2022) — multimedia sobre redes de paquetes</li>
+</ul>
+<p>Control de actualidad: 25/08/2026. Se priorizan arquitectura y estándares estables; no se memorizan cifras comerciales de velocidad ni catálogos de fabricante.</p>
+<h1>1. NGN e IMS: arquitectura y funciones</h1>
+<p><strong>1. B — </strong>NGN busca convergencia de servicios sobre infraestructura de paquetes y desacoplamiento entre transporte y lógica de servicio.</p>
+<p><strong>2. A — </strong>El valor conceptual de NGN es converger voz, datos y multimedia sobre una infraestructura común.</p>
+<p><strong>3. B — </strong>IMS significa IP Multimedia Subsystem y organiza control de sesión, abonado y servicios multimedia IP.</p>
+<p><strong>4. A — </strong>IMS permite que la lógica multimedia IP no quede atada a una única red de acceso.</p>
+<p><strong>5. C — </strong>P-CSCF es el Proxy-CSCF y constituye el punto inicial de señalización IMS para el UE.</p>
+<p><strong>6. A — </strong>I-CSCF participa en entrada y consulta/routing hacia el S-CSCF correspondiente.</p>
+<p><strong>7. B — </strong>S-CSCF es la función central de control de sesión SIP en la arquitectura IMS clásica.</p>
+<p><strong>8. B — </strong>HSS almacena información de suscripción/perfil; en 5G aparecen evoluciones de funciones/datos, pero la idea sigue siendo útil.</p>
+<p><strong>9. D — </strong>3GPP sigue manteniendo especificaciones IMS para LTE/5G y generaciones posteriores.</p>
+<p><strong>10. A — </strong>3GPP TS 24.229 define control IMS basado en SIP/SDP.</p>
+<p><strong>11. D — </strong>SDP describe medios, codecs y direcciones/puertos; no transporta audio/vídeo.</p>
+<p><strong>12. D — </strong>IMS es una arquitectura específica; VoIP es un concepto más amplio.</p>
+<p><strong>13. A — </strong>NGN expresa principios de convergencia; IMS materializa control multimedia IP en el ecosistema 3GPP.</p>
+<p><strong>14. C — </strong>El desacoplamiento facilita convergencia fijo-móvil y reutilización de servicios.</p>
+<p><strong>15. C — </strong>El temario prioriza arquitectura estable sobre catálogos o releases concretas.</p>
+<p><strong>16. D — </strong>QoS administra recursos/congestión y debe integrarse con la política de servicio.</p>
+<p><strong>17. C — </strong>La convergencia es funcional y arquitectónica, no solo física.</p>
+<p><strong>18. B — </strong>IMS define funciones lógicas y relaciones, no un producto monolítico obligatorio.</p>
+<p><strong>19. D — </strong>Separar capas ayuda a razonar arquitectura, seguridad y dependencias.</p>
+<p><strong>20. C — </strong>La convergencia busca continuidad de identidad y servicios entre accesos.</p>
+<h1>2. SIP, RTP, VoIP, UC, QoS y convergencia</h1>
+<p><strong>21. B — </strong>RFC 3261 define SIP como protocolo de control/señalización de sesiones.</p>
+<p><strong>22. A — </strong>INVITE solicita establecer una sesión y suele incluir o negociar descripción de medios.</p>
+<p><strong>23. C — </strong>BYE termina una sesión SIP establecida.</p>
+<p><strong>24. A — </strong>REGISTER permite asociar una identidad SIP con contactos/localizaciones actuales.</p>
+<p><strong>25. B — </strong>Las familias SIP agrupan respuestas: 1xx provisionales, 2xx éxito, 3xx redirección, 4xx cliente, 5xx servidor, 6xx globales.</p>
+<p><strong>26. A — </strong>Es una de las distinciones más rentables del tema.</p>
+<p><strong>27. A — </strong>RFC 3550 define RTP para medios y RTCP para control/monitorización relacionada.</p>
+<p><strong>28. C — </strong>El RFC de RTP declara expresamente que RTP no garantiza QoS.</p>
+<p><strong>29. B — </strong>SDP describe la sesión; no transporta el medio.</p>
+<p><strong>30. C — </strong>Session Border Controller protege y controla los límites de dominios de voz/UC.</p>
+<p><strong>31. D — </strong>Pueden coexistir o integrarse en productos, pero sus funciones conceptuales son distintas.</p>
+<p><strong>32. C — </strong>SRTP protege audio/vídeo RTP; TLS puede proteger señalización SIP en despliegues adecuados.</p>
+<p><strong>33. B — </strong>La protección debe contemplar ambos planos, sin asumir que cifrar uno protege automáticamente el otro.</p>
+<p><strong>34. A — </strong>VoIP describe el transporte/servicio de voz sobre IP de forma amplia.</p>
+<p><strong>35. D — </strong>ToIP tiene un alcance de solución de telefonía más amplio que el concepto puro de VoIP.</p>
+<p><strong>36. D — </strong>UC busca experiencia y servicios de comunicación integrados.</p>
+<p><strong>37. B — </strong>La voz interactiva es sensible a retardo, variación de retardo y pérdidas.</p>
+<p><strong>38. C — </strong>Hay un compromiso entre suavizar jitter y añadir latencia.</p>
+<p><strong>39. D — </strong>QoS necesita diseño extremo a extremo y capacidad suficiente.</p>
+<p><strong>40. D — </strong>La solución debe cubrir arquitectura, frontera, calidad, seguridad y operación.</p>
+<h1>3. Generaciones móviles: de 2G a 5G-Advanced</h1>
+<p><strong>41. B — </strong>2G marca el paso a voz digital; GPRS/EDGE ampliaron capacidades de datos.</p>
+<p><strong>42. A — </strong>3G amplió significativamente servicios de datos móviles, manteniendo todavía herencia de dominios previos.</p>
+<p><strong>43. B — </strong>LTE/EPC simplifica hacia paquetes IP y soporta voz mediante VoLTE/IMS.</p>
+<p><strong>44. A — </strong>VoLTE integra voz en LTE usando IMS para control multimedia.</p>
+<p><strong>45. A — </strong>5G implica evolución de radio y core, no solo mayor velocidad pico.</p>
+<p><strong>46. B — </strong>eMBB es una de las familias de casos de uso clásicas de 5G.</p>
+<p><strong>47. C — </strong>URLLC expresa requisitos estrictos, aunque el resultado extremo a extremo depende de toda la arquitectura.</p>
+<p><strong>48. A — </strong>mMTC se asocia a conectividad masiva de dispositivos con perfiles de consumo/carga específicos.</p>
+<p><strong>49. D — </strong>3GPP identifica Release 18 como la primera release de 5G-Advanced.</p>
+<p><strong>50. D — </strong>No debe confundirse evolución avanzada de 5G con una generación 6G.</p>
+<p><strong>51. C — </strong>Separar RAN y core ayuda a entender evolución de generaciones y troubleshooting.</p>
+<p><strong>52. D — </strong>UE es User Equipment, concepto básico de arquitectura celular.</p>
+<p><strong>53. D — </strong>Las redes celulares organizan cobertura/capacidad mediante celdas y recursos radio.</p>
+<p><strong>54. C — </strong>La movilidad requiere transferir la conexión sin interrumpir innecesariamente el servicio.</p>
+<p><strong>55. C — </strong>eSIM cambia el modelo de aprovisionamiento, no elimina identidad ni autenticación de red.</p>
+<p><strong>56. B — </strong>La diferencia está en formato/aprovisionamiento, no en prescindir de credenciales.</p>
+<p><strong>57. B — </strong>Evita confundir capacidad de acceso con experiencia completa.</p>
+<p><strong>58. C — </strong>La tecnología nominal no sustituye pruebas de cobertura y diseño de continuidad.</p>
+<p><strong>59. A — </strong>Frecuencia y ancho de banda son variables físicas centrales de cualquier acceso radio.</p>
+<p><strong>60. D — </strong>La evolución de generaciones se entiende mejor por arquitectura y servicios que por marketing de Mbps.</p>
+<h1>4. LTE/5G: radio, core, movilidad y slicing</h1>
+<p><strong>61. A — </strong>LTE separa E-UTRAN como RAN y EPC como core de paquetes.</p>
+<p><strong>62. C — </strong>EPC proporciona funciones de movilidad, sesión y conectividad de paquetes en LTE.</p>
+<p><strong>63. C — </strong>NR es la interfaz/acceso radio; no debe confundirse con el core.</p>
+<p><strong>64. A — </strong>Standalone permite explotar de forma nativa funciones del 5GC.</p>
+<p><strong>65. B — </strong>NSA permitió desplegar NR apoyándose en la infraestructura 4G existente.</p>
+<p><strong>66. C — </strong>La distinción es de arquitectura móvil, no de marca o cobertura visual del terminal.</p>
+<p><strong>67. D — </strong>Slicing busca adaptar recursos/servicios a distintos perfiles sin requerir redes físicas totalmente separadas.</p>
+<p><strong>68. A — </strong>Pueden coexistir técnicas de segmentación, pero operan con alcance distinto.</p>
+<p><strong>69. C — </strong>5GC evoluciona hacia funciones de red más desacopladas y orientadas a servicios.</p>
+<p><strong>70. B — </strong>La movilidad es función esencial de RAN/core y debe diferenciarse de roaming entre operadores.</p>
+<p><strong>71. B — </strong>Roaming implica relación entre red doméstica y visitada; no es simplemente handover local.</p>
+<p><strong>72. B — </strong>Distinguir movilidad radio de itinerancia comercial/técnica evita errores de examen.</p>
+<p><strong>73. D — </strong>La RAN conecta por radio; el core orquesta conectividad y servicio de red.</p>
+<p><strong>74. A — </strong>La cobertura indoor depende de propagación, carga y despliegue local.</p>
+<p><strong>75. A — </strong>Las redes móviles pueden usar NAT a gran escala; hay que validar requisitos de IP, VPN y entrada.</p>
+<p><strong>76. D — </strong>APN es habitual en EPC; DNN cumple un papel análogo en 5G para selección de red de datos.</p>
+<p><strong>77. D — </strong>La voz de 4G se integra como servicio IP multimedia mediante IMS.</p>
+<p><strong>78. D — </strong>La latencia extremo a extremo depende también de dónde se ejecuta la aplicación.</p>
+<p><strong>79. C — </strong>La operación necesita telemetría de acceso, IP y servicio, no una única métrica visual.</p>
+<p><strong>80. B — </strong>Un enlace rápido sigue siendo un SPOF si no existe diversidad de operador/medio cuando el servicio lo exige.</p>
+<h1>5. MDM, EMM y UEM: gobierno del endpoint móvil</h1>
+<p><strong>81. A — </strong>MDM controla el dispositivo y su configuración de forma centralizada.</p>
+<p><strong>82. D — </strong>MAM centra el control en aplicaciones y datos asociados, pudiendo complementar MDM.</p>
+<p><strong>83. B — </strong>MCM se ocupa de contenido, mientras MDM gestiona dispositivo y MAM aplicaciones.</p>
+<p><strong>84. C — </strong>EMM amplía la gestión desde dispositivo hacia aplicaciones, contenido e identidad.</p>
+<p><strong>85. B — </strong>UEM extiende el alcance de EMM para abarcar más tipos de endpoint.</p>
+<p><strong>86. C — </strong>Las fronteras de producto varían, pero la evolución conceptual es examinable.</p>
+<p><strong>87. A — </strong>Bring Your Own Device plantea retos de privacidad, soporte y borrado selectivo.</p>
+<p><strong>88. B — </strong>COPE mantiene propiedad corporativa y permite uso personal según política.</p>
+<p><strong>89. C — </strong>COBO maximiza control corporativo a costa de menor uso personal.</p>
+<p><strong>90. C — </strong>CYOD equilibra elección con estandarización/soporte.</p>
+<p><strong>91. C — </strong>El enrolment establece la relación de gestión y suele determinar el modo de propiedad/control.</p>
+<p><strong>92. D — </strong>El estado de cumplimiento puede alimentar acceso condicional y remediación.</p>
+<p><strong>93. A — </strong>Integra IAM y postura de endpoint para aplicar confianza adaptativa.</p>
+<p><strong>94. D — </strong>En BYOD es especialmente importante separar datos personales y corporativos.</p>
+<p><strong>95. D — </strong>La separación facilita privacidad y borrado selectivo.</p>
+<p><strong>96. A — </strong>Root/jailbreak puede romper supuestos de aislamiento y debe tratarse mediante postura/compliance.</p>
+<p><strong>97. A — </strong>La distribución controlada de certificados reduce contraseñas compartidas y automatiza identidad de dispositivo/usuario.</p>
+<p><strong>98. B — </strong>La organización debe comunicar alcance de la gestión y aplicar minimización/separación.</p>
+<p><strong>99. B — </strong>El ciclo de vida de identidad y dispositivo debe cerrarse de forma coordinada.</p>
+<p><strong>100. D — </strong>UEM busca gobierno común manteniendo controles específicos por plataforma.</p>
+<h1>6. Videoconferencia: SIP/H.323, WebRTC y medios</h1>
+<p><strong>101. C — </strong>Separar señalización, medios y procesamiento multipunto ayuda a diseñar e interoperar.</p>
+<p><strong>102. A — </strong>H.323 define arquitectura y protocolos para multimedia de paquetes; sigue siendo relevante como tecnología/interoperabilidad heredada.</p>
+<p><strong>103. D — </strong>Ambos resuelven control de sesiones con arquitecturas diferentes.</p>
+<p><strong>104. C — </strong>Señalización y medios se separan: RTP lleva el contenido en tiempo real.</p>
+<p><strong>105. B — </strong>W3C define las APIs; IETF define protocolos de transporte/conectividad relacionados.</p>
+<p><strong>106. A — </strong>No confundir plataforma de comunicaciones con formato de codificación.</p>
+<p><strong>107. B — </strong>RFC 8445 define ICE y su uso de candidatos host, server-reflexive y relayed.</p>
+<p><strong>108. D — </strong>STUN es una herramienta usada por ICE; no es por sí sola una solución completa de NAT traversal.</p>
+<p><strong>109. D — </strong>TURN consume recursos de servidor/ancho de banda y normalmente se usa como fallback mediante ICE.</p>
+<p><strong>110. D — </strong>Es una trampa clásica de WebRTC/NAT traversal.</p>
+<p><strong>111. B — </strong>SDP expresa codecs, direcciones/puertos y otros parámetros de sesión.</p>
+<p><strong>112. B — </strong>H.264, H.265, VP8/VP9 y AV1 son ejemplos de codecs, según ecosistema.</p>
+<p><strong>113. A — </strong>Opus está ampliamente adoptado para audio interactivo por calidad y adaptación a distintos bitrates.</p>
+<p><strong>114. D — </strong>No existe codec “mejor” universalmente; la plataforma y terminales importan.</p>
+<p><strong>115. A — </strong>MCU centraliza composición y puede simplificar clientes a costa de recursos/latencia de servidor.</p>
+<p><strong>116. C — </strong>SFU escala bien en muchas arquitecturas WebRTC y desplaza composición hacia clientes.</p>
+<p><strong>117. A — </strong>La elección afecta CPU servidor, ancho de banda, terminales, layouts y escala.</p>
+<p><strong>118. C — </strong>Simulcast puede ayudar a SFU a seleccionar calidad adecuada por receptor.</p>
+<p><strong>119. C — </strong>SVC y simulcast son técnicas distintas para adaptación de medios.</p>
+<p><strong>120. B — </strong>ICE intenta rutas directas y TURN permite comunicación relayed cuando fallan.</p>
+<h1>7. Dimensionamiento, QoS y acondicionamiento de salas</h1>
+<p><strong>121. D — </strong>Dimensionar por sesiones simultáneas evita tanto infradimensionar como multiplicar por usuarios que nunca coinciden.</p>
+<p><strong>122. C — </strong>20 × 3 Mb/s = 60 Mb/s de subida, antes de overhead y margen.</p>
+<p><strong>123. A — </strong>60 × 1,30 = 78 Mb/s.</p>
+<p><strong>124. A — </strong>Un enlace asimétrico puede saturarse en el sentido menos capaz aunque el otro tenga margen.</p>
+<p><strong>125. A — </strong>Latencia incluye procesamiento, colas, transmisión y propagación.</p>
+<p><strong>126. D — </strong>El jitter obliga a buffers y puede afectar audio/vídeo interactivo.</p>
+<p><strong>127. D — </strong>La pérdida es distinta de latencia y jitter aunque pueden aparecer juntas por congestión.</p>
+<p><strong>128. D — </strong>Existe un compromiso entre suavidad y retardo interactivo.</p>
+<p><strong>129. C — </strong>QoS es útil donde se controla la red; en Internet público no hay garantía extremo a extremo de las mismas políticas.</p>
+<p><strong>130. B — </strong>Marcado sin políticas de cola/condicionamiento no garantiza calidad.</p>
+<p><strong>131. C — </strong>La calidad debe observarse desde red y medios, no por una única señal.</p>
+<p><strong>132. A — </strong>Para salas fijas se suele preferir red cableada, manteniendo redundancia/diseño adecuado.</p>
+<p><strong>133. B — </strong>Una reunión con audio deficiente resulta casi inutilizable aunque el vídeo sea nítido.</p>
+<p><strong>134. D — </strong>Materiales, geometría y ruido de HVAC afectan a la calidad de audio.</p>
+<p><strong>135. C — </strong>La iluminación física influye en calidad de imagen y carga de compresión.</p>
+<p><strong>136. B — </strong>El equipamiento debe adaptarse a geometría y uso real de la sala.</p>
+<p><strong>137. B — </strong>La plataforma de colaboración debe tratar identidad, invitados, grabación y administración como activos de seguridad.</p>
+<p><strong>138. C — </strong>La grabación genera un nuevo activo de información con ciclo de vida propio.</p>
+<p><strong>139. B — </strong>Accesibilidad debe considerarse en plataforma, contenido y experiencia de sala/remoto.</p>
+<p><strong>140. A — </strong>Calidad en tiempo real depende de continuidad de entrega, no solo del Mbps contratado.</p>
+<h1>8. Casos integradores de comunicaciones convergentes</h1>
+<p><strong>141. D — </strong>La migración debe cubrir servicio, frontera, red, seguridad y operación.</p>
+<p><strong>142. B — </strong>La separación de planos es fundamental para firewall, SBC, troubleshooting y QoS.</p>
+<p><strong>143. D — </strong>La convergencia busca continuidad de identidad/servicio entre dispositivos y accesos.</p>
+<p><strong>144. C — </strong>QoS prioriza; si la capacidad es insuficiente de forma sostenida, hay que dimensionar.</p>
+<p><strong>145. C — </strong>Redundancia efectiva requiere diversidad de dominio de fallo y pruebas de conmutación.</p>
+<p><strong>146. D — </strong>BYOD exige equilibrio entre protección corporativa y minimización de datos personales.</p>
+<p><strong>147. B — </strong>En COBO la organización tiene alto control y debe actuar sobre identidad, dispositivo y datos.</p>
+<p><strong>148. A — </strong>MFA no compensa necesariamente un endpoint comprometido/no conforme.</p>
+<p><strong>149. D — </strong>NAT traversal es una causa típica de fallos selectivos de WebRTC.</p>
+<p><strong>150. D — </strong>TURN es robusto pero costoso; ICE intenta preferir caminos directos cuando funcionan.</p>
+<p><strong>151. A — </strong>SFU evita transcodificación/mezcla total y es común en WebRTC a gran escala.</p>
+<p><strong>152. B — </strong>Interoperar implica señalización, medios, codecs, seguridad y funciones de llamada.</p>
+<p><strong>153. C — </strong>30 × 2,5 = 75 Mb/s; después se añade overhead, otros servicios y margen.</p>
+<p><strong>154. C — </strong>75 × 1,20 = 90 Mb/s.</p>
+<p><strong>155. A — </strong>Audio claro es crítico para inteligibilidad y fatiga de reunión.</p>
+<p><strong>156. B — </strong>La QoS extremo a extremo requiere control/acuerdos de los dominios atravesados.</p>
+<p><strong>157. C — </strong>La grabación es información gestionada y debe justificarse/protegerse.</p>
+<p><strong>158. A — </strong>La convergencia técnica funciona mejor con gobierno transversal de identidad, seguridad y operación.</p>
+<p><strong>159. A — </strong>Un problema de voz/vídeo puede originarse en múltiples capas; la correlación reduce diagnósticos por intuición.</p>
+<p><strong>160. B — </strong>La respuesta integra arquitectura, movilidad, medios, calidad, endpoint, seguridad y operación de los tres epígrafes.</p>
+<h1>Mapa mental de alto rendimiento</h1>
+<ul>
+<li>NGN = convergencia sobre paquetes/IP y separación transporte–control–servicios. IMS = arquitectura 3GPP de sesiones multimedia.</li>
+<li>P-CSCF = primer contacto; I-CSCF = entrada/interrogación; S-CSCF = control/registro; HSS = datos de abonado en arquitectura clásica.</li>
+<li>SIP señaliza; SDP describe medios; RTP transporta; RTCP monitoriza/controla. SBC protege la frontera.</li>
+<li>VoIP ≠ ToIP ≠ UC. QoS no crea ancho de banda; jitter buffer reduce variación a costa de retardo.</li>
+<li>2G voz digital/SMS → 3G datos → 4G LTE/EPC all-IP → 5G NR/5GC. Release 18 = inicio de 5G-Advanced.</li>
+<li>5G NSA depende de LTE/EPC; SA usa 5G Core. Handover ≠ roaming. eSIM cambia aprovisionamiento, no elimina autenticación.</li>
+<li>MDM dispositivo; MAM apps; MCM contenido; EMM integra movilidad; UEM unifica endpoints. BYOD/COPE/COBO/CYOD cambian control/privacidad.</li>
+<li>H.323 y SIP son señalización/control. WebRTC ≠ codec. ICE coordina traversal; STUN descubre/comprueba; TURN relaya.</li>
+<li>MCU mezcla/transcodifica; SFU reenvía selectivamente. Simulcast ≠ SVC.</li>
+<li>Dimensionamiento = bitrate × concurrencia × sentido + overhead + margen. Medir subida y bajada.</li>
+<li>Calidad = latencia + jitter + pérdida + capacidad. QoS necesita política extremo a extremo en dominios controlados.</li>
+<li>Sala: primero audio/acústica, después cámara, iluminación, pantalla, red, seguridad, accesibilidad y operación.</li>
+</ul>
+<h1>Trampas que deben quedar eliminadas</h1>
+<ul>
+<li>IMS ≠ VoIP.</li>
+<li>P-CSCF ≠ I-CSCF ≠ S-CSCF.</li>
+<li>SIP ≠ RTP.</li>
+<li>SDP ≠ codec.</li>
+<li>SBC ≠ PBX.</li>
+<li>VoIP ≠ ToIP.</li>
+<li>QoS ≠ ancho de banda nuevo.</li>
+<li>5G SA ≠ NSA.</li>
+<li>5G-Advanced ≠ 6G.</li>
+<li>Handover ≠ roaming.</li>
+<li>eSIM ≠ ausencia de autenticación.</li>
+<li>MDM ≠ UEM.</li>
+<li>BYOD ≠ COPE ≠ COBO ≠ CYOD.</li>
+<li>WebRTC ≠ codec.</li>
+<li>ICE ≠ STUN ≠ TURN.</li>
+<li>MCU ≠ SFU.</li>
+<li>Jitter ≠ latencia ≠ pérdida.</li>
+<li>Dimensionar por concurrencia ≠ usuarios totales.</li>
+<li>DSCP ≠ garantía de QoS Internet.</li>
+<li>Grabación ≠ retención indefinida.</li>
+</ul>
+<h1>Checklist de decisión en supuesto</h1>
+<ul>
+<li>1) Separa acceso, control/señalización, medios y servicios.</li>
+<li>2) Para voz/UC: PBX/servicio, SIP trunks, SBC, QoS, seguridad y continuidad.</li>
+<li>3) Para móvil: cobertura, operador, 4G/5G, SA/NSA si importa, redundancia y direccionamiento/VPN.</li>
+<li>4) Define modelo BYOD/COPE/COBO/CYOD y UEM con enrolment, compliance, certificados y acceso condicional.</li>
+<li>5) Para vídeo: SIP/H.323/WebRTC, ICE/STUN/TURN, codecs e interoperabilidad.</li>
+<li>6) Calcula bitrate por concurrencia, subida/bajada, overhead y margen.</li>
+<li>7) Controla latencia, jitter y pérdida con QoS/monitorización donde se gestione la ruta.</li>
+<li>8) Diseña sala: audio/acústica, cámara, iluminación, pantalla, red, seguridad, grabación y accesibilidad.</li>
+<li>9) Añade HA, doble operador/trunk cuando proceda, monitorización, logs y procedimientos de fallo/failback.</li>
+</ul></main></body></html>

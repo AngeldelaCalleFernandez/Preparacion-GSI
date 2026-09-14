@@ -1,0 +1,181 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GSI A2 — PRÁCTICA ACTIVA 06 — ALGORITMOS Y TAD — SOLUCIONARIO RAZONADO</title><link rel="stylesheet" href="../../assets/css/styles.css"></head><body><main class="shell topic-content"><p><a href="../../index.html#practica">Volver a práctica escrita</a></p><p>Material curado GSI A2. Fuente: <a href="https://docs.google.com/document/d/1ORZQCt30etCjhlxUYHGJi-UVSOTziefwEc_AZnhSTY0/edit">documento original de Drive</a>.</p><h1>GSI A2 — PRÁCTICA ACTIVA 06</h1>
+<h2>Algoritmos, TAD y complejidad — SOLUCIONARIO RAZONADO</h2>
+<p><strong>Criterio de corrección:</strong> una respuesta excelente indica <strong>estructura/algoritmo + por qué + complejidad aproximada + limitación</strong>. Hay varios problemas con más de una solución válida; el solucionario muestra una respuesta modelo coherente con III.05 V2.1.</p>
+<h1>PARTE A - TAD y estructuras de datos</h1>
+<p>1 - TAD vs implementación</p>
+<p>El TAD define comportamiento observable y operaciones, no representación interna. Pila = push/pop/top con semántica LIFO. Un array y una lista pueden implementar esas operaciones; cambia coste/gestión interna, no el contrato abstracto.</p>
+<p>2 - Pila para deshacer</p>
+<p><strong>Pila</strong>. La última acción realizada es la primera que se deshace: LIFO.</p>
+<p>3 - Cola de impresión</p>
+<p><strong>Cola</strong>. Primer trabajo en entrar, primero en salir: FIFO.</p>
+<p>4 - Urgencias con prioridad</p>
+<p><strong>Cola de prioridad</strong>. Extrae según prioridad, no solo por orden de llegada. Para desempatar puede combinarse prioridad con timestamp/secuencia.</p>
+<p>5 - Búsqueda por identificador</p>
+<p>Hash: búsqueda promedio cercana a O(1) si distribución y factor de carga son adecuados. Lineal: O(n). Para millones de búsquedas exactas, hash suele ser más apropiado si no necesitas orden/rangos.</p>
+<p>6 - Acceso posicional</p>
+<p><strong>Array</strong>: acceso por índice O(1). Lista enlazada: para llegar a la posición i normalmente recorres nodos, O(n).</p>
+<p>7 - Inserción conocida</p>
+<p>Con referencia al nodo, ajustar punteros puede ser O(1). Si antes debes localizar la posición, ese recorrido puede costar O(n); por tanto la operación completa ya no es O(1).</p>
+<p>8 - Deque</p>
+<p><strong>Deque / double-ended queue</strong>: inserción/extracción por ambos extremos.</p>
+<p>9 - Top de prioridades</p>
+<p><strong>Heap</strong> es una implementación clásica de cola de prioridad: acceso al mínimo/máximo y actualización eficiente.</p>
+<p>10 - BST balanceado</p>
+<p>Balanceado: altura O(log n), búsqueda O(log n). Degenerado como lista: altura O(n), búsqueda O(n).</p>
+<p>11 - Grafo: matriz o lista</p>
+<p><strong>Lista de adyacencia</strong>: O(V+E) de memoria aproximada y adecuada a pocos vecinos por vértice. Matriz O(V²) sería enorme para 100.000 vértices.</p>
+<p>12 - B-tree / B+ tree</p>
+<p>Tienen alto factor de ramificación, reducen altura y número de accesos a bloques/páginas. Eso encaja con almacenamiento secundario, donde una E/S es mucho más costosa que comparaciones en memoria.</p>
+<p>13 - Traza de pila</p>
+<p>pop devuelve <strong>C</strong>, después <strong>D</strong>, después <strong>B</strong>. Queda A en la pila.</p>
+<p>14 - Traza de cola</p>
+<p>Primer dequeue: <strong>A</strong>. Segundo: <strong>B</strong>. Quedan C,D en ese orden.</p>
+<p>15 - Colisiones hash</p>
+<p>No necesariamente es un error: colisiones son posibles. Se resuelven con técnicas como encadenamiento o direccionamiento abierto, además de buena función hash y gestión del factor de carga.</p>
+<h1>PARTE B - Complejidad temporal y espacial</h1>
+<p>16 - Un bucle</p>
+<p><strong>O(n)</strong>: trabajo constante repetido n veces.</p>
+<p>17 - Dos bucles anidados</p>
+<p><strong>O(n²)</strong>: n × n iteraciones.</p>
+<p>18 - Bucle logarítmico</p>
+<p><strong>O(log n)</strong>: i se duplica; el número de pasos es aproximadamente log₂ n.</p>
+<p>19 - Lineal por logarítmico</p>
+<p><strong>O(n log n)</strong>: por cada una de n iteraciones se ejecuta un bucle logarítmico.</p>
+<p>20 - Secuenciales, no anidados</p>
+<p>O(n)+O(n)=O(2n)=<strong>O(n)</strong>. Big-O elimina constantes multiplicativas.</p>
+<p>21 - Triangular</p>
+<p>0+1+...+(n-1)=n(n-1)/2, por tanto <strong>O(n²)</strong>.</p>
+<p>22 - Constantes y términos dominantes</p>
+<p>Domina n²; constantes y términos inferiores no cambian crecimiento asintótico. Resultado: <strong>O(n²)</strong>.</p>
+<p>23 - Búsqueda binaria</p>
+<p><strong>O(log n)</strong>. Requisito clave: la colección debe estar ordenada según el criterio de búsqueda y permitir acceso adecuado al punto medio.</p>
+<p>24 - Hash promedio vs peor caso</p>
+<p>Promedio O(1) con distribución razonable. Si muchas claves colisionan en la misma zona/estructura, una búsqueda puede degenerar a recorrer O(n) elementos.</p>
+<p>25 - Árbol balanceado</p>
+<p>Balanceado: <strong>O(log n)</strong>. Degenerado: <strong>O(n)</strong>.</p>
+<p>26 - BFS con lista de adyacencia</p>
+<p><strong>O(V+E)</strong>: cada vértice se visita una vez y cada arista se examina un número constante de veces.</p>
+<p>27 - Matriz de adyacencia</p>
+<p>Para cada uno de V vértices puedes tener que inspeccionar V posiciones para descubrir vecinos, total <strong>O(V²)</strong> aunque existan pocas aristas reales.</p>
+<p>28 - Merge sort</p>
+<p><strong>O(n log n)</strong>. Divide en mitades log n niveles y combina O(n) trabajo por nivel.</p>
+<p>29 - Espacio de búsqueda binaria</p>
+<p>Iterativa: O(1) espacio auxiliar. Recursiva: típicamente O(log n) por pila de llamadas. El tiempo sigue siendo O(log n).</p>
+<h1>PARTE C - Ordenación y búsqueda</h1>
+<p>30 - Búsqueda lineal</p>
+<p>Con una sola búsqueda, ordenar primero O(n log n) puede costar más que recorrer una vez O(n). Si no habrá reutilización, lineal puede ser razonable.</p>
+<p>31 - Traza de búsqueda binaria</p>
+<p>Índices 0..6. Medio=3 -&gt; 9; buscamos mayor. Subrango 4..6, medio=5 -&gt; 15; buscamos menor. Subrango 4..4 -&gt; <strong>12</strong>. Comparaciones: 9,15,12.</p>
+<p>32 - Insertion sort</p>
+<p>En listas casi ordenadas realiza pocos desplazamientos y tiene bajo overhead; aunque su cota general sea O(n²), puede ser muy competitivo en tamaños pequeños o baja inversión.</p>
+<p>33 - Merge sort</p>
+<p>Tiempo <strong>O(n log n)</strong>, es <strong>estable</strong> y normalmente requiere <strong>espacio auxiliar O(n)</strong> para combinar en arrays.</p>
+<p>34 - Quicksort</p>
+<p>Promedio <strong>O(n log n)</strong>; peor <strong>O(n²)</strong>. Un pivote que produce particiones muy desequilibradas acerca al peor caso; estrategias de pivote ayudan a evitarlo en práctica.</p>
+<p>35 - Heapsort</p>
+<p><strong>O(n log n)</strong> incluso en peor caso. Frente a quicksort clásico, ofrece una cota peor-caso más fuerte, normalmente con operación in-place.</p>
+<p>36 - Estabilidad</p>
+<p>Un algoritmo estable mantiene el orden relativo de elementos con clave igual. Si previamente estaban ordenados por antigüedad, al ordenar por departamento se conserva ese orden dentro de cada departamento.</p>
+<p>37 - Elegir ordenación</p>
+<p><strong>Heapsort</strong>: O(n log n) en peor caso y espacio auxiliar bajo/in-place típico. Merge garantiza O(n log n) pero suele necesitar O(n) adicional; quick puede caer a O(n²).</p>
+<p>38 - Top-k</p>
+<p>Un <strong>min-heap de tamaño 100</strong> permite mantener los 100 mayores: cada nuevo valor se compara con el mínimo del top y, si entra, se reemplaza con coste O(log k).</p>
+<p>39 - Ordenar antes de buscar</p>
+<p>Sin ordenar: 1.000.000 búsquedas × O(n). Ordenar una vez O(n log n) + búsquedas O(log n) cada una puede ser enormemente mejor. Hash podría dar O(1) promedio si solo hay igualdad; influyen memoria, necesidad de rangos/orden, actualizaciones y coste de construcción.</p>
+<h1>PARTE D - Árboles y grafos</h1>
+<p>40 - BFS</p>
+<p>Con vecinos alfabéticos: <strong>A, B, C, D, E, F</strong>.</p>
+<p>41 - DFS</p>
+<p>Visitando alfabéticamente y profundizando: <strong>A, B, D, E, F, C</strong>. Otras órdenes son posibles si cambia el orden de vecinos; por eso el enunciado lo fija.</p>
+<p>42 - Camino mínimo no ponderado</p>
+<p><strong>BFS</strong>, porque explora por niveles y el primer alcance de un nodo da el menor número de aristas desde el origen.</p>
+<p>43 - Dijkstra</p>
+<p>A-&gt;C=1; C-&gt;B añade 2, total 3; B-&gt;D añade 1, total <strong>4</strong>. Camino: <strong>A-C-B-D</strong>.</p>
+<p>44 - Pesos negativos</p>
+<p>Dijkstra asume que una distancia fijada no será mejorada mediante una arista negativa posterior. Con pesos negativos puede fallar. <strong>Bellman-Ford</strong> admite aristas negativas y además puede detectar ciclos negativos alcanzables.</p>
+<p>45 - Floyd-Warshall</p>
+<p>Es apropiado cuando necesitas distancias/caminos entre <strong>todos los pares</strong> de vértices. Para un único origen suele ser innecesariamente costoso.</p>
+<p>46 - Dirigido vs no dirigido</p>
+<p>Dirigido: &#x27;usuario A sigue a B&#x27; o flujo de una carretera de sentido único. No dirigido: enlace físico bidireccional o relación &#x27;son vecinos&#x27; cuando es simétrica.</p>
+<p>47 - Heap máximo</p>
+<p>Sí. 9&gt;=7,8; 7&gt;=2,5; 8&gt;=3. Cada padre es mayor o igual que sus hijos.</p>
+<p>48 - BST</p>
+<p>Buscar 7: <strong>8 -&gt; 3 -&gt; 6 -&gt; 7</strong>. En cada paso comparas y eliges izquierda/derecha.</p>
+<p>49 - Representación de grafo</p>
+<p>Lista de adyacencia usa menos memoria en dispersos. Matriz permite comprobar una arista (u,v) en <strong>O(1)</strong> directo con acceso a la celda; en lista depende del grado/estructura usada.</p>
+<p>50 - MST y greedy</p>
+<p><strong>Kruskal y Prim</strong>.</p>
+<p>51 - BFS vs DFS</p>
+<p>Para solución más cercana en pasos no ponderados: <strong>BFS</strong>. Para explorar profundidad y evitar mantener una frontera ancha, <strong>DFS</strong> puede ser más apropiado, aunque no garantiza la solución más corta.</p>
+<h1>PARTE E - Estrategias de diseño de algoritmos</h1>
+<p>52 - Divide y vencerás</p>
+<p>1) dividir problema; 2) resolver subproblemas; 3) combinar resultados. Ejemplos de tus apuntes: <strong>merge sort</strong> y <strong>búsqueda binaria</strong>.</p>
+<p>53 - Greedy que falla</p>
+<p>Greedy: 4+1+1 = <strong>3 monedas</strong>. Óptimo: 3+3 = <strong>2 monedas</strong>. Demuestra que una elección localmente mejor no siempre produce óptimo global.</p>
+<p>54 - Programación dinámica</p>
+<p><strong>Subproblemas solapados</strong>: los mismos estados se recalculan muchas veces. <strong>Subestructura óptima</strong>: una solución óptima puede construirse a partir de soluciones óptimas de subproblemas.</p>
+<p>55 - Memoization vs tabulation</p>
+<p>Memoization: top-down, recursivo o dirigido por demanda, guarda resultados cuando se necesitan. Tabulation: bottom-up, rellena una tabla desde casos base en orden definido.</p>
+<p>56 - Backtracking</p>
+<p>Si dos reinas ya se atacan, añadir más reinas nunca hará válida esa solución parcial. Se poda la rama inmediatamente.</p>
+<p>57 - Branch and bound</p>
+<p>Usa una <strong>cota</strong> para estimar el mejor resultado posible de una rama; si no puede superar la mejor solución conocida, se descarta sin explorarla completa.</p>
+<p>58 - Fibonacci</p>
+<p>Recursivo ingenuo repite masivamente subproblemas y crece aproximadamente exponencial, <strong>O(2^n)</strong> como cota conceptual habitual. DP calcula cada estado una vez: <strong>O(n)</strong> tiempo, con espacio O(n) o incluso O(1) si solo mantienes los dos últimos.</p>
+<p>59 - Elegir estrategia</p>
+<p>a) merge sort -&gt; divide y vencerás; b) mochila 0/1 -&gt; programación dinámica; c) N reinas -&gt; backtracking; d) Kruskal -&gt; greedy.</p>
+<p>60 - No todo greedy vale</p>
+<p>Hace falta demostrar propiedades del problema, como elección voraz segura y subestructura adecuada. Un contraejemplo basta para mostrar que la regla local no garantiza optimalidad global.</p>
+<h1>PARTE F - Organización de ficheros</h1>
+<p>61 - Fichero secuencial</p>
+<p><strong>Secuencial</strong>: simple y eficiente para recorridos completos de principio a fin.</p>
+<p>62 - Acceso directo/hash</p>
+<p><strong>Directo/hash</strong>: calcula ubicación lógica desde la clave. Debe gestionar <strong>colisiones</strong> y crecimiento/rehashing según diseño.</p>
+<p>63 - Secuencial indexado</p>
+<p>El índice permite localizar más rápido una zona/registro sin recorrer todo el fichero, manteniendo además una organización secuencial útil para recorridos.</p>
+<p>64 - Registros fijos vs variables</p>
+<p>Fijos: tamaño conocido, cálculo de posición y acceso más sencillo, posible desperdicio de espacio. Variables: aprovechan espacio y flexibilidad, pero requieren metadatos/offsets y gestión más compleja.</p>
+<p>65 - Buffering</p>
+<p>La E/S física tiene alto coste fijo. Agrupar registros en bloques reduce número de operaciones, aprovecha transferencia secuencial/cachés y mejora throughput.</p>
+<p>66 - Elección combinada</p>
+<p>Una organización <strong>secuencial indexada</strong> puede equilibrar recorrido completo y búsquedas por clave. También podría existir fichero secuencial más un índice separado. La elección depende de frecuencia de consultas, actualizaciones y volumen.</p>
+<h1>PARTE G - IA básica dentro de III.05</h1>
+<p>67 - Supervisado, no supervisado, refuerzo</p>
+<p>a) <strong>supervisado</strong>; b) <strong>no supervisado/clustering</strong>; c) <strong>aprendizaje por refuerzo</strong>.</p>
+<p>68 - Train/validation/test</p>
+<p>Train ajusta parámetros; validation ayuda a seleccionar hiperparámetros/modelo; test estima rendimiento final no visto. Si ajustas repetidamente con el test, deja de ser una evaluación independiente y se produce fuga de información hacia decisiones de modelado.</p>
+<p>69 - Overfitting</p>
+<p>Sospecha <strong>sobreajuste</strong>: memoriza/personaliza demasiado el entrenamiento y generaliza peor a datos nuevos. Generalización es mantener rendimiento adecuado fuera de la muestra de entrenamiento.</p>
+<p>70 - Precision vs recall</p>
+<p>Priorizar recall busca detectar mayor proporción de fraudes reales, reduciendo falsos negativos. Puede aumentar <strong>falsos positivos</strong> y carga de revisión.</p>
+<p>71 - F1</p>
+<p>F1 es media armónica de precision y recall; penaliza que una de las dos sea muy baja. Puede ser útil con desbalance cuando ambas importan, aunque no sustituye entender costes de errores.</p>
+<p>72 - Data leakage</p>
+<p><strong>Fuga de datos</strong>: el modelo recibe información que no estaría disponible en el momento real de predicción, produciendo métricas artificialmente buenas.</p>
+<p>73 - Tipo de tarea</p>
+<p>Importe futuro -&gt; <strong>regresión</strong>; spam/no spam -&gt; <strong>clasificación</strong>; agrupar similares -&gt; <strong>clustering</strong>; casos atípicos -&gt; <strong>detección de anomalías</strong>.</p>
+<h1>PARTE H - Mini-supuestos integradores</h1>
+<p>74 - Centro de incidencias</p>
+<p>Hash por id para acceso promedio O(1). Para atención, cola de prioridad; para conservar FIFO dentro de misma prioridad, la clave de prioridad puede combinar severidad y secuencia de llegada o mantener una cola FIFO por nivel. Justifica complejidad y reglas de desempate.</p>
+<p>75 - Búsqueda documental</p>
+<p>Una única búsqueda: lineal O(n). Millones de búsquedas estáticas: ordenar O(n log n) y luego O(log n) por búsqueda amortiza bien. Hash puede dar O(1) promedio si solo buscas igualdad. Deciden memoria, necesidad de rangos/orden, actualizaciones, persistencia y construcción del índice.</p>
+<p>76 - Rutas administrativas</p>
+<p>Con latencias no negativas: <strong>Dijkstra</strong> desde un origen a todos los destinos. Si aparecieran pesos negativos teóricos, usar <strong>Bellman-Ford</strong>; si necesitas todos los pares, Floyd-Warshall es otra opción según tamaño.</p>
+<p>77 - Procesamiento casi ordenado</p>
+<p><strong>Insertion sort</strong> puede ser razonable: bajo overhead y buen comportamiento cuando hay pocos elementos fuera de posición.</p>
+<p>78 - Asignación con decisiones</p>
+<p><strong>Backtracking</strong> si puedes podar por inviabilidad. Si además existe una cota optimista/pesimista para descartar ramas que no superarán la mejor solución, <strong>branch and bound</strong>.</p>
+<p>79 - Clasificador público</p>
+<p>Definir objetivo y etiqueta; calidad/representatividad de datos; separar train/validation/test; seleccionar métricas según costes de FP/FN; vigilar overfitting y leakage; evaluar sesgo por grupos pertinentes; exigir explicabilidad proporcional al impacto; supervisión humana, logging, monitorización y revisión del modelo.</p>
+<p>80 - Supuesto completo de 20 minutos</p>
+<p>Una respuesta sólida: 1) hash/índices para lookup; 2) cola de prioridad para tareas; 3) listas de adyacencia para red dispersa; 4) Dijkstra para latencias positivas; 5) complejidades aproximadas O(1) promedio, O(log k) para heap, O(V+E) para BFS y O((V+E)logV) conceptual con heap para Dijkstra; 6) si hay ordenación, elegir según estabilidad/memoria/peor caso; 7) IA: objetivo, datos, splits, métrica, leakage/overfitting, sesgo, explicabilidad y supervisión. No hace falta elegir producto concreto.</p>
+<h1>Patrón mental de examen</h1>
+<ul>
+<li><strong>¿Qué operación domina?</strong> acceso por índice, lookup por clave, FIFO/LIFO, prioridad, rango, vecino, camino.</li>
+<li><strong>¿Qué estructura encaja?</strong> array, lista, pila, cola, heap, hash, árbol, grafo.</li>
+<li><strong>¿Qué coste?</strong> O(1), O(log n), O(n), O(n log n), O(n²)... y si es promedio o peor caso.</li>
+<li><strong>¿Qué precondición?</strong> datos ordenados, pesos no negativos, grafo disperso, baja contención, etc.</li>
+<li><strong>¿Qué estrategia?</strong> divide/conquer, greedy, DP, backtracking o branch and bound.</li>
+<li><strong>IA:</strong> objetivo -&gt; datos -&gt; train/validation/test -&gt; métrica -&gt; generalización -&gt; sesgo/explicabilidad.</li>
+</ul>
+<p>Soluciones construidas sobre III.05 V2.1. Cuando se añade una complejidad derivada (p.ej. Dijkstra con heap), se usa como razonamiento estándar de apoyo y no como nueva obligación literal de memorización si no figura en el apunte.</p></main></body></html>

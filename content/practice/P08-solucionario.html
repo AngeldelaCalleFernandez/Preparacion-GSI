@@ -1,0 +1,349 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GSI A2 — PRÁCTICA ACTIVA 08 — CONTACT CENTER — SOLUCIONARIO RAZONADO</title><link rel="stylesheet" href="../../assets/css/styles.css"></head><body><main class="shell topic-content"><p><a href="../../index.html#practica">Volver a práctica escrita</a></p><p>Material curado GSI A2. Fuente: <a href="https://docs.google.com/document/d/1pZGrMdZeqouX4udaoz920uIJaIDu2rwzZ51f0lnRMhw/edit">documento original de Drive</a>.</p><h1>GSI A2 - PRACTICA ACTIVA 08</h1>
+<h2>Contact center, CRM, IVR, VoiceXML y KPI - SOLUCIONARIO RAZONADO</h2>
+<p><strong>Criterio de correccion:</strong> usa la terminologia de II.12 V2.1. En calculos de KPI se explicita que son derivaciones directas de las definiciones del tema; no se incorporan formulas avanzadas de dimensionamiento que los apuntes no exigen.</p>
+<h1>Mapa maestro de componentes</h1>
+<table>
+<tr>
+<th scope="col"><p>Familia</p></th>
+<th scope="col"><p>Elemento</p></th>
+<th scope="col"><p>Funcion que debes reconocer</p></th>
+</tr>
+<tr>
+<td><p>Voz</p></td>
+<td><p>PBX / IP-PBX</p></td>
+<td><p>Centralita: gestiona extensiones y llamadas.</p></td>
+</tr>
+<tr>
+<td><p>Voz</p></td>
+<td><p>SIP</p></td>
+<td><p>Protocolo de senalizacion habitual en VoIP.</p></td>
+</tr>
+<tr>
+<td><p>Voz</p></td>
+<td><p>SBC</p></td>
+<td><p>Protege/controla el borde de sesiones VoIP.</p></td>
+</tr>
+<tr>
+<td><p>Routing</p></td>
+<td><p>ACD</p></td>
+<td><p>Distribuye llamadas a colas/agentes.</p></td>
+</tr>
+<tr>
+<td><p>Integracion</p></td>
+<td><p>CTI</p></td>
+<td><p>Integra telefonia con aplicaciones/CRM.</p></td>
+</tr>
+<tr>
+<td><p>Autoservicio</p></td>
+<td><p>IVR</p></td>
+<td><p>Dialogo automatizado por DTMF y/o voz.</p></td>
+</tr>
+<tr>
+<td><p>Voz</p></td>
+<td><p>ASR / TTS</p></td>
+<td><p>Reconocimiento automatico de voz / sintesis de voz.</p></td>
+</tr>
+<tr>
+<td><p>Planificacion</p></td>
+<td><p>WFM</p></td>
+<td><p>Predice carga y planifica agentes.</p></td>
+</tr>
+<tr>
+<td><p>Datos</p></td>
+<td><p>CRM / case management</p></td>
+<td><p>Contexto, historial, actividades, casos/tickets e integraciones.</p></td>
+</tr>
+<tr>
+<td><p>Dialogo</p></td>
+<td><p>VoiceXML</p></td>
+<td><p>Lenguaje XML para describir dialogos de voz.</p></td>
+</tr>
+</table>
+<h1>PARTE A - Conceptos y diferencias de examen</h1>
+<p>1 - Call center vs contact center</p>
+<p>Diferencia ambos conceptos en una frase.</p>
+<p><strong>Respuesta modelo:</strong> Call center se centra principalmente en voz. Contact center integra varios canales y busca gestionar interacciones con routing, contexto, trazabilidad y niveles de servicio.</p>
+<p>2 - Multicanal</p>
+<p>Define multicanal.</p>
+<p><strong>Respuesta modelo:</strong> Existen varios canales, pero pueden funcionar como silos.</p>
+<p>3 - Omnicanal</p>
+<p>Define omnicanal y su requisito principal.</p>
+<p><strong>Respuesta modelo:</strong> Busca conservar contexto, identidad e historial al cambiar de canal; requiere modelo comun de interaccion y CRM/case management.</p>
+<p>4 - ACD</p>
+<p>¿Que hace un ACD y que no hace por si solo?</p>
+<p><strong>Respuesta modelo:</strong> Distribuye llamadas a colas/agentes. No equivale a CRM ni a CTI.</p>
+<p>5 - CTI</p>
+<p>¿Que aporta CTI?</p>
+<p><strong>Respuesta modelo:</strong> Integra telefonia y aplicaciones/CRM: identificacion contextual, screen-pop, registro de llamada, click-to-call, transferencias y clasificacion.</p>
+<p>6 - IVR</p>
+<p>¿Que es un IVR?</p>
+<p><strong>Respuesta modelo:</strong> Un sistema de respuesta de voz interactiva que presenta opciones y recoge entrada mediante DTMF y/o voz.</p>
+<p>7 - IVR vs ASR</p>
+<p>¿Por que IVR y ASR no son sinonimos?</p>
+<p><strong>Respuesta modelo:</strong> Porque un IVR puede funcionar solo con tonos DTMF. ASR es reconocimiento automatico de voz.</p>
+<p>8 - TTS</p>
+<p>¿Que funcion cumple TTS?</p>
+<p><strong>Respuesta modelo:</strong> Sintesis de voz: generar salida hablada a partir de texto.</p>
+<p>9 - DTMF</p>
+<p>¿Que papel tiene DTMF en un IVR?</p>
+<p><strong>Respuesta modelo:</strong> Permite introducir opciones mediante tonos del teclado telefonico; no es reconocimiento de voz.</p>
+<p>10 - VoiceXML</p>
+<p>¿Que es VoiceXML para II.12?</p>
+<p><strong>Respuesta modelo:</strong> Un lenguaje XML para describir dialogos de voz, prompts, gramaticas, captura y flujo mediante una plataforma/interprete de voz.</p>
+<p>11 - PBX/IP-PBX</p>
+<p>¿Que componente gestiona extensiones y llamadas?</p>
+<p><strong>Respuesta modelo:</strong> PBX/IP-PBX.</p>
+<p>12 - SIP</p>
+<p>¿Que funcion tiene SIP dentro del alcance de II.12?</p>
+<p><strong>Respuesta modelo:</strong> Es un protocolo de senalizacion habitual en VoIP.</p>
+<p>13 - SBC</p>
+<p>¿Que papel conceptual cumple un SBC?</p>
+<p><strong>Respuesta modelo:</strong> Protege y controla el borde de las sesiones VoIP.</p>
+<p>14 - WFM</p>
+<p>¿Que hace Workforce Management?</p>
+<p><strong>Respuesta modelo:</strong> Predice carga y planifica agentes.</p>
+<p>15 - CRM</p>
+<p>¿Por que CRM no es una simple agenda?</p>
+<p><strong>Respuesta modelo:</strong> Porque gestiona ficha, contactos, historial, actividades, casos/tickets, comunicaciones, base de conocimiento, reporting e integraciones.</p>
+<p>16 - Screen-pop</p>
+<p>¿Que es screen-pop y que error de seguridad debes evitar?</p>
+<p><strong>Respuesta modelo:</strong> Muestra informacion contextual al agente al entrar la interaccion. No equivale a autenticacion ni justifica mostrar datos innecesarios.</p>
+<p>17 - Identificar vs autenticar</p>
+<p>El sistema reconoce el numero llamante. ¿Ha autenticado al ciudadano?</p>
+<p><strong>Respuesta modelo:</strong> No necesariamente. Identificacion contextual y autenticacion con garantia suficiente son conceptos distintos.</p>
+<p>18 - Grabacion</p>
+<p>¿Que cuatro elementos minimos debes definir si se graban llamadas?</p>
+<p><strong>Respuesta modelo:</strong> Finalidad/base, informacion al interesado, acceso/seguridad y retencion; ademas derechos y control de exportaciones cuando proceda.</p>
+<h1>PARTE B - Arquitectura, routing y experiencia</h1>
+<p>19 - Cadena arquitectonica</p>
+<p>Ordena conceptualmente: agentes, canales, backoffice, ACD/router, CRM, IVR.</p>
+<p><strong>Respuesta modelo:</strong> Canales -&gt; gateway/telefonia/chat/email -&gt; router/ACD -&gt; IVR/bots cuando proceda -&gt; agentes -&gt; CRM/case management -&gt; conocimiento -&gt; backoffice.</p>
+<p>20 - Servicios transversales</p>
+<p>Cita los servicios transversales que II.12 coloca sobre la arquitectura.</p>
+<p><strong>Respuesta modelo:</strong> Identidad, grabacion, analitica, supervision, reporting y observabilidad.</p>
+<p>21 - Skills-based routing</p>
+<p>¿Que criterio de routing asigna una interaccion segun competencias del agente?</p>
+<p><strong>Respuesta modelo:</strong> Skills-based routing.</p>
+<p>22 - Prioridad</p>
+<p>Una incidencia critica debe pasar delante de consultas generales. ¿Que mecanismo de routing aplica?</p>
+<p><strong>Respuesta modelo:</strong> Priorizacion de cola/reglas de routing por urgencia.</p>
+<p>23 - Idioma</p>
+<p>¿Puede el idioma formar parte del routing?</p>
+<p><strong>Respuesta modelo:</strong> Si. El tema cita idioma como criterio de enrutamiento.</p>
+<p>24 - Agente mas libre</p>
+<p>¿Que estrategia busca asignar al agente con mayor disponibilidad?</p>
+<p><strong>Respuesta modelo:</strong> Enrutamiento al agente mas libre.</p>
+<p>25 - Round-robin</p>
+<p>¿Que idea expresa round-robin?</p>
+<p><strong>Respuesta modelo:</strong> Distribuir de forma rotatoria entre agentes/recursos elegibles.</p>
+<p>26 - Callback</p>
+<p>¿Para que sirve ofrecer callback en una cola?</p>
+<p><strong>Respuesta modelo:</strong> Permite evitar espera continua y devolver la llamada conforme a reglas, mejorando experiencia y gestion de picos.</p>
+<p>27 - Desbordamiento</p>
+<p>¿Que debe ocurrir si una cola supera umbrales definidos?</p>
+<p><strong>Respuesta modelo:</strong> Aplicar reglas de desbordamiento/fallback hacia otras colas, agentes o canales segun diseno.</p>
+<p>28 - Evitar loops</p>
+<p>¿Que fallo de diseno menciona II.12 en colas y routing?</p>
+<p><strong>Respuesta modelo:</strong> Bucles de enrutamiento y perdida de contexto.</p>
+<p>29 - Omnicanal real</p>
+<p>Un usuario pasa de chat a telefono y debe repetir todos sus datos. ¿Es una experiencia omnicanal madura?</p>
+<p><strong>Respuesta modelo:</strong> No. La omnicanalidad intenta conservar contexto, identidad e historial entre canales.</p>
+<p>30 - Backoffice</p>
+<p>¿Por que el contact center debe integrarse con backoffice?</p>
+<p><strong>Respuesta modelo:</strong> Porque muchas interacciones necesitan ejecutar/resolver procesos fuera del propio canal; el contexto y el estado del caso deben mantenerse.</p>
+<p>31 - Base de conocimiento</p>
+<p>¿Que aporta una base de conocimiento a agentes y autoservicio?</p>
+<p><strong>Respuesta modelo:</strong> Informacion coherente para resolver consultas y apoyar respuestas; debe integrarse con proceso/CRM.</p>
+<p>32 - Canales alternativos</p>
+<p>¿Por que un organismo publico no deberia forzar la voz como unico canal?</p>
+<p><strong>Respuesta modelo:</strong> Por accesibilidad, diversidad de necesidades y adecuacion del tramite; el propio supuesto de II.12 pide no forzar voz para todos los tramites.</p>
+<p>33 - IVR corto</p>
+<p>¿Que recomendacion de diseno da II.12 para menus IVR?</p>
+<p><strong>Respuesta modelo:</strong> Menus cortos, salida a agente, repeticion, accesibilidad, deteccion de errores y cuidado con datos sensibles.</p>
+<p>34 - CRM y minimizacion</p>
+<p>¿Por que &#x27;copiar todo al CRM&#x27; es mala practica?</p>
+<p><strong>Respuesta modelo:</strong> Porque CRM debe respetar minimizacion, calidad, finalidad, retencion y permisos.</p>
+<h1>PARTE C - Identidad, privacidad y accesibilidad</h1>
+<p>35 - Numero llamante</p>
+<p>¿El numero llamante puede usarse como contexto? ¿Como credencial fuerte unica?</p>
+<p><strong>Respuesta modelo:</strong> Como contexto, si. Como unica autenticacion fuerte para tramites sensibles, no deberia asumirse suficiente.</p>
+<p>36 - Factor adicional</p>
+<p>¿Cuando puede requerirse un factor adicional de autenticacion?</p>
+<p><strong>Respuesta modelo:</strong> En tramites sensibles o cuando el riesgo exija mayor garantia.</p>
+<p>37 - Preguntas debiles</p>
+<p>¿Que dice II.12 sobre preguntas debiles como unico mecanismo de autenticacion?</p>
+<p><strong>Respuesta modelo:</strong> No deben usarse como unico mecanismo si el riesgo es alto.</p>
+<p>38 - Minimo privilegio</p>
+<p>Una llamada entra y el agente ve toda la historia medica, fiscal y administrativa. ¿Que principio se esta vulnerando?</p>
+<p><strong>Respuesta modelo:</strong> Minimo privilegio/minimizacion de la informacion mostrada.</p>
+<p>39 - Grabaciones y credenciales</p>
+<p>¿Que dato deberia evitarse grabar si no es necesario?</p>
+<p><strong>Respuesta modelo:</strong> Credenciales y otros datos sensibles innecesarios.</p>
+<p>40 - Exportacion de grabaciones</p>
+<p>¿Deben quedar sin control las exportaciones de grabaciones?</p>
+<p><strong>Respuesta modelo:</strong> No. Deben estar controladas y trazadas.</p>
+<p>41 - Accesibilidad auditiva</p>
+<p>Da una alternativa de canal coherente para personas con discapacidad auditiva.</p>
+<p><strong>Respuesta modelo:</strong> Chat/texto u otros canales accesibles; segun servicio, subtitulos/interpretacion.</p>
+<p>42 - Accesibilidad cognitiva</p>
+<p>¿Que principio de comunicacion ayuda especialmente?</p>
+<p><strong>Respuesta modelo:</strong> Lenguaje claro, tiempos razonables y flujos comprensibles.</p>
+<p>43 - IVR inaccesible</p>
+<p>¿Se soluciona un IVR inaccesible diciendo &#x27;tambien tenemos web&#x27;?</p>
+<p><strong>Respuesta modelo:</strong> No. II.12 indica que un IVR inaccesible no se corrige unicamente anadiendo web.</p>
+<p>44 - Tecnologias de apoyo</p>
+<p>¿Que debe buscar la arquitectura multicanal respecto a tecnologias de apoyo?</p>
+<p><strong>Respuesta modelo:</strong> Compatibilidad y canales que permitan acceso efectivo a personas con distintas discapacidades.</p>
+<p>45 - Privacidad por canal</p>
+<p>¿Cambiar de canal elimina las obligaciones de privacidad?</p>
+<p><strong>Respuesta modelo:</strong> No. La omnicanalidad exige reglas comunes de identidad, contexto y privacidad.</p>
+<p>46 - Retencion</p>
+<p>¿Por que debe existir una politica de retencion para grabaciones/interacciones?</p>
+<p><strong>Respuesta modelo:</strong> Para limitar conservacion conforme a finalidad, requisitos y riesgo, evitando acumulacion indefinida.</p>
+<p>47 - Roles y logs</p>
+<p>¿Que controles necesitan los agentes segun II.12?</p>
+<p><strong>Respuesta modelo:</strong> Roles/permisos, logs/trazabilidad y formacion.</p>
+<p>48 - Autenticacion proporcional</p>
+<p>¿Que significa que la autenticacion sea proporcional?</p>
+<p><strong>Respuesta modelo:</strong> Ajustar la garantia al riesgo del tramite, evitando tanto insuficiencia como friccion innecesaria en atencion general.</p>
+<h1>PARTE D - KPI, interpretacion y calculos derivados</h1>
+<p>49 - ASA</p>
+<p>¿Que mide ASA?</p>
+<p><strong>Respuesta modelo:</strong> Tiempo medio de respuesta.</p>
+<p>50 - AHT</p>
+<p>¿Que mide AHT?</p>
+<p><strong>Respuesta modelo:</strong> Tiempo medio de gestion.</p>
+<p>51 - Abandon rate</p>
+<p>¿Que mide abandon rate?</p>
+<p><strong>Respuesta modelo:</strong> Porcentaje de interacciones/llamadas que abandonan antes de ser atendidas segun definicion operativa.</p>
+<p>52 - FCR</p>
+<p>¿Que mide FCR?</p>
+<p><strong>Respuesta modelo:</strong> Resolucion en primer contacto.</p>
+<p>53 - Service level</p>
+<p>¿Que mide service level?</p>
+<p><strong>Respuesta modelo:</strong> Porcentaje atendido dentro de un umbral de tiempo definido.</p>
+<p>54 - Occupancy</p>
+<p>¿Que mide occupancy?</p>
+<p><strong>Respuesta modelo:</strong> Tiempo productivo respecto al tiempo disponible, segun definicion operativa.</p>
+<p>55 - CSAT/NPS</p>
+<p>¿Como deben interpretarse CSAT y NPS?</p>
+<p><strong>Respuesta modelo:</strong> Como metricas de satisfaccion/recomendacion, con cautela y en contexto; no sustituyen indicadores operativos.</p>
+<p>56 - AHT trampa</p>
+<p>¿Por que reducir AHT de forma aislada puede ser contraproducente?</p>
+<p><strong>Respuesta modelo:</strong> Puede empeorar FCR, calidad y satisfaccion si se fuerza a cerrar contactos demasiado rapido.</p>
+<p>57 - KPI equilibrados</p>
+<p>¿Que combinacion conceptual es mejor: solo AHT o eficiencia + calidad?</p>
+<p><strong>Respuesta modelo:</strong> Eficiencia + calidad: por ejemplo AHT junto a FCR, service level, abandono y satisfaccion.</p>
+<p>58 - Calculo abandon rate</p>
+<p>Calculo derivado: entran 1.000 llamadas y 80 abandonan antes de ser atendidas. ¿Abandon rate?</p>
+<p><strong>Respuesta modelo:</strong> 80/1000 x 100 = 8%. El calculo deriva de la definicion del KPI; la definicion operativa exacta debe fijarse.</p>
+<p>59 - Calculo FCR</p>
+<p>Calculo derivado: 720 de 900 casos se resuelven en primer contacto. ¿FCR?</p>
+<p><strong>Respuesta modelo:</strong> 720/900 x 100 = 80%.</p>
+<p>60 - Calculo service level</p>
+<p>Calculo derivado: 850 de 1.000 llamadas atendidas cumplen el umbral de 30 s. ¿Service level?</p>
+<p><strong>Respuesta modelo:</strong> 850/1000 x 100 = 85%, para ese umbral y definicion.</p>
+<p>61 - Calculo AHT</p>
+<p>Calculo derivado: tres gestiones duran 4, 6 y 8 min. ¿AHT simple?</p>
+<p><strong>Respuesta modelo:</strong> (4+6+8)/3 = 6 minutos.</p>
+<p>62 - Calculo ASA</p>
+<p>Calculo derivado: tres llamadas esperan 20, 30 y 70 s hasta respuesta. ¿ASA simple?</p>
+<p><strong>Respuesta modelo:</strong> (20+30+70)/3 = 40 s.</p>
+<p>63 - Calculo occupancy</p>
+<p>Calculo derivado: un agente tiene 360 min disponibles y 270 min productivos segun la definicion usada. ¿Occupancy?</p>
+<p><strong>Respuesta modelo:</strong> 270/360 x 100 = 75%.</p>
+<p>64 - KPI sin contexto</p>
+<p>Un informe dice &#x27;AHT=4 min&#x27;. ¿Por que no basta para juzgar el servicio?</p>
+<p><strong>Respuesta modelo:</strong> Falta objetivo, periodo, canal, tipo de caso y metricas de calidad como FCR/satisfaccion/abandono.</p>
+<p>65 - Umbral service level</p>
+<p>¿Service level tiene sentido sin definir umbral?</p>
+<p><strong>Respuesta modelo:</strong> No. Debe expresarse como porcentaje atendido dentro de un umbral definido.</p>
+<p>66 - KPI por canal</p>
+<p>¿Debe compararse AHT de chat y voz sin mas?</p>
+<p><strong>Respuesta modelo:</strong> No necesariamente. Los canales y tipos de interaccion pueden tener dinamicas distintas; los KPI deben contextualizarse.</p>
+<h1>PARTE E - Dimensionamiento, capacidad y continuidad</h1>
+<p>67 - Datos de dimensionamiento</p>
+<p>Enumera las entradas que II.12 exige considerar para dimensionar.</p>
+<p><strong>Respuesta modelo:</strong> Volumen por franja, duracion media, patron de llegada, objetivo de servicio, shrinkage, canales y concurrencia.</p>
+<p>68 - Shrinkage</p>
+<p>¿Que ejemplos da II.12 de shrinkage?</p>
+<p><strong>Respuesta modelo:</strong> Pausas, formacion y ausencias.</p>
+<p>69 - Promedio no basta</p>
+<p>¿Por que &#x27;llamadas medias/agentes&#x27; no es dimensionamiento suficiente?</p>
+<p><strong>Respuesta modelo:</strong> Porque ignora patron de llegada, variabilidad, duracion, objetivo de servicio, shrinkage y concurrencia.</p>
+<p>70 - Erlang C</p>
+<p>¿Que debes saber de Erlang C para GSI segun los apuntes?</p>
+<p><strong>Respuesta modelo:</strong> Que es un modelo de colas utilizado en telefonia en escenarios adecuados. No es necesario convertir II.12 en ejercicios matematicos avanzados.</p>
+<p>71 - Pico horario</p>
+<p>Un centro recibe 10.000 llamadas diarias, pero el 40% llega en una hora. ¿Que error seria dimensionar solo con media diaria?</p>
+<p><strong>Respuesta modelo:</strong> Ignorar picos y patron de llegada; la capacidad debe analizarse por franja.</p>
+<p>72 - Multicanal y capacidad</p>
+<p>¿Por que la concurrencia cambia segun canal?</p>
+<p><strong>Respuesta modelo:</strong> Porque voz, chat, email u otros canales pueden requerir distinta dedicacion y simultaneidad; el dimensionamiento debe considerarlo.</p>
+<p>73 - Fallo del CRM</p>
+<p>¿Que principio de continuidad plantea II.12 si el CRM falla?</p>
+<p><strong>Respuesta modelo:</strong> Si el servicio es critico, no deberia desaparecer todo mecanismo basico de atencion.</p>
+<p>74 - Redundancia</p>
+<p>Cita medidas de continuidad recogidas en el tema.</p>
+<p><strong>Respuesta modelo:</strong> Redundancia de enlaces/telefonia, sedes o agentes remotos, colas, fallback, backup de configuracion, desbordamiento, monitorizacion y planes de contingencia.</p>
+<p>75 - Backup de configuracion</p>
+<p>¿Por que importa en contact center?</p>
+<p><strong>Respuesta modelo:</strong> Permite recuperar reglas, IVR, routing y otros elementos de configuracion tras fallo/cambio.</p>
+<p>76 - Monitorizacion</p>
+<p>¿Que debe monitorizarse ademas de &#x27;el servidor esta encendido&#x27;?</p>
+<p><strong>Respuesta modelo:</strong> Disponibilidad de canales, colas, tiempos, errores, integraciones, telefonia/CRM y KPI de servicio segun arquitectura.</p>
+<h1>PARTE F - VoiceXML y trampas tecnicas</h1>
+<p>77 - VoiceXML no es audio</p>
+<p>¿VoiceXML contiene necesariamente el audio grabado?</p>
+<p><strong>Respuesta modelo:</strong> No. Es un lenguaje XML para describir dialogos y flujo; puede referenciar prompts/recursos segun plataforma.</p>
+<p>78 - VoiceXML y XML</p>
+<p>¿Por que importa recordar que VoiceXML es XML?</p>
+<p><strong>Respuesta modelo:</strong> Porque su naturaleza es de lenguaje XML estructurado para dialogos de voz, no un protocolo de telefonia.</p>
+<p>79 - VoiceXML vs IVR</p>
+<p>¿Son sinonimos VoiceXML e IVR?</p>
+<p><strong>Respuesta modelo:</strong> No. IVR es el sistema/funcion de dialogo; VoiceXML puede ser una tecnologia para describir ese dialogo.</p>
+<p>80 - CTI vs ACD</p>
+<p>El sistema reparte llamadas pero no abre ficha ni registra contexto. ¿Que componente funciona y cual falta integrar?</p>
+<p><strong>Respuesta modelo:</strong> ACD funciona para distribucion; falta CTI/CRM para integracion contextual.</p>
+<p>81 - ASR vs TTS</p>
+<p>El usuario habla y el sistema convierte voz en entrada; luego lee una respuesta. ¿Que dos capacidades hay?</p>
+<p><strong>Respuesta modelo:</strong> ASR para reconocer voz y TTS para sintetizar la respuesta.</p>
+<p>82 - SBC vs ACD</p>
+<p>¿Que diferencia esencial hay?</p>
+<p><strong>Respuesta modelo:</strong> SBC protege/controla borde de sesiones VoIP; ACD distribuye llamadas entre colas/agentes.</p>
+<h1>PARTE G - Mini-supuestos integradores</h1>
+<p>83 - Organismo multicanal</p>
+<p>Un organismo atiende telefono, email y chat, pero cada canal crea un expediente independiente. ¿Que problema ves y que arquitectura propones a alto nivel?</p>
+<p><strong>Respuesta modelo:</strong> Es multicanal en silos, no omnicanal maduro. Proponer modelo comun de interaccion, identidad y CRM/case management compartido, con routing por canal y trazabilidad.</p>
+<p>84 - IVR de prestaciones</p>
+<p>El IVR ofrece 9 menus, no permite volver atras ni hablar con agente y pide datos sensibles en voz abierta. Identifica al menos cuatro mejoras.</p>
+<p><strong>Respuesta modelo:</strong> Menus mas cortos, repeticion/errores, salida a agente, accesibilidad y evitar capturar/grabar datos sensibles innecesarios.</p>
+<p>85 - Ciudadano sensible</p>
+<p>Una llamada sobre un tramite sensible se identifica solo por numero de telefono y el agente ve toda la ficha. ¿Que controles faltan?</p>
+<p><strong>Respuesta modelo:</strong> Autenticacion proporcional adicional, minimo privilegio, datos necesarios solamente, roles y trazabilidad.</p>
+<p>86 - KPI contradictorios</p>
+<p>AHT baja 25%, pero FCR cae y abandonos posteriores/subidas de contactos aumentan. ¿Es una mejora?</p>
+<p><strong>Respuesta modelo:</strong> No puede afirmarse. Optimizar AHT aislado puede degradar calidad; hay que analizar FCR, abandono, satisfaccion y objetivos.</p>
+<p>87 - Pico extraordinario</p>
+<p>Una campana publica multiplicara llamadas durante dos semanas. Estructura una respuesta de capacidad sin calcular Erlang C.</p>
+<p><strong>Respuesta modelo:</strong> Prever volumen por franja, duracion, objetivo de servicio, shrinkage, skills, canales y concurrencia; ampliar agentes/colas/callback/desbordamiento, monitorizar KPI y preparar contingencia.</p>
+<p>88 - Continuidad</p>
+<p>Cae el CRM central pero la telefonia funciona. ¿Que deberia existir si el servicio es critico?</p>
+<p><strong>Respuesta modelo:</strong> Mecanismo basico de atencion/fallback, registro temporal controlado, recuperacion de contexto posterior, procedimientos y monitorizacion; no dejar el servicio totalmente inutilizable.</p>
+<p>89 - Arquitectura de segundo ejercicio</p>
+<p>En maximo 12 lineas, ¿que bloques deberia contener una respuesta sobre un nuevo contact center publico?</p>
+<p><strong>Respuesta modelo:</strong> Canales y voz -&gt; ACD/IVR -&gt; agentes -&gt; CRM/casos -&gt; backoffice; routing; identificacion/autenticacion; privacidad/grabacion; accesibilidad; SLA/KPI; continuidad; monitorizacion/observabilidad.</p>
+<p>90 - Supuesto completo 20 min</p>
+<p>Debes disenar atencion publica por telefono, chat y email con tramites generales y sensibles. Estructura una respuesta completa sin elegir producto.</p>
+<p><strong>Respuesta modelo:</strong> Requisitos/canales; arquitectura multicanal/omnicanal; ACD/routing/IVR; CTI+CRM/casos; autenticacion proporcional; minimo privilegio y grabacion; accesibilidad; KPI/SL; dimensionamiento por franja; continuidad/fallback; monitorizacion y trazabilidad; integracion con backoffice.</p>
+<h1>Patron mental de examen</h1>
+<ul>
+<li>¿Es call center, contact center, multicanal u omnicanal?</li>
+<li>¿Que hace cada pieza? ACD distribuye; CTI integra; IVR dialoga; CRM conserva contexto/caso.</li>
+<li>¿Como enruto? skill, prioridad, idioma, disponibilidad, callback y desbordamiento.</li>
+<li>¿Como identifico/autentico sin exponer datos de mas?</li>
+<li>¿Que KPI equilibran eficiencia y calidad? ASA, AHT, abandono, FCR, service level, occupancy y satisfaccion.</li>
+<li>¿Como dimensiono? volumen por franja, duracion, llegadas, objetivo, shrinkage, canales y concurrencia.</li>
+<li>¿Que pasa si falla CRM/telefonia/sede? continuidad, fallback y monitorizacion.</li>
+</ul>
+<p>Base nuclear: GSI A2 Bloque II V2.1, tema II.12. No se anaden productos ni profundidad de telefonia avanzada. Los calculos sencillos de KPI son aplicaciones directas de sus definiciones.</p></main></body></html>

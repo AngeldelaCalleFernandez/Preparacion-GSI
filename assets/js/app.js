@@ -1,16 +1,18 @@
-import { isDemoMode, loadAppData } from "./data-service.js?m2";
-import { initRouter, syncRouter } from "./router.js?m2";
-import { loadTopicContentIndex } from "./topic-content-service.js?phase7a";
-import { initSyllabusView } from "./syllabus-view.js?m2";
-import { configurePersistenceV2 } from "./persistence-v2.js?m3";
-import { migrateV1ToV2 } from "./persistence-migration-v2.js?m3";
-import { initTraining } from "./training.js?m3";
-import { initExam } from "./exam.js?m3";
-import { migratePhase3Training } from "./reinforcement-migration.js?m3";
-import { initReinforcement } from "./reinforcement.js?m3";
-import { migrateAnalytics } from "./analytics-migration.js?m3";
-import { initStatistics, renderAnalyticsHome } from "./statistics.js?m3";
-import { clearStatus, setStatus, setText } from "./ui.js";
+import { isDemoMode, loadAppData } from "./data-service.js?gsi2";
+import { initRouter, syncRouter } from "./router.js?gsi2";
+import { loadTopicContentIndex } from "./topic-content-service.js?gsi2";
+import { initSyllabusView } from "./syllabus-view.js?gsi2";
+import { configurePersistenceV2 } from "./persistence-v2.js?gsi2";
+import { migrateV1ToV2 } from "./persistence-migration-v2.js?gsi2";
+import { initTraining } from "./training.js?gsi2";
+import { initExam } from "./exam.js?gsi2";
+import { initWrittenPractice } from "./written-practice.js?gsi2";
+import { initProgressBackup } from "./progress-backup.js?gsi2";
+import { migratePhase3Training } from "./reinforcement-migration.js?gsi2";
+import { initReinforcement } from "./reinforcement.js?gsi2";
+import { migrateAnalytics } from "./analytics-migration.js?gsi2";
+import { initStatistics, renderAnalyticsHome } from "./statistics.js?gsi2";
+import { clearStatus, setStatus, setText } from "./ui.js?gsi2";
 
 function renderHomeSummary(data) {
   const topicCount = data.syllabus.blocks.reduce((total, block) => total + block.topics.length, 0);
@@ -52,6 +54,8 @@ async function start() {
     }
     initTraining(data);
     initExam(data);
+    await initWrittenPractice(data);
+    initProgressBackup(data);
     initReinforcement(data);
     initStatistics(data);
     renderAnalyticsHome(data);

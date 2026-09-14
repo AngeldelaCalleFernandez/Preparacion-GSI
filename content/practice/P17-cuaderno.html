@@ -1,0 +1,1169 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — CUADERNO</title><link rel="stylesheet" href="../../assets/css/styles.css"></head><body><main class="shell topic-content"><p><a href="../../index.html#practica">Volver a práctica escrita</a></p><p>Material curado GSI A2. Fuente: <a href="https://docs.google.com/document/d/1UZpwstIulX7D0QVYtXv60EH2937e0gfpjoy72mNAOTU/edit">documento original de Drive</a>.</p><p>GSI A2 — PRÁCTICA ACTIVA 17</p>
+<p><strong>COMPUTADORES · ESCALABILIDAD · CLOUD · SISTEMAS OPERATIVOS</strong></p>
+<p>160 preguntas · 4 opciones · refuerzo directo de II.01 e II.02</p>
+<p><strong>CUADERNO DE TRABAJO</strong></p>
+<h1>Cómo usar esta práctica</h1>
+<p>Objetivo: convertir II.01 e II.02 de cobertura parcial a entrenamiento fuerte, cubriendo el extremo completo del epígrafe: arquitectura de computadores, HPC, escalabilidad/cloud y fundamentos comparados de Windows, Linux/Unix y sistemas móviles.</p>
+<p>Método: responde sin consultar apuntes. Marca además cada fallo como arquitectura/hardware, paralelismo/HPC, cloud/continuidad, procesos/concurrencia, memoria/E/S, plataforma o movilidad.</p>
+<p>Base nuclear: GSI A2 — Bloque II — Apuntes completos V2.1 revisados. Contraste oficial: NIST SP 800-145; Microsoft Learn (procesos/memoria Windows); Android Open Source Project (Application Sandbox); Apple Platform Security (App Security).</p>
+<h2>Distribución</h2>
+<table>
+<tr>
+<th scope="col"><p><strong>Preguntas</strong></p></th>
+<th scope="col"><p><strong>Bloque</strong></p></th>
+<th scope="col"><p><strong>Función</strong></p></th>
+</tr>
+<tr>
+<td><p>1–20</p></td>
+<td><p>Computadores: arquitectura, CPU, memoria y E/S</p></td>
+<td><p>CPU, memoria, E/S, almacenamiento, aceleradores y métricas.</p></td>
+</tr>
+<tr>
+<td><p>21–40</p></td>
+<td><p>Paralelismo, HPC, mainframe, clúster y grid</p></td>
+<td><p>Flynn, UMA/NUMA, mainframe, supercomputación, clúster/grid y paralelismo.</p></td>
+</tr>
+<tr>
+<td><p>41–60</p></td>
+<td><p>Escalabilidad, disponibilidad y virtualización</p></td>
+<td><p>Scale up/out, elasticidad, HA, RTO/RPO, virtualización y dimensionamiento.</p></td>
+</tr>
+<tr>
+<td><p>61–80</p></td>
+<td><p>Cloud: modelos, responsabilidades y decisión arquitectónica</p></td>
+<td><p>NIST cloud, IaaS/PaaS/SaaS, despliegue, IAM, TCO y reversibilidad.</p></td>
+</tr>
+<tr>
+<td><p>81–100</p></td>
+<td><p>Sistemas operativos: procesos, hilos, planificación y concurrencia</p></td>
+<td><p>Procesos/hilos, estados, scheduling, sincronización, deadlock y syscalls.</p></td>
+</tr>
+<tr>
+<td><p>101–120</p></td>
+<td><p>Memoria, E/S, ficheros y estructuras de kernel</p></td>
+<td><p>Memoria virtual, paginación, TLB, E/S, sistemas de archivos y kernels.</p></td>
+</tr>
+<tr>
+<td><p>121–140</p></td>
+<td><p>Windows, Linux y Unix: administración y seguridad</p></td>
+<td><p>Windows NT, Linux/Unix, servicios, logs, permisos, hardening y administración.</p></td>
+</tr>
+<tr>
+<td><p>141–160</p></td>
+<td><p>Sistemas móviles y casos integradores de plataforma</p></td>
+<td><p>Android/iOS, sandbox, permisos, MDM/UEM y casos integradores.</p></td>
+</tr>
+</table>
+<h2>Fuentes oficiales de contraste</h2>
+<ul>
+<li>NIST SP 800-145 — The NIST Definition of Cloud Computing</li>
+<li>Microsoft Learn — Processes, Threads and Virtual Address Space</li>
+<li>Android Open Source Project — Application Sandbox</li>
+<li>Apple Platform Security — App security overview</li>
+</ul>
+<p>Control de actualidad: 25/08/2026. Se priorizan conceptos y arquitectura estable frente a números de versión efímeros.</p>
+<h1>1. Computadores: arquitectura, CPU, memoria y E/S</h1>
+<p><strong>1. ¿Qué describe mejor la función de la CPU?</strong></p>
+<p>A) Ejecuta instrucciones y coordina operaciones sobre datos mediante unidades de control y ejecución.</p>
+<p>B) Almacena de forma persistente todos los datos del sistema.</p>
+<p>C) Sustituye al sistema operativo en la gestión de procesos.</p>
+<p>D) Actúa únicamente como controlador de red.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>2. En terminología de hardware, ¿qué diferencia correctamente socket, núcleo e hilo hardware?</strong></p>
+<p>A) Un socket aloja un procesador físico; un núcleo es una unidad de ejecución dentro de él y un hilo hardware es un contexto lógico de ejecución expuesto por el núcleo.</p>
+<p>B) Socket y núcleo son sinónimos; hilo es un proceso del SO.</p>
+<p>C) Un núcleo contiene siempre varios sockets.</p>
+<p>D) Un hilo hardware es una partición de disco usada por la CPU.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>3. ¿Cuál es el orden habitual de la jerarquía de memoria desde menor latencia a mayor capacidad?</strong></p>
+<p>A) RAM -&gt; registros -&gt; SSD -&gt; caché.</p>
+<p>B) Registros -&gt; cachés -&gt; RAM -&gt; almacenamiento persistente.</p>
+<p>C) SSD -&gt; RAM -&gt; caché -&gt; registros.</p>
+<p>D) Caché -&gt; almacenamiento -&gt; registros -&gt; RAM.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>4. ¿Qué principio explotan principalmente las memorias caché?</strong></p>
+<p>A) La independencia lógica de datos.</p>
+<p>B) La compresión obligatoria de instrucciones.</p>
+<p>C) La redundancia geográfica del almacenamiento.</p>
+<p>D) La localidad temporal y espacial de los accesos.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>5. ¿Qué afirmación sobre la caché L1 es la más adecuada en términos generales?</strong></p>
+<p>A) Es el almacenamiento persistente principal del equipo.</p>
+<p>B) Siempre es compartida por todos los servidores de un clúster.</p>
+<p>C) Tiene más capacidad que la RAM del sistema.</p>
+<p>D) Suele ser muy rápida y pequeña, próxima al núcleo de ejecución.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>6. ¿Qué papel tiene la MMU en un sistema moderno?</strong></p>
+<p>A) Planifica rutas IP entre redes.</p>
+<p>B) Convierte un HDD en un SSD.</p>
+<p>C) Sustituye al compilador en tiempo de ejecución.</p>
+<p>D) Participa en la traducción y protección de direcciones de memoria.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>7. ¿Qué describe mejor la RAM?</strong></p>
+<p>A) Memoria persistente que conserva datos sin alimentación.</p>
+<p>B) Memoria principal volátil usada por programas y sistema operativo durante la ejecución.</p>
+<p>C) Memoria exclusiva de la tarjeta de red.</p>
+<p>D) Sinónimo de caché L1.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>8. ¿Qué ventaja típica aporta un SSD/NVMe frente a un HDD mecánico?</strong></p>
+<p>A) Mayor latencia por ausencia de partes móviles.</p>
+<p>B) Necesidad de desfragmentación mecánica para arrancar.</p>
+<p>C) Menor latencia de acceso y mayor rendimiento en muchas cargas de E/S.</p>
+<p>D) Ejecución directa de instrucciones de CPU.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>9. ¿Para qué resulta especialmente apropiada una GPU?</strong></p>
+<p>A) Para sustituir siempre al SGBD.</p>
+<p>B) Para almacenar copias de seguridad de larga duración.</p>
+<p>C) Para cargas con alto paralelismo de datos y muchas operaciones similares.</p>
+<p>D) Para proporcionar direccionamiento IP al sistema.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>10. ¿Qué caracteriza a una FPGA?</strong></p>
+<p>A) Permite configurar lógica hardware reprogramable para acelerar funciones específicas.</p>
+<p>B) Es obligatoriamente un procesador general x86.</p>
+<p>C) Es un tipo de memoria RAM no volátil.</p>
+<p>D) Es un hipervisor de tipo 2.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>11. ¿Qué caracteriza a un ASIC?</strong></p>
+<p>A) Es una máquina virtual gestionada por software.</p>
+<p>B) Es un protocolo de almacenamiento distribuido.</p>
+<p>C) Es un circuito diseñado para una función o familia de funciones específicas.</p>
+<p>D) Es un sistema operativo móvil.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>12. ¿Qué métrica expresa mejor la cantidad total de trabajo procesado por unidad de tiempo?</strong></p>
+<p>A) Latencia.</p>
+<p>B) RPO.</p>
+<p>C) Throughput o rendimiento agregado.</p>
+<p>D) Tiempo de seek lógico de una página web.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>13. ¿Qué significa que un sistema tenga menor latencia?</strong></p>
+<p>A) Que almacena necesariamente más datos.</p>
+<p>B) Que una operación o petición tarda menos en completarse o responder.</p>
+<p>C) Que usa más núcleos obligatoriamente.</p>
+<p>D) Que siempre tiene mayor disponibilidad anual.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>14. ¿Cuál es la función principal de un bus o interconexión del sistema?</strong></p>
+<p>A) Permitir el intercambio de datos, direcciones y señales entre componentes.</p>
+<p>B) Ejecutar el código de usuario en modo privilegiado.</p>
+<p>C) Reemplazar el sistema de archivos.</p>
+<p>D) Resolver nombres DNS.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>15. ¿Qué permite DMA en operaciones de E/S?</strong></p>
+<p>A) Transferir datos entre dispositivo y memoria con menor intervención continuada de la CPU.</p>
+<p>B) Convertir cualquier proceso en hilo.</p>
+<p>C) Eliminar la necesidad de memoria RAM.</p>
+<p>D) Asignar direcciones IP mediante DHCP.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>16. ¿Qué diferencia conceptual existe entre arquitectura de 32 y 64 bits?</strong></p>
+<p>A) La de 64 bits obliga a usar cloud.</p>
+<p>B) Entre otros aspectos, cambia el tamaño natural de registros/direcciones y la capacidad de direccionamiento de memoria.</p>
+<p>C) La de 32 bits no puede ejecutar ningún sistema operativo.</p>
+<p>D) La de 64 bits elimina las cachés.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>17. ¿Qué afirmación es correcta sobre RISC y CISC como conceptos arquitectónicos?</strong></p>
+<p>A) RISC significa que no existe memoria caché.</p>
+<p>B) CISC es un tipo de sistema de archivos.</p>
+<p>C) RISC y CISC clasifican redes por número de saltos.</p>
+<p>D) Son enfoques de diseño del repertorio y ejecución de instrucciones; los procesadores modernos pueden combinar técnicas internas de ambos enfoques.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>18. En un servidor con varios sockets, ¿qué problema puede aparecer si una tarea accede constantemente a memoria remota en una topología NUMA?</strong></p>
+<p>A) Pérdida automática de la licencia del sistema operativo.</p>
+<p>B) Conversión del sistema en una arquitectura SISD.</p>
+<p>C) Mayor latencia y menor rendimiento por mala localidad de memoria.</p>
+<p>D) Eliminación de la caché de CPU.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>19. ¿Por qué no debe confundirse capacidad con rendimiento?</strong></p>
+<p>A) Porque son exactamente la misma métrica.</p>
+<p>B) Porque la capacidad solo existe en sistemas móviles.</p>
+<p>C) Porque el rendimiento solo depende del tamaño del disco.</p>
+<p>D) Un sistema puede almacenar o admitir mucho volumen y, sin embargo, responder lentamente bajo carga.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>20. Para una carga de IA con gran cantidad de operaciones matriciales paralelas, ¿qué decisión es más razonable evaluar?</strong></p>
+<p>A) Sustituir toda la RAM por almacenamiento en cinta.</p>
+<p>B) Usar aceleradores como GPU, comparando coste, memoria, software y rendimiento real de la carga.</p>
+<p>C) Eliminar el sistema operativo.</p>
+<p>D) Forzar un único hilo para maximizar paralelismo.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<h1>2. Paralelismo, HPC, mainframe, clúster y grid</h1>
+<p><strong>21. Según Flynn, ¿qué caracteriza a SISD?</strong></p>
+<p>A) Una instrucción y múltiples flujos de datos.</p>
+<p>B) Múltiples instrucciones y múltiples datos.</p>
+<p>C) Un flujo de instrucciones y un flujo de datos.</p>
+<p>D) Múltiples instrucciones sobre un único flujo de datos como caso típico general.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>22. Según Flynn, ¿qué caracteriza a SIMD?</strong></p>
+<p>A) Un único dato controla múltiples sistemas operativos.</p>
+<p>B) Múltiples instrucciones actúan siempre sobre un único dato.</p>
+<p>C) No existe paralelismo de datos.</p>
+<p>D) Una misma instrucción actúa sobre múltiples datos.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>23. Según Flynn, ¿qué caracteriza a MIMD?</strong></p>
+<p>A) Múltiples flujos de instrucciones operan sobre múltiples flujos de datos.</p>
+<p>B) Una única instrucción sobre un único dato.</p>
+<p>C) Una instrucción sobre múltiples datos.</p>
+<p>D) Un modelo exclusivo de tarjetas de red.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>24. ¿Qué categoría de Flynn es poco habitual como arquitectura general de propósito común?</strong></p>
+<p>A) SISD.</p>
+<p>B) MISD.</p>
+<p>C) SIMD.</p>
+<p>D) MIMD.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>25. ¿Qué diferencia esencial hay entre UMA y NUMA?</strong></p>
+<p>A) UMA usa solo discos y NUMA solo RAM.</p>
+<p>B) NUMA elimina la necesidad de sincronización.</p>
+<p>C) En UMA el tiempo de acceso a memoria es aproximadamente uniforme; en NUMA depende de la localidad del nodo de memoria.</p>
+<p>D) UMA es un protocolo de red y NUMA una base de datos.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>26. ¿Qué práctica favorece el rendimiento en NUMA?</strong></p>
+<p>A) Mover aleatoriamente los datos entre nodos en cada acceso.</p>
+<p>B) Desactivar todas las cachés.</p>
+<p>C) Usar siempre un único proceso sin medir.</p>
+<p>D) Mantener hilos y datos con buena afinidad/localidad cuando sea posible.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>27. ¿Qué caracteriza principalmente a un mainframe?</strong></p>
+<p>A) Gran capacidad transaccional, E/S, disponibilidad y aislamiento de cargas.</p>
+<p>B) Maximizar exclusivamente FLOPS científicos.</p>
+<p>C) Ser necesariamente un ordenador portátil.</p>
+<p>D) No admitir virtualización.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>28. ¿Qué caracteriza principalmente a un supercomputador?</strong></p>
+<p>A) Maximizar capacidad de cálculo para cargas científicas o técnicas de gran escala.</p>
+<p>B) Servir únicamente páginas HTML estáticas.</p>
+<p>C) Ser siempre un servidor monoprocesador.</p>
+<p>D) Priorizar exclusivamente impresión de documentos.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>29. ¿Qué es un clúster de computación?</strong></p>
+<p>A) Un conjunto de nodos independientes conectados y coordinados para prestar capacidad conjunta.</p>
+<p>B) Una única CPU con varios registros.</p>
+<p>C) Un sistema de archivos local sin red.</p>
+<p>D) Un modelo de licencia de software.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>30. ¿Qué objetivo puede perseguir un clúster?</strong></p>
+<p>A) Únicamente reducir el tamaño del código fuente.</p>
+<p>B) Solo sustituir DNS.</p>
+<p>C) Alto rendimiento, alta disponibilidad, balanceo o una combinación.</p>
+<p>D) Eliminar todo punto de fallo sin redundancia.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>31. ¿Qué distingue conceptualmente a grid computing?</strong></p>
+<p>A) Es sinónimo exacto de una única máquina virtual.</p>
+<p>B) Obliga a que todos los nodos estén en la misma placa base.</p>
+<p>C) Es un sistema de permisos POSIX.</p>
+<p>D) Agrega recursos autónomos y potencialmente distribuidos entre distintos dominios para compartir capacidad.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>32. ¿Qué afirmación es correcta sobre clúster, grid y cloud?</strong></p>
+<p>A) Son conceptos relacionados con computación distribuida/recursos, pero no son sinónimos.</p>
+<p>B) Son tres nombres para el mismo producto.</p>
+<p>C) Cloud es siempre un clúster físico de un solo nodo.</p>
+<p>D) Grid implica necesariamente SaaS.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>33. En memoria compartida, ¿qué problema exige mecanismos de sincronización?</strong></p>
+<p>A) La imposibilidad absoluta de compartir datos.</p>
+<p>B) La ausencia de cualquier caché.</p>
+<p>C) El hecho de que cada proceso tenga su propio disco físico.</p>
+<p>D) Varias tareas pueden acceder y modificar estado compartido de forma concurrente.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>34. En memoria distribuida, ¿cómo se intercambian típicamente datos entre nodos?</strong></p>
+<p>A) Leyendo todos la misma dirección física de RAM local.</p>
+<p>B) Usando exclusivamente interrupciones de teclado.</p>
+<p>C) Mediante comunicación/mensajes a través de una interconexión.</p>
+<p>D) Mediante el registro de Windows.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>35. ¿Qué expresa la ley de Amdahl de forma cualitativa?</strong></p>
+<p>A) El rendimiento siempre crece linealmente sin límite.</p>
+<p>B) Duplicar nodos reduce siempre el rendimiento a la mitad.</p>
+<p>C) La latencia de red desaparece con más procesadores.</p>
+<p>D) La parte no paralelizable limita el speedup máximo aunque se añadan más recursos.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>36. ¿Qué métrica se usa habitualmente para expresar capacidad de cálculo en HPC de coma flotante?</strong></p>
+<p>A) RPO.</p>
+<p>B) FLOPS y sus múltiplos, interpretados siempre junto con la carga/benchmark.</p>
+<p>C) Número de usuarios de Active Directory.</p>
+<p>D) TTL de DNS.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>37. ¿Qué es un benchmark útil?</strong></p>
+<p>A) Cualquier número de marketing sin metodología.</p>
+<p>B) Solo la frecuencia nominal de la CPU.</p>
+<p>C) Una prueba reproducible y representativa del tipo de carga que se quiere comparar.</p>
+<p>D) Una prueba que cambia condiciones entre alternativas.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>38. Para una simulación científica que escala bien entre nodos, ¿qué infraestructura es razonable valorar?</strong></p>
+<p>A) Un único móvil sin aceleradores por definición.</p>
+<p>B) Un clúster HPC con interconexión adecuada y software paralelo.</p>
+<p>C) Un servidor DNS como motor de cálculo.</p>
+<p>D) Una impresora de red con almacenamiento.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>39. Para un core bancario con enorme volumen transaccional, continuidad y E/S, ¿qué familia histórica de sistemas encaja mejor conceptualmente?</strong></p>
+<p>A) Supercomputador orientado exclusivamente a simulación científica.</p>
+<p>B) Mainframe.</p>
+<p>C) Microcontrolador de muy bajo consumo.</p>
+<p>D) Sistema de archivos distribuido sin CPU.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>40. ¿Qué error de diseño puede degradar un algoritmo paralelo?</strong></p>
+<p>A) Reducir contención.</p>
+<p>B) Crear demasiada sincronización y comunicación respecto al trabajo útil.</p>
+<p>C) Aumentar localidad de datos.</p>
+<p>D) Equilibrar la carga entre trabajadores.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<h1>3. Escalabilidad, disponibilidad y virtualización</h1>
+<p><strong>41. ¿Qué significa escalado vertical o scale up?</strong></p>
+<p>A) Aumentar recursos de un nodo, por ejemplo CPU o RAM.</p>
+<p>B) Añadir más nodos a la plataforma.</p>
+<p>C) Reducir el número de réplicas.</p>
+<p>D) Distribuir usuarios por DNS sin cambiar recursos.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>42. ¿Qué significa escalado horizontal o scale out?</strong></p>
+<p>A) Aumentar exclusivamente la frecuencia de una CPU.</p>
+<p>B) Mover la aplicación a un disco más pequeño.</p>
+<p>C) Añadir nodos o instancias para repartir la carga.</p>
+<p>D) Desactivar balanceo.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>43. ¿Qué es elasticidad?</strong></p>
+<p>A) Sinónimo exacto de alta disponibilidad.</p>
+<p>B) Copiar datos una vez al año.</p>
+<p>C) Capacidad de ajustar recursos a la demanda, idealmente de forma rápida o automática.</p>
+<p>D) Usar siempre la máxima capacidad contratada.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>44. ¿Qué diferencia hay entre escalabilidad y elasticidad?</strong></p>
+<p>A) No existe diferencia.</p>
+<p>B) Elasticidad solo se aplica a impresoras.</p>
+<p>C) Escalabilidad implica obligatoriamente apagar servicios.</p>
+<p>D) Escalabilidad es poder crecer; elasticidad añade adaptación dinámica a la demanda.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>45. ¿Qué objetivo tiene la alta disponibilidad?</strong></p>
+<p>A) Eliminar la necesidad de copias de seguridad.</p>
+<p>B) Garantizar que nunca exista ningún fallo físico.</p>
+<p>C) Reducir interrupciones mediante redundancia, detección y failover.</p>
+<p>D) Maximizar exclusivamente capacidad de disco.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>46. ¿Qué diferencia conceptual hay entre alta disponibilidad y tolerancia a fallos?</strong></p>
+<p>A) Son siempre exactamente lo mismo.</p>
+<p>B) La tolerancia a fallos busca seguir funcionando pese al fallo; HA puede aceptar una conmutación o interrupción mínima.</p>
+<p>C) HA solo se aplica a desarrollo y tolerancia a fallos a redes.</p>
+<p>D) Tolerancia a fallos exige una sola copia de cada componente.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>47. ¿Qué es un punto único de fallo (SPOF)?</strong></p>
+<p>A) Un componente redundante que nunca participa en servicio.</p>
+<p>B) Un componente cuyo fallo puede interrumpir por sí solo el servicio.</p>
+<p>C) Un nodo de caché sin datos.</p>
+<p>D) Un requisito de licencia.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>48. ¿Qué mide RTO?</strong></p>
+<p>A) La pérdida máxima de datos expresada temporalmente.</p>
+<p>B) La latencia de una consulta SQL.</p>
+<p>C) El tiempo objetivo para recuperar un servicio tras una interrupción.</p>
+<p>D) El número de réplicas de un clúster.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>49. ¿Qué mide RPO?</strong></p>
+<p>A) El tiempo máximo de reparación física de una CPU.</p>
+<p>B) La pérdida máxima de datos tolerable, expresada normalmente como ventana temporal.</p>
+<p>C) El número de hilos por núcleo.</p>
+<p>D) La disponibilidad mensual medida en porcentaje.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>50. ¿Qué es un hipervisor de tipo 1?</strong></p>
+<p>A) Una aplicación que siempre necesita un SO anfitrión de escritorio.</p>
+<p>B) Un contenedor OCI.</p>
+<p>C) Un controlador de dominio.</p>
+<p>D) Un hipervisor que se ejecuta directamente sobre el hardware o con una capa mínima especializada.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>51. ¿Qué es un hipervisor de tipo 2?</strong></p>
+<p>A) Un firmware de red.</p>
+<p>B) Un hipervisor que se ejecuta sobre un sistema operativo anfitrión.</p>
+<p>C) Una CPU sin virtualización.</p>
+<p>D) Un clúster de base de datos.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>52. ¿Qué incluye normalmente una máquina virtual?</strong></p>
+<p>A) Hardware virtual, un sistema operativo invitado y sus aplicaciones.</p>
+<p>B) Solo una imagen de datos sin sistema operativo.</p>
+<p>C) Exclusivamente un proceso que comparte siempre el kernel del host.</p>
+<p>D) Una VLAN sin recursos de cómputo.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>53. ¿Qué diferencia básica hay entre una VM y un contenedor?</strong></p>
+<p>A) El contenedor siempre pesa más que una VM.</p>
+<p>B) La VM no puede tener red.</p>
+<p>C) El contenedor es un hipervisor de tipo 1.</p>
+<p>D) La VM suele incluir un SO invitado; el contenedor comparte el kernel del host.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>54. ¿Qué riesgo operativo tiene sobredimensionar de forma permanente?</strong></p>
+<p>A) Reducir siempre el coste total.</p>
+<p>B) Aumentar coste e infrautilización sin aportar valor proporcional.</p>
+<p>C) Eliminar la necesidad de monitorización.</p>
+<p>D) Impedir cualquier escalado futuro.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>55. ¿Qué riesgo tiene infradimensionar una plataforma?</strong></p>
+<p>A) Disponibilidad infinita.</p>
+<p>B) Menor latencia garantizada.</p>
+<p>C) Saturación, colas, latencia elevada y posible incumplimiento de servicio.</p>
+<p>D) Eliminación del coste operativo.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>56. Para escalar horizontalmente una aplicación web, ¿qué propiedad suele ayudar?</strong></p>
+<p>A) Guardar toda sesión solo en el primer servidor.</p>
+<p>B) Usar una dirección IP distinta por usuario sin balanceador.</p>
+<p>C) Desactivar persistencia de datos.</p>
+<p>D) Evitar estado exclusivo en memoria local de una única instancia o externalizarlo.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>57. ¿Qué función tiene un balanceador de carga?</strong></p>
+<p>A) Hacer copias de seguridad del código fuente.</p>
+<p>B) Sustituir el sistema operativo invitado.</p>
+<p>C) Convertir automáticamente una app en microservicios.</p>
+<p>D) Distribuir peticiones o conexiones entre varias instancias según una política.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>58. ¿Qué debe acompañar a una estrategia de failover para que sea confiable?</strong></p>
+<p>A) Detección de fallo, estado replicado o recuperable, pruebas y procedimiento de retorno/operación.</p>
+<p>B) Solo un diagrama sin pruebas.</p>
+<p>C) Una única copia del componente crítico.</p>
+<p>D) Desactivar monitorización para evitar alertas.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>59. ¿Qué afirmación es correcta sobre backup y alta disponibilidad?</strong></p>
+<p>A) Son controles distintos: HA reduce caída; backup permite recuperar datos/estado perdido.</p>
+<p>B) Un clúster HA elimina cualquier necesidad de backup.</p>
+<p>C) Backup garantiza continuidad sin tiempo de recuperación.</p>
+<p>D) Ambos son exactamente el mismo mecanismo.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>60. En una plataforma crítica, ¿qué diseño es más completo?</strong></p>
+<p>A) Redundancia sin SPOF, monitorización, failover probado, backups y plan de recuperación ante desastres.</p>
+<p>B) Solo duplicar CPU dentro del mismo servidor.</p>
+<p>C) Confiar en que el hardware no falle.</p>
+<p>D) Mantener una única copia sin pruebas.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<h1>4. Cloud: modelos, responsabilidades y decisión arquitectónica</h1>
+<p><strong>61. Según NIST SP 800-145, ¿cuál es una característica esencial de cloud computing?</strong></p>
+<p>A) Uso obligatorio de una marca concreta.</p>
+<p>B) Un único centro de datos físico.</p>
+<p>C) Ausencia total de medición de consumo.</p>
+<p>D) Autoservicio bajo demanda.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>62. Según NIST, ¿qué significa broad network access?</strong></p>
+<p>A) El servicio solo puede usarse desde una LAN privada.</p>
+<p>B) La red debe ser siempre inalámbrica.</p>
+<p>C) Todos los clientes comparten una única contraseña.</p>
+<p>D) Las capacidades están disponibles por red mediante mecanismos estándar para distintos tipos de clientes.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>63. ¿Qué significa resource pooling en cloud?</strong></p>
+<p>A) Cada cliente debe comprar físicamente todos los servidores.</p>
+<p>B) Los recursos del proveedor se agrupan para servir a múltiples consumidores con asignación dinámica.</p>
+<p>C) El proveedor no puede reasignar recursos.</p>
+<p>D) Se elimina la multitenencia por definición.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>64. ¿Qué significa measured service?</strong></p>
+<p>A) Cloud no registra consumo.</p>
+<p>B) La facturación debe ser siempre una tarifa plana.</p>
+<p>C) El uso de recursos puede medirse, controlarse y reportarse de forma apropiada al servicio.</p>
+<p>D) Solo se mide el espacio en disco.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>65. ¿Qué significa rapid elasticity?</strong></p>
+<p>A) Los recursos pueden aprovisionarse y liberarse rápidamente para ajustarse a la demanda.</p>
+<p>B) Los servidores nunca cambian de tamaño.</p>
+<p>C) El cliente debe esperar una compra física manual por cada pico.</p>
+<p>D) Es sinónimo de copia de seguridad.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>66. En IaaS, ¿qué recibe típicamente el cliente?</strong></p>
+<p>A) Una aplicación final completa sin gestionar nada.</p>
+<p>B) Solo un lenguaje de programación sin infraestructura.</p>
+<p>C) Únicamente correo electrónico como SaaS.</p>
+<p>D) Cómputo, red y almacenamiento virtualizados, gestionando normalmente SO y aplicaciones.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>67. En PaaS, ¿qué gestiona normalmente el proveedor además de la infraestructura?</strong></p>
+<p>A) El código de negocio del cliente obligatoriamente.</p>
+<p>B) Todos los datos del cliente en nombre de éste.</p>
+<p>C) La plataforma/runtime y servicios de soporte para desplegar aplicaciones.</p>
+<p>D) La estrategia de producto de la organización.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>68. En SaaS, ¿qué consume el usuario?</strong></p>
+<p>A) Solo servidores físicos sin sistema operativo.</p>
+<p>B) Una CPU sin almacenamiento.</p>
+<p>C) Un hipervisor local de tipo 1.</p>
+<p>D) Una aplicación completa operada principalmente por el proveedor.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>69. ¿Qué es una nube pública?</strong></p>
+<p>A) Infraestructura/servicios ofrecidos por un proveedor para múltiples clientes conforme a su modelo.</p>
+<p>B) Una nube exclusiva para una sola organización por definición.</p>
+<p>C) Un CPD sin virtualización.</p>
+<p>D) Un sinónimo de multicloud.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>70. ¿Qué es una nube privada?</strong></p>
+<p>A) Una infraestructura cloud dedicada a una organización, alojada interna o externamente.</p>
+<p>B) Cualquier servidor físico sin automatización.</p>
+<p>C) Un servicio SaaS usado por millones de clientes.</p>
+<p>D) Una red social corporativa.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>71. ¿Qué caracteriza a una nube híbrida?</strong></p>
+<p>A) Usar dos proveedores públicos sin integración.</p>
+<p>B) Integra entornos privados y públicos con mecanismos de interoperabilidad/operación conjunta.</p>
+<p>C) Mantener todo exclusivamente on-premise.</p>
+<p>D) Ejecutar una única VM local.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>72. ¿Qué es multicloud?</strong></p>
+<p>A) Uso de servicios de más de un proveedor cloud.</p>
+<p>B) Sinónimo obligatorio de nube híbrida.</p>
+<p>C) Uso de varias zonas del mismo centro de datos físico.</p>
+<p>D) Una licencia de virtualización.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>73. ¿Qué diferencia hay entre región y zona de disponibilidad en muchas nubes?</strong></p>
+<p>A) Una zona siempre contiene varias regiones.</p>
+<p>B) Una región agrupa ubicaciones geográficas; las zonas buscan aislar fallos dentro de la región.</p>
+<p>C) Son términos de licenciamiento de software.</p>
+<p>D) No tienen relación con diseño de resiliencia.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>74. ¿Qué principio debe aplicarse al IAM cloud?</strong></p>
+<p>A) Compartir una cuenta administradora entre todos.</p>
+<p>B) Mínimo privilegio y separación de responsabilidades.</p>
+<p>C) Dar permisos globales por comodidad.</p>
+<p>D) Desactivar trazabilidad.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>75. ¿Qué significa responsabilidad compartida en cloud?</strong></p>
+<p>A) El proveedor asume absolutamente toda la seguridad en cualquier modelo.</p>
+<p>B) El cliente administra físicamente los centros de datos del proveedor.</p>
+<p>C) No existen obligaciones del cliente en SaaS.</p>
+<p>D) Proveedor y cliente conservan responsabilidades diferentes según el modelo de servicio.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>76. ¿Qué riesgo describe vendor lock-in?</strong></p>
+<p>A) Dependencia de servicios, APIs o formatos que hacen costosa la migración a otra solución.</p>
+<p>B) Capacidad de salir fácilmente sin coste.</p>
+<p>C) Redundancia automática entre proveedores.</p>
+<p>D) Una técnica de cifrado.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>77. ¿Qué debe incluir una evaluación TCO cloud frente a on-premise?</strong></p>
+<p>A) Solo el precio mensual de una VM.</p>
+<p>B) Solo el coste de compra del servidor local.</p>
+<p>C) Cómputo, almacenamiento, red, licencias, operación, personal, migración, seguridad y salida, entre otros.</p>
+<p>D) Ignorar tráfico y soporte.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>78. ¿Qué afirmación es correcta sobre cloud y administración?</strong></p>
+<p>A) Cloud elimina cualquier necesidad de arquitectura.</p>
+<p>B) No hace falta monitorización.</p>
+<p>C) Cloud cambia y automatiza parte de la administración, pero no elimina gobierno, seguridad ni operación.</p>
+<p>D) El cliente deja de ser responsable de sus datos.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>79. Para una aplicación con picos impredecibles y periodos de baja demanda, ¿qué propiedad cloud aporta valor directo?</strong></p>
+<p>A) Fijar para siempre la capacidad máxima.</p>
+<p>B) Eliminar métricas de consumo.</p>
+<p>C) Elasticidad y aprovisionamiento bajo demanda.</p>
+<p>D) Usar un único nodo sin posibilidad de cambio.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>80. Una Administración quiere migrar a cloud sin quedar atrapada. ¿Qué requisito es más maduro?</strong></p>
+<p>A) Confiar en una promesa comercial sin plan de salida.</p>
+<p>B) Definir portabilidad, formatos, exportación, documentación, costes de salida y pruebas de reversibilidad.</p>
+<p>C) Prohibir cualquier copia de datos.</p>
+<p>D) No documentar dependencias para simplificar.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<h1>5. Sistemas operativos: procesos, hilos, planificación y concurrencia</h1>
+<p><strong>81. ¿Cuál es la función general de un sistema operativo?</strong></p>
+<p>A) Compilar obligatoriamente todo el código fuente.</p>
+<p>B) Sustituir todas las aplicaciones de negocio.</p>
+<p>C) Actuar únicamente como firewall.</p>
+<p>D) Gestionar hardware y ofrecer abstracciones/servicios a aplicaciones y usuarios.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>82. ¿Qué es un proceso?</strong></p>
+<p>A) Una dirección IP.</p>
+<p>B) Un programa en ejecución con espacio de direcciones, estado y recursos asociados.</p>
+<p>C) Un archivo de configuración sin ejecutar.</p>
+<p>D) Un núcleo físico de CPU.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>83. ¿Qué es un hilo?</strong></p>
+<p>A) Un proceso completamente aislado con su propio kernel.</p>
+<p>B) Un dispositivo de bloque.</p>
+<p>C) Una unidad de ejecución dentro de un proceso que comparte gran parte de sus recursos con otros hilos del mismo proceso.</p>
+<p>D) Un socket físico de CPU.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>84. ¿Qué diferencia básica hay entre proceso e hilo?</strong></p>
+<p>A) No existe ninguna diferencia.</p>
+<p>B) Los hilos siempre tienen su propio sistema operativo.</p>
+<p>C) Los procesos están más aislados; los hilos del mismo proceso comparten memoria y recursos.</p>
+<p>D) Un proceso es hardware y un hilo es almacenamiento.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>85. ¿Cuál es un estado clásico de proceso?</strong></p>
+<p>A) Preparado (ready), esperando CPU.</p>
+<p>B) Encriptado.</p>
+<p>C) Montado.</p>
+<p>D) Indexado.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>86. ¿Qué hace el planificador de CPU?</strong></p>
+<p>A) Selecciona rutas BGP.</p>
+<p>B) Asigna licencias de software.</p>
+<p>C) Formatea discos automáticamente.</p>
+<p>D) Selecciona qué tarea/hilo ejecutará el procesador según la política del SO.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>87. ¿Qué caracteriza a FCFS/FIFO?</strong></p>
+<p>A) Da siempre prioridad al proceso más corto conocido.</p>
+<p>B) Usa obligatoriamente quantum.</p>
+<p>C) Atiende trabajos aproximadamente en orden de llegada.</p>
+<p>D) Es un algoritmo de cifrado.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>88. ¿Qué caracteriza a Round Robin?</strong></p>
+<p>A) Reparte CPU mediante quantums de tiempo entre tareas preparadas.</p>
+<p>B) Ejecuta siempre un proceso hasta terminar.</p>
+<p>C) Selecciona por número de archivos abiertos.</p>
+<p>D) No permite preempción.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>89. ¿Qué riesgo tienen las prioridades si no existe mecanismo de envejecimiento u otra compensación?</strong></p>
+<p>A) Desaparición de la memoria virtual.</p>
+<p>B) Inanición de tareas de baja prioridad.</p>
+<p>C) Duplicación de sockets físicos.</p>
+<p>D) Conversión automática en deadlock.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>90. ¿Qué objetivo tiene SJF?</strong></p>
+<p>A) Maximizar siempre el quantum.</p>
+<p>B) Seleccionar la tarea con más memoria.</p>
+<p>C) Evitar cualquier estimación de duración.</p>
+<p>D) Favorecer trabajos con menor duración estimada para reducir espera media en condiciones ideales.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>91. ¿Qué es un cambio de contexto?</strong></p>
+<p>A) Cambiar el sistema de archivos de NTFS a ext4.</p>
+<p>B) Guardar/restaurar estado para cambiar la CPU de una tarea a otra.</p>
+<p>C) Mover una VM a otra región cloud por definición.</p>
+<p>D) Renombrar un proceso.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>92. ¿Qué diferencia hay entre concurrencia y paralelismo?</strong></p>
+<p>A) Son exactamente sinónimos.</p>
+<p>B) Paralelismo solo existe con un único núcleo.</p>
+<p>C) Concurrencia permite progreso solapado de tareas; paralelismo implica ejecución simultánea real.</p>
+<p>D) Concurrencia exige varias máquinas físicas.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>93. ¿Qué es una condición de carrera?</strong></p>
+<p>A) Un resultado dependiente del orden/timing de accesos concurrentes a estado compartido.</p>
+<p>B) Una ruta de red más corta.</p>
+<p>C) Un error de licencia de software.</p>
+<p>D) Un algoritmo de compresión.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>94. ¿Para qué se usa un mutex?</strong></p>
+<p>A) Para resolver DNS.</p>
+<p>B) Para paginar memoria al disco.</p>
+<p>C) Para cifrar un volumen.</p>
+<p>D) Para proporcionar exclusión mutua sobre una sección o recurso compartido.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>95. ¿Qué permite un semáforo de conteo?</strong></p>
+<p>A) Ejecutar siempre un único hilo por sistema.</p>
+<p>B) Controlar acceso concurrente a un número limitado de recursos o señalizar disponibilidad.</p>
+<p>C) Sustituir la MMU.</p>
+<p>D) Crear usuarios del SO.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>96. ¿Qué es un monitor en concurrencia?</strong></p>
+<p>A) Una pantalla física obligatoria.</p>
+<p>B) Un router de capa 3.</p>
+<p>C) Una abstracción que encapsula estado y sincronización, normalmente con exclusión mutua y condiciones.</p>
+<p>D) Un formato de disco.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>97. ¿Cuál es una condición clásica necesaria para deadlock?</strong></p>
+<p>A) Cifrado de memoria.</p>
+<p>B) Alta disponibilidad.</p>
+<p>C) Multitenencia cloud.</p>
+<p>D) Espera circular.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>98. ¿Qué es una llamada al sistema (system call)?</strong></p>
+<p>A) Una llamada HTTP a un SaaS necesariamente.</p>
+<p>B) Un mecanismo por el que un programa solicita un servicio al kernel.</p>
+<p>C) Una interrupción eléctrica.</p>
+<p>D) Un cambio de licencia.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>99. ¿Qué diferencia hay entre modo usuario y modo kernel?</strong></p>
+<p>A) El modo kernel tiene privilegios superiores; el modo usuario restringe operaciones directas sobre recursos críticos.</p>
+<p>B) Modo usuario siempre ejecuta más rápido por definición.</p>
+<p>C) Modo kernel es una cuenta de Active Directory.</p>
+<p>D) No existe separación de privilegios en sistemas modernos.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>100. Si un servicio tiene muchos hilos bloqueados esperando E/S, ¿qué conclusión es más razonable?</strong></p>
+<p>A) La carga puede estar limitada por E/S; añadir CPU no garantiza resolver el cuello de botella.</p>
+<p>B) La solución es siempre duplicar la frecuencia de CPU.</p>
+<p>C) La espera de E/S demuestra que no hay concurrencia.</p>
+<p>D) Hay que desactivar interrupciones.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<h1>6. Memoria, E/S, ficheros y estructuras de kernel</h1>
+<p><strong>101. ¿Qué proporciona la memoria virtual a un proceso?</strong></p>
+<p>A) Acceso directo a toda la RAM de otros procesos.</p>
+<p>B) Persistencia garantizada tras apagar el equipo.</p>
+<p>C) Una copia de seguridad automática de archivos.</p>
+<p>D) Un espacio de direcciones lógico protegido y abstraído de la memoria física concreta.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>102. ¿Qué diferencia básica hay entre dirección virtual y física?</strong></p>
+<p>A) Son siempre idénticas.</p>
+<p>B) La física solo existe en cloud.</p>
+<p>C) La virtual se almacena únicamente en DNS.</p>
+<p>D) La virtual pertenece al espacio lógico del proceso y se traduce a una ubicación física mediante hardware/SO.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>103. ¿Qué es paginación?</strong></p>
+<p>A) Dividir memoria virtual y física en unidades de tamaño fijo llamadas páginas/marcos.</p>
+<p>B) Dividir una red en VLAN.</p>
+<p>C) Dividir procesos en usuarios.</p>
+<p>D) Cifrar bloques de disco.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>104. ¿Qué caracteriza a la segmentación clásica?</strong></p>
+<p>A) Usa unidades lógicas de tamaño variable asociadas a partes del programa/datos.</p>
+<p>B) Siempre usa páginas de tamaño fijo.</p>
+<p>C) Es un sistema de archivos.</p>
+<p>D) Es un algoritmo de routing.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>105. ¿Qué almacena conceptualmente una TLB?</strong></p>
+<p>A) Contraseñas de usuarios.</p>
+<p>B) Rutas BGP.</p>
+<p>C) Traducciones recientes de direcciones virtuales a físicas para acelerar acceso.</p>
+<p>D) Copias de seguridad de disco.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>106. ¿Qué es un page fault?</strong></p>
+<p>A) Un fallo físico obligatorio de la RAM.</p>
+<p>B) Un evento cuando una página necesaria no está actualmente mapeada/residente de la forma requerida y el SO debe atenderlo.</p>
+<p>C) Una pérdida de red.</p>
+<p>D) Un error de licencia.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>107. ¿Qué es thrashing?</strong></p>
+<p>A) Uso eficiente de caché.</p>
+<p>B) Exceso de fallos de página y movimiento de memoria que deja poco tiempo para trabajo útil.</p>
+<p>C) Compresión de disco sin impacto.</p>
+<p>D) Un algoritmo de planificación de red.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>108. ¿Qué intenta un algoritmo de reemplazo de páginas?</strong></p>
+<p>A) Elegir qué página retirar de memoria cuando se necesita liberar un marco.</p>
+<p>B) Seleccionar el siguiente router.</p>
+<p>C) Elegir qué usuario inicia sesión.</p>
+<p>D) Decidir qué licencia instalar.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>109. ¿Qué ventaja conceptual busca LRU?</strong></p>
+<p>A) Eliminar cualquier page fault futuro.</p>
+<p>B) Evitar el uso de memoria virtual.</p>
+<p>C) Retirar páginas no usadas recientemente, aprovechando localidad temporal.</p>
+<p>D) Ordenar procesos por prioridad.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>110. ¿Qué es una interrupción de hardware?</strong></p>
+<p>A) Una petición DNS.</p>
+<p>B) Una licencia de uso.</p>
+<p>C) Un fichero ejecutable.</p>
+<p>D) Una señal que notifica a la CPU un evento que requiere atención.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>111. ¿Qué diferencia hay entre interrupción y polling?</strong></p>
+<p>A) Son exactamente lo mismo.</p>
+<p>B) Polling siempre consume cero CPU.</p>
+<p>C) La interrupción notifica eventos; polling consulta repetidamente el estado.</p>
+<p>D) Las interrupciones solo existen en almacenamiento cloud.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>112. ¿Qué es un driver?</strong></p>
+<p>A) Firmware grabado necesariamente en la placa.</p>
+<p>B) Una aplicación SaaS.</p>
+<p>C) Un algoritmo de scheduling.</p>
+<p>D) Software que permite al SO controlar un dispositivo concreto mediante una interfaz apropiada.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>113. ¿Qué diferencia conceptual hay entre dispositivo de bloque y de carácter?</strong></p>
+<p>A) El de bloque siempre es una GPU y el de carácter una CPU.</p>
+<p>B) No existe ninguna diferencia en sistemas operativos.</p>
+<p>C) El de bloque trabaja con unidades direccionables de datos; el de carácter expone típicamente un flujo secuencial.</p>
+<p>D) El de carácter solo se usa en cloud.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>114. ¿Qué aporta journaling a un sistema de archivos?</strong></p>
+<p>A) Cifrar obligatoriamente todo el disco.</p>
+<p>B) Eliminar la necesidad de copias.</p>
+<p>C) Registrar cambios/operaciones para facilitar recuperación de consistencia tras fallos.</p>
+<p>D) Convertir cualquier archivo en ejecutable.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>115. ¿Qué es una ACL de fichero?</strong></p>
+<p>A) Un índice de base de datos.</p>
+<p>B) Una lista de control de acceso que asigna permisos a identidades o grupos.</p>
+<p>C) Una tabla de páginas de memoria.</p>
+<p>D) Un protocolo de correo.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>116. En Unix/Linux, ¿qué representan rwx?</strong></p>
+<p>A) Permisos de lectura, escritura y ejecución.</p>
+<p>B) Reinicio, warning y XML.</p>
+<p>C) Ruta, web y extensión.</p>
+<p>D) RAM, workspace y XFS.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>117. ¿Qué caracteriza a un kernel monolítico?</strong></p>
+<p>A) Todo servicio se ejecuta obligatoriamente fuera del kernel.</p>
+<p>B) Muchos servicios del sistema se ejecutan en espacio privilegiado del kernel.</p>
+<p>C) No puede cargar drivers.</p>
+<p>D) No soporta multitarea.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>118. ¿Qué idea busca un microkernel?</strong></p>
+<p>A) Ejecutar todas las aplicaciones en modo kernel.</p>
+<p>B) Mantener en el núcleo mínimo funciones esenciales y mover más servicios a espacios separados.</p>
+<p>C) Eliminar comunicación entre componentes.</p>
+<p>D) Usar una sola tarea para todo el sistema.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>119. ¿Qué significa que un kernel sea híbrido?</strong></p>
+<p>A) Combina decisiones de diseño de varias familias, sin encajar de forma pura en un único modelo.</p>
+<p>B) Que alterna entre Windows y Linux cada segundo.</p>
+<p>C) Que necesita dos CPUs de fabricantes distintos.</p>
+<p>D) Que carece de gestión de memoria.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>120. Un servidor sufre alta latencia de disco y CPU baja. ¿Qué acción es más razonable antes de ampliar CPU?</strong></p>
+<p>A) Duplicar CPU sin medir.</p>
+<p>B) Desactivar la caché.</p>
+<p>C) Reducir memoria para forzar más paginación.</p>
+<p>D) Medir cola, IOPS, throughput y patrón de acceso del almacenamiento y optimizar ese cuello de botella.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<h1>7. Windows, Linux y Unix: administración y seguridad</h1>
+<p><strong>121. ¿De qué familia tecnológica deriva Windows moderno?</strong></p>
+<p>A) De MS-DOS exclusivamente sin arquitectura NT.</p>
+<p>B) De un kernel Linux.</p>
+<p>C) De la familia Windows NT.</p>
+<p>D) De BSD sin componentes propios.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>122. ¿Qué es un servicio de Windows?</strong></p>
+<p>A) Una partición NTFS.</p>
+<p>B) Un proceso o componente gestionado para ejecutar funciones en segundo plano bajo el Service Control Manager.</p>
+<p>C) Una cuenta de Active Directory.</p>
+<p>D) Un paquete RPM.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>123. ¿Qué función cumple el Registro de Windows?</strong></p>
+<p>A) Almacenar configuración estructurada del sistema y muchas aplicaciones.</p>
+<p>B) Ser el único sistema de archivos de Windows.</p>
+<p>C) Sustituir todos los logs.</p>
+<p>D) Actuar como hipervisor.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>124. ¿Para qué sirve Windows Event Log?</strong></p>
+<p>A) Compilar controladores.</p>
+<p>B) Asignar memoria física.</p>
+<p>C) Gestionar paquetes DEB.</p>
+<p>D) Registrar eventos de sistema, seguridad y aplicaciones para operación y auditoría.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>125. ¿Qué es PowerShell?</strong></p>
+<p>A) Un sistema de archivos.</p>
+<p>B) Un hipervisor bare metal.</p>
+<p>C) Un protocolo de routing.</p>
+<p>D) Un entorno de shell y automatización orientado a objetos y administración.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>126. ¿Qué es Active Directory en relación con Windows?</strong></p>
+<p>A) Un servicio de directorio e identidad usado en entornos corporativos; no es el sistema operativo en sí.</p>
+<p>B) El kernel de Windows.</p>
+<p>C) El sistema de archivos por defecto.</p>
+<p>D) Una GPU virtual.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>127. ¿Qué características se asocian a NTFS?</strong></p>
+<p>A) Ausencia de permisos.</p>
+<p>B) ACL, journaling y capacidades avanzadas de sistema de archivos.</p>
+<p>C) Uso exclusivo en Linux.</p>
+<p>D) Ser un protocolo de red.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>128. ¿Qué es Linux estrictamente?</strong></p>
+<p>A) Una única distribución concreta.</p>
+<p>B) Un lenguaje de programación.</p>
+<p>C) El kernel; las distribuciones añaden userland, gestor de paquetes y otras herramientas.</p>
+<p>D) Un protocolo web.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>129. ¿Qué es una distribución Linux?</strong></p>
+<p>A) Una única llamada al sistema.</p>
+<p>B) Una CPU virtual.</p>
+<p>C) Un algoritmo de caché.</p>
+<p>D) Un sistema que integra kernel, herramientas, bibliotecas, paquetes, instalador y políticas de mantenimiento.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>130. ¿Qué es un daemon en Unix/Linux?</strong></p>
+<p>A) Un bloque de memoria.</p>
+<p>B) Un proceso de servicio que se ejecuta normalmente en segundo plano.</p>
+<p>C) Un usuario root obligatorio.</p>
+<p>D) Una VLAN.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>131. ¿Qué papel tiene systemd en muchas distribuciones Linux?</strong></p>
+<p>A) Gestionar unidades y servicios, arranque y otras funciones de sistema.</p>
+<p>B) Ser el kernel Linux.</p>
+<p>C) Sustituir el sistema de archivos.</p>
+<p>D) Ser un compilador C.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>132. ¿Qué contiene /proc en Linux de forma conceptual?</strong></p>
+<p>A) Archivos de usuario permanentes exclusivamente.</p>
+<p>B) Una interfaz de sistema de archivos virtual con información de procesos y kernel.</p>
+<p>C) El firmware de la BIOS.</p>
+<p>D) Copias de seguridad externas.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>133. ¿Qué contiene /sys en Linux de forma conceptual?</strong></p>
+<p>A) Solo documentos ofimáticos.</p>
+<p>B) El registro de Windows.</p>
+<p>C) Una interfaz de sistema de archivos virtual relacionada con dispositivos, kernel y modelo del sistema.</p>
+<p>D) Un repositorio Git obligatorio.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>134. ¿Para qué se usa sudo?</strong></p>
+<p>A) Para desactivar permisos del sistema.</p>
+<p>B) Para reemplazar el kernel.</p>
+<p>C) Para convertir un usuario en root permanentemente sin control.</p>
+<p>D) Para ejecutar acciones con privilegios elevados conforme a política y autenticación.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>135. ¿Qué buena práctica aplica tanto a Windows como a Linux?</strong></p>
+<p>A) Usar siempre una cuenta administradora para tareas diarias.</p>
+<p>B) Separar cuentas administrativas, aplicar mínimo privilegio, parchear y registrar eventos.</p>
+<p>C) Desactivar logs para ahorrar espacio.</p>
+<p>D) Compartir contraseñas entre técnicos.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>136. ¿Qué es hardening?</strong></p>
+<p>A) Aumentar el número de aplicaciones instaladas sin revisión.</p>
+<p>B) Desactivar autenticación.</p>
+<p>C) Eliminar actualizaciones.</p>
+<p>D) Reducir superficie de ataque mediante configuración segura, servicios mínimos, parches y controles.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>137. ¿Qué diferencia hay entre paquete y repositorio de paquetes?</strong></p>
+<p>A) Son sinónimos exactos.</p>
+<p>B) El repositorio solo puede contener código fuente.</p>
+<p>C) El paquete contiene software/metadatos; el repositorio organiza y distribuye paquetes y actualizaciones.</p>
+<p>D) Un paquete es siempre un kernel completo.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>138. ¿Qué diferencia conceptual hay entre Unix y Linux?</strong></p>
+<p>A) Unix es una familia/tradición y conjunto de sistemas/especificaciones; Linux es un kernel tipo Unix usado en múltiples distribuciones.</p>
+<p>B) Linux es una edición de Windows.</p>
+<p>C) Unix es exclusivamente un sistema móvil.</p>
+<p>D) No existe relación histórica o conceptual.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>139. ¿Qué sistema de archivos moderno usa macOS principalmente?</strong></p>
+<p>A) NTFS como formato nativo principal.</p>
+<p>B) ext4 como formato nativo principal.</p>
+<p>C) APFS.</p>
+<p>D) FAT12 como formato moderno principal.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>140. Una organización debe elegir Windows o Linux para un servicio. ¿Qué criterio es más profesional?</strong></p>
+<p>A) Compatibilidad, soporte, seguridad, competencias, integración, automatización, ciclo de vida y TCO.</p>
+<p>B) Preferencia personal del administrador.</p>
+<p>C) Elegir siempre el sistema con más comandos conocidos.</p>
+<p>D) Decidir solo por coste de licencia inicial.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<h1>8. Sistemas móviles y casos integradores de plataforma</h1>
+<p><strong>141. ¿Sobre qué kernel se apoya Android?</strong></p>
+<p>A) Linux.</p>
+<p>B) Windows NT.</p>
+<p>C) XNU exclusivamente sin componentes Linux.</p>
+<p>D) Un microkernel propio sin Linux.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>142. ¿Cómo aísla Android las aplicaciones de forma básica?</strong></p>
+<p>A) Ejecuta todas las apps con el mismo usuario root.</p>
+<p>B) Comparte por defecto todos los datos entre apps.</p>
+<p>C) Desactiva la separación de procesos.</p>
+<p>D) Asigna UID y procesos separados, aplicando sandbox a nivel del kernel y permisos.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>143. ¿Qué principio debe aplicarse a los permisos de una app móvil?</strong></p>
+<p>A) Pedir todos los permisos al instalar por comodidad.</p>
+<p>B) Usar siempre permisos de administrador.</p>
+<p>C) Conceder acceso completo a otras apps.</p>
+<p>D) Solicitar solo capacidades necesarias y de forma proporcional a la función.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>144. ¿En qué se basa iOS a nivel de sistema?</strong></p>
+<p>A) En Windows NT.</p>
+<p>B) En un kernel Linux estándar sin cambios.</p>
+<p>C) En Darwin/XNU y componentes de plataforma Apple.</p>
+<p>D) En DOS.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>145. ¿Qué controles caracterizan la seguridad de apps en iPhone/iPad?</strong></p>
+<p>A) Ejecución de cualquier binario sin firma por defecto.</p>
+<p>B) Firma de código, distribución controlada y sandboxing, entre otras capas.</p>
+<p>C) Todas las apps con acceso directo al kernel.</p>
+<p>D) Ausencia de aislamiento entre aplicaciones.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>146. ¿Qué función tiene MDM?</strong></p>
+<p>A) Sustituir la red móvil del operador.</p>
+<p>B) Administrar dispositivos, configuración, políticas, aplicaciones y cumplimiento de forma centralizada.</p>
+<p>C) Actuar como CPU del dispositivo.</p>
+<p>D) Convertir Android en iOS.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>147. ¿Qué relación existe entre MDM, EMM y UEM?</strong></p>
+<p>A) Son tres protocolos de routing.</p>
+<p>B) MDM es un sistema de archivos y EMM una CPU.</p>
+<p>C) Son familias de gestión con alcance creciente/solapado; UEM busca unificar múltiples tipos de endpoint.</p>
+<p>D) UEM solo gestiona impresoras.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>148. ¿Qué aporta el cifrado de dispositivo?</strong></p>
+<p>A) Protección absoluta aunque el dispositivo esté desbloqueado y comprometido.</p>
+<p>B) Protección de datos en reposo, especialmente si se combina con autenticación y gestión adecuada de claves.</p>
+<p>C) Eliminación de cualquier riesgo de phishing.</p>
+<p>D) Sustitución de las copias de seguridad.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>149. ¿Por qué son importantes las actualizaciones del sistema móvil?</strong></p>
+<p>A) Corrigen vulnerabilidades y mejoran seguridad/compatibilidad; la gestión debe controlar ciclo de soporte.</p>
+<p>B) Porque borran siempre los datos.</p>
+<p>C) Porque sustituyen la necesidad de autenticación.</p>
+<p>D) Porque eliminan cualquier dependencia de aplicaciones.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>150. ¿Qué diferencia hay entre autenticación biométrica y autorización?</strong></p>
+<p>A) Son exactamente lo mismo.</p>
+<p>B) La biometría puede ayudar a autenticar al usuario; la autorización decide qué acciones puede realizar.</p>
+<p>C) La autorización identifica huellas dactilares.</p>
+<p>D) La autenticación asigna permisos de aplicación sin identidad.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>151. ¿Qué riesgo aumenta con dispositivos BYOD sin una política clara?</strong></p>
+<p>A) Desaparición automática de malware.</p>
+<p>B) Cumplimiento garantizado por ser dispositivo personal.</p>
+<p>C) Mezcla de datos personales/corporativos, falta de control de parcheo y dificultad de borrado/retirada selectiva.</p>
+<p>D) Menor necesidad de identidad.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>152. ¿Qué ventaja aporta un perfil de trabajo o contenedor corporativo móvil?</strong></p>
+<p>A) Dar acceso root a todas las apps.</p>
+<p>B) Separar datos y aplicaciones corporativas de la parte personal con políticas diferenciadas.</p>
+<p>C) Eliminar toda privacidad del usuario.</p>
+<p>D) Compartir automáticamente credenciales entre perfiles.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>153. Una app corporativa necesita cámara solo al escanear documentos. ¿Qué enfoque es más adecuado?</strong></p>
+<p>A) Solicitar el permiso de cámara de forma contextual y limitarlo a la función necesaria.</p>
+<p>B) Exigir cámara, micrófono, contactos y ubicación desde el primer arranque sin motivo.</p>
+<p>C) Ejecutar la app como root.</p>
+<p>D) Desactivar el sandbox.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>154. Un servicio web corporativo se ejecutará en varias plataformas. ¿Qué capa debería mantener contratos estables para reducir dependencia del SO?</strong></p>
+<p>A) APIs/servicios y formatos bien definidos, separando lógica de negocio de detalles de plataforma.</p>
+<p>B) Llamadas directas a drivers desde cada cliente.</p>
+<p>C) Acceso a memoria física compartida por Internet.</p>
+<p>D) Una única ruta absoluta local codificada en todos los clientes.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>155. Una aplicación crítica presenta picos de CPU, muchas sesiones y dependencia de una única instancia. ¿Qué mejora es más completa?</strong></p>
+<p>A) Aumentar disco sin medir CPU.</p>
+<p>B) Mantener sesiones únicamente en RAM local de una instancia.</p>
+<p>C) Desactivar logs.</p>
+<p>D) Diseñar escalado horizontal, externalizar estado, balancear, monitorizar y eliminar SPOF.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>156. Una organización móvil necesita poder retirar solo los datos corporativos de un empleado que deja la entidad. ¿Qué capacidad es especialmente útil?</strong></p>
+<p>A) Formatear siempre el dispositivo personal completo sin política.</p>
+<p>B) Compartir la cuenta del empleado con el sustituto.</p>
+<p>C) Eliminar la autenticación.</p>
+<p>D) Gestión MDM/UEM con separación de datos y borrado selectivo cuando la plataforma lo soporte.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>157. Un servidor Windows y otro Linux ofrecen el mismo servicio. ¿Qué control transversal permite comparar su salud operativa?</strong></p>
+<p>A) Métricas y logs homogéneos de CPU, memoria, E/S, red, disponibilidad y errores.</p>
+<p>B) El color del escritorio.</p>
+<p>C) El nombre del sistema de archivos por sí solo.</p>
+<p>D) La cantidad de comandos disponibles.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>158. Una carga científica requiere gran paralelismo; el portal de acceso requiere alta disponibilidad. ¿Qué diseño es más razonable?</strong></p>
+<p>A) Usar un único componente para todo sin redundancia.</p>
+<p>B) Convertir el portal en un supercomputador monolítico.</p>
+<p>C) Eliminar colas y monitorización.</p>
+<p>D) Separar el front de servicio resiliente del backend HPC, dimensionando cada capa según su perfil.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>159. ¿Qué criterio resume mejor una selección tecnológica madura entre móvil, servidor, cloud y HPC?</strong></p>
+<p>A) Elegir la tecnología más nueva sin analizar requisitos.</p>
+<p>B) Usar siempre la misma plataforma para cualquier carga.</p>
+<p>C) Alinear arquitectura, rendimiento, seguridad, soporte, operación, coste y reversibilidad con los requisitos reales.</p>
+<p>D) Decidir solo por frecuencia de CPU.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>160. Caso final: un organismo necesita renovar infraestructura, mantener aplicaciones Windows/Linux, gestionar móviles y absorber picos. ¿Qué enfoque es más completo?</strong></p>
+<p>A) Migrar todo a una única tecnología sin inventario.</p>
+<p>B) Comprar el servidor más grande y eliminar monitorización.</p>
+<p>C) Inventariar cargas y dependencias, clasificar requisitos, combinar capacidad adecuada/on-prem-cloud, diseñar HA/escalado, gobernar identidades y UEM, y probar recuperación/reversibilidad.</p>
+<p>D) Permitir móviles sin gestión para reducir costes.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<h1>Registro de errores</h1>
+<p>Revisa los fallos a las 24–72 h. Escribe la regla correcta en una frase y vuelve a resolver la pregunta sin mirar.</p>
+<table>
+<tr>
+<th scope="col"><p><strong>N.º</strong></p></th>
+<th scope="col"><p><strong>Tema</strong></p></th>
+<th scope="col"><p><strong>Tipo de error</strong></p></th>
+<th scope="col"><p><strong>Regla correcta</strong></p></th>
+<th scope="col"><p><strong>Revisión</strong></p></th>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table></main></body></html>

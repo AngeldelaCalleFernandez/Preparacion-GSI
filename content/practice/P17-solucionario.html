@@ -1,0 +1,287 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO</title><link rel="stylesheet" href="../../assets/css/styles.css"></head><body><main class="shell topic-content"><p><a href="../../index.html#practica">Volver a práctica escrita</a></p><p>Material curado GSI A2. Fuente: <a href="https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit">documento original de Drive</a>.</p><p>GSI A2 — PRÁCTICA ACTIVA 17</p>
+<p><strong>COMPUTADORES · ESCALABILIDAD · CLOUD · SISTEMAS OPERATIVOS</strong></p>
+<p>160 preguntas · 4 opciones · refuerzo directo de II.01 e II.02</p>
+<p><strong>SOLUCIONARIO COMENTADO</strong></p>
+<h1>Cómo usar esta práctica</h1>
+<p>Este solucionario explica la regla que discrimina cada respuesta. No memorices la letra: memoriza la distinción técnica y vuelve al cuaderno para reintentar los fallos.</p>
+<p>Base nuclear: GSI A2 — Bloque II — Apuntes completos V2.1 revisados. Contraste oficial: NIST SP 800-145; Microsoft Learn (procesos/memoria Windows); Android Open Source Project (Application Sandbox); Apple Platform Security (App Security).</p>
+<h2>Distribución</h2>
+<table>
+<tr>
+<th scope="col"><p><strong>Preguntas</strong></p></th>
+<th scope="col"><p><strong>Bloque</strong></p></th>
+<th scope="col"><p><strong>Función</strong></p></th>
+</tr>
+<tr>
+<td><p>1–20</p></td>
+<td><p>Computadores: arquitectura, CPU, memoria y E/S</p></td>
+<td><p>CPU, memoria, E/S, almacenamiento, aceleradores y métricas.</p></td>
+</tr>
+<tr>
+<td><p>21–40</p></td>
+<td><p>Paralelismo, HPC, mainframe, clúster y grid</p></td>
+<td><p>Flynn, UMA/NUMA, mainframe, supercomputación, clúster/grid y paralelismo.</p></td>
+</tr>
+<tr>
+<td><p>41–60</p></td>
+<td><p>Escalabilidad, disponibilidad y virtualización</p></td>
+<td><p>Scale up/out, elasticidad, HA, RTO/RPO, virtualización y dimensionamiento.</p></td>
+</tr>
+<tr>
+<td><p>61–80</p></td>
+<td><p>Cloud: modelos, responsabilidades y decisión arquitectónica</p></td>
+<td><p>NIST cloud, IaaS/PaaS/SaaS, despliegue, IAM, TCO y reversibilidad.</p></td>
+</tr>
+<tr>
+<td><p>81–100</p></td>
+<td><p>Sistemas operativos: procesos, hilos, planificación y concurrencia</p></td>
+<td><p>Procesos/hilos, estados, scheduling, sincronización, deadlock y syscalls.</p></td>
+</tr>
+<tr>
+<td><p>101–120</p></td>
+<td><p>Memoria, E/S, ficheros y estructuras de kernel</p></td>
+<td><p>Memoria virtual, paginación, TLB, E/S, sistemas de archivos y kernels.</p></td>
+</tr>
+<tr>
+<td><p>121–140</p></td>
+<td><p>Windows, Linux y Unix: administración y seguridad</p></td>
+<td><p>Windows NT, Linux/Unix, servicios, logs, permisos, hardening y administración.</p></td>
+</tr>
+<tr>
+<td><p>141–160</p></td>
+<td><p>Sistemas móviles y casos integradores de plataforma</p></td>
+<td><p>Android/iOS, sandbox, permisos, MDM/UEM y casos integradores.</p></td>
+</tr>
+</table>
+<h2>Fuentes oficiales de contraste</h2>
+<ul>
+<li>NIST SP 800-145 — The NIST Definition of Cloud Computing</li>
+<li>Microsoft Learn — Processes, Threads and Virtual Address Space</li>
+<li>Android Open Source Project — Application Sandbox</li>
+<li>Apple Platform Security — App security overview</li>
+</ul>
+<p>Control de actualidad: 25/08/2026. Se priorizan conceptos y arquitectura estable frente a números de versión efímeros.</p>
+<h1>1. Computadores: arquitectura, CPU, memoria y E/S</h1>
+<p><strong>1. A — </strong>La CPU interpreta y ejecuta instrucciones; almacenamiento, SO y red son subsistemas distintos.</p>
+<p><strong>2. A — </strong>No deben confundirse procesador físico, núcleo y contexto de ejecución hardware.</p>
+<p><strong>3. B — </strong>La jerarquía busca equilibrar latencia, capacidad y coste.</p>
+<p><strong>4. D — </strong>Los datos e instrucciones usados recientemente o cercanos tienden a reutilizarse.</p>
+<p><strong>5. D — </strong>L1 prioriza latencia frente a capacidad.</p>
+<p><strong>6. D — </strong>La Memory Management Unit soporta traducción de direcciones y protección de memoria.</p>
+<p><strong>7. B — </strong>La RAM es memoria principal y normalmente volátil.</p>
+<p><strong>8. C — </strong>La ausencia de movimiento mecánico reduce latencias; NVMe además usa una interfaz/protocolo optimizado para flash.</p>
+<p><strong>9. C — </strong>Las GPU explotan paralelismo masivo; no son un reemplazo universal de CPU.</p>
+<p><strong>10. A — </strong>Una FPGA permite implementar circuitos lógicos reconfigurables.</p>
+<p><strong>11. C — </strong>ASIC significa circuito integrado de aplicación específica.</p>
+<p><strong>12. C — </strong>Throughput mide volumen de trabajo; latencia mide el tiempo de una operación.</p>
+<p><strong>13. B — </strong>Latencia y capacidad/HA son dimensiones distintas.</p>
+<p><strong>14. A — </strong>La interconexión comunica CPU, memoria y dispositivos/controladores.</p>
+<p><strong>15. A — </strong>DMA reduce la carga de CPU durante determinadas transferencias de E/S.</p>
+<p><strong>16. B — </strong>El ancho de palabra/direcciones afecta capacidad y ABI, no determina por sí solo cloud ni SO.</p>
+<p><strong>17. D — </strong>Son categorías de arquitectura de instrucciones, no de almacenamiento o red.</p>
+<p><strong>18. C — </strong>En NUMA la localidad importa: memoria local suele ser más rápida que memoria asociada a otro nodo NUMA.</p>
+<p><strong>19. D — </strong>Capacidad, throughput y latencia deben evaluarse por separado.</p>
+<p><strong>20. B — </strong>La selección de aceleradores debe ligarse al perfil de cálculo y a su ecosistema.</p>
+<h1>2. Paralelismo, HPC, mainframe, clúster y grid</h1>
+<p><strong>21. C — </strong>SISD representa el modelo secuencial clásico.</p>
+<p><strong>22. D — </strong>SIMD es típico de procesamiento vectorial y muchas cargas GPU.</p>
+<p><strong>23. A — </strong>MIMD es común en multiprocesadores y sistemas distribuidos.</p>
+<p><strong>24. B — </strong>MISD aparece mucho menos como arquitectura general que SISD/SIMD/MIMD.</p>
+<p><strong>25. C — </strong>La diferencia central es la topología/latencia de acceso a memoria.</p>
+<p><strong>26. D — </strong>Afinidad y localidad reducen accesos remotos costosos.</p>
+<p><strong>27. A — </strong>Mainframe y supercomputador optimizan perfiles de carga distintos.</p>
+<p><strong>28. A — </strong>La supercomputación se orienta a cálculo intensivo y paralelismo masivo.</p>
+<p><strong>29. A — </strong>El clúster coordina varios nodos mediante red y software.</p>
+<p><strong>30. C — </strong>Los clústeres se diseñan según objetivo: HPC, HA, balanceo, etc.</p>
+<p><strong>31. D — </strong>Grid coordina recursos distribuidos y autónomos; no es lo mismo que cloud.</p>
+<p><strong>32. A — </strong>Cada modelo resuelve organización y provisión de recursos de forma distinta.</p>
+<p><strong>33. D — </strong>Estado compartido introduce carreras y coherencia/sincronización.</p>
+<p><strong>34. C — </strong>Los nodos no comparten necesariamente un espacio físico de memoria.</p>
+<p><strong>35. D — </strong>El trabajo serial limita la aceleración total; por eso el escalado no es infinito.</p>
+<p><strong>36. B — </strong>FLOPS mide operaciones de coma flotante por segundo, aunque no sustituye benchmarks representativos.</p>
+<p><strong>37. C — </strong>La comparabilidad exige metodología y carga representativa.</p>
+<p><strong>38. B — </strong>HPC combina nodos, interconexión y middleware/software paralelo.</p>
+<p><strong>39. B — </strong>El perfil transaccional y de continuidad es típico de mainframe.</p>
+<p><strong>40. B — </strong>El overhead de comunicación/sincronización puede anular el beneficio del paralelismo.</p>
+<h1>3. Escalabilidad, disponibilidad y virtualización</h1>
+<p><strong>41. A — </strong>Scale up aumenta capacidad dentro de una máquina o instancia.</p>
+<p><strong>42. C — </strong>Scale out incrementa el número de unidades de cómputo.</p>
+<p><strong>43. C — </strong>Un sistema puede escalar y, sin embargo, no ajustar recursos elásticamente.</p>
+<p><strong>44. D — </strong>Son conceptos próximos, pero no equivalentes.</p>
+<p><strong>45. C — </strong>HA busca continuidad de servicio, no sustituye backup ni DR.</p>
+<p><strong>46. B — </strong>La tolerancia a fallos suele implicar continuidad más inmediata que un esquema de failover tradicional.</p>
+<p><strong>47. B — </strong>Eliminar SPOF requiere redundancia y diseño de dependencias.</p>
+<p><strong>48. C — </strong>RTO es tiempo; RPO se refiere a pérdida de datos tolerable.</p>
+<p><strong>49. B — </strong>RPO guía frecuencia/estrategia de replicación y copias.</p>
+<p><strong>50. D — </strong>Tipo 1 se asocia a bare metal; tipo 2 se ejecuta sobre un SO host.</p>
+<p><strong>51. B — </strong>Tipo 2 usa servicios del SO host.</p>
+<p><strong>52. A — </strong>La VM presenta hardware virtual y ejecuta un SO invitado.</p>
+<p><strong>53. D — </strong>Contenedores virtualizan a nivel de sistema operativo; VM a nivel de hardware.</p>
+<p><strong>54. B — </strong>Dimensionar debe basarse en demanda, picos y margen razonable.</p>
+<p><strong>55. C — </strong>CPU, RAM, E/S, red o dependencias pueden convertirse en cuellos de botella.</p>
+<p><strong>56. D — </strong>El estado local rígido dificulta repartir usuarios entre réplicas.</p>
+<p><strong>57. D — </strong>El balanceo ayuda a rendimiento y disponibilidad, pero no resuelve por sí solo todos los SPOF.</p>
+<p><strong>58. A — </strong>La redundancia no sirve si la conmutación no está probada o el estado no es coherente.</p>
+<p><strong>59. A — </strong>Replicación/HA puede propagar errores; backup ofrece puntos de recuperación.</p>
+<p><strong>60. A — </strong>La continuidad requiere capas: HA, protección de datos y DR.</p>
+<h1>4. Cloud: modelos, responsabilidades y decisión arquitectónica</h1>
+<p><strong>61. D — </strong>NIST define cinco características esenciales, entre ellas on-demand self-service.</p>
+<p><strong>62. D — </strong>El acceso de red amplio favorece clientes heterogéneos.</p>
+<p><strong>63. B — </strong>NIST asocia resource pooling con un modelo multi-tenant y asignación dinámica.</p>
+<p><strong>64. C — </strong>La medición de uso es una de las características esenciales NIST.</p>
+<p><strong>65. A — </strong>Elasticidad rápida permite crecer y decrecer según demanda.</p>
+<p><strong>66. D — </strong>IaaS deja al cliente más responsabilidad sobre SO, middleware y aplicaciones.</p>
+<p><strong>67. C — </strong>PaaS abstrae infraestructura y parte de la plataforma.</p>
+<p><strong>68. D — </strong>SaaS entrega funcionalidad de aplicación.</p>
+<p><strong>69. A — </strong>Pública se distingue de privada por ámbito de provisión, no por ausencia de seguridad.</p>
+<p><strong>70. A — </strong>Privada describe dedicación organizativa, no necesariamente ubicación on-premise.</p>
+<p><strong>71. B — </strong>Híbrida combina modelos de despliegue; multicloud se refiere a varios proveedores.</p>
+<p><strong>72. A — </strong>Multicloud no implica por sí mismo integración transparente ni parte privada.</p>
+<p><strong>73. B — </strong>La separación de zonas permite diseñar tolerancia a fallos locales.</p>
+<p><strong>74. B — </strong>Identidad y permisos son controles críticos en cloud.</p>
+<p><strong>75. D — </strong>El reparto cambia entre IaaS/PaaS/SaaS, pero el cliente nunca queda sin responsabilidades.</p>
+<p><strong>76. A — </strong>La reversibilidad debe considerarse antes de adoptar servicios propietarios.</p>
+<p><strong>77. C — </strong>TCO compara coste total, no una tarifa aislada.</p>
+<p><strong>78. C — </strong>La abstracción cambia responsabilidades; no elimina gestión.</p>
+<p><strong>79. C — </strong>La elasticidad permite adaptar coste/capacidad a la carga.</p>
+<p><strong>80. B — </strong>La reversibilidad debe diseñarse y probarse, no asumirse.</p>
+<h1>5. Sistemas operativos: procesos, hilos, planificación y concurrencia</h1>
+<p><strong>81. D — </strong>El SO gestiona procesos, memoria, E/S, ficheros, usuarios, protección y comunicaciones.</p>
+<p><strong>82. B — </strong>El proceso es una instancia de ejecución gestionada por el SO.</p>
+<p><strong>83. C — </strong>Los hilos comparten espacio de direcciones y otros recursos del proceso.</p>
+<p><strong>84. C — </strong>Compartir memoria hace los hilos ligeros pero exige sincronización.</p>
+<p><strong>85. A — </strong>Estados clásicos incluyen nuevo, preparado, ejecución, bloqueado/espera y terminado.</p>
+<p><strong>86. D — </strong>La planificación distribuye tiempo de CPU.</p>
+<p><strong>87. C — </strong>FCFS es simple, pero puede producir efecto convoy.</p>
+<p><strong>88. A — </strong>Round Robin es típico de tiempo compartido y usa quantum.</p>
+<p><strong>89. B — </strong>Starvation ocurre cuando una tarea espera indefinidamente por preferencia continua de otras.</p>
+<p><strong>90. D — </strong>SJF depende de estimar duración y puede perjudicar trabajos largos.</p>
+<p><strong>91. B — </strong>Context switching tiene coste y es parte de la multitarea.</p>
+<p><strong>92. C — </strong>Puede haber concurrencia en un solo núcleo mediante intercalado.</p>
+<p><strong>93. A — </strong>Las carreras se evitan con diseño y sincronización adecuados.</p>
+<p><strong>94. D — </strong>El mutex protege secciones críticas frente a acceso simultáneo incompatible.</p>
+<p><strong>95. B — </strong>Su contador representa unidades disponibles o eventos según diseño.</p>
+<p><strong>96. C — </strong>Monitor es un concepto de sincronización, no un dispositivo de visualización.</p>
+<p><strong>97. D — </strong>Las condiciones de Coffman incluyen exclusión mutua, retención y espera, no apropiación y espera circular.</p>
+<p><strong>98. B — </strong>Las aplicaciones usan syscalls para operaciones privilegiadas gestionadas por el SO.</p>
+<p><strong>99. A — </strong>La separación protege el sistema frente a fallos o acciones no autorizadas de aplicaciones.</p>
+<p><strong>100. A — </strong>Primero se debe identificar el recurso limitante: CPU, disco, red, bloqueo, etc.</p>
+<h1>6. Memoria, E/S, ficheros y estructuras de kernel</h1>
+<p><strong>101. D — </strong>Cada proceso trabaja con direcciones virtuales que el sistema traduce y protege.</p>
+<p><strong>102. D — </strong>La traducción permite aislamiento y gestión flexible de memoria.</p>
+<p><strong>103. A — </strong>Paginación usa unidades de tamaño fijo para mapear memoria virtual y física.</p>
+<p><strong>104. A — </strong>Paginación y segmentación son técnicas distintas de gestión de memoria.</p>
+<p><strong>105. C — </strong>La TLB es una caché de traducciones de memoria.</p>
+<p><strong>106. B — </strong>Muchos page faults son parte normal de la memoria virtual; algunos implican traer datos desde almacenamiento.</p>
+<p><strong>107. B — </strong>Thrashing ocurre cuando la presión de memoria provoca paginación intensa.</p>
+<p><strong>108. A — </strong>FIFO, LRU/aproximaciones y otros algoritmos gestionan sustitución de páginas.</p>
+<p><strong>109. C — </strong>LRU se basa en la hipótesis de que uso reciente predice reutilización.</p>
+<p><strong>110. D — </strong>Las interrupciones permiten reaccionar a dispositivos sin sondeo constante.</p>
+<p><strong>111. C — </strong>Cada técnica tiene costes; muchos dispositivos usan interrupciones para evitar sondeo continuo.</p>
+<p><strong>112. D — </strong>Driver y firmware no son sinónimos: el driver corre en el sistema y controla el dispositivo.</p>
+<p><strong>113. C — </strong>Es una clasificación clásica de interfaces de E/S.</p>
+<p><strong>114. C — </strong>Journaling mejora recuperación del sistema de archivos, pero no sustituye backup.</p>
+<p><strong>115. B — </strong>ACL permite permisos más expresivos que modelos simples propietario/grupo/otros.</p>
+<p><strong>116. A — </strong>El modelo clásico usa r/w/x para propietario, grupo y otros.</p>
+<p><strong>117. B — </strong>Linux suele describirse como monolítico modular; los diseños reales pueden combinar técnicas.</p>
+<p><strong>118. B — </strong>El microkernel reduce funciones privilegiadas, a costa de más comunicación entre componentes.</p>
+<p><strong>119. A — </strong>Los SO reales mezclan ideas monolíticas, microkernel y módulos.</p>
+<p><strong>120. D — </strong>La mejora debe dirigirse al recurso saturado, no al componente más visible.</p>
+<h1>7. Windows, Linux y Unix: administración y seguridad</h1>
+<p><strong>121. C — </strong>Windows moderno se basa en la línea NT.</p>
+<p><strong>122. B — </strong>Los servicios proporcionan funciones persistentes sin interfaz interactiva obligatoria.</p>
+<p><strong>123. A — </strong>El Registro es un almacén de configuración, no un sistema de archivos completo.</p>
+<p><strong>124. D — </strong>Los logs son esenciales para diagnóstico, seguridad y trazabilidad.</p>
+<p><strong>125. D — </strong>PowerShell permite administrar y automatizar Windows y otros entornos.</p>
+<p><strong>126. A — </strong>AD centraliza identidades, autenticación y políticas, pero es distinto del SO cliente/servidor.</p>
+<p><strong>127. B — </strong>NTFS es el sistema de archivos corporativo habitual de Windows.</p>
+<p><strong>128. C — </strong>Linux es el kernel; Ubuntu, Debian, RHEL y otras son distribuciones.</p>
+<p><strong>129. D — </strong>Las distribuciones empaquetan componentes y ciclo de vida.</p>
+<p><strong>130. B — </strong>Daemon es funcionalmente comparable a muchos servicios de Windows, aunque la implementación difiere.</p>
+<p><strong>131. A — </strong>systemd actúa como init y gestor de servicios en muchas distribuciones.</p>
+<p><strong>132. B — </strong>/proc expone información dinámica del kernel/procesos.</p>
+<p><strong>133. C — </strong>/sys expone objetos del kernel y dispositivos.</p>
+<p><strong>134. D — </strong>sudo facilita elevación controlada y auditable, preferible a compartir credenciales root.</p>
+<p><strong>135. B — </strong>Hardening básico es transversal a plataformas.</p>
+<p><strong>136. D — </strong>Hardening busca disminuir exposición y privilegios.</p>
+<p><strong>137. C — </strong>Los gestores de paquetes resuelven instalación y dependencias a partir de repositorios.</p>
+<p><strong>138. A — </strong>Linux sigue principios Unix, aunque no es simplemente “Unix comercial”.</p>
+<p><strong>139. C — </strong>APFS es el sistema de archivos moderno principal de Apple para macOS y otros dispositivos.</p>
+<p><strong>140. A — </strong>La plataforma debe justificarse por requisitos y operación, no por afinidad personal.</p>
+<h1>8. Sistemas móviles y casos integradores de plataforma</h1>
+<p><strong>141. A — </strong>Android usa el kernel Linux con una plataforma y framework propios.</p>
+<p><strong>142. D — </strong>AOSP documenta un sandbox basado en UID y mecanismos de seguridad Linux.</p>
+<p><strong>143. D — </strong>Mínimo privilegio y transparencia reducen exposición de datos y sensores.</p>
+<p><strong>144. C — </strong>iOS deriva de Darwin y usa el kernel XNU.</p>
+<p><strong>145. B — </strong>Apple Platform Security destaca firma, validación e aislamiento de apps.</p>
+<p><strong>146. B — </strong>Mobile Device Management centraliza control de flotas corporativas.</p>
+<p><strong>147. C — </strong>La terminología evoluciona, pero UEM extiende gestión más allá del móvil.</p>
+<p><strong>148. B — </strong>Cifrado es una capa importante, pero no resuelve todos los riesgos.</p>
+<p><strong>149. A — </strong>La capacidad de parcheo y ciclo de soporte es un criterio de gestión de flota.</p>
+<p><strong>150. B — </strong>Identidad y permisos son controles diferentes.</p>
+<p><strong>151. C — </strong>BYOD requiere segmentación de datos, condiciones y controles de gestión adecuados.</p>
+<p><strong>152. B — </strong>La separación facilita mínimo privilegio, borrado selectivo y gobierno.</p>
+<p><strong>153. A — </strong>Los permisos deben ser proporcionales y comprensibles.</p>
+<p><strong>154. A — </strong>La abstracción por contratos facilita portabilidad e interoperabilidad.</p>
+<p><strong>155. D — </strong>El caso combina escalabilidad, estado, balanceo y disponibilidad.</p>
+<p><strong>156. D — </strong>La gestión corporativa debe contemplar alta, operación y retirada segura.</p>
+<p><strong>157. A — </strong>Observabilidad comparable permite operar plataformas heterogéneas con criterios comunes.</p>
+<p><strong>158. D — </strong>No todas las capas tienen el mismo patrón de rendimiento o continuidad.</p>
+<p><strong>159. C — </strong>La elección de plataforma es multicriterio y debe justificar trade-offs.</p>
+<p><strong>160. C — </strong>La solución integra II.01 y II.02: hardware, cloud, SO, seguridad, operación y continuidad.</p>
+<h1>Mapa mental de alto rendimiento</h1>
+<ul>
+<li>Computador: CPU + memoria + E/S + almacenamiento + interconexión. Socket ≠ núcleo ≠ hilo hardware.</li>
+<li>Memoria: registros/caché/RAM/almacenamiento. Localidad y latencia importan; capacidad ≠ rendimiento.</li>
+<li>Flynn: SISD / SIMD / MISD / MIMD. UMA ≠ NUMA. Mainframe ≠ supercomputador. Clúster ≠ grid ≠ cloud.</li>
+<li>Escalado: scale up = más recursos por nodo; scale out = más nodos. Escalabilidad ≠ elasticidad ≠ HA.</li>
+<li>Continuidad: SPOF, failover, RTO, RPO, backups y DR son piezas distintas y complementarias.</li>
+<li>Virtualización: hipervisor tipo 1 vs tipo 2; VM incluye SO invitado; contenedor comparte kernel del host.</li>
+<li>NIST cloud: autoservicio, acceso de red, pooling, elasticidad rápida y servicio medido; IaaS/PaaS/SaaS y despliegues.</li>
+<li>SO: proceso ≠ hilo; concurrencia ≠ paralelismo; user mode ≠ kernel mode; syscall = petición al kernel.</li>
+<li>Concurrencia: mutex/semaphore/monitor; carrera ≠ deadlock; Coffman incluye espera circular.</li>
+<li>Memoria: virtual ≠ física; paginación ≠ segmentación; MMU/TLB; page fault; thrashing.</li>
+<li>E/S: driver ≠ firmware; interrupción ≠ polling; DMA reduce intervención de CPU; block ≠ character device.</li>
+<li>Windows: NT, servicios, Registro, Event Log, NTFS, PowerShell, AD como directorio. Linux: kernel + distribución, daemon/systemd, /proc, /sys, rwx/sudo.</li>
+<li>Móvil: Android usa kernel Linux y sandbox por UID; iOS usa Darwin/XNU con firma y sandbox; MDM/UEM gobierna flotas.</li>
+</ul>
+<h1>Trampas que deben quedar eliminadas</h1>
+<ul>
+<li>CPU ≠ socket ≠ núcleo ≠ hilo.</li>
+<li>Throughput ≠ latencia.</li>
+<li>SIMD ≠ MIMD.</li>
+<li>UMA ≠ NUMA.</li>
+<li>Mainframe ≠ supercomputador.</li>
+<li>Clúster ≠ grid ≠ cloud.</li>
+<li>Scale up ≠ scale out.</li>
+<li>Escalabilidad ≠ elasticidad.</li>
+<li>HA ≠ backup ≠ DR.</li>
+<li>RTO ≠ RPO.</li>
+<li>Tipo 1 ≠ tipo 2.</li>
+<li>VM ≠ contenedor.</li>
+<li>IaaS ≠ PaaS ≠ SaaS.</li>
+<li>Nube híbrida ≠ multicloud.</li>
+<li>Proceso ≠ hilo.</li>
+<li>Concurrencia ≠ paralelismo.</li>
+<li>Mutex ≠ semáforo.</li>
+<li>Carrera ≠ deadlock.</li>
+<li>Modo usuario ≠ kernel.</li>
+<li>Memoria virtual ≠ RAM.</li>
+<li>Paginación ≠ segmentación.</li>
+<li>Driver ≠ firmware.</li>
+<li>Journaling ≠ backup.</li>
+<li>Windows ≠ Active Directory.</li>
+<li>Linux kernel ≠ distribución.</li>
+<li>Servicio Windows ≈ daemon en función, no en implementación.</li>
+<li>MDM/EMM/UEM ≠ sistema operativo móvil.</li>
+</ul>
+<h1>Checklist de decisión en supuesto</h1>
+<ul>
+<li>1) Caracteriza carga: CPU, memoria, E/S, red, latencia, picos, datos y usuarios.</li>
+<li>2) Elige arquitectura: nodo único, escala vertical/horizontal, HPC/aceleradores o cloud según perfil.</li>
+<li>3) Elimina SPOF y define HA, backup, RTO/RPO y DR.</li>
+<li>4) Justifica SO/plataforma por compatibilidad, soporte, hardening, automatización y competencias.</li>
+<li>5) Diseña identidad, mínimo privilegio, logging, parcheo y observabilidad.</li>
+<li>6) Para móviles, añade UEM/MDM, separación de datos, permisos, cifrado y ciclo de vida.</li>
+<li>7) Compara TCO y reversibilidad: migración, operación, dependencia y salida.</li>
+</ul></main></body></html>

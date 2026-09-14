@@ -4,11 +4,11 @@ import {
   calculateStatistics,
   createAnalyticsStore,
   normaliseAnalyticsStore,
-} from "./analytics-engine.js";
-import { getConfiguredPersistenceAdapter } from "./persistence-v2.js?m3";
+} from "./analytics-engine.js?gsi2";
+import { getConfiguredPersistenceAdapter } from "./persistence-v2.js?gsi2";
 
-export const ANALYTICS_REAL_KEY = "tai.analytics.real.v1";
-export const ANALYTICS_DEMO_KEY = "tai.analytics.demo.v1";
+export const ANALYTICS_REAL_KEY = "gsi.analytics.real.v1";
+export const ANALYTICS_DEMO_KEY = "gsi.analytics.demo.v1";
 
 function browserStorage() {
   return getConfiguredPersistenceAdapter();

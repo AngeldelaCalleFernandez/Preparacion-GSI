@@ -1,4 +1,4 @@
-import { selectRuntimeContext, validateLegacySyllabusCompatibility } from "./catalog-service.js?m2";
+import { selectRuntimeContext, validateLegacySyllabusCompatibility } from "./catalog-service.js?gsi2";
 
 const CATALOG_FILES = Object.freeze({
   oppositions: "./data/oppositions.json",
@@ -38,6 +38,16 @@ function assertCollection(collection, expectedType, filename) {
   }
   if (collection.metadata.dataset_type !== expectedType) {
     throw new Error(`${filename} declara dataset_type=${collection.metadata.dataset_type ?? "ausente"}.`);
+  }
+}
+
+function assertGsiQuestions(data) {
+  const topics = new Map(data.syllabus.blocks.flatMap((block) => block.topics.map((topic) => [topic.id, block.id])));
+  const ids = new Set();
+  for (const name of ["official", "ai", "manual"]) for (const q of data[name].questions) {
+    if (ids.has(q.id) || q.opposition_id !== "OPP-GSI" || topics.get(q.topic_id) !== q.block_id || q.options?.length !== 4 || new Set(q.options.map((o) => o.id)).size !== 4 || !q.options.some((o) => o.id === q.correct_option) || !q.provenance?.locator || !q.feedback?.correct) throw new Error(`Pregunta GSI inválida: ${q.id || "sin identificador"}.`);
+    if (q.origin === "ai" && q.validation_status !== "validated" && q.is_active) throw new Error(`La pregunta generada ${q.id} requiere revisión antes de activarse.`);
+    ids.add(q.id);
   }
 }
 
@@ -123,7 +133,7 @@ function combineQuestions(data, demoEnabled) {
 }
 
 export function isDemoMode() {
-  return new URLSearchParams(window.location.search).get("demo") === "1";
+  return false;
 }
 
 export async function loadAppData() {
@@ -146,6 +156,7 @@ export async function loadAppData() {
   }
   validateLegacySyllabusCompatibility(runtimeContext, data.syllabus);
   assertDataShape(data);
+  assertGsiQuestions(data);
   return {
     ...data,
     demoEnabled,

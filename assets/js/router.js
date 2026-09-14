@@ -1,4 +1,4 @@
-export const VALID_ROUTES = new Set(["inicio", "temario", "entrenamiento", "examen", "refuerzo", "estadisticas"]);
+export const VALID_ROUTES = new Set(["inicio", "temario", "entrenamiento", "examen", "practica", "refuerzo", "estadisticas"]);
 
 const TOPIC_ID_RE = /^B[1-4]-T\d{2}$/;
 const QUALIFIED_TOPIC_ID_RE = /^[A-Z][A-Z0-9-]*-B[1-4]-T\d{2}$/;
@@ -40,8 +40,8 @@ export function renderRoute(route, shouldFocus = false, root = document, routeSt
     }
   }
   if (root === document) {
-    document.title = `${resolvedRoute[0].toUpperCase()}${resolvedRoute.slice(1)} · TAI`;
-    window.dispatchEvent(new CustomEvent("tai:routechange", { detail: routeState || { route: resolvedRoute, topicId: null, sectionId: null, error: null } }));
+    document.title = `${resolvedRoute[0].toUpperCase()}${resolvedRoute.slice(1)} · GSI A2`;
+    window.dispatchEvent(new CustomEvent("gsi:routechange", { detail: routeState || { route: resolvedRoute, topicId: null, sectionId: null, error: null } }));
   }
   if (shouldFocus) {
     root.querySelector("#main-content")?.focus();

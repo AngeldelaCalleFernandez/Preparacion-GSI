@@ -1,9 +1,9 @@
-import { describeQuestionSource } from "./data-service.js";
+import { describeQuestionSource } from "./data-service.js?gsi2";
 import {
   createQuestionReference,
   getTemporalState,
   selectReinforcementQuestions,
-} from "./reinforcement-engine.js";
+} from "./reinforcement-engine.js?gsi2";
 import {
   applyStoredReinforcementEvents,
   clearAllReinforcement,
@@ -14,15 +14,15 @@ import {
   getReinforcementSummary,
   loadReinforcementStore,
   saveReinforcementSession,
-} from "./reinforcement-storage.js?m3";
+} from "./reinforcement-storage.js?gsi2";
 import {
   createAnalyticsAnnotationEvent,
   createAnalyticsAttemptEvent,
   createAnalyticsSession,
   createAnalyticsSessionEvent,
-} from "./analytics-events.js";
-import { applyStoredAnalyticsEvents } from "./analytics-storage.js?m3";
-import { createElement, setStatus } from "./ui.js";
+} from "./analytics-events.js?gsi2";
+import { applyStoredAnalyticsEvents } from "./analytics-storage.js?gsi2";
+import { createElement, setStatus } from "./ui.js?gsi2";
 
 function originLabel(origin) {
   return { official: "Oficial", ai: "IA", manual: "Manual", adapted: "Adaptada" }[origin] || origin;
@@ -119,7 +119,7 @@ export function initReinforcement(data) {
   let pendingRecovery = null;
 
   if (data.demoEnabled) storeSelect.add(new Option("Refuerzo demo (ficticio)", "demo"));
-  else demoSummaryNode.textContent = "El refuerzo demo está aislado. Ábrelo con ?demo=1 para consultarlo o eliminarlo.";
+  else demoSummaryNode.hidden = true;
 
   function isDemoStore() {
     return storeSelect.value === "demo" && data.demoEnabled;

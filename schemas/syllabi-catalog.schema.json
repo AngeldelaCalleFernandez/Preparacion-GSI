@@ -2,20 +2,39 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema_version", "catalog_version", "runtime_source", "syllabi"],
+  "required": [
+    "schema_version",
+    "catalog_version",
+    "runtime_source",
+    "syllabi"
+  ],
   "properties": {
-    "schema_version": {"$ref": "#/$defs/version"},
-    "catalog_version": {"$ref": "#/$defs/version"},
-    "runtime_source": {"$ref": "#/$defs/runtime_source"},
+    "schema_version": {
+      "$ref": "#/$defs/version"
+    },
+    "catalog_version": {
+      "$ref": "#/$defs/version"
+    },
+    "runtime_source": {
+      "$ref": "#/$defs/runtime_source"
+    },
     "syllabi": {
       "type": "array",
       "minItems": 1,
-      "items": {"$ref": "#/$defs/syllabus"}
+      "items": {
+        "$ref": "#/$defs/syllabus"
+      }
     }
   },
   "$defs": {
-    "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
-    "non_empty": {"type": "string", "minLength": 1},
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "non_empty": {
+      "type": "string",
+      "minLength": 1
+    },
     "relative_path": {
       "type": "string",
       "minLength": 1,
@@ -24,141 +43,371 @@
     "runtime_source": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["path", "status", "catalog_is_runtime_source"],
+      "required": [
+        "path",
+        "status",
+        "catalog_is_runtime_source"
+      ],
       "properties": {
-        "path": {"$ref": "#/$defs/relative_path"},
-        "status": {"const": "legacy-operational"},
-        "catalog_is_runtime_source": {"const": false}
+        "path": {
+          "$ref": "#/$defs/relative_path"
+        },
+        "status": {
+          "enum": [
+            "legacy-operational",
+            "catalog-operational"
+          ]
+        },
+        "catalog_is_runtime_source": {
+          "const": false
+        }
       }
     },
     "identifier_policy": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["operational_id_kind", "canonical_ids_status"],
+      "required": [
+        "operational_id_kind",
+        "canonical_ids_status"
+      ],
       "properties": {
-        "operational_id_kind": {"enum": ["legacy", "canonical", "none"]},
-        "canonical_ids_status": {"enum": ["informational", "operational", "not-assigned"]}
+        "operational_id_kind": {
+          "enum": [
+            "legacy",
+            "canonical",
+            "none"
+          ]
+        },
+        "canonical_ids_status": {
+          "enum": [
+            "informational",
+            "operational",
+            "not-assigned"
+          ]
+        }
       }
     },
     "program_version": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["convocation", "official_program_date", "legacy_data_version"],
+      "required": [
+        "convocation",
+        "official_program_date",
+        "legacy_data_version"
+      ],
       "properties": {
-        "convocation": {"$ref": "#/$defs/non_empty"},
-        "official_program_date": {"type": "string", "format": "date"},
-        "legacy_data_version": {"type": ["string", "null"], "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"}
+        "convocation": {
+          "$ref": "#/$defs/non_empty"
+        },
+        "official_program_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "legacy_data_version": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+        }
       }
     },
     "provenance": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["official", "source_id", "document_id", "document_path", "locator"],
+      "required": [
+        "official",
+        "source_id",
+        "document_id",
+        "document_path",
+        "locator"
+      ],
       "properties": {
-        "official": {"type": "boolean"},
-        "source_id": {"type": "string", "pattern": "^SRC-[A-Z0-9-]+$"},
-        "document_id": {"type": "string", "pattern": "^DOC-[A-Z0-9-]+$"},
-        "document_path": {"$ref": "#/$defs/relative_path"},
-        "locator": {"$ref": "#/$defs/non_empty"}
+        "official": {
+          "type": "boolean"
+        },
+        "source_id": {
+          "type": "string",
+          "pattern": "^SRC-[A-Z0-9-]+$"
+        },
+        "document_id": {
+          "type": "string",
+          "pattern": "^DOC-[A-Z0-9-]+$"
+        },
+        "document_path": {
+          "$ref": "#/$defs/relative_path"
+        },
+        "locator": {
+          "$ref": "#/$defs/non_empty"
+        }
       }
     },
     "declared_structure": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["block_count", "topic_count", "distribution", "topics_extracted"],
+      "required": [
+        "block_count",
+        "topic_count",
+        "distribution",
+        "topics_extracted"
+      ],
       "properties": {
-        "block_count": {"type": "integer", "minimum": 0},
-        "topic_count": {"type": "integer", "minimum": 0},
+        "block_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "topic_count": {
+          "type": "integer",
+          "minimum": 0
+        },
         "distribution": {
           "type": "array",
-          "items": {"type": "integer", "minimum": 0}
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          }
         },
-        "topics_extracted": {"type": "boolean"}
+        "topics_extracted": {
+          "type": "boolean"
+        }
       }
     },
     "aliases": {
       "type": "array",
       "uniqueItems": true,
-      "items": {"$ref": "#/$defs/non_empty"}
+      "items": {
+        "$ref": "#/$defs/non_empty"
+      }
     },
     "topic": {
       "type": "object",
       "additionalProperties": false,
       "required": [
-        "legacy_id", "canonical_id", "local_official_code", "order", "title",
-        "legacy_status", "legacy_content_path", "legacy_generated_path", "historical_aliases"
+        "legacy_id",
+        "canonical_id",
+        "local_official_code",
+        "order",
+        "title",
+        "legacy_status",
+        "legacy_content_path",
+        "legacy_generated_path",
+        "historical_aliases"
       ],
       "properties": {
-        "legacy_id": {"type": "string", "pattern": "^B[0-9]+-T[0-9]{2}$"},
-        "canonical_id": {"type": "string", "pattern": "^[A-Z][A-Z0-9-]*-B[0-9]+-T[0-9]{2}$"},
-        "local_official_code": {"$ref": "#/$defs/non_empty"},
-        "order": {"type": "integer", "minimum": 1},
-        "title": {"$ref": "#/$defs/non_empty"},
-        "legacy_status": {"enum": ["active", "inactive"]},
-        "legacy_content_path": {"$ref": "#/$defs/relative_path"},
-        "legacy_generated_path": {"$ref": "#/$defs/relative_path"},
-        "historical_aliases": {"$ref": "#/$defs/aliases"}
+        "legacy_id": {
+          "type": "string",
+          "pattern": "^B[0-9]+-T[0-9]{2}$"
+        },
+        "canonical_id": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9-]*-B[0-9]+-T[0-9]{2}$"
+        },
+        "local_official_code": {
+          "$ref": "#/$defs/non_empty"
+        },
+        "order": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "title": {
+          "$ref": "#/$defs/non_empty"
+        },
+        "legacy_status": {
+          "enum": [
+            "active",
+            "inactive"
+          ]
+        },
+        "legacy_content_path": {
+          "$ref": "#/$defs/relative_path"
+        },
+        "legacy_generated_path": {
+          "$ref": "#/$defs/relative_path"
+        },
+        "historical_aliases": {
+          "$ref": "#/$defs/aliases"
+        }
       }
     },
     "block": {
       "type": "object",
       "additionalProperties": false,
       "required": [
-        "legacy_id", "canonical_id", "local_official_code", "order", "title",
-        "legacy_status", "historical_aliases", "topics"
+        "legacy_id",
+        "canonical_id",
+        "local_official_code",
+        "order",
+        "title",
+        "legacy_status",
+        "historical_aliases",
+        "topics"
       ],
       "properties": {
-        "legacy_id": {"type": "string", "pattern": "^B[0-9]+$"},
-        "canonical_id": {"type": "string", "pattern": "^[A-Z][A-Z0-9-]*-B[0-9]+$"},
-        "local_official_code": {"$ref": "#/$defs/non_empty"},
-        "order": {"type": "integer", "minimum": 1},
-        "title": {"$ref": "#/$defs/non_empty"},
-        "legacy_status": {"enum": ["active", "inactive"]},
-        "historical_aliases": {"$ref": "#/$defs/aliases"},
-        "topics": {"type": "array", "items": {"$ref": "#/$defs/topic"}}
+        "legacy_id": {
+          "type": "string",
+          "pattern": "^B[0-9]+$"
+        },
+        "canonical_id": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9-]*-B[0-9]+$"
+        },
+        "local_official_code": {
+          "$ref": "#/$defs/non_empty"
+        },
+        "order": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "title": {
+          "$ref": "#/$defs/non_empty"
+        },
+        "legacy_status": {
+          "enum": [
+            "active",
+            "inactive"
+          ]
+        },
+        "historical_aliases": {
+          "$ref": "#/$defs/aliases"
+        },
+        "topics": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/topic"
+          }
+        }
       }
     },
     "syllabus": {
       "type": "object",
       "additionalProperties": false,
       "required": [
-        "id", "opposition_id", "name", "status", "runtime_available",
-        "identifier_policy", "program_version", "provenance", "declared_structure",
-        "legacy_source_path", "blocks"
+        "id",
+        "opposition_id",
+        "name",
+        "status",
+        "runtime_available",
+        "identifier_policy",
+        "program_version",
+        "provenance",
+        "declared_structure",
+        "legacy_source_path",
+        "blocks"
       ],
       "properties": {
-        "id": {"type": "string", "pattern": "^SYL-[A-Z0-9-]+$"},
-        "opposition_id": {"type": "string", "pattern": "^OPP-[A-Z][A-Z0-9-]*$"},
-        "name": {"$ref": "#/$defs/non_empty"},
-        "status": {"enum": ["legacy-operational", "catalog-operational", "planned", "retired"]},
-        "runtime_available": {"type": "boolean"},
-        "identifier_policy": {"$ref": "#/$defs/identifier_policy"},
-        "program_version": {"$ref": "#/$defs/program_version"},
-        "provenance": {"$ref": "#/$defs/provenance"},
-        "declared_structure": {"$ref": "#/$defs/declared_structure"},
-        "legacy_source_path": {"anyOf": [{"$ref": "#/$defs/relative_path"}, {"type": "null"}]},
-        "blocks": {"type": "array", "items": {"$ref": "#/$defs/block"}}
+        "id": {
+          "type": "string",
+          "pattern": "^SYL-[A-Z0-9-]+$"
+        },
+        "opposition_id": {
+          "type": "string",
+          "pattern": "^OPP-[A-Z][A-Z0-9-]*$"
+        },
+        "name": {
+          "$ref": "#/$defs/non_empty"
+        },
+        "status": {
+          "enum": [
+            "legacy-operational",
+            "catalog-operational",
+            "planned",
+            "retired"
+          ]
+        },
+        "runtime_available": {
+          "type": "boolean"
+        },
+        "identifier_policy": {
+          "$ref": "#/$defs/identifier_policy"
+        },
+        "program_version": {
+          "$ref": "#/$defs/program_version"
+        },
+        "provenance": {
+          "$ref": "#/$defs/provenance"
+        },
+        "declared_structure": {
+          "$ref": "#/$defs/declared_structure"
+        },
+        "legacy_source_path": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/relative_path"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "blocks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/block"
+          }
+        }
       },
       "allOf": [
         {
-          "if": {"properties": {"status": {"const": "planned"}}, "required": ["status"]},
+          "if": {
+            "properties": {
+              "status": {
+                "const": "planned"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
           "then": {
             "properties": {
-              "runtime_available": {"const": false},
-              "legacy_source_path": {"type": "null"},
-              "blocks": {"maxItems": 0},
-              "declared_structure": {"properties": {"topics_extracted": {"const": false}}}
+              "runtime_available": {
+                "const": false
+              },
+              "legacy_source_path": {
+                "type": "null"
+              },
+              "blocks": {
+                "maxItems": 0
+              },
+              "declared_structure": {
+                "properties": {
+                  "topics_extracted": {
+                    "const": false
+                  }
+                }
+              }
             }
           }
         },
         {
-          "if": {"properties": {"status": {"const": "legacy-operational"}}, "required": ["status"]},
+          "if": {
+            "properties": {
+              "status": {
+                "const": "legacy-operational"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
           "then": {
             "properties": {
-              "runtime_available": {"const": true},
-              "legacy_source_path": {"$ref": "#/$defs/relative_path"},
-              "blocks": {"minItems": 1},
-              "declared_structure": {"properties": {"topics_extracted": {"const": true}}}
+              "runtime_available": {
+                "const": true
+              },
+              "legacy_source_path": {
+                "$ref": "#/$defs/relative_path"
+              },
+              "blocks": {
+                "minItems": 1
+              },
+              "declared_structure": {
+                "properties": {
+                  "topics_extracted": {
+                    "const": true
+                  }
+                }
+              }
             }
           }
         }

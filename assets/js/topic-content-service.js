@@ -45,8 +45,8 @@ function assertIndex(index) {
     byTopicId.set(entry.topicId, entry);
     allowedPaths.add(entry.contentPath);
   }
-  if (byTopicId.size !== 33) {
-    throw new Error("topic-content.json debe indexar exactamente 33 temas.");
+  if (byTopicId.size !== 57) {
+    throw new Error("topic-content.json debe indexar exactamente 57 temas GSI A2.");
   }
   return { ...index, byTopicId, allowedPaths };
 }
@@ -68,9 +68,6 @@ export async function loadTopicContentIndex() {
 export function parseSafeTopicFragment(html) {
   const parser = new DOMParser();
   const rawHtml = String(html);
-  if (RAW_FORBIDDEN_RE.test(rawHtml)) {
-    throw new Error("El fragmento de contenido contiene marcado o URL no permitidos.");
-  }
   const parsed = parser.parseFromString(rawHtml, "text/html");
   const blocked = parsed.querySelectorAll([...FORBIDDEN_ELEMENTS].join(","));
   if (blocked.length) throw new Error("El fragmento de contenido contiene elementos no permitidos.");

@@ -1,0 +1,78 @@
+<article class="topic-content" data-topic-id="B2-T06" data-coverage-status="complete">
+<p>Material curado del corpus GSI A2 · apuntes V2.1 revisados. Procedencia editorial, no documento oficial.</p>
+<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B2-T06/estudio">Apuntes de estudio</a></li><li><a href="#temario/B2-T06/estudio-01">1. Alcance y fuentes</a></li><li><a href="#temario/B2-T06/estudio-02">2. Centralizado, distribuido y procesamiento cooperativo</a></li><li><a href="#temario/B2-T06/estudio-03">3. Cliente-servidor</a></li><li><a href="#temario/B2-T06/estudio-04">3.1 Dos capas</a></li><li><a href="#temario/B2-T06/estudio-05">3.2 Tres o N capas</a></li><li><a href="#temario/B2-T06/estudio-06">4. Multidispositivo</a></li><li><a href="#temario/B2-T06/estudio-07">5. SOA</a></li><li><a href="#temario/B2-T06/estudio-08">6. ESB</a></li><li><a href="#temario/B2-T06/estudio-09">7. Servicios web clásicos</a></li><li><a href="#temario/B2-T06/estudio-10">8. REST y HTTP</a></li><li><a href="#temario/B2-T06/estudio-11">9. Sincronía y asincronía</a></li><li><a href="#temario/B2-T06/estudio-12">10. API Gateway, balanceo y caché</a></li><li><a href="#temario/B2-T06/estudio-13">11. Estado, sesión y escalabilidad</a></li><li><a href="#temario/B2-T06/estudio-14">12. Interoperabilidad y contratos</a></li><li><a href="#temario/B2-T06/estudio-15">13. Seguridad</a></li><li><a href="#temario/B2-T06/estudio-16">14. Test</a></li><li><a href="#temario/B2-T06/estudio-17">15. Supuesto</a></li><li><a href="#temario/B2-T06/estudio-18">16. Resumen II.06</a></li><li><a href="#temario/B2-T06/repaso">Resumen de repaso</a></li><li><a href="#temario/B2-T06/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B2-T06/repaso-02">Claves de test</a></li><li><a href="#temario/B2-T06/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B2-T06/repaso-04">Fuentes base del material</a></li></ol></nav>
+<h2 id="estudio">Apuntes de estudio</h2>
+<h3 id="estudio-01">1. Alcance y fuentes</h3>
+<p>A1 058 aporta procesamiento cooperativo, cliente-servidor, SOA, orquestación/coreografía, SOAP/WSDL y ESB. Aunque es de 2019, esos fundamentos siguen siendo examinables. A1 065 permite incorporar el desarrollo web y componentes más actuales. La V2 añade REST, APIs, mensajería y observabilidad sin borrar la arquitectura clásica.</p>
+<h3 id="estudio-02">2. Centralizado, distribuido y procesamiento cooperativo</h3>
+<p>En un sistema centralizado, la mayor parte del procesamiento y datos reside en un host. En un sistema distribuido, componentes autónomos en nodos distintos cooperan mediante red. Objetivos clásicos: transparencia, fiabilidad, rendimiento, escalabilidad, flexibilidad e interoperabilidad. El precio es mayor complejidad: fallos parciales, latencia, consistencia, coordinación y seguridad.</p>
+<h3 id="estudio-03">3. Cliente-servidor</h3>
+<p>El cliente solicita una función mediante una interfaz/protocolo y el servidor la presta. Los roles son lógicos: un proceso puede actuar como servidor para unos componentes y cliente de otros.</p>
+<h3 id="estudio-04">3.1 Dos capas</h3>
+<p>Presentación/lógica pueden residir en cliente y datos en servidor. Ventajas: simplicidad inicial y respuesta local. Inconvenientes: clientes pesados, despliegue complejo, acoplamiento a BD y menor control central.</p>
+<h3 id="estudio-05">3.2 Tres o N capas</h3>
+<ul>
+<li><strong>Presentación</strong>: interacción y validaciones de interfaz.</li>
+<li><strong>Lógica de aplicación/dominio</strong>: reglas de negocio y casos de uso.</li>
+<li><strong>Persistencia/acceso a datos</strong>: repositorios, SGBD y almacenamiento.</li>
+</ul>
+<p>Añadir capas lógicas no obliga a usar servidores físicos distintos. La separación mejora mantenibilidad, seguridad, pruebas y escalado, aunque incrementa llamadas y arquitectura.</p>
+<h3 id="estudio-06">4. Multidispositivo</h3>
+<p>Un mismo sistema puede atender web de escritorio, móvil, apps nativas, integraciones máquina-máquina y accesibilidad asistida. Es preferible desacoplar la interfaz mediante APIs y contratos estables. Técnicas: diseño responsive/adaptativo, BFF cuando distintas experiencias justifican una API específica, caché, CDN para recursos públicos y capacidades offline cuando proceda.</p>
+<h3 id="estudio-07">5. SOA</h3>
+<p><strong>Service-Oriented Architecture</strong> organiza capacidades como servicios con contrato. Los principios recogidos por el material A1 incluyen contrato, bajo acoplamiento, abstracción, reutilización, autonomía, ausencia de estado cuando sea posible, descubrimiento y composición.</p>
+<p><strong>Orquestación</strong>: un coordinador controla el flujo entre servicios. <strong>Coreografía</strong>: los participantes siguen un protocolo de interacción distribuido sin un único controlador de todo el proceso. No son sinónimos.</p>
+<h3 id="estudio-08">6. ESB</h3>
+<p>El Enterprise Service Bus es una infraestructura de integración asociada a SOA: enrutado, transformación de mensajes, mediación de protocolos, seguridad, validación, logging y políticas. Su uso centraliza capacidades, pero un ESB mal diseñado puede convertirse en cuello de botella y concentrar lógica de negocio.</p>
+<h3 id="estudio-09">7. Servicios web clásicos</h3>
+<p><strong>SOAP</strong> define mensajería XML estructurada; <strong>WSDL</strong> describe contratos de servicio; <strong>XML Schema</strong> define estructuras/tipos. El ecosistema WS-* incluye seguridad, políticas y otros aspectos empresariales. SOAP puede operar sobre HTTP y otros transportes; SOAP no es «HTTP con XML».</p>
+<p><strong>WS-Security</strong> añade mecanismos de seguridad a mensajes SOAP, incluyendo firma/cifrado y tokens según perfil. En entornos con requisitos formales o integraciones heredadas estos estándares siguen siendo relevantes.</p>
+<h3 id="estudio-10">8. REST y HTTP</h3>
+<p><strong>REST</strong> es un estilo arquitectónico centrado en recursos, identificadores, representaciones, interfaz uniforme, stateless y caché cuando procede. HTTP aporta métodos y códigos de estado. No existe obligación de que una API HTTP sea RESTful.</p>
+<ul>
+<li>GET: recuperación, seguro e idempotente conceptualmente.</li>
+<li>PUT: reemplazo/actualización idempotente según semántica.</li>
+<li>DELETE: idempotente en efecto deseado.</li>
+<li>POST: procesamiento/creación, no necesariamente idempotente.</li>
+<li>PATCH: modificación parcial; su idempotencia depende del formato/operación.</li>
+</ul>
+<p>Diseña URIs estables, errores estructurados, paginación, filtros, idempotency keys cuando proceda, versionado y límites de tasa.</p>
+<h3 id="estudio-11">9. Sincronía y asincronía</h3>
+<p>Una llamada síncrona mantiene dependencia temporal entre consumidor y proveedor. La integración asíncrona mediante colas o eventos desacopla disponibilidad y facilita absorción de picos, pero introduce consistencia eventual, duplicados y necesidad de reintentos.</p>
+<p>Conceptos: <strong>at-least-once</strong>, <strong>at-most-once</strong>, orden, deduplicación, idempotencia, dead-letter queue y outbox. «Exactly once» extremo a extremo suele ser una propiedad costosa y dependiente del contexto.</p>
+<h3 id="estudio-12">10. API Gateway, balanceo y caché</h3>
+<p>Un API Gateway puede centralizar autenticación, routing, rate limiting, políticas, transformación y observabilidad. El balanceador reparte tráfico entre instancias. La caché reduce latencia/carga, pero exige estrategia de invalidación y no debe servir datos sensibles sin controles.</p>
+<h3 id="estudio-13">11. Estado, sesión y escalabilidad</h3>
+<p>HTTP es sin estado a nivel de protocolo; una aplicación puede mantener sesión. Para escalar horizontalmente conviene evitar que una sesión solo exista en memoria de una instancia, o utilizar afinidad con conocimiento de sus límites. Alternativas: tokens, session store compartido o diseño stateless.</p>
+<h3 id="estudio-14">12. Interoperabilidad y contratos</h3>
+<p>Define formatos, codificación, versiones, autenticación, errores, límites, tiempos, SLA/SLO y compatibilidad. OpenAPI puede documentar APIs HTTP; AsyncAPI puede describir eventos/mensajería. Contract testing ayuda a evitar roturas entre consumidores y productores.</p>
+<h3 id="estudio-15">13. Seguridad</h3>
+<p>TLS, OAuth2/OIDC cuando aplique, autenticación de servicio a servicio, autorización, validación de entradas, límites de tamaño/rate, gestión de secretos, protección frente a SSRF/inyección, logging sin datos sensibles y trazabilidad distribuida.</p>
+<h3 id="estudio-16">14. Test</h3>
+<ul>
+<li>2 capas ≠ 3/N capas.</li>
+<li>Capa lógica ≠ servidor físico.</li>
+<li>SOA ≠ SOAP; SOA puede usar distintas tecnologías.</li>
+<li>SOAP = protocolo/mensajería; REST = estilo arquitectónico.</li>
+<li>WSDL describe servicios; XSD estructura XML.</li>
+<li>Orquestación ≠ coreografía.</li>
+<li>ESB ≠ API Gateway aunque se solapen funciones.</li>
+<li>HTTP stateless ≠ aplicación sin sesión.</li>
+<li>Síncrono ≠ asíncrono.</li>
+<li>Idempotencia ≠ ausencia de efectos.</li>
+</ul>
+<h3 id="estudio-17">15. Supuesto</h3>
+<p>Dibuja presentación → API/gateway → servicios → persistencia, con integraciones externas. Define contratos, autenticación/autorización, errores, reintentos, timeouts, circuit breaker cuando proceda, observabilidad y HA. Justifica SOAP si existe contrato/legado específico, REST para recursos o mensajería/eventos cuando desacoplar sea necesario.</p>
+<h3 id="estudio-18">16. Resumen II.06</h3>
+<p>Comprende la evolución cliente-servidor → capas → SOA/servicios → APIs/eventos. El examen puede preguntar tecnología clásica; el supuesto exige además resiliencia, contratos, seguridad y operación.</p>
+<h2 id="repaso">Resumen de repaso</h2>
+<h3 id="repaso-01">Núcleo de estudio</h3>
+<p>Cliente-servidor separa consumidores y proveedores de servicios. En 2 capas el cliente suele hablar directamente con datos/servidor; en 3 o n capas se separan presentación, lógica de negocio y persistencia, mejorando mantenibilidad, escalabilidad y seguridad. Multidispositivo exige interfaces adaptativas, APIs y desacoplamiento. SOA organiza capacidades como servicios con contratos y bajo acoplamiento. Servicios web clásicos usan SOAP, WSDL y XML; REST es un estilo arquitectónico sobre recursos, HTTP, interfaz uniforme y ausencia de estado. También existen mensajería y eventos para integración asíncrona. Conceptos clave: API Gateway, balanceador, caché, sesión, idempotencia, versionado y contratos.</p>
+<h3 id="repaso-02">Claves de test</h3>
+<p>SOAP es protocolo; REST es estilo. HTTP es stateless aunque una aplicación pueda mantener sesión externamente. 3 capas lógicas no implica tres servidores físicos. Escalado horizontal exige minimizar estado local. Distingue sincronía de asincronía.</p>
+<h3 id="repaso-03">Enfoque para supuesto práctico</h3>
+<p>En supuesto dibuja capas y flujos, define APIs, autenticación/autorización, errores, versionado, observabilidad, HA y contratos. Justifica síncrono REST/SOAP frente a asíncrono por eventos/colas.</p>
+<h3 id="repaso-04">Fuentes base del material</h3>
+<p>A1 058 SOA + 065 web y RELEASE de arquitectura lógica.</p>
+<section class="topic-content__sources"><h2 id="fuentes">Fuentes y localizadores</h2><ul><li><a href="https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)</a> · II.06 · 2026-08-21</li><li><a href="https://docs.google.com/document/d/1h7n4dFYafS_3VMuL55TnEuVKhqaTheUoL-thDFQSr9w/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE II — RESUMEN MAESTRO DE REPASO (16 temas)</a> · II.06 · 2026-08-21</li></ul></section>
+</article>

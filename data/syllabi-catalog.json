@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "catalog_version": "1.0.0",
+  "catalog_version": "2.0.0",
   "runtime_source": {
     "path": "data/syllabus.json",
     "status": "legacy-operational",
@@ -8,9 +8,9 @@
   },
   "syllabi": [
     {
-      "id": "SYL-TAI-2025",
-      "opposition_id": "OPP-TAI",
-      "name": "Temario TAI - ingreso libre",
+      "id": "SYL-GSI-2025",
+      "opposition_id": "OPP-GSI",
+      "name": "Gestión de Sistemas e Informática de la Administración del Estado — GSI A2, ingreso libre",
       "status": "legacy-operational",
       "runtime_available": true,
       "identifier_policy": {
@@ -20,132 +20,700 @@
       "program_version": {
         "convocation": "BOE-A-2025-26262",
         "official_program_date": "2025-12-22",
-        "legacy_data_version": "0.1.0"
+        "legacy_data_version": "2.0.0"
       },
       "provenance": {
         "official": true,
-        "source_id": "SRC-BOE-2025-CONVOCATORIA",
-        "document_id": "DOC-BOE-2025-PROGRAMA-MD",
-        "document_path": "documents/markdown/01_TEMARIO_Y_CONVOCATORIA/01_temario_oficial_TAI_33_temas_extracto_BOE.md",
-        "locator": "Anexo V"
+        "source_id": "SRC-BOE-GSI-2025",
+        "document_id": "DOC-BOE-GSI-2025",
+        "document_path": "documents/markdown/gsi/BOE-A-2025-26262-Anexo-IX.md",
+        "locator": "Anexo IX"
       },
       "declared_structure": {
         "block_count": 4,
-        "topic_count": 33,
-        "distribution": [9, 5, 9, 10],
+        "topic_count": 57,
+        "distribution": [
+          10,
+          16,
+          15,
+          16
+        ],
         "topics_extracted": true
       },
       "legacy_source_path": "data/syllabus.json",
       "blocks": [
         {
           "legacy_id": "B1",
-          "canonical_id": "TAI-B1",
+          "canonical_id": "GSI-B1",
           "local_official_code": "I",
           "order": 1,
           "title": "Organización del Estado y Administración electrónica",
           "legacy_status": "active",
-          "historical_aliases": ["B1"],
+          "historical_aliases": [],
           "topics": [
-            {"legacy_id": "B1-T01", "canonical_id": "TAI-B1-T01", "local_official_code": "I.1", "order": 1, "title": "La Constitución Española de 1978. Derechos y deberes fundamentales. Su garantía y suspensión. La Corona: funciones constitucionales del Rey.", "legacy_status": "active", "legacy_content_path": "content/topics/B1-T01.md", "legacy_generated_path": "content/generated/B1-T01.html", "historical_aliases": ["B1-T01"]},
-            {"legacy_id": "B1-T02", "canonical_id": "TAI-B1-T02", "local_official_code": "I.2", "order": 2, "title": "Las Cortes Generales: atribuciones del Congreso de los Diputados y del Senado. El Tribunal Constitucional: composición y atribuciones. El Defensor del Pueblo.", "legacy_status": "active", "legacy_content_path": "content/topics/B1-T02.md", "legacy_generated_path": "content/generated/B1-T02.html", "historical_aliases": ["B1-T02"]},
-            {"legacy_id": "B1-T03", "canonical_id": "TAI-B1-T03", "local_official_code": "I.3", "order": 3, "title": "El Gobierno: composición, nombramiento y cese. Las funciones del Gobierno. Relaciones entre el Gobierno y las Cortes Generales.", "legacy_status": "active", "legacy_content_path": "content/topics/B1-T03.md", "legacy_generated_path": "content/generated/B1-T03.html", "historical_aliases": ["B1-T03"]},
-            {"legacy_id": "B1-T04", "canonical_id": "TAI-B1-T04", "local_official_code": "I.4", "order": 4, "title": "El texto refundido del Estatuto Básico del Empleo Público y demás normativa de aplicación: derechos y deberes, formas de provisión de puestos, promoción interna y carrera profesional; situaciones administrativas, incompatibilidades y régimen sancionador. La Ley 19/2013, de 9 de diciembre, de transparencia, acceso a la información pública y buen gobierno. La Agenda 2030 y los Objetivos de Desarrollo Sostenible.", "legacy_status": "active", "legacy_content_path": "content/topics/B1-T04.md", "legacy_generated_path": "content/generated/B1-T04.html", "historical_aliases": ["B1-T04"]},
-            {"legacy_id": "B1-T05", "canonical_id": "TAI-B1-T05", "local_official_code": "I.5", "order": 5, "title": "Políticas de igualdad y contra la violencia de género. Políticas de igualdad de trato y no discriminación de las personas LGTBI. Discapacidad y dependencia: régimen jurídico.", "legacy_status": "active", "legacy_content_path": "content/topics/B1-T05.md", "legacy_generated_path": "content/generated/B1-T05.html", "historical_aliases": ["B1-T05"]},
-            {"legacy_id": "B1-T06", "canonical_id": "TAI-B1-T06", "local_official_code": "I.6", "order": 6, "title": "La sociedad de la información. Identidad y firma electrónica: régimen jurídico. El DNI electrónico. La Agenda Digital para España.", "legacy_status": "active", "legacy_content_path": "content/topics/B1-T06.md", "legacy_generated_path": "content/generated/B1-T06.html", "historical_aliases": ["B1-T06"]},
-            {"legacy_id": "B1-T07", "canonical_id": "TAI-B1-T07", "local_official_code": "I.7", "order": 7, "title": "La protección de datos personales y su régimen jurídico: principios, derechos y obligaciones. Derechos digitales.", "legacy_status": "active", "legacy_content_path": "content/topics/B1-T07.md", "legacy_generated_path": "content/generated/B1-T07.html", "historical_aliases": ["B1-T07"]},
-            {"legacy_id": "B1-T08", "canonical_id": "TAI-B1-T08", "local_official_code": "I.8", "order": 8, "title": "Acceso electrónico de los ciudadanos a los servicios públicos y normativa de desarrollo. La gestión electrónica de los procedimientos administrativos: registros, notificaciones y uso de medios electrónicos. Esquema Nacional de Seguridad y de Interoperabilidad. Normas técnicas de Interoperabilidad.", "legacy_status": "active", "legacy_content_path": "content/topics/B1-T08.md", "legacy_generated_path": "content/generated/B1-T08.html", "historical_aliases": ["B1-T08"]},
-            {"legacy_id": "B1-T09", "canonical_id": "TAI-B1-T09", "local_official_code": "I.9", "order": 9, "title": "Instrumentos para el acceso electrónico a las Administraciones públicas: sedes electrónicas, canales y puntos de acceso, identificación y autenticación. Infraestructuras y servicios comunes en materia de administración electrónica.", "legacy_status": "active", "legacy_content_path": "content/topics/B1-T09.md", "legacy_generated_path": "content/generated/B1-T09.html", "historical_aliases": ["B1-T09"]}
+            {
+              "legacy_id": "B1-T01",
+              "canonical_id": "GSI-B1-T01",
+              "local_official_code": "I.1",
+              "order": 1,
+              "title": "La Constitución Española de 1978. Derechos y deberes fundamentales. Su garantía y suspensión. La Corona: funciones constitucionales del Rey.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B1-T01.md",
+              "legacy_generated_path": "content/generated/B1-T01.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B1-T02",
+              "canonical_id": "GSI-B1-T02",
+              "local_official_code": "I.2",
+              "order": 2,
+              "title": "Las Cortes Generales: atribuciones del Congreso de los Diputados y del Senado. El Tribunal Constitucional: composición y atribuciones. El Defensor del Pueblo.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B1-T02.md",
+              "legacy_generated_path": "content/generated/B1-T02.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B1-T03",
+              "canonical_id": "GSI-B1-T03",
+              "local_official_code": "I.3",
+              "order": 3,
+              "title": "El Gobierno: composición, nombramiento y cese. Las funciones del Gobierno. Relaciones entre el Gobierno y las Cortes Generales.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B1-T03.md",
+              "legacy_generated_path": "content/generated/B1-T03.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B1-T04",
+              "canonical_id": "GSI-B1-T04",
+              "local_official_code": "I.4",
+              "order": 4,
+              "title": "La Ley 19/2013, de 9 de diciembre, de transparencia, acceso a la información pública y buen gobierno. La Agenda 2030 y los Objetivos de Desarrollo Sostenible.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B1-T04.md",
+              "legacy_generated_path": "content/generated/B1-T04.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B1-T05",
+              "canonical_id": "GSI-B1-T05",
+              "local_official_code": "I.5",
+              "order": 5,
+              "title": "Políticas de igualdad y contra la violencia de género. Políticas de igualdad de trato y no discriminación de las personas LGTBI. Discapacidad y dependencia: régimen jurídico.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B1-T05.md",
+              "legacy_generated_path": "content/generated/B1-T05.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B1-T06",
+              "canonical_id": "GSI-B1-T06",
+              "local_official_code": "I.6",
+              "order": 6,
+              "title": "La sociedad de la información. La Agenda Digital para España. Identidad y firma electrónica: régimen jurídico. Reglamento eIDAS. El DNI electrónico.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B1-T06.md",
+              "legacy_generated_path": "content/generated/B1-T06.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B1-T07",
+              "canonical_id": "GSI-B1-T07",
+              "local_official_code": "I.7",
+              "order": 7,
+              "title": "La protección de datos personales y su régimen jurídico: principios, derechos, responsable y encargado del tratamiento, delegado y autoridades de protección de datos. Derechos digitales.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B1-T07.md",
+              "legacy_generated_path": "content/generated/B1-T07.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B1-T08",
+              "canonical_id": "GSI-B1-T08",
+              "local_official_code": "I.8",
+              "order": 8,
+              "title": "Las Leyes de Procedimiento Administrativo Común de las Administraciones Públicas y de Régimen Jurídico del Sector Público. El texto refundido del Estatuto Básico del Empleo Público.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B1-T08.md",
+              "legacy_generated_path": "content/generated/B1-T08.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B1-T09",
+              "canonical_id": "GSI-B1-T09",
+              "local_official_code": "I.9",
+              "order": 9,
+              "title": "Instrumentos para el acceso electrónico a las Administraciones públicas: sedes electrónicas, canales y punto de acceso, identificación y autenticación. Datos abiertos. Normativa vigente de reutilización de la información del sector público. La gestión electrónica de los procedimientos administrativos. Esquema Nacional de Seguridad (ENS). Esquema Nacional de Interoperabilidad (ENI). Normas técnicas de interoperabilidad. Guías CCN-STIC serie 800.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B1-T09.md",
+              "legacy_generated_path": "content/generated/B1-T09.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B1-T10",
+              "canonical_id": "GSI-B1-T10",
+              "local_official_code": "I.10",
+              "order": 10,
+              "title": "Instrumentos y órganos para la cooperación entre Administraciones públicas en materia de Administración electrónica. Infraestructuras y servicios comunes. Plataformas de validación e interconexión de redes.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B1-T10.md",
+              "legacy_generated_path": "content/generated/B1-T10.html",
+              "historical_aliases": []
+            }
           ]
         },
         {
           "legacy_id": "B2",
-          "canonical_id": "TAI-B2",
+          "canonical_id": "GSI-B2",
           "local_official_code": "II",
           "order": 2,
           "title": "Tecnología básica",
           "legacy_status": "active",
-          "historical_aliases": ["B2"],
+          "historical_aliases": [],
           "topics": [
-            {"legacy_id": "B2-T01", "canonical_id": "TAI-B2-T01", "local_official_code": "II.1", "order": 1, "title": "Informática básica. Representación y comunicación de la información: elementos constitutivos de un sistema de información. Características y funciones. Arquitectura de ordenadores. Componentes internos de los equipos microinformáticos.", "legacy_status": "active", "legacy_content_path": "content/topics/B2-T01.md", "legacy_generated_path": "content/generated/B2-T01.html", "historical_aliases": ["B2-T01"]},
-            {"legacy_id": "B2-T02", "canonical_id": "TAI-B2-T02", "local_official_code": "II.2", "order": 2, "title": "Periféricos: conectividad y administración. Elementos de impresión. Elementos de almacenamiento. Elementos de visualización y digitalización.", "legacy_status": "active", "legacy_content_path": "content/topics/B2-T02.md", "legacy_generated_path": "content/generated/B2-T02.html", "historical_aliases": ["B2-T02"]},
-            {"legacy_id": "B2-T03", "canonical_id": "TAI-B2-T03", "local_official_code": "II.3", "order": 3, "title": "Tipos abstractos y Estructuras de datos. Organizaciones de ficheros. Algoritmos. Formatos de información y ficheros.", "legacy_status": "active", "legacy_content_path": "content/topics/B2-T03.md", "legacy_generated_path": "content/generated/B2-T03.html", "historical_aliases": ["B2-T03"]},
-            {"legacy_id": "B2-T04", "canonical_id": "TAI-B2-T04", "local_official_code": "II.4", "order": 4, "title": "Sistemas operativos. Características y elementos constitutivos. Sistemas Windows. Sistemas Unix y Linux. Sistemas operativos para dispositivos móviles.", "legacy_status": "active", "legacy_content_path": "content/topics/B2-T04.md", "legacy_generated_path": "content/generated/B2-T04.html", "historical_aliases": ["B2-T04"]},
-            {"legacy_id": "B2-T05", "canonical_id": "TAI-B2-T05", "local_official_code": "II.5", "order": 5, "title": "Sistemas de gestión de bases de datos relacionales, orientados a objetos y NoSQL: características y componentes.", "legacy_status": "active", "legacy_content_path": "content/topics/B2-T05.md", "legacy_generated_path": "content/generated/B2-T05.html", "historical_aliases": ["B2-T05"]}
+            {
+              "legacy_id": "B2-T01",
+              "canonical_id": "GSI-B2-T01",
+              "local_official_code": "II.1",
+              "order": 1,
+              "title": "Tecnologías actuales de ordenadores: de los dispositivos móviles a los superordenadores y arquitecturas escalables y de altas prestaciones. Computación en la nube. Base tecnológica. Componentes, funcionalidades y capacidades.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B2-T01.md",
+              "legacy_generated_path": "content/generated/B2-T01.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B2-T02",
+              "canonical_id": "GSI-B2-T02",
+              "local_official_code": "II.2",
+              "order": 2,
+              "title": "Conceptos y fundamentos de los sistemas operativos. Características técnicas, funcionales y de administración: Windows, Linux, Unix y otros. Sistemas operativos para dispositivos móviles.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B2-T02.md",
+              "legacy_generated_path": "content/generated/B2-T02.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B2-T03",
+              "canonical_id": "GSI-B2-T03",
+              "local_official_code": "II.3",
+              "order": 3,
+              "title": "Características técnicas de los lenguajes y paradigmas actuales de programación.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B2-T03.md",
+              "legacy_generated_path": "content/generated/B2-T03.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B2-T04",
+              "canonical_id": "GSI-B2-T04",
+              "local_official_code": "II.4",
+              "order": 4,
+              "title": "Inteligencia de negocios: cuadros de mando integral, sistemas de soporte a las decisiones, sistemas de información ejecutiva y almacenes de datos. OLTP y OLAP.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B2-T04.md",
+              "legacy_generated_path": "content/generated/B2-T04.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B2-T05",
+              "canonical_id": "GSI-B2-T05",
+              "local_official_code": "II.5",
+              "order": 5,
+              "title": "La arquitectura ANSI/SPARC. Sistemas de gestión de bases de datos relacionales. El lenguaje SQL. Normas y estándares para la interoperabilidad entre gestores de bases de datos relacionales.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B2-T05.md",
+              "legacy_generated_path": "content/generated/B2-T05.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B2-T06",
+              "canonical_id": "GSI-B2-T06",
+              "local_official_code": "II.6",
+              "order": 6,
+              "title": "Arquitectura de sistemas cliente-servidor, multicapas y multidispositivo: tipología. Componentes. Interoperabilidad de componentes. Ventajas e inconvenientes. Arquitectura de servicios web.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B2-T06.md",
+              "legacy_generated_path": "content/generated/B2-T06.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B2-T07",
+              "canonical_id": "GSI-B2-T07",
+              "local_official_code": "II.7",
+              "order": 7,
+              "title": "Modelo de desarrollo de aplicaciones basado en contenedores y microservicios. Arquitectura y soluciones. Despliegue, monitorización y escalado.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B2-T07.md",
+              "legacy_generated_path": "content/generated/B2-T07.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B2-T08",
+              "canonical_id": "GSI-B2-T08",
+              "local_official_code": "II.8",
+              "order": 8,
+              "title": "El modelo TCP/IP y el modelo de referencia de interconexión de sistemas abiertos (OSI) de ISO: arquitectura, capas, interfaces, protocolos, direccionamiento y encaminamiento.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B2-T08.md",
+              "legacy_generated_path": "content/generated/B2-T08.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B2-T09",
+              "canonical_id": "GSI-B2-T09",
+              "local_official_code": "II.9",
+              "order": 9,
+              "title": "Lenguajes de marca o etiqueta. Características y funcionalidades. SGML, HTML, XML y sus derivaciones. Lenguajes de script.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B2-T09.md",
+              "legacy_generated_path": "content/generated/B2-T09.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B2-T10",
+              "canonical_id": "GSI-B2-T10",
+              "local_official_code": "II.10",
+              "order": 10,
+              "title": "Análisis y gestión de riesgos de los sistemas de información. Herramientas.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B2-T10.md",
+              "legacy_generated_path": "content/generated/B2-T10.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B2-T11",
+              "canonical_id": "GSI-B2-T11",
+              "local_official_code": "II.11",
+              "order": 11,
+              "title": "Auditoría Informática: objetivos, alcance y metodología. Técnicas y herramientas. Normas y estándares. Auditoría del ENS y de protección de datos. Auditoría de seguridad física.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B2-T11.md",
+              "legacy_generated_path": "content/generated/B2-T11.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B2-T12",
+              "canonical_id": "GSI-B2-T12",
+              "local_official_code": "II.12",
+              "order": 12,
+              "title": "Gestión de la atención a clientes y usuarios: centros de contacto, CRM. Arquitectura multicanal. Sistemas de respuesta de voz interactiva (IVR). Voice XML.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B2-T12.md",
+              "legacy_generated_path": "content/generated/B2-T12.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B2-T13",
+              "canonical_id": "GSI-B2-T13",
+              "local_official_code": "II.13",
+              "order": 13,
+              "title": "Seguridad física y lógica de un sistema de información. Herramientas en ciberseguridad. Gestión de incidentes. Informática forense.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B2-T13.md",
+              "legacy_generated_path": "content/generated/B2-T13.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B2-T14",
+              "canonical_id": "GSI-B2-T14",
+              "local_official_code": "II.14",
+              "order": 14,
+              "title": "Software libre y software propietario. Características y tipos de licencias. La protección jurídica de los programas de ordenador. Tecnologías de protección de derechos digitales.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B2-T14.md",
+              "legacy_generated_path": "content/generated/B2-T14.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B2-T15",
+              "canonical_id": "GSI-B2-T15",
+              "local_official_code": "II.15",
+              "order": 15,
+              "title": "Técnicas de evaluación de alternativas y análisis de viabilidad. Planificación, presupuestación y control de costes de un proyecto informático.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B2-T15.md",
+              "legacy_generated_path": "content/generated/B2-T15.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B2-T16",
+              "canonical_id": "GSI-B2-T16",
+              "local_official_code": "II.16",
+              "order": 16,
+              "title": "Sistemas de gestión documental y de contenidos. Sindicación de contenido. Sistemas de gestión de flujos de trabajos. Búsqueda de información: robots, spiders, otros. Posicionamiento y buscadores (SEO). Herramientas de trabajo colaborativo y redes sociales.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B2-T16.md",
+              "legacy_generated_path": "content/generated/B2-T16.html",
+              "historical_aliases": []
+            }
           ]
         },
         {
           "legacy_id": "B3",
-          "canonical_id": "TAI-B3",
+          "canonical_id": "GSI-B3",
           "local_official_code": "III",
           "order": 3,
           "title": "Desarrollo de sistemas",
           "legacy_status": "active",
-          "historical_aliases": ["B3"],
+          "historical_aliases": [],
           "topics": [
-            {"legacy_id": "B3-T01", "canonical_id": "TAI-B3-T01", "local_official_code": "III.1", "order": 1, "title": "Modelado de datos, metodologías y reglas. Entidades, atributos y relaciones. Diseño de bases de datos. Diseño lógico y físico. El modelo lógico relacional. Normalización.", "legacy_status": "active", "legacy_content_path": "content/topics/B3-T01.md", "legacy_generated_path": "content/generated/B3-T01.html", "historical_aliases": ["B3-T01"]},
-            {"legacy_id": "B3-T02", "canonical_id": "TAI-B3-T02", "local_official_code": "III.2", "order": 2, "title": "Lenguajes de programación. Representación de tipos de datos. Operadores. Instrucciones condicionales. Bucles y recursividad. Procedimientos, funciones y parámetros. Vectores y registros. Estructura de un programa.", "legacy_status": "active", "legacy_content_path": "content/topics/B3-T02.md", "legacy_generated_path": "content/generated/B3-T02.html", "historical_aliases": ["B3-T02"]},
-            {"legacy_id": "B3-T03", "canonical_id": "TAI-B3-T03", "local_official_code": "III.3", "order": 3, "title": "Lenguajes de interrogación de bases de datos. Estándar ANSI SQL. Procedimientos almacenados. Eventos y disparadores.", "legacy_status": "active", "legacy_content_path": "content/topics/B3-T03.md", "legacy_generated_path": "content/generated/B3-T03.html", "historical_aliases": ["B3-T03"]},
-            {"legacy_id": "B3-T04", "canonical_id": "TAI-B3-T04", "local_official_code": "III.4", "order": 4, "title": "Diseño y programación orientada a objetos. Elementos y componentes software: objetos, clases, herencia, métodos, sobrecarga. Ventajas e inconvenientes. Patrones de diseño y lenguaje de modelado unificado (UML).", "legacy_status": "active", "legacy_content_path": "content/topics/B3-T04.md", "legacy_generated_path": "content/generated/B3-T04.html", "historical_aliases": ["B3-T04"]},
-            {"legacy_id": "B3-T05", "canonical_id": "TAI-B3-T05", "local_official_code": "III.5", "order": 5, "title": "Arquitectura Java EE/Jakarta EE y plataforma .NET: componentes, persistencia y seguridad. Características, elementos, lenguajes y funciones en ambos entornos. Desarrollo de interfaces.", "legacy_status": "active", "legacy_content_path": "content/topics/B3-T05.md", "legacy_generated_path": "content/generated/B3-T05.html", "historical_aliases": ["B3-T05"]},
-            {"legacy_id": "B3-T06", "canonical_id": "TAI-B3-T06", "local_official_code": "III.6", "order": 6, "title": "Arquitectura de sistemas cliente/servidor y multicapas: componentes y operación. Arquitecturas de servicios web y protocolos asociados.", "legacy_status": "active", "legacy_content_path": "content/topics/B3-T06.md", "legacy_generated_path": "content/generated/B3-T06.html", "historical_aliases": ["B3-T06"]},
-            {"legacy_id": "B3-T07", "canonical_id": "TAI-B3-T07", "local_official_code": "III.7", "order": 7, "title": "Aplicaciones web. Desarrollo web front-end y en servidor, multiplataforma y multidispositivo. Lenguajes: HTML, XML y sus derivaciones. Navegadores y lenguajes de programación web. Lenguajes de script.", "legacy_status": "active", "legacy_content_path": "content/topics/B3-T07.md", "legacy_generated_path": "content/generated/B3-T07.html", "historical_aliases": ["B3-T07"]},
-            {"legacy_id": "B3-T08", "canonical_id": "TAI-B3-T08", "local_official_code": "III.8", "order": 8, "title": "Accesibilidad, diseño universal y usabilidad. Acceso y usabilidad de las tecnologías, productos y servicios relacionados con la sociedad de la información. Confidencialidad y disponibilidad de la información en puestos de usuario final. Conceptos de seguridad en el desarrollo de los sistemas.", "legacy_status": "active", "legacy_content_path": "content/topics/B3-T08.md", "legacy_generated_path": "content/generated/B3-T08.html", "historical_aliases": ["B3-T08"]},
-            {"legacy_id": "B3-T09", "canonical_id": "TAI-B3-T09", "local_official_code": "III.9", "order": 9, "title": "Repositorios: estructura y actualización. Generación de código y documentación. Metodologías de desarrollo. Pruebas. Programas para control de versiones. Plataformas de desarrollo colaborativo de software.", "legacy_status": "active", "legacy_content_path": "content/topics/B3-T09.md", "legacy_generated_path": "content/generated/B3-T09.html", "historical_aliases": ["B3-T09"]}
+            {
+              "legacy_id": "B3-T01",
+              "canonical_id": "GSI-B3-T01",
+              "local_official_code": "III.1",
+              "order": 1,
+              "title": "Concepto del ciclo de vida de los sistemas y fases. Modelos de ciclo de vida.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B3-T01.md",
+              "legacy_generated_path": "content/generated/B3-T01.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B3-T02",
+              "canonical_id": "GSI-B3-T02",
+              "local_official_code": "III.2",
+              "order": 2,
+              "title": "Gestión y planificación del proceso de desarrollo. Técnicas y prácticas de gestión y planificación de proyectos. Metodologías de desarrollo.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B3-T02.md",
+              "legacy_generated_path": "content/generated/B3-T02.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B3-T03",
+              "canonical_id": "GSI-B3-T03",
+              "local_official_code": "III.3",
+              "order": 3,
+              "title": "Estrategias de determinación de requerimientos: entrevistas, derivación de sistemas existentes, análisis y prototipos. La especificación de requisitos de software.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B3-T03.md",
+              "legacy_generated_path": "content/generated/B3-T03.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B3-T04",
+              "canonical_id": "GSI-B3-T04",
+              "local_official_code": "III.4",
+              "order": 4,
+              "title": "Modelado de datos y metodologías. Diseño de bases de datos. El modelo lógico relacional. Normalización. Diseño lógico y físico. Problemas de concurrencia de acceso. Mecanismos de resolución de conflictos.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B3-T04.md",
+              "legacy_generated_path": "content/generated/B3-T04.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B3-T05",
+              "canonical_id": "GSI-B3-T05",
+              "local_official_code": "III.5",
+              "order": 5,
+              "title": "Tipos abstractos de datos y estructuras de datos. Organizaciones de ficheros. Estrategias de diseño de algoritmos. Tipos de algoritmos: ordenación y búsqueda. Fundamentos de Inteligencia Artificial, tecnologías asociadas y áreas de aplicación.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B3-T05.md",
+              "legacy_generated_path": "content/generated/B3-T05.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B3-T06",
+              "canonical_id": "GSI-B3-T06",
+              "local_official_code": "III.6",
+              "order": 6,
+              "title": "Construcción del sistema. Entornos de construcción y generación de código. Despliegue de aplicaciones e integración continua. Dev-Ops. Estándares de documentación. Manuales de usuario y manuales técnicos. Formación de usuarios y personal técnico: métodos y materiales.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B3-T06.md",
+              "legacy_generated_path": "content/generated/B3-T06.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B3-T07",
+              "canonical_id": "GSI-B3-T07",
+              "local_official_code": "III.7",
+              "order": 7,
+              "title": "Pruebas. Planificación y documentación. Utilización de datos de prueba. Pruebas de software, hardware, procedimientos y datos.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B3-T07.md",
+              "legacy_generated_path": "content/generated/B3-T07.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B3-T08",
+              "canonical_id": "GSI-B3-T08",
+              "local_official_code": "III.8",
+              "order": 8,
+              "title": "Instalación y cambio. Estrategias de sustitución. Recepción e instalación. Evaluación post-implementación. Mantenimiento.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B3-T08.md",
+              "legacy_generated_path": "content/generated/B3-T08.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B3-T09",
+              "canonical_id": "GSI-B3-T09",
+              "local_official_code": "III.9",
+              "order": 9,
+              "title": "Análisis y diseño orientado a objetos. Elementos. El proceso unificado de software. El lenguaje de modelado unificado (UML). Patrones de diseño.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B3-T09.md",
+              "legacy_generated_path": "content/generated/B3-T09.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B3-T10",
+              "canonical_id": "GSI-B3-T10",
+              "local_official_code": "III.10",
+              "order": 10,
+              "title": "La arquitectura Java EE/Jakarta EE. Características de funcionamiento. Elementos constitutivos. Productos y herramientas. Persistencia. Seguridad.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B3-T10.md",
+              "legacy_generated_path": "content/generated/B3-T10.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B3-T11",
+              "canonical_id": "GSI-B3-T11",
+              "local_official_code": "III.11",
+              "order": 11,
+              "title": "La plataforma.NET. Modelo de programación. Servicios. Herramientas. Persistencia. Seguridad.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B3-T11.md",
+              "legacy_generated_path": "content/generated/B3-T11.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B3-T12",
+              "canonical_id": "GSI-B3-T12",
+              "local_official_code": "III.12",
+              "order": 12,
+              "title": "Aplicaciones web. Diseño web multiplataforma/multidispositivo. Desarrollo web front-end y en servidor. Componentes de tecnologías de programación. Servicios web: estándares, protocolos asociados, interoperabilidad y seguridad. Internacionalización y localización.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B3-T12.md",
+              "legacy_generated_path": "content/generated/B3-T12.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B3-T13",
+              "canonical_id": "GSI-B3-T13",
+              "local_official_code": "III.13",
+              "order": 13,
+              "title": "La calidad del software y su medida. Modelos, métricas, normas y estándares.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B3-T13.md",
+              "legacy_generated_path": "content/generated/B3-T13.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B3-T14",
+              "canonical_id": "GSI-B3-T14",
+              "local_official_code": "III.14",
+              "order": 14,
+              "title": "Accesibilidad, diseño universal y usabilidad. Accesibilidad y usabilidad de las tecnologías, productos y servicios relacionados con la sociedad de la información. Experiencia de Usuario o UX. La Guía de comunicación digital de la Administración del Estado.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B3-T14.md",
+              "legacy_generated_path": "content/generated/B3-T14.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B3-T15",
+              "canonical_id": "GSI-B3-T15",
+              "local_official_code": "III.15",
+              "order": 15,
+              "title": "Minería de datos. Aplicación a la resolución de problemas de gestión. Tecnología y algoritmos. Procesamiento analítico en línea (OLAP). Big data. Entornos Hadoop o similares. Bases de datos NoSQL.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B3-T15.md",
+              "legacy_generated_path": "content/generated/B3-T15.html",
+              "historical_aliases": []
+            }
           ]
         },
         {
           "legacy_id": "B4",
-          "canonical_id": "TAI-B4",
+          "canonical_id": "GSI-B4",
           "local_official_code": "IV",
           "order": 4,
           "title": "Sistemas y comunicaciones",
           "legacy_status": "active",
-          "historical_aliases": ["B4"],
+          "historical_aliases": [],
           "topics": [
-            {"legacy_id": "B4-T01", "canonical_id": "TAI-B4-T01", "local_official_code": "IV.1", "order": 1, "title": "Administración del Sistema operativo y software de base. Actualización, mantenimiento y reparación del sistema operativo.", "legacy_status": "active", "legacy_content_path": "content/topics/B4-T01.md", "legacy_generated_path": "content/generated/B4-T01.html", "historical_aliases": ["B4-T01"]},
-            {"legacy_id": "B4-T02", "canonical_id": "TAI-B4-T02", "local_official_code": "IV.2", "order": 2, "title": "Administración de bases de datos. Sistemas de almacenamiento y su virtualización. Políticas, sistemas y procedimientos de backup y su recuperación. Backup de sistemas físicos y virtuales. Virtualización de sistemas y virtualización de puestos de usuario.", "legacy_status": "active", "legacy_content_path": "content/topics/B4-T02.md", "legacy_generated_path": "content/generated/B4-T02.html", "historical_aliases": ["B4-T02"]},
-            {"legacy_id": "B4-T03", "canonical_id": "TAI-B4-T03", "local_official_code": "IV.3", "order": 3, "title": "Administración de servidores de correo electrónico sus protocolos. Administración de contenedores y microservicios.", "legacy_status": "active", "legacy_content_path": "content/topics/B4-T03.md", "legacy_generated_path": "content/generated/B4-T03.html", "historical_aliases": ["B4-T03"]},
-            {"legacy_id": "B4-T04", "canonical_id": "TAI-B4-T04", "local_official_code": "IV.4", "order": 4, "title": "Administración de redes de área local. Gestión de usuarios. Gestión de dispositivos. Monitorización y control de tráfico.", "legacy_status": "active", "legacy_content_path": "content/topics/B4-T04.md", "legacy_generated_path": "content/generated/B4-T04.html", "historical_aliases": ["B4-T04"]},
-            {"legacy_id": "B4-T05", "canonical_id": "TAI-B4-T05", "local_official_code": "IV.5", "order": 5, "title": "Conceptos de seguridad de los sistemas de información. Seguridad física. Seguridad lógica. Amenazas y vulnerabilidades. Técnicas criptográficas y protocolos seguros. Mecanismos de firma digital. Infraestructura física de un CPD: acondicionamiento y equipamiento. Sistemas de gestión de incidencias. Control remoto de puestos de usuario.", "legacy_status": "active", "legacy_content_path": "content/topics/B4-T05.md", "legacy_generated_path": "content/generated/B4-T05.html", "historical_aliases": ["B4-T05"]},
-            {"legacy_id": "B4-T06", "canonical_id": "TAI-B4-T06", "local_official_code": "IV.6", "order": 6, "title": "Comunicaciones. Medios de transmisión. Modos de comunicación. Equipos terminales y equipos de interconexión y conmutación. Redes de comunicaciones. Redes de conmutación y redes de difusión. Comunicaciones móviles e inalámbricas.", "legacy_status": "active", "legacy_content_path": "content/topics/B4-T06.md", "legacy_generated_path": "content/generated/B4-T06.html", "historical_aliases": ["B4-T06"]},
-            {"legacy_id": "B4-T07", "canonical_id": "TAI-B4-T07", "local_official_code": "IV.7", "order": 7, "title": "El modelo TCP/IP y el modelo de referencia de interconexión de sistemas abiertos (OSI) de ISO. Protocolos TCP/IP.", "legacy_status": "active", "legacy_content_path": "content/topics/B4-T07.md", "legacy_generated_path": "content/generated/B4-T07.html", "historical_aliases": ["B4-T07"]},
-            {"legacy_id": "B4-T08", "canonical_id": "TAI-B4-T08", "local_official_code": "IV.8", "order": 8, "title": "Internet: arquitectura de red. Origen, evolución y estado actual. Principales servicios. Protocolos HTTP, HTTPS y SSL/TLS.", "legacy_status": "active", "legacy_content_path": "content/topics/B4-T08.md", "legacy_generated_path": "content/generated/B4-T08.html", "historical_aliases": ["B4-T08"]},
-            {"legacy_id": "B4-T09", "canonical_id": "TAI-B4-T09", "local_official_code": "IV.9", "order": 9, "title": "Seguridad y protección en redes de comunicaciones. Seguridad perimetral. Acceso remoto seguro a redes. Redes privadas virtuales (VPN). Seguridad en el puesto del usuario.", "legacy_status": "active", "legacy_content_path": "content/topics/B4-T09.md", "legacy_generated_path": "content/generated/B4-T09.html", "historical_aliases": ["B4-T09"]},
-            {"legacy_id": "B4-T10", "canonical_id": "TAI-B4-T10", "local_official_code": "IV.10", "order": 10, "title": "Redes locales. Tipología. Técnicas de transmisión. Métodos de acceso. Dispositivos de interconexión.", "legacy_status": "active", "legacy_content_path": "content/topics/B4-T10.md", "legacy_generated_path": "content/generated/B4-T10.html", "historical_aliases": ["B4-T10"]}
+            {
+              "legacy_id": "B4-T01",
+              "canonical_id": "GSI-B4-T01",
+              "local_official_code": "IV.1",
+              "order": 1,
+              "title": "Administración del Sistema operativo y software de base.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B4-T01.md",
+              "legacy_generated_path": "content/generated/B4-T01.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B4-T02",
+              "canonical_id": "GSI-B4-T02",
+              "local_official_code": "IV.2",
+              "order": 2,
+              "title": "Administración de sistemas de gestión de bases de datos.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B4-T02.md",
+              "legacy_generated_path": "content/generated/B4-T02.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B4-T03",
+              "canonical_id": "GSI-B4-T03",
+              "local_official_code": "IV.3",
+              "order": 3,
+              "title": "Mantenimiento de equipos e instalaciones. Tipos de mantenimiento. Gestión de incidencias. Procedimientos de backup y recuperación.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B4-T03.md",
+              "legacy_generated_path": "content/generated/B4-T03.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B4-T04",
+              "canonical_id": "GSI-B4-T04",
+              "local_official_code": "IV.4",
+              "order": 4,
+              "title": "Gestión de la configuración. Control de cambios y de versiones. Técnicas y herramientas de operación automática. Evaluación y monitorización del rendimiento de sistemas, infraestructuras y servicios. Gestión de la capacidad. Herramientas y técnicas utilizables.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B4-T04.md",
+              "legacy_generated_path": "content/generated/B4-T04.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B4-T05",
+              "canonical_id": "GSI-B4-T05",
+              "local_official_code": "IV.5",
+              "order": 5,
+              "title": "Almacenamiento de datos: arquitectura, tipos, componentes, protocolos, gestión y administración. Virtualización del almacenamiento.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B4-T05.md",
+              "legacy_generated_path": "content/generated/B4-T05.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B4-T06",
+              "canonical_id": "GSI-B4-T06",
+              "local_official_code": "IV.6",
+              "order": 6,
+              "title": "Planificación física y dimensionamiento de un centro de procesamiento de datos. Virtualización y consolidación de servidores y recursos. Vulnerabilidades, riesgo y protección. Sistemas de alta disponibilidad y balanceo de carga. Recuperación ante desastres.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B4-T06.md",
+              "legacy_generated_path": "content/generated/B4-T06.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B4-T07",
+              "canonical_id": "GSI-B4-T07",
+              "local_official_code": "IV.7",
+              "order": 7,
+              "title": "Medios de transmisión guiados y no guiados (inalámbricos): tipos y parámetros significativos. Elementos de cableado estructurado.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B4-T07.md",
+              "legacy_generated_path": "content/generated/B4-T07.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B4-T08",
+              "canonical_id": "GSI-B4-T08",
+              "local_official_code": "IV.8",
+              "order": 8,
+              "title": "Redes locales. Tipología, protocolos y técnicas de transmisión. Métodos de acceso. Dispositivos de interconexión. Seguridad. Normativa Reguladora.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B4-T08.md",
+              "legacy_generated_path": "content/generated/B4-T08.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B4-T09",
+              "canonical_id": "GSI-B4-T09",
+              "local_official_code": "IV.9",
+              "order": 9,
+              "title": "Administración de redes locales. Gestión de usuarios y dispositivos. Monitorización y control de tráfico. Gestión SNMP.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B4-T09.md",
+              "legacy_generated_path": "content/generated/B4-T09.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B4-T10",
+              "canonical_id": "GSI-B4-T10",
+              "local_official_code": "IV.10",
+              "order": 10,
+              "title": "Redes de área extensa. Tecnologías WDM y MPLS SD-WAN. Protocolos de encaminamiento.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B4-T10.md",
+              "legacy_generated_path": "content/generated/B4-T10.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B4-T11",
+              "canonical_id": "GSI-B4-T11",
+              "local_official_code": "IV.11",
+              "order": 11,
+              "title": "Redes inalámbricas. Protocolos. Características funcionales y técnicas. Sistemas de expansión del espectro. Sistemas de acceso. Modos de operación. Seguridad. Normativa reguladora.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B4-T11.md",
+              "legacy_generated_path": "content/generated/B4-T11.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B4-T12",
+              "canonical_id": "GSI-B4-T12",
+              "local_official_code": "IV.12",
+              "order": 12,
+              "title": "La seguridad en redes. Seguridad perimetral. Control de accesos. Técnicas criptográficas y protocolos seguros. Mecanismos de firma digital. Redes privadas virtuales. Seguridad en el puesto del usuario.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B4-T12.md",
+              "legacy_generated_path": "content/generated/B4-T12.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B4-T13",
+              "canonical_id": "GSI-B4-T13",
+              "local_official_code": "IV.13",
+              "order": 13,
+              "title": "La red Internet: arquitectura de red. Principios de funcionamiento. Servicios: evolución, estado actual y perspectivas de futuro. Internet de las Cosas (IoT).",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B4-T13.md",
+              "legacy_generated_path": "content/generated/B4-T13.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B4-T14",
+              "canonical_id": "GSI-B4-T14",
+              "local_official_code": "IV.14",
+              "order": 14,
+              "title": "Redes de nueva generación y servicios convergentes (NGN/IMS). VoIP, ToIP y comunicaciones unificadas. Convergencia telefonía fija-telefonía móvil.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B4-T14.md",
+              "legacy_generated_path": "content/generated/B4-T14.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B4-T15",
+              "canonical_id": "GSI-B4-T15",
+              "local_official_code": "IV.15",
+              "order": 15,
+              "title": "Sistemas de comunicaciones móviles. Generaciones de tecnologías de telefonía móvil. Soluciones de gestión de dispositivos móviles (MDM, EMM, UEM).",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B4-T15.md",
+              "legacy_generated_path": "content/generated/B4-T15.html",
+              "historical_aliases": []
+            },
+            {
+              "legacy_id": "B4-T16",
+              "canonical_id": "GSI-B4-T16",
+              "local_official_code": "IV.16",
+              "order": 16,
+              "title": "Sistemas de videoconferencia. Protocolos. Dimensionamiento y calidad de servicio en las comunicaciones y acondicionamiento de salas y equipos.",
+              "legacy_status": "active",
+              "legacy_content_path": "content/topics/B4-T16.md",
+              "legacy_generated_path": "content/generated/B4-T16.html",
+              "historical_aliases": []
+            }
           ]
         }
       ]
-    },
-    {
-      "id": "SYL-GSI-2025",
-      "opposition_id": "OPP-GSI",
-      "name": "Programa GSI 2025 pendiente de extracción estructurada",
-      "status": "planned",
-      "runtime_available": false,
-      "identifier_policy": {
-        "operational_id_kind": "none",
-        "canonical_ids_status": "not-assigned"
-      },
-      "program_version": {
-        "convocation": "BOE-A-2025-26262",
-        "official_program_date": "2025-12-22",
-        "legacy_data_version": null
-      },
-      "provenance": {
-        "official": true,
-        "source_id": "SRC-BOE-2025-CONVOCATORIA",
-        "document_id": "DOC-BOE-2025-CONVOCATORIA-MD",
-        "document_path": "documents/markdown/01_TEMARIO_Y_CONVOCATORIA/00_convocatoria_BOE_2025_programa_oficial_TAI.md",
-        "locator": "Anexo IX"
-      },
-      "declared_structure": {
-        "block_count": 4,
-        "topic_count": 55,
-        "distribution": [10, 16, 15, 14],
-        "topics_extracted": false
-      },
-      "legacy_source_path": null,
-      "blocks": []
     }
   ]
 }

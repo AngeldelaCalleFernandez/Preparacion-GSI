@@ -1,11 +1,115 @@
-<article class="topic-content" data-topic-id="B2-T03" data-coverage-status="pending">
-<aside class="topic-content__status topic-content__status--pending" role="status"><p>Contenido pendiente de fuentes verificables.</p></aside>
-<nav class="topic-content__toc" aria-label="Índice del tema">
-<h2>Contenido del tema</h2>
-<ol><li class="topic-content__toc-level-2"><a href="#temario/B2-T03/fuentes-necesarias">Fuentes necesarias</a></li></ol>
-</nav>
-<h2 id="fuentes-necesarias">Fuentes necesarias</h2>
-<div class="topic-content__pendiente" data-editorial-kind="pendiente"><p class="topic-content__kind">Pendiente</p><p>Contenido pendiente de una fuente verificable.</p>
-<p>Fuente necesaria: documentación técnica primaria local sobre estructuras de datos, ficheros, algoritmos y formatos de información.</p></div>
-
+<article class="topic-content" data-topic-id="B2-T03" data-coverage-status="complete">
+<p>Material curado del corpus GSI A2 · apuntes V2.1 revisados. Procedencia editorial, no documento oficial.</p>
+<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B2-T03/estudio">Apuntes de estudio</a></li><li><a href="#temario/B2-T03/estudio-01">1. Situación de las fuentes</a></li><li><a href="#temario/B2-T03/estudio-02">2. Formas de clasificar un lenguaje</a></li><li><a href="#temario/B2-T03/estudio-03">2.1 Nivel de abstracción</a></li><li><a href="#temario/B2-T03/estudio-04">2.2 Compilación, interpretación, JIT y AOT</a></li><li><a href="#temario/B2-T03/estudio-05">2.3 Tipado</a></li><li><a href="#temario/B2-T03/estudio-06">3. Paradigma imperativo y procedimental</a></li><li><a href="#temario/B2-T03/estudio-07">4. Orientación a objetos</a></li><li><a href="#temario/B2-T03/estudio-08">5. Programación funcional</a></li><li><a href="#temario/B2-T03/estudio-09">6. Lógico y declarativo</a></li><li><a href="#temario/B2-T03/estudio-10">7. Eventos, reactividad y concurrencia</a></li><li><a href="#temario/B2-T03/estudio-11">8. Gestión de memoria</a></li><li><a href="#temario/B2-T03/estudio-12">9. Ejemplos de lenguajes actuales</a></li><li><a href="#temario/B2-T03/estudio-13">10. Módulos, paquetes, excepciones y genéricos</a></li><li><a href="#temario/B2-T03/estudio-14">11. Criterios de selección</a></li><li><a href="#temario/B2-T03/estudio-15">12. Test</a></li><li><a href="#temario/B2-T03/estudio-16">13. Supuesto</a></li><li><a href="#temario/B2-T03/estudio-17">14. Resumen II.03</a></li><li><a href="#temario/B2-T03/repaso">Resumen de repaso</a></li><li><a href="#temario/B2-T03/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B2-T03/repaso-02">Claves de test</a></li><li><a href="#temario/B2-T03/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B2-T03/repaso-04">Fuentes base del material</a></li></ol></nav>
+<h2 id="estudio">Apuntes de estudio</h2>
+<h3 id="estudio-01">1. Situación de las fuentes</h3>
+<p>Este es uno de los huecos reales del banco A1: no existe un tema que cubra exactamente el epígrafe GSI. Por tanto, la V2 distingue claramente <strong>complemento GSI</strong> de contenido heredado. El objetivo es clasificar lenguajes y comprender decisiones técnicas, no aprender la sintaxis completa de cada uno.</p>
+<h3 id="estudio-02">2. Formas de clasificar un lenguaje</h3>
+<h3 id="estudio-03">2.1 Nivel de abstracción</h3>
+<p>Los lenguajes de bajo nivel exponen detalles cercanos a la máquina; los de alto nivel proporcionan abstracciones de datos, control, memoria y bibliotecas. Un mayor nivel de abstracción suele mejorar productividad y portabilidad, aunque puede ocultar costes de ejecución.</p>
+<h3 id="estudio-04">2.2 Compilación, interpretación, JIT y AOT</h3>
+<ul>
+<li><strong>Compilación nativa</strong>: transforma código fuente a instrucciones de una arquitectura antes de ejecutar.</li>
+<li><strong>Interpretación</strong>: un intérprete ejecuta representaciones del programa durante la ejecución.</li>
+<li><strong>Bytecode/intermediate language</strong>: Java y .NET generan representaciones intermedias ejecutadas por una máquina virtual/runtime.</li>
+<li><strong>JIT</strong>: compila durante ejecución partes del programa a código nativo.</li>
+<li><strong>AOT</strong>: compila anticipadamente, incluso en plataformas que también admiten JIT.</li>
+</ul>
+<p>La frontera no es absoluta: un lenguaje puede disponer de varias implementaciones. Por eso «lenguaje compilado» y «lenguaje interpretado» no deben tratarse como categorías rígidas.</p>
+<h3 id="estudio-05">2.3 Tipado</h3>
+<p><strong>Tipado estático</strong>: muchas comprobaciones se realizan antes de ejecutar; <strong>dinámico</strong>: los tipos se asocian y comprueban principalmente en ejecución. «Dinámico» no significa «sin tipos». La distinción fuerte/débil es menos formal y alude al grado de conversiones implícitas y restricciones.</p>
+<p>Otros conceptos: inferencia de tipos, genéricos, nulabilidad, tipos algebraicos, conversión explícita e implícita.</p>
+<h3 id="estudio-06">3. Paradigma imperativo y procedimental</h3>
+<p>Describe <strong>cómo</strong> modificar el estado mediante secuencias de instrucciones, asignaciones, condiciones, bucles y procedimientos. C es un ejemplo clásico. Ventajas: modelo cercano a la máquina y control explícito. Riesgos: mutabilidad y efectos laterales pueden complicar sistemas grandes y concurrentes.</p>
+<h3 id="estudio-07">4. Orientación a objetos</h3>
+<p>Organiza software alrededor de objetos que combinan estado y comportamiento. Conceptos: clase, objeto, encapsulación, abstracción, herencia, polimorfismo, composición e interfaces. Java, C#, C++ y muchos lenguajes modernos son multiparadigma y ofrecen OO.</p>
+<p>La composición suele permitir menor acoplamiento que jerarquías de herencia profundas. La OO no garantiza por sí sola buen diseño: importan cohesión, interfaces y responsabilidades.</p>
+<h3 id="estudio-08">5. Programación funcional</h3>
+<p>Trata funciones como valores de primera clase y favorece expresiones, composición, funciones puras e inmutabilidad. Una función pura depende solo de sus entradas y no produce efectos laterales observables. Esto facilita razonamiento, pruebas y paralelismo. Haskell es funcional por diseño; Java, C#, JavaScript, Python y otros incorporan lambdas, funciones de orden superior y operaciones funcionales.</p>
+<p>Conceptos a reconocer: map/filter/reduce, closures, recursividad, evaluación perezosa en algunos lenguajes e inmutabilidad.</p>
+<h3 id="estudio-09">6. Lógico y declarativo</h3>
+<p>En programación declarativa se expresa <strong>qué resultado</strong> se desea y el motor decide gran parte de cómo obtenerlo. SQL es el ejemplo esencial: la consulta describe el conjunto deseado y el optimizador elige un plan. En programación lógica se expresan hechos y reglas, como en Prolog.</p>
+<h3 id="estudio-10">7. Eventos, reactividad y concurrencia</h3>
+<p>En el modelo <strong>dirigido por eventos</strong>, callbacks, listeners o manejadores responden a eventos. Es habitual en GUI, navegador y sistemas distribuidos. La programación <strong>reactiva</strong> modela flujos asíncronos y propagación de cambios; suele incorporar backpressure o mecanismos para regular productores y consumidores.</p>
+<p><strong>Concurrencia</strong> significa progresar en varias tareas potencialmente solapadas; <strong>paralelismo</strong>, ejecutar realmente tareas a la vez. Modelos: hilos y memoria compartida, paso de mensajes/actores, async/await, event loop y procesos.</p>
+<h3 id="estudio-11">8. Gestión de memoria</h3>
+<p>C/C++ permiten control explícito de memoria, con potencia y riesgo de fugas, use-after-free y corrupción. Java, .NET, Python o JavaScript incorporan recolección automática de basura, aunque siguen existiendo fugas lógicas y presión de memoria. Rust emplea ownership y borrowing para imponer gran parte de la seguridad de memoria en compilación sin GC general.</p>
+<h3 id="estudio-12">9. Ejemplos de lenguajes actuales</h3>
+<table>
+<tr>
+<th scope="col"><p>Lenguaje</p></th>
+<th scope="col"><p>Rasgos útiles para comparar</p></th>
+</tr>
+<tr>
+<td><p>C</p></td>
+<td><p>Compilado, procedimental, control de memoria, sistemas y rendimiento.</p></td>
+</tr>
+<tr>
+<td><p>C++</p></td>
+<td><p>Nativo, multiparadigma, OO/genéricos, alto control y complejidad.</p></td>
+</tr>
+<tr>
+<td><p>Java</p></td>
+<td><p>Tipado estático, JVM, GC, OO + funcional, ecosistema empresarial.</p></td>
+</tr>
+<tr>
+<td><p>C#</p></td>
+<td><p>Tipado estático, .NET/CLR, multiparadigma, async/await, ecosistema empresarial.</p></td>
+</tr>
+<tr>
+<td><p>Python</p></td>
+<td><p>Dinámico, alto nivel, multiparadigma, scripting, datos y automatización.</p></td>
+</tr>
+<tr>
+<td><p>JavaScript/ECMAScript</p></td>
+<td><p>Dinámico, web, event loop, funciones de primera clase; cliente y servidor.</p></td>
+</tr>
+<tr>
+<td><p>TypeScript</p></td>
+<td><p>Superset de JavaScript con sistema de tipos estático gradual; transpila a JavaScript.</p></td>
+</tr>
+<tr>
+<td><p>Go</p></td>
+<td><p>Compilado, tipado estático, goroutines/channels, servicios e infraestructura.</p></td>
+</tr>
+<tr>
+<td><p>Rust</p></td>
+<td><p>Compilado, tipado estático, ownership, seguridad de memoria sin GC general.</p></td>
+</tr>
+<tr>
+<td><p>SQL</p></td>
+<td><p>Declarativo, orientado a consulta/manipulación relacional.</p></td>
+</tr>
+</table>
+<h3 id="estudio-13">10. Módulos, paquetes, excepciones y genéricos</h3>
+<p>Los sistemas modernos estructuran código en módulos/paquetes y gestionan dependencias con repositorios y versiones. Las excepciones separan flujo normal y manejo de errores, aunque algunos lenguajes emplean tipos de resultado. Los genéricos permiten reutilizar algoritmos manteniendo información de tipos.</p>
+<h3 id="estudio-14">11. Criterios de selección</h3>
+<p>Lenguaje y runtime deben evaluarse por requisitos funcionales/no funcionales, rendimiento, seguridad, ecosistema, disponibilidad de profesionales, soporte, ciclo de vida, portabilidad, integración, observabilidad, herramientas de pruebas, despliegue y coste de mantenimiento. La moda o preferencia del equipo no es criterio suficiente.</p>
+<h3 id="estudio-15">12. Test</h3>
+<ul>
+<li>Compilado ≠ necesariamente código nativo.</li>
+<li>JIT ≠ intérprete puro.</li>
+<li>Tipado dinámico ≠ ausencia de tipos.</li>
+<li>Paradigma OO ≠ lenguaje exclusivamente OO.</li>
+<li>Funcional: funciones de primera clase e inmutabilidad son ideas centrales.</li>
+<li>Declarativo expresa principalmente qué; imperativo, cómo.</li>
+<li>Concurrencia ≠ paralelismo.</li>
+<li>Garbage collector reduce gestión manual, pero no elimina todos los problemas de memoria.</li>
+<li>SQL es declarativo.</li>
+<li>Java y C# se apoyan en runtime/máquina virtual y pueden usar JIT/AOT.</li>
+</ul>
+<h3 id="estudio-16">13. Supuesto</h3>
+<p>Cuando el caso exija escoger tecnología, presenta una matriz corta: requisitos → alternativas → criterios → decisión. Indica runtime, modelo de concurrencia, bibliotecas, mantenibilidad, seguridad, pruebas, soporte y despliegue. En aplicaciones públicas la continuidad del mantenimiento pesa más que elegir el lenguaje con mayor tendencia.</p>
+<h3 id="estudio-17">14. Resumen II.03</h3>
+<p>Clasifica por ejecución, tipado, memoria y paradigma; domina imperativo, OO, funcional, declarativo, eventos y concurrencia; y aprende a justificar un lenguaje por requisitos.</p>
+<h2 id="repaso">Resumen de repaso</h2>
+<h3 id="repaso-01">Núcleo de estudio</h3>
+<p>Tema complementario. Clasifica lenguajes por nivel de abstracción, tipado estático/dinámico y fuerte/débil, compilación/interpretación/JIT, gestión de memoria y paradigma. Paradigmas principales: imperativo/procedimental, orientado a objetos, funcional, lógico/declarativo, dirigido por eventos, concurrente/reactivo y scripting. Java y C# combinan OO con elementos funcionales y ejecución sobre máquina virtual/runtime; C/C++ se compilan a código nativo; Python y JavaScript son dinámicos y multiparadigma; SQL es declarativo. Conceptos transversales: tipos, alcance, paso de parámetros, excepciones, genéricos, closures, inmutabilidad, concurrencia, recolector de basura, módulos/paquetes y ecosistemas. No hace falta aprender sintaxis extensa: GSI pregunta características y comparaciones.</p>
+<h3 id="repaso-02">Claves de test</h3>
+<p>Compilado no equivale siempre a nativo: Java/.NET compilan a bytecode/IL y usan JIT/AOT. Tipado dinámico no significa “sin tipos”. Funcional enfatiza funciones de primera clase e inmutabilidad; lógico expresa hechos/reglas; declarativo describe qué se quiere. Diferencia concurrencia de paralelismo.</p>
+<h3 id="repaso-03">Enfoque para supuesto práctico</h3>
+<p>En supuesto selecciona lenguaje por ecosistema, mantenibilidad, competencias del equipo, rendimiento, seguridad, soporte, interoperabilidad y ciclo de vida. Evita justificar solo por popularidad.</p>
+<h3 id="repaso-04">Fuentes base del material</h3>
+<p>Sin correspondencia A1 suficiente. Usar fuentes oficiales de Java, .NET, Python/ECMAScript y material docente de paradigmas. Tema COMPLEMENTAR.</p>
+<section class="topic-content__sources"><h2 id="fuentes">Fuentes y localizadores</h2><ul><li><a href="https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)</a> · II.03 · 2026-08-21</li><li><a href="https://docs.google.com/document/d/1h7n4dFYafS_3VMuL55TnEuVKhqaTheUoL-thDFQSr9w/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE II — RESUMEN MAESTRO DE REPASO (16 temas)</a> · II.03 · 2026-08-21</li></ul></section>
 </article>

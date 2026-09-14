@@ -1,11 +1,73 @@
-<article class="topic-content" data-topic-id="B4-T10" data-coverage-status="pending">
-<aside class="topic-content__status topic-content__status--pending" role="status"><p>Contenido pendiente de fuentes verificables.</p></aside>
-<nav class="topic-content__toc" aria-label="Índice del tema">
-<h2>Contenido del tema</h2>
-<ol><li class="topic-content__toc-level-2"><a href="#temario/B4-T10/fuentes-necesarias">Fuentes necesarias</a></li></ol>
-</nav>
-<h2 id="fuentes-necesarias">Fuentes necesarias</h2>
-<div class="topic-content__pendiente" data-editorial-kind="pendiente"><p class="topic-content__kind">Pendiente</p><p>Contenido pendiente de una fuente verificable.</p>
-<p>Fuente necesaria: documentación técnica primaria local sobre redes locales, topologías, transmisión, acceso y dispositivos de interconexión.</p></div>
-
+<article class="topic-content" data-topic-id="B4-T10" data-coverage-status="complete">
+<p>Material curado del corpus GSI A2 · apuntes V2.1 revisados. Procedencia editorial, no documento oficial.</p>
+<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B4-T10/estudio">Apuntes de estudio</a></li><li><a href="#temario/B4-T10/estudio-01">1. WAN y transportes</a></li><li><a href="#temario/B4-T10/estudio-02">2. WDM</a></li><li><a href="#temario/B4-T10/estudio-03">3. MPLS</a></li><li><a href="#temario/B4-T10/estudio-04">4. SD-WAN</a></li><li><a href="#temario/B4-T10/estudio-05">5. Routing estático y dinámico</a></li><li><a href="#temario/B4-T10/estudio-06">6. RIP, OSPF, IS-IS y BGP</a></li><li><a href="#temario/B4-T10/estudio-07">Resumen</a></li><li><a href="#temario/B4-T10/repaso">Resumen de repaso</a></li><li><a href="#temario/B4-T10/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B4-T10/repaso-02">Claves de test</a></li><li><a href="#temario/B4-T10/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B4-T10/repaso-04">Fuentes base del material</a></li></ol></nav>
+<h2 id="estudio">Apuntes de estudio</h2>
+<p><strong>Cobertura oficial que debe quedar dominada:</strong> Redes de área extensa. Tecnologías WDM y MPLS SD-WAN. Protocolos de encaminamiento.</p>
+<h3 id="estudio-01">1. WAN y transportes</h3>
+<p>WAN conecta sedes/CPD/cloud a través de operadores, Internet o infraestructuras propias. Los criterios son capacidad, latencia, disponibilidad, QoS, cifrado, cobertura, coste, diversidad física y tiempo de provisión. Una arquitectura puede combinar varios underlays.</p>
+<h3 id="estudio-02">2. WDM</h3>
+<p>Wavelength Division Multiplexing transporta múltiples canales ópticos en diferentes longitudes de onda sobre una fibra. <strong>CWDM</strong> usa espaciado más amplio y menor complejidad; <strong>DWDM</strong> mayor densidad/capacidad y alcance con sistemas ópticos más sofisticados. WDM es tecnología de capa óptica; no realiza routing IP.</p>
+<h3 id="estudio-03">3. MPLS</h3>
+<p>MPLS reenvía paquetes usando etiquetas. Conceptos: FEC agrupa tráfico con mismo tratamiento; LER inserta/retira etiquetas en borde; LSR conmuta etiquetas; LSP es camino de etiquetas. Permite VPN L3/L2, ingeniería de tráfico y QoS en redes de operador. <strong>MPLS no cifra por sí mismo</strong>.</p>
+<h3 id="estudio-04">4. SD-WAN</h3>
+<p>SD-WAN desacopla política/control de la elección de múltiples transportes. Underlay = conectividad subyacente (Internet, MPLS, 4G/5G...); overlay = túneles/red lógica. Un controlador/orquestador distribuye políticas; el edge mide SLA de caminos y selecciona según aplicación, pérdida, jitter/latencia y coste.</p>
+<p>Beneficios: gestión central, uso activo de varios enlaces y aprovisionamiento; riesgos: dependencia de plataforma, control plane, seguridad de edges y calidad variable del underlay.</p>
+<h3 id="estudio-05">5. Routing estático y dinámico</h3>
+<p>Routing estático es predecible pero escala mal. Protocolos dinámicos intercambian información y convergen tras cambios. Métricas y atributos determinan selección; debe evitarse redistribución indiscriminada.</p>
+<h3 id="estudio-06">6. RIP, OSPF, IS-IS y BGP</h3>
+<table>
+<tr>
+<th scope="col"><p><strong>Protocolo
+</strong></p></th>
+<th scope="col"><p><strong>Tipo
+</strong></p></th>
+<th scope="col"><p><strong>Ámbito/idea clave
+</strong></p></th>
+</tr>
+<tr>
+<td><p>RIP</p></td>
+<td><p>distance-vector</p></td>
+<td><p>métrica de saltos; simple/legado</p></td>
+</tr>
+<tr>
+<td><p>OSPF</p></td>
+<td><p>link-state IGP</p></td>
+<td><p>áreas, coste, SPF; interior de organización</p></td>
+</tr>
+<tr>
+<td><p>IS-IS</p></td>
+<td><p>link-state IGP</p></td>
+<td><p>niveles/áreas; común en grandes operadores</p></td>
+</tr>
+<tr>
+<td><p>BGP</p></td>
+<td><p>path-vector EGP</p></td>
+<td><p>políticas y AS-PATH entre AS; también DC/enterprise a gran escala</p></td>
+</tr>
+</table>
+<p>Datos y trampas de test</p>
+<ul>
+<li>WDM multiplexa longitudes de onda, no paquetes IP.</li>
+<li>MPLS usa etiquetas y no cifra por sí mismo.</li>
+<li>Underlay ≠ overlay en SD-WAN.</li>
+<li>OSPF es link-state; BGP path-vector.</li>
+<li>BGP utiliza políticas/atributos, no una “ruta más corta” simple.</li>
+<li>Routing estático puede ser adecuado en topologías sencillas.</li>
+<li>Redundancia lógica sin diversidad física puede compartir el mismo fallo de fibra.</li>
+</ul>
+<p>Aplicación al supuesto práctico</p>
+<p>Compara MPLS, doble Internet+VPN y SD-WAN con criterios de SLA, cifrado y coste. Diseña dos operadores/rutas físicamente diversas, routing interior y exterior, QoS, monitorización y failover. Si hay cloud, contempla latencia y conectividad directa o VPN según criticidad.</p>
+<h3 id="estudio-07">Resumen</h3>
+<p>WAN moderna combina transportes físicos/operador, routing y overlays. WDM aumenta capacidad óptica; MPLS ofrece forwarding/VPN/QoS; SD-WAN centraliza política sobre varios underlays.</p>
+<p><strong>Fuentes base:</strong> A1 113 + 108 + 120; SD-WAN actualizado como complemento.</p>
+<h2 id="repaso">Resumen de repaso</h2>
+<h3 id="repaso-01">Núcleo de estudio</h3>
+<p>WAN conecta sedes a larga distancia mediante servicios de operador, Internet/VPN y tecnologías privadas. WDM multiplexa múltiples longitudes de onda sobre fibra (CWDM/DWDM). MPLS conmuta etiquetas y permite VPN, ingeniería de tráfico y clases de servicio en redes de operador. SD-WAN crea overlay gestionado por software sobre múltiples transportes, seleccionando caminos según políticas/rendimiento y facilitando centralización. Routing: estático y dinámico; OSPF/IS-IS como IGP; BGP entre sistemas autónomos y también en grandes redes. Conceptos: convergencia, métrica, prefijo, next hop, redundancia y QoS.</p>
+<h3 id="repaso-02">Claves de test</h3>
+<p>MPLS no cifra por sí mismo; SD-WAN no es necesariamente Internet-only; BGP es path-vector; OSPF es link-state. WDM opera en capa óptica y aumenta capacidad por fibra.</p>
+<h3 id="repaso-03">Enfoque para supuesto práctico</h3>
+<p>En supuesto compara MPLS, Internet+VPN y SD-WAN; diseña doble operador/enlace, BGP/OSPF, QoS, cifrado, monitorización y failover. Incluye latencia a cloud/CPD.</p>
+<h3 id="repaso-04">Fuentes base del material</h3>
+<p>A1 113 + 108 + 120.</p>
+<section class="topic-content__sources"><h2 id="fuentes">Fuentes y localizadores</h2><ul><li><a href="https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)</a> · IV.10 · 2026-08-21</li><li><a href="https://docs.google.com/document/d/1PRbZRedDj9j2D4jPlDODZUKkmbCqPWxMM4hhGhjcZIo/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE IV — RESUMEN MAESTRO DE REPASO (16 temas)</a> · IV.10 · 2026-08-21</li></ul></section>
 </article>

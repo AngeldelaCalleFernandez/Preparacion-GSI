@@ -1,0 +1,66 @@
+<article class="topic-content" data-topic-id="B3-T13" data-coverage-status="complete">
+<p>Material curado del corpus GSI A2 · apuntes V2.1 revisados. Procedencia editorial, no documento oficial.</p>
+<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B3-T13/estudio">Apuntes de estudio</a></li><li><a href="#temario/B3-T13/estudio-01">1. Calidad</a></li><li><a href="#temario/B3-T13/estudio-02">2. ISO/IEC 25010:2023</a></li><li><a href="#temario/B3-T13/estudio-03">3. Métricas</a></li><li><a href="#temario/B3-T13/estudio-04">4. Complejidad ciclomática</a></li><li><a href="#temario/B3-T13/estudio-05">5. Mantenibilidad</a></li><li><a href="#temario/B3-T13/estudio-06">6. Calidad en proceso</a></li><li><a href="#temario/B3-T13/estudio-07">6.1 SQuaRE y modelos de calidad</a></li><li><a href="#temario/B3-T13/estudio-08">6.2 Nueve características de ISO/IEC 25010:2023</a></li><li><a href="#temario/B3-T13/estudio-09">6.3 Métricas de producto</a></li><li><a href="#temario/B3-T13/estudio-10">6.4 Métricas de proceso/entrega</a></li><li><a href="#temario/B3-T13/estudio-11">6.5 QA, QC y mejora</a></li><li><a href="#temario/B3-T13/estudio-12">6.6 Modelos de proceso</a></li><li><a href="#temario/B3-T13/estudio-13">7. Test</a></li><li><a href="#temario/B3-T13/estudio-14">8. Supuesto</a></li><li><a href="#temario/B3-T13/estudio-15">9. Resumen</a></li><li><a href="#temario/B3-T13/repaso">Resumen de repaso</a></li><li><a href="#temario/B3-T13/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B3-T13/repaso-02">Claves de test</a></li><li><a href="#temario/B3-T13/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B3-T13/repaso-04">Actualización 2026</a></li><li><a href="#temario/B3-T13/repaso-05">Fuentes base del material</a></li></ol></nav>
+<h2 id="estudio">Apuntes de estudio</h2>
+<p>Cobertura oficial que debe quedar dominada: Calidad del software y medición: modelos, métricas, normas y estándares.</p>
+<h3 id="estudio-01">1. Calidad</h3>
+<p>Grado en que producto satisface necesidades/requisitos bajo condiciones. Distingue quality assurance (proceso/preventivo) y quality control (evaluación del producto).</p>
+<h3 id="estudio-02">2. ISO/IEC 25010:2023</h3>
+<p>La edición 2023 reemplaza a 2011 y define un modelo de calidad de producto con <strong>9 características</strong>. El examen puede contener material antiguo, pero el apunte debe reflejar estándar vigente y señalar transición.</p>
+<p>Las características vigentes incluyen adecuación funcional, eficiencia de desempeño, compatibilidad, capacidad de interacción, fiabilidad, seguridad, mantenibilidad, flexibilidad y safety; cada una se subdivide. Para estudiar, importa entender que el modelo sirve para especificar, medir y evaluar calidad durante el ciclo.</p>
+<h3 id="estudio-03">3. Métricas</h3>
+<p>Producto: tamaño, complejidad, duplicación, cobertura, defect density, deuda técnica, rendimiento. Proceso: lead/cycle time, defect escape, change failure rate. Servicio: disponibilidad, latencia, error rate, SLO.</p>
+<h3 id="estudio-04">4. Complejidad ciclomática</h3>
+<p>McCabe mide caminos independientes del grafo de control; una formulación común V(G)=E−N+2P o decisiones+1 para componente simple. Alta complejidad incrementa dificultad de prueba/mantenimiento, pero el número no debe usarse aislado.</p>
+<h3 id="estudio-05">5. Mantenibilidad</h3>
+<p>Modularidad, analizabilidad, modificabilidad, testabilidad y reutilización según modelo/edición aplicable. Reducir acoplamiento, aumentar cohesión, pruebas y documentación.</p>
+<h3 id="estudio-06">6. Calidad en proceso</h3>
+<p>Definition of Done, reviews, lint/static analysis, testing, quality gates, gestión de deuda, RCA y mejora continua.</p>
+<h3 id="estudio-07">6.1 SQuaRE y modelos de calidad</h3>
+<p><strong>Base A1 correcta:</strong> 103, versión 31.1 actualizada 24/02/2026. Se elimina la vieja derivación hacia A1 050. <strong>Complemento oficial:</strong> ISO/IEC 25010:2023 es la edición vigente del modelo de calidad de producto y define nueve características.</p>
+<p>La familia <strong>SQuaRE (ISO/IEC 25000)</strong> organiza requisitos y evaluación de calidad. Para estudiar no es necesario memorizar todas las partes, pero sí entender la cadena: definir modelo/requisitos → seleccionar medidas → evaluar → aceptar/mejorar.</p>
+<h3 id="estudio-08">6.2 Nueve características de ISO/IEC 25010:2023</h3>
+<p>Functional suitability, performance efficiency, compatibility, interaction capability, reliability, security, maintainability, flexibility y safety. La terminología de 2023 cambia respecto a material 2011: por eso en test hay que saber identificar qué edición se pregunta.</p>
+<h3 id="estudio-09">6.3 Métricas de producto</h3>
+<ul>
+<li>densidad de defectos;</li>
+<li>complejidad ciclomática;</li>
+<li>duplicación;</li>
+<li>acoplamiento/cohesión;</li>
+<li>cobertura;</li>
+<li>tiempo de respuesta/throughput;</li>
+<li>disponibilidad y tasa de error;</li>
+<li>vulnerabilidades por severidad/edad.</li>
+</ul>
+<p>Una métrica debe tener definición, unidad, población, periodo y objetivo. Comparar proyectos distintos con “líneas de código” sin contexto es una mala práctica.</p>
+<h3 id="estudio-10">6.4 Métricas de proceso/entrega</h3>
+<p>Lead time, deployment frequency, change failure rate, mean time to restore (con cautela sobre definiciones), defect escape rate y tiempo de resolución. Las métricas DORA pueden orientar entrega, pero no sustituyen calidad funcional ni seguridad.</p>
+<h3 id="estudio-11">6.5 QA, QC y mejora</h3>
+<p><strong>QA</strong> diseña procesos preventivos: estándares, revisiones, formación, pipeline, auditoría. <strong>QC</strong> evalúa producto: pruebas, inspecciones y mediciones. RCA, retrospectivas y mejora continua cierran el ciclo.</p>
+<h3 id="estudio-12">6.6 Modelos de proceso</h3>
+<p>EFQM/ISO 900x pueden aparecer en tus fuentes como calidad organizativa/servicio, pero el epígrafe GSI aquí se centra en <strong>software y medición</strong>. Se conservan solo como contexto, evitando convertir III.13 en el tema A1 completo de calidad organizativa.</p>
+<h3 id="estudio-13">7. Test</h3>
+<ul>
+<li>QA ≠ QC.</li>
+<li>ISO/IEC 25010:2023 es edición actual.</li>
+<li>Cobertura ≠ ausencia de defectos.</li>
+<li>Complejidad ≠ calidad total.</li>
+<li>Métrica sin objetivo/contexto puede inducir comportamientos perversos.</li>
+</ul>
+<h3 id="estudio-14">8. Supuesto</h3>
+<p>Convierte calidad en NFR medibles: disponibilidad, p95, errores, seguridad, accesibilidad, mantenibilidad y criterios de aceptación. Añade quality gates y SLO.</p>
+<h3 id="estudio-15">9. Resumen</h3>
+<p>Calidad debe especificarse y medirse. Actualiza el modelo a ISO/IEC 25010:2023 y usa métricas con contexto.</p>
+<h2 id="repaso">Resumen de repaso</h2>
+<h3 id="repaso-01">Núcleo de estudio</h3>
+<p>Calidad debe definirse y medirse desde requisitos. ISO/IEC 25010:2023 actualiza el modelo de calidad de producto a nueve características: adecuación funcional, eficiencia de desempeño, compatibilidad, capacidad de interacción, fiabilidad, seguridad, mantenibilidad, flexibilidad y seguridad funcional/safety. Métricas pueden ser de producto (complejidad, defectos, cobertura), proceso (lead time, tasa de defectos, retrabajo) y servicio (disponibilidad, latencia, error rate), siempre vinculadas a objetivos. ISO 9001 aporta gestión de calidad organizativa; familia SQuaRE estructura evaluación de calidad de sistemas/software. Calidad interna, externa y en uso se relacionan pero no son idénticas.</p>
+<h3 id="repaso-02">Claves de test</h3>
+<p>La edición ISO/IEC 25010:2011 tenía ocho características y quedó sustituida por la edición 2023. Cobertura de código no mide por sí sola calidad. Disponibilidad puede expresarse como tiempo disponible/tiempo total; fiabilidad no es solo rendimiento.</p>
+<h3 id="repaso-03">Enfoque para supuesto práctico</h3>
+<p>En supuesto define atributos medibles: disponibilidad, p95 de respuesta, tasa de error, cobertura, vulnerabilidades, accesibilidad, mantenibilidad. Incluye quality gates y aceptación basada en SLA/SLO y pruebas.</p>
+<h3 id="repaso-04">Actualización 2026</h3>
+<p>Actualización 2026: estudiar la edición ISO/IEC 25010:2023, no quedarse exclusivamente con el modelo 2011.</p>
+<h3 id="repaso-05">Fuentes base del material</h3>
+<p>A1 103 es la fuente actual correcta; no usar A1 050 de mapeos antiguos. ISO/IEC 25010:2023.</p>
+<section class="topic-content__sources"><h2 id="fuentes">Fuentes y localizadores</h2><ul><li><a href="https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)</a> · III.13 · 2026-08-21</li><li><a href="https://docs.google.com/document/d/1l0nl4fc451Tl3XB9XZ4LRLZGLZEJxUueQvaMZoF8gcA/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE III — RESUMEN MAESTRO DE REPASO (15 temas)</a> · III.13 · 2026-08-21</li></ul></section>
+</article>

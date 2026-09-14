@@ -1,11 +1,79 @@
-<article class="topic-content" data-topic-id="B2-T01" data-coverage-status="pending">
-<aside class="topic-content__status topic-content__status--pending" role="status"><p>Contenido pendiente de fuentes verificables.</p></aside>
-<nav class="topic-content__toc" aria-label="Índice del tema">
-<h2>Contenido del tema</h2>
-<ol><li class="topic-content__toc-level-2"><a href="#temario/B2-T01/fuentes-necesarias">Fuentes necesarias</a></li></ol>
-</nav>
-<h2 id="fuentes-necesarias">Fuentes necesarias</h2>
-<div class="topic-content__pendiente" data-editorial-kind="pendiente"><p class="topic-content__kind">Pendiente</p><p>Contenido pendiente de una fuente verificable.</p>
-<p>Fuente necesaria: documentación técnica primaria local sobre informática básica, sistemas de información y arquitectura de ordenadores.</p></div>
-
+<article class="topic-content" data-topic-id="B2-T01" data-coverage-status="complete">
+<p>Material curado del corpus GSI A2 · apuntes V2.1 revisados. Procedencia editorial, no documento oficial.</p>
+<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B2-T01/estudio">Apuntes de estudio</a></li><li><a href="#temario/B2-T01/estudio-01">1. Alcance del BOE</a></li><li><a href="#temario/B2-T01/estudio-02">2. Componentes básicos de un sistema de cómputo</a></li><li><a href="#temario/B2-T01/estudio-03">3. Paralelismo y taxonomía de Flynn</a></li><li><a href="#temario/B2-T01/estudio-04">4. Mainframe, supercomputación, clúster y grid</a></li><li><a href="#temario/B2-T01/estudio-05">5. Escalabilidad, elasticidad y disponibilidad</a></li><li><a href="#temario/B2-T01/estudio-06">6. Virtualización</a></li><li><a href="#temario/B2-T01/estudio-07">7. Computación en la nube</a></li><li><a href="#temario/B2-T01/estudio-08">7.1 Modelos de servicio</a></li><li><a href="#temario/B2-T01/estudio-09">7.2 Modelos de despliegue</a></li><li><a href="#temario/B2-T01/estudio-10">7.3 Componentes y capacidades</a></li><li><a href="#temario/B2-T01/estudio-11">8. Riesgos y criterios de elección</a></li><li><a href="#temario/B2-T01/estudio-12">9. Datos y trampas de test</a></li><li><a href="#temario/B2-T01/estudio-13">10. Aplicación al supuesto</a></li><li><a href="#temario/B2-T01/estudio-14">11. Resumen II.01</a></li><li><a href="#temario/B2-T01/repaso">Resumen de repaso</a></li><li><a href="#temario/B2-T01/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B2-T01/repaso-02">Claves de test</a></li><li><a href="#temario/B2-T01/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B2-T01/repaso-04">Fuentes base del material</a></li></ol></nav>
+<h2 id="estudio">Apuntes de estudio</h2>
+<h3 id="estudio-01">1. Alcance del BOE</h3>
+<p>El tema une dos escalas: desde los dispositivos móviles y ordenadores de propósito general hasta servidores, clústeres, superordenadores y cloud. Para estudiarlo bien hay que dominar la <strong>base tecnológica</strong> —procesador, memoria, E/S, almacenamiento e interconexión— y después entender cómo se obtienen capacidad, paralelismo, escalabilidad, disponibilidad y elasticidad.</p>
+<p><strong>Depuración A1:</strong> el A1 052 aporta taxonomía de Flynn, UMA/NUMA, clúster y grid, pero es de 2019. Se conserva esa teoría estable; se eliminan afirmaciones coyunturales sobre la madurez del grid. A1 053 aporta servidores, virtualización e infraestructura más reciente.</p>
+<h3 id="estudio-02">2. Componentes básicos de un sistema de cómputo</h3>
+<p>Un computador ejecuta instrucciones sobre datos mediante la cooperación de procesador, memoria, subsistema de entrada/salida, almacenamiento e interconexiones. La CPU contiene unidades de control y ejecución, registros y varios niveles de caché. En procesadores modernos es habitual disponer de varios <strong>núcleos</strong>, y cada núcleo puede exponer uno o más <strong>hilos hardware</strong>. No deben confundirse CPU física, socket, núcleo e hilo.</p>
+<p>La jerarquía de memoria busca equilibrar velocidad, capacidad y coste: registros → cachés L1/L2/L3 → memoria principal → almacenamiento persistente. Cuanto más cerca de la CPU, menor latencia y normalmente menor capacidad. Las cachés explotan localidad temporal y espacial. En sistemas multiprocesador cobran importancia la coherencia de caché y la topología de memoria.</p>
+<p>El almacenamiento puede apoyarse en HDD, SSD/NVMe y sistemas externos o distribuidos. La E/S se gestiona mediante controladores, buses e interfaces. En cargas especializadas aparecen <strong>aceleradores</strong>: GPU para procesamiento masivamente paralelo, FPGA para lógica reconfigurable y otros ASIC orientados a cargas concretas.</p>
+<h3 id="estudio-03">3. Paralelismo y taxonomía de Flynn</h3>
+<p>La clasificación clásica distingue el número de flujos de instrucciones y de datos:</p>
+<ul>
+<li><strong>SISD</strong>: una instrucción y un flujo de datos; modelo secuencial clásico.</li>
+<li><strong>SIMD</strong>: una misma instrucción se aplica a múltiples datos. Es característico del procesamiento vectorial y de muchas operaciones de GPU.</li>
+<li><strong>MISD</strong>: múltiples instrucciones sobre un flujo de datos; poco común como arquitectura general.</li>
+<li><strong>MIMD</strong>: múltiples instrucciones sobre múltiples datos; modelo típico de multiprocesadores y sistemas distribuidos.</li>
+</ul>
+<p>En MIMD interesa distinguir memoria compartida y distribuida. En <strong>UMA</strong> los procesadores presentan tiempos de acceso aproximadamente uniformes a memoria; en <strong>NUMA</strong> el acceso a memoria local es más rápido que a memoria asociada a otros procesadores. El software debe considerar afinidad, localidad y sincronización para aprovechar el hardware.</p>
+<h3 id="estudio-04">4. Mainframe, supercomputación, clúster y grid</h3>
+<p><strong>Mainframe</strong> y <strong>supercomputador</strong> no son sinónimos. El mainframe prioriza enorme capacidad transaccional, E/S, disponibilidad, aislamiento de cargas y continuidad de servicio; el supercomputador se orienta a maximizar capacidad de cálculo para problemas científicos o técnicos. Ambos pueden ser multiprocesador y altamente redundantes, pero sus cargas y objetivos difieren.</p>
+<p>Un <strong>clúster</strong> agrupa nodos independientes conectados por una red y coordinados mediante software para prestar una capacidad conjunta. Puede buscar alto rendimiento, alta disponibilidad, balanceo o una combinación. El A1 052 destaca tres piezas: nodos de computación, interconexión de altas prestaciones y middleware que coordina el conjunto.</p>
+<p><strong>Grid computing</strong> agrega recursos autónomos y geográficamente distribuidos, incluso pertenecientes a dominios distintos. La idea estable es compartir y seleccionar recursos de manera dinámica; no debe estudiarse como si sustituyera al cloud moderno.</p>
+<h3 id="estudio-05">5. Escalabilidad, elasticidad y disponibilidad</h3>
+<p><strong>Escalabilidad vertical (scale up)</strong> aumenta CPU, RAM o capacidad de un nodo. Es simple, pero tiene techo físico y puede mantener un punto único de fallo. <strong>Escalabilidad horizontal (scale out)</strong> añade nodos y exige que la aplicación y los datos toleren distribución. En sistemas web suele facilitarse manteniendo servicios sin estado o externalizando el estado.</p>
+<p><strong>Elasticidad</strong> es la capacidad de ajustar recursos a la demanda, idealmente de forma automática. Un sistema puede ser escalable sin ser elástico. <strong>Alta disponibilidad</strong> reduce interrupciones mediante redundancia y failover; <strong>tolerancia a fallos</strong> busca seguir funcionando a pesar de fallos; <strong>recuperación ante desastres</strong> contempla la restauración del servicio ante eventos graves y se relaciona con RTO y RPO.</p>
+<h3 id="estudio-06">6. Virtualización</h3>
+<p>La virtualización abstrae recursos físicos para crear entornos lógicos. Un <strong>hipervisor tipo 1</strong> se ejecuta directamente sobre el hardware; uno <strong>tipo 2</strong> sobre un sistema operativo anfitrión. Una máquina virtual incluye un sistema operativo invitado y recursos virtuales; esto proporciona aislamiento y flexibilidad, aunque introduce sobrecarga y exige gestión del hipervisor, imágenes, redes y almacenamiento.</p>
+<p>No confundas virtualización con contenedores: el contenedor comparte el kernel del host y virtualiza a nivel de sistema operativo; se estudia en II.07.</p>
+<h3 id="estudio-07">7. Computación en la nube</h3>
+<p>Cloud computing ofrece recursos TIC bajo demanda mediante acceso de red, aprovisionamiento rápido, compartición de recursos, medición de consumo y elasticidad. Las características conceptuales importan más que memorizar proveedores.</p>
+<h3 id="estudio-08">7.1 Modelos de servicio</h3>
+<ul>
+<li><strong>IaaS</strong>: el proveedor entrega capacidad de cómputo, red y almacenamiento; el cliente gestiona SO, middleware y aplicaciones.</li>
+<li><strong>PaaS</strong>: el proveedor gestiona además plataforma/runtime y servicios de soporte; el cliente despliega aplicaciones y datos.</li>
+<li><strong>SaaS</strong>: el usuario consume una aplicación completa gestionada por el proveedor.</li>
+<li>Otros modelos especializados —funciones, bases de datos gestionadas, contenedores gestionados— pueden entenderse como evoluciones dentro del continuo de responsabilidad.</li>
+</ul>
+<h3 id="estudio-09">7.2 Modelos de despliegue</h3>
+<ul>
+<li><strong>Nube pública</strong>: infraestructura ofrecida por un proveedor a múltiples clientes.</li>
+<li><strong>Nube privada</strong>: dedicada a una organización, alojada interna o externamente.</li>
+<li><strong>Híbrida</strong>: integra recursos privados y públicos con mecanismos de interoperabilidad y operación.</li>
+<li><strong>Multicloud</strong>: uso de más de un proveedor; no implica por sí mismo integración transparente.</li>
+</ul>
+<h3 id="estudio-10">7.3 Componentes y capacidades</h3>
+<p>Una plataforma cloud combina cómputo, redes virtuales, balanceo, almacenamiento de bloque/fichero/objeto, IAM, gestión de claves y secretos, observabilidad, autoscaling, copias, imágenes, APIs de gestión y automatización. La infraestructura se organiza frecuentemente en regiones y zonas de disponibilidad para aislar fallos.</p>
+<h3 id="estudio-11">8. Riesgos y criterios de elección</h3>
+<p>Cloud no elimina la administración: cambia el reparto de responsabilidades. Deben valorarse protección del dato, ENS cuando proceda, ubicación y transferencias, identidad y privilegios, cifrado, logging, dependencia del proveedor, portabilidad, costes variables, salida/reversibilidad, disponibilidad y continuidad.</p>
+<p>El dimensionamiento debe distinguir <strong>capacidad</strong> y <strong>rendimiento</strong>. Métricas típicas: CPU, RAM, IOPS, throughput, latencia, concurrencia y tiempos de respuesta. Sobredimensionar encarece; infradimensionar compromete servicio.</p>
+<h3 id="estudio-12">9. Datos y trampas de test</h3>
+<ul>
+<li>SISD/SIMD/MISD/MIMD clasifican por flujos de instrucciones y datos.</li>
+<li>UMA ≠ NUMA.</li>
+<li>Mainframe ≠ supercomputador.</li>
+<li>Clúster ≠ grid ≠ cloud.</li>
+<li>Scale up = más recursos en un nodo; scale out = más nodos.</li>
+<li>Escalabilidad ≠ elasticidad.</li>
+<li>HA ≠ backup ≠ disaster recovery.</li>
+<li>IaaS/PaaS/SaaS implican distinta distribución de responsabilidades.</li>
+<li>Hipervisor tipo 1 ≠ tipo 2.</li>
+<li>CPU/socket/núcleo/hilo no son equivalentes.</li>
+</ul>
+<h3 id="estudio-13">10. Aplicación al supuesto</h3>
+<p>Ante una carga nueva, describe volumen y picos, requisitos de latencia, disponibilidad y datos; estima recursos; plantea escalado vertical/horizontal; distribuye por zonas; añade balanceo, observabilidad, backups y DR; y compara on-premise/cloud con TCO y riesgos. Una respuesta madura justifica por qué la arquitectura elegida satisface los requisitos y cómo crecerá.</p>
+<h3 id="estudio-14">11. Resumen II.01</h3>
+<p>Estudia la cadena completa: hardware → paralelismo → clúster/HPC → virtualización → escalabilidad → cloud. Las preguntas de examen suelen explotar diferencias conceptuales; en supuesto, la clave es dimensionar, eliminar puntos únicos de fallo y justificar coste, seguridad y crecimiento.</p>
+<h2 id="repaso">Resumen de repaso</h2>
+<h3 id="repaso-01">Núcleo de estudio</h3>
+<p>Estudia la evolución desde dispositivos móviles y sistemas personales hasta servidores, clústeres, supercomputadores y arquitecturas de altas prestaciones. Revisa CPU, memoria, buses, almacenamiento, GPU/aceleradores, paralelismo SIMD/MIMD, multiprocesamiento, clúster y conceptos de HPC. Escalabilidad vertical significa aumentar recursos de un nodo; horizontal, añadir nodos. En cloud distingue IaaS, PaaS y SaaS; despliegues público, privado, híbrido y multicloud; elasticidad, autoservicio, pago por uso, agrupación de recursos y acceso por red. Relaciona virtualización, contenedores, almacenamiento distribuido, balanceo, alta disponibilidad y regiones/zonas de disponibilidad. Para la AGE conviene conocer la idea de nube soberana y servicios cloud contratados con requisitos ENS, sin memorizar productos comerciales salvo ejemplos.</p>
+<h3 id="repaso-02">Claves de test</h3>
+<p>Diferencia escalabilidad y elasticidad; alta disponibilidad y recuperación ante desastres; hipervisor tipo 1 y tipo 2; IaaS/PaaS/SaaS; cloud público/privado/híbrido. En arquitectura, CPU no es lo mismo que núcleo, hilo o socket. Preguntas frecuentes mezclan capacidad, rendimiento, disponibilidad y tolerancia a fallos.</p>
+<h3 id="repaso-03">Enfoque para supuesto práctico</h3>
+<p>Ante un supuesto, justifica dimensionamiento, crecimiento, HA, zonas, RPO/RTO, cifrado, monitorización y coste. Evita elegir cloud “porque sí”: compara requisitos de datos, latencia, dependencia de proveedor, reversibilidad y ENS.</p>
+<h3 id="repaso-04">Fuentes base del material</h3>
+<p>A1 052 + 053 + 054 + 055 y RELEASE de arquitectura física/cloud.</p>
+<section class="topic-content__sources"><h2 id="fuentes">Fuentes y localizadores</h2><ul><li><a href="https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)</a> · II.01 · 2026-08-21</li><li><a href="https://docs.google.com/document/d/1h7n4dFYafS_3VMuL55TnEuVKhqaTheUoL-thDFQSr9w/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE II — RESUMEN MAESTRO DE REPASO (16 temas)</a> · II.01 · 2026-08-21</li></ul></section>
 </article>

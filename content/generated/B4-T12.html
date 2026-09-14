@@ -1,0 +1,54 @@
+<article class="topic-content" data-topic-id="B4-T12" data-coverage-status="complete">
+<p>Material curado del corpus GSI A2 · apuntes V2.1 revisados. Procedencia editorial, no documento oficial.</p>
+<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B4-T12/estudio">Apuntes de estudio</a></li><li><a href="#temario/B4-T12/estudio-01">1. Arquitectura por capas y Zero Trust</a></li><li><a href="#temario/B4-T12/estudio-02">2. Perímetro, DMZ y segmentación</a></li><li><a href="#temario/B4-T12/estudio-03">3. AAA, NAC y administración</a></li><li><a href="#temario/B4-T12/estudio-04">4. Criptografía</a></li><li><a href="#temario/B4-T12/estudio-05">5. PKI, certificados y firma digital</a></li><li><a href="#temario/B4-T12/estudio-06">6. TLS, SSH e IPsec</a></li><li><a href="#temario/B4-T12/estudio-07">7. VPN</a></li><li><a href="#temario/B4-T12/estudio-08">8. Puesto de usuario</a></li><li><a href="#temario/B4-T12/estudio-09">9. ENS</a></li><li><a href="#temario/B4-T12/estudio-10">Resumen</a></li><li><a href="#temario/B4-T12/repaso">Resumen de repaso</a></li><li><a href="#temario/B4-T12/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B4-T12/repaso-02">Claves de test</a></li><li><a href="#temario/B4-T12/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B4-T12/repaso-04">Fuentes base del material</a></li></ol></nav>
+<h2 id="estudio">Apuntes de estudio</h2>
+<p><strong>Cobertura oficial que debe quedar dominada:</strong> La seguridad en redes. Seguridad perimetral. Control de accesos. Técnicas criptográficas y protocolos seguros. Mecanismos de firma digital. Redes privadas virtuales. Seguridad en el puesto del usuario.</p>
+<h3 id="estudio-01">1. Arquitectura por capas y Zero Trust</h3>
+<p>Seguridad en red aplica defensa en profundidad: segmentación, control de identidad, filtrado, cifrado, detección, endpoint, registro y respuesta. Zero Trust no significa “sin red interna”: significa no conceder confianza implícita por ubicación y verificar identidad, dispositivo, contexto y mínimo privilegio de forma continua.</p>
+<h3 id="estudio-02">2. Perímetro, DMZ y segmentación</h3>
+<p>DMZ aloja servicios expuestos separándolos de redes internas. Firewall <strong>stateless</strong> filtra por reglas de paquete; <strong>stateful</strong> sigue estado de conexión; NGFW añade identificación de aplicaciones/usuarios y otras funciones. Proxy intermedia tráfico; WAF protege aplicaciones web HTTP; IDS detecta, IPS puede bloquear. La segmentación limita movimiento lateral.</p>
+<h3 id="estudio-03">3. AAA, NAC y administración</h3>
+<p>AAA = Authentication, Authorization, Accounting. RADIUS se usa ampliamente para acceso de red/802.1X; TACACS+ es frecuente en administración de dispositivos. 802.1X separa supplicant, authenticator y servidor AAA. NAC aplica identidad/postura y políticas.</p>
+<p>La administración debe usar MFA, RBAC, cuentas nominativas, bastión/PAM, protocolos seguros, red de gestión y logs. Deshabilitar Telnet/HTTP inseguros cuando existan alternativas.</p>
+<h3 id="estudio-04">4. Criptografía</h3>
+<p>Simétrica (AES): misma clave, eficiente para volumen. Asimétrica (RSA/ECC): par pública/privada, útil para firma/intercambio/autenticación. Hash (SHA-2/SHA-3): huella unidireccional, no cifra. HMAC combina hash y secreto para autenticidad/integridad.</p>
+<p>La seguridad depende de algoritmos, tamaños, modos, generación/almacenamiento de claves y protocolo. “Usar criptografía” sin gestión de claves no resuelve el riesgo.</p>
+<h3 id="estudio-05">5. PKI, certificados y firma digital</h3>
+<p>Una PKI gestiona CA, certificados, claves, políticas, revocación/estado (CRL/OCSP) y ciclo de vida. En firma digital, el firmante genera una firma con su clave privada sobre el hash/estructura definida; se verifica con la pública/certificado. Aporta autenticidad e integridad y puede sustentar no repudio en el marco jurídico/procedimental adecuado.</p>
+<h3 id="estudio-06">6. TLS, SSH e IPsec</h3>
+<p>TLS protege protocolos de aplicación. En julio de 2026, RFC 9846 volvió a especificar TLS 1.3 y <strong>obsoletó RFC 8446</strong>; para examen importa TLS 1.3 y sus propiedades modernas (AEAD, handshake y eliminación de algoritmos legados), no memorizar cada cambio editorial.</p>
+<p>SSH protege administración remota; IPsec protege tráfico IP mediante arquitectura de seguridad con AH/ESP (en la práctica ESP es central) y modos transporte/túnel. No confundir TLS con IPsec: operan en capas y escenarios diferentes.</p>
+<h3 id="estudio-07">7. VPN</h3>
+<p>VPN site-to-site conecta redes; acceso remoto conecta usuario/dispositivo. Puede basarse en IPsec o TLS/tecnologías asociadas. Debe autenticar fuerte, limitar rutas/recursos, registrar y evaluar endpoint. Split tunneling reduce carga pero cambia riesgo; decidir por política.</p>
+<h3 id="estudio-08">8. Puesto de usuario</h3>
+<p>Hardening, parcheo, EDR/antimalware, cifrado de disco, firewall local, control de aplicaciones, mínimo privilegio, navegador seguro, bloqueo, MFA, protección de credenciales, MDM/UEM en móviles y copias de datos cuando corresponda. Una VPN no protege un endpoint ya comprometido.</p>
+<h3 id="estudio-09">9. ENS</h3>
+<p>En sector público español, el RD 311/2022 regula el ENS. Su texto consolidado vigente a esta revisión mantiene principios como seguridad integral, gestión basada en riesgos, prevención/detección/respuesta/conservación, líneas de defensa, vigilancia continua y diferenciación de responsabilidades. Las medidas se agrupan en marco organizativo, operacional y protección.</p>
+<p>Datos y trampas de test</p>
+<ul>
+<li>Hash ≠ cifrado.</li>
+<li>Firma se genera con clave privada y se verifica con pública.</li>
+<li>Cifrado no implica por sí solo autenticación.</li>
+<li>Firewall stateful ≠ WAF.</li>
+<li>IDS detecta; IPS puede actuar/bloquear.</li>
+<li>RADIUS es típico en acceso 802.1X; TACACS+ en administración de dispositivos.</li>
+<li>MPLS ≠ VPN cifrada por sí misma.</li>
+<li>TLS 1.3 sigue siendo versión moderna; RFC 9846 (julio 2026) obsoleta RFC 8446.</li>
+<li>VPN ≠ endpoint seguro.</li>
+</ul>
+<p>Aplicación al supuesto práctico</p>
+<p>Parte de datos/servicios y riesgo: zonas/DMZ, firewalls, WAF/IDS/IPS, NAC/802.1X, AAA, MFA/PAM, cifrado y PKI, VPN/Zero Trust, EDR y SIEM. Mapea controles al ENS cuando aplique. Dibuja flujos permitidos y evita “allow any”; incluye gestión de certificados, logs y respuesta.</p>
+<h3 id="estudio-10">Resumen</h3>
+<p>La seguridad en red no es un producto: es arquitectura de confianza mínima, control de accesos, criptografía correcta, segmentación, detección y endpoint endurecido, alineados con riesgo y ENS.</p>
+<p><strong>Fuentes base:</strong> A1 125 v30.1 (09/09/2024) + A1 079/080/131 + RD 311/2022 ENS/CCN.</p>
+<h2 id="repaso">Resumen de repaso</h2>
+<h3 id="repaso-01">Núcleo de estudio</h3>
+<p>Arquitectura segura aplica segmentación, DMZ, firewalls stateful/NGFW, proxies/WAF, IDS/IPS, NAC, DNS seguro, VPN y Zero Trust como enfoque de verificación continua. IAM: identidad, autenticación, MFA, autorización RBAC/ABAC y mínimo privilegio. Criptografía simétrica (AES) para datos; asimétrica (RSA/ECC) para intercambio/firma; hash (SHA-2/3) para integridad; PKI gestiona certificados, CA, revocación OCSP/CRL. TLS protege transporte; IPsec protege capa IP; VPN puede ser site-to-site o acceso remoto. Firma digital combina hash y clave privada y aporta autenticidad/integridad/no repudio en el contexto adecuado. Puesto: hardening, EDR, cifrado, parcheo, control de aplicaciones y privilegios.</p>
+<h3 id="repaso-02">Claves de test</h3>
+<p>Cifrar no autentica automáticamente; hash no cifra; firma se crea con clave privada y se verifica con pública. TLS 1.3 es la versión moderna estandarizada. VPN no hace seguro un endpoint comprometido.</p>
+<h3 id="repaso-03">Enfoque para supuesto práctico</h3>
+<p>En supuesto diseña zonas, reglas de mínimo acceso, MFA, bastión/PAM, WAF, SIEM, EDR, VPN/Zero Trust, PKI y respuesta. Relaciona medidas con ENS y riesgo.</p>
+<h3 id="repaso-04">Fuentes base del material</h3>
+<p>A1 125 + 079 + 080 + 131, ENS/CCN-STIC.</p>
+<section class="topic-content__sources"><h2 id="fuentes">Fuentes y localizadores</h2><ul><li><a href="https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)</a> · IV.12 · 2026-08-21</li><li><a href="https://docs.google.com/document/d/1PRbZRedDj9j2D4jPlDODZUKkmbCqPWxMM4hhGhjcZIo/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE IV — RESUMEN MAESTRO DE REPASO (16 temas)</a> · IV.12 · 2026-08-21</li></ul></section>
+</article>

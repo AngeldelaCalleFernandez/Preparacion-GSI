@@ -1,0 +1,182 @@
+<article class="topic-content" data-topic-id="B2-T08" data-coverage-status="complete">
+<p>Material curado del corpus GSI A2 · apuntes V2.1 revisados. Procedencia editorial, no documento oficial.</p>
+<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B2-T08/estudio">Apuntes de estudio</a></li><li><a href="#temario/B2-T08/estudio-01">1. Alcance</a></li><li><a href="#temario/B2-T08/estudio-02">2. Conceptos de red</a></li><li><a href="#temario/B2-T08/estudio-03">3. Modelo OSI</a></li><li><a href="#temario/B2-T08/estudio-04">4. TCP/IP</a></li><li><a href="#temario/B2-T08/estudio-05">5. Ethernet, MAC, ARP y NDP</a></li><li><a href="#temario/B2-T08/estudio-06">6. IPv4</a></li><li><a href="#temario/B2-T08/estudio-07">7. IPv6</a></li><li><a href="#temario/B2-T08/estudio-08">8. TCP y UDP</a></li><li><a href="#temario/B2-T08/estudio-09">9. Puertos y sockets</a></li><li><a href="#temario/B2-T08/estudio-10">10. DNS, DHCP e ICMP</a></li><li><a href="#temario/B2-T08/estudio-11">11. Routing</a></li><li><a href="#temario/B2-T08/estudio-12">12. Encapsulación y PDU</a></li><li><a href="#temario/B2-T08/estudio-13">13. MTU y fragmentación</a></li><li><a href="#temario/B2-T08/estudio-14">14. Test</a></li><li><a href="#temario/B2-T08/estudio-15">15. Supuesto</a></li><li><a href="#temario/B2-T08/estudio-16">16. Resumen II.08</a></li><li><a href="#temario/B2-T08/repaso">Resumen de repaso</a></li><li><a href="#temario/B2-T08/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B2-T08/repaso-02">Claves de test</a></li><li><a href="#temario/B2-T08/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B2-T08/repaso-04">Fuentes base del material</a></li></ol></nav>
+<h2 id="estudio">Apuntes de estudio</h2>
+<h3 id="estudio-01">1. Alcance</h3>
+<p>El tema exige arquitectura de comunicaciones, capas/interfaces/protocolos, direccionamiento y routing. El banco A1 109/111/115 proporciona una base sólida; la V2 reorganiza el material para que puedas resolver preguntas de capas, subnetting y protocolos.</p>
+<h3 id="estudio-02">2. Conceptos de red</h3>
+<p>Una red interconecta nodos para intercambiar datos mediante protocolos. Un <strong>protocolo</strong> define reglas entre entidades del mismo nivel; una <strong>interfaz</strong> delimita servicios entre capas adyacentes. La encapsulación añade cabeceras —y a veces trailers— a medida que los datos bajan por la pila; el receptor desencapsula.</p>
+<h3 id="estudio-03">3. Modelo OSI</h3>
+<table>
+<tr>
+<th scope="col"><p>Capa</p></th>
+<th scope="col"><p>Función esencial</p></th>
+<th scope="col"><p>Ejemplos/conceptos</p></th>
+</tr>
+<tr>
+<td><p>7 Aplicación</p></td>
+<td><p>Servicios a aplicaciones</p></td>
+<td><p>HTTP, DNS, SMTP, SNMP</p></td>
+</tr>
+<tr>
+<td><p>6 Presentación</p></td>
+<td><p>Representación, codificación, transformación</p></td>
+<td><p>formatos, serialización, cifrado conceptualmente</p></td>
+</tr>
+<tr>
+<td><p>5 Sesión</p></td>
+<td><p>Diálogo/sesiones</p></td>
+<td><p>control de sesión, checkpoints conceptuales</p></td>
+</tr>
+<tr>
+<td><p>4 Transporte</p></td>
+<td><p>Comunicación extremo a extremo, puertos</p></td>
+<td><p>TCP, UDP</p></td>
+</tr>
+<tr>
+<td><p>3 Red</p></td>
+<td><p>Direccionamiento y routing</p></td>
+<td><p>IPv4/IPv6, ICMP, routers</p></td>
+</tr>
+<tr>
+<td><p>2 Enlace</p></td>
+<td><p>Tramas, MAC, acceso al medio</p></td>
+<td><p>Ethernet, Wi‑Fi, switches, VLAN</p></td>
+</tr>
+<tr>
+<td><p>1 Física</p></td>
+<td><p>Señal y medio</p></td>
+<td><p>cobre, fibra, radio</p></td>
+</tr>
+</table>
+<p>Las implementaciones reales no siempre separan literalmente sesión/presentación; OSI sigue siendo un modelo de referencia útil.</p>
+<h3 id="estudio-04">4. TCP/IP</h3>
+<p>La pila TCP/IP se representa habitualmente como acceso a red/enlace, Internet, transporte y aplicación. Mapeo aproximado: OSI 1-2 → acceso; OSI 3 → Internet; OSI 4 → transporte; OSI 5-7 → aplicación.</p>
+<h3 id="estudio-05">5. Ethernet, MAC, ARP y NDP</h3>
+<p>Una dirección MAC identifica una interfaz en un dominio de enlace. Ethernet transporta tramas. Los switches aprenden asociaciones MAC↔puerto y reenvían tramas. Una <strong>VLAN</strong> crea dominios de broadcast lógicos separados.</p>
+<p>En IPv4, <strong>ARP</strong> resuelve dirección IPv4 a MAC en el enlace local. En IPv6, <strong>Neighbor Discovery (NDP)</strong> cumple funciones de descubrimiento sobre ICMPv6. ARP no atraviesa routers.</p>
+<h3 id="estudio-06">6. IPv4</h3>
+<p>Dirección de 32 bits. CIDR expresa prefijo /n. La máscara separa red y host. Ejemplos:</p>
+<table>
+<tr>
+<th scope="col"><p>Prefijo</p></th>
+<th scope="col"><p>Máscara</p></th>
+<th scope="col"><p>Direcciones totales</p></th>
+</tr>
+<tr>
+<td><p>/24</p></td>
+<td><p>255.255.255.0</p></td>
+<td><p>256</p></td>
+</tr>
+<tr>
+<td><p>/25</p></td>
+<td><p>255.255.255.128</p></td>
+<td><p>128</p></td>
+</tr>
+<tr>
+<td><p>/26</p></td>
+<td><p>255.255.255.192</p></td>
+<td><p>64</p></td>
+</tr>
+<tr>
+<td><p>/27</p></td>
+<td><p>255.255.255.224</p></td>
+<td><p>32</p></td>
+</tr>
+<tr>
+<td><p>/28</p></td>
+<td><p>255.255.255.240</p></td>
+<td><p>16</p></td>
+</tr>
+</table>
+<p>En una subred IPv4 tradicional, red y broadcast no se asignan a hosts; por eso suele usarse 2^(bits host)−2, con excepciones especiales /31 y /32. Debes ser capaz de calcular rango, red, broadcast y número de hosts.</p>
+<p>Rangos privados RFC1918: 10.0.0.0/8; 172.16.0.0/12; 192.168.0.0/16. NAT traduce direcciones y, con PAT, también puertos. NAT no es por sí mismo un firewall ni una medida suficiente de seguridad.</p>
+<h3 id="estudio-07">7. IPv6</h3>
+<p>Direcciones de 128 bits en hexadecimal. Elimina la necesidad estructural de NAT para conservar direcciones, aunque pueden existir traducciones por otros motivos. Tipos: unicast, multicast y anycast; no existe broadcast IPv6. Link-local usa FE80::/10. NDP y SLAAC son conceptos esenciales.</p>
+<p>La abreviación permite omitir ceros iniciales y comprimir una secuencia continua de grupos cero una sola vez con ::.</p>
+<h3 id="estudio-08">8. TCP y UDP</h3>
+<table>
+<tr>
+<th scope="col"><p>Característica</p></th>
+<th scope="col"><p>TCP</p></th>
+<th scope="col"><p>UDP</p></th>
+</tr>
+<tr>
+<td><p>Conexión</p></td>
+<td><p>Orientado a conexión</p></td>
+<td><p>No orientado</p></td>
+</tr>
+<tr>
+<td><p>Fiabilidad</p></td>
+<td><p>Sí, ACK/retransmisión/orden</p></td>
+<td><p>No garantizada por protocolo</p></td>
+</tr>
+<tr>
+<td><p>Control flujo/congestión</p></td>
+<td><p>Sí</p></td>
+<td><p>No equivalente</p></td>
+</tr>
+<tr>
+<td><p>Unidad</p></td>
+<td><p>Segmento</p></td>
+<td><p>Datagrama</p></td>
+</tr>
+<tr>
+<td><p>Overhead</p></td>
+<td><p>Mayor</p></td>
+<td><p>Menor</p></td>
+</tr>
+<tr>
+<td><p>Casos</p></td>
+<td><p>web, SSH, correo, BBDD</p></td>
+<td><p>DNS frecuente, streaming/tiempo real, QUIC sobre UDP</p></td>
+</tr>
+</table>
+<p>TCP usa handshake, números de secuencia, ACK, ventanas y mecanismos de congestión. UDP no significa «malo» o «inseguro»: permite que protocolos superiores implementen fiabilidad o seguridad de otra manera; QUIC es el ejemplo actual más visible.</p>
+<h3 id="estudio-09">9. Puertos y sockets</h3>
+<p>Los puertos identifican extremos lógicos de transporte. Un socket puede entenderse como combinación de protocolo, IP y puerto. Valores a reconocer: SSH 22/TCP; DNS 53 UDP/TCP; HTTP 80/TCP; HTTPS 443 (TCP y QUIC/UDP según HTTP/3); SMTP 25; NTP 123/UDP; SNMP 161/162 UDP típicamente. No memorices cientos de puertos sin prioridad.</p>
+<h3 id="estudio-10">10. DNS, DHCP e ICMP</h3>
+<p><strong>DNS</strong> resuelve nombres y otros registros. Registros: A, AAAA, CNAME, MX, NS, TXT, PTR, SRV. Hay resolución recursiva e iterativa; caching y TTL afectan propagación.</p>
+<p><strong>DHCP</strong> asigna parámetros como dirección, máscara/prefijo, gateway y DNS. En IPv4 el flujo clásico se resume DORA: Discover, Offer, Request, Acknowledge.</p>
+<p><strong>ICMP</strong> transporta mensajes de control/error; ping usa eco. En IPv6, ICMPv6 es aún más esencial por NDP y otras funciones.</p>
+<h3 id="estudio-11">11. Routing</h3>
+<p>Un router decide el siguiente salto utilizando tabla de rutas y la coincidencia de prefijo más específica. Rutas pueden ser conectadas, estáticas o aprendidas dinámicamente. La <strong>ruta por defecto</strong> se usa cuando no existe una más específica.</p>
+<ul>
+<li><strong>IGP</strong>: dentro de un sistema autónomo. OSPF es protocolo de estado de enlace; calcula rutas con coste.</li>
+<li><strong>EGP</strong>: entre sistemas autónomos. BGP es el protocolo interdominio de Internet y selecciona rutas con políticas y atributos, no solo «camino más corto».</li>
+<li><strong>RIP</strong>: vector distancia histórico, métrica por saltos; útil conceptualmente.</li>
+</ul>
+<h3 id="estudio-12">12. Encapsulación y PDU</h3>
+<p>PDU orientativa: datos en capas altas, segmento/datagrama en transporte, paquete/datagrama IP en red, trama en enlace y bits/señales en física. Preguntas de examen pueden asociar switch con L2 y router con L3, aunque equipos modernos implementen varias capas.</p>
+<h3 id="estudio-13">13. MTU y fragmentación</h3>
+<p>MTU es el máximo tamaño de unidad de una interfaz/enlace. En IPv4 puede existir fragmentación; en IPv6 los routers no fragmentan paquetes en tránsito. Path MTU Discovery evita fragmentación innecesaria. Problemas de MTU pueden manifestarse como conexiones que «funcionan parcialmente».</p>
+<h3 id="estudio-14">14. Test</h3>
+<ul>
+<li>OSI tiene 7 capas.</li>
+<li>TCP/IP suele agrupar 4 capas conceptuales.</li>
+<li>Switch principalmente L2; router L3.</li>
+<li>IPv4 = 32 bits; IPv6 = 128 bits.</li>
+<li>ARP es IPv4/enlace; NDP es IPv6.</li>
+<li>IPv6 no usa broadcast.</li>
+<li>TCP ≠ UDP.</li>
+<li>DNS ≠ DHCP.</li>
+<li>NAT ≠ firewall.</li>
+<li>Ruta más específica gana frente a ruta por defecto.</li>
+<li>OSPF es IGP; BGP es interdominio.</li>
+<li>Puerto ≠ dirección IP.</li>
+</ul>
+<h3 id="estudio-15">15. Supuesto</h3>
+<p>Segmenta por VLAN/subred, calcula CIDR, define gateways, routing redundante, DNS/DHCP/NTP, firewalls y balanceo. Separa usuarios, servidores, administración y DMZ cuando corresponda. Incluye IPv6 si procede, alta disponibilidad, monitorización y direccionamiento documentado.</p>
+<h3 id="estudio-16">16. Resumen II.08</h3>
+<p>Aprende capas por función, no solo de memoria; domina TCP/UDP, IPv4/IPv6, CIDR, DNS/DHCP/ICMP y routing. Practica subnetting: es una habilidad que no se consolida leyendo.</p>
+<h2 id="repaso">Resumen de repaso</h2>
+<h3 id="repaso-01">Núcleo de estudio</h3>
+<p>OSI tiene siete capas: física, enlace, red, transporte, sesión, presentación y aplicación. TCP/IP se suele representar con acceso a red, Internet, transporte y aplicación. En IP estudia IPv4/IPv6, CIDR, subredes, gateway, NAT, ICMP y encaminamiento. TCP proporciona conexión, fiabilidad, control de flujo/congestión y puertos; UDP ofrece datagramas sin garantía y menor sobrecarga. Protocolos habituales: ARP/NDP, DHCP, DNS, HTTP(S), SMTP, IMAP, SSH, SNMP, NTP. Routing: estático y dinámico; conceptos de IGP/EGP, métricas y tablas; OSPF como IGP de estado de enlace y BGP como protocolo interdominio.</p>
+<h3 id="repaso-02">Claves de test</h3>
+<p>Memoriza PDU y función por capa, puertos más habituales y diferencias TCP/UDP; IPv4 32 bits, IPv6 128; CIDR y máscara; switch opera principalmente en L2 y router en L3. DNS no “convierte Internet”, resuelve nombres; DHCP asigna configuración de red.</p>
+<h3 id="repaso-03">Enfoque para supuesto práctico</h3>
+<p>En supuesto representa VLAN/subredes, direccionamiento, redundancia, routing, firewall, DNS/DHCP, balanceo y monitorización. Calcula rangos CIDR cuando sea necesario y justifica separación de zonas.</p>
+<h3 id="repaso-04">Fuentes base del material</h3>
+<p>A1 109 + 111 + 115 y redes A1.</p>
+<section class="topic-content__sources"><h2 id="fuentes">Fuentes y localizadores</h2><ul><li><a href="https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)</a> · II.08 · 2026-08-21</li><li><a href="https://docs.google.com/document/d/1h7n4dFYafS_3VMuL55TnEuVKhqaTheUoL-thDFQSr9w/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE II — RESUMEN MAESTRO DE REPASO (16 temas)</a> · II.08 · 2026-08-21</li></ul></section>
+</article>

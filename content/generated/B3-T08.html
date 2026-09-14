@@ -1,11 +1,83 @@
-<article class="topic-content" data-topic-id="B3-T08" data-coverage-status="pending">
-<aside class="topic-content__status topic-content__status--pending" role="status"><p>Contenido pendiente de fuentes verificables.</p></aside>
-<nav class="topic-content__toc" aria-label="Índice del tema">
-<h2>Contenido del tema</h2>
-<ol><li class="topic-content__toc-level-2"><a href="#temario/B3-T08/fuentes-necesarias">Fuentes necesarias</a></li></ol>
-</nav>
-<h2 id="fuentes-necesarias">Fuentes necesarias</h2>
-<div class="topic-content__pendiente" data-editorial-kind="pendiente"><p class="topic-content__kind">Pendiente</p><p>Contenido pendiente de una fuente verificable.</p>
-<p>Fuente necesaria: documentación primaria local sobre accesibilidad, diseño universal, usabilidad y seguridad en el desarrollo.</p></div>
-
+<article class="topic-content" data-topic-id="B3-T08" data-coverage-status="complete">
+<p>Material curado del corpus GSI A2 · apuntes V2.1 revisados. Procedencia editorial, no documento oficial.</p>
+<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B3-T08/estudio">Apuntes de estudio</a></li><li><a href="#temario/B3-T08/estudio-01">1. Instalación</a></li><li><a href="#temario/B3-T08/estudio-02">2. Migración</a></li><li><a href="#temario/B3-T08/estudio-03">3. Gestión del cambio</a></li><li><a href="#temario/B3-T08/estudio-04">4. Postimplantación</a></li><li><a href="#temario/B3-T08/estudio-05">5. Mantenimiento</a></li><li><a href="#temario/B3-T08/estudio-06">6. CMDB/configuración</a></li><li><a href="#temario/B3-T08/estudio-07">6.1 Estrategias de sustitución</a></li><li><a href="#temario/B3-T08/estudio-08">6.2 Recepción</a></li><li><a href="#temario/B3-T08/estudio-09">6.3 Plan de cutover</a></li><li><a href="#temario/B3-T08/estudio-10">6.4 Evaluación postimplantación</a></li><li><a href="#temario/B3-T08/estudio-11">6.5 Organización del mantenimiento</a></li><li><a href="#temario/B3-T08/estudio-12">7. Test</a></li><li><a href="#temario/B3-T08/estudio-13">8. Supuesto</a></li><li><a href="#temario/B3-T08/estudio-14">9. Resumen</a></li><li><a href="#temario/B3-T08/repaso">Resumen de repaso</a></li><li><a href="#temario/B3-T08/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B3-T08/repaso-02">Claves de test</a></li><li><a href="#temario/B3-T08/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B3-T08/repaso-04">Fuentes base del material</a></li></ol></nav>
+<h2 id="estudio">Apuntes de estudio</h2>
+<p>Cobertura oficial que debe quedar dominada: Estrategias de implantación, sustitución y cambio. Recepción e instalación. Evaluación postimplantación. Mantenimiento de sistemas.</p>
+<h3 id="estudio-01">1. Instalación</h3>
+<p>Preparación de entornos, configuración, datos, integraciones, certificados/secretos, observabilidad y validación. Todo debe poder repetirse y auditarse.</p>
+<h3 id="estudio-02">2. Migración</h3>
+<p>Inventario, mapeo de datos, limpieza, pruebas, reconciliación, ventana de cambio, rollback y validación. Estrategias: big bang, fases, paralelo y piloto.</p>
+<h3 id="estudio-03">3. Gestión del cambio</h3>
+<p>RFC/cambio → evaluación de impacto/riesgo → aprobación según modelo → planificación → ejecución → validación → cierre. Cambios estándar/preautorizados pueden agilizar operación.</p>
+<h3 id="estudio-04">4. Postimplantación</h3>
+<p>Hypercare, monitorización, soporte reforzado, métricas, incidencias, adopción, rendimiento y revisión post-implantación. Comparar beneficios reales con caso de negocio.</p>
+<h3 id="estudio-05">5. Mantenimiento</h3>
+<ul>
+<li>correctivo;</li>
+<li>adaptativo;</li>
+<li>perfectivo/evolutivo;</li>
+<li>preventivo.</li>
+</ul>
+<p>La deuda técnica aumenta coste futuro y debe gestionarse como riesgo/coste, no como categoría de mantenimiento separada necesariamente.</p>
+<h3 id="estudio-06">6. CMDB/configuración</h3>
+<p>Identificar elementos de configuración, versiones, relaciones y estado. CMDB no debe convertirse en inventario desactualizado: automatizar discovery cuando compense.</p>
+<h3 id="estudio-07">6.1 Estrategias de sustitución</h3>
+<p><strong>Base A1:</strong> 101 + 100. Se amplían las cuatro estrategias clásicas porque son muy preguntables.</p>
+<table>
+<tr>
+<th scope="col"><p>Estrategia</p></th>
+<th scope="col"><p>Ventaja</p></th>
+<th scope="col"><p>Riesgo/coste</p></th>
+</tr>
+<tr>
+<td><p>directa / big bang</p></td>
+<td><p>rápida, sin coexistencia</p></td>
+<td><p>máximo riesgo; rollback crítico</p></td>
+</tr>
+<tr>
+<td><p>paralela</p></td>
+<td><p>comparación y respaldo</p></td>
+<td><p>doble operación/coste; sincronización</p></td>
+</tr>
+<tr>
+<td><p>piloto</p></td>
+<td><p>aprendizaje en ámbito limitado</p></td>
+<td><p>representatividad y posterior escalado</p></td>
+</tr>
+<tr>
+<td><p>por fases</p></td>
+<td><p>reduce impacto progresivamente</p></td>
+<td><p>coexistencia e interfaces temporales</p></td>
+</tr>
+</table>
+<h3 id="estudio-08">6.2 Recepción</h3>
+<p>La recepción técnica comprueba entregables y criterios contractuales: software, código/artefactos, licencias, documentación, formación, pruebas, vulnerabilidades, inventario, configuración e infraestructura. Debe existir evidencia de aceptación y lista de defectos/condiciones pendientes.</p>
+<h3 id="estudio-09">6.3 Plan de cutover</h3>
+<p>Secuencia minuto/hora: congelación, backup, parada, exportación, migración, validación, cambio de DNS/rutas, arranque, smoke tests, comunicación y decisión go/no-go. Define <strong>punto de no retorno</strong> y pasos de rollback con responsables.</p>
+<h3 id="estudio-10">6.4 Evaluación postimplantación</h3>
+<p>Compara objetivos con resultados: disponibilidad, rendimiento, incidencias, adopción, satisfacción, costes y beneficios. Registra lecciones y deuda residual. Una implantación técnicamente correcta puede fracasar por adopción o soporte.</p>
+<h3 id="estudio-11">6.5 Organización del mantenimiento</h3>
+<p>Backlog de correctivos/evolutivos, SLA, priorización, releases, soporte L1/L2/L3, gestión de obsolescencia, parches, deuda técnica y fin de vida. Mantenimiento preventivo incluye refactorización, actualización y eliminación de riesgos antes del fallo.</p>
+<h3 id="estudio-12">7. Test</h3>
+<ul>
+<li>Instalación ≠ despliegue únicamente.</li>
+<li>Cambio ≠ release.</li>
+<li>Correctivo ≠ adaptativo.</li>
+<li>Rollback debe probarse.</li>
+<li>Postimplantación incluye adopción y operación.</li>
+</ul>
+<h3 id="estudio-13">8. Supuesto</h3>
+<p>Define plan de cutover, migración, backups, rollback, comunicaciones, soporte, métricas de éxito y revisión.</p>
+<h3 id="estudio-14">9. Resumen</h3>
+<p>Implantar es transferir un sistema a operación de forma controlada y reversible.</p>
+<h2 id="repaso">Resumen de repaso</h2>
+<h3 id="repaso-01">Núcleo de estudio</h3>
+<p>Estrategias de conversión: directa/big bang, paralela, piloto y por fases. Directa es rápida pero arriesgada; paralela reduce riesgo a costa de coste/duplicidad; piloto limita alcance; fases permiten aprendizaje progresivo. Recepción incluye validación contractual/técnica, inventario, documentación y aceptación. Instalación requiere plan, ventanas, backups, rollback, comunicaciones y soporte reforzado. Post-implementación evalúa objetivos, incidencias, rendimiento, adopción y beneficios. Mantenimiento: correctivo, adaptativo, perfectivo/evolutivo y preventivo; gestiona deuda técnica, parches, obsolescencia y fin de soporte.</p>
+<h3 id="repaso-02">Claves de test</h3>
+<p>Migración no es solo copiar datos; requiere transformación, reconciliación y validación. Piloto ≠ prototipo. Mantenimiento adaptativo responde al entorno; correctivo a defectos. Rollback debe probarse antes del cambio.</p>
+<h3 id="repaso-03">Enfoque para supuesto práctico</h3>
+<p>En supuesto plantea plan de transición con dry-run, backup, freeze, sincronización, reconciliación, aceptación, rollback, hypercare y KPIs posteriores. Para legado, incluye convivencia e interfaces temporales.</p>
+<h3 id="repaso-04">Fuentes base del material</h3>
+<p>A1 100 + 101 y materiales de migración/mantenimiento. Tema COMPLEMENTAR.</p>
+<section class="topic-content__sources"><h2 id="fuentes">Fuentes y localizadores</h2><ul><li><a href="https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)</a> · III.08 · 2026-08-21</li><li><a href="https://docs.google.com/document/d/1l0nl4fc451Tl3XB9XZ4LRLZGLZEJxUueQvaMZoF8gcA/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE III — RESUMEN MAESTRO DE REPASO (15 temas)</a> · III.08 · 2026-08-21</li></ul></section>
 </article>

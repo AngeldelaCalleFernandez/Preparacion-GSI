@@ -1,0 +1,295 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GSI A2 — PRÁCTICA ACTIVA 07 — PROGRAMACIÓN Y PARADIGMAS — CUADERNO DE PREGUNTAS</title><link rel="stylesheet" href="../../assets/css/styles.css"></head><body><main class="shell topic-content"><p><a href="../../index.html#practica">Volver a práctica escrita</a></p><p>Material curado GSI A2. Fuente: <a href="https://docs.google.com/document/d/1hAj9yP7FMAJvESXsvsHBQnL3fviSIEGLPkUDHspHHxY/edit">documento original de Drive</a>.</p><h1>GSI A2 - PRACTICA ACTIVA 07</h1>
+<h2>Programacion y paradigmas - CUADERNO DE PREGUNTAS</h2>
+<p><strong>Ambito:</strong> II.03 - Caracteristicas tecnicas de los lenguajes y paradigmas actuales de programacion.</p>
+<p><strong>Metodo:</strong> responde primero sin mirar soluciones. Para cada pregunta intenta clasificar por cinco ejes: ejecucion, tipado, paradigma, memoria y concurrencia. En mini-supuestos anade criterios de mantenimiento/soporte.</p>
+<h1>PARTE A - Tabla maestra de contraste</h1>
+<table>
+<tr>
+<th scope="col"><p>Eje</p></th>
+<th scope="col"><p>Contraste principal</p></th>
+<th scope="col"><p>Idea que debes dominar</p></th>
+</tr>
+<tr>
+<td><p>Ejecucion</p></td>
+<td><p>nativo / interprete / bytecode-IL / JIT / AOT</p></td>
+<td><p>Son mecanismos de implementacion; no conviertas &quot;compilado&quot; e &quot;interpretado&quot; en categorias rigidas del lenguaje.</p></td>
+</tr>
+<tr>
+<td><p>Tipado</p></td>
+<td><p>estatico / dinamico</p></td>
+<td><p>Estatico: muchas comprobaciones antes de ejecutar. Dinamico: principalmente en ejecucion. Dinamico no significa &quot;sin tipos&quot;.</p></td>
+</tr>
+<tr>
+<td><p>Paradigma</p></td>
+<td><p>imperativo / OO / funcional / declarativo / eventos-reactivo</p></td>
+<td><p>Un lenguaje moderno puede ser multiparadigma.</p></td>
+</tr>
+<tr>
+<td><p>Memoria</p></td>
+<td><p>manual / GC / ownership-borrowing</p></td>
+<td><p>Manual ofrece control con riesgos; GC reduce gestion manual pero no evita fugas logicas; Rust usa ownership/borrowing sin GC general.</p></td>
+</tr>
+<tr>
+<td><p>Concurrencia</p></td>
+<td><p>hilos / mensajes-actores / async-await / event loop / procesos</p></td>
+<td><p>Concurrencia no implica paralelismo.</p></td>
+</tr>
+<tr>
+<td><p>Seleccion</p></td>
+<td><p>requisitos / ecosistema / soporte / operacion</p></td>
+<td><p>No elegir por moda: justificar rendimiento, seguridad, mantenibilidad, personal, soporte, integracion, pruebas y despliegue.</p></td>
+</tr>
+</table>
+<p>Esta tabla resume exactamente los ejes que II.03 V2.1 prioriza. No sustituye el tema; sirve para segunda vuelta y memoria activa.</p>
+<h1>PARTE B - Ejecucion, abstraccion y tipado</h1>
+<p>1 - Lenguaje vs implementacion</p>
+<p>¿Por que es incorrecto afirmar que un lenguaje es de forma absoluta &#x27;compilado&#x27; o &#x27;interpretado&#x27;?</p>
+<p>2 - Compilacion nativa</p>
+<p>Define compilacion nativa en una frase y senala que produce antes de ejecutar.</p>
+<p>3 - Bytecode / IL</p>
+<p>Java y .NET generan normalmente una representacion intermedia. ¿Que ventaja conceptual aporta respecto a compilar solo a una CPU concreta?</p>
+<p>4 - JIT</p>
+<p>¿Que caracteriza a un compilador JIT?</p>
+<p>5 - AOT</p>
+<p>¿Que significa AOT y por que puede existir incluso en una plataforma que tambien admite JIT?</p>
+<p>6 - Tipado estatico</p>
+<p>Explica tipado estatico sin decir simplemente &#x27;el tipo nunca cambia&#x27;.</p>
+<p>7 - Tipado dinamico</p>
+<p>¿Por que &#x27;dinamico&#x27; no significa &#x27;sin tipos&#x27;?</p>
+<p>8 - Fuerte/debil</p>
+<p>¿Por que conviene ser prudente con la etiqueta &#x27;tipado fuerte/debil&#x27;?</p>
+<p>9 - Inferencia de tipos</p>
+<p>¿La inferencia de tipos convierte necesariamente un lenguaje estatico en dinamico?</p>
+<p>10 - Genericos</p>
+<p>¿Que problema resuelven los genericos?</p>
+<p>11 - Nulabilidad</p>
+<p>¿Que aporta tratar la nulabilidad como parte del sistema de tipos?</p>
+<p>12 - Tipos algebraicos</p>
+<p>¿Por que aparecen los tipos algebraicos en una lista moderna de conceptos de tipado aunque no haya que dominar su sintaxis?</p>
+<p>13 - Conversion implicita</p>
+<p>¿Que riesgo introduce un sistema con muchas conversiones implicitas?</p>
+<p>14 - Bajo vs alto nivel</p>
+<p>Compara bajo y alto nivel segun los apuntes.</p>
+<p>15 - Portabilidad</p>
+<p>¿Un lenguaje de alto nivel es automaticamente portable en cualquier sistema?</p>
+<p>16 - TypeScript</p>
+<p>Clasifica TypeScript segun los apuntes: relacion con JavaScript, tipado y resultado de compilacion/transpilacion.</p>
+<p>17 - Compilado != nativo</p>
+<p>Da un ejemplo del propio temario que demuestre que &#x27;compilado&#x27; no implica necesariamente codigo maquina nativo inmediato.</p>
+<p>18 - JIT != interprete puro</p>
+<p>Una pregunta de test afirma: &#x27;Si hay JIT, el programa se interpreta siempre instruccion a instruccion&#x27;. ¿Correcto?</p>
+<p>19 - Estatico vs dinamico</p>
+<p>¿Que afirmacion es mas correcta: &#x27;estatico = seguro&#x27; o &#x27;estatico = muchas comprobaciones antes de ejecutar&#x27;?</p>
+<p>20 - Clasificacion multiple</p>
+<p>Clasifica conceptualmente Java por ejecucion, tipado, memoria y paradigma, sin convertir ninguna etiqueta en exclusiva.</p>
+<h1>PARTE C - Paradigmas</h1>
+<p>21 - Imperativo</p>
+<p>¿Que expresa fundamentalmente el paradigma imperativo?</p>
+<p>22 - Procedimental</p>
+<p>¿Como se relaciona programacion procedimental con imperativa?</p>
+<p>23 - Orientacion a objetos</p>
+<p>Enumera los conceptos OO nucleares que recoge II.03.</p>
+<p>24 - Composicion vs herencia</p>
+<p>¿Por que los apuntes recomiendan no abusar de jerarquias de herencia profundas?</p>
+<p>25 - Funcion de primera clase</p>
+<p>¿Que significa que las funciones sean valores de primera clase?</p>
+<p>26 - Funcion pura</p>
+<p>Define funcion pura.</p>
+<p>27 - Inmutabilidad</p>
+<p>¿Por que la programacion funcional favorece inmutabilidad?</p>
+<p>28 - map/filter/reduce</p>
+<p>¿Que representan map, filter y reduce en el temario?</p>
+<p>29 - Closure</p>
+<p>¿Que concepto funcional permite a una funcion conservar/acceder al entorno lexico donde fue creada?</p>
+<p>30 - Declarativo</p>
+<p>¿Que diferencia esencial establecen los apuntes entre declarativo e imperativo?</p>
+<p>31 - SQL</p>
+<p>¿Por que SQL es el ejemplo esencial de declarativo?</p>
+<p>32 - Programacion logica</p>
+<p>¿Como se representa el conocimiento en programacion logica segun el ejemplo de los apuntes?</p>
+<p>33 - Multiparadigma</p>
+<p>¿Por que Java, C#, JavaScript o Python no deben clasificarse como &#x27;solo OO&#x27; o &#x27;solo funcional&#x27;?</p>
+<p>34 - OO no garantiza buen diseno</p>
+<p>Una aplicacion usa clases, herencia e interfaces. ¿Eso demuestra por si solo buen diseno?</p>
+<p>35 - Efecto lateral</p>
+<p>Da un ejemplo conceptual de efecto lateral observable.</p>
+<p>36 - Recursividad</p>
+<p>¿En que paradigma aparece como concepto frecuente en tus apuntes sin ser exclusiva de el?</p>
+<p>37 - Dirigido por eventos</p>
+<p>¿Que elementos caracterizan un modelo dirigido por eventos?</p>
+<p>38 - Reactiva</p>
+<p>¿Que modela principalmente la programacion reactiva?</p>
+<p>39 - Backpressure</p>
+<p>¿Que problema intenta resolver el backpressure?</p>
+<p>40 - Elegir paradigma</p>
+<p>Un sistema transforma una coleccion sin modificarla, encadenando filter y map. ¿Que estilo domina? ¿Significa que el lenguaje deba ser puramente funcional?</p>
+<h1>PARTE D - Concurrencia y memoria</h1>
+<p>41 - Concurrencia vs paralelismo</p>
+<p>Define ambos conceptos de forma que no puedan confundirse.</p>
+<p>42 - Hilos y memoria compartida</p>
+<p>¿Que ventaja y que dificultad general introduce el modelo de hilos con memoria compartida?</p>
+<p>43 - Paso de mensajes / actores</p>
+<p>¿Que idea diferencia el paso de mensajes de la memoria compartida?</p>
+<p>44 - async/await</p>
+<p>¿async/await implica necesariamente que dos tareas usen dos nucleos a la vez?</p>
+<p>45 - Event loop</p>
+<p>¿Que modelo citado en II.03 es caracteristico de JavaScript?</p>
+<p>46 - Procesos</p>
+<p>¿Por que procesos aparecen tambien como modelo de concurrencia?</p>
+<p>47 - Modelo adecuado</p>
+<p>Un consumidor recibe eventos mas lentamente que el productor. ¿Que concepto de la parte reactiva deberias mencionar?</p>
+<p>48 - Asincronia en E/S</p>
+<p>Una operacion espera red y no necesita CPU durante gran parte del tiempo. ¿Por que un modelo asincrono puede ser apropiado conceptualmente?</p>
+<p>49 - CPU-bound</p>
+<p>Una tarea realiza calculo intensivo puro. ¿Es correcto afirmar que añadir async/await por si solo la hara mas rapida?</p>
+<p>50 - Concurrencia y efectos laterales</p>
+<p>¿Por que mutabilidad y efectos laterales complican sistemas concurrentes segun el tema?</p>
+<p>51 - Memoria manual</p>
+<p>¿Que lenguajes cita II.03 como ejemplo de control explicito de memoria y que riesgos asocia?</p>
+<p>52 - Garbage collection</p>
+<p>¿Que lenguajes del tema se citan como ejemplos con GC?</p>
+<p>53 - Fuga logica con GC</p>
+<p>¿Como puede existir una fuga de memoria aunque haya garbage collector?</p>
+<p>54 - Rust</p>
+<p>¿Que mecanismo destaca II.03 en Rust para seguridad de memoria sin GC general?</p>
+<p>55 - GC no lo arregla todo</p>
+<p>Verdadero o falso: &#x27;Con GC desaparecen todos los problemas de memoria&#x27;. Justifica.</p>
+<p>56 - Manual vs GC vs ownership</p>
+<p>Compara los tres enfoques en una frase cada uno.</p>
+<p>57 - JavaScript</p>
+<p>Clasifica JavaScript por tipado, paradigma y modelo de concurrencia citado.</p>
+<p>58 - Go</p>
+<p>¿Que elementos de concurrencia se destacan de Go en la tabla del tema?</p>
+<p>59 - C#</p>
+<p>¿Que mecanismo de concurrencia aparece destacado para C# en la tabla de lenguajes?</p>
+<p>60 - Criterio de seleccion</p>
+<p>¿Por que el modelo de concurrencia debe formar parte de la seleccion de lenguaje/runtime?</p>
+<h1>PARTE E - Comparacion de lenguajes actuales</h1>
+<p>61 - C</p>
+<p>Resume C en cuatro rasgos de la tabla.</p>
+<p>62 - C++</p>
+<p>¿Que diferencia principal anaden los apuntes respecto a C?</p>
+<p>63 - Java</p>
+<p>¿Que cuatro rasgos principales debes asociar a Java?</p>
+<p>64 - C#</p>
+<p>¿Que cuatro rasgos principales debes asociar a C#?</p>
+<p>65 - Python</p>
+<p>¿Que rasgos resalta el tema?</p>
+<p>66 - JavaScript</p>
+<p>¿Que rasgos resalta el tema?</p>
+<p>67 - TypeScript</p>
+<p>¿Que aporta respecto a JavaScript segun II.03?</p>
+<p>68 - Go</p>
+<p>¿Que rasgos resalta II.03?</p>
+<p>69 - Rust</p>
+<p>¿Que rasgos resalta II.03?</p>
+<p>70 - SQL</p>
+<p>¿Como se clasifica SQL en este tema?</p>
+<p>71 - Java vs JavaScript</p>
+<p>¿Por que no debes inferir relacion tecnica directa por el nombre?</p>
+<p>72 - Java vs C#</p>
+<p>¿Que similitudes de alto nivel reconoce el temario?</p>
+<p>73 - Python vs TypeScript</p>
+<p>¿Que contraste de tipado es mas relevante para el examen?</p>
+<p>74 - Go vs Rust</p>
+<p>Sin entrar en sintaxis, ¿que diferencia de enfoque destaca la tabla?</p>
+<p>75 - No elegir por moda</p>
+<p>Una tecnologia es tendencia pero el equipo no tiene experiencia y el soporte es incierto. ¿Que dice II.03?</p>
+<h1>PARTE F - Fragmentos y reconocimiento</h1>
+<p>76 - Imperativo</p>
+<p>Identifica el estilo dominante:</p>
+<p>x = 0for n in datos:    if n &gt; 0:        x = x + n</p>
+<p>77 - Funcional</p>
+<p>Identifica el estilo dominante:</p>
+<p>resultado = reduce(sumar, map(f, filter(pred, datos)))</p>
+<p>78 - Declarativo</p>
+<p>SELECT departamento, COUNT(*)</p>
+<p>FROM empleadoGROUP BY departamento;</p>
+<p>79 - OO</p>
+<p>class Cuenta {</p>
+<p>saldo  ingresar(cantidad) { ... }}</p>
+<p>80 - Evento</p>
+<p>boton.onClick(() =&gt; guardar());</p>
+<p>81 - Async</p>
+<p>async function cargar() {</p>
+<p>const r = await peticion();  return r;}</p>
+<p>82 - Funcion pura</p>
+<p>f(x) = x * x</p>
+<p>83 - Funcion con efecto</p>
+<p>f(x):</p>
+<p>contador_global++  return x*x</p>
+<p>84 - Closure</p>
+<p>crearContador():</p>
+<p>n = 0  return () =&gt; { n = n + 1; return n }</p>
+<p>85 - Tipado dinamico</p>
+<p>x = 10</p>
+<p>x = &quot;diez&quot;</p>
+<p>86 - Generico</p>
+<p>func max&lt;T&gt;(a:T, b:T) -&gt; T</p>
+<p>87 - Backpressure</p>
+<p>Productor emite 100.000 eventos/s y consumidor procesa 20.000/s. ¿Que problema arquitectonico debes reconocer antes de hablar de lenguajes?</p>
+<p>88 - Runtime</p>
+<p>Un programa se distribuye como representacion intermedia y necesita un entorno de ejecucion que puede JIT-compilar. ¿Que familia conceptual describe?</p>
+<h1>PARTE G - Modulos, errores y mini-supuestos</h1>
+<p>89 - Modulos y paquetes</p>
+<p>¿Que objetivo general tienen modulos/paquetes en sistemas modernos?</p>
+<p>90 - Excepciones vs tipos de resultado</p>
+<p>¿Que idea comun resuelve el manejo de excepciones o los tipos de resultado?</p>
+<p>91 - Servicio empresarial</p>
+<p>Debes elegir lenguaje/runtime para una aplicacion publica empresarial con 10 anos de mantenimiento previsto. ¿Que criterios de II.03 pondrias antes que &#x27;es el lenguaje mas popular hoy&#x27;?</p>
+<p>92 - Sistema embebido de alto control</p>
+<p>El requisito dominante es control fino de recursos y rendimiento, aceptando mayor responsabilidad de memoria. ¿Que familia de lenguajes del cuadro es coherente considerar?</p>
+<p>93 - Backend con mucha E/S</p>
+<p>Servicio con miles de operaciones de red concurrentes y poco calculo por peticion. ¿Que aspecto del lenguaje/runtime debes evaluar especialmente?</p>
+<p>94 - Migracion JavaScript</p>
+<p>Un gran frontend JavaScript sufre muchos errores de contratos de tipos en equipos numerosos. ¿Que alternativa del propio cuadro puede aportar tipado estatico gradual sin cambiar el ecosistema de ejecucion final?</p>
+<p>95 - Seguridad de memoria</p>
+<p>Un componente de sistemas requiere rendimiento nativo y se quiere reducir una parte importante de errores de memoria sin GC general. ¿Que lenguaje del cuadro merece evaluarse y que concepto debes citar?</p>
+<p>96 - Supuesto de 20 minutos</p>
+<p>Un organismo debe elegir tecnologia para: API empresarial mantenible, procesamiento de trabajos asincronos y una herramienta de sistemas de alto rendimiento. Estructura una respuesta sin elegir por moda.</p>
+<h1>Registro de progreso</h1>
+<table>
+<tr>
+<th scope="col"><p>Bloque</p></th>
+<th scope="col"><p>Intento 1</p></th>
+<th scope="col"><p>Intento 2</p></th>
+<th scope="col"><p>Errores recurrentes</p></th>
+</tr>
+<tr>
+<td><p>B Ejecucion/tipado</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>C Paradigmas</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>D Concurrencia/memoria</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>E Lenguajes</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>F Fragmentos</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>G Supuestos</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+<p>Base exclusiva de contenido nuclear: GSI A2 Bloque II V2.1, tema II.03. Se usan fragmentos de pseudocodigo solo para reconocer conceptos; no se exige sintaxis de un lenguaje no contemplada por los apuntes.</p></main></body></html>

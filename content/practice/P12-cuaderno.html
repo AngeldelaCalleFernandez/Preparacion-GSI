@@ -1,0 +1,464 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GSI A2 — PRÁCTICA ACTIVA 12 — SUPUESTOS INTEGRADORES INFRAESTRUCTURA, REDES, SEGURIDAD Y OPERACIÓN — CUADERNO</title><link rel="stylesheet" href="../../assets/css/styles.css"></head><body><main class="shell topic-content"><p><a href="../../index.html#practica">Volver a práctica escrita</a></p><p>Material curado GSI A2. Fuente: <a href="https://docs.google.com/document/d/1IV-EhzFhTHK_28No4sHwnRjJCM2FlmJ4nWK71Zh7wwE/edit">documento original de Drive</a>.</p><h1>GSI A2 - PRACTICA ACTIVA 12</h1>
+<h2>Supuestos integradores de infraestructura, redes, seguridad y operacion - CUADERNO DE SUPUESTOS</h2>
+<p><strong>Base principal:</strong> II.08, II.10, II.13 y IV.01-IV.13 de los apuntes V2.1. La practica integra conocimientos; no sustituye esos temas.</p>
+<p><strong>Formato de entrenamiento:</strong> 10 supuestos de 5 preguntas. Los supuestos 9 y 10 deben hacerse como simulacro completo. El objetivo no es nombrar mas tecnologias, sino construir una arquitectura coherente y operable que responda a requisitos, dominios de fallo, riesgo y SLO/RPO/RTO.</p>
+<p><strong>Plantilla recomendada:</strong> Requisitos/SLA-RPO-RTO -&gt; arquitectura y dominios de fallo -&gt; seguridad/riesgo -&gt; operacion/observabilidad -&gt; recuperacion/pruebas -&gt; alternativas y coste. En incidencias: sintoma -&gt; hipotesis -&gt; comprobacion -&gt; evidencia -&gt; correccion -&gt; validacion.</p>
+<h1>Mapa de cobertura</h1>
+<table>
+<tr>
+<th scope="col"><p>Supuesto</p></th>
+<th scope="col"><p>Foco</p></th>
+<th scope="col"><p>Tipo</p></th>
+</tr>
+<tr>
+<td><p>1. Red multisede con servicios criticos</p></td>
+<td><p>II.08 + IV.09 + IV.10 + IV.12</p></td>
+<td><p>Entrenamiento integrador</p></td>
+</tr>
+<tr>
+<td><p>2. Nuevo CPD con alta disponibilidad y DR</p></td>
+<td><p>IV.03 + IV.05 + IV.06 + IV.04</p></td>
+<td><p>Entrenamiento integrador</p></td>
+</tr>
+<tr>
+<td><p>3. Ransomware en infraestructura corporativa</p></td>
+<td><p>II.10 + II.13 + IV.03 + IV.12</p></td>
+<td><p>Entrenamiento integrador</p></td>
+</tr>
+<tr>
+<td><p>4. Degradacion de rendimiento de un servicio critico</p></td>
+<td><p>IV.01 + IV.02 + IV.04 + IV.05</p></td>
+<td><p>Entrenamiento integrador</p></td>
+</tr>
+<tr>
+<td><p>5. Nueva sede: LAN, Wi-Fi y acceso seguro</p></td>
+<td><p>IV.07 + IV.08 + IV.09 + IV.11 + IV.12</p></td>
+<td><p>Entrenamiento integrador</p></td>
+</tr>
+<tr>
+<td><p>6. Migracion de almacenamiento y plataforma virtual</p></td>
+<td><p>IV.02 + IV.05 + IV.06</p></td>
+<td><p>Entrenamiento integrador</p></td>
+</tr>
+<tr>
+<td><p>7. Servicio publico en Internet y DMZ</p></td>
+<td><p>II.13 + IV.04 + IV.12 + IV.13</p></td>
+<td><p>Entrenamiento integrador</p></td>
+</tr>
+<tr>
+<td><p>8. Red IoT para edificio inteligente</p></td>
+<td><p>IV.08 + IV.12 + IV.13</p></td>
+<td><p>Entrenamiento integrador</p></td>
+</tr>
+<tr>
+<td><p>9. SIMULACRO A - Perdida total del CPD principal</p></td>
+<td><p>SIMULACRO integral IV.01-06 + IV.09-13</p></td>
+<td><p>Simulacro completo</p></td>
+</tr>
+<tr>
+<td><p>10. SIMULACRO B - Arquitectura multisede segura y operable</p></td>
+<td><p>SIMULACRO integral II.08/10/13 + IV.01-13</p></td>
+<td><p>Simulacro completo</p></td>
+</tr>
+</table>
+<h1>SUPUESTO 1 - Red multisede con servicios criticos</h1>
+<p><strong>Enunciado:</strong> Un organismo tiene una sede central, un CPD y 18 delegaciones. Cada delegacion utiliza aplicaciones corporativas, telefonia IP y videollamadas. Actualmente existe un unico enlace de operador por sede. Se producen cortes esporadicos y la direccion quiere mejorar disponibilidad sin multiplicar innecesariamente el coste. Algunos servicios viajan por Internet y otros por red privada del operador.</p>
+<p>Pregunta 1</p>
+<p>Defina los requisitos tecnicos y de servicio que debe conocer antes de redisenar la WAN.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<p>Pregunta 2</p>
+<p>Compare MPLS, doble acceso a Internet con VPN y SD-WAN para este escenario, indicando ventajas, limites y criterios de eleccion.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<p>Pregunta 3</p>
+<p>Proponga una arquitectura de redundancia de enlaces y routing que evite una falsa redundancia.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<p>Pregunta 4</p>
+<p>Explique como trataria QoS para voz/video y como verificaria que la politica funciona extremo a extremo.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<p>Pregunta 5</p>
+<p>Disene la monitorizacion y el procedimiento de diagnostico cuando una delegacion comunica &#x27;Internet funciona, pero la aplicacion corporativa va muy lenta&#x27;.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<h1>SUPUESTO 2 - Nuevo CPD con alta disponibilidad y DR</h1>
+<p><strong>Enunciado:</strong> Se construira un CPD para servicios administrativos criticos. La direccion exige tolerar el fallo de un host, un switch y una UPS sin parada completa. Para dos servicios se ha fijado RTO de 60 minutos y RPO de 15 minutos ante perdida total del CPD. Se dispone de una segunda sede a 80 km con conectividad independiente.</p>
+<p>Pregunta 1</p>
+<p>Proponga el diseno fisico y electrico minimo del CPD y explique N, N+1 y 2N en el contexto del caso.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<p>Pregunta 2</p>
+<p>Disene la plataforma de virtualizacion, red, balanceo y almacenamiento eliminando puntos unicos de fallo.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<p>Pregunta 3</p>
+<p>Explique por que alta disponibilidad local no cumple por si sola el requisito de desastre y proponga la arquitectura DR.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<p>Pregunta 4</p>
+<p>Defina una estrategia de datos y backup compatible con RPO 15 min y RTO 60 min, distinguiendo replica de backup.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<p>Pregunta 5</p>
+<p>Describa un ejercicio completo de DR, incluyendo conmutacion, validacion y failback.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<h1>SUPUESTO 3 - Ransomware en infraestructura corporativa</h1>
+<p><strong>Enunciado:</strong> A las 07:20 varios usuarios informan de ficheros cifrados. El EDR detecta actividad maliciosa en varios equipos y el servidor de ficheros comienza a mostrar extensiones anormales. Las copias de seguridad estan accesibles desde el mismo dominio administrativo. No se conoce aun el alcance ni si hubo exfiltracion.</p>
+<p>Pregunta 1</p>
+<p>Defina las primeras actuaciones de gestion del incidente sin destruir evidencia.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<p>Pregunta 2</p>
+<p>Proponga una estrategia de contencion y explique como priorizaria continuidad frente a preservacion forense.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<p>Pregunta 3</p>
+<p>Indique que evidencias y fuentes analizaria para determinar vector inicial, alcance y posible exfiltracion.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<p>Pregunta 4</p>
+<p>Redisene la estrategia de backup para reducir el impacto de un ransomware futuro.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<p>Pregunta 5</p>
+<p>Explique las condiciones para recuperar el servicio y las acciones posteriores de problema/mejora.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<h1>SUPUESTO 4 - Degradacion de rendimiento de un servicio critico</h1>
+<p><strong>Enunciado:</strong> Un portal corporativo pasa de responder en 500 ms a superar 8 segundos. CPU de los servidores web esta al 35%, la red WAN no muestra perdida apreciable y la base de datos tiene picos de I/O. La incidencia aparece tras una actualizacion nocturna. Se han abierto varios tickets y un administrador propone aumentar CPU inmediatamente.</p>
+<p>Pregunta 1</p>
+<p>Describa un metodo de diagnostico ordenado y explique por que no aumentaria CPU como primera medida.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<p>Pregunta 2</p>
+<p>Indique que señales de observabilidad correlacionaria entre aplicacion, sistema, red, almacenamiento y base de datos.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<p>Pregunta 3</p>
+<p>Proponga como investigar la base de datos y el almacenamiento sin aplicar &#x27;tuning por recetas&#x27;.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<p>Pregunta 4</p>
+<p>Explique el papel de gestion de cambios, baseline y rollback ante la actualizacion nocturna.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<p>Pregunta 5</p>
+<p>Defina acciones de capacity management para evitar repetir una degradacion similar.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<h1>SUPUESTO 5 - Nueva sede: LAN, Wi-Fi y acceso seguro</h1>
+<p><strong>Enunciado:</strong> Se abre una sede de 240 puestos, 45 telefonos IP, 32 puntos de acceso Wi-Fi, impresoras y 60 dispositivos IoT. Habra usuarios corporativos, invitados y personal tecnico. El edificio tiene tres plantas y un CPD local pequeno. Se desea redundancia, administracion central y crecimiento del 25%.</p>
+<p>Pregunta 1</p>
+<p>Proponga el esquema de cableado estructurado y los criterios para elegir cobre o fibra entre zonas.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<p>Pregunta 2</p>
+<p>Disene la segmentacion LAN/VLAN y el routing inter-VLAN, indicando controles de seguridad.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<p>Pregunta 3</p>
+<p>Explique el diseno de switching redundante, STP/RSTP, LACP y el riesgo de extender L2 innecesariamente.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<p>Pregunta 4</p>
+<p>Proponga la WLAN corporativa, invitados e IoT, incluyendo planificacion RF y seguridad.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<p>Pregunta 5</p>
+<p>Defina la administracion/monitorizacion de red y como diagnosticaria que &#x27;en la planta 3 el Wi-Fi tiene buena señal pero va lento&#x27;.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<h1>SUPUESTO 6 - Migracion de almacenamiento y plataforma virtual</h1>
+<p><strong>Enunciado:</strong> El CPD actual utiliza almacenamiento heterogeneo. Las bases de datos estan en discos locales de varios servidores, los ficheros compartidos en un NAS y las maquinas virtuales en una SAN antigua. La organizacion quiere consolidar, mejorar capacidad y simplificar operaciones sin convertir el nuevo almacenamiento en un punto unico de fallo.</p>
+<p>Pregunta 1</p>
+<p>Clasifique las cargas y explique cuando elegiria DAS, NAS, SAN u objeto.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<p>Pregunta 2</p>
+<p>Proponga el diseno de almacenamiento para VMs y bases de datos, incluyendo RAID, multipath y dominios de fallo.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<p>Pregunta 3</p>
+<p>Explique thin provisioning, snapshots y replicacion y los riesgos de confundirlos con capacidad fisica o backup.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<p>Pregunta 4</p>
+<p>Defina las metricas y pruebas de rendimiento/capacidad que realizaria antes y despues de la migracion.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<p>Pregunta 5</p>
+<p>Describa la estrategia de migracion y rollback manteniendo servicio e integridad.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<h1>SUPUESTO 7 - Servicio publico en Internet y DMZ</h1>
+<p><strong>Enunciado:</strong> Un portal publico recibe millones de consultas mensuales y tiene una API para terceros. Actualmente todo entra por un unico proveedor de Internet y el frontal web comparte red con servicios internos. Se han sufrido intentos de DDoS, ataques web y una expiracion de certificado que causo indisponibilidad.</p>
+<p>Pregunta 1</p>
+<p>Proponga una arquitectura de Internet y DMZ eliminando los principales puntos unicos de fallo.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<p>Pregunta 2</p>
+<p>Defina los controles perimetrales y de aplicacion y distinga firewall, WAF, IDS e IPS.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<p>Pregunta 3</p>
+<p>Explique el papel de DNS, CDN, TLS/PKI y proteccion DDoS en disponibilidad y seguridad.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<p>Pregunta 4</p>
+<p>Disene el acceso administrativo y la segmentacion interna bajo principios de minimo privilegio/Zero Trust.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<p>Pregunta 5</p>
+<p>Defina monitorizacion, gestion de certificados e incident response para este servicio.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<h1>SUPUESTO 8 - Red IoT para edificio inteligente</h1>
+<p><strong>Enunciado:</strong> Un edificio publico instalara 2.000 sensores y actuadores para energia, climatizacion, acceso y mantenimiento. Algunos dispositivos tienen recursos limitados y permaneceran en servicio durante mas de diez anos. La plataforma central recibira telemetria y enviara ordenes. La organizacion teme credenciales por defecto y dispositivos sin soporte.</p>
+<p>Pregunta 1</p>
+<p>Proponga una arquitectura IoT por capas e indique cuando situaria funciones en gateway/edge.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<p>Pregunta 2</p>
+<p>Compare MQTT, CoAP y HTTP para el escenario sin afirmar que uno es universalmente mejor.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<p>Pregunta 3</p>
+<p>Disene la segmentacion de red e identidad de los dispositivos.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<p>Pregunta 4</p>
+<p>Defina el ciclo de vida de seguridad: aprovisionamiento, firmware, inventario, certificados/credenciales y fin de soporte.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<p>Pregunta 5</p>
+<p>Explique como monitorizaria la plataforma y como responderia ante un dispositivo comprometido.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<h1>SUPUESTO 9 - SIMULACRO A - Perdida total del CPD principal</h1>
+<p><strong>Enunciado:</strong> A las 11:05 un incendio obliga a evacuar el CPD principal. La alimentacion se corta y todos los servicios locales quedan inaccesibles. Existe un CPD secundario con replicas asincronas de las bases de datos, copias de seguridad y capacidad para ejecutar los servicios criticos, pero la ultima prueba integral de DR fue hace 14 meses. El portal publico, el correo y el sistema de expedientes deben recuperarse con prioridades diferentes.</p>
+<p>Pregunta 1</p>
+<p>Organice la respuesta inicial al desastre: gobierno, comunicaciones, clasificacion de servicios y decisiones de activacion.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<p>Pregunta 2</p>
+<p>Describa la conmutacion tecnica al CPD secundario para red, identidad, aplicaciones y bases de datos.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<p>Pregunta 3</p>
+<p>Explique como determinaria y demostraria RPO/RTO reales de cada servicio durante el incidente.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<p>Pregunta 4</p>
+<p>Defina la estrategia para recuperar servicios que no pueden arrancarse directamente desde replica y para garantizar que los datos son validos.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<p>Pregunta 5</p>
+<p>Planifique el failback al CPD principal y la revision postincidente.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<h1>SUPUESTO 10 - SIMULACRO B - Arquitectura multisede segura y operable</h1>
+<p><strong>Enunciado:</strong> Una Administracion con sede central, 20 oficinas, dos CPD y teletrabajo quiere renovar toda su infraestructura. Hay 2.500 usuarios, aplicaciones internas, un portal publico, telefonia, Wi-Fi corporativo/invitados, sensores IoT y varios servicios SaaS. El objetivo es mejorar disponibilidad, seguridad y capacidad de evolucion sin elevar la complejidad operativa mas de lo necesario.</p>
+<p>Pregunta 1</p>
+<p>Defina la arquitectura de LAN/WAN y conectividad a Internet, incluyendo segmentacion, routing, redundancia y acceso remoto.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<p>Pregunta 2</p>
+<p>Proponga la arquitectura de CPD, compute, almacenamiento, HA y DR, relacionandola con RPO/RTO.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<p>Pregunta 3</p>
+<p>Disene la arquitectura de seguridad de red y puesto de usuario, incluyendo identidad, acceso privilegiado, VPN/Zero Trust, deteccion y ENS cuando aplique.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<p>Pregunta 4</p>
+<p>Defina la operacion: configuracion/cambios, monitorizacion/observabilidad, SNMP/telemetria, incidentes, backup y capacity management.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<p>Pregunta 5</p>
+<p>Presente un plan de implantacion por fases con pruebas, criterios de aceptacion y mecanismos para controlar la complejidad y el coste.</p>
+<p><strong>Esquema de respuesta:
+</strong></p>
+<p>________________________________________________________________________________</p>
+<p>________________________________________________________________________________</p>
+<h1>Hoja de seguimiento</h1>
+<table>
+<tr>
+<th scope="col"><p>Supuesto</p></th>
+<th scope="col"><p>Tiempo</p></th>
+<th scope="col"><p>Completo</p></th>
+<th scope="col"><p>Fallos de arquitectura</p></th>
+<th scope="col"><p>Huecos tecnicos</p></th>
+</tr>
+<tr>
+<td><p>1</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>2</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>3</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>4</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>5</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>6</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>7</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>8</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>9</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><p>10</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+<p>Contenido construido exclusivamente a partir del alcance y terminologia de los apuntes GSI A2 V2.1 indicados. Los escenarios anaden contexto para practicar aplicacion, pero no introducen como materia nuclear productos concretos fuera de esos apuntes.</p></main></body></html>

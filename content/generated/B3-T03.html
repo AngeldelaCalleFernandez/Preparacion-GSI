@@ -1,11 +1,84 @@
-<article class="topic-content" data-topic-id="B3-T03" data-coverage-status="pending">
-<aside class="topic-content__status topic-content__status--pending" role="status"><p>Contenido pendiente de fuentes verificables.</p></aside>
-<nav class="topic-content__toc" aria-label="Índice del tema">
-<h2>Contenido del tema</h2>
-<ol><li class="topic-content__toc-level-2"><a href="#temario/B3-T03/fuentes-necesarias">Fuentes necesarias</a></li></ol>
-</nav>
-<h2 id="fuentes-necesarias">Fuentes necesarias</h2>
-<div class="topic-content__pendiente" data-editorial-kind="pendiente"><p class="topic-content__kind">Pendiente</p><p>Contenido pendiente de una fuente verificable.</p>
-<p>Fuente necesaria: documentación técnica primaria local sobre ANSI SQL, procedimientos almacenados, eventos y disparadores.</p></div>
-
+<article class="topic-content" data-topic-id="B3-T03" data-coverage-status="complete">
+<p>Material curado del corpus GSI A2 · apuntes V2.1 revisados. Procedencia editorial, no documento oficial.</p>
+<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B3-T03/estudio">Apuntes de estudio</a></li><li><a href="#temario/B3-T03/estudio-01">1. Tipos</a></li><li><a href="#temario/B3-T03/estudio-02">2. Elicitación</a></li><li><a href="#temario/B3-T03/estudio-03">3. Calidad de requisitos</a></li><li><a href="#temario/B3-T03/estudio-04">4. Historias y casos de uso</a></li><li><a href="#temario/B3-T03/estudio-05">5. Priorización</a></li><li><a href="#temario/B3-T03/estudio-06">6. Trazabilidad</a></li><li><a href="#temario/B3-T03/estudio-07">7. Gestión de cambios</a></li><li><a href="#temario/B3-T03/estudio-08">7.1 Derivación de sistemas existentes</a></li><li><a href="#temario/B3-T03/estudio-09">7.2 Especificación de requisitos</a></li><li><a href="#temario/B3-T03/estudio-10">7.3 Modelado de requisitos</a></li><li><a href="#temario/B3-T03/estudio-11">7.4 Requisitos no funcionales</a></li><li><a href="#temario/B3-T03/estudio-12">8. Test</a></li><li><a href="#temario/B3-T03/estudio-13">9. Supuesto</a></li><li><a href="#temario/B3-T03/estudio-14">10. Resumen</a></li><li><a href="#temario/B3-T03/repaso">Resumen de repaso</a></li><li><a href="#temario/B3-T03/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B3-T03/repaso-02">Claves de test</a></li><li><a href="#temario/B3-T03/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B3-T03/repaso-04">Fuentes base del material</a></li></ol></nav>
+<h2 id="estudio">Apuntes de estudio</h2>
+<p>Cobertura oficial que debe quedar dominada: Análisis de requisitos: técnicas de entrevistas, derivación de sistemas existentes, análisis, prototipos y especificación de requisitos.</p>
+<h3 id="estudio-01">1. Tipos</h3>
+<ul>
+<li>negocio;</li>
+<li>usuario/stakeholder;</li>
+<li>funcionales;</li>
+<li>no funcionales/calidad;</li>
+<li>restricciones;</li>
+<li>transición/migración.</li>
+</ul>
+<h3 id="estudio-02">2. Elicitación</h3>
+<p>Entrevistas, talleres, observación, cuestionarios, análisis documental, prototipos, brainstorming, análisis de interfaces y procesos. No es “preguntar qué quiere el usuario”: se descubren necesidades, conflictos, reglas y excepciones.</p>
+<h3 id="estudio-03">3. Calidad de requisitos</h3>
+<p>Deben ser necesarios, claros, verificables, consistentes, factibles, trazables, priorizados y sin ambigüedad evitable. Un requisito no funcional debe poder medirse: “rápido” es pobre; “p95 &lt; 2 s bajo X carga” es verificable.</p>
+<h3 id="estudio-04">4. Historias y casos de uso</h3>
+<p>Historia: “Como [rol], quiero [capacidad], para [beneficio]”, complementada con criterios de aceptación. Caso de uso desarrolla actores, precondiciones, flujo principal, alternativos, excepciones y postcondiciones.</p>
+<h3 id="estudio-05">5. Priorización</h3>
+<p>MoSCoW, valor/riesgo/coste, WSJF en contextos adecuados. Prioridad debe explicitar dependencia y obligación legal.</p>
+<h3 id="estudio-06">6. Trazabilidad</h3>
+<p>Requisito ↔ diseño ↔ código ↔ prueba ↔ entrega. Permite impacto de cambio y demostrar cobertura. Matriz de trazabilidad no debe convertirse en burocracia sin uso.</p>
+<h3 id="estudio-07">7. Gestión de cambios</h3>
+<p>Registrar cambio, analizar impacto, decidir, versionar, actualizar trazabilidad y comunicar. En Agile, backlog facilita cambio, pero no elimina análisis de impacto.</p>
+<h3 id="estudio-08">7.1 Derivación de sistemas existentes</h3>
+<p><strong>Base A1:</strong> 088 + 094 + 091. El BOE menciona expresamente la <strong>derivación de sistemas existentes</strong>, que en la V2 anterior estaba demasiado implícita.</p>
+<p>Cuando se sustituye o moderniza un sistema, parte de los requisitos se obtiene mediante ingeniería inversa funcional: inventario de procesos, interfaces, datos, reglas de negocio, roles, informes, dependencias, restricciones y excepciones actuales. Hay que distinguir entre <strong>requisito real</strong> y <strong>limitación heredada</strong>. Copiar sin análisis todos los comportamientos del legado perpetúa deuda y errores.</p>
+<p>Técnicas: observación de usuarios, análisis de pantallas/documentación/código y logs, extracción del modelo de datos, trazado de interfaces y talleres de “as-is / to-be”. Para migración se documentan reglas de correspondencia de datos y requisitos de reconciliación.</p>
+<h3 id="estudio-09">7.2 Especificación de requisitos</h3>
+<p>Una SRS/ERS debe permitir construir y verificar. Estructura útil: alcance, actores, glosario, requisitos funcionales, reglas de negocio, interfaces, datos, requisitos no funcionales, restricciones, supuestos, criterios de aceptación y trazabilidad. La familia ISO/IEC/IEEE 29148 es una referencia de ingeniería de requisitos que puede usarse como apoyo, sin memorizar numeración secundaria salvo que aparezca en test.</p>
+<h3 id="estudio-10">7.3 Modelado de requisitos</h3>
+<p>Casos de uso, BPMN/diagramas de actividad, estados, prototipos, modelos de dominio y contratos de interfaz. El modelo se elige por la duda que resuelve; dibujar por decorar añade ruido.</p>
+<h3 id="estudio-11">7.4 Requisitos no funcionales</h3>
+<table>
+<tr>
+<th scope="col"><p>Área</p></th>
+<th scope="col"><p>Ejemplo verificable</p></th>
+</tr>
+<tr>
+<td><p>rendimiento</p></td>
+<td><p>p95 de respuesta &lt; 2 s bajo carga definida</p></td>
+</tr>
+<tr>
+<td><p>disponibilidad</p></td>
+<td><p>99,9 % mensual excluyendo ventanas acordadas</p></td>
+</tr>
+<tr>
+<td><p>seguridad</p></td>
+<td><p>MFA para perfiles privilegiados; cifrado en tránsito</p></td>
+</tr>
+<tr>
+<td><p>accesibilidad</p></td>
+<td><p>conformidad legal/técnica aplicable y pruebas manuales</p></td>
+</tr>
+<tr>
+<td><p>continuidad</p></td>
+<td><p>RTO/RPO definidos por proceso</p></td>
+</tr>
+</table>
+<p><strong>Trampa:</strong> “el sistema será intuitivo y rápido” no es un requisito suficientemente verificable.</p>
+<h3 id="estudio-12">8. Test</h3>
+<ul>
+<li>Requisito funcional ≠ no funcional.</li>
+<li>Criterio de aceptación ≠ requisito completo.</li>
+<li>Historia ≠ caso de uso.</li>
+<li>Trazabilidad bidireccional facilita impacto y cobertura.</li>
+</ul>
+<h3 id="estudio-13">9. Supuesto</h3>
+<p>Identifica stakeholders, requisitos, NFR medibles, restricciones ENS/RGPD/accesibilidad, prototipo, prioridades, trazabilidad y control de cambios.</p>
+<h3 id="estudio-14">10. Resumen</h3>
+<p>El mejor requisito es comprensible y verificable. La trazabilidad conecta necesidad con prueba y entrega.</p>
+<h2 id="repaso">Resumen de repaso</h2>
+<h3 id="repaso-01">Núcleo de estudio</h3>
+<p>Requisitos funcionales describen comportamientos; no funcionales imponen cualidades/restricciones como seguridad, rendimiento, disponibilidad, accesibilidad o mantenibilidad. Elicitación: entrevistas, talleres, observación, cuestionarios, análisis documental, sistemas existentes, prototipos, historias de usuario y casos de uso. Un buen requisito es necesario, claro, verificable, trazable, consistente y factible. La especificación SRS debe organizar alcance, actores, interfaces, reglas, datos, requisitos funcionales/no funcionales, restricciones y criterios de aceptación. La trazabilidad enlaza necesidad-requisito-diseño-prueba. Prototipos ayudan a validar UX y requisitos, pero no sustituyen el análisis.</p>
+<h3 id="repaso-02">Claves de test</h3>
+<p>Requisito no funcional no significa “opcional”; caso de uso ≠ historia de usuario; criterio de aceptación debe poder verificarse; trazabilidad bidireccional ayuda a impacto de cambios. ISO/IEC/IEEE 29148 es una referencia moderna de ingeniería de requisitos.</p>
+<h3 id="repaso-03">Enfoque para supuesto práctico</h3>
+<p>En supuesto identifica actores y objetivos, lista requisitos prioritarios, NFR medibles, interfaces, datos y restricciones legales; añade matriz de trazabilidad y validación con usuarios.</p>
+<h3 id="repaso-04">Fuentes base del material</h3>
+<p>A1 088 + 094 + 091 y material de análisis funcional.</p>
+<section class="topic-content__sources"><h2 id="fuentes">Fuentes y localizadores</h2><ul><li><a href="https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)</a> · III.03 · 2026-08-21</li><li><a href="https://docs.google.com/document/d/1l0nl4fc451Tl3XB9XZ4LRLZGLZEJxUueQvaMZoF8gcA/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE III — RESUMEN MAESTRO DE REPASO (15 temas)</a> · III.03 · 2026-08-21</li></ul></section>
 </article>

@@ -1,6 +1,6 @@
-import { loadTopicFragment } from "./topic-content-service.js?phase7a";
-import { resolveTopicReference } from "./catalog-service.js?m2";
-import { parseRoute } from "./router.js?m2";
+import { loadTopicFragment } from "./topic-content-service.js?gsi2";
+import { resolveTopicReference } from "./catalog-service.js?gsi2";
+import { parseRoute } from "./router.js?gsi2";
 
 let viewState = null;
 let requestVersion = 0;
@@ -37,7 +37,7 @@ function getEntry(topicId) {
 function getOfficialSource(topic) {
   return topic.source_ids
     .map((sourceId) => viewState.data.indexes.sourcesById.get(sourceId))
-    .find((source) => source?.url) || null;
+    .find((source) => source?.url && source.official_status === "official") || null;
 }
 
 function createPill(className, text) {
@@ -164,7 +164,7 @@ function focusTarget(detail, routeState, topic) {
   }
   target.setAttribute("tabindex", "-1");
   const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
-  target.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+  target.scrollIntoView({ behavior: "auto", block: "start" });
   target.focus({ preventScroll: true });
   for (const link of detail.querySelectorAll(".topic-content__toc a")) {
     link.toggleAttribute("aria-current", link.getAttribute("href") === `#temario/${topic.id}/${routeState.sectionId}`);
@@ -213,7 +213,7 @@ async function renderDetail(routeState) {
   actions.append(back);
   if (officialSource) actions.append(officialSource);
   detail.append(createBreadcrumbs(topic), actions, official, meta, message, content);
-  document.title = `Tema ${topic.number} · TAI`;
+  document.title = `Tema ${topic.number} · GSI A2`;
   try {
     const fragment = await loadTopicFragment(viewState.index, operationalTopicId);
     if (version !== requestVersion) return;
@@ -249,7 +249,7 @@ function setupFilters() {
 export function initSyllabusView(data, index) {
   viewState = { data, index };
   setupFilters();
-  window.addEventListener("tai:routechange", (event) => renderRouteState(event.detail));
+  window.addEventListener("gsi:routechange", (event) => renderRouteState(event.detail));
   renderList();
   renderRouteState(parseRoute());
 }

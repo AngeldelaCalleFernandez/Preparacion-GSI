@@ -1,21 +1,21 @@
 export const LOGICAL_PERSISTENCE_KEYS = Object.freeze([
-  "tai.phase3.training.v1",
-  "tai.phase4.exam.active.real.v1",
-  "tai.phase4.exam.active.demo.v1",
-  "tai.reinforcement.real.v1",
-  "tai.reinforcement.demo.v1",
-  "tai.analytics.real.v1",
-  "tai.analytics.demo.v1",
+  "gsi.phase3.training.v1",
+  "gsi.phase4.exam.active.real.v1",
+  "gsi.phase4.exam.active.demo.v1",
+  "gsi.reinforcement.real.v1",
+  "gsi.reinforcement.demo.v1",
+  "gsi.analytics.real.v1",
+  "gsi.analytics.demo.v1",
 ]);
 
 const SUFFIX_BY_LOGICAL_KEY = Object.freeze({
-  "tai.phase3.training.v1": "training",
-  "tai.phase4.exam.active.real.v1": "exam.active.real",
-  "tai.phase4.exam.active.demo.v1": "exam.active.demo",
-  "tai.reinforcement.real.v1": "reinforcement.real",
-  "tai.reinforcement.demo.v1": "reinforcement.demo",
-  "tai.analytics.real.v1": "analytics.real",
-  "tai.analytics.demo.v1": "analytics.demo",
+  "gsi.phase3.training.v1": "training",
+  "gsi.phase4.exam.active.real.v1": "exam.active.real",
+  "gsi.phase4.exam.active.demo.v1": "exam.active.demo",
+  "gsi.reinforcement.real.v1": "reinforcement.real",
+  "gsi.reinforcement.demo.v1": "reinforcement.demo",
+  "gsi.analytics.real.v1": "analytics.real",
+  "gsi.analytics.demo.v1": "analytics.demo",
 });
 
 const OPPOSITION_ID_RE = /^OPP-[A-Z][A-Z0-9-]*$/;

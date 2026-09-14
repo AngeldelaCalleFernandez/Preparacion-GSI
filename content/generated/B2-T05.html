@@ -1,11 +1,162 @@
-<article class="topic-content" data-topic-id="B2-T05" data-coverage-status="pending">
-<aside class="topic-content__status topic-content__status--pending" role="status"><p>Contenido pendiente de fuentes verificables.</p></aside>
-<nav class="topic-content__toc" aria-label="Índice del tema">
-<h2>Contenido del tema</h2>
-<ol><li class="topic-content__toc-level-2"><a href="#temario/B2-T05/fuentes-necesarias">Fuentes necesarias</a></li></ol>
-</nav>
-<h2 id="fuentes-necesarias">Fuentes necesarias</h2>
-<div class="topic-content__pendiente" data-editorial-kind="pendiente"><p class="topic-content__kind">Pendiente</p><p>Contenido pendiente de una fuente verificable.</p>
-<p>Fuente necesaria: documentación técnica primaria local sobre sistemas gestores de bases de datos relacionales, orientados a objetos y NoSQL.</p></div>
-
+<article class="topic-content" data-topic-id="B2-T05" data-coverage-status="complete">
+<p>Material curado del corpus GSI A2 · apuntes V2.1 revisados. Procedencia editorial, no documento oficial.</p>
+<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B2-T05/estudio">Apuntes de estudio</a></li><li><a href="#temario/B2-T05/estudio-01">1. Por qué este tema debe ser amplio</a></li><li><a href="#temario/B2-T05/estudio-02">2. Base de datos, metadatos y SGBD</a></li><li><a href="#temario/B2-T05/estudio-03">3. Lenguajes</a></li><li><a href="#temario/B2-T05/estudio-04">4. Arquitectura ANSI/X3/SPARC</a></li><li><a href="#temario/B2-T05/estudio-05">5. Modelo relacional</a></li><li><a href="#temario/B2-T05/estudio-06">6. Álgebra relacional: conceptos</a></li><li><a href="#temario/B2-T05/estudio-07">7. SQL de consulta</a></li><li><a href="#temario/B2-T05/estudio-08">7.1 Joins</a></li><li><a href="#temario/B2-T05/estudio-09">7.2 Agregación y subconsultas</a></li><li><a href="#temario/B2-T05/estudio-10">8. Vistas, índices y objetos</a></li><li><a href="#temario/B2-T05/estudio-11">9. Transacciones y ACID</a></li><li><a href="#temario/B2-T05/estudio-12">10. Anomalías de concurrencia</a></li><li><a href="#temario/B2-T05/estudio-13">11. Bloqueos, 2PL y deadlock</a></li><li><a href="#temario/B2-T05/estudio-14">12. Arquitectura interna del SGBD</a></li><li><a href="#temario/B2-T05/estudio-15">13. Optimización</a></li><li><a href="#temario/B2-T05/estudio-16">14. Interoperabilidad entre SGBD relacionales</a></li><li><a href="#temario/B2-T05/estudio-17">15. CAP: dónde encaja</a></li><li><a href="#temario/B2-T05/estudio-18">16. Seguridad</a></li><li><a href="#temario/B2-T05/estudio-19">17. Test</a></li><li><a href="#temario/B2-T05/estudio-20">18. Supuesto</a></li><li><a href="#temario/B2-T05/estudio-21">19. Resumen II.05</a></li><li><a href="#temario/B2-T05/repaso">Resumen de repaso</a></li><li><a href="#temario/B2-T05/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B2-T05/repaso-02">Claves de test</a></li><li><a href="#temario/B2-T05/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B2-T05/repaso-04">Fuentes base del material</a></li></ol></nav>
+<h2 id="estudio">Apuntes de estudio</h2>
+<h3 id="estudio-01">1. Por qué este tema debe ser amplio</h3>
+<p>El A1 063 contiene bastante más detalle útil de lo que reflejaba el resumen maestro: lenguajes de SGBD, ACID, anomalías, aislamiento, 2PL, componentes internos y ANSI/SPARC. El A1 064 añade modelo relacional, SQL e interoperabilidad. La V2 recupera ese contenido porque coincide directamente con el BOE.</p>
+<h3 id="estudio-02">2. Base de datos, metadatos y SGBD</h3>
+<p>Una base de datos es un conjunto persistente de datos estructurados e interrelacionados conforme a un modelo. El <strong>diccionario de datos</strong> almacena metadatos sobre objetos, atributos, restricciones, privilegios, estructuras y otras propiedades. Puede hablarse de diccionario activo cuando su definición participa directamente en las herramientas del SGBD.</p>
+<p>Un <strong>SGBD</strong> proporciona servicios para definir, almacenar, consultar y modificar datos, manteniendo concurrencia, integridad, recuperación, seguridad y administración. Entre sus funciones: catálogo, optimización, transacciones, bloqueos/versionado, logs, backup/recovery, autorización y utilidades de explotación.</p>
+<h3 id="estudio-03">3. Lenguajes</h3>
+<ul>
+<li><strong>DDL</strong>: CREATE, ALTER, DROP y otras sentencias de definición de esquemas/objetos.</li>
+<li><strong>DML</strong>: SELECT, INSERT, UPDATE, DELETE y manipulación de datos.</li>
+<li><strong>DCL</strong>: control de privilegios, por ejemplo GRANT/REVOKE según SGBD.</li>
+<li><strong>TCL</strong>: control transaccional, como COMMIT, ROLLBACK y SAVEPOINT.</li>
+</ul>
+<p>La clasificación exacta de determinadas sentencias puede variar entre productos/documentación; para examen interesa la función conceptual.</p>
+<h3 id="estudio-04">4. Arquitectura ANSI/X3/SPARC</h3>
+<p>La arquitectura de tres niveles busca independencia entre vistas, modelo global y almacenamiento:</p>
+<ul>
+<li><strong>Nivel externo</strong>: vistas o esquemas externos adaptados a usuarios/aplicaciones.</li>
+<li><strong>Nivel conceptual</strong>: descripción lógica global de entidades, relaciones y restricciones, independiente del almacenamiento concreto.</li>
+<li><strong>Nivel interno</strong>: representación física, organización de ficheros, páginas, índices y estrategias de almacenamiento.</li>
+</ul>
+<p><strong>Independencia física</strong>: cambiar estructuras internas sin obligar a modificar esquema conceptual/aplicaciones. <strong>Independencia lógica</strong>: modificar el esquema conceptual preservando en lo posible vistas externas y aplicaciones. La independencia lógica suele ser más difícil de alcanzar.</p>
+<h3 id="estudio-05">5. Modelo relacional</h3>
+<p>E. F. Codd propuso representar datos mediante relaciones. Una <strong>relación</strong> puede visualizarse como tabla; sus filas son tuplas y columnas atributos. Un dominio define valores admisibles. El orden de filas no forma parte del significado relacional.</p>
+<ul>
+<li><strong>Clave candidata</strong>: conjunto mínimo de atributos que identifica de forma única una tupla.</li>
+<li><strong>Clave primaria</strong>: candidata elegida como identificador principal.</li>
+<li><strong>Clave alternativa</strong>: candidata no elegida.</li>
+<li><strong>Clave foránea</strong>: referencia una clave de otra relación y materializa integridad referencial.</li>
+<li><strong>NULL</strong>: ausencia/desconocimiento/no aplicabilidad según contexto; introduce lógica de tres valores.</li>
+</ul>
+<p>Restricciones: dominio, clave/entidad, integridad referencial y reglas de negocio. El diseño y normalización se profundizan en Bloque III, pero aquí hay que reconocer que el SGBD las aplica.</p>
+<h3 id="estudio-06">6. Álgebra relacional: conceptos</h3>
+<p>Operaciones básicas a reconocer: selección (filas), proyección (columnas), unión, diferencia, producto cartesiano y renombrado; join combina relaciones según condición. SQL no es una transcripción exacta del álgebra relacional, pero comparte su fundamento de operación sobre conjuntos/multiconjuntos.</p>
+<h3 id="estudio-07">7. SQL de consulta</h3>
+<p>Orden lógico aproximado de una consulta: FROM/JOIN → WHERE → GROUP BY → HAVING → SELECT → ORDER BY, con matices del optimizador. De ahí una trampa clásica: <strong>WHERE</strong> filtra filas antes de agrupar y <strong>HAVING</strong> filtra grupos.</p>
+<h3 id="estudio-08">7.1 Joins</h3>
+<ul>
+<li><strong>INNER JOIN</strong>: filas con coincidencia.</li>
+<li><strong>LEFT OUTER JOIN</strong>: conserva todas las filas izquierdas y completa con NULL cuando no hay coincidencia.</li>
+<li><strong>RIGHT OUTER JOIN</strong>: simétrico.</li>
+<li><strong>FULL OUTER JOIN</strong>: conserva ambos lados.</li>
+<li><strong>CROSS JOIN</strong>: producto cartesiano.</li>
+</ul>
+<p>Un join mal especificado puede multiplicar filas. Las cardinalidades del modelo deben entenderse antes de interpretar agregaciones.</p>
+<h3 id="estudio-09">7.2 Agregación y subconsultas</h3>
+<p>COUNT, SUM, AVG, MIN y MAX operan sobre conjuntos. GROUP BY crea grupos. Subconsultas pueden ser escalares, devolver conjuntos o estar correlacionadas. EXISTS comprueba existencia. UNION combina resultados eliminando duplicados; UNION ALL los conserva.</p>
+<h3 id="estudio-10">8. Vistas, índices y objetos</h3>
+<p><strong>Vista</strong>: consulta con nombre que presenta una representación lógica; no equivale necesariamente a materialización. Una vista materializada persiste resultados según mecanismos del motor.</p>
+<p><strong>Índice</strong>: estructura auxiliar que acelera determinadas búsquedas/ordenaciones a costa de espacio, mantenimiento y mayor coste de escritura. Conceptos habituales: B/B+ tree, hash, índices compuestos, selectividad y cobertura. La elección depende del patrón de consultas.</p>
+<p>Otros objetos frecuentes: secuencias/identidades, procedimientos/funciones almacenadas, triggers y constraints; no todos son parte estricta del estándar con idéntico comportamiento en productos.</p>
+<h3 id="estudio-11">9. Transacciones y ACID</h3>
+<ul>
+<li><strong>Atomicidad</strong>: todas las operaciones de la transacción tienen efecto o ninguna.</li>
+<li><strong>Consistencia</strong>: la transacción lleva la BD de un estado válido a otro respetando reglas.</li>
+<li><strong>Aislamiento</strong>: las transacciones concurrentes no deben producir resultados incompatibles con el nivel establecido.</li>
+<li><strong>Durabilidad</strong>: tras commit, el resultado persiste frente a fallos contemplados.</li>
+</ul>
+<p>COMMIT confirma; ROLLBACK deshace según alcance. El log de transacciones, buffers y mecanismos de recuperación ayudan a garantizar atomicidad/durabilidad.</p>
+<h3 id="estudio-12">10. Anomalías de concurrencia</h3>
+<ul>
+<li><strong>Lectura sucia</strong>: una transacción lee datos no confirmados por otra.</li>
+<li><strong>Lectura no repetible</strong>: la misma fila leída dos veces ofrece valores distintos porque otra transacción confirmó una modificación.</li>
+<li><strong>Lectura fantasma</strong>: repetir una consulta por condición devuelve un conjunto distinto por inserciones/borrados concurrentes.</li>
+</ul>
+<table>
+<tr>
+<th scope="col"><p>Nivel clásico</p></th>
+<th scope="col"><p>Lectura sucia</p></th>
+<th scope="col"><p>No repetible</p></th>
+<th scope="col"><p>Fantasma</p></th>
+</tr>
+<tr>
+<td><p>Read Uncommitted</p></td>
+<td><p>Puede</p></td>
+<td><p>Puede</p></td>
+<td><p>Puede</p></td>
+</tr>
+<tr>
+<td><p>Read Committed</p></td>
+<td><p>Evita</p></td>
+<td><p>Puede</p></td>
+<td><p>Puede</p></td>
+</tr>
+<tr>
+<td><p>Repeatable Read</p></td>
+<td><p>Evita</p></td>
+<td><p>Evita</p></td>
+<td><p>Puede en modelo estándar</p></td>
+</tr>
+<tr>
+<td><p>Serializable</p></td>
+<td><p>Evita</p></td>
+<td><p>Evita</p></td>
+<td><p>Evita</p></td>
+</tr>
+</table>
+<p>Los motores implementan aislamiento mediante bloqueos, MVCC o combinaciones, por lo que ciertos comportamientos prácticos pueden diferir del cuadro teórico estándar.</p>
+<h3 id="estudio-13">11. Bloqueos, 2PL y deadlock</h3>
+<p>El <strong>two-phase locking (2PL)</strong> separa una fase de adquisición de bloqueos y otra de liberación para lograr serializabilidad en variantes adecuadas. Pueden existir bloqueos compartidos/exclusivos y granularidad de fila, página, tabla, etc. Dos transacciones pueden formar un <strong>deadlock</strong>; el SGBD detecta/previene y aborta una de ellas.</p>
+<h3 id="estudio-14">12. Arquitectura interna del SGBD</h3>
+<p>El A1 063 diferencia componentes conceptuales:</p>
+<ul>
+<li><strong>Procesador/optimizador de consultas</strong>: parsea, valida y elige plan de ejecución.</li>
+<li><strong>Gestor de transacciones</strong>: coordina unidades de trabajo.</li>
+<li><strong>Scheduler/Lock Manager</strong>: ordena acceso concurrente y bloqueos.</li>
+<li><strong>Gestor de buffers</strong>: mueve páginas entre disco y memoria.</li>
+<li><strong>Gestor de recuperación</strong>: log, commit/rollback y restauración de consistencia.</li>
+<li><strong>Gestor de almacenamiento</strong>: organiza páginas, ficheros, índices y acceso físico.</li>
+</ul>
+<h3 id="estudio-15">13. Optimización</h3>
+<p>El optimizador elige planes en función de estadísticas, cardinalidades, índices, costes estimados y operadores. Problemas típicos: estadísticas obsoletas, índices inadecuados, scans masivos, joins costosos, funciones que impiden usar índice, N+1 desde aplicaciones y falta de particionado cuando procede.</p>
+<h3 id="estudio-16">14. Interoperabilidad entre SGBD relacionales</h3>
+<p>La interoperabilidad puede darse en varios niveles:</p>
+<ul>
+<li><strong>SQL estándar</strong>: lenguaje común, aunque cada producto introduce dialectos/extensiones.</li>
+<li><strong>ODBC</strong>: interfaz/driver estandarizado de acceso a datos, ampliamente usado en múltiples lenguajes.</li>
+<li><strong>JDBC</strong>: API Java para conexión a SGBD mediante drivers.</li>
+<li><strong>ORM</strong>: capa de mapeo objeto-relacional; mejora portabilidad parcial, pero no elimina diferencias de SQL, tipos ni transacciones.</li>
+<li><strong>APIs y servicios</strong>: encapsulan datos evitando acoplar consumidores al motor.</li>
+<li><strong>ETL/ELT, replicación y CDC</strong>: integración y sincronización entre plataformas.</li>
+<li><strong>Formatos</strong>: CSV, JSON, XML, Parquet, etc., útiles para intercambio, no equivalentes a interoperabilidad transaccional.</li>
+</ul>
+<p>El objetivo realista no es que dos motores sean idénticos, sino reducir dependencia de extensiones y definir contratos de datos, tipos, codificación, transacciones y errores.</p>
+<h3 id="estudio-17">15. CAP: dónde encaja</h3>
+<p>El A1 063 menciona CAP. Conviene conocerlo como teoría de <strong>sistemas de datos distribuidos</strong>: ante partición de red, no puede garantizarse simultáneamente consistencia fuerte y disponibilidad para todas las operaciones. No es una regla para elegir un SGBD relacional mononodo ni sustituye a ACID.</p>
+<h3 id="estudio-18">16. Seguridad</h3>
+<p>Principio de mínimo privilegio, cuentas separadas, roles, autenticación robusta, cifrado en tránsito y reposo, gestión de secretos, auditoría, parcheo, hardening y copias. Las aplicaciones deben usar consultas parametrizadas para prevenir inyección SQL.</p>
+<h3 id="estudio-19">17. Test</h3>
+<ul>
+<li>ANSI/SPARC: externo → conceptual → interno.</li>
+<li>Independencia física ≠ lógica.</li>
+<li>DDL/DML/DCL/TCL.</li>
+<li>PK ≠ FK.</li>
+<li>WHERE ≠ HAVING.</li>
+<li>INNER ≠ LEFT/FULL JOIN.</li>
+<li>Vista ≠ tabla física necesariamente.</li>
+<li>Índice acelera lecturas concretas pero penaliza almacenamiento/escrituras.</li>
+<li>ACID: atomicidad, consistencia, aislamiento, durabilidad.</li>
+<li>Dirty/non-repeatable/phantom son anomalías distintas.</li>
+<li>Read committed evita dirty reads; serializable es el aislamiento más fuerte del esquema clásico.</li>
+<li>CAP ≠ ACID.</li>
+<li>ODBC ≠ JDBC.</li>
+</ul>
+<h3 id="estudio-20">18. Supuesto</h3>
+<p>Diseña esquema y claves; identifica transacciones críticas; define aislamiento; selecciona índices con base en consultas; plantea pooling de conexiones, roles, cifrado, logs, backup y HA; y documenta interoperabilidad mediante estándar SQL/driver/API. Justifica cuándo usar funciones nativas y el coste de lock-in.</p>
+<h3 id="estudio-21">19. Resumen II.05</h3>
+<p>Tema nuclear: ANSI/SPARC + relacional + SQL + transacciones/concurrencia + arquitectura interna + interoperabilidad. Practica consultas y anomalías; son mucho más examinables que memorizar marcas de SGBD.</p>
+<h2 id="repaso">Resumen de repaso</h2>
+<h3 id="repaso-01">Núcleo de estudio</h3>
+<p>La arquitectura ANSI/SPARC separa niveles externo, conceptual e interno para favorecer independencia lógica y física de los datos. Un SGBD proporciona definición, manipulación, control de concurrencia, transacciones, integridad, seguridad, recuperación y administración. En el modelo relacional, tablas representan relaciones; filas tuplas; columnas atributos; claves primarias identifican y claves foráneas relacionan. SQL incluye DDL, DML, DCL y control transaccional. Domina SELECT, JOIN, agregación, GROUP BY/HAVING, subconsultas, vistas, índices y transacciones ACID. Interoperabilidad: estándares SQL, ODBC/JDBC, formatos de intercambio, APIs y replicación/CDC según caso.</p>
+<h3 id="repaso-02">Claves de test</h3>
+<p>ANSI/SPARC: externo=visiones, conceptual=modelo global, interno=almacenamiento. WHERE filtra antes de agrupar; HAVING después. INNER/LEFT/RIGHT/FULL JOIN no son equivalentes. Índice acelera lecturas pero añade coste de espacio y escritura. ACID: atomicidad, consistencia, aislamiento, durabilidad.</p>
+<h3 id="repaso-03">Enfoque para supuesto práctico</h3>
+<p>En supuesto diseña esquema, claves, índices, particionado, HA/replicación, backup, cifrado, auditoría y conexión. Justifica motor relacional frente a NoSQL en función de consistencia, consultas y modelo de datos.</p>
+<h3 id="repaso-04">Fuentes base del material</h3>
+<p>A1 063 + 064. Correspondencia DIRECTA.</p>
+<section class="topic-content__sources"><h2 id="fuentes">Fuentes y localizadores</h2><ul><li><a href="https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)</a> · II.05 · 2026-08-21</li><li><a href="https://docs.google.com/document/d/1h7n4dFYafS_3VMuL55TnEuVKhqaTheUoL-thDFQSr9w/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE II — RESUMEN MAESTRO DE REPASO (16 temas)</a> · II.05 · 2026-08-21</li></ul></section>
 </article>

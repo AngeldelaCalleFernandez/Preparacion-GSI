@@ -1,0 +1,72 @@
+<article class="topic-content" data-topic-id="B2-T09" data-coverage-status="complete">
+<p>Material curado del corpus GSI A2 · apuntes V2.1 revisados. Procedencia editorial, no documento oficial.</p>
+<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B2-T09/estudio">Apuntes de estudio</a></li><li><a href="#temario/B2-T09/estudio-01">1. Alcance y corrección de fuente</a></li><li><a href="#temario/B2-T09/estudio-02">2. Lenguajes de marcas y SGML</a></li><li><a href="#temario/B2-T09/estudio-03">3. HTML</a></li><li><a href="#temario/B2-T09/estudio-04">3.1 Semántica</a></li><li><a href="#temario/B2-T09/estudio-05">3.2 Formularios y multimedia</a></li><li><a href="#temario/B2-T09/estudio-06">3.3 Metadatos</a></li><li><a href="#temario/B2-T09/estudio-07">4. CSS</a></li><li><a href="#temario/B2-T09/estudio-08">5. XML</a></li><li><a href="#temario/B2-T09/estudio-09">6. DTD y XSD</a></li><li><a href="#temario/B2-T09/estudio-10">7. Namespaces</a></li><li><a href="#temario/B2-T09/estudio-11">8. XPath y XSLT</a></li><li><a href="#temario/B2-T09/estudio-12">9. XHTML</a></li><li><a href="#temario/B2-T09/estudio-13">10. JSON frente a XML</a></li><li><a href="#temario/B2-T09/estudio-14">11. Lenguajes de script</a></li><li><a href="#temario/B2-T09/estudio-15">12. JavaScript y seguridad web</a></li><li><a href="#temario/B2-T09/estudio-16">13. HTTP como contexto</a></li><li><a href="#temario/B2-T09/estudio-17">14. Test</a></li><li><a href="#temario/B2-T09/estudio-18">15. Supuesto</a></li><li><a href="#temario/B2-T09/estudio-19">16. Resumen II.09</a></li><li><a href="#temario/B2-T09/repaso">Resumen de repaso</a></li><li><a href="#temario/B2-T09/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B2-T09/repaso-02">Claves de test</a></li><li><a href="#temario/B2-T09/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B2-T09/repaso-04">Fuentes base del material</a></li></ol></nav>
+<h2 id="estudio">Apuntes de estudio</h2>
+<h3 id="estudio-01">1. Alcance y corrección de fuente</h3>
+<p>A1 077, de 2023, aporta HTML, CSS, XML, XSD, XPath, XSLT, HTTP y estándares web. La V2 corrige una formulación importante: <strong>HTML moderno no debe describirse como «basado en XML»</strong>. HTML tiene su propia sintaxis; XHTML es la serialización XML de HTML y exige reglas de documento XML bien formado.</p>
+<h3 id="estudio-02">2. Lenguajes de marcas y SGML</h3>
+<p>Un lenguaje de marcas incorpora etiquetas/metadatos al contenido para representar estructura, semántica o presentación. <strong>SGML</strong> es un metalenguaje ISO histórico para definir lenguajes de marcado mediante reglas/DTD. Influyó en HTML y XML. Para GSI importa su relación histórica/conceptual, no memorizar toda la norma SGML.</p>
+<h3 id="estudio-03">3. HTML</h3>
+<p><strong>HTML</strong> define estructura y semántica de documentos web. El documento moderno comienza con &lt;!doctype html&gt; y contiene los elementos html, head y body. La presentación se delega principalmente en CSS y el comportamiento en JavaScript.</p>
+<h3 id="estudio-04">3.1 Semántica</h3>
+<p>Elementos como header, nav, main, article, section, aside y footer describen función del contenido. Usar semántica nativa mejora accesibilidad, mantenimiento, indexación y capacidad de las tecnologías de apoyo.</p>
+<h3 id="estudio-05">3.2 Formularios y multimedia</h3>
+<p>Form, label, input, select, textarea y button permiten interacción. La asociación label-control y la validación accesible son fundamentales. HTML incluye audio, video, canvas y SVG integrado. El atributo alt proporciona alternativa textual a imágenes cuando procede.</p>
+<h3 id="estudio-06">3.3 Metadatos</h3>
+<p>title, meta charset, viewport, description y lenguaje del documento. Los metadatos ayudan a interpretación, responsive y SEO, pero no sustituyen contenido de calidad.</p>
+<h3 id="estudio-07">4. CSS</h3>
+<p>Aunque el título del BOE no lo menciona expresamente, A1 077 lo usa para entender la web. CSS separa presentación de estructura. Conceptos: cascada, especificidad, herencia, box model, media queries, Flexbox y Grid. Responsive design adapta el layout al espacio disponible.</p>
+<h3 id="estudio-08">5. XML</h3>
+<p><strong>XML</strong> es un metalenguaje/sintaxis extensible para representar documentos y datos estructurados. Las etiquetas las define la aplicación. Un documento <strong>bien formado</strong> cumple reglas sintácticas XML; uno <strong>válido</strong> además cumple el vocabulario/esquema declarado.</p>
+<ul>
+<li>Un único elemento raíz.</li>
+<li>Etiquetas correctamente anidadas y cerradas.</li>
+<li>XML distingue mayúsculas/minúsculas.</li>
+<li>Atributos entre comillas.</li>
+<li>Entidades para caracteres especiales cuando proceda.</li>
+</ul>
+<h3 id="estudio-09">6. DTD y XSD</h3>
+<p><strong>DTD</strong> describe estructura mediante sintaxis heredada de SGML. <strong>XML Schema (XSD)</strong> usa XML y define tipos de datos, cardinalidades, restricciones y estructuras más ricas. XSD no es lo mismo que un documento XML de negocio: es su esquema.</p>
+<h3 id="estudio-10">7. Namespaces</h3>
+<p>Evitan colisiones de nombres al combinar vocabularios XML. Se declaran mediante URI y prefijos. El prefijo es una abreviatura local; la identidad se asocia al namespace, no al texto del prefijo.</p>
+<h3 id="estudio-11">8. XPath y XSLT</h3>
+<p><strong>XPath</strong> selecciona nodos/valores dentro de XML mediante expresiones de rutas. <strong>XSLT</strong> transforma documentos XML a XML, HTML, texto u otros resultados, utilizando XPath para seleccionar partes. XPath consulta; XSLT transforma.</p>
+<h3 id="estudio-12">9. XHTML</h3>
+<p>XHTML aplica reglas XML al vocabulario HTML. Requiere documento bien formado, minúsculas según versión, elementos cerrados y atributos citados. No debe confundirse con HTML5 servido con sintaxis HTML.</p>
+<h3 id="estudio-13">10. JSON frente a XML</h3>
+<p>JSON no está en el título, pero es útil como comparación: modelo sencillo de objetos, arrays, strings, números, booleanos y null, muy habitual en APIs. XML destaca en documentos con namespaces, esquemas y ecosistemas de firma/transformación. La elección depende del contrato y no de que uno sea universalmente «mejor».</p>
+<h3 id="estudio-14">11. Lenguajes de script</h3>
+<p>Un script automatiza tareas o añade comportamiento con un ciclo de desarrollo generalmente ligero. Ejemplos: JavaScript, Python, shell/Bash, PowerShell. El término no implica necesariamente tipado dinámico ni interpretación pura.</p>
+<p>En navegador, JavaScript usa DOM y APIs web; puede gestionar eventos y peticiones. En servidor y automatización, los scripts administran sistemas, transforman datos y orquestan procesos.</p>
+<h3 id="estudio-15">12. JavaScript y seguridad web</h3>
+<p>JavaScript ≠ Java. Riesgos típicos: XSS si se inyecta contenido no confiable en DOM/HTML, CSRF cuando una aplicación acepta acciones autenticadas sin protección adecuada y dependencias de terceros comprometidas. Medidas: escaping contextual, APIs seguras de DOM, CSP, cookies seguras/SameSite, tokens CSRF cuando proceda y control de dependencias.</p>
+<h3 id="estudio-16">13. HTTP como contexto</h3>
+<p>HTTP es protocolo de aplicación sin estado. HTTP/2 multiplexa flujos sobre conexión; HTTP/3 utiliza QUIC sobre UDP con TLS integrado en QUIC. No es necesario memorizar cada RFC, pero sí comprender que HTML/XML son formatos y HTTP es protocolo de transporte de aplicación.</p>
+<h3 id="estudio-17">14. Test</h3>
+<ul>
+<li>SGML = metalenguaje histórico.</li>
+<li>HTML ≠ XML; XHTML sí usa sintaxis XML.</li>
+<li>HTML estructura; CSS presenta; JavaScript programa comportamiento.</li>
+<li>XML bien formado ≠ válido.</li>
+<li>XSD ≠ XML de datos.</li>
+<li>Namespace evita colisiones.</li>
+<li>XPath selecciona; XSLT transforma.</li>
+<li>JavaScript ≠ Java.</li>
+<li>JSON ≠ XML.</li>
+<li>HTTP ≠ HTML.</li>
+</ul>
+<h3 id="estudio-18">15. Supuesto</h3>
+<p>Usa HTML semántico y accesible; CSS responsive; scripts sin mezclar secretos; APIs con JSON o XML según contrato; XSD si una integración exige validación; sanitiza/valida entradas y protege XSS/CSRF. Si hay intercambio administrativo XML, documenta namespaces, esquemas, firma y versiones.</p>
+<h3 id="estudio-19">16. Resumen II.09</h3>
+<p>Domina la jerarquía SGML→influencia en HTML/XML, diferencias HTML/XHTML/XML, XSD, XPath/XSLT y papel de scripts. La trampa principal es confundir lenguaje de marcas, programación y protocolo.</p>
+<h2 id="repaso">Resumen de repaso</h2>
+<h3 id="repaso-01">Núcleo de estudio</h3>
+<p>SGML es metalenguaje histórico del que deriva HTML; XML define una sintaxis extensible para datos estructurados. HTML describe estructura y semántica de documentos web; CSS se encarga de presentación; JavaScript proporciona comportamiento en cliente y también puede ejecutarse en servidor. En XML estudia documento bien formado y válido, namespaces, XSD, XPath y transformaciones XSLT a nivel conceptual. JSON no aparece en el título del BOE pero es un formato actual de intercambio que conviene contrastar con XML. Los lenguajes de script suelen priorizar automatización y ejecución rápida sobre un ciclo clásico de compilación.</p>
+<h3 id="repaso-02">Claves de test</h3>
+<p>HTML no es XML salvo XHTML; XML no trae etiquetas predefinidas; XSD define estructura/tipos; XPath selecciona nodos; XSLT transforma. JavaScript ≠ Java. Distingue lenguaje de marcas de lenguaje de programación.</p>
+<h3 id="repaso-03">Enfoque para supuesto práctico</h3>
+<p>En supuesto usa HTML semántico, CSS responsive, JavaScript/TypeScript cuando proceda, APIs con JSON/XML según integración y validación de esquemas. Añade accesibilidad y seguridad contra XSS/CSRF/inyección.</p>
+<h3 id="repaso-04">Fuentes base del material</h3>
+<p>A1 077. Correspondencia DIRECTA.</p>
+<section class="topic-content__sources"><h2 id="fuentes">Fuentes y localizadores</h2><ul><li><a href="https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)</a> · II.09 · 2026-08-21</li><li><a href="https://docs.google.com/document/d/1h7n4dFYafS_3VMuL55TnEuVKhqaTheUoL-thDFQSr9w/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE II — RESUMEN MAESTRO DE REPASO (16 temas)</a> · II.09 · 2026-08-21</li></ul></section>
+</article>

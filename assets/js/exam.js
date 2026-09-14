@@ -1,4 +1,4 @@
-import { describeQuestionSource } from "./data-service.js";
+import { describeQuestionSource } from "./data-service.js?gsi2";
 import {
   EXAM_MODES,
   calculateExamResults,
@@ -7,22 +7,22 @@ import {
   getMixedQuota,
   isQuestionEligible,
   selectExamQuestions,
-} from "./exam-engine.js";
+} from "./exam-engine.js?gsi2";
 import {
   clearActiveExamState,
   createActiveExamState,
   loadActiveExamState,
   saveActiveExamState,
-} from "./exam-storage.js?m3";
+} from "./exam-storage.js?gsi2";
 import {
   createAnalyticsAnnotationEvent,
   createAnalyticsAttemptEvent,
   createAnalyticsSession,
   createAnalyticsSessionEvent,
-} from "./analytics-events.js";
-import { applyStoredAnalyticsEvents } from "./analytics-storage.js?m3";
-import { applyStoredReinforcementEvents, createReinforcementEvent } from "./reinforcement-storage.js?m3";
-import { createElement, setStatus } from "./ui.js";
+} from "./analytics-events.js?gsi2";
+import { applyStoredAnalyticsEvents } from "./analytics-storage.js?gsi2";
+import { applyStoredReinforcementEvents, createReinforcementEvent } from "./reinforcement-storage.js?gsi2";
+import { createElement, setStatus } from "./ui.js?gsi2";
 
 function formatNumber(value) {
   return new Intl.NumberFormat("es-ES", { maximumFractionDigits: 2, minimumFractionDigits: 0 }).format(value);
@@ -34,7 +34,9 @@ function formatMinutes(seconds) {
 
 function modeLabel(mode) {
   return {
-    [EXAM_MODES.BOE]: "Solo BOE",
+    [EXAM_MODES.GSI]: "Simulacro GSI · primer ejercicio",
+    [EXAM_MODES.CUSTOM]: "Test configurable",
+    [EXAM_MODES.BOE]: "Solo oficiales",
     [EXAM_MODES.AI_VALIDATED]: "Solo IA validada",
     [EXAM_MODES.MIXED]: "Mixto",
     [EXAM_MODES.DEMO]: "Sesión ficticia",
@@ -120,11 +122,12 @@ export function initExam(data) {
       durationSeconds: Number(duration.value) * 60,
       blockIds: getSelectedBlocks(),
       boePercentage: Number(boePercentage.value),
-      penaltyPerError: Number(penalty.value),
+      penaltyPerError: 1 / 3,
       shuffleQuestions: document.querySelector("#exam-shuffle-questions").checked,
       shuffleOptions: document.querySelector("#exam-shuffle-options").checked,
       demoEnabled: data.demoEnabled,
     };
+    if (mode === EXAM_MODES.GSI) Object.assign(config, { questionCount: 100, durationSeconds: 5400, blockIds: ["B1", "B2", "B3", "B4"], penaltyPerError: 1 / 3 });
     if (mode === EXAM_MODES.MIXED) {
       Object.assign(config, getMixedQuota(config.questionCount, config.boePercentage));
     }
@@ -134,8 +137,14 @@ export function initExam(data) {
   function renderAvailability() {
     const config = getConfig();
     mixedSettings.hidden = config.mode !== EXAM_MODES.MIXED;
+    const fixed = config.mode === EXAM_MODES.GSI;
+    questionCount.disabled = fixed; duration.disabled = fixed;
+    if (fixed) { questionCount.value = 100; duration.value = 90; }
+    for (const input of blockContainer.querySelectorAll("input")) { input.disabled = fixed; if (fixed) input.checked = true; }
     const available = getExamAvailability(data.questions, config);
-    if (config.mode === EXAM_MODES.BOE) {
+    if ([EXAM_MODES.GSI, EXAM_MODES.CUSTOM].includes(config.mode)) {
+      availabilityNode.textContent = `Disponibles: ${available.gsi.length} preguntas revisadas del corpus GSI. La procedencia aparece al corregir.`;
+    } else if (config.mode === EXAM_MODES.BOE) {
       availabilityNode.textContent = `Disponibles para Solo BOE: ${available.boe.length}.`;
     } else if (config.mode === EXAM_MODES.AI_VALIDATED) {
       availabilityNode.textContent = `Disponibles para Solo IA validada: ${available.ai.length}.`;

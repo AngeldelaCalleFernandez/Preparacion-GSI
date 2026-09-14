@@ -1,0 +1,1170 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GSI A2 — PRÁCTICA ACTIVA 18 — HTML, XML, CONTENIDOS, BÚSQUEDA Y SEO — CUADERNO</title><link rel="stylesheet" href="../../assets/css/styles.css"></head><body><main class="shell topic-content"><p><a href="../../index.html#practica">Volver a práctica escrita</a></p><p>Material curado GSI A2. Fuente: <a href="https://docs.google.com/document/d/1ig3ExDeOmH-flxBBPvBwmZ7MIXkHF2fGwHMX8yI0BHc/edit">documento original de Drive</a>.</p><p>GSI A2 — PRÁCTICA ACTIVA 18</p>
+<p><strong>HTML · XML · SCRIPTS · CONTENIDOS · BÚSQUEDA · SEO</strong></p>
+<p>160 preguntas · 4 opciones · refuerzo directo de II.09 e II.16</p>
+<p><strong>CUADERNO DE TRABAJO</strong></p>
+<h1>Cómo usar esta práctica</h1>
+<p>Objetivo: cerrar II.09 e II.16 como temas parciales mediante práctica específica de SGML/HTML/XML, DTD/XSD/namespaces, XPath/XSLT, scripting y seguridad web, además de DMS/CMS, sindicación, workflow, búsqueda, robots, SEO y colaboración.</p>
+<p>Método: responde sin consultar apuntes. Marca seguridad alta/media/baja y registra cada fallo con una regla breve que puedas recuperar 24–72 horas después.</p>
+<p>Base nuclear: GSI A2 — Bloque II — Apuntes completos V2.1 revisados. Contraste oficial: WHATWG HTML Living Standard; W3C XML/XSD/XPath; RFC 4287 Atom; RFC 9309 Robots Exclusion Protocol; Google Search Central para crawling/sitemaps/SEO.</p>
+<h2>Distribución</h2>
+<table>
+<tr>
+<th scope="col"><p><strong>Preguntas</strong></p></th>
+<th scope="col"><p><strong>Bloque</strong></p></th>
+<th scope="col"><p><strong>Función</strong></p></th>
+</tr>
+<tr>
+<td><p>1–20</p></td>
+<td><p>SGML, HTML y semántica web</p></td>
+<td><p>SGML, HTML, semántica, formularios, CSS y DOM.</p></td>
+</tr>
+<tr>
+<td><p>21–40</p></td>
+<td><p>XML, DTD, XSD y namespaces</p></td>
+<td><p>XML bien formado/válido, DTD, XSD, namespaces y contratos.</p></td>
+</tr>
+<tr>
+<td><p>41–60</p></td>
+<td><p>XPath, XSLT, XHTML, JSON y lenguajes de script</p></td>
+<td><p>XPath/XSLT/XHTML/JSON, scripts, eventos y asincronía.</p></td>
+</tr>
+<tr>
+<td><p>61–80</p></td>
+<td><p>Scripting web, DOM, seguridad y casos de integración</p></td>
+<td><p>DOM, XSS/CSRF/CSP, cookies, validación, dependencias y casos.</p></td>
+</tr>
+<tr>
+<td><p>81–100</p></td>
+<td><p>Gestión documental, CMS/ECM, metadatos y ciclo de vida</p></td>
+<td><p>DMS/CMS/ECM, metadatos, versionado, retención y gobierno.</p></td>
+</tr>
+<tr>
+<td><p>101–120</p></td>
+<td><p>Taxonomías, sindicación, workflow y BPM</p></td>
+<td><p>Taxonomías, RSS/Atom, workflow, BPM/BPMN y métricas.</p></td>
+</tr>
+<tr>
+<td><p>121–140</p></td>
+<td><p>Búsqueda, indexación, robots, sitemaps y SEO</p></td>
+<td><p>Crawling, índice invertido, precision/recall, robots.txt, sitemap y SEO.</p></td>
+</tr>
+<tr>
+<td><p>141–160</p></td>
+<td><p>Colaboración, redes sociales, seguridad y casos integradores</p></td>
+<td><p>Colaboración, redes sociales, IAM, DLP, seguridad y ciclo integrado.</p></td>
+</tr>
+</table>
+<h2>Fuentes oficiales de contraste</h2>
+<ul>
+<li>WHATWG — HTML Living Standard</li>
+<li>W3C — XML 1.0 / XML Schema / XPath</li>
+<li>RFC 4287 — Atom Syndication Format</li>
+<li>RFC 9309 — Robots Exclusion Protocol</li>
+<li>Google Search Central — SEO, crawling y sitemaps</li>
+</ul>
+<p>Control de actualidad: 25/08/2026. Se priorizan estándares y conceptos estables frente a productos o tendencias coyunturales.</p>
+<h1>1. SGML, HTML y semántica web</h1>
+<p><strong>1. ¿Qué es un lenguaje de marcas?</strong></p>
+<p>A) Un sistema que incorpora etiquetas o metadatos al contenido para representar estructura, semántica o presentación.</p>
+<p>B) Un lenguaje que solo puede ejecutar cálculos numéricos.</p>
+<p>C) Un protocolo de transporte de red.</p>
+<p>D) Un sistema operativo de propósito general.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>2. ¿Qué es SGML?</strong></p>
+<p>A) Una versión moderna de JavaScript.</p>
+<p>B) Un protocolo de sindicación web.</p>
+<p>C) Un sistema de bases de datos.</p>
+<p>D) Un metalenguaje histórico estandarizado para definir lenguajes de marcado.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>3. ¿Qué relación conceptual existe entre SGML y XML?</strong></p>
+<p>A) XML es un reemplazo de HTTP.</p>
+<p>B) SGML deriva de JSON.</p>
+<p>C) XML fue diseñado como una forma restringida/perfil de SGML orientada a facilidad de uso e interoperabilidad web.</p>
+<p>D) No existe ninguna relación histórica o técnica.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>4. ¿Qué describe mejor HTML moderno?</strong></p>
+<p>A) Una sintaxis XML obligatoria.</p>
+<p>B) Un protocolo de transporte.</p>
+<p>C) Un lenguaje de marcado para estructura y semántica de documentos y aplicaciones web.</p>
+<p>D) Un lenguaje de consulta relacional.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>5. ¿Qué afirmación es correcta sobre HTML y XML?</strong></p>
+<p>A) Todo documento HTML debe ser XML bien formado.</p>
+<p>B) HTML moderno no debe describirse simplemente como “XML”; son sintaxis y modelos de procesamiento distintos.</p>
+<p>C) XML es una hoja de estilos para HTML.</p>
+<p>D) HTML es un protocolo de aplicación como HTTP.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>6. ¿Cuál es la función principal de &lt;!doctype html&gt; en HTML moderno?</strong></p>
+<p>A) Declarar un namespace XML obligatorio.</p>
+<p>B) Cargar una hoja CSS externa.</p>
+<p>C) Definir un esquema XSD.</p>
+<p>D) Indicar el modo de documento esperado y favorecer el procesamiento estándar del navegador.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>7. ¿Qué elemento HTML contiene normalmente metadatos y recursos no visibles como contenido principal?</strong></p>
+<p>A) &lt;body&gt;.</p>
+<p>B) &lt;main&gt;.</p>
+<p>C) &lt;footer&gt;.</p>
+<p>D) &lt;head&gt;.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>8. ¿Qué elemento HTML representa el contenido principal único de la página?</strong></p>
+<p>A) &lt;meta&gt;.</p>
+<p>B) &lt;main&gt;.</p>
+<p>C) &lt;link&gt;.</p>
+<p>D) &lt;script&gt; exclusivamente.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>9. ¿Qué ventaja aporta usar elementos semánticos como nav, article o footer?</strong></p>
+<p>A) Eliminan la necesidad de CSS.</p>
+<p>B) Convierten HTML en XML.</p>
+<p>C) Garantizan por sí solos posicionamiento SEO máximo.</p>
+<p>D) Mejoran estructura, accesibilidad, mantenimiento e interpretación por herramientas.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>10. ¿Qué función tiene el atributo alt de una imagen cuando corresponde?</strong></p>
+<p>A) Ejecutar JavaScript al cargar la imagen.</p>
+<p>B) Proporcionar una alternativa textual útil para accesibilidad y contextos donde la imagen no se presenta.</p>
+<p>C) Definir su tamaño físico en píxeles.</p>
+<p>D) Cifrar el recurso.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>11. ¿Qué relación correcta existe entre HTML, CSS y JavaScript?</strong></p>
+<p>A) CSS estructura datos y HTML ejecuta procesos del servidor.</p>
+<p>B) HTML estructura, CSS presenta y JavaScript añade comportamiento/programación.</p>
+<p>C) JavaScript es una hoja de estilos y CSS un lenguaje de marcas.</p>
+<p>D) Los tres son protocolos de transporte.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>12. ¿Qué es CSS?</strong></p>
+<p>A) Un lenguaje de hojas de estilo para describir presentación de documentos.</p>
+<p>B) Un lenguaje de consulta XML.</p>
+<p>C) Un sistema de gestión documental.</p>
+<p>D) Un protocolo de correo.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>13. ¿Qué significa responsive design?</strong></p>
+<p>A) Servir siempre una página distinta para cada modelo de móvil.</p>
+<p>B) Convertir HTML en XML.</p>
+<p>C) Adaptar la presentación al espacio, dispositivo y capacidades mediante técnicas como media queries y layouts flexibles.</p>
+<p>D) Impedir el zoom del usuario.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>14. ¿Qué objetivo tiene una etiqueta &lt;label&gt; asociada a un control de formulario?</strong></p>
+<p>A) Definir una ruta de red.</p>
+<p>B) Validar el XML mediante XSD.</p>
+<p>C) Ejecutar una consulta SQL.</p>
+<p>D) Dar una descripción accesible y facilitar interacción con el control.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>15. ¿Qué diferencia conceptual hay entre elemento y atributo HTML?</strong></p>
+<p>A) El elemento representa una unidad estructural; el atributo aporta propiedades o configuración al elemento.</p>
+<p>B) Son sinónimos.</p>
+<p>C) El atributo siempre crea otro documento.</p>
+<p>D) Un elemento solo puede contener números.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>16. ¿Qué es el DOM en contexto web?</strong></p>
+<p>A) Una representación programática en forma de árbol de un documento que scripts pueden consultar y modificar.</p>
+<p>B) Un protocolo de transporte.</p>
+<p>C) Una licencia de software.</p>
+<p>D) Un sistema de archivos distribuido.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>17. ¿Qué afirmación sobre HTML Living Standard es correcta?</strong></p>
+<p>A) HTML quedó congelado definitivamente en 2014.</p>
+<p>B) Solo W3C XML define hoy HTML.</p>
+<p>C) HTML se mantiene como estándar vivo, con actualización continua de la especificación.</p>
+<p>D) HTML moderno exige siempre XHTML.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>18. ¿Qué diferencia hay entre contenido semántico y presentación?</strong></p>
+<p>A) La semántica expresa significado/estructura; la presentación define apariencia.</p>
+<p>B) No existe diferencia.</p>
+<p>C) La semántica solo se usa en CSS.</p>
+<p>D) La presentación debe codificarse siempre con tablas HTML.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>19. ¿Qué práctica es más adecuada al crear una tabla HTML de datos?</strong></p>
+<p>A) Usar tablas para cualquier layout aunque no haya datos tabulares.</p>
+<p>B) Sustituir todos los textos por imágenes.</p>
+<p>C) Usar estructura de tabla real y encabezados adecuados cuando los datos son tabulares.</p>
+<p>D) Eliminar encabezados para simplificar.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>20. Una página es visualmente correcta pero usa divs genéricos para todo y carece de títulos/landmarks. ¿Qué mejora es más apropiada?</strong></p>
+<p>A) Añadir más JavaScript sin cambiar estructura.</p>
+<p>B) Reestructurar con HTML semántico, jerarquía de encabezados y controles accesibles antes de depender de estilos.</p>
+<p>C) Convertir el sitio entero a XML sin necesidad.</p>
+<p>D) Ocultar todos los encabezados.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<h1>2. XML, DTD, XSD y namespaces</h1>
+<p><strong>21. ¿Qué es XML?</strong></p>
+<p>A) Un lenguaje de estilos.</p>
+<p>B) Un protocolo de red.</p>
+<p>C) Una base de datos relacional.</p>
+<p>D) Un lenguaje/sintaxis extensible para representar documentos y datos estructurados con etiquetas definidas por la aplicación.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>22. ¿Qué significa que un documento XML esté bien formado?</strong></p>
+<p>A) Que cumple las reglas sintácticas fundamentales de XML.</p>
+<p>B) Que cumple necesariamente un XSD.</p>
+<p>C) Que su contenido es correcto desde el punto de vista del negocio.</p>
+<p>D) Que utiliza HTML válido.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>23. ¿Qué significa que un XML sea válido respecto a un esquema?</strong></p>
+<p>A) Que contiene un único atributo.</p>
+<p>B) Que puede abrirse en cualquier navegador.</p>
+<p>C) Que está cifrado.</p>
+<p>D) Que además de estar bien formado cumple las restricciones del vocabulario/esquema aplicable.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>24. ¿Qué regla de XML es correcta?</strong></p>
+<p>A) Puede haber varios elementos raíz hermanos.</p>
+<p>B) Las etiquetas no necesitan cerrarse.</p>
+<p>C) Debe existir un único elemento raíz del documento.</p>
+<p>D) XML no distingue mayúsculas y minúsculas.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>25. ¿Qué regla de anidamiento exige XML?</strong></p>
+<p>A) Los elementos pueden cruzarse libremente.</p>
+<p>B) Los elementos deben cerrarse y anidarse correctamente, sin solapamiento.</p>
+<p>C) Solo el elemento raíz necesita cierre.</p>
+<p>D) Las etiquetas se interpretan sin orden.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>26. ¿XML distingue mayúsculas y minúsculas en nombres?</strong></p>
+<p>A) No, todos los nombres se normalizan a minúsculas.</p>
+<p>B) Sí, es sensible a mayúsculas/minúsculas.</p>
+<p>C) Solo en atributos numéricos.</p>
+<p>D) Depende del navegador y no del estándar.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>27. ¿Cómo deben escribirse los valores de atributos XML?</strong></p>
+<p>A) Entre comillas simples o dobles conforme a la sintaxis XML.</p>
+<p>B) Siempre sin comillas.</p>
+<p>C) Solo entre paréntesis.</p>
+<p>D) Como comentarios.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>28. ¿Qué es una entidad XML predefinida como &amp;lt;?</strong></p>
+<p>A) Un tipo de namespace.</p>
+<p>B) Un esquema XSD.</p>
+<p>C) Un script ejecutable.</p>
+<p>D) Una forma de representar ciertos caracteres con significado especial en la sintaxis.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>29. ¿Qué es una DTD?</strong></p>
+<p>A) Una hoja de estilo CSS.</p>
+<p>B) Un protocolo de sindicación.</p>
+<p>C) Un mecanismo clásico para declarar estructura y restricciones de un vocabulario XML mediante sintaxis propia heredada de SGML.</p>
+<p>D) Una API REST.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>30. ¿Qué es XSD?</strong></p>
+<p>A) Un lenguaje de scripting.</p>
+<p>B) XML Schema Definition, un lenguaje de esquema basado en XML con tipos y restricciones ricas.</p>
+<p>C) Un sistema de ficheros.</p>
+<p>D) Un formato de imagen.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>31. ¿Qué ventaja típica ofrece XSD frente a DTD?</strong></p>
+<p>A) Un sistema de tipos y restricciones más expresivo y una sintaxis XML.</p>
+<p>B) XSD no permite validar estructuras.</p>
+<p>C) DTD tiene tipos de datos más ricos que XSD.</p>
+<p>D) XSD solo sirve para HTML.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>32. ¿Qué es un namespace XML?</strong></p>
+<p>A) Un directorio del sistema operativo.</p>
+<p>B) Un mecanismo para distinguir nombres de distintos vocabularios mediante identificadores URI.</p>
+<p>C) Un esquema de compresión.</p>
+<p>D) Un protocolo de autenticación.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>33. ¿Qué papel tiene el prefijo en un namespace XML?</strong></p>
+<p>A) Es siempre una URL que debe poder abrirse.</p>
+<p>B) Debe ser idéntico en todos los documentos.</p>
+<p>C) Sustituye al elemento raíz.</p>
+<p>D) Es una abreviatura local asociada a una URI de namespace; el prefijo concreto no define por sí solo la identidad.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>34. ¿Qué problema resuelven principalmente los namespaces?</strong></p>
+<p>A) Cifrado de datos.</p>
+<p>B) Colisiones de nombres al mezclar elementos o atributos de vocabularios distintos.</p>
+<p>C) Paginación de memoria.</p>
+<p>D) Balanceo de carga.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>35. ¿Qué diferencia hay entre esquema y documento de instancia?</strong></p>
+<p>A) Son exactamente lo mismo.</p>
+<p>B) El esquema siempre contiene datos de producción.</p>
+<p>C) El esquema define reglas; el documento de instancia contiene datos que deben cumplirlas.</p>
+<p>D) La instancia define el lenguaje XSD.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>36. ¿Qué es una cardinalidad en XSD?</strong></p>
+<p>A) Una restricción sobre cuántas veces puede aparecer un elemento, por ejemplo mínimo/máximo.</p>
+<p>B) La dirección IP de un nodo.</p>
+<p>C) El tamaño de una hoja CSS.</p>
+<p>D) El número de usuarios del CMS.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>37. ¿Qué afirmación es correcta sobre un XML bien formado pero inválido?</strong></p>
+<p>A) Es imposible.</p>
+<p>B) Implica necesariamente que falta el elemento raíz.</p>
+<p>C) Siempre significa que el archivo está cifrado.</p>
+<p>D) Puede cumplir la sintaxis XML y, sin embargo, incumplir el XSD o DTD esperado.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>38. ¿Qué práctica mejora interoperabilidad en intercambio XML?</strong></p>
+<p>A) Versionar y publicar esquemas, namespaces y reglas de compatibilidad de forma controlada.</p>
+<p>B) Cambiar nombres de elementos sin avisar.</p>
+<p>C) Eliminar validación para aceptar cualquier cosa.</p>
+<p>D) Usar prefijos aleatorios como contrato semántico.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>39. ¿Qué debe hacer un receptor si un contrato exige XSD concreto?</strong></p>
+<p>A) Aceptar siempre cualquier XML bien formado.</p>
+<p>B) Transformar cualquier error en HTML.</p>
+<p>C) Validar contra el esquema aplicable y gestionar errores de forma explícita.</p>
+<p>D) Ignorar namespaces.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>40. En una integración administrativa, dos organismos usan elementos &lt;id&gt; con significados distintos. ¿Qué solución es más correcta?</strong></p>
+<p>A) Confiar solo en el prefijo visual sin URI.</p>
+<p>B) Eliminar todos los identificadores.</p>
+<p>C) Definir vocabularios/namespaces claros y contratos de esquema que desambigüen cada identificador.</p>
+<p>D) Usar el mismo namespace para conceptos incompatibles sin documentación.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<h1>3. XPath, XSLT, XHTML, JSON y lenguajes de script</h1>
+<p><strong>41. ¿Para qué sirve XPath?</strong></p>
+<p>A) Para definir estilos CSS.</p>
+<p>B) Para seleccionar y navegar nodos/valores de documentos XML mediante expresiones.</p>
+<p>C) Para cifrar archivos.</p>
+<p>D) Para crear bases de datos.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>42. ¿Para qué sirve XSLT?</strong></p>
+<p>A) Para transformar documentos XML en otros resultados usando reglas/plantillas y XPath.</p>
+<p>B) Para validar tipos como XSD exclusivamente.</p>
+<p>C) Para gestionar procesos del SO.</p>
+<p>D) Para definir rutas IP.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>43. ¿Qué relación hay entre XPath y XSLT?</strong></p>
+<p>A) Son sinónimos.</p>
+<p>B) XSLT utiliza XPath para seleccionar partes del documento sobre las que aplicar transformaciones.</p>
+<p>C) XPath sustituye por completo a XML.</p>
+<p>D) XSLT es un protocolo de transporte.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>44. ¿Qué es XHTML?</strong></p>
+<p>A) Un nuevo protocolo HTTP.</p>
+<p>B) El vocabulario HTML expresado bajo reglas de sintaxis XML.</p>
+<p>C) Una hoja de estilos.</p>
+<p>D) Una base de datos XML obligatoria.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>45. ¿Qué requisito caracteriza a XHTML servido como XML?</strong></p>
+<p>A) Puede omitir cierres de forma arbitraria como HTML tolerante.</p>
+<p>B) No distingue mayúsculas/minúsculas.</p>
+<p>C) Debe respetar las reglas de XML bien formado.</p>
+<p>D) No usa atributos.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>46. ¿Qué afirmación es correcta sobre HTML moderno y XHTML?</strong></p>
+<p>A) Todo HTML5 es XHTML.</p>
+<p>B) XHTML es un lenguaje de programación.</p>
+<p>C) HTML solo puede servirse como application/xhtml+xml.</p>
+<p>D) HTML puede usar sintaxis HTML; XHTML usa sintaxis XML y no deben confundirse.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>47. ¿Qué es JSON?</strong></p>
+<p>A) Un formato textual de intercambio basado en objetos, arrays y valores simples.</p>
+<p>B) Un lenguaje de marcas XML.</p>
+<p>C) Un protocolo de red.</p>
+<p>D) Un sistema de plantillas XSLT.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>48. ¿Qué ventaja puede ofrecer XML frente a JSON en ciertos contratos documentales?</strong></p>
+<p>A) Namespaces, esquemas maduros y ecosistema de transformación/firma para documentos complejos.</p>
+<p>B) Ser siempre más corto.</p>
+<p>C) No requerir ninguna sintaxis.</p>
+<p>D) Ejecutar código de forma nativa.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>49. ¿Qué ventaja puede ofrecer JSON en muchas APIs?</strong></p>
+<p>A) Soporte nativo obligatorio de XSD.</p>
+<p>B) Modelo sencillo y buena integración con ecosistemas web y objetos/arrays.</p>
+<p>C) Namespaces XML incorporados.</p>
+<p>D) Ser un protocolo HTTP.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>50. ¿Qué es un lenguaje de script?</strong></p>
+<p>A) Un lenguaje que obligatoriamente carece de tipos.</p>
+<p>B) Un formato de imagen.</p>
+<p>C) Un lenguaje usado frecuentemente para automatización o comportamiento con un ciclo de ejecución/desarrollo ligero.</p>
+<p>D) Un protocolo de routing.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>51. ¿JavaScript es lo mismo que Java?</strong></p>
+<p>A) Sí, JavaScript es una edición reducida de Java.</p>
+<p>B) Solo se diferencian por la extensión del fichero.</p>
+<p>C) No; son lenguajes distintos con modelos, runtimes y ecosistemas diferentes.</p>
+<p>D) JavaScript necesita JVM obligatoriamente.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>52. ¿Qué lenguaje de script es típico en shells Unix/Linux?</strong></p>
+<p>A) Shell/Bash y otros shells compatibles.</p>
+<p>B) XSD.</p>
+<p>C) CSS.</p>
+<p>D) SGML.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>53. ¿Qué herramienta cumple un papel similar de automatización administrativa en Windows?</strong></p>
+<p>A) XPath.</p>
+<p>B) RSS.</p>
+<p>C) XSLT exclusivamente.</p>
+<p>D) PowerShell.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>54. ¿Qué significa que un lenguaje sea “interpretado” en un entorno concreto?</strong></p>
+<p>A) Que no puede compilarse nunca en ninguna implementación.</p>
+<p>B) Que no tiene tipos.</p>
+<p>C) Que una implementación ejecuta el programa mediante un intérprete o runtime sin generar necesariamente un binario nativo previo completo.</p>
+<p>D) Que solo puede ejecutarse en navegador.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>55. ¿Qué es una closure en scripting/programación funcional?</strong></p>
+<p>A) Un cierre obligatorio de etiqueta XML.</p>
+<p>B) Una conexión TCP terminada.</p>
+<p>C) Un permiso del sistema de archivos.</p>
+<p>D) Una función que conserva acceso a variables de su entorno léxico.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>56. ¿Qué es un evento en programación web?</strong></p>
+<p>A) Un esquema XSD.</p>
+<p>B) Un namespace.</p>
+<p>C) Una notificación de que ocurrió una interacción o cambio que puede ser manejado por código.</p>
+<p>D) Una tabla de base de datos.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>57. ¿Qué es un callback?</strong></p>
+<p>A) Un tipo de documento XML.</p>
+<p>B) Una política SEO.</p>
+<p>C) Un sistema de archivos.</p>
+<p>D) Una función pasada o registrada para ejecutarse cuando ocurre una condición o evento.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>58. ¿Qué riesgo tiene mezclar lógica de negocio compleja directamente en plantillas de presentación?</strong></p>
+<p>A) Mejora siempre seguridad.</p>
+<p>B) Aumenta acoplamiento y dificulta pruebas, mantenimiento y reutilización.</p>
+<p>C) Elimina la necesidad de arquitectura.</p>
+<p>D) Convierte la aplicación en XML válida.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>59. ¿Qué afirmación es correcta sobre XSLT como transformación?</strong></p>
+<p>A) Solo puede devolver XSD.</p>
+<p>B) Solo valida, no transforma.</p>
+<p>C) Es un lenguaje de estilos CSS.</p>
+<p>D) Puede producir XML, HTML, texto u otros resultados según la transformación.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>60. Una integración recibe XML de una versión antigua y debe producir el nuevo formato. ¿Qué herramienta encaja conceptualmente?</strong></p>
+<p>A) Una transformación XSLT bien controlada, si las reglas de mapeo se expresan adecuadamente.</p>
+<p>B) Un archivo robots.txt.</p>
+<p>C) Un índice invertido.</p>
+<p>D) Un daemon del sistema.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<h1>4. Scripting web, DOM, seguridad y casos de integración</h1>
+<p><strong>61. ¿Qué es el DOM desde JavaScript?</strong></p>
+<p>A) Un protocolo de autenticación.</p>
+<p>B) La API/modelo que permite acceder y modificar la estructura del documento.</p>
+<p>C) Un formato de sindicación.</p>
+<p>D) Una base de datos relacional.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>62. ¿Qué es XSS?</strong></p>
+<p>A) Una técnica de compresión XML.</p>
+<p>B) Una vulnerabilidad en la que contenido no confiable termina ejecutándose como script en el contexto de una página.</p>
+<p>C) Un sistema de autenticación federada.</p>
+<p>D) Un tipo de sitemap.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>63. ¿Qué medida reduce riesgo de XSS al insertar texto no confiable?</strong></p>
+<p>A) Desactivar HTTPS.</p>
+<p>B) Usar APIs seguras de texto/DOM y escape contextual en lugar de concatenar HTML sin control.</p>
+<p>C) Guardar el texto en robots.txt.</p>
+<p>D) Convertirlo siempre a Base64 y ejecutarlo.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>64. ¿Qué es CSRF?</strong></p>
+<p>A) Una inyección de CSS necesariamente.</p>
+<p>B) Un error de XSD.</p>
+<p>C) Una técnica de indexación.</p>
+<p>D) Un ataque que induce al navegador autenticado de un usuario a realizar una acción no deseada contra un sitio.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>65. ¿Qué controles ayudan contra CSRF?</strong></p>
+<p>A) Tokens anti-CSRF cuando proceda, SameSite y validación apropiada del origen/contexto.</p>
+<p>B) Desactivar toda autenticación.</p>
+<p>C) Usar únicamente GET para acciones con efectos.</p>
+<p>D) Eliminar HTTPS.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>66. ¿Qué es CSP?</strong></p>
+<p>A) Un esquema de base de datos.</p>
+<p>B) Un lenguaje de estilos.</p>
+<p>C) Un algoritmo de routing.</p>
+<p>D) Content Security Policy, un mecanismo del navegador para restringir orígenes y tipos de contenido ejecutable/cargable.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>67. ¿Qué propiedad debe tener una cookie de sesión sensible al usar HTTPS?</strong></p>
+<p>A) Debe ser accesible a cualquier dominio.</p>
+<p>B) Debe almacenarse siempre en una URL pública.</p>
+<p>C) Secure y, cuando proceda, HttpOnly/SameSite según el caso.</p>
+<p>D) Debe desactivar caducidad por definición.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>68. ¿Qué diferencia hay entre HTML y HTTP?</strong></p>
+<p>A) Son sinónimos.</p>
+<p>B) HTTP es una hoja de estilos.</p>
+<p>C) HTML es un protocolo de transporte.</p>
+<p>D) HTML es un formato/lenguaje de documentos; HTTP es un protocolo de aplicación para intercambio de recursos.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>69. ¿Qué significa que HTTP sea stateless a nivel de protocolo?</strong></p>
+<p>A) Cada petición se procesa sin requerir que el protocolo mantenga por sí mismo estado de aplicación entre peticiones.</p>
+<p>B) Las aplicaciones no pueden tener sesiones.</p>
+<p>C) El navegador no puede usar cookies.</p>
+<p>D) HTTP no puede transportar datos.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>70. ¿Qué riesgo tiene insertar secretos directamente en JavaScript entregado al navegador?</strong></p>
+<p>A) El navegador los cifra automáticamente de forma segura.</p>
+<p>B) El DOM los oculta del usuario.</p>
+<p>C) El código del cliente es visible/inspeccionable y no debe contener secretos de servidor.</p>
+<p>D) robots.txt impide que se vean.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>71. ¿Qué es una dependencia de terceros en frontend?</strong></p>
+<p>A) Un atributo HTML obligatorio.</p>
+<p>B) Un namespace XML.</p>
+<p>C) Una biblioteca o recurso externo que forma parte de la cadena de suministro y debe gobernarse.</p>
+<p>D) Un sitemap.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>72. ¿Qué práctica mejora seguridad de dependencias web?</strong></p>
+<p>A) Inventariarlas, fijar/versionar cuando proceda, revisar vulnerabilidades y controlar origen/integridad.</p>
+<p>B) Cargar cualquier script remoto sin revisión.</p>
+<p>C) Desactivar actualizaciones y auditoría.</p>
+<p>D) Compartir claves privadas con el CDN.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>73. ¿Qué es una petición asíncrona desde navegador?</strong></p>
+<p>A) Una transformación XSLT obligatoria.</p>
+<p>B) Un cambio de namespace.</p>
+<p>C) Una operación de red que puede completarse sin bloquear de forma síncrona toda la interfaz.</p>
+<p>D) Un tipo de DTD.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>74. ¿Qué es una Promise en JavaScript?</strong></p>
+<p>A) Una abstracción para representar el resultado futuro de una operación asíncrona.</p>
+<p>B) Un esquema XML.</p>
+<p>C) Un estilo CSS.</p>
+<p>D) Una cabecera HTTP de seguridad.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>75. ¿Qué aporta async/await?</strong></p>
+<p>A) Elimina cualquier posibilidad de error.</p>
+<p>B) Sintaxis para trabajar con promesas de forma más legible, sin convertir la operación en síncrona real.</p>
+<p>C) Bloquea necesariamente todo el navegador.</p>
+<p>D) Convierte JavaScript en Java.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>76. ¿Qué diferencia hay entre validación en cliente y servidor?</strong></p>
+<p>A) La validación de cliente basta para seguridad.</p>
+<p>B) La de cliente mejora UX, pero la de servidor sigue siendo necesaria como frontera de confianza.</p>
+<p>C) La de servidor solo se usa en XML.</p>
+<p>D) No deben existir ambas.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>77. ¿Qué es sanitización en contexto de contenido?</strong></p>
+<p>A) Cifrar todo el tráfico.</p>
+<p>B) Crear un sitemap.</p>
+<p>C) Asignar un namespace.</p>
+<p>D) Transformar o filtrar contenido para eliminar construcciones peligrosas permitiendo solo un subconjunto seguro.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>78. Una aplicación web recibe XML externo. ¿Qué riesgo adicional debe considerarse?</strong></p>
+<p>A) Procesamiento seguro del parser, evitando configuraciones peligrosas como resolución no controlada de entidades externas.</p>
+<p>B) El XML no puede causar riesgos por definición.</p>
+<p>C) Solo existe riesgo si se usa CSS.</p>
+<p>D) La única medida es añadir robots.txt.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>79. ¿Qué es accesibilidad web en este contexto?</strong></p>
+<p>A) Solo aumentar el tamaño de fuente.</p>
+<p>B) Solo optimizar SEO.</p>
+<p>C) Diseñar contenido y controles para que puedan ser percibidos, operados y comprendidos por usuarios con distintas capacidades.</p>
+<p>D) Convertir todo a imagen.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>80. Caso final II.09: una AAPP publica formularios HTML y además intercambia expedientes XML. ¿Qué enfoque es más completo?</strong></p>
+<p>A) Usar XML como sustituto de toda interfaz web y sin esquema.</p>
+<p>B) Insertar secretos en JavaScript y aceptar cualquier XML.</p>
+<p>C) Eliminar validación para mejorar compatibilidad.</p>
+<p>D) Usar HTML semántico/accesible para interfaz, scripts seguros, y XML con namespaces/esquemas/versionado para integración.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<h1>5. Gestión documental, CMS/ECM, metadatos y ciclo de vida</h1>
+<p><strong>81. ¿Qué es un DMS o gestor documental?</strong></p>
+<p>A) Un protocolo de red.</p>
+<p>B) Un lenguaje de marcado.</p>
+<p>C) Un motor de cálculo HPC.</p>
+<p>D) Un sistema que gestiona documentos y su ciclo de vida: captura, metadatos, versiones, permisos, búsqueda, retención y disposición.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>82. ¿Qué es un CMS?</strong></p>
+<p>A) Un sistema operativo.</p>
+<p>B) Un sistema de gestión de contenidos orientado a creación, edición y publicación de contenidos, páginas y recursos.</p>
+<p>C) Una base de datos obligatoriamente relacional.</p>
+<p>D) Un protocolo de correo.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>83. ¿Qué diferencia principal hay entre DMS y CMS?</strong></p>
+<p>A) Son siempre exactamente iguales.</p>
+<p>B) DMS solo gestiona imágenes y CMS solo PDFs.</p>
+<p>C) DMS prioriza documentos/ciclo de vida; CMS prioriza contenidos y publicación/experiencia.</p>
+<p>D) CMS no puede tener permisos.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>84. ¿Qué es ECM?</strong></p>
+<p>A) Un algoritmo de cifrado.</p>
+<p>B) Un estándar de memoria.</p>
+<p>C) Un concepto paraguas de gestión empresarial de contenidos que puede integrar DMS, workflow, records, colaboración y captura.</p>
+<p>D) Una licencia de software.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>85. ¿Qué son metadatos documentales?</strong></p>
+<p>A) El contenido binario completo del documento siempre.</p>
+<p>B) Datos que describen contenido, contexto, estructura, estado o gestión de un documento.</p>
+<p>C) Solo el nombre del fichero.</p>
+<p>D) Únicamente permisos del sistema operativo.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>86. ¿Qué ventaja aporta un modelo de metadatos bien gobernado?</strong></p>
+<p>A) Elimina la necesidad de permisos.</p>
+<p>B) Sustituye las copias de seguridad.</p>
+<p>C) Impide cualquier cambio de documento.</p>
+<p>D) Facilita clasificación, búsqueda, automatización y aplicación de políticas coherentes.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>87. ¿Qué es versionado documental?</strong></p>
+<p>A) Conservar distintas revisiones/evolución de un documento con identificación y trazabilidad.</p>
+<p>B) Un sinónimo de backup completo del repositorio.</p>
+<p>C) Un protocolo web.</p>
+<p>D) Una clasificación SEO.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>88. ¿Qué diferencia hay entre versionado y backup?</strong></p>
+<p>A) No existe diferencia.</p>
+<p>B) Backup solo guarda metadatos.</p>
+<p>C) Versionado conserva revisiones lógicas; backup permite recuperar el sistema/datos ante pérdida o corrupción más amplia.</p>
+<p>D) Versionado protege automáticamente frente a ransomware del repositorio.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>89. ¿Qué es check-out/check-in?</strong></p>
+<p>A) Un protocolo de autenticación.</p>
+<p>B) Un mecanismo para reservar/editar y reincorporar un documento controlando concurrencia/versiones.</p>
+<p>C) Un método de indexación web.</p>
+<p>D) Una técnica de compresión.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>90. ¿Qué es una política de retención?</strong></p>
+<p>A) Una regla que define cuánto tiempo conservar información y cuándo transferir, archivar o eliminar según requisitos.</p>
+<p>B) Borrar cuando el disco se llena.</p>
+<p>C) Guardar todo para siempre sin criterio.</p>
+<p>D) Un algoritmo de ranking.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>91. ¿Qué es un legal hold o bloqueo de conservación?</strong></p>
+<p>A) Una suspensión de eliminación normal para preservar información relevante ante una obligación o procedimiento.</p>
+<p>B) Un permiso de edición permanente.</p>
+<p>C) Un tipo de sitemap.</p>
+<p>D) Una licencia de contenido.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>92. ¿Qué significa disposición documental?</strong></p>
+<p>A) La acción final controlada sobre documentos al terminar su retención: eliminación, transferencia o conservación permanente según política.</p>
+<p>B) Publicarlos siempre en Internet.</p>
+<p>C) Cambiarles la extensión.</p>
+<p>D) Convertirlos necesariamente a PDF.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>93. ¿Qué ventaja aporta OCR en gestión documental?</strong></p>
+<p>A) Garantizar la validez jurídica de cualquier documento.</p>
+<p>B) Extraer texto de imágenes/documentos escaneados para búsqueda y procesamiento, con revisión según calidad.</p>
+<p>C) Sustituir metadatos y firma.</p>
+<p>D) Cifrar el repositorio.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>94. ¿Qué es clasificación documental?</strong></p>
+<p>A) Ordenar solo por tamaño de fichero.</p>
+<p>B) Convertir todo a un único formato.</p>
+<p>C) Eliminar permisos.</p>
+<p>D) Asignar documentos a categorías/series/tipos según una estructura controlada.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>95. ¿Qué debe gobernarse en permisos de un repositorio documental?</strong></p>
+<p>A) Roles, mínimo privilegio, herencias, acceso externo, información sensible y trazabilidad.</p>
+<p>B) Dar acceso global para facilitar búsquedas.</p>
+<p>C) Usar una única cuenta compartida.</p>
+<p>D) Desactivar auditoría.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>96. ¿Qué riesgo tiene guardar documentos sin metadatos fiables?</strong></p>
+<p>A) Mejora precisión de búsquedas.</p>
+<p>B) Elimina duplicados automáticamente.</p>
+<p>C) Dificulta búsqueda, clasificación, retención, trazabilidad y automatización.</p>
+<p>D) Garantiza cumplimiento.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>97. ¿Qué diferencia hay entre documento y expediente electrónico en contexto administrativo?</strong></p>
+<p>A) Son siempre el mismo objeto.</p>
+<p>B) El documento contiene siempre varios expedientes.</p>
+<p>C) El expediente es una hoja CSS.</p>
+<p>D) El expediente agrupa documentos y actuaciones relacionados con un procedimiento, con estructura y metadatos propios.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>98. ¿Qué es una plantilla documental?</strong></p>
+<p>A) Un algoritmo de crawling.</p>
+<p>B) Un patrón reutilizable que estandariza estructura, campos y presentación de documentos.</p>
+<p>C) Un índice invertido.</p>
+<p>D) Un protocolo de voz.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>99. ¿Qué función cumple una taxonomía de tipos documentales en un DMS?</strong></p>
+<p>A) Cifrar documentos.</p>
+<p>B) Asignar IPs.</p>
+<p>C) Ejecutar scripts de navegador.</p>
+<p>D) Organizar categorías controladas para clasificación y recuperación.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>100. Un organismo quiere evitar que cada unidad guarde copias locales sin control. ¿Qué enfoque es más adecuado?</strong></p>
+<p>A) Compartir una carpeta sin permisos ni auditoría.</p>
+<p>B) Enviar siempre adjuntos por correo como sistema maestro.</p>
+<p>C) Repositorio corporativo con metadatos, permisos, versionado, búsqueda, retención y reglas claras de trabajo.</p>
+<p>D) Eliminar el versionado para evitar complejidad.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<h1>6. Taxonomías, sindicación, workflow y BPM</h1>
+<p><strong>101. ¿Qué es una taxonomía?</strong></p>
+<p>A) Un protocolo HTTP.</p>
+<p>B) Una clasificación controlada de conceptos/categorías, a menudo jerárquica o facetada.</p>
+<p>C) Un formato de compresión.</p>
+<p>D) Una base de datos temporal.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>102. ¿Qué es una folksonomía?</strong></p>
+<p>A) Una taxonomía jerárquica obligatoria.</p>
+<p>B) Un esquema XSD.</p>
+<p>C) Un protocolo de correo.</p>
+<p>D) Un sistema de etiquetado libre generado por usuarios sin un vocabulario completamente controlado.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>103. ¿Qué es una ontología?</strong></p>
+<p>A) Una lista de URLs.</p>
+<p>B) Una hoja de estilos.</p>
+<p>C) Un gestor de paquetes.</p>
+<p>D) Un modelo más formal de conceptos, propiedades y relaciones dentro de un dominio.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>104. ¿Qué es sindicación de contenidos?</strong></p>
+<p>A) Copiar páginas mediante scraping sin contrato.</p>
+<p>B) Publicar un feed estructurado para que terceros o clientes se suscriban y agreguen novedades.</p>
+<p>C) Enviar únicamente correo electrónico.</p>
+<p>D) Un sistema de cifrado.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>105. ¿Qué es Atom según RFC 4287?</strong></p>
+<p>A) Un formato XML para feeds y entradas de contenido y metadatos.</p>
+<p>B) Un protocolo de routing.</p>
+<p>C) Un lenguaje de estilos.</p>
+<p>D) Un sistema operativo.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>106. ¿Qué diferencia conceptual hay entre feed y scraping?</strong></p>
+<p>A) El feed es una interfaz estructurada publicada por el productor; scraping extrae contenido de páginas sin ese contrato específico.</p>
+<p>B) Son siempre lo mismo.</p>
+<p>C) Scraping es un formato XML estándar.</p>
+<p>D) Un feed nunca contiene metadatos.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>107. ¿Qué suele contener una entrada de feed?</strong></p>
+<p>A) Una tabla de páginas de memoria.</p>
+<p>B) Una ACL de sistema operativo.</p>
+<p>C) Identificador, título, enlace, fecha y contenido/resumen según formato.</p>
+<p>D) Un certificado TLS obligatorio.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>108. ¿Qué es un workflow?</strong></p>
+<p>A) Un lenguaje de consulta XML.</p>
+<p>B) Un protocolo de correo.</p>
+<p>C) Una definición de tareas, estados, participantes, reglas y transiciones de un proceso.</p>
+<p>D) Un tipo de CPU.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>109. ¿Qué es una transición en workflow?</strong></p>
+<p>A) Un cambio de dirección IP.</p>
+<p>B) Un backup completo.</p>
+<p>C) Una consulta SEO.</p>
+<p>D) El paso de un estado o actividad a otro conforme a reglas/condiciones.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>110. ¿Qué es una tarea humana en workflow?</strong></p>
+<p>A) Una llamada de sistema del kernel.</p>
+<p>B) Una actividad que requiere intervención/decisión de una persona o rol.</p>
+<p>C) Un sitemap.</p>
+<p>D) Un namespace.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>111. ¿Qué es una escalada en workflow?</strong></p>
+<p>A) Aumentar CPU.</p>
+<p>B) Una regla que deriva o eleva una tarea cuando se incumple un plazo o condición.</p>
+<p>C) Cambiar XSD.</p>
+<p>D) Crear una cookie.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>112. ¿Qué es BPM?</strong></p>
+<p>A) Un único motor de workflow concreto.</p>
+<p>B) Un formato de imagen.</p>
+<p>C) La disciplina de gestionar procesos de extremo a extremo: modelar, ejecutar, medir y mejorar.</p>
+<p>D) Una técnica de caché.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>113. ¿Qué es BPMN?</strong></p>
+<p>A) Un protocolo de transporte.</p>
+<p>B) Una hoja CSS.</p>
+<p>C) Un formato de feed.</p>
+<p>D) Una notación estandarizada para modelar procesos con eventos, actividades, gateways y flujos.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>114. ¿Qué representa un gateway en BPMN?</strong></p>
+<p>A) Una bifurcación, decisión o sincronización del flujo según su tipo.</p>
+<p>B) Un firewall de red necesariamente.</p>
+<p>C) Un índice invertido.</p>
+<p>D) Un sistema de archivos.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>115. ¿Qué diferencia hay entre workflow y orquestación técnica?</strong></p>
+<p>A) No existe diferencia conceptual.</p>
+<p>B) Workflow puede incluir personas y reglas de negocio; orquestación coordina principalmente servicios/operaciones técnicas.</p>
+<p>C) Orquestación solo se usa en documentos.</p>
+<p>D) Workflow no puede automatizar nada.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>116. ¿Qué riesgo tiene automatizar un proceso defectuoso sin rediseñarlo?</strong></p>
+<p>A) Garantizar una mejora automática.</p>
+<p>B) Eliminar cualquier necesidad de métricas.</p>
+<p>C) Hacer imposible la auditoría.</p>
+<p>D) Consolidar ineficiencias y errores a mayor velocidad.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>117. ¿Qué métrica ayuda a gestionar un workflow?</strong></p>
+<p>A) Número de píxeles del logo.</p>
+<p>B) Frecuencia de CPU del navegador.</p>
+<p>C) Tiempo de ciclo, cola, SLA, tasa de rechazo/retrabajo o cuellos de botella.</p>
+<p>D) Cantidad de etiquetas HTML sin contexto.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>118. ¿Qué ventaja aporta una bandeja de tareas por rol?</strong></p>
+<p>A) Asignar trabajo según responsabilidad, prioridad y estado, con trazabilidad.</p>
+<p>B) Eliminar autenticación.</p>
+<p>C) Compartir una única cuenta.</p>
+<p>D) Convertir workflow en RSS.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>119. ¿Qué debe ocurrir cuando cambia una regla de negocio en un workflow crítico?</strong></p>
+<p>A) Modificarlo en producción sin registrar.</p>
+<p>B) Eliminar historiales.</p>
+<p>C) Versionar el proceso/reglas, evaluar instancias en curso y mantener trazabilidad del cambio.</p>
+<p>D) Forzar todas las instancias a reiniciar sin análisis.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>120. Caso: un documento se crea, revisa, firma y publica. ¿Qué arquitectura funcional encaja?</strong></p>
+<p>A) DMS/repositorio + workflow de revisión/aprobación + firma cuando proceda + CMS para publicación.</p>
+<p>B) Solo un feed RSS sin repositorio.</p>
+<p>C) Un índice invertido como único componente.</p>
+<p>D) Una hoja CSS que gestione aprobaciones.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<h1>7. Búsqueda, indexación, robots, sitemaps y SEO</h1>
+<p><strong>121. ¿Qué hace un crawler, robot o spider?</strong></p>
+<p>A) Calcula por sí solo todo el ranking final.</p>
+<p>B) Gestiona permisos del CMS.</p>
+<p>C) Cifra el contenido.</p>
+<p>D) Descubre y descarga recursos para que puedan analizarse e indexarse.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>122. ¿Qué es indexación en un buscador?</strong></p>
+<p>A) Enviar correos a autores.</p>
+<p>B) Crear backups.</p>
+<p>C) Procesar y organizar contenido en estructuras que permitan recuperación eficiente.</p>
+<p>D) Ejecutar workflow humano.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>123. ¿Qué es un índice invertido?</strong></p>
+<p>A) Una tabla de rutas IP.</p>
+<p>B) Una ACL de fichero.</p>
+<p>C) Una estructura que asocia términos con los documentos o posiciones donde aparecen.</p>
+<p>D) Un feed Atom.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>124. ¿Qué es precision en recuperación de información?</strong></p>
+<p>A) La proporción de relevantes existentes que fueron recuperados.</p>
+<p>B) El número total de documentos.</p>
+<p>C) La velocidad del crawler.</p>
+<p>D) La proporción de resultados recuperados que son relevantes.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>125. ¿Qué es recall?</strong></p>
+<p>A) La proporción de documentos relevantes que el sistema consigue recuperar.</p>
+<p>B) La proporción de resultados devueltos que son relevantes.</p>
+<p>C) La latencia del buscador.</p>
+<p>D) El tamaño del índice.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>126. ¿Qué es F1?</strong></p>
+<p>A) Un protocolo de sindicación.</p>
+<p>B) La media armónica entre precision y recall.</p>
+<p>C) Una cabecera HTTP.</p>
+<p>D) Un tipo de XSD.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>127. ¿Qué es tokenización?</strong></p>
+<p>A) Cifrar documentos.</p>
+<p>B) Crear usuarios.</p>
+<p>C) Publicar un sitemap.</p>
+<p>D) Dividir texto en unidades útiles para análisis e indexación.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>128. ¿Qué diferencia hay entre stemming y lematización?</strong></p>
+<p>A) No existe ninguna diferencia.</p>
+<p>B) Stemming solo funciona en imágenes.</p>
+<p>C) Ambas reducen variantes; lematización busca formas léxicas más lingüísticas, mientras stemming suele aplicar reglas más mecánicas.</p>
+<p>D) Lematización es un protocolo web.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>129. ¿Qué es BM25 de forma conceptual?</strong></p>
+<p>A) Un sistema operativo.</p>
+<p>B) Un estándar XML.</p>
+<p>C) Una función/familia de ranking textual basada en coincidencia de términos, frecuencias y longitud, entre otros factores.</p>
+<p>D) Un protocolo de voz.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>130. ¿Qué función tiene robots.txt?</strong></p>
+<p>A) Proteger datos sensibles como control de acceso.</p>
+<p>B) Impedir físicamente toda petición HTTP.</p>
+<p>C) Autenticar usuarios.</p>
+<p>D) Comunicar reglas de crawling a robots que implementan el Robots Exclusion Protocol.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>131. ¿Por qué robots.txt no debe usarse para proteger información confidencial?</strong></p>
+<p>A) Porque no es autenticación/autorización y un cliente puede ignorarlo o acceder directamente a la URL.</p>
+<p>B) Porque cifra demasiado el contenido.</p>
+<p>C) Porque solo funciona con XML.</p>
+<p>D) Porque elimina el contenido del servidor.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>132. ¿Qué es un sitemap?</strong></p>
+<p>A) Un control de acceso.</p>
+<p>B) Un archivo que informa sobre URLs y puede facilitar su descubrimiento por buscadores.</p>
+<p>C) Un sustituto de los enlaces internos.</p>
+<p>D) Una hoja de estilos.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>133. ¿Un sitemap garantiza que una URL se indexe?</strong></p>
+<p>A) Sí, siempre.</p>
+<p>B) No; facilita descubrimiento, pero el buscador decide rastreo/indexación según sus criterios.</p>
+<p>C) Solo si la URL está bloqueada por autenticación.</p>
+<p>D) Sí, y además garantiza primera posición.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>134. ¿Qué es SEO?</strong></p>
+<p>A) Prácticas para ayudar a buscadores a comprender, rastrear y presentar contenido útil a usuarios.</p>
+<p>B) Compra de anuncios obligatoriamente.</p>
+<p>C) Un protocolo de sindicación.</p>
+<p>D) Un sistema de autenticación.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>135. ¿Qué diferencia hay entre SEO y SEM?</strong></p>
+<p>A) Son exactamente lo mismo.</p>
+<p>B) SEO solo se aplica a XML y SEM a HTML.</p>
+<p>C) SEO se refiere a optimización orgánica; SEM suele asociarse a marketing de pago en buscadores.</p>
+<p>D) SEM es un sistema de archivos.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>136. ¿Qué factor técnico ayuda al SEO y accesibilidad?</strong></p>
+<p>A) Ocultar contenido a usuarios y mostrar otro a robots.</p>
+<p>B) HTML semántico, títulos claros, enlaces rastreables, rendimiento y compatibilidad móvil.</p>
+<p>C) Usar texto como imágenes sin alternativa.</p>
+<p>D) Bloquear todas las páginas en robots.txt.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>137. ¿Qué es una URL canonical?</strong></p>
+<p>A) Una señal que ayuda a indicar la versión preferida entre URLs duplicadas o muy similares.</p>
+<p>B) Una redirección obligatoria que siempre bloquea otras URLs.</p>
+<p>C) Un namespace XML.</p>
+<p>D) Una licencia de contenido.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>138. ¿Qué problema puede causar contenido duplicado?</strong></p>
+<p>A) Mejorar siempre ranking.</p>
+<p>B) Fragmentar señales, dificultar selección de versión preferida y generar rastreo innecesario.</p>
+<p>C) Eliminar la necesidad de sitemap.</p>
+<p>D) Garantizar mayor precision interna.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>139. ¿Qué información resulta útil para mejorar un buscador interno?</strong></p>
+<p>A) Consultas sin resultados, reformulaciones, clics, filtros usados y feedback de relevancia.</p>
+<p>B) Solo el color de la interfaz.</p>
+<p>C) Número de CPUs sin relación con uso.</p>
+<p>D) Eliminar logs de búsqueda.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>140. Un portal público tiene buen contenido pero el buscador no encuentra sinónimos ni tolera errores. ¿Qué mejora es más directa?</strong></p>
+<p>A) Añadir más CSS.</p>
+<p>B) Bloquear el crawler interno con robots.txt.</p>
+<p>C) Eliminar metadatos.</p>
+<p>D) Trabajar análisis lingüístico, sinónimos, corrección, facetas y evaluación de precision/recall.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<h1>8. Colaboración, redes sociales, seguridad y casos integradores</h1>
+<p><strong>141. ¿Qué es una herramienta de colaboración empresarial?</strong></p>
+<p>A) Una plataforma que facilita coedición, comunicación, tareas, conocimiento o coordinación entre equipos.</p>
+<p>B) Un protocolo de routing.</p>
+<p>C) Un lenguaje de marcado.</p>
+<p>D) Una CPU distribuida.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>142. ¿Qué debe gobernarse en espacios colaborativos?</strong></p>
+<p>A) Solo el color del tema.</p>
+<p>B) Dar acceso público por defecto.</p>
+<p>C) Eliminar auditoría.</p>
+<p>D) Identidad, permisos, invitados, clasificación, retención, exportación y ciclo de vida.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>143. ¿Qué riesgo existe con enlaces públicos de documentos?</strong></p>
+<p>A) Garantizan mínimo privilegio.</p>
+<p>B) Pueden permitir acceso no controlado o reenvío fuera del ámbito previsto.</p>
+<p>C) Sustituyen autenticación robusta.</p>
+<p>D) Impiden automáticamente descargas.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>144. ¿Qué es coedición?</strong></p>
+<p>A) Un backup.</p>
+<p>B) Una técnica SEO.</p>
+<p>C) Un feed RSS.</p>
+<p>D) Edición concurrente de un contenido por varias personas con mecanismos de sincronización/conflicto.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>145. ¿Qué papel tiene una wiki interna?</strong></p>
+<p>A) Sustituir todas las bases de datos transaccionales.</p>
+<p>B) Actuar como firewall.</p>
+<p>C) Capturar y enlazar conocimiento colaborativo con historial y edición controlada.</p>
+<p>D) Ser un protocolo de voz.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>146. ¿Qué es una red social corporativa?</strong></p>
+<p>A) Un sistema operativo.</p>
+<p>B) Un XSD.</p>
+<p>C) Un hipervisor.</p>
+<p>D) Un entorno de interacción y difusión social dentro de una organización o comunidad controlada.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>147. ¿Qué precaución debe tener una Administración al usar redes sociales públicas?</strong></p>
+<p>A) Publicar datos personales para facilitar atención.</p>
+<p>B) No convertirlas en único canal para trámites o información que requiera garantías formales.</p>
+<p>C) Usar cuentas sin control institucional.</p>
+<p>D) Eliminar alternativas accesibles.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>148. ¿Qué es moderación?</strong></p>
+<p>A) Aplicación de reglas para gestionar contenido, abuso, spam y convivencia en espacios de participación.</p>
+<p>B) Un algoritmo de cifrado.</p>
+<p>C) Una función XSLT.</p>
+<p>D) Un tipo de sitemap.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>149. ¿Qué es DLP en gestión de contenidos?</strong></p>
+<p>A) Un motor de búsqueda.</p>
+<p>B) Un lenguaje de marcas.</p>
+<p>C) Un formato de feed.</p>
+<p>D) Controles para detectar o restringir salida/uso inadecuado de información sensible.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>150. ¿Por qué los metadatos también requieren protección?</strong></p>
+<p>A) Nunca contienen información útil.</p>
+<p>B) Son siempre públicos por definición.</p>
+<p>C) Pueden revelar información sensible sobre personas, expedientes, clasificación o contexto aunque el contenido esté protegido.</p>
+<p>D) No pueden indexarse.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>151. ¿Qué función tiene el antivirus/sandbox de ficheros en un repositorio?</strong></p>
+<p>A) Sustituir permisos.</p>
+<p>B) Garantizar que todo documento es jurídicamente válido.</p>
+<p>C) Crear metadatos automáticamente sin error.</p>
+<p>D) Reducir riesgo de almacenar o distribuir archivos maliciosos mediante análisis y aislamiento.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>152. ¿Qué es una política de invitados?</strong></p>
+<p>A) Reglas sobre quién puede invitar externos, a qué espacios, durante cuánto tiempo y con qué permisos.</p>
+<p>B) Un algoritmo de indexación.</p>
+<p>C) Un tipo de documento HTML.</p>
+<p>D) Una forma de cifrado de disco.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>153. ¿Qué ventaja aporta integrar IAM con DMS/CMS/colaboración?</strong></p>
+<p>A) Centralizar identidad, grupos, SSO, bajas y aplicación coherente de permisos.</p>
+<p>B) Eliminar necesidad de autorización.</p>
+<p>C) Hacer públicas todas las carpetas.</p>
+<p>D) Sustituir el repositorio.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>154. ¿Qué debe ocurrir cuando un empleado deja la organización?</strong></p>
+<p>A) Mantener su cuenta activa indefinidamente.</p>
+<p>B) Borrar automáticamente toda información corporativa.</p>
+<p>C) Revocar acceso, revisar propiedad/transferencia de contenidos y conservar lo necesario según política.</p>
+<p>D) Compartir su contraseña con el sustituto.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>155. ¿Qué riesgo tiene usar chats como repositorio único de decisiones?</strong></p>
+<p>A) Mejora siempre la gestión documental.</p>
+<p>B) Dificulta conservación, búsqueda, contexto, gobierno y trazabilidad si no existe política/archivo adecuado.</p>
+<p>C) Elimina necesidad de DMS.</p>
+<p>D) Garantiza retención legal.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>156. ¿Qué arquitectura integra mejor gestión de contenidos extremo a extremo?</strong></p>
+<p>A) Solo un CMS sin permisos ni repositorio.</p>
+<p>B) Un archivo robots.txt que gestione todo.</p>
+<p>C) Captura/creación -&gt; metadatos/DMS -&gt; workflow -&gt; publicación CMS -&gt; sindicación/indexación -&gt; retención/disposición.</p>
+<p>D) Una red social como único archivo oficial.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>157. ¿Qué papel tiene una API en una plataforma documental moderna?</strong></p>
+<p>A) Sustituir identidad y auditoría.</p>
+<p>B) Permitir integración controlada con otros sistemas para consultar, crear o actualizar contenido según permisos.</p>
+<p>C) Convertir automáticamente cualquier documento en HTML válido.</p>
+<p>D) Eliminar el versionado.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>158. ¿Qué práctica mejora continuidad de una plataforma de contenidos?</strong></p>
+<p>A) Confiar solo en versionado.</p>
+<p>B) Backups probados, alta disponibilidad según criticidad, exportación/reversibilidad y recuperación documentada.</p>
+<p>C) No probar restauraciones.</p>
+<p>D) Depender de un único administrador sin documentación.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>159. Caso: portal público con DMS, CMS, buscador y colaboración. ¿Qué control transversal es imprescindible?</strong></p>
+<p>A) Una cuenta compartida para simplificar.</p>
+<p>B) Eliminar logs para mejorar rendimiento.</p>
+<p>C) IAM/mínimo privilegio, auditoría, clasificación, retención, seguridad de ficheros y monitorización.</p>
+<p>D) Publicar por defecto cualquier documento interno.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<p><strong>160. Caso final II.16: un organismo quiere mejorar publicación y conocimiento interno. ¿Qué enfoque es más completo?</strong></p>
+<p>A) Gobernar ciclo de vida documental, workflow, CMS, sindicación, buscador/SEO, colaboración, accesos, retención y métricas.</p>
+<p>B) Comprar un CMS y no definir procesos.</p>
+<p>C) Confiar únicamente en redes sociales.</p>
+<p>D) Eliminar metadatos y taxonomías para simplificar.</p>
+<p>Respuesta: ____     Seguridad: alta / media / baja</p>
+<h1>Registro de errores</h1>
+<p>Revisa los fallos a las 24–72 h. Escribe la regla correcta en una frase y vuelve a resolver la pregunta sin mirar.</p>
+<table>
+<tr>
+<th scope="col"><p><strong>N.º</strong></p></th>
+<th scope="col"><p><strong>Tema</strong></p></th>
+<th scope="col"><p><strong>Tipo de error</strong></p></th>
+<th scope="col"><p><strong>Regla correcta</strong></p></th>
+<th scope="col"><p><strong>Revisión</strong></p></th>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table></main></body></html>

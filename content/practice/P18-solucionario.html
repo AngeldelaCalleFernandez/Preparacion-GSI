@@ -1,0 +1,282 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GSI A2 — PRÁCTICA ACTIVA 18 — HTML, XML, CONTENIDOS, BÚSQUEDA Y SEO — SOLUCIONARIO COMENTADO</title><link rel="stylesheet" href="../../assets/css/styles.css"></head><body><main class="shell topic-content"><p><a href="../../index.html#practica">Volver a práctica escrita</a></p><p>Material curado GSI A2. Fuente: <a href="https://docs.google.com/document/d/112QcJCX27eaJY3eYIWk83Q6akrLlkQ-gZArjpC52D_k/edit">documento original de Drive</a>.</p><p>GSI A2 — PRÁCTICA ACTIVA 18</p>
+<p><strong>HTML · XML · SCRIPTS · CONTENIDOS · BÚSQUEDA · SEO</strong></p>
+<p>160 preguntas · 4 opciones · refuerzo directo de II.09 e II.16</p>
+<p><strong>SOLUCIONARIO COMENTADO</strong></p>
+<h1>Cómo usar esta práctica</h1>
+<p>Este solucionario fija la distinción técnica que debe quedar automatizada. Repite las preguntas falladas sin mirar la letra y clasifica el error: markup/XML, scripting/seguridad, documental/workflow, búsqueda/SEO o colaboración.</p>
+<p>Base nuclear: GSI A2 — Bloque II — Apuntes completos V2.1 revisados. Contraste oficial: WHATWG HTML Living Standard; W3C XML/XSD/XPath; RFC 4287 Atom; RFC 9309 Robots Exclusion Protocol; Google Search Central para crawling/sitemaps/SEO.</p>
+<h2>Distribución</h2>
+<table>
+<tr>
+<th scope="col"><p><strong>Preguntas</strong></p></th>
+<th scope="col"><p><strong>Bloque</strong></p></th>
+<th scope="col"><p><strong>Función</strong></p></th>
+</tr>
+<tr>
+<td><p>1–20</p></td>
+<td><p>SGML, HTML y semántica web</p></td>
+<td><p>SGML, HTML, semántica, formularios, CSS y DOM.</p></td>
+</tr>
+<tr>
+<td><p>21–40</p></td>
+<td><p>XML, DTD, XSD y namespaces</p></td>
+<td><p>XML bien formado/válido, DTD, XSD, namespaces y contratos.</p></td>
+</tr>
+<tr>
+<td><p>41–60</p></td>
+<td><p>XPath, XSLT, XHTML, JSON y lenguajes de script</p></td>
+<td><p>XPath/XSLT/XHTML/JSON, scripts, eventos y asincronía.</p></td>
+</tr>
+<tr>
+<td><p>61–80</p></td>
+<td><p>Scripting web, DOM, seguridad y casos de integración</p></td>
+<td><p>DOM, XSS/CSRF/CSP, cookies, validación, dependencias y casos.</p></td>
+</tr>
+<tr>
+<td><p>81–100</p></td>
+<td><p>Gestión documental, CMS/ECM, metadatos y ciclo de vida</p></td>
+<td><p>DMS/CMS/ECM, metadatos, versionado, retención y gobierno.</p></td>
+</tr>
+<tr>
+<td><p>101–120</p></td>
+<td><p>Taxonomías, sindicación, workflow y BPM</p></td>
+<td><p>Taxonomías, RSS/Atom, workflow, BPM/BPMN y métricas.</p></td>
+</tr>
+<tr>
+<td><p>121–140</p></td>
+<td><p>Búsqueda, indexación, robots, sitemaps y SEO</p></td>
+<td><p>Crawling, índice invertido, precision/recall, robots.txt, sitemap y SEO.</p></td>
+</tr>
+<tr>
+<td><p>141–160</p></td>
+<td><p>Colaboración, redes sociales, seguridad y casos integradores</p></td>
+<td><p>Colaboración, redes sociales, IAM, DLP, seguridad y ciclo integrado.</p></td>
+</tr>
+</table>
+<h2>Fuentes oficiales de contraste</h2>
+<ul>
+<li>WHATWG — HTML Living Standard</li>
+<li>W3C — XML 1.0 / XML Schema / XPath</li>
+<li>RFC 4287 — Atom Syndication Format</li>
+<li>RFC 9309 — Robots Exclusion Protocol</li>
+<li>Google Search Central — SEO, crawling y sitemaps</li>
+</ul>
+<p>Control de actualidad: 25/08/2026. Se priorizan estándares y conceptos estables frente a productos o tendencias coyunturales.</p>
+<h1>1. SGML, HTML y semántica web</h1>
+<p><strong>1. A — </strong>Los lenguajes de marcas describen estructura o significado; no son por ello lenguajes de programación.</p>
+<p><strong>2. D — </strong>SGML influyó en HTML y XML y se estudia como antecedente conceptual.</p>
+<p><strong>3. C — </strong>La recomendación XML 1.0 se presenta como subconjunto/restricción de SGML.</p>
+<p><strong>4. C — </strong>HTML tiene su propia sintaxis; XHTML es la variante basada en XML.</p>
+<p><strong>5. B — </strong>WHATWG distingue explícitamente la sintaxis HTML de la sintaxis XML.</p>
+<p><strong>6. D — </strong>El doctype moderno es simple y evita modos de compatibilidad heredados.</p>
+<p><strong>7. D — </strong>head contiene título, metadatos y referencias; body contiene el contenido representado.</p>
+<p><strong>8. B — </strong>main ayuda a expresar semántica de la región principal del documento.</p>
+<p><strong>9. D — </strong>La semántica ayuda a usuarios, tecnologías de apoyo y procesamiento, pero no sustituye calidad o CSS.</p>
+<p><strong>10. B — </strong>alt aporta equivalencia textual; su contenido depende de la función de la imagen.</p>
+<p><strong>11. B — </strong>Separar responsabilidades es una regla básica de arquitectura web.</p>
+<p><strong>12. A — </strong>CSS controla presentación y layout; no sustituye la estructura semántica HTML.</p>
+<p><strong>13. C — </strong>Responsive busca adaptación del layout y contenido sin depender de un dispositivo fijo.</p>
+<p><strong>14. D — </strong>La asociación label-control mejora accesibilidad y usabilidad.</p>
+<p><strong>15. A — </strong>Los atributos complementan la información del elemento.</p>
+<p><strong>16. A — </strong>El DOM conecta documentos y APIs de programación.</p>
+<p><strong>17. C — </strong>WHATWG mantiene el HTML Living Standard.</p>
+<p><strong>18. A — </strong>Separar contenido/semántica y estilo favorece mantenimiento y accesibilidad.</p>
+<p><strong>19. C — </strong>La estructura semántica de tabla ayuda a interpretar relaciones entre datos.</p>
+<p><strong>20. B — </strong>La semántica debe estar en el documento, no inferirse solo por apariencia.</p>
+<h1>2. XML, DTD, XSD y namespaces</h1>
+<p><strong>21. D — </strong>XML permite definir vocabularios y estructuras, no una lista fija de etiquetas de negocio.</p>
+<p><strong>22. A — </strong>Bien formado es requisito sintáctico; válido implica además conformidad con un esquema/DTD si se declara.</p>
+<p><strong>23. D — </strong>Validez añade conformidad estructural y de tipos según el mecanismo de validación.</p>
+<p><strong>24. C — </strong>Un documento XML bien formado tiene exactamente un elemento raíz.</p>
+<p><strong>25. B — </strong>El anidamiento correcto es una regla sintáctica esencial de XML.</p>
+<p><strong>26. B — </strong>Elemento y Elemento son nombres distintos en XML.</p>
+<p><strong>27. A — </strong>Los valores de atributos deben ir citados.</p>
+<p><strong>28. D — </strong>Las referencias de entidad permiten representar caracteres reservados.</p>
+<p><strong>29. C — </strong>DTD valida estructura, pero su sistema de tipos es más limitado que XSD.</p>
+<p><strong>30. B — </strong>XSD permite definir estructuras, tipos, cardinalidades y restricciones.</p>
+<p><strong>31. A — </strong>XSD fue diseñado para expresar restricciones más ricas que DTD.</p>
+<p><strong>32. B — </strong>Namespaces evitan colisiones al combinar vocabularios XML.</p>
+<p><strong>33. D — </strong>La identidad semántica se asocia al namespace URI, no al texto del prefijo.</p>
+<p><strong>34. B — </strong>Dos vocabularios pueden usar el mismo nombre local sin confundirse si pertenecen a namespaces distintos.</p>
+<p><strong>35. C — </strong>XSD describe estructura y restricciones de documentos XML concretos.</p>
+<p><strong>36. A — </strong>minOccurs y maxOccurs son ejemplos de cardinalidad.</p>
+<p><strong>37. D — </strong>Bien formado e inválido es una combinación perfectamente posible.</p>
+<p><strong>38. A — </strong>La interoperabilidad depende de contratos estables y evolución compatible.</p>
+<p><strong>39. C — </strong>La validación asegura conformidad estructural y de tipos del intercambio.</p>
+<p><strong>40. C — </strong>Namespaces y esquemas ayudan a evitar colisiones y ambigüedad contractual.</p>
+<h1>3. XPath, XSLT, XHTML, JSON y lenguajes de script</h1>
+<p><strong>41. B — </strong>XPath es un lenguaje de selección/expresión sobre modelos XML.</p>
+<p><strong>42. A — </strong>XSLT transforma; XPath selecciona.</p>
+<p><strong>43. B — </strong>La separación selección/transformación es una distinción clásica de examen.</p>
+<p><strong>44. B — </strong>XHTML aplica reglas de documento XML bien formado al vocabulario HTML.</p>
+<p><strong>45. C — </strong>La sintaxis XML es estricta en cierre y anidamiento.</p>
+<p><strong>46. D — </strong>WHATWG separa claramente ambas sintaxis.</p>
+<p><strong>47. A — </strong>JSON es un formato de datos muy usado en APIs, distinto de XML.</p>
+<p><strong>48. A — </strong>La elección depende del contrato; XML destaca en documentos y vocabularios extensibles.</p>
+<p><strong>49. B — </strong>JSON suele ser cómodo para datos estructurados de APIs, aunque no es universalmente mejor.</p>
+<p><strong>50. C — </strong>“Script” describe uso/entorno, no impone necesariamente interpretación pura o tipado dinámico.</p>
+<p><strong>51. C — </strong>La similitud del nombre es una trampa clásica.</p>
+<p><strong>52. A — </strong>Los shells se usan ampliamente para automatización de sistemas Unix/Linux.</p>
+<p><strong>53. D — </strong>PowerShell es un shell/lenguaje de automatización moderno.</p>
+<p><strong>54. C — </strong>Compilado/interpretado no son categorías absolutas del lenguaje.</p>
+<p><strong>55. D — </strong>Las closures aparecen en JavaScript y otros lenguajes modernos.</p>
+<p><strong>56. C — </strong>Clicks, cambios, carga o mensajes generan eventos manejables.</p>
+<p><strong>57. D — </strong>Callbacks son un mecanismo clásico de asincronía/eventos.</p>
+<p><strong>58. B — </strong>Separar responsabilidades facilita evolución del sistema.</p>
+<p><strong>59. D — </strong>XSLT está diseñado para transformar árboles XML.</p>
+<p><strong>60. A — </strong>XSLT es una opción natural para transformación estructurada entre vocabularios XML.</p>
+<h1>4. Scripting web, DOM, seguridad y casos de integración</h1>
+<p><strong>61. B — </strong>JavaScript puede manipular el DOM y responder a eventos.</p>
+<p><strong>62. B — </strong>XSS se previene con codificación/escape contextual, APIs seguras y políticas como CSP.</p>
+<p><strong>63. B — </strong>La regla es no interpretar datos no confiables como código/markup activo.</p>
+<p><strong>64. D — </strong>CSRF explota credenciales/sesión implícita del navegador.</p>
+<p><strong>65. A — </strong>Las acciones sensibles deben verificar intención/origen y no depender solo de cookies automáticas.</p>
+<p><strong>66. D — </strong>CSP reduce impacto de ciertas inyecciones y controla recursos, aunque no sustituye desarrollo seguro.</p>
+<p><strong>67. C — </strong>Los atributos de cookie reducen exposición a red, script y CSRF según contexto.</p>
+<p><strong>68. D — </strong>Formato y protocolo no deben confundirse.</p>
+<p><strong>69. A — </strong>Las aplicaciones pueden mantener estado mediante cookies, tokens o servidor aunque HTTP sea stateless.</p>
+<p><strong>70. C — </strong>Las credenciales y claves secretas deben mantenerse en componentes de confianza.</p>
+<p><strong>71. C — </strong>Las dependencias pueden introducir vulnerabilidades o cambios no controlados.</p>
+<p><strong>72. A — </strong>La cadena de suministro debe tratarse como parte de la superficie de ataque.</p>
+<p><strong>73. C — </strong>Fetch/promesas permiten coordinar E/S asíncrona.</p>
+<p><strong>74. A — </strong>Promesas permiten encadenar y manejar éxito/error de operaciones asíncronas.</p>
+<p><strong>75. B — </strong>async/await es azúcar sintáctico sobre mecanismos asíncronos.</p>
+<p><strong>76. B — </strong>El cliente puede manipularse; la validación autoritativa debe realizarse en servidor.</p>
+<p><strong>77. D — </strong>Sanitizar es distinto de validar o escapar y depende del contexto.</p>
+<p><strong>78. A — </strong>Los parsers deben configurarse de forma segura frente a XXE y otros abusos.</p>
+<p><strong>79. C — </strong>Semántica, teclado, alternativas textuales, contraste y mensajes claros forman parte del diseño accesible.</p>
+<p><strong>80. D — </strong>La solución diferencia interfaz web, scripting y contrato de intercambio XML.</p>
+<h1>5. Gestión documental, CMS/ECM, metadatos y ciclo de vida</h1>
+<p><strong>81. D — </strong>DMS se centra en documentos y gobierno documental.</p>
+<p><strong>82. B — </strong>CMS se orienta a contenidos/publicación; puede solaparse con DMS, pero no es lo mismo.</p>
+<p><strong>83. C — </strong>Las fronteras comerciales se solapan, pero el foco funcional es distinto.</p>
+<p><strong>84. C — </strong>ECM agrupa capacidades de contenido, documentos y procesos.</p>
+<p><strong>85. B — </strong>Título, autor, fecha, expediente, tipo, clasificación, versión o retención son ejemplos.</p>
+<p><strong>86. D — </strong>Los metadatos son base de búsqueda y ciclo de vida.</p>
+<p><strong>87. A — </strong>Versionado ayuda a controlar cambios, pero no protege frente a todos los desastres del repositorio.</p>
+<p><strong>88. C — </strong>Son controles complementarios y no intercambiables.</p>
+<p><strong>89. B — </strong>Puede coexistir con coedición moderna según plataforma.</p>
+<p><strong>90. A — </strong>La retención debe responder a valor legal, administrativo, histórico y de negocio.</p>
+<p><strong>91. A — </strong>El hold prevalece temporalmente sobre reglas normales de disposición cuando procede.</p>
+<p><strong>92. A — </strong>La disposición forma parte del ciclo de vida y requiere autorización/trazabilidad.</p>
+<p><strong>93. B — </strong>OCR facilita explotación del contenido, pero puede cometer errores.</p>
+<p><strong>94. D — </strong>La clasificación facilita contexto, retención y acceso.</p>
+<p><strong>95. A — </strong>Los repositorios suelen contener información sensible y requieren control de acceso fino.</p>
+<p><strong>96. C — </strong>La calidad del repositorio depende también de metadatos y gobierno.</p>
+<p><strong>97. D — </strong>La gestión pública distingue documento individual de expediente como conjunto organizado.</p>
+<p><strong>98. B — </strong>Las plantillas favorecen consistencia y automatización.</p>
+<p><strong>99. D — </strong>Una taxonomía aporta vocabulario común y estructura de clasificación.</p>
+<p><strong>100. C — </strong>La centralización gobernada reduce duplicidad y pérdida de trazabilidad.</p>
+<h1>6. Taxonomías, sindicación, workflow y BPM</h1>
+<p><strong>101. B — </strong>Las taxonomías ayudan a organizar y recuperar contenido.</p>
+<p><strong>102. D — </strong>La folksonomía aporta flexibilidad pero puede generar sinónimos/ambigüedad.</p>
+<p><strong>103. D — </strong>Ontología expresa semántica y relaciones más ricas que una taxonomía simple.</p>
+<p><strong>104. B — </strong>RSS y Atom son formatos clásicos de sindicación.</p>
+<p><strong>105. A — </strong>Atom es un formato XML estandarizado para sindicación web.</p>
+<p><strong>106. A — </strong>La sindicación ofrece un canal explícito y estable para consumo.</p>
+<p><strong>107. C — </strong>Los feeds describen novedades con metadatos estructurados.</p>
+<p><strong>108. C — </strong>Workflow modela cómo avanza el trabajo y quién actúa.</p>
+<p><strong>109. D — </strong>Las transiciones representan el flujo del proceso.</p>
+<p><strong>110. B — </strong>Los workflows pueden combinar tareas humanas y automáticas.</p>
+<p><strong>111. B — </strong>Escaladas ayudan a controlar SLA y excepciones.</p>
+<p><strong>112. C — </strong>BPM es un enfoque de gestión, más amplio que automatizar una secuencia.</p>
+<p><strong>113. D — </strong>BPMN aporta un lenguaje visual común para procesos.</p>
+<p><strong>114. A — </strong>Los gateways controlan divergencia/convergencia del proceso.</p>
+<p><strong>115. B — </strong>Pueden solaparse, pero su foco típico es distinto.</p>
+<p><strong>116. D — </strong>BPM requiere analizar y mejorar, no solo digitalizar pasos existentes.</p>
+<p><strong>117. C — </strong>Los procesos deben medirse para identificar demoras y calidad.</p>
+<p><strong>118. A — </strong>La gestión de tareas necesita identidad, permisos y seguimiento.</p>
+<p><strong>119. C — </strong>El gobierno de versiones evita inconsistencias y permite auditoría.</p>
+<p><strong>120. A — </strong>Cada familia resuelve una parte del ciclo: documento, proceso, firma y publicación.</p>
+<h1>7. Búsqueda, indexación, robots, sitemaps y SEO</h1>
+<p><strong>121. D — </strong>Crawling es la fase de descubrimiento/captura, distinta de indexación y ranking.</p>
+<p><strong>122. C — </strong>La indexación transforma contenido en una representación consultable.</p>
+<p><strong>123. C — </strong>El índice invertido es básico en recuperación de información textual.</p>
+<p><strong>124. D — </strong>Precision mide calidad de los resultados devueltos.</p>
+<p><strong>125. A — </strong>Recall mide cobertura de los relevantes disponibles.</p>
+<p><strong>126. B — </strong>F1 equilibra ambas métricas en un único valor.</p>
+<p><strong>127. D — </strong>Los tokens son unidades sobre las que se construyen análisis y búsqueda.</p>
+<p><strong>128. C — </strong>Son técnicas de normalización lingüística con distinta sofisticación.</p>
+<p><strong>129. C — </strong>BM25 es un ranking léxico clásico de recuperación de información.</p>
+<p><strong>130. D — </strong>RFC 9309 formaliza el protocolo; robots.txt no es una barrera de seguridad.</p>
+<p><strong>131. A — </strong>Los recursos sensibles deben protegerse con controles reales de acceso.</p>
+<p><strong>132. B — </strong>Los sitemaps ayudan al crawling; no garantizan indexación o ranking.</p>
+<p><strong>133. B — </strong>Enviar una URL no obliga a indexarla ni posicionarla.</p>
+<p><strong>134. A — </strong>SEO se centra en descubrimiento orgánico y calidad técnica/contenido.</p>
+<p><strong>135. C — </strong>Es una distinción habitual en gestión de contenidos y marketing digital.</p>
+<p><strong>136. B — </strong>Buenas prácticas técnicas suelen mejorar experiencia y comprensión del contenido.</p>
+<p><strong>137. A — </strong>Canonical ayuda a consolidar señales de duplicados, pero no es un control de acceso.</p>
+<p><strong>138. B — </strong>La canonicalización y arquitectura de URLs ayudan a gestionarlo.</p>
+<p><strong>139. A — </strong>La analítica de búsqueda revela vocabulario real y huecos de contenido.</p>
+<p><strong>140. D — </strong>La calidad de recuperación requiere índice, análisis y ranking adecuados.</p>
+<h1>8. Colaboración, redes sociales, seguridad y casos integradores</h1>
+<p><strong>141. A — </strong>Colaboración incluye wikis, chat/canales, repositorios, videoconferencia y gestión de tareas.</p>
+<p><strong>142. D — </strong>La colaboración multiplica copias y participantes, por lo que necesita gobierno.</p>
+<p><strong>143. B — </strong>Los enlaces compartidos deben limitarse, caducar o requerir identidad según sensibilidad.</p>
+<p><strong>144. D — </strong>La coedición moderna puede sustituir ciertos flujos de check-out, aunque necesita versionado.</p>
+<p><strong>145. C — </strong>Las wikis son útiles para conocimiento vivo, con necesidad de gobernanza y revisión.</p>
+<p><strong>146. D — </strong>Puede complementar canales formales, pero requiere política, moderación y retención.</p>
+<p><strong>147. B — </strong>Las redes sociales son canales de comunicación, no sustitutos automáticos del canal administrativo garantizado.</p>
+<p><strong>148. A — </strong>La moderación necesita criterios, roles y trazabilidad.</p>
+<p><strong>149. D — </strong>DLP puede complementar clasificación, permisos y monitorización.</p>
+<p><strong>150. C — </strong>La sensibilidad no reside solo en el cuerpo del documento.</p>
+<p><strong>151. D — </strong>El control de malware es una capa de seguridad, no reemplaza IAM ni gobierno.</p>
+<p><strong>152. A — </strong>El acceso externo debe ser explícito, mínimo y revisado.</p>
+<p><strong>153. A — </strong>La identidad central facilita altas/bajas y mínimo privilegio.</p>
+<p><strong>154. C — </strong>El offboarding forma parte del ciclo de vida de identidad y contenidos.</p>
+<p><strong>155. B — </strong>El canal de conversación no debe sustituir sin diseño a los repositorios oficiales.</p>
+<p><strong>156. C — </strong>El ciclo combina varias familias funcionales con IAM, seguridad y auditoría transversales.</p>
+<p><strong>157. B — </strong>Las APIs desacoplan consumidores y permiten automatización, pero deben gobernarse.</p>
+<p><strong>158. B — </strong>Continuidad requiere protección de datos, servicio y capacidad de salida.</p>
+<p><strong>159. C — </strong>La seguridad debe atravesar repositorio, publicación, búsqueda y colaboración.</p>
+<p><strong>160. A — </strong>La solución integra contenidos, procesos, descubrimiento, colaboración y gobierno.</p>
+<h1>Mapa mental de alto rendimiento</h1>
+<ul>
+<li>SGML = metalenguaje histórico. HTML = marcado web con sintaxis propia. XHTML = vocabulario HTML bajo sintaxis XML.</li>
+<li>XML bien formado ≠ XML válido. DTD ≠ XSD. Namespace URI identifica vocabulario; el prefijo es local.</li>
+<li>XPath selecciona/navega; XSLT transforma. XML ≠ JSON y la elección depende del contrato.</li>
+<li>HTML estructura, CSS presenta, JavaScript programa comportamiento. DOM conecta documento y scripts.</li>
+<li>JavaScript ≠ Java. Script ≠ necesariamente “sin tipos” o “solo interpretado”.</li>
+<li>XSS ≠ CSRF. Validación cliente ≠ validación servidor. CSP y cookies seguras son capas complementarias.</li>
+<li>DMS ≠ CMS. ECM es paraguas. Versionado ≠ backup. Metadatos, clasificación y retención gobiernan ciclo documental.</li>
+<li>Taxonomía ≠ folksonomía ≠ ontología. Feed ≠ scraping. Atom es XML; RSS/Atom sirven para sindicación.</li>
+<li>Workflow ≠ BPM. BPMN modela procesos; automatizar sin rediseñar puede automatizar ineficiencias.</li>
+<li>Crawler ≠ indexador ≠ ranking. Precision ≠ recall. Índice invertido = término -&gt; documentos.</li>
+<li>robots.txt ≠ seguridad. Sitemap ayuda a descubrimiento, no garantiza indexación. SEO ≠ SEM.</li>
+<li>Colaboración requiere IAM, invitados, clasificación, retención, DLP, auditoría y offboarding.</li>
+</ul>
+<h1>Trampas que deben quedar eliminadas</h1>
+<ul>
+<li>HTML ≠ XML.</li>
+<li>XML bien formado ≠ válido.</li>
+<li>DTD ≠ XSD.</li>
+<li>Namespace ≠ prefijo.</li>
+<li>XPath ≠ XSLT.</li>
+<li>JavaScript ≠ Java.</li>
+<li>JSON ≠ XML.</li>
+<li>HTML ≠ HTTP.</li>
+<li>XSS ≠ CSRF.</li>
+<li>Validación cliente ≠ seguridad servidor.</li>
+<li>DMS ≠ CMS.</li>
+<li>Versionado ≠ backup.</li>
+<li>Taxonomía ≠ folksonomía.</li>
+<li>RSS/Atom ≠ scraping.</li>
+<li>Workflow ≠ BPM.</li>
+<li>Crawler ≠ ranking.</li>
+<li>Precision ≠ recall.</li>
+<li>robots.txt ≠ control de acceso.</li>
+<li>Sitemap ≠ garantía de indexación.</li>
+<li>SEO ≠ SEM.</li>
+<li>Chat ≠ repositorio documental oficial por defecto.</li>
+</ul>
+<h1>Checklist de decisión en supuesto</h1>
+<ul>
+<li>1) Separa interfaz web, contrato de datos y automatización.</li>
+<li>2) Define vocabularios/esquemas/versionado para XML e integraciones.</li>
+<li>3) Aplica seguridad web: entradas, XSS/CSRF, cookies, secretos y dependencias.</li>
+<li>4) Diseña repositorio documental con metadatos, permisos, versionado, retención y backup.</li>
+<li>5) Modela workflow/BPM con roles, SLA, excepciones y métricas.</li>
+<li>6) Diseña búsqueda: crawling/captura, índice, ranking, precision/recall y analítica.</li>
+<li>7) Publicación: CMS, sitemap, SEO, sindicación y accesibilidad.</li>
+<li>8) Colaboración: invitados, clasificación, DLP, auditoría, ciclo de vida y salida.</li>
+</ul></main></body></html>

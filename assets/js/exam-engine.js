@@ -1,4 +1,6 @@
 export const EXAM_MODES = Object.freeze({
+  GSI: "gsi",
+  CUSTOM: "custom",
   BOE: "boe",
   AI_VALIDATED: "ai-validated",
   MIXED: "mixed",
@@ -39,6 +41,10 @@ function isProductionActive(question) {
 
 export function isQuestionEligible(question, config) {
   if (!question || !hasConfiguredBlock(question, config.blockIds)) return false;
+  if ([EXAM_MODES.GSI, EXAM_MODES.CUSTOM].includes(config.mode)) {
+    return isProductionActive(question) && question.opposition_id === "OPP-GSI"
+      && question.validation_status === "validated" && ["official", "manual", "ai"].includes(question.collection);
+  }
   if (config.mode === EXAM_MODES.BOE) {
     return isProductionActive(question) && question.collection === "official" && question.origin === "official";
   }
@@ -63,6 +69,9 @@ export function isQuestionEligible(question, config) {
 
 export function validateExamConfig(config) {
   const errors = [];
+  if (config.mode === EXAM_MODES.GSI && (config.questionCount !== 100 || config.durationSeconds !== 5400 || config.penaltyPerError !== 1 / 3 || [...new Set(config.blockIds || [])].sort().join(",") !== "B1,B2,B3,B4")) {
+    errors.push("El simulacro GSI requiere 100 preguntas, 90 minutos, los cuatro bloques y penalización exacta de 1/3.");
+  }
   if (!Object.values(EXAM_MODES).includes(config.mode)) errors.push("Selecciona una modalidad de examen válida.");
   if (!Array.isArray(config.blockIds) || config.blockIds.length === 0) errors.push("Selecciona al menos un bloque.");
   if (!Number.isInteger(config.questionCount) || config.questionCount < 1) errors.push("Indica un número entero positivo de preguntas.");
@@ -92,7 +101,8 @@ export function getExamAvailability(questions, config) {
   const boe = unique.filter((question) => isQuestionEligible(question, { ...config, mode: EXAM_MODES.BOE }));
   const ai = unique.filter((question) => isQuestionEligible(question, { ...config, mode: EXAM_MODES.AI_VALIDATED }));
   const demo = unique.filter((question) => isQuestionEligible(question, { ...config, mode: EXAM_MODES.DEMO }));
-  return { boe, ai, demo };
+  const gsi = unique.filter((question) => isQuestionEligible(question, { ...config, mode: EXAM_MODES.CUSTOM }));
+  return { boe, ai, demo, gsi };
 }
 
 function selectBalancedDemoQuestions(questions, config) {
@@ -124,10 +134,28 @@ export function selectExamQuestions(questions, config, random = Math.random) {
   const { unique, duplicates } = uniqueById(questions);
   if (duplicates.length > 0) return { errors: [`Hay preguntas duplicadas en los datos cargados: ${duplicates.join(", ")}.`] };
   const availability = getExamAvailability(unique, config);
+  // Shuffle the candidate pools before cutting; every eligible question can appear.
+  if (config.shuffleQuestions) for (const key of Object.keys(availability)) availability[key] = shuffleCopy(availability[key], random);
   let selected;
   let quotas = null;
 
-  if (config.mode === EXAM_MODES.BOE) {
+  if ([EXAM_MODES.GSI, EXAM_MODES.CUSTOM].includes(config.mode)) {
+    if (availability.gsi.length < config.questionCount) return { errors: [`Se necesitan ${config.questionCount} preguntas revisadas y hay ${availability.gsi.length}.`] };
+    if (config.mode === EXAM_MODES.GSI) {
+      // Spread practice across topics, without claiming an official block quota.
+      const groups = new Map();
+      for (const question of availability.gsi) {
+        if (!groups.has(question.topic_id)) groups.set(question.topic_id, []);
+        groups.get(question.topic_id).push(question);
+      }
+      selected = [];
+      while (selected.length < config.questionCount) {
+        for (const pool of groups.values()) {
+          if (pool.length && selected.length < config.questionCount) selected.push(pool.pop());
+        }
+      }
+    } else selected = availability.gsi.slice(0, config.questionCount);
+  } else if (config.mode === EXAM_MODES.BOE) {
     if (availability.boe.length < config.questionCount) {
       return { errors: [`Solo BOE necesita ${config.questionCount} preguntas activas oficiales y solo hay ${availability.boe.length}.`] };
     }

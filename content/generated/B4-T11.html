@@ -1,0 +1,49 @@
+<article class="topic-content" data-topic-id="B4-T11" data-coverage-status="complete">
+<p>Material curado del corpus GSI A2 · apuntes V2.1 revisados. Procedencia editorial, no documento oficial.</p>
+<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B4-T11/estudio">Apuntes de estudio</a></li><li><a href="#temario/B4-T11/estudio-01">1. IEEE 802.11 y generaciones</a></li><li><a href="#temario/B4-T11/estudio-02">2. Bandas y canales</a></li><li><a href="#temario/B4-T11/estudio-03">3. Técnicas PHY</a></li><li><a href="#temario/B4-T11/estudio-04">4. Acceso al medio</a></li><li><a href="#temario/B4-T11/estudio-05">5. Modos y arquitectura</a></li><li><a href="#temario/B4-T11/estudio-06">6. Roaming y planificación RF</a></li><li><a href="#temario/B4-T11/estudio-07">7. Seguridad</a></li><li><a href="#temario/B4-T11/estudio-08">Resumen</a></li><li><a href="#temario/B4-T11/repaso">Resumen de repaso</a></li><li><a href="#temario/B4-T11/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B4-T11/repaso-02">Claves de test</a></li><li><a href="#temario/B4-T11/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B4-T11/repaso-04">Actualización 2026</a></li><li><a href="#temario/B4-T11/repaso-05">Fuentes base del material</a></li></ol></nav>
+<h2 id="estudio">Apuntes de estudio</h2>
+<p><strong>Cobertura oficial que debe quedar dominada:</strong> Redes inalámbricas. Protocolos. Características funcionales y técnicas. Sistemas de expansión del espectro. Sistemas de acceso. Modos de operación. Seguridad. Normativa reguladora.</p>
+<h3 id="estudio-01">1. IEEE 802.11 y generaciones</h3>
+<p>802.11 define WLAN. Mapa útil: 802.11n → Wi-Fi 4; 802.11ac → Wi-Fi 5; 802.11ax → Wi-Fi 6 (6E al usar 6 GHz donde está permitido); 802.11be → Wi-Fi 7. Las denominaciones Wi-Fi son de industria/certificación; el estándar IEEE define PHY/MAC.</p>
+<h3 id="estudio-02">2. Bandas y canales</h3>
+<p>2,4 GHz: mayor propagación pero poco espectro y más interferencia. 5 GHz: más canales/capacidad y menor alcance típico. 6 GHz: espectro adicional donde regulación lo permite, con equipos compatibles. Anchos de 20/40/80/160 MHz y, con Wi‑Fi 7, hasta 320 MHz en 6 GHz según disponibilidad. Canales más anchos elevan pico pero consumen espectro y pueden empeorar reutilización.</p>
+<h3 id="estudio-03">3. Técnicas PHY</h3>
+<p>Históricamente DSSS/FHSS; OFDM en generaciones posteriores; OFDMA divide recursos entre estaciones, útil en densidad. MIMO usa múltiples antenas/streams; MU‑MIMO atiende varios clientes. Modulación más densa exige mayor SNR.</p>
+<p>Wi-Fi 7/802.11be incorpora 320 MHz, 4096-QAM, Multi-Link Operation (MLO) y asignación más flexible de recursos; el examen debe entender beneficio, no memorizar tasas máximas de marketing.</p>
+<h3 id="estudio-04">4. Acceso al medio</h3>
+<p>Wi‑Fi usa CSMA/CA, no CSMA/CD: escucha, contención aleatoria y acknowledgements; RTS/CTS puede mitigar nodos ocultos. QoS 802.11e/WMM prioriza categorías. OFDMA añade programación más eficiente en ax/be.</p>
+<h3 id="estudio-05">5. Modos y arquitectura</h3>
+<p>BSS = conjunto básico alrededor de AP; ESS agrupa BSS con misma red/roaming. Ad-hoc/IBSS carece de AP central (histórico/limitado); mesh interconecta nodos inalámbricamente. En enterprise, control puede ser local, controlador o cloud; la función importa más que el formato.</p>
+<h3 id="estudio-06">6. Roaming y planificación RF</h3>
+<p>El cliente decide gran parte del roaming. 802.11k/v/r pueden ayudar con vecinos, steering y transición rápida. Diseño requiere site survey, potencia, canales, solapamiento, densidad, capacidad y fuentes de interferencia. “Señal fuerte” no equivale a buena WLAN si todos comparten aire saturado.</p>
+<h3 id="estudio-07">7. Seguridad</h3>
+<p>WEP y WPA antiguos son obsoletos/inseguros. WPA2 usa AES-CCMP en configuraciones modernas; WPA3 mejora autenticación y protección. En empresa: 802.1X/EAP con RADIUS, certificados cuando proceda, segmentación y NAC. Redes de invitados aisladas; IoT separado. Ocultar SSID o filtrar MAC no constituye seguridad robusta.</p>
+<p>Datos y trampas de test</p>
+<ul>
+<li>Wi-Fi usa CSMA/CA, no CSMA/CD.</li>
+<li>SSID oculto ≠ seguridad.</li>
+<li>2,4 GHz suele tener más alcance, pero menos espectro.</li>
+<li>Wi-Fi 6 = 802.11ax; Wi-Fi 7 = 802.11be.</li>
+<li>6 GHz depende de regulación y equipo.</li>
+<li>Canal más ancho ≠ siempre mejor en alta densidad.</li>
+<li>WPA3/802.1X son preferibles en empresa; WEP está obsoleto.</li>
+<li>MLO es rasgo clave de Wi-Fi 7.</li>
+</ul>
+<p>Aplicación al supuesto práctico</p>
+<p>Diseña cobertura y capacidad mediante survey: número/ubicación de AP, canales/potencia, PoE y uplinks. Separa SSID corporativo, invitados e IoT; usa 802.1X/RADIUS, NAC, VLAN/VRF y políticas. Incluye redundancia del plano de control y monitorización de SNR, utilización, retransmisiones y roaming.</p>
+<h3 id="estudio-08">Resumen</h3>
+<p>WLAN se diseña como un medio compartido de radio: bandas/canales, PHY/MAC, acceso, roaming, densidad y seguridad. Wi‑Fi 7 amplía capacidad y flexibilidad, pero no cambia los fundamentos de planificación RF.</p>
+<p><strong>Fuentes base:</strong> A1 114 v30.1 (05/09/2024) + actualización Wi‑Fi 7/IEEE 802.11be.</p>
+<h2 id="repaso">Resumen de repaso</h2>
+<h3 id="repaso-01">Núcleo de estudio</h3>
+<p>Wi-Fi se basa en IEEE 802.11. Conceptos: bandas 2,4/5/6 GHz, canales, ancho de canal, modulación, MIMO/OFDMA en generaciones modernas, potencia, roaming y planificación RF. 802.11ax corresponde a Wi-Fi 6/6E; 802.11be a Wi-Fi 7. Modos infraestructura y ad hoc; enterprise usa controladores/cloud según diseño. Seguridad actual: WPA2/WPA3, 802.1X/EAP y RADIUS para empresa; evita WEP y WPA antiguos. Planifica cobertura y capacidad, no solo señal; interferencia co-canal/adyacente y densidad importan.</p>
+<h3 id="repaso-02">Claves de test</h3>
+<p>2,4 GHz suele dar mayor alcance pero menos canales/capacidad; 5/6 GHz más espectro. SSID no es mecanismo de seguridad. Ocultar SSID no protege. WPA3-Enterprise y 802.1X son preferibles en entornos corporativos.</p>
+<h3 id="repaso-03">Enfoque para supuesto práctico</h3>
+<p>En supuesto separa SSID corporativo/invitados/IoT, usa 802.1X/NAC, segmentación, survey RF, redundancia de control, gestión y monitorización. Considera cableado/PoE de AP.</p>
+<h3 id="repaso-04">Actualización 2026</h3>
+<p>Actualización 2026: incluir conceptualmente Wi-Fi 7/802.11be sin desplazar los fundamentos 802.11.</p>
+<h3 id="repaso-05">Fuentes base del material</h3>
+<p>A1 114. Correspondencia DIRECTA.</p>
+<section class="topic-content__sources"><h2 id="fuentes">Fuentes y localizadores</h2><ul><li><a href="https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)</a> · IV.11 · 2026-08-21</li><li><a href="https://docs.google.com/document/d/1PRbZRedDj9j2D4jPlDODZUKkmbCqPWxMM4hhGhjcZIo/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE IV — RESUMEN MAESTRO DE REPASO (16 temas)</a> · IV.11 · 2026-08-21</li></ul></section>
+</article>

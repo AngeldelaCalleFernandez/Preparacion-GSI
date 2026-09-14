@@ -1,11 +1,86 @@
-<article class="topic-content" data-topic-id="B4-T05" data-coverage-status="pending">
-<aside class="topic-content__status topic-content__status--pending" role="status"><p>Contenido pendiente de fuentes verificables.</p></aside>
-<nav class="topic-content__toc" aria-label="Índice del tema">
-<h2>Contenido del tema</h2>
-<ol><li class="topic-content__toc-level-2"><a href="#temario/B4-T05/fuentes-necesarias">Fuentes necesarias</a></li></ol>
-</nav>
-<h2 id="fuentes-necesarias">Fuentes necesarias</h2>
-<div class="topic-content__pendiente" data-editorial-kind="pendiente"><p class="topic-content__kind">Pendiente</p><p>Contenido pendiente de una fuente verificable.</p>
-<p>Fuente necesaria: documentación técnica primaria local sobre seguridad de sistemas, criptografía, CPD, incidencias y control remoto.</p></div>
-
+<article class="topic-content" data-topic-id="B4-T05" data-coverage-status="complete">
+<p>Material curado del corpus GSI A2 · apuntes V2.1 revisados. Procedencia editorial, no documento oficial.</p>
+<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B4-T05/estudio">Apuntes de estudio</a></li><li><a href="#temario/B4-T05/estudio-01">1. Medios y jerarquía</a></li><li><a href="#temario/B4-T05/estudio-02">2. DAS, NAS, SAN y objeto</a></li><li><a href="#temario/B4-T05/estudio-03">3. RAID y protección local</a></li><li><a href="#temario/B4-T05/estudio-04">4. Cabinas, controladoras, caché y LUN</a></li><li><a href="#temario/B4-T05/estudio-05">5. Protocolos</a></li><li><a href="#temario/B4-T05/estudio-06">6. Virtualización y eficiencia</a></li><li><a href="#temario/B4-T05/estudio-07">7. Rendimiento y dimensionamiento</a></li><li><a href="#temario/B4-T05/estudio-08">8. Administración y seguridad</a></li><li><a href="#temario/B4-T05/estudio-09">Resumen</a></li><li><a href="#temario/B4-T05/repaso">Resumen de repaso</a></li><li><a href="#temario/B4-T05/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B4-T05/repaso-02">Claves de test</a></li><li><a href="#temario/B4-T05/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B4-T05/repaso-04">Fuentes base del material</a></li></ol></nav>
+<h2 id="estudio">Apuntes de estudio</h2>
+<p><strong>Cobertura oficial que debe quedar dominada:</strong> Almacenamiento de datos: arquitectura, tipos, componentes, protocolos, gestión y administración. Virtualización del almacenamiento.</p>
+<h3 id="estudio-01">1. Medios y jerarquía</h3>
+<p>HDD ofrece gran capacidad/coste favorable con latencia mecánica; SSD reduce latencia; NVMe usa PCIe y colas/paralelismo adaptados a memoria no volátil. La cinta conserva valor en archivo/copia por coste y aislamiento. El almacenamiento cloud/objeto cambia modelo operativo y de coste, pero no elimina requisitos de durabilidad, acceso y salida.</p>
+<h3 id="estudio-02">2. DAS, NAS, SAN y objeto</h3>
+<table>
+<tr>
+<th scope="col"><p><strong>Modelo
+</strong></p></th>
+<th scope="col"><p><strong>Unidad expuesta
+</strong></p></th>
+<th scope="col"><p><strong>Protocolos típicos
+</strong></p></th>
+<th scope="col"><p><strong>Uso
+</strong></p></th>
+</tr>
+<tr>
+<td><p>DAS</p></td>
+<td><p>bloques/dispositivo local</p></td>
+<td><p>SATA, SAS, NVMe</p></td>
+<td><p>servidor individual, baja complejidad</p></td>
+</tr>
+<tr>
+<td><p>NAS</p></td>
+<td><p>ficheros</p></td>
+<td><p>NFS, SMB</p></td>
+<td><p>ficheros compartidos</p></td>
+</tr>
+<tr>
+<td><p>SAN</p></td>
+<td><p>bloques remotos</p></td>
+<td><p>Fibre Channel, iSCSI, NVMe-oF</p></td>
+<td><p>BD, virtualización, cargas de bloque</p></td>
+</tr>
+<tr>
+<td><p>Objeto</p></td>
+<td><p>objeto + metadatos/API</p></td>
+<td><p>HTTP/S3-compatible conceptualmente</p></td>
+<td><p>backup, datos masivos, contenido</p></td>
+</tr>
+</table>
+<p>NAS y SAN no se diferencian por “estar en red” —ambas lo están— sino por la abstracción: fichero frente a bloque.</p>
+<h3 id="estudio-03">3. RAID y protección local</h3>
+<p>RAID 0: striping sin redundancia. RAID 1: espejo. RAID 5: paridad distribuida, tolera normalmente un disco. RAID 6: doble paridad, normalmente dos. RAID 10: stripe sobre espejos; buen rendimiento y reconstrucción a cambio de capacidad.</p>
+<p>RAID mejora disponibilidad frente a fallo de disco, pero <strong>no es backup</strong>: no protege de borrado lógico, ransomware, incendio, error administrativo o corrupción replicada.</p>
+<h3 id="estudio-04">4. Cabinas, controladoras, caché y LUN</h3>
+<p>Una cabina integra controladoras, puertos front-end/back-end, caché y discos/flash. Presenta volúmenes/LUN a hosts. En Fibre Channel, zoning controla qué iniciadores y targets se ven; LUN masking limita volúmenes. Multipathing ofrece varios caminos y failover/balanceo según pila.</p>
+<h3 id="estudio-05">5. Protocolos</h3>
+<p>Fibre Channel transporta bloques sobre red especializada; iSCSI transporta comandos SCSI sobre TCP/IP; NFS y SMB comparten ficheros; NVMe-oF extiende semántica NVMe sobre fabric. Cada elección implica latencia, coste, habilidades, multipath y aislamiento distintos.</p>
+<h3 id="estudio-06">6. Virtualización y eficiencia</h3>
+<p>Virtualizar almacenamiento agrupa/abstrae recursos físicos en pools y volúmenes lógicos. Técnicas: <strong>thin provisioning</strong>, snapshots, clones, deduplicación, compresión, tiering y replicación. Thin provisioning permite asignar capacidad lógica superior a la física, lo que exige alertas para evitar agotamiento.</p>
+<p>Snapshot guarda un punto lógico, frecuentemente mediante copy-on-write/redirección; puede depender del mismo sistema y no ser copia independiente.</p>
+<h3 id="estudio-07">7. Rendimiento y dimensionamiento</h3>
+<p>Medir IOPS, throughput (MB/s o GB/s), latencia, tamaño de bloque, ratio lectura/escritura, secuencial/aleatorio y concurrencia. Una base OLTP exige perfil distinto de backup secuencial. La capacidad útil debe descontar RAID, snapshots, reservas y crecimiento.</p>
+<h3 id="estudio-08">8. Administración y seguridad</h3>
+<p>Inventario, firmware, salud de discos, pools, capacidad, latencia, rutas, snapshots, replicación y alertas. Seguridad: segmentación de redes de storage, autenticación, cifrado en tránsito/reposo cuando proceda, control de administración y borrado seguro. Para backup, valorar inmutabilidad/WORM.</p>
+<p>Datos y trampas de test</p>
+<ul>
+<li>RAID ≠ backup.</li>
+<li>NAS = ficheros; SAN = bloques.</li>
+<li>iSCSI = SCSI sobre TCP/IP.</li>
+<li>Thin provisioning puede sobreaprovisionar; necesita control de capacidad.</li>
+<li>Snapshot ≠ copia independiente necesariamente.</li>
+<li>IOPS ≠ throughput; una carga puede estar limitada por uno u otro.</li>
+<li>RAID 5 tolera típicamente un fallo; RAID 6 dos.</li>
+<li>Zoning y LUN masking actúan en capas diferentes de visibilidad/acceso.</li>
+</ul>
+<p>Aplicación al supuesto práctico</p>
+<p>Clasifica cargas (BD, VM, ficheros, objeto, backup); estima capacidad útil y crecimiento; define rendimiento (IOPS/throughput/latencia); elige DAS/NAS/SAN/objeto; añade RAID, multipath, snapshots/replicación, cifrado, monitorización y backup independiente. Justifica coste y dominio de fallo.</p>
+<h3 id="estudio-09">Resumen</h3>
+<p>El diseño de almacenamiento se basa en abstracción (bloque/fichero/objeto), rendimiento, disponibilidad, capacidad y recuperabilidad; la virtualización mejora flexibilidad pero exige vigilancia del pool físico.</p>
+<p><strong>Fuentes base:</strong> A1 056 v31.1 (11/03/2026) como fuente principal + A1 057 como apoyo histórico.</p>
+<h2 id="repaso">Resumen de repaso</h2>
+<h3 id="repaso-01">Núcleo de estudio</h3>
+<p>Distingue almacenamiento local DAS, NAS por ficheros y SAN por bloques; almacenamiento objeto expone objetos vía API y escala masivamente. Medios: HDD, SSD/NVMe, cinta y cloud según coste/rendimiento/durabilidad. RAID combina discos: RAID 0 rendimiento sin redundancia; 1 espejo; 5 paridad simple; 6 doble; 10 espejo+striping. Protocolos: SATA/SAS/NVMe local; NFS/SMB ficheros; Fibre Channel/iSCSI bloques; S3-compatible objetos a nivel conceptual. Virtualización agrupa recursos físicos en pools/lógicos, thin provisioning, snapshots y replicación. Capacidad debe considerar IOPS, throughput, latencia y crecimiento.</p>
+<h3 id="repaso-02">Claves de test</h3>
+<p>RAID no es backup; snapshot no siempre es copia independiente; NAS ≠ SAN; iSCSI transporta SCSI sobre IP. RAID 5 tolera normalmente un disco; RAID 6 dos. Thin provisioning puede sobreaprovisionar y requiere control.</p>
+<h3 id="repaso-03">Enfoque para supuesto práctico</h3>
+<p>En supuesto clasifica cargas (BD, ficheros, objetos, backup), calcula capacidad útil, rendimiento, redundancia, replicación y tiering. Incluye cifrado, inmutabilidad y monitorización.</p>
+<h3 id="repaso-04">Fuentes base del material</h3>
+<p>A1 056 + 057 y material de almacenamiento/virtualización.</p>
+<section class="topic-content__sources"><h2 id="fuentes">Fuentes y localizadores</h2><ul><li><a href="https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)</a> · IV.05 · 2026-08-21</li><li><a href="https://docs.google.com/document/d/1PRbZRedDj9j2D4jPlDODZUKkmbCqPWxMM4hhGhjcZIo/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE IV — RESUMEN MAESTRO DE REPASO (16 temas)</a> · IV.05 · 2026-08-21</li></ul></section>
 </article>

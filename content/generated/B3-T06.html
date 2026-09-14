@@ -1,11 +1,92 @@
-<article class="topic-content" data-topic-id="B3-T06" data-coverage-status="pending">
-<aside class="topic-content__status topic-content__status--pending" role="status"><p>Contenido pendiente de fuentes verificables.</p></aside>
-<nav class="topic-content__toc" aria-label="Índice del tema">
-<h2>Contenido del tema</h2>
-<ol><li class="topic-content__toc-level-2"><a href="#temario/B3-T06/fuentes-necesarias">Fuentes necesarias</a></li></ol>
-</nav>
-<h2 id="fuentes-necesarias">Fuentes necesarias</h2>
-<div class="topic-content__pendiente" data-editorial-kind="pendiente"><p class="topic-content__kind">Pendiente</p><p>Contenido pendiente de una fuente verificable.</p>
-<p>Fuente necesaria: documentación técnica primaria local sobre arquitecturas cliente-servidor, multicapas, servicios web y protocolos asociados.</p></div>
-
+<article class="topic-content" data-topic-id="B3-T06" data-coverage-status="complete">
+<p>Material curado del corpus GSI A2 · apuntes V2.1 revisados. Procedencia editorial, no documento oficial.</p>
+<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B3-T06/estudio">Apuntes de estudio</a></li><li><a href="#temario/B3-T06/estudio-01">1. Construcción</a></li><li><a href="#temario/B3-T06/estudio-02">2. Git</a></li><li><a href="#temario/B3-T06/estudio-03">3. Build reproducible</a></li><li><a href="#temario/B3-T06/estudio-04">4. Integración continua</a></li><li><a href="#temario/B3-T06/estudio-05">5. Entrega/despliegue continuo</a></li><li><a href="#temario/B3-T06/estudio-06">6. DevOps</a></li><li><a href="#temario/B3-T06/estudio-07">7. IaC y configuración</a></li><li><a href="#temario/B3-T06/estudio-08">8. Estrategias de despliegue</a></li><li><a href="#temario/B3-T06/estudio-09">9. Supply chain</a></li><li><a href="#temario/B3-T06/estudio-10">10. Documentación</a></li><li><a href="#temario/B3-T06/estudio-11">11. Formación y transición</a></li><li><a href="#temario/B3-T06/estudio-12">11.1 Entornos de construcción y generación de código</a></li><li><a href="#temario/B3-T06/estudio-13">11.2 Entornos y promoción</a></li><li><a href="#temario/B3-T06/estudio-14">11.3 Quality gates</a></li><li><a href="#temario/B3-T06/estudio-15">11.4 Documentación exigible</a></li><li><a href="#temario/B3-T06/estudio-16">11.5 Formación</a></li><li><a href="#temario/B3-T06/estudio-17">12. Test</a></li><li><a href="#temario/B3-T06/estudio-18">13. Supuesto</a></li><li><a href="#temario/B3-T06/estudio-19">14. Resumen</a></li><li><a href="#temario/B3-T06/repaso">Resumen de repaso</a></li><li><a href="#temario/B3-T06/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B3-T06/repaso-02">Claves de test</a></li><li><a href="#temario/B3-T06/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B3-T06/repaso-04">Fuentes base del material</a></li></ol></nav>
+<h2 id="estudio">Apuntes de estudio</h2>
+<p>Cobertura oficial que debe quedar dominada: Construcción del sistema: entornos de construcción, generación de código, despliegue, integración continua y DevOps. Estándares de documentación, manuales y métodos/materiales de formación.</p>
+<h3 id="estudio-01">1. Construcción</h3>
+<p>Convierte diseño/requisitos en código mantenible. Prácticas: estándares, modularidad, revisión, análisis estático, gestión de dependencias, testing automatizado y control de versiones.</p>
+<h3 id="estudio-02">2. Git</h3>
+<p>Repositorio, commit, branch, merge/rebase, tag, pull request. El objetivo no es memorizar comandos, sino trazabilidad y colaboración. Branching debe ser tan simple como permita el modelo de entrega.</p>
+<h3 id="estudio-03">3. Build reproducible</h3>
+<p>Dependencias fijadas, lockfiles, repositorios controlados, artefactos inmutables, versiones, checksums, SBOM. “Funciona en mi máquina” se reduce con entornos reproducibles y CI.</p>
+<h3 id="estudio-04">4. Integración continua</h3>
+<p>Cambios frecuentes integrados en rama compartida con build y pruebas automáticas. Pipeline típico: checkout → dependencias → compile/build → static analysis → unit tests → package → security scans → artefacto.</p>
+<h3 id="estudio-05">5. Entrega/despliegue continuo</h3>
+<p>Continuous Delivery mantiene software desplegable y puede requerir aprobación; Continuous Deployment despliega automáticamente cambios que superan controles. No son sinónimos.</p>
+<h3 id="estudio-06">6. DevOps</h3>
+<p>Cultura/prácticas para reducir fricción desarrollo-operación mediante automatización, responsabilidad compartida, feedback y observabilidad. DevSecOps integra seguridad en todo el flujo.</p>
+<h3 id="estudio-07">7. IaC y configuración</h3>
+<p>Infraestructura declarada/versionada, revisable y automatizada. Distingue provisión de infraestructura de configuración de aplicaciones. Evitar cambios manuales no trazados.</p>
+<h3 id="estudio-08">8. Estrategias de despliegue</h3>
+<p>Rolling, blue-green, canary y feature flags. Rollback debe contemplar compatibilidad de esquema de BD y migraciones.</p>
+<h3 id="estudio-09">9. Supply chain</h3>
+<p>Dependencias, artefactos, firmas, SBOM, secretos, provenance, repositorios y runners. El pipeline es infraestructura crítica.</p>
+<h3 id="estudio-10">10. Documentación</h3>
+<p>Arquitectura, ADR, API, operación/runbooks, instalación, usuario y soporte. Docs-as-code puede versionar documentación técnica con código.</p>
+<h3 id="estudio-11">11. Formación y transición</h3>
+<p>Plan de capacitación por perfiles, materiales, sesiones, entorno de prácticas, evaluación y soporte inicial. La aceptación operativa incluye conocimiento y procedimientos.</p>
+<h3 id="estudio-12">11.1 Entornos de construcción y generación de código</h3>
+<p><strong>Base A1:</strong> 097 + 102. Se amplían los elementos que el epígrafe oficial enumera de manera literal.</p>
+<p>Un entorno de construcción integra compiladores/intérpretes, gestor de dependencias, build tool, análisis estático, tests, empaquetado y repositorio de artefactos. Ejemplos de categorías: Maven/Gradle en Java, dotnet CLI/MSBuild en .NET, npm/pnpm/yarn en JS, make/CMake en C/C++. Memoriza la función, no una bandera concreta.</p>
+<p>La <strong>generación de código</strong> puede partir de modelos, schemas, contratos OpenAPI/AsyncAPI, ORM o IDL. Reduce trabajo repetitivo, pero el código generado debe versionarse o reproducirse de forma determinista según estrategia y no editarse manualmente si se regenerará.</p>
+<h3 id="estudio-13">11.2 Entornos y promoción</h3>
+<p>Desarrollo → integración/test → preproducción → producción, con configuración externa y artefacto inmutable. Promover <strong>el mismo artefacto</strong> reduce diferencias. Bases de datos requieren migraciones versionadas y compatibles con despliegues progresivos.</p>
+<h3 id="estudio-14">11.3 Quality gates</h3>
+<p>Compilación, tests, cobertura mínima razonada, análisis estático, SAST, dependencia/SCA, secretos, imagen, IaC y políticas de licencia. Un gate debe estar vinculado a riesgo; acumular herramientas sin capacidad de corregir hallazgos genera ruido.</p>
+<h3 id="estudio-15">11.4 Documentación exigible</h3>
+<table>
+<tr>
+<th scope="col"><p>Documento</p></th>
+<th scope="col"><p>Para quién / qué resuelve</p></th>
+</tr>
+<tr>
+<td><p>arquitectura/ADR</p></td>
+<td><p>decisiones, contexto, alternativas, consecuencias</p></td>
+</tr>
+<tr>
+<td><p>API/contratos</p></td>
+<td><p>integradores/desarrolladores</p></td>
+</tr>
+<tr>
+<td><p>manual de instalación/despliegue</p></td>
+<td><p>operación/implantación</p></td>
+</tr>
+<tr>
+<td><p>manual de explotación/runbook</p></td>
+<td><p>operación, incidencias, backup, recuperación</p></td>
+</tr>
+<tr>
+<td><p>manual de usuario</p></td>
+<td><p>tareas funcionales y ayuda</p></td>
+</tr>
+<tr>
+<td><p>administración</p></td>
+<td><p>roles, configuración, parametrización y seguridad</p></td>
+</tr>
+</table>
+<h3 id="estudio-16">11.5 Formación</h3>
+<p>Análisis de perfiles → objetivos de aprendizaje → material → sesiones prácticas → evaluación → soporte. Modalidades: instructor, autoformación, microlearning, laboratorio/sandbox y formación de formadores. Para implantación, medir asistencia no basta: conviene medir competencia/adopción y dudas recurrentes.</p>
+<h3 id="estudio-17">12. Test</h3>
+<ul>
+<li>CI ≠ CD.</li>
+<li>Delivery ≠ Deployment.</li>
+<li>DevOps ≠ herramienta.</li>
+<li>IaC ≠ “script suelto”.</li>
+<li>Artefacto inmutable favorece trazabilidad.</li>
+<li>Rollback de app puede fallar si BD no es compatible.</li>
+</ul>
+<h3 id="estudio-18">13. Supuesto</h3>
+<p>Diseña repositorio, ramas, pipeline, quality gates, artefactos, registry, IaC, secretos, entornos, despliegue progresivo, observabilidad, rollback, documentación y formación.</p>
+<h3 id="estudio-19">14. Resumen</h3>
+<p>Construcción moderna = código + automatización + artefactos trazables + operación preparada.</p>
+<h2 id="repaso">Resumen de repaso</h2>
+<h3 id="repaso-01">Núcleo de estudio</h3>
+<p>Construcción abarca entorno de desarrollo, gestión de dependencias, compilación/build, análisis estático, empaquetado y artefactos reproducibles. Control de versiones con Git: repositorio, commit, branch, merge/rebase, tags y estrategias de ramas; revisión mediante pull/merge requests. Integración continua ejecuta build y pruebas frecuentes; entrega continua mantiene artefactos desplegables; despliegue continuo automatiza producción bajo controles. Pipeline típico: checkout, dependencias, build, test, SAST/SCA, empaquetado, firma/SBOM, registro, despliegue y validación. DevOps integra cultura, automatización, medición y colaboración; IaC y configuración declarativa mejoran reproducibilidad. Documentación: arquitectura, APIs, operaciones, instalación, seguridad, usuario y runbooks; formación adaptada a usuarios y técnicos.</p>
+<h3 id="repaso-02">Claves de test</h3>
+<p>CI ≠ CD; entrega continua ≠ despliegue continuo; repositorio de código ≠ repositorio de artefactos; rollback y roll-forward son estrategias distintas. DevOps no es una herramienta ni elimina separación de responsabilidades/control.</p>
+<h3 id="repaso-03">Enfoque para supuesto práctico</h3>
+<p>En supuesto diseña pipeline con quality gates, entornos, secretos, aprobaciones, artefactos inmutables, blue-green/canary/rolling, observabilidad y rollback. Incluye plan de formación y documentación viva.</p>
+<h3 id="repaso-04">Fuentes base del material</h3>
+<p>A1 097 + 102 y RELEASE CI/CD. Tema COMPLEMENTAR por dispersión de fuentes.</p>
+<section class="topic-content__sources"><h2 id="fuentes">Fuentes y localizadores</h2><ul><li><a href="https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)</a> · III.06 · 2026-08-21</li><li><a href="https://docs.google.com/document/d/1l0nl4fc451Tl3XB9XZ4LRLZGLZEJxUueQvaMZoF8gcA/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE III — RESUMEN MAESTRO DE REPASO (15 temas)</a> · III.06 · 2026-08-21</li></ul></section>
 </article>

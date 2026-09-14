@@ -3,11 +3,11 @@ import {
   applyReinforcementEvents,
   createQuestionReference,
   getTemporalState,
-} from "./reinforcement-engine.js";
-import { getConfiguredPersistenceAdapter } from "./persistence-v2.js?m3";
+} from "./reinforcement-engine.js?gsi2";
+import { getConfiguredPersistenceAdapter } from "./persistence-v2.js?gsi2";
 
-export const REINFORCEMENT_REAL_KEY = "tai.reinforcement.real.v1";
-export const REINFORCEMENT_DEMO_KEY = "tai.reinforcement.demo.v1";
+export const REINFORCEMENT_REAL_KEY = "gsi.reinforcement.real.v1";
+export const REINFORCEMENT_DEMO_KEY = "gsi.reinforcement.demo.v1";
 const VERSION = 1;
 
 function browserStorage() {
