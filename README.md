@@ -1,8 +1,8 @@
-# GSI A2 · Programa de estudio
+# GSI · Plataforma de estudio para Gestión de Sistemas e Informática A2
 
-Aplicación personal estática para Gestión de Sistemas e Informática de la Administración del Estado, ingreso libre A2. El programa tiene **57 temas** del Anexo IX de BOE-A-2025-26262, distribuidos en **10 / 16 / 15 / 16**.
+Aplicación web estática y repositorio de contenidos para preparar el **Cuerpo de Gestión de Sistemas e Informática de la Administración del Estado, ingreso libre, subgrupo A2**.
 
-Los apuntes completos y los resúmenes proceden del corpus Drive V2.1 del propietario. Cada tema conserva documento, enlace, sección y revisión. No necesita backend, cuenta de usuario, framework ni compilación.
+El proyecto está dedicado exclusivamente a GSI A2. Incluye los **57 temas** del Anexo IX de BOE-A-2025-26262, distribuidos en **10 / 16 / 15 / 16**.
 
 ## Acceso directo
 
@@ -10,78 +10,159 @@ Los apuntes completos y los resúmenes proceden del corpus Drive V2.1 del propie
 
 No hay que instalar nada para estudiar desde la versión publicada. Funciona en ordenador, tableta y móvil con un navegador moderno.
 
-Para empezar, abre la [guía paso a paso en la web](https://angeldelacallefernandez.github.io/TAI-GSI/docs/guia-de-estudio.html). También está disponible [dentro del repositorio](docs/GUIA_DE_ESTUDIO.md). Incluye un primer ejercicio, instrucciones de uso y una rutina de 45 minutos.
+Para empezar, consulta la [guía paso a paso](https://angeldelacallefernandez.github.io/TAI-GSI/docs/guia-de-estudio.html). Incluye un primer ejercicio, instrucciones de uso y una rutina de 45 minutos. También está disponible [en formato Markdown](docs/GUIA_DE_ESTUDIO.md).
 
-## Estado de esta entrega
+## Estado actual
 
-**La aplicación funciona; la cobertura del banco aún impide cerrar la versión estable.** Hay 959 preguntas curadas activas y 803 generadas pendientes de validación. Los 57 temas tienen apuntes y fuente, pero 40 todavía no tienen preguntas activas y otro tiene 17. Las pendientes quedan excluidas del entrenamiento y los exámenes.
+La aplicación funciona y los 57 temas tienen apuntes completos, resumen y procedencia. El banco contiene:
 
-El detalle reproducible está en [la auditoría](docs/FINAL_GSI_AUDIT.md), [la cobertura por tema](data/gsi-coverage-report.json) y [el resultado completo de pruebas](logs/gsi-suite.json). El lote pendiente puede consultarse en [la vista de revisión editorial](review.html).
+| Origen | Activas | Pendientes |
+| --- | ---: | ---: |
+| Material curado del corpus | 959 | 0 |
+| Preguntas generadas | 0 | 803 |
+| Preguntas oficiales identificadas | 0 | 0 |
 
-## Abrir una copia local
+Las 803 preguntas generadas continúan pendientes de validación y quedan excluidas de entrenamientos y exámenes. Las 959 activas están repartidas en 17 temas; 40 temas todavía no tienen test activo y B1-T03 tiene 17 preguntas.
 
-Desde la raíz del repositorio:
+Consulta la [auditoría completa](docs/FINAL_GSI_AUDIT.md), la [cobertura por tema](data/gsi-coverage-report.json) y el [resultado de la suite](logs/gsi-suite.json).
 
-```powershell
+## Funcionalidades
+
+- Temario navegable con los 57 temas completos.
+- Búsqueda y filtros por bloque, cobertura y estado editorial.
+- Entrenamiento por tema, bloque, preguntas no vistas y últimos errores.
+- Corrección inmediata con explicación y procedencia.
+- Simulacro GSI de 100 preguntas y 90 minutos, con penalización de un tercio por error.
+- Test configurable con selección de bloques, cantidad y duración.
+- Práctica escrita: elección entre dos supuestos, cinco respuestas y 180 minutos.
+- Refuerzo programado de errores y dudas.
+- Estadísticas de actividad, evolución y temas débiles.
+- Guardado local, exportación e importación del progreso.
+- Avisos de vigencia separados de los apuntes originales.
+- Diseño adaptable y navegación mediante teclado.
+
+## Cómo está construido
+
+La aplicación utiliza HTML5, CSS3 y JavaScript moderno sin frameworks. Los catálogos y bancos se almacenan en JSON y los temas se sirven como HTML estático. No necesita backend, base de datos, cuenta de usuario ni proceso de compilación.
+
+Los datos, el contenido y la lógica se mantienen separados. Las preguntas oficiales, curadas y generadas se guardan en bancos diferentes. Una pregunta generada no entra en entrenamientos o exámenes hasta que esté activa y validada.
+
+## Progreso y varios dispositivos
+
+El progreso se guarda en el navegador y dispositivo donde estudias. No se sincroniza automáticamente.
+
+Para trasladarlo:
+
+1. Pulsa **Exportar progreso** en el primer dispositivo.
+2. Guarda el archivo JSON descargado.
+3. Abre la aplicación en el otro dispositivo.
+4. Pulsa **Importar copia GSI** y selecciona el archivo.
+
+Si ya estudiabas desde `http://127.0.0.1:8765/`, exporta allí el progreso e impórtalo una vez en la versión publicada. El navegador considera ambas direcciones sitios diferentes.
+
+## Ejecutar una copia local
+
+Clona el repositorio y entra en su carpeta:
+
+```bash
+git clone --branch gsi-only-final https://github.com/AngeldelaCalleFernandez/TAI-GSI.git
+cd TAI-GSI
+```
+
+Inicia un servidor HTTP:
+
+```bash
 python -m http.server 8765 --bind 127.0.0.1
 ```
 
-Abre `http://127.0.0.1:8765/`. No abras `index.html` con `file://`: el navegador necesita HTTP para cargar los JSON. Si utilizas el entorno local ya preparado, el intérprete es `.\.venv\Scripts\python.exe`.
-
-La publicación usa GitHub Pages directamente desde la raíz de la rama gsi-only-final. Las rutas son relativas y se han comprobado desde una subruta de proyecto. Cada actualización de esa rama vuelve a publicar el sitio.
-
-## Estudiar
-
-- **Temario:** apuntes completos y repaso, con procedencia y avisos de vigencia separados del original.
-- **Entrenamiento:** tema, bloque, mixto, preguntas no vistas o falladas; corrección y explicación inmediata.
-- **Examen GSI:** 100 preguntas, 90 minutos, acierto +1, error −1/3, blanco 0. Es puntuación directa de práctica; no reproduce la transformación ni el corte del tribunal. No se implementan reservas.
-- **Práctica escrita:** cuatro simulacros, elección A/B, cinco preguntas y 180 minutos. Incluye esquema, respuestas guardadas, soluciones y autoevaluación 30/10/5/5. La biblioteca contiene 38 cuadernos/solucionarios locales y cuatro carpetas de apoyo A1, identificadas como apoyo.
-- **Refuerzo y estadísticas:** historial de respuestas, errores, progreso por tema y bloque, sesiones y repaso.
-
-El progreso queda en el navegador y dispositivo donde estudias. En el apartado «Tu progreso GSI», al final de la página, puedes exportarlo, importarlo o reiniciarlo. Exporta una copia para pasar el progreso entre ordenador, tableta y móvil, y antes de sustituir una práctica escrita: solo se conserva una sesión escrita actual. No se escriben datos en los JSON del sitio ni se sincronizan automáticamente.
-
-Si ya estudiabas desde http://127.0.0.1:8765/, exporta allí tu progreso e impórtalo una vez en la versión publicada. El navegador considera ambas direcciones sitios diferentes.
+Abre `http://127.0.0.1:8765/`. No abras directamente `index.html` mediante `file://`, porque la aplicación utiliza `fetch()` para cargar sus datos.
 
 ## Publicación
 
-El sitio es HTML, CSS, JavaScript y JSON estáticos. GitHub Pages lo sirve sin backend y sin proceso de compilación. La publicación no cambia el estado editorial de las preguntas: solo las preguntas activas y validadas entran en los entrenamientos y exámenes.
+GitHub Pages sirve los archivos estáticos directamente desde la raíz `/` de la rama `gsi-only-final`. El archivo `.nojekyll` evita el procesamiento con Jekyll. Cada actualización de esa rama vuelve a desplegar el sitio.
 
-## Ejecutar todas las pruebas
+La publicación no modifica el estado editorial del banco: la aplicación sigue seleccionando únicamente preguntas activas y validadas.
 
-Requisitos de desarrollo: Python, `jsonschema`, Node.js, `rg` (ripgrep), Playwright y Google Chrome. No son dependencias de la aplicación publicada.
+## Estructura del repositorio
 
-```powershell
+```text
+TAI-GSI/
+├── index.html                 # Entrada de la aplicación
+├── review.html                # Consulta del lote editorial pendiente
+├── assets/
+│   ├── css/                   # Estilos
+│   └── js/                    # Módulos de la aplicación
+├── content/
+│   ├── topics/                # 57 temas en Markdown
+│   ├── generated/             # 57 temas transformados a HTML
+│   └── question-drafts/       # Autoría del banco generado
+├── data/                      # Catálogos, fuentes, preguntas y práctica
+├── documents/markdown/gsi/    # Conversiones documentales utilizadas
+├── schemas/                   # Contratos JSON
+├── scripts/                   # Importadores, compiladores y validadores
+├── tests/                     # Pruebas JavaScript y de navegador
+├── docs/                      # Guías, vigencia y auditoría
+├── logs/                      # Evidencias de validación
+└── archive/                   # Historia excluida del producto activo
+```
+
+La identidad activa es `OPP-GSI / SYL-GSI-2025`. El contenido y progreso históricos de TAI permanecen excluidos de la aplicación GSI.
+
+## Validación
+
+Instala las dependencias de desarrollo y ejecuta la suite completa:
+
+```bash
 python -m pip install -r scripts/requirements-validation.txt
 python scripts/run_gsi_suite.py
 ```
 
-Si Playwright no está disponible en el entorno, puedes instalarlo fuera del repositorio:
-
-```powershell
-npm install --prefix "$env:TEMP/gsi-test-tools" playwright
-$env:PLAYWRIGHT_MODULE = "$env:TEMP/gsi-test-tools/node_modules/playwright/index.mjs"
-python scripts/run_gsi_suite.py
-```
-
-El ejecutor detecta también la instalación de Playwright incluida en el entorno de trabajo. Los navegadores de prueba se sirven por HTTP local con puertos libres. No dependen del servidor abierto para estudiar.
-
-| Código de salida | Significado |
-| --- | --- |
-| 0 | Pruebas técnicas y criterio de cobertura superados |
-| 1 | Fallo técnico o dependencia ausente; consultar el log |
+| Código | Significado |
+| ---: | --- |
+| 0 | Pruebas técnicas y cobertura editorial superadas |
+| 1 | Fallo técnico o dependencia ausente |
 | 2 | Sin fallos técnicos, pero cierre editorial pendiente |
 
-El estado actual esperado es **2**. Un JSON válido no concede validación editorial a sus preguntas.
+El estado actual esperado es **2** por las 803 preguntas pendientes. Un JSON válido no concede validación editorial.
 
-## Datos y mantenimiento
+La última ejecución aprobó:
 
-- `data/`: catálogos GSI, fuentes, manifiestos y bancos físicamente separados (`official`, `manual`, `ai`). No hay preguntas oficiales identificadas en el material importado.
-- `content/topics/` y `content/generated/`: 57 temas Markdown y sus HTML listos para servir.
-- `documents/markdown/gsi/`: 50 conversiones del corpus; los originales permanecen en Drive y las capturas nativas locales se conservan en `documents/originals/gsi/`, fuera de Git.
-- `content/question-drafts/`: texto de autoría de preguntas; [procedimiento editorial](docs/GSI_REVISION_EDITORIAL.md).
-- `scripts/`: importadores, compiladores opcionales y validadores actuales. Los archivos publicados ya están generados: no hay que ejecutar importadores para estudiar.
-- `archive/`, `PLAN_*`, los informes antiguos de `docs/`, `data/protected-artifacts.json`, `data/conversion_report.json` y los documentos ajenos a `documents/markdown/gsi/`: historia del proyecto TAI, sin carga desde el producto GSI. Los scripts archivados son evidencia de migración y no deben ejecutarse desde su nueva ubicación.
+- 18 archivos contra 16 esquemas JSON;
+- 57 temas y sus referencias;
+- 1762 preguntas con estructura válida;
+- 76 pruebas unitarias;
+- 288 pruebas de regresión;
+- 72 comprobaciones funcionales en navegador;
+- funcionamiento en escritorio, móvil y una subruta de GitHub Pages.
 
-La identidad activa es `OPP-GSI / SYL-GSI-2025`. El historial TAI permanece intacto y se excluye de cualquier importación o atribución automática de progreso a GSI.
+También se comprueban puntuación, temporizadores, persistencia, exportación e importación, rutas relativas, procedencia, exclusión de preguntas pendientes y ausencia de referencias TAI en el producto activo.
 
-Consulta también el [control de vigencia](docs/GSI_VIGENCIA.md). Las fechas de revisión originales se conservan; ejecutar un validador no actualiza automáticamente la vigencia del contenido.
+## Fuentes, trazabilidad y vigencia
+
+Los apuntes completos y los resúmenes proceden del corpus Drive V2.1 autorizado por el propietario. Cada tema conserva documento, enlace, localizador, versión y fecha de revisión. El BOE se utiliza para comprobar el alcance oficial del programa; el contenido didáctico procede del corpus autorizado.
+
+Las **actualizaciones catalogadas** son avisos revisados que se muestran al principio del tema afectado cuando una norma o tecnología cambia después de redactarse los apuntes. La aplicación muestra los avisos registrados, pero no busca ni incorpora cambios de Internet automáticamente. El texto original permanece intacto.
+
+Consulta el [control de vigencia](docs/GSI_VIGENCIA.md) y el [procedimiento de revisión editorial](docs/GSI_REVISION_EDITORIAL.md).
+
+## Principios del proyecto
+
+- Mantener una solución estática, sencilla y comprensible.
+- Conservar la procedencia de cada contenido.
+- No presentar material editorial como oficial.
+- No activar automáticamente preguntas generadas.
+- No mezclar progreso o contenido de otras oposiciones.
+- Preservar documentos originales e historial de migración.
+- Validar los datos y el funcionamiento antes de publicar cambios.
+
+Las reglas completas de mantenimiento están en [AGENTS.md](AGENTS.md).
+
+## Aviso
+
+Este es un proyecto personal de apoyo al estudio. No es una publicación oficial de la Administración General del Estado y no sustituye al BOE, las convocatorias, la normativa vigente ni las fuentes oficiales enlazadas.
+
+Antes de preparar una convocatoria concreta debe comprobarse que el programa y las normas aplicables siguen vigentes.
+
+## Licencia
+
+El repositorio no declara actualmente una licencia específica. Su publicación en GitHub no concede por sí sola permisos adicionales de reutilización, modificación o redistribución.
