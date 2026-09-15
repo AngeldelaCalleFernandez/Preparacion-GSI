@@ -164,4 +164,3 @@ Resume siempre:
 - Comandos y validaciones ejecutados.
 - Cómo probar el resultado.
 - Siguiente fase recomendada.
-

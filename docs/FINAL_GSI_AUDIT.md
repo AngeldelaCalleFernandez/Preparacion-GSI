@@ -4,7 +4,7 @@ Fecha: **15 de septiembre de 2026**. Rama: `gsi-only-final`.
 
 **Estado: implementación técnica utilizable; cierre editorial bloqueado.** Los 57 temas tienen apuntes completos y procedencia. Hay 959 preguntas activas, pero 40 temas no tienen ninguna activa y B1-T03 tiene 17. Las 803 preguntas generadas continúan pendientes. No se declara versión estable, publicación ni PR terminada.
 
-Commit de referencia del código: `bdac2015341a9bbfb9e6bc47d02507c73c594989`. El informe se guarda en un commit posterior para poder citar una revisión existente; el identificador del commit que contiene esta auditoría se obtiene con `git log -1 --format=%H -- docs/FINAL_GSI_AUDIT.md`.
+Commit de referencia del código: `57ede4b3200cfc2f7e03501741852001373a3d13`. El informe se guarda en un commit posterior para poder citar una revisión existente; el identificador del commit que contiene esta auditoría se obtiene con `git log -1 --format=%H -- docs/FINAL_GSI_AUDIT.md`.
 
 ## Fuentes y documentos
 
@@ -178,3 +178,5 @@ El recorrido se ejecutó con Chrome sin interfaz, bajo `/gsi-test/`, en escritor
 Principales archivos creados: `scripts/validate_gsi_final.py`, `scripts/run_gsi_suite.py`, importadores/compiladores GSI, `assets/js/written-practice.js`, `assets/js/progress-backup.js`, `assets/js/training-engine.js`, `assets/js/editorial-review.js`, `review.html`, los manifiestos `data/gsi-*`, los tres tests `tests/gsi-*.mjs`, 50 conversiones, 57 Markdown/HTML y la documentación actual. Se modificaron `index.html`, estilos, módulos existentes, catálogos, fuentes, bancos, esquemas, pruebas de regresión y `AGENTS.md`. El detalle de Git se obtiene comparando con `a8e2471`.
 
 Fase técnica completada: conversión, datos, aplicación, exámenes, refuerzo y documentación verificable. **Fase de versión estable pendiente:** resolver la revisión editorial del lote, regenerar solo aceptaciones válidas, repetir la suite y publicar/preparar PR únicamente con código 0. No faltan documentos canónicos por convertir; la limitación pendiente es la cobertura validada del banco.
+
+Comprobación adicional de conservación: los 20 scripts trasladados coinciden con su revisión anterior (normalizando finales de línea), sin pérdidas; cero coincidencias de los patrones de credenciales comprobados entre archivos versionados y no ignorados. Evidencia en `logs/gsi-preservation-check.json`. Se retiró una línea vacía sobrante al final de la copia histórica de instrucciones; el original permanece en el historial Git.
