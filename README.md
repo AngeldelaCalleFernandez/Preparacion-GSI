@@ -4,7 +4,13 @@ Aplicación personal estática para Gestión de Sistemas e Informática de la Ad
 
 Los apuntes completos y los resúmenes proceden del corpus Drive V2.1 del propietario. Cada tema conserva documento, enlace, sección y revisión. No necesita backend, cuenta de usuario, framework ni compilación.
 
-**Para empezar a estudiar:** abre la [guía paso a paso](docs/guia-de-estudio.html), también disponible [en texto](docs/GUIA_DE_ESTUDIO.md). Incluye un primer ejercicio, instrucciones de uso y una rutina de 45 minutos.
+## Acceso directo
+
+**[Abrir la aplicación GSI A2](https://angeldelacallefernandez.github.io/TAI-GSI/)**
+
+No hay que instalar nada para estudiar desde la versión publicada. Funciona en ordenador, tableta y móvil con un navegador moderno.
+
+Para empezar, abre la [guía paso a paso en la web](https://angeldelacallefernandez.github.io/TAI-GSI/docs/guia-de-estudio.html). También está disponible [dentro del repositorio](docs/GUIA_DE_ESTUDIO.md). Incluye un primer ejercicio, instrucciones de uso y una rutina de 45 minutos.
 
 ## Estado de esta entrega
 
@@ -12,7 +18,7 @@ Los apuntes completos y los resúmenes proceden del corpus Drive V2.1 del propie
 
 El detalle reproducible está en [la auditoría](docs/FINAL_GSI_AUDIT.md), [la cobertura por tema](data/gsi-coverage-report.json) y [el resultado completo de pruebas](logs/gsi-suite.json). El lote pendiente puede consultarse en [la vista de revisión editorial](review.html).
 
-## Abrir la aplicación
+## Abrir una copia local
 
 Desde la raíz del repositorio:
 
@@ -22,7 +28,7 @@ python -m http.server 8765 --bind 127.0.0.1
 
 Abre `http://127.0.0.1:8765/`. No abras `index.html` con `file://`: el navegador necesita HTTP para cargar los JSON. Si utilizas el entorno local ya preparado, el intérprete es `.\.venv\Scripts\python.exe`.
 
-Para GitHub Pages basta servir los archivos del repositorio. Las rutas son relativas; se ha probado también desde una subruta de proyecto. Esta entrega no se ha publicado ni enviado a una PR porque el control de cobertura no está superado.
+La publicación usa GitHub Pages directamente desde la raíz de la rama gsi-only-final. Las rutas son relativas y se han comprobado desde una subruta de proyecto. Cada actualización de esa rama vuelve a publicar el sitio.
 
 ## Estudiar
 
@@ -32,7 +38,13 @@ Para GitHub Pages basta servir los archivos del repositorio. Las rutas son relat
 - **Práctica escrita:** cuatro simulacros, elección A/B, cinco preguntas y 180 minutos. Incluye esquema, respuestas guardadas, soluciones y autoevaluación 30/10/5/5. La biblioteca contiene 38 cuadernos/solucionarios locales y cuatro carpetas de apoyo A1, identificadas como apoyo.
 - **Refuerzo y estadísticas:** historial de respuestas, errores, progreso por tema y bloque, sesiones y repaso.
 
-El progreso queda en este navegador. En el apartado «Tu progreso GSI», al final de la página, puedes exportarlo, importarlo o reiniciarlo. Exporta antes de cambiar de navegador o sustituir una práctica escrita: solo se conserva una sesión escrita actual. No se escriben datos en los JSON del sitio ni se sincronizan entre dispositivos.
+El progreso queda en el navegador y dispositivo donde estudias. En el apartado «Tu progreso GSI», al final de la página, puedes exportarlo, importarlo o reiniciarlo. Exporta una copia para pasar el progreso entre ordenador, tableta y móvil, y antes de sustituir una práctica escrita: solo se conserva una sesión escrita actual. No se escriben datos en los JSON del sitio ni se sincronizan automáticamente.
+
+Si ya estudiabas desde http://127.0.0.1:8765/, exporta allí tu progreso e impórtalo una vez en la versión publicada. El navegador considera ambas direcciones sitios diferentes.
+
+## Publicación
+
+El sitio es HTML, CSS, JavaScript y JSON estáticos. GitHub Pages lo sirve sin backend y sin proceso de compilación. La publicación no cambia el estado editorial de las preguntas: solo las preguntas activas y validadas entran en los entrenamientos y exámenes.
 
 ## Ejecutar todas las pruebas
 
