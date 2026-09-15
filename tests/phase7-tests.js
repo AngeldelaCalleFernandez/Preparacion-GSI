@@ -176,13 +176,14 @@ await test("un enlace HTTPS se conserva en DocumentFragment", () => {
 });
 await test("el servicio no escribe contenido en localStorage", () => assert(!serviceSource.includes("localStorage"), "El servicio usa localStorage."));
 await test("el servicio usa una lista cerrada de rutas", () => assert(serviceSource.includes("allowedPaths") && serviceSource.includes("CONTENT_PATH_RE"), "No se limita contentPath."));
-await test("los archivos protegidos no cambian", async () => {
-  const validator = await fetchText("../scripts/validate_phase7.py");
-  assert(validator.includes("fase-6-completada") && validator.includes("sha256"), "El validador no protege el estado previo.");
+await test("la auditoría verifica integridad de fuentes y derivados", async () => {
+  const validator = await fetchText("../scripts/validate_gsi_final.py");
+  assert(validator.includes("study_sha256") && validator.includes("gsi-document-register.json") && validator.includes("evidence_sha256"), "Faltan controles de integridad.");
 });
-await test("el informe de cobertura contiene el piloto y los pendientes", async () => {
-  const report = await fetchText("../docs/COBERTURA_TEMARIO_FASE_7.md");
-  assert(report.includes("B1-T01") && report.includes("B4-T10") && report.includes("Fase 7B"), "El informe no refleja la cobertura real.");
+
+await test("el informe de cobertura distingue contenido y preguntas pendientes", async () => {
+  const report = await fetchJson("../data/gsi-coverage-report.json");
+  assert(report.topics.length === 57 && report.topics.every((t) => t.has_source && t.study_characters > 1500 && Number.isInteger(t.active) && Number.isInteger(t.pending)), "Cobertura incompleta.");
 });
 
 summary.textContent = `${passed} pruebas aprobadas y ${failed} fallidas.`;

@@ -8,6 +8,7 @@ import hashlib
 import json
 import re
 import sys
+import subprocess
 import unicodedata
 import xml.etree.ElementTree as ET
 from collections import Counter
@@ -16,7 +17,8 @@ from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
 ROOT=Path(__file__).resolve().parents[1]
-DATE='2026-09-15'
+from datetime import date
+DATE=date.today().isoformat()
 COUNTS=[10,16,15,16]
 def load(p): return json.loads((ROOT/p).read_text('utf-8'))
 def sha(s): return hashlib.sha256(s.encode('utf-8')).hexdigest()
@@ -132,10 +134,39 @@ def main():
     for item in practice['library']:
         if item.get('localPath'):check((ROOT/item['localPath']).is_file(),item['id']+': biblioteca local accesible')
         if item['sourceType']=='support-a1':check('no constituye un simulacro fiel GSI' in item['description'],item['id']+': apoyo A1 etiquetado')
-    runtime=[ROOT/'index.html',*(ROOT/'assets').rglob('*.js'),*(ROOT/'assets').rglob('*.css'),*(ROOT/'content/generated').glob('*.html'),*(ROOT/'content/topics').glob('*.md')]
+    runtime=[ROOT/'index.html',ROOT/'review.html',*(ROOT/'assets').rglob('*.js'),*(ROOT/'assets').rglob('*.css'),*(ROOT/'content/generated').glob('*.html'),*(ROOT/'content/topics').glob('*.md')]
     for p in runtime:
         text=p.read_text('utf-8');check(not re.search(r'\b(?:TAI|tai|TODO|FIXME)\b|33 temas',text),p.relative_to(ROOT).as_posix()+': sin TAI ni marcadores pendientes activos')
         check(not re.search(r'gh[pousr]_[A-Za-z0-9]{30,}|AKIA[0-9A-Z]{16}|sk-proj-[A-Za-z0-9_-]{30,}',text),p.name+': sin patrones de credencial')
+    # Check relative paths from the two application entry points and their modules.
+    for p in [ROOT/'index.html',ROOT/'review.html',*(ROOT/'assets/js').glob('*.js')]:
+        text=p.read_text('utf-8')
+        if p.suffix=='.html':
+            page=Fragment();page.feed(text);links=page.links
+        else:
+            links=re.findall(r"(?:from\s+|import\s*)[\"'](\.[^\"']+)[\"']",text)
+        for link in links:
+            parts=urlsplit(link)
+            if parts.scheme or not parts.path:continue
+            destination=(p.parent/unquote(parts.path)).resolve()
+            check(not parts.path.startswith('/') and destination.is_relative_to(ROOT) and destination.is_file(),p.name+': ruta relativa resoluble '+link)
+    found=subprocess.run(['rg','--json','-i',r'\bTAI\b|33 temas','--glob','!logs/**','--glob','!tmp/**','.'],cwd=ROOT,capture_output=True,text=True,encoding='utf-8')
+    check(found.returncode in (0,1),'Búsqueda global de referencias históricas ejecutada')
+    matches=[]
+    for line in found.stdout.splitlines():
+        item=json.loads(line)
+        if item['type']!='match':continue
+        value=item['data'];path=value['path']['text'].replace('\\','/').removeprefix('./')
+        if path.startswith('archive/'):kind='archivo histórico excluido'
+        elif path.startswith(('docs/','PLAN_')) or path in ('README.md','AGENTS.md'):kind='documentación histórica o explicación de la migración'
+        elif path.startswith('tests/'):kind='regresión negativa y aislamiento del historial antiguo'
+        elif path.startswith('scripts/'):kind='control de exclusión o conservación del archivo'
+        elif path.startswith('documents/'):kind='documentación original conservada, no consumida como fuente GSI'
+        elif path in ('data/conversion_report.json','data/protected-artifacts.json'):kind='registro de integridad histórico, no consumido por la aplicación'
+        else:kind='SIN CLASIFICAR'
+        check(kind!='SIN CLASIFICAR','Referencia histórica clasificada: '+path+':'+str(value['line_number']))
+        matches.append({'path':path,'line':value['line_number'],'text':value['lines']['text'].rstrip(),'classification':kind})
+    save('logs/gsi-legacy-review.json',{'date':DATE,'pattern':r'\bTAI\b|33 temas','scope':'Archivos versionados y no ignorados; originales locales preservados fuera del runtime. Se excluyen logs para evitar autorreferencias y tmp.', 'matches':matches,'unclassified':sum(m['classification']=='SIN CLASIFICAR' for m in matches)})
     report['release_ready']=not errors and not blockers
     save('data/gsi-coverage-report.json',report)
     save('logs/gsi-final-validation.json',{'date':DATE,'checks_passed':len(checks),'errors':errors,'release_blockers':blockers,'ready':not errors and not blockers})

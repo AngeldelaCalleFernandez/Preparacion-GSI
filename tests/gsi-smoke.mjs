@@ -184,6 +184,22 @@ try {
     await page.setViewportSize({width:1365,height:900});
   });
 
+  await check("editorial review exposes source and preserves pending status", async () => {
+    const before=await page.evaluate(()=>JSON.stringify(Object.entries(localStorage)));
+    await page.goto(base.replace('index.html','review.html'));
+    await page.waitForFunction(()=>document.querySelector('#review-question').options.length===803);
+    await page.locator('#review-topic').selectOption('B4-T13');
+    assert.equal(await page.locator('#review-question option').count(),20);
+    const first=await page.locator('#review-content').innerText();
+    assert.match(first,/Texto de la sección/);assert.match(first,/pendiente de validación/);
+    assert.ok((await page.locator('#review-content pre').innerText()).length>100);
+    await page.locator('#review-next').click();assert.notEqual(await page.locator('#review-content').innerText(),first);
+    await page.locator('#review-topic').selectOption('');await page.locator('#review-search').fill('AI-GSI-B1-T03-001');
+    assert.equal(await page.locator('#review-question option').count(),1);
+    await page.setViewportSize({width:390,height:844});
+    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2),true);
+    assert.equal(await page.evaluate(()=>JSON.stringify(Object.entries(localStorage))),before);
+  });
   await check("no console errors or broken HTTP routes", () => { assert.deepEqual(consoleErrors, []); assert.deepEqual(broken, []); });
 } finally {
   await fs.mkdir(path.join(root, "logs"), { recursive: true });

@@ -4,7 +4,6 @@ const TOPIC_ID_RE = /^B[1-4]-T\d{2}$/;
 const SECTION_ID_RE = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const FORBIDDEN_ELEMENTS = new Set(["script", "style", "iframe", "object", "embed", "form", "base", "link"]);
 const URL_ATTRIBUTES = new Set(["href", "src", "xlink:href", "action", "formaction"]);
-const RAW_FORBIDDEN_RE = /<\s*\/?\s*(?:script|style|iframe|object|embed|form|base|link)\b|\son[a-z]+\s*=|(?:javascript|data|vbscript):/i;
 
 function isSafeUrl(value) {
   const trimmed = String(value || "").trim();

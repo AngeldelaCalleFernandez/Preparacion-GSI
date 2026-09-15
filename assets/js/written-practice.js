@@ -14,7 +14,7 @@ export function validateWrittenState(state, cases) {
   if (!state || state.version !== 1 || state.oppositionId !== "OPP-GSI" || state.syllabusId !== "SYL-GSI-2025" || !cases.some((c) => c.id === state.caseId)) return false;
   if (!Number.isFinite(Date.parse(state.startedAt)) || Date.parse(state.deadlineAt) - Date.parse(state.startedAt) !== 10800000 || (state.finishedAt !== null && (!Number.isFinite(Date.parse(state.finishedAt)) || Date.parse(state.finishedAt) < Date.parse(state.startedAt)))) return false;
   if (typeof state.outline !== "string" || !state.answers || Object.keys(state.answers).length !== 5 || ![1, 2, 3, 4, 5].every((n) => typeof state.answers[n] === "string")) return false;
-  return Object.entries(RUBRIC).every(([key, max]) => Number.isFinite(state.scores?.[key]) && state.scores[key] >= 0 && state.scores[key] <= max);
+  return state.scores !== null && typeof state.scores === "object" && !Array.isArray(state.scores) && Object.keys(state.scores).length === 4 && Object.entries(RUBRIC).every(([key, max]) => Number.isFinite(state.scores?.[key]) && state.scores[key] >= 0 && state.scores[key] <= max);
 }
 export function writtenRemaining(state, now = Date.now()) { return Math.max(0, (Date.parse(state.deadlineAt) - now) / 1000); }
 

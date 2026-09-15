@@ -1,12 +1,10 @@
-# Instrucciones del proyecto GSI A2
+# Instrucciones del proyecto TAI
 
 ## Alcance
 
 Estas instrucciones se aplican a todo el repositorio. El proyecto es una
-aplicación personal y estática para preparar Gestión de Sistemas e Informática
-de la Administración del Estado (GSI A2, ingreso libre): 57 temas según
-BOE-A-2025-26262, Anexo IX. Los planes y herramientas anteriores conservados
-en archive/ son históricos y no forman parte del producto activo.
+aplicación personal y estática para preparar las oposiciones de Técnicos
+Auxiliares de Informática de la Administración del Estado (TAI).
 
 La prioridad es mantener una solución sencilla, comprensible y fácil de
 ampliar por una sola persona. Evita arquitecturas empresariales, abstracciones

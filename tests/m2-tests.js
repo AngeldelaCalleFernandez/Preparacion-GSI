@@ -70,7 +70,7 @@ const [oppositions, syllabiCatalog, legacySyllabus, sources, topicContent, offic
   fetchText("../assets/js/syllabus-view.js?gsi2"),
   fetchText("../assets/js/app.js?gsi2"),
   fetchText("../index.html"),
-  fetchText("../scripts/validate_m2_runtime.py"),
+  fetchText("../scripts/validate_gsi_final.py"),
 ]);
 
 const runtimeContext = selectRuntimeContext(oppositions, syllabiCatalog);
@@ -177,7 +177,7 @@ await test("no hay dependencias externas", () => {
 });
 await test("no hay escritura de catálogo", () => assert(!catalogSource.includes("fetch(") && !catalogSource.includes("localStorage"), "El servicio de catálogo tiene efectos secundarios."));
 await test("los datos protegidos permanecen cubiertos por el validador", () => {
-  assert(["data/syllabus.json", "data/sources.json", "data/topic-content.json", "data/questions-official.json"].every((path) => validatorSource.includes(path)), "El validador no protege todos los datos requeridos.");
+  assert(["data/syllabus.json", "data/sources.json", "data/topic-content.json", "data/questions-{origin}.json"].every((path) => validatorSource.includes(path)), "El validador no protege todos los datos requeridos.");
 });
 await test("la materialización legacy coincide con el catálogo seleccionado", () => assert(validateLegacySyllabusCompatibility(runtimeContext, legacySyllabus), "La compatibilidad legacy no valida."));
 await test("los índices de aplicación siguen usando IDs legacy", () => {
