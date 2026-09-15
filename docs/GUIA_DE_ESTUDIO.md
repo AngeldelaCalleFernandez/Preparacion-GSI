@@ -4,9 +4,17 @@ Esta guía explica cómo usar la aplicación para estudiar, practicar y volver s
 
 **Tu recorrido habitual será: Temario → Entrenamiento → Refuerzo → Estadísticas.** Reserva Examen y Práctica escrita para sesiones más largas.
 
-## 1. Abrir la aplicación en tu ordenador
+## 1. Abrir la aplicación en ordenador, tableta o móvil
 
-Si ya tienes la aplicación abierta y puedes entrar en Temario, pasa al paso 2.
+1. Abre [la aplicación GSI A2](https://angeldelacallefernandez.github.io/TAI-GSI/) en el navegador de tu dispositivo.
+2. Guarda esa dirección en favoritos para volver fácilmente.
+3. Pulsa **Temario** para empezar. No necesitas instalar nada ni mantener encendido tu ordenador.
+
+Verás la portada **Gestión de Sistemas e Informática de la Administración del Estado — GSI A2**. Utiliza siempre el mismo navegador y perfil en cada dispositivo para recuperar su progreso. Si cambias de dispositivo, traslada una copia siguiendo el paso 10.
+
+### Opcional: usar la copia local preparada en tu ordenador
+
+Si prefieres estudiar desde la copia que ya tienes en `C:\TAI-proyecto`, sigue estos pasos en ese ordenador:
 
 1. Abre el menú Inicio de Windows, escribe **PowerShell** y ábrelo.
 2. Copia estas dos líneas, pégalas y pulsa Intro:
@@ -20,11 +28,11 @@ Set-Location -LiteralPath 'C:\TAI-proyecto'
 4. Abre tu navegador y entra en **http://127.0.0.1:8765/**.
 5. Guarda esa dirección en favoritos para volver a ella fácilmente.
 
-Verás la portada **Gestión de Sistemas e Informática de la Administración del Estado — GSI A2**. Utiliza siempre el mismo navegador, el mismo perfil y esa misma dirección para recuperar tu progreso.
+Esta dirección local guarda su propio progreso, separado del de la web publicada. Para trasladarlo, exporta una copia en la versión local e impórtala en la publicada siguiendo el paso 10.
 
 Cuando acabes, puedes cerrar el navegador. Para detener la aplicación, vuelve a PowerShell y pulsa **Ctrl+C**. El progreso ya guardado se conserva. Otro día, repite las dos líneas y abre tu favorito.
 
-No abras `index.html` con doble clic: los datos necesitan que la aplicación esté funcionando mediante la dirección anterior. El enlace local funciona en este ordenador; no abre automáticamente el proyecto desde tu móvil.
+No abras `index.html` con doble clic: la copia local necesita el servidor HTTP anterior. Para entrar desde otro dispositivo, utiliza el enlace de la web publicada al principio de este paso.
 
 ## 2. Saber para qué sirve cada apartado
 
@@ -183,7 +191,11 @@ El guardado normal es automático y local: se conserva en ese navegador, perfil 
 3. Pulsa **Importar copia GSI** y selecciona el archivo guardado.
 4. Confirma cuando la aplicación te lo pida y comprueba tus resultados después de la recarga. La copia sustituye los datos guardados que contiene; no combina historiales de varios dispositivos.
 
-Haz una copia al terminar la semana y antes de borrar datos del navegador, cambiar de ordenador o sustituir una práctica escrita. Mantener siempre `http://127.0.0.1:8765/` evita que otra dirección parezca una instalación sin progreso.
+Para continuar en otro dispositivo, lleva el archivo JSON a ese dispositivo y usa **Importar copia GSI** en la web publicada. Al cambiar otra vez, exporta allí la copia más reciente: los historiales no se sincronizan ni se combinan automáticamente.
+
+Si antes estudiabas en `http://127.0.0.1:8765/`, exporta allí tu progreso e impórtalo una vez en la web publicada. Son direcciones distintas y el navegador guarda sus datos por separado.
+
+Haz una copia al terminar la semana y antes de borrar datos del navegador, cambiar de ordenador o sustituir una práctica escrita. Usa siempre el mismo favorito, navegador y perfil para encontrar tus datos.
 
 Utiliza **Reiniciar todo el progreso GSI** únicamente si quieres empezar desde cero. Exporta antes si quieres poder recuperar lo que tenías.
 
@@ -206,7 +218,8 @@ Si todavía no tienes preguntas del tema, dedica esos 10 minutos a explicarlo po
 
 | Qué ocurre | Qué puedes hacer |
 | --- | --- |
-| La dirección no abre | Comprueba que PowerShell sigue abierto y que has ejecutado las dos líneas del paso 1. |
+| La web publicada no abre | Comprueba tu conexión a Internet y abre el enlace del paso 1. |
+| La dirección local no abre | Comprueba que PowerShell sigue abierto y que has ejecutado las dos líneas del apartado opcional del paso 1. |
 | PowerShell indica que el puerto está en uso | Abre la dirección habitual: puede que la aplicación ya estuviera funcionando. Si no aparece GSI, conserva el mensaje para resolverlo; cambiar de puerto cambia también dónde busca el navegador tu progreso. |
 | Aparece un error al abrir `index.html` | Utiliza la dirección HTTP del paso 1. |
 | No encuentro un tema | Vacía la búsqueda y deja todos los bloques, toda la cobertura y todos los estados. |

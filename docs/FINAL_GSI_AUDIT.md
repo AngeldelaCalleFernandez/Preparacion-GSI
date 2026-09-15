@@ -2,15 +2,19 @@
 
 Fecha: **15 de septiembre de 2026**. Rama: `gsi-only-final`.
 
-**Estado: implementación técnica utilizable; cierre editorial bloqueado.** Los 57 temas tienen apuntes completos y procedencia. Hay 959 preguntas activas, pero 40 temas no tienen ninguna activa y B1-T03 tiene 17. Las 803 preguntas generadas continúan pendientes. No se declara versión estable, publicación ni PR terminada.
+**Estado: aplicación publicada y utilizable; cierre editorial bloqueado.** Los 57 temas tienen apuntes completos y procedencia. Hay 959 preguntas activas, pero 40 temas no tienen ninguna activa y B1-T03 tiene 17. Las 803 preguntas generadas continúan pendientes. La publicación fue autorizada expresamente por el propietario; no equivale a declarar una versión estable ni una PR de cierre terminada.
 
-Commit de referencia del código: `57ede4b3200cfc2f7e03501741852001373a3d13`. El informe se guarda en un commit posterior para poder citar una revisión existente; el identificador del commit que contiene esta auditoría se obtiene con `git log -1 --format=%H -- docs/FINAL_GSI_AUDIT.md`.
+Commit de referencia de la suite del 15 de septiembre: `7cc25aede8b67f88027244696296fd92af73e8a9`. El informe se guarda en un commit posterior para poder citar una revisión existente; el identificador del commit que contiene esta auditoría se obtiene con `git log -1 --format=%H -- docs/FINAL_GSI_AUDIT.md`.
+
+Acceso público: [aplicación GSI A2](https://angeldelacallefernandez.github.io/TAI-GSI/) y [guía paso a paso](https://angeldelacallefernandez.github.io/TAI-GSI/docs/guia-de-estudio.html). GitHub Pages publica desde la raíz de `gsi-only-final`, con HTTPS y `.nojekyll`; se verificó el estado `built`. El progreso sigue siendo local a cada navegador y se traslada mediante exportación/importación.
 
 ## Fuentes y documentos
 
 Única raíz didáctica: [Drive autorizado](https://drive.google.com/drive/folders/1bmBgrybIUDyT1owpnooU8Oq5FH4wLrp2). El inventario contiene 139 registros de la estructura principal y 2338 elementos auxiliares (1906 archivos y 432 carpetas). El recorrido auxiliar registró 436 carpetas, incluidas sus raíces, y cero errores de listado. Inventariar un archivo no significa que se haya leído su contenido; se consumieron 50 documentos nativos de la estructura principal y se consultaron seis muestras auxiliares de índices/apoyo. No se identificó un banco de preguntas oficiales importable en lo consultado.
 
-Control externo: [BOE-A-2025-26262, Anexo IX](https://www.boe.es/buscar/doc.php?id=BOE-A-2025-26262). Los títulos y el orden de los 57 temas se comparan automáticamente contra su XML conservado. Distribución: bloque I 10, II 16, III 15 y IV 16. Las discrepancias del mapa auxiliar y el anterior catálogo de 55 temas están registradas en `data/gsi-map-review.json`.
+Control externo: [BOE-A-2025-26262, Anexo IX](https://www.boe.es/buscar/doc.php?id=BOE-A-2025-26262), consultado de nuevo el 15 de septiembre. Los títulos y el orden de los 57 temas se comparan automáticamente contra su XML conservado. Distribución: bloque I 10, II 16, III 15 y IV 16. Las discrepancias del mapa auxiliar y el anterior catálogo de 55 temas están registradas en `data/gsi-map-review.json`.
+
+La revisión complementaria de Drive del 15 de septiembre está en [gsi-source-recheck-2026-09-15.json](../logs/gsi-source-recheck-2026-09-15.json). Incluye la nueva carpeta de vigilancia y sus cinco subcarpetas, un aviso sobre Kubernetes que confirma el ya catalogado, y tres candidatos auxiliares: dos documentos de preguntas abiertas y un PDF de cero bytes. No aportan preguntas de cuatro alternativas importables para cubrir los temas pendientes. No se reemplaza el inventario histórico ni se contabilizan estas consultas como conversiones.
 
 | Fuente canónica | Documento | Revisión de origen |
 | --- | --- | --- |
@@ -129,7 +133,7 @@ Identidad única `OPP-GSI / SYL-GSI-2025`. Las claves lógicas `gsi.*` usan alma
 
 `archive/tai-before-gsi/` conserva datos, contenidos, pruebas, instrucciones y scripts de la aplicación anterior. `archive/gsi-migration-scripts/` conserva herramientas de migración de una sola ejecución. No se ejecutan desde sus ubicaciones archivadas. Los planes `PLAN_*`, los informes antiguos de fases/M0–M3, `data/protected-artifacts.json`, `data/conversion_report.json`, documentos anteriores y fuentes técnicas históricas permanecen como evidencia fuera del runtime.
 
-La búsqueda global `rg -i "\bTAI\b|33 temas"` se registra con archivo, línea, texto y clasificación en `logs/gsi-legacy-review.json`: 399 líneas encontradas en esta ejecución, 0 sin clasificar. Las coincidencias corresponden a historia conservada, pruebas de rechazo/aislamiento o controles de exclusión. Los activos `index.html`, `review.html`, `assets/`, los 57 temas y sus HTML no contienen TAI ni marcadores TODO/FIXME. No se han borrado originales para limpiar búsquedas. El inventario no enumera archivos ignorados ni se escanea recursivamente su propio log.
+La búsqueda global `rg -i "\bTAI\b|33 temas"` se registra con archivo, línea, texto y clasificación en `logs/gsi-legacy-review.json`: 406 líneas en la suite de referencia, 0 sin clasificar. Las coincidencias corresponden a historia conservada, pruebas de rechazo/aislamiento, controles de exclusión o nombres de rutas del repositorio. Los activos `index.html`, `review.html`, `assets/`, los 57 temas y sus HTML no contienen TAI ni marcadores TODO/FIXME. No se han borrado originales para limpiar búsquedas. El inventario no enumera archivos ignorados ni se escanea recursivamente su propio log; su última ejecución puede incluir nuevas líneas de documentación posteriores a la suite.
 
 ## Validación reproducible
 
@@ -140,7 +144,7 @@ Comando único: `python scripts/run_gsi_suite.py`. Requisitos y alternativa para
 | JSON contra esquemas | 18 archivos, 16 esquemas; 0 errores |
 | Referencias | 4 bloques, 57 temas, 21 documentos del catálogo de fuentes; 0 errores |
 | Integridad de preguntas | 1762 preguntas; 0 errores de estructura |
-| Validador final | 16607 controles correctos; 0 errores técnicos; 1 bloqueo editorial; código 2 |
+| Validador final | 16615 controles correctos en la suite de referencia; 0 errores técnicos; 1 bloqueo editorial; código 2 |
 | Sintaxis JavaScript | 37 módulos/archivos comprobados; 0 errores |
 | Unitarias GSI | 76 aprobadas; 0 fallidas |
 | Regresión en navegador | 288 aprobadas; 0 fallidas |
@@ -161,6 +165,8 @@ Las unitarias verifican, entre otros casos, 50 aciertos + 30 errores + 20 blanco
 
 El recorrido se ejecutó con Chrome sin interfaz, bajo `/gsi-test/`, en escritorio 1365×900 y móvil 390×844. Abrió los 57 apuntes, probó los 57 filtros (17 temas con respuesta y 40 con indisponibilidad explícita), cuatro bloques, mixto, errores, no vistas, simulacro completo, corrección, estadísticas/refuerzo, expiración y recarga de los dos temporizadores, autoevaluación escrita, exportación/reinicio/importación, navegación por teclado y la vista editorial sin mutaciones. Se inspeccionaron capturas de escritorio y móvil. No equivale a ejecutar test de contenido en los 40 temas todavía bloqueados.
 
+Tras corregir únicamente la documentación se volvió a comprobar la guía bajo una subruta HTTP: acceso desde Inicio, 12 pasos y sus anclas, comando local opcional, escritorio, móvil, estilos de impresión y vuelta a la aplicación; sin errores HTTP ni de consola. La versión Markdown y la HTML explican el mismo acceso público y traslado de progreso.
+
 ## Incidencias corregidas y límites
 
 - Se corrigieron el catálogo antiguo de 55 temas, rótulos auxiliares imprecisos y referencias a la aplicación previa.
@@ -171,12 +177,13 @@ El recorrido se ejecutó con Chrome sin interfaz, bajo `/gsi-test/`, en escritor
 - Se corrigió una expectativa del recorrido que buscaba un número donde la interfaz muestra «No hay preguntas activas». El estado vacío se prueba sin introducir preguntas pendientes.
 - La descarga DOCX y el lanzador de MarkItDown no fueron utilizables; se completaron las conversiones con contenido nativo y la API Python de MarkItDown, sin OCR.
 - La revisión automática de permisos rechazó la activación masiva sin revisión humana independiente. Los 803 borradores permanecen inactivos y se ha dejado la decisión pendiente al propietario; no se ha simulado una autorización.
-- No hay publicación GitHub Pages ni PR de cierre porque la condición exigida por el usuario —todas las comprobaciones verdes— todavía no se cumple. La compatibilidad HTTP estática y con subruta sí está probada localmente.
+- GitHub Pages está publicado por autorización expresa del propietario, con el estado editorial pendiente visible. No se prepara una PR de cierre ni se declara versión estable mientras la suite no alcance código 0.
+- Se corrigió la guía para comenzar por el acceso web desde cualquier dispositivo y explicar cómo trasladar progreso desde la copia local. El README vuelve a enumerar todas las herramientas necesarias para reproducir las pruebas.
 
 ## Archivos entregados y siguiente paso
 
 Principales archivos creados: `scripts/validate_gsi_final.py`, `scripts/run_gsi_suite.py`, importadores/compiladores GSI, `assets/js/written-practice.js`, `assets/js/progress-backup.js`, `assets/js/training-engine.js`, `assets/js/editorial-review.js`, `review.html`, los manifiestos `data/gsi-*`, los tres tests `tests/gsi-*.mjs`, 50 conversiones, 57 Markdown/HTML y la documentación actual. Se modificaron `index.html`, estilos, módulos existentes, catálogos, fuentes, bancos, esquemas, pruebas de regresión y `AGENTS.md`. El detalle de Git se obtiene comparando con `a8e2471`.
 
-Fase técnica completada: conversión, datos, aplicación, exámenes, refuerzo y documentación verificable. **Fase de versión estable pendiente:** resolver la revisión editorial del lote, regenerar solo aceptaciones válidas, repetir la suite y publicar/preparar PR únicamente con código 0. No faltan documentos canónicos por convertir; la limitación pendiente es la cobertura validada del banco.
+Fase técnica completada: conversión, datos, aplicación, exámenes, refuerzo, documentación y publicación de la versión utilizable autorizada. **Fase de versión estable pendiente:** resolver la revisión editorial del lote, regenerar solo aceptaciones válidas, repetir la suite y preparar el cierre únicamente con código 0. No faltan documentos canónicos por convertir; la limitación pendiente es la cobertura validada del banco.
 
 Comprobación adicional de conservación: los 20 scripts trasladados coinciden con su revisión anterior (normalizando finales de línea), sin pérdidas; cero coincidencias de los patrones de credenciales comprobados entre archivos versionados y no ignorados. Evidencia en `logs/gsi-preservation-check.json`. Se retiró una línea vacía sobrante al final de la copia histórica de instrucciones; el original permanece en el historial Git.

@@ -20,3 +20,5 @@ Control externo realizado el 14 de septiembre de 2026; informe consolidado el 15
 El mapa auxiliar abrevia algunos rótulos: B1-T03 amplía el nombre a «Gobierno y Administración» y B1-T04 menciona gobierno abierto. Se utilizan los títulos íntegros del BOE y se registran las diferencias en `data/gsi-map-review.json`. El catálogo anterior de 55 temas GSI se sustituye por los 57 oficiales.
 
 La revisión de vigencia no activa por sí sola las 803 preguntas generadas. Cualquier cambio de versión, norma o explicación exige revisar la pregunta afectada y renovar su registro editorial asociado a los hashes exactos.
+
+Comprobación adicional del 15 de septiembre: una ficha de vigilancia del corpus autorizado confirma el aviso UPD-2026-001 ya incorporado. Se contrastaron de nuevo el [anuncio de publicación](https://kubernetes.io/blog/2026/08/26/kubernetes-v1-37-release/) y las [ramas mantenidas](https://kubernetes.io/releases/). No se añade un aviso duplicado ni se modifica el manual V2.1. El [resumen público](../logs/gsi-source-recheck-2026-09-15.json) omite los metadatos privados, que se conservan localmente fuera de Git.

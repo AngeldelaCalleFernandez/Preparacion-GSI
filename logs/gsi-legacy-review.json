@@ -23,14 +23,44 @@
     },
     {
       "path": "README.md",
-      "line": 69,
-      "text": "- `archive/`, `PLAN_*`, los informes antiguos de `docs/`, `data/protected-artifacts.json`, `data/conversion_report.json` y los documentos ajenos a `documents/markdown/gsi/`: historia del proyecto TAI, sin carga desde el producto GSI. Los scripts archivados son evidencia de migración y no deben ejecutarse desde su nueva ubicación.",
+      "line": 9,
+      "text": "**[Abrir la aplicación GSI A2](https://angeldelacallefernandez.github.io/TAI-GSI/)**",
       "classification": "documentación histórica o explicación de la migración"
     },
     {
       "path": "README.md",
-      "line": 71,
-      "text": "La identidad activa es `OPP-GSI / SYL-GSI-2025`. El historial TAI permanece intacto y se excluye de cualquier importación o atribución automática de progreso a GSI.",
+      "line": 13,
+      "text": "Para empezar, consulta la [guía paso a paso](https://angeldelacallefernandez.github.io/TAI-GSI/docs/guia-de-estudio.html). Incluye un primer ejercicio, instrucciones de uso y una rutina de 45 minutos. También está disponible [en formato Markdown](docs/GUIA_DE_ESTUDIO.md).",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
+      "path": "README.md",
+      "line": 68,
+      "text": "git clone --branch gsi-only-final https://github.com/AngeldelaCalleFernandez/TAI-GSI.git",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
+      "path": "README.md",
+      "line": 69,
+      "text": "cd TAI-GSI",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
+      "path": "README.md",
+      "line": 89,
+      "text": "TAI-GSI/",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
+      "path": "README.md",
+      "line": 109,
+      "text": "La identidad activa es `OPP-GSI / SYL-GSI-2025`. El contenido y progreso históricos de TAI permanecen excluidos de la aplicación GSI.",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
+      "path": "README.md",
+      "line": 148,
+      "text": "También se comprueban puntuación, temporizadores, persistencia, exportación e importación, rutas relativas, procedencia, exclusión de preguntas pendientes y ausencia de referencias TAI en el producto activo.",
       "classification": "documentación histórica o explicación de la migración"
     },
     {
@@ -82,90 +112,6 @@
       "classification": "documentación histórica o explicación de la migración"
     },
     {
-      "path": "archive/gsi-migration-scripts/gsi-smoke-extras.js.txt",
-      "line": 66,
-      "text": "    await page.evaluate(()=>localStorage.setItem(\"tai.phase3.training.v1\",\"historical untouched\"));",
-      "classification": "archivo histórico excluido"
-    },
-    {
-      "path": "archive/gsi-migration-scripts/gsi-smoke-extras.js.txt",
-      "line": 71,
-      "text": "    assert.equal(await page.evaluate(()=>localStorage.getItem(\"tai.phase3.training.v1\")),\"historical untouched\");",
-      "classification": "archivo histórico excluido"
-    },
-    {
-      "path": "archive/gsi-migration-scripts/gsi-smoke-extras.js.txt",
-      "line": 87,
-      "text": "      const text=await page.locator(`[data-view=\"${route}\"]`).innerText();assert.doesNotMatch(text,/\\bTAI\\b|33 temas/);",
-      "classification": "archivo histórico excluido"
-    },
-    {
-      "path": "scripts/validate_gsi_final.py",
-      "line": 139,
-      "text": "        text=p.read_text('utf-8');check(not re.search(r'\\b(?:TAI|tai|TODO|FIXME)\\b|33 temas',text),p.relative_to(ROOT).as_posix()+': sin TAI ni marcadores pendientes activos')",
-      "classification": "control de exclusión o conservación del archivo"
-    },
-    {
-      "path": "scripts/validate_gsi_final.py",
-      "line": 153,
-      "text": "    found=subprocess.run(['rg','--json','-i',r'\\bTAI\\b|33 temas','--glob','!logs/**','--glob','!tmp/**','.'],cwd=ROOT,capture_output=True,text=True,encoding='utf-8')",
-      "classification": "control de exclusión o conservación del archivo"
-    },
-    {
-      "path": "scripts/validate_gsi_final.py",
-      "line": 169,
-      "text": "    save('logs/gsi-legacy-review.json',{'date':DATE,'pattern':r'\\bTAI\\b|33 temas','scope':'Archivos versionados y no ignorados; originales locales preservados fuera del runtime. Se excluyen logs para evitar autorreferencias y tmp.', 'matches':matches,'unclassified':sum(m['classification']=='SIN CLASIFICAR' for m in matches)})",
-      "classification": "control de exclusión o conservación del archivo"
-    },
-    {
-      "path": "archive/tai-before-gsi/tests/phase7b2-tests.js",
-      "line": 67,
-      "text": "  assert(sourceIndexes.sourcesById.get(\"SRC-BOE-2026-CODIGO-TAI\")?.documents.length, \"B1-T01 perdió fuentes históricas\");",
-      "classification": "archivo histórico excluido"
-    },
-    {
-      "path": "archive/tai-before-gsi/tests/phase7b2-tests.js",
-      "line": 108,
-      "text": "await test(\"la aplicación conserva exactamente 33 temas\", () => assert(index.topics.length === 33 && syllabus.blocks.flatMap((block) => block.topics).length === 33, \"Temario alterado\"));",
-      "classification": "archivo histórico excluido"
-    },
-    {
-      "path": "scripts/build_gsi_content.py",
-      "line": 40,
-      "text": "    archive = ROOT / 'archive/tai-before-gsi'",
-      "classification": "control de exclusión o conservación del archivo"
-    },
-    {
-      "path": "scripts/build_gsi_content.py",
-      "line": 50,
-      "text": "    save('archive/tai-before-gsi/README.md', '# Archivo histórico anterior a GSI\\n\\nCopia inmutable de datos y contenidos de la aplicación anterior. No se carga desde la aplicación GSI. Los identificadores locales coincidentes pertenecen a otra oposición y nunca deben importarse como progreso GSI.\\n')",
-      "classification": "control de exclusión o conservación del archivo"
-    },
-    {
-      "path": "archive/tai-before-gsi/tests/phase7b2-runner.html",
-      "line": 6,
-      "text": "    <title>Runner Fase 7B.2 · TAI</title>",
-      "classification": "archivo histórico excluido"
-    },
-    {
-      "path": "tests/m2-tests.js",
-      "line": 101,
-      "text": "  expectThrow(() => selectRuntimeContext(oppositions, syllabiCatalog, { oppositionId: \"OPP-TAI\", syllabusId: \"SYL-TAI-2025\" }), \"Se aceptó el programa histórico.\");",
-      "classification": "regresión negativa y aislamiento del historial antiguo"
-    },
-    {
-      "path": "archive/tai-before-gsi/tests/phase7-tests.js",
-      "line": 58,
-      "text": "await test(\"existen exactamente 33 registros de contenido\", () => assert(index.topics.length === 33, \"El índice no tiene 33 temas.\"));",
-      "classification": "archivo histórico excluido"
-    },
-    {
-      "path": "archive/tai-before-gsi/tests/phase7-runner.html",
-      "line": 6,
-      "text": "    <title>Runner Fase 7A · TAI</title>",
-      "classification": "archivo histórico excluido"
-    },
-    {
       "path": "tests/gsi-unit.mjs",
       "line": 46,
       "text": "test('Migración GSI no copia claves antiguas ni sin identidad',()=>{const raw=new Memory();raw.setItem('tai.phase3.training.v1','legacy untouched');raw.setItem('gsi.phase3.training.v1','unscoped untouched');const before=[...raw.map];const result=migrateV1ToV2(context,raw);assert.ok(result.ok);assert.equal(result.copied,0);assert.deepEqual([...raw.map],before);});",
@@ -190,102 +136,6 @@
       "classification": "regresión negativa y aislamiento del historial antiguo"
     },
     {
-      "path": "archive/tai-before-gsi/tests/phase6-tests.js",
-      "line": 278,
-      "text": "  const storage = memoryStorage({ \"tai.phase3.training.v1\": JSON.stringify({ version: 1, responses: [{ responseId: \"legacy-1\", questionId: item.id, selectedOption: \"B\", correct: false, answeredAt: NOW, origin: item.origin, blockId: item.block_id, topicId: item.topic_id, isDemo: false }] }) });",
-      "classification": "archivo histórico excluido"
-    },
-    {
-      "path": "archive/tai-before-gsi/tests/phase6-tests.js",
-      "line": 355,
-      "text": "  const storage = memoryStorage({ \"tai.phase3.training.v1\": JSON.stringify({ version: 1, responses: [{ responseId: \"rebuild-1\", questionId: item.id, selectedOption: \"A\", correct: true, answeredAt: NOW, origin: item.origin, blockId: item.block_id, topicId: item.topic_id, isDemo: false }] }) });",
-      "classification": "archivo histórico excluido"
-    },
-    {
-      "path": "archive/tai-before-gsi/tests/phase6-tests.js",
-      "line": 437,
-      "text": "  const storage = memoryStorage({ \"tai.phase3.training.v1\": JSON.stringify({ version: 1, responses: [{ responseId: \"again-1\", questionId: item.id, selectedOption: \"A\", correct: true, answeredAt: NOW, origin: item.origin, blockId: item.block_id, topicId: item.topic_id, isDemo: false }] }) });",
-      "classification": "archivo histórico excluido"
-    },
-    {
-      "path": "archive/tai-before-gsi/tests/phase6-tests.js",
-      "line": 454,
-      "text": "  const storage = memoryStorage({ \"tai.phase3.training.v1\": JSON.stringify({ version: 1, responses: [{ responseId: \"partial-1\", questionId: item.id, selectedOption: \"A\", correct: true, answeredAt: NOW, origin: item.origin, blockId: item.block_id, topicId: item.topic_id, isDemo: false }] }) });",
-      "classification": "archivo histórico excluido"
-    },
-    {
-      "path": "archive/tai-before-gsi/tests/phase6-tests.js",
-      "line": 466,
-      "text": "  const storage = memoryStorage({ \"tai.phase3.training.v1\": JSON.stringify({ version: 1, responses: [{ responseId: \"bad-1\", questionId: item.id, selectedOption: \"Z\", correct: \"sí\", answeredAt: NOW, origin: item.origin, blockId: item.block_id, topicId: item.topic_id, isDemo: false }] }) });",
-      "classification": "archivo histórico excluido"
-    },
-    {
-      "path": "archive/gsi-migration-scripts/adapt_gsi_regressions.py",
-      "line": 6,
-      "text": "archive=ROOT/'archive/tai-before-gsi/tests'",
-      "classification": "archivo histórico excluido"
-    },
-    {
-      "path": "archive/gsi-migration-scripts/adapt_gsi_regressions.py",
-      "line": 15,
-      "text": "            s=s.replace('tai.phase3.training.v1','gsi.phase3.training.v1')",
-      "classification": "archivo histórico excluido"
-    },
-    {
-      "path": "archive/gsi-migration-scripts/adapt_gsi_regressions.py",
-      "line": 16,
-      "text": "        if p.suffix=='.html': s=s.replace(' · TAI',' · GSI A2')",
-      "classification": "archivo histórico excluido"
-    },
-    {
-      "path": "archive/gsi-migration-scripts/adapt_gsi_regressions.py",
-      "line": 31,
-      "text": "replace(p,'\"OPP-TAI\" && runtimeContext.syllabusId === \"SYL-TAI-2025\"','\"OPP-GSI\" && runtimeContext.syllabusId === \"SYL-GSI-2025\"')",
-      "classification": "archivo histórico excluido"
-    },
-    {
-      "path": "archive/gsi-migration-scripts/adapt_gsi_regressions.py",
-      "line": 32,
-      "text": "replace(p,'selección actual OPP-TAI / SYL-TAI-2025','selección actual OPP-GSI / SYL-GSI-2025')",
-      "classification": "archivo histórico excluido"
-    },
-    {
-      "path": "archive/gsi-migration-scripts/adapt_gsi_regressions.py",
-      "line": 34,
-      "text": "  expectThrow(() => selectRuntimeContext(oppositions, syllabiCatalog, { oppositionId: \"OPP-TAI\", syllabusId: \"SYL-TAI-2025\" }), \"Se aceptó el programa histórico.\");",
-      "classification": "archivo histórico excluido"
-    },
-    {
-      "path": "archive/gsi-migration-scripts/adapt_gsi_regressions.py",
-      "line": 39,
-      "text": "replace(p,'se conservan los 33 temas TAI','se indexan los 57 temas GSI')",
-      "classification": "archivo histórico excluido"
-    },
-    {
-      "path": "archive/gsi-migration-scripts/adapt_gsi_regressions.py",
-      "line": 41,
-      "text": "replace(p,'ruta canónica TAI','ruta canónica GSI')",
-      "classification": "archivo histórico excluido"
-    },
-    {
-      "path": "archive/gsi-migration-scripts/adapt_gsi_regressions.py",
-      "line": 53,
-      "text": "replace(p,'33 registros','57 registros');replace(p,'index.topics.length === 33','index.topics.length === 57');replace(p,'no tiene 33 temas','no tiene 57 temas')",
-      "classification": "archivo histórico excluido"
-    },
-    {
-      "path": "archive/gsi-migration-scripts/adapt_gsi_regressions.py",
-      "line": 83,
-      "text": "replace(p,'SRC-BOE-2026-CODIGO-TAI','SRC-BOE-GSI-2025')",
-      "classification": "archivo histórico excluido"
-    },
-    {
-      "path": "archive/gsi-migration-scripts/adapt_gsi_regressions.py",
-      "line": 98,
-      "text": "replace(p,'exactamente 33 temas','exactamente 57 temas');replace(p,'index.topics.length === 33','index.topics.length === 57');replace(p,'block.topics).length === 33','block.topics).length === 57')",
-      "classification": "archivo histórico excluido"
-    },
-    {
       "path": "tests/gsi-smoke.mjs",
       "line": 158,
       "text": "    await page.evaluate(()=>localStorage.setItem(\"tai.phase3.training.v1\",\"historical untouched\"));",
@@ -302,6 +152,66 @@
       "line": 179,
       "text": "      const text=await page.locator(`[data-view=\"${route}\"]`).innerText();assert.doesNotMatch(text,/\\bTAI\\b|33 temas/);",
       "classification": "regresión negativa y aislamiento del historial antiguo"
+    },
+    {
+      "path": "tests/m2-tests.js",
+      "line": 101,
+      "text": "  expectThrow(() => selectRuntimeContext(oppositions, syllabiCatalog, { oppositionId: \"OPP-TAI\", syllabusId: \"SYL-TAI-2025\" }), \"Se aceptó el programa histórico.\");",
+      "classification": "regresión negativa y aislamiento del historial antiguo"
+    },
+    {
+      "path": "scripts/validate_gsi_final.py",
+      "line": 139,
+      "text": "        text=p.read_text('utf-8');check(not re.search(r'\\b(?:TAI|tai|TODO|FIXME)\\b|33 temas',text),p.relative_to(ROOT).as_posix()+': sin TAI ni marcadores pendientes activos')",
+      "classification": "control de exclusión o conservación del archivo"
+    },
+    {
+      "path": "scripts/validate_gsi_final.py",
+      "line": 153,
+      "text": "    found=subprocess.run(['rg','--json','-i',r'\\bTAI\\b|33 temas','--glob','!logs/**','--glob','!tmp/**','.'],cwd=ROOT,capture_output=True,text=True,encoding='utf-8')",
+      "classification": "control de exclusión o conservación del archivo"
+    },
+    {
+      "path": "scripts/validate_gsi_final.py",
+      "line": 169,
+      "text": "    save('logs/gsi-legacy-review.json',{'date':DATE,'pattern':r'\\bTAI\\b|33 temas','scope':'Archivos versionados y no ignorados; originales locales preservados fuera del runtime. Se excluyen logs para evitar autorreferencias y tmp.', 'matches':matches,'unclassified':sum(m['classification']=='SIN CLASIFICAR' for m in matches)})",
+      "classification": "control de exclusión o conservación del archivo"
+    },
+    {
+      "path": "scripts/build_gsi_content.py",
+      "line": 40,
+      "text": "    archive = ROOT / 'archive/tai-before-gsi'",
+      "classification": "control de exclusión o conservación del archivo"
+    },
+    {
+      "path": "scripts/build_gsi_content.py",
+      "line": 50,
+      "text": "    save('archive/tai-before-gsi/README.md', '# Archivo histórico anterior a GSI\\n\\nCopia inmutable de datos y contenidos de la aplicación anterior. No se carga desde la aplicación GSI. Los identificadores locales coincidentes pertenecen a otra oposición y nunca deben importarse como progreso GSI.\\n')",
+      "classification": "control de exclusión o conservación del archivo"
+    },
+    {
+      "path": "archive/tai-before-gsi/tests/phase7b2-tests.js",
+      "line": 67,
+      "text": "  assert(sourceIndexes.sourcesById.get(\"SRC-BOE-2026-CODIGO-TAI\")?.documents.length, \"B1-T01 perdió fuentes históricas\");",
+      "classification": "archivo histórico excluido"
+    },
+    {
+      "path": "archive/tai-before-gsi/tests/phase7b2-tests.js",
+      "line": 108,
+      "text": "await test(\"la aplicación conserva exactamente 33 temas\", () => assert(index.topics.length === 33 && syllabus.blocks.flatMap((block) => block.topics).length === 33, \"Temario alterado\"));",
+      "classification": "archivo histórico excluido"
+    },
+    {
+      "path": "archive/tai-before-gsi/tests/phase7b2-runner.html",
+      "line": 6,
+      "text": "    <title>Runner Fase 7B.2 · TAI</title>",
+      "classification": "archivo histórico excluido"
+    },
+    {
+      "path": "archive/tai-before-gsi/tests/phase7-tests.js",
+      "line": 58,
+      "text": "await test(\"existen exactamente 33 registros de contenido\", () => assert(index.topics.length === 33, \"El índice no tiene 33 temas.\"));",
+      "classification": "archivo histórico excluido"
     },
     {
       "path": "archive/tai-before-gsi/tests/m2-tests.js",
@@ -334,15 +244,51 @@
       "classification": "archivo histórico excluido"
     },
     {
-      "path": "archive/tai-before-gsi/tests/phase6-runner.html",
-      "line": 6,
-      "text": "    <title>Runner Fase 6 · TAI</title>",
-      "classification": "archivo histórico excluido"
-    },
-    {
       "path": "archive/tai-before-gsi/tests/m2-runner.html",
       "line": 6,
       "text": "    <title>Runner M2 · TAI</title>",
+      "classification": "archivo histórico excluido"
+    },
+    {
+      "path": "archive/tai-before-gsi/tests/phase7-runner.html",
+      "line": 6,
+      "text": "    <title>Runner Fase 7A · TAI</title>",
+      "classification": "archivo histórico excluido"
+    },
+    {
+      "path": "archive/tai-before-gsi/tests/phase6-tests.js",
+      "line": 278,
+      "text": "  const storage = memoryStorage({ \"tai.phase3.training.v1\": JSON.stringify({ version: 1, responses: [{ responseId: \"legacy-1\", questionId: item.id, selectedOption: \"B\", correct: false, answeredAt: NOW, origin: item.origin, blockId: item.block_id, topicId: item.topic_id, isDemo: false }] }) });",
+      "classification": "archivo histórico excluido"
+    },
+    {
+      "path": "archive/tai-before-gsi/tests/phase6-tests.js",
+      "line": 355,
+      "text": "  const storage = memoryStorage({ \"tai.phase3.training.v1\": JSON.stringify({ version: 1, responses: [{ responseId: \"rebuild-1\", questionId: item.id, selectedOption: \"A\", correct: true, answeredAt: NOW, origin: item.origin, blockId: item.block_id, topicId: item.topic_id, isDemo: false }] }) });",
+      "classification": "archivo histórico excluido"
+    },
+    {
+      "path": "archive/tai-before-gsi/tests/phase6-tests.js",
+      "line": 437,
+      "text": "  const storage = memoryStorage({ \"tai.phase3.training.v1\": JSON.stringify({ version: 1, responses: [{ responseId: \"again-1\", questionId: item.id, selectedOption: \"A\", correct: true, answeredAt: NOW, origin: item.origin, blockId: item.block_id, topicId: item.topic_id, isDemo: false }] }) });",
+      "classification": "archivo histórico excluido"
+    },
+    {
+      "path": "archive/tai-before-gsi/tests/phase6-tests.js",
+      "line": 454,
+      "text": "  const storage = memoryStorage({ \"tai.phase3.training.v1\": JSON.stringify({ version: 1, responses: [{ responseId: \"partial-1\", questionId: item.id, selectedOption: \"A\", correct: true, answeredAt: NOW, origin: item.origin, blockId: item.block_id, topicId: item.topic_id, isDemo: false }] }) });",
+      "classification": "archivo histórico excluido"
+    },
+    {
+      "path": "archive/tai-before-gsi/tests/phase6-tests.js",
+      "line": 466,
+      "text": "  const storage = memoryStorage({ \"tai.phase3.training.v1\": JSON.stringify({ version: 1, responses: [{ responseId: \"bad-1\", questionId: item.id, selectedOption: \"Z\", correct: \"sí\", answeredAt: NOW, origin: item.origin, blockId: item.block_id, topicId: item.topic_id, isDemo: false }] }) });",
+      "classification": "archivo histórico excluido"
+    },
+    {
+      "path": "archive/tai-before-gsi/tests/phase6-runner.html",
+      "line": 6,
+      "text": "    <title>Runner Fase 6 · TAI</title>",
       "classification": "archivo histórico excluido"
     },
     {
@@ -356,6 +302,12 @@
       "line": 6,
       "text": "    <title>Runner Fase 5 · TAI</title>",
       "classification": "archivo histórico excluido"
+    },
+    {
+      "path": "documents/sources/technical/manifest.json",
+      "line": 3,
+      "text": "    \"title\": \"Manifiesto de fuentes técnicas primarias TAI\",",
+      "classification": "documentación original conservada, no consumida como fuente GSI"
     },
     {
       "path": "archive/tai-before-gsi/tests/m3-tests.js",
@@ -406,6 +358,186 @@
       "classification": "archivo histórico excluido"
     },
     {
+      "path": "docs/FINAL_GSI_AUDIT.md",
+      "line": 9,
+      "text": "Acceso público: [aplicación GSI A2](https://angeldelacallefernandez.github.io/TAI-GSI/) y [guía paso a paso](https://angeldelacallefernandez.github.io/TAI-GSI/docs/guia-de-estudio.html). GitHub Pages publica desde la raíz de `gsi-only-final`, con HTTPS y `.nojekyll`; se verificó el estado `built`. El progreso sigue siendo local a cada navegador y se traslada mediante exportación/importación.",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
+      "path": "docs/FINAL_GSI_AUDIT.md",
+      "line": 130,
+      "text": "Identidad única `OPP-GSI / SYL-GSI-2025`. Las claves lógicas `gsi.*` usan almacenamiento versionado `oposiciones.OPP-GSI.SYL-GSI-2025.*.v2`; la práctica usa `gsi.OPP-GSI.SYL-GSI-2025.written.v1`. No se copian claves TAI ni datos sin identidad GSI. Exportación/importación valida identidades, preguntas, referencias, opciones, sesiones, plazos y rúbrica; el reinicio afecta exclusivamente al progreso GSI. Se admite el estado nulo de una sesión borrada y se intenta revertir cualquier escritura parcial que falle.",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
+      "path": "docs/FINAL_GSI_AUDIT.md",
+      "line": 134,
+      "text": "`archive/tai-before-gsi/` conserva datos, contenidos, pruebas, instrucciones y scripts de la aplicación anterior. `archive/gsi-migration-scripts/` conserva herramientas de migración de una sola ejecución. No se ejecutan desde sus ubicaciones archivadas. Los planes `PLAN_*`, los informes antiguos de fases/M0–M3, `data/protected-artifacts.json`, `data/conversion_report.json`, documentos anteriores y fuentes técnicas históricas permanecen como evidencia fuera del runtime.",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
+      "path": "docs/FINAL_GSI_AUDIT.md",
+      "line": 136,
+      "text": "La búsqueda global `rg -i \"\\bTAI\\b|33 temas\"` se registra con archivo, línea, texto y clasificación en `logs/gsi-legacy-review.json`: 406 líneas en la suite de referencia, 0 sin clasificar. Las coincidencias corresponden a historia conservada, pruebas de rechazo/aislamiento, controles de exclusión o nombres de rutas del repositorio. Los activos `index.html`, `review.html`, `assets/`, los 57 temas y sus HTML no contienen TAI ni marcadores TODO/FIXME. No se han borrado originales para limpiar búsquedas. El inventario no enumera archivos ignorados ni se escanea recursivamente su propio log; su última ejecución puede incluir nuevas líneas de documentación posteriores a la suite.",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
+      "path": "docs/FINAL_GSI_AUDIT.md",
+      "line": 176,
+      "text": "- Las primeras regresiones fallaron por contratos congelados (33 temas, GSI inactivo y claves antiguas). Se adaptaron a los contratos GSI conservando pruebas de puntuación, aislamiento y seguridad. El log inicial se conserva en `logs/gsi-regression-initial.json`.",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
+      "path": "docs/COBERTURA_TEMARIO_FASE_7.md",
+      "line": 9,
+      "text": "| B1-T01 | partial | needs-review | 5 | 4 | SRC-BOE-2026-CODIGO-TAI | Cobertura pendiente | Fuente local verificable para completar una guía editorial de estudio que relacione todos los subapartados del tema sin sustituir el texto constitucional. |",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
+      "path": "docs/CATALOGO_MULTI_OPOSICION_M1.md",
+      "line": 7,
+      "text": "TAI y GSI. `data/syllabi-catalog.json` registra por separado los programas que",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
+      "path": "docs/CATALOGO_MULTI_OPOSICION_M1.md",
+      "line": 20,
+      "text": "ejemplo `OPP-TAI`. Un syllabus es una versión concreta y fechable de su programa,",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
+      "path": "docs/CATALOGO_MULTI_OPOSICION_M1.md",
+      "line": 21,
+      "text": "por ejemplo `SYL-TAI-2025`. Esta separación permite que una oposición tenga",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
+      "path": "docs/CATALOGO_MULTI_OPOSICION_M1.md",
+      "line": 24,
+      "text": "## 4. TAI y GSI tienen programas distintos",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
+      "path": "docs/CATALOGO_MULTI_OPOSICION_M1.md",
+      "line": 26,
+      "text": "TAI y GSI son cuerpos diferentes y sus programas oficiales no son",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
+      "path": "docs/CATALOGO_MULTI_OPOSICION_M1.md",
+      "line": 33,
+      "text": "- Oposición: `OPP-TAI` y `OPP-GSI`, estables y sin año.",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
+      "path": "docs/CATALOGO_MULTI_OPOSICION_M1.md",
+      "line": 34,
+      "text": "- Syllabus: `SYL-TAI-2025` y `SYL-GSI-2025`, ligados a la convocatoria.",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
+      "path": "docs/CATALOGO_MULTI_OPOSICION_M1.md",
+      "line": 35,
+      "text": "- Bloque TAI: `B1` sigue operativo; `TAI-B1` es una reserva informativa.",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
+      "path": "docs/CATALOGO_MULTI_OPOSICION_M1.md",
+      "line": 36,
+      "text": "- Tema TAI: `B1-T01` sigue operativo; `TAI-B1-T01` es una reserva informativa.",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
+      "path": "docs/CATALOGO_MULTI_OPOSICION_M1.md",
+      "line": 50,
+      "text": "## 7. TAI-B1-T01 todavía no es operativo",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
+      "path": "docs/CATALOGO_MULTI_OPOSICION_M1.md",
+      "line": 52,
+      "text": "`TAI-B1-T01` solo expresa la identidad canónica que podría adoptarse en una fase",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
+      "path": "docs/CATALOGO_MULTI_OPOSICION_M1.md",
+      "line": 81,
+      "text": "M1 se apoya en la etiqueta anotada `m0-linea-base-tai` y conserva los hashes y",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
+      "path": "docs/CARGADOR_RUTAS_MULTI_OPOSICION_M2.md",
+      "line": 6,
+      "text": "contenido editorial ni persistencia: conserva TAI como el único contexto que la",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
+      "path": "docs/CARGADOR_RUTAS_MULTI_OPOSICION_M2.md",
+      "line": 24,
+      "text": "Con los catálogos de M1, el único resultado es `OPP-TAI` con",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
+      "path": "docs/CARGADOR_RUTAS_MULTI_OPOSICION_M2.md",
+      "line": 25,
+      "text": "`SYL-TAI-2025`. TAI continúa siendo el contexto actual porque es el único que",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
+      "path": "docs/CARGADOR_RUTAS_MULTI_OPOSICION_M2.md",
+      "line": 31,
+      "text": "TAI. La ruta se obtiene de `legacy_source_path` del contexto elegido y se",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
+      "path": "docs/CARGADOR_RUTAS_MULTI_OPOSICION_M2.md",
+      "line": 68,
+      "text": "Los registros v1 se siguen interpretando como TAI por compatibilidad histórica.",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
+      "path": "docs/CARGADOR_RUTAS_MULTI_OPOSICION_M2.md",
+      "line": 71,
+      "text": "M0 sigue siendo la línea base de datos y contenido TAI protegido; M1 aporta los",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
+      "path": "docs/PRUEBAS_MANUALES_M2.md",
+      "line": 11,
+      "text": "| M2-02 | Listado de `#temario` | NO EJECUTADA | Muestra 4 bloques y 33 temas. |",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
+      "path": "docs/PRUEBAS_MANUALES_FASE_7B_2.md",
+      "line": 58,
+      "text": "  **APROBADA**. Cargó los 33 temas y desapareció el error anterior.",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
+      "path": "docs/BASELINE_TAI_M0.md",
+      "line": 1,
+      "text": "# Línea base protegida TAI — Fase M0",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
+      "path": "docs/BASELINE_TAI_M0.md",
+      "line": 5,
+      "text": "M0 fija una línea base documental y verificable de TAI antes de cualquier",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
+      "path": "docs/BASELINE_TAI_M0.md",
+      "line": 83,
+      "text": "Los valores `TAI-B1-T01` y `TAI-B1-T02` son únicamente reservas documentales de",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
+      "path": "docs/BASELINE_TAI_M0.md",
+      "line": 112,
+      "text": "una arquitectura multioposición. El código `TAI` del manifiesto es metadato",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
       "path": "archive/tai-before-gsi/scripts/validate_phase7.py",
       "line": 59,
       "text": "ABSOLUTE_PATH_RE = re.compile(r\"(?:[A-Za-z]:\\\\|C:/TAI-proyecto)\", re.IGNORECASE)",
@@ -418,10 +550,34 @@
       "classification": "archivo histórico excluido"
     },
     {
+      "path": "docs/PRUEBAS_MANUALES_FASE_7.md",
+      "line": 9,
+      "text": "| M-01 | APROBADA | Ejecutada en navegador: `#temario` mostró 33 temas. |",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
+      "path": "docs/PRUEBAS_MANUALES_FASE_7.md",
+      "line": 48,
+      "text": "- M-02 y M-04: el filtro por Bloque I mostró 9 de 33 temas; al seleccionar",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
       "path": "archive/tai-before-gsi/scripts/validate_phase6.py",
       "line": 160,
       "text": "    for key in (\"tai.analytics.real.v1\", \"tai.analytics.demo.v1\"):",
       "classification": "archivo histórico excluido"
+    },
+    {
+      "path": "docs/PERSISTENCIA_MULTI_OPOSICION_M3.md",
+      "line": 13,
+      "text": "Se conservan exactamente `tai.phase3.training.v1`, los dos contratos de examen activo, los dos de refuerzo y los dos de analítica. Son el origen histórico de la migración.",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
+      "path": "docs/PERSISTENCIA_MULTI_OPOSICION_M3.md",
+      "line": 25,
+      "text": "Las claves físicas siguen `oposiciones.<OPPOSITION_ID>.<SYLLABUS_ID>.<TIPO>.v2`. Por ejemplo, el contexto TAI actual produce `oposiciones.OPP-TAI.SYL-TAI-2025.training.v2`.",
+      "classification": "documentación histórica o explicación de la migración"
     },
     {
       "path": "archive/tai-before-gsi/scripts/validate_phase5.py",
@@ -446,6 +602,66 @@
       "line": 182,
       "text": "        errors.append(\"ERROR: la interfaz requiere un temario de 4 bloques y 33 temas.\")",
       "classification": "archivo histórico excluido"
+    },
+    {
+      "path": "docs/GUIA_DE_ESTUDIO.md",
+      "line": 9,
+      "text": "1. Abre [la aplicación GSI A2](https://angeldelacallefernandez.github.io/TAI-GSI/) en el navegador de tu dispositivo.",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
+      "path": "docs/GUIA_DE_ESTUDIO.md",
+      "line": 17,
+      "text": "Si prefieres estudiar desde la copia que ya tienes en `C:\\TAI-proyecto`, sigue estos pasos en ese ordenador:",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
+      "path": "docs/GUIA_DE_ESTUDIO.md",
+      "line": 23,
+      "text": "Set-Location -LiteralPath 'C:\\TAI-proyecto'",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
+      "path": "docs/PRUEBAS_MANUALES_FASE_3.md",
+      "line": 14,
+      "text": "| M-01 | APROBADA | Abra `http://localhost:8000/`. Espere a que termine la carga. | Inicio visible, sin error de carga, con 4 bloques, 33 temas, 0 preguntas reales activas y el número de actualizaciones catalogadas. |",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
+      "path": "docs/PRUEBAS_MANUALES_FASE_3.md",
+      "line": 15,
+      "text": "| M-02 | APROBADA | Abra `http://localhost:8000/#temario`. Expanda los cuatro bloques uno a uno. | Navegación y URL por hash correctas; se ven 4 bloques y exactamente 33 temas, cada uno con sus fuentes. |",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
+      "path": "docs/PRUEBAS_MANUALES_FASE_3.md",
+      "line": 33,
+      "text": "- 2026-07-30 · Navegador integrado de Codex · M-02 APROBADA: `#temario` cargó los cuatro bloques; los cuatro se desplegaron y se comprobaron 33 temas visibles.",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
+      "path": "docs/PRUEBAS_MANUALES_FASE_3.md",
+      "line": 43,
+      "text": "- 2026-07-30 · Navegador integrado de Codex · M-11 NO EJECUTADA: la política de seguridad del navegador integrado bloqueó la navegación a `file:///C:/TAI-proyecto/index.html`. No se pudo comprobar el mensaje explicativo sin sortear esa política.",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
+      "path": "docs/guia-de-estudio.html",
+      "line": 29,
+      "text": "<ol><li>Abre <a href=\"https://angeldelacallefernandez.github.io/TAI-GSI/\">la aplicación GSI A2</a> en el navegador de tu dispositivo.</li><li>Guarda esa dirección en favoritos para volver fácilmente.</li><li>Pulsa <strong>Temario</strong> para empezar. No necesitas instalar nada ni mantener encendido tu ordenador.</li></ol>",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
+      "path": "docs/guia-de-estudio.html",
+      "line": 32,
+      "text": "<p>Si prefieres estudiar desde la copia que ya tienes en <code>C:\\TAI-proyecto</code>, sigue estos pasos en ese ordenador:</p>",
+      "classification": "documentación histórica o explicación de la migración"
+    },
+    {
+      "path": "docs/guia-de-estudio.html",
+      "line": 34,
+      "text": "<pre tabindex=\"0\" aria-label=\"Comandos para abrir la aplicación\"><code>Set-Location -LiteralPath &#x27;C:\\TAI-proyecto&#x27;",
+      "classification": "documentación histórica o explicación de la migración"
     },
     {
       "path": "archive/tai-before-gsi/scripts/validate_m3_persistence.py",
@@ -499,6 +715,30 @@
       "path": "archive/tai-before-gsi/scripts/validate_m3_persistence.py",
       "line": 168,
       "text": "    for forbidden in (\"OPP-TAI\", \"SYL-TAI-2025\", \"OPP-GSI\", \"SYL-GSI-2025\"):",
+      "classification": "archivo histórico excluido"
+    },
+    {
+      "path": "archive/tai-before-gsi/data/topic-content.json",
+      "line": 19,
+      "text": "              \"sourceId\": \"SRC-BOE-2026-CODIGO-TAI\",",
+      "classification": "archivo histórico excluido"
+    },
+    {
+      "path": "archive/tai-before-gsi/data/topic-content.json",
+      "line": 31,
+      "text": "              \"sourceId\": \"SRC-BOE-2026-CODIGO-TAI\",",
+      "classification": "archivo histórico excluido"
+    },
+    {
+      "path": "archive/tai-before-gsi/data/topic-content.json",
+      "line": 43,
+      "text": "              \"sourceId\": \"SRC-BOE-2026-CODIGO-TAI\",",
+      "classification": "archivo histórico excluido"
+    },
+    {
+      "path": "archive/tai-before-gsi/data/topic-content.json",
+      "line": 55,
+      "text": "              \"sourceId\": \"SRC-BOE-2026-CODIGO-TAI\",",
       "classification": "archivo histórico excluido"
     },
     {
@@ -571,6 +811,12 @@
       "path": "archive/tai-before-gsi/scripts/validate_m2_runtime.py",
       "line": 301,
       "text": "    for required in (\"#inicio\", \"4 bloques y 33 temas\", \"modo demo\", \"gsi\", \"tests/m2-runner.html\"):",
+      "classification": "archivo histórico excluido"
+    },
+    {
+      "path": "archive/tai-before-gsi/data/syllabus.json",
+      "line": 3,
+      "text": "    \"title\": \"Temario TAI - ingreso libre\",",
       "classification": "archivo histórico excluido"
     },
     {
@@ -838,72 +1084,6 @@
       "classification": "archivo histórico excluido"
     },
     {
-      "path": "archive/tai-before-gsi/scripts/validate_m0_baseline.py",
-      "line": 2,
-      "text": "\"\"\"Deterministic, read-only validator for the protected TAI M0 baseline.\"\"\"",
-      "classification": "archivo histórico excluido"
-    },
-    {
-      "path": "archive/tai-before-gsi/scripts/validate_m0_baseline.py",
-      "line": 395,
-      "text": "    print(\"OK: línea base TAI M0 validada en modo de solo lectura.\")",
-      "classification": "archivo histórico excluido"
-    },
-    {
-      "path": "archive/tai-before-gsi/scripts/topic_content_lib.py",
-      "line": 111,
-      "text": "        raise TopicContentError(f\"data/syllabus.json debe contener 33 temas; se encontraron {len(topic_map)}.\")",
-      "classification": "archivo histórico excluido"
-    },
-    {
-      "path": "archive/tai-before-gsi/scripts/technical_source_lib.py",
-      "line": 189,
-      "text": "    request = Request(str(download_url), headers={\"User-Agent\": \"TAI-source-verifier/1.0\"})",
-      "classification": "archivo histórico excluido"
-    },
-    {
-      "path": "archive/tai-before-gsi/scripts/convert_documents.py",
-      "line": 2,
-      "text": "\"\"\"Safe, repeatable document conversion for the TAI project.",
-      "classification": "archivo histórico excluido"
-    },
-    {
-      "path": "archive/tai-before-gsi/data/topic-content.json",
-      "line": 19,
-      "text": "              \"sourceId\": \"SRC-BOE-2026-CODIGO-TAI\",",
-      "classification": "archivo histórico excluido"
-    },
-    {
-      "path": "archive/tai-before-gsi/data/topic-content.json",
-      "line": 31,
-      "text": "              \"sourceId\": \"SRC-BOE-2026-CODIGO-TAI\",",
-      "classification": "archivo histórico excluido"
-    },
-    {
-      "path": "archive/tai-before-gsi/data/topic-content.json",
-      "line": 43,
-      "text": "              \"sourceId\": \"SRC-BOE-2026-CODIGO-TAI\",",
-      "classification": "archivo histórico excluido"
-    },
-    {
-      "path": "archive/tai-before-gsi/data/topic-content.json",
-      "line": 55,
-      "text": "              \"sourceId\": \"SRC-BOE-2026-CODIGO-TAI\",",
-      "classification": "archivo histórico excluido"
-    },
-    {
-      "path": "archive/tai-before-gsi/data/syllabus.json",
-      "line": 3,
-      "text": "    \"title\": \"Temario TAI - ingreso libre\",",
-      "classification": "archivo histórico excluido"
-    },
-    {
-      "path": "documents/sources/technical/manifest.json",
-      "line": 3,
-      "text": "    \"title\": \"Manifiesto de fuentes técnicas primarias TAI\",",
-      "classification": "documentación original conservada, no consumida como fuente GSI"
-    },
-    {
       "path": "archive/tai-before-gsi/data/syllabi-catalog.json",
       "line": 11,
       "text": "      \"id\": \"SYL-TAI-2025\",",
@@ -1144,6 +1324,24 @@
       "classification": "archivo histórico excluido"
     },
     {
+      "path": "archive/tai-before-gsi/scripts/validate_m0_baseline.py",
+      "line": 2,
+      "text": "\"\"\"Deterministic, read-only validator for the protected TAI M0 baseline.\"\"\"",
+      "classification": "archivo histórico excluido"
+    },
+    {
+      "path": "archive/tai-before-gsi/scripts/validate_m0_baseline.py",
+      "line": 395,
+      "text": "    print(\"OK: línea base TAI M0 validada en modo de solo lectura.\")",
+      "classification": "archivo histórico excluido"
+    },
+    {
+      "path": "archive/tai-before-gsi/scripts/topic_content_lib.py",
+      "line": 111,
+      "text": "        raise TopicContentError(f\"data/syllabus.json debe contener 33 temas; se encontraron {len(topic_map)}.\")",
+      "classification": "archivo histórico excluido"
+    },
+    {
       "path": "archive/tai-before-gsi/data/sources.json",
       "line": 3,
       "text": "    \"title\": \"Catálogo de fuentes TAI\",",
@@ -1267,6 +1465,18 @@
       "path": "archive/tai-before-gsi/data/sources.json",
       "line": 176,
       "text": "        {\"id\": \"DOC-INAP-2025-ANSWER-B-MD\", \"path\": \"documents/markdown/03_TEST_OFICIALES/2025_convocatoria_examen_2026_PROVISIONAL/Plantilla respuestas TAI-L-B_act.md\", \"kind\": \"answer_key\", \"conversion_status\": \"converted\"},",
+      "classification": "archivo histórico excluido"
+    },
+    {
+      "path": "archive/tai-before-gsi/scripts/technical_source_lib.py",
+      "line": 189,
+      "text": "    request = Request(str(download_url), headers={\"User-Agent\": \"TAI-source-verifier/1.0\"})",
+      "classification": "archivo histórico excluido"
+    },
+    {
+      "path": "archive/tai-before-gsi/scripts/convert_documents.py",
+      "line": 2,
+      "text": "\"\"\"Safe, repeatable document conversion for the TAI project.",
       "classification": "archivo histórico excluido"
     },
     {
@@ -1444,6 +1654,54 @@
       "classification": "archivo histórico excluido"
     },
     {
+      "path": "data/protected-artifacts.json",
+      "line": 3,
+      "text": "  \"baseline_id\": \"TAI-M0-2026-08-06\",",
+      "classification": "registro de integridad histórico, no consumido por la aplicación"
+    },
+    {
+      "path": "data/protected-artifacts.json",
+      "line": 32,
+      "text": "        \"code\": \"TAI\",",
+      "classification": "registro de integridad histórico, no consumido por la aplicación"
+    },
+    {
+      "path": "data/protected-artifacts.json",
+      "line": 37,
+      "text": "        \"value\": \"TAI-B1-T01\",",
+      "classification": "registro de integridad histórico, no consumido por la aplicación"
+    },
+    {
+      "path": "data/protected-artifacts.json",
+      "line": 126,
+      "text": "            \"source_id\": \"SRC-BOE-2026-CODIGO-TAI\",",
+      "classification": "registro de integridad histórico, no consumido por la aplicación"
+    },
+    {
+      "path": "data/protected-artifacts.json",
+      "line": 128,
+      "text": "            \"document_ids\": [\"DOC-BOE-2026-CODIGO-TAI-MD\"]",
+      "classification": "registro de integridad histórico, no consumido por la aplicación"
+    },
+    {
+      "path": "data/protected-artifacts.json",
+      "line": 138,
+      "text": "            \"relation\": \"Protege la relación histórica de B1-T01 con SRC-BOE-2026-CODIGO-TAI.\"",
+      "classification": "registro de integridad histórico, no consumido por la aplicación"
+    },
+    {
+      "path": "data/protected-artifacts.json",
+      "line": 152,
+      "text": "        \"code\": \"TAI\",",
+      "classification": "registro de integridad histórico, no consumido por la aplicación"
+    },
+    {
+      "path": "data/protected-artifacts.json",
+      "line": 157,
+      "text": "        \"value\": \"TAI-B1-T02\",",
+      "classification": "registro de integridad histórico, no consumido por la aplicación"
+    },
+    {
       "path": "data/conversion_report.json",
       "line": 57,
       "text": "    \"source_file\": \"documents/originals/03_TEST_OFICIALES/2017_FORMATO_ANTIGUO/TAI-LI-2017.pdf\",",
@@ -1552,54 +1810,6 @@
       "classification": "registro de integridad histórico, no consumido por la aplicación"
     },
     {
-      "path": "data/protected-artifacts.json",
-      "line": 3,
-      "text": "  \"baseline_id\": \"TAI-M0-2026-08-06\",",
-      "classification": "registro de integridad histórico, no consumido por la aplicación"
-    },
-    {
-      "path": "data/protected-artifacts.json",
-      "line": 32,
-      "text": "        \"code\": \"TAI\",",
-      "classification": "registro de integridad histórico, no consumido por la aplicación"
-    },
-    {
-      "path": "data/protected-artifacts.json",
-      "line": 37,
-      "text": "        \"value\": \"TAI-B1-T01\",",
-      "classification": "registro de integridad histórico, no consumido por la aplicación"
-    },
-    {
-      "path": "data/protected-artifacts.json",
-      "line": 126,
-      "text": "            \"source_id\": \"SRC-BOE-2026-CODIGO-TAI\",",
-      "classification": "registro de integridad histórico, no consumido por la aplicación"
-    },
-    {
-      "path": "data/protected-artifacts.json",
-      "line": 128,
-      "text": "            \"document_ids\": [\"DOC-BOE-2026-CODIGO-TAI-MD\"]",
-      "classification": "registro de integridad histórico, no consumido por la aplicación"
-    },
-    {
-      "path": "data/protected-artifacts.json",
-      "line": 138,
-      "text": "            \"relation\": \"Protege la relación histórica de B1-T01 con SRC-BOE-2026-CODIGO-TAI.\"",
-      "classification": "registro de integridad histórico, no consumido por la aplicación"
-    },
-    {
-      "path": "data/protected-artifacts.json",
-      "line": 152,
-      "text": "        \"code\": \"TAI\",",
-      "classification": "registro de integridad histórico, no consumido por la aplicación"
-    },
-    {
-      "path": "data/protected-artifacts.json",
-      "line": 157,
-      "text": "        \"value\": \"TAI-B1-T02\",",
-      "classification": "registro de integridad histórico, no consumido por la aplicación"
-    },
-    {
       "path": "documents/markdown/04_PAGINAS_Y_ENLACES/ABRIR_INDICE_ENLACES.md",
       "line": 1,
       "text": "# Documentación inicial TAI",
@@ -1676,30 +1886,6 @@
       "line": 55,
       "text": "| Páginas generales | Test | [Oposición Informática - TAI](https://www.oposicioninformatica.com/oposiciones/tecnico-auxiliar-de-informatica-estado) | NO OFICIAL / COMERCIAL | Revisar calidad, fuentes y fecha de actualización antes de pagar. |",
       "classification": "documentación original conservada, no consumida como fuente GSI"
-    },
-    {
-      "path": "archive/tai-before-gsi/content/topics/B1-T01.md",
-      "line": 20,
-      "text": "[[fuente:SRC-BOE-2026-CODIGO-TAI|localizador=Constitución Española de 1978, título preliminar, artículos 1 a 9]]",
-      "classification": "archivo histórico excluido"
-    },
-    {
-      "path": "archive/tai-before-gsi/content/topics/B1-T01.md",
-      "line": 28,
-      "text": "[[fuente:SRC-BOE-2026-CODIGO-TAI|localizador=Constitución Española de 1978, título I, artículos 10 a 55]]",
-      "classification": "archivo histórico excluido"
-    },
-    {
-      "path": "archive/tai-before-gsi/content/topics/B1-T01.md",
-      "line": 36,
-      "text": "[[fuente:SRC-BOE-2026-CODIGO-TAI|localizador=Constitución Española de 1978, título I, capítulo IV y capítulo V, artículos 53 a 55]]",
-      "classification": "archivo histórico excluido"
-    },
-    {
-      "path": "archive/tai-before-gsi/content/topics/B1-T01.md",
-      "line": 48,
-      "text": "[[fuente:SRC-BOE-2026-CODIGO-TAI|localizador=Constitución Española de 1978, título II, artículos 56 a 65]]",
-      "classification": "archivo histórico excluido"
     },
     {
       "path": "documents/markdown/03_TEST_OFICIALES/2025_convocatoria_examen_2026_PROVISIONAL/cuestionario_TAI-L_ext_9QVS9NM8ER_154AB89SD658.md",
@@ -1876,6 +2062,126 @@
       "classification": "documentación original conservada, no consumida como fuente GSI"
     },
     {
+      "path": "documents/markdown/03_TEST_OFICIALES/2025_convocatoria_examen_2026_PROVISIONAL/Cuestionario TAI-L-ModeloA.md",
+      "line": 67,
+      "text": "2025 - TAI-L (MODELO A) Página 1 de 14",
+      "classification": "documentación original conservada, no consumida como fuente GSI"
+    },
+    {
+      "path": "documents/markdown/03_TEST_OFICIALES/2025_convocatoria_examen_2026_PROVISIONAL/Cuestionario TAI-L-ModeloA.md",
+      "line": 135,
+      "text": "2025 - TAI-L (MODELO A) Página 2 de 14",
+      "classification": "documentación original conservada, no consumida como fuente GSI"
+    },
+    {
+      "path": "documents/markdown/03_TEST_OFICIALES/2025_convocatoria_examen_2026_PROVISIONAL/Cuestionario TAI-L-ModeloA.md",
+      "line": 207,
+      "text": "|     |     |     | 2025 - TAI-L (MODELO A)  |     | Página 3 de 14  |",
+      "classification": "documentación original conservada, no consumida como fuente GSI"
+    },
+    {
+      "path": "documents/markdown/03_TEST_OFICIALES/2025_convocatoria_examen_2026_PROVISIONAL/Cuestionario TAI-L-ModeloA.md",
+      "line": 283,
+      "text": "|            |     |     | 2025 - TAI-L (MODELO A)  |              | Página 4 de 14  |",
+      "classification": "documentación original conservada, no consumida como fuente GSI"
+    },
+    {
+      "path": "documents/markdown/03_TEST_OFICIALES/2025_convocatoria_examen_2026_PROVISIONAL/Cuestionario TAI-L-ModeloA.md",
+      "line": 345,
+      "text": "2025 - TAI-L (MODELO A) Página 5 de 14",
+      "classification": "documentación original conservada, no consumida como fuente GSI"
+    },
+    {
+      "path": "documents/markdown/03_TEST_OFICIALES/2025_convocatoria_examen_2026_PROVISIONAL/Cuestionario TAI-L-ModeloA.md",
+      "line": 413,
+      "text": "2025 - TAI-L (MODELO A) Página 6 de 14",
+      "classification": "documentación original conservada, no consumida como fuente GSI"
+    },
+    {
+      "path": "documents/markdown/03_TEST_OFICIALES/2025_convocatoria_examen_2026_PROVISIONAL/Cuestionario TAI-L-ModeloA.md",
+      "line": 469,
+      "text": "2025 - TAI-L (MODELO A) Página 7 de 14",
+      "classification": "documentación original conservada, no consumida como fuente GSI"
+    },
+    {
+      "path": "documents/markdown/03_TEST_OFICIALES/2025_convocatoria_examen_2026_PROVISIONAL/Cuestionario TAI-L-ModeloA.md",
+      "line": 503,
+      "text": "2025 - TAI-L (MODELO A) Página 8 de 14",
+      "classification": "documentación original conservada, no consumida como fuente GSI"
+    },
+    {
+      "path": "documents/markdown/03_TEST_OFICIALES/2025_convocatoria_examen_2026_PROVISIONAL/Cuestionario TAI-L-ModeloA.md",
+      "line": 571,
+      "text": "2025 - TAI-L (MODELO A) Página 9 de 14",
+      "classification": "documentación original conservada, no consumida como fuente GSI"
+    },
+    {
+      "path": "documents/markdown/03_TEST_OFICIALES/2025_convocatoria_examen_2026_PROVISIONAL/Cuestionario TAI-L-ModeloA.md",
+      "line": 635,
+      "text": "2025 - TAI-L (MODELO A) Página 10 de 14",
+      "classification": "documentación original conservada, no consumida como fuente GSI"
+    },
+    {
+      "path": "documents/markdown/03_TEST_OFICIALES/2025_convocatoria_examen_2026_PROVISIONAL/Cuestionario TAI-L-ModeloA.md",
+      "line": 677,
+      "text": "2025 - TAI-L (MODELO A) Página 11 de 14",
+      "classification": "documentación original conservada, no consumida como fuente GSI"
+    },
+    {
+      "path": "documents/markdown/03_TEST_OFICIALES/2025_convocatoria_examen_2026_PROVISIONAL/Cuestionario TAI-L-ModeloA.md",
+      "line": 738,
+      "text": "|                           |     |     | 2025 - TAI-L (MODELO A)  |                        | Página 12 de 14  |",
+      "classification": "documentación original conservada, no consumida como fuente GSI"
+    },
+    {
+      "path": "documents/markdown/03_TEST_OFICIALES/2025_convocatoria_examen_2026_PROVISIONAL/Cuestionario TAI-L-ModeloA.md",
+      "line": 796,
+      "text": "2025 - TAI-L (MODELO A) Página 13 de 14",
+      "classification": "documentación original conservada, no consumida como fuente GSI"
+    },
+    {
+      "path": "documents/markdown/03_TEST_OFICIALES/2025_convocatoria_examen_2026_PROVISIONAL/Cuestionario TAI-L-ModeloA.md",
+      "line": 834,
+      "text": "2025 - TAI-L (MODELO A) Página 14 de 14",
+      "classification": "documentación original conservada, no consumida como fuente GSI"
+    },
+    {
+      "path": "archive/tai-before-gsi/AGENTS.md",
+      "line": 1,
+      "text": "# Instrucciones del proyecto TAI",
+      "classification": "archivo histórico excluido"
+    },
+    {
+      "path": "archive/tai-before-gsi/AGENTS.md",
+      "line": 7,
+      "text": "Auxiliares de Informática de la Administración del Estado (TAI).",
+      "classification": "archivo histórico excluido"
+    },
+    {
+      "path": "archive/tai-before-gsi/content/topics/B1-T01.md",
+      "line": 20,
+      "text": "[[fuente:SRC-BOE-2026-CODIGO-TAI|localizador=Constitución Española de 1978, título preliminar, artículos 1 a 9]]",
+      "classification": "archivo histórico excluido"
+    },
+    {
+      "path": "archive/tai-before-gsi/content/topics/B1-T01.md",
+      "line": 28,
+      "text": "[[fuente:SRC-BOE-2026-CODIGO-TAI|localizador=Constitución Española de 1978, título I, artículos 10 a 55]]",
+      "classification": "archivo histórico excluido"
+    },
+    {
+      "path": "archive/tai-before-gsi/content/topics/B1-T01.md",
+      "line": 36,
+      "text": "[[fuente:SRC-BOE-2026-CODIGO-TAI|localizador=Constitución Española de 1978, título I, capítulo IV y capítulo V, artículos 53 a 55]]",
+      "classification": "archivo histórico excluido"
+    },
+    {
+      "path": "archive/tai-before-gsi/content/topics/B1-T01.md",
+      "line": 48,
+      "text": "[[fuente:SRC-BOE-2026-CODIGO-TAI|localizador=Constitución Española de 1978, título II, artículos 56 a 65]]",
+      "classification": "archivo histórico excluido"
+    },
+    {
       "path": "archive/tai-before-gsi/content/generated/B1-T01.html",
       "line": 9,
       "text": "<p><span class=\"topic-source-ref\"> <span class=\"topic-source-ref__label\">Fuente: Código electrónico BOE de normativa para TAI</span> <span class=\"topic-source-ref__locator\">Localizador: Constitución Española de 1978, título preliminar, artículos 1 a 9</span> <a href=\"https://www.boe.es/biblioteca_juridica/codigos/abrir_pdf.php?fich=470_Normativa_para_ingreso_al_Cuerpo_de_Tecnicos_Auxiliares_de_Informatica_de_la_AE.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Abrir fuente oficial (nueva pestaña)</a> </span></p></div>",
@@ -1903,18 +2209,6 @@
       "path": "archive/tai-before-gsi/content/generated/B1-T01.html",
       "line": 26,
       "text": "<li><a href=\"https://www.boe.es/biblioteca_juridica/codigos/abrir_pdf.php?fich=470_Normativa_para_ingreso_al_Cuerpo_de_Tecnicos_Auxiliares_de_Informatica_de_la_AE.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Código electrónico BOE de normativa para TAI (nueva pestaña)</a></li>",
-      "classification": "archivo histórico excluido"
-    },
-    {
-      "path": "archive/tai-before-gsi/AGENTS.md",
-      "line": 1,
-      "text": "# Instrucciones del proyecto TAI",
-      "classification": "archivo histórico excluido"
-    },
-    {
-      "path": "archive/tai-before-gsi/AGENTS.md",
-      "line": 7,
-      "text": "Auxiliares de Informática de la Administración del Estado (TAI).",
       "classification": "archivo histórico excluido"
     },
     {
@@ -1988,6 +2282,24 @@
       "line": 49,
       "text": "| Páginas generales | Test | Oposición Informática - TAI | NO OFICIAL / COMERCIAL | https://www.oposicioninformatica.com/oposiciones/tecnico-auxiliar-de-informatica-estado | Revisar calidad, fuentes y fecha de actualización antes de pagar. |",
       "classification": "documentación original conservada, no consumida como fuente GSI"
+    },
+    {
+      "path": "archive/gsi-migration-scripts/gsi-smoke-extras.js.txt",
+      "line": 66,
+      "text": "    await page.evaluate(()=>localStorage.setItem(\"tai.phase3.training.v1\",\"historical untouched\"));",
+      "classification": "archivo histórico excluido"
+    },
+    {
+      "path": "archive/gsi-migration-scripts/gsi-smoke-extras.js.txt",
+      "line": 71,
+      "text": "    assert.equal(await page.evaluate(()=>localStorage.getItem(\"tai.phase3.training.v1\")),\"historical untouched\");",
+      "classification": "archivo histórico excluido"
+    },
+    {
+      "path": "archive/gsi-migration-scripts/gsi-smoke-extras.js.txt",
+      "line": 87,
+      "text": "      const text=await page.locator(`[data-view=\"${route}\"]`).innerText();assert.doesNotMatch(text,/\\bTAI\\b|33 temas/);",
+      "classification": "archivo histórico excluido"
     },
     {
       "path": "documents/markdown/03_TEST_OFICIALES/2019_examen_2021/cues_1er_ejer_TAI-L_oep19_154AB89SD658.md",
@@ -2092,310 +2404,70 @@
       "classification": "documentación original conservada, no consumida como fuente GSI"
     },
     {
-      "path": "docs/BASELINE_TAI_M0.md",
-      "line": 1,
-      "text": "# Línea base protegida TAI — Fase M0",
-      "classification": "documentación histórica o explicación de la migración"
-    },
-    {
-      "path": "docs/BASELINE_TAI_M0.md",
-      "line": 5,
-      "text": "M0 fija una línea base documental y verificable de TAI antes de cualquier",
-      "classification": "documentación histórica o explicación de la migración"
-    },
-    {
-      "path": "docs/BASELINE_TAI_M0.md",
-      "line": 83,
-      "text": "Los valores `TAI-B1-T01` y `TAI-B1-T02` son únicamente reservas documentales de",
-      "classification": "documentación histórica o explicación de la migración"
-    },
-    {
-      "path": "docs/BASELINE_TAI_M0.md",
-      "line": 112,
-      "text": "una arquitectura multioposición. El código `TAI` del manifiesto es metadato",
-      "classification": "documentación histórica o explicación de la migración"
-    },
-    {
-      "path": "docs/FINAL_GSI_AUDIT.md",
-      "line": 126,
-      "text": "Identidad única `OPP-GSI / SYL-GSI-2025`. Las claves lógicas `gsi.*` usan almacenamiento versionado `oposiciones.OPP-GSI.SYL-GSI-2025.*.v2`; la práctica usa `gsi.OPP-GSI.SYL-GSI-2025.written.v1`. No se copian claves TAI ni datos sin identidad GSI. Exportación/importación valida identidades, preguntas, referencias, opciones, sesiones, plazos y rúbrica; el reinicio afecta exclusivamente al progreso GSI. Se admite el estado nulo de una sesión borrada y se intenta revertir cualquier escritura parcial que falle.",
-      "classification": "documentación histórica o explicación de la migración"
-    },
-    {
-      "path": "docs/FINAL_GSI_AUDIT.md",
-      "line": 130,
-      "text": "`archive/tai-before-gsi/` conserva datos, contenidos, pruebas, instrucciones y scripts de la aplicación anterior. `archive/gsi-migration-scripts/` conserva herramientas de migración de una sola ejecución. No se ejecutan desde sus ubicaciones archivadas. Los planes `PLAN_*`, los informes antiguos de fases/M0–M3, `data/protected-artifacts.json`, `data/conversion_report.json`, documentos anteriores y fuentes técnicas históricas permanecen como evidencia fuera del runtime.",
-      "classification": "documentación histórica o explicación de la migración"
-    },
-    {
-      "path": "docs/FINAL_GSI_AUDIT.md",
-      "line": 132,
-      "text": "La búsqueda global `rg -i \"\\bTAI\\b|33 temas\"` se registra con archivo, línea, texto y clasificación en `logs/gsi-legacy-review.json`: 393 líneas encontradas en esta ejecución, 0 sin clasificar. Las coincidencias corresponden a historia conservada, pruebas de rechazo/aislamiento o controles de exclusión. Los activos `index.html`, `review.html`, `assets/`, los 57 temas y sus HTML no contienen TAI ni marcadores TODO/FIXME. No se han borrado originales para limpiar búsquedas. El inventario no enumera archivos ignorados ni se escanea recursivamente su propio log.",
-      "classification": "documentación histórica o explicación de la migración"
-    },
-    {
-      "path": "docs/FINAL_GSI_AUDIT.md",
-      "line": 170,
-      "text": "- Las primeras regresiones fallaron por contratos congelados (33 temas, GSI inactivo y claves antiguas). Se adaptaron a los contratos GSI conservando pruebas de puntuación, aislamiento y seguridad. El log inicial se conserva en `logs/gsi-regression-initial.json`.",
-      "classification": "documentación histórica o explicación de la migración"
-    },
-    {
-      "path": "docs/CATALOGO_MULTI_OPOSICION_M1.md",
-      "line": 7,
-      "text": "TAI y GSI. `data/syllabi-catalog.json` registra por separado los programas que",
-      "classification": "documentación histórica o explicación de la migración"
-    },
-    {
-      "path": "docs/CATALOGO_MULTI_OPOSICION_M1.md",
-      "line": 20,
-      "text": "ejemplo `OPP-TAI`. Un syllabus es una versión concreta y fechable de su programa,",
-      "classification": "documentación histórica o explicación de la migración"
-    },
-    {
-      "path": "docs/CATALOGO_MULTI_OPOSICION_M1.md",
-      "line": 21,
-      "text": "por ejemplo `SYL-TAI-2025`. Esta separación permite que una oposición tenga",
-      "classification": "documentación histórica o explicación de la migración"
-    },
-    {
-      "path": "docs/CATALOGO_MULTI_OPOSICION_M1.md",
-      "line": 24,
-      "text": "## 4. TAI y GSI tienen programas distintos",
-      "classification": "documentación histórica o explicación de la migración"
-    },
-    {
-      "path": "docs/CATALOGO_MULTI_OPOSICION_M1.md",
-      "line": 26,
-      "text": "TAI y GSI son cuerpos diferentes y sus programas oficiales no son",
-      "classification": "documentación histórica o explicación de la migración"
-    },
-    {
-      "path": "docs/CATALOGO_MULTI_OPOSICION_M1.md",
-      "line": 33,
-      "text": "- Oposición: `OPP-TAI` y `OPP-GSI`, estables y sin año.",
-      "classification": "documentación histórica o explicación de la migración"
-    },
-    {
-      "path": "docs/CATALOGO_MULTI_OPOSICION_M1.md",
-      "line": 34,
-      "text": "- Syllabus: `SYL-TAI-2025` y `SYL-GSI-2025`, ligados a la convocatoria.",
-      "classification": "documentación histórica o explicación de la migración"
-    },
-    {
-      "path": "docs/CATALOGO_MULTI_OPOSICION_M1.md",
-      "line": 35,
-      "text": "- Bloque TAI: `B1` sigue operativo; `TAI-B1` es una reserva informativa.",
-      "classification": "documentación histórica o explicación de la migración"
-    },
-    {
-      "path": "docs/CATALOGO_MULTI_OPOSICION_M1.md",
-      "line": 36,
-      "text": "- Tema TAI: `B1-T01` sigue operativo; `TAI-B1-T01` es una reserva informativa.",
-      "classification": "documentación histórica o explicación de la migración"
-    },
-    {
-      "path": "docs/CATALOGO_MULTI_OPOSICION_M1.md",
-      "line": 50,
-      "text": "## 7. TAI-B1-T01 todavía no es operativo",
-      "classification": "documentación histórica o explicación de la migración"
-    },
-    {
-      "path": "docs/CATALOGO_MULTI_OPOSICION_M1.md",
-      "line": 52,
-      "text": "`TAI-B1-T01` solo expresa la identidad canónica que podría adoptarse en una fase",
-      "classification": "documentación histórica o explicación de la migración"
-    },
-    {
-      "path": "docs/CATALOGO_MULTI_OPOSICION_M1.md",
-      "line": 81,
-      "text": "M1 se apoya en la etiqueta anotada `m0-linea-base-tai` y conserva los hashes y",
-      "classification": "documentación histórica o explicación de la migración"
-    },
-    {
-      "path": "docs/CARGADOR_RUTAS_MULTI_OPOSICION_M2.md",
+      "path": "archive/gsi-migration-scripts/adapt_gsi_regressions.py",
       "line": 6,
-      "text": "contenido editorial ni persistencia: conserva TAI como el único contexto que la",
-      "classification": "documentación histórica o explicación de la migración"
+      "text": "archive=ROOT/'archive/tai-before-gsi/tests'",
+      "classification": "archivo histórico excluido"
     },
     {
-      "path": "docs/CARGADOR_RUTAS_MULTI_OPOSICION_M2.md",
-      "line": 24,
-      "text": "Con los catálogos de M1, el único resultado es `OPP-TAI` con",
-      "classification": "documentación histórica o explicación de la migración"
-    },
-    {
-      "path": "docs/CARGADOR_RUTAS_MULTI_OPOSICION_M2.md",
-      "line": 25,
-      "text": "`SYL-TAI-2025`. TAI continúa siendo el contexto actual porque es el único que",
-      "classification": "documentación histórica o explicación de la migración"
-    },
-    {
-      "path": "docs/CARGADOR_RUTAS_MULTI_OPOSICION_M2.md",
-      "line": 31,
-      "text": "TAI. La ruta se obtiene de `legacy_source_path` del contexto elegido y se",
-      "classification": "documentación histórica o explicación de la migración"
-    },
-    {
-      "path": "docs/CARGADOR_RUTAS_MULTI_OPOSICION_M2.md",
-      "line": 68,
-      "text": "Los registros v1 se siguen interpretando como TAI por compatibilidad histórica.",
-      "classification": "documentación histórica o explicación de la migración"
-    },
-    {
-      "path": "docs/CARGADOR_RUTAS_MULTI_OPOSICION_M2.md",
-      "line": 71,
-      "text": "M0 sigue siendo la línea base de datos y contenido TAI protegido; M1 aporta los",
-      "classification": "documentación histórica o explicación de la migración"
-    },
-    {
-      "path": "docs/PRUEBAS_MANUALES_FASE_3.md",
-      "line": 14,
-      "text": "| M-01 | APROBADA | Abra `http://localhost:8000/`. Espere a que termine la carga. | Inicio visible, sin error de carga, con 4 bloques, 33 temas, 0 preguntas reales activas y el número de actualizaciones catalogadas. |",
-      "classification": "documentación histórica o explicación de la migración"
-    },
-    {
-      "path": "docs/PRUEBAS_MANUALES_FASE_3.md",
+      "path": "archive/gsi-migration-scripts/adapt_gsi_regressions.py",
       "line": 15,
-      "text": "| M-02 | APROBADA | Abra `http://localhost:8000/#temario`. Expanda los cuatro bloques uno a uno. | Navegación y URL por hash correctas; se ven 4 bloques y exactamente 33 temas, cada uno con sus fuentes. |",
-      "classification": "documentación histórica o explicación de la migración"
+      "text": "            s=s.replace('tai.phase3.training.v1','gsi.phase3.training.v1')",
+      "classification": "archivo histórico excluido"
     },
     {
-      "path": "docs/PRUEBAS_MANUALES_FASE_3.md",
-      "line": 33,
-      "text": "- 2026-07-30 · Navegador integrado de Codex · M-02 APROBADA: `#temario` cargó los cuatro bloques; los cuatro se desplegaron y se comprobaron 33 temas visibles.",
-      "classification": "documentación histórica o explicación de la migración"
+      "path": "archive/gsi-migration-scripts/adapt_gsi_regressions.py",
+      "line": 16,
+      "text": "        if p.suffix=='.html': s=s.replace(' · TAI',' · GSI A2')",
+      "classification": "archivo histórico excluido"
     },
     {
-      "path": "docs/PRUEBAS_MANUALES_FASE_3.md",
-      "line": 43,
-      "text": "- 2026-07-30 · Navegador integrado de Codex · M-11 NO EJECUTADA: la política de seguridad del navegador integrado bloqueó la navegación a `file:///C:/TAI-proyecto/index.html`. No se pudo comprobar el mensaje explicativo sin sortear esa política.",
-      "classification": "documentación histórica o explicación de la migración"
+      "path": "archive/gsi-migration-scripts/adapt_gsi_regressions.py",
+      "line": 31,
+      "text": "replace(p,'\"OPP-TAI\" && runtimeContext.syllabusId === \"SYL-TAI-2025\"','\"OPP-GSI\" && runtimeContext.syllabusId === \"SYL-GSI-2025\"')",
+      "classification": "archivo histórico excluido"
     },
     {
-      "path": "docs/COBERTURA_TEMARIO_FASE_7.md",
-      "line": 9,
-      "text": "| B1-T01 | partial | needs-review | 5 | 4 | SRC-BOE-2026-CODIGO-TAI | Cobertura pendiente | Fuente local verificable para completar una guía editorial de estudio que relacione todos los subapartados del tema sin sustituir el texto constitucional. |",
-      "classification": "documentación histórica o explicación de la migración"
+      "path": "archive/gsi-migration-scripts/adapt_gsi_regressions.py",
+      "line": 32,
+      "text": "replace(p,'selección actual OPP-TAI / SYL-TAI-2025','selección actual OPP-GSI / SYL-GSI-2025')",
+      "classification": "archivo histórico excluido"
     },
     {
-      "path": "docs/PERSISTENCIA_MULTI_OPOSICION_M3.md",
-      "line": 13,
-      "text": "Se conservan exactamente `tai.phase3.training.v1`, los dos contratos de examen activo, los dos de refuerzo y los dos de analítica. Son el origen histórico de la migración.",
-      "classification": "documentación histórica o explicación de la migración"
+      "path": "archive/gsi-migration-scripts/adapt_gsi_regressions.py",
+      "line": 34,
+      "text": "  expectThrow(() => selectRuntimeContext(oppositions, syllabiCatalog, { oppositionId: \"OPP-TAI\", syllabusId: \"SYL-TAI-2025\" }), \"Se aceptó el programa histórico.\");",
+      "classification": "archivo histórico excluido"
     },
     {
-      "path": "docs/PERSISTENCIA_MULTI_OPOSICION_M3.md",
-      "line": 25,
-      "text": "Las claves físicas siguen `oposiciones.<OPPOSITION_ID>.<SYLLABUS_ID>.<TIPO>.v2`. Por ejemplo, el contexto TAI actual produce `oposiciones.OPP-TAI.SYL-TAI-2025.training.v2`.",
-      "classification": "documentación histórica o explicación de la migración"
+      "path": "archive/gsi-migration-scripts/adapt_gsi_regressions.py",
+      "line": 39,
+      "text": "replace(p,'se conservan los 33 temas TAI','se indexan los 57 temas GSI')",
+      "classification": "archivo histórico excluido"
     },
     {
-      "path": "docs/PRUEBAS_MANUALES_FASE_7B_2.md",
-      "line": 58,
-      "text": "  **APROBADA**. Cargó los 33 temas y desapareció el error anterior.",
-      "classification": "documentación histórica o explicación de la migración"
+      "path": "archive/gsi-migration-scripts/adapt_gsi_regressions.py",
+      "line": 41,
+      "text": "replace(p,'ruta canónica TAI','ruta canónica GSI')",
+      "classification": "archivo histórico excluido"
     },
     {
-      "path": "docs/PRUEBAS_MANUALES_M2.md",
-      "line": 11,
-      "text": "| M2-02 | Listado de `#temario` | NO EJECUTADA | Muestra 4 bloques y 33 temas. |",
-      "classification": "documentación histórica o explicación de la migración"
+      "path": "archive/gsi-migration-scripts/adapt_gsi_regressions.py",
+      "line": 53,
+      "text": "replace(p,'33 registros','57 registros');replace(p,'index.topics.length === 33','index.topics.length === 57');replace(p,'no tiene 33 temas','no tiene 57 temas')",
+      "classification": "archivo histórico excluido"
     },
     {
-      "path": "docs/PRUEBAS_MANUALES_FASE_7.md",
-      "line": 9,
-      "text": "| M-01 | APROBADA | Ejecutada en navegador: `#temario` mostró 33 temas. |",
-      "classification": "documentación histórica o explicación de la migración"
+      "path": "archive/gsi-migration-scripts/adapt_gsi_regressions.py",
+      "line": 83,
+      "text": "replace(p,'SRC-BOE-2026-CODIGO-TAI','SRC-BOE-GSI-2025')",
+      "classification": "archivo histórico excluido"
     },
     {
-      "path": "docs/PRUEBAS_MANUALES_FASE_7.md",
-      "line": 48,
-      "text": "- M-02 y M-04: el filtro por Bloque I mostró 9 de 33 temas; al seleccionar",
-      "classification": "documentación histórica o explicación de la migración"
-    },
-    {
-      "path": "documents/markdown/03_TEST_OFICIALES/2025_convocatoria_examen_2026_PROVISIONAL/Cuestionario TAI-L-ModeloA.md",
-      "line": 67,
-      "text": "2025 - TAI-L (MODELO A) Página 1 de 14",
-      "classification": "documentación original conservada, no consumida como fuente GSI"
-    },
-    {
-      "path": "documents/markdown/03_TEST_OFICIALES/2025_convocatoria_examen_2026_PROVISIONAL/Cuestionario TAI-L-ModeloA.md",
-      "line": 135,
-      "text": "2025 - TAI-L (MODELO A) Página 2 de 14",
-      "classification": "documentación original conservada, no consumida como fuente GSI"
-    },
-    {
-      "path": "documents/markdown/03_TEST_OFICIALES/2025_convocatoria_examen_2026_PROVISIONAL/Cuestionario TAI-L-ModeloA.md",
-      "line": 207,
-      "text": "|     |     |     | 2025 - TAI-L (MODELO A)  |     | Página 3 de 14  |",
-      "classification": "documentación original conservada, no consumida como fuente GSI"
-    },
-    {
-      "path": "documents/markdown/03_TEST_OFICIALES/2025_convocatoria_examen_2026_PROVISIONAL/Cuestionario TAI-L-ModeloA.md",
-      "line": 283,
-      "text": "|            |     |     | 2025 - TAI-L (MODELO A)  |              | Página 4 de 14  |",
-      "classification": "documentación original conservada, no consumida como fuente GSI"
-    },
-    {
-      "path": "documents/markdown/03_TEST_OFICIALES/2025_convocatoria_examen_2026_PROVISIONAL/Cuestionario TAI-L-ModeloA.md",
-      "line": 345,
-      "text": "2025 - TAI-L (MODELO A) Página 5 de 14",
-      "classification": "documentación original conservada, no consumida como fuente GSI"
-    },
-    {
-      "path": "documents/markdown/03_TEST_OFICIALES/2025_convocatoria_examen_2026_PROVISIONAL/Cuestionario TAI-L-ModeloA.md",
-      "line": 413,
-      "text": "2025 - TAI-L (MODELO A) Página 6 de 14",
-      "classification": "documentación original conservada, no consumida como fuente GSI"
-    },
-    {
-      "path": "documents/markdown/03_TEST_OFICIALES/2025_convocatoria_examen_2026_PROVISIONAL/Cuestionario TAI-L-ModeloA.md",
-      "line": 469,
-      "text": "2025 - TAI-L (MODELO A) Página 7 de 14",
-      "classification": "documentación original conservada, no consumida como fuente GSI"
-    },
-    {
-      "path": "documents/markdown/03_TEST_OFICIALES/2025_convocatoria_examen_2026_PROVISIONAL/Cuestionario TAI-L-ModeloA.md",
-      "line": 503,
-      "text": "2025 - TAI-L (MODELO A) Página 8 de 14",
-      "classification": "documentación original conservada, no consumida como fuente GSI"
-    },
-    {
-      "path": "documents/markdown/03_TEST_OFICIALES/2025_convocatoria_examen_2026_PROVISIONAL/Cuestionario TAI-L-ModeloA.md",
-      "line": 571,
-      "text": "2025 - TAI-L (MODELO A) Página 9 de 14",
-      "classification": "documentación original conservada, no consumida como fuente GSI"
-    },
-    {
-      "path": "documents/markdown/03_TEST_OFICIALES/2025_convocatoria_examen_2026_PROVISIONAL/Cuestionario TAI-L-ModeloA.md",
-      "line": 635,
-      "text": "2025 - TAI-L (MODELO A) Página 10 de 14",
-      "classification": "documentación original conservada, no consumida como fuente GSI"
-    },
-    {
-      "path": "documents/markdown/03_TEST_OFICIALES/2025_convocatoria_examen_2026_PROVISIONAL/Cuestionario TAI-L-ModeloA.md",
-      "line": 677,
-      "text": "2025 - TAI-L (MODELO A) Página 11 de 14",
-      "classification": "documentación original conservada, no consumida como fuente GSI"
-    },
-    {
-      "path": "documents/markdown/03_TEST_OFICIALES/2025_convocatoria_examen_2026_PROVISIONAL/Cuestionario TAI-L-ModeloA.md",
-      "line": 738,
-      "text": "|                           |     |     | 2025 - TAI-L (MODELO A)  |                        | Página 12 de 14  |",
-      "classification": "documentación original conservada, no consumida como fuente GSI"
-    },
-    {
-      "path": "documents/markdown/03_TEST_OFICIALES/2025_convocatoria_examen_2026_PROVISIONAL/Cuestionario TAI-L-ModeloA.md",
-      "line": 796,
-      "text": "2025 - TAI-L (MODELO A) Página 13 de 14",
-      "classification": "documentación original conservada, no consumida como fuente GSI"
-    },
-    {
-      "path": "documents/markdown/03_TEST_OFICIALES/2025_convocatoria_examen_2026_PROVISIONAL/Cuestionario TAI-L-ModeloA.md",
-      "line": 834,
-      "text": "2025 - TAI-L (MODELO A) Página 14 de 14",
-      "classification": "documentación original conservada, no consumida como fuente GSI"
+      "path": "archive/gsi-migration-scripts/adapt_gsi_regressions.py",
+      "line": 98,
+      "text": "replace(p,'exactamente 33 temas','exactamente 57 temas');replace(p,'index.topics.length === 33','index.topics.length === 57');replace(p,'block.topics).length === 33','block.topics).length === 57')",
+      "classification": "archivo histórico excluido"
     }
   ],
   "unclassified": 0

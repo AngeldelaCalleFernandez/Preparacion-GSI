@@ -110,12 +110,22 @@ La identidad activa es `OPP-GSI / SYL-GSI-2025`. El contenido y progreso histór
 
 ## Validación
 
-Instala las dependencias de desarrollo y ejecuta la suite completa:
+Para ejecutar las pruebas necesitas Python 3.10 o posterior, Node.js 20 o posterior, `rg` (ripgrep) y Google Chrome instalados. Son herramientas de desarrollo; no hacen falta para estudiar desde la web.
+
+Instala las dependencias de validación y de navegador:
 
 ```bash
 python -m pip install -r scripts/requirements-validation.txt
+npm install --no-save --package-lock=false playwright
+```
+
+Ejecuta la suite desde la raíz del repositorio:
+
+```bash
 python scripts/run_gsi_suite.py
 ```
+
+Si Playwright está instalado fuera del repositorio, puedes indicar su archivo `index.mjs` mediante la variable de entorno `PLAYWRIGHT_MODULE`. El runner también detecta el módulo del entorno local preparado. Las pruebas usan el canal `chrome`: instalar solo Chromium no sustituye a Google Chrome.
 
 | Código | Significado |
 | ---: | --- |
