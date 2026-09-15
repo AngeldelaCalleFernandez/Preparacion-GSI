@@ -3,8 +3,8 @@ import {
   calculateExamResults,
   getMixedQuota,
   selectExamQuestions,
-} from "../assets/js/exam-engine.js";
-import { createActiveExamState, validateActiveExamState } from "../assets/js/exam-storage.js";
+} from "../assets/js/exam-engine.js?gsi2";
+import { createActiveExamState, validateActiveExamState } from "../assets/js/exam-storage.js?gsi2";
 
 const results = document.querySelector("#results");
 const summary = document.querySelector("#summary");
@@ -35,7 +35,7 @@ function fixture(id, collection, overrides = {}) {
     id,
     collection,
     origin: collection === "official" ? "official" : "ai",
-    validation_status: collection === "ai" ? "validated" : "pending_review",
+    validation_status: "validated",
     official_status: collection === "official" ? "official" : "not_official",
     is_active: true,
     isDemo: collection === "demo",

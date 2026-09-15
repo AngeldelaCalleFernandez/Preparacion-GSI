@@ -1,5 +1,5 @@
-import { parseRoute, resolveRoute } from "../assets/js/router.js?phase7runner=1";
-import { parseSafeTopicFragment } from "../assets/js/topic-content-service.js?phase7runner=1";
+import { parseRoute, resolveRoute } from "../assets/js/router.js?gsi2";
+import { parseSafeTopicFragment } from "../assets/js/topic-content-service.js?gsi2";
 
 const results = document.querySelector("#results");
 const summary = document.querySelector("#summary");
@@ -48,14 +48,14 @@ const [syllabus, sources, index, appHtml, serviceSource, builderSource] = await 
   fetchJson("../data/sources.json"),
   fetchJson("../data/topic-content.json"),
   fetchText("../index.html"),
-  fetchText("../assets/js/topic-content-service.js"),
-  fetchText("../scripts/build_topic_content.py"),
+  fetchText("../assets/js/topic-content-service.js?gsi2"),
+  fetchText("../scripts/build_gsi_content.py"),
 ]);
 const officialTopics = syllabus.blocks.flatMap((block) => block.topics.map((topic) => ({ ...topic, blockId: block.id })));
 const sourceIds = new Set(sources.sources.map((source) => source.id));
 
 await test("el índice editorial carga", () => assert(index.version === 1, "La versión del índice no es 1."));
-await test("existen exactamente 33 registros de contenido", () => assert(index.topics.length === 33, "El índice no tiene 33 temas."));
+await test("existen exactamente 57 registros de contenido", () => assert(index.topics.length === 57, "El índice no tiene 57 temas."));
 await test("cada tema oficial aparece exactamente una vez", () => assert(new Set(index.topics.map((topic) => topic.topicId)).size === officialTopics.length, "Hay IDs duplicados o ausentes."));
 await test("cada contentPath es relativo", () => assert(index.topics.every((topic) => /^content\/generated\/B[1-4]-T\d{2}\.html$/.test(topic.contentPath)), "Hay una ruta no relativa."));
 await test("cada checksum tiene formato SHA-256", () => assert(index.topics.every((topic) => /^[a-f0-9]{64}$/.test(topic.checksum)), "Hay un checksum inválido."));
@@ -63,16 +63,17 @@ await test("cada sourceId citado existe", () => assert(index.topics.every((topic
 await test("cada referencia tiene localizador", () => assert(index.topics.every((topic) => topic.sections.every((section) => section.sourceRefs.every((ref) => ref.locator.trim()))), "Falta un localizador."));
 await test("cada sectionId es único dentro del tema", () => assert(index.topics.every((topic) => new Set(topic.sections.map((section) => section.sectionId)).size === topic.sections.length), "Hay secciones duplicadas."));
 await test("no se fabrican fragmentos externos", () => assert(index.topics.every((topic) => topic.sections.every((section) => section.sourceRefs.every((ref) => ref.officialFragmentUrl === null))), "Hay un fragmento externo no verificado."));
-await test("el constructor es determinista", () => assert(builderSource.includes("build_artifacts") && !builderSource.includes("datetime.now"), "El constructor depende de la hora actual."));
+await test("el constructor es determinista", () => assert(builderSource.includes("render_topic") && !builderSource.includes("datetime.now"), "El constructor depende de la hora actual."));
 await test("B1-T01 contiene referencias verificables", () => {
   const pilot = index.topics.find((topic) => topic.topicId === "B1-T01");
-  assert(pilot.status === "partial" && pilot.reviewStatus === "needs-review" && pilot.sections.some((section) => section.sourceRefs.length), "El piloto no es trazable.");
+  assert(pilot.status === "complete" && pilot.reviewStatus === "reviewed" && pilot.sections.some((section) => section.sourceRefs.length), "El piloto no es trazable.");
 });
-await test("solo los cuatro pilotos autorizados tienen cobertura parcial", () => {
-  const partialIds = index.topics.filter((topic) => topic.status === "partial").map((topic) => topic.topicId).sort();
-  assert(JSON.stringify(partialIds) === JSON.stringify(["B1-T01", "B2-T04", "B3-T07", "B4-T08"]), "Hay cobertura no autorizada.");
+await test("los 57 temas tienen cobertura completa", () => {
+  assert(index.topics.length === 57 && index.topics.every((t) => t.status === "complete"), "Queda cobertura parcial.");
 });
-await test("ningún tema se marca automáticamente como reviewed", () => assert(index.topics.every((topic) => topic.reviewStatus !== "reviewed"), "Hay una revisión automática."));
+
+await test("cada tema revisado remite al corpus V2.1", () => assert(index.topics.every((t) => t.reviewStatus === "reviewed" && t.sections.some((s) => s.sourceRefs.some((r) => /SRC-GSI-B[1-4]-V21/.test(r.sourceId)))), "Revisión sin fuente canónica."));
+
 await test("el modo demo no duplica el índice editorial", () => assert(!serviceSource.includes("demo/questions") && !serviceSource.includes("isDemo"), "El servicio editorial depende del banco demo."));
 await test("la ruta #temario muestra el listado", () => assert(parseRoute("#temario").route === "temario" && !parseRoute("#temario").topicId, "No se resolvió el listado."));
 await test("la ruta de detalle muestra el tema correcto", () => assert(parseRoute("#temario/B1-T01").topicId === "B1-T01", "No se resolvió el tema."));
@@ -100,23 +101,29 @@ await test("la vista final contiene un único H1", () => {
 await test("H1 del Markdown coincide con syllabus.json", async () => {
   const topic = officialTopics.find((item) => item.id === "B1-T01");
   const markdown = await fetchText("../content/topics/B1-T01.md");
-  assert(sourceFrontMatter(markdown).title === topic.title, "El H1 no coincide con el temario oficial.");
+  assert(markdown.split("\n")[0].slice(2) === topic.title, "El H1 no coincide con el temario oficial.");
 });
 await test("la jerarquía H2/H3 es válida", async () => {
-  const html = await fetchText("../content/generated/B1-T01.html");
-  assert(html.indexOf("<h2 id=\"derechos-deberes-garantias\"") < html.indexOf("<h3 id=\"garantia-suspension\""), "Un H3 no sigue a un H2.");
+  const fragment = parseSafeTopicFragment(await fetchText("../content/generated/B1-T01.html"));
+  let previous = 1;
+  for (const h of fragment.querySelectorAll("h1,h2,h3,h4,h5,h6")) {
+    const level = Number(h.tagName[1]); assert(level <= previous + 1, `Salto ${previous} a ${level}`); previous = level;
+  }
 });
-await test("un tema pending muestra aviso útil", async () => {
+
+await test("el antiguo tema pendiente tiene ahora apuntes sustanciales", async () => {
   const html = await fetchText("../content/generated/B2-T01.html");
-  assert(html.includes("Contenido pendiente de una fuente verificable."), "No se muestra la carencia documental.");
+  assert(html.length > 5000 && !html.includes("Contenido pendiente de una fuente verificable."), "Persiste un placeholder.");
 });
-await test("el piloto partial muestra aviso de cobertura", async () => {
+
+await test("el contenido distingue corpus editorial de documento oficial", async () => {
   const html = await fetchText("../content/generated/B1-T01.html");
-  assert(html.includes("Cobertura parcial"), "No se muestra el aviso parcial.");
+  assert(html.includes("no documento oficial") && html.includes("V2.1"), "Procedencia ambigua.");
 });
+
 await test("la tabla de contenidos enlaza las secciones locales", async () => {
   const html = await fetchText("../content/generated/B1-T01.html");
-  assert(html.includes("#temario/B1-T01/la-corona"), "Falta el enlace local de sección.");
+  assert(index.topics[0].sections.every((s) => html.includes(`#temario/B1-T01/${s.sectionId}`)), "Falta el enlace local de sección.");
 });
 await test("un script se rechaza antes de insertar", () => {
   let rejected = false;

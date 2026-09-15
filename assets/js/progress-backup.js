@@ -1,6 +1,7 @@
 import { LOGICAL_PERSISTENCE_KEYS, buildPhysicalPersistenceKey, parsePersistenceEnvelope } from "./persistence-v2.js?gsi2";
 import { validateTrainingV1 } from "./persistence-migration-v2.js?gsi2";
 import { validateActiveExamState } from "./exam-storage.js?gsi2";
+import { validateExamConfig, isQuestionEligible } from "./exam-engine.js?gsi2";
 import { validateReinforcementStore } from "./reinforcement-storage.js?gsi2";
 import { normaliseAnalyticsStore } from "./analytics-engine.js?gsi2";
 import { WRITTEN_KEY, validateWrittenState } from "./written-practice.js?gsi2";
@@ -20,13 +21,21 @@ export function validateProgressBackup(backup, data) {
   const context = data.runtimeContext;
   if (!backup || backup.format !== "gsi-progress" || backup.version !== 1 || backup.oppositionId !== "OPP-GSI" || backup.oppositionId !== context.oppositionId || backup.syllabusId !== context.syllabusId || !backup.entries || Array.isArray(backup.entries)) throw new Error("La copia no pertenece a este programa GSI A2.");
   const keys = new Map(keysFor(context).map((k) => [k.physical, k.logical]));
-  const questionIds = new Set(data.questions.map((q) => q.id));
+  const questionsById = new Map(data.questions.map((q) => [q.id, q]));
+  const questionIds = new Set(questionsById.keys());
+  const blockIds = new Set(data.syllabus.blocks.map((b) => b.id));
   const topicIds = new Set(data.syllabus.blocks.flatMap((b) => b.topics.map((t) => t.id)));
   function checkReferences(value, depth = 0) {
     if (depth > 30) throw new Error("La copia tiene una estructura demasiado profunda.");
     if (!value || typeof value !== "object") return;
+    if (value.questionId && questionsById.has(value.questionId)) {
+      const q = questionsById.get(value.questionId);
+      if ((value.blockId && value.blockId !== q.block_id) || (value.topicId && value.topicId !== q.topic_id)) throw new Error("La respuesta está asignada a un tema o bloque incorrecto.");
+      if (value.selectedOption !== undefined && value.selectedOption !== null && !q.options.some((o) => o.id === value.selectedOption)) throw new Error("La respuesta contiene una opción desconocida.");
+    }
     for (const [key, item] of Object.entries(value)) {
       if (key === "questionId" && !questionIds.has(item)) throw new Error(`Pregunta ajena al banco GSI: ${item}.`);
+      if (key === "blockId" && !blockIds.has(item)) throw new Error(`Bloque ajeno al programa GSI: ${item}.`);
       if (key === "topicId" && !topicIds.has(item)) throw new Error(`Tema ajeno al programa GSI: ${item}.`);
       if (key === "isDemo" && item === true) throw new Error("La copia contiene datos de demostración.");
       checkReferences(item, depth + 1);
@@ -40,11 +49,31 @@ export function validateProgressBackup(backup, data) {
     const logical = keys.get(physical);
     if (!logical) throw new Error("La copia contiene claves de otra aplicación o versión.");
     const payload = parsePersistenceEnvelope(JSON.stringify(value), context).payload;
+    if (payload === null) continue; // Tombstone left by the domain storage adapter.
     let valid = false;
     if (logical.includes("training")) valid = validateTrainingV1(payload);
-    else if (logical.includes("exam.active")) valid = validateActiveExamState(payload).valid;
+    else if (logical.includes("exam.active")) {
+      valid = validateActiveExamState(payload).valid && validateExamConfig(payload.config).length === 0;
+      if (valid) {
+        const ids = new Set(payload.questionRefs.map((ref) => ref.id));
+        valid = payload.questionRefs.length === payload.config.questionCount
+          && Date.parse(payload.deadlineAt) - Date.parse(payload.startedAt) === payload.config.durationSeconds * 1000
+          && payload.questionRefs.every((ref) => {
+            const q = questionsById.get(ref.id);
+            const order = payload.optionOrderByQuestionId[ref.id];
+            return q && isQuestionEligible(q, payload.config) && ref.blockId === q.block_id && ref.topicId === q.topic_id
+              && Array.isArray(order) && order.length === 4 && new Set(order).size === 4 && order.every((id) => q.options.some((o) => o.id === id));
+          })
+          && Object.entries(payload.answersByQuestionId).every(([id, answer]) => ids.has(id) && (answer === null || questionsById.get(id).options.some((o) => o.id === answer)))
+          && payload.flaggedQuestionIds.every((id) => ids.has(id));
+      }
+    }
     else if (logical.includes("reinforcement")) valid = validateReinforcementStore(payload, false).valid;
-    else if (logical.includes("analytics")) valid = normaliseAnalyticsStore(payload, false).valid;
+    else if (logical.includes("analytics")) {
+      const result = normaliseAnalyticsStore(payload, false);
+      valid = result.valid && Array.isArray(payload.attempts) && Array.isArray(payload.sessions)
+        && result.store.attempts.length === payload.attempts.length && result.store.sessions.length === payload.sessions.length;
+    }
     if (!valid) throw new Error(`Datos incompatibles en ${logical}.`);
     checkReferences(payload);
     if (Array.isArray(payload.questionRefs) && payload.questionRefs.some((q) => !questionIds.has(q.id))) throw new Error("El examen contiene preguntas ajenas a GSI.");
@@ -61,7 +90,12 @@ export function importProgress(backup, data, storage) {
       else storage.removeItem(key);
     }
   } catch (error) {
-    for (const [key, raw] of previous) { if (raw === null) storage.removeItem(key); else storage.setItem(key, raw); }
+    const rollbackErrors = [];
+    for (const [key, raw] of previous) {
+      try { if (raw === null) storage.removeItem(key); else storage.setItem(key, raw); }
+      catch { rollbackErrors.push(key); }
+    }
+    if (rollbackErrors.length) throw new Error("El navegador rechazó la escritura y parte de la restauración. Conserva la copia exportada y revisa el espacio disponible.");
     throw error;
   }
 }

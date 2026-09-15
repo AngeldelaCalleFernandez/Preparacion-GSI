@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "authorized_root",
+    "documents"
+  ],
+  "properties": {
+    "version": {
+      "const": 1
+    },
+    "authorized_root": {
+      "const": "1bmBgrybIUDyT1owpnooU8Oq5FH4wLrp2"
+    },
+    "documents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path",
+          "title",
+          "drive_id",
+          "url",
+          "kind",
+          "sha256"
+        ],
+        "properties": {
+          "path": {
+            "type": "string",
+            "pattern": "^documents/markdown/gsi/.+\\.md$"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "drive_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "pattern": "^https://"
+          },
+          "kind": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        }
+      },
+      "minItems": 50,
+      "maxItems": 50
+    }
+  }
+}

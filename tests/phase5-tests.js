@@ -7,15 +7,15 @@ import {
   createQuestionReference,
   getTemporalState,
   selectReinforcementQuestions,
-} from "../assets/js/reinforcement-engine.js";
+} from "../assets/js/reinforcement-engine.js?gsi2";
 import {
   REINFORCEMENT_DEMO_KEY,
   REINFORCEMENT_REAL_KEY,
   applyStoredReinforcementEvents,
   clearDemoReinforcement,
   loadReinforcementStore,
-} from "../assets/js/reinforcement-storage.js";
-import { migratePhase3Training } from "../assets/js/reinforcement-migration.js";
+} from "../assets/js/reinforcement-storage.js?gsi2";
+import { migratePhase3Training } from "../assets/js/reinforcement-migration.js?gsi2";
 
 const results = document.querySelector("#results");
 const summary = document.querySelector("#summary");
@@ -263,7 +263,7 @@ test("una sesión vacía no puede aportar preguntas", () => {
 test("la migración es idempotente", () => {
   const item = question("MIG-1");
   const legacy = { version: 1, responses: [{ questionId: item.id, selectedOption: "B", correct: false, answeredAt: NOW.toISOString(), origin: item.origin, blockId: item.block_id, topicId: item.topic_id, isDemo: false }] };
-  const storage = memoryStorage({ "tai.phase3.training.v1": JSON.stringify(legacy) });
+  const storage = memoryStorage({ "gsi.phase3.training.v1": JSON.stringify(legacy) });
   const data = { questions: [item] };
   const first = migratePhase3Training(data, false, storage);
   const second = migratePhase3Training(data, false, storage);

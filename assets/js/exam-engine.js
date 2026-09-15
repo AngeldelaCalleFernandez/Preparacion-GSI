@@ -40,13 +40,13 @@ function isProductionActive(question) {
 }
 
 export function isQuestionEligible(question, config) {
-  if (!question || !hasConfiguredBlock(question, config.blockIds)) return false;
+  if (!question || (question.opposition_id && question.opposition_id !== "OPP-GSI") || !hasConfiguredBlock(question, config.blockIds)) return false;
   if ([EXAM_MODES.GSI, EXAM_MODES.CUSTOM].includes(config.mode)) {
     return isProductionActive(question) && question.opposition_id === "OPP-GSI"
       && question.validation_status === "validated" && ["official", "manual", "ai"].includes(question.collection);
   }
   if (config.mode === EXAM_MODES.BOE) {
-    return isProductionActive(question) && question.collection === "official" && question.origin === "official";
+    return isProductionActive(question) && question.collection === "official" && question.origin === "official" && question.validation_status === "validated";
   }
   if (config.mode === EXAM_MODES.AI_VALIDATED) {
     return isProductionActive(question)

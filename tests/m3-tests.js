@@ -7,20 +7,20 @@ import {
   getConfiguredPersistenceAdapter,
   parsePersistenceEnvelope,
   validatePersistenceEnvelope,
-} from "../assets/js/persistence-v2.js?m3";
-import { migrateV1ToV2, planV1ToV2Migration } from "../assets/js/persistence-migration-v2.js?m3";
-import { createAnalyticsStore } from "../assets/js/analytics-engine.js";
-import { createActiveExamState, clearActiveExamState, saveActiveExamState } from "../assets/js/exam-storage.js?m3";
-import { clearAllResponses, saveResponse } from "../assets/js/storage.js?m3";
+} from "../assets/js/persistence-v2.js?gsi2";
+import { migrateV1ToV2, planV1ToV2Migration } from "../assets/js/persistence-migration-v2.js?gsi2";
+import { createAnalyticsStore } from "../assets/js/analytics-engine.js?gsi2";
+import { createActiveExamState, clearActiveExamState, saveActiveExamState } from "../assets/js/exam-storage.js?gsi2";
+import { clearAllResponses, saveResponse } from "../assets/js/storage.js?gsi2";
 import {
   clearAllReinforcement,
   createReinforcementSession,
   loadReinforcementStore,
   saveReinforcementStore,
-} from "../assets/js/reinforcement-storage.js?m3";
-import { clearAllAnalyticsStores, loadAnalyticsStore, saveAnalyticsStore } from "../assets/js/analytics-storage.js?m3";
-import { migratePhase3Training } from "../assets/js/reinforcement-migration.js?m3";
-import { migrateAnalytics } from "../assets/js/analytics-migration.js?m3";
+} from "../assets/js/reinforcement-storage.js?gsi2";
+import { clearAllAnalyticsStores, loadAnalyticsStore, saveAnalyticsStore } from "../assets/js/analytics-storage.js?gsi2";
+import { migratePhase3Training } from "../assets/js/reinforcement-migration.js?gsi2";
+import { migrateAnalytics } from "../assets/js/analytics-migration.js?gsi2";
 
 const CONTEXT = Object.freeze({ oppositionId: "OPP-TEST", syllabusId: "SYL-TEST-2026", short_code: "IGNORADO" });
 const OTHER_CONTEXT = Object.freeze({ oppositionId: "OPP-ALT", syllabusId: "SYL-ALT-2026", short_code: "TAMPOCO" });
@@ -141,13 +141,13 @@ function readPayload(storage, context, logicalKey) {
 }
 
 function seedAllValid(storage) {
-  seedV1(storage, "tai.phase3.training.v1", trainingPayload(false));
-  seedV1(storage, "tai.phase4.exam.active.real.v1", examPayload(false));
-  seedV1(storage, "tai.phase4.exam.active.demo.v1", examPayload(true));
-  seedV1(storage, "tai.reinforcement.real.v1", reinforcementPayload(false));
-  seedV1(storage, "tai.reinforcement.demo.v1", reinforcementPayload(true));
-  seedV1(storage, "tai.analytics.real.v1", analyticsPayload(false));
-  seedV1(storage, "tai.analytics.demo.v1", analyticsPayload(true));
+  seedV1(storage, "gsi.phase3.training.v1", trainingPayload(false));
+  seedV1(storage, "gsi.phase4.exam.active.real.v1", examPayload(false));
+  seedV1(storage, "gsi.phase4.exam.active.demo.v1", examPayload(true));
+  seedV1(storage, "gsi.reinforcement.real.v1", reinforcementPayload(false));
+  seedV1(storage, "gsi.reinforcement.demo.v1", reinforcementPayload(true));
+  seedV1(storage, "gsi.analytics.real.v1", analyticsPayload(false));
+  seedV1(storage, "gsi.analytics.demo.v1", analyticsPayload(true));
 }
 
 async function test(name, action) {
@@ -161,7 +161,7 @@ async function test(name, action) {
 
 await test("01. contexto sin oppositionId rechazado", () => expectThrows(() => buildPhysicalPersistenceKey({ syllabusId: CONTEXT.syllabusId }, LOGICAL_PERSISTENCE_KEYS[0]), "oppositionId"));
 await test("02. contexto sin syllabusId rechazado", () => expectThrows(() => buildPhysicalPersistenceKey({ oppositionId: CONTEXT.oppositionId }, LOGICAL_PERSISTENCE_KEYS[0]), "syllabusId"));
-await test("03. contrato desconocido rechazado", () => expectThrows(() => buildPhysicalPersistenceKey(CONTEXT, "tai.unknown.v1"), "desconocido"));
+await test("03. contrato desconocido rechazado", () => expectThrows(() => buildPhysicalPersistenceKey(CONTEXT, "gsi.unknown.v1"), "desconocido"));
 await test("04. builder determinista", () => expect(physical(CONTEXT, LOGICAL_PERSISTENCE_KEYS[0]) === physical(CONTEXT, LOGICAL_PERSISTENCE_KEYS[0])));
 await test("05. contextos diferentes producen claves diferentes", () => expect(physical(CONTEXT, LOGICAL_PERSISTENCE_KEYS[0]) !== physical(OTHER_CONTEXT, LOGICAL_PERSISTENCE_KEYS[0])));
 await test("06. siete contratos producen siete claves", () => expect(new Set(LOGICAL_PERSISTENCE_KEYS.map((key) => physical(CONTEXT, key))).size === 7));
@@ -215,9 +215,9 @@ await test("53. se conservan IDs legacy", () => { const raw = new FakeStorage();
 await test("54. no se duplica contexto por registro", () => { const raw = new FakeStorage(); seedV1(raw, LOGICAL_PERSISTENCE_KEYS[0], trainingPayload()); migrateV1ToV2(CONTEXT, raw); const record = readPayload(raw, CONTEXT, LOGICAL_PERSISTENCE_KEYS[0]).responses[0]; expect(!Object.hasOwn(record, "oppositionId") && !Object.hasOwn(record, "syllabusId")); });
 await test("55. runner usa exclusivamente almacenamiento en memoria", () => { const raw = new FakeStorage(); raw.setItem("prueba", "ok"); expect(raw.getItem("prueba") === "ok" && raw.length === 1); });
 await test("56. runner no requiere dependencias externas", () => expect([...document.scripts].every((script) => !script.src || new URL(script.src).origin === location.origin)));
-await test("57. rutas M2 permanecen accesibles", async () => { const response = await fetch("../assets/js/catalog-service.js?m2"); expect(response.ok && (await response.text()).includes("selectRuntimeContext")); });
-await test("58. GSI continúa no operativo", async () => { const catalog = await (await fetch("../data/oppositions.json")).json(); const planned = catalog.oppositions.find((item) => item.short_code === "GSI"); expect(planned?.runtime_available === false && planned?.status === "planned"); });
-await test("59. persistencia no inventa IDs GSI", async () => { const source = await (await fetch("../assets/js/persistence-v2.js?m3")).text(); expect(!source.includes("OPP-GSI") && !source.includes("SYL-GSI-2025")); });
+await test("57. rutas M2 permanecen accesibles", async () => { const response = await fetch("../assets/js/catalog-service.js?gsi2"); expect(response.ok && (await response.text()).includes("selectRuntimeContext")); });
+await test("58. GSI es el único programa operativo", async () => { const catalog = await (await fetch("../data/oppositions.json")).json(); const planned = catalog.oppositions.find((item) => item.short_code === "GSI"); expect(planned?.runtime_available === true && planned?.status === "active" && catalog.oppositions.length === 1); });
+await test("59. persistencia no inventa IDs GSI", async () => { const source = await (await fetch("../assets/js/persistence-v2.js?gsi2")).text(); expect(!source.includes("OPP-GSI") && !source.includes("SYL-GSI-2025")); });
 await test("60. datos y contenido protegidos siguen disponibles", async () => { const [data, content] = await Promise.all([fetch("../data/syllabus.json"), fetch("../content/topics/B1-T01.md")]); expect(data.ok && content.ok); });
 await test("61. sesión de refuerzo conserva el contexto lógico", () => { const raw = new FakeStorage(); configurePersistenceV2(CONTEXT, raw); const session = createReinforcementSession(false, [{ question: question(false) }], { count: 1 }); expect(session.isDemo === false && !Object.hasOwn(session, "oppositionId")); });
 

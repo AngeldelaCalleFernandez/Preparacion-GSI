@@ -163,7 +163,8 @@ def main():
                   'published_at': '2025-12-22', 'reviewed_at': DATE, 'block_ids': [b['id'] for b in blocks],
                   'topic_ids': [t['id'] for b in blocks for t in b['topics']], 'mapping_status': 'mapped',
                   'documents': [{'id': 'DOC-BOE-GSI-2025', 'path': 'documents/markdown/gsi/BOE-A-2025-26262-Anexo-IX.md', 'kind': 'program', 'conversion_status': 'converted'}]}
-    sources = [source_boe]
+    existing_sources = json.loads((ROOT / 'data/sources.json').read_text('utf-8'))['sources']
+    sources = [source_boe] + [s for s in existing_sources if s['id'] != source_boe['id'] and not re.fullmatch(r'SRC-GSI-B[1-4]-(V21|REPASO)', s['id'])]
     index = {'version': 1, 'generatedAt': DATE + 'T00:00:00Z', 'topics': []}
     manifest = {'version': VERSION, 'retrieved_at': DATE, 'authorized_root': DRIVE_ROOT, 'official_control': BOE_URL,
                 'canonical_documents': [], 'topics': [], 'discrepancies': ['El catálogo anterior declaraba GSI 55 temas (10/16/15/14); el Anexo IX descargado confirma 57 (10/16/15/16).'],
@@ -228,9 +229,11 @@ def main():
         current = json.loads(target.read_text('utf-8'))
         if current.get('metadata', {}).get('data_version') != VERSION:
             save(target, {'metadata': {'dataset_type': origin, 'schema_version': '1.0.0', 'data_version': VERSION, 'updated_at': DATE}, 'questions': []})
-    save('data/updates.json', {'metadata': {k: v for k, v in metadata('Actualizaciones GSI A2').items() if k != 'title'}, 'updates': []})
-    main_inv = json.loads((ROOT / 'tmp/gsi-main-inventory.json').read_text('utf-8'))
-    aux_inv = json.loads((ROOT / 'tmp/gsi-aux-inventory.json').read_text('utf-8'))
+    if not (ROOT / 'data/updates.json').exists():
+        save('data/updates.json', {'metadata': {k: v for k, v in metadata('Actualizaciones GSI A2').items() if k != 'title'}, 'updates': []})
+    previous_inventory = json.loads((ROOT / 'data/gsi-drive-inventory.json').read_text('utf-8'))
+    main_inv = previous_inventory['main']
+    aux_inv = previous_inventory['auxiliary']
     save('data/gsi-drive-inventory.json', {'root': DRIVE_ROOT, 'inspected_at': DATE, 'main': main_inv, 'auxiliary': aux_inv})
     print('GSI: 57 topics, distribution 10/16/15/16, 8 canonical documents, full notes and summaries.')
 

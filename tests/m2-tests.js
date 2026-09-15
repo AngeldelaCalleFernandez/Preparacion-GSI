@@ -4,9 +4,9 @@ import {
   selectRuntimeContext,
   validateCatalogs,
   validateLegacySyllabusCompatibility,
-} from "../assets/js/catalog-service.js?m2runner=1";
-import { buildIndexes } from "../assets/js/data-service.js?m2runner=1";
-import { parseRoute, resolveRoute } from "../assets/js/router.js?m2runner=1";
+} from "../assets/js/catalog-service.js?gsi2";
+import { buildIndexes } from "../assets/js/data-service.js?gsi2";
+import { parseRoute, resolveRoute } from "../assets/js/router.js?gsi2";
 
 const results = document.querySelector("#results");
 const summary = document.querySelector("#summary");
@@ -65,10 +65,10 @@ const [oppositions, syllabiCatalog, legacySyllabus, sources, topicContent, offic
   fetchJson("../data/questions-ai.json"),
   fetchJson("../data/questions-manual.json"),
   fetchJson("../data/demo/questions-ai-demo.json"),
-  fetchText("../assets/js/catalog-service.js"),
-  fetchText("../assets/js/data-service.js"),
-  fetchText("../assets/js/syllabus-view.js"),
-  fetchText("../assets/js/app.js"),
+  fetchText("../assets/js/catalog-service.js?gsi2"),
+  fetchText("../assets/js/data-service.js?gsi2"),
+  fetchText("../assets/js/syllabus-view.js?gsi2"),
+  fetchText("../assets/js/app.js?gsi2"),
   fetchText("../index.html"),
   fetchText("../scripts/validate_m2_runtime.py"),
 ]);
@@ -94,17 +94,18 @@ await test("selección automática del único contexto runtime", () => {
   const reversedContext = selectRuntimeContext(reversedOppositions, reversedSyllabi);
   assert(reversedContext.syllabusId === runtimeContext.syllabusId, "La selección depende del orden del array.");
 });
-await test("selección actual OPP-TAI / SYL-TAI-2025", () => {
-  assert(runtimeContext.oppositionId === "OPP-TAI" && runtimeContext.syllabusId === "SYL-TAI-2025", "El contexto disponible no es el esperado.");
+await test("selección actual OPP-GSI / SYL-GSI-2025", () => {
+  assert(runtimeContext.oppositionId === "OPP-GSI" && runtimeContext.syllabusId === "SYL-GSI-2025", "El contexto disponible no es el esperado.");
 });
-await test("rechazo de SYL-GSI-2025 como contexto operativo", () => {
-  assert(plannedSyllabus, "Falta un syllabus no disponible para la prueba.");
-  expectThrow(() => selectRuntimeContext(oppositions, syllabiCatalog, { oppositionId: plannedSyllabus.opposition_id, syllabusId: plannedSyllabus.id }), "El syllabus planned fue aceptado.");
+await test("rechazo del programa histórico como contexto operativo", () => {
+  expectThrow(() => selectRuntimeContext(oppositions, syllabiCatalog, { oppositionId: "OPP-TAI", syllabusId: "SYL-TAI-2025" }), "Se aceptó el programa histórico.");
 });
-await test("GSI no tiene temas ni mapa de identidades", () => {
-  assert(plannedSyllabus.blocks.length === 0 && buildIdentityIndexes(plannedSyllabus).topicReferences.size === 0, "El syllabus no disponible expone temas.");
+
+await test("GSI dispone de 57 identidades y no hay programa planificado", () => {
+  assert(!plannedSyllabus && buildIdentityIndexes(selectedSyllabus).topicsByCanonicalId.size === 57, "El mapa GSI no está completo.");
 });
-await test("se conservan los 33 temas TAI", () => assert(allCatalogTopics.length === legacyTopics.length && allCatalogTopics.length === 33, "El total de temas no se conserva."));
+
+await test("se indexan los 57 temas GSI", () => assert(allCatalogTopics.length === legacyTopics.length && allCatalogTopics.length === 57, "El total de temas no se conserva."));
 await test("cada legacy_id resuelve a sí mismo", () => {
   assert(allCatalogTopics.every((topic) => resolveTopicReference(runtimeContext, topic.legacy_id) === topic.legacy_id), "Un ID legacy no conserva su resolución.");
 });
@@ -127,12 +128,12 @@ await test("el servicio no modifica los objetos de catálogo recibidos", () => {
 });
 await test("#temario/B1-T01 sigue siendo válida", () => assert(parseRoute("#temario/B1-T01").topicId === "B1-T01", "La ruta legacy no es válida."));
 await test("#temario/B1-T01/<seccion> sigue siendo válida", () => assert(parseRoute("#temario/B1-T01/la-corona").sectionId === "la-corona", "La sección legacy no es válida."));
-await test("una ruta canónica TAI equivalente se acepta", () => {
+await test("una ruta canónica GSI equivalente se acepta", () => {
   const topic = allCatalogTopics[0];
   const route = parseRoute(`#temario/${topic.canonical_id}`);
   assert(!route.error && route.topicId === topic.canonical_id, "La forma canónica no se acepta.");
 });
-await test("una ruta canónica TAI con sección se acepta", () => {
+await test("una ruta canónica GSI con sección se acepta", () => {
   const topic = allCatalogTopics[0];
   const route = parseRoute(`#temario/${topic.canonical_id}/la-corona`);
   assert(!route.error && route.sectionId === "la-corona", "La sección canónica no se acepta.");
@@ -152,20 +153,22 @@ await test("el contenido editorial se solicita con el ID legacy", () => {
   assert(contentByTopic.has(legacyId) && syllabusViewSource.includes("loadTopicFragment(viewState.index, operationalTopicId)"), "La vista no entrega el ID legacy al contenido editorial.");
 });
 await test("los enlaces internos existentes siguen siendo legacy", () => assert(syllabusViewSource.includes("study.href = `#temario/${topic.id}`"), "Los enlaces internos dejaron de usar topic.id legacy."));
-await test("no aparecen temas GSI en la UI", () => {
-  assert(!indexHtml.includes("GSI") && !syllabusViewSource.includes("plannedSyllabus"), "La interfaz expone el syllabus no disponible.");
+await test("la interfaz identifica GSI A2 sin selector de otra oposición", () => {
+  assert(indexHtml.includes("GSI A2") && !/\bTAI\b/.test(indexHtml) && !indexHtml.includes('id="opposition-select"'), "Identidad activa incorrecta.");
 });
+
 await test("no se introducen nuevas claves localStorage", () => {
   assert(!catalogSource.includes("localStorage") && !dataServiceSource.includes(".v2") && !appSource.includes(".v2"), "M2 introduce persistencia nueva.");
 });
 await test("las preguntas conservan block_id y topic_id legacy", () => {
   const topicIds = new Set(legacyTopics.map((topic) => topic.id));
-  const collections = [official, ai, manual, demo];
-  assert(collections.every((collection) => collection.questions.every((question) => /^B[1-4]$/.test(question.block_id) && topicIds.has(question.topic_id) && !Object.hasOwn(question, "opposition_id") && !Object.hasOwn(question, "syllabus_id"))), "Las preguntas no conservan su forma legacy.");
+  const collections = [official, ai, manual];
+  assert(collections.every((collection) => collection.questions.every((question) => /^B[1-4]$/.test(question.block_id) && topicIds.has(question.topic_id) && question.opposition_id === "OPP-GSI")), "Las preguntas no conservan su forma legacy.");
 });
-await test("el modo demo no cambia de semántica", () => {
-  assert(demo.metadata.dataset_type === "ai" && demo.questions.every((question) => question.is_active && question.official_status === "not_official"), "El banco demo cambió de semántica.");
+await test("el runtime excluye demo incluso con parámetros antiguos", () => {
+  assert(/export function isDemoMode\(\)\s*\{\s*return false;/.test(dataServiceSource), "Demo puede entrar en el banco.");
 });
+
 await test("las rutas continúan siendo relativas y aptas para GitHub Pages", () => {
   assert(runtimeContext.legacySourcePath === syllabiCatalog.runtime_source.path && !runtimeContext.legacySourcePath.startsWith("/") && dataServiceSource.includes("`./${runtimeContext.legacySourcePath}`"), "La materialización runtime no usa una ruta relativa.");
 });

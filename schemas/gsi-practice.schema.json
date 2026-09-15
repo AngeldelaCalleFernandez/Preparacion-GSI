@@ -1,0 +1,242 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "updatedAt",
+    "oppositionId",
+    "simulations",
+    "cases",
+    "library"
+  ],
+  "properties": {
+    "version": {
+      "const": 1
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date"
+    },
+    "oppositionId": {
+      "const": "OPP-GSI"
+    },
+    "simulations": {
+      "const": 4
+    },
+    "cases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "simulation",
+          "option",
+          "title",
+          "statement",
+          "questions",
+          "checklist",
+          "rubric",
+          "source",
+          "solutionHtml",
+          "solutionSource"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^GSI-S[1-4]-[AB]$"
+          },
+          "simulation": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 4
+          },
+          "option": {
+            "enum": [
+              "A",
+              "B"
+            ]
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "statement": {
+            "type": "string",
+            "minLength": 300
+          },
+          "questions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "id",
+                "prompt",
+                "checklist"
+              ],
+              "properties": {
+                "id": {
+                  "enum": [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5"
+                  ]
+                },
+                "prompt": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "checklist": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "minItems": 0
+                }
+              }
+            },
+            "minItems": 5,
+            "maxItems": 5
+          },
+          "checklist": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1
+          },
+          "rubric": {
+            "const": {
+              "technical": 30,
+              "analysis": 10,
+              "systematic": 5,
+              "expression": 5
+            }
+          },
+          "source": {
+            "type": "object",
+            "additionalProperties": true,
+            "required": [
+              "title",
+              "url",
+              "drive_id",
+              "locator"
+            ],
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1
+              },
+              "url": {
+                "type": "string",
+                "format": "uri",
+                "pattern": "^https://"
+              },
+              "drive_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "locator": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "solutionHtml": {
+            "type": "string",
+            "minLength": 1000
+          },
+          "solutionSource": {
+            "type": "object",
+            "additionalProperties": true,
+            "required": [
+              "title",
+              "url",
+              "drive_id",
+              "locator"
+            ],
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1
+              },
+              "url": {
+                "type": "string",
+                "format": "uri",
+                "pattern": "^https://"
+              },
+              "drive_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "locator": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      },
+      "minItems": 8,
+      "maxItems": 8
+    },
+    "library": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "title",
+          "url",
+          "sourceType",
+          "description"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "pattern": "^https://"
+          },
+          "sourceType": {
+            "enum": [
+              "curated",
+              "support-a1"
+            ]
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "localPath": {
+            "type": "string",
+            "pattern": "^content/practice/[A-Za-z0-9-]+\\.html$"
+          },
+          "drive_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "pack": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "minItems": 1
+    }
+  }
+}

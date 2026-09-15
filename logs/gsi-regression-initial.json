@@ -1,0 +1,115 @@
+{
+  "date": "2026-09-14T14:45:25.754Z",
+  "results": [
+    {
+      "suite": "phase4",
+      "summary": "6 pruebas aprobadas; 3 fallidas.",
+      "failures": [
+        "FALLIDA: Solo BOE usa exclusivamente la colección oficial activa — No se seleccionó una pregunta BOE.",
+        "FALLIDA: Mixto calcula cuotas exactas sin sustituir orígenes — El mixto no pudo iniciar.",
+        "FALLIDA: El barajado conserva preguntas y opciones sin mutar sus datos — No se pudo barajar."
+      ],
+      "total": 9,
+      "errors": []
+    },
+    {
+      "suite": "phase5",
+      "summary": "23 pruebas aprobadas; 1 fallidas.",
+      "failures": [
+        "FALLIDA: la migración es idempotente — Cannot read properties of undefined (reading 'attempts')"
+      ],
+      "total": 24,
+      "errors": []
+    },
+    {
+      "suite": "phase6",
+      "summary": "60 pruebas aprobadas; 4 fallidas.",
+      "failures": [
+        "FALLIDA: la migración es idempotente — La migración volvió a insertar el mismo historial.",
+        "FALLIDA: la reconstrucción no duplica eventos — La reconstrucción duplicó un evento.",
+        "FALLIDA: la reconstrucción tras borrar analytics recupera datos compatibles — No se recuperó el historial compatible.",
+        "FALLIDA: la migración ignora entrenamientos no verificables — La migración fabricó un resultado no verificable."
+      ],
+      "total": 64,
+      "errors": []
+    },
+    {
+      "suite": "phase7",
+      "summary": "36 pruebas aprobadas y 9 fallidas.",
+      "failures": [
+        "FALLIDA: existen exactamente 33 registros de contenido — El índice no tiene 33 temas.",
+        "FALLIDA: B1-T01 contiene referencias verificables — El piloto no es trazable.",
+        "FALLIDA: solo los cuatro pilotos autorizados tienen cobertura parcial — Hay cobertura no autorizada.",
+        "FALLIDA: ningún tema se marca automáticamente como reviewed — Hay una revisión automática.",
+        "FALLIDA: H1 del Markdown coincide con syllabus.json — El Markdown no tiene el front matter y H1 esperados.",
+        "FALLIDA: la jerarquía H2/H3 es válida — Un H3 no sigue a un H2.",
+        "FALLIDA: un tema pending muestra aviso útil — No se muestra la carencia documental.",
+        "FALLIDA: el piloto partial muestra aviso de cobertura — No se muestra el aviso parcial.",
+        "FALLIDA: la tabla de contenidos enlaza las secciones locales — Falta el enlace local de sección."
+      ],
+      "total": 45,
+      "errors": []
+    },
+    {
+      "suite": "phase7b2",
+      "summary": "29 pruebas aprobadas y 21 fallidas.",
+      "failures": [
+        "FALLIDA: el adaptador conserva fuentes históricas y técnicas reales — Faltan variantes reales",
+        "FALLIDA: buildIndexes conserva objetos, relaciones y documentos históricos — B1-T01 perdió fuentes históricas",
+        "FALLIDA: B2-T04 carga como partial — B2-T04 no es partial",
+        "FALLIDA: B3-T07 carga como partial — B3-T07 no es partial",
+        "FALLIDA: B4-T08 carga como partial — B4-T08 no es partial",
+        "FALLIDA: B2-T04 muestra needs-review — B2-T04 no está pendiente de revisión",
+        "FALLIDA: B3-T07 muestra needs-review — B3-T07 no está pendiente de revisión",
+        "FALLIDA: B4-T08 muestra needs-review — B4-T08 no está pendiente de revisión",
+        "FALLIDA: B2-T04 muestra aviso de cobertura parcial — B2-T04 no avisa",
+        "FALLIDA: B3-T07 muestra aviso de cobertura parcial — B3-T07 no avisa",
+        "FALLIDA: B4-T08 muestra aviso de cobertura parcial — B4-T08 no avisa",
+        "FALLIDA: las fuentes se muestran — Falta lista de fuentes",
+        "FALLIDA: los localizadores se muestran — Faltan localizadores",
+        "FALLIDA: RFC 9846 aparece en B4-T08 — Falta RFC 9846",
+        "FALLIDA: ECMA-262 aparece una sola vez como fuente lógica — ECMA duplicada",
+        "FALLIDA: los ejemplos de código no se ejecutan — Ejemplos no escapados",
+        "FALLIDA: el filtro partial tiene cuatro temas — Recuento partial incorrecto",
+        "FALLIDA: la búsqueda puede encontrar términos de los tres pilotos — Término no indexado",
+        "FALLIDA: ningún tema está reviewed — Tema reviewed",
+        "FALLIDA: ningún tema está complete — Tema complete",
+        "FALLIDA: la aplicación conserva exactamente 33 temas — Temario alterado"
+      ],
+      "total": 50,
+      "errors": []
+    },
+    {
+      "suite": "m2",
+      "summary": "29 pruebas aprobadas y 6 fallidas.",
+      "failures": [
+        "FALLIDA: selección actual OPP-TAI / SYL-TAI-2025 — El contexto disponible no es el esperado.",
+        "FALLIDA: rechazo de SYL-GSI-2025 como contexto operativo — Falta un syllabus no disponible para la prueba.",
+        "FALLIDA: GSI no tiene temas ni mapa de identidades — Cannot read properties of undefined (reading 'blocks')",
+        "FALLIDA: se conservan los 33 temas TAI — El total de temas no se conserva.",
+        "FALLIDA: no aparecen temas GSI en la UI — La interfaz expone el syllabus no disponible.",
+        "FALLIDA: las preguntas conservan block_id y topic_id legacy — Las preguntas no conservan su forma legacy."
+      ],
+      "total": 35,
+      "errors": []
+    },
+    {
+      "suite": "m3",
+      "summary": "Runner M3: 51 aprobadas, 10 fallidas.",
+      "failures": [
+        "FALLIDA — 37. varias v1 válidas migran juntas: La condición esperada no se cumple.",
+        "FALLIDA — 45. nuevas escrituras de dominio usan solo v2: Persistencia v2 inválida: el adaptador no está configurado.",
+        "FALLIDA — 46. no hay dual-write sobre v1 histórica: Persistencia v2 inválida: el adaptador no está configurado.",
+        "FALLIDA — 47. clear training no permite remigración: La condición esperada no se cumple.",
+        "FALLIDA — 48. clear examen no permite remigración: Persistencia v2 inválida: el adaptador no está configurado.",
+        "FALLIDA — 49. clear refuerzo no permite remigración: Persistencia v2 inválida: el adaptador no está configurado.",
+        "FALLIDA — 50. clear analítica no permite remigración: Persistencia v2 inválida: el adaptador no está configurado.",
+        "FALLIDA — 51. migratePhase3Training funciona mediante adaptador: Persistencia v2 inválida: el adaptador no está configurado.",
+        "FALLIDA — 52. migrateAnalytics funciona mediante adaptador: Persistencia v2 inválida: el adaptador no está configurado.",
+        "FALLIDA — 58. GSI continúa no operativo: La condición esperada no se cumple."
+      ],
+      "total": 61,
+      "errors": []
+    }
+  ]
+}

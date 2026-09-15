@@ -22,6 +22,9 @@
           },
           {
             "$ref": "#/$defs/corpusSource"
+          },
+          {
+            "$ref": "#/$defs/currencyControl"
           }
         ]
       }
@@ -420,6 +423,92 @@
           "items": {
             "$ref": "#/$defs/corpusDocument"
           }
+        }
+      }
+    },
+    "currencyControl": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "title",
+        "publisher",
+        "official_status",
+        "url",
+        "published_at",
+        "reviewed_at",
+        "block_ids",
+        "topic_ids",
+        "mapping_status",
+        "documents",
+        "sourceKind"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^SRC-[A-Z0-9-]+$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "publisher": {
+          "type": "string",
+          "minLength": 1
+        },
+        "official_status": {
+          "enum": [
+            "official",
+            "official_provisional",
+            "official_archive",
+            "reference"
+          ]
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri"
+        },
+        "published_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "reviewed_at": {
+          "type": "string",
+          "format": "date"
+        },
+        "block_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^B[1-4]$"
+          }
+        },
+        "topic_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^B[1-4]-T\\d{2}$"
+          }
+        },
+        "mapping_status": {
+          "enum": [
+            "mapped",
+            "partial",
+            "pending_review"
+          ]
+        },
+        "documents": {
+          "type": "array",
+          "maxItems": 0
+        },
+        "sourceKind": {
+          "const": "currency-control"
         }
       }
     }

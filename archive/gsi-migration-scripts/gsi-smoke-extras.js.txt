@@ -1,0 +1,93 @@
+  const bank = (await Promise.all(["official", "manual", "ai"].map(async (origin) => JSON.parse(await fs.readFile(path.join(root, `data/questions-${origin}.json`), "utf8")).questions))).flat();
+  const pendingTopics = [];
+  await check("training through every topic filter", async () => {
+    await page.goto(`${base}#entrenamiento`);
+    await page.locator("#training-quantity").fill("1");
+    for (const block of syllabus.blocks) for (const topic of block.topics) {
+      await page.locator("#training-block").selectOption(block.id);
+      await page.locator("#training-topic").selectOption(topic.id);
+      const active = bank.filter((q) => q.topic_id === topic.id && q.is_active && q.validation_status === "validated");
+      if (!active.length) {
+        pendingTopics.push(topic.id);
+        assert.match(await page.locator("#training-availability").innerText(), /0/);
+        continue;
+      }
+      await page.locator('#training-form button[type="submit"]').click();
+      const statement = await page.locator("#training-session .question-statement").innerText();
+      const q = active.find((q) => q.statement === statement); assert.ok(q, `Wrong topic: ${topic.id}`);
+      const wrong = q.options.find((o) => o.id !== q.correct_option).id;
+      await page.locator(`#training-session .option-button[data-option-id="${wrong}"]`).click();
+      assert.match(await page.locator(".answer-panel").innerText(), /Respuesta incorrecta/);
+      await page.getByRole("button", { name: "Finalizar entrenamiento", exact: true }).click();
+    }
+    console.log(`Topic training: ${57 - pendingTopics.length} answered, ${pendingTopics.length} safely unavailable pending review.`);
+  });
+  await check("training each block, mixed, failed and unseen", async () => {
+    for (const blockId of ["B1", "B2", "B3", "B4", ""]) {
+      await page.locator("#training-block").selectOption(blockId);
+      await page.locator("#training-history").selectOption("all");
+      await page.locator('#training-form button[type="submit"]').click();
+      const statement = await page.locator("#training-session .question-statement").innerText();
+      const q = bank.find((q) => q.statement === statement); assert.ok(q && (!blockId || q.block_id === blockId));
+      await page.locator(`#training-session .option-button[data-option-id="${q.correct_option}"]`).click();
+      await page.getByRole("button",{name:"Finalizar entrenamiento",exact:true}).click();
+    }
+    for(const history of ["failed","unseen"]) {
+      await page.locator("#training-history").selectOption(history); await page.locator('#training-form button[type="submit"]').click();
+      await page.locator("#training-session .option-button").first().click(); await page.getByRole("button",{name:"Finalizar entrenamiento",exact:true}).click();
+    }
+  });
+  await check("exam deadline survives reload and expires", async () => {
+    await page.goto(`${base}#examen`); await page.locator("#exam-mode").selectOption("gsi");
+    await page.locator('#exam-config-form button[type="submit"]').click();
+    await page.locator("#exam-active").waitFor({state:"visible"});
+    const previous = await page.evaluate(() => {
+      const key = Object.keys(localStorage).find((k) => k.endsWith("exam.active.real.v2"));
+      return JSON.parse(localStorage.getItem(key)).payload;
+    });
+    await page.reload(); await page.getByRole("button",{name:"Reanudar",exact:true}).click();
+    assert.match(await page.locator("#exam-progress").innerText(),/de 100/);
+    assert.equal(await page.evaluate(() => JSON.parse(localStorage.getItem(Object.keys(localStorage).find((k)=>k.endsWith("exam.active.real.v2")))).payload.deadlineAt),previous.deadlineAt);
+    await page.evaluate(() => {
+      const key=Object.keys(localStorage).find((k)=>k.endsWith("exam.active.real.v2")); const value=JSON.parse(localStorage.getItem(key));
+      value.payload.deadlineAt=new Date(Date.now()-1000).toISOString(); value.payload.startedAt=new Date(Date.parse(value.payload.deadlineAt)-5400000).toISOString(); localStorage.setItem(key,JSON.stringify(value));
+    });
+    await page.reload(); await page.getByRole("button",{name:"Reanudar",exact:true}).click();
+    await page.locator("#exam-results").waitFor({state:"visible"}); assert.match(await page.locator("#app-status").innerText(),/Tiempo agotado/);
+  });
+  await check("written marking, rubric and saved score", async () => {
+    page.on("dialog", (dialog) => dialog.accept());
+    await page.goto(`${base}#practica`); await page.getByRole("button",{name:"Terminar y autocorregir",exact:true}).click();
+    for(const [key,value] of [["technical","30"],["analysis","10"],["systematic","5"],["expression","5"]]) {await page.locator(`#score-${key}`).fill(value); await page.locator(`#score-${key}`).dispatchEvent("change");}
+    assert.equal(await page.locator("#written-score").innerText(),"50 / 50 puntos"); await page.reload(); await page.locator("#written-score").waitFor(); assert.equal(await page.locator("#written-score").innerText(),"50 / 50 puntos");
+  });
+  await check("export reset import restores all GSI progress and preserves old data", async () => {
+    await page.goto(`${base}#estadisticas`);
+    await page.evaluate(()=>localStorage.setItem("tai.phase3.training.v1","historical untouched"));
+    const downloadPromise=page.waitForEvent("download"); await page.locator("#progress-export").click(); const download=await downloadPromise;
+    const backupPath=path.join(root,"tmp/gsi/smoke-progress.json");await download.saveAs(backupPath);
+    const backup=JSON.parse(await fs.readFile(backupPath,"utf8"));assert.equal(backup.oppositionId,"OPP-GSI");
+    await page.locator("#progress-reset").click();await page.waitForFunction(()=>document.querySelector("#home-topic-count")?.textContent==="57");
+    assert.equal(await page.evaluate(()=>localStorage.getItem("tai.phase3.training.v1")),"historical untouched");
+    await page.locator("#progress-import").setInputFiles(backupPath);
+    await page.waitForFunction(()=>Boolean(localStorage.getItem("gsi.OPP-GSI.SYL-GSI-2025.written.v1")),null,{timeout:10000});
+    assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem("gsi.OPP-GSI.SYL-GSI-2025.written.v1")).scores.technical),30);
+    await page.goto(`${base}#practica`);await page.locator("#written-score").waitFor();assert.equal(await page.locator("#written-score").innerText(),"50 / 50 puntos");
+  });
+  await check("written timeout persists and makes answers read only", async () => {
+    await page.getByRole("button",{name:"Elegir otro simulacro",exact:true}).click();await page.getByRole("button",{name:"Elegir opción B · iniciar 180 minutos",exact:true}).click();
+    await page.evaluate(()=>{const k="gsi.OPP-GSI.SYL-GSI-2025.written.v1";const v=JSON.parse(localStorage.getItem(k));v.deadlineAt=new Date(Date.now()-1000).toISOString();v.startedAt=new Date(Date.parse(v.deadlineAt)-10800000).toISOString();localStorage.setItem(k,JSON.stringify(v));});
+    await page.reload();await page.locator("#written-score").waitFor();assert.equal(await page.locator("#written-answer-1").evaluate(e=>e.readOnly),true);
+  });
+  await check("mobile main views and keyboard navigation", async () => {
+    await page.setViewportSize({width:390,height:844});
+    for(const route of ["inicio","entrenamiento","examen","practica","refuerzo","estadisticas"]) {
+      await page.goto(`${base}#${route}`);await page.locator(`[data-view="${route}"]`).waitFor({state:"visible"});
+      assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2),true,route);
+      const text=await page.locator(`[data-view="${route}"]`).innerText();assert.doesNotMatch(text,/\bTAI\b|33 temas/);
+    }
+    await page.goto(`${base}#temario/B2-T07`);await page.locator('.topic-content[data-topic-id="B2-T07"]').waitFor();assert.match(await page.locator("#topic-detail").innerText(),/1.37 ya publicado/);
+    await page.screenshot({path:path.join(root,"tmp/gsi/topic-mobile-viewport.png")});
+    await page.locator('a[data-route="inicio"]').focus();await page.keyboard.press("Enter");assert.match(page.url(),/#inicio$/);
+    await page.setViewportSize({width:1365,height:900});
+  });

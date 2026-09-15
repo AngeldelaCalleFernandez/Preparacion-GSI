@@ -112,7 +112,7 @@ def main() -> int:
     if errors:
         print("\n".join(errors))
         return 1
-    print(f"OK: {total} preguntas validadas; no se ha importado ni generado ninguna pregunta.")
+    print(f"OK: {total} preguntas con estructura válida; no se modifica su estado de revisión editorial.")
     return 0
 
 

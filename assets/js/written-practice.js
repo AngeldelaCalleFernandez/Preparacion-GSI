@@ -12,7 +12,7 @@ export function createWrittenState(caseId, now = Date.now()) {
 }
 export function validateWrittenState(state, cases) {
   if (!state || state.version !== 1 || state.oppositionId !== "OPP-GSI" || state.syllabusId !== "SYL-GSI-2025" || !cases.some((c) => c.id === state.caseId)) return false;
-  if (!Number.isFinite(Date.parse(state.startedAt)) || Date.parse(state.deadlineAt) - Date.parse(state.startedAt) !== 10800000 || (state.finishedAt !== null && !Number.isFinite(Date.parse(state.finishedAt)))) return false;
+  if (!Number.isFinite(Date.parse(state.startedAt)) || Date.parse(state.deadlineAt) - Date.parse(state.startedAt) !== 10800000 || (state.finishedAt !== null && (!Number.isFinite(Date.parse(state.finishedAt)) || Date.parse(state.finishedAt) < Date.parse(state.startedAt)))) return false;
   if (typeof state.outline !== "string" || !state.answers || Object.keys(state.answers).length !== 5 || ![1, 2, 3, 4, 5].every((n) => typeof state.answers[n] === "string")) return false;
   return Object.entries(RUBRIC).every(([key, max]) => Number.isFinite(state.scores?.[key]) && state.scores[key] >= 0 && state.scores[key] <= max);
 }

@@ -1124,15 +1124,15 @@
       "options": [
         {
           "id": "A",
-          "text": "Obligación de cifrar el documento completo"
+          "text": "Efecto jurídico idéntico al de cualquier firma simple sin requisitos adicionales"
         },
         {
           "id": "B",
-          "text": "Inmunidad frente a toda impugnación judicial"
+          "text": "Equivalencia con una firma manuscrita solo si interviene un notario"
         },
         {
           "id": "C",
-          "text": "Conversión automática de cualquier documento en norma jurídica"
+          "text": "Presunción absoluta de veracidad del contenido firmado"
         },
         {
           "id": "D",
@@ -1156,7 +1156,7 @@
         "title": "GSI_A2 — BLOQUE I — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (10 temas)",
         "evidence": "### Firma electrónica\n\nCategoría general.\n\n### Firma avanzada\n\nVinculada al firmante, permite identificarlo, se crea bajo su control con nivel adecuado y detecta alteraciones posteriores en datos conforme a requisitos eIDAS.\n\n### Firma cualificada\n\nFirma avanzada + **dispositivo cualificado** + **certificado cualificado**. Tiene efecto jurídico equivalente a manuscrita en la UE en los términos del Reglamento.",
         "evidence_sha256": "a31865c5668f47dc33feab917e16839a7073eaec10d68844aff57b9d32af6988",
-        "record_sha256": "7c890d314248141f270336a12cde00756e34b87606df62e0560d7208595ca48a",
+        "record_sha256": "b6b51dd549dfb261e3cf9d10836a46b2315e7bc25d92af623f0deee8b764ba16",
         "review_id": null,
         "review_method": "Pendiente de revisión editorial; el compilador no valida contenido."
       },
@@ -1883,11 +1883,11 @@
       "options": [
         {
           "id": "A",
-          "text": "Cesión universal"
+          "text": "Exactitud de los datos"
         },
         {
           "id": "B",
-          "text": "Consentimiento tácito obligatorio"
+          "text": "Limitación del plazo de conservación"
         },
         {
           "id": "C",
@@ -1895,7 +1895,7 @@
         },
         {
           "id": "D",
-          "text": "Conservación ilimitada"
+          "text": "Limitación de la finalidad"
         }
       ],
       "correct_option": "C",
@@ -1915,7 +1915,7 @@
         "title": "GSI_A2 — BLOQUE I — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (10 temas)",
         "evidence": "* licitud, lealtad y transparencia;\n* limitación de finalidad;\n* minimización;\n* exactitud;\n* limitación de conservación;\n* integridad y confidencialidad;\n* responsabilidad proactiva.\n\nConsentimiento **no es un principio ni la única base jurídica**.",
         "evidence_sha256": "9ea07239f739d891505b1ca865826dbe8c93bd1dc685daca1df15508cd1124f2",
-        "record_sha256": "b13f48b88c07c5d6356abc4437646e585f15ace84b87e97aa3a7c5658afc99df",
+        "record_sha256": "956fa9d4efee5b20fa93c145ef4c5b2483e288e24e16cd071f552ac6a74b0d63",
         "review_id": null,
         "review_method": "Pendiente de revisión editorial; el compilador no valida contenido."
       },
@@ -6092,11 +6092,11 @@
       "options": [
         {
           "id": "A",
-          "text": "Cola de mensajes"
+          "text": "Cubo OLAP como sinónimo obligatorio de cualquier almacén por área"
         },
         {
           "id": "B",
-          "text": "Intérprete SQL"
+          "text": "Sistema OLTP de transacciones operativas"
         },
         {
           "id": "C",
@@ -6104,7 +6104,7 @@
         },
         {
           "id": "D",
-          "text": "Registro de transacciones como única definición"
+          "text": "Data Warehouse corporativo completo"
         }
       ],
       "correct_option": "C",
@@ -6124,7 +6124,7 @@
         "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
         "evidence": "Un Data Warehouse integra información de múltiples fuentes para análisis histórico. La formulación clásica de Inmon lo caracteriza como **orientado a temas, integrado, variable en el tiempo y no volátil**. El objetivo no es procesar transacciones de negocio en tiempo real, sino facilitar análisis coherente.\n\n**Data Mart** es un subconjunto especializado por área o materia. En enfoque top-down se construye primero un DW corporativo y después datamarts; en enfoque bottom-up se crean datamarts conformados y se integran progresivamente.",
         "evidence_sha256": "cf9c833cd5ba7fd4797a8b2e35b4741e603353872f82f4eec185d6c317dfbaee",
-        "record_sha256": "fd4ea74882b5ef763bc360dc136ce99719d866d18cff3a8640887f66092dd883",
+        "record_sha256": "d56f3171f7a078a0d6fd1cf77584a0aa633be67ac6ded43352b35cf0ad49ffab",
         "review_id": null,
         "review_method": "Pendiente de revisión editorial; el compilador no valida contenido."
       },
@@ -8093,15 +8093,15 @@
       "options": [
         {
           "id": "A",
-          "text": "Proyección"
+          "text": "Atomicidad"
         },
         {
           "id": "B",
-          "text": "Normalización"
+          "text": "Aislamiento"
         },
         {
           "id": "C",
-          "text": "Independencia lógica"
+          "text": "Consistencia"
         },
         {
           "id": "D",
@@ -8125,7 +8125,7 @@
         "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
         "evidence": "* **Atomicidad**: todas las operaciones de la transacción tienen efecto o ninguna.\n* **Consistencia**: la transacción lleva la BD de un estado válido a otro respetando reglas.\n* **Aislamiento**: las transacciones concurrentes no deben producir resultados incompatibles con el nivel establecido.\n* **Durabilidad**: tras commit, el resultado persiste frente a fallos contemplados.\n\nCOMMIT confirma; ROLLBACK deshace según alcance. El log de transacciones, buffers y mecanismos de recuperación ayudan a garantizar atomicidad/durabilidad.",
         "evidence_sha256": "997a745ef531fef9cd63693c5bcef3013b924ea152c68dbd004a9d33d9302a4d",
-        "record_sha256": "dbb680beecd626c446460f3e7bc78dda2fa20f135c115b10315619cafbdf8bf5",
+        "record_sha256": "0e2bd3cf9438897c53617135b017a79624d38fe19dd9954cec05f5c396ed5b75",
         "review_id": null,
         "review_method": "Pendiente de revisión editorial; el compilador no valida contenido."
       },
@@ -10646,11 +10646,11 @@
       "options": [
         {
           "id": "A",
-          "text": "Resolver nombres de dominio"
+          "text": "Administrar sesiones y credenciales privilegiadas como función de PAM"
         },
         {
           "id": "B",
-          "text": "Compilar dependencias"
+          "text": "Orquestar playbooks de respuesta como función de SOAR"
         },
         {
           "id": "C",
@@ -10658,7 +10658,7 @@
         },
         {
           "id": "D",
-          "text": "Garantizar energía ininterrumpida"
+          "text": "Correlacionar registros y generar alertas como función central de SIEM"
         }
       ],
       "correct_option": "C",
@@ -10678,7 +10678,7 @@
         "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
         "evidence": "* **Firewall**: aplica política de filtrado; puede ser stateless/stateful y de aplicación según producto.\n* **WAF**: protege aplicaciones HTTP frente a patrones/ataques de capa aplicación; no sustituye desarrollo seguro.\n* **IDS**: detecta y alerta; **IPS**: puede bloquear en línea.\n* **EDR/XDR**: telemetría y respuesta en endpoints/varios dominios.\n* **Antimalware**: detección por firmas, comportamiento y otras técnicas.\n* **SIEM**: centraliza/correlaciona logs y genera detecciones.\n* **SOAR**: automatiza/orquesta flujos de respuesta.\n* **Escáner de vulnerabilidades**: identifica exposiciones conocidas/configuración.\n* **SAST/DAST/SCA**: análisis de código, aplicación ejecutándose y dependencias.\n* **DLP**: políticas para detectar/controlar salida de datos sensibles.\n* **PAM**: gestión de accesos privilegiados.\n* **MFA**: reduce riesgo de credenciales robadas, aunque no elimina phishing avanzado.",
         "evidence_sha256": "85a840193b72bb96f906113bec5155219ab70bdd0e4b03192d890f839c8bde6f",
-        "record_sha256": "07c367f009025ace3257106e7d720c2fc1dcd088e06ed33a8fabf588bde59385",
+        "record_sha256": "0081c288850e22728fa922b304d537f39811adde3ec8e4c9a042ab8987e396c7",
         "review_id": null,
         "review_method": "Pendiente de revisión editorial; el compilador no valida contenido."
       },
@@ -15338,7 +15338,7 @@
       "options": [
         {
           "id": "A",
-          "text": "Fragmentan siempre como requisito"
+          "text": "Fragmentan si el paquete supera la MTU del enlace de salida"
         },
         {
           "id": "B",
@@ -15346,11 +15346,11 @@
         },
         {
           "id": "C",
-          "text": "Eliminan obligatoriamente toda cabecera de transporte"
+          "text": "Fragmentan después de traducir la cabecera a su formato mínimo"
         },
         {
           "id": "D",
-          "text": "Convierten cada paquete a IPv4"
+          "text": "Fragmentan únicamente cuando el siguiente salto es IPv6"
         }
       ],
       "correct_option": "B",
@@ -15370,7 +15370,7 @@
         "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
         "evidence": "MTU es el máximo tamaño de unidad de una interfaz/enlace. En IPv4 puede existir fragmentación; en IPv6 los routers no fragmentan paquetes en tránsito. Path MTU Discovery evita fragmentación innecesaria. Problemas de MTU pueden manifestarse como conexiones que «funcionan parcialmente».",
         "evidence_sha256": "e2e11985b004afe0df297f05a01b08d36fd05745d50ad698f21a55562c653938",
-        "record_sha256": "b6cc0e5456f4941e6019a658a303d2418586aef4c6c59205d01e8a98695971d1",
+        "record_sha256": "9bdf1587f97c7a01ddc3488dd31deb47928ff318fa6ba4d377c588108f16a20a",
         "review_id": null,
         "review_method": "Pendiente de revisión editorial; el compilador no valida contenido."
       },
@@ -16718,11 +16718,11 @@
       "options": [
         {
           "id": "A",
-          "text": "RPO: tiempo de respuesta HTTP; RTO: tamaño de backup"
+          "text": "RTO: tiempo medio entre fallos; RPO: tiempo medio de reparación"
         },
         {
           "id": "B",
-          "text": "Ambos son categorías ENS"
+          "text": "RTO: duración de retención; RPO: frecuencia de pruebas"
         },
         {
           "id": "C",
@@ -16730,7 +16730,7 @@
         },
         {
           "id": "D",
-          "text": "RTO: probabilidad; RPO: impacto económico"
+          "text": "RTO: pérdida máxima de datos; RPO: tiempo de recuperación"
         }
       ],
       "correct_option": "C",
@@ -16750,7 +16750,7 @@
         "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
         "evidence": "RTO es tiempo objetivo de recuperación; RPO es pérdida máxima de datos medida temporalmente. Ayudan a traducir impacto/disponibilidad a requisitos de continuidad. No son probabilidades ni «niveles de riesgo».",
         "evidence_sha256": "fb28cee0bcf6fb31e3fd561700c37a96879d468446b9f6b5422e927bd1b3e4da",
-        "record_sha256": "3cc27c5c3646229c7d89a2383fd7e924abfc88bf665281321fef17ee43504891",
+        "record_sha256": "1b35ec00e6deffd2d14d0b9299704986f3bd18fb2a71f035a634d5ba35ddb219",
         "review_id": null,
         "review_method": "Pendiente de revisión editorial; el compilador no valida contenido."
       },
@@ -18512,11 +18512,11 @@
       "options": [
         {
           "id": "A",
-          "text": "Definir gramáticas XML exclusivamente"
+          "text": "Guiar al usuario por menús de voz como función de IVR"
         },
         {
           "id": "B",
-          "text": "Firmar documentos PDF"
+          "text": "Distribuir llamadas entrantes a colas según reglas de ACD"
         },
         {
           "id": "C",
@@ -18524,7 +18524,7 @@
         },
         {
           "id": "D",
-          "text": "Resolver nombres DNS"
+          "text": "Integrar telefonía y CRM como función principal de CTI"
         }
       ],
       "correct_option": "C",
@@ -18544,7 +18544,7 @@
         "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
         "evidence": "* **PBX/IP-PBX**: centralita que gestiona extensiones y llamadas.\n* **SIP**: protocolo de señalización habitual en VoIP.\n* **SBC**: Session Border Controller, protege/controla el borde de sesiones VoIP.\n* **ACD**: Automatic Call Distributor, enruta llamadas a colas/agentes.\n* **CTI**: Computer Telephony Integration, integra telefonía y aplicaciones/CRM.\n* **IVR**: Interactive Voice Response, diálogo automatizado por teclado DTMF y/o voz.\n* **Grabación**: registra llamadas cuando existe finalidad/base y controles apropiados.\n* **WFM**: Workforce Management, predice carga y planifica agentes.",
         "evidence_sha256": "07c6e69e53e1e380b170a20bd75d3a0be84bf2ad83699dba4dcce9b3c1d986b2",
-        "record_sha256": "10bf71c01662045db8f76d3d392248179fc5b71a47fd0d2e71425242d696beb6",
+        "record_sha256": "5ab87516bdb6eec3032cfbc74469aa45d7c0da66775970704a23ac5f2e772e53",
         "review_id": null,
         "review_method": "Pendiente de revisión editorial; el compilador no valida contenido."
       },
@@ -20651,7 +20651,7 @@
       "options": [
         {
           "id": "A",
-          "text": "Eliminación del historial de versiones"
+          "text": "Un informe de viabilidad sin procedimiento de transición"
         },
         {
           "id": "B",
@@ -20659,11 +20659,11 @@
         },
         {
           "id": "C",
-          "text": "Solo una captura del icono"
+          "text": "Únicamente la aprobación de requisitos de la fase de análisis"
         },
         {
           "id": "D",
-          "text": "Aceptación de cualquier fallo sin respuesta"
+          "text": "El diseño de arquitectura sin criterios de recuperación"
         }
       ],
       "correct_option": "B",
@@ -20683,7 +20683,7 @@
         "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
         "evidence": "**Base A1 utilizada:** A1 086. La fuente es útil para distinguir modelos y actividades. **Complemento GSI:** se explicita qué se controla en cada transición porque es una pregunta muy aprovechable en supuesto.\n\nUn ciclo bien gobernado no es una lista de fases: cada transición debe tener **entradas, salidas y criterios de paso**. En viabilidad se espera una justificación de alternativas; en requisitos, una especificación priorizada y trazable; en diseño, arquitectura y modelos; en construcción, artefactos reproducibles; en pruebas, evidencia de verificación/validación; en despliegue, plan de implantación y reversión; en operación, niveles de servicio y procedimientos.\n\nLa **trazabilidad** enlaza necesidad → requisito → componente de diseño → implementación → prueba → versión desplegada. Esta cadena permite estimar impacto de un cambio y demostrar cobertura ante auditoría o aceptación.",
         "evidence_sha256": "0fa0a016ec7e38f242c27d8c75816bdc0de70b090abd5de99e88e67f67a65e9b",
-        "record_sha256": "8804c29b17f1add8ecdde0828b25a3ed92e774ab41489a7821ade45b0712bf1b",
+        "record_sha256": "a2b1c5f32860c7c5ca051b9b4eb04b1677c86f36dca566d1898fd986d618a46e",
         "review_id": null,
         "review_method": "Pendiente de revisión editorial; el compilador no valida contenido."
       },
@@ -24446,11 +24446,11 @@
       "options": [
         {
           "id": "A",
-          "text": "Exclusivamente una pérdida de energía"
+          "text": "Lectura sucia de cambios no confirmados"
         },
         {
           "id": "B",
-          "text": "Un error sintáctico obligatorio"
+          "text": "Actualización perdida al sobrescribir una escritura"
         },
         {
           "id": "C",
@@ -24458,7 +24458,7 @@
         },
         {
           "id": "D",
-          "text": "Desnormalización por definición"
+          "text": "Interbloqueo entre transacciones que esperan recursos"
         }
       ],
       "correct_option": "C",
@@ -24478,7 +24478,7 @@
         "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
         "evidence": "* **lectura sucia:** leer cambios no confirmados;\n* **lectura no repetible:** la misma fila cambia entre lecturas;\n* **fantasma:** cambia el conjunto de filas que satisface un predicado;\n* **actualización perdida:** una escritura sobrescribe otra sin detectar conflicto.",
         "evidence_sha256": "30c5fd4fe454ac874140abd10e060d38cca0865590169e56dbeb1edc1b6c621d",
-        "record_sha256": "1378d00615c69e16ae4a750ab8a059959b7aa37e7bcc3598ae43642125ac00ad",
+        "record_sha256": "61c2c5bce3f733cd59dd443334dddebbaaa0895c8ecf407ab406c4de86d3e77e",
         "review_id": null,
         "review_method": "Pendiente de revisión editorial; el compilador no valida contenido."
       },
@@ -26240,11 +26240,11 @@
       "options": [
         {
           "id": "A",
-          "text": "Siempre usa O(1) de espacio"
+          "text": "Su tiempo siempre está acotado por O(n)"
         },
         {
           "id": "B",
-          "text": "Nunca falla el equipo"
+          "text": "Opera sin memoria auxiliar en todos los casos"
         },
         {
           "id": "C",
@@ -26252,7 +26252,7 @@
         },
         {
           "id": "D",
-          "text": "Siempre tarda O(n)"
+          "text": "Su complejidad no depende del orden inicial de la entrada"
         }
       ],
       "correct_option": "C",
@@ -26272,7 +26272,7 @@
         "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
         "evidence": "| Algoritmo | Promedio | Rasgo |\n| --- | --- | --- |\n| Insertion | O(n²) | simple; bueno para pequeños/casi ordenados |\n| Merge | O(n log n) | estable; requiere espacio auxiliar típico |\n| Quick | O(n log n) | peor O(n²); muy eficiente práctico con buen pivote |\n| Heap | O(n log n) | peor caso acotado; in-place típico |\n\n**Estable** significa conservar el orden relativo de elementos con clave igual; no significa “no se cae”.",
         "evidence_sha256": "3810c97ad34b29ab19644c9d2337022fc200b6ed1d7b392a256178964765057d",
-        "record_sha256": "03790235b084c79ad108c955d68a8382c5da4df2939d739bf0b29317d66262a6",
+        "record_sha256": "2912ad046fe4cc5b719fa89417d7be2c211bec97167eef4dc76b044005be2ab7",
         "review_id": null,
         "review_method": "Pendiente de revisión editorial; el compilador no valida contenido."
       },
@@ -28314,15 +28314,15 @@
         },
         {
           "id": "B",
-          "text": "Prueba de disco"
+          "text": "Partición de equivalencia sin modelar combinaciones de reglas"
         },
         {
           "id": "C",
-          "text": "Hash forense"
+          "text": "Cobertura de sentencias basada en la estructura interna del código"
         },
         {
           "id": "D",
-          "text": "Compilación nativa"
+          "text": "Análisis de valores límite para una única variable numérica"
         }
       ],
       "correct_option": "A",
@@ -28342,7 +28342,7 @@
         "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
         "evidence": "Particiones de equivalencia, valores límite, tablas de decisión, transición de estados, casos de uso.",
         "evidence_sha256": "1f455152c8922ad105857f25d29bcaf00771c5438907e0f826496bfe9b693ea4",
-        "record_sha256": "8de9e6b9de980362c13c4d48525695a7226a8e782e476fb2b15f099edfbab84c",
+        "record_sha256": "770457b0a07c8b4258f798405c5425097047d5e82c8d316d56b219db13702d77",
         "review_id": null,
         "review_method": "Pendiente de revisión editorial; el compilador no valida contenido."
       },
@@ -33347,7 +33347,7 @@
       "options": [
         {
           "id": "A",
-          "text": "Tener más líneas de código"
+          "text": "Cumplir exclusivamente el presupuesto del proyecto"
         },
         {
           "id": "B",
@@ -33355,11 +33355,11 @@
         },
         {
           "id": "C",
-          "text": "No recibir quejas aunque no haya usuarios"
+          "text": "Medir únicamente el número de defectos detectados durante desarrollo"
         },
         {
           "id": "D",
-          "text": "Usar siempre la tecnología más reciente"
+          "text": "Maximizar rendimiento con independencia de las necesidades"
         }
       ],
       "correct_option": "B",
@@ -33379,7 +33379,7 @@
         "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
         "evidence": "Grado en que producto satisface necesidades/requisitos bajo condiciones. Distingue quality assurance (proceso/preventivo) y quality control (evaluación del producto).",
         "evidence_sha256": "67449c443e546eb0f62b0da74ae9c909a2bc01476964646fbf3a15090754360f",
-        "record_sha256": "c9f13e839c70439f241d830b41ea9ddbfac936492a26fcdac9e661946b0818b1",
+        "record_sha256": "52c13705bbae20481cbf39dfb81305c97fe4525868ddabe7e490d4dc8a6910f6",
         "review_id": null,
         "review_method": "Pendiente de revisión editorial; el compilador no valida contenido."
       },
@@ -38871,15 +38871,15 @@
         },
         {
           "id": "B",
-          "text": "Solo un fichero exportado"
+          "text": "El conjunto de datos y estructuras persistentes considerado aisladamente"
         },
         {
           "id": "C",
-          "text": "Un documento de requisitos"
+          "text": "Una copia lógica exportada del contenido de la base"
         },
         {
           "id": "D",
-          "text": "Únicamente una tabla"
+          "text": "El esquema lógico de tablas y restricciones considerado aisladamente"
         }
       ],
       "correct_option": "A",
@@ -38899,7 +38899,7 @@
         "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
         "evidence": "La administración de un SGBD convierte el motor de base de datos en un servicio fiable. Incluye instalación y parametrización, instancias, catálogos/esquemas, almacenamiento, memoria, conexiones, seguridad, transacciones, rendimiento, copias, recuperación, replicación, alta disponibilidad, auditoría, parcheo y capacidad.\n\nConviene distinguir **base de datos** (datos/estructuras) de **instancia** (procesos y memoria que prestan servicio, según motor). Algunos productos usan terminología distinta; el concepto operativo es identificar procesos, memoria, ficheros y listeners/endpoints.",
         "evidence_sha256": "fa29a7fa257556145111079c53948997a0c1201bca2d81bd007934c36bcf8733",
-        "record_sha256": "6809bae87953015837c757c5b98a4d126e84a9638fee5704eb4e003155f06baf",
+        "record_sha256": "551b3cad820ae3fd6ce4dabef039b8d41de9865c9ca053ad067bb06d12064d1c",
         "review_id": null,
         "review_method": "Pendiente de revisión editorial; el compilador no valida contenido."
       },
@@ -44180,15 +44180,15 @@
       "options": [
         {
           "id": "A",
-          "text": "Son siempre idénticos"
+          "text": "Volumen transferido por segundo frente a operaciones por segundo"
         },
         {
           "id": "B",
-          "text": "IOPS mide solo capacidad total"
+          "text": "Tiempo por operación frente a capacidad útil del volumen"
         },
         {
           "id": "C",
-          "text": "Throughput mide únicamente número de discos"
+          "text": "Número de operaciones simultáneas frente a tiempo de respuesta"
         },
         {
           "id": "D",
@@ -44212,7 +44212,7 @@
         "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
         "evidence": "Medir IOPS, throughput (MB/s o GB/s), latencia, tamaño de bloque, ratio lectura/escritura, secuencial/aleatorio y concurrencia. Una base OLTP exige perfil distinto de backup secuencial. La capacidad útil debe descontar RAID, snapshots, reservas y crecimiento.",
         "evidence_sha256": "c32a33f0e3d75827bb7190d2744f8e8e0793317422bceb2911ff6d25a8941a58",
-        "record_sha256": "3295c2abfde76e39fc072675e9930a792e5645e610448f1c4367833931e7b12a",
+        "record_sha256": "5e908385bca7c24d8d6b4aab0ce5ecc88e60a21ad25c36dff553040a921b085e",
         "review_id": null,
         "review_method": "Pendiente de revisión editorial; el compilador no valida contenido."
       },
@@ -44732,15 +44732,15 @@
       "options": [
         {
           "id": "A",
-          "text": "Crear backups independientes"
+          "text": "Duplicar la cadena de alimentación eléctrica hasta cada servidor"
         },
         {
           "id": "B",
-          "text": "Aumentar ancho de banda lógico"
+          "text": "Añadir por sí mismos un equipo de climatización redundante N+1"
         },
         {
           "id": "C",
-          "text": "Sustituir control de acceso"
+          "text": "Medir la energía TI consumida sin incluir refrigeración"
         },
         {
           "id": "D",
@@ -44764,7 +44764,7 @@
         "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
         "evidence": "Cadena típica: red eléctrica → cuadros/ATS → UPS → PDU → equipo, con grupo electrógeno para autonomía prolongada. Redundancia N cubre solo carga; N+1 añade un componente; 2N duplica capacidad completa en la parte diseñada. La topología real puede combinar niveles.\n\nLa climatización controla temperatura/humedad y flujo de aire; pasillos frío/caliente y contención mejoran eficiencia. PUE = energía total del CPD / energía TI; cuanto más próximo a 1, menor overhead, pero no mide disponibilidad ni calidad de servicio.",
         "evidence_sha256": "c0049bc8e2877ff8ee817a5730fb3678eb19101496d82c8d459f8d1ff7163a1d",
-        "record_sha256": "4ad9f5d6b81805d77197caf024e9d4178e2ec264f271bac6993b5e8e88e72d8c",
+        "record_sha256": "1976a4850f71c9279fc966c9d4a6e4cebf9109f831cb9053d7a0221eb763475f",
         "review_id": null,
         "review_method": "Pendiente de revisión editorial; el compilador no valida contenido."
       },
@@ -49424,15 +49424,15 @@
       "options": [
         {
           "id": "A",
-          "text": "Solo contraseñas"
+          "text": "Eventos de aplicación equivalentes a un servidor Syslog"
         },
         {
           "id": "B",
-          "text": "Exclusivamente tablas DNS"
+          "text": "Objetos de gestión de una MIB consultados mediante SNMP"
         },
         {
           "id": "C",
-          "text": "Siempre todo el payload de cada paquete"
+          "text": "Registros completos de cada paquete equivalentes a una captura sin muestreo"
         },
         {
           "id": "D",
@@ -49456,7 +49456,7 @@
         "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
         "evidence": "Syslog centraliza eventos; NetFlow/IPFIX o tecnologías equivalentes resumen flujos para saber quién habla con quién, cuánto y cuándo; streaming telemetry publica métricas de forma más frecuente/estructurada que polling tradicional. Se complementan, no sustituyen totalmente.",
         "evidence_sha256": "9c1717465a2196de82a4a5579144e4a808f7ed1b73bb0153679ac6bc12bf5423",
-        "record_sha256": "16c90f4ad3b74d08c72cf9a5e55718a8437609f58453cfc43e6938d91d4221cd",
+        "record_sha256": "ba2fb0243c5c196d542c80970494cb878ec79b5a83968a4f4f07333b6dde7bb6",
         "review_id": null,
         "review_method": "Pendiente de revisión editorial; el compilador no valida contenido."
       },
@@ -54323,7 +54323,7 @@
       "options": [
         {
           "id": "A",
-          "text": "Eliminar necesidad de routing"
+          "text": "Sustituir las políticas de filtrado de un firewall"
         },
         {
           "id": "B",
@@ -54331,11 +54331,11 @@
         },
         {
           "id": "C",
-          "text": "Sustituir siempre al firewall"
+          "text": "Aportar por sí solo autenticación criptográfica de los extremos"
         },
         {
           "id": "D",
-          "text": "Crear direcciones IPv6 ilimitadas en IPv4"
+          "text": "Mantener todas las direcciones de los extremos sin traducción"
         }
       ],
       "correct_option": "B",
@@ -54355,7 +54355,7 @@
         "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
         "evidence": "IPv4 usa espacio limitado y NAT se ha extendido para conservar direcciones; IPv6 aporta 128 bits y autoconfiguración/ND, entre otras capacidades. Dual stack permite transición. NAT no es un control de seguridad equivalente a firewall y puede complicar extremo-a-extremo.",
         "evidence_sha256": "9cddf031732f5ca7367eb0c66c1313f33e451c70ce6a9340115dd5a103fe6597",
-        "record_sha256": "95867bcfb34500245f8b3c3a35ba32b6540324e556836de551ba5cb67fe65cc5",
+        "record_sha256": "6b324789291881d68c7d6fd977b57b54902213b5c0213e08cb7e9ead1258732a",
         "review_id": null,
         "review_method": "Pendiente de revisión editorial; el compilador no valida contenido."
       },

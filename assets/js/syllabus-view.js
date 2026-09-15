@@ -218,6 +218,13 @@ async function renderDetail(routeState) {
     const fragment = await loadTopicFragment(viewState.index, operationalTopicId);
     if (version !== requestVersion) return;
     content.replaceChildren(fragment);
+    for (const update of viewState.data.updates.updates.filter((u) => u.topic_ids.includes(operationalTopicId))) {
+      const notice = element("aside", "notice");
+      notice.append(element("strong", "", `${update.title} · control ${update.reviewed_at}`), element("p", "", update.summary));
+      const link = sourceLink(viewState.data.indexes.sourcesById.get(update.source_id), "Comprobación de vigencia en la fuente oficial");
+      if (link) notice.append(link);
+      content.prepend(notice);
+    }
     focusTarget(detail, routeState, topic);
   } catch (error) {
     if (version !== requestVersion) return;

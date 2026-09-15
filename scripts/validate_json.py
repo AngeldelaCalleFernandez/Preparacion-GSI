@@ -19,6 +19,16 @@ except ImportError:
 
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMAS = {
+    "data/gsi-coverage-report.json": "schemas/gsi-coverage-report.schema.json",
+    "data/gsi-drive-inventory.json": "schemas/gsi-drive-inventory.schema.json",
+    "data/gsi-map-review.json": "schemas/gsi-map-review.schema.json",
+    "data/gsi-source-manifest.json": "schemas/gsi-source-manifest.schema.json",
+    "data/gsi-document-register.json": "schemas/gsi-document-register.schema.json",
+    "data/gsi-editorial-reviews.json": "schemas/gsi-editorial-reviews.schema.json",
+    "data/gsi-practice.json": "schemas/gsi-practice.schema.json",
+    "data/topic-content.json": "schemas/topic-content.schema.json",
+    "data/syllabi-catalog.json": "schemas/syllabi-catalog.schema.json",
+    "data/oppositions.json": "schemas/oppositions.schema.json",
     "data/syllabus.json": "schemas/syllabus.schema.json",
     "data/sources.json": "schemas/source.schema.json",
     "data/questions-official.json": "schemas/question.schema.json",

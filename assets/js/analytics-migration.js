@@ -45,7 +45,7 @@ function reportTemplate() {
     duplicates: 0,
     sessionsReconstructed: 0,
     unavailable: [
-      "Los exámenes finalizados antes de Fase 6 no se conservaban.",
+      "Las versiones antiguas no conservaban todos los exámenes finalizados.",
       "Las sesiones de entrenamiento y refuerzo históricas no se reconstruyen sin un resumen verificable.",
     ],
     temporalPrecision: "Los intentos importados conservan la fecha disponible; el historial de refuerzo puede estar truncado a 25 eventos por pregunta.",

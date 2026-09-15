@@ -7,13 +7,13 @@ import {
   createAnalyticsStore,
   getPeriodRange,
   selectComparable,
-} from "../assets/js/analytics-engine.js";
+} from "../assets/js/analytics-engine.js?gsi2";
 import {
   createAnalyticsAnnotationEvent,
   createAnalyticsAttemptEvent,
   createAnalyticsSession,
   createAnalyticsSessionEvent,
-} from "../assets/js/analytics-events.js";
+} from "../assets/js/analytics-events.js?gsi2";
 import {
   ANALYTICS_DEMO_KEY,
   ANALYTICS_REAL_KEY,
@@ -24,17 +24,17 @@ import {
   loadActiveTrainingSession,
   loadAnalyticsStore,
   saveActiveTrainingSession,
-} from "../assets/js/analytics-storage.js";
-import { migrateAnalytics, rebuildAnalytics } from "../assets/js/analytics-migration.js";
-import { EXAM_MODES, selectExamQuestions } from "../assets/js/exam-engine.js?phase6runner=1";
+} from "../assets/js/analytics-storage.js?gsi2";
+import { migrateAnalytics, rebuildAnalytics } from "../assets/js/analytics-migration.js?gsi2";
+import { EXAM_MODES, selectExamQuestions } from "../assets/js/exam-engine.js?gsi2";
 import {
   applyStoredReinforcementEvents,
   createReinforcementEvent,
   loadReinforcementStore,
   REINFORCEMENT_REAL_KEY,
-} from "../assets/js/reinforcement-storage.js";
-import { renderRoute, resolveRoute } from "../assets/js/router.js";
-import { isLearningEligible } from "../assets/js/statistics.js";
+} from "../assets/js/reinforcement-storage.js?gsi2";
+import { renderRoute, resolveRoute } from "../assets/js/router.js?gsi2";
+import { isLearningEligible } from "../assets/js/statistics.js?gsi2";
 
 const results = document.querySelector("#results");
 const summary = document.querySelector("#summary");
@@ -275,7 +275,7 @@ test("las sesiones duplicadas quedan excluidas", () => {
 
 test("la migración es idempotente", () => {
   const item = question("MIG-1");
-  const storage = memoryStorage({ "tai.phase3.training.v1": JSON.stringify({ version: 1, responses: [{ responseId: "legacy-1", questionId: item.id, selectedOption: "B", correct: false, answeredAt: NOW, origin: item.origin, blockId: item.block_id, topicId: item.topic_id, isDemo: false }] }) });
+  const storage = memoryStorage({ "gsi.phase3.training.v1": JSON.stringify({ version: 1, responses: [{ responseId: "legacy-1", questionId: item.id, selectedOption: "B", correct: false, answeredAt: NOW, origin: item.origin, blockId: item.block_id, topicId: item.topic_id, isDemo: false }] }) });
   const data = { questions: [item] };
   const first = migrateAnalytics(data, false, storage);
   const second = migrateAnalytics(data, false, storage);
@@ -352,7 +352,7 @@ test("las preguntas defectuosas se identifican sin perder histórico", () => {
 
 test("la reconstrucción no duplica eventos", () => {
   const item = question("REBUILD");
-  const storage = memoryStorage({ "tai.phase3.training.v1": JSON.stringify({ version: 1, responses: [{ responseId: "rebuild-1", questionId: item.id, selectedOption: "A", correct: true, answeredAt: NOW, origin: item.origin, blockId: item.block_id, topicId: item.topic_id, isDemo: false }] }) });
+  const storage = memoryStorage({ "gsi.phase3.training.v1": JSON.stringify({ version: 1, responses: [{ responseId: "rebuild-1", questionId: item.id, selectedOption: "A", correct: true, answeredAt: NOW, origin: item.origin, blockId: item.block_id, topicId: item.topic_id, isDemo: false }] }) });
   const first = rebuildAnalytics({ questions: [item] }, false, storage);
   const second = rebuildAnalytics({ questions: [item] }, false, storage);
   assert(first.saved && second.saved && loadAnalyticsStore(false, storage).store.attempts.length === 1, "La reconstrucción duplicó un evento.");
@@ -434,7 +434,7 @@ test("precisión sobre respondidas difiere de porcentaje evaluado", () => {
 
 test("la reconstrucción tras borrar analytics recupera datos compatibles", () => {
   const item = question("AGAIN");
-  const storage = memoryStorage({ "tai.phase3.training.v1": JSON.stringify({ version: 1, responses: [{ responseId: "again-1", questionId: item.id, selectedOption: "A", correct: true, answeredAt: NOW, origin: item.origin, blockId: item.block_id, topicId: item.topic_id, isDemo: false }] }) });
+  const storage = memoryStorage({ "gsi.phase3.training.v1": JSON.stringify({ version: 1, responses: [{ responseId: "again-1", questionId: item.id, selectedOption: "A", correct: true, answeredAt: NOW, origin: item.origin, blockId: item.block_id, topicId: item.topic_id, isDemo: false }] }) });
   migrateAnalytics({ questions: [item] }, false, storage);
   clearAnalyticsStore(false, storage);
   rebuildAnalytics({ questions: [item] }, false, storage);
@@ -451,7 +451,7 @@ test("una reconstrucción que falla por cuota conserva las estadísticas anterio
 
 test("la migración conserva el aviso de historial parcial", () => {
   const item = question("PARTIAL");
-  const storage = memoryStorage({ "tai.phase3.training.v1": JSON.stringify({ version: 1, responses: [{ responseId: "partial-1", questionId: item.id, selectedOption: "A", correct: true, answeredAt: NOW, origin: item.origin, blockId: item.block_id, topicId: item.topic_id, isDemo: false }] }) });
+  const storage = memoryStorage({ "gsi.phase3.training.v1": JSON.stringify({ version: 1, responses: [{ responseId: "partial-1", questionId: item.id, selectedOption: "A", correct: true, answeredAt: NOW, origin: item.origin, blockId: item.block_id, topicId: item.topic_id, isDemo: false }] }) });
   migrateAnalytics({ questions: [item] }, false, storage);
   assert(loadAnalyticsStore(false, storage).store.diagnostics.migration.temporalPrecision.includes("truncado"), "No se conservó la limitación del historial de refuerzo.");
 });
@@ -463,7 +463,7 @@ test("mejor bloque y mejor tema exigen cinco respuestas", () => {
 
 test("la migración ignora entrenamientos no verificables", () => {
   const item = question("INVALID-TRAIN");
-  const storage = memoryStorage({ "tai.phase3.training.v1": JSON.stringify({ version: 1, responses: [{ responseId: "bad-1", questionId: item.id, selectedOption: "Z", correct: "sí", answeredAt: NOW, origin: item.origin, blockId: item.block_id, topicId: item.topic_id, isDemo: false }] }) });
+  const storage = memoryStorage({ "gsi.phase3.training.v1": JSON.stringify({ version: 1, responses: [{ responseId: "bad-1", questionId: item.id, selectedOption: "Z", correct: "sí", answeredAt: NOW, origin: item.origin, blockId: item.block_id, topicId: item.topic_id, isDemo: false }] }) });
   const result = migrateAnalytics({ questions: [item] }, false, storage);
   assert(result.saved && result.report.ignored === 1 && loadAnalyticsStore(false, storage).store.attempts.length === 0, "La migración fabricó un resultado no verificable.");
 });
