@@ -102,7 +102,7 @@ Comando: `.\.venv\Scripts\python.exe scripts/run_gsi_suite.py`.
 
 Se ejercitan los 57 temas con respuesta real, los dos exámenes históricos, selección de reservas, puntuación, letras originales, recarga y plazo absoluto, progreso exportado/importado, exclusión de anuladas/provisionales, escritorio y móvil. Se inspeccionó visualmente la biblioteca móvil. Los resultados están en `logs/gsi-suite.json`, `logs/gsi-unit.json` y `logs/gsi-browser-smoke.json`.
 
-La primera pasada detectó IDs documentales con guion bajo, un validador limitado a la carpeta canónica y una expectativa de 21 documentos. Se normalizaron IDs con guiones, se incluyó la carpeta oficial y se comprobó el nuevo total de 33. La suite posterior pasó completa. Los duplicados exactos se identifican por enunciado y alternativas: dos preguntas oficiales con el mismo encabezado pero opciones distintas son ítems diferentes.
+La primera pasada detectó IDs documentales con guion bajo, un validador limitado a la carpeta canónica y una expectativa de 21 documentos. Se normalizaron IDs con guiones, se incluyó la carpeta oficial y se comprobó el nuevo total de 33. La suite posterior pasó completa. Se fijaron finales de línea LF para las nuevas conversiones en `.gitattributes`, de modo que sus hashes se conserven también al clonar en Windows. Los duplicados exactos se identifican por enunciado y alternativas: dos preguntas oficiales con el mismo encabezado pero opciones distintas son ítems diferentes.
 
 ### Entrega y publicación pendiente
 
