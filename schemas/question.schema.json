@@ -202,6 +202,11 @@
     },
     "provenance": {
       "type": "object",
+      "allOf": [{
+        "if": {"properties": {"type": {"const": "official"}}, "required": ["type"]},
+        "then": {"properties": {"drive_id": {"type": "null"}, "url": {"pattern": "^https://sede\\.inap\\.gob\\.es/"}}},
+        "else": {"properties": {"drive_id": {"type": "string", "minLength": 1}}}
+      }],
       "additionalProperties": false,
       "required": [
         "type",
@@ -230,7 +235,7 @@
           "pattern": "^DOC-[A-Z0-9-]+$"
         },
         "drive_id": {
-          "type": "string",
+          "type": ["string", "null"],
           "minLength": 1
         },
         "url": {

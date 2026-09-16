@@ -344,6 +344,7 @@ export function initReinforcement(data) {
     questionNode.replaceChildren();
     questionNode.append(createElement("p", "question-progress", `Pregunta ${activeSession.currentIndex + 1} de ${resolved.questions.length}`));
     questionNode.append(createElement("p", "pill", `${originLabel(question.origin)} · ${question.block_id} · ${question.topic_id}`));
+    if (describeOfficialQuestion(question)) questionNode.append(createElement("p", "form-help", describeOfficialQuestion(question)));
     questionNode.append(createElement("p", "question-statement", question.statement));
     if (!response) {
       activeSession.questionStartedAtByQuestionId ||= {};
@@ -552,3 +553,4 @@ export function initReinforcement(data) {
   });
   renderAll();
 }
+import { describeOfficialQuestion } from "./official-exams.js?gsi2";

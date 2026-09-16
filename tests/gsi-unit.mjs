@@ -37,7 +37,7 @@ test('Examen excluye IA pendiente, inactiva, demo y otra oposición',()=>{
   assert.equal(isQuestionEligible({...questions[0],origin:'official',collection:'official',validation_status:'pending_review'},{...config,mode:EXAM_MODES.BOE}),false);
 });
 for(const b of syllabus.blocks) for(const t of b.topics)test(`Filtro de entrenamiento ${t.id}`,()=>{const result=filterTrainingQuestions(questions,[],{topicId:t.id});assert.ok(result.every(q=>q.topic_id===t.id&&q.is_active&&q.validation_status==='validated'));assert.equal(result.length,questions.filter(q=>q.topic_id===t.id&&q.is_active&&q.validation_status==='validated').length);});
-test('Entrenamiento por bloque y mixto',()=>{for(const b of syllabus.blocks)assert.ok(filterTrainingQuestions(questions,[],{blockId:b.id}).every(q=>q.block_id===b.id));assert.equal(filterTrainingQuestions(questions).length,959);});
+test('Entrenamiento por bloque y mixto',()=>{for(const b of syllabus.blocks)assert.ok(filterTrainingQuestions(questions,[],{blockId:b.id}).every(q=>q.block_id===b.id));assert.equal(filterTrainingQuestions(questions).length,1762+questions.filter(q=>q.origin==='official'&&q.is_active).length);});
 test('Fallos y no vistas usan la respuesta más reciente, sin mezclar demo',()=>{const q=questions.find(q=>q.is_active);const rows=[{questionId:q.id,correct:false,answeredAt:'2026-09-01T10:00:00Z'},{questionId:q.id,correct:true,answeredAt:'2026-09-02T10:00:00Z'}];assert.equal(filterTrainingQuestions([q],rows,{history:'failed'}).length,0);assert.equal(filterTrainingQuestions([q],rows,{history:'unseen'}).length,0);assert.equal(filterTrainingQuestions([q],rows.slice(0,1),{history:'failed'}).length,1);assert.equal(filterTrainingQuestions([q],[{...rows[0],isDemo:true}],{history:'unseen'}).length,1);});
 test('Temporizador formatea y limita a cero',()=>{assert.equal(formatRemainingTime(5400),'90:00');assert.equal(formatRemainingTime(-1),'00:00');assert.equal(formatRemainingTime(59.1),'01:00');});
 test('Práctica escrita: 180 minutos absolutos y rúbrica de 50',()=>{const now=Date.parse('2026-09-14T10:00:00Z');const state=createWrittenState(practice.cases[0].id,now);assert.equal(writtenRemaining(state,now),10800);assert.equal(writtenRemaining(state,now+5000),10795);assert.equal(writtenRemaining(state,now+10801000),0);assert.equal(validateWrittenState(state,practice.cases),true);assert.equal(Object.values(RUBRIC).reduce((a,b)=>a+b,0),50);});
@@ -52,6 +52,39 @@ test('Importación rechaza otra identidad, tema, pregunta, opción o modo demo',
 test('Importación de examen exige configuración, plazo y opciones íntegros',()=>{const raw=seed(),adapter=createPersistenceAdapter(context,raw),state=createActiveExamState({config,questions:selected.questions,optionOrderByQuestionId:selected.optionOrderByQuestionId,isDemo:false});adapter.setItem('gsi.phase4.exam.active.real.v1',JSON.stringify(state));const backup=exportProgress(context,raw);assert.doesNotThrow(()=>validateProgressBackup(backup,data));const key=buildPhysicalPersistenceKey(context,'gsi.phase4.exam.active.real.v1');backup.entries[key].payload.deadlineAt=state.startedAt;assert.throws(()=>validateProgressBackup(backup,data));});
 test('Fallo de escritura restaura la copia anterior',()=>{const raw=seed(),before=[...raw.map],backup=exportProgress(context,raw);raw.failAt=raw.calls+2;assert.throws(()=>importProgress(backup,data,raw),/Quota/);assert.deepEqual([...raw.map],before);});
 test('Reinicio borra solo progreso GSI y conserva historial antiguo',()=>{const raw=seed();resetProgress(context,raw);assert.deepEqual([...raw.map],[['tai.phase3.training.v1','historical']]);});
+const officialCatalog=JSON.parse(await fs.readFile(new URL('../data/gsi-official-exams.json',import.meta.url),'utf8'));
+for(const exam of officialCatalog.exams.filter(e=>e.key_status==='definitive')) {
+  const cfg={...config,mode:EXAM_MODES.BOE,officialExamId:exam.id,shuffleQuestions:false,shuffleOptions:false};
+  test(`Oficial ${exam.year}: plantilla, orden, reservas y exclusión de anuladas`,()=>{
+    const result=selectExamQuestions(questions,cfg);
+    assert.deepEqual(result.questions.map(q=>q.id),exam.question_ids);
+    assert.deepEqual(result.questions.filter(q=>q.exam.is_reserve).map(q=>q.exam.number),[1,2,3,4]);
+    assert.ok(result.questions.every(q=>q.exam.is_reserve||!exam.annulled_numbers.includes(q.exam.number)));
+    assert.ok(Object.values(result.optionOrderByQuestionId).every(order=>order.join('')==='ABCD'));
+    assert.equal(calculateExamResults(result.questions,Object.fromEntries(result.questions.map(q=>[q.id,q.correct_option])),1/3).overall.net,100);
+  });
+  test(`Oficial ${exam.year}: rechaza configuración alterada`,()=>{
+    for(const change of [{shuffleOptions:true},{shuffleQuestions:true},{questionCount:99},{durationSeconds:60},{mode:EXAM_MODES.GSI}])assert.ok(selectExamQuestions(questions,{...cfg,...change}).errors);
+    const corrupt=structuredClone(questions);corrupt.find(q=>q.exam?.id===exam.id&&q.exam.paper_order===2).exam.paper_order=1;
+    assert.ok(selectExamQuestions(corrupt,cfg).errors);
+  });
+  test(`Oficial ${exam.year}: copia de progreso conserva convocatoria y rechaza reordenación`,()=>{
+    const result=selectExamQuestions(questions,cfg),raw=seed(),adapter=createPersistenceAdapter(context,raw);
+    const state=createActiveExamState({config:cfg,questions:result.questions,optionOrderByQuestionId:result.optionOrderByQuestionId,isDemo:false});
+    adapter.setItem('gsi.phase4.exam.active.real.v1',JSON.stringify(state));
+    const backup=exportProgress(context,raw),target=new Memory();
+    assert.doesNotThrow(()=>importProgress(backup,data,target));
+    const key=buildPhysicalPersistenceKey(context,'gsi.phase4.exam.active.real.v1');
+    assert.equal(exportProgress(context,target).entries[key].payload.config.officialExamId,exam.id);
+    backup.entries[key].payload.questionRefs.reverse();assert.throws(()=>validateProgressBackup(backup,data));
+  });
+}
+test('Plantilla modificada 2024 pregunta 12 y provisional 2025 excluida',()=>{
+  assert.equal(questions.find(q=>q.id==='OFF-GSI-INAP-2024-Q012').correct_option,'D');
+  assert.equal(questions.filter(q=>q.origin==='official').length,202);
+  assert.equal(questions.some(q=>q.exam?.year===2025),false);
+  assert.ok(selectExamQuestions(questions,{...config,mode:EXAM_MODES.BOE,officialExamId:'GSI-INAP-2025',shuffleQuestions:false,shuffleOptions:false}).errors);
+});
 await fs.writeFile(new URL('../logs/gsi-unit.json',import.meta.url),JSON.stringify({date:new Date().toISOString(),passed:results.filter(r=>r.ok).length,failed:results.filter(r=>!r.ok).length,results},null,2)+'\n');
 console.log(`GSI unit: ${results.filter(r=>r.ok).length} passed, ${results.filter(r=>!r.ok).length} failed.`);
 if(results.some(r=>!r.ok))process.exitCode=1;

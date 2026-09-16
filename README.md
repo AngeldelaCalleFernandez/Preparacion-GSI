@@ -19,10 +19,14 @@ La aplicación funciona y los 57 temas tienen apuntes completos, resumen y proce
 | Origen | Activas | Pendientes |
 | --- | ---: | ---: |
 | Material curado del corpus | 959 | 0 |
-| Preguntas generadas | 0 | 803 |
-| Preguntas oficiales identificadas | 0 | 0 |
+| Preguntas generadas revisadas | 803 | 0 |
+| Preguntas oficiales INAP | 202 | 0 |
 
-Las 803 preguntas generadas continúan pendientes de validación y quedan excluidas de entrenamientos y exámenes. Las 959 activas están repartidas en 17 temas; 40 temas todavía no tienen test activo y B1-T03 tiene 17 preguntas.
+La copia local contiene **1.964 preguntas activas** y los **57 temas tienen al menos 20 preguntas revisadas**. Las 803 generadas se activaron tras la confirmación del propietario de que los test estaban revisados; conservan su origen IA y la aceptación asociada a sus hashes. La confirmación no se presenta como una revisión humana realizada por el agente.
+
+En **Examen → Exámenes oficiales INAP**, abre **2022** o **2024**, pulsa **Preparar este examen** y después **Iniciar examen**. Cada convocatoria ofrece 100 preguntas evaluables en 90 minutos, con plantilla definitiva y sustitución de anuladas por reservas. Hay 12 enlaces oficiales a cuestionarios, plantillas, supuestos escritos y criterios de 2022, 2024 y 2025. La plantilla consultada de **2025 es provisional**: se ofrece para lectura, sin activar su corrección automática. [Detalle de la importación](docs/GSI_EXAMENES_OFICIALES.md).
+
+Estos cambios están preparados localmente; la web pública solo los mostrará tras publicarse esta revisión.
 
 Consulta la [auditoría completa](docs/FINAL_GSI_AUDIT.md), la [cobertura por tema](data/gsi-coverage-report.json) y el [resultado de la suite](logs/gsi-suite.json).
 
@@ -34,6 +38,7 @@ Consulta la [auditoría completa](docs/FINAL_GSI_AUDIT.md), la [cobertura por te
 - Corrección inmediata con explicación y procedencia.
 - Simulacro GSI de 100 preguntas y 90 minutos, con penalización de un tercio por error.
 - Test configurable con selección de bloques, cantidad y duración.
+- Exámenes oficiales de 2022 y 2024, y biblioteca de PDF del INAP de tres convocatorias.
 - Práctica escrita: elección entre dos supuestos, cinco respuestas y 180 minutos.
 - Refuerzo programado de errores y dudas.
 - Estadísticas de actividad, evolución y temas débiles.
@@ -88,7 +93,7 @@ La publicación no modifica el estado editorial del banco: la aplicación sigue 
 ```text
 TAI-GSI/
 ├── index.html                 # Entrada de la aplicación
-├── review.html                # Consulta del lote editorial pendiente
+├── review.html                # Consulta de preguntas y revisión editorial
 ├── assets/
 │   ├── css/                   # Estilos
 │   └── js/                    # Módulos de la aplicación

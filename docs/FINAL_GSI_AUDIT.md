@@ -1,5 +1,121 @@
 # Auditoría de la conversión a GSI A2
 
+## Estado vigente: 16 de septiembre de 2026
+
+**Integración local validada, pendiente de publicación.** Rama `gsi-only-final`. El commit que contiene este informe se identifica con `git log -1 --format=%H -- docs/FINAL_GSI_AUDIT.md`; el código y sus pruebas se guardan junto con esta actualización. La web pública sigue en su revisión anterior hasta completar el envío a GitHub.
+
+Programa: BOE-A-2025-26262, Anexo IX; **57 temas, distribución 10/16/15/16**. Se conservan los 57 apuntes completos y trazados del corpus autorizado, los 50 documentos canónicos convertidos, ocho supuestos con solución y cuatro simulacros escritos. El inventario, la raíz Drive, las migraciones y los originales históricos se detallan más abajo.
+
+El propietario confirmó el 15 de septiembre: «los test estan revisados». Se registra esa declaración para los hashes exactos de las 803 preguntas generadas, sin atribuir al agente una revisión humana ni inventar el método utilizado. Se activan conservando su origen IA. Detalle en [GSI_REVISION_EDITORIAL.md](GSI_REVISION_EDITORIAL.md).
+
+| Origen | Activas | Pendientes |
+| --- | ---: | ---: |
+| Curadas | 959 | 0 |
+| Generadas, revisión confirmada por el propietario | 803 | 0 |
+| Oficiales INAP | 202 | 0 |
+| **Total** | **1964** | **0** |
+
+Por bloque: **B1 252; B2 760; B3 479; B4 473**. Los 57 temas tienen al menos 20 preguntas activas; los borradores no validados siguen excluidos por el motor. La revisión de una versión no autoriza automáticamente versiones futuras.
+
+### Exámenes oficiales incorporados
+
+Dos exámenes interactivos de ingreso libre, convocatorias 2022 y 2024, con 100 preguntas evaluables, 90 minutos y penalización exacta de 1/3. Se conservan las letras, las plantillas definitivas y la respuesta modificada de 2024/12. Las ocho anuladas se sustituyen por las primeras cuatro reservas de cada examen; las quintas reservas solo entran en entrenamiento.
+
+Se descargaron y convirtieron **12 PDF**, cuatro por convocatoria 2022/2024/2025, con MarkItDown normal y sin OCR. Los 12 originales se conservan localmente y sus hashes se verifican; no quedan conversiones oficiales pendientes. La plantilla 2025 consultada es provisional y queda fuera del banco activo. Cuestionarios, plantillas, supuestos y criterios están enlazados desde Examen. Los supuestos oficiales se consultan en PDF, sin soluciones inventadas. [Procedencia, procedimiento y límites](GSI_EXAMENES_OFICIALES.md).
+
+### Cobertura actual por tema
+
+| Tema | Activas | Pendientes |
+| --- | ---: | ---: |
+| B1-T01 | 25 | 0 |
+| B1-T02 | 22 | 0 |
+| B1-T03 | 24 | 0 |
+| B1-T04 | 22 | 0 |
+| B1-T05 | 26 | 0 |
+| B1-T06 | 23 | 0 |
+| B1-T07 | 24 | 0 |
+| B1-T08 | 37 | 0 |
+| B1-T09 | 23 | 0 |
+| B1-T10 | 26 | 0 |
+| B2-T01 | 84 | 0 |
+| B2-T02 | 88 | 0 |
+| B2-T03 | 22 | 0 |
+| B2-T04 | 24 | 0 |
+| B2-T05 | 24 | 0 |
+| B2-T06 | 22 | 0 |
+| B2-T07 | 21 | 0 |
+| B2-T08 | 25 | 0 |
+| B2-T09 | 84 | 0 |
+| B2-T10 | 22 | 0 |
+| B2-T11 | 23 | 0 |
+| B2-T12 | 24 | 0 |
+| B2-T13 | 26 | 0 |
+| B2-T14 | 163 | 0 |
+| B2-T15 | 24 | 0 |
+| B2-T16 | 84 | 0 |
+| B3-T01 | 26 | 0 |
+| B3-T02 | 24 | 0 |
+| B3-T03 | 22 | 0 |
+| B3-T04 | 24 | 0 |
+| B3-T05 | 24 | 0 |
+| B3-T06 | 25 | 0 |
+| B3-T07 | 22 | 0 |
+| B3-T08 | 23 | 0 |
+| B3-T09 | 24 | 0 |
+| B3-T10 | 25 | 0 |
+| B3-T11 | 143 | 0 |
+| B3-T12 | 25 | 0 |
+| B3-T13 | 24 | 0 |
+| B3-T14 | 24 | 0 |
+| B3-T15 | 24 | 0 |
+| B4-T01 | 21 | 0 |
+| B4-T02 | 22 | 0 |
+| B4-T03 | 22 | 0 |
+| B4-T04 | 23 | 0 |
+| B4-T05 | 25 | 0 |
+| B4-T06 | 24 | 0 |
+| B4-T07 | 22 | 0 |
+| B4-T08 | 21 | 0 |
+| B4-T09 | 22 | 0 |
+| B4-T10 | 25 | 0 |
+| B4-T11 | 23 | 0 |
+| B4-T12 | 27 | 0 |
+| B4-T13 | 23 | 0 |
+| B4-T14 | 47 | 0 |
+| B4-T15 | 68 | 0 |
+| B4-T16 | 58 | 0 |
+
+### Validación de esta revisión
+
+Comando: `.\.venv\Scripts\python.exe scripts/run_gsi_suite.py`.
+
+| Comprobación | Resultado |
+| --- | --- |
+| Integridad y cobertura | 19077 controles, cero errores y cero bloqueos |
+| JSON y esquemas | 19 archivos, 17 esquemas, cero errores |
+| Referencias | 4 bloques, 57 temas, 33 documentos catalogados |
+| Preguntas | 1964 con estructura válida |
+| Unitarias | 83 aprobadas, cero fallidas |
+| Regresión en navegador | 288 aprobadas, cero fallidas |
+| Recorrido HTTP | 75 aprobadas, cero fallidas; cero errores de consola y rutas |
+| Suite completa | Código 0; technical_pass y release_ready verdaderos |
+
+Se ejercitan los 57 temas con respuesta real, los dos exámenes históricos, selección de reservas, puntuación, letras originales, recarga y plazo absoluto, progreso exportado/importado, exclusión de anuladas/provisionales, escritorio y móvil. Se inspeccionó visualmente la biblioteca móvil. Los resultados están en `logs/gsi-suite.json`, `logs/gsi-unit.json` y `logs/gsi-browser-smoke.json`.
+
+La primera pasada detectó IDs documentales con guion bajo, un validador limitado a la carpeta canónica y una expectativa de 21 documentos. Se normalizaron IDs con guiones, se incluyó la carpeta oficial y se comprobó el nuevo total de 33. La suite posterior pasó completa. Los duplicados exactos se identifican por enunciado y alternativas: dos preguntas oficiales con el mismo encabezado pero opciones distintas son ítems diferentes.
+
+### Entrega y publicación pendiente
+
+Creados: módulo `assets/js/official-exams.js`, catálogo y mapa oficiales, extracción conservada, 12 Markdown, log de conversiones, esquema e importador oficial, y esta documentación de uso. Modificados: bancos, registro editorial, fuentes, interfaz de examen/entrenamiento/refuerzo, validación de progreso, esquemas, validadores, pruebas, README y guía. La arquitectura sigue siendo estática, sin backend ni build.
+
+Fase de integración, pruebas y documentación completada localmente. La publicación sigue pendiente: una revisión automática anterior rechazó el push porque incluía auditorías derivadas de fuentes privadas sin autorización específica para ese contenido. No se ha repetido ese envío ni se ha dado por publicado este lote. La siguiente acción es resolver la autorización de publicación y verificar GitHub Pages tras desplegar.
+
+Para probar: servir la raíz por HTTP y abrir **Examen → Exámenes oficiales INAP → 2022 o 2024 → Preparar este examen → Iniciar examen**. La guía explica también la consulta de PDF y el traslado de progreso entre dispositivos.
+
+## Informe histórico: 15 de septiembre, anterior a la confirmación y a la importación oficial
+
+**El resto del documento se conserva como historial. Sus cantidades, bloqueos y resultados corresponden a aquella revisión; el estado vigente es el descrito arriba.**
+
 Fecha: **15 de septiembre de 2026**. Rama: `gsi-only-final`.
 
 **Estado: aplicación publicada y utilizable; cierre editorial bloqueado.** Los 57 temas tienen apuntes completos y procedencia. Hay 959 preguntas activas, pero 40 temas no tienen ninguna activa y B1-T03 tiene 17. Las 803 preguntas generadas continúan pendientes. La publicación fue autorizada expresamente por el propietario; no equivale a declarar una versión estable ni una PR de cierre terminada.

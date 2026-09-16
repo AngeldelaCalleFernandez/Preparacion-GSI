@@ -46,7 +46,7 @@ No abras `index.html` con doble clic: la copia local necesita el servidor HTTP a
 | Refuerzo | Volver a trabajar preguntas falladas o que te generan dudas. |
 | Estadísticas | Comprobar resultados y decidir qué repasar. |
 
-**Situación del contenido, a 15 de septiembre de 2026:** puedes estudiar los 57 temas. Hay 959 preguntas activas repartidas en 17 temas; otros 40 todavía no tienen test activo. Las 803 preguntas generadas pendientes de revisión no se utilizan para entrenar ni examinarte. Si un tema no ofrece preguntas, sus apuntes siguen disponibles.
+**Contenido de esta revisión, a 16 de septiembre de 2026:** puedes estudiar y practicar los 57 temas. Hay 1.964 preguntas activas: 959 curadas, 803 generadas cuya revisión ha confirmado el propietario y 202 oficiales del INAP. Todos los temas tienen al menos 20 preguntas revisadas. Estos cambios aparecerán en la web pública cuando se publique esta revisión.
 
 ## 3. Estudiar tu primer tema
 
@@ -129,7 +129,17 @@ La puntuación directa de la aplicación es: **aciertos − errores ÷ 3**. Las 
 
 Para una sesión más breve, puedes elegir **Test configurable · banco revisado** y ajustar cantidad, tiempo y bloques. La modalidad GSI mantiene sus 100 preguntas y 90 minutos.
 
-Mientras falten preguntas activas en 40 temas, el simulacro utiliza los temas disponibles. Sirve para practicar el tiempo y la corrección, pero no para medir el dominio de todo el programa.
+Para hacer un **examen oficial**:
+
+1. En **Examen**, busca **Exámenes oficiales INAP**.
+2. Abre la convocatoria **2022** o **2024**.
+3. Pulsa **Preparar este examen**. Comprueba la convocatoria seleccionada.
+4. Pulsa **Iniciar examen** cuando tengas 90 minutos disponibles.
+5. Contesta y corrige al finalizar. Se conservan las letras originales y se sustituyen las anuladas por reservas.
+
+Para practicar preguntas oficiales sueltas, elige **Solo preguntas oficiales → Mezclar preguntas oficiales** y ajusta la cantidad. Las respuestas siguen la plantilla histórica de su convocatoria: contrasta la normativa y la tecnología con los apuntes actuales.
+
+En cada convocatoria también puedes abrir **Segundo ejercicio: supuestos oficiales (PDF)** y **Criterios de corrección (PDF)**. Resuelve uno de los supuestos por escrito; esos PDF no tienen autocorrección en la aplicación. La convocatoria **2025** está disponible para lectura con su plantilla provisional; no tiene examen interactivo hasta verificar la definitiva.
 
 ## 8. Practicar el ejercicio escrito
 

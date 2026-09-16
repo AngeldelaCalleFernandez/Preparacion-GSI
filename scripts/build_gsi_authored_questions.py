@@ -5,9 +5,11 @@ import json
 import random
 import re
 from pathlib import Path
+from datetime import date
 
 ROOT = Path(__file__).resolve().parents[1]
 DATE = '2026-09-14'
+UPDATED = date.today().isoformat()
 
 def digest(value):
     return hashlib.sha256(value.encode('utf-8')).hexdigest()
@@ -18,7 +20,8 @@ def load(path):
 def main():
     sources = {s['id']: s for s in load('data/sources.json')['sources']}
     review_path = ROOT / 'data/gsi-editorial-reviews.json'
-    reviews = {r['id']: r for r in json.loads(review_path.read_text('utf-8'))['reviews']} if review_path.exists() else {}
+    review_data = json.loads(review_path.read_text('utf-8')) if review_path.exists() else {}
+    reviews = {r['id']: r for r in review_data.get('reviews', [])}
     questions, evidence_report, counts = [], [], {}
     for path in sorted((ROOT / 'content/question-drafts').glob('*.txt')):
         topic = None
@@ -41,7 +44,9 @@ def main():
             record_hash = digest(topic + '\n' + line)
             evidence_hash = digest(evidence)
             review = reviews.get(qid, {})
-            accepted = review.get('decision') == 'accepted' and review.get('record_sha256') == record_hash and review.get('evidence_sha256') == evidence_hash
+            accepted = (review_data.get('reviewer_type') == 'human' and review_data.get('status') == 'reviewed'
+                        and review.get('decision') == 'accepted' and review.get('record_sha256') == record_hash
+                        and review.get('evidence_sha256') == evidence_hash)
             options = [correct, *wrong]
             if len(set(s.casefold() for s in options)) != 4: raise ValueError(f'{qid}: duplicate alternatives')
             random.Random(qid).shuffle(options)
@@ -56,11 +61,11 @@ def main():
                         'evidence': evidence, 'evidence_sha256': evidence_hash, 'record_sha256': record_hash,
                         'review_id': qid if accepted else None, 'review_method': review.get('method') if accepted else 'Pendiente de revisión editorial; el compilador no valida contenido.'},
                         'provenance': provenance, 'difficulty': 'medium', 'tags': ['fuente-v21', 'dificultad-orientativa'],
-                        'is_active': accepted, 'created_at': DATE, 'updated_at': DATE}
+                        'is_active': accepted, 'created_at': DATE, 'updated_at': UPDATED}
             questions.append(question)
             evidence_report.append({'id': qid, 'topic': topic, 'section': section, 'statement': statement, 'correct': correct,
                                     'record_sha256': record_hash, 'evidence_sha256': evidence_hash, 'accepted': accepted})
-    output = {'metadata': {'dataset_type': 'ai', 'schema_version': '1.0.0', 'data_version': '2.0.0', 'updated_at': DATE}, 'questions': questions}
+    output = {'metadata': {'dataset_type': 'ai', 'schema_version': '1.0.0', 'data_version': '2.1.0', 'updated_at': UPDATED}, 'questions': questions}
     (ROOT / 'data/questions-ai.json').write_text(json.dumps(output, ensure_ascii=False, indent=2) + '\n', 'utf-8')
     (ROOT / 'logs/gsi-authored-evidence.json').write_text(json.dumps(evidence_report, ensure_ascii=False, indent=2) + '\n', 'utf-8')
     print(f'{len(questions)} authored questions: {sum(q["is_active"] for q in questions)} accepted with matching editorial records.')

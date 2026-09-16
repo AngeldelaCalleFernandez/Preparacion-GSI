@@ -1,4 +1,5 @@
 import { describeQuestionSource } from "./data-service.js?gsi2";
+import { describeOfficialQuestion, renderOfficialExamLibrary } from "./official-exams.js?gsi2";
 import {
   EXAM_MODES,
   calculateExamResults,
@@ -6,6 +7,7 @@ import {
   getExamAvailability,
   getMixedQuota,
   isQuestionEligible,
+  validateExamConfig,
   selectExamQuestions,
 } from "./exam-engine.js?gsi2";
 import {
@@ -80,6 +82,8 @@ function createResultTable(rows, labelForId) {
 export function initExam(data) {
   const form = document.querySelector("#exam-config-form");
   const modeSelect = document.querySelector("#exam-mode");
+  const officialSelect = document.querySelector("#official-exam-select");
+  const officialField = document.querySelector("#official-exam-field");
   const questionCount = document.querySelector("#exam-question-count");
   const duration = document.querySelector("#exam-duration");
   const penalty = document.querySelector("#exam-penalty");
@@ -118,6 +122,7 @@ export function initExam(data) {
     const mode = modeOverride ?? modeSelect.value;
     const config = {
       mode,
+      officialExamId: mode === EXAM_MODES.BOE ? officialSelect.value || null : null,
       questionCount: Number(questionCount.value),
       durationSeconds: Number(duration.value) * 60,
       blockIds: getSelectedBlocks(),
@@ -127,7 +132,8 @@ export function initExam(data) {
       shuffleOptions: document.querySelector("#exam-shuffle-options").checked,
       demoEnabled: data.demoEnabled,
     };
-    if (mode === EXAM_MODES.GSI) Object.assign(config, { questionCount: 100, durationSeconds: 5400, blockIds: ["B1", "B2", "B3", "B4"], penaltyPerError: 1 / 3 });
+    if (mode === EXAM_MODES.GSI || config.officialExamId) Object.assign(config, { questionCount: 100, durationSeconds: 5400, blockIds: ["B1", "B2", "B3", "B4"], penaltyPerError: 1 / 3 });
+    if (config.officialExamId) Object.assign(config, { shuffleQuestions: false, shuffleOptions: false });
     if (mode === EXAM_MODES.MIXED) {
       Object.assign(config, getMixedQuota(config.questionCount, config.boePercentage));
     }
@@ -137,7 +143,13 @@ export function initExam(data) {
   function renderAvailability() {
     const config = getConfig();
     mixedSettings.hidden = config.mode !== EXAM_MODES.MIXED;
-    const fixed = config.mode === EXAM_MODES.GSI;
+    officialField.hidden = config.mode !== EXAM_MODES.BOE;
+    const fixed = config.mode === EXAM_MODES.GSI || Boolean(config.officialExamId);
+    for (const id of ["#exam-shuffle-questions", "#exam-shuffle-options"]) {
+      const input = document.querySelector(id);
+      input.disabled = Boolean(config.officialExamId);
+      if (config.officialExamId) input.checked = false;
+    }
     questionCount.disabled = fixed; duration.disabled = fixed;
     if (fixed) { questionCount.value = 100; duration.value = 90; }
     for (const input of blockContainer.querySelectorAll("input")) { input.disabled = fixed; if (fixed) input.checked = true; }
@@ -145,7 +157,9 @@ export function initExam(data) {
     if ([EXAM_MODES.GSI, EXAM_MODES.CUSTOM].includes(config.mode)) {
       availabilityNode.textContent = `Disponibles: ${available.gsi.length} preguntas revisadas del corpus GSI. La procedencia aparece al corregir.`;
     } else if (config.mode === EXAM_MODES.BOE) {
-      availabilityNode.textContent = `Disponibles para Solo BOE: ${available.boe.length}.`;
+      availabilityNode.textContent = config.officialExamId
+        ? `${officialSelect.selectedOptions[0].textContent}: ${available.boe.length} preguntas evaluables, con reservas y plantilla definitiva. Corrección histórica de esa convocatoria.`
+        : `Disponibles para Solo oficiales: ${available.boe.length}.`;
     } else if (config.mode === EXAM_MODES.AI_VALIDATED) {
       availabilityNode.textContent = `Disponibles para Solo IA validada: ${available.ai.length}.`;
     } else if (config.mode === EXAM_MODES.DEMO) {
@@ -216,6 +230,7 @@ export function initExam(data) {
     progressNode.textContent = `Pregunta ${active.state.currentIndex + 1} de ${active.questions.length}${isFlagged(question.id) ? " · marcada para revisión" : ""}`;
     questionNode.replaceChildren();
     const card = createElement("article", "exam-question-card");
+    if (describeOfficialQuestion(question)) card.append(createElement("p", "form-help", describeOfficialQuestion(question)));
     card.append(createElement("p", "question-statement", question.statement));
     const options = createElement("div", "question-options");
     options.setAttribute("role", "group");
@@ -461,6 +476,7 @@ export function initExam(data) {
   }
 
   function resolveSavedQuestions(state) {
+    if (validateExamConfig(state.config).length) return { error: "La configuración guardada del examen no es válida." };
     const byReference = new Map(data.questions.map((question) => [`${question.collection}:${question.id}`, question]));
     const questions = [];
     for (const reference of state.questionRefs) {
@@ -473,6 +489,7 @@ export function initExam(data) {
       }
       const optionIds = question.options.map((option) => option.id);
       const savedOrder = state.optionOrderByQuestionId[question.id];
+      if (state.config.officialExamId && (question.exam.paper_order !== questions.length + 1 || savedOrder?.join("") !== "ABCD")) return { error: "El examen oficial guardado no conserva el orden del cuestionario y sus opciones." };
       if (!Array.isArray(savedOrder) || savedOrder.length !== optionIds.length || new Set(savedOrder).size !== optionIds.length || savedOrder.some((id) => !optionIds.includes(id))) {
         return { error: `No se puede recuperar ${reference.id}: el orden de opciones no es válido.` };
       }
@@ -575,6 +592,15 @@ export function initExam(data) {
     blockContainer.append(label);
   }
   if (data.demoEnabled) demoStart.hidden = false;
+  const officialPapers = new Map(data.questions.filter((question) => question.origin === "official" && question.exam?.key_status === "definitive").map((question) => [question.exam.id, question.exam.year]));
+  for (const [id, year] of [...officialPapers].sort((a, b) => b[1] - a[1])) {
+    const option = createElement("option", "", `INAP · convocatoria ${year}`); option.value = id; officialSelect.append(option);
+  }
+  officialSelect.addEventListener("change", renderAvailability);
+  renderOfficialExamLibrary(document.querySelector("#official-exam-library"), (id) => {
+    modeSelect.value = EXAM_MODES.BOE; officialSelect.value = id; renderAvailability();
+    form.scrollIntoView({ block: "start" }); officialSelect.focus();
+  });
   modeSelect.addEventListener("change", renderAvailability);
   questionCount.addEventListener("input", renderAvailability);
   boePercentage.addEventListener("input", renderAvailability);

@@ -1,8 +1,8 @@
 {
-  "date": "2026-09-15T14:38:59.483598+00:00",
-  "exit_code": 2,
+  "date": "2026-09-16T08:50:56.865945+00:00",
+  "exit_code": 0,
   "technical_pass": true,
-  "release_ready": false,
+  "release_ready": true,
   "stages": [
     {
       "name": "Integridad y cobertura GSI",
@@ -10,9 +10,9 @@
         "C:\\TAI-proyecto\\.venv\\Scripts\\python.exe",
         "scripts/validate_gsi_final.py"
       ],
-      "exit_code": 2,
-      "seconds": 1.41,
-      "output": "GSI: 16615 controles de integridad correctos; 0 errores técnicos; 1 bloqueos de cierre.\n41 temas tienen menos de 20 preguntas activas revisadas; 803 generadas pendientes de validación humana. La revisión automática de permisos rechazó su activación masiva."
+      "exit_code": 0,
+      "seconds": 1.33,
+      "output": "GSI: 19077 controles de integridad correctos; 0 errores técnicos; 0 bloqueos de cierre."
     },
     {
       "name": "JSON y esquemas",
@@ -21,8 +21,8 @@
         "scripts/validate_json.py"
       ],
       "exit_code": 0,
-      "seconds": 1.66,
-      "output": "OK: 18 archivos de datos y 16 esquemas validados."
+      "seconds": 1.76,
+      "output": "OK: 19 archivos de datos y 17 esquemas validados."
     },
     {
       "name": "Referencias",
@@ -31,8 +31,8 @@
         "scripts/validate_references.py"
       ],
       "exit_code": 0,
-      "seconds": 0.17,
-      "output": "OK: 4 bloques, 57 temas y 21 Markdown con rutas y referencias válidas."
+      "seconds": 0.16,
+      "output": "OK: 4 bloques, 57 temas y 33 Markdown con rutas y referencias válidas."
     },
     {
       "name": "Preguntas",
@@ -41,8 +41,8 @@
         "scripts/validate_questions.py"
       ],
       "exit_code": 0,
-      "seconds": 0.15,
-      "output": "OK: 1762 preguntas con estructura válida; no se modifica su estado de revisión editorial."
+      "seconds": 0.16,
+      "output": "OK: 1964 preguntas con estructura válida; no se modifica su estado de revisión editorial."
     },
     {
       "name": "Sintaxis assets/js/analytics-engine.js",
@@ -52,7 +52,7 @@
         "C:\\TAI-proyecto\\assets\\js\\analytics-engine.js"
       ],
       "exit_code": 0,
-      "seconds": 3.22,
+      "seconds": 0.07,
       "output": ""
     },
     {
@@ -74,7 +74,7 @@
         "C:\\TAI-proyecto\\assets\\js\\analytics-migration.js"
       ],
       "exit_code": 0,
-      "seconds": 0.07,
+      "seconds": 0.06,
       "output": ""
     },
     {
@@ -107,7 +107,7 @@
         "C:\\TAI-proyecto\\assets\\js\\catalog-service.js"
       ],
       "exit_code": 0,
-      "seconds": 0.08,
+      "seconds": 0.06,
       "output": ""
     },
     {
@@ -118,7 +118,7 @@
         "C:\\TAI-proyecto\\assets\\js\\data-service.js"
       ],
       "exit_code": 0,
-      "seconds": 0.07,
+      "seconds": 0.06,
       "output": ""
     },
     {
@@ -129,7 +129,7 @@
         "C:\\TAI-proyecto\\assets\\js\\editorial-review.js"
       ],
       "exit_code": 0,
-      "seconds": 0.09,
+      "seconds": 0.07,
       "output": ""
     },
     {
@@ -166,6 +166,17 @@
       "output": ""
     },
     {
+      "name": "Sintaxis assets/js/official-exams.js",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.EXE",
+        "--check",
+        "C:\\TAI-proyecto\\assets\\js\\official-exams.js"
+      ],
+      "exit_code": 0,
+      "seconds": 0.07,
+      "output": ""
+    },
+    {
       "name": "Sintaxis assets/js/persistence-migration-v2.js",
       "command": [
         "C:\\Program Files\\nodejs\\node.EXE",
@@ -173,7 +184,7 @@
         "C:\\TAI-proyecto\\assets\\js\\persistence-migration-v2.js"
       ],
       "exit_code": 0,
-      "seconds": 0.07,
+      "seconds": 0.06,
       "output": ""
     },
     {
@@ -184,7 +195,7 @@
         "C:\\TAI-proyecto\\assets\\js\\persistence-v2.js"
       ],
       "exit_code": 0,
-      "seconds": 0.08,
+      "seconds": 0.06,
       "output": ""
     },
     {
@@ -195,7 +206,7 @@
         "C:\\TAI-proyecto\\assets\\js\\progress-backup.js"
       ],
       "exit_code": 0,
-      "seconds": 0.08,
+      "seconds": 0.07,
       "output": ""
     },
     {
@@ -206,7 +217,7 @@
         "C:\\TAI-proyecto\\assets\\js\\reinforcement-engine.js"
       ],
       "exit_code": 0,
-      "seconds": 0.08,
+      "seconds": 0.06,
       "output": ""
     },
     {
@@ -239,7 +250,7 @@
         "C:\\TAI-proyecto\\assets\\js\\reinforcement.js"
       ],
       "exit_code": 0,
-      "seconds": 0.07,
+      "seconds": 0.06,
       "output": ""
     },
     {
@@ -250,7 +261,7 @@
         "C:\\TAI-proyecto\\assets\\js\\router.js"
       ],
       "exit_code": 0,
-      "seconds": 0.07,
+      "seconds": 0.06,
       "output": ""
     },
     {
@@ -261,7 +272,7 @@
         "C:\\TAI-proyecto\\assets\\js\\statistics.js"
       ],
       "exit_code": 0,
-      "seconds": 0.08,
+      "seconds": 0.07,
       "output": ""
     },
     {
@@ -272,7 +283,7 @@
         "C:\\TAI-proyecto\\assets\\js\\storage.js"
       ],
       "exit_code": 0,
-      "seconds": 0.07,
+      "seconds": 0.11,
       "output": ""
     },
     {
@@ -283,7 +294,7 @@
         "C:\\TAI-proyecto\\assets\\js\\syllabus-view.js"
       ],
       "exit_code": 0,
-      "seconds": 0.08,
+      "seconds": 0.06,
       "output": ""
     },
     {
@@ -305,7 +316,7 @@
         "C:\\TAI-proyecto\\assets\\js\\training-engine.js"
       ],
       "exit_code": 0,
-      "seconds": 0.08,
+      "seconds": 0.06,
       "output": ""
     },
     {
@@ -316,7 +327,7 @@
         "C:\\TAI-proyecto\\assets\\js\\training.js"
       ],
       "exit_code": 0,
-      "seconds": 0.07,
+      "seconds": 0.06,
       "output": ""
     },
     {
@@ -382,7 +393,7 @@
         "C:\\TAI-proyecto\\tests\\m2-tests.js"
       ],
       "exit_code": 0,
-      "seconds": 0.08,
+      "seconds": 0.06,
       "output": ""
     },
     {
@@ -426,7 +437,7 @@
         "C:\\TAI-proyecto\\tests\\phase6-tests.js"
       ],
       "exit_code": 0,
-      "seconds": 0.08,
+      "seconds": 0.07,
       "output": ""
     },
     {
@@ -437,7 +448,7 @@
         "C:\\TAI-proyecto\\tests\\phase7-tests.js"
       ],
       "exit_code": 0,
-      "seconds": 0.07,
+      "seconds": 0.06,
       "output": ""
     },
     {
@@ -448,7 +459,7 @@
         "C:\\TAI-proyecto\\tests\\phase7b2-tests.js"
       ],
       "exit_code": 0,
-      "seconds": 0.08,
+      "seconds": 0.07,
       "output": ""
     },
     {
@@ -458,8 +469,8 @@
         "tests/gsi-unit.mjs"
       ],
       "exit_code": 0,
-      "seconds": 0.2,
-      "output": "GSI unit: 76 passed, 0 failed."
+      "seconds": 0.32,
+      "output": "GSI unit: 83 passed, 0 failed."
     },
     {
       "name": "Regresión en navegador",
@@ -468,7 +479,7 @@
         "tests/gsi-regression.mjs"
       ],
       "exit_code": 0,
-      "seconds": 3.67,
+      "seconds": 3.22,
       "output": "{\"suite\":\"phase4\",\"summary\":\"9 pruebas aprobadas; 0 fallidas.\",\"failures\":[],\"total\":9,\"errors\":[]}\n{\"suite\":\"phase5\",\"summary\":\"24 pruebas aprobadas; 0 fallidas.\",\"failures\":[],\"total\":24,\"errors\":[]}\n{\"suite\":\"phase6\",\"summary\":\"64 pruebas aprobadas; 0 fallidas.\",\"failures\":[],\"total\":64,\"errors\":[]}\n{\"suite\":\"phase7\",\"summary\":\"45 pruebas aprobadas y 0 fallidas.\",\"failures\":[],\"total\":45,\"errors\":[]}\n{\"suite\":\"phase7b2\",\"summary\":\"50 pruebas aprobadas y 0 fallidas.\",\"failures\":[],\"total\":50,\"errors\":[]}\n{\"suite\":\"m2\",\"summary\":\"35 pruebas aprobadas y 0 fallidas.\",\"failures\":[],\"total\":35,\"errors\":[]}\n{\"suite\":\"m3\",\"summary\":\"Runner M3: 61 aprobadas, 0 fallidas.\",\"failures\":[],\"total\":61,\"errors\":[]}"
     },
     {
@@ -478,8 +489,8 @@
         "tests/gsi-smoke.mjs"
       ],
       "exit_code": 0,
-      "seconds": 12.68,
-      "output": "PASS startup\nPASS topic B1-T01\nPASS topic B1-T02\nPASS topic B1-T03\nPASS topic B1-T04\nPASS topic B1-T05\nPASS topic B1-T06\nPASS topic B1-T07\nPASS topic B1-T08\nPASS topic B1-T09\nPASS topic B1-T10\nPASS topic B2-T01\nPASS topic B2-T02\nPASS topic B2-T03\nPASS topic B2-T04\nPASS topic B2-T05\nPASS topic B2-T06\nPASS topic B2-T07\nPASS topic B2-T08\nPASS topic B2-T09\nPASS topic B2-T10\nPASS topic B2-T11\nPASS topic B2-T12\nPASS topic B2-T13\nPASS topic B2-T14\nPASS topic B2-T15\nPASS topic B2-T16\nPASS topic B3-T01\nPASS topic B3-T02\nPASS topic B3-T03\nPASS topic B3-T04\nPASS topic B3-T05\nPASS topic B3-T06\nPASS topic B3-T07\nPASS topic B3-T08\nPASS topic B3-T09\nPASS topic B3-T10\nPASS topic B3-T11\nPASS topic B3-T12\nPASS topic B3-T13\nPASS topic B3-T14\nPASS topic B3-T15\nPASS topic B4-T01\nPASS topic B4-T02\nPASS topic B4-T03\nPASS topic B4-T04\nPASS topic B4-T05\nPASS topic B4-T06\nPASS topic B4-T07\nPASS topic B4-T08\nPASS topic B4-T09\nPASS topic B4-T10\nPASS topic B4-T11\nPASS topic B4-T12\nPASS topic B4-T13\nPASS topic B4-T14\nPASS topic B4-T15\nPASS topic B4-T16\nPASS mobile layout\nPASS training and persistent response\nPASS complete GSI exam / correction\nPASS written selection / five answers / persistence\nPASS statistics / reinforcement views\nTopic training: 17 answered, 40 safely unavailable pending review.\nPASS training through every topic filter\nPASS training each block, mixed, failed and unseen\nPASS exam deadline survives reload and expires\nPASS written marking, rubric and saved score\nPASS export reset import restores all GSI progress and preserves old data\nPASS written timeout persists and makes answers read only\nPASS mobile main views and keyboard navigation\nPASS editorial review exposes source and preserves pending status\nPASS no console errors or broken HTTP routes"
+      "seconds": 23.6,
+      "output": "PASS startup\nPASS topic B1-T01\nPASS topic B1-T02\nPASS topic B1-T03\nPASS topic B1-T04\nPASS topic B1-T05\nPASS topic B1-T06\nPASS topic B1-T07\nPASS topic B1-T08\nPASS topic B1-T09\nPASS topic B1-T10\nPASS topic B2-T01\nPASS topic B2-T02\nPASS topic B2-T03\nPASS topic B2-T04\nPASS topic B2-T05\nPASS topic B2-T06\nPASS topic B2-T07\nPASS topic B2-T08\nPASS topic B2-T09\nPASS topic B2-T10\nPASS topic B2-T11\nPASS topic B2-T12\nPASS topic B2-T13\nPASS topic B2-T14\nPASS topic B2-T15\nPASS topic B2-T16\nPASS topic B3-T01\nPASS topic B3-T02\nPASS topic B3-T03\nPASS topic B3-T04\nPASS topic B3-T05\nPASS topic B3-T06\nPASS topic B3-T07\nPASS topic B3-T08\nPASS topic B3-T09\nPASS topic B3-T10\nPASS topic B3-T11\nPASS topic B3-T12\nPASS topic B3-T13\nPASS topic B3-T14\nPASS topic B3-T15\nPASS topic B4-T01\nPASS topic B4-T02\nPASS topic B4-T03\nPASS topic B4-T04\nPASS topic B4-T05\nPASS topic B4-T06\nPASS topic B4-T07\nPASS topic B4-T08\nPASS topic B4-T09\nPASS topic B4-T10\nPASS topic B4-T11\nPASS topic B4-T12\nPASS topic B4-T13\nPASS topic B4-T14\nPASS topic B4-T15\nPASS topic B4-T16\nPASS mobile layout\nPASS training and persistent response\nPASS complete GSI exam / correction\nPASS written selection / five answers / persistence\nPASS statistics / reinforcement views\nTopic training: 57 answered, 0 safely unavailable pending review.\nPASS training through every topic filter\nPASS training each block, mixed, failed and unseen\nPASS exam deadline survives reload and expires\nPASS written marking, rubric and saved score\nPASS export reset import restores all GSI progress and preserves old data\nPASS written timeout persists and makes answers read only\nPASS mobile main views and keyboard navigation\nPASS official library: three convocations, twelve PDFs and provisional excluded\nPASS official 2024: prepare, answer, resume and correct\nPASS official 2022: prepare, answer, resume and correct\nPASS editorial review exposes confirmed status without writing progress\nPASS no console errors or broken HTTP routes"
     }
   ]
 }

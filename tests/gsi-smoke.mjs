@@ -184,14 +184,47 @@ try {
     await page.setViewportSize({width:1365,height:900});
   });
 
-  await check("editorial review exposes source and preserves pending status", async () => {
+  await check("official library: three convocations, twelve PDFs and provisional excluded", async () => {
+    await page.goto(`${base}#examen`);
+    await page.locator('#official-exam-library details').first().waitFor({state:'attached'});
+    assert.equal(await page.locator('#official-exam-library details').count(),3);
+    assert.equal(await page.locator('#official-exam-library a[href^="https://sede.inap.gob.es/"]').count(),12);
+    assert.equal(await page.locator('[data-exam-id="GSI-INAP-2025"] button').count(),0);
+    await page.locator('[data-exam-id="GSI-INAP-2025"] summary').click();
+    assert.match(await page.locator('[data-exam-id="GSI-INAP-2025"]').innerText(),/provisional/);
+    await page.setViewportSize({width:390,height:844});
+    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2),true);
+    await page.screenshot({path:path.join(root,'tmp/gsi/official-mobile.png'),fullPage:true});
+    await page.setViewportSize({width:1365,height:900});
+  });
+  for(const year of [2024,2022]) await check(`official ${year}: prepare, answer, resume and correct`, async () => {
+    await page.goto(`${base}#examen`);
+    const card=page.locator(`[data-exam-id="GSI-INAP-${year}"]`);
+    await card.locator('summary').click();await card.getByRole('button').click();
+    assert.equal(await page.locator('#official-exam-select').inputValue(),`GSI-INAP-${year}`);
+    assert.equal(await page.locator('#exam-shuffle-options').isDisabled(),true);
+    assert.equal(await page.locator('#exam-shuffle-options').isChecked(),false);
+    await page.locator('#exam-config-form button[type="submit"]').click();
+    await page.locator('#exam-active').waitFor({state:'visible'});
+    assert.match(await page.locator('#exam-question').innerText(),new RegExp(`convocatoria ${year}`));
+    const q=bank.find(q=>q.exam?.year===year&&q.exam.paper_order===1);
+    await page.locator('#exam-question .exam-option-button').nth('ABCD'.indexOf(q.correct_option)).click();
+    const deadline=await page.evaluate(()=>JSON.parse(localStorage.getItem(Object.keys(localStorage).find(k=>k.endsWith('exam.active.real.v2')))).payload.deadlineAt);
+    await page.reload();await page.getByRole('button',{name:'Reanudar',exact:true}).click();
+    const state=await page.evaluate(()=>JSON.parse(localStorage.getItem(Object.keys(localStorage).find(k=>k.endsWith('exam.active.real.v2')))).payload);
+    assert.equal(state.deadlineAt,deadline);assert.equal(state.answersByQuestionId[q.id],q.correct_option);
+    await page.getByRole('button',{name:'Finalizar examen',exact:true}).click();await page.locator('#exam-confirm-finish').click();
+    await page.locator('#exam-results').waitFor({state:'visible'});assert.match(await page.locator('#exam-result-summary').innerText(),/99/);
+    await page.locator('#exam-new').click();
+  });
+  await check("editorial review exposes confirmed status without writing progress", async () => {
     const before=await page.evaluate(()=>JSON.stringify(Object.entries(localStorage)));
     await page.goto(base.replace('index.html','review.html'));
     await page.waitForFunction(()=>document.querySelector('#review-question').options.length===803);
     await page.locator('#review-topic').selectOption('B4-T13');
     assert.equal(await page.locator('#review-question option').count(),20);
     const first=await page.locator('#review-content').innerText();
-    assert.match(first,/Texto de la sección/);assert.match(first,/pendiente de validación/);
+    assert.match(first,/Texto de la sección/);assert.match(first,/Generada · validada · activa/);assert.match(first,/confirmada por el propietario/);
     assert.ok((await page.locator('#review-content pre').innerText()).length>100);
     await page.locator('#review-next').click();assert.notEqual(await page.locator('#review-content').innerText(),first);
     await page.locator('#review-topic').selectOption('');await page.locator('#review-search').fill('AI-GSI-B1-T03-001');

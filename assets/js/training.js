@@ -291,6 +291,7 @@ export function initTraining(data) {
     session.replaceChildren();
     session.append(createElement("p", "question-progress", `Pregunta ${state.index + 1} de ${state.questions.length}`));
     session.append(createElement("p", "pill", `${originLabel(question)} · ${question.validation_status}`));
+    if (describeOfficialQuestion(question)) session.append(createElement("p", "form-help", describeOfficialQuestion(question)));
     session.append(createElement("p", "question-statement", question.statement));
     const options = createElement("div", "question-options");
     options.setAttribute("role", "group");
@@ -452,3 +453,4 @@ export function initTraining(data) {
   updateAvailability();
   recoverTrainingContext();
 }
+import { describeOfficialQuestion } from "./official-exams.js?gsi2";

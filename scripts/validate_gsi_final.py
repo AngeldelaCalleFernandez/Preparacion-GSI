@@ -86,8 +86,17 @@ def main():
     for origin in ('official','manual','ai'):
         qs=load(f'data/questions-{origin}.json')['questions'];check(all(q['origin']==origin for q in qs),origin+': separación física');questions.extend(qs)
     ids=[q['id'] for q in questions];check(len(ids)==len(set(ids)),'IDs de preguntas únicos')
-    prompts=[norm(q['statement']) for q in questions];check(len(prompts)==len(set(prompts)),'Sin enunciados duplicados exactos normalizados')
+    signatures=[(norm(q['statement']),tuple(sorted(norm(o['text']) for o in q['options']))) for q in questions]
+    check(len(signatures)==len(set(signatures)),'Sin preguntas duplicadas exactas: enunciado y alternativas normalizados')
+    official_catalog=load('data/gsi-official-exams.json')
+    official_extracted=load('documents/sources/gsi-official/extracted.json')
+    official_records={f"OFF-GSI-INAP-{e['year']}-{'R' if r['reserve'] else 'Q'}{r['number']:03d}":r for e in official_extracted['exams'] for r in (e.get('questions') or [])}
+    official_papers={e['id']:e for e in official_catalog['exams']}
     reviews=load('data/gsi-editorial-reviews.json');reviewmap={r['id']:r for r in reviews['reviews']}
+    if reviews.get('confirmation'):
+        confirmation=reviews['confirmation']
+        fingerprint=sha('\n'.join(f"{r['id']}:{r['record_sha256']}:{r['evidence_sha256']}" for r in reviews['reviews']))
+        check(confirmation['records_sha256']==fingerprint and confirmation['record_count']==len(reviewmap),'Confirmación del propietario ligada al lote exacto')
     drafts={}
     for path in sorted((ROOT/'content/question-drafts').glob('*.txt')):
         counts={};topic=None
@@ -99,7 +108,16 @@ def main():
         label=q['id'];check(q['opposition_id']=='OPP-GSI' and q['topic_id'] in topics and q['block_id']==q['topic_id'][:2],label+': identidad GSI y tema válidos')
         check(len(q['options'])==4 and len({o['id'] for o in q['options']})==4 and len({norm(o['text']) for o in q['options']})==4 and sum(o['id']==q['correct_option'] for o in q['options'])==1,label+': cuatro opciones distintas y una correcta')
         check(bool(q['feedback']['correct'].strip()) and q['provenance']['source_id'] in sources and bool(q['provenance']['locator']),label+': explicación y procedencia')
-        check(q['provenance']['drive_id'] in known,label+': fuente dentro del inventario autorizado')
+        if q['origin']=='official':
+            original=official_records.get(label,{})
+            paper=official_papers.get(q.get('exam',{}).get('id'),{})
+            docs={d['kind']:d for d in paper.get('documents',[])}
+            check(original.get('annulled') is False and paper.get('key_status')=='definitive',label+': no anulada y plantilla definitiva')
+            check(q['statement']==original.get('statement') and {o['id']:o['text'] for o in q['options']}==original.get('options') and q['correct_option']==original.get('answer'),label+': enunciado, alternativas y clave oficiales conservados')
+            check(q['source']['record_sha256']==sha(json.dumps(original,ensure_ascii=False,sort_keys=True)),label+': extracción oficial íntegra')
+            check(q['provenance']['drive_id'] is None and q['provenance']['url']==docs.get('questionnaire',{}).get('url') and q['source']['answer_key_url']==docs.get('answer_key',{}).get('url') and urlsplit(q['provenance']['url']).hostname=='sede.inap.gob.es',label+': procedencia pública INAP sin Drive ficticio')
+        else:
+            check(q['provenance']['drive_id'] in known,label+': fuente dentro del inventario autorizado')
         check(not q['is_active'] or q['validation_status']=='validated',label+': activación exige revisión')
         if q['origin']=='ai':
             topic,line=drafts[label];fields=line.split('|');section=fields[0]
@@ -119,9 +137,20 @@ def main():
                 part=re.search(r'(?m)^\*\*'+str(number)+r'\.[\s\S]*?\*\*Respuesta:\s*([A-D])\.',text)
                 match=part
             check(match is not None and match[1]==q['correct_option'],label+': clave cotejada con solucionario original')
+    for paper in official_catalog['exams']:
+        for doc in paper['documents']:
+            check(digest(doc['markdown'])==doc['markdown_sha256'],paper['id']+': conversión oficial íntegra')
+            original=ROOT/doc['original']
+            if original.exists():check(digest(doc['original'])==doc['original_sha256'],paper['id']+': PDF original conservado')
+        selected=[q for q in questions if q['id'] in paper['question_ids']]
+        if paper['key_status']=='definitive':
+            check(len(selected)==len(set(paper['question_ids']))==100,paper['id']+': cien preguntas evaluables')
+            check(sorted(q['exam']['paper_order'] for q in selected)==list(range(1,101)),paper['id']+': orden íntegro')
+            check([q['exam']['number'] for q in sorted(selected,key=lambda q:q['exam']['paper_order']) if q['exam']['is_reserve']]==paper['used_reserve_numbers']==list(range(1,len(paper['annulled_numbers'])+1)),paper['id']+': reservas sustituyen anuladas en orden')
+        else:check(not selected and not paper['question_ids'],paper['id']+': plantilla provisional excluida del banco activo')
     active=Counter(q['topic_id'] for q in questions if q['is_active']);total=Counter(q['topic_id'] for q in questions)
     deficient=[tid for tid in topics if active[tid]<20]
-    if deficient:blockers.append(f'{len(deficient)} temas tienen menos de 20 preguntas activas revisadas; 803 generadas pendientes de validación humana. La revisión automática de permisos rechazó su activación masiva.')
+    if deficient:blockers.append(f'{len(deficient)} temas tienen menos de 20 preguntas activas revisadas; {sum(q["origin"]=="ai" and q["validation_status"]=="pending_review" for q in questions)} generadas pendientes de revisión.')
     report={'version':1,'date':DATE,'opposition_id':'OPP-GSI','topic_count':57,'distribution':COUNTS,
         'question_totals':{'total':len(questions),'active':sum(active.values()),'pending':sum(q['validation_status']=='pending_review' for q in questions),'by_origin':dict(Counter(q['origin'] for q in questions)),'by_block':dict(Counter(q['block_id'] for q in questions))},
         'topics':[{'topic_id':tid,'study_characters':mmap[tid]['study_characters'],'has_source':bool(mmap[tid]['drive_id']),'questions':total[tid],'active':active[tid],'pending':total[tid]-active[tid],'minimum_met':active[tid]>=20} for tid in topics],

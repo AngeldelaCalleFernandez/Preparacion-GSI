@@ -58,10 +58,11 @@ export function validateProgressBackup(backup, data) {
         const ids = new Set(payload.questionRefs.map((ref) => ref.id));
         valid = payload.questionRefs.length === payload.config.questionCount
           && Date.parse(payload.deadlineAt) - Date.parse(payload.startedAt) === payload.config.durationSeconds * 1000
-          && payload.questionRefs.every((ref) => {
+          && payload.questionRefs.every((ref, index) => {
             const q = questionsById.get(ref.id);
             const order = payload.optionOrderByQuestionId[ref.id];
             return q && isQuestionEligible(q, payload.config) && ref.blockId === q.block_id && ref.topicId === q.topic_id
+              && (!payload.config.officialExamId || (q.exam.paper_order === index + 1 && Array.isArray(order) && order.join("") === "ABCD"))
               && Array.isArray(order) && order.length === 4 && new Set(order).size === 4 && order.every((id) => q.options.some((o) => o.id === id));
           })
           && Object.entries(payload.answersByQuestionId).every(([id, answer]) => ids.has(id) && (answer === null || questionsById.get(id).options.some((o) => o.id === answer)))

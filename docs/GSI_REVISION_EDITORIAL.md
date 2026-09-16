@@ -1,6 +1,6 @@
 # Revisión editorial del banco GSI
 
-Estado a 15 de septiembre de 2026: **959 preguntas curadas activas; 803 preguntas generadas pendientes**. Las primeras conservan las claves y explicaciones del corpus revisado; no son preguntas oficiales. Las segundas no se incorporan al entrenamiento ni al examen mientras permanezcan pendientes.
+Estado a 16 de septiembre de 2026: **959 preguntas curadas, 803 generadas y 202 oficiales activas**. Las curadas conservan las claves y explicaciones del corpus revisado. Las generadas conservan su origen IA; las oficiales se importan de cuestionarios y plantillas definitivas del INAP.
 
 ## Evidencia disponible
 
@@ -18,12 +18,12 @@ Se comprobó automáticamente la coincidencia de las 959 claves importadas con s
 
 Los candidatos a duplicados y sus decisiones editoriales se documentan en `logs/gsi-semantic-review.json`. La búsqueda semántica es heurística y no garantiza detectar todas las paráfrasis del banco.
 
-## Pendiente para la activación
+## Confirmación del propietario y activación
 
-La revisión automática de permisos rechazó activar masivamente las 803 preguntas sin validación humana independiente. Se conserva `reviewer_type: ai`, `status: pending_human_review` y `decision: pending_review`. Se ha solicitado al propietario una decisión expresa sobre si admite la revisión editorial asistida por IA como suficiente, sin atribuirle validación humana. No se ha recibido ni registrado esa autorización.
+Tras el bloqueo inicial, el propietario declaró el 15 de septiembre: «los test estan revisados». Se registra esa declaración de revisión existente para el lote exacto de 803 preguntas, con su identidad de propietario, fecha, hashes de pregunta y evidencia y huella agregada del lote. No se atribuye al agente una revisión humana ni se inventa el método que utilizó el propietario. El registro identifica `reviewer_type: human`, `status: reviewed` y decisiones aceptadas por esa confirmación.
 
 Para una revisión humana, quien revise debe contrastar enunciado, cuatro alternativas, unicidad de la correcta, explicación, localizador y vigencia. Los registros aceptados deben identificar al revisor real, el método, la fecha y los hashes exactos. No basta con cambiar todas las decisiones mediante un script.
 
-Después de una revisión y autorización suficientes, el compilador `scripts/build_gsi_authored_questions.py` materializa únicamente aceptaciones con hashes coincidentes. La validación final exige actualmente revisor humano para una pregunta generada activa. No se debe modificar esa condición para simular una revisión; una eventual autorización del propietario debe documentar con veracidad el método admitido antes de cambiar la política.
+El compilador `scripts/build_gsi_authored_questions.py` materializa únicamente aceptaciones con hashes coincidentes y revisión global confirmada. La validación final exige revisor humano para una pregunta generada activa y verifica la huella del lote declarado. Si cambia una fila o su evidencia, debe renovarse la revisión afectada.
 
-Tras cualquier actualización se ejecuta `python scripts/run_gsi_suite.py`. Solo un código 0 permite declarar superadas las pruebas técnicas y la cobertura. El estado presente produce código 2 y mantiene el bloqueo visible.
+Tras cualquier actualización se ejecuta `python scripts/run_gsi_suite.py`. Solo un código 0 permite declarar superadas las pruebas técnicas y la cobertura. El resultado vigente está en `logs/gsi-suite.json`.

@@ -46,7 +46,8 @@ export function isQuestionEligible(question, config) {
       && question.validation_status === "validated" && ["official", "manual", "ai"].includes(question.collection);
   }
   if (config.mode === EXAM_MODES.BOE) {
-    return isProductionActive(question) && question.collection === "official" && question.origin === "official" && question.validation_status === "validated";
+    return isProductionActive(question) && question.collection === "official" && question.origin === "official" && question.validation_status === "validated"
+      && (!config.officialExamId || (question.exam?.id === config.officialExamId && question.exam.key_status === "definitive" && Number.isInteger(question.exam.paper_order)));
   }
   if (config.mode === EXAM_MODES.AI_VALIDATED) {
     return isProductionActive(question)
@@ -69,6 +70,9 @@ export function isQuestionEligible(question, config) {
 
 export function validateExamConfig(config) {
   const errors = [];
+  if (config.officialExamId && (config.mode !== EXAM_MODES.BOE || !/^GSI-INAP-\d{4}$/.test(config.officialExamId) || config.questionCount !== 100 || config.durationSeconds !== 5400 || config.penaltyPerError !== 1 / 3 || [...new Set(config.blockIds || [])].sort().join(",") !== "B1,B2,B3,B4" || config.shuffleQuestions || config.shuffleOptions)) {
+    errors.push("El examen oficial requiere 100 preguntas, 90 minutos, los cuatro bloques, penalización de 1/3 y el orden original de preguntas y opciones.");
+  }
   if (config.mode === EXAM_MODES.GSI && (config.questionCount !== 100 || config.durationSeconds !== 5400 || config.penaltyPerError !== 1 / 3 || [...new Set(config.blockIds || [])].sort().join(",") !== "B1,B2,B3,B4")) {
     errors.push("El simulacro GSI requiere 100 preguntas, 90 minutos, los cuatro bloques y penalización exacta de 1/3.");
   }
@@ -159,7 +163,10 @@ export function selectExamQuestions(questions, config, random = Math.random) {
     if (availability.boe.length < config.questionCount) {
       return { errors: [`Solo BOE necesita ${config.questionCount} preguntas activas oficiales y solo hay ${availability.boe.length}.`] };
     }
-    selected = availability.boe.slice(0, config.questionCount);
+    if (config.officialExamId) {
+      selected = [...availability.boe].sort((a, b) => a.exam.paper_order - b.exam.paper_order);
+      if (selected.length !== 100 || selected.some((question, index) => question.exam.paper_order !== index + 1)) return { errors: ["El examen oficial no contiene las 100 posiciones evaluables únicas. Revisa el catálogo y las reservas."] };
+    } else selected = availability.boe.slice(0, config.questionCount);
   } else if (config.mode === EXAM_MODES.AI_VALIDATED) {
     if (availability.ai.length < config.questionCount) {
       return { errors: [`Solo IA validada necesita ${config.questionCount} preguntas y solo hay ${availability.ai.length}.`] };

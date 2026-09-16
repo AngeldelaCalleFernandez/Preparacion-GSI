@@ -182,6 +182,11 @@
         <h1 id="exam-title">Modo examen</h1>
         <p class="lead">Reproduce el primer ejercicio GSI: 100 preguntas en 90 minutos. Los simulacros usan material de estudio validado con procedencia visible en la corrección.</p>
 
+        <section aria-labelledby="official-exams-title">
+          <h2 id="official-exams-title">Exámenes oficiales INAP</h2>
+          <p>Abre una convocatoria para consultar los PDF de ambos ejercicios y su plantilla. Las convocatorias con plantilla definitiva también se pueden realizar aquí.</p>
+          <div id="official-exam-library" aria-live="polite"></div>
+        </section>
         <form id="exam-config-form" class="training-form" novalidate>
           <fieldset>
             <legend>Configurar examen</legend>
@@ -207,6 +212,10 @@
                 <label for="exam-penalty">Penalización por error</label>
                 <input id="exam-penalty" name="penalty" type="text" value="1/3" readonly aria-describedby="exam-scoring">
               </div>
+            </div>
+            <div id="official-exam-field" class="field" hidden>
+              <label for="official-exam-select">Convocatoria oficial</label>
+              <select id="official-exam-select"><option value="">Mezclar preguntas oficiales</option></select>
             </div>
             <fieldset class="exam-blocks-fieldset">
               <legend>Bloques incluidos</legend>

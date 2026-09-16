@@ -87,6 +87,39 @@
         }
       },
       "minItems": 1
+    },
+    "confirmation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "received_at",
+        "statement",
+        "scope",
+        "record_count",
+        "records_sha256"
+      ],
+      "properties": {
+        "received_at": {
+          "type": "string",
+          "format": "date"
+        },
+        "statement": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scope": {
+          "type": "string",
+          "minLength": 1
+        },
+        "record_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "records_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
     }
   }
 }

@@ -112,7 +112,8 @@ def main() -> int:
 
     markdown_paths = {
         path.relative_to(ROOT).as_posix()
-        for path in (ROOT / "documents" / "markdown" / "gsi").rglob("*.md")
+        for folder in ("gsi", "gsi-official")
+        for path in (ROOT / "documents" / "markdown" / folder).rglob("*.md")
     }
     registered_paths = {d["path"] for d in load_json("data/gsi-document-register.json")["documents"]}
     for path in sorted(markdown_paths - catalog_paths - registered_paths):

@@ -12,9 +12,11 @@ function render(){
   content.replaceChildren();
   const q=filtered.find(q=>q.id===select.value);const position=filtered.indexOf(q);
   previous.disabled=position<=0;next.disabled=position<0||position===filtered.length-1;
-  counter.textContent=`${filtered.length} borradores en esta selección · ${bank.length} en el lote`;
+  counter.textContent=`${filtered.length} preguntas en esta selección · ${bank.length} en el lote`;
   if(!q)return;
-  content.append(node('h2',`${q.id} · ${q.statement}`),node('p','Generada · pendiente de validación · dificultad orientativa'));
+  const status=q.validation_status==='validated'?'validada':q.validation_status==='pending_review'?'pendiente de validación':q.validation_status;
+  content.append(node('h2',`${q.id} · ${q.statement}`),node('p',`Generada · ${status} · ${q.is_active?'activa':'inactiva'} · dificultad orientativa`));
+  if(q.source.review_method)content.append(node('p',q.source.review_method));
   const options=node('ol','');options.type='A';
   for(const o of q.options)options.append(node('li',o.text+(o.id===q.correct_option?' — respuesta propuesta':'')));
   content.append(options,node('h3','Explicación propuesta'),node('p',q.feedback.correct));
