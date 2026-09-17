@@ -1,6 +1,8 @@
-# Guía paso a paso para estudiar GSI A2
+# Preparación GSI · Guía paso a paso
 
 Esta guía explica cómo usar la aplicación para estudiar, practicar y volver sobre tus errores. No necesitas saber programar ni modificar archivos del proyecto.
+
+Creado por [AngeldelaCalleFernandez](https://github.com/AngeldelaCalleFernandez). [Uso gratuito y no comercial, con atribución](../LICENSE). Los materiales de terceros conservan sus propias condiciones.
 
 **Tu recorrido habitual será: Temario → Entrenamiento → Refuerzo → Estadísticas.** Reserva Examen y Práctica escrita para sesiones más largas.
 

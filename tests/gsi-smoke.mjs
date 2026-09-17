@@ -35,7 +35,7 @@ try {
   await check("startup", async () => {
     await page.waitForFunction(() => document.querySelector("#home-topic-count").textContent === "57", null, { timeout: 15000 });
     assert.equal(await page.locator("#app-status").innerText(), "");
-    assert.match(await page.title(), /GSI A2/);
+    assert.match(await page.title(), /Preparación GSI/);
   });
   await fs.mkdir(path.join(root, "tmp/gsi"), { recursive: true });
   await page.screenshot({ path: path.join(root, "tmp/gsi/home-desktop.png"), fullPage: true });

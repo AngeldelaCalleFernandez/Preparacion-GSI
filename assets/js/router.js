@@ -40,7 +40,7 @@ export function renderRoute(route, shouldFocus = false, root = document, routeSt
     }
   }
   if (root === document) {
-    document.title = `${resolvedRoute[0].toUpperCase()}${resolvedRoute.slice(1)} · GSI A2`;
+    document.title = `${resolvedRoute[0].toUpperCase()}${resolvedRoute.slice(1)} · Preparación GSI`;
     window.dispatchEvent(new CustomEvent("gsi:routechange", { detail: routeState || { route: resolvedRoute, topicId: null, sectionId: null, error: null } }));
   }
   if (shouldFocus) {

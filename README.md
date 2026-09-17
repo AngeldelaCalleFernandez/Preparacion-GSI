@@ -1,4 +1,4 @@
-# GSI · Plataforma de estudio para Gestión de Sistemas e Informática A2
+# Preparación GSI
 
 Aplicación web estática y repositorio de contenidos para preparar el **Cuerpo de Gestión de Sistemas e Informática de la Administración del Estado, ingreso libre, subgrupo A2**.
 
@@ -6,7 +6,7 @@ El proyecto está dedicado exclusivamente a GSI A2. Incluye los **57 temas** del
 
 ## Acceso directo
 
-**[Abrir la aplicación GSI A2](https://angeldelacallefernandez.github.io/TAI-GSI/)**
+**[Abrir Preparación GSI](https://angeldelacallefernandez.github.io/TAI-GSI/)**
 
 No hay que instalar nada para estudiar desde la versión publicada. Funciona en ordenador, tableta y móvil con un navegador moderno.
 
@@ -142,12 +142,12 @@ El estado actual esperado es **2** por las 803 preguntas pendientes. Un JSON vá
 
 La última ejecución aprobó:
 
-- 18 archivos contra 16 esquemas JSON;
+- 19 archivos contra 17 esquemas JSON;
 - 57 temas y sus referencias;
-- 1762 preguntas con estructura válida;
-- 76 pruebas unitarias;
+- 1964 preguntas con estructura válida;
+- 83 pruebas unitarias;
 - 288 pruebas de regresión;
-- 72 comprobaciones funcionales en navegador;
+- 75 comprobaciones funcionales en navegador;
 - funcionamiento en escritorio, móvil y una subruta de GitHub Pages.
 
 También se comprueban puntuación, temporizadores, persistencia, exportación e importación, rutas relativas, procedencia, exclusión de preguntas pendientes y ausencia de referencias TAI en el producto activo.
@@ -180,4 +180,10 @@ Antes de preparar una convocatoria concreta debe comprobarse que el programa y l
 
 ## Licencia
 
-El repositorio no declara actualmente una licencia específica. Su publicación en GitHub no concede por sí sola permisos adicionales de reutilización, modificación o redistribución.
+**Creado por [AngeldelaCalleFernandez](https://github.com/AngeldelaCalleFernandez).**
+
+Preparación GSI se ofrece bajo una **licencia propia de uso gratuito, no comercial y con atribución obligatoria**. Puedes usar, copiar, modificar y compartir los elementos cubiertos gratuitamente, manteniendo el crédito al creador, el enlace al proyecto y la licencia. Las adaptaciones deben identificar sus cambios y conservar estas condiciones. No se permite la venta, el acceso de pago ni la explotación comercial sin permiso expreso.
+
+Consulta el [texto completo](LICENSE) y la [página de licencia y autoría](https://angeldelacallefernandez.github.io/TAI-GSI/licencia.html). Los documentos oficiales y materiales de terceros mantienen sus propios derechos y condiciones; esta licencia solo cubre las aportaciones sobre las que el creador puede conceder permisos.
+
+La restricción comercial fue elegida expresamente por el propietario. Es una licencia específica, no MIT. Creative Commons desaconseja aplicar sus licencias al software como tal ([FAQ oficial](https://creativecommons.org/faq/#can-i-apply-a-creative-commons-license-to-software)); por eso no se etiqueta el código de la aplicación con una licencia CC.

@@ -213,7 +213,7 @@ async function renderDetail(routeState) {
   actions.append(back);
   if (officialSource) actions.append(officialSource);
   detail.append(createBreadcrumbs(topic), actions, official, meta, message, content);
-  document.title = `Tema ${topic.number} · GSI A2`;
+  document.title = `Tema ${topic.number} · Preparación GSI`;
   try {
     const fragment = await loadTopicFragment(viewState.index, operationalTopicId);
     if (version !== requestVersion) return;

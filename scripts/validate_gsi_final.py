@@ -168,7 +168,7 @@ def main():
         text=p.read_text('utf-8');check(not re.search(r'\b(?:TAI|tai|TODO|FIXME)\b|33 temas',text),p.relative_to(ROOT).as_posix()+': sin TAI ni marcadores pendientes activos')
         check(not re.search(r'gh[pousr]_[A-Za-z0-9]{30,}|AKIA[0-9A-Z]{16}|sk-proj-[A-Za-z0-9_-]{30,}',text),p.name+': sin patrones de credencial')
     # Check relative paths from the two application entry points and their modules.
-    for p in [ROOT/'index.html',ROOT/'review.html',*(ROOT/'assets/js').glob('*.js')]:
+    for p in [ROOT/'index.html',ROOT/'review.html',ROOT/'licencia.html',*(ROOT/'assets/js').glob('*.js')]:
         text=p.read_text('utf-8')
         if p.suffix=='.html':
             page=Fragment();page.feed(text);links=page.links
@@ -187,6 +187,7 @@ def main():
         if item['type']!='match':continue
         value=item['data'];path=value['path']['text'].replace('\\','/').removeprefix('./')
         if path.startswith('archive/'):kind='archivo histórico excluido'
+        elif path in ('LICENSE','licencia.html') and not re.search(r'\bTAI\b|33 temas',value['lines']['text'].replace('https://github.com/AngeldelaCalleFernandez/TAI-GSI','')):kind='enlace de atribución al repositorio con nombre histórico'
         elif path.startswith(('docs/','PLAN_')) or path in ('README.md','AGENTS.md'):kind='documentación histórica o explicación de la migración'
         elif path.startswith('tests/'):kind='regresión negativa y aislamiento del historial antiguo'
         elif path.startswith('scripts/'):kind='control de exclusión o conservación del archivo'

@@ -1,5 +1,11 @@
 # Auditoría de la conversión a GSI A2
 
+## Nombre y licencia: 17 de septiembre de 2026
+
+El nombre visible pasa a **Preparación GSI** en cabecera, títulos de navegación, temario, revisión editorial, guía y README. El propietario eligió expresamente uso gratuito y no comercial con atribución. Se crean `LICENSE` (licencia específica del proyecto) y `licencia.html`; la aplicación muestra el crédito a `AngeldelaCalleFernandez` y un enlace a las condiciones. Los derechos de documentos oficiales y materiales de terceros se conservan. El repositorio y su dirección de Pages siguen siendo los existentes.
+
+Se modifican HTML, estilos, títulos del router y temario, documentación y la expectativa de título en el recorrido HTTP. El validador incluye los enlaces de la nueva página y solo admite el nombre histórico en sus URLs de atribución exactas. No se convierten documentos ni se cambia el banco de preguntas. Validación: 19088 controles de integridad, 83 unitarias, 288 regresiones y 75 comprobaciones HTTP; el resultado de la ejecución está en `logs/gsi-suite.json`.
+
 ## Estado vigente: 16 de septiembre de 2026
 
 **Integración validada; publicación autorizada el 17 de septiembre de 2026.** Rama `gsi-only-final`. El commit que contiene este informe se identifica con `git log -1 --format=%H -- docs/FINAL_GSI_AUDIT.md`. El código validado está en `353d598` y la conservación de hashes en Windows en `8308d62`. GitHub Pages publica desde la raíz de esta rama; el estado de despliegue se consulta en las acciones del repositorio.
