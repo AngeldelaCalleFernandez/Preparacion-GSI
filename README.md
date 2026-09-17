@@ -22,11 +22,11 @@ La aplicación funciona y los 57 temas tienen apuntes completos, resumen y proce
 | Preguntas generadas revisadas | 803 | 0 |
 | Preguntas oficiales INAP | 202 | 0 |
 
-La copia local contiene **1.964 preguntas activas** y los **57 temas tienen al menos 20 preguntas revisadas**. Las 803 generadas se activaron tras la confirmación del propietario de que los test estaban revisados; conservan su origen IA y la aceptación asociada a sus hashes. La confirmación no se presenta como una revisión humana realizada por el agente.
+La aplicación contiene **1.964 preguntas activas** y los **57 temas tienen al menos 20 preguntas revisadas**. Las 803 generadas se activaron tras la confirmación del propietario de que los test estaban revisados; conservan su origen IA y la aceptación asociada a sus hashes. La confirmación no se presenta como una revisión humana realizada por el agente.
 
 En **Examen → Exámenes oficiales INAP**, abre **2022** o **2024**, pulsa **Preparar este examen** y después **Iniciar examen**. Cada convocatoria ofrece 100 preguntas evaluables en 90 minutos, con plantilla definitiva y sustitución de anuladas por reservas. Hay 12 enlaces oficiales a cuestionarios, plantillas, supuestos escritos y criterios de 2022, 2024 y 2025. La plantilla consultada de **2025 es provisional**: se ofrece para lectura, sin activar su corrección automática. [Detalle de la importación](docs/GSI_EXAMENES_OFICIALES.md).
 
-Estos cambios están preparados localmente; la web pública solo los mostrará tras publicarse esta revisión.
+La publicación de esta revisión, incluidas las auditorías, fue autorizada expresamente por el propietario el 17 de septiembre de 2026.
 
 Consulta la [auditoría completa](docs/FINAL_GSI_AUDIT.md), la [cobertura por tema](data/gsi-coverage-report.json) y el [resultado de la suite](logs/gsi-suite.json).
 

@@ -2,7 +2,7 @@
 
 ## Estado vigente: 16 de septiembre de 2026
 
-**Integración local validada, pendiente de publicación.** Rama `gsi-only-final`. El commit que contiene este informe se identifica con `git log -1 --format=%H -- docs/FINAL_GSI_AUDIT.md`; el código y sus pruebas se guardan junto con esta actualización. La web pública sigue en su revisión anterior hasta completar el envío a GitHub.
+**Integración validada; publicación autorizada el 17 de septiembre de 2026.** Rama `gsi-only-final`. El commit que contiene este informe se identifica con `git log -1 --format=%H -- docs/FINAL_GSI_AUDIT.md`. El código validado está en `353d598` y la conservación de hashes en Windows en `8308d62`. GitHub Pages publica desde la raíz de esta rama; el estado de despliegue se consulta en las acciones del repositorio.
 
 Programa: BOE-A-2025-26262, Anexo IX; **57 temas, distribución 10/16/15/16**. Se conservan los 57 apuntes completos y trazados del corpus autorizado, los 50 documentos canónicos convertidos, ocho supuestos con solución y cuatro simulacros escritos. El inventario, la raíz Drive, las migraciones y los originales históricos se detallan más abajo.
 
@@ -104,11 +104,11 @@ Se ejercitan los 57 temas con respuesta real, los dos exámenes históricos, sel
 
 La primera pasada detectó IDs documentales con guion bajo, un validador limitado a la carpeta canónica y una expectativa de 21 documentos. Se normalizaron IDs con guiones, se incluyó la carpeta oficial y se comprobó el nuevo total de 33. La suite posterior pasó completa. Se fijaron finales de línea LF para las nuevas conversiones en `.gitattributes`, de modo que sus hashes se conserven también al clonar en Windows. Los duplicados exactos se identifican por enunciado y alternativas: dos preguntas oficiales con el mismo encabezado pero opciones distintas son ítems diferentes.
 
-### Entrega y publicación pendiente
+### Entrega y autorización de publicación
 
 Creados: módulo `assets/js/official-exams.js`, catálogo y mapa oficiales, extracción conservada, 12 Markdown, log de conversiones, esquema e importador oficial, y esta documentación de uso. Modificados: bancos, registro editorial, fuentes, interfaz de examen/entrenamiento/refuerzo, validación de progreso, esquemas, validadores, pruebas, README y guía. La arquitectura sigue siendo estática, sin backend ni build.
 
-Fase de integración, pruebas y documentación completada localmente. La publicación sigue pendiente: una revisión automática anterior rechazó el push porque incluía auditorías derivadas de fuentes privadas sin autorización específica para ese contenido. No se ha repetido ese envío ni se ha dado por publicado este lote. La siguiente acción es resolver la autorización de publicación y verificar GitHub Pages tras desplegar.
+Fase de integración, pruebas y documentación completada. El bloqueo anterior de publicación queda resuelto por autorización expresa del propietario el 17 de septiembre de 2026: confirmó que permite publicar los cambios pendientes, incluidas las auditorías derivadas de sus documentos privados, en el repositorio público. Esta autorización permite enviar el conjunto preparado y comprobar GitHub Pages tras el despliegue. Los PDF originales permanecen conservados localmente e ignorados por Git; la aplicación enlaza los documentos públicos del INAP.
 
 Para probar: servir la raíz por HTTP y abrir **Examen → Exámenes oficiales INAP → 2022 o 2024 → Preparar este examen → Iniciar examen**. La guía explica también la consulta de PDF y el traslado de progreso entre dispositivos.
 

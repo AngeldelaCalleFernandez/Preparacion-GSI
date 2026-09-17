@@ -46,7 +46,7 @@ No abras `index.html` con doble clic: la copia local necesita el servidor HTTP a
 | Refuerzo | Volver a trabajar preguntas falladas o que te generan dudas. |
 | Estadísticas | Comprobar resultados y decidir qué repasar. |
 
-**Contenido de esta revisión, a 16 de septiembre de 2026:** puedes estudiar y practicar los 57 temas. Hay 1.964 preguntas activas: 959 curadas, 803 generadas cuya revisión ha confirmado el propietario y 202 oficiales del INAP. Todos los temas tienen al menos 20 preguntas revisadas. Estos cambios aparecerán en la web pública cuando se publique esta revisión.
+**Contenido de esta revisión, a 16 de septiembre de 2026:** puedes estudiar y practicar los 57 temas. Hay 1.964 preguntas activas: 959 curadas, 803 generadas cuya revisión ha confirmado el propietario y 202 oficiales del INAP. Todos los temas tienen al menos 20 preguntas revisadas.
 
 ## 3. Estudiar tu primer tema
 
