@@ -6,11 +6,11 @@ El proyecto está dedicado exclusivamente a GSI A2. Incluye los **57 temas** del
 
 ## Acceso directo
 
-**[Abrir Preparación GSI](https://angeldelacallefernandez.github.io/TAI-GSI/)**
+**[Abrir Preparación GSI](https://angeldelacallefernandez.github.io/Preparacion-GSI/)**
 
 No hay que instalar nada para estudiar desde la versión publicada. Funciona en ordenador, tableta y móvil con un navegador moderno.
 
-Para empezar, consulta la [guía paso a paso](https://angeldelacallefernandez.github.io/TAI-GSI/docs/guia-de-estudio.html). Incluye un primer ejercicio, instrucciones de uso y una rutina de 45 minutos. También está disponible [en formato Markdown](docs/GUIA_DE_ESTUDIO.md).
+Para empezar, consulta la [guía paso a paso](https://angeldelacallefernandez.github.io/Preparacion-GSI/docs/guia-de-estudio.html). Incluye un primer ejercicio, instrucciones de uso y una rutina de 45 minutos. También está disponible [en formato Markdown](docs/GUIA_DE_ESTUDIO.md).
 
 ## Estado actual
 
@@ -70,8 +70,8 @@ Si ya estudiabas desde `http://127.0.0.1:8765/`, exporta allí el progreso e imp
 Clona el repositorio y entra en su carpeta:
 
 ```bash
-git clone --branch gsi-only-final https://github.com/AngeldelaCalleFernandez/TAI-GSI.git
-cd TAI-GSI
+git clone https://github.com/AngeldelaCalleFernandez/Preparacion-GSI.git
+cd Preparacion-GSI
 ```
 
 Inicia un servidor HTTP:
@@ -184,6 +184,6 @@ Antes de preparar una convocatoria concreta debe comprobarse que el programa y l
 
 Preparación GSI se ofrece bajo una **licencia propia de uso gratuito, no comercial y con atribución obligatoria**. Puedes usar, copiar, modificar y compartir los elementos cubiertos gratuitamente, manteniendo el crédito al creador, el enlace al proyecto y la licencia. Las adaptaciones deben identificar sus cambios y conservar estas condiciones. No se permite la venta, el acceso de pago ni la explotación comercial sin permiso expreso.
 
-Consulta el [texto completo](LICENSE) y la [página de licencia y autoría](https://angeldelacallefernandez.github.io/TAI-GSI/licencia.html). Los documentos oficiales y materiales de terceros mantienen sus propios derechos y condiciones; esta licencia solo cubre las aportaciones sobre las que el creador puede conceder permisos.
+Consulta el [texto completo](LICENSE) y la [página de licencia y autoría](https://angeldelacallefernandez.github.io/Preparacion-GSI/licencia.html). Los documentos oficiales y materiales de terceros mantienen sus propios derechos y condiciones; esta licencia solo cubre las aportaciones sobre las que el creador puede conceder permisos.
 
 La restricción comercial fue elegida expresamente por el propietario. Es una licencia específica, no MIT. Creative Commons desaconseja aplicar sus licencias al software como tal ([FAQ oficial](https://creativecommons.org/faq/#can-i-apply-a-creative-commons-license-to-software)); por eso no se etiqueta el código de la aplicación con una licencia CC.

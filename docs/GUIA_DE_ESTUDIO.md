@@ -8,7 +8,7 @@ Creado por [AngeldelaCalleFernandez](https://github.com/AngeldelaCalleFernandez)
 
 ## 1. Abrir la aplicación en ordenador, tableta o móvil
 
-1. Abre [la aplicación GSI A2](https://angeldelacallefernandez.github.io/TAI-GSI/) en el navegador de tu dispositivo.
+1. Abre [Preparación GSI](https://angeldelacallefernandez.github.io/Preparacion-GSI/) en el navegador de tu dispositivo.
 2. Guarda esa dirección en favoritos para volver fácilmente.
 3. Pulsa **Temario** para empezar. No necesitas instalar nada ni mantener encendido tu ordenador.
 

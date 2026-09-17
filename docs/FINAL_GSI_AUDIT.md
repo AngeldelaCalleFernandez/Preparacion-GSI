@@ -128,7 +128,7 @@ Fecha: **15 de septiembre de 2026**. Rama: `gsi-only-final`.
 
 Commit de referencia de la suite del 15 de septiembre: `7cc25aede8b67f88027244696296fd92af73e8a9`. El informe se guarda en un commit posterior para poder citar una revisión existente; el identificador del commit que contiene esta auditoría se obtiene con `git log -1 --format=%H -- docs/FINAL_GSI_AUDIT.md`.
 
-Acceso público: [aplicación GSI A2](https://angeldelacallefernandez.github.io/TAI-GSI/) y [guía paso a paso](https://angeldelacallefernandez.github.io/TAI-GSI/docs/guia-de-estudio.html). GitHub Pages publica desde la raíz de `gsi-only-final`, con HTTPS y `.nojekyll`; se verificó el estado `built`. El progreso sigue siendo local a cada navegador y se traslada mediante exportación/importación.
+Acceso público actual: [Preparación GSI](https://angeldelacallefernandez.github.io/Preparacion-GSI/) y [guía paso a paso](https://angeldelacallefernandez.github.io/Preparacion-GSI/docs/guia-de-estudio.html). GitHub Pages publica desde la raíz de `gsi-only-final`, con HTTPS y `.nojekyll`. El progreso sigue siendo local a cada navegador y se traslada mediante exportación/importación.
 
 ## Fuentes y documentos
 

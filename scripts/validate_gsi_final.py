@@ -187,7 +187,6 @@ def main():
         if item['type']!='match':continue
         value=item['data'];path=value['path']['text'].replace('\\','/').removeprefix('./')
         if path.startswith('archive/'):kind='archivo histórico excluido'
-        elif path in ('LICENSE','licencia.html') and not re.search(r'\bTAI\b|33 temas',value['lines']['text'].replace('https://github.com/AngeldelaCalleFernandez/TAI-GSI','')):kind='enlace de atribución al repositorio con nombre histórico'
         elif path.startswith(('docs/','PLAN_')) or path in ('README.md','AGENTS.md'):kind='documentación histórica o explicación de la migración'
         elif path.startswith('tests/'):kind='regresión negativa y aislamiento del historial antiguo'
         elif path.startswith('scripts/'):kind='control de exclusión o conservación del archivo'
