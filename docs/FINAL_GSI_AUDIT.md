@@ -1,5 +1,7 @@
 # Auditoría de la conversión a GSI A2
 
+> **Aviso de estado:** este documento conserva auditorías y resultados históricos de distintas fases del proyecto. Para el estado vigente del saneamiento de fuentes y derechos de terceros, consulte [AUDITORIA_SANEAMIENTO_PREPARATIC.md](../AUDITORIA_SANEAMIENTO_PREPARATIC.md). Para el resultado técnico vigente, consulte [logs/gsi-suite.json](../logs/gsi-suite.json).
+
 ## Mezcla y feedback de test: 21 de septiembre de 2026
 
 Entrenamiento permite seleccionar varios bloques y temas de bloques diferentes. La selección se reparte por turnos entre los grupos elegidos, siempre que tengan preguntas disponibles. El filtro mantiene compatibilidad con la selección anterior de un único bloque o tema y con origen, no vistas y últimos errores.

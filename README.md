@@ -92,7 +92,7 @@ La publicación no modifica el estado editorial del banco: la aplicación sigue 
 ## Estructura del repositorio
 
 ```text
-TAI-GSI/
+Preparacion-GSI/
 ├── index.html                 # Entrada de la aplicación
 ├── review.html                # Consulta de preguntas y revisión editorial
 ├── assets/
@@ -139,7 +139,7 @@ Si Playwright está instalado fuera del repositorio, puedes indicar su archivo `
 | 1 | Fallo técnico o dependencia ausente |
 | 2 | Sin fallos técnicos, pero cierre editorial pendiente |
 
-El estado actual esperado es **2** por las 803 preguntas pendientes. Un JSON válido no concede validación editorial.
+El estado actual esperado es **0**: las comprobaciones técnicas y el cierre editorial están superados. Las 803 preguntas generadas permanecen identificadas como de origen IA y su revisión corresponde a la versión y hashes registrados.
 
 La última ejecución aprobó:
 
