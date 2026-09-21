@@ -197,6 +197,41 @@ try {
     await page.screenshot({path:path.join(root,'tmp/gsi/official-mobile.png'),fullPage:true});
     await page.setViewportSize({width:1365,height:900});
   });
+  await check("training mixes selected blocks and topics, reports failures and repeats them", async () => {
+    await page.goto(`${base}#entrenamiento`);
+    await page.locator("#training-mix-scope").check();
+    await page.locator('#training-mix-settings').waitFor({state:'visible'});
+    await page.locator('#training-mix-blocks input[value="B2"]').uncheck();
+    await page.locator('#training-mix-blocks input[value="B3"]').uncheck();
+    await page.locator('#training-mix-topics input[value="B1-T01"]').check();
+    await page.locator('#training-mix-topics input[value="B4-T16"]').check();
+    await page.locator("#training-quantity").fill("4");
+    assert.match(await page.locator("#training-availability").innerText(),/Mezcla activa: 2 grupo/);
+    await page.locator('#training-form button[type="submit"]').click();
+    const failedIds=[];
+    for(let index=0;index<4;index+=1){
+      const statement=await page.locator("#training-session .question-statement").innerText();
+      const q=bank.find(candidate=>candidate.statement===statement);
+      assert.ok(q&&['B1-T01','B4-T16'].includes(q.topic_id));
+      const shouldFail=index<2;
+      const option=shouldFail?q.options.find(candidate=>candidate.id!==q.correct_option).id:q.correct_option;
+      if(shouldFail)failedIds.push(q.id);
+      await page.locator(`#training-session .option-button[data-option-id="${option}"]`).click();
+      await page.getByRole("button",{name:index===3?"Finalizar entrenamiento":"Siguiente pregunta",exact:true}).click();
+    }
+    assert.match(await page.locator("#training-session").innerText(),/2 correctas/);
+    assert.match(await page.locator("#training-session").innerText(),/2 falladas/);
+    assert.equal(await page.locator(".training-result-failed").count(),2);
+    assert.equal(await page.locator(".training-result-breakdown li").count(),2);
+    await page.screenshot({path:path.join(root,"tmp/gsi/training-results.png"),fullPage:true});
+    await page.getByRole("button",{name:"Repetir solo las falladas",exact:true}).click();
+    assert.match(await page.locator("#training-session .question-progress").innerText(),/de 2/);
+    const retryStatement=await page.locator("#training-session .question-statement").innerText();
+    assert.ok(failedIds.includes(bank.find(q=>q.statement===retryStatement).id));
+    await page.setViewportSize({width:390,height:844});
+    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2),true);
+    await page.setViewportSize({width:1365,height:900});
+  });
   for(const year of [2024,2022]) await check(`official ${year}: prepare, answer, resume and correct`, async () => {
     await page.goto(`${base}#examen`);
     const card=page.locator(`[data-exam-id="GSI-INAP-${year}"]`);

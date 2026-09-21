@@ -1,5 +1,5 @@
 import { loadAnalyticsStore } from "./analytics-storage.js?gsi2";
-import { filterTrainingQuestions } from "./training-engine.js?gsi2";
+import { filterTrainingQuestions, selectTrainingQuestions, summarizeTrainingResults } from "./training-engine.js?gsi2";
 import { describeQuestionSource } from "./data-service.js?gsi2";
 import { clearAllResponses, clearDemoResponses, getProgressSummary, getStoredResponses, saveResponse } from "./storage.js?gsi2";
 import {
@@ -28,15 +28,6 @@ function originLabel(question) {
   if (question.origin === "official") return "Oficial";
   if (question.origin === "ai") return "Generada a partir del corpus";
   return "Material curado";
-}
-
-function shuffle(items) {
-  const copy = [...items];
-  for (let index = copy.length - 1; index > 0; index -= 1) {
-    const randomIndex = Math.floor(Math.random() * (index + 1));
-    [copy[index], copy[randomIndex]] = [copy[randomIndex], copy[index]];
-  }
-  return copy;
 }
 
 function sessionId() {
@@ -84,6 +75,10 @@ export function initTraining(data) {
   const originSelect = document.querySelector("#training-origin");
   const historySelect = document.querySelector("#training-history");
   const quantityInput = document.querySelector("#training-quantity");
+  const mixScope = document.querySelector("#training-mix-scope");
+  const mixSettings = document.querySelector("#training-mix-settings");
+  const mixBlocks = document.querySelector("#training-mix-blocks");
+  const mixTopics = document.querySelector("#training-mix-topics");
   const availability = document.querySelector("#training-availability");
   const session = document.querySelector("#training-session");
   const progressSummary = document.querySelector("#storage-summary");
@@ -116,20 +111,54 @@ export function initTraining(data) {
     for (const topic of block.topics) topicSelect.add(new Option(`Tema ${topic.number}. ${topic.title}`, topic.id));
   }
 
+  function checkedValues(container) {
+    return [...container.querySelectorAll("input[type='checkbox']:checked")].map((input) => input.value);
+  }
+
+  function currentFilters() {
+    const shared = { origin: originSelect.value, history: historySelect.value };
+    if (!mixScope.checked) return { ...shared, blockId: blockSelect.value, topicId: topicSelect.value };
+    return { ...shared, blockIds: checkedValues(mixBlocks), topicIds: checkedValues(mixTopics) };
+  }
+
+  function renderMixTopics() {
+    const preserved = new Set(checkedValues(mixTopics));
+    const selectedBlocks = new Set(checkedValues(mixBlocks));
+    mixTopics.replaceChildren();
+    for (const block of data.syllabus.blocks.filter((candidate) => selectedBlocks.has(candidate.id))) {
+      const details = createElement("details", "training-topic-group");
+      if (selectedBlocks.size <= 2) details.open = true;
+      details.append(createElement("summary", "", `${block.id} · ${block.title}`));
+      const grid = createElement("div", "checkbox-grid training-scope-grid");
+      for (const topic of block.topics) {
+        const label = document.createElement("label");
+        const input = document.createElement("input");
+        input.type = "checkbox";
+        input.value = topic.id;
+        input.checked = preserved.has(topic.id);
+        input.addEventListener("change", updateAvailability);
+        label.append(input, document.createTextNode(`Tema ${topic.number}. ${topic.title}`));
+        grid.append(label);
+      }
+      details.append(grid);
+      mixTopics.append(details);
+    }
+    if (selectedBlocks.size === 0) mixTopics.append(createElement("p", "form-help", "Marca al menos un bloque para mostrar sus temas."));
+  }
+
   function availableQuestions() {
-    return filterTrainingQuestions(data.questions, [...getStoredResponses(), ...loadAnalyticsStore(false).store.attempts], {
-      blockId: blockSelect.value, topicId: topicSelect.value, origin: originSelect.value,
-      history: historySelect.value,
-    });
+    if (mixScope.checked && checkedValues(mixBlocks).length === 0) return [];
+    return filterTrainingQuestions(data.questions, [...getStoredResponses(), ...loadAnalyticsStore(false).store.attempts], currentFilters());
   }
 
   function updateAvailability() {
     const count = availableQuestions().length;
     quantityInput.max = Math.max(count, 1);
     if (Number(quantityInput.value) > count && count > 0) quantityInput.value = String(count);
+    const mixLabel = mixScope.checked ? ` Mezcla activa: ${checkedValues(mixTopics).length || checkedValues(mixBlocks).length} grupo(s) seleccionado(s).` : "";
     availability.textContent = count === 0
       ? "No hay preguntas activas que coincidan con esta selección."
-      : `${count} pregunta${count === 1 ? "" : "s"} disponible${count === 1 ? "" : "s"} para esta selección.`;
+      : `${count} pregunta${count === 1 ? "" : "s"} disponible${count === 1 ? "" : "s"} para esta selección.${mixLabel}`;
   }
 
   function persistActiveContext() {
@@ -174,15 +203,90 @@ export function initTraining(data) {
   function renderCompleted() {
     session.replaceChildren();
     session.hidden = false;
+    const summary = summarizeTrainingResults(state.questions, state.responsesByQuestionKey);
     const heading = createElement("h2", "", "Entrenamiento finalizado");
-    const text = createElement("p", "", `Has respondido ${Object.keys(state.responsesByQuestionKey).length} pregunta${Object.keys(state.responsesByQuestionKey).length === 1 ? "" : "s"}.`);
+    const text = createElement("p", "", summary.incorrect === 0
+      ? `Has respondido ${summary.answered} pregunta${summary.answered === 1 ? "" : "s"} sin fallos.`
+      : `Has respondido ${summary.answered} preguntas: ${summary.correct} correctas y ${summary.incorrect} falladas. Las falladas ya están guardadas en Refuerzo.`);
+    const cards = createElement("div", "summary-grid");
+    for (const [value, label] of [[summary.answered, "Respondidas"], [summary.correct, "Correctas"], [summary.incorrect, "Falladas"], [`${Math.round(summary.accuracy)} %`, "Acierto"]]) {
+      const card = createElement("article", "summary-card");
+      card.append(createElement("p", "summary-card__value", String(value)), createElement("p", "summary-card__label", label));
+      cards.append(card);
+    }
+    session.append(heading, text, cards);
+
+    const missedTopics = summary.byTopic.filter((row) => row.incorrect > 0).sort((a, b) => b.incorrect - a.incorrect || a.id.localeCompare(b.id));
+    if (missedTopics.length) {
+      const breakdown = createElement("section", "training-result-breakdown");
+      breakdown.append(createElement("h3", "", "Dónde reforzar"));
+      const list = document.createElement("ul");
+      for (const row of missedTopics.slice(0, 5)) {
+        const topic = data.indexes.topicsById.get(row.id);
+        const item = createElement("li", "", `${row.id} · ${topic?.title ?? "Tema"}: ${row.incorrect} fallo${row.incorrect === 1 ? "" : "s"} de ${row.answered}.`);
+        list.append(item);
+      }
+      breakdown.append(list);
+      session.append(breakdown);
+    }
+
+    if (summary.failed.length) {
+      const details = createElement("details", "");
+      details.open = true;
+      details.append(createElement("summary", "", `Repasar las ${summary.incorrect} falladas`));
+      const failedList = createElement("div", "training-results-list");
+      for (const [index, entry] of summary.failed.entries()) {
+        const correctOption = entry.question.options.find((option) => option.id === entry.question.correct_option);
+        const selectedOption = entry.question.options.find((option) => option.id === entry.response.selectedOption);
+        const card = createElement("article", "training-result-failed");
+        card.append(
+          createElement("h4", "", `${index + 1}. ${entry.question.topic_id}`),
+          createElement("p", "", entry.question.statement),
+          createElement("p", "", `Tu respuesta: ${selectedOption ? `${selectedOption.id}. ${selectedOption.text}` : "En blanco"}`),
+          createElement("p", "", `Correcta: ${correctOption.id}. ${correctOption.text}`),
+          createElement("p", "", feedbackFor(entry.question, entry.response.selectedOption, false)),
+        );
+        failedList.append(card);
+      }
+      details.append(failedList);
+      session.append(details);
+    }
+
+    const actions = createElement("div", "action-row");
+    if (summary.failed.length) {
+      const retry = createElement("button", "button", "Repetir solo las falladas");
+      retry.type = "button";
+      retry.addEventListener("click", () => startTrainingQuestions(summary.failed.map((entry) => entry.question), "Repaso de preguntas falladas iniciado."));
+      actions.append(retry);
+      const reinforcement = createElement("a", "button button--secondary", "Abrir Refuerzo");
+      reinforcement.href = "#refuerzo";
+      actions.append(reinforcement);
+    }
     const restart = createElement("button", "button", "Configurar otro entrenamiento");
     restart.type = "button";
     restart.addEventListener("click", () => {
       session.hidden = true;
       form.querySelector("button[type='submit']")?.focus();
     });
-    session.append(heading, text, restart);
+    actions.append(restart);
+    session.append(actions);
+  }
+
+  function startTrainingQuestions(questions, message) {
+    state.questions = questions;
+    state.index = 0;
+    state.answered = false;
+    state.isDemo = Boolean(state.questions[0]?.isDemo);
+    state.trainingSessionId = sessionId();
+    state.startedAt = new Date().toISOString();
+    state.responsesByQuestionKey = {};
+    state.questionStartedAtByQuestionKey = {};
+    state.finished = false;
+    const saved = persistActiveContext();
+    if (!saved.saved) setStatus(saved.error || "No se pudo preparar el contexto temporal del entrenamiento.", "error");
+    else setStatus(message, "success");
+    renderQuestion();
+    session.querySelector(".option-button")?.focus();
   }
 
   function annotateAttempt(response, question, changes, suffix) {
@@ -405,6 +509,15 @@ export function initTraining(data) {
   }
 
   for (const block of data.syllabus.blocks) blockSelect.add(new Option(`${block.id} · ${block.title}`, block.id));
+  for (const block of data.syllabus.blocks) {
+    const label = document.createElement("label");
+    const input = document.createElement("input");
+    input.type = "checkbox";
+    input.value = block.id;
+    input.addEventListener("change", () => { renderMixTopics(); updateAvailability(); });
+    label.append(input, document.createTextNode(`${block.id} · ${block.title}`));
+    mixBlocks.append(label);
+  }
   blockSelect.addEventListener("change", () => {
     renderTopics();
     updateAvailability();
@@ -413,6 +526,16 @@ export function initTraining(data) {
   originSelect.addEventListener("change", updateAvailability);
   historySelect.addEventListener("change", updateAvailability);
   quantityInput.addEventListener("input", updateAvailability);
+  mixScope.addEventListener("change", () => {
+    mixSettings.hidden = !mixScope.checked;
+    blockSelect.disabled = mixScope.checked;
+    topicSelect.disabled = mixScope.checked || !data.indexes.blocksById.has(blockSelect.value);
+    if (mixScope.checked && checkedValues(mixBlocks).length === 0) {
+      for (const input of mixBlocks.querySelectorAll("input")) input.checked = true;
+    }
+    renderMixTopics();
+    updateAvailability();
+  });
   form.addEventListener("submit", (event) => {
     event.preventDefault();
     const available = availableQuestions();
@@ -422,20 +545,10 @@ export function initTraining(data) {
       return;
     }
     const quantity = Math.min(requested, available.length);
-    state.questions = shuffle(available).slice(0, quantity);
-    state.index = 0;
-    state.answered = false;
-    state.isDemo = Boolean(state.questions[0]?.isDemo);
-    state.trainingSessionId = sessionId();
-    state.startedAt = new Date().toISOString();
-    state.responsesByQuestionKey = {};
-    state.questionStartedAtByQuestionKey = {};
-    state.finished = false;
-    const saved = persistActiveContext();
-    if (!saved.saved) setStatus(saved.error || "No se pudo preparar el contexto temporal del entrenamiento.", "error");
-    else setStatus("Entrenamiento iniciado. Elige una opción para recibir corrección inmediata.", "success");
-    renderQuestion();
-    session.querySelector(".option-button")?.focus();
+    startTrainingQuestions(
+      selectTrainingQuestions(available, quantity, currentFilters()),
+      "Entrenamiento iniciado. Elige una opción para recibir corrección inmediata.",
+    );
   });
   clearDemoButton.addEventListener("click", () => {
     if (!window.confirm("¿Borrar solo las respuestas de demostración guardadas en este navegador?")) return;
@@ -450,6 +563,7 @@ export function initTraining(data) {
     updateProgressSummary();
   });
   updateProgressSummary();
+  renderMixTopics();
   updateAvailability();
   recoverTrainingContext();
 }

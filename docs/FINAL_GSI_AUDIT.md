@@ -1,5 +1,13 @@
 # Auditoría de la conversión a GSI A2
 
+## Mezcla y feedback de test: 21 de septiembre de 2026
+
+Entrenamiento permite seleccionar varios bloques y temas de bloques diferentes. La selección se reparte por turnos entre los grupos elegidos, siempre que tengan preguntas disponibles. El filtro mantiene compatibilidad con la selección anterior de un único bloque o tema y con origen, no vistas y últimos errores.
+
+El final de cada test muestra respondidas, correctas, falladas, porcentaje de acierto y hasta cinco temas con más fallos. Expone el detalle de todas las falladas con respuesta elegida, correcta y explicación. Las falladas se incorporan automáticamente a Refuerzo y pueden repetirse inmediatamente mediante **Repetir solo las falladas**.
+
+Se añadieron pruebas unitarias para filtros múltiples, reparto equilibrado y cálculo del resumen, además de un recorrido real en navegador que mezcla B1-T01 y B4-T16, provoca fallos en ambos temas, comprueba el feedback y abre un nuevo test solo con las falladas. La captura de revisión visual se genera en tmp/gsi/training-results.png.
+
 ## Nombre y licencia: 17 de septiembre de 2026
 
 El nombre visible pasa a **Preparación GSI** en cabecera, títulos de navegación, temario, revisión editorial, guía y README. El propietario eligió expresamente uso gratuito y no comercial con atribución. Se crean `LICENSE` (licencia específica del proyecto) y `licencia.html`; la aplicación muestra el crédito a `AngeldelaCalleFernandez` y un enlace a las condiciones. Los derechos de documentos oficiales y materiales de terceros se conservan. El repositorio y su dirección de Pages siguen siendo los existentes.

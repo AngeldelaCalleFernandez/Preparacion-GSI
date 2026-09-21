@@ -81,6 +81,8 @@ Para probar el proceso completo, utiliza B1-T01, que ya tiene preguntas activas.
 
 En Entrenamiento, elegir una opción ya registra la respuesta: decide antes de pulsar. Tu objetivo es entender por qué una respuesta es correcta, no recordar solo su letra, porque el orden puede variar.
 
+Al terminar aparece un resumen con las preguntas respondidas, aciertos, fallos y porcentaje. Si has fallado, abre **Repasar las falladas** para leer tu respuesta, la correcta y la explicación. Pulsa **Repetir solo las falladas** para hacer inmediatamente otro test con ellas o **Abrir Refuerzo** para trabajar la cola programada.
+
 ## 5. Cambiar el tipo de entrenamiento
 
 Configura los filtros antes de pulsar **Iniciar entrenamiento**:
@@ -90,12 +92,14 @@ Configura los filtros antes de pulsar **Iniciar entrenamiento**:
 | Un tema concreto | Su bloque y su tema. |
 | Un bloque entero | Su bloque y **Todos los temas**. |
 | Mezclar el banco disponible | **Todos los bloques**, **Todos los temas** y **Todas · test mixto**. |
+| Mezclar varios bloques | Activa **Mezclar varios bloques o temas**, marca los bloques y no marques ningún tema. Las preguntas se reparten entre los bloques elegidos. |
+| Mezclar temas de bloques diferentes | Activa **Mezclar varios bloques o temas**, marca sus bloques y después los temas concretos. Las preguntas se reparten entre esos temas. |
 | Preguntas nuevas para ti | En **Selección**, elige **Preguntas no vistas**. |
 | Volver sobre errores | En **Selección**, elige **Última respuesta incorrecta**. |
 
 Puedes combinar la selección de errores o no vistas con un bloque o tema. «Última respuesta incorrecta» se fija en tu respuesta más reciente: una pregunta que ya hayas corregido después puede dejar de aparecer ahí.
 
-Si ves **No hay preguntas activas**, comprueba los filtros. Actualmente, seleccionar solo **Oficial** o **Generadas** no aporta preguntas activas. Vuelve a **Todos los orígenes**; si el tema tampoco tiene test, continúa estudiándolo desde Temario.
+Si ves **No hay preguntas activas**, comprueba los bloques, temas, origen e historial elegidos. En la mezcla debe quedar al menos un bloque marcado. Los orígenes **Oficial**, **Generadas** y **Material curado** tienen preguntas activas, aunque una combinación muy concreta puede quedarse sin preguntas nuevas o falladas.
 
 ## 6. Repasar con Refuerzo
 

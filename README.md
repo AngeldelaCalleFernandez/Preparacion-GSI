@@ -34,8 +34,9 @@ Consulta la [auditoría completa](docs/FINAL_GSI_AUDIT.md), la [cobertura por te
 
 - Temario navegable con los 57 temas completos.
 - Búsqueda y filtros por bloque, cobertura y estado editorial.
-- Entrenamiento por tema, bloque, preguntas no vistas y últimos errores.
+- Entrenamiento por uno o varios bloques y temas, preguntas no vistas y últimos errores.
 - Corrección inmediata con explicación y procedencia.
+- Resumen final con aciertos, fallos, porcentaje, temas que reforzar y repetición de las falladas.
 - Simulacro GSI de 100 preguntas y 90 minutos, con penalización de un tercio por error.
 - Test configurable con selección de bloques, cantidad y duración.
 - Exámenes oficiales de 2022 y 2024, y biblioteca de PDF del INAP de tres convocatorias.

@@ -160,6 +160,18 @@
                 <input id="training-quantity" name="quantity" type="number" min="1" value="20" inputmode="numeric" required>
               </div>
             </div>
+            <label class="training-mix-toggle"><input id="training-mix-scope" type="checkbox"> Mezclar varios bloques o temas</label>
+            <div id="training-mix-settings" class="training-mix-settings" hidden>
+              <p class="form-help">Marca dos o más bloques. Si no marcas temas, se mezclarán todos los temas de esos bloques. También puedes elegir temas concretos de bloques diferentes.</p>
+              <fieldset>
+                <legend class="training-mix-legend">Bloques para mezclar</legend>
+                <div id="training-mix-blocks" class="checkbox-grid training-scope-grid"></div>
+              </fieldset>
+              <fieldset>
+                <legend class="training-mix-legend">Temas concretos (opcional)</legend>
+                <div id="training-mix-topics" class="training-topic-groups"></div>
+              </fieldset>
+            </div>
           </fieldset>
           <p id="training-availability" class="form-help" aria-live="polite"></p>
           <button class="button" type="submit">Iniciar entrenamiento</button>

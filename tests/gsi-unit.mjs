@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import { EXAM_MODES, selectExamQuestions, calculateExamResults, validateExamConfig, isQuestionEligible, formatRemainingTime } from '../assets/js/exam-engine.js?gsi2';
-import { filterTrainingQuestions } from '../assets/js/training-engine.js?gsi2';
+import { filterTrainingQuestions, selectTrainingQuestions, summarizeTrainingResults } from '../assets/js/training-engine.js?gsi2';
 import { createActiveExamState } from '../assets/js/exam-storage.js?gsi2';
 import { createWrittenState, writtenRemaining, validateWrittenState, RUBRIC, WRITTEN_KEY } from '../assets/js/written-practice.js?gsi2';
 import { buildPhysicalPersistenceKey, createPersistenceAdapter } from '../assets/js/persistence-v2.js?gsi2';
@@ -38,6 +38,30 @@ test('Examen excluye IA pendiente, inactiva, demo y otra oposición',()=>{
 });
 for(const b of syllabus.blocks) for(const t of b.topics)test(`Filtro de entrenamiento ${t.id}`,()=>{const result=filterTrainingQuestions(questions,[],{topicId:t.id});assert.ok(result.every(q=>q.topic_id===t.id&&q.is_active&&q.validation_status==='validated'));assert.equal(result.length,questions.filter(q=>q.topic_id===t.id&&q.is_active&&q.validation_status==='validated').length);});
 test('Entrenamiento por bloque y mixto',()=>{for(const b of syllabus.blocks)assert.ok(filterTrainingQuestions(questions,[],{blockId:b.id}).every(q=>q.block_id===b.id));assert.equal(filterTrainingQuestions(questions).length,1762+questions.filter(q=>q.origin==='official'&&q.is_active).length);});
+test('Entrenamiento mezcla varios bloques y temas concretos',()=>{
+  const blocks=filterTrainingQuestions(questions,[],{blockIds:['B1','B4']});
+  assert.ok(blocks.length>0&&blocks.every(q=>['B1','B4'].includes(q.block_id)));
+  const topics=filterTrainingQuestions(questions,[],{blockIds:['B1','B4'],topicIds:['B1-T01','B4-T16']});
+  assert.ok(topics.length>0&&topics.every(q=>['B1-T01','B4-T16'].includes(q.topic_id)));
+});
+test('Selección mezclada reparte preguntas entre los grupos elegidos',()=>{
+  const pool=filterTrainingQuestions(questions,[],{blockIds:['B1','B2','B3']});
+  const selected=selectTrainingQuestions(pool,9,{blockIds:['B1','B2','B3']},()=>.37);
+  const counts=Object.fromEntries(['B1','B2','B3'].map(id=>[id,selected.filter(q=>q.block_id===id).length]));
+  assert.deepEqual(counts,{B1:3,B2:3,B3:3});
+  const topicPool=filterTrainingQuestions(questions,[],{topicIds:['B1-T01','B2-T01']});
+  const topicSelection=selectTrainingQuestions(topicPool,6,{topicIds:['B1-T01','B2-T01']},()=>.37);
+  assert.equal(topicSelection.filter(q=>q.topic_id==='B1-T01').length,3);
+  assert.equal(topicSelection.filter(q=>q.topic_id==='B2-T01').length,3);
+});
+test('Resumen de entrenamiento cuenta aciertos, fallos y temas para repasar',()=>{
+  const sample=questions.filter(q=>q.is_active).slice(0,4);
+  const responses=Object.fromEntries(sample.map((q,index)=>[`${q.collection}:${q.id}`,{selectedOption:index<2?q.correct_option:q.options.find(o=>o.id!==q.correct_option).id,correct:index<2}]));
+  const summary=summarizeTrainingResults(sample,responses);
+  assert.deepEqual({answered:summary.answered,correct:summary.correct,incorrect:summary.incorrect,accuracy:summary.accuracy},{answered:4,correct:2,incorrect:2,accuracy:50});
+  assert.deepEqual(summary.failed.map(entry=>entry.question.id),sample.slice(2).map(q=>q.id));
+  assert.equal(summary.byTopic.reduce((total,row)=>total+row.incorrect,0),2);
+});
 test('Fallos y no vistas usan la respuesta más reciente, sin mezclar demo',()=>{const q=questions.find(q=>q.is_active);const rows=[{questionId:q.id,correct:false,answeredAt:'2026-09-01T10:00:00Z'},{questionId:q.id,correct:true,answeredAt:'2026-09-02T10:00:00Z'}];assert.equal(filterTrainingQuestions([q],rows,{history:'failed'}).length,0);assert.equal(filterTrainingQuestions([q],rows,{history:'unseen'}).length,0);assert.equal(filterTrainingQuestions([q],rows.slice(0,1),{history:'failed'}).length,1);assert.equal(filterTrainingQuestions([q],[{...rows[0],isDemo:true}],{history:'unseen'}).length,1);});
 test('Temporizador formatea y limita a cero',()=>{assert.equal(formatRemainingTime(5400),'90:00');assert.equal(formatRemainingTime(-1),'00:00');assert.equal(formatRemainingTime(59.1),'01:00');});
 test('Práctica escrita: 180 minutos absolutos y rúbrica de 50',()=>{const now=Date.parse('2026-09-14T10:00:00Z');const state=createWrittenState(practice.cases[0].id,now);assert.equal(writtenRemaining(state,now),10800);assert.equal(writtenRemaining(state,now+5000),10795);assert.equal(writtenRemaining(state,now+10801000),0);assert.equal(validateWrittenState(state,practice.cases),true);assert.equal(Object.values(RUBRIC).reduce((a,b)=>a+b,0),50);});
