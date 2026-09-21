@@ -4,6 +4,8 @@
 
 Edición de estudio: agosto de 2026.
 
+**Procedencia y derechos:** PreparaTIC/A1 se cita como fuente secundaria consultada; la redacción y organización de este documento son propias y las fuentes primarias prevalecen. Este proyecto no está afiliado, patrocinado ni respaldado por PreparaTIC. Véanse los [avisos de terceros](../../../../THIRD_PARTY_NOTICES.md).
+
 **Método de elaboración:** programa oficial vigente de GSI A2 → selección del material PreparaTIC/A1 útil → eliminación de profundidad A1 ajena al epígrafe → actualización de tecnología y normativa → cobertura de huecos → teoría desarrollada → datos de test → aplicación al supuesto → resumen.
 
 Este documento es el **material principal de estudio** del Bloque IV. El «Resumen maestro de repaso» se conserva separado para segundas vueltas y memoria activa. Ante discrepancias prevalecen el BOE vigente, la normativa consolidada, los estándares y la documentación oficial actual.

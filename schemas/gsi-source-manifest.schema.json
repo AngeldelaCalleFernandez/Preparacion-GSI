@@ -6,7 +6,9 @@
     "version",
     "retrieved_at",
     "authorized_root",
+    "authorized_root_meaning",
     "official_control",
+    "source_rights",
     "canonical_documents",
     "topics",
     "discrepancies",
@@ -25,10 +27,44 @@
       "format": "uri",
       "pattern": "^https://"
     },
+    "authorized_root_meaning": {
+      "type": "string",
+      "minLength": 1
+    },
     "official_control": {
       "type": "string",
       "format": "uri",
       "pattern": "^https://"
+    },
+    "source_rights": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "sourceName",
+          "sourceUrl",
+          "rightsholder",
+          "reuseBasis",
+          "permissionStatus",
+          "attributionRequired",
+          "sourceType"
+        ],
+        "properties": {
+          "sourceName": { "type": "string", "minLength": 1 },
+          "sourceUrl": { "type": "string", "format": "uri", "pattern": "^https://" },
+          "rightsholder": { "type": "string", "minLength": 1 },
+          "reuseBasis": { "type": "string", "minLength": 1 },
+          "permissionStatus": {
+            "enum": ["not_verified", "statutory_basis_reviewed_per_item"]
+          },
+          "attributionRequired": { "type": "boolean" },
+          "sourceType": {
+            "enum": ["third_party_secondary", "official_primary"]
+          }
+        }
+      }
     },
     "canonical_documents": {
       "type": "array",

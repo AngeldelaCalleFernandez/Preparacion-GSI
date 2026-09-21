@@ -6,6 +6,15 @@ from datetime import date
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 DATE=date.today().isoformat()
+RIGHTS={
+    'sourceName':'Exámenes oficiales GSI del INAP',
+    'sourceUrl':'https://sede.inap.gob.es/',
+    'rightsholder':'No atribuido por este proyecto; fuente oficial INAP',
+    'reuseBasis':'Preguntas separadas del banco propio e identificadas por convocatoria, cuestionario y plantilla oficial.',
+    'permissionStatus':'not_verified',
+    'attributionRequired':True,
+    'sourceType':'official_exam',
+}
 def load(path):return json.loads((ROOT/path).read_text('utf-8'))
 def save(path,data):
     p=ROOT/path;p.parent.mkdir(parents=True,exist_ok=True)
@@ -87,7 +96,8 @@ def main():
             'note':('Plantilla definitiva aplicada: las preguntas anuladas se sustituyen por reservas en su orden. Las claves corresponden a esta convocatoria histórica.'
                     if records else 'El INAP solo publica una plantilla provisional en la página consultada. Documentos disponibles para lectura; no se incorporan claves provisionales al banco activo.')})
     assert len(bank)==202 and len({q['id'] for q in bank})==202
-    save('data/questions-official.json',{'metadata':{'dataset_type':'official','schema_version':'1.0.0','data_version':'2.1.0','updated_at':DATE},'questions':bank})
+    save('data/questions-official.json',{'metadata':{'dataset_type':'official','schema_version':'1.0.0',
+        'data_version':'2.1.1','updated_at':DATE,'rights':RIGHTS},'questions':bank})
     save('data/gsi-official-exams.json',{'version':1,'updated_at':DATE,'exams':catalog})
     sources['metadata']['updated_at']=DATE
     save('data/sources.json',sources)

@@ -2,6 +2,8 @@
 
 Manual de desarrollo de sistemas para GSI A2. Está pensado para estudiar teoría y, a la vez, convertirla en decisiones justificadas en el segundo ejercicio.
 
+**Procedencia y derechos:** PreparaTIC/A1 se cita como fuente secundaria consultada; la redacción y organización de este documento son propias y las fuentes primarias prevalecen. Este proyecto no está afiliado, patrocinado ni respaldado por PreparaTIC. Véanse los [avisos de terceros](../../../../THIRD_PARTY_NOTICES.md).
+
 **Estructura de cada tema:** núcleo de estudio → claves de test → enfoque de supuesto → actualización cuando sea necesaria → fuentes base. El BOE vigente prevalece sobre cualquier apunte o mapeo antiguo.
 
 ## III.01 — Ciclo de vida de sistemas y modelos de ciclo de vida

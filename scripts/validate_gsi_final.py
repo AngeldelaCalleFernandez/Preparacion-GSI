@@ -117,7 +117,7 @@ def main():
             check(q['source']['record_sha256']==sha(json.dumps(original,ensure_ascii=False,sort_keys=True)),label+': extracción oficial íntegra')
             check(q['provenance']['drive_id'] is None and q['provenance']['url']==docs.get('questionnaire',{}).get('url') and q['source']['answer_key_url']==docs.get('answer_key',{}).get('url') and urlsplit(q['provenance']['url']).hostname=='sede.inap.gob.es',label+': procedencia pública INAP sin Drive ficticio')
         else:
-            check(q['provenance']['drive_id'] in known,label+': fuente dentro del inventario autorizado')
+            check(q['provenance']['drive_id'] in known,label+': fuente dentro del inventario interno registrado')
         check(not q['is_active'] or q['validation_status']=='validated',label+': activación exige revisión')
         if q['origin']=='ai':
             topic,line=drafts[label];fields=line.split('|');section=fields[0]
@@ -187,7 +187,7 @@ def main():
         if item['type']!='match':continue
         value=item['data'];path=value['path']['text'].replace('\\','/').removeprefix('./')
         if path.startswith('archive/'):kind='archivo histórico excluido'
-        elif path.startswith(('docs/','PLAN_')) or path in ('README.md','AGENTS.md'):kind='documentación histórica o explicación de la migración'
+        elif path.startswith(('docs/','PLAN_')) or path in ('README.md','AGENTS.md','AUDITORIA_SANEAMIENTO_PREPARATIC.md'):kind='documentación histórica, explicación de la migración o auditoría de saneamiento'
         elif path.startswith('tests/'):kind='regresión negativa y aislamiento del historial antiguo'
         elif path.startswith('scripts/'):kind='control de exclusión o conservación del archivo'
         elif path.startswith('documents/'):kind='documentación original conservada, no consumida como fuente GSI'

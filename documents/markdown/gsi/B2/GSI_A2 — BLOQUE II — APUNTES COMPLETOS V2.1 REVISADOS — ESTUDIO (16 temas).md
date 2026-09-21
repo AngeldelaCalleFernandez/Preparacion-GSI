@@ -4,6 +4,8 @@
 
 **Edición de estudio — agosto de 2026**
 
+**Procedencia y derechos:** PreparaTIC/A1 se cita como fuente secundaria consultada; la redacción y organización de este documento son propias y las fuentes primarias prevalecen. Este proyecto no está afiliado, patrocinado ni respaldado por PreparaTIC. Véanse los [avisos de terceros](../../../../THIRD_PARTY_NOTICES.md).
+
 Método de elaboración: **programa oficial vigente de GSI A2 → selección del material PreparaTIC/A1 útil → eliminación de profundidad A1 ajena al epígrafe → actualización de lo desfasado → cobertura de huecos → tema GSI completo → datos de test → aplicación al supuesto → resumen final.**
 
 Este documento es el material principal de estudio del Bloque II. El documento «Resumen maestro de repaso» se mantiene separado: sirve para segundas vueltas, memoria activa y repasos rápidos, no sustituye a estos apuntes.
@@ -595,7 +597,7 @@ Un mismo sistema puede atender web de escritorio, móvil, apps nativas, integrac
 
 ## 5. SOA
 
-**Service-Oriented Architecture** organiza capacidades como servicios con contrato. Los principios recogidos por el material A1 incluyen contrato, bajo acoplamiento, abstracción, reutilización, autonomía, ausencia de estado cuando sea posible, descubrimiento y composición.
+**Service-Oriented Architecture** organiza capacidades como servicios con contrato. Para evaluar un servicio conviene separar tres planos: cómo expone su capacidad —contrato, abstracción y descubrimiento—; cuánto depende de consumidores e implementaciones —bajo acoplamiento y autonomía—; y cómo participa en soluciones mayores —reutilización y composición, evitando retener estado cuando el caso lo permita—.
 
 **Orquestación**: un coordinador controla el flujo entre servicios. **Coreografía**: los participantes siguen un protocolo de interacción distribuido sin un único controlador de todo el proceso. No son sinónimos.
 

@@ -154,7 +154,9 @@ También se comprueban puntuación, temporizadores, persistencia, exportación e
 
 ## Fuentes, trazabilidad y vigencia
 
-Los apuntes completos y los resúmenes proceden del corpus Drive V2.1 autorizado por el propietario. Cada tema conserva documento, enlace, localizador, versión y fecha de revisión. El BOE se utiliza para comprobar el alcance oficial del programa; el contenido didáctico procede del corpus autorizado.
+Los apuntes completos y los resúmenes proceden del corpus Drive V2.1 **aprobado internamente para publicación por el propietario del proyecto**. Esta aprobación solo identifica el conjunto de trabajo y no acredita permiso o licencia de titulares externos. Cada tema conserva documento, enlace, localizador, versión y fecha de revisión. El BOE y la documentación oficial se utilizan como fuentes primarias; PreparaTIC/A1 figura, cuando corresponde, como fuente secundaria consultada.
+
+Consulta [Fuentes y materiales de terceros](THIRD_PARTY_NOTICES.md) para conocer la atribución a PreparaTIC, la separación de fuentes oficiales y el alcance de los derechos. El proyecto es independiente y no está afiliado, patrocinado ni respaldado por PreparaTIC.
 
 Las **actualizaciones catalogadas** son avisos revisados que se muestran al principio del tema afectado cuando una norma o tecnología cambia después de redactarse los apuntes. La aplicación muestra los avisos registrados, pero no busca ni incorpora cambios de Internet automáticamente. El texto original permanece intacto.
 
@@ -184,6 +186,6 @@ Antes de preparar una convocatoria concreta debe comprobarse que el programa y l
 
 Preparación GSI se ofrece bajo una **licencia propia de uso gratuito, no comercial y con atribución obligatoria**. Puedes usar, copiar, modificar y compartir los elementos cubiertos gratuitamente, manteniendo el crédito al creador, el enlace al proyecto y la licencia. Las adaptaciones deben identificar sus cambios y conservar estas condiciones. No se permite la venta, el acceso de pago ni la explotación comercial sin permiso expreso.
 
-Consulta el [texto completo](LICENSE) y la [página de licencia y autoría](https://angeldelacallefernandez.github.io/Preparacion-GSI/licencia.html). Los documentos oficiales y materiales de terceros mantienen sus propios derechos y condiciones; esta licencia solo cubre las aportaciones sobre las que el creador puede conceder permisos.
+Consulta el [texto completo](LICENSE), la [página de licencia y autoría](https://angeldelacallefernandez.github.io/Preparacion-GSI/licencia.html) y los [avisos de terceros](THIRD_PARTY_NOTICES.md). Los documentos oficiales y materiales de terceros mantienen sus propios derechos y condiciones; esta licencia solo cubre las aportaciones sobre las que el creador puede conceder permisos.
 
 La restricción comercial fue elegida expresamente por el propietario. Es una licencia específica, no MIT. Creative Commons desaconseja aplicar sus licencias al software como tal ([FAQ oficial](https://creativecommons.org/faq/#can-i-apply-a-creative-commons-license-to-software)); por eso no se etiqueta el código de la aplicación con una licencia CC.

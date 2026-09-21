@@ -4,6 +4,8 @@
 
 **Edición de estudio:** agosto de 2026.
 
+**Procedencia y derechos:** PreparaTIC/A1 se cita como fuente secundaria consultada; la redacción y organización de este documento son propias y las fuentes primarias prevalecen. Este proyecto no está afiliado, patrocinado ni respaldado por PreparaTIC. Véanse los [avisos de terceros](../../../../THIRD_PARTY_NOTICES.md).
+
 **Método:** BOE vigente → fuente A1 útil → poda de contenido A1 fuera de alcance → actualización → huecos → tema completo → test → supuesto → resumen.
 
 Revisión V2.1: se ha contrastado cada epígrafe con el programa oficial vigente y se han ampliado los puntos que faltaban en V2: planificación de proyectos; derivación de sistemas existentes; diseño lógico/físico y concurrencia; estrategias algorítmicas; pruebas de hardware, procedimientos y datos; estrategias de sustitución; productos/herramientas, persistencia y seguridad en Java/.NET; y calidad/accesibilidad con referencias vigentes.
@@ -570,7 +572,7 @@ Cobertura oficial que debe quedar dominada: Planificación y documentación de l
 
 ## 1. Principios
 
-La fuente A1 096 recoge los principios ISTQB: las pruebas muestran presencia de defectos, pruebas exhaustivas son imposibles, testing temprano, agrupación de defectos, paradoja del pesticida, dependencia del contexto y falacia de ausencia de errores.
+Los principios de prueba pueden agruparse en tres ideas: probar reduce incertidumbre, pero no demuestra ausencia de defectos; la exhaustividad no es viable, por lo que conviene empezar pronto y concentrar el esfuerzo donde se acumulan fallos; y la estrategia debe adaptarse al contexto, renovar los casos para evitar pérdida de eficacia y comprobar que el producto satisface la necesidad, no solo que carece de errores conocidos.
 
 ## 2. Error, defecto y fallo
 

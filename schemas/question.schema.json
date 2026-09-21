@@ -25,7 +25,8 @@
         "dataset_type",
         "schema_version",
         "data_version",
-        "updated_at"
+        "updated_at",
+        "rights"
       ],
       "properties": {
         "dataset_type": {
@@ -46,6 +47,32 @@
         "updated_at": {
           "type": "string",
           "format": "date"
+        },
+        "rights": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "sourceName",
+            "sourceUrl",
+            "rightsholder",
+            "reuseBasis",
+            "permissionStatus",
+            "attributionRequired",
+            "sourceType"
+          ],
+          "properties": {
+            "sourceName": { "type": "string", "minLength": 1 },
+            "sourceUrl": { "type": "string", "format": "uri", "pattern": "^https://" },
+            "rightsholder": { "type": "string", "minLength": 1 },
+            "reuseBasis": { "type": "string", "minLength": 1 },
+            "permissionStatus": {
+              "enum": ["self_authored_claimed", "not_verified"]
+            },
+            "attributionRequired": { "type": "boolean" },
+            "sourceType": {
+              "enum": ["project_authored_curated", "project_generated_reviewed", "official_exam"]
+            }
+          }
         }
       }
     },

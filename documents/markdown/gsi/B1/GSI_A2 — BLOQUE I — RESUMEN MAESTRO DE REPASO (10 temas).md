@@ -2,6 +2,8 @@
 
 Manual de estudio depurado. El contenido se limita al alcance del programa vigente de GSI A2, eliminando profundidad A1 innecesaria. Cada tema incluye núcleo, claves de test, enfoque para supuesto y trazabilidad de fuentes.
 
+**Procedencia y derechos:** PreparaTIC/A1 se cita como fuente secundaria consultada; la redacción y organización de este documento son propias y las fuentes primarias prevalecen. Este proyecto no está afiliado, patrocinado ni respaldado por PreparaTIC. Véanse los [avisos de terceros](../../../../THIRD_PARTY_NOTICES.md).
+
 **Estructura de cada tema:** núcleo de estudio → claves de test → enfoque de supuesto → actualización cuando sea necesaria → fuentes base. El BOE vigente prevalece sobre cualquier apunte o mapeo antiguo.
 
 ## I.01 — Constitución: derechos y deberes fundamentales. Garantías y suspensión. Corona

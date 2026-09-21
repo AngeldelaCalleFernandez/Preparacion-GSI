@@ -6,6 +6,16 @@ import re
 from collections import Counter
 from build_gsi_content import ROOT, DATE, VERSION, save, text_of
 
+RIGHTS = {
+    'sourceName': 'Prácticas y test GSI del proyecto',
+    'sourceUrl': 'https://github.com/AngeldelaCalleFernandez/Preparacion-GSI',
+    'rightsholder': 'Autor del repositorio para la formulación original; las fuentes subyacentes conservan sus derechos',
+    'reuseBasis': 'Preguntas redactadas para el proyecto y trazadas por documento; no son preguntas oficiales ni se atribuyen a PreparaTIC.',
+    'permissionStatus': 'self_authored_claimed',
+    'attributionRequired': True,
+    'sourceType': 'project_authored_curated',
+}
+
 def paragraphs(path):
     doc = json.loads(path.read_text('utf-8'))
     return doc, [(e.get('startIndex'), text_of(e), bool(e.get('paragraph', {}).get('bullet')))
@@ -109,7 +119,8 @@ def main():
         else:
             seen[key] = q['id']; included.append(q)
     save('data/sources.json', data)
-    save('data/questions-manual.json', {'metadata': {'dataset_type': 'manual', 'schema_version': '1.0.0', 'data_version': VERSION, 'updated_at': DATE}, 'questions': included})
+    save('data/questions-manual.json', {'metadata': {'dataset_type': 'manual', 'schema_version': '1.0.0',
+        'data_version': '2.0.1', 'updated_at': DATE, 'rights': RIGHTS}, 'questions': included})
     save('logs/gsi-question-import.json', {'date': DATE, 'source_count': 12, 'source_questions': len(questions), 'imported': len(included), 'exact_duplicates': duplicates,
                                          'per_topic': dict(sorted(Counter(q['topic_id'] for q in included).items())),
                                          'review': 'Claves y explicaciones conservadas del corpus. No son preguntas oficiales.'})

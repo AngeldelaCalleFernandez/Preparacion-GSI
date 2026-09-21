@@ -159,9 +159,9 @@ try {
     const downloadPromise=page.waitForEvent("download"); await page.locator("#progress-export").click(); const download=await downloadPromise;
     const backupPath=path.join(root,"tmp/gsi/smoke-progress.json");await download.saveAs(backupPath);
     const backup=JSON.parse(await fs.readFile(backupPath,"utf8"));assert.equal(backup.oppositionId,"OPP-GSI");
-    await page.locator("#progress-reset").click();await page.waitForFunction(()=>document.querySelector("#home-topic-count")?.textContent==="57");
+    await Promise.all([page.waitForNavigation(),page.locator("#progress-reset").click()]);await page.waitForFunction(()=>document.querySelector("#home-topic-count")?.textContent==="57");
     assert.equal(await page.evaluate(()=>localStorage.getItem("tai.phase3.training.v1")),"historical untouched");
-    await page.locator("#progress-import").setInputFiles(backupPath);
+    await Promise.all([page.waitForNavigation(),page.locator("#progress-import").setInputFiles(backupPath)]);
     await page.waitForFunction(()=>Boolean(localStorage.getItem("gsi.OPP-GSI.SYL-GSI-2025.written.v1")),null,{timeout:10000});
     assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem("gsi.OPP-GSI.SYL-GSI-2025.written.v1")).scores.technical),30);
     await page.goto(`${base}#practica`);await page.locator("#written-score").waitFor();assert.equal(await page.locator("#written-score").innerText(),"50 / 50 puntos");

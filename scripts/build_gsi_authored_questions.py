@@ -10,6 +10,15 @@ from datetime import date
 ROOT = Path(__file__).resolve().parents[1]
 DATE = '2026-09-14'
 UPDATED = date.today().isoformat()
+RIGHTS = {
+    'sourceName': 'Banco GSI generado por IA y revisado',
+    'sourceUrl': 'https://github.com/AngeldelaCalleFernandez/Preparacion-GSI',
+    'rightsholder': 'Autor del repositorio para la selección y revisión registrada; las fuentes subyacentes conservan sus derechos',
+    'reuseBasis': 'Generación propia basada en evidencias trazadas del corpus; no oficial y no atribuida a PreparaTIC.',
+    'permissionStatus': 'self_authored_claimed',
+    'attributionRequired': True,
+    'sourceType': 'project_generated_reviewed',
+}
 
 def digest(value):
     return hashlib.sha256(value.encode('utf-8')).hexdigest()
@@ -65,7 +74,8 @@ def main():
             questions.append(question)
             evidence_report.append({'id': qid, 'topic': topic, 'section': section, 'statement': statement, 'correct': correct,
                                     'record_sha256': record_hash, 'evidence_sha256': evidence_hash, 'accepted': accepted})
-    output = {'metadata': {'dataset_type': 'ai', 'schema_version': '1.0.0', 'data_version': '2.1.0', 'updated_at': UPDATED}, 'questions': questions}
+    output = {'metadata': {'dataset_type': 'ai', 'schema_version': '1.0.0', 'data_version': '2.1.1',
+                           'updated_at': UPDATED, 'rights': RIGHTS}, 'questions': questions}
     (ROOT / 'data/questions-ai.json').write_text(json.dumps(output, ensure_ascii=False, indent=2) + '\n', 'utf-8')
     (ROOT / 'logs/gsi-authored-evidence.json').write_text(json.dumps(evidence_report, ensure_ascii=False, indent=2) + '\n', 'utf-8')
     print(f'{len(questions)} authored questions: {sum(q["is_active"] for q in questions)} accepted with matching editorial records.')

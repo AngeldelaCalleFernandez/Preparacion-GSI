@@ -10,7 +10,7 @@ Se modifican HTML, estilos, títulos del router y temario, documentación y la e
 
 **Integración validada; publicación autorizada el 17 de septiembre de 2026.** Rama `gsi-only-final`. El commit que contiene este informe se identifica con `git log -1 --format=%H -- docs/FINAL_GSI_AUDIT.md`. El código validado está en `353d598` y la conservación de hashes en Windows en `8308d62`. GitHub Pages publica desde la raíz de esta rama; el estado de despliegue se consulta en las acciones del repositorio.
 
-Programa: BOE-A-2025-26262, Anexo IX; **57 temas, distribución 10/16/15/16**. Se conservan los 57 apuntes completos y trazados del corpus autorizado, los 50 documentos canónicos convertidos, ocho supuestos con solución y cuatro simulacros escritos. El inventario, la raíz Drive, las migraciones y los originales históricos se detallan más abajo.
+Programa: BOE-A-2025-26262, Anexo IX; **57 temas, distribución 10/16/15/16**. Se conservan los 57 apuntes completos y trazados del corpus aprobado internamente para publicación, los 50 documentos canónicos convertidos, ocho supuestos con solución y cuatro simulacros escritos. Esta aprobación interna no acredita permiso de titulares externos. El inventario, la raíz Drive, las migraciones y los originales históricos se detallan más abajo.
 
 El propietario confirmó el 15 de septiembre: «los test estan revisados». Se registra esa declaración para los hashes exactos de las 803 preguntas generadas, sin atribuir al agente una revisión humana ni inventar el método utilizado. Se activan conservando su origen IA. Detalle en [GSI_REVISION_EDITORIAL.md](GSI_REVISION_EDITORIAL.md).
 
@@ -132,7 +132,7 @@ Acceso público actual: [Preparación GSI](https://angeldelacallefernandez.githu
 
 ## Fuentes y documentos
 
-Única raíz didáctica: [Drive autorizado](https://drive.google.com/drive/folders/1bmBgrybIUDyT1owpnooU8Oq5FH4wLrp2). El inventario contiene 139 registros de la estructura principal y 2338 elementos auxiliares (1906 archivos y 432 carpetas). El recorrido auxiliar registró 436 carpetas, incluidas sus raíces, y cero errores de listado. Inventariar un archivo no significa que se haya leído su contenido; se consumieron 50 documentos nativos de la estructura principal y se consultaron seis muestras auxiliares de índices/apoyo. No se identificó un banco de preguntas oficiales importable en lo consultado.
+Única raíz didáctica: [Drive aprobado internamente para lectura e inventario](https://drive.google.com/drive/folders/1bmBgrybIUDyT1owpnooU8Oq5FH4wLrp2). Esa aprobación interna no acredita permiso ni licencia de titulares externos. El inventario contiene 139 registros de la estructura principal y 2338 elementos auxiliares (1906 archivos y 432 carpetas). El recorrido auxiliar registró 436 carpetas, incluidas sus raíces, y cero errores de listado. Inventariar un archivo no significa que se haya leído su contenido; se consumieron 50 documentos nativos de la estructura principal y se consultaron seis muestras auxiliares de índices/apoyo. No se identificó un banco de preguntas oficiales importable en lo consultado.
 
 Control externo: [BOE-A-2025-26262, Anexo IX](https://www.boe.es/buscar/doc.php?id=BOE-A-2025-26262), consultado de nuevo el 15 de septiembre. Los títulos y el orden de los 57 temas se comparan automáticamente contra su XML conservado. Distribución: bloque I 10, II 16, III 15 y IV 16. Las discrepancias del mapa auxiliar y el anterior catálogo de 55 temas están registradas en `data/gsi-map-review.json`.
 

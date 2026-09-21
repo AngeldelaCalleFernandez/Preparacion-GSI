@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Materialize GSI-only catalogs and 57 full topics from authorized snapshots.
+"""Materialize GSI-only catalogs and 57 full topics from internally approved snapshots.
 
 No model-authored study text: native paragraphs/tables and MarkItDown outputs
 are split at source topic headings. BOE is used only for scope and exam rules.
@@ -166,9 +166,24 @@ def main():
     existing_sources = json.loads((ROOT / 'data/sources.json').read_text('utf-8'))['sources']
     sources = [source_boe] + [s for s in existing_sources if s['id'] != source_boe['id'] and not re.fullmatch(r'SRC-GSI-B[1-4]-(V21|REPASO)', s['id'])]
     index = {'version': 1, 'generatedAt': DATE + 'T00:00:00Z', 'topics': []}
-    manifest = {'version': VERSION, 'retrieved_at': DATE, 'authorized_root': DRIVE_ROOT, 'official_control': BOE_URL,
+    manifest = {'version': VERSION, 'retrieved_at': DATE, 'authorized_root': DRIVE_ROOT,
+                'authorized_root_meaning': 'Raíz aprobada internamente para lectura e inventario. No acredita permiso, licencia ni autorización de titulares de derechos externos.',
+                'official_control': BOE_URL,
+                'source_rights': [
+                    {'sourceName': 'PreparaTIC', 'sourceUrl': 'https://www.preparatic.org/',
+                     'rightsholder': 'Autores y titulares indicados por PreparaTIC en cada material; no verificados por este repositorio',
+                     'reuseBasis': 'Consulta como fuente secundaria y atribución. Los originales no se redistribuyen desde este repositorio.',
+                     'permissionStatus': 'not_verified', 'attributionRequired': True, 'sourceType': 'third_party_secondary'},
+                    {'sourceName': 'Boletín Oficial del Estado', 'sourceUrl': 'https://www.boe.es/',
+                     'rightsholder': 'Fuente oficial; el régimen aplicable depende del documento',
+                     'reuseBasis': 'Fuente primaria normativa. Aplicación por documento del régimen de textos oficiales, incluido el artículo 13 TRLPI cuando corresponda.',
+                     'permissionStatus': 'statutory_basis_reviewed_per_item', 'attributionRequired': True, 'sourceType': 'official_primary'},
+                    {'sourceName': 'Instituto Nacional de Administración Pública', 'sourceUrl': 'https://sede.inap.gob.es/',
+                     'rightsholder': 'No atribuido por este proyecto; fuente oficial INAP',
+                     'reuseBasis': 'Cuestionarios y plantillas identificados por convocatoria y URL oficial, separados del banco propio.',
+                     'permissionStatus': 'not_verified', 'attributionRequired': True, 'sourceType': 'official_primary'}],
                 'canonical_documents': [], 'topics': [], 'discrepancies': ['El catálogo anterior declaraba GSI 55 temas (10/16/15/14); el Anexo IX descargado confirma 57 (10/16/15/16).'],
-                'policy': 'Originales en Drive preservados; snapshots nativos locales; conversión MarkItDown sin OCR. Doctrina solo del corpus autorizado.'}
+                'policy': 'Originales en Drive preservados; snapshots nativos locales; conversión MarkItDown sin OCR. El corpus está aprobado internamente para publicación, lo que no implica permiso de terceros. Las fuentes secundarias se atribuyen y las fuentes primarias prevalecen.'}
     for b, block in enumerate(blocks, 1):
         directory = ROOT / f'documents/originals/gsi/B{b}'
         notes_path = next(directory.glob('*V2.1*.json'))
