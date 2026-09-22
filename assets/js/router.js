@@ -1,4 +1,4 @@
-export const VALID_ROUTES = new Set(["inicio", "temario", "entrenamiento", "examen", "practica", "refuerzo", "estadisticas"]);
+export const VALID_ROUTES = new Set(["inicio", "temario", "plan", "entrenamiento", "examen", "practica", "refuerzo", "estadisticas"]);
 
 const TOPIC_ID_RE = /^B[1-4]-T\d{2}$/;
 const QUALIFIED_TOPIC_ID_RE = /^[A-Z][A-Z0-9-]*-B[1-4]-T\d{2}$/;

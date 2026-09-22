@@ -19,6 +19,7 @@ except ImportError:
 
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMAS = {
+    "data/study-plan.json": "schemas/study-plan.schema.json",
     "data/gsi-official-exams.json": "schemas/gsi-official-exams.schema.json",
     "data/gsi-coverage-report.json": "schemas/gsi-coverage-report.schema.json",
     "data/gsi-drive-inventory.json": "schemas/gsi-drive-inventory.schema.json",

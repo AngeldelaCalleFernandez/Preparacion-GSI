@@ -83,7 +83,7 @@ await test("la recarga conserva el estado de ruta", () => assert(JSON.stringify(
 await test("atrás y adelante conservan rutas editoriales", () => assert(parseRoute("#temario/B1-T01").route === "temario" && parseRoute("#temario").route === "temario", "Las rutas no son reversibles."));
 await test("una ruta de tema malformada produce error controlado", () => assert(parseRoute("#temario/X1").error, "No se informó el error."));
 await test("una ruta de sección malformada produce error controlado", () => assert(parseRoute("#temario/B1-T01/Seccion").error, "No se informó el error."));
-await test("las rutas anteriores se conservan", () => assert(resolveRoute("#estadisticas") === "estadisticas" && resolveRoute("#examen") === "examen", "Se perdió una ruta previa."));
+await test("las rutas anteriores y el plan se conservan", () => assert(resolveRoute("#estadisticas") === "estadisticas" && resolveRoute("#examen") === "examen" && resolveRoute("#plan") === "plan", "Se perdió una ruta válida."));
 await test("cada HTML generado existe", async () => {
   await Promise.all(index.topics.map(async (topic) => {
     const html = await fetchText(`../${topic.contentPath}`);
@@ -95,7 +95,7 @@ await test("el fragmento generado no contiene H1", async () => {
   assert(!/<h1\b/i.test(html), "El fragmento contiene H1.");
 });
 await test("la vista final contiene un único H1", () => {
-  const section = appHtml.match(/<section data-view="temario"[\s\S]*?<section data-view="entrenamiento"/);
+  const section = appHtml.match(/<section data-view="temario"[\s\S]*?<section id="study-plan-view"/);
   assert(section && (section[0].match(/<h1\b/gi) || []).length === 1, "La vista Temario tiene más de un H1.");
 });
 await test("H1 del Markdown coincide con syllabus.json", async () => {

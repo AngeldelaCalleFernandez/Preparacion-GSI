@@ -20,6 +20,7 @@
           <ul class="primary-nav">
             <li><a href="#inicio" data-route="inicio">Inicio</a></li>
             <li><a href="#temario" data-route="temario">Temario</a></li>
+            <li><a href="#plan" data-route="plan">Plan de estudio</a></li>
             <li><a href="#entrenamiento" data-route="entrenamiento">Entrenamiento</a></li>
             <li><a href="#examen" data-route="examen">Examen</a></li>
             <li><a href="#practica" data-route="practica">Práctica escrita</a></li>
@@ -62,7 +63,8 @@
           </article>
         </div>
         <div class="action-row">
-          <a class="button" href="#temario">Consultar temario</a>
+          <a class="button" href="#plan">Empezar desde cero</a>
+          <a class="button button--secondary" href="#temario">Consultar temario</a>
           <a class="button button--secondary" href="#entrenamiento">Ir a entrenamiento</a>
           <a class="button button--secondary" href="#estadisticas">Ver estadísticas</a>
         </div>
@@ -121,6 +123,121 @@
           <div id="syllabus-blocks" class="block-list" aria-live="polite"></div>
         </div>
         <section id="topic-detail" aria-live="polite" hidden></section>
+      </section>
+
+      <section id="study-plan-view" data-view="plan" aria-labelledby="study-plan-title" hidden>
+        <p class="eyebrow">Itinerario orientativo</p>
+        <h1 id="study-plan-title">Plan de estudio orientativo desde cero</h1>
+        <p class="lead">Una ruta de 12 meses para preparar GSI A2 desde el principio, combinando teoría, test, repaso y supuesto práctico.</p>
+        <aside class="notice" aria-label="Carácter orientativo del plan">
+          <strong>Este itinerario es una orientación.</strong> El ritmo real dependerá de tu experiencia previa, disponibilidad y evolución en los test. Avanza por dominio, no únicamente por calendario.
+        </aside>
+
+        <div class="study-plan-intro-grid">
+          <article class="study-plan-card">
+            <h2>Perfil para el que está diseñado</h2>
+            <ul>
+              <li>Sin conocimientos previos específicos.</li>
+              <li>8–12 horas disponibles por semana.</li>
+              <li>Preparación aproximada de 12 meses.</li>
+              <li>Primera y segunda vuelta, test, supuestos prácticos y simulacros.</li>
+            </ul>
+          </article>
+          <form class="study-plan-card" aria-labelledby="study-plan-availability-title">
+            <h2 id="study-plan-availability-title">¿Cuánto tiempo puedes estudiar?</h2>
+            <label for="study-plan-availability">Disponibilidad semanal</label>
+            <select id="study-plan-availability"></select>
+            <p id="study-plan-availability-result" class="study-plan-advice" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+        <p class="form-help">Con menos de 8 horas, mantén el orden y amplía el calendario. Con más de 12, dedica el tiempo adicional principalmente a preguntas, repaso y práctica, no a acumular lectura.</p>
+
+        <nav class="study-plan-toc" aria-label="Contenido del plan">
+          <strong>En esta página</strong>
+          <ol>
+            <li><a href="#plan" data-plan-target="plan-metodo">Cómo estudiar un tema</a></li>
+            <li><a href="#plan" data-plan-target="plan-semana">Semana tipo</a></li>
+            <li><a href="#plan" data-plan-target="plan-fases">Las seis fases</a></li>
+            <li><a href="#plan" data-plan-target="plan-test">Evolución del test</a></li>
+            <li><a href="#plan" data-plan-target="plan-practico">Práctico desde el principio</a></li>
+            <li><a href="#plan" data-plan-target="plan-cierre">Cuándo pasar de tema</a></li>
+            <li><a href="#plan" data-plan-target="plan-seguimiento">Seguimiento</a></li>
+          </ol>
+        </nav>
+
+        <section id="plan-metodo" class="study-plan-section" aria-labelledby="plan-metodo-title">
+          <p class="eyebrow">01 · Método</p>
+          <h2 id="plan-metodo-title">Cómo estudiar cada tema</h2>
+          <div id="study-plan-method" class="study-plan-flow" aria-label="Flujo para estudiar un tema"></div>
+          <p class="study-plan-rule">Un tema no está terminado porque lo hayas leído. Está provisionalmente cerrado cuando puedes explicar sus conceptos principales y resolver preguntas sin depender constantemente de los apuntes.</p>
+          <div id="study-plan-law" class="study-plan-card study-plan-card--wide"></div>
+        </section>
+
+        <section id="plan-semana" class="study-plan-section" aria-labelledby="plan-semana-title">
+          <p class="eyebrow">02 · Ritmo sostenible</p>
+          <h2 id="plan-semana-title">Semana tipo para principiantes</h2>
+          <div id="study-plan-week" class="study-plan-week"></div>
+          <p class="form-help">No es necesario seguir estos días exactamente. Lo importante es mantener dentro de cada semana teoría, recuperación activa, preguntas y revisión.</p>
+        </section>
+
+        <section id="plan-fases" class="study-plan-section" aria-labelledby="plan-fases-title">
+          <p class="eyebrow">03 · Aproximadamente 12 meses</p>
+          <h2 id="plan-fases-title">Seis fases, no seis fechas límite</h2>
+          <p class="lead">Cada fase tiene un objetivo de dominio. Si los fundamentos aún no están claros, ajusta el calendario antes de avanzar.</p>
+          <div id="study-plan-phases" class="study-plan-phases"></div>
+        </section>
+
+        <section id="plan-test" class="study-plan-section" aria-labelledby="plan-test-title">
+          <p class="eyebrow">04 · Recuperación activa</p>
+          <h2 id="plan-test-title">Cómo evoluciona el test</h2>
+          <div id="study-plan-tests" class="study-plan-progression"></div>
+          <p class="study-plan-rule">El número de preguntas importa menos que corregirlas bien. Observa el porcentaje de acierto, los errores recurrentes, las preguntas nuevas y los temas débiles; no solo la nota.</p>
+        </section>
+
+        <section id="plan-practico" class="study-plan-section" aria-labelledby="plan-practico-title">
+          <p class="eyebrow">05 · Aplicación</p>
+          <h2 id="plan-practico-title">No esperes a terminar el temario para empezar el práctico</h2>
+          <div id="study-plan-practice" class="study-plan-progression"></div>
+          <div class="study-plan-contrast" aria-label="Diferencia entre test y práctico">
+            <article><h3>Test</h3><p>Reconocer · recordar · diferenciar.</p></article>
+            <article><h3>Práctico</h3><p>Aplicar · integrar · justificar · estructurar.</p></article>
+          </div>
+          <p><a class="button button--secondary" href="#practica">Abrir la práctica escrita</a></p>
+        </section>
+
+        <section id="plan-cierre" class="study-plan-section" aria-labelledby="plan-cierre-title">
+          <p class="eyebrow">06 · Criterio de avance</p>
+          <h2 id="plan-cierre-title">Cuándo pasar al siguiente tema</h2>
+          <div id="study-plan-statuses" class="study-plan-statuses"></div>
+          <fieldset class="study-plan-checklist">
+            <legend>Checklist para «Cerrado provisionalmente»</legend>
+            <div id="study-plan-readiness" class="checkbox-grid"></div>
+            <p id="study-plan-readiness-result" class="form-help" role="status" aria-live="polite">Marca cada criterio que ya puedas cumplir.</p>
+          </fieldset>
+          <p class="notice">Si sigues fallando conceptos básicos, no necesitas releer todo el tema: vuelve específicamente a los puntos débiles.</p>
+        </section>
+
+        <section id="plan-minimo" class="study-plan-section" aria-labelledby="plan-minimo-title">
+          <p class="eyebrow">07 · Semanas difíciles</p>
+          <h2 id="plan-minimo-title">Modo mínimo</h2>
+          <div id="study-plan-minimum" class="study-plan-card study-plan-card--wide"></div>
+        </section>
+
+        <section id="plan-errores" class="study-plan-section" aria-labelledby="plan-errores-title">
+          <p class="eyebrow">08 · Evita estos atajos</p>
+          <h2 id="plan-errores-title">Errores frecuentes del principiante</h2>
+          <div id="study-plan-mistakes" class="study-plan-warning-grid"></div>
+        </section>
+
+        <section id="plan-seguimiento" class="study-plan-section" aria-labelledby="plan-seguimiento-title">
+          <p class="eyebrow">09 · Seguimiento local</p>
+          <h2 id="plan-seguimiento-title">Dashboard orientativo</h2>
+          <p>Estas métricas reutilizan la actividad ya guardada por entrenamiento, examen, refuerzo y práctica en este navegador.</p>
+          <div id="study-plan-dashboard" class="analytics-summary-grid" aria-live="polite"></div>
+          <p class="study-plan-rule">El objetivo es una tendencia de mejora, no alcanzar todas las métricas cada semana.</p>
+        </section>
+
+        <section id="study-plan-sources" class="study-plan-section" aria-labelledby="study-plan-sources-title"></section>
       </section>
 
       <section data-view="entrenamiento" aria-labelledby="training-title" hidden>

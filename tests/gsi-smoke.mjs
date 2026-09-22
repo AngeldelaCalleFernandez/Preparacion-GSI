@@ -40,6 +40,25 @@ try {
   await fs.mkdir(path.join(root, "tmp/gsi"), { recursive: true });
   await page.screenshot({ path: path.join(root, "tmp/gsi/home-desktop.png"), fullPage: true });
   const syllabus = JSON.parse(await fs.readFile(path.join(root, "data/syllabus.json"), "utf8"));
+  await check("study plan route, dynamic topics and interactive controls", async () => {
+    await page.goto(`${base}#plan`);
+    await page.locator('[data-view="plan"]').waitFor({ state: "visible" });
+    assert.equal(await page.locator('#study-plan-phases details').count(), 6);
+    assert.ok(await page.locator('#study-plan-phases a[href^="#temario/"]').count() >= 30);
+    assert.equal(await page.locator('#study-plan-dashboard .analytics-card').count(), 8);
+    assert.match(await page.locator('#study-plan-sources').innerText(), /Fuentes actualizadas: .*2026/);
+    assert.doesNotMatch(await page.locator('[data-view="plan"]').innerText(), /100 preguntas en 90 minutos/);
+    await page.locator('[data-plan-target="plan-test"]').click();
+    assert.match(page.url(), /#plan$/);
+    assert.equal(await page.locator('[data-view="plan"]').isVisible(), true);
+    await page.locator('#study-plan-availability').selectOption('5-7');
+    assert.match(await page.locator('#study-plan-availability-result').innerText(), /15–18 meses/);
+    const checks = page.locator('#study-plan-readiness input[type="checkbox"]');
+    assert.equal(await checks.count(), 6);
+    for (let index = 0; index < 6; index += 1) await checks.nth(index).check();
+    assert.match(await page.locator('#study-plan-readiness-result').innerText(), /cerrar provisionalmente/);
+    await page.screenshot({ path: path.join(root, "tmp/gsi/study-plan-desktop.png"), fullPage: true });
+  });
   for (const block of syllabus.blocks) for (const topic of block.topics) {
     await check(`topic ${topic.id}`, async () => {
       await page.goto(`${base}#temario/${topic.id}`);
@@ -173,11 +192,15 @@ try {
   });
   await check("mobile main views and keyboard navigation", async () => {
     await page.setViewportSize({width:390,height:844});
-    for(const route of ["inicio","entrenamiento","examen","practica","refuerzo","estadisticas"]) {
+    for(const route of ["inicio","plan","entrenamiento","examen","practica","refuerzo","estadisticas"]) {
       await page.goto(`${base}#${route}`);await page.locator(`[data-view="${route}"]`).waitFor({state:"visible"});
       assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2),true,route);
       const text=await page.locator(`[data-view="${route}"]`).innerText();assert.doesNotMatch(text,/\bTAI\b|33 temas/);
     }
+    await page.goto(`${base}#plan`);await page.locator('[data-view="plan"]').waitFor({state:"visible"});
+    await page.locator('#study-plan-phases details').nth(2).click();
+    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2),true,'plan expanded');
+    await page.screenshot({path:path.join(root,"tmp/gsi/study-plan-mobile.png"),fullPage:true});
     await page.goto(`${base}#temario/B2-T07`);await page.locator('.topic-content[data-topic-id="B2-T07"]').waitFor();assert.match(await page.locator("#topic-detail").innerText(),/1.37 ya publicado/);
     await page.screenshot({path:path.join(root,"tmp/gsi/topic-mobile-viewport.png")});
     await page.locator('a[data-route="inicio"]').focus();await page.keyboard.press("Enter");assert.match(page.url(),/#inicio$/);

@@ -7,6 +7,7 @@ const CATALOG_FILES = Object.freeze({
 
 const DATA_FILES = Object.freeze({
   sources: "./data/sources.json",
+  studyPlan: "./data/study-plan.json",
   official: "./data/questions-official.json",
   ai: "./data/questions-ai.json",
   manual: "./data/questions-manual.json",
@@ -52,8 +53,8 @@ function assertGsiQuestions(data) {
 }
 
 function assertDataShape(data) {
-  if (!Array.isArray(data.syllabus?.blocks) || !Array.isArray(data.sources?.sources) || !Array.isArray(data.updates?.updates)) {
-    throw new Error("Los datos de temario, fuentes o actualizaciones no tienen la estructura esperada.");
+  if (!Array.isArray(data.syllabus?.blocks) || !Array.isArray(data.sources?.sources) || !Array.isArray(data.updates?.updates) || data.studyPlan?.metadata?.plan_type !== "orientative" || !Array.isArray(data.studyPlan?.phases)) {
+    throw new Error("Los datos de temario, fuentes, actualizaciones o planificación no tienen la estructura esperada.");
   }
   const structure = data.runtimeContext?.syllabus?.declared_structure;
   const distribution = data.syllabus.blocks.map((block) => Array.isArray(block.topics) ? block.topics.length : -1);

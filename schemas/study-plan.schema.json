@@ -1,0 +1,188 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "metadata",
+    "availability",
+    "topic_method",
+    "law_study",
+    "week",
+    "phases",
+    "test_progression",
+    "practical_progression",
+    "readiness",
+    "minimum_mode",
+    "mistakes"
+  ],
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema_version", "data_version", "updated_at", "opposition_id", "syllabus_id", "plan_type", "audience", "base_weekly_hours", "base_duration_months"],
+      "properties": {
+        "schema_version": { "const": "1.0.0" },
+        "data_version": { "type": "string", "minLength": 1 },
+        "updated_at": { "type": "string", "format": "date" },
+        "opposition_id": { "const": "OPP-GSI" },
+        "syllabus_id": { "const": "SYL-GSI-2025" },
+        "plan_type": { "const": "orientative" },
+        "audience": { "$ref": "#/$defs/text" },
+        "base_weekly_hours": { "const": "8–12" },
+        "base_duration_months": { "const": 12 }
+      }
+    },
+    "availability": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "label", "advice"],
+        "properties": {
+          "id": { "enum": ["5-7", "8-12", "13-16"] },
+          "label": { "$ref": "#/$defs/text" },
+          "advice": { "$ref": "#/$defs/text" }
+        }
+      }
+    },
+    "topic_method": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "title", "description"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z]+$" },
+          "title": { "$ref": "#/$defs/text" },
+          "description": { "$ref": "#/$defs/text" }
+        }
+      }
+    },
+    "law_study": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "answer", "guidance", "official_uses", "hierarchy", "example"],
+      "properties": {
+        "title": { "$ref": "#/$defs/text" },
+        "answer": { "$ref": "#/$defs/text" },
+        "guidance": { "$ref": "#/$defs/text" },
+        "official_uses": { "$ref": "#/$defs/textList" },
+        "hierarchy": { "$ref": "#/$defs/textList" },
+        "example": { "$ref": "#/$defs/text" }
+      }
+    },
+    "week": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["day", "focus", "tasks"],
+        "properties": {
+          "day": { "$ref": "#/$defs/text" },
+          "focus": { "$ref": "#/$defs/text" },
+          "tasks": { "$ref": "#/$defs/textList" }
+        }
+      }
+    },
+    "phases": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "number", "months", "title", "objective", "goals", "note"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^phase-[1-6]$" },
+          "number": { "type": "integer", "minimum": 1, "maximum": 6 },
+          "months": { "type": "string", "pattern": "^Meses [0-9]+–[0-9]+$" },
+          "title": { "$ref": "#/$defs/text" },
+          "objective": { "$ref": "#/$defs/text" },
+          "topic_ids": { "$ref": "#/$defs/topicIds" },
+          "review_topic_ids": { "$ref": "#/$defs/topicIds" },
+          "scope": { "const": "all-topics" },
+          "prerequisites": { "$ref": "#/$defs/textList" },
+          "diagrams": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "$ref": "#/$defs/textList" }
+          },
+          "goals": { "$ref": "#/$defs/textList" },
+          "note": { "$ref": "#/$defs/text" }
+        }
+      }
+    },
+    "test_progression": { "$ref": "#/$defs/progression" },
+    "practical_progression": { "$ref": "#/$defs/progression" },
+    "readiness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["statuses", "checklist"],
+      "properties": {
+        "statuses": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": { "$ref": "#/$defs/text" }
+        },
+        "checklist": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "items": { "$ref": "#/$defs/text" }
+        }
+      }
+    },
+    "minimum_mode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sessions", "priorities", "message"],
+      "properties": {
+        "sessions": { "$ref": "#/$defs/text" },
+        "priorities": { "$ref": "#/$defs/textList" },
+        "message": { "$ref": "#/$defs/text" }
+      }
+    },
+    "mistakes": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10,
+      "items": { "$ref": "#/$defs/text" }
+    }
+  },
+  "$defs": {
+    "text": { "type": "string", "minLength": 1 },
+    "textList": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/text" }
+    },
+    "topicIds": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^B[1-4]-T[0-9]{2}$" }
+    },
+    "progression": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["months", "practice"],
+        "properties": {
+          "months": { "type": "string", "pattern": "^[0-9]+–[0-9]+$" },
+          "practice": { "$ref": "#/$defs/text" },
+          "example": { "$ref": "#/$defs/text" }
+        }
+      }
+    }
+  }
+}

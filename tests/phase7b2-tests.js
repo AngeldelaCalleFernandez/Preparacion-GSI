@@ -108,7 +108,7 @@ await test("la búsqueda puede encontrar términos de los tres pilotos", () => {
 await test("el modo demo usa el mismo contenido", () => assert(!service.includes("isDemo") && !service.includes("questions-ai-demo"), "Contenido editorial duplicado por demo"));
 await test("tema inexistente se controla", () => assert(parseRoute("#temario/B9-T99").error, "Tema inválido aceptado"));
 await test("sección inexistente mantiene ruta válida para control en vista", () => assert(parseRoute("#temario/B2-T04/no-existe").sectionId === "no-existe", "Sección no conservada"));
-await test("el H1 visible de Temario es único", async () => { const app = await fetchText("../index.html"); const view = app.match(/<section data-view="temario"[\s\S]*?<section data-view="entrenamiento"/); assert((view?.[0].match(/<h1\b/gi) || []).length === 1, "H1 incorrecto"); });
+await test("el H1 visible de Temario es único", async () => { const app = await fetchText("../index.html"); const view = app.match(/<section data-view="temario"[\s\S]*?<section id="study-plan-view"/); assert((view?.[0].match(/<h1\b/gi) || []).length === 1, "H1 incorrecto"); });
 await test("los fragmentos empiezan en H2", () => assert(html.every((value) => !/<h1\b/i.test(value) && /<h2\b/i.test(value)), "Jerarquía incorrecta"));
 await test("el informe de cobertura coincide", () => { const coverage=JSON.parse(report);assert(coverage.topic_count===57 && coverage.topics.every((t)=>t.has_source), "Informe desactualizado"); });
 
@@ -117,7 +117,7 @@ await test("todos los temas conservan fecha de revisión", () => assert(index.to
 await test("todos los temas tienen secciones trazadas", () => assert(index.topics.every((topic) => topic.sections.length > 3 && topic.sections.every((s) => s.sourceRefs.length)), "Secciones sin fuente"));
 
 await test("el servicio no escribe localStorage", () => assert(!service.includes("localStorage"), "Escritura local"));
-await test("las rutas anteriores siguen funcionando", () => assert(resolveRoute("#examen") === "examen" && resolveRoute("#refuerzo") === "refuerzo" && resolveRoute("#estadisticas") === "estadisticas", "Regresión de rutas"));
+await test("las rutas anteriores y el plan siguen funcionando", () => assert(resolveRoute("#examen") === "examen" && resolveRoute("#refuerzo") === "refuerzo" && resolveRoute("#estadisticas") === "estadisticas" && resolveRoute("#plan") === "plan", "Regresión de rutas"));
 await test("las rutas son relativas y aptas para subruta", () => assert(index.topics.every((topic) => !topic.contentPath.startsWith("/") && service.includes("./data/topic-content.json")), "Ruta absoluta"));
 await test("la aplicación conserva exactamente 57 temas", () => assert(index.topics.length === 57 && syllabus.blocks.flatMap((block) => block.topics).length === 57, "Temario alterado"));
 await test("el parser rechaza scripts", () => { let rejected = false; try { parseSafeTopicFragment("<script>x</script>"); } catch { rejected = true; } assert(rejected, "Script aceptado"); });

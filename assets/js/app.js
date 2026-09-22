@@ -2,6 +2,7 @@ import { isDemoMode, loadAppData } from "./data-service.js?gsi2";
 import { initRouter, syncRouter } from "./router.js?gsi2";
 import { loadTopicContentIndex } from "./topic-content-service.js?gsi2";
 import { initSyllabusView } from "./syllabus-view.js?gsi2";
+import { initStudyPlan } from "./study-plan.js?gsi2";
 import { configurePersistenceV2 } from "./persistence-v2.js?gsi2";
 import { migrateV1ToV2 } from "./persistence-migration-v2.js?gsi2";
 import { initTraining } from "./training.js?gsi2";
@@ -55,6 +56,7 @@ async function start() {
     initTraining(data);
     initExam(data);
     await initWrittenPractice(data);
+    initStudyPlan(data);
     initProgressBackup(data);
     initReinforcement(data);
     initStatistics(data);

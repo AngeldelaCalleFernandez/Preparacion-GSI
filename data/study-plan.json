@@ -1,0 +1,212 @@
+{
+  "metadata": {
+    "schema_version": "1.0.0",
+    "data_version": "1.0.0",
+    "updated_at": "2026-09-22",
+    "opposition_id": "OPP-GSI",
+    "syllabus_id": "SYL-GSI-2025",
+    "plan_type": "orientative",
+    "audience": "Personas que empiezan GSI A2 sin conocimientos jurídicos o tecnológicos previos",
+    "base_weekly_hours": "8–12",
+    "base_duration_months": 12
+  },
+  "availability": [
+    {
+      "id": "5-7",
+      "label": "5–7 h/semana",
+      "advice": "Mantén el orden, pero piensa aproximadamente en 15–18 meses."
+    },
+    {
+      "id": "8-12",
+      "label": "8–12 h/semana",
+      "advice": "Referencia base: aproximadamente 12 meses."
+    },
+    {
+      "id": "13-16",
+      "label": "13–16 h/semana",
+      "advice": "Puedes reducir el calendario, pero utiliza el tiempo extra para práctica, test y repaso."
+    }
+  ],
+  "topic_method": [
+    {
+      "id": "understand",
+      "title": "Comprender",
+      "description": "Estudia el material principal intentando entender los conceptos antes de memorizar detalles."
+    },
+    {
+      "id": "recall",
+      "title": "Recordar sin mirar",
+      "description": "Cierra los apuntes y explica conceptos, diferencias, procesos, normas o arquitecturas con tus palabras."
+    },
+    {
+      "id": "test",
+      "title": "Hacer test",
+      "description": "Realiza inicialmente unas 15–25 preguntas específicas del tema."
+    },
+    {
+      "id": "errors",
+      "title": "Revisar errores",
+      "description": "Registra tema, concepto correcto, causa del fallo, fuente correcta y fecha de repaso."
+    },
+    {
+      "id": "apply",
+      "title": "Aplicar",
+      "description": "Si tiene aplicación técnica o jurídica, resuelve una pregunta corta o un mini caso."
+    },
+    {
+      "id": "review",
+      "title": "Repasar",
+      "description": "Vuelve a los errores aproximadamente 2, 7 y 30 días después."
+    }
+  ],
+  "law_study": {
+    "title": "¿Tengo que memorizar todas las leyes y todos los artículos?",
+    "answer": "No. El programa oficial determina qué materias entran y el material principal ayuda a elegir la profundidad adecuada.",
+    "guidance": "Algunos artículos sí pueden ser rentables para memorizar, pero un principiante no debería convertir cada referencia normativa en el estudio completo de una ley o reglamento.",
+    "official_uses": [
+      "Verificar literalidad y vigencia.",
+      "Resolver contradicciones.",
+      "Estudiar artículos especialmente importantes."
+    ],
+    "hierarchy": [
+      "Programa oficial",
+      "Material principal de estudio",
+      "Normativa y documentación oficial",
+      "Test",
+      "Cuaderno de errores"
+    ],
+    "example": "Si un tema menciona eIDAS, primero entiende identificación, firma, certificados y tipos de firma. Después memoriza los artículos concretos que sean especialmente relevantes o aparezcan recurrentemente en test."
+  },
+  "week": [
+    { "day": "Lunes", "focus": "Tema principal", "tasks": ["Comprensión"] },
+    { "day": "Martes", "focus": "Continuación", "tasks": ["Recuerdo activo", "Primeras preguntas"] },
+    { "day": "Miércoles", "focus": "Segundo tema", "tasks": ["Materia jurídica o transversal"] },
+    { "day": "Jueves", "focus": "Continuación", "tasks": ["Test", "Corrección de errores"] },
+    { "day": "Viernes", "focus": "Descanso", "tasks": ["Sesión corta de errores, opcional"] },
+    { "day": "Sábado", "focus": "Sesión larga", "tasks": ["Práctica o mini supuesto", "Tema técnico", "Test acumulativo"] },
+    { "day": "Domingo", "focus": "30–60 minutos o descanso", "tasks": ["Repaso", "Errores", "Preguntas acumulativas"] }
+  ],
+  "phases": [
+    {
+      "id": "phase-1",
+      "number": 1,
+      "months": "Meses 1–2",
+      "title": "Fundamentos",
+      "objective": "Aprender el vocabulario jurídico y tecnológico básico para que el resto del temario tenga sentido.",
+      "topic_ids": ["B1-T01", "B1-T06", "B1-T07", "B1-T08", "B2-T01", "B2-T02", "B2-T05", "B2-T06", "B3-T01", "B3-T03"],
+      "goals": [
+        "Entender la estructura de la oposición y distinguir sus cuatro bloques.",
+        "Conocer vocabulario jurídico esencial.",
+        "Comprender cliente/servidor, sistema operativo, bases de datos, identidad, firma y desarrollo básico.",
+        "Haber comenzado los test y pequeños ejercicios prácticos."
+      ],
+      "note": "Busca una primera comprensión útil; todavía no necesitas dominar todos los detalles avanzados."
+    },
+    {
+      "id": "phase-2",
+      "number": 2,
+      "months": "Meses 3–4",
+      "title": "Desarrollo y datos",
+      "objective": "Construir una visión conectada de datos, software, arquitectura, pruebas y despliegue.",
+      "topic_ids": ["B2-T03", "B2-T04", "B2-T07", "B2-T09", "B3-T02", "B3-T04", "B3-T05", "B3-T06", "B3-T07", "B3-T09", "B3-T10", "B3-T11", "B3-T12"],
+      "review_topic_ids": ["B2-T05", "B2-T06", "B3-T01", "B3-T03"],
+      "prerequisites": [
+        "Antes de SQL: tabla → fila → columna → clave primaria → relación.",
+        "Antes de web: cliente → servidor → HTTP → frontend → backend → API → base de datos.",
+        "Antes de UML: objeto → clase → relación → caso de uso."
+      ],
+      "goals": ["Resolver consultas y modelos sencillos.", "Explicar el ciclo completo desde requisito hasta despliegue.", "Relacionar pruebas y calidad con el desarrollo."],
+      "note": "Los conceptos previos son apoyos introductorios, no temas nuevos del programa."
+    },
+    {
+      "id": "phase-3",
+      "number": 3,
+      "months": "Meses 5–6",
+      "title": "Sistemas, seguridad y redes",
+      "objective": "Comprender cómo se conectan aplicaciones, sistemas, comunicaciones, almacenamiento y seguridad.",
+      "topic_ids": ["B2-T08", "B2-T10", "B2-T11", "B2-T13", "B4-T01", "B4-T02", "B4-T03", "B4-T04", "B4-T05", "B4-T06", "B4-T07", "B4-T08", "B4-T09", "B4-T10", "B4-T11", "B4-T12", "B4-T13"],
+      "diagrams": [
+        ["Aplicación", "Sistema operativo", "Servidor", "Red", "Almacenamiento", "CPD / nube"],
+        ["Aplicación", "TCP/UDP", "IP", "Enlace", "Medio físico"]
+      ],
+      "goals": ["Dibujar una arquitectura básica de sistemas.", "Explicar las capas de una comunicación.", "Relacionar riesgos, controles, auditoría e incidentes."],
+      "note": "Empieza con modelos visuales y añade las siglas cuando ya entiendas qué representa cada capa."
+    },
+    {
+      "id": "phase-4",
+      "number": 4,
+      "months": "Meses 7–8",
+      "title": "Administración electrónica",
+      "objective": "Integrar procedimiento, identidad, seguridad, interoperabilidad, datos y servicios comunes en arquitecturas administrativas.",
+      "topic_ids": ["B1-T06", "B1-T07", "B1-T08", "B1-T09", "B1-T10", "B3-T14", "B4-T12"],
+      "diagrams": [
+        ["Ciudadano", "Sede electrónica", "Identificación", "Registro", "Tramitador", "Expediente", "Firma / sello", "Notificación", "Archivo"]
+      ],
+      "goals": ["Distinguir identificación, firma y sello.", "Explicar registro, expediente, notificación y archivo.", "Aplicar transversalmente ENS, ENI, RGPD, accesibilidad y trazabilidad."],
+      "note": "Contrasta la literalidad importante con la normativa vigente, pero no conviertas cada referencia en el estudio completo de una ley."
+    },
+    {
+      "id": "phase-5",
+      "number": 5,
+      "months": "Meses 9–10",
+      "title": "Cierre de la primera vuelta",
+      "objective": "Terminar los 57 temas y pasar del trabajo aislado a la integración de materias.",
+      "scope": "all-topics",
+      "goals": ["Detectar los 10–15 temas más débiles.", "Aumentar preguntas acumulativas y test mixtos.", "Combinar desarrollo, bases de datos, seguridad, redes y Administración electrónica.", "Comenzar simulacros de mayor tamaño."],
+      "note": "Completa los temas aún no recorridos sin dejar de repasar lo anterior."
+    },
+    {
+      "id": "phase-6",
+      "number": 6,
+      "months": "Meses 11–12",
+      "title": "Segunda vuelta y modo examen",
+      "objective": "Consolidar con errores reales, temas débiles, preguntas nuevas, exámenes oficiales y supuestos completos.",
+      "goals": ["Evitar releer todo desde cero.", "Mejorar velocidad y estructura escrita.", "Realizar simulaciones conforme al formato vigente configurado en la aplicación.", "Priorizar resultados de test, cuaderno de errores, peor retención y materias frecuentes en supuestos."],
+      "note": "El formato puede cambiar: consulta siempre la convocatoria vigente y la configuración actual del modo examen."
+    }
+  ],
+  "test_progression": [
+    { "months": "1–2", "practice": "15–25 preguntas después de cada tema." },
+    { "months": "3–4", "practice": "Test por tema y pequeños test mezclados." },
+    { "months": "5–6", "practice": "Test de bloque." },
+    { "months": "7–8", "practice": "Test acumulativos de varios bloques." },
+    { "months": "9–10", "practice": "Simulacros parciales y completos." },
+    { "months": "11–12", "practice": "Simulacros en condiciones de examen." }
+  ],
+  "practical_progression": [
+    { "months": "1–2", "practice": "Preguntas de 10–20 minutos.", "example": "Explica cómo autenticarías a un ciudadano en un portal." },
+    { "months": "3–4", "practice": "Mini supuestos de 20–30 minutos." },
+    { "months": "5–6", "practice": "Casos de 30–60 minutos." },
+    { "months": "7–8", "practice": "Casos integradores de 60–90 minutos." },
+    { "months": "9–10", "practice": "Supuestos completos de forma progresiva." },
+    { "months": "11–12", "practice": "Simulaciones completas con tiempo real." }
+  ],
+  "readiness": {
+    "statuses": ["No iniciado", "Estudiando", "Cerrado provisionalmente", "Necesita repaso", "Consolidado"],
+    "checklist": [
+      "He recorrido todo el epígrafe oficial.",
+      "Entiendo los conceptos fundamentales.",
+      "Puedo explicarlos sin leer.",
+      "He hecho al menos 15–25 preguntas.",
+      "He corregido mis errores importantes.",
+      "Sé distinguir las principales trampas o conceptos similares."
+    ]
+  },
+  "minimum_mode": {
+    "sessions": "Dos sesiones cortas durante la semana y una sesión de fin de semana.",
+    "priorities": ["Mantener el repaso.", "Continuar un tema.", "Hacer algunas preguntas.", "No acumular deuda artificial."],
+    "message": "No intentes recuperar una semana perdida duplicando las horas de la siguiente."
+  },
+  "mistakes": [
+    "Leer mucho pero no hacerse preguntas.",
+    "Intentar memorizar una ley completa porque aparece citada.",
+    "Estudiar todos los temas con la misma profundidad.",
+    "Dejar los test para el final.",
+    "Dejar el práctico para después de terminar los 57 temas.",
+    "Repetir siempre las mismas preguntas.",
+    "Ignorar los errores.",
+    "Estudiar tecnología como listas de siglas sin comprender la arquitectura.",
+    "Memorizar artículos sin entender qué regulan.",
+    "Avanzar por calendario aunque no se entiendan los fundamentos."
+  ]
+}

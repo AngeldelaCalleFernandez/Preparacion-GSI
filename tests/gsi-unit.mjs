@@ -7,9 +7,11 @@ import { createWrittenState, writtenRemaining, validateWrittenState, RUBRIC, WRI
 import { buildPhysicalPersistenceKey, createPersistenceAdapter } from '../assets/js/persistence-v2.js?gsi2';
 import { migrateV1ToV2 } from '../assets/js/persistence-migration-v2.js?gsi2';
 import { exportProgress, importProgress, resetProgress, validateProgressBackup } from '../assets/js/progress-backup.js?gsi2';
+import { getAvailabilityAdvice, findMissingTopicIds } from '../assets/js/study-plan.js?gsi2';
+import { parseRoute } from '../assets/js/router.js?gsi2';
 
 const read = async (name) => JSON.parse(await fs.readFile(new URL('../data/'+name+'.json',import.meta.url),'utf8'));
-const syllabus=await read('syllabus'), practice=await read('gsi-practice');
+const syllabus=await read('syllabus'), practice=await read('gsi-practice'), studyPlan=await read('study-plan');
 const questions=(await Promise.all(['official','manual','ai'].map(async (collection)=>(await read('questions-'+collection)).questions.map((q)=>({...q,collection,isDemo:false}))))).flat();
 const context={oppositionId:'OPP-GSI',syllabusId:'SYL-GSI-2025'};
 const data={runtimeContext:context,syllabus,practice,questions};
@@ -23,6 +25,19 @@ class Memory {
   removeItem(k){this.map.delete(k);}
 }
 const selected=selectExamQuestions(questions,config,()=>.37);
+test('Plan orientativo: ruta, seis fases y referencias oficiales válidas',()=>{
+  const topics=new Map(syllabus.blocks.flatMap(block=>block.topics.map(topic=>[topic.id,topic])));
+  assert.equal(parseRoute('#plan').route,'plan');
+  assert.equal(studyPlan.metadata.plan_type,'orientative');
+  assert.equal(studyPlan.phases.length,6);
+  assert.deepEqual(findMissingTopicIds(studyPlan,topics),[]);
+  assert.ok(studyPlan.phases.every(phase=>!Object.hasOwn(phase,'topic_titles')));
+});
+test('Plan orientativo adapta el calendario sin prometer resultado',()=>{
+  assert.match(getAvailabilityAdvice(studyPlan,'5-7').advice,/15–18 meses/);
+  assert.match(getAvailabilityAdvice(studyPlan,'8-12').advice,/12 meses/);
+  assert.match(getAvailabilityAdvice(studyPlan,'13-16').advice,/práctica, test y repaso/);
+});
 test('GSI: 100 preguntas distintas, cuatro bloques y 90 minutos',()=>{assert.equal(selected.questions.length,100);assert.equal(new Set(selected.questions.map(q=>q.id)).size,100);assert.equal(new Set(selected.questions.map(q=>q.block_id)).size,4);assert.deepEqual(validateExamConfig(config),[]);});
 test('GSI rechaza cantidad, penalización, tiempo o bloques incorrectos',()=>{for(const change of [{questionCount:99},{durationSeconds:5399},{penaltyPerError:.25},{blockIds:['B1']}])assert.ok(validateExamConfig({...config,...change}).length);});
 test('Puntuación GSI: 50 aciertos, 30 errores, 20 blancos = 40',()=>{const answers=Object.fromEntries(selected.questions.slice(0,80).map((q,i)=>[q.id,i<50?q.correct_option:q.options.find(o=>o.id!==q.correct_option).id]));const r=calculateExamResults(selected.questions,answers,1/3);assert.equal(r.overall.net,40);assert.equal(r.overall.grossPercentage,50);assert.equal(r.overall.blank,20);assert.equal(r.byTopic.reduce((n,t)=>n+t.total,0),100);});
