@@ -26,6 +26,21 @@ def digest(p): return hashlib.sha256((ROOT/p).read_bytes()).hexdigest()
 def norm(s): return re.sub(r'\W+',' ',unicodedata.normalize('NFKC',s).casefold()).strip()
 def save(p,x): (ROOT/p).write_text(json.dumps(x,ensure_ascii=False,indent=2)+'\n','utf-8')
 
+def remove_editorial_layer(text, topic_id, enhancements):
+    """Recover the canonical study text before declared B1 editorial additions."""
+    enhancement=enhancements.get(topic_id,{})
+    text=re.sub(r'\n*<!-- editorial-supplement:'+re.escape(topic_id)+r':\d+:start -->.*?<!-- editorial-supplement:'+re.escape(topic_id)+r':\d+:end -->\n*','\n\n',text,flags=re.S)
+    for visual in enhancement.get('visuals',[]):
+        block=(f'\n\n### {visual["title"]}\n\n'
+               f'![{visual["alt"]}](../../{visual["src"]})\n\n'
+               f'_{visual["description"]}_\n\n'
+               f'**Qué debes recordar:** {visual["takeaway"]}\n')
+        text=text.replace(block,'')
+    for replacement in reversed(enhancement.get('replacements',[])):
+        source=replacement.get('fromMarkdown',replacement['from'])
+        text=text.replace(replacement['to'],source,1)
+    return text
+
 class Fragment(HTMLParser):
     def __init__(self): super().__init__(convert_charrefs=True); self.ids=[];self.links=[];self.text=[];self.unsafe=[]
     def handle_starttag(self,tag,attrs):
@@ -43,6 +58,7 @@ def main():
         else:checks.append(message)
     syllabus=load('data/syllabus.json'); blocks=syllabus['blocks'];topics={t['id']:t for b in blocks for t in b['topics']}
     manifest=load('data/gsi-source-manifest.json'); index=load('data/topic-content.json');sources={s['id']:s for s in load('data/sources.json')['sources']}
+    enhancements=load('content/enhancements/b1-visuals.json')['topics']
     inventory=load('data/gsi-drive-inventory.json'); known={e['id'] for e in inventory['main']}|{e['id'] for e in inventory['auxiliary']['items']}|{e['id'] for e in inventory['auxiliary']['roots']}
     check([len(b['topics']) for b in blocks]==COUNTS and len(topics)==57,'57 temas; distribución 10/16/15/16')
     check([o['id'] for o in load('data/oppositions.json')['oppositions']]==['OPP-GSI'],'Única oposición GSI')
@@ -62,7 +78,8 @@ def main():
         if section:
             rest=canonical[section.end():];boundary=re.search(r'(?m)^#+ (?:I|II|III|IV)\.\d+\s*[—–-]',rest)
             study=rest[:boundary.start()].strip() if boundary else rest.strip()
-            check(sha(study)==m['study_sha256'] and study in text and len(study)==m['study_characters'],tid+': apuntes completos conservados y hash exacto')
+            preserved=remove_editorial_layer(text,tid,enhancements)
+            check(sha(study)==m['study_sha256'] and study in preserved and len(study)==m['study_characters'],tid+': apuntes completos conservados y hash exacto')
         check(len(' '.join(frag.text))>1500 and len(text)>1500,tid+': contenido sustancial')
         check(text.startswith('# '+t['title']+'\n') and '## Resumen de repaso' in text,tid+': título oficial y repaso')
         check(digest(m['html_path'])==imap[tid]['checksum'],tid+': HTML íntegro')
@@ -72,6 +89,8 @@ def main():
         for link in frag.links:
             if link.startswith('#temario/'):
                 route=link.split('/');check(route[1] in topics and (len(route)<3 or route[2] in frag.ids),tid+': enlace de sección válido')
+            elif link.startswith('assets/diagrams/b1/'):
+                check((ROOT/link).is_file() and link.endswith('.svg'),tid+': diagrama SVG local resoluble')
             else:check(link.startswith('https://'),tid+': URL de fuente HTTPS')
     register=load('data/gsi-document-register.json')
     conversions={e['output']:e for e in load('logs/gsi-conversions.json') if e['status']=='converted'}
@@ -123,6 +142,7 @@ def main():
             topic,line=drafts[label];fields=line.split('|');section=fields[0]
             check(q['statement']==fields[1] and sorted(o['text'] for o in q['options'])==sorted(fields[2:6]) and next(o['text'] for o in q['options'] if o['id']==q['correct_option'])==fields[2] and q['feedback']['correct']==fields[6],label+': opciones, respuesta y explicación coinciden con borrador')
             text=(ROOT/f'content/topics/{topic}.md').read_text('utf-8').split('## Resumen de repaso')[0]
+            text=remove_editorial_layer(text,topic,enhancements)
             match=re.search(r'^## '+re.escape(section)+r'\.? (.+?)\n(.*?)(?=^## |\Z)',text,re.M|re.S)
             check(match is not None and sha(match[2].strip())==q['source']['evidence_sha256'] and match[2].strip()==q['source']['evidence'],label+': evidencia exacta de sección')
             check(sha(topic+'\n'+line)==q['source']['record_sha256'],label+': borrador y JSON sincronizados')
