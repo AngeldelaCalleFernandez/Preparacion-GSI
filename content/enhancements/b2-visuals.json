@@ -1,0 +1,356 @@
+{
+  "version": 1,
+  "topics": {
+    "B2-T01": {
+      "classification": "REESCRITURA SELECTIVA",
+      "replacements": [
+        {
+          "from": "Depuración A1: el A1 052 aporta taxonomía de Flynn, UMA/NUMA, clúster y grid, pero es de 2019. Se conserva esa teoría estable; se eliminan afirmaciones coyunturales sobre la madurez del grid. A1 053 aporta servidores, virtualización e infraestructura más reciente.",
+          "fromMarkdown": "**Depuración A1:** el A1 052 aporta taxonomía de Flynn, UMA/NUMA, clúster y grid, pero es de 2019. Se conserva esa teoría estable; se eliminan afirmaciones coyunturales sobre la madurez del grid. A1 053 aporta servidores, virtualización e infraestructura más reciente.",
+          "to": "La taxonomía de Flynn, UMA/NUMA, clúster y grid siguen siendo fundamentos examinables. Deben relacionarse con servidores, virtualización e infraestructura actual, evitando convertir datos coyunturales de mercado o versiones en reglas técnicas."
+        }
+      ],
+      "visuals": [
+        {
+          "afterHeading": "7. Computación en la nube",
+          "src": "assets/diagrams/b2/b2-t01-maquina-cloud.svg",
+          "title": "De la máquina física al servicio cloud",
+          "alt": "Cadena por capas desde CPU, memoria y almacenamiento hasta virtualización, infraestructura cloud y los modelos IaaS, PaaS y SaaS, indicando cómo cambia la responsabilidad del cliente.",
+          "description": "Conecta la base física con la abstracción cloud y sitúa el reparto de gestión en IaaS, PaaS y SaaS.",
+          "takeaway": "Cloud no elimina la infraestructura: añade abstracción y cambia quién administra hardware, sistema operativo, plataforma y aplicación."
+        }
+      ]
+    },
+    "B2-T02": {
+      "classification": "CONSERVAR ESTRUCTURA",
+      "replacements": [],
+      "visuals": [
+        {
+          "afterHeading": "3. Procesos, hilos y planificación",
+          "src": "assets/diagrams/b2/b2-t02-proceso-hilo.svg",
+          "title": "Proceso, hilos y estados de ejecución",
+          "alt": "Diagrama de un proceso con memoria y recursos propios que contiene varios hilos, junto a los estados preparado, ejecución y bloqueado y las transiciones controladas por el planificador.",
+          "description": "Separa el contenedor de recursos —proceso— de las unidades de ejecución —hilos— y lo relaciona con planificación.",
+          "takeaway": "Los hilos comparten recursos del proceso; el planificador asigna CPU a unidades ejecutables y un bloqueo no equivale a terminación."
+        }
+      ]
+    },
+    "B2-T03": {
+      "classification": "REESCRITURA SELECTIVA",
+      "replacements": [
+        {
+          "from": "Este es uno de los huecos reales del banco A1: no existe un tema que cubra exactamente el epígrafe GSI. Por tanto, la V2 distingue claramente complemento GSI de contenido heredado. El objetivo es clasificar lenguajes y comprender decisiones técnicas, no aprender la sintaxis completa de cada uno.",
+          "fromMarkdown": "Este es uno de los huecos reales del banco A1: no existe un tema que cubra exactamente el epígrafe GSI. Por tanto, la V2 distingue claramente **complemento GSI** de contenido heredado. El objetivo es clasificar lenguajes y comprender decisiones técnicas, no aprender la sintaxis completa de cada uno.",
+          "to": "El objetivo del tema es clasificar lenguajes por distintos ejes y comprender decisiones técnicas, no aprender la sintaxis completa de cada uno. Un mismo lenguaje puede ser multiparadigma y disponer de varias estrategias de ejecución."
+        }
+      ],
+      "visuals": [
+        {
+          "afterHeading": "2. Formas de clasificar un lenguaje",
+          "src": "assets/diagrams/b2/b2-t03-ejes-lenguajes.svg",
+          "title": "Un lenguaje se clasifica por varios ejes",
+          "alt": "Matriz conceptual que clasifica lenguajes de programación por nivel de abstracción, estrategia de ejecución, sistema de tipos, gestión de memoria y paradigmas, evitando categorías excluyentes.",
+          "description": "Evita reducir cada lenguaje a una sola etiqueta y reúne los criterios que suelen mezclarse en test.",
+          "takeaway": "Compilación, tipado, memoria y paradigma son ejes distintos; un lenguaje puede combinar varias opciones e implementaciones."
+        }
+      ]
+    },
+    "B2-T04": {
+      "classification": "REESCRITURA SELECTIVA",
+      "replacements": [
+        {
+          "from": "1. Alcance y depuración",
+          "to": "1. Alcance del tema"
+        },
+        {
+          "from": "A1 075 es la fuente técnica principal: desarrolla BI, Data Warehouse, DSS/EIS, ETL, datamarts y explotación multidimensional. También trata Data Lake, Lakehouse, Fabric y Mesh; estos conceptos se mantienen únicamente como comparación porque el BOE centra II.04 en BI, cuadros de mando, sistemas de decisión, almacenes y OLTP/OLAP.",
+          "to": "El núcleo del tema es Business Intelligence, Data Warehouse, DSS/EIS, ETL, datamarts y explotación multidimensional. Data Lake, Lakehouse, Data Fabric y Data Mesh se mantienen como comparación actual, sin desplazar el foco examinable de BI, cuadros de mando y OLTP/OLAP."
+        }
+      ],
+      "visuals": [
+        {
+          "afterHeading": "2. De datos a decisión",
+          "src": "assets/diagrams/b2/b2-t04-cadena-bi.svg",
+          "title": "Cadena BI: de las fuentes a la decisión",
+          "alt": "Flujo desde sistemas operacionales y fuentes externas hacia staging y ETL o ELT, Data Warehouse, modelo dimensional u OLAP y finalmente informes, cuadros de mando, DSS y EIS.",
+          "description": "Sitúa integración, almacén, modelo analítico y consumo en el orden correcto.",
+          "takeaway": "BI no es solo el dashboard: sin integración, calidad, linaje y modelo analítico, la visualización no produce información fiable."
+        }
+      ]
+    },
+    "B2-T05": {
+      "classification": "REESCRITURA SELECTIVA",
+      "replacements": [
+        {
+          "from": "1. Por qué este tema debe ser amplio",
+          "to": "1. Alcance del tema"
+        },
+        {
+          "from": "El A1 063 contiene bastante más detalle útil de lo que reflejaba el resumen maestro: lenguajes de SGBD, ACID, anomalías, aislamiento, 2PL, componentes internos y ANSI/SPARC. El A1 064 añade modelo relacional, SQL e interoperabilidad. La V2 recupera ese contenido porque coincide directamente con el BOE.",
+          "to": "El tema reúne arquitectura ANSI/SPARC, modelo relacional, SQL, transacciones ACID, concurrencia, componentes internos e interoperabilidad. Conviene estudiarlo como una cadena que va desde la independencia de datos hasta la ejecución segura y concurrente de consultas."
+        }
+      ],
+      "visuals": [
+        {
+          "afterHeading": "4. Arquitectura ANSI/X3/SPARC",
+          "src": "assets/diagrams/b2/b2-t05-ansi-sparc.svg",
+          "title": "ANSI/SPARC e independencia de datos",
+          "alt": "Arquitectura en tres niveles con vistas externas, esquema conceptual global y nivel interno físico, mostrando independencia lógica entre externo y conceptual e independencia física entre conceptual e interno.",
+          "description": "Relaciona los tres esquemas con los dos tipos de independencia que suelen intercambiarse en test.",
+          "takeaway": "La independencia física protege el modelo conceptual frente a cambios de almacenamiento; la lógica protege vistas y aplicaciones frente a cambios conceptuales."
+        }
+      ]
+    },
+    "B2-T06": {
+      "classification": "REESCRITURA SELECTIVA",
+      "replacements": [
+        {
+          "from": "1. Alcance y fuentes",
+          "to": "1. Alcance del tema"
+        },
+        {
+          "from": "A1 058 aporta procesamiento cooperativo, cliente-servidor, SOA, orquestación/coreografía, SOAP/WSDL y ESB. Aunque es de 2019, esos fundamentos siguen siendo examinables. A1 065 permite incorporar el desarrollo web y componentes más actuales. La V2 añade REST, APIs, mensajería y observabilidad sin borrar la arquitectura clásica.",
+          "to": "El tema combina fundamentos todavía examinables —procesamiento cooperativo, cliente-servidor, SOA, SOAP/WSDL y ESB— con APIs HTTP, REST, mensajería y observabilidad. La arquitectura clásica y los patrones actuales deben entenderse como opciones relacionadas, no como una sustitución automática."
+        }
+      ],
+      "visuals": [
+        {
+          "afterHeading": "3. Cliente-servidor",
+          "src": "assets/diagrams/b2/b2-t06-capas-integracion.svg",
+          "title": "Capas lógicas y estilos de integración",
+          "alt": "Arquitectura desde clientes web, móvil y máquina a máquina hacia presentación, API Gateway, lógica de negocio y persistencia, con caminos síncronos REST o SOAP y asíncronos mediante colas o eventos.",
+          "description": "Integra multidispositivo, separación por capas y las dos formas principales de comunicación.",
+          "takeaway": "Una capa lógica no equivale a un servidor físico; REST, SOAP y mensajería son mecanismos distintos que se eligen según contrato y acoplamiento."
+        }
+      ]
+    },
+    "B2-T07": {
+      "classification": "REESCRITURA SELECTIVA",
+      "replacements": [
+        {
+          "from": "Actualización 21/08/2026: Kubernetes mantiene oficialmente las tres ramas menores 1.36, 1.35 y 1.34. La 1.37 está prevista para el 26/08/2026, por lo que no se estudia como versión estable en esta edición. La V2 prioriza objetos y arquitectura estables, no números de parche.",
+          "fromMarkdown": "**Actualización 21/08/2026:** Kubernetes mantiene oficialmente las tres ramas menores 1.36, 1.35 y 1.34. La 1.37 está prevista para el 26/08/2026, por lo que no se estudia como versión estable en esta edición. La V2 prioriza objetos y arquitectura estables, no números de parche.",
+          "to": "Las ramas soportadas de Kubernetes cambian con el calendario del proyecto. Para examen deben priorizarse objetos, responsabilidades y arquitectura estable, utilizando la página oficial de versiones para cualquier dato temporal."
+        }
+      ],
+      "supplements": [
+        {
+          "afterHeading": "1. Alcance y actualización",
+          "title": "Actualización comprobada de Kubernetes",
+          "paragraphs": [
+            "A 22/09/2026, el proyecto Kubernetes mantiene las ramas menores 1.37, 1.36 y 1.35; la versión 1.37.0 se publicó el 26/08/2026. Este dato sirve para corregir la previsión anterior, pero no debe desplazar el estudio de la arquitectura y los objetos estables."
+          ],
+          "sources": [
+            {
+              "title": "Kubernetes — Releases",
+              "url": "https://kubernetes.io/releases/",
+              "locator": "ramas menores activamente soportadas"
+            },
+            {
+              "title": "Kubernetes 1.37",
+              "url": "https://kubernetes.io/releases/1.37/",
+              "locator": "fecha y estado de la serie 1.37"
+            }
+          ],
+          "note": "No memorices números de parche. Comprueba la versión soportada solo cuando una pregunta o supuesto dependa expresamente de actualidad."
+        }
+      ],
+      "visuals": [
+        {
+          "afterHeading": "8. Kubernetes: arquitectura",
+          "src": "assets/diagrams/b2/b2-t07-kubernetes.svg",
+          "title": "Kubernetes: control plane, nodos y objetos",
+          "alt": "Arquitectura de Kubernetes con API Server, scheduler, controller manager y almacén de estado en el control plane, y nodos con kubelet, runtime, pods y Services que proporcionan acceso estable.",
+          "description": "Separa componentes del clúster de los objetos declarativos que gestiona el usuario.",
+          "takeaway": "El control plane reconcilia estado deseado; el Pod es la unidad de despliegue y el Service ofrece acceso estable, pero no es un microservicio de negocio."
+        }
+      ]
+    },
+    "B2-T08": {
+      "classification": "CONSERVAR ESTRUCTURA",
+      "replacements": [],
+      "visuals": [
+        {
+          "afterHeading": "3. Modelo OSI",
+          "src": "assets/diagrams/b2/b2-t08-osi-tcpip.svg",
+          "title": "Correspondencia OSI, TCP/IP y encapsulación",
+          "alt": "Comparación vertical de las siete capas OSI con las cuatro capas TCP/IP y la encapsulación datos, segmento o datagrama, paquete IP, trama y bits, incluyendo ejemplos de protocolos y equipos.",
+          "description": "Une función, modelo y PDU en una sola lectura para resolver preguntas de capas.",
+          "takeaway": "TCP/IP agrupa sesión y presentación dentro de aplicación; transporte usa puertos, red usa IP y enlace trabaja con tramas y MAC."
+        }
+      ]
+    },
+    "B2-T09": {
+      "classification": "REESCRITURA SELECTIVA",
+      "replacements": [
+        {
+          "from": "1. Alcance y corrección de fuente",
+          "to": "1. Alcance y distinción principal"
+        },
+        {
+          "from": "A1 077, de 2023, aporta HTML, CSS, XML, XSD, XPath, XSLT, HTTP y estándares web. La V2 corrige una formulación importante: HTML moderno no debe describirse como «basado en XML». HTML tiene su propia sintaxis; XHTML es la serialización XML de HTML y exige reglas de documento XML bien formado.",
+          "fromMarkdown": "A1 077, de 2023, aporta HTML, CSS, XML, XSD, XPath, XSLT, HTTP y estándares web. La V2 corrige una formulación importante: **HTML moderno no debe describirse como «basado en XML»**. HTML tiene su propia sintaxis; XHTML es la serialización XML de HTML y exige reglas de documento XML bien formado.",
+          "to": "La distinción central es que HTML moderno tiene sintaxis propia y no debe describirse como basado en XML. XHTML aplica reglas XML al vocabulario HTML, mientras XML permite definir vocabularios extensibles y validarlos mediante DTD o XSD."
+        }
+      ],
+      "visuals": [
+        {
+          "afterHeading": "2. Lenguajes de marcas y SGML",
+          "src": "assets/diagrams/b2/b2-t09-familia-marcas.svg",
+          "title": "SGML, HTML, XML y XHTML: parentesco sin confusión",
+          "alt": "Árbol conceptual que presenta SGML como antecedente, HTML como lenguaje web con sintaxis propia, XML como metalenguaje extensible y XHTML como vocabulario HTML sujeto a reglas XML.",
+          "description": "Representa la relación histórica y sintáctica sin afirmar que HTML5 sea XML.",
+          "takeaway": "HTML estructura la web con sintaxis propia; XML define vocabularios; XHTML es HTML expresado con reglas XML."
+        }
+      ]
+    },
+    "B2-T10": {
+      "classification": "REESCRITURA SELECTIVA",
+      "replacements": [
+        {
+          "from": "1. Alcance y fuentes",
+          "to": "1. Alcance del tema"
+        },
+        {
+          "from": "A1 047 aporta el proceso general y MAGERIT. La documentación oficial del PAe confirma en 2026 que MAGERIT v3 sigue siendo la metodología pública mantenida para análisis/gestión de riesgos y que PILAR se encuentra en producción como herramienta asociada.",
+          "fromMarkdown": "A1 047 aporta el proceso general y MAGERIT. La documentación oficial del PAe confirma en 2026 que **MAGERIT v3** sigue siendo la metodología pública mantenida para análisis/gestión de riesgos y que **PILAR** se encuentra en producción como herramienta asociada.",
+          "to": "El tema combina el proceso general de gestión de riesgos con MAGERIT v3 como metodología de referencia en la Administración y PILAR como herramienta asociada. Metodología, herramienta y decisión de aceptación son piezas distintas."
+        }
+      ],
+      "visuals": [
+        {
+          "afterHeading": "3. Ciclo de gestión de riesgos",
+          "src": "assets/diagrams/b2/b2-t10-ciclo-riesgo.svg",
+          "title": "Del activo al riesgo residual",
+          "alt": "Ciclo que enlaza contexto, activos y dependencias, amenazas y vulnerabilidades, impacto y probabilidad, riesgo inherente, salvaguardas, riesgo residual, tratamiento, aceptación y revisión.",
+          "description": "Ordena el análisis y la gestión y señala dónde actúan los controles.",
+          "takeaway": "El riesgo inherente se valora antes de controles; el residual queda después y debe tratarse o aceptarse por quien tenga competencia."
+        }
+      ]
+    },
+    "B2-T11": {
+      "classification": "REESCRITURA SELECTIVA",
+      "replacements": [
+        {
+          "from": "El A1 038 es la fuente específica y se complementa con A1 047 para riesgos y A1 048 para ENS.",
+          "to": "El enfoque integra metodología de auditoría, gestión de riesgos y requisitos específicos del ENS."
+        }
+      ],
+      "visuals": [
+        {
+          "afterHeading": "4. Ciclo de auditoría",
+          "src": "assets/diagrams/b2/b2-t11-ciclo-auditoria.svg",
+          "title": "Auditoría: del criterio al cierre eficaz",
+          "alt": "Flujo de auditoría desde mandato y alcance hacia criterios, planificación por riesgos, trabajo de campo, evidencia, hallazgos, informe, plan de acciones y verificación del cierre.",
+          "description": "Muestra la cadena probatoria completa y evita reducir la auditoría a una búsqueda informal de fallos.",
+          "takeaway": "Un hallazgo necesita condición, criterio y evidencia; una acción no está cerrada hasta comprobar su eficacia."
+        }
+      ]
+    },
+    "B2-T12": {
+      "classification": "REESCRITURA SELECTIVA",
+      "replacements": [
+        {
+          "from": "1. Alcance y hueco A1",
+          "to": "1. Alcance del tema"
+        },
+        {
+          "from": "El mapa A1 cubre parcialmente CRM y XML, pero no desarrolla con suficiente profundidad la arquitectura de contact center. Por eso esta sección es una ampliación específica GSI, siguiendo los conceptos ya identificados en la auditoría: PBX/SBC/VoIP, colas/enrutado, CTI, IVR, ASR/TTS, VoiceXML, privacidad, accesibilidad, KPI y dimensionamiento.",
+          "fromMarkdown": "El mapa A1 cubre parcialmente CRM y XML, pero no desarrolla con suficiente profundidad la arquitectura de contact center. Por eso esta sección es una **ampliación específica GSI**, siguiendo los conceptos ya identificados en la auditoría: PBX/SBC/VoIP, colas/enrutado, CTI, IVR, ASR/TTS, VoiceXML, privacidad, accesibilidad, KPI y dimensionamiento.",
+          "to": "El tema estudia la arquitectura completa de un contact center: PBX/SBC/VoIP, colas y enrutado, CTI, IVR, ASR/TTS, VoiceXML, CRM, privacidad, accesibilidad, indicadores y dimensionamiento."
+        }
+      ],
+      "visuals": [
+        {
+          "afterHeading": "10. Arquitectura multicanal",
+          "src": "assets/diagrams/b2/b2-t12-contact-center.svg",
+          "title": "Contact center multicanal y continuidad de contexto",
+          "alt": "Arquitectura donde voz, correo, chat y web pasan por gateways y enrutamiento ACD, IVR o bots hacia agentes, CRM y backoffice, con identidad, grabación, analítica y supervisión transversales.",
+          "description": "Sitúa ACD, CTI, IVR y CRM en su función y muestra qué añade la omnicanalidad.",
+          "takeaway": "ACD distribuye, CTI conecta telefonía y aplicaciones, IVR automatiza el diálogo y CRM conserva el contexto autorizado."
+        }
+      ]
+    },
+    "B2-T13": {
+      "classification": "REESCRITURA SELECTIVA",
+      "replacements": [
+        {
+          "from": "A1 125 desarrolla seguridad en redes y ataques; A1 126, disponible en versión P31, actualiza el marco de ciberseguridad e incidentes; A1 127 aporta informática forense. Para GSI deben integrarse, no estudiarse como tres listas separadas.",
+          "to": "Seguridad preventiva y detectiva, respuesta a incidentes e informática forense deben estudiarse como un continuo: proteger, detectar, contener, recuperar, preservar evidencia y aprender."
+        }
+      ],
+      "visuals": [
+        {
+          "afterHeading": "10. Gestión de incidentes",
+          "src": "assets/diagrams/b2/b2-t13-incidente-forense.svg",
+          "title": "Respuesta a incidentes y preservación forense",
+          "alt": "Ciclo desde preparación, detección y análisis hacia contención, erradicación, recuperación y lecciones aprendidas, con una vía paralela de identificación, preservación, adquisición, hash y cadena de custodia.",
+          "description": "Integra la respuesta operativa con la conservación de evidencia, dos objetivos que deben coordinarse.",
+          "takeaway": "Contener no es erradicar; la urgencia operativa debe equilibrarse con preservar evidencia íntegra y trazable."
+        }
+      ]
+    },
+    "B2-T14": {
+      "classification": "REESCRITURA SELECTIVA",
+      "replacements": [
+        {
+          "from": "1. Alcance y fuentes",
+          "to": "1. Alcance del tema"
+        },
+        {
+          "from": "A1 069 desarrolla software libre/código abierto y licencias; A1 043, la protección jurídica de programas. Se combinan con el epígrafe GSI y se elimina información de productos ofimáticos/servidores que no aporta a licencias o derecho.",
+          "to": "El tema combina software libre y propietario, familias de licencias, protección jurídica de programas y medidas técnicas de protección. Deben separarse libertad, precio, titularidad, licencia y DRM."
+        },
+        {
+          "from": "La European Union Public Licence (EUPL) es una licencia de software libre promovida por la Comisión Europea y especialmente relevante en Administraciones Públicas europeas. Es copyleft, está disponible en múltiples lenguas oficiales y fue diseñada teniendo en cuenta el marco jurídico de la UE. Para GSI conviene reconocer su finalidad, su relación con la reutilización de software público y que la compatibilidad con otras licencias debe comprobarse conforme a la versión y apéndice de compatibilidad aplicables.",
+          "fromMarkdown": "## La European Union Public Licence (EUPL) es una licencia de software libre promovida por la Comisión Europea y especialmente relevante en Administraciones Públicas europeas. Es copyleft, está disponible en múltiples lenguas oficiales y fue diseñada teniendo en cuenta el marco jurídico de la UE. Para GSI conviene reconocer su finalidad, su relación con la reutilización de software público y que la compatibilidad con otras licencias debe comprobarse conforme a la versión y apéndice de compatibilidad aplicables.",
+          "to": "La European Union Public Licence (EUPL) es una licencia de software libre promovida por la Comisión Europea y especialmente relevante en Administraciones Públicas europeas. Es copyleft, está disponible en múltiples lenguas oficiales y fue diseñada teniendo en cuenta el marco jurídico de la UE. Para GSI conviene reconocer su finalidad, su relación con la reutilización de software público y que la compatibilidad con otras licencias debe comprobarse conforme a la versión y apéndice de compatibilidad aplicables.",
+          "namedStyleType": "NORMAL_TEXT"
+        }
+      ],
+      "visuals": [
+        {
+          "afterHeading": "6. Copyleft",
+          "src": "assets/diagrams/b2/b2-t14-licencias.svg",
+          "title": "Licencias de software: permisos y obligaciones",
+          "alt": "Comparación entre software propietario, licencias permisivas y copyleft, con ejemplos MIT, BSD, Apache, LGPL, GPL, AGPL y EUPL y diferencias frente a dominio público y DRM.",
+          "description": "Ordena las familias por condiciones de reutilización sin confundir licencia jurídica con mecanismo técnico.",
+          "takeaway": "Libre no significa gratis; permisiva no significa sin condiciones; copyleft no es dominio público y DRM no es una licencia."
+        }
+      ]
+    },
+    "B2-T15": {
+      "classification": "CONSERVAR ESTRUCTURA",
+      "replacements": [],
+      "visuals": [
+        {
+          "afterHeading": "2. Estudio de alternativas",
+          "src": "assets/diagrams/b2/b2-t15-alternativas-proyecto.svg",
+          "title": "De la alternativa al control del proyecto",
+          "alt": "Flujo desde requisitos obligatorios, alternativas, criterios y pesos hacia normalización, sensibilidad y decisión, seguido por viabilidad, WBS, cronograma, presupuesto, línea base y valor ganado.",
+          "description": "Conecta la selección transparente de solución con su planificación y control posterior.",
+          "takeaway": "Una alternativa inviable no se compensa con puntuación; tras decidir, el control compara alcance, plazo y coste contra líneas base aprobadas."
+        }
+      ]
+    },
+    "B2-T16": {
+      "classification": "REESCRITURA SELECTIVA",
+      "replacements": [
+        {
+          "from": "A1 104 desarrolla gestión documental, CMS/DMS y sindicación. El resto se completa con material de workflow, búsqueda y colaboración. El BOE mezcla varias familias, por lo que el tema debe estructurarse por función y no por productos.",
+          "to": "El epígrafe reúne gestión documental, contenidos, workflow, búsqueda, sindicación y colaboración. Debe estudiarse por función y por ciclo de vida, evitando organizarlo como una lista de productos."
+        }
+      ],
+      "visuals": [
+        {
+          "afterHeading": "16. Integración DMS/CMS/workflow",
+          "src": "assets/diagrams/b2/b2-t16-ciclo-contenido.svg",
+          "title": "Ciclo de vida integrado del contenido",
+          "alt": "Flujo desde captura y metadatos hacia repositorio DMS, workflow de revisión, publicación CMS, sindicación, indexación y búsqueda, y finalmente archivo, retención o eliminación controlada.",
+          "description": "Sitúa cada familia de herramienta dentro de un proceso completo y gobernado.",
+          "takeaway": "DMS conserva y gobierna documentos; workflow coordina tareas; CMS publica; el buscador indexa y recupera; versionado no sustituye al backup."
+        }
+      ]
+    }
+  }
+}

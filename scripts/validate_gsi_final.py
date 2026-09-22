@@ -26,6 +26,17 @@ def digest(p): return hashlib.sha256((ROOT/p).read_bytes()).hexdigest()
 def norm(s): return re.sub(r'\W+',' ',unicodedata.normalize('NFKC',s).casefold()).strip()
 def save(p,x): (ROOT/p).write_text(json.dumps(x,ensure_ascii=False,indent=2)+'\n','utf-8')
 
+def load_enhancements():
+    enhancements={}
+    for path in sorted((ROOT/'content/enhancements').glob('b*-visuals.json')):
+        data=json.loads(path.read_text('utf-8'))
+        if data.get('version')!=1 or not isinstance(data.get('topics'),dict):
+            raise ValueError(f'Manifiesto editorial inválido: {path}')
+        duplicates=set(enhancements)&set(data['topics'])
+        if duplicates:raise ValueError(f'Temas editoriales duplicados en {path}: {sorted(duplicates)}')
+        enhancements.update(data['topics'])
+    return enhancements
+
 def remove_editorial_layer(text, topic_id, enhancements):
     """Recover the canonical study text before declared B1 editorial additions."""
     enhancement=enhancements.get(topic_id,{})
@@ -58,7 +69,7 @@ def main():
         else:checks.append(message)
     syllabus=load('data/syllabus.json'); blocks=syllabus['blocks'];topics={t['id']:t for b in blocks for t in b['topics']}
     manifest=load('data/gsi-source-manifest.json'); index=load('data/topic-content.json');sources={s['id']:s for s in load('data/sources.json')['sources']}
-    enhancements=load('content/enhancements/b1-visuals.json')['topics']
+    enhancements=load_enhancements()
     inventory=load('data/gsi-drive-inventory.json'); known={e['id'] for e in inventory['main']}|{e['id'] for e in inventory['auxiliary']['items']}|{e['id'] for e in inventory['auxiliary']['roots']}
     check([len(b['topics']) for b in blocks]==COUNTS and len(topics)==57,'57 temas; distribución 10/16/15/16')
     check([o['id'] for o in load('data/oppositions.json')['oppositions']]==['OPP-GSI'],'Única oposición GSI')
@@ -89,8 +100,8 @@ def main():
         for link in frag.links:
             if link.startswith('#temario/'):
                 route=link.split('/');check(route[1] in topics and (len(route)<3 or route[2] in frag.ids),tid+': enlace de sección válido')
-            elif link.startswith('assets/diagrams/b1/'):
-                check((ROOT/link).is_file() and link.endswith('.svg'),tid+': diagrama SVG local resoluble')
+            elif re.fullmatch(r'assets/diagrams/b[1-4]/[^/]+\.svg',link):
+                check((ROOT/link).is_file(),tid+': diagrama SVG local resoluble')
             else:check(link.startswith('https://'),tid+': URL de fuente HTTPS')
     register=load('data/gsi-document-register.json')
     conversions={e['output']:e for e in load('logs/gsi-conversions.json') if e['status']=='converted'}

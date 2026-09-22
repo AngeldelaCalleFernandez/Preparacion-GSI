@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Proceso, hilos y estados de ejecución</title>
+  <desc id="desc">Un proceso contiene memoria y recursos compartidos y varios hilos; a la derecha se muestran estados preparado, ejecución y bloqueado con sus transiciones.</desc>
+  <style>text{font-family:system-ui,sans-serif;fill:#172b42}.h{font-size:34px;font-weight:800}.t{font-size:23px;font-weight:750}.n{font-size:17px}.k{font-size:15px;font-weight:800}.box{stroke:#244f78;stroke-width:3}.arrow{stroke:#2f6fb2;stroke-width:4;fill:none;marker-end:url(#a)}</style><defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0 0 6 9 3z" fill="#2f6fb2"/></marker></defs>
+  <rect width="1200" height="700" rx="24" fill="#f7fbff"/><text x="600" y="55" text-anchor="middle" class="h">Proceso ≠ hilo · concurrencia ≠ paralelismo</text>
+  <rect x="55" y="105" width="500" height="470" rx="24" fill="#e3efff" class="box"/><text x="305" y="148" text-anchor="middle" class="t">PROCESO</text><text x="305" y="180" text-anchor="middle" class="n">espacio de direcciones, estado y recursos</text>
+  <rect x="95" y="220" width="420" height="95" rx="16" fill="#fff" class="box"/><text x="305" y="258" text-anchor="middle" class="t">Memoria y recursos compartidos</text><text x="305" y="288" text-anchor="middle" class="n">código · datos · ficheros · identificadores</text>
+  <rect x="95" y="355" width="115" height="120" rx="16" fill="#e9f5ec" class="box"/><text x="152" y="400" text-anchor="middle" class="t">Hilo 1</text><text x="152" y="435" text-anchor="middle" class="n">pila</text>
+  <rect x="247" y="355" width="115" height="120" rx="16" fill="#e9f5ec" class="box"/><text x="304" y="400" text-anchor="middle" class="t">Hilo 2</text><text x="304" y="435" text-anchor="middle" class="n">pila</text>
+  <rect x="400" y="355" width="115" height="120" rx="16" fill="#e9f5ec" class="box"/><text x="457" y="400" text-anchor="middle" class="t">Hilo 3</text><text x="457" y="435" text-anchor="middle" class="n">pila</text>
+  <text x="790" y="130" text-anchor="middle" class="t">Planificación de una unidad ejecutable</text>
+  <rect x="660" y="195" width="260" height="90" rx="45" fill="#fff3d6" class="box"/><text x="790" y="248" text-anchor="middle" class="t">PREPARADO</text>
+  <path d="M790 285V342" class="arrow"/><text x="806" y="320" class="k">dispatch</text>
+  <rect x="660" y="350" width="260" height="90" rx="45" fill="#e9f5ec" class="box"/><text x="790" y="403" text-anchor="middle" class="t">EJECUCIÓN</text>
+  <path d="M920 395H1010" class="arrow"/><rect x="1000" y="350" width="160" height="90" rx="45" fill="#f3eafa" class="box"/><text x="1080" y="403" text-anchor="middle" class="t">BLOQUEADO</text>
+  <path d="M1080 350C1080 250 940 230 920 240" class="arrow"/><text x="984" y="260" class="k">evento</text>
+  <path d="M660 410C570 410 570 240 660 240" class="arrow"/><text x="575" y="330" class="k">desalojo</text>
+  <text x="790" y="525" text-anchor="middle" class="n">Un proceso puede tener un hilo o varios.</text><text x="790" y="558" text-anchor="middle" class="n">Compartir recursos exige sincronización.</text>
+  <rect x="650" y="595" width="450" height="48" rx="24" fill="#173a63"/><text x="875" y="625" text-anchor="middle" fill="#fff" class="k">DEADLOCK: CUATRO CONDICIONES SIMULTÁNEAS</text><style>text[fill="#fff"]{fill:#fff}</style>
+</svg>

@@ -24,7 +24,7 @@ COUNTS = [10, 16, 15, 16]
 DRIVE_ROOT = 'https://drive.google.com/drive/folders/1bmBgrybIUDyT1owpnooU8Oq5FH4wLrp2'
 BOE_URL = 'https://www.boe.es/buscar/doc.php?id=BOE-A-2025-26262'
 TOPIC = re.compile(r'^(I|II|III|IV)\.(\d{1,2})\s*[—–-]\s*(.+)')
-ENHANCEMENTS_PATH = ROOT / 'content/enhancements/b1-visuals.json'
+ENHANCEMENTS_DIR = ROOT / 'content/enhancements'
 HTML_OUTPUT_REPLACEMENTS = {
     # Preserve two pre-existing reviewed HTML corrections whose Markdown source
     # had already been updated while the native snapshot remained older.
@@ -92,12 +92,16 @@ def text_of(element):
     return ''.join(e.get('textRun', {}).get('content', '') for e in element.get('paragraph', {}).get('elements', [])).strip()
 
 def load_enhancements():
-    if not ENHANCEMENTS_PATH.exists():
-        return {}
-    data = json.loads(ENHANCEMENTS_PATH.read_text('utf-8'))
-    if data.get('version') != 1 or not isinstance(data.get('topics'), dict):
-        raise ValueError(f'Invalid enhancement manifest: {ENHANCEMENTS_PATH}')
-    return data['topics']
+    enhancements = {}
+    for path in sorted(ENHANCEMENTS_DIR.glob('b*-visuals.json')):
+        data = json.loads(path.read_text('utf-8'))
+        if data.get('version') != 1 or not isinstance(data.get('topics'), dict):
+            raise ValueError(f'Invalid enhancement manifest: {path}')
+        duplicates = set(enhancements) & set(data['topics'])
+        if duplicates:
+            raise ValueError(f'Duplicate enhancement topics in {path}: {sorted(duplicates)}')
+        enhancements.update(data['topics'])
+    return enhancements
 
 def replace_paragraph_text(elements, replacements, topic_id):
     """Apply small, explicit editorial replacements without altering source snapshots."""
@@ -119,6 +123,8 @@ def replace_paragraph_text(elements, replacements, topic_id):
             style = deepcopy(runs[0].get('textRun', {}).get('textStyle', {}))
             updated = current.replace(source, replacement['to'], 1)
             runs[:] = [{'textRun': {'content': updated, 'textStyle': style}}]
+            if replacement.get('namedStyleType'):
+                paragraph.setdefault('paragraphStyle', {})['namedStyleType'] = replacement['namedStyleType']
             found = True
             break
         if not found:
