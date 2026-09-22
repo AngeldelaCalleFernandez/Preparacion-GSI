@@ -22,7 +22,7 @@
 <h3 id="estudio-06">6. CMDB/configuración</h3>
 <p>Identificar elementos de configuración, versiones, relaciones y estado. CMDB no debe convertirse en inventario desactualizado: automatizar discovery cuando compense.</p>
 <h3 id="estudio-07">6.1 Estrategias de sustitución</h3>
-<p><strong>Base A1:</strong> 101 + 100. Se amplían las cuatro estrategias clásicas porque son muy preguntables.</p>
+<p><strong>Las cuatro estrategias clásicas de sustitución deben compararse por velocidad, coexistencia, reversibilidad, coste y riesgo operativo.</strong></p>
 <table>
 <tr>
 <th scope="col"><p>Estrategia</p></th>
@@ -53,6 +53,7 @@
 <h3 id="estudio-08">6.2 Recepción</h3>
 <p>La recepción técnica comprueba entregables y criterios contractuales: software, código/artefactos, licencias, documentación, formación, pruebas, vulnerabilidades, inventario, configuración e infraestructura. Debe existir evidencia de aceptación y lista de defectos/condiciones pendientes.</p>
 <h3 id="estudio-09">6.3 Plan de cutover</h3>
+<section class="topic-visual-block" aria-labelledby="b3-t08-visual-01-title"><h4 id="b3-t08-visual-01-title">Cutover controlado y estrategias de sustitución</h4><figure class="topic-visual"><p class="topic-visual__mobile-hint" aria-hidden="true">Desliza horizontalmente para explorar el esquema con texto legible.</p><img src="assets/diagrams/b3/b3-t08-cutover.svg" alt="Flujo de implantación desde ensayo y congelación hasta backup, migración, reconciliación, decisión go o no-go, arranque, hypercare y revisión, comparando big bang, paralelo, piloto y fases." loading="lazy" decoding="async"><figcaption><span>Conecta la estrategia elegida con la secuencia operativa y la reversión.</span><strong>Qué debes recordar:</strong> El punto de no retorno, la reconciliación y un rollback probado convierten una instalación en una transición gobernada.</figcaption></figure></section>
 <p>Secuencia minuto/hora: congelación, backup, parada, exportación, migración, validación, cambio de DNS/rutas, arranque, smoke tests, comunicación y decisión go/no-go. Define <strong>punto de no retorno</strong> y pasos de rollback con responsables.</p>
 <h3 id="estudio-10">6.4 Evaluación postimplantación</h3>
 <p>Compara objetivos con resultados: disponibilidad, rendimiento, incidencias, adopción, satisfacción, costes y beneficios. Registra lecciones y deuda residual. Una implantación técnicamente correcta puede fracasar por adopción o soporte.</p>

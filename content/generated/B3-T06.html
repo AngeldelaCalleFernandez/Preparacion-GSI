@@ -10,6 +10,7 @@
 <h3 id="estudio-03">3. Build reproducible</h3>
 <p>Dependencias fijadas, lockfiles, repositorios controlados, artefactos inmutables, versiones, checksums, SBOM. “Funciona en mi máquina” se reduce con entornos reproducibles y CI.</p>
 <h3 id="estudio-04">4. Integración continua</h3>
+<section class="topic-visual-block" aria-labelledby="b3-t06-visual-01-title"><h4 id="b3-t06-visual-01-title">Pipeline trazable desde el código hasta la operación</h4><figure class="topic-visual"><p class="topic-visual__mobile-hint" aria-hidden="true">Desliza horizontalmente para explorar el esquema con texto legible.</p><img src="assets/diagrams/b3/b3-t06-pipeline-entrega.svg" alt="Pipeline de integración y entrega con commit, build reproducible, pruebas, análisis de seguridad, artefacto firmado, promoción por entornos, despliegue progresivo, observabilidad, documentación y formación." loading="lazy" decoding="async"><figcaption><span>Integra construcción, calidad, despliegue y transferencia de conocimiento.</span><strong>Qué debes recordar:</strong> Se promueve el mismo artefacto inmutable; Continuous Delivery conserva una decisión de despliegue y Continuous Deployment la automatiza.</figcaption></figure></section>
 <p>Cambios frecuentes integrados en rama compartida con build y pruebas automáticas. Pipeline típico: checkout → dependencias → compile/build → static analysis → unit tests → package → security scans → artefacto.</p>
 <h3 id="estudio-05">5. Entrega/despliegue continuo</h3>
 <p>Continuous Delivery mantiene software desplegable y puede requerir aprobación; Continuous Deployment despliega automáticamente cambios que superan controles. No son sinónimos.</p>
@@ -26,7 +27,7 @@
 <h3 id="estudio-11">11. Formación y transición</h3>
 <p>Plan de capacitación por perfiles, materiales, sesiones, entorno de prácticas, evaluación y soporte inicial. La aceptación operativa incluye conocimiento y procedimientos.</p>
 <h3 id="estudio-12">11.1 Entornos de construcción y generación de código</h3>
-<p><strong>Base A1:</strong> 097 + 102. Se amplían los elementos que el epígrafe oficial enumera de manera literal.</p>
+<p><strong>La construcción abarca herramientas, dependencias, generación de código, pruebas, empaquetado y promoción del mismo artefacto, junto con documentación y formación para operar el sistema.</strong></p>
 <p>Un entorno de construcción integra compiladores/intérpretes, gestor de dependencias, build tool, análisis estático, tests, empaquetado y repositorio de artefactos. Ejemplos de categorías: Maven/Gradle en Java, dotnet CLI/MSBuild en .NET, npm/pnpm/yarn en JS, make/CMake en C/C++. Memoriza la función, no una bandera concreta.</p>
 <p>La <strong>generación de código</strong> puede partir de modelos, schemas, contratos OpenAPI/AsyncAPI, ORM o IDL. Reduce trabajo repetitivo, pero el código generado debe versionarse o reproducirse de forma determinista según estrategia y no editarse manualmente si se regenerará.</p>
 <h3 id="estudio-13">11.2 Entornos y promoción</h3>

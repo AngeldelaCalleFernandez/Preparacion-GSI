@@ -16,7 +16,8 @@
 <h3 id="estudio-06">6. Optimización del diseño</h3>
 <p>Índices, particionado, tipos, cardinalidad, consultas y estadísticas. Un índice mejora ciertas lecturas y penaliza escrituras/mantenimiento.</p>
 <h3 id="estudio-07">6.1 Del modelo conceptual al físico</h3>
-<p><strong>Base A1 principal:</strong> 063 + 064, ya muy aprovechados en II.05. En este tema el foco no es SQL en general sino el <strong>proceso de diseño</strong> y la concurrencia.</p>
+<section class="topic-visual-block" aria-labelledby="b3-t04-visual-01-title"><h4 id="b3-t04-visual-01-title">Diseño de datos y control de concurrencia</h4><figure class="topic-visual"><p class="topic-visual__mobile-hint" aria-hidden="true">Desliza horizontalmente para explorar el esquema con texto legible.</p><img src="assets/diagrams/b3/b3-t04-datos-concurrencia.svg" alt="Flujo desde modelo conceptual a modelo lógico normalizado y diseño físico, conectado con transacciones ACID y las estrategias de bloqueo, MVCC y control optimista frente a anomalías concurrentes." loading="lazy" decoding="async"><figcaption><span>Relaciona las tres capas de diseño con las decisiones de integridad, rendimiento y concurrencia.</span><strong>Qué debes recordar:</strong> Normalizar protege semántica; índices optimizan accesos y el aislamiento controla qué interferencias concurrentes se aceptan.</figcaption></figure></section>
+<p><strong>El foco del tema es transformar reglas de negocio en diseño conceptual, lógico y físico, y preservar la consistencia cuando varias transacciones acceden a los datos.</strong></p>
 <ul>
 <li><strong>Conceptual:</strong> entidades, relaciones, atributos, identificadores, cardinalidades y reglas.</li>
 <li><strong>Lógico:</strong> transformación al modelo relacional: tablas, PK/FK, restricciones y normalización.</li>

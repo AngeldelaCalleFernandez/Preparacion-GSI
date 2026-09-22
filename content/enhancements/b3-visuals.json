@@ -1,0 +1,141 @@
+{
+  "version": 1,
+  "topics": {
+    "B3-T01": {
+      "classification": "REESCRITURA SELECTIVA",
+      "replacements": [{
+        "from": "Base A1 utilizada: A1 086. La fuente es útil para distinguir modelos y actividades. Complemento GSI: se explicita qué se controla en cada transición porque es una pregunta muy aprovechable en supuesto.",
+        "fromMarkdown": "**Base A1 utilizada:** A1 086. La fuente es útil para distinguir modelos y actividades. **Complemento GSI:** se explicita qué se controla en cada transición porque es una pregunta muy aprovechable en supuesto.",
+        "to": "Cada transición del ciclo debe controlarse mediante entradas, salidas, responsables y criterios de paso; esta gobernanza permite conectar modelo, entregables y aceptación."
+      }],
+      "visuals": [{"afterHeading":"3. Modelos clásicos","src":"assets/diagrams/b3/b3-t01-ciclos-vida.svg","title":"Modelos de ciclo de vida según incertidumbre y riesgo","alt":"Comparación visual entre cascada, modelo en V, incremental e iterativo y espiral, indicando secuencia, relación con pruebas, entregas parciales y análisis de riesgos.","description":"Sitúa cada modelo por su forma de avanzar, recibir feedback y tratar el riesgo.","takeaway":"Las actividades del ciclo no desaparecen: cambia su orden, repetición, solapamiento y forma de control."}]
+    },
+    "B3-T02": {
+      "classification": "REESCRITURA SELECTIVA",
+      "replacements": [{
+        "from": "Base A1: 088 + 037; el 095 se conserva solo como apoyo histórico/metodológico. Complemento: se recuperan técnicas de planificación exigidas literalmente por el BOE.",
+        "fromMarkdown": "**Base A1:** 088 + 037; el 095 se conserva solo como apoyo histórico/metodológico. **Complemento:** se recuperan técnicas de planificación exigidas literalmente por el BOE.",
+        "to": "La planificación debe conectar alcance, estimación, dependencias, calendario, coste y evidencia de avance, tanto en enfoques predictivos como adaptativos."
+      }],
+      "visuals": [{"afterHeading":"7.2 Líneas base y seguimiento","src":"assets/diagrams/b3/b3-t02-planificacion-control.svg","title":"Planificar, ejecutar y controlar el desarrollo","alt":"Flujo desde alcance y EDT o backlog hacia estimación, dependencias, línea base o sprint, ejecución, métricas, previsión y control de cambios, diferenciando gobierno predictivo y adaptativo.","description":"Une planificación inicial, seguimiento objetivo y decisión sobre cambios.","takeaway":"WBS y backlog no son sinónimos; ambos necesitan prioridades, responsables, criterios de aceptación y medidas de avance."}]
+    },
+    "B3-T03": {
+      "classification": "REESCRITURA SELECTIVA",
+      "replacements": [{
+        "from": "Base A1: 088 + 094 + 091. El BOE menciona expresamente la derivación de sistemas existentes, que en la V2 anterior estaba demasiado implícita.",
+        "fromMarkdown": "**Base A1:** 088 + 094 + 091. El BOE menciona expresamente la **derivación de sistemas existentes**, que en la V2 anterior estaba demasiado implícita.",
+        "to": "La derivación de sistemas existentes exige descubrir procesos, datos, interfaces, reglas y excepciones sin convertir automáticamente cada limitación heredada en un requisito futuro."
+      }],
+      "visuals": [{"afterHeading":"7.2 Especificación de requisitos","src":"assets/diagrams/b3/b3-t03-requisitos-trazabilidad.svg","title":"De la necesidad a una prueba trazable","alt":"Cadena de requisitos desde stakeholders y sistema existente, pasando por elicitación, análisis, especificación y priorización, hasta diseño, implementación, prueba y entrega con trazabilidad bidireccional.","description":"Muestra cómo se descubre, especifica, valida y mantiene un requisito.","takeaway":"Un requisito útil es claro y verificable; la trazabilidad permite medir cobertura y analizar el impacto de cada cambio."}]
+    },
+    "B3-T04": {
+      "classification": "REESCRITURA SELECTIVA",
+      "replacements": [{
+        "from": "Base A1 principal: 063 + 064, ya muy aprovechados en II.05. En este tema el foco no es SQL en general sino el proceso de diseño y la concurrencia.",
+        "fromMarkdown": "**Base A1 principal:** 063 + 064, ya muy aprovechados en II.05. En este tema el foco no es SQL en general sino el **proceso de diseño** y la concurrencia.",
+        "to": "El foco del tema es transformar reglas de negocio en diseño conceptual, lógico y físico, y preservar la consistencia cuando varias transacciones acceden a los datos."
+      }],
+      "visuals": [{"afterHeading":"6.1 Del modelo conceptual al físico","src":"assets/diagrams/b3/b3-t04-datos-concurrencia.svg","title":"Diseño de datos y control de concurrencia","alt":"Flujo desde modelo conceptual a modelo lógico normalizado y diseño físico, conectado con transacciones ACID y las estrategias de bloqueo, MVCC y control optimista frente a anomalías concurrentes.","description":"Relaciona las tres capas de diseño con las decisiones de integridad, rendimiento y concurrencia.","takeaway":"Normalizar protege semántica; índices optimizan accesos y el aislamiento controla qué interferencias concurrentes se aceptan."}]
+    },
+    "B3-T05": {
+      "classification": "REESCRITURA SELECTIVA",
+      "replacements": [{
+        "from": "Base A1: 070 + 071 + 076. Hueco GSI completado: el BOE pide expresamente estrategias de diseño, no solo complejidad y ejemplos de ordenación.",
+        "fromMarkdown": "**Base A1:** 070 + 071 + 076. **Hueco GSI completado:** el BOE pide expresamente estrategias de diseño, no solo complejidad y ejemplos de ordenación.",
+        "to": "Las estrategias de diseño explican cómo abordar el problema; la estructura de datos y la complejidad determinan el coste de las operaciones que la solución necesita."
+      }],
+      "visuals": [{"afterHeading":"6.1 Estrategias de diseño de algoritmos","src":"assets/diagrams/b3/b3-t05-algoritmos-ia.svg","title":"Del problema al algoritmo y al modelo de IA","alt":"Mapa de decisión que conecta operaciones y restricciones con estructuras de datos, estrategias como divide y vencerás, voraz, programación dinámica y backtracking, y el ciclo de datos, entrenamiento, evaluación e inferencia de IA.","description":"Evita mezclar abstracción de datos, técnica algorítmica y aprendizaje automático.","takeaway":"Primero define problema, operaciones y métricas; después elige estructura, algoritmo o modelo, y valida su coste y generalización."}]
+    },
+    "B3-T06": {
+      "classification": "REESCRITURA SELECTIVA",
+      "replacements": [{
+        "from": "Base A1: 097 + 102. Se amplían los elementos que el epígrafe oficial enumera de manera literal.",
+        "fromMarkdown": "**Base A1:** 097 + 102. Se amplían los elementos que el epígrafe oficial enumera de manera literal.",
+        "to": "La construcción abarca herramientas, dependencias, generación de código, pruebas, empaquetado y promoción del mismo artefacto, junto con documentación y formación para operar el sistema."
+      }],
+      "visuals": [{"afterHeading":"4. Integración continua","src":"assets/diagrams/b3/b3-t06-pipeline-entrega.svg","title":"Pipeline trazable desde el código hasta la operación","alt":"Pipeline de integración y entrega con commit, build reproducible, pruebas, análisis de seguridad, artefacto firmado, promoción por entornos, despliegue progresivo, observabilidad, documentación y formación.","description":"Integra construcción, calidad, despliegue y transferencia de conocimiento.","takeaway":"Se promueve el mismo artefacto inmutable; Continuous Delivery conserva una decisión de despliegue y Continuous Deployment la automatiza."}]
+    },
+    "B3-T07": {
+      "classification": "REESCRITURA SELECTIVA",
+      "replacements": [{
+        "from": "Base principal: A1 096 (resumen de 16 páginas). La V2 anterior infrautilizaba esta fuente. Se recuperan planificación, condiciones, diseño, ejecución, criterios de salida, reporting y cierre.",
+        "fromMarkdown": "**Base principal:** A1 096 (resumen de 16 páginas). La V2 anterior infrautilizaba esta fuente. Se recuperan planificación, condiciones, diseño, ejecución, criterios de salida, reporting y cierre.",
+        "to": "La estrategia de pruebas debe cubrir planificación, condiciones, diseño, datos y entornos, ejecución, defectos, criterios de salida, informe y cierre."
+      }],
+      "visuals": [{"afterHeading":"11.1 Plan de pruebas y documentación","src":"assets/diagrams/b3/b3-t07-estrategia-pruebas.svg","title":"Estrategia de pruebas basada en riesgo y evidencia","alt":"Matriz que cruza objetos de prueba —software, hardware, datos y procedimientos— con niveles, técnicas, datos y tipos no funcionales, culminando en defectos, criterios de salida e informe de aceptación.","description":"Ordena las dimensiones que deben aparecer en un plan de pruebas completo.","takeaway":"Nivel, tipo, técnica y objeto son ejes distintos; la aceptación necesita evidencia y riesgo residual, no solo tests en verde."}]
+    },
+    "B3-T08": {
+      "classification": "REESCRITURA SELECTIVA",
+      "replacements": [{
+        "from": "Base A1: 101 + 100. Se amplían las cuatro estrategias clásicas porque son muy preguntables.",
+        "fromMarkdown": "**Base A1:** 101 + 100. Se amplían las cuatro estrategias clásicas porque son muy preguntables.",
+        "to": "Las cuatro estrategias clásicas de sustitución deben compararse por velocidad, coexistencia, reversibilidad, coste y riesgo operativo."
+      }],
+      "visuals": [{"afterHeading":"6.3 Plan de cutover","src":"assets/diagrams/b3/b3-t08-cutover.svg","title":"Cutover controlado y estrategias de sustitución","alt":"Flujo de implantación desde ensayo y congelación hasta backup, migración, reconciliación, decisión go o no-go, arranque, hypercare y revisión, comparando big bang, paralelo, piloto y fases.","description":"Conecta la estrategia elegida con la secuencia operativa y la reversión.","takeaway":"El punto de no retorno, la reconciliación y un rollback probado convierten una instalación en una transición gobernada."}]
+    },
+    "B3-T09": {
+      "classification": "REESCRITURA SELECTIVA",
+      "replacements": [{
+        "from": "Base A1: 089 + 090 + 093 (+092). Análisis identifica conceptos, responsabilidades y relaciones del dominio sin comprometer prematuramente tecnología. Diseño traduce el modelo a clases/componentes/interfaces y decisiones técnicas.",
+        "fromMarkdown": "**Base A1:** 089 + 090 + 093 (+092). **Análisis** identifica conceptos, responsabilidades y relaciones del dominio sin comprometer prematuramente tecnología. **Diseño** traduce el modelo a clases/componentes/interfaces y decisiones técnicas.",
+        "to": "El análisis identifica conceptos, responsabilidades y relaciones del dominio; el diseño traduce ese modelo a clases, componentes, interfaces y decisiones técnicas."
+      }],
+      "visuals": [{"afterHeading":"8.3 UML: qué muestra cada diagrama","src":"assets/diagrams/b3/b3-t09-up-uml-patrones.svg","title":"Proceso Unificado, UML y patrones: tres funciones distintas","alt":"Esquema que separa las fases Inicio, Elaboración, Construcción y Transición del Proceso Unificado, los diagramas UML elegidos según la pregunta y los patrones seleccionados por intención.","description":"Evita confundir proceso de desarrollo, lenguaje de modelado y solución de diseño recurrente.","takeaway":"UP organiza el trabajo, UML comunica modelos y un patrón resuelve un problema concreto con consecuencias que deben justificarse."}]
+    },
+    "B3-T10": {
+      "classification": "REESCRITURA SELECTIVA",
+      "replacements": [{
+        "from": "Base A1: 067, versión 31.1 actualizada el 19/02/2026. Es una fuente especialmente valiosa. Actualización oficial: Jakarta EE 11 es la plataforma vigente de referencia y soporta Java SE 17 o superior, con mejoras al usar Java 21.",
+        "fromMarkdown": "**Base A1:** 067, versión 31.1 actualizada el 19/02/2026. Es una fuente especialmente valiosa. **Actualización oficial:** Jakarta EE 11 es la plataforma vigente de referencia y soporta Java SE 17 o superior, con mejoras al usar Java 21.",
+        "to": "Jakarta EE 11 es la plataforma final vigente de referencia y requiere Java SE 17 o superior; algunas especificaciones aprovechan capacidades de Java 21, como los hilos virtuales gestionados. Jakarta EE 12 continúa en desarrollo a 22/09/2026."
+      }],
+      "visuals": [{"afterHeading":"8.2 Perfiles y componentes Jakarta EE 11","src":"assets/diagrams/b3/b3-t10-jakarta-ee.svg","title":"Arquitectura y perfiles de Jakarta EE 11","alt":"Arquitectura por capas con cliente y REST o Servlet, CDI y servicios de negocio, Persistence y Transactions, mensajería y seguridad, rodeada por los perfiles Core, Web y Platform sobre Java 17 o superior.","description":"Sitúa las especificaciones por responsabilidad y alcance de perfil.","takeaway":"Jakarta EE define especificaciones; el runtime las implementa. CDI, Persistence, Transactions, REST y Security cubren responsabilidades distintas."}]
+    },
+    "B3-T11": {
+      "classification": "REESCRITURA SELECTIVA",
+      "replacements": [{
+        "from": "Base A1: 066 (2023), útil para CLR, bibliotecas, ADO.NET, EF y LINQ. Actualización oficial: a 21/08/2026 .NET 10 es LTS activo hasta 14/11/2028; .NET 8 y .NET 9 terminan soporte en noviembre de 2026. No estudiar .NET 6 como “LTS vigente”.",
+        "fromMarkdown": "**Base A1:** 066 (2023), útil para CLR, bibliotecas, ADO.NET, EF y LINQ. **Actualización oficial:** a 21/08/2026 .NET 10 es LTS activo hasta 14/11/2028; .NET 8 y .NET 9 terminan soporte en noviembre de 2026. No estudiar .NET 6 como “LTS vigente”.",
+        "to": "A 22/09/2026, .NET 10 es la versión LTS vigente y está soportada hasta noviembre de 2028; .NET 8 LTS y .NET 9 STS continúan soportadas hasta noviembre de 2026. La versión se elige también por compatibilidad y ciclo de soporte."
+      }],
+      "visuals": [{"afterHeading":"8.3 Servicios web","src":"assets/diagrams/b3/b3-t11-dotnet.svg","title":"Plataforma .NET moderna de extremo a extremo","alt":"Arquitectura desde C sharp y el SDK hacia IL y CLR, ASP.NET Core con middleware e inyección, servicios, Entity Framework Core o ADO.NET, identidad, observabilidad y despliegue framework-dependent o self-contained.","description":"Relaciona herramientas, runtime, modelo web, persistencia, seguridad y despliegue.","takeaway":"CLR ejecuta IL administrado; ASP.NET Core compone la aplicación y EF Core es un ORM, no el runtime ni la base de datos."}]
+    },
+    "B3-T12": {
+      "classification": "REESCRITURA SELECTIVA",
+      "replacements": [{
+        "from": "Base A1: 065 (+058). El A1 065 es extenso pero de 2023: se conservan fundamentos y se actualizan prácticas de seguridad/arquitectura.",
+        "fromMarkdown": "**Base A1:** 065 (+058). El A1 065 es extenso pero de 2023: se conservan fundamentos y se actualizan prácticas de seguridad/arquitectura.",
+        "to": "Los fundamentos de navegador, HTTP y servidor se combinan con prácticas actuales de arquitectura responsive, APIs, identidad, seguridad, rendimiento e internacionalización."
+      }],
+      "visuals": [{"afterHeading":"8.2 Ciclo HTTP y estado","src":"assets/diagrams/b3/b3-t12-web-segura.svg","title":"Petición web, estado y controles de seguridad","alt":"Flujo desde navegador y CDN o reverse proxy hasta API, servicios y datos, mostrando TLS, cookies o tokens, CORS, CSP, control de acceso, validación, caché, observabilidad e internacionalización.","description":"Coloca cada control en la capa donde actúa y muestra que HTTP no mantiene sesión por sí mismo.","takeaway":"TLS protege el transporte; CORS no autentica, CSP no autoriza y la validación de seguridad siempre se repite en servidor."}]
+    },
+    "B3-T13": {
+      "classification": "REESCRITURA SELECTIVA",
+      "replacements": [{
+        "from": "Base A1 correcta: 103, versión 31.1 actualizada 24/02/2026. Se elimina la vieja derivación hacia A1 050. Complemento oficial: ISO/IEC 25010:2023 es la edición vigente del modelo de calidad de producto y define nueve características.",
+        "fromMarkdown": "**Base A1 correcta:** 103, versión 31.1 actualizada 24/02/2026. Se elimina la vieja derivación hacia A1 050. **Complemento oficial:** ISO/IEC 25010:2023 es la edición vigente del modelo de calidad de producto y define nueve características.",
+        "to": "ISO/IEC 25010:2023 es la edición vigente del modelo de calidad de producto y define nueve características; SQuaRE conecta requisitos, medidas, evaluación y mejora."
+      }],
+      "visuals": [{"afterHeading":"6.2 Nueve características de ISO/IEC 25010:2023","src":"assets/diagrams/b3/b3-t13-calidad.svg","title":"De los atributos de calidad a la evidencia","alt":"Cadena que agrupa las nueve características de ISO IEC 25010 de 2023, las convierte en requisitos medibles, selecciona métricas y pruebas, aplica quality gates y termina en evaluación y mejora.","description":"Evita memorizar el modelo sin conectarlo con medidas, aceptación y operación.","takeaway":"Una métrica necesita definición, unidad, periodo y objetivo; cobertura o complejidad aisladas no equivalen a calidad total."}]
+    },
+    "B3-T14": {
+      "classification": "REESCRITURA SELECTIVA",
+      "replacements": [{
+        "from": "Base A1: 044 + 094 + 133. Complemento vigente: RD 1112/2018 para sitios web y apps móviles del sector público; EN 301 549 como estándar europeo técnico. W3C mantiene WCAG 2.2 como recomendación más reciente y anima a usarla; la versión vigente de EN 301 549 todavía referencia ampliamente WCAG 2.1, por lo que no deben confundirse “última recomendación W3C” y “referencia legal armonizada”.",
+        "fromMarkdown": "**Base A1:** 044 + 094 + 133. **Complemento vigente:** RD 1112/2018 para sitios web y apps móviles del sector público; EN 301 549 como estándar europeo técnico. W3C mantiene WCAG 2.2 como recomendación más reciente y anima a usarla; la versión vigente de EN 301 549 todavía referencia ampliamente WCAG 2.1, por lo que no deben confundirse “última recomendación W3C” y “referencia legal armonizada”.",
+        "to": "En el sector público español, el RD 1112/2018 exige integrar accesibilidad durante diseño, gestión y mantenimiento. La presunción de conformidad se vincula a la norma armonizada publicada; WCAG 2.2 es la recomendación W3C más reciente, pero no debe confundirse automáticamente con la referencia jurídica aplicable."
+      }],
+      "visuals": [{"afterHeading":"8.2 Conformidad y evaluación","src":"assets/diagrams/b3/b3-t14-accesibilidad-ux.svg","title":"Accesibilidad, usabilidad y UX durante todo el ciclo","alt":"Ciclo desde investigación y requisitos hasta diseño semántico, construcción, evaluación automática y manual, pruebas con usuarios, declaración, publicación y monitorización, guiado por los principios WCAG POUR.","description":"Integra cumplimiento técnico, facilidad de uso y experiencia sin tratarlos como sinónimos.","takeaway":"Accesibilidad se verifica con herramientas y revisión humana; usabilidad mide tareas en contexto y UX abarca la experiencia global."}]
+    },
+    "B3-T15": {
+      "classification": "REESTRUCTURAR",
+      "replacements": [
+        {"from":"Base A1: 075. Complemento GSI: se amplía “tecnologías y algoritmos” exigido por BOE.","fromMarkdown":"**Base A1:** 075. **Complemento GSI:** se amplía “tecnologías y algoritmos” exigido por BOE.","to":"Las tareas de minería deben asociarse con algoritmos y métricas adecuados al objetivo, la distribución de datos y el coste de los errores."},
+        {"from":"ANEXO A — Memorización rápida","fromMarkdown":"# ANEXO A — Memorización rápida","to":"15. Memorización transversal del Bloque III","namedStyleType":"HEADING_2"},
+        {"from":"ANEXO B — Estrategia de estudio","fromMarkdown":"# ANEXO B — Estrategia de estudio","to":"15.1 Estrategia de estudio","namedStyleType":"HEADING_2"},
+        {"from":"Fuentes y control de actualidad","fromMarkdown":"# Fuentes y control de actualidad","to":"16. Fuentes y control de actualidad","namedStyleType":"HEADING_2"}
+      ],
+      "visuals": [{"afterHeading":"11.7 Batch vs streaming","src":"assets/diagrams/b3/b3-t15-plataforma-datos.svg","title":"Plataforma de datos: de la ingesta al valor","alt":"Arquitectura de datos con fuentes e ingesta batch o streaming, almacenamiento HDFS, objetos, lake o warehouse, procesamiento Hadoop o Spark, gobierno transversal y consumos OLAP, minería, IA y servicios NoSQL.","description":"Relaciona tecnologías con función, latencia, modelo de acceso y gobierno.","takeaway":"Hadoop no es todo Big Data y NoSQL no sustituye por defecto al modelo relacional: cada pieza debe justificarse por requisitos."}]
+    }
+  }
+}
