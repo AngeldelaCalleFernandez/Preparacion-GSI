@@ -81,7 +81,7 @@ La aplicación ofrece cuatro simulacros, ocho casos A/B, cinco respuestas y 180 
 - Los 57 temas pasaron las pruebas visuales en escritorio y móvil.
 - La aplicación permanece estática, sin framework, backend ni nuevas dependencias.
 - La primera ejecución aislada de las pruebas visuales no encontró `playwright`; al indicar el runtime ya incluido mediante `PLAYWRIGHT_MODULE`, las cuatro pasaron. No fue necesario instalar nada.
-- Ejecutar la suite con el Python global devuelve código 2 si falta `jsonschema`. El comando reproducible documentado usa `.venv\Scripts\python.exe`.
+- La línea base con el Python global devolvió código 2 porque faltaba `jsonschema`. El orquestador ahora detecta el entorno `.venv` del proyecto y lo usa para las etapas Python, por lo que el comando documentado `python scripts/run_gsi_suite.py` es reproducible sin instalar dependencias en el intérprete global.
 
 ## Archivos principales
 

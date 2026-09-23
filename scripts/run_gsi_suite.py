@@ -12,6 +12,26 @@ from datetime import datetime, timezone
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def validation_python():
+    candidates = [
+        Path(sys.executable),
+        ROOT / '.venv/Scripts/python.exe',
+        ROOT / '.venv/bin/python',
+    ]
+    for candidate in candidates:
+        if not candidate.is_file():
+            continue
+        probe = subprocess.run(
+            [str(candidate), '-c', 'import jsonschema'],
+            cwd=ROOT,
+            capture_output=True,
+            timeout=20,
+        )
+        if probe.returncode == 0:
+            return str(candidate)
+    return sys.executable
+
+
 def main():
     env = os.environ.copy()
     env['PYTHONIOENCODING'] = 'utf-8'
@@ -19,12 +39,15 @@ def main():
     bundled = Path.home() / '.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.mjs'
     if not env.get('PLAYWRIGHT_MODULE') and bundled.is_file():
         env['PLAYWRIGHT_MODULE'] = str(bundled)
+    python = validation_python()
+    if Path(python).resolve() != Path(sys.executable).resolve():
+        print(f'Python de validación: {Path(python).relative_to(ROOT)}', flush=True)
     stages = [
-        ('Integridad y cobertura GSI', [sys.executable, 'scripts/validate_gsi_final.py']),
-        ('JSON y esquemas', [sys.executable, 'scripts/validate_json.py']),
-        ('Referencias', [sys.executable, 'scripts/validate_references.py']),
-        ('Preguntas', [sys.executable, 'scripts/validate_questions.py']),
-        ('Calidad objetiva de preguntas', [sys.executable, 'scripts/audit_question_quality.py']),
+        ('Integridad y cobertura GSI', [python, 'scripts/validate_gsi_final.py']),
+        ('JSON y esquemas', [python, 'scripts/validate_json.py']),
+        ('Referencias', [python, 'scripts/validate_references.py']),
+        ('Preguntas', [python, 'scripts/validate_questions.py']),
+        ('Calidad objetiva de preguntas', [python, 'scripts/audit_question_quality.py']),
     ]
     results = []
     if node:
