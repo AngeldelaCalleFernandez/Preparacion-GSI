@@ -6,6 +6,7 @@ No question status is changed. A passing structural check is never editorial app
 import csv
 import hashlib
 import json
+import random
 import re
 import sys
 import subprocess
@@ -16,6 +17,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 from build_gsi_content import markdown_replacement_pair, markdown_topics
+from build_gsi_authored_questions import load_length_reviews
 
 ROOT=Path(__file__).resolve().parents[1]
 from datetime import date
@@ -138,6 +140,7 @@ def main():
             if line.startswith('@'):topic=line[1:]
             elif line and not line.startswith('#'):
                 counts[topic]=counts.get(topic,0)+1;drafts[f'AI-GSI-{topic}-{counts[topic]:03}']=(topic,line)
+    length_reviews=load_length_reviews()
     for q in questions:
         label=q['id'];check(q['opposition_id']=='OPP-GSI' and q['topic_id'] in topics and q['block_id']==q['topic_id'][:2],label+': identidad GSI y tema válidos')
         check(len(q['options'])==4 and len({o['id'] for o in q['options']})==4 and len({norm(o['text']) for o in q['options']})==4 and sum(o['id']==q['correct_option'] for o in q['options'])==1,label+': cuatro opciones distintas y una correcta')
@@ -155,7 +158,31 @@ def main():
         check(not q['is_active'] or q['validation_status']=='validated',label+': activación exige revisión')
         if q['origin']=='ai':
             topic,line=drafts[label];fields=line.split('|');section=fields[0]
-            check(q['statement']==fields[1] and sorted(o['text'] for o in q['options'])==sorted(fields[2:6]) and next(o['text'] for o in q['options'] if o['id']==q['correct_option'])==fields[2] and q['feedback']['correct']==fields[6],label+': opciones, respuesta y explicación coinciden con borrador')
+            expected_options=fields[2:6].copy()
+            random.Random(label).shuffle(expected_options)
+            expected_options=dict(zip('ABCD',expected_options))
+            expected_key=next(key for key,value in expected_options.items() if value==fields[2])
+            expected_statement=fields[1]
+            editorial=length_reviews.get(label)
+            if editorial:
+                revision,manifest,reviewed_at=editorial
+                if revision['decision']=='rewrite':
+                    wrong_keys=[key for key in 'ABCD' if key!=expected_key]
+                    for key,value in zip(wrong_keys,revision['distractors']):
+                        expected_options[key]=value
+                    expected_options[expected_key]=revision.get('correct_text',fields[2])
+                    expected_statement=revision.get('statement',fields[1])
+                source_revision=q['source'].get('editorial_revision',{})
+                check(source_revision=={
+                    'decision':revision['decision'],'reason':revision['reason'],
+                    'reviewer_type':'ai_assistant','reviewed_at':reviewed_at,
+                    'manifest':'content/question-drafts/'+manifest,
+                    'base_record_sha256':sha(topic+'\n'+line),
+                },label+': revisión IA trazada sin atribuirla a la persona revisora del borrador')
+                check(q['is_active']==(revision['decision']!='retire'),label+': estado editorial IA aplicado')
+            else:
+                check('editorial_revision' not in q['source'],label+': sin revisión IA ajena al manifiesto')
+            check(q['statement']==expected_statement and {o['id']:o['text'] for o in q['options']}==expected_options and q['correct_option']==expected_key and q['feedback']['correct']==fields[6],label+': borrador y revisión editorial IA sincronizados')
             # Question evidence is a provenance snapshot. Editorial updates to
             # the study page do not rewrite the reviewed question or its source.
             historical_source=sources[q['source']['source_id']]

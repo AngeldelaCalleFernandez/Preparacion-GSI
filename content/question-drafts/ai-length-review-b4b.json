@@ -1,0 +1,217 @@
+{
+  "version": 1,
+  "reviewed_at": "2026-09-23",
+  "reviewer": "Asistente IA, revisión editorial solicitada; no sustituye la aceptación humana previa del borrador",
+  "reviews": {
+    "AI-GSI-B4-T06-020": {
+      "decision": "rewrite",
+      "reason": "Las respuestas anteriores reducían DR a discos o a un manual.",
+      "distractors": [
+        "Datos y servidores; DNS y rutas volverán solos.",
+        "Aplicación y copias, dejando identidades y certificados para después del arranque.",
+        "Inventario de hardware y almacenamiento sin servicios externos dependientes."
+      ]
+    },
+    "AI-GSI-B4-T07-015": {
+      "decision": "rewrite",
+      "reason": "Software y cuentas no eran elementos competidores de cableado.",
+      "distractors": [
+        "Switches, controladores WLAN, VLAN y direcciones IP.",
+        "Rack, alimentación eléctrica, cortafuegos y servidor de autenticación.",
+        "Troncal de fibra, routers de borde, políticas IP y puntos de acceso."
+      ]
+    },
+    "AI-GSI-B4-T07-018": {
+      "decision": "rewrite",
+      "reason": "Direcciones IP y VLAN hacían única la opción de potencia.",
+      "distractors": [
+        "Potencia máxima de cada AP sin sumar la demanda simultánea del switch.",
+        "Número de puertos PoE sin considerar la potencia requerida por puerto.",
+        "Presupuesto total sin límite de cada puerto."
+      ]
+    },
+    "AI-GSI-B4-T09-004": {
+      "decision": "rewrite",
+      "reason": "Capacidad ilimitada y falta de autenticación eran extremos evidentes.",
+      "distractors": [
+        "Priorizar tráfico de control con QoS dentro de la misma red de usuarios.",
+        "Cifrar logs administrativos sin separar las rutas de acceso a los equipos.",
+        "VLAN de usuarios con nombres DNS de gestión."
+      ]
+    },
+    "AI-GSI-B4-T09-006": {
+      "decision": "rewrite",
+      "reason": "Compresión y reloj no competían con un control de acceso de red.",
+      "distractors": [
+        "Identidad sin postura del dispositivo.",
+        "Inventario de IP sin aplicar decisiones de acceso según cumplimiento.",
+        "Registro de conexión sin remediación ni políticas para equipos no conformes."
+      ]
+    },
+    "AI-GSI-B4-T09-012": {
+      "decision": "rewrite",
+      "reason": "Routing y discos eran ajenos a notificaciones SNMP.",
+      "distractors": [
+        "TRAP exige acuse de aplicación; INFORM es siempre no confirmado.",
+        "Ambos reciben acuse, pero INFORM transporta más variables en la notificación.",
+        "INFORM cifra el aviso; TRAP lo transmite sin cifrado ni posibilidad de acuse."
+      ]
+    },
+    "AI-GSI-B4-T09-019": {
+      "decision": "rewrite",
+      "reason": "Las acciones previas eran cambios ciegos frente a la única medición.",
+      "distractors": [
+        "Ampliar capacidad por utilización agregada sin identificar flujos dominantes.",
+        "Aplicar QoS a todo el tráfico antes de saber qué aplicación satura el enlace.",
+        "Mover carga sin verificar si es anómala."
+      ]
+    },
+    "AI-GSI-B4-T09-020": {
+      "decision": "rewrite",
+      "reason": "Borrar logs y modificar todo eran antiejemplos demasiado claros.",
+      "distractors": [
+        "Seguir capas, pero reiniciar equipos antes de capturar el fallo reproducible.",
+        "Cambiar rutas y DNS a la vez.",
+        "Tomar medidas solo en aplicación y asumir que las capas inferiores funcionan."
+      ]
+    },
+    "AI-GSI-B4-T10-001": {
+      "decision": "rewrite",
+      "reason": "Las alternativas anteriores eran criterios únicos evidentemente incompletos.",
+      "distractors": [
+        "Capacidad y coste nominal, dejando disponibilidad y diversidad al operador.",
+        "Latencia y cifrado, sin medir capacidad en hora punta ni rutas de respaldo.",
+        "Disponibilidad y precio sin diversidad."
+      ]
+    },
+    "AI-GSI-B4-T10-003": {
+      "decision": "rewrite",
+      "reason": "IP, TCP y CPU no eran mecanismos ópticos competidores.",
+      "correct_text": "Canales ópticos sobre una fibra, separados por distintas longitudes de onda.",
+      "distractors": [
+        "Intervalos temporales sobre una misma portadora óptica.",
+        "Flujos de paquetes mediante etiquetas de reenvío en routers.",
+        "Fibras físicas paralelas sin combinar longitudes de onda."
+      ]
+    },
+    "AI-GSI-B4-T10-007": {
+      "decision": "rewrite",
+      "reason": "Contraseña y antena eran categorías ajenas a MPLS.",
+      "distractors": [
+        "La pila de etiquetas asignada a un paquete al entrar en MPLS.",
+        "El camino conmutado por etiquetas entre dos routers de borde.",
+        "Router de entrada que asigna etiquetas."
+      ]
+    },
+    "AI-GSI-B4-T10-016": {
+      "decision": "rewrite",
+      "reason": "Cifrado y capacidad óptica no eran resultados del routing dinámico.",
+      "distractors": [
+        "Rutas fijadas manualmente que no varían aunque cambie la topología.",
+        "Intercambio de claves de cifrado y protección del contenido transportado.",
+        "Más capacidad física al anunciar prefijos."
+      ]
+    },
+    "AI-GSI-B4-T11-004": {
+      "decision": "rewrite",
+      "reason": "Capacidad infinita y fibra eran distractores absurdos.",
+      "distractors": [
+        "Menor alcance que 6 GHz y más canales.",
+        "Cobertura similar a 5 GHz y menos interferencia por su espectro más amplio.",
+        "Mayor propagación y más canales no solapados que en bandas superiores."
+      ]
+    },
+    "AI-GSI-B4-T11-007": {
+      "decision": "rewrite",
+      "reason": "SSID y cifrado no competían con una técnica de acceso radio.",
+      "distractors": [
+        "Múltiples antenas y flujos espaciales.",
+        "Asigna toda la portadora a una estación por turno sin subdividir recursos.",
+        "Coordina espera del medio para evitar colisiones sin repartir subportadoras."
+      ]
+    },
+    "AI-GSI-B4-T12-002": {
+      "decision": "rewrite",
+      "reason": "Un router caro y ocultar direcciones no competían con controles en capas.",
+      "distractors": [
+        "Filtro y cifrado sin segmentación interna.",
+        "Identidad y antivirus de puesto, sin políticas de red o monitorización.",
+        "Segmentación y listas de acceso, suponiendo que la identidad ya no importa."
+      ]
+    },
+    "AI-GSI-B4-T12-008": {
+      "decision": "rewrite",
+      "reason": "HDFS, CoAP y SMTP eran categorías ajenas al acceso administrativo.",
+      "statement": "Según el temario, ¿qué protocolo AAA se asocia frecuentemente al acceso administrativo a dispositivos de red?",
+      "correct_text": "TACACS+, empleado para AAA de acceso administrativo a equipos de red.",
+      "distractors": [
+        "RADIUS, utilizado ampliamente para acceso de red y 802.1X.",
+        "SNMPv3, empleado para supervisión y operaciones de gestión.",
+        "802.1X, control de acceso al puerto con servidor AAA."
+      ]
+    },
+    "AI-GSI-B4-T12-017": {
+      "decision": "rewrite",
+      "reason": "Impresoras y negaciones de autenticación eran ajenas a la topología VPN.",
+      "distractors": [
+        "Site-to-site conecta usuarios individuales; acceso remoto enlaza sedes completas.",
+        "Ambas unen redes; remoto usa clientes móviles.",
+        "La primera da acceso a una aplicación; la segunda transporta una red entre sedes."
+      ]
+    },
+    "AI-GSI-B4-T13-001": {
+      "decision": "rewrite",
+      "reason": "Navegador y cuenta eran categorías ajenas a la definición de AS.",
+      "distractors": [
+        "Una subred con mismo dominio DNS, aunque utilice políticas de routing distintas.",
+        "Un único router de frontera con direcciones públicas de varios operadores.",
+        "Un grupo de servidores web que comparten certificado y balanceador."
+      ]
+    },
+    "AI-GSI-B4-T13-008": {
+      "decision": "rewrite",
+      "reason": "La identidad Internet/Web y sustitución de BGP eran fáciles de descartar.",
+      "distractors": [
+        "La Web agrupa todos los servicios de Internet bajo HTTPS.",
+        "Internet es solo conectividad IP; la Web incluye correo y DNS.",
+        "Servicios distintos sin relación de inclusión."
+      ]
+    },
+    "AI-GSI-B4-T13-012": {
+      "decision": "rewrite",
+      "reason": "Eliminar toda congestión o propagación eran promesas imposibles.",
+      "distractors": [
+        "Reduce el bloqueo entre streams, pero pierde entrega fiable de cada uno.",
+        "Elimina bloqueo incluso dentro de un stream.",
+        "Mantiene TCP pero asigna una conexión independiente a cada stream HTTP."
+      ]
+    },
+    "AI-GSI-B4-T13-013": {
+      "decision": "rewrite",
+      "reason": "Moda y obligación de toda novedad eran criterios de descarte.",
+      "distractors": [
+        "Priorizar la tecnología de mayor adopción aunque dependa de un solo proveedor.",
+        "Elegir el mayor rendimiento nominal sin evaluar continuidad ni operación.",
+        "Favorecer integración rápida aunque incremente dependencia y dificulte salida."
+      ]
+    },
+    "AI-GSI-B4-T13-017": {
+      "decision": "rewrite",
+      "reason": "Compilador y sistema de archivos no eran protocolos IoT competidores.",
+      "distractors": [
+        "Mensajería publicación-suscripción sobre TCP mediante un broker.",
+        "Intercambio HTTP sobre TCP con multiplexación de streams.",
+        "Mensajería de cola orientada a broker para aplicaciones empresariales."
+      ]
+    },
+    "AI-GSI-B4-T13-020": {
+      "decision": "rewrite",
+      "reason": "Credenciales compartidas y ausencia de inventario eran errores evidentes.",
+      "distractors": [
+        "Identidad única y segmentación, dejando firmware sin mecanismo de actualización.",
+        "Firmware firmado con credenciales comunes.",
+        "Inventario y actualización, sin controlar acceso de red ni fin de soporte."
+      ]
+    }
+  }
+}

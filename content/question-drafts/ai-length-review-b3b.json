@@ -1,0 +1,309 @@
+{
+  "version": 1,
+  "reviewed_at": "2026-09-23",
+  "reviewer": "Asistente IA, revisión editorial solicitada; no sustituye la aceptación humana previa del borrador",
+  "reviews": {
+    "AI-GSI-B3-T06-015": {
+      "decision": "rewrite",
+      "reason": "El enunciado pedía evitar algo y solo la respuesta correcta describía una mala práctica.",
+      "statement": "Una personalización de un cliente OpenAPI debe sobrevivir a futuras regeneraciones. ¿Dónde conviene mantenerla?",
+      "correct_text": "En una extensión separada o plantilla controlada que sobreviva a la regeneración.",
+      "distractors": [
+        "En el código generado, aplicando a mano el cambio después de cada nueva generación.",
+        "En comentarios del contrato OpenAPI que el generador no procesa.",
+        "En una copia local del cliente no integrada en el proceso de construcción."
+      ]
+    },
+    "AI-GSI-B3-T07-003": {
+      "decision": "rewrite",
+      "reason": "Las respuestas previas eran absurdas o negaban la relación causal.",
+      "distractors": [
+        "Un fallo observado genera un defecto en el código que después causa el error humano.",
+        "El defecto es siempre visible al usuario; el error surge solo cuando se ejecuta.",
+        "Error humano es fallo visible; defecto, su causa."
+      ]
+    },
+    "AI-GSI-B3-T07-009": {
+      "decision": "rewrite",
+      "reason": "Las garantías absolutas permitían reconocer la opción matizada sin conocer cobertura.",
+      "distractors": [
+        "Que se ejecutaron las líneas y se verificaron todos sus resultados posibles.",
+        "Que se cubrieron también todas las ramas.",
+        "Que se cubrieron todos los caminos de ejecución con datos relevantes."
+      ]
+    },
+    "AI-GSI-B3-T07-012": {
+      "decision": "rewrite",
+      "reason": "Ignorar, borrar o declarar fiable eran soluciones evidentemente inválidas.",
+      "distractors": [
+        "Aprobarla si falla solo en integración.",
+        "Repetirla hasta que pase y registrar solo la última ejecución como evidencia.",
+        "Deshabilitarla mientras no haya cambios funcionales en el módulo probado."
+      ]
+    },
+    "AI-GSI-B3-T07-014": {
+      "decision": "rewrite",
+      "reason": "Los distractores anteriores omitían casi todo el contenido de un caso de prueba.",
+      "correct_text": "Precondiciones, datos de entrada, pasos ejecutables y resultado esperado verificable.",
+      "distractors": [
+        "Datos y resultado esperado, dejando las precondiciones al criterio del ejecutor.",
+        "Pasos detallados y fecha, sin fijar los datos que condicionan el resultado.",
+        "Precondiciones y resultado final, sin secuencia que permita repetir la ejecución."
+      ]
+    },
+    "AI-GSI-B3-T07-016": {
+      "decision": "rewrite",
+      "reason": "Manual, formulario y función aritmética no competían con pruebas físicas.",
+      "distractors": [
+        "Verificar el controlador en simulación sin probar el dispositivo físico.",
+        "Probar la API de inventario que consulta modelos de hardware.",
+        "Inspeccionar registros de capacidad sin someter dispositivos a carga o fallo."
+      ]
+    },
+    "AI-GSI-B3-T07-019": {
+      "decision": "rewrite",
+      "reason": "Se sustituyeron negaciones obvias por inversiones de los dos propósitos.",
+      "distractors": [
+        "Retest busca efectos colaterales; regresión confirma únicamente el defecto corregido.",
+        "Ambos repiten exactamente el caso fallido, con distinto nombre según el equipo.",
+        "Regresión verifica solo el requisito nuevo; retest cubre todo lo preexistente."
+      ]
+    },
+    "AI-GSI-B3-T07-020": {
+      "decision": "rewrite",
+      "reason": "Tamaño de archivo y antigüedad eran categorías ajenas.",
+      "distractors": [
+        "Severidad mide urgencia de corrección; prioridad describe impacto técnico.",
+        "Severidad y prioridad son el mismo impacto, expresado por equipos distintos.",
+        "Severidad depende del plazo; prioridad, de los usuarios."
+      ]
+    },
+    "AI-GSI-B3-T08-015": {
+      "decision": "rewrite",
+      "reason": "La opción correcta era la única con secuencia y responsabilidades operativas.",
+      "distractors": [
+        "Fecha y ventana de cambio, dejando secuencia y reversión al equipo de guardia.",
+        "Pasos de migración y validación, sin autoridad para decidir arranque o vuelta atrás.",
+        "Responsables sin secuencia ni decisión go/no-go."
+      ]
+    },
+    "AI-GSI-B3-T08-019": {
+      "decision": "rewrite",
+      "reason": "Se reemplazaron malas prácticas manifiestas por otras clases de mantenimiento.",
+      "distractors": [
+        "Corregir el defecto después de que se manifieste en producción.",
+        "Adaptar la aplicación a una norma que ya ha entrado en vigor.",
+        "Incorporar una nueva función solicitada por los usuarios del servicio."
+      ]
+    },
+    "AI-GSI-B3-T08-020": {
+      "decision": "rewrite",
+      "reason": "Las opciones anteriores eran listas incompletas o irrelevantes.",
+      "distractors": [
+        "Incidencias y niveles de soporte, sin plan de releases ni obsolescencia.",
+        "Versiones y despliegues, dejando prioridades al orden de llegada.",
+        "Inventario técnico y contratos, sin backlog de cambios ni seguimiento del servicio."
+      ]
+    },
+    "AI-GSI-B3-T09-002": {
+      "decision": "rewrite",
+      "reason": "Cableado y compilador no eran alternativas sobre principios de diseño.",
+      "distractors": [
+        "Reglas obligatorias cuyo cumplimiento exige una clase por responsabilidad.",
+        "Métricas de ejecución que sustituyen el juicio sobre acoplamiento y cohesión.",
+        "Método que obliga a usar todos los patrones."
+      ]
+    },
+    "AI-GSI-B3-T09-003": {
+      "decision": "rewrite",
+      "reason": "Biblioteca y lenguaje gráfico eran categorías ajenas al proceso.",
+      "distractors": [
+        "Secuencial, centrado en documentos y con riesgos revisados solo al cierre.",
+        "Un conjunto de diagramas UML sin orientación para planificar iteraciones.",
+        "Iterativo, pero difiere toda arquitectura hasta después de la construcción."
+      ]
+    },
+    "AI-GSI-B3-T09-010": {
+      "decision": "rewrite",
+      "reason": "Compilar, borrar y pruebas físicas hacían obvia la distinción.",
+      "distractors": [
+        "El análisis fija interfaces de infraestructura; el diseño descubre conceptos del dominio.",
+        "Ambos definen solo clases técnicas, pero el diseño añade nombres de métodos.",
+        "El análisis selecciona tecnologías; el diseño documenta requisitos de usuarios."
+      ]
+    },
+    "AI-GSI-B3-T09-011": {
+      "decision": "rewrite",
+      "reason": "Los distractores eran resultados de otras fases, expresados de forma trivial.",
+      "distractors": [
+        "Visión, alcance inicial y caso de negocio sin base arquitectónica ejecutable.",
+        "Construcción de la mayor parte de funciones con arquitectura aún por decidir.",
+        "Despliegue final, formación y aceptación operativa por los usuarios."
+      ]
+    },
+    "AI-GSI-B3-T09-015": {
+      "decision": "rewrite",
+      "reason": "Las opciones anteriores mezclaban bases de datos y negación del caso de uso.",
+      "distractors": [
+        "Include añade comportamiento opcional; extend inserta pasos comunes obligatorios.",
+        "Ambos incorporan siempre comportamiento obligatorio, pero en puntos distintos.",
+        "Include y extend indican dependencia entre actores, no entre casos de uso."
+      ]
+    },
+    "AI-GSI-B3-T12-004": {
+      "decision": "rewrite",
+      "reason": "La respuesta correcta era la única que delimitaba la capa de protección.",
+      "distractors": [
+        "Protección TLS del transporte y autorización correcta de todas las operaciones.",
+        "TLS elimina fallos de validación de entradas.",
+        "Confidencialidad de peticiones, pero no de respuestas del mismo canal."
+      ]
+    },
+    "AI-GSI-B3-T12-005": {
+      "decision": "rewrite",
+      "reason": "Cifrado e imágenes no eran distractores de localización.",
+      "distractors": [
+        "i18n adapta textos y formatos a un idioma; l10n prepara el software para varios.",
+        "Solo i18n cambia formatos regionales.",
+        "l10n define la arquitectura general; i18n crea los recursos de cada locale."
+      ]
+    },
+    "AI-GSI-B3-T12-006": {
+      "decision": "rewrite",
+      "reason": "El enunciado y la respuesta tenían una doble negación y dos alternativas ajenas.",
+      "statement": "Una aplicación guarda instantes en UTC. ¿Qué necesidad sigue vigente al mostrarlos al usuario?",
+      "correct_text": "Presentarlos según la zona horaria y el formato local del usuario.",
+      "distractors": [
+        "Volver a convertirlos a UTC antes de cada presentación, sin tener en cuenta el locale.",
+        "Mostrar siempre la marca UTC original para que todos los usuarios vean la misma hora.",
+        "Mostrar la hora en zona del servidor."
+      ]
+    },
+    "AI-GSI-B3-T12-013": {
+      "decision": "rewrite",
+      "reason": "XSS, cifrado y autenticación no eran opciones competidoras sobre CORS.",
+      "distractors": [
+        "Autorizar al usuario a ejecutar operaciones de negocio desde cualquier origen.",
+        "Aplicar iguales reglas a navegadores y clientes no web.",
+        "Permitir a cualquier cliente HTTP acceder solo si el navegador valida su identidad."
+      ]
+    },
+    "AI-GSI-B3-T12-019": {
+      "decision": "rewrite",
+      "reason": "Longitud y decodificación literal eran comprobaciones insuficientes obvias.",
+      "distractors": [
+        "Firma y expiración, suponiendo que cualquier emisor y audiencia son válidos.",
+        "Estructura y emisor, sin verificar la firma criptográfica del token.",
+        "Firma y claims sin vigencia ni audiencia."
+      ]
+    },
+    "AI-GSI-B3-T13-007": {
+      "decision": "rewrite",
+      "reason": "Bytes, CPU y usuarios eran métricas de categorías ajenas.",
+      "distractors": [
+        "Acoplamiento entre módulos a partir de las dependencias del código.",
+        "Profundidad máxima de anidamiento de funciones en el programa.",
+        "Cantidad de clases dependientes."
+      ]
+    },
+    "AI-GSI-B3-T13-018": {
+      "decision": "rewrite",
+      "reason": "Las garantías automáticas de calidad y seguridad eran triviales.",
+      "distractors": [
+        "Que el tiempo de recuperación de cada incidente debe ser bajo.",
+        "Que la tasa de fallos de los cambios también es necesariamente baja.",
+        "Que el producto satisface los requisitos funcionales de sus usuarios."
+      ]
+    },
+    "AI-GSI-B3-T13-020": {
+      "decision": "rewrite",
+      "reason": "Las alternativas antiguas eran etiquetas de calidad sin criterios.",
+      "distractors": [
+        "Un conjunto de herramientas de pruebas sin umbrales de aceptación definidos.",
+        "Estándares de código sin metas de servicio.",
+        "Un certificado del proveedor sin comprobar requisitos no funcionales concretos."
+      ]
+    },
+    "AI-GSI-B3-T14-010": {
+      "decision": "rewrite",
+      "reason": "Tipografía, color y pantallas no recogían experiencia de uso.",
+      "distractors": [
+        "La facilidad de interacción durante la sesión, sin expectativa ni resultado posterior.",
+        "Jerarquía visual y consistencia de interfaz.",
+        "Las emociones del usuario medidas al final, sin utilidad ni contexto del servicio."
+      ]
+    },
+    "AI-GSI-B3-T14-014": {
+      "decision": "rewrite",
+      "reason": "Icono y prohibición de quejas eran distractores manifiestos.",
+      "distractors": [
+        "Declaración inicial sin canal de incidencias.",
+        "Una auditoría técnica de lanzamiento, sin seguimiento o actualización posterior.",
+        "Un canal de reclamaciones, sin informar del estado de accesibilidad del servicio."
+      ]
+    },
+    "AI-GSI-B3-T14-015": {
+      "decision": "rewrite",
+      "reason": "Las negaciones de flexibilidad revelaban la finalidad del diseño universal.",
+      "distractors": [
+        "Un producto estándar para usuario promedio, con adaptaciones individuales al final.",
+        "Diseños separados para cada discapacidad, sin una base común de uso amplio.",
+        "Una interfaz uniforme que reduzca ajustes aunque algunos usuarios los necesiten."
+      ]
+    },
+    "AI-GSI-B3-T14-016": {
+      "decision": "rewrite",
+      "reason": "Se reemplazaron ejemplos extremos por principios de diseño confundibles.",
+      "distractors": [
+        "Interacción uniforme, sin entradas alternativas.",
+        "Información completa solo por un canal sensorial para evitar redundancia.",
+        "Minimizar pasos visibles aunque se pierdan avisos de errores reversibles."
+      ]
+    },
+    "AI-GSI-B3-T14-019": {
+      "decision": "rewrite",
+      "reason": "Obligación universal y prueba automática eran exageraciones.",
+      "distractors": [
+        "Sustituyen entrevistas y observación.",
+        "Evidencia cuantitativa suficiente para aprobar decisiones sin prueba con usuarios.",
+        "Entregables previos obligatorios aunque no reduzcan incertidumbre del proyecto."
+      ]
+    },
+    "AI-GSI-B3-T15-003": {
+      "decision": "rewrite",
+      "reason": "Las opciones anteriores negaban de forma obvia la diferencia analítica.",
+      "distractors": [
+        "OLAP descubre modelos predictivos; minería agrega dimensiones de informes conocidos.",
+        "OLAP registra operaciones transaccionales; minería solo presenta cuadros de mando.",
+        "Ambas agregan medidas; minería usa más datos."
+      ]
+    },
+    "AI-GSI-B3-T15-004": {
+      "decision": "rewrite",
+      "reason": "Moda y maximizar herramientas eran indicadores de descarte.",
+      "distractors": [
+        "La mera acumulación histórica exige distribución aunque las consultas sean simples.",
+        "La diversidad de formatos obliga a un lago distribuido incluso con pocos datos.",
+        "Baja latencia exige clúster, aunque haya pocos datos."
+      ]
+    },
+    "AI-GSI-B3-T15-011": {
+      "decision": "rewrite",
+      "reason": "Caché y ausencia de gobierno eran distractores ajenos o absolutos.",
+      "distractors": [
+        "Warehouse conserva datos heterogéneos en bruto; lake exige esquema curado antes de carga.",
+        "Warehouse se orienta a transacciones operativas; lake a cubos preagregados para BI.",
+        "Ambos usan el mismo esquema curado."
+      ]
+    },
+    "AI-GSI-B3-T15-012": {
+      "decision": "rewrite",
+      "reason": "La lista integral contrastaba con ausencia de dueño y solo discos.",
+      "distractors": [
+        "Catálogo y retención, sin linaje ni responsable de calidad de los datos.",
+        "Capacidad y rendimiento, dejando privacidad y permisos a cada consumidor.",
+        "Linaje y copias, sin catálogo de uso."
+      ]
+    }
+  }
+}

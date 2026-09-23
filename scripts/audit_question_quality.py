@@ -8,6 +8,7 @@ review and never change a question's editorial status automatically.
 from __future__ import annotations
 
 from collections import Counter, defaultdict
+from build_gsi_authored_questions import load_length_reviews
 from datetime import datetime, timezone
 from difflib import SequenceMatcher
 import json
@@ -114,11 +115,15 @@ def metric_summary(questions: list[dict]) -> dict:
 def main() -> int:
     questions = load_questions()
     revised_manual_ids = reviewed_manual_length_ids()
+    reviewed_ai_decisions = {qid: review['decision'] for qid, (review, _, _) in load_length_reviews().items()}
     objective_errors: list[dict] = []
     short_feedback: list[dict] = []
     repeated_feedback: list[str] = []
     repeated_feedback_by_origin: Counter[str] = Counter()
     severe_length_clues: list[dict] = []
+    reviewed_ai_unique_shortest: list[str] = []
+    reviewed_ai_unique_longest: list[str] = []
+    reviewed_ai_reverse_clues: list[dict] = []
     topic_positions: list[dict] = []
     prefix_counts: Counter[tuple[str, ...]] = Counter()
     by_topic: dict[str, list[dict]] = defaultdict(list)
@@ -153,11 +158,26 @@ def main() -> int:
         lengths = {option["id"]: len(option["text"].strip()) for option in question["options"]}
         correct_length = lengths[question["correct_option"]]
         longest_distractor = max(length for option_id, length in lengths.items() if option_id != question["correct_option"])
+        if question["origin"] == "ai" and question_id in reviewed_ai_decisions:
+            shortest_distractor = min(length for option_id, length in lengths.items() if option_id != question["correct_option"])
+            if correct_length < shortest_distractor:
+                reviewed_ai_unique_shortest.append(question_id)
+                if shortest_distractor / max(correct_length, 1) >= 1.5:
+                    reviewed_ai_reverse_clues.append({
+                        "id": question_id,
+                        "correct_characters": correct_length,
+                        "shortest_distractor_characters": shortest_distractor,
+                        "ratio": round(shortest_distractor / max(correct_length, 1), 2),
+                    })
+            if correct_length > longest_distractor:
+                reviewed_ai_unique_longest.append(question_id)
         if correct_length > longest_distractor and correct_length / max(longest_distractor, 1) >= 1.5:
             if question["origin"] == "official":
                 review_status = "official_immutable_exception"
             elif question["origin"] == "manual" and question_id in revised_manual_ids:
                 review_status = "editorially_revised_still_flagged"
+            elif question["origin"] == "ai" and question_id in reviewed_ai_decisions:
+                review_status = "editorially_revised_still_flagged" if reviewed_ai_decisions[question_id] == "rewrite" else "editorially_reviewed_keep"
             else:
                 review_status = "pending_review"
             severe_length_clues.append(
@@ -241,6 +261,13 @@ def main() -> int:
                 "official_exceptions": sorted(item["id"] for item in severe_length_clues if item["origin"] == "official"),
                 "top_candidates": sorted(severe_length_clues, key=lambda item: (-item["ratio"], item["id"]))[:50],
                 "note": "Heuristic only: the correct option is at least 1.5 times as long as every distractor. Editorial review does not suppress a raw candidate; official items remain unchanged.",
+            },
+            "reviewed_ai_length_balance": {
+                "count": len(reviewed_ai_decisions),
+                "correct_unique_shortest": len(reviewed_ai_unique_shortest),
+                "correct_unique_longest": len(reviewed_ai_unique_longest),
+                "severe_reverse_candidates": reviewed_ai_reverse_clues,
+                "note": "Additional check restricted to the 129 AI items reviewed in this pass; the original longest-answer detector remains unchanged.",
             },
             "repeated_statement_prefixes": repeated_prefixes,
             "topic_position_imbalances": topic_positions,

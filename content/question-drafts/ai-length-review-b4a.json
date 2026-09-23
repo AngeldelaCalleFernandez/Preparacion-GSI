@@ -1,0 +1,214 @@
+{
+  "version": 1,
+  "reviewed_at": "2026-09-23",
+  "reviewer": "Asistente IA, revisión editorial solicitada; no sustituye la aceptación humana previa del borrador",
+  "reviews": {
+    "AI-GSI-B4-T01-001": {
+      "decision": "rewrite",
+      "reason": "Compra, instalación y hardware eran fragmentos ajenos al ciclo operativo completo.",
+      "distractors": [
+        "Completar instalación y parches iniciales, dejando recuperación a cada incidente.",
+        "Disponibilidad diaria sin asegurar recuperación.",
+        "Administrar contratos y licencias, delegando operación técnica sin seguimiento."
+      ]
+    },
+    "AI-GSI-B4-T01-003": {
+      "decision": "rewrite",
+      "reason": "Las negaciones absolutas no competían con una configuración base.",
+      "distractors": [
+        "Una lista de software aprobado sin registrar parámetros ni versiones instaladas.",
+        "Imagen inicial sin controlar cambios posteriores.",
+        "El último estado de producción aceptado como referencia aunque no sea reproducible."
+      ]
+    },
+    "AI-GSI-B4-T01-005": {
+      "decision": "rewrite",
+      "reason": "Secretos embebidos y omisión horaria eran errores evidentes.",
+      "distractors": [
+        "Configurar el entorno dentro del binario.",
+        "Resolver dependencias en producción sin registrar sus versiones efectivas.",
+        "Mantener configuraciones separadas pero sin documentar servicios dependientes."
+      ]
+    },
+    "AI-GSI-B4-T01-013": {
+      "decision": "rewrite",
+      "reason": "Las otras opciones describían mejoras automáticas o efectos ajenos.",
+      "distractors": [
+        "Redirigir escrituras a otro volumen sin que exista configuración de desbordamiento.",
+        "Liberar logs antiguos de forma automática.",
+        "Mantener logs y actualizaciones escribiendo mientras solo se degrada lectura."
+      ]
+    },
+    "AI-GSI-B4-T01-018": {
+      "decision": "rewrite",
+      "reason": "Puertos abiertos y auditoría desactivada eran pistas triviales.",
+      "distractors": [
+        "Conservar servicios de prueba si solo el personal interno conoce sus credenciales.",
+        "Puertos de gestión abiertos tras el firewall.",
+        "Reducir registros de seguridad para disminuir la información visible a atacantes."
+      ]
+    },
+    "AI-GSI-B4-T01-020": {
+      "decision": "rewrite",
+      "reason": "Las conclusiones automáticas de avería ignoraban el SLO del enunciado.",
+      "distractors": [
+        "Que la CPU está saturada aunque latencia y servicio sigan dentro de objetivo.",
+        "Que debe escalarse capacidad de inmediato sin medir colas ni tendencias.",
+        "Que cumplir el SLO excluye cualquier riesgo futuro de capacidad."
+      ]
+    },
+    "AI-GSI-B4-T02-008": {
+      "decision": "rewrite",
+      "reason": "Fallo eléctrico y ataque externo no eran diagnósticos directos de bloqueo.",
+      "distractors": [
+        "Transacciones cortas que liberan bloqueos antes de acceder a recursos compartidos.",
+        "Consultas indexadas sin transacción abierta.",
+        "Ausencia de sesiones concurrentes que compitan por los mismos registros."
+      ]
+    },
+    "AI-GSI-B4-T02-011": {
+      "decision": "rewrite",
+      "reason": "Garantizar el mejor plan era una negación evidente del problema.",
+      "distractors": [
+        "Cambiar cardinalidad real sin cambiar filas.",
+        "Eliminar físicamente los índices aunque el optimizador todavía los vea.",
+        "Impedir confirmaciones de transacciones con independencia del plan elegido."
+      ]
+    },
+    "AI-GSI-B4-T02-013": {
+      "decision": "rewrite",
+      "reason": "Las afirmaciones de nunca mejorar lecturas eran descartables.",
+      "distractors": [
+        "Solo consumen memoria de lectura y no afectan operaciones de escritura.",
+        "Índices reducen siempre el coste de escritura.",
+        "Sustituyen el análisis de consultas porque el optimizador elige sin estadísticas."
+      ]
+    },
+    "AI-GSI-B4-T02-014": {
+      "decision": "rewrite",
+      "reason": "Se sustituyeron garantías absolutas por otros mecanismos de copia y réplica.",
+      "distractors": [
+        "Copian páginas binarias del motor para restaurar el mismo diseño físico.",
+        "Capturan bloques modificados desde una copia previa sin exportar objetos.",
+        "Replican cambios en tiempo real a otro nodo como sustituto de un export."
+      ]
+    },
+    "AI-GSI-B4-T02-019": {
+      "decision": "rewrite",
+      "reason": "Se reemplazaron desastres absolutos por límites concretos de réplica local.",
+      "distractors": [
+        "La pérdida del edificio, porque los dos nodos guardan datos idénticos allí.",
+        "Una corrupción lógica propagada a ambas réplicas en la misma operación.",
+        "Una eliminación replicada por el administrador."
+      ]
+    },
+    "AI-GSI-B4-T03-010": {
+      "decision": "rewrite",
+      "reason": "Culpables, borrado y promesa sin acciones eran distractores obvios.",
+      "distractors": [
+        "Cronología sin acciones ni seguimiento.",
+        "Impacto y medidas inmediatas, dejando fuera factores que permitieron repetición.",
+        "Lista de acciones futuras sin relacionarlas con evidencia o responsables."
+      ]
+    },
+    "AI-GSI-B4-T03-013": {
+      "decision": "rewrite",
+      "reason": "Los distractores eran objetos ajenos o copia completa tradicional.",
+      "distractors": [
+        "Releer por completo el origen.",
+        "Se copian solo cambios desde la última completa sin reconstruir el estado total.",
+        "Se replica el origen en línea para mantener un segundo sistema operativo."
+      ]
+    },
+    "AI-GSI-B4-T03-015": {
+      "decision": "rewrite",
+      "reason": "Los absolutos no permitían comparar dominios administrativos.",
+      "distractors": [
+        "Garantía de que los datos copiados no contienen corrupción lógica.",
+        "Autenticación compartida para producción y backup con menor coste operativo.",
+        "Sustitución de las pruebas de restauración por control de acceso a las copias."
+      ]
+    },
+    "AI-GSI-B4-T03-016": {
+      "decision": "rewrite",
+      "reason": "RPO cero y restauración garantizada eran promesas imposibles.",
+      "distractors": [
+        "Evitar que una corrupción lógica se incluya en futuras versiones de la copia.",
+        "Asegurar que toda copia protegida puede restaurarse sin probar el proceso.",
+        "Recuperación puntual sin versiones."
+      ]
+    },
+    "AI-GSI-B4-T03-017": {
+      "decision": "rewrite",
+      "reason": "Las alternativas previas repetían comprobaciones de archivos insuficientes.",
+      "distractors": [
+        "Éxito del trabajo y lectura de archivos, sin arrancar el servicio recuperado.",
+        "Integridad de hashes de copia, sin verificar configuración ni dependencias.",
+        "Extraer datos sin comprobar la aplicación."
+      ]
+    },
+    "AI-GSI-B4-T04-001": {
+      "decision": "rewrite",
+      "reason": "El original contraponía un CI no físico a categorías hardware limitadas.",
+      "distractors": [
+        "Un registro de incidente del servicio.",
+        "Una petición de cambio aprobada que aún no se ha implantado.",
+        "Una métrica de disponibilidad observada durante el último mes."
+      ]
+    },
+    "AI-GSI-B4-T04-008": {
+      "decision": "rewrite",
+      "reason": "Identidad y sustitución total eran simplificaciones descartables.",
+      "distractors": [
+        "Versiones gobierna relaciones del servicio; configuración registra solo archivos.",
+        "Ambos controlan únicamente cambios de código, con distinto formato de registro.",
+        "Configuración se limita al inventario físico; versiones cubre todo el servicio."
+      ]
+    },
+    "AI-GSI-B4-T04-010": {
+      "decision": "rewrite",
+      "reason": "Memoria y negación de automatización eran categorías ajenas.",
+      "distractors": [
+        "Declarativa describe pasos; imperativa define el estado final deseado.",
+        "Declarativa ejecuta menos comandos.",
+        "Imperativa declara invariantes; declarativa solo registra cambios manuales."
+      ]
+    },
+    "AI-GSI-B4-T05-013": {
+      "decision": "rewrite",
+      "reason": "Backup, cifrado y errores lógicos no eran funciones de varias rutas.",
+      "distractors": [
+        "Copias históricas de los volúmenes a través de cada ruta disponible.",
+        "Tolerancia a errores lógicos mediante escritura simultánea de varias versiones.",
+        "Cifrado al activar dos controladores."
+      ]
+    },
+    "AI-GSI-B4-T05-020": {
+      "decision": "rewrite",
+      "reason": "Credenciales públicas y alertas apagadas eran errores evidentes.",
+      "distractors": [
+        "Red separada con cuentas compartidas.",
+        "Restringir administradores sin vigilar salud, capacidad o cambios de configuración.",
+        "Monitorizar cabinas y permitir gestión desde cualquier segmento de usuarios."
+      ]
+    },
+    "AI-GSI-B4-T06-004": {
+      "decision": "rewrite",
+      "reason": "Se sustituyeron métricas no energéticas por cocientes energéticos confundibles.",
+      "distractors": [
+        "Energía TI dividida por energía total.",
+        "Energía de refrigeración dividida por energía de equipos TI.",
+        "Potencia TI nominal dividida por la capacidad eléctrica instalada."
+      ]
+    },
+    "AI-GSI-B4-T06-012": {
+      "decision": "rewrite",
+      "reason": "Las alternativas previas negaban failover o estado de forma extrema.",
+      "distractors": [
+        "Activo-pasivo sirve desde ambos nodos.",
+        "Ambos mantienen un nodo en reserva, pero activo-activo conmuta más rápido.",
+        "Activo-pasivo replica solo datos; activo-activo replica configuración sin tráfico."
+      ]
+    }
+  }
+}
