@@ -111,6 +111,11 @@
         {
           "from": "A1 058 aporta procesamiento cooperativo, cliente-servidor, SOA, orquestación/coreografía, SOAP/WSDL y ESB. Aunque es de 2019, esos fundamentos siguen siendo examinables. A1 065 permite incorporar el desarrollo web y componentes más actuales. La V2 añade REST, APIs, mensajería y observabilidad sin borrar la arquitectura clásica.",
           "to": "El tema combina fundamentos todavía examinables —procesamiento cooperativo, cliente-servidor, SOA, SOAP/WSDL y ESB— con APIs HTTP, REST, mensajería y observabilidad. La arquitectura clásica y los patrones actuales deben entenderse como opciones relacionadas, no como una sustitución automática."
+        },
+        {
+          "from": "Service-Oriented Architecture organiza capacidades como servicios con contrato. Los principios recogidos por el material A1 incluyen contrato, bajo acoplamiento, abstracción, reutilización, autonomía, ausencia de estado cuando sea posible, descubrimiento y composición.",
+          "fromMarkdown": "**Service-Oriented Architecture** organiza capacidades como servicios con contrato. Los principios recogidos por el material A1 incluyen contrato, bajo acoplamiento, abstracción, reutilización, autonomía, ausencia de estado cuando sea posible, descubrimiento y composición.",
+          "to": "Service-Oriented Architecture organiza capacidades como servicios con contrato. Para evaluar un servicio conviene separar tres planos: cómo expone su capacidad —contrato, abstracción y descubrimiento—; cuánto depende de consumidores e implementaciones —bajo acoplamiento y autonomía—; y cómo participa en soluciones mayores —reutilización y composición, evitando retener estado cuando el caso lo permita—."
         }
       ],
       "visuals": [
@@ -126,35 +131,7 @@
     },
     "B2-T07": {
       "classification": "REESCRITURA SELECTIVA",
-      "replacements": [
-        {
-          "from": "Actualización 21/08/2026: Kubernetes mantiene oficialmente las tres ramas menores 1.36, 1.35 y 1.34. La 1.37 está prevista para el 26/08/2026, por lo que no se estudia como versión estable en esta edición. La V2 prioriza objetos y arquitectura estables, no números de parche.",
-          "fromMarkdown": "**Actualización 21/08/2026:** Kubernetes mantiene oficialmente las tres ramas menores 1.36, 1.35 y 1.34. La 1.37 está prevista para el 26/08/2026, por lo que no se estudia como versión estable en esta edición. La V2 prioriza objetos y arquitectura estables, no números de parche.",
-          "to": "Las ramas soportadas de Kubernetes cambian con el calendario del proyecto. Para examen deben priorizarse objetos, responsabilidades y arquitectura estable, utilizando la página oficial de versiones para cualquier dato temporal."
-        }
-      ],
-      "supplements": [
-        {
-          "afterHeading": "1. Alcance y actualización",
-          "title": "Actualización comprobada de Kubernetes",
-          "paragraphs": [
-            "A 22/09/2026, el proyecto Kubernetes mantiene las ramas menores 1.37, 1.36 y 1.35; la versión 1.37.0 se publicó el 26/08/2026. Este dato sirve para corregir la previsión anterior, pero no debe desplazar el estudio de la arquitectura y los objetos estables."
-          ],
-          "sources": [
-            {
-              "title": "Kubernetes — Releases",
-              "url": "https://kubernetes.io/releases/",
-              "locator": "ramas menores activamente soportadas"
-            },
-            {
-              "title": "Kubernetes 1.37",
-              "url": "https://kubernetes.io/releases/1.37/",
-              "locator": "fecha y estado de la serie 1.37"
-            }
-          ],
-          "note": "No memorices números de parche. Comprueba la versión soportada solo cuando una pregunta o supuesto dependa expresamente de actualidad."
-        }
-      ],
+      "replacements": [],
       "visuals": [
         {
           "afterHeading": "8. Kubernetes: arquitectura",
@@ -302,9 +279,9 @@
           "to": "El tema combina software libre y propietario, familias de licencias, protección jurídica de programas y medidas técnicas de protección. Deben separarse libertad, precio, titularidad, licencia y DRM."
         },
         {
-          "from": "La European Union Public Licence (EUPL) es una licencia de software libre promovida por la Comisión Europea y especialmente relevante en Administraciones Públicas europeas. Es copyleft, está disponible en múltiples lenguas oficiales y fue diseñada teniendo en cuenta el marco jurídico de la UE. Para GSI conviene reconocer su finalidad, su relación con la reutilización de software público y que la compatibilidad con otras licencias debe comprobarse conforme a la versión y apéndice de compatibilidad aplicables.",
-          "fromMarkdown": "## La European Union Public Licence (EUPL) es una licencia de software libre promovida por la Comisión Europea y especialmente relevante en Administraciones Públicas europeas. Es copyleft, está disponible en múltiples lenguas oficiales y fue diseñada teniendo en cuenta el marco jurídico de la UE. Para GSI conviene reconocer su finalidad, su relación con la reutilización de software público y que la compatibilidad con otras licencias debe comprobarse conforme a la versión y apéndice de compatibilidad aplicables.",
-          "to": "La European Union Public Licence (EUPL) es una licencia de software libre promovida por la Comisión Europea y especialmente relevante en Administraciones Públicas europeas. Es copyleft, está disponible en múltiples lenguas oficiales y fue diseñada teniendo en cuenta el marco jurídico de la UE. Para GSI conviene reconocer su finalidad, su relación con la reutilización de software público y que la compatibilidad con otras licencias debe comprobarse conforme a la versión y apéndice de compatibilidad aplicables.",
+          "from": "La European Union Public Licence (EUPL) es una licencia de software libre promovida por la Comisión Europea y especialmente relevante en Administraciones Públicas europeas. Es copyleft, está disponible en múltiples lenguas oficiales y fue diseñada teniendo en cuenta el marco jurídico de la UE. El ENI exige que las licencias de aplicaciones de fuentes abiertas garanticen ejecución para cualquier propósito, acceso al código fuente, modificación/mejora y redistribución —con o sin cambios— manteniendo esas garantías, y establece que para este fin se procurará aplicar la EUPL, sin excluir otras licencias que garanticen los mismos derechos. La compatibilidad con otras licencias debe comprobarse conforme a la versión y apéndice aplicables.",
+          "fromMarkdown": "## La European Union Public Licence (EUPL) es una licencia de software libre promovida por la Comisión Europea y especialmente relevante en Administraciones Públicas europeas. Es copyleft, está disponible en múltiples lenguas oficiales y fue diseñada teniendo en cuenta el marco jurídico de la UE. El ENI exige que las licencias de aplicaciones de fuentes abiertas garanticen ejecución para cualquier propósito, acceso al código fuente, modificación/mejora y redistribución —con o sin cambios— manteniendo esas garantías, y establece que para este fin se procurará aplicar la EUPL, sin excluir otras licencias que garanticen los mismos derechos. La compatibilidad con otras licencias debe comprobarse conforme a la versión y apéndice aplicables.",
+          "to": "La European Union Public Licence (EUPL) es una licencia de software libre promovida por la Comisión Europea y especialmente relevante en Administraciones Públicas europeas. Es copyleft, está disponible en múltiples lenguas oficiales y fue diseñada teniendo en cuenta el marco jurídico de la UE. El ENI exige que las licencias de aplicaciones de fuentes abiertas garanticen ejecución para cualquier propósito, acceso al código fuente, modificación/mejora y redistribución —con o sin cambios— manteniendo esas garantías, y establece que para este fin se procurará aplicar la EUPL, sin excluir otras licencias que garanticen los mismos derechos. La compatibilidad con otras licencias debe comprobarse conforme a la versión y apéndice aplicables.",
           "namedStyleType": "NORMAL_TEXT"
         }
       ],

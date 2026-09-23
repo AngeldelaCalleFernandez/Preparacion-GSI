@@ -22,6 +22,10 @@
 <p>Definir frecuencia, retención diaria/semanal/mensual según necesidad legal y operativa, versionado y expiración. Restaurar puede requerir infraestructura, SO, aplicación, configuración, datos y dependencias. La prueba debe comprobar integridad funcional, no solo que el fichero se lee.</p>
 <h3 id="estudio-07">7. RPO, RTO y ejercicios</h3>
 <p>RPO responde “¿cuánto dato puedo perder?”; RTO, “¿cuánto tiempo puedo estar sin servicio?”. Un RPO muy bajo exige copias/log shipping/replicación frecuentes; un RTO bajo exige automatización, capacidad reservada y runbooks ensayados. Los objetivos se fijan por proceso de negocio, no por deseo técnico.</p>
+<p>Microdatos oficiales de alta rentabilidad</p>
+<p>- Regla 3-2-1: mantener 3 copias de los datos, en 2 tipos/medios de almacenamiento distintos y 1 copia fuera del sitio/dominio de fallo. Las extensiones 3-2-1-1-0 añaden aislamiento/inmutabilidad y verificación.</p>
+<p>- En RCM, el mantenimiento predictivo sólo tiene sentido cuando existe una condición/fallo potencial detectable y un intervalo P-F (Potential Failure → Functional Failure) identificable y monitorizable con tiempo para actuar.</p>
+<p>- Deduplicación identifica bloques/objetos repetidos y conserva una única copia física o lógica de referencia, sustituyendo duplicados por referencias; no es simplemente compresión.</p>
 <h3 id="estudio-08">8. Datos y trampas de test</h3>
 <ul>
 <li>Incidente ≠ problema.</li>
@@ -46,5 +50,5 @@
 <p>En supuesto presenta matriz severidad, flujo ITSM, monitorización-alerta-ticket-escalado-cierre y plan backup/restore alineado con RPO/RTO. Incluye ejercicios de recuperación.</p>
 <h3 id="repaso-04">Fuentes base del material</h3>
 <p>A1 101 + 056 + 105 y materiales de continuidad.</p>
-<section class="topic-content__sources"><h2 id="fuentes">Fuentes y localizadores</h2><ul><li><a href="https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)</a> · IV.03 · 2026-08-21</li><li><a href="https://docs.google.com/document/d/1PRbZRedDj9j2D4jPlDODZUKkmbCqPWxMM4hhGhjcZIo/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE IV — RESUMEN MAESTRO DE REPASO (16 temas)</a> · IV.03 · 2026-08-21</li></ul></section>
+<section class="topic-content__sources"><h2 id="fuentes">Fuentes y localizadores</h2><ul><li><a href="https://docs.google.com/document/d/1MwEk2ye_u4RRHO3HP38gKX2yXjqAjzodtESKAOxDuv0/edit" target="_blank" rel="noopener noreferrer">04 — BLOQUE IV — Sistemas y comunicaciones — GSI A2</a> · IV.03 · 2026-09-23</li><li><a href="https://docs.google.com/document/d/1PRbZRedDj9j2D4jPlDODZUKkmbCqPWxMM4hhGhjcZIo/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE IV — RESUMEN MAESTRO DE REPASO (16 temas)</a> · IV.03 · 2026-08-21</li></ul></section>
 </article>

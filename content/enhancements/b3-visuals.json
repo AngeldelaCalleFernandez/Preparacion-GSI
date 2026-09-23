@@ -16,7 +16,11 @@
         "from": "Base A1: 088 + 037; el 095 se conserva solo como apoyo histórico/metodológico. Complemento: se recuperan técnicas de planificación exigidas literalmente por el BOE.",
         "fromMarkdown": "**Base A1:** 088 + 037; el 095 se conserva solo como apoyo histórico/metodológico. **Complemento:** se recuperan técnicas de planificación exigidas literalmente por el BOE.",
         "to": "La planificación debe conectar alcance, estimación, dependencias, calendario, coste y evidencia de avance, tanto en enfoques predictivos como adaptativos."
-      }],
+      },
+      {"from": "Kanban visualiza el flujo", "to": "Kanban visualiza el flujo", "namedStyleType": "NORMAL_TEXT"},
+      {"from": "Planning Poker es una técnica", "to": "Planning Poker es una técnica", "namedStyleType": "NORMAL_TEXT"},
+      {"from": "Durante un Sprint no deben", "to": "Durante un Sprint no deben", "namedStyleType": "NORMAL_TEXT"},
+      {"from": "En Gantt, longitud de barra", "to": "En Gantt, longitud de barra", "namedStyleType": "NORMAL_TEXT"}],
       "visuals": [{"afterHeading":"7.2 Líneas base y seguimiento","src":"assets/diagrams/b3/b3-t02-planificacion-control.svg","title":"Planificar, ejecutar y controlar el desarrollo","alt":"Flujo desde alcance y EDT o backlog hacia estimación, dependencias, línea base o sprint, ejecución, métricas, previsión y control de cambios, diferenciando gobierno predictivo y adaptativo.","description":"Une planificación inicial, seguimiento objetivo y decisión sobre cambios.","takeaway":"WBS y backlog no son sinónimos; ambos necesitan prioridades, responsables, criterios de aceptación y medidas de avance."}]
     },
     "B3-T03": {
@@ -61,7 +65,13 @@
         "from": "Base principal: A1 096 (resumen de 16 páginas). La V2 anterior infrautilizaba esta fuente. Se recuperan planificación, condiciones, diseño, ejecución, criterios de salida, reporting y cierre.",
         "fromMarkdown": "**Base principal:** A1 096 (resumen de 16 páginas). La V2 anterior infrautilizaba esta fuente. Se recuperan planificación, condiciones, diseño, ejecución, criterios de salida, reporting y cierre.",
         "to": "La estrategia de pruebas debe cubrir planificación, condiciones, diseño, datos y entornos, ejecución, defectos, criterios de salida, informe y cierre."
-      }],
+      },{
+        "from": "La fuente A1 096 recoge los principios ISTQB: las pruebas muestran presencia de defectos, pruebas exhaustivas son imposibles, testing temprano, agrupación de defectos, paradoja del pesticida, dependencia del contexto y falacia de ausencia de errores.",
+        "to": "Los principios de prueba pueden agruparse en tres ideas: probar reduce incertidumbre, pero no demuestra ausencia de defectos; la exhaustividad no es viable, por lo que conviene empezar pronto y concentrar el esfuerzo donde se acumulan fallos; y la estrategia debe adaptarse al contexto, renovar los casos para evitar pérdida de eficacia y comprobar que el producto satisface la necesidad, no solo que carece de errores conocidos."
+      },
+      {"from": "Fuzzing introduce entradas", "to": "Fuzzing introduce entradas", "namedStyleType": "NORMAL_TEXT"},
+      {"from": "Selenium automatiza pruebas", "to": "Selenium automatiza pruebas", "namedStyleType": "NORMAL_TEXT"},
+      {"from": "Las pruebas de aceptación validan", "to": "Las pruebas de aceptación validan", "namedStyleType": "NORMAL_TEXT"}],
       "visuals": [{"afterHeading":"11.1 Plan de pruebas y documentación","src":"assets/diagrams/b3/b3-t07-estrategia-pruebas.svg","title":"Estrategia de pruebas basada en riesgo y evidencia","alt":"Matriz que cruza objetos de prueba —software, hardware, datos y procedimientos— con niveles, técnicas, datos y tipos no funcionales, culminando en defectos, criterios de salida e informe de aceptación.","description":"Ordena las dimensiones que deben aparecer en un plan de pruebas completo.","takeaway":"Nivel, tipo, técnica y objeto son ejes distintos; la aceptación necesita evidencia y riesgo residual, no solo tests en verde."}]
     },
     "B3-T08": {
@@ -93,11 +103,20 @@
     },
     "B3-T11": {
       "classification": "REESCRITURA SELECTIVA",
-      "replacements": [{
-        "from": "Base A1: 066 (2023), útil para CLR, bibliotecas, ADO.NET, EF y LINQ. Actualización oficial: a 21/08/2026 .NET 10 es LTS activo hasta 14/11/2028; .NET 8 y .NET 9 terminan soporte en noviembre de 2026. No estudiar .NET 6 como “LTS vigente”.",
-        "fromMarkdown": "**Base A1:** 066 (2023), útil para CLR, bibliotecas, ADO.NET, EF y LINQ. **Actualización oficial:** a 21/08/2026 .NET 10 es LTS activo hasta 14/11/2028; .NET 8 y .NET 9 terminan soporte en noviembre de 2026. No estudiar .NET 6 como “LTS vigente”.",
-        "to": "A 22/09/2026, .NET 10 es la versión LTS vigente y está soportada hasta noviembre de 2028; .NET 8 LTS y .NET 9 STS continúan soportadas hasta noviembre de 2026. La versión se elige también por compatibilidad y ciclo de soporte."
-      }],
+      "replacements": [
+        {
+          "from": "Base A1: 066 (2023), útil para CLR, bibliotecas, ADO.NET, EF y LINQ. Actualización oficial: política de soporte Microsoft actualizada el 08/09/2026: .NET 10 LTS activo hasta 14/11/2028; .NET 9 STS y .NET 8 LTS hasta 10/11/2026. No estudiar .NET 6 como “LTS vigente”.",
+          "fromMarkdown": "**Base A1: 066 (2023), útil para CLR, bibliotecas, ADO.NET, EF y LINQ. Actualización oficial: política de soporte Microsoft actualizada el 08/09/2026: .NET 10 LTS activo hasta 14/11/2028; .NET 9 STS y .NET 8 LTS hasta 10/11/2026. No estudiar .NET 6 como “LTS vigente”.**",
+          "to": ".NET 10 es la versión LTS de referencia en esta revisión y tiene soporte previsto hasta noviembre de 2028. La elección de versión debe considerar compatibilidad y ciclo de soporte; las fechas próximas a caducar se consultan en la política oficial vigente."
+        },
+        {
+          "from": "Según la política oficial de Microsoft actualizada el 08/09/2026: .NET 10 es LTS y finaliza soporte el 14/11/2028; .NET 9 (STS) y .NET 8 (LTS) finalizan soporte el 10/11/2026.",
+          "fromMarkdown": "## Según la política oficial de Microsoft actualizada el 08/09/2026: .NET 10 es LTS y finaliza soporte el 14/11/2028; .NET 9 (STS) y .NET 8 (LTS) finalizan soporte el 10/11/2026.",
+          "to": "La política de soporte distingue versiones LTS y STS. Para versiones con vencimiento próximo, comprueba la fecha vigente en la documentación oficial antes de usarla en un supuesto.",
+          "namedStyleType": "NORMAL_TEXT"
+        },
+        {"from": "CLI = Common Language Infrastructure", "to": "CLI = Common Language Infrastructure", "namedStyleType": "NORMAL_TEXT"}
+      ],
       "visuals": [{"afterHeading":"8.3 Servicios web","src":"assets/diagrams/b3/b3-t11-dotnet.svg","title":"Plataforma .NET moderna de extremo a extremo","alt":"Arquitectura desde C sharp y el SDK hacia IL y CLR, ASP.NET Core con middleware e inyección, servicios, Entity Framework Core o ADO.NET, identidad, observabilidad y despliegue framework-dependent o self-contained.","description":"Relaciona herramientas, runtime, modelo web, persistencia, seguridad y despliegue.","takeaway":"CLR ejecuta IL administrado; ASP.NET Core compone la aplicación y EF Core es un ORM, no el runtime ni la base de datos."}]
     },
     "B3-T12": {
@@ -133,7 +152,8 @@
         {"from":"Base A1: 075. Complemento GSI: se amplía “tecnologías y algoritmos” exigido por BOE.","fromMarkdown":"**Base A1:** 075. **Complemento GSI:** se amplía “tecnologías y algoritmos” exigido por BOE.","to":"Las tareas de minería deben asociarse con algoritmos y métricas adecuados al objetivo, la distribución de datos y el coste de los errores."},
         {"from":"ANEXO A — Memorización rápida","fromMarkdown":"# ANEXO A — Memorización rápida","to":"15. Memorización transversal del Bloque III","namedStyleType":"HEADING_2"},
         {"from":"ANEXO B — Estrategia de estudio","fromMarkdown":"# ANEXO B — Estrategia de estudio","to":"15.1 Estrategia de estudio","namedStyleType":"HEADING_2"},
-        {"from":"Fuentes y control de actualidad","fromMarkdown":"# Fuentes y control de actualidad","to":"16. Fuentes y control de actualidad","namedStyleType":"HEADING_2"}
+        {"from":"Fuentes y control de actualidad","fromMarkdown":"# Fuentes y control de actualidad","to":"16. Fuentes y control de actualidad","namedStyleType":"HEADING_2"},
+        {"from":"Microsoft .NET Support Policy, actualizada 08/09/2026: .NET 10 LTS activo hasta 14/11/2028; .NET 9 STS y .NET 8 LTS hasta 10/11/2026.","fromMarkdown":"* Microsoft .NET Support Policy, actualizada 08/09/2026: .NET 10 LTS activo hasta 14/11/2028; .NET 9 STS y .NET 8 LTS hasta 10/11/2026.","to":"Microsoft .NET Support Policy: .NET 10 LTS es la referencia de esta revisión; las fechas de fin de soporte próximas deben comprobarse en la política vigente.","toMarkdown":"* Microsoft .NET Support Policy: .NET 10 LTS es la referencia de esta revisión; las fechas de fin de soporte próximas deben comprobarse en la política vigente."}
       ],
       "visuals": [{"afterHeading":"11.7 Batch vs streaming","src":"assets/diagrams/b3/b3-t15-plataforma-datos.svg","title":"Plataforma de datos: de la ingesta al valor","alt":"Arquitectura de datos con fuentes e ingesta batch o streaming, almacenamiento HDFS, objetos, lake o warehouse, procesamiento Hadoop o Spark, gobierno transversal y consumos OLAP, minería, IA y servicios NoSQL.","description":"Relaciona tecnologías con función, latencia, modelo de acceso y gobierno.","takeaway":"Hadoop no es todo Big Data y NoSQL no sustituye por defecto al modelo relacional: cada pieza debe justificarse por requisitos."}]
     }

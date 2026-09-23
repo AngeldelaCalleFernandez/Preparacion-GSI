@@ -21,6 +21,12 @@
 <section class="topic-visual-block" aria-labelledby="b4-t06-visual-01-title"><h4 id="b4-t06-visual-01-title">CPD, alta disponibilidad y recuperación ante desastres</h4><figure class="topic-visual"><p class="topic-visual__mobile-hint" aria-hidden="true">Desliza horizontalmente para explorar el esquema con texto legible.</p><img src="assets/diagrams/b4/b4-t06-cpd-ha-dr.svg" alt="Arquitectura con energía, climatización, red, hosts y almacenamiento redundantes en un sitio para alta disponibilidad, más una segunda sede o zona con replicación, backup, DNS y runbook para desastre." loading="lazy" decoding="async"><figcaption><span>Separa fallos de componente, de host y de sitio completo.</span><strong>Qué debes recordar:</strong> HA reduce indisponibilidad local; DR recupera otro dominio de fallo. N+1, 2N, RPO y RTO responden preguntas distintas.</figcaption></figure></section>
 <p>DR cubre pérdida de sitio/dominio de fallo. Sitio <strong>cold</strong>: infraestructura mínima, más RTO; <strong>warm</strong>: parte preinstalada; <strong>hot</strong>: alta preparación/replicación, mayor coste. Diseñar datos, DNS/routing, identidades, certificados, dependencias externas, backups y runbooks.</p>
 <p>La prueba de DR debe incluir conmutación y <strong>failback</strong>, no solo verificar una copia. RPO/RTO de cada servicio guían replicación y automatización.</p>
+<p>Microdatos oficiales de alta rentabilidad</p>
+<p>- Hipervisor tipo 1 o bare-metal: se ejecuta directamente sobre el hardware; tipo 2 o hosted: se ejecuta sobre un sistema operativo anfitrión.</p>
+<p>- HCI (Hyperconverged Infrastructure) integra de forma software-definida cómputo, almacenamiento y red/gestión en nodos de plataforma común.</p>
+<p>- VDI centraliza escritorios virtuales; RDP es un protocolo habitual de acceso remoto en ecosistema Microsoft, no sinónimo universal de VDI.</p>
+<p>- Weighted Least Connections selecciona teniendo en cuenta conexiones activas y peso/capacidad del backend; interesa la carga relativa al peso, no sólo el número bruto de conexiones.</p>
+<p>- En modo passthrough/L4 el balanceador puede reenviar basándose en IP/puerto/conexión sin inspeccionar contenido HTTP ni terminar necesariamente TLS; el enrutamiento por URL/cookie/cabecera exige funciones L7.</p>
 <h3 id="estudio-08">8. Datos y trampas de test</h3>
 <ul>
 <li>HA ≠ DR.</li>
@@ -46,5 +52,5 @@
 <p>En supuesto dibuja dos zonas/sedes, redundancia de red/energía, cluster, balanceo, almacenamiento y backup. Justifica RPO/RTO, coste y pruebas de conmutación.</p>
 <h3 id="repaso-04">Fuentes base del material</h3>
 <p>A1 057 + 053 + 128 + 132 y RELEASE arquitectura física.</p>
-<section class="topic-content__sources"><h2 id="fuentes">Fuentes y localizadores</h2><ul><li><a href="https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)</a> · IV.06 · 2026-08-21</li><li><a href="https://docs.google.com/document/d/1PRbZRedDj9j2D4jPlDODZUKkmbCqPWxMM4hhGhjcZIo/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE IV — RESUMEN MAESTRO DE REPASO (16 temas)</a> · IV.06 · 2026-08-21</li></ul></section>
+<section class="topic-content__sources"><h2 id="fuentes">Fuentes y localizadores</h2><ul><li><a href="https://docs.google.com/document/d/1MwEk2ye_u4RRHO3HP38gKX2yXjqAjzodtESKAOxDuv0/edit" target="_blank" rel="noopener noreferrer">04 — BLOQUE IV — Sistemas y comunicaciones — GSI A2</a> · IV.06 · 2026-09-23</li><li><a href="https://docs.google.com/document/d/1PRbZRedDj9j2D4jPlDODZUKkmbCqPWxMM4hhGhjcZIo/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE IV — RESUMEN MAESTRO DE REPASO (16 temas)</a> · IV.06 · 2026-08-21</li></ul></section>
 </article>

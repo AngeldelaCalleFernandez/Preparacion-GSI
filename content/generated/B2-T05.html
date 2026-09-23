@@ -9,7 +9,7 @@
 <p>Un <strong>SGBD</strong> proporciona servicios para definir, almacenar, consultar y modificar datos, manteniendo concurrencia, integridad, recuperación, seguridad y administración. Entre sus funciones: catálogo, optimización, transacciones, bloqueos/versionado, logs, backup/recovery, autorización y utilidades de explotación.</p>
 <h3 id="estudio-03">3. Lenguajes</h3>
 <ul>
-<li><strong>DDL</strong>: CREATE, ALTER, DROP y otras sentencias de definición de esquemas/objetos.</li>
+<li><strong>DDL: CREATE, ALTER, DROP y otras sentencias de definición de esquemas/objetos. TRUNCATE elimina las filas/contenido de una tabla conservando su definición; no equivale a DROP. Su clasificación formal y comportamiento transaccional concreto dependen del SGBD.</strong></li>
 <li><strong>DML</strong>: SELECT, INSERT, UPDATE, DELETE y manipulación de datos.</li>
 <li><strong>DCL</strong>: control de privilegios, por ejemplo GRANT/REVOKE según SGBD.</li>
 <li><strong>TCL</strong>: control transaccional, como COMMIT, ROLLBACK y SAVEPOINT.</li>
@@ -25,12 +25,12 @@
 </ul>
 <p><strong>Independencia física</strong>: cambiar estructuras internas sin obligar a modificar esquema conceptual/aplicaciones. <strong>Independencia lógica</strong>: modificar el esquema conceptual preservando en lo posible vistas externas y aplicaciones. La independencia lógica suele ser más difícil de alcanzar.</p>
 <h3 id="estudio-05">5. Modelo relacional</h3>
-<p>E. F. Codd propuso representar datos mediante relaciones. Una <strong>relación</strong> puede visualizarse como tabla; sus filas son tuplas y columnas atributos. Un dominio define valores admisibles. El orden de filas no forma parte del significado relacional.</p>
+<p>E. F. Codd propuso representar datos mediante relaciones. Una relación puede visualizarse como tabla; sus filas son tuplas y columnas atributos. Un dominio define valores admisibles. El orden de filas no forma parte del significado relacional. Regla de acceso garantizado de Codd: cada valor atómico debe poder localizarse unívocamente mediante el nombre de la relación/tabla, el atributo/columna y el valor de la clave primaria de la fila.</p>
 <ul>
 <li><strong>Clave candidata</strong>: conjunto mínimo de atributos que identifica de forma única una tupla.</li>
 <li><strong>Clave primaria</strong>: candidata elegida como identificador principal.</li>
 <li><strong>Clave alternativa</strong>: candidata no elegida.</li>
-<li><strong>Clave foránea</strong>: referencia una clave de otra relación y materializa integridad referencial.</li>
+<li><strong>Clave foránea: referencia una clave de otra relación y materializa integridad referencial. En una relación 1:N, la clave foránea suele situarse en el lado N y referencia la clave del lado 1.</strong></li>
 <li><strong>NULL</strong>: ausencia/desconocimiento/no aplicabilidad según contexto; introduce lógica de tres valores.</li>
 </ul>
 <p>Restricciones: dominio, clave/entidad, integridad referencial y reglas de negocio. El diseño y normalización se profundizan en Bloque III, pero aquí hay que reconocer que el SGBD las aplica.</p>
@@ -110,7 +110,7 @@
 <li><strong>Scheduler/Lock Manager</strong>: ordena acceso concurrente y bloqueos.</li>
 <li><strong>Gestor de buffers</strong>: mueve páginas entre disco y memoria.</li>
 <li><strong>Gestor de recuperación</strong>: log, commit/rollback y restauración de consistencia.</li>
-<li><strong>Gestor de almacenamiento</strong>: organiza páginas, ficheros, índices y acceso físico.</li>
+<li><strong>Gestor de almacenamiento: organiza páginas, ficheros, índices y acceso físico. Formulación clásica de examen para los componentes de proceso de un SGBD: compilador DML, precompilador DML, intérprete DDL y motor de ejecución.</strong></li>
 </ul>
 <h3 id="estudio-15">13. Optimización</h3>
 <p>El optimizador elige planes en función de estadísticas, cardinalidades, índices, costes estimados y operadores. Problemas típicos: estadísticas obsoletas, índices inadecuados, scans masivos, joins costosos, funciones que impiden usar índice, N+1 desde aplicaciones y falta de particionado cuando procede.</p>
@@ -127,7 +127,7 @@
 </ul>
 <p>El objetivo realista no es que dos motores sean idénticos, sino reducir dependencia de extensiones y definir contratos de datos, tipos, codificación, transacciones y errores.</p>
 <h3 id="estudio-17">15. CAP: dónde encaja</h3>
-<p>El A1 063 menciona CAP. Conviene conocerlo como teoría de <strong>sistemas de datos distribuidos</strong>: ante partición de red, no puede garantizarse simultáneamente consistencia fuerte y disponibilidad para todas las operaciones. No es una regla para elegir un SGBD relacional mononodo ni sustituye a ACID.</p>
+<p>El A1 063 menciona CAP. Conviene conocerlo como teoría de sistemas de datos distribuidos: ante partición de red, no puede garantizarse simultáneamente consistencia fuerte y disponibilidad para todas las operaciones. No es una regla para elegir un SGBD relacional mononodo ni sustituye a ACID. Como ejemplo de familia distinta, Apache Cassandra es una base de datos distribuida NoSQL que utiliza un modelo de almacenamiento particionado wide-column/columnas anchas; no es un SGBD relacional.</p>
 <h3 id="estudio-18">16. Seguridad</h3>
 <p>Principio de mínimo privilegio, cuentas separadas, roles, autenticación robusta, cifrado en tránsito y reposo, gestión de secretos, auditoría, parcheo, hardening y copias. Las aplicaciones deben usar consultas parametrizadas para prevenir inyección SQL.</p>
 <h3 id="estudio-19">17. Test</h3>
@@ -159,5 +159,5 @@
 <p>En supuesto diseña esquema, claves, índices, particionado, HA/replicación, backup, cifrado, auditoría y conexión. Justifica motor relacional frente a NoSQL en función de consistencia, consultas y modelo de datos.</p>
 <h3 id="repaso-04">Fuentes base del material</h3>
 <p>A1 063 + 064. Correspondencia DIRECTA.</p>
-<section class="topic-content__sources"><h2 id="fuentes">Fuentes y localizadores</h2><ul><li><a href="https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)</a> · II.05 · 2026-08-21</li><li><a href="https://docs.google.com/document/d/1h7n4dFYafS_3VMuL55TnEuVKhqaTheUoL-thDFQSr9w/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE II — RESUMEN MAESTRO DE REPASO (16 temas)</a> · II.05 · 2026-08-21</li></ul></section>
+<section class="topic-content__sources"><h2 id="fuentes">Fuentes y localizadores</h2><ul><li><a href="https://docs.google.com/document/d/1_-6JFktfHXhth_n3KeUfRPjPeFxp3Mgkl2HlZzab7c4/edit" target="_blank" rel="noopener noreferrer">02 — BLOQUE II — Tecnología básica — GSI A2</a> · II.05 · 2026-09-23</li><li><a href="https://docs.google.com/document/d/1h7n4dFYafS_3VMuL55TnEuVKhqaTheUoL-thDFQSr9w/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE II — RESUMEN MAESTRO DE REPASO (16 temas)</a> · II.05 · 2026-08-21</li></ul></section>
 </article>

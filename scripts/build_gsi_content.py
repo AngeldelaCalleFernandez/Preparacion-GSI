@@ -17,26 +17,16 @@ from pathlib import Path
 from import_gsi_documents import render_elements, inline
 
 ROOT = Path(__file__).resolve().parents[1]
-DATE = '2026-09-14'
+DATE = '2026-09-23'
 VERSION = '2.0.0'
 ROMAN = ['I', 'II', 'III', 'IV']
 COUNTS = [10, 16, 15, 16]
 DRIVE_ROOT = 'https://drive.google.com/drive/folders/1bmBgrybIUDyT1owpnooU8Oq5FH4wLrp2'
+REVIEWED_ROOT = 'https://drive.google.com/drive/folders/13eWbtpnf_3902Xa7g5vsLEyZcgUm6ufO'
 BOE_URL = 'https://www.boe.es/buscar/doc.php?id=BOE-A-2025-26262'
 TOPIC = re.compile(r'^(I|II|III|IV)\.(\d{1,2})\s*[—–-]\s*(.+)')
 ENHANCEMENTS_DIR = ROOT / 'content/enhancements'
-HTML_OUTPUT_REPLACEMENTS = {
-    # Preserve two pre-existing reviewed HTML corrections whose Markdown source
-    # had already been updated while the native snapshot remained older.
-    'B2-T06': [(
-        '<p><strong>Service-Oriented Architecture</strong> organiza capacidades como servicios con contrato. Los principios recogidos por el material A1 incluyen contrato, bajo acoplamiento, abstracción, reutilización, autonomía, ausencia de estado cuando sea posible, descubrimiento y composición.</p>',
-        '<p><strong>Service-Oriented Architecture</strong> organiza capacidades como servicios con contrato. Para evaluar un servicio conviene separar tres planos: cómo expone su capacidad —contrato, abstracción y descubrimiento—; cuánto depende de consumidores e implementaciones —bajo acoplamiento y autonomía—; y cómo participa en soluciones mayores —reutilización y composición, evitando retener estado cuando el caso lo permita—.</p>'
-    )],
-    'B3-T07': [(
-        '<p>La fuente A1 096 recoge los principios ISTQB: las pruebas muestran presencia de defectos, pruebas exhaustivas son imposibles, testing temprano, agrupación de defectos, paradoja del pesticida, dependencia del contexto y falacia de ausencia de errores.</p>',
-        '<p>Los principios de prueba pueden agruparse en tres ideas: probar reduce incertidumbre, pero no demuestra ausencia de defectos; la exhaustividad no es viable, por lo que conviene empezar pronto y concentrar el esfuerzo donde se acumulan fallos; y la estrategia debe adaptarse al contexto, renovar los casos para evitar pérdida de eficacia y comprobar que el producto satisface la necesidad, no solo que carece de errores conocidos.</p>'
-    )]
-}
+HTML_OUTPUT_REPLACEMENTS = {}
 
 def save(path, value):
     path = ROOT / path
@@ -46,6 +36,15 @@ def save(path, value):
 
 def metadata(title):
     return {'title': title, 'schema_version': '1.0.0', 'data_version': VERSION, 'updated_at': DATE}
+
+def markdown_replacement_pair(replacement):
+    """Apply a declared heading demotion consistently to Markdown and HTML."""
+    if (replacement.get('namedStyleType') == 'NORMAL_TEXT'
+            and replacement['from'] == replacement['to']
+            and 'fromMarkdown' not in replacement):
+        return '## ' + replacement['from'], replacement.get('toMarkdown', replacement['to'])
+    return (replacement.get('fromMarkdown', replacement['from']),
+            replacement.get('toMarkdown', replacement['to']))
 
 def archive_previous():
     old = json.loads((ROOT / 'data/syllabus.json').read_text('utf-8'))
@@ -127,6 +126,8 @@ def replace_paragraph_text(elements, replacements, topic_id):
                 paragraph.setdefault('paragraphStyle', {})['namedStyleType'] = replacement['namedStyleType']
             found = True
             break
+        if not found and any(replacement['to'] in text_of(element) for element in result):
+            found = True
         if not found:
             pending.append(source)
     if pending:
@@ -246,7 +247,7 @@ def inject_markdown_enhancements(markdown, visuals, supplements, topic_id):
         raise ValueError(f'Supplement placement headings not found in Markdown {topic_id}: {missing_supplements}')
     return '\n'.join(lines)
 
-def native_topics(doc, block_number):
+def native_topics(doc, block_number, stop_audit=False):
     sections = {}
     current = None
     for tab in doc.get('tabs', []):
@@ -257,13 +258,17 @@ def native_topics(doc, block_number):
                 if current in sections:
                     raise ValueError(f'Duplicate native topic: {doc["title"]} {current}')
                 sections[current] = []
+            elif stop_audit and current == COUNTS[block_number - 1] and re.match(
+                r'^ANEXO [A-Z]\s*[—–-].*(?:Registro de ajustes|Control de cambios|Auditoría|Evidencias)', text_of(element), re.I
+            ):
+                break
             elif current is not None:
                 sections[current].append(element)
     if sorted(sections) != list(range(1, COUNTS[block_number - 1]+1)):
         raise ValueError(f'Incomplete native topic split: {doc["title"]}: {sorted(sections)}')
     return sections
 
-def markdown_topics(path, block_number):
+def markdown_topics(path, block_number, stop_audit=False):
     sections = {}
     current = None
     for line in path.read_text('utf-8').splitlines():
@@ -273,24 +278,32 @@ def markdown_topics(path, block_number):
             if current in sections:
                 raise ValueError(f'Duplicate Markdown topic: {path} {current}')
             sections[current] = []
+        elif stop_audit and current == COUNTS[block_number - 1] and re.search(
+            r'ANEXO [A-Z]\s*[—–-].*(?:Registro de ajustes|Control de cambios|Auditoría|Evidencias)', line, re.I
+        ):
+            break
         elif current is not None:
             sections[current].append(line)
     if sorted(sections) != list(range(1, COUNTS[block_number - 1]+1)):
         raise ValueError(f'Incomplete Markdown split: {path}: {sorted(sections)}')
     return {k: '\n'.join(v).strip() for k, v in sections.items()}
 
-def corpus_source(path, block, kind):
+def corpus_source(path, block, kind, markdown_path=None):
     doc = json.loads(path.read_text('utf-8'))
     is_notes = kind == 'study_notes'
-    tag = f'GSI-B{block}-' + ('V21' if is_notes else 'REPASO')
-    reviewed = '2026-08-24' if block == 1 and is_notes else '2026-08-21'
+    tag = f'GSI-B{block}-' + ('REV20260923' if is_notes else 'REPASO')
+    reviewed = DATE if is_notes else '2026-08-21'
+    if markdown_path is None:
+        markdown_path = ROOT / 'documents/markdown/gsi' / path.relative_to(ROOT / 'documents/originals/gsi').with_suffix('.md')
     source = {'id': 'SRC-' + tag, 'sourceKind': 'corpus-source', 'title': doc['title'],
               'publisher': 'Corpus de estudio GSI A2 del propietario', 'official_status': 'reference',
               'url': f'https://docs.google.com/document/d/{doc["documentId"]}/edit',
               'drive_id': doc['documentId'], 'version': 'V2.1' if is_notes else 'Resumen maestro, agosto 2026',
               'reviewed_at': reviewed, 'block_ids': [f'B{block}'],
+              'revision_id': doc.get('revisionId') if is_notes else None,
+              'snapshot_path': path.relative_to(ROOT).as_posix() if is_notes else None,
               'topic_ids': [f'B{block}-T{n:02}' for n in range(1, COUNTS[block-1]+1)],
-              'documents': [{'id': 'DOC-' + tag, 'path': 'documents/markdown/gsi/' + path.relative_to(ROOT / 'documents/originals/gsi').with_suffix('.md').as_posix(),
+              'documents': [{'id': 'DOC-' + tag, 'path': markdown_path.relative_to(ROOT).as_posix(),
                              'kind': kind, 'conversion_status': 'converted'}]}
     return source, doc
 
@@ -350,7 +363,7 @@ def render_topic(topic_id, native, summary, source, review_source, locator, enha
     citations = ''.join(f'<li><a href="{html.escape(s["url"], quote=True)}" target="_blank" rel="noopener noreferrer">{html.escape(s["title"])}</a> · {html.escape(locator)} · {s["reviewed_at"]}</li>' for s in [source, review_source])
     markup = f'<article class="topic-content" data-topic-id="{topic_id}" data-coverage-status="complete">\n<p>Material curado del corpus GSI A2 · apuntes V2.1 revisados. Procedencia editorial, no documento oficial.</p>\n<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol>{toc}</ol></nav>\n' + '\n'.join(body) + f'\n<section class="topic-content__sources"><h2 id="fuentes">Fuentes y localizadores</h2><ul>{citations}</ul></section>\n</article>\n'
     for previous, reviewed in HTML_OUTPUT_REPLACEMENTS.get(topic_id, []):
-        if previous not in markup:
+        if previous not in markup and reviewed not in markup:
             raise ValueError(f'Preserved HTML replacement not found in {topic_id}')
         markup = markup.replace(previous, reviewed, 1)
     return markup, sections
@@ -366,10 +379,11 @@ def main():
                   'documents': [{'id': 'DOC-BOE-GSI-2025', 'path': 'documents/markdown/gsi/BOE-A-2025-26262-Anexo-IX.md', 'kind': 'program', 'conversion_status': 'converted'}]}
     existing_sources_document = json.loads((ROOT / 'data/sources.json').read_text('utf-8'))
     existing_sources = existing_sources_document['sources']
-    other_sources = [s for s in existing_sources if s['id'] != source_boe['id'] and not re.fullmatch(r'SRC-GSI-B[1-4]-(V21|REPASO)', s['id'])]
+    other_sources = [s for s in existing_sources if s['id'] != source_boe['id'] and not re.fullmatch(r'SRC-GSI-B[1-4]-(REV20260923|REPASO)', s['id'])]
     canonical_sources = []
     index = {'version': 1, 'generatedAt': DATE + 'T00:00:00Z', 'topics': []}
     manifest = {'version': VERSION, 'retrieved_at': DATE, 'authorized_root': DRIVE_ROOT,
+                'reviewed_root': REVIEWED_ROOT,
                 'authorized_root_meaning': 'Raíz aprobada internamente para lectura e inventario. No acredita permiso, licencia ni autorización de titulares de derechos externos.',
                 'official_control': BOE_URL,
                 'source_rights': [
@@ -389,15 +403,16 @@ def main():
                 'policy': 'Originales en Drive preservados; snapshots nativos locales; conversión MarkItDown sin OCR. El corpus está aprobado internamente para publicación, lo que no implica permiso de terceros. Las fuentes secundarias se atribuyen y las fuentes primarias prevalecen.'}
     for b, block in enumerate(blocks, 1):
         directory = ROOT / f'documents/originals/gsi/B{b}'
-        notes_path = next(directory.glob('*V2.1*.json'))
+        notes_path = ROOT / f'content/source-snapshots/reviewed-2026-09-23/B{b}-full.json'
+        notes_markdown_path = ROOT / f'documents/markdown/gsi/revised-2026-09-23/B{b}/reviewed-block-{ROMAN[b-1]}.md'
         review_path = next(directory.glob('*RESUMEN*.json'))
-        source, notes = corpus_source(notes_path, b, 'study_notes')
+        source, notes = corpus_source(notes_path, b, 'study_notes', notes_markdown_path)
         review_source, review = corpus_source(review_path, b, 'review_summary')
         canonical_sources.extend([source, review_source])
         manifest['canonical_documents'].extend([source, review_source])
-        native = native_topics(notes, b)
+        native = native_topics(notes, b, stop_audit=True)
         summaries = native_topics(review, b)
-        md = markdown_topics(ROOT / source['documents'][0]['path'], b)
+        md = markdown_topics(ROOT / source['documents'][0]['path'], b, stop_audit=True)
         summary_md = markdown_topics(ROOT / review_source['documents'][0]['path'], b)
         for topic in block['topics']:
             number, tid = topic['number'], topic['id']
@@ -411,10 +426,10 @@ def main():
                 raise ValueError(f'Source study content too short: {tid}: {len(md[number])}')
             study_markdown = md[number]
             for replacement in enhancement.get('replacements', []):
-                markdown_source = replacement.get('fromMarkdown', replacement['from'])
-                if markdown_source not in study_markdown:
+                markdown_source, markdown_target = markdown_replacement_pair(replacement)
+                if markdown_source not in study_markdown and markdown_target not in study_markdown:
                     raise ValueError(f'Editorial replacement not found in Markdown {tid}: {markdown_source}')
-                study_markdown = study_markdown.replace(markdown_source, replacement['to'], 1)
+                study_markdown = study_markdown.replace(markdown_source, markdown_target, 1)
             study_markdown = inject_markdown_enhancements(study_markdown, enhancement.get('visuals', []), enhancement.get('supplements', []), tid)
             topic_text = f'# {topic["title"]}\n\n{tid} · Bloque {b} · Tema {number}\n\nFuente: [{source["title"]}]({source["url"]}) · {locator} · {source["version"]} · {source["reviewed_at"]}\n\n' + study_markdown + f'\n\n## Resumen de repaso\n\nFuente: [{review_source["title"]}]({review_source["url"]}) · {locator}\n\n' + summary_md[number] + '\n'
             save(f'content/topics/{tid}.md', topic_text)
@@ -461,8 +476,21 @@ def main():
         save('data/updates.json', {'metadata': {k: v for k, v in metadata('Actualizaciones GSI A2').items() if k != 'title'}, 'updates': []})
     previous_inventory = json.loads((ROOT / 'data/gsi-drive-inventory.json').read_text('utf-8'))
     main_inv = previous_inventory['main']
+    known_main_ids = {entry['id'] for entry in main_inv}
+    for source in canonical_sources:
+        if source['id'].endswith('REV20260923') and source['drive_id'] not in known_main_ids:
+            main_inv.append({'id': source['drive_id'], 'title': source['title'],
+                             'mime_type': 'application/vnd.google-apps.document', 'size': None,
+                             'url': source['url'], 'file_or_folder': 'file', 'parent_id': None,
+                             'modified_time': None, 'relative_path': f'revisión 2026-09-23/B{source["block_ids"][0][1:]}'})
+    reviewed_by_id = {source['drive_id']: source for source in canonical_sources if source['id'].endswith('REV20260923')}
+    for entry in main_inv:
+        if entry['id'] in reviewed_by_id:
+            entry.setdefault('parent_id', None)
+            entry['relative_path'] = f'sin ruta verificada/{reviewed_by_id[entry["id"]]["block_ids"][0]}'
     aux_inv = previous_inventory['auxiliary']
-    save('data/gsi-drive-inventory.json', {'root': DRIVE_ROOT, 'inspected_at': DATE, 'main': main_inv, 'auxiliary': aux_inv})
+    save('data/gsi-drive-inventory.json', {'root': DRIVE_ROOT, 'reviewed_root': REVIEWED_ROOT,
+                                          'inspected_at': DATE, 'main': main_inv, 'auxiliary': aux_inv})
     print('GSI: 57 topics, distribution 10/16/15/16, 8 canonical documents, full notes and summaries.')
 
 if __name__ == '__main__':

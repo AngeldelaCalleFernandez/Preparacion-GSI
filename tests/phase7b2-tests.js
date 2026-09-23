@@ -47,7 +47,7 @@ await test("el adaptador conserva fuentes BOE y canónicas GSI", () => {
   assert(getSourceDisplayData(historical).documents.length === historical.documents.length, "Documentos históricos perdidos");
   assert(getSourceDisplayData(technicalPublic).documents.length === 1 && getSourceDisplayData(technicalPublic).url?.startsWith("https://"), "Fuente pública no normalizada");
   assert(getSourceDisplayData(technicalPrivate).documents.length === 1 && getSourceDisplayData(technicalPrivate).url?.startsWith("https://"), "Fuente privada no segura");
-  assert(sourceIndexes.documentsById.size === 33, "Los 21 documentos previos y 12 oficiales deben indexarse exactamente una vez");
+  assert(sourceIndexes.documentsById.size === 37, "Los 21 documentos previos, 4 revisados y 12 oficiales deben indexarse exactamente una vez");
   assert(sourceIndexes.documentsById.has("DOC-INAP-GSI-2024-ANSWER-KEY"), "Falta la plantilla definitiva oficial");
 });
 await test("el adaptador tolera fuentes técnicas inválidas sin bloquear índices", () => {
@@ -112,7 +112,7 @@ await test("el H1 visible de Temario es único", async () => { const app = await
 await test("los fragmentos empiezan en H2", () => assert(html.every((value) => !/<h1\b/i.test(value) && /<h2\b/i.test(value)), "Jerarquía incorrecta"));
 await test("el informe de cobertura coincide", () => { const coverage=JSON.parse(report);assert(coverage.topic_count===57 && coverage.topics.every((t)=>t.has_source), "Informe desactualizado"); });
 
-await test("todos los temas conservan fecha de revisión", () => assert(index.topics.every((topic) => /^2026-08-/.test(topic.updatedAt)), "Revisión sin fecha"));
+await test("todos los temas conservan fecha de revisión", () => assert(index.topics.every((topic) => topic.updatedAt === "2026-09-23"), "Revisión sin fecha"));
 
 await test("todos los temas tienen secciones trazadas", () => assert(index.topics.every((topic) => topic.sections.length > 3 && topic.sections.every((s) => s.sourceRefs.length)), "Secciones sin fuente"));
 

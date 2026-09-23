@@ -58,6 +58,12 @@
 <p>Medir IOPS, throughput (MB/s o GB/s), latencia, tamaño de bloque, ratio lectura/escritura, secuencial/aleatorio y concurrencia. Una base OLTP exige perfil distinto de backup secuencial. La capacidad útil debe descontar RAID, snapshots, reservas y crecimiento.</p>
 <h3 id="estudio-08">8. Administración y seguridad</h3>
 <p>Inventario, firmware, salud de discos, pools, capacidad, latencia, rutas, snapshots, replicación y alertas. Seguridad: segmentación de redes de storage, autenticación, cifrado en tránsito/reposo cuando proceda, control de administración y borrado seguro. Para backup, valorar inmutabilidad/WORM.</p>
+<p>Microdatos oficiales de alta rentabilidad</p>
+<p>- Capacidad aproximada con discos iguales (o tomando el tamaño del menor): RAID 0 = N×S; RAID 1 clásico de dos discos ≈ S; RAID 5 = (N−1)×S; RAID 6 = (N−2)×S. La capacidad útil real puede ser menor por metadatos/formato.</p>
+<p>- iSCSI transporta SCSI sobre TCP/IP; FCoE encapsula Fibre Channel sobre Ethernet. No inviertas ambas asociaciones.</p>
+<p>- LUN (Logical Unit Number) identifica una unidad lógica SCSI presentada a un host; en SAN suele asociarse al volumen lógico que el host ve como dispositivo de bloque.</p>
+<p>- La virtualización de almacenamiento puede implementarse en host/servidor, en la red/fabric o en la propia cabina; «shadow» no es una ubicación arquitectónica estándar.</p>
+<p>- Amazon S3 es almacenamiento de objetos. Úsalo como ejemplo de servicio, no como definición de almacenamiento objeto.</p>
 <h3 id="estudio-09">9. Datos y trampas de test</h3>
 <ul>
 <li>RAID ≠ backup.</li>
@@ -83,5 +89,5 @@
 <p>En supuesto clasifica cargas (BD, ficheros, objetos, backup), calcula capacidad útil, rendimiento, redundancia, replicación y tiering. Incluye cifrado, inmutabilidad y monitorización.</p>
 <h3 id="repaso-04">Fuentes base del material</h3>
 <p>A1 056 + 057 y material de almacenamiento/virtualización.</p>
-<section class="topic-content__sources"><h2 id="fuentes">Fuentes y localizadores</h2><ul><li><a href="https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)</a> · IV.05 · 2026-08-21</li><li><a href="https://docs.google.com/document/d/1PRbZRedDj9j2D4jPlDODZUKkmbCqPWxMM4hhGhjcZIo/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE IV — RESUMEN MAESTRO DE REPASO (16 temas)</a> · IV.05 · 2026-08-21</li></ul></section>
+<section class="topic-content__sources"><h2 id="fuentes">Fuentes y localizadores</h2><ul><li><a href="https://docs.google.com/document/d/1MwEk2ye_u4RRHO3HP38gKX2yXjqAjzodtESKAOxDuv0/edit" target="_blank" rel="noopener noreferrer">04 — BLOQUE IV — Sistemas y comunicaciones — GSI A2</a> · IV.05 · 2026-09-23</li><li><a href="https://docs.google.com/document/d/1PRbZRedDj9j2D4jPlDODZUKkmbCqPWxMM4hhGhjcZIo/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE IV — RESUMEN MAESTRO DE REPASO (16 temas)</a> · IV.05 · 2026-08-21</li></ul></section>
 </article>

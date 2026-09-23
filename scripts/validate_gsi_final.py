@@ -15,6 +15,7 @@ from collections import Counter
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
+from build_gsi_content import markdown_replacement_pair, markdown_topics
 
 ROOT=Path(__file__).resolve().parents[1]
 from datetime import date
@@ -48,8 +49,8 @@ def remove_editorial_layer(text, topic_id, enhancements):
                f'**Qué debes recordar:** {visual["takeaway"]}\n')
         text=text.replace(block,'')
     for replacement in reversed(enhancement.get('replacements',[])):
-        source=replacement.get('fromMarkdown',replacement['from'])
-        text=text.replace(replacement['to'],source,1)
+        source,target=markdown_replacement_pair(replacement)
+        text=text.replace(target,source,1)
     return text
 
 class Fragment(HTMLParser):
@@ -87,7 +88,9 @@ def main():
         section=re.search(r'(?m)^#+ '+re.escape(m['locator'])+r'\s*[—–-].*\n',canonical)
         check(section is not None,tid+': localizador en manual original')
         if section:
-            rest=canonical[section.end():];boundary=re.search(r'(?m)^#+ (?:I|II|III|IV)\.\d+\s*[—–-]',rest)
+            rest=canonical[section.end():];boundary=re.search(
+                r'(?m)^(?:#+ (?:I|II|III|IV)\.\d+\s*[—–-]|.*ANEXO [A-Z]\s*[—–-].*(?:Registro de ajustes|Control de cambios|Auditoría|Evidencias))',rest
+            )
             study=rest[:boundary.start()].strip() if boundary else rest.strip()
             preserved=remove_editorial_layer(text,tid,enhancements)
             check(sha(study)==m['study_sha256'] and study in preserved and len(study)==m['study_characters'],tid+': apuntes completos conservados y hash exacto')
@@ -128,6 +131,7 @@ def main():
         fingerprint=sha('\n'.join(f"{r['id']}:{r['record_sha256']}:{r['evidence_sha256']}" for r in reviews['reviews']))
         check(confirmation['records_sha256']==fingerprint and confirmation['record_count']==len(reviewmap),'Confirmación del propietario ligada al lote exacto')
     drafts={}
+    historical_study={}
     for path in sorted((ROOT/'content/question-drafts').glob('*.txt')):
         counts={};topic=None
         for line in path.read_text('utf-8').splitlines():
@@ -152,8 +156,14 @@ def main():
         if q['origin']=='ai':
             topic,line=drafts[label];fields=line.split('|');section=fields[0]
             check(q['statement']==fields[1] and sorted(o['text'] for o in q['options'])==sorted(fields[2:6]) and next(o['text'] for o in q['options'] if o['id']==q['correct_option'])==fields[2] and q['feedback']['correct']==fields[6],label+': opciones, respuesta y explicación coinciden con borrador')
-            text=(ROOT/f'content/topics/{topic}.md').read_text('utf-8').split('## Resumen de repaso')[0]
-            text=remove_editorial_layer(text,topic,enhancements)
+            # Question evidence is a provenance snapshot. Editorial updates to
+            # the study page do not rewrite the reviewed question or its source.
+            historical_source=sources[q['source']['source_id']]
+            historical_path=ROOT/historical_source['documents'][0]['path']
+            block=int(topic[1]);key=(historical_path,block)
+            if key not in historical_study:
+                historical_study[key]=markdown_topics(historical_path,block)
+            text=historical_study[key][int(topic[-2:])]
             match=re.search(r'^## '+re.escape(section)+r'\.? (.+?)\n(.*?)(?=^## |\Z)',text,re.M|re.S)
             check(match is not None and sha(match[2].strip())==q['source']['evidence_sha256'] and match[2].strip()==q['source']['evidence'],label+': evidencia exacta de sección')
             check(sha(topic+'\n'+line)==q['source']['record_sha256'],label+': borrador y JSON sincronizados')

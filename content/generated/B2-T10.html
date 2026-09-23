@@ -10,13 +10,13 @@
 <li><strong>Amenaza</strong>: causa potencial de incidente o daño.</li>
 <li><strong>Vulnerabilidad</strong>: debilidad que una amenaza puede explotar.</li>
 <li><strong>Salvaguarda/control</strong>: medida que reduce probabilidad, impacto o facilita prevención/detección/respuesta.</li>
-<li><strong>Impacto</strong>: consecuencia de materialización.</li>
+<li><strong>Impacto: consecuencia de materialización. En MAGERIT v3, el impacto acumulado se calcula a partir del valor acumulado del activo y de la degradación causada; por tanto, conocer solo el valor propio del activo y el porcentaje de degradación no basta para obtener el impacto acumulado si no se conoce su valor acumulado.</strong></li>
 <li><strong>Probabilidad/frecuencia</strong>: posibilidad de ocurrencia según método.</li>
 <li><strong>Riesgo</strong>: combinación de probabilidad y consecuencias sobre objetivos/activos.</li>
 <li><strong>Riesgo inherente/potencial</strong>: antes de considerar controles.</li>
 <li><strong>Riesgo residual</strong>: el que permanece tras salvaguardas.</li>
 </ul>
-<p>Amenaza y vulnerabilidad no son intercambiables. Un servidor sin parche tiene una vulnerabilidad; un atacante o malware puede ser amenaza; el riesgo surge al combinar contexto, exposición y consecuencias.</p>
+<p>Amenaza y vulnerabilidad no son intercambiables. Un servidor sin parche tiene una vulnerabilidad; un atacante o malware puede ser amenaza; el riesgo surge al combinar contexto, exposición y consecuencias. En MAGERIT, la dimensión de integridad se refiere al mantenimiento de la completitud y corrección de los datos.</p>
 <h3 id="estudio-03">3. Ciclo de gestión de riesgos</h3>
 <section class="topic-visual-block" aria-labelledby="b2-t10-visual-01-title"><h4 id="b2-t10-visual-01-title">Del activo al riesgo residual</h4><figure class="topic-visual"><p class="topic-visual__mobile-hint" aria-hidden="true">Desliza horizontalmente para explorar el esquema con texto legible.</p><img src="assets/diagrams/b2/b2-t10-ciclo-riesgo.svg" alt="Ciclo que enlaza contexto, activos y dependencias, amenazas y vulnerabilidades, impacto y probabilidad, riesgo inherente, salvaguardas, riesgo residual, tratamiento, aceptación y revisión." loading="lazy" decoding="async"><figcaption><span>Ordena el análisis y la gestión y señala dónde actúan los controles.</span><strong>Qué debes recordar:</strong> El riesgo inherente se valora antes de controles; el residual queda después y debe tratarse o aceptarse por quien tenga competencia.</figcaption></figure></section>
 <ul>
@@ -33,7 +33,7 @@
 <li>Revisar de forma continua ante cambios, incidentes y nuevas amenazas.</li>
 </ul>
 <h3 id="estudio-04">4. Análisis cualitativo y cuantitativo</h3>
-<p><strong>Cualitativo</strong>: escalas como bajo/medio/alto y matrices; rápido y comprensible, pero menos preciso. <strong>Cuantitativo</strong>: intenta expresar frecuencias/pérdidas en magnitudes, útil cuando hay datos fiables. En la práctica existen enfoques semicuantitativos.</p>
+<p><strong>Cualitativo: escalas como bajo/medio/alto y matrices; rápido y comprensible, pero menos preciso. Un mapa de calor o matriz de riesgos representa habitualmente probabilidad/frecuencia frente a impacto para priorizar. Cuantitativo: intenta expresar frecuencias/pérdidas en magnitudes, útil cuando hay datos fiables. En la práctica existen enfoques semicuantitativos.</strong></p>
 <p>No conviertas números arbitrarios en falsa precisión. Lo importante es que escalas y criterios estén definidos y sean consistentes.</p>
 <h3 id="estudio-05">5. Tratamiento</h3>
 <ul>
@@ -45,7 +45,7 @@
 <p>Un plan de tratamiento define acción, responsable, prioridad, recursos, fecha y riesgo objetivo. La aceptación debe ser explícita según gobernanza.</p>
 <h3 id="estudio-06">6. MAGERIT v3</h3>
 <p>MAGERIT estructura el análisis de riesgos de sistemas de información dentro de un marco de gestión. Está especialmente alineada con el ámbito de las AAPP y el ENS. Trabaja con activos, dimensiones/valoración, amenazas, salvaguardas, impacto y riesgo. No es una herramienta: es una <strong>metodología</strong>.</p>
-<p>El material oficial la relaciona con ISO 31000 y con la exigencia del ENS de gestionar seguridad basada en riesgos.</p>
+<p>El material oficial la relaciona con ISO 31000 y con la exigencia del ENS de gestionar seguridad basada en riesgos. Como referencias internacionales vigentes que conviene reconocer: ISO/IEC 27005:2022 proporciona guía para gestionar riesgos de seguridad de la información, y NIST SP 800-30 Rev.1 ofrece una guía para realizar evaluaciones de riesgos.</p>
 <h3 id="estudio-07">7. PILAR</h3>
 <p>PILAR implementa análisis y gestión según MAGERIT/ISO 27005. Permite modelar activos y dependencias, amenazas y salvaguardas, estimar impacto/riesgo potencial y residual, producir mapa de riesgos y apoyar un plan de mejora. La herramienta no sustituye al juicio ni a la aprobación de responsables.</p>
 <h3 id="estudio-08">8. Riesgo de seguridad vs riesgo de proyecto</h3>
@@ -82,5 +82,5 @@
 <p>En supuesto haz una tabla corta activo-amenaza-vulnerabilidad-impacto-medida-riesgo residual. Vincula controles con ENS y continuidad, prioriza por riesgo y justifica aceptación por responsable competente.</p>
 <h3 id="repaso-04">Fuentes base del material</h3>
 <p>A1 047 y material ENS/MAGERIT.</p>
-<section class="topic-content__sources"><h2 id="fuentes">Fuentes y localizadores</h2><ul><li><a href="https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)</a> · II.10 · 2026-08-21</li><li><a href="https://docs.google.com/document/d/1h7n4dFYafS_3VMuL55TnEuVKhqaTheUoL-thDFQSr9w/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE II — RESUMEN MAESTRO DE REPASO (16 temas)</a> · II.10 · 2026-08-21</li></ul></section>
+<section class="topic-content__sources"><h2 id="fuentes">Fuentes y localizadores</h2><ul><li><a href="https://docs.google.com/document/d/1_-6JFktfHXhth_n3KeUfRPjPeFxp3Mgkl2HlZzab7c4/edit" target="_blank" rel="noopener noreferrer">02 — BLOQUE II — Tecnología básica — GSI A2</a> · II.10 · 2026-09-23</li><li><a href="https://docs.google.com/document/d/1h7n4dFYafS_3VMuL55TnEuVKhqaTheUoL-thDFQSr9w/edit" target="_blank" rel="noopener noreferrer">GSI_A2 — BLOQUE II — RESUMEN MAESTRO DE REPASO (16 temas)</a> · II.10 · 2026-08-21</li></ul></section>
 </article>
