@@ -1,5 +1,7 @@
 # Auditoría de la conversión a GSI A2
 
+> **Documento histórico:** la auditoría integral más reciente, incluida la depuración del banco realizada el 23/09/2026, está en [AUDITORIA_INTEGRAL_GSI_2026.md](AUDITORIA_INTEGRAL_GSI_2026.md). Los recuentos de este documento corresponden a las fases que se indican en cada apartado.
+
 > **Aviso de estado:** este documento conserva auditorías y resultados históricos de distintas fases del proyecto. Para el estado vigente del saneamiento de fuentes y derechos de terceros, consulte [AUDITORIA_SANEAMIENTO_PREPARATIC.md](../AUDITORIA_SANEAMIENTO_PREPARATIC.md). Para el resultado técnico vigente, consulte [logs/gsi-suite.json](../logs/gsi-suite.json).
 
 ## Mezcla y feedback de test: 21 de septiembre de 2026

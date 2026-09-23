@@ -18,17 +18,17 @@ La aplicación funciona y los 57 temas tienen apuntes completos, resumen y proce
 
 | Origen | Activas | Pendientes |
 | --- | ---: | ---: |
-| Material curado del corpus | 959 | 0 |
+| Material curado del corpus | 662 | 0 |
 | Preguntas generadas revisadas | 803 | 0 |
 | Preguntas oficiales INAP | 202 | 0 |
 
-La aplicación contiene **1.964 preguntas activas** y los **57 temas tienen al menos 20 preguntas revisadas**. Las 803 generadas se activaron tras la confirmación del propietario de que los test estaban revisados; conservan su origen IA y la aceptación asociada a sus hashes. La confirmación no se presenta como una revisión humana realizada por el agente.
+La aplicación contiene **1.667 preguntas activas** y los **57 temas tienen al menos 20 preguntas revisadas**. Una auditoría estructural retiró 297 preguntas curadas cuya respuesta correcta era al menos 2,5 veces más larga que cualquier distractor, salvo tres excepciones mínimas documentadas para conservar la cobertura. Las 803 generadas se activaron tras la confirmación del propietario de que los test estaban revisados; conservan su origen IA y la aceptación asociada a sus hashes. La confirmación no se presenta como una revisión humana realizada por el agente.
 
 En **Examen → Exámenes oficiales INAP**, abre **2022** o **2024**, pulsa **Preparar este examen** y después **Iniciar examen**. Cada convocatoria ofrece 100 preguntas evaluables en 90 minutos, con plantilla definitiva y sustitución de anuladas por reservas. Hay 12 enlaces oficiales a cuestionarios, plantillas, supuestos escritos y criterios de 2022, 2024 y 2025. La plantilla consultada de **2025 es provisional**: se ofrece para lectura, sin activar su corrección automática. [Detalle de la importación](docs/GSI_EXAMENES_OFICIALES.md).
 
 La publicación de esta revisión, incluidas las auditorías, fue autorizada expresamente por el propietario el 17 de septiembre de 2026.
 
-Consulta la [auditoría completa](docs/FINAL_GSI_AUDIT.md), la [cobertura por tema](data/gsi-coverage-report.json) y el [resultado de la suite](logs/gsi-suite.json).
+Consulta la [auditoría integral de 2026](docs/AUDITORIA_INTEGRAL_GSI_2026.md), la [auditoría histórica](docs/FINAL_GSI_AUDIT.md), la [cobertura por tema](data/gsi-coverage-report.json), la [auditoría del banco](logs/gsi-question-quality-audit.json) y el [resultado de la suite](logs/gsi-suite.json).
 
 ## Funcionalidades
 
@@ -145,7 +145,7 @@ La última ejecución aprobó:
 
 - 19 archivos contra 17 esquemas JSON;
 - 57 temas y sus referencias;
-- 1964 preguntas con estructura válida;
+- 1667 preguntas con estructura válida y auditoría objetiva de calidad;
 - 83 pruebas unitarias;
 - 288 pruebas de regresión;
 - 75 comprobaciones funcionales en navegador;
