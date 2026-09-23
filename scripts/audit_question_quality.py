@@ -33,6 +33,25 @@ REVIEWED_NEAR_DUPLICATES = {
     frozenset(("AI-GSI-B2-T06-013", "AI-GSI-B2-T06-016")): "Distingue REST y PATCH.",
     frozenset(("MAN-GSI-P19-006", "MAN-GSI-P19-007")): "Contraste paralelo I-CSCF/S-CSCF.",
 }
+SHORT_FEEDBACK_EXCEPTIONS = {
+    "AI-GSI-B3-T13-009": "La sustitución numérica muestra la fórmula y el resultado sin omitir ningún paso.",
+    "AI-GSI-B4-T06-005": "El cociente del PUE muestra directamente los datos y el resultado.",
+}
+
+
+def reviewed_manual_length_ids() -> set[str]:
+    paths = [ROOT / "content/question-drafts/manual-question-quality-review.json"]
+    paths.extend(sorted((ROOT / "content/question-drafts").glob("manual-question-revisions-p*.json")))
+    reviewed: set[str] = set()
+    for path in paths:
+        with path.open(encoding="utf-8") as stream:
+            revisions = json.load(stream)["revisions"]
+        reviewed.update(
+            question_id
+            for question_id, revision in revisions.items()
+            if "statement" in revision or "options" in revision
+        )
+    return reviewed
 
 
 def normalize(value: str) -> str:
@@ -94,6 +113,7 @@ def metric_summary(questions: list[dict]) -> dict:
 
 def main() -> int:
     questions = load_questions()
+    revised_manual_ids = reviewed_manual_length_ids()
     objective_errors: list[dict] = []
     short_feedback: list[dict] = []
     repeated_feedback: list[str] = []
@@ -121,7 +141,12 @@ def main() -> int:
         if question.get("is_active") and not incorrect_feedback:
             objective_errors.append({"id": question_id, "reason": "missing_incorrect_feedback"})
         if len(correct_feedback) < 40:
-            short_feedback.append({"id": question_id, "characters": len(correct_feedback)})
+            short_feedback.append({
+                "id": question_id,
+                "characters": len(correct_feedback),
+                "review_status": "reviewed_keep" if question_id in SHORT_FEEDBACK_EXCEPTIONS else "pending_review",
+                **({"reason": SHORT_FEEDBACK_EXCEPTIONS[question_id]} if question_id in SHORT_FEEDBACK_EXCEPTIONS else {}),
+            })
         if correct_feedback and normalize(correct_feedback) == normalize(incorrect_feedback):
             repeated_feedback.append(question_id)
             repeated_feedback_by_origin[question["origin"]] += 1
@@ -129,13 +154,22 @@ def main() -> int:
         correct_length = lengths[question["correct_option"]]
         longest_distractor = max(length for option_id, length in lengths.items() if option_id != question["correct_option"])
         if correct_length > longest_distractor and correct_length / max(longest_distractor, 1) >= 1.5:
+            if question["origin"] == "official":
+                review_status = "official_immutable_exception"
+            elif question["origin"] == "manual" and question_id in revised_manual_ids:
+                review_status = "editorially_revised_still_flagged"
+            else:
+                review_status = "pending_review"
             severe_length_clues.append(
                 {
                     "id": question_id,
                     "origin": question["origin"],
+                    "block_id": question["block_id"],
+                    "topic_id": question["topic_id"],
                     "correct_characters": correct_length,
                     "longest_distractor_characters": longest_distractor,
                     "ratio": round(correct_length / max(longest_distractor, 1), 2),
+                    "review_status": review_status,
                 }
             )
         words = tuple(statement.split()[:5])
@@ -201,8 +235,12 @@ def main() -> int:
             "severe_correct_length_clues": {
                 "count": len(severe_length_clues),
                 "by_origin": dict(sorted(Counter(item["origin"] for item in severe_length_clues).items())),
+                "by_review_status": dict(sorted(Counter(item["review_status"] for item in severe_length_clues).items())),
+                "pending_by_origin": dict(sorted(Counter(item["origin"] for item in severe_length_clues if item["review_status"] == "pending_review").items())),
+                "candidates": sorted(severe_length_clues, key=lambda item: item["id"]),
+                "official_exceptions": sorted(item["id"] for item in severe_length_clues if item["origin"] == "official"),
                 "top_candidates": sorted(severe_length_clues, key=lambda item: (-item["ratio"], item["id"]))[:50],
-                "note": "Heuristic only: the correct option is at least 1.5 times as long as every distractor.",
+                "note": "Heuristic only: the correct option is at least 1.5 times as long as every distractor. Editorial review does not suppress a raw candidate; official items remain unchanged.",
             },
             "repeated_statement_prefixes": repeated_prefixes,
             "topic_position_imbalances": topic_positions,

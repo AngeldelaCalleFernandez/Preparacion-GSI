@@ -1,5 +1,10 @@
 # Auditoría integral de Preparación GSI A2 — 23/09/2026
 
+> Nota de seguimiento: las cifras y pendientes de este documento son la
+> instantánea de la auditoría inicial. La revisión editorial posterior de las
+> 406 candidatas de longitud, las 27 explicaciones breves y las 297 retiradas
+> se documenta en [REVISION_CALIDAD_PREGUNTAS_GSI_2026.md](REVISION_CALIDAD_PREGUNTAS_GSI_2026.md).
+
 ## Resultado ejecutivo
 
 La aplicación sigue siendo técnicamente utilizable y cubre los 57 temas del programa de GSI A2 de ingreso libre. La auditoría no encontró un error P0 demostrado en las normas y conceptos temporales contrastados, pero sí un P1 editorial grave en el banco curado: la respuesta correcta era la alternativa más larga en el 87,8 % de sus 959 preguntas, frente al 33,7 % de las 202 preguntas oficiales.

@@ -1,0 +1,198 @@
+{
+  "version": 1,
+  "reviewed_at": "2026-09-23",
+  "criterion": "Movilidad empresarial y videoconferencia contrastadas con controles y protocolos del mismo dominio.",
+  "revisions": {
+    "MAN-GSI-P19-086": {
+      "options": {
+        "A": "UEM gestiona solo antivirus; MDM cubre PCs y móviles por igual.",
+        "B": "MDM incluye toda la gestión de identidad y aplicaciones de UEM.",
+        "D": "EMM se limita al inventario de SIM y no gestiona aplicaciones."
+      }
+    },
+    "MAN-GSI-P19-087": {
+      "options": {
+        "B": "Equipo propiedad de la empresa reservado al uso profesional.",
+        "C": "Equipo propiedad de la empresa con uso personal permitido.",
+        "D": "Equipo elegido del catálogo corporativo y adquirido por la empresa."
+      }
+    },
+    "MAN-GSI-P19-088": {
+      "options": {
+        "A": "Dispositivo personal usado para trabajo bajo política BYOD.",
+        "C": "Dispositivo corporativo reservado exclusivamente al negocio.",
+        "D": "Dispositivo elegido entre modelos aprobados sin propiedad corporativa."
+      }
+    },
+    "MAN-GSI-P19-089": {
+      "options": {
+        "A": "Dispositivo personal aceptado para uso laboral.",
+        "B": "Dispositivo corporativo con uso personal permitido.",
+        "D": "Dispositivo elegido entre los modelos autorizados."
+      }
+    },
+    "MAN-GSI-P19-096": {
+      "options": {
+        "B": "Mantener acceso hasta la próxima revisión periódica de compliance.",
+        "C": "Confiar en MFA aunque el terminal incumpla el requisito de integridad.",
+        "D": "Limitar únicamente el ancho de banda sin cambiar autorización."
+      }
+    },
+    "MAN-GSI-P19-097": {
+      "options": {
+        "B": "Aumentar cobertura radio mediante cambio de identidad de SIM.",
+        "C": "Reemplazar cifrado local del terminal por autenticación de red.",
+        "D": "Respaldar automáticamente todas las apps sin política de datos."
+      }
+    },
+    "MAN-GSI-P19-099": {
+      "options": {
+        "A": "Mantener tokens mientras el usuario no borre voluntariamente la app.",
+        "C": "Borrar todo dato personal incluso en un dispositivo BYOD.",
+        "D": "Dejar certificados activos para simplificar un posible retorno."
+      }
+    },
+    "MAN-GSI-P19-100": {
+      "options": {
+        "A": "Gestionar solo móviles y dejar ordenadores sin inventario.",
+        "B": "Configurar cada sistema por correo sin política común.",
+        "C": "Aplicar una política idéntica sin tener en cuenta capacidades de cada SO."
+      }
+    },
+    "MAN-GSI-P19-104": {
+      "options": {
+        "A": "SIP/SDP, porque negocia medios y también transporta audio.",
+        "B": "RTCP, porque sustituye todos los paquetes RTP de medios.",
+        "D": "SRTP, porque negocia la sesión sin usar un plano RTP."
+      }
+    },
+    "MAN-GSI-P19-109": {
+      "options": {
+        "A": "Descubrir mapeos NAT sin retransmitir medios.",
+        "B": "Negociar códecs pero sin intervenir en conectividad.",
+        "C": "Controlar registro SIP del abonado en IMS."
+      }
+    },
+    "MAN-GSI-P19-110": {
+      "options": {
+        "A": "STUN obtiene candidatos y TURN selecciona el par válido sin retransmitir medios.",
+        "B": "TURN descubre mapeos, mientras STUN siempre relaya medios.",
+        "C": "STUN retransmite medios al fallar la ruta directa; TURN solo anuncia la IP pública."
+      },
+      "feedback": "STUN ayuda a descubrir mapeos y comprobar conectividad; TURN retransmite medios cuando la ruta directa no funciona. ICE coordina candidatos."
+    },
+    "MAN-GSI-P19-120": {
+      "options": {
+        "A": "Un servidor STUN sin capacidad de retransmitir tráfico.",
+        "C": "Un S-CSCF de IMS usado como relay de medios WebRTC.",
+        "D": "Un servidor DNS que cambie los puertos de ambos peers."
+      }
+    },
+    "MAN-GSI-P19-121": {
+      "options": {
+        "A": "Solo el número de cuentas registradas, aunque no concurran.",
+        "B": "Solo la velocidad anunciada del enlace, sin medir flujos.",
+        "C": "Solo el bitrate máximo de una cámara, sin subidas ni overhead."
+      }
+    },
+    "MAN-GSI-P19-126": {
+      "options": {
+        "A": "Tasa media de bits disponibles por segundo.",
+        "B": "Proporción de paquetes que no llegan al destino.",
+        "C": "Tiempo total de tránsito de un paquete entre extremos."
+      }
+    },
+    "MAN-GSI-P19-129": {
+      "options": {
+        "A": "Marcar DSCP en los terminales sin configurar colas en los equipos intermedios.",
+        "B": "Priorizar voz solo en la LAN y asumir el mismo tratamiento en Internet.",
+        "D": "Configurar colas en la WAN, pero omitir clasificación coherente al entrar el tráfico."
+      }
+    },
+    "MAN-GSI-P19-131": {
+      "options": {
+        "A": "Número de asistentes, resolución nominal de cámara y velocidad contratada, sin pérdida ni jitter.",
+        "B": "RTT y ancho de banda contratado, sin observar bitrate, pérdida ni comportamiento del endpoint.",
+        "D": "Duración y número de reconexiones, sin métricas de transporte RTP ni calidad percibida."
+      }
+    },
+    "MAN-GSI-P19-134": {
+      "options": {
+        "A": "Aumentar la capacidad WAN disponible para vídeo.",
+        "B": "Cifrar el medio RTP antes de reproducirlo.",
+        "C": "Modificar políticas de acceso a la reunión."
+      }
+    },
+    "MAN-GSI-P19-135": {
+      "options": {
+        "A": "Situar la luz principal detrás de los participantes y dejar los rostros en sombra.",
+        "B": "Usar una única luz lateral intensa, sin controlar sombras ni exposición.",
+        "D": "Mantener contraluces de ventanas y confiar en la corrección automática de cámara."
+      }
+    },
+    "MAN-GSI-P19-136": {
+      "options": {
+        "A": "Resolución nominal de cámara y pantalla, sin relacionarla con distancia ni tamaño de sala.",
+        "C": "Tamaño de pantalla y cableado, sin contar asistentes ni campo de visión.",
+        "D": "Ángulo máximo de cámara y protocolo de gestión, sin comprobar legibilidad del contenido."
+      }
+    },
+    "MAN-GSI-P19-138": {
+      "options": {
+        "A": "Retención indefinida como valor por defecto para todo contenido.",
+        "B": "Publicación automática porque los asistentes fueron invitados.",
+        "D": "Acceso a grabaciones sin permiso adicional al de la reunión."
+      }
+    },
+    "MAN-GSI-P19-141": {
+      "options": {
+        "A": "PBX redundante y SIP trunk único, sin estudiar frontera SBC ni continuidad del operador.",
+        "B": "Dos trunks y QoS en LAN, sin revisar identidad, cifrado ni conmutación ante caída.",
+        "C": "Servicio UC cloud con terminales nuevos, sin medir capacidad de sedes ni teletrabajo."
+      }
+    },
+    "MAN-GSI-P19-143": {
+      "options": {
+        "A": "PBX móvil y de escritorio separadas, sincronizando contactos pero no numeración ni identidad.",
+        "B": "Clientes de UC con presencia compartida, pero cuentas y políticas distintas para cada terminal.",
+        "C": "Número único mediante desvío de llamadas, sin presencia ni continuidad de otros servicios."
+      }
+    },
+    "MAN-GSI-P19-149": {
+      "options": {
+        "A": "SDP únicamente, sin comprobación de rutas ni candidatos ICE.",
+        "B": "Solo BGP externo sin revisar políticas del firewall local.",
+        "C": "Solo el códec de la cámara cuando falla por tipo de NAT."
+      }
+    },
+    "MAN-GSI-P19-151": {
+      "options": {
+        "B": "MCU que mezcla y recodifica obligatoriamente cada flujo.",
+        "C": "PBX que concentra solo señalización sin distribuir vídeo.",
+        "D": "Relay TURN que sustituye la lógica de selección de streams."
+      }
+    },
+    "MAN-GSI-P19-154": {
+      "statement": "Si a 75 Mb/s se añade un margen del 20 %, ¿qué reserva aproximada resulta por sentido?",
+      "options": {
+        "C": "90 Mb/s."
+      },
+      "reason": "La precisión 'por sentido' pasa al enunciado porque antes singularizaba la alternativa correcta."
+    },
+    "MAN-GSI-P19-156": {
+      "options": {
+        "A": "DSCP obliga a todos los operadores a respetar la misma cola.",
+        "C": "El marcado DSCP cifra el flujo de medios en Internet.",
+        "D": "El marcado reemplaza dimensionamiento cuando el enlace se satura."
+      }
+    },
+    "MAN-GSI-P19-160": {
+      "statement": "Un organismo tiene PBX IP en varias sedes, una flota móvil gestionada y salas WebRTC; necesita continuidad e interoperabilidad entre todos los servicios. ¿Qué plan aborda el conjunto?",
+      "options": {
+        "A": "Integrar UC, UEM y salas, pero tratar seguridad y recuperación como funciones independientes sin pruebas conjuntas.",
+        "C": "Diseñar IMS/SIP y WebRTC con QoS, pero no gobernar terminales móviles ni identidades compartidas.",
+        "D": "Elegir red móvil y UC redundantes, pero omitir capacidad de sedes, interoperabilidad de salas y monitorización."
+      }
+    }
+  }
+}

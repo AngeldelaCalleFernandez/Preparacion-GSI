@@ -1,0 +1,280 @@
+{
+  "version": 1,
+  "reviewed_at": "2026-09-23",
+  "criterion": "Alternativas revisadas para contrastar mecanismos del mismo dominio y eliminar pistas ajenas a la materia.",
+  "revisions": {
+    "MAN-GSI-P15-006": {
+      "options": {
+        "A": "Para ejecutar assemblies, sin compilar ni publicar proyectos.",
+        "C": "Para restaurar paquetes, sin gestionar pruebas ni despliegue.",
+        "D": "Para definir proyectos, sin invocar el SDK ni el runtime."
+      }
+    },
+    "MAN-GSI-P15-008": {
+      "options": {
+        "A": "Que el compilador genera código nativo y el CLR deja de intervenir.",
+        "C": "Que requiere privilegios administrativos para usar el recolector de basura.",
+        "D": "Que el runtime interpreta todo el código sin JIT ni AOT."
+      }
+    },
+    "MAN-GSI-P15-009": {
+      "options": {
+        "B": "Puede ejecutarse en Linux solo si está alojado dentro de IIS.",
+        "C": "Se limita a Windows salvo que el código se traduzca a Java.",
+        "D": "La portabilidad depende del IDE usado para compilar el proyecto."
+      }
+    },
+    "MAN-GSI-P15-011": {
+      "options": {
+        "A": "Resolver y descargar paquetes según las versiones de NuGet.",
+        "B": "Hospedar las peticiones HTTP de una aplicación ASP.NET Core.",
+        "C": "Convertir IL en instrucciones nativas durante la ejecución."
+      }
+    },
+    "MAN-GSI-P15-012": {
+      "options": {
+        "A": "Una biblioteca de acceso a datos y seguimiento de entidades.",
+        "C": "El servidor web que recibe peticiones HTTP en aplicaciones .NET.",
+        "D": "El sistema de compilación que procesa archivos de proyecto."
+      }
+    },
+    "MAN-GSI-P15-015": {
+      "options": {
+        "A": "LTS permite más plataformas; STS limita la ejecución a Windows.",
+        "B": "LTS recibe solo correcciones; STS recibe únicamente nuevas funciones.",
+        "C": "LTS designa el SDK; STS designa el runtime de producción."
+      }
+    },
+    "MAN-GSI-P15-018": {
+      "options": {
+        "A": "Fijar la versión del SDK que ejecuta las herramientas de desarrollo.",
+        "B": "Seleccionar una implementación concreta del servidor web.",
+        "D": "Fijar la versión del sistema operativo de despliegue."
+      }
+    },
+    "MAN-GSI-P15-020": {
+      "options": {
+        "A": "Elegir .NET Framework cuando la aplicación use una base de datos relacional.",
+        "B": "Elegir el runtime en función exclusiva del IDE del equipo.",
+        "D": "Usar .NET moderno sin analizar APIs y dependencias heredadas."
+      }
+    },
+    "MAN-GSI-P15-022": {
+      "options": {
+        "B": "Transforma el código fuente C# en IL antes del despliegue.",
+        "C": "Convierte IL en nativo al publicar, sin ejecución posterior del runtime.",
+        "D": "Interpreta IL instrucción a instrucción sin producir código máquina."
+      }
+    },
+    "MAN-GSI-P15-023": {
+      "options": {
+        "A": "JIT compila antes del despliegue; AOT compila durante cada llamada.",
+        "B": "JIT y AOT difieren solo en el lenguaje fuente admitido.",
+        "C": "JIT siempre interpreta IL; AOT solo genera metadatos."
+      }
+    },
+    "MAN-GSI-P15-026": {
+      "options": {
+        "A": "CLR define tipos; CTS limita APIs públicas; CLS ejecuta assemblies.",
+        "B": "CLR ejecuta assemblies; CLS define todos los tipos; CTS fija un subconjunto compatible.",
+        "C": "CTS gestiona memoria; CLR fija reglas de interoperabilidad; CLS compila IL."
+      }
+    },
+    "MAN-GSI-P15-027": {
+      "options": {
+        "A": "Un proyecto fuente que agrupa archivos antes de compilar.",
+        "B": "Un paquete NuGet que instala bibliotecas y dependencias.",
+        "C": "Un módulo de ejecución sin metadatos ni identidad propia."
+      }
+    },
+    "MAN-GSI-P15-028": {
+      "options": {
+        "A": "Las instrucciones IL de todos los métodos, sin datos de identidad.",
+        "B": "Los datos de ejecución y las métricas de rendimiento.",
+        "D": "Las opciones de configuración HTTP de Kestrel y del middleware."
+      }
+    },
+    "MAN-GSI-P15-031": {
+      "options": {
+        "B": "Esperar a la finalización del objeto para liberar el recurso al salir del método.",
+        "C": "Confiar en que el GC cierre el recurso al terminar el bloque léxico.",
+        "D": "Forzar una colección global tras cada uso, sin disponer el objeto."
+      }
+    },
+    "MAN-GSI-P15-036": {
+      "options": {
+        "A": "Una interfaz cuyos métodos se invocan por nombre en tiempo de compilación.",
+        "C": "Un evento que almacena directamente el estado compartido de un componente.",
+        "D": "Un método genérico que acepta cualquier firma sin comprobación de tipos."
+      }
+    },
+    "MAN-GSI-P15-038": {
+      "options": {
+        "B": "Resolver únicamente tipos conocidos durante la compilación.",
+        "C": "Eliminar metadatos del assembly para reducir el tamaño de salida.",
+        "D": "Sustituir llamadas dinámicas por enlace estático obligatorio."
+      }
+    },
+    "MAN-GSI-P15-040": {
+      "options": {
+        "A": "El código C# se convierte directamente en instrucciones del procesador en todos los despliegues.",
+        "B": "IL ya contiene instrucciones nativas específicas para la CPU destino.",
+        "D": "JIT transforma el código máquina en IL para poder ejecutarlo."
+      }
+    },
+    "MAN-GSI-P15-041": {
+      "options": {
+        "B": "Crear un hilo nuevo para cada await y ejecutar el resto en paralelo.",
+        "C": "Garantizar ejecución simultánea de operaciones en núcleos distintos.",
+        "D": "Eliminar las excepciones de la operación asíncrona al suspenderla."
+      }
+    },
+    "MAN-GSI-P15-042": {
+      "options": {
+        "A": "Un hilo físico reservado desde la creación hasta completar la operación.",
+        "B": "Una llamada de callback que siempre devuelve un resultado inmediato.",
+        "C": "Una unidad de trabajo que no puede propagarse entre métodos."
+      }
+    },
+    "MAN-GSI-P15-043": {
+      "options": {
+        "A": "Ejecutar la continuación sin esperar y perder su resultado.",
+        "C": "Convertir automáticamente la tarea asíncrona en paralelismo de CPU.",
+        "D": "Cancelar la operación cada vez que se consulta su estado."
+      }
+    },
+    "MAN-GSI-P15-045": {
+      "options": {
+        "A": "El CLR ejecuta siempre el filtrado completo después de materializar todas las filas.",
+        "C": "LINQ se traduce obligatoriamente a SQL aunque el proveedor no admita la expresión.",
+        "D": "El proveedor ejecuta métodos C# arbitrarios directamente en la base de datos."
+      }
+    },
+    "MAN-GSI-P15-046": {
+      "options": {
+        "A": "IEnumerable expresa siempre SQL; IQueryable solo permite filtrar en memoria.",
+        "B": "Ambas interfaces fuerzan materialización antes de aplicar Where.",
+        "C": "IQueryable nunca puede delegar operaciones al proveedor de datos."
+      }
+    },
+    "MAN-GSI-P15-050": {
+      "options": {
+        "A": "Permitir null en todos los tipos valor sin declarar su nulabilidad.",
+        "B": "Convertir las referencias en opciones comprobadas dinámicamente por el CLR.",
+        "D": "Suprimir todas las advertencias de nulidad sin analizar el flujo del programa."
+      }
+    },
+    "MAN-GSI-P15-051": {
+      "options": {
+        "A": "Comparar solo cadenas mediante expresiones regulares de compilación.",
+        "B": "Eliminar las conversiones de tipos aunque no exista patrón compatible.",
+        "D": "Ejecutar switch sin evaluar el valor ni las propiedades de entrada."
+      }
+    },
+    "MAN-GSI-P15-053": {
+      "options": {
+        "B": "Compila el proyecto y genera el assembly sin restaurar paquetes.",
+        "C": "Prepara los artefactos de publicación para el sistema destino.",
+        "D": "Actualiza obligatoriamente todas las dependencias a su última versión."
+      }
+    },
+    "MAN-GSI-P15-054": {
+      "options": {
+        "A": "NuGet y MSBuild son dos nombres del mismo motor de compilación.",
+        "C": "NuGet compila el proyecto y MSBuild resuelve licencias de paquetes.",
+        "D": "NuGet ejecuta IL; MSBuild administra versiones del runtime."
+      }
+    },
+    "MAN-GSI-P15-055": {
+      "options": {
+        "A": "El resultado IL y los metadatos de todos los assemblies publicados.",
+        "B": "El manifiesto de paquetes ya restaurados en la máquina destino.",
+        "D": "La configuración de ejecución específica de cada usuario del servicio."
+      }
+    },
+    "MAN-GSI-P15-056": {
+      "options": {
+        "B": "build genera el paquete desplegable; publish solo comprueba sintaxis.",
+        "C": "publish compila, pero build añade el runtime al artefacto de salida.",
+        "D": "Ambos producen siempre el mismo conjunto de archivos para despliegue."
+      }
+    },
+    "MAN-GSI-P15-059": {
+      "options": {
+        "A": "Para resolver y actualizar paquetes del proyecto desde NuGet.",
+        "B": "Para publicar assemblies con distintas modalidades de runtime.",
+        "D": "Para analizar el código fuente sin observar el proceso en ejecución."
+      }
+    },
+    "MAN-GSI-P15-060": {
+      "options": {
+        "A": "Cada IDE exige un runtime distinto para ejecutar el mismo assembly.",
+        "B": "La elección de IDE determina el sistema operativo de destino.",
+        "C": "El CLR solo está disponible cuando la aplicación se abre en Visual Studio."
+      }
+    },
+    "MAN-GSI-P15-061": {
+      "options": {
+        "A": "Una secuencia de controladores MVC que sustituye al servidor HTTP.",
+        "B": "Una cadena de servicios registrados en el contenedor de DI, sin intervenir en HTTP.",
+        "C": "Un flujo de compilación que ejecuta tareas MSBuild antes de publicar."
+      }
+    },
+    "MAN-GSI-P15-062": {
+      "options": {
+        "B": "Un contenedor de servicios integrado que administra transacciones SQL.",
+        "C": "Un runtime alternativo para crear instancias de CLR por petición.",
+        "D": "Un registro de controllers sin ciclos de vida ni resolución de dependencias."
+      }
+    },
+    "MAN-GSI-P15-067": {
+      "options": {
+        "A": "Conservar datos de usuario que deben persistir entre versiones de la aplicación.",
+        "C": "Almacenar el código compilado y los metadatos de assemblies publicados.",
+        "D": "Guardar secretos de producción en el repositorio como fuente principal."
+      }
+    },
+    "MAN-GSI-P15-068": {
+      "options": {
+        "A": "Cifrarlos en el código fuente y registrar la clave junto al binario.",
+        "C": "Guardarlos en appsettings.json, protegido solo por acceso al repositorio.",
+        "D": "Codificarlos antes de incluirlos en la imagen del contenedor."
+      }
+    },
+    "MAN-GSI-P15-069": {
+      "options": {
+        "B": "Seleccionar el TFM y compilar APIs diferentes para cada petición.",
+        "C": "Determinar el proveedor de identidad según el IDE del desarrollador.",
+        "D": "Cambiar el ciclo de soporte del runtime sin actualizar la instalación."
+      }
+    },
+    "MAN-GSI-P15-070": {
+      "options": {
+        "B": "Autorizar primero para evitar autenticar peticiones no permitidas.",
+        "C": "El orden es indiferente porque ambos middleware comparten identidad.",
+        "D": "Autenticar solo después de ejecutar la acción del endpoint."
+      }
+    },
+    "MAN-GSI-P15-074": {
+      "options": {
+        "B": "Definir el modelo de persistencia y ejecutar consultas SQL por petición.",
+        "C": "Registrar todos los servicios y resolver sus ciclos de vida.",
+        "D": "Intermediar HTTP antes del enrutamiento como middleware global."
+      }
+    },
+    "MAN-GSI-P15-079": {
+      "options": {
+        "A": "Endpoints que sustituyen los logs de errores y trazas del servicio.",
+        "B": "Sondeos que validan toda la lógica de negocio en cada petición HTTP.",
+        "C": "Un informe estático del estado durante la compilación y publicación."
+      }
+    },
+    "MAN-GSI-P15-080": {
+      "options": {
+        "A": "El caching reduce carga, por lo que ya no importa controlar la coherencia de los datos servidos.",
+        "B": "El rate limiting limita peticiones, por lo que puede reemplazar el control de identidad de la API.",
+        "D": "Ambos mecanismos mejoran rendimiento, por lo que aplican las mismas políticas de configuración."
+      }
+    }
+  }
+}

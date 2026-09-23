@@ -1,0 +1,294 @@
+{
+  "version": 1,
+  "reviewed_at": "2026-09-23",
+  "criterion": "Contrastes de arquitectura, rendimiento, disponibilidad y modelos cloud del temario.",
+  "revisions": {
+    "MAN-GSI-P17-001": {
+      "options": {
+        "B": "Almacena instrucciones y datos de forma persistente entre reinicios.",
+        "C": "Gestiona procesos sustituyendo al planificador del sistema operativo.",
+        "D": "Realiza todas las transferencias de E/S sin controladores."
+      }
+    },
+    "MAN-GSI-P17-007": {
+      "options": {
+        "A": "Memoria principal no volátil que conserva procesos tras apagar.",
+        "C": "Memoria de acceso rápido exclusiva de la interfaz de red.",
+        "D": "Caché interna del procesador accesible como memoria principal."
+      }
+    },
+    "MAN-GSI-P17-010": {
+      "options": {
+        "B": "Un circuito de lógica fija fabricado para una tarea concreta.",
+        "C": "Un procesador de propósito general que solo ejecuta microcódigo.",
+        "D": "Un dispositivo de memoria regrabable sin lógica de ejecución."
+      }
+    },
+    "MAN-GSI-P17-011": {
+      "options": {
+        "A": "Un circuito reconfigurable por el usuario para distintas funciones.",
+        "B": "Un procesador general que ejecuta cualquier sistema operativo.",
+        "D": "Un coprocesador que necesita compilación JIT para definir su hardware."
+      }
+    },
+    "MAN-GSI-P17-013": {
+      "options": {
+        "A": "Mayor volumen de datos almacenados por segundo.",
+        "C": "Mayor número de operaciones completadas en paralelo.",
+        "D": "Más tiempo de actividad anual sin interrupciones."
+      }
+    },
+    "MAN-GSI-P17-015": {
+      "options": {
+        "B": "Transferir datos solo mediante copias ejecutadas por la CPU.",
+        "C": "Mover instrucciones entre cachés sin intervención de dispositivos.",
+        "D": "Asignar memoria virtual a un proceso sin traducción de direcciones."
+      }
+    },
+    "MAN-GSI-P17-016": {
+      "options": {
+        "A": "Cambiar el número de núcleos sin modificar registros ni direcciones.",
+        "C": "Eliminar la necesidad de gestión de memoria virtual.",
+        "D": "Garantizar que todos los programas de 32 bits sean incompatibles."
+      }
+    },
+    "MAN-GSI-P17-019": {
+      "options": {
+        "A": "La capacidad mide solo CPU y el rendimiento solo disco.",
+        "B": "Un sistema de más capacidad responde necesariamente antes.",
+        "C": "La capacidad y el tiempo de respuesta son la misma magnitud."
+      }
+    },
+    "MAN-GSI-P17-020": {
+      "options": {
+        "A": "Aumentar almacenamiento persistente sin analizar memoria del acelerador.",
+        "C": "Aumentar solo la frecuencia de una CPU si la carga es paralelizable.",
+        "D": "Elegir acelerador por pico teórico sin medir el software de la carga."
+      }
+    },
+    "MAN-GSI-P17-023": {
+      "options": {
+        "B": "Un flujo de instrucciones y un flujo de datos.",
+        "C": "Un flujo de instrucciones aplicado a varios flujos de datos.",
+        "D": "Varios flujos de instrucciones aplicados a un único flujo de datos."
+      }
+    },
+    "MAN-GSI-P17-025": {
+      "options": {
+        "A": "UMA distribuye nodos de memoria; NUMA uniformiza todos los accesos.",
+        "B": "NUMA elimina el efecto de localidad al compartir memoria.",
+        "D": "UMA y NUMA solo describen el número de módulos instalados."
+      }
+    },
+    "MAN-GSI-P17-027": {
+      "options": {
+        "B": "Priorizar el pico de cálculo de coma flotante sobre E/S transaccional.",
+        "C": "Ofrecer alto rendimiento solo para una tarea interactiva individual.",
+        "D": "Evitar aislamiento de cargas y ejecutar un único trabajo por sistema."
+      }
+    },
+    "MAN-GSI-P17-028": {
+      "options": {
+        "B": "Maximizar transacciones concurrentes y E/S de negocio como objetivo principal.",
+        "C": "Optimizar únicamente el tiempo de arranque de un servicio web.",
+        "D": "Priorizar aislamiento de muchas cargas pequeñas sobre cálculo masivo."
+      }
+    },
+    "MAN-GSI-P17-031": {
+      "options": {
+        "A": "Un conjunto homogéneo en un solo dominio administrativo estrechamente acoplado.",
+        "B": "Una plataforma de elasticidad bajo demanda gestionada por un proveedor.",
+        "C": "Una máquina única dividida en varias instancias virtuales."
+      }
+    },
+    "MAN-GSI-P17-032": {
+      "options": {
+        "B": "Los tres exigen el mismo dominio administrativo y hardware homogéneo.",
+        "C": "Cloud equivale a un clúster aunque no ofrezca servicio medido ni elasticidad.",
+        "D": "Grid exige que los recursos compartidos se ofrezcan como SaaS."
+      }
+    },
+    "MAN-GSI-P17-036": {
+      "options": {
+        "A": "IOPS de almacenamiento, sin relación con operaciones de cálculo.",
+        "C": "Latencia de una petición web, sin medir capacidad aritmética.",
+        "D": "Velocidad nominal de red, sin benchmark de la carga científica."
+      }
+    },
+    "MAN-GSI-P17-037": {
+      "options": {
+        "A": "Un pico anunciado sin metodología ni entorno reproducible.",
+        "B": "La frecuencia nominal del procesador tomada como único criterio.",
+        "D": "Una prueba con cargas o condiciones diferentes para cada candidato."
+      }
+    },
+    "MAN-GSI-P17-040": {
+      "options": {
+        "A": "Reducir los intercambios de datos entre trabajadores.",
+        "C": "Mejorar la localidad de los datos usados por cada hilo.",
+        "D": "Distribuir trabajo de forma equilibrada entre procesadores."
+      }
+    },
+    "MAN-GSI-P17-043": {
+      "options": {
+        "A": "Mantener otra copia para conmutar ante un fallo.",
+        "B": "Aumentar capacidad solo mediante compra anual de hardware.",
+        "D": "Reservar de forma permanente la capacidad máxima prevista."
+      }
+    },
+    "MAN-GSI-P17-046": {
+      "options": {
+        "A": "HA impide cualquier interrupción; tolerancia a fallos solo restaura backup.",
+        "C": "Tolerancia a fallos describe solo redundancia de red, no de servicio.",
+        "D": "HA y tolerancia a fallos requieren un único componente sin réplica."
+      }
+    },
+    "MAN-GSI-P17-049": {
+      "options": {
+        "A": "El tiempo máximo aceptable para recuperar el servicio: RTO.",
+        "C": "La duración media de una reparación de hardware: MTTR.",
+        "D": "El porcentaje de tiempo disponible durante un periodo: SLA."
+      }
+    },
+    "MAN-GSI-P17-051": {
+      "options": {
+        "A": "Un hipervisor que se ejecuta directamente sobre hardware sin anfitrión.",
+        "C": "Un contenedor que comparte el kernel del sistema anfitrión.",
+        "D": "Un emulador de instrucciones sin sistema operativo anfitrión."
+      }
+    },
+    "MAN-GSI-P17-053": {
+      "options": {
+        "A": "La VM comparte siempre el kernel del host; el contenedor lo incluye.",
+        "B": "El contenedor exige un sistema operativo invitado completo por instancia.",
+        "C": "La VM y el contenedor ofrecen idéntico aislamiento de hardware."
+      }
+    },
+    "MAN-GSI-P17-054": {
+      "options": {
+        "A": "Reducir el coste total al reservar recursos que nunca se usan.",
+        "C": "Eliminar necesidades de seguimiento porque sobra capacidad.",
+        "D": "Asegurar escalabilidad sin revisar el patrón de demanda."
+      }
+    },
+    "MAN-GSI-P17-055": {
+      "options": {
+        "A": "Aumentar disponibilidad pese a saturar recursos críticos.",
+        "B": "Reducir la latencia cuando crecen colas y esperas.",
+        "D": "Eliminar necesidad de priorizar y medir cargas."
+      }
+    },
+    "MAN-GSI-P17-057": {
+      "options": {
+        "A": "Mantener la copia de seguridad de cada instancia que atiende peticiones.",
+        "B": "Replicar almacenamiento sin intervenir en el tráfico cliente.",
+        "C": "Aumentar CPU de una instancia sin repartir conexiones."
+      }
+    },
+    "MAN-GSI-P17-058": {
+      "options": {
+        "B": "Un diagrama de conmutación sin probar la recuperación de estado.",
+        "C": "Una réplica sin detectar cuándo debe asumir el servicio.",
+        "D": "Un respaldo que comparte todos los dominios de fallo del primario."
+      }
+    },
+    "MAN-GSI-P17-059": {
+      "options": {
+        "B": "El clúster HA recupera cualquier borrado lógico sin copias históricas.",
+        "C": "El backup asegura continuidad inmediata aunque tarde en restaurar.",
+        "D": "Ambos controles cubren los mismos fallos y tiempos de recuperación."
+      }
+    },
+    "MAN-GSI-P17-060": {
+      "options": {
+        "B": "Redundar CPU dentro del mismo servidor sin plan de recuperación.",
+        "C": "Duplicar instancias, pero conservar una sola base de datos sin backup.",
+        "D": "Hacer backups, pero mantener un único punto de fallo en producción."
+      }
+    },
+    "MAN-GSI-P17-062": {
+      "options": {
+        "A": "Acceso restringido a una LAN privada como rasgo esencial del servicio.",
+        "B": "Acceso únicamente desde terminales de un fabricante concreto.",
+        "C": "Acceso por red que exige una única contraseña compartida."
+      }
+    },
+    "MAN-GSI-P17-063": {
+      "options": {
+        "A": "Reservar físicamente cada servidor para un cliente durante toda la vida útil.",
+        "C": "Impedir reasignación dinámica para mantener capacidad ociosa fija.",
+        "D": "Asignar recursos por cliente sin un conjunto compartido del proveedor."
+      }
+    },
+    "MAN-GSI-P17-064": {
+      "options": {
+        "A": "Facturación fija obligatoria, independiente de cualquier consumo.",
+        "B": "Seguimiento de uso solo para almacenamiento, no para otros recursos.",
+        "D": "Imposibilidad de medir o informar uso por ser recurso virtual."
+      }
+    },
+    "MAN-GSI-P17-066": {
+      "options": {
+        "A": "Una aplicación terminada cuya operación completa recae en el proveedor.",
+        "B": "Un entorno de despliegue que gestiona también el runtime de la aplicación.",
+        "C": "Un servicio final de correo en que el cliente no administra el SO."
+      }
+    },
+    "MAN-GSI-P17-069": {
+      "options": {
+        "B": "Una nube dedicada a una sola organización y operada externamente.",
+        "C": "Una combinación interoperable de nube privada y pública.",
+        "D": "Uso de varios proveedores públicos para una misma aplicación."
+      }
+    },
+    "MAN-GSI-P17-070": {
+      "options": {
+        "B": "Una infraestructura física sin autoservicio ni elasticidad.",
+        "C": "Servicios abiertos al público general aunque una entidad sea el único usuario.",
+        "D": "Una red corporativa sin características de servicio cloud."
+      }
+    },
+    "MAN-GSI-P17-071": {
+      "options": {
+        "A": "Contratar dos nubes públicas sin portabilidad ni conexión entre ellas.",
+        "C": "Ejecutar cargas solo en un centro propio y llamarlo híbrido.",
+        "D": "Mover manualmente una VM entre servidores del mismo CPD."
+      }
+    },
+    "MAN-GSI-P17-073": {
+      "options": {
+        "A": "Una zona agrupa regiones completas bajo un único dominio de fallo.",
+        "C": "La región y la zona expresan solo condiciones comerciales de licencia.",
+        "D": "Una región evita toda caída de sus zonas sin diseño adicional."
+      }
+    },
+    "MAN-GSI-P17-076": {
+      "options": {
+        "B": "Facilidad de exportar datos y sustituir servicios sin coste relevante.",
+        "C": "Disponibilidad automática de instancias en dos zonas del proveedor.",
+        "D": "Cifrado de datos que elimina por sí solo dependencia de APIs."
+      }
+    },
+    "MAN-GSI-P17-077": {
+      "options": {
+        "A": "Cómputo, almacenamiento y licencias, suponiendo que red y salida no generan costes.",
+        "B": "Inversión inicial, electricidad y equipos, excluyendo personal, mantenimiento y migración.",
+        "D": "Precio de suscripción y soporte, pero sin incluir tráfico, seguridad ni reversibilidad."
+      }
+    },
+    "MAN-GSI-P17-078": {
+      "options": {
+        "A": "El proveedor asume todas las decisiones de seguridad del cliente.",
+        "B": "La automatización sustituye monitorización y gestión de incidencias.",
+        "D": "La ubicación cloud elimina la responsabilidad de gobernar datos."
+      }
+    },
+    "MAN-GSI-P17-080": {
+      "options": {
+        "A": "Pactar exportación de datos y formatos abiertos, sin probar tiempos ni integridad de la salida.",
+        "C": "Conservar copias de datos, pero no documentar servicios y APIs que usa la aplicación.",
+        "D": "Migrar a servicios propietarios y confiar en una futura traducción automática sin plan."
+      }
+    }
+  }
+}

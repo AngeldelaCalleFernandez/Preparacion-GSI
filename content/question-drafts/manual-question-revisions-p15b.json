@@ -1,0 +1,255 @@
+{
+  "version": 1,
+  "reviewed_at": "2026-09-23",
+  "criterion": "Distractores del mismo mecanismo técnico y distinciones presentes en el tema III.10-11.",
+  "revisions": {
+    "MAN-GSI-P15-085": {
+      "options": {
+        "A": "Ejecutar cualquier método de C# en el servidor de datos sin traducción.",
+        "C": "Garantizar acceso por índice aunque la expresión no filtre por clave.",
+        "D": "Evitar materializar datos incluso cuando el resultado se enumera."
+      }
+    },
+    "MAN-GSI-P15-086": {
+      "options": {
+        "B": "Un registro de cambios independiente del estado de las entidades.",
+        "C": "Una auditoría histórica persistente de todas las modificaciones.",
+        "D": "Un mecanismo para detectar cambios en los archivos de migración."
+      }
+    },
+    "MAN-GSI-P15-087": {
+      "options": {
+        "B": "En actualizaciones donde el contexto debe persistir cambios de la entidad.",
+        "C": "En consultas que requieren generar migraciones antes de ejecutarse.",
+        "D": "Cuando se necesita cargar relaciones sin consultar la base de datos."
+      }
+    },
+    "MAN-GSI-P15-088": {
+      "options": {
+        "A": "Un mecanismo para copiar datos de producción entre proveedores sin adaptar el esquema.",
+        "B": "Un reemplazo de las transacciones durante cambios del modelo.",
+        "D": "Una copia de seguridad automática previa a cada cambio de esquema."
+      }
+    },
+    "MAN-GSI-P15-089": {
+      "options": {
+        "A": "Una consulta con N filtros que utiliza un solo índice compuesto.",
+        "B": "N consultas independientes agrupadas y enviadas en una sola llamada.",
+        "C": "Una consulta por lote que materializa todas las relaciones requeridas."
+      }
+    },
+    "MAN-GSI-P15-091": {
+      "options": {
+        "A": "Impide consultar relaciones si no se declaran en el modelo.",
+        "C": "Fuerza una transacción nueva por cada entidad materializada.",
+        "D": "Evita N+1 porque todas las relaciones se resuelven sin consultas."
+      }
+    },
+    "MAN-GSI-P15-092": {
+      "options": {
+        "A": "Inicia una transacción distribuida aunque solo intervenga una base.",
+        "B": "Confirma cada cambio de entidad antes de evaluar el siguiente.",
+        "C": "Garantiza atomicidad entre llamadas separadas a SaveChanges."
+      }
+    },
+    "MAN-GSI-P15-093": {
+      "options": {
+        "A": "Cuando cada SaveChanges aislado coincide con toda la unidad de trabajo.",
+        "B": "Para cualquier lectura que no modifica datos, aunque sea una sola consulta.",
+        "C": "Cuando se busca que el proveedor confirme cada operación por separado."
+      }
+    },
+    "MAN-GSI-P15-094": {
+      "options": {
+        "A": "Escapar manualmente solo las comillas simples antes de concatenar.",
+        "B": "Confiar en que el ORM parametrice incluso una cadena SQL ya concatenada.",
+        "D": "Codificar la entrada en Base64 antes de incluirla en la consulta."
+      }
+    },
+    "MAN-GSI-P15-095": {
+      "options": {
+        "A": "El pool reutiliza objetos DbContext, pero cada Open crea obligatoriamente una nueva conexión física.",
+        "B": "La reutilización física exige conservar abierta cada conexión lógica durante toda la vida de la aplicación.",
+        "D": "La conexión vuelve al pool al cerrar lógicamente, por lo que no hay que disponer objetos ni revisar su ciclo de vida."
+      }
+    },
+    "MAN-GSI-P15-097": {
+      "options": {
+        "B": "Forzar la materialización de toda la tabla antes de medir el coste.",
+        "C": "Suponer que el proveedor ejecutará en SQL cualquier método .NET.",
+        "D": "Ignorar el error de traducción y mantener la expresión sin cambios."
+      }
+    },
+    "MAN-GSI-P15-098": {
+      "options": {
+        "B": "Hace que toda operación posterior siga traduciéndose al servidor.",
+        "C": "Mantiene diferida la consulta hasta que termina el proceso.",
+        "D": "Convierte automáticamente la secuencia materializada en IQueryable."
+      }
+    },
+    "MAN-GSI-P15-100": {
+      "options": {
+        "A": "ADO.NET y EF Core son dos motores de base de datos incompatibles.",
+        "C": "EF Core abstrae el servidor SQL y ya no utiliza proveedores ni conexiones.",
+        "D": "ADO.NET ofrece tracking de entidades; EF Core opera solo con comandos."
+      }
+    },
+    "MAN-GSI-P15-101": {
+      "options": {
+        "A": "Debe haberse publicado el servicio en modalidad self-contained.",
+        "C": "Debe haberse asignado un rol local sin validar la identidad.",
+        "D": "Debe consultarse EF Core antes de procesar la credencial."
+      }
+    },
+    "MAN-GSI-P15-102": {
+      "statement": "En una aplicación web que también expone una API, ¿qué diferencia práctica conviene considerar entre una cookie de sesión y un bearer token?",
+      "options": {
+        "A": "La cookie identifica una sesión en el servidor; el bearer token obliga a mantener una sesión equivalente.",
+        "B": "El navegador suele adjuntar la cookie de sesión automáticamente; el bearer token suele presentarse de forma explícita como credencial en la petición a la API.",
+        "C": "Ambas credenciales se adjuntan automáticamente por el navegador bajo las mismas reglas de origen.",
+        "D": "La diferencia es solo el formato de firma y no afecta al envío ni a la protección frente a CSRF."
+      },
+      "feedback": "Una cookie de sesión suele adjuntarse automáticamente por el navegador; un bearer token se presenta normalmente en la cabecera de autorización. Ese modo de envío influye, entre otras cosas, en el riesgo de CSRF."
+    },
+    "MAN-GSI-P15-103": {
+      "options": {
+        "A": "Una política que decide acceso sin información del usuario.",
+        "B": "Una credencial secreta equivalente a la contraseña del usuario.",
+        "C": "Un rol almacenado exclusivamente en una tabla de EF Core."
+      }
+    },
+    "MAN-GSI-P15-108": {
+      "options": {
+        "B": "Para reemplazar TLS al transportar datos entre navegador y servidor.",
+        "C": "Para almacenar contraseñas de usuarios sin hash ni políticas propias.",
+        "D": "Para cifrar automáticamente toda la base de datos de EF Core."
+      }
+    },
+    "MAN-GSI-P15-109": {
+      "options": {
+        "A": "Ataques XSS originados por salida HTML sin escape contextual.",
+        "B": "Inyección SQL causada por concatenar parámetros en consultas.",
+        "C": "Robo de credenciales mediante fuerza bruta contra el inicio de sesión."
+      }
+    },
+    "MAN-GSI-P15-110": {
+      "options": {
+        "A": "Comprobar autorización de cada operación de negocio tras autenticar.",
+        "B": "Proteger datos en reposo dentro de la base de datos.",
+        "D": "Garantizar la identidad de ambas partes aunque solo el servidor presente certificado."
+      }
+    },
+    "MAN-GSI-P15-111": {
+      "options": {
+        "A": "Registrarlos de forma estructurada para facilitar auditoría.",
+        "C": "Incorporarlos a la imagen de contenedor solo en Base64.",
+        "D": "Guardarlos en appsettings.json versionado y confiar en permisos Git."
+      }
+    },
+    "MAN-GSI-P15-112": {
+      "options": {
+        "A": "Sustituir métricas y trazas por mensajes libres sin propiedades.",
+        "B": "Eliminar identificadores de correlación porque los campos bastan.",
+        "D": "Garantizar que ningún dato sensible aparece en los eventos emitidos."
+      }
+    },
+    "MAN-GSI-P15-113": {
+      "options": {
+        "A": "Todas las credenciales y datos internos de cada dependencia.",
+        "B": "Cada operación de negocio, incluso las más costosas, en liveness.",
+        "D": "La versión de todos los paquetes de desarrollo como salida pública."
+      }
+    },
+    "MAN-GSI-P15-115": {
+      "options": {
+        "A": "Evitar aplicar parches al runtime incluido en la imagen.",
+        "B": "Obtener aislamiento equivalente a una máquina virtual completa.",
+        "C": "Separar automáticamente un monolito en servicios independientes."
+      }
+    },
+    "MAN-GSI-P15-116": {
+      "options": {
+        "B": "Self-contained, porque utiliza siempre un runtime ya instalado.",
+        "C": "Ambas tienen el mismo tamaño si usan idéntico TFM.",
+        "D": "Framework-dependent, porque empaqueta una copia del runtime."
+      }
+    },
+    "MAN-GSI-P15-130": {
+      "options": {
+        "B": "Declarar límites transaccionales de métodos de negocio.",
+        "C": "Persistir entidades mediante un repositorio Jakarta Data.",
+        "D": "Exponer endpoints HTTP y mapear rutas de recursos."
+      }
+    },
+    "MAN-GSI-P15-133": {
+      "options": {
+        "A": "Una implementación de base de datos integrada con el runtime.",
+        "B": "Una especificación que sustituye Jakarta Persistence en todos los casos.",
+        "C": "Una API de validación de datos de entrada y beans."
+      }
+    },
+    "MAN-GSI-P15-136": {
+      "options": {
+        "B": "De jakarta.* a javax.* en las APIs transferidas.",
+        "C": "De java.* a jakarta.* también en las clases básicas de Java SE.",
+        "D": "De org.* a java.* para todos los paquetes de terceros."
+      }
+    },
+    "MAN-GSI-P15-138": {
+      "options": {
+        "B": "La especificación empaqueta el servidor; la implementación solo declara interfaces.",
+        "C": "La implementación fija el contrato y la especificación aporta un runtime concreto.",
+        "D": "Ambas son ejecutables distintos que deben desplegarse juntos."
+      }
+    },
+    "MAN-GSI-P15-139": {
+      "options": {
+        "A": "La versión de Jakarta EE identifica la misma versión de Java SE.",
+        "B": "Java SE es un perfil reducido de Jakarta EE para aplicaciones web.",
+        "D": "Jakarta EE sustituye la JVM por un runtime independiente de Java."
+      }
+    },
+    "MAN-GSI-P15-140": {
+      "options": {
+        "A": "Para que cada operación confirme por separado aunque falle la siguiente.",
+        "B": "Para elegir el perfil Jakarta EE que contiene la API transaccional.",
+        "D": "Para sustituir validación de entrada por rollback al terminar el servicio."
+      }
+    },
+    "MAN-GSI-P15-141": {
+      "options": {
+        "A": "EF Core y Jakarta Persistence, ambos contenedores de inyección.",
+        "C": "NuGet y Maven, ambos gestores de dependencias usados como DI.",
+        "D": "Kestrel y Jakarta Servlet, ambos contenedores de inyección."
+      }
+    },
+    "MAN-GSI-P15-143": {
+      "options": {
+        "B": "ASP.NET Core y Jakarta Faces, ambos marcos de API REST.",
+        "C": "Kestrel y Jakarta Persistence, ambos definen recursos REST.",
+        "D": "EF Core y Jakarta Transactions, ambos exponen endpoints REST."
+      }
+    },
+    "MAN-GSI-P15-148": {
+      "options": {
+        "A": "Migrar toda la persistencia a otro stack antes de medir la consulta.",
+        "C": "Forzar el ORM para todas las consultas aunque falte control fino.",
+        "D": "Resolver el problema solo aumentando el tamaño de la base de datos."
+      }
+    },
+    "MAN-GSI-P15-153": {
+      "options": {
+        "A": "Activar lazy loading en todas las relaciones sin observar consultas.",
+        "B": "Aumentar el pool de conexiones sin examinar el patrón de acceso.",
+        "D": "Ejecutar cada relación por separado y desactivar registros SQL."
+      }
+    },
+    "MAN-GSI-P15-158": {
+      "options": {
+        "A": "Usar APIs específicas del proveedor en toda la lógica de negocio.",
+        "C": "Evitar pruebas en otro runtime porque las APIs son estándares.",
+        "D": "Fijar extensiones propietarias como contrato público de la aplicación."
+      }
+    }
+  }
+}

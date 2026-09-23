@@ -1,0 +1,197 @@
+{
+  "version": 1,
+  "reviewed_at": "2026-09-23",
+  "criterion": "IMS, SIP/RTP, QoS y 5G contrastados con funciones y protocolos próximos.",
+  "revisions": {
+    "MAN-GSI-P19-002": {
+      "options": {
+        "B": "La separación de transporte, control y servicios en cada red vertical.",
+        "C": "El uso de una red única para voz sin integrar otros servicios.",
+        "D": "La gestión de QoS exclusivamente en terminales de usuario."
+      }
+    },
+    "MAN-GSI-P19-003": {
+      "options": {
+        "A": "Una arquitectura para transportar solo medios RTP sin señalización.",
+        "C": "Una red de acceso radio que sustituye la gestión de sesiones.",
+        "D": "Una PBX física que integra todas las funciones en un servidor."
+      }
+    },
+    "MAN-GSI-P19-004": {
+      "options": {
+        "B": "Mantener control y servicios ligados a cada acceso físico.",
+        "C": "Trasladar toda identidad del abonado al terminal sin datos de red.",
+        "D": "Hacer que la movilidad dependa solo del códec de los medios."
+      }
+    },
+    "MAN-GSI-P19-006": {
+      "options": {
+        "B": "Ser el primer contacto SIP del terminal con el dominio IMS.",
+        "C": "Mantener registro y aplicar la lógica de servicio del abonado.",
+        "D": "Almacenar el perfil del abonado para consulta de funciones IMS."
+      }
+    },
+    "MAN-GSI-P19-008": {
+      "options": {
+        "A": "La función de entrada que localiza el servidor de sesión.",
+        "C": "El componente que transporta los flujos de audio y vídeo.",
+        "D": "La función que recibe SIP del terminal como primer contacto."
+      }
+    },
+    "MAN-GSI-P19-010": {
+      "options": {
+        "B": "IMS sustituye SIP por RTP para control de sesión.",
+        "C": "SIP transporta el medio y RTP negocia la sesión en IMS.",
+        "D": "IMS usa SIP sin perfiles ni procedimientos definidos por 3GPP."
+      }
+    },
+    "MAN-GSI-P19-014": {
+      "options": {
+        "A": "Suprimir políticas de seguridad para permitir cualquier acceso.",
+        "B": "Fijar cada servicio a una tecnología radio para garantizar identidad.",
+        "D": "Impedir que una sesión continúe cuando cambia el acceso."
+      }
+    },
+    "MAN-GSI-P19-016": {
+      "options": {
+        "A": "Crear capacidad física adicional sin ampliar enlaces.",
+        "B": "Evitar dimensionamiento aunque la ruta esté saturada.",
+        "C": "Sustituir autenticación de usuarios por clases de tráfico."
+      }
+    },
+    "MAN-GSI-P19-018": {
+      "options": {
+        "A": "Simplificar correctamente los planos de control y datos del abonado.",
+        "C": "Reducir el análisis solo a las funciones de transporte de medios.",
+        "D": "Asumir que no existen funciones de registro ni control separadas."
+      }
+    },
+    "MAN-GSI-P19-020": {
+      "options": {
+        "A": "Mantener una PBX diferente para cada tecnología de acceso.",
+        "B": "Cambiar de identidad y numeración al cambiar de acceso.",
+        "D": "Hacer que cada servicio dependa del códec del terminal usado."
+      }
+    },
+    "MAN-GSI-P19-026": {
+      "options": {
+        "B": "SIP transporta medios y RTP establece el diálogo.",
+        "C": "Ambos se limitan a transportar códecs sin control de sesión.",
+        "D": "RTP negocia participantes; SIP mide pérdida y jitter."
+      },
+      "feedback": "SIP controla el establecimiento y fin de sesiones; RTP transporta los medios. RTCP aporta estadísticas y control asociados al flujo."
+    },
+    "MAN-GSI-P19-027": {
+      "options": {
+        "B": "Negociar parámetros SDP antes de establecer el diálogo SIP.",
+        "C": "Reservar ancho de banda físico en todos los saltos de la ruta.",
+        "D": "Cifrar el flujo RTP sin configuración adicional."
+      }
+    },
+    "MAN-GSI-P19-032": {
+      "options": {
+        "A": "La señalización SIP sin proteger el plano de medios.",
+        "B": "El perfil del abonado almacenado en HSS.",
+        "D": "El suministro eléctrico del terminal IP."
+      }
+    },
+    "MAN-GSI-P19-039": {
+      "options": {
+        "A": "Marcar tráfico con DSCP para obtener automáticamente capacidad adicional en cualquier enlace.",
+        "B": "Priorizar voz en congestión para evitar calcular la capacidad requerida por vídeo y datos.",
+        "C": "Aplicar colas en la LAN y asumir que todo tránsito de Internet conservará la prioridad."
+      }
+    },
+    "MAN-GSI-P19-042": {
+      "options": {
+        "B": "La sustitución completa del core móvil por IMS.",
+        "C": "La introducción de 5G NR como acceso radio.",
+        "D": "La prestación general de voz solo mediante WebRTC."
+      }
+    },
+    "MAN-GSI-P19-045": {
+      "options": {
+        "B": "Una nueva SIM sin modificar acceso radio ni core.",
+        "C": "Un acceso Wi-Fi y el core de LTE renombrado.",
+        "D": "Solo mayor velocidad pico, sin cambios en arquitectura ni densidad."
+      }
+    },
+    "MAN-GSI-P19-048": {
+      "options": {
+        "B": "Comunicaciones móviles orientadas solo a vídeo de alta tasa.",
+        "C": "Un perfil de comunicación ultrafiable de baja latencia.",
+        "D": "La evolución de voz sobre LTE basada en IMS."
+      }
+    },
+    "MAN-GSI-P19-049": {
+      "options": {
+        "A": "El nombre formal de una red 6G ya desplegada.",
+        "B": "Una extensión de 3G que usa exclusivamente UMTS.",
+        "C": "Una variante de 5G definida solo para redes Wi-Fi."
+      }
+    },
+    "MAN-GSI-P19-055": {
+      "options": {
+        "A": "Cifrar todos los datos del sistema operativo del terminal.",
+        "B": "Mejorar ganancia de antena y cobertura radio del equipo.",
+        "D": "Transportar medios de voz sin intervención del core."
+      }
+    },
+    "MAN-GSI-P19-057": {
+      "options": {
+        "A": "Sí, porque la generación radio fija el tiempo total de aplicación.",
+        "C": "Sí, si el terminal muestra 5G aunque el servidor sea remoto.",
+        "D": "Solo depende del códec y no del transporte o procesamiento."
+      }
+    },
+    "MAN-GSI-P19-061": {
+      "options": {
+        "B": "El core de LTE que gestiona movilidad y sesiones.",
+        "C": "La red de acceso radio de 5G NR.",
+        "D": "La arquitectura de servicios multimedia sobre IP."
+      }
+    },
+    "MAN-GSI-P19-064": {
+      "options": {
+        "B": "Usa NR conectado a EPC como arquitectura principal.",
+        "C": "Emplea solo LTE sin nueva red de acceso.",
+        "D": "Equivale a 5G-Advanced con Release 18 obligatorio."
+      }
+    },
+    "MAN-GSI-P19-069": {
+      "options": {
+        "A": "Eliminar funciones de identidad y autenticación.",
+        "B": "Sustituir interfaces de servicio por circuitos TDM.",
+        "D": "Prescindir de registro y observabilidad de funciones."
+      }
+    },
+    "MAN-GSI-P19-070": {
+      "options": {
+        "A": "Roaming entre operadores sin cambio de celda.",
+        "C": "Actualización del perfil UEM de un terminal.",
+        "D": "Cambio del servidor DNS sin continuidad radio."
+      }
+    },
+    "MAN-GSI-P19-074": {
+      "options": {
+        "B": "Elegir bandas y operador con un mapa exterior, sin medir pérdidas por materiales del edificio.",
+        "C": "Medir cobertura interior, pero ignorar concurrencia y capacidad en horas de ocupación.",
+        "D": "Medir señal en una ventana y extrapolarla a todas las plantas y salas de trabajo."
+      }
+    },
+    "MAN-GSI-P19-077": {
+      "options": {
+        "A": "VoLTE usa solo RTP y prescinde de control de sesiones.",
+        "B": "IMS sirve únicamente a servicios SMS sobre 2G.",
+        "C": "VoLTE es un códec de voz que reemplaza SIP."
+      }
+    },
+    "MAN-GSI-P19-078": {
+      "options": {
+        "A": "Edge garantiza latencia nula con independencia de la ruta.",
+        "B": "Todas las aplicaciones deben residir dentro de la antena.",
+        "C": "El procesamiento de borde elimina la necesidad del core móvil."
+      }
+    }
+  }
+}

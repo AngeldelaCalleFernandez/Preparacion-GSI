@@ -106,10 +106,34 @@ def extract_pack(pack):
 
 def main():
     retirement_data = json.loads((ROOT / 'content/question-drafts/manual-question-retirements.json').read_text('utf-8'))
-    threshold = float(retirement_data['correct_length_ratio_threshold'])
-    exceptions = {item['id'] for item in retirement_data['retained_exceptions']}
-    if len(exceptions) != len(retirement_data['retained_exceptions']):
-        raise ValueError('Duplicate IDs in manual question retirement exceptions')
+    retired_ids = set(retirement_data['retired_ids'])
+    if len(retired_ids) != len(retirement_data['retired_ids']):
+        raise ValueError('Duplicate IDs in manual question retirements')
+    review_paths = [ROOT / 'content/question-drafts/manual-question-quality-review.json']
+    review_paths.extend(sorted((ROOT / 'content/question-drafts').glob('manual-question-revisions-p*.json')))
+    revisions = {}
+    for review_path in review_paths:
+        review_data = json.loads(review_path.read_text('utf-8'))
+        for question_id, revision in review_data['revisions'].items():
+            if not isinstance(revision, dict):
+                raise ValueError(f'Invalid manual revision in {review_path.name}: {question_id} must be an object')
+            unknown_fields = set(revision) - {'statement', 'options', 'feedback', 'reason'}
+            if unknown_fields:
+                raise ValueError(f'Unknown manual revision fields in {review_path.name}: {question_id} {sorted(unknown_fields)}')
+            current = revisions.setdefault(question_id, {})
+            for field, value in revision.items():
+                if field == 'options':
+                    options = current.setdefault('options', {})
+                    overlap = set(options) & set(value)
+                    if overlap:
+                        raise ValueError(f'Duplicate manual option revisions: {question_id} {sorted(overlap)}')
+                    options.update(value)
+                elif field == 'reason' and field in current:
+                    current[field] += ' ' + value
+                elif field in current:
+                    raise ValueError(f'Duplicate manual revision field: {question_id} {field}')
+                else:
+                    current[field] = value
     data = json.loads((ROOT / 'data/sources.json').read_text('utf-8'))
     data['sources'] = [s for s in data['sources'] if not re.match(r'SRC-GSI-P\d+-', s['id'])]
     questions = []
@@ -131,19 +155,31 @@ def main():
             duplicates.append({'excluded_id': q['id'], 'retained_id': seen[key], 'statement': q['statement']})
         else:
             seen[key] = q['id']; included.append(q)
-    def length_clue(question):
-        lengths = {option['id']: len(option['text'].strip()) for option in question['options']}
-        correct = lengths[question['correct_option']]
-        longest_distractor = max(length for option_id, length in lengths.items() if option_id != question['correct_option'])
-        return correct > longest_distractor and correct / max(longest_distractor, 1) >= threshold
     available_ids = {q['id'] for q in included}
-    missing_exceptions = exceptions - available_ids
-    if missing_exceptions:
-        raise ValueError(f'Unknown manual question retirement exceptions: {sorted(missing_exceptions)}')
-    invalid_exceptions = [q['id'] for q in included if q['id'] in exceptions and not length_clue(q)]
-    if invalid_exceptions:
-        raise ValueError(f'Manual question exceptions no longer match the retirement criterion: {invalid_exceptions}')
-    retired_ids = {q['id'] for q in included if length_clue(q) and q['id'] not in exceptions}
+    unknown_ids = (retired_ids | set(revisions)) - available_ids
+    if unknown_ids:
+        raise ValueError(f'Unknown manual question editorial IDs: {sorted(unknown_ids)}')
+    if retired_ids & set(revisions):
+        raise ValueError(f'Retired questions cannot have active revisions: {sorted(retired_ids & set(revisions))}')
+    for question in included:
+        revision = revisions.get(question['id'])
+        if not revision:
+            continue
+        if 'statement' in revision:
+            question['statement'] = revision['statement']
+        if 'options' in revision:
+            if set(revision['options']) - set('ABCD'):
+                raise ValueError(f'Invalid option ID in revision {question["id"]}')
+            for option in question['options']:
+                if option['id'] in revision['options']:
+                    option['text'] = revision['options'][option['id']]
+        if 'feedback' in revision:
+            question['feedback'] = {
+                'correct': revision['feedback'],
+                'incorrect': 'Según la revisión editorial: ' + revision['feedback'],
+            }
+        question['source']['review_method'] = 'Cotejo de clave con solucionario original; redacción editorial adaptada y trazada en content/question-drafts/manual-question-quality-review.json y manual-question-revisions-p*.json.'
+        question['updated_at'] = DATE
     retired = [q for q in included if q['id'] in retired_ids]
     included = [q for q in included if q['id'] not in retired_ids]
     remaining_by_topic = Counter(q['topic_id'] for q in included)
@@ -166,7 +202,7 @@ def main():
     save('logs/gsi-question-import.json', {'date': DATE, 'source_count': 12, 'source_questions': len(questions), 'imported': len(included), 'exact_duplicates': duplicates,
                                          'retired': [{'id': q['id'], 'topic_id': q['topic_id']} for q in retired],
                                          'retirement_criterion': retirement_data['criterion'],
-                                         'retained_exceptions': retirement_data['retained_exceptions'],
+                                         'revisions': sorted(revisions),
                                          'per_topic': dict(sorted(Counter(q['topic_id'] for q in included).items())),
                                          'review': 'Claves y explicaciones conservadas del corpus. No son preguntas oficiales.'})
     print(f'{len(included)} curated questions imported; {len(duplicates)} exact duplicate prompts and {len(retired)} low-quality questions excluded.')

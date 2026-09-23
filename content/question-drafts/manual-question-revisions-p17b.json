@@ -1,0 +1,315 @@
+{
+  "version": 1,
+  "reviewed_at": "2026-09-23",
+  "criterion": "Contrastes de procesos, memoria, sistemas operativos, móvil y operación del temario.",
+  "revisions": {
+    "MAN-GSI-P17-081": {
+      "options": {
+        "A": "Ejecutar solo aplicaciones de usuario sin administrar dispositivos.",
+        "B": "Exponer hardware directamente a cada aplicación sin aislamiento.",
+        "C": "Gestionar únicamente la red, dejando memoria y procesos a las aplicaciones."
+      }
+    },
+    "MAN-GSI-P17-082": {
+      "options": {
+        "A": "Un archivo ejecutable almacenado pero no iniciado.",
+        "C": "Un hilo aislado que no comparte recursos con otros hilos.",
+        "D": "Una unidad física de CPU asignada a un programa."
+      }
+    },
+    "MAN-GSI-P17-083": {
+      "options": {
+        "A": "Un proceso independiente con espacio de direcciones propio.",
+        "B": "Una tarea planificada que no puede compartir memoria con otras.",
+        "D": "Una unidad física que equivale siempre a un núcleo de CPU."
+      }
+    },
+    "MAN-GSI-P17-084": {
+      "options": {
+        "A": "Los hilos tienen espacios de direcciones separados y procesos compartidos.",
+        "B": "Cada hilo posee su propio sistema operativo invitado.",
+        "D": "Proceso e hilo son dos nombres para la misma unidad de aislamiento."
+      }
+    },
+    "MAN-GSI-P17-086": {
+      "options": {
+        "A": "Decide las rutas de red antes de cada ejecución de proceso.",
+        "B": "Reserva memoria física permanente a cada hilo.",
+        "C": "Asigna prioridades sin seleccionar nunca la tarea que ejecuta CPU."
+      }
+    },
+    "MAN-GSI-P17-090": {
+      "options": {
+        "A": "Seleccionar siempre el trabajo que ya espera más tiempo.",
+        "B": "Asignar el mismo intervalo de CPU a todas las tareas.",
+        "C": "Priorizar la tarea con mayor duración estimada."
+      }
+    },
+    "MAN-GSI-P17-092": {
+      "options": {
+        "A": "Concurrencia exige ejecución simultánea en varios núcleos.",
+        "B": "Paralelismo solo intercala tareas sobre un único núcleo.",
+        "D": "Ambos conceptos significan lo mismo si las tareas son asíncronas."
+      }
+    },
+    "MAN-GSI-P17-094": {
+      "options": {
+        "A": "Permitir acceso concurrente sin exclusión a una sección crítica.",
+        "B": "Sincronizar exclusivamente entre procesos que no comparten estado.",
+        "C": "Asignar tiempo de CPU según prioridad de cada hilo."
+      }
+    },
+    "MAN-GSI-P17-095": {
+      "options": {
+        "A": "Garantizar que solo un hilo existe en todo el proceso.",
+        "C": "Asignar páginas físicas de memoria a tareas concurrentes.",
+        "D": "Forzar ejecución estrictamente secuencial de todos los procesos."
+      }
+    },
+    "MAN-GSI-P17-098": {
+      "options": {
+        "A": "Una llamada a una biblioteca de usuario que nunca entra en el kernel.",
+        "C": "Una interrupción de hardware generada por un dispositivo externo.",
+        "D": "Un mensaje entre procesos sin servicio del sistema operativo."
+      }
+    },
+    "MAN-GSI-P17-099": {
+      "options": {
+        "B": "El modo usuario permite ejecutar instrucciones privilegiadas directamente.",
+        "C": "El modo kernel solo modifica la identidad de una cuenta.",
+        "D": "No hay separación si el programa se ejecuta como administrador."
+      }
+    },
+    "MAN-GSI-P17-100": {
+      "options": {
+        "B": "La CPU está saturada aunque sus métricas indiquen baja utilización.",
+        "C": "Más núcleos resolverán la espera de E/S sin medir almacenamiento.",
+        "D": "Bloquear interrupciones reduce siempre el tiempo de respuesta."
+      }
+    },
+    "MAN-GSI-P17-101": {
+      "options": {
+        "A": "Acceso a la RAM de otros procesos sin protección.",
+        "B": "Persistencia automática de su memoria después de apagar.",
+        "C": "Una copia física dedicada de toda la memoria RAM del host."
+      }
+    },
+    "MAN-GSI-P17-104": {
+      "options": {
+        "B": "Divide toda la memoria en páginas de tamaño fijo.",
+        "C": "Utiliza una sola región sin permisos diferenciados.",
+        "D": "Asigna direcciones físicas directamente sin estructuras lógicas."
+      }
+    },
+    "MAN-GSI-P17-107": {
+      "options": {
+        "A": "Mayor acierto de caché y poca presión de memoria.",
+        "C": "Uso intenso de CPU para trabajo útil sin fallos de página.",
+        "D": "Compresión de datos en disco sin actividad de memoria virtual."
+      }
+    },
+    "MAN-GSI-P17-108": {
+      "options": {
+        "B": "Escoger el proceso al que se asigna el siguiente quantum.",
+        "C": "Decidir la posición de los archivos dentro del sistema de ficheros.",
+        "D": "Seleccionar qué traducción reciente mantener en la TLB."
+      }
+    },
+    "MAN-GSI-P17-109": {
+      "options": {
+        "A": "Garantizar ausencia futura de fallos de página.",
+        "B": "Retirar la página que acaba de utilizarse más recientemente.",
+        "D": "Seleccionar páginas exclusivamente por prioridad del proceso."
+      }
+    },
+    "MAN-GSI-P17-112": {
+      "options": {
+        "A": "Firmware del dispositivo, siempre independiente del sistema operativo.",
+        "B": "Servicio de usuario que sustituye al kernel de E/S.",
+        "C": "Biblioteca de aplicación que accede a hardware sin interfaz del SO."
+      }
+    },
+    "MAN-GSI-P17-113": {
+      "options": {
+        "A": "Bloque equivale a flujo secuencial; carácter a unidades direccionables.",
+        "B": "Ambos se diferencian solo por la capacidad de almacenamiento.",
+        "D": "El dispositivo de carácter usa siempre un sistema de archivos."
+      }
+    },
+    "MAN-GSI-P17-114": {
+      "options": {
+        "A": "Cifrar automáticamente todo el contenido del sistema de archivos.",
+        "B": "Sustituir la copia de seguridad tras borrado de datos.",
+        "D": "Garantizar que ninguna escritura pueda perderse en una caída."
+      }
+    },
+    "MAN-GSI-P17-115": {
+      "options": {
+        "A": "Permisos POSIX rwx sin entradas adicionales por identidad.",
+        "C": "Una lista de páginas de memoria asociadas a un archivo.",
+        "D": "Un registro de cambios que permite recuperar el sistema de archivos."
+      }
+    },
+    "MAN-GSI-P17-116": {
+      "options": {
+        "B": "Permisos de lectura, escritura y borrado del directorio.",
+        "C": "Permisos de lectura, escritura y administración de propietario.",
+        "D": "Permisos de lectura, edición y cambio de atributos."
+      }
+    },
+    "MAN-GSI-P17-118": {
+      "options": {
+        "A": "Ejecutar controladores y sistemas de archivos en modo kernel.",
+        "C": "Eliminar la comunicación entre servicios separados del núcleo.",
+        "D": "Mantener todos los servicios en un único espacio privilegiado."
+      }
+    },
+    "MAN-GSI-P17-119": {
+      "options": {
+        "B": "Que ejecuta simultáneamente dos sistemas operativos de usuario.",
+        "C": "Que necesita procesadores de distintos fabricantes para arrancar.",
+        "D": "Que prescinde de gestión de memoria y controladores."
+      }
+    },
+    "MAN-GSI-P17-120": {
+      "options": {
+        "A": "Ampliar CPU sin medir tiempos de espera ni utilización de almacenamiento.",
+        "B": "Desactivar caché de lectura para ver directamente el rendimiento del disco en producción.",
+        "C": "Reducir RAM y aumentar paginación antes de medir colas de E/S."
+      }
+    },
+    "MAN-GSI-P17-123": {
+      "options": {
+        "B": "Almacenar exclusivamente cuentas y contraseñas de dominio.",
+        "C": "Guardar solo eventos de seguridad, sin configuración de aplicaciones.",
+        "D": "Sustituir por completo los archivos y registros de eventos."
+      }
+    },
+    "MAN-GSI-P17-130": {
+      "options": {
+        "A": "Un proceso interactivo que siempre espera entrada del terminal.",
+        "C": "Una cuenta privilegiada necesaria para ejecutar todos los servicios.",
+        "D": "Una unidad de systemd que no puede iniciar procesos persistentes."
+      }
+    },
+    "MAN-GSI-P17-131": {
+      "options": {
+        "B": "Ser el núcleo Linux que gestiona memoria y procesos.",
+        "C": "Reemplazar el sistema de archivos y todos los gestores de paquetes.",
+        "D": "Compilar programas C antes de iniciar servicios."
+      }
+    },
+    "MAN-GSI-P17-132": {
+      "options": {
+        "A": "Archivos persistentes de usuario y datos de aplicaciones.",
+        "C": "Una copia del firmware y ajustes de arranque del equipo.",
+        "D": "Un repositorio de paquetes del sistema operativo."
+      }
+    },
+    "MAN-GSI-P17-135": {
+      "options": {
+        "A": "Usar cuentas privilegiadas para toda actividad administrativa y personal.",
+        "C": "Desactivar registros en sistemas de baja capacidad.",
+        "D": "Compartir credenciales entre técnicos para facilitar continuidad."
+      }
+    },
+    "MAN-GSI-P17-136": {
+      "options": {
+        "A": "Instalar servicios adicionales para que siempre haya alternativa.",
+        "B": "Desactivar autenticación en servicios de mantenimiento.",
+        "C": "Evitar parches para preservar una configuración estable."
+      }
+    },
+    "MAN-GSI-P17-137": {
+      "options": {
+        "A": "El paquete y el repositorio son el mismo archivo instalable.",
+        "B": "El repositorio solo almacena fuente; el paquete solo binarios.",
+        "D": "Un paquete instala todo el sistema; el repositorio solo actualiza kernel."
+      }
+    },
+    "MAN-GSI-P17-140": {
+      "options": {
+        "B": "Elegir según preferencia del equipo, sin revisar compatibilidad.",
+        "C": "Escoger el sistema con más comandos conocidos por el administrador.",
+        "D": "Comparar únicamente coste inicial de licencia y no operación."
+      }
+    },
+    "MAN-GSI-P17-142": {
+      "options": {
+        "A": "Todas las apps comparten identidad de ejecución y directorios.",
+        "B": "Las apps acceden por defecto a todos los datos de otras apps.",
+        "C": "El aislamiento depende solo de cerrar aplicaciones en segundo plano."
+      }
+    },
+    "MAN-GSI-P17-147": {
+      "options": {
+        "A": "MDM gestiona solo aplicaciones y UEM únicamente redes móviles.",
+        "B": "EMM se limita al inventario de equipos de sobremesa.",
+        "D": "UEM reduce el alcance de MDM a teléfonos sin políticas de identidad."
+      }
+    },
+    "MAN-GSI-P17-149": {
+      "options": {
+        "B": "Solo mejoran estética y nunca corrigen vulnerabilidades.",
+        "C": "Sustituyen autenticación y control de acceso del dispositivo.",
+        "D": "Eliminan la necesidad de revisar soporte de modelos y fabricantes."
+      }
+    },
+    "MAN-GSI-P17-150": {
+      "options": {
+        "A": "La biometría decide por sí sola qué recursos puede consultar.",
+        "C": "La autorización identifica al usuario mediante huella o rostro.",
+        "D": "La autenticación y la autorización son la misma comprobación."
+      }
+    },
+    "MAN-GSI-P17-151": {
+      "options": {
+        "A": "Disminuye la superficie de riesgo porque no hay gestión corporativa.",
+        "B": "El dispositivo personal asegura por sí mismo parcheo y cifrado.",
+        "D": "La propiedad personal impide toda separación de datos de trabajo."
+      }
+    },
+    "MAN-GSI-P17-152": {
+      "options": {
+        "A": "Conceder privilegios root a todas las apps del dispositivo.",
+        "C": "Eliminar de forma automática los datos personales ante baja laboral.",
+        "D": "Compartir identidades corporativas y personales sin barrera."
+      }
+    },
+    "MAN-GSI-P17-154": {
+      "options": {
+        "B": "Llamadas específicas a drivers de cada plataforma desde clientes.",
+        "C": "Acceso directo desde navegadores a memoria de los servidores.",
+        "D": "Rutas y formatos locales codificados en cada consumidor del servicio."
+      }
+    },
+    "MAN-GSI-P17-155": {
+      "options": {
+        "A": "Aumentar almacenamiento aunque la CPU sea el cuello de botella.",
+        "B": "Conservar sesiones solo en memoria local de una instancia.",
+        "C": "Balancear peticiones sin resolver el estado ni el punto único de fallo."
+      }
+    },
+    "MAN-GSI-P17-157": {
+      "options": {
+        "B": "Solo la versión y el nombre comercial de cada sistema.",
+        "C": "Solo la capacidad nominal del disco, sin medir E/S ni errores.",
+        "D": "Solo el número de procesos, sin tiempos ni disponibilidad."
+      }
+    },
+    "MAN-GSI-P17-158": {
+      "options": {
+        "A": "Compartir una sola instancia para portal y cómputo sin aislar fallos.",
+        "B": "Priorizar FLOPS para el portal, sin redundancia de acceso.",
+        "C": "Eliminar colas HPC y monitorización para reducir complejidad."
+      }
+    },
+    "MAN-GSI-P17-159": {
+      "options": {
+        "A": "Priorizar el producto más nuevo y optimizar después seguridad, soporte y coste.",
+        "B": "Unificar todas las cargas en la misma plataforma para simplificar operación, sin analizar requisitos.",
+        "D": "Comparar CPU y memoria nominales antes que resiliencia, integración y reversibilidad."
+      }
+    }
+  }
+}
