@@ -24,6 +24,7 @@ def main():
         ('JSON y esquemas', [sys.executable, 'scripts/validate_json.py']),
         ('Referencias', [sys.executable, 'scripts/validate_references.py']),
         ('Preguntas', [sys.executable, 'scripts/validate_questions.py']),
+        ('Calidad objetiva de preguntas', [sys.executable, 'scripts/audit_question_quality.py']),
     ]
     results = []
     if node:

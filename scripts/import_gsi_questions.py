@@ -105,12 +105,25 @@ def extract_pack(pack):
     return result, [qsource, source]
 
 def main():
+    retirement_data = json.loads((ROOT / 'content/question-drafts/manual-question-retirements.json').read_text('utf-8'))
+    threshold = float(retirement_data['correct_length_ratio_threshold'])
+    exceptions = {item['id'] for item in retirement_data['retained_exceptions']}
+    if len(exceptions) != len(retirement_data['retained_exceptions']):
+        raise ValueError('Duplicate IDs in manual question retirement exceptions')
     data = json.loads((ROOT / 'data/sources.json').read_text('utf-8'))
     data['sources'] = [s for s in data['sources'] if not re.match(r'SRC-GSI-P\d+-', s['id'])]
     questions = []
     for pack in range(14, 20):
         imported, sources = extract_pack(pack)
         questions.extend(imported); data['sources'].extend(sources)
+    def source_group(source):
+        source_id = source['id']
+        if re.match(r'SRC-GSI-P\d+-', source_id):
+            return 1
+        if source_id.startswith(('SRC-CONTROL-', 'SRC-INAP-')):
+            return 2
+        return 0
+    data['sources'].sort(key=source_group)
     seen, included, duplicates = {}, [], []
     for q in questions:
         key = re.sub(r'\W+', ' ', q['statement'].casefold()).strip()
@@ -118,13 +131,45 @@ def main():
             duplicates.append({'excluded_id': q['id'], 'retained_id': seen[key], 'statement': q['statement']})
         else:
             seen[key] = q['id']; included.append(q)
+    def length_clue(question):
+        lengths = {option['id']: len(option['text'].strip()) for option in question['options']}
+        correct = lengths[question['correct_option']]
+        longest_distractor = max(length for option_id, length in lengths.items() if option_id != question['correct_option'])
+        return correct > longest_distractor and correct / max(longest_distractor, 1) >= threshold
+    available_ids = {q['id'] for q in included}
+    missing_exceptions = exceptions - available_ids
+    if missing_exceptions:
+        raise ValueError(f'Unknown manual question retirement exceptions: {sorted(missing_exceptions)}')
+    invalid_exceptions = [q['id'] for q in included if q['id'] in exceptions and not length_clue(q)]
+    if invalid_exceptions:
+        raise ValueError(f'Manual question exceptions no longer match the retirement criterion: {invalid_exceptions}')
+    retired_ids = {q['id'] for q in included if length_clue(q) and q['id'] not in exceptions}
+    retired = [q for q in included if q['id'] in retired_ids]
+    included = [q for q in included if q['id'] not in retired_ids]
+    remaining_by_topic = Counter(q['topic_id'] for q in included)
+    other_by_topic = Counter()
+    for relative_path in ('data/questions-official.json', 'data/questions-ai.json'):
+        for question in json.loads((ROOT / relative_path).read_text('utf-8'))['questions']:
+            if question['is_active'] and question['validation_status'] == 'validated':
+                other_by_topic[question['topic_id']] += 1
+    all_topic_ids = {
+        topic['id']
+        for block in json.loads((ROOT / 'data/syllabus.json').read_text('utf-8'))['blocks']
+        for topic in block['topics']
+    }
+    combined_by_topic = {topic_id: remaining_by_topic[topic_id] + other_by_topic[topic_id] for topic_id in all_topic_ids}
+    if any(count < retirement_data['coverage_floor'] for count in combined_by_topic.values()):
+        raise ValueError('Manual retirement rule breaks the declared per-topic coverage floor')
     save('data/sources.json', data)
     save('data/questions-manual.json', {'metadata': {'dataset_type': 'manual', 'schema_version': '1.0.0',
-        'data_version': '2.0.1', 'updated_at': DATE, 'rights': RIGHTS}, 'questions': included})
+        'data_version': '2.1.0', 'updated_at': DATE, 'rights': RIGHTS}, 'questions': included})
     save('logs/gsi-question-import.json', {'date': DATE, 'source_count': 12, 'source_questions': len(questions), 'imported': len(included), 'exact_duplicates': duplicates,
+                                         'retired': [{'id': q['id'], 'topic_id': q['topic_id']} for q in retired],
+                                         'retirement_criterion': retirement_data['criterion'],
+                                         'retained_exceptions': retirement_data['retained_exceptions'],
                                          'per_topic': dict(sorted(Counter(q['topic_id'] for q in included).items())),
                                          'review': 'Claves y explicaciones conservadas del corpus. No son preguntas oficiales.'})
-    print(f'{len(included)} curated questions imported; {len(duplicates)} exact duplicate prompts excluded.')
+    print(f'{len(included)} curated questions imported; {len(duplicates)} exact duplicate prompts and {len(retired)} low-quality questions excluded.')
     print(dict(sorted(Counter(q['topic_id'] for q in included).items())))
 
 if __name__ == '__main__': main()

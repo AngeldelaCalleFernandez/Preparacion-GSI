@@ -52,7 +52,7 @@ test('Examen excluye IA pendiente, inactiva, demo y otra oposición',()=>{
   assert.equal(isQuestionEligible({...questions[0],origin:'official',collection:'official',validation_status:'pending_review'},{...config,mode:EXAM_MODES.BOE}),false);
 });
 for(const b of syllabus.blocks) for(const t of b.topics)test(`Filtro de entrenamiento ${t.id}`,()=>{const result=filterTrainingQuestions(questions,[],{topicId:t.id});assert.ok(result.every(q=>q.topic_id===t.id&&q.is_active&&q.validation_status==='validated'));assert.equal(result.length,questions.filter(q=>q.topic_id===t.id&&q.is_active&&q.validation_status==='validated').length);});
-test('Entrenamiento por bloque y mixto',()=>{for(const b of syllabus.blocks)assert.ok(filterTrainingQuestions(questions,[],{blockId:b.id}).every(q=>q.block_id===b.id));assert.equal(filterTrainingQuestions(questions).length,1762+questions.filter(q=>q.origin==='official'&&q.is_active).length);});
+test('Entrenamiento por bloque y mixto',()=>{for(const b of syllabus.blocks)assert.ok(filterTrainingQuestions(questions,[],{blockId:b.id}).every(q=>q.block_id===b.id));const eligible=questions.filter(q=>q.is_active&&q.validation_status==='validated');assert.equal(filterTrainingQuestions(questions).length,eligible.length);});
 test('Entrenamiento mezcla varios bloques y temas concretos',()=>{
   const blocks=filterTrainingQuestions(questions,[],{blockIds:['B1','B4']});
   assert.ok(blocks.length>0&&blocks.every(q=>['B1','B4'].includes(q.block_id)));
