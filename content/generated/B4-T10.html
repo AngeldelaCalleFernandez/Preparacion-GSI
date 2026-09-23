@@ -1,6 +1,6 @@
 <article class="topic-content" data-topic-id="B4-T10" data-coverage-status="complete">
 <p>Material curado del corpus GSI A2 · apuntes V2.1 revisados. Procedencia editorial, no documento oficial.</p>
-<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B4-T10/estudio">Apuntes de estudio</a></li><li><a href="#temario/B4-T10/estudio-01">1. WAN y transportes</a></li><li><a href="#temario/B4-T10/estudio-02">2. WDM</a></li><li><a href="#temario/B4-T10/estudio-03">3. MPLS</a></li><li><a href="#temario/B4-T10/estudio-04">4. SD-WAN</a></li><li><a href="#temario/B4-T10/estudio-05">5. Routing estático y dinámico</a></li><li><a href="#temario/B4-T10/estudio-06">6. RIP, OSPF, IS-IS y BGP</a></li><li><a href="#temario/B4-T10/estudio-07">Resumen</a></li><li><a href="#temario/B4-T10/repaso">Resumen de repaso</a></li><li><a href="#temario/B4-T10/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B4-T10/repaso-02">Claves de test</a></li><li><a href="#temario/B4-T10/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B4-T10/repaso-04">Fuentes base del material</a></li></ol></nav>
+<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B4-T10/estudio">Apuntes de estudio</a></li><li><a href="#temario/B4-T10/estudio-01">1. WAN y transportes</a></li><li><a href="#temario/B4-T10/estudio-02">2. WDM</a></li><li><a href="#temario/B4-T10/estudio-03">3. MPLS</a></li><li><a href="#temario/B4-T10/estudio-04">4. SD-WAN</a></li><li><a href="#temario/B4-T10/estudio-05">5. Routing estático y dinámico</a></li><li><a href="#temario/B4-T10/estudio-06">6. RIP, OSPF, IS-IS y BGP</a></li><li><a href="#temario/B4-T10/estudio-07">7. Datos y trampas de test</a></li><li><a href="#temario/B4-T10/estudio-08">8. Aplicación al supuesto práctico</a></li><li><a href="#temario/B4-T10/estudio-09">Resumen</a></li><li><a href="#temario/B4-T10/repaso">Resumen de repaso</a></li><li><a href="#temario/B4-T10/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B4-T10/repaso-02">Claves de test</a></li><li><a href="#temario/B4-T10/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B4-T10/repaso-04">Fuentes base del material</a></li></ol></nav>
 <h2 id="estudio">Apuntes de estudio</h2>
 <p><strong>Cobertura oficial que debe quedar dominada:</strong> Redes de área extensa. Tecnologías WDM y MPLS SD-WAN. Protocolos de encaminamiento.</p>
 <h3 id="estudio-01">1. WAN y transportes</h3>
@@ -10,6 +10,7 @@
 <h3 id="estudio-03">3. MPLS</h3>
 <p>MPLS reenvía paquetes usando etiquetas. Conceptos: FEC agrupa tráfico con mismo tratamiento; LER inserta/retira etiquetas en borde; LSR conmuta etiquetas; LSP es camino de etiquetas. Permite VPN L3/L2, ingeniería de tráfico y QoS en redes de operador. <strong>MPLS no cifra por sí mismo</strong>.</p>
 <h3 id="estudio-04">4. SD-WAN</h3>
+<section class="topic-visual-block" aria-labelledby="b4-t10-visual-01-title"><h4 id="b4-t10-visual-01-title">WAN por capas: óptica, transporte, overlay y routing</h4><figure class="topic-visual"><p class="topic-visual__mobile-hint" aria-hidden="true">Desliza horizontalmente para explorar el esquema con texto legible.</p><img src="assets/diagrams/b4/b4-t10-wan.svg" alt="Capas de una WAN con WDM en fibra, underlays Internet MPLS o móvil, overlay SD-WAN cifrado con políticas, edges de sede y cloud, y routing OSPF o IS-IS interno y BGP entre sistemas autónomos." loading="lazy" decoding="async"><figcaption><span>Evita atribuir a cada tecnología funciones de otra capa.</span><strong>Qué debes recordar:</strong> WDM multiplexa luz, MPLS conmuta etiquetas sin cifrar por sí solo, SD-WAN aplica política sobre underlays y BGP enruta por atributos.</figcaption></figure></section>
 <p>SD-WAN desacopla política/control de la elección de múltiples transportes. Underlay = conectividad subyacente (Internet, MPLS, 4G/5G...); overlay = túneles/red lógica. Un controlador/orquestador distribuye políticas; el edge mide SLA de caminos y selecciona según aplicación, pérdida, jitter/latencia y coste.</p>
 <p>Beneficios: gestión central, uso activo de varios enlaces y aprovisionamiento; riesgos: dependencia de plataforma, control plane, seguridad de edges y calidad variable del underlay.</p>
 <h3 id="estudio-05">5. Routing estático y dinámico</h3>
@@ -45,7 +46,7 @@
 <td><p>políticas y AS-PATH entre AS; también DC/enterprise a gran escala</p></td>
 </tr>
 </table>
-<p>Datos y trampas de test</p>
+<h3 id="estudio-07">7. Datos y trampas de test</h3>
 <ul>
 <li>WDM multiplexa longitudes de onda, no paquetes IP.</li>
 <li>MPLS usa etiquetas y no cifra por sí mismo.</li>
@@ -55,9 +56,9 @@
 <li>Routing estático puede ser adecuado en topologías sencillas.</li>
 <li>Redundancia lógica sin diversidad física puede compartir el mismo fallo de fibra.</li>
 </ul>
-<p>Aplicación al supuesto práctico</p>
+<h3 id="estudio-08">8. Aplicación al supuesto práctico</h3>
 <p>Compara MPLS, doble Internet+VPN y SD-WAN con criterios de SLA, cifrado y coste. Diseña dos operadores/rutas físicamente diversas, routing interior y exterior, QoS, monitorización y failover. Si hay cloud, contempla latencia y conectividad directa o VPN según criticidad.</p>
-<h3 id="estudio-07">Resumen</h3>
+<h3 id="estudio-09">Resumen</h3>
 <p>WAN moderna combina transportes físicos/operador, routing y overlays. WDM aumenta capacidad óptica; MPLS ofrece forwarding/VPN/QoS; SD-WAN centraliza política sobre varios underlays.</p>
 <p><strong>Fuentes base:</strong> A1 113 + 108 + 120; SD-WAN actualizado como complemento.</p>
 <h2 id="repaso">Resumen de repaso</h2>

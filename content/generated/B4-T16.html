@@ -1,6 +1,6 @@
 <article class="topic-content" data-topic-id="B4-T16" data-coverage-status="complete">
 <p>Material curado del corpus GSI A2 · apuntes V2.1 revisados. Procedencia editorial, no documento oficial.</p>
-<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B4-T16/estudio">Apuntes de estudio</a></li><li><a href="#temario/B4-T16/estudio-01">1. Arquitectura</a></li><li><a href="#temario/B4-T16/estudio-02">2. SIP, H.323 y WebRTC</a></li><li><a href="#temario/B4-T16/estudio-03">3. SDP, RTP/RTCP y NAT traversal</a></li><li><a href="#temario/B4-T16/estudio-04">4. Códecs</a></li><li><a href="#temario/B4-T16/estudio-05">5. MCU y SFU</a></li><li><a href="#temario/B4-T16/estudio-06">6. Dimensionamiento</a></li><li><a href="#temario/B4-T16/estudio-07">7. QoS y calidad</a></li><li><a href="#temario/B4-T16/estudio-08">8. Sala</a></li><li><a href="#temario/B4-T16/estudio-09">9. Seguridad y accesibilidad</a></li><li><a href="#temario/B4-T16/estudio-10">Resumen</a></li><li><a href="#temario/B4-T16/estudio-11">ANEXO A — Puertos, protocolos y siglas de alta rentabilidad</a></li><li><a href="#temario/B4-T16/estudio-12">Siglas que deben salir sin pensar</a></li><li><a href="#temario/B4-T16/estudio-13">ANEXO B — Checklist para el segundo ejercicio</a></li><li><a href="#temario/B4-T16/estudio-14">ANEXO C — Estrategia de estudio del Bloque IV</a></li><li><a href="#temario/B4-T16/estudio-15">Fuentes oficiales de actualización utilizadas</a></li><li><a href="#temario/B4-T16/repaso">Resumen de repaso</a></li><li><a href="#temario/B4-T16/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B4-T16/repaso-02">Claves de test</a></li><li><a href="#temario/B4-T16/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B4-T16/repaso-04">Fuentes base del material</a></li><li><a href="#temario/B4-T16/repaso-05">Fuentes oficiales de actualización</a></li></ol></nav>
+<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B4-T16/estudio">Apuntes de estudio</a></li><li><a href="#temario/B4-T16/estudio-01">1. Arquitectura</a></li><li><a href="#temario/B4-T16/estudio-02">2. SIP, H.323 y WebRTC</a></li><li><a href="#temario/B4-T16/estudio-03">3. SDP, RTP/RTCP y NAT traversal</a></li><li><a href="#temario/B4-T16/estudio-04">4. Códecs</a></li><li><a href="#temario/B4-T16/estudio-05">5. MCU y SFU</a></li><li><a href="#temario/B4-T16/estudio-06">6. Dimensionamiento</a></li><li><a href="#temario/B4-T16/estudio-07">7. QoS y calidad</a></li><li><a href="#temario/B4-T16/estudio-08">8. Sala</a></li><li><a href="#temario/B4-T16/estudio-09">9. Seguridad y accesibilidad</a></li><li><a href="#temario/B4-T16/estudio-10">10. Datos y trampas de test</a></li><li><a href="#temario/B4-T16/estudio-11">11. Aplicación al supuesto práctico</a></li><li><a href="#temario/B4-T16/estudio-12">Resumen</a></li><li><a href="#temario/B4-T16/estudio-13">12. Puertos, protocolos y siglas de alta rentabilidad</a></li><li><a href="#temario/B4-T16/estudio-14">Siglas que deben salir sin pensar</a></li><li><a href="#temario/B4-T16/estudio-15">13. Checklist para el segundo ejercicio</a></li><li><a href="#temario/B4-T16/estudio-16">14. Estrategia de estudio del Bloque IV</a></li><li><a href="#temario/B4-T16/estudio-17">15. Fuentes oficiales de actualización</a></li><li><a href="#temario/B4-T16/repaso">Resumen de repaso</a></li><li><a href="#temario/B4-T16/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B4-T16/repaso-02">Claves de test</a></li><li><a href="#temario/B4-T16/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B4-T16/repaso-04">Fuentes base del material</a></li><li><a href="#temario/B4-T16/repaso-05">Fuentes oficiales de actualización</a></li></ol></nav>
 <h2 id="estudio">Apuntes de estudio</h2>
 <p><strong>Cobertura oficial que debe quedar dominada:</strong> Sistemas de videoconferencia. Protocolos. Dimensionamiento y calidad de servicio en las comunicaciones y acondicionamiento de salas y equipos.</p>
 <h3 id="estudio-01">1. Arquitectura</h3>
@@ -14,6 +14,7 @@
 <h3 id="estudio-05">5. MCU y SFU</h3>
 <p>MCU recibe, decodifica/compone y vuelve a codificar una mezcla; reduce streams al cliente pero consume servidor y puede añadir latencia. SFU reenvía streams/capas seleccionadas sin mezcla completa; desplaza más trabajo al cliente/red y escala bien en WebRTC. La elección depende de terminales, grabación, layouts y escala.</p>
 <h3 id="estudio-06">6. Dimensionamiento</h3>
+<section class="topic-visual-block" aria-labelledby="b4-t16-visual-01-title"><h4 id="b4-t16-visual-01-title">Videoconferencia: señalización, medios y dimensionamiento</h4><figure class="topic-visual"><p class="topic-visual__mobile-hint" aria-hidden="true">Desliza horizontalmente para explorar el esquema con texto legible.</p><img src="assets/diagrams/b4/b4-t16-videoconferencia.svg" alt="Arquitectura con captura, codecs, SIP H323 o WebRTC, ICE STUN y TURN, RTP RTCP, MCU o SFU y participantes, acompañada de la fórmula bitrate por concurrencia, sentidos, overhead y margen." loading="lazy" decoding="async"><figcaption><span>Une protocolos, arquitectura multipunto, red y cálculo de capacidad.</span><strong>Qué debes recordar:</strong> WebRTC no es un codec; SIP y H.323 señalizan, RTP transporta, TURN relaya y el ancho de banda se calcula por flujos simultáneos.</figcaption></figure></section>
 <p>Capacidad aproximada = bitrate de cada flujo × concurrencia × direcciones + overhead + margen. En una sede con N reuniones, no se multiplica por usuarios totales si no son simultáneos. Considerar subida y bajada, presentaciones, simulcast/SVC y tráfico a cloud.</p>
 <p><strong>Ejemplo:</strong> 20 salas simultáneas a 3 Mb/s de vídeo+audio por sentido hacia cloud ≈ 60 Mb/s de subida y 60 Mb/s de bajada antes de overhead/margen. Con 30% de margen, reservar ~78 Mb/s por sentido, además de otros servicios.</p>
 <h3 id="estudio-07">7. QoS y calidad</h3>
@@ -22,7 +23,7 @@
 <p>Cámara con encuadre adecuado, micrófonos y altavoces con cancelación de eco, pantalla proporcional, iluminación frontal uniforme, tratamiento acústico, posición de participantes, red cableada preferente, alimentación y control. La experiencia depende más de audio claro que de resolución extrema.</p>
 <h3 id="estudio-09">9. Seguridad y accesibilidad</h3>
 <p>Identidad/SSO/MFA para administración y reuniones sensibles, cifrado en tránsito, controles de invitados/lobby, actualización, permisos de grabación, retención, privacidad y logs. Accesibilidad: subtitulado, transcripción, compatibilidad con ayudas y alternativas cuando proceda.</p>
-<p>Datos y trampas de test</p>
+<h3 id="estudio-10">10. Datos y trampas de test</h3>
 <ul>
 <li>SIP/H.323 = señalización/control; RTP = medios.</li>
 <li>WebRTC ≠ codec.</li>
@@ -33,12 +34,12 @@
 <li>Dimensionar por concurrencia real, no por usuarios totales.</li>
 <li>Audio deficiente suele arruinar más una reunión que vídeo de menor resolución.</li>
 </ul>
-<p>Aplicación al supuesto práctico</p>
+<h3 id="estudio-11">11. Aplicación al supuesto práctico</h3>
 <p>Calcula concurrencia y bitrate con overhead/margen; define WAN/Internet y QoS, redundancia, SBC/gateway si interopera con SIP, plataforma cloud/on-prem, seguridad, grabación, monitorización y diseño de salas. Incluye STUN/TURN/ICE si WebRTC y requisitos de accesibilidad.</p>
-<h3 id="estudio-10">Resumen</h3>
+<h3 id="estudio-12">Resumen</h3>
 <p>Videoconferencia combina protocolos, codecs, red y sala. Para un supuesto, el valor está en calcular concurrencia, controlar latencia/jitter/pérdida, garantizar interoperabilidad y diseñar una experiencia operable y segura.</p>
 <p><strong>Fuentes base:</strong> A1 130 (06/09/2024, resumen 11 págs.) + A1 129; actualización WebRTC/NAT traversal.</p>
-<h3 id="estudio-11">ANEXO A — Puertos, protocolos y siglas de alta rentabilidad</h3>
+<h3 id="estudio-13">12. Puertos, protocolos y siglas de alta rentabilidad</h3>
 <p>Los puertos indicados son valores bien conocidos por defecto; pueden cambiarse y algunos protocolos usan rangos/datos dinámicos. Memorizar el servicio y la función es más importante que creer que el puerto identifica siempre una aplicación.</p>
 <table>
 <tr>
@@ -125,7 +126,7 @@
 <td><p>UDP tradicional; despliegues seguros pueden usar TLS/otros puertos</p></td>
 </tr>
 </table>
-<h3 id="estudio-12">Siglas que deben salir sin pensar</h3>
+<h3 id="estudio-14">Siglas que deben salir sin pensar</h3>
 <table>
 <tr>
 <th scope="col"><p><strong>Sigla
@@ -198,7 +199,7 @@
 <td><p>dos arquitecturas de multipunto en vídeo</p></td>
 </tr>
 </table>
-<h3 id="estudio-13">ANEXO B — Checklist para el segundo ejercicio</h3>
+<h3 id="estudio-15">13. Checklist para el segundo ejercicio</h3>
 <p>Cuando un supuesto pida infraestructura o comunicaciones, responde en capas para no olvidar requisitos:</p>
 <ul>
 <li><strong>Requisitos:</strong> usuarios, sedes, carga, concurrencia, datos, latencia, disponibilidad, RPO/RTO, crecimiento, normativa.</li>
@@ -211,7 +212,7 @@
 <li><strong>Gobierno:</strong> documentación, SLA/SLO, responsables, pruebas, aceptación, formación y reversibilidad.</li>
 </ul>
 <p><strong>Regla de redacción:</strong> cada tecnología nombrada debe resolver un requisito o un riesgo. “Pondría Kubernetes, SD-WAN, Zero Trust y cloud” sin relación causal puntúa peor que una arquitectura más sencilla bien justificada.</p>
-<h3 id="estudio-14">ANEXO C — Estrategia de estudio del Bloque IV</h3>
+<h3 id="estudio-16">14. Estrategia de estudio del Bloque IV</h3>
 <table>
 <tr>
 <th scope="col"><p><strong>Prioridad
@@ -238,7 +239,7 @@
 </tr>
 </table>
 <p>Primera vuelta: comprender arquitectura y diferencias. Segunda: memoria activa de siglas/puertos/estándares. Tercera: test y ejercicios (RAID, capacidad, RPO/RTO, ancho de banda, troubleshooting). Cuarta: mini-supuestos de 20–30 minutos y corrección con checklist.</p>
-<h3 id="estudio-15">Fuentes oficiales de actualización utilizadas</h3>
+<h3 id="estudio-17">15. Fuentes oficiales de actualización</h3>
 <ul>
 <li>Programa oficial GSI A2 — BOE-A-2025-26262.</li>
 <li>Real Decreto 311/2022, ENS, texto consolidado (última actualización publicada 06/11/2024).</li>

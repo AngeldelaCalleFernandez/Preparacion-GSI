@@ -1,6 +1,6 @@
 <article class="topic-content" data-topic-id="B4-T13" data-coverage-status="complete">
 <p>Material curado del corpus GSI A2 · apuntes V2.1 revisados. Procedencia editorial, no documento oficial.</p>
-<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B4-T13/estudio">Apuntes de estudio</a></li><li><a href="#temario/B4-T13/estudio-01">1. Internet como red de redes</a></li><li><a href="#temario/B4-T13/estudio-02">2. Direccionamiento, NAT e IPv6</a></li><li><a href="#temario/B4-T13/estudio-03">3. DNS, CDN y servicios</a></li><li><a href="#temario/B4-T13/estudio-04">4. HTTP/2, HTTP/3 y QUIC</a></li><li><a href="#temario/B4-T13/estudio-05">5. Servicios y perspectivas</a></li><li><a href="#temario/B4-T13/estudio-06">6. Arquitectura IoT</a></li><li><a href="#temario/B4-T13/estudio-07">7. Protocolos IoT</a></li><li><a href="#temario/B4-T13/estudio-08">8. Seguridad y ciclo de vida IoT</a></li><li><a href="#temario/B4-T13/estudio-09">Resumen</a></li><li><a href="#temario/B4-T13/repaso">Resumen de repaso</a></li><li><a href="#temario/B4-T13/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B4-T13/repaso-02">Claves de test</a></li><li><a href="#temario/B4-T13/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B4-T13/repaso-04">Fuentes base del material</a></li></ol></nav>
+<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B4-T13/estudio">Apuntes de estudio</a></li><li><a href="#temario/B4-T13/estudio-01">1. Internet como red de redes</a></li><li><a href="#temario/B4-T13/estudio-02">2. Direccionamiento, NAT e IPv6</a></li><li><a href="#temario/B4-T13/estudio-03">3. DNS, CDN y servicios</a></li><li><a href="#temario/B4-T13/estudio-04">4. HTTP/2, HTTP/3 y QUIC</a></li><li><a href="#temario/B4-T13/estudio-05">5. Servicios y perspectivas</a></li><li><a href="#temario/B4-T13/estudio-06">6. Arquitectura IoT</a></li><li><a href="#temario/B4-T13/estudio-07">7. Protocolos IoT</a></li><li><a href="#temario/B4-T13/estudio-08">8. Seguridad y ciclo de vida IoT</a></li><li><a href="#temario/B4-T13/estudio-09">9. Datos y trampas de test</a></li><li><a href="#temario/B4-T13/estudio-10">10. Aplicación al supuesto práctico</a></li><li><a href="#temario/B4-T13/estudio-11">Resumen</a></li><li><a href="#temario/B4-T13/repaso">Resumen de repaso</a></li><li><a href="#temario/B4-T13/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B4-T13/repaso-02">Claves de test</a></li><li><a href="#temario/B4-T13/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B4-T13/repaso-04">Fuentes base del material</a></li></ol></nav>
 <h2 id="estudio">Apuntes de estudio</h2>
 <p><strong>Cobertura oficial que debe quedar dominada:</strong> La red Internet: arquitectura de red. Principios de funcionamiento. Servicios: evolución, estado actual y perspectivas de futuro. Internet de las Cosas (IoT).</p>
 <h3 id="estudio-01">1. Internet como red de redes</h3>
@@ -14,12 +14,13 @@
 <h3 id="estudio-05">5. Servicios y perspectivas</h3>
 <p>Evolución: cifrado por defecto, CDN/edge, cloud, APIs, IPv6, automatización de red, HTTP/3/QUIC y mayor observabilidad. Las tendencias deben estudiarse como arquitectura, no como predicción comercial. La soberanía, resiliencia y dependencia de terceros importan en servicios públicos.</p>
 <h3 id="estudio-06">6. Arquitectura IoT</h3>
+<section class="topic-visual-block" aria-labelledby="b4-t13-visual-01-title"><h4 id="b4-t13-visual-01-title">Internet distribuida y ciclo de un servicio IoT</h4><figure class="topic-visual"><p class="topic-visual__mobile-hint" aria-hidden="true">Desliza horizontalmente para explorar el esquema con texto legible.</p><img src="assets/diagrams/b4/b4-t13-internet-iot.svg" alt="Red de redes con sistemas autónomos, BGP, DNS, CDN y HTTP 3 sobre QUIC, conectada a una arquitectura IoT de dispositivo, acceso, gateway edge, broker, plataforma, datos y aplicación con identidad y actualización." loading="lazy" decoding="async"><figcaption><span>Conecta la arquitectura global de Internet con el recorrido y ciclo de vida de un dispositivo IoT.</span><strong>Qué debes recordar:</strong> BGP intercambia rutas y DNS nombres; en IoT, inventario, credenciales únicas y firmware actualizable son tan esenciales como la conectividad.</figcaption></figure></section>
 <p>Capas prácticas: dispositivo/sensor-actuador → conectividad → gateway/edge → plataforma/broker → almacenamiento/procesamiento → aplicación. El edge reduce latencia/tráfico y puede funcionar ante desconexión; cloud aporta escala y servicios centrales.</p>
 <h3 id="estudio-07">7. Protocolos IoT</h3>
 <p>MQTT usa patrón publish/subscribe mediante broker, ligero y común en telemetría. CoAP es protocolo RESTful ligero sobre UDP para dispositivos restringidos. HTTP sigue siendo viable en dispositivos más capaces. Redes de acceso pueden incluir Wi-Fi, Ethernet, celular, LPWAN u otras según alcance/energía/coste.</p>
 <h3 id="estudio-08">8. Seguridad y ciclo de vida IoT</h3>
 <p>Identidad única, credenciales no por defecto, secure boot cuando aplique, firmware firmado/OTA, segmentación, mínimos servicios, inventario, logs, cifrado, privacidad y fin de soporte. Dispositivo que no puede actualizarse es una deuda de seguridad durante años.</p>
-<p>Datos y trampas de test</p>
+<h3 id="estudio-09">9. Datos y trampas de test</h3>
 <ul>
 <li>Internet ≠ Web.</li>
 <li>BGP conecta/intercambia rutas entre AS; DNS resuelve nombres.</li>
@@ -30,9 +31,9 @@
 <li>MQTT suele usar broker y pub/sub; CoAP es REST ligero sobre UDP.</li>
 <li>IoT requiere actualización e identidad, no solo conectividad.</li>
 </ul>
-<p>Aplicación al supuesto práctico</p>
+<h3 id="estudio-10">10. Aplicación al supuesto práctico</h3>
 <p>Diseña Internet de un servicio público con doble conectividad, DNS autoritativo/resolución, CDN/WAF si procede, protección DDoS, IPv6 planificado, TLS, monitorización y rutas. Para IoT: red separada, identidad/certificados, broker, OTA firmado, inventario, gateway/edge y ciclo de vida.</p>
-<h3 id="estudio-09">Resumen</h3>
+<h3 id="estudio-11">Resumen</h3>
 <p>Internet funciona mediante interconexión de AS, routing BGP y servicios distribuidos como DNS/CDN. Su evolución actual incluye QUIC/HTTP3 e IoT, donde seguridad y ciclo de vida son tan importantes como conectividad.</p>
 <p><strong>Fuentes base:</strong> A1 109/115/117 + RFC 9000 (QUIC) y RFC 9114 (HTTP/3) como actualización.</p>
 <h2 id="repaso">Resumen de repaso</h2>

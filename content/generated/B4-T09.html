@@ -1,6 +1,6 @@
 <article class="topic-content" data-topic-id="B4-T09" data-coverage-status="complete">
 <p>Material curado del corpus GSI A2 · apuntes V2.1 revisados. Procedencia editorial, no documento oficial.</p>
-<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B4-T09/estudio">Apuntes de estudio</a></li><li><a href="#temario/B4-T09/estudio-01">1. Modelo FCAPS</a></li><li><a href="#temario/B4-T09/estudio-02">2. Inventario y configuración</a></li><li><a href="#temario/B4-T09/estudio-03">3. Usuarios y acceso a red</a></li><li><a href="#temario/B4-T09/estudio-04">4. SNMP: arquitectura</a></li><li><a href="#temario/B4-T09/estudio-05">5. Syslog, flows y telemetría</a></li><li><a href="#temario/B4-T09/estudio-06">6. Monitorización</a></li><li><a href="#temario/B4-T09/estudio-07">7. Control de tráfico y QoS</a></li><li><a href="#temario/B4-T09/estudio-08">8. Troubleshooting por capas</a></li><li><a href="#temario/B4-T09/estudio-09">Resumen</a></li><li><a href="#temario/B4-T09/repaso">Resumen de repaso</a></li><li><a href="#temario/B4-T09/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B4-T09/repaso-02">Claves de test</a></li><li><a href="#temario/B4-T09/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B4-T09/repaso-04">Fuentes base del material</a></li></ol></nav>
+<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B4-T09/estudio">Apuntes de estudio</a></li><li><a href="#temario/B4-T09/estudio-01">1. Modelo FCAPS</a></li><li><a href="#temario/B4-T09/estudio-02">2. Inventario y configuración</a></li><li><a href="#temario/B4-T09/estudio-03">3. Usuarios y acceso a red</a></li><li><a href="#temario/B4-T09/estudio-04">4. SNMP: arquitectura</a></li><li><a href="#temario/B4-T09/estudio-05">5. Syslog, flows y telemetría</a></li><li><a href="#temario/B4-T09/estudio-06">6. Monitorización</a></li><li><a href="#temario/B4-T09/estudio-07">7. Control de tráfico y QoS</a></li><li><a href="#temario/B4-T09/estudio-08">8. Troubleshooting por capas</a></li><li><a href="#temario/B4-T09/estudio-09">9. Datos y trampas de test</a></li><li><a href="#temario/B4-T09/estudio-10">10. Aplicación al supuesto práctico</a></li><li><a href="#temario/B4-T09/estudio-11">Resumen</a></li><li><a href="#temario/B4-T09/repaso">Resumen de repaso</a></li><li><a href="#temario/B4-T09/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B4-T09/repaso-02">Claves de test</a></li><li><a href="#temario/B4-T09/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B4-T09/repaso-04">Fuentes base del material</a></li></ol></nav>
 <h2 id="estudio">Apuntes de estudio</h2>
 <p><strong>Cobertura oficial que debe quedar dominada:</strong> Administración de redes locales. Gestión de usuarios y dispositivos. Monitorización y control de tráfico. Gestión SNMP.</p>
 <h3 id="estudio-01">1. Modelo FCAPS</h3>
@@ -10,6 +10,7 @@
 <h3 id="estudio-03">3. Usuarios y acceso a red</h3>
 <p>Directorio/IAM identifica usuarios; 802.1X autentica acceso a puerto/WLAN con supplicant–authenticator–servidor AAA, normalmente RADIUS. NAC añade postura/compliance y políticas. Separar identidad del usuario de cuenta administrativa del dispositivo.</p>
 <h3 id="estudio-04">4. SNMP: arquitectura</h3>
+<section class="topic-visual-block" aria-labelledby="b4-t09-visual-01-title"><h4 id="b4-t09-visual-01-title">Gestión de red con SNMP y telemetría complementaria</h4><figure class="topic-visual"><p class="topic-visual__mobile-hint" aria-hidden="true">Desliza horizontalmente para explorar el esquema con texto legible.</p><img src="assets/diagrams/b4/b4-t09-gestion-red.svg" alt="Plataforma NMS que consulta agentes SNMP mediante OID definidos en MIB y recibe traps o informs, junto con syslog, NetFlow o IPFIX y streaming telemetry hacia correlación, alertas, tickets y diagnóstico." loading="lazy" decoding="async"><figcaption><span>Separa consulta, notificación, eventos, flujos y métricas de alta frecuencia.</span><strong>Qué debes recordar:</strong> MIB describe y OID identifica; SNMPv3 protege mejor la gestión, mientras syslog y flows responden preguntas diferentes.</figcaption></figure></section>
 <p><strong>Manager/NMS</strong> consulta o recibe eventos; <strong>agent</strong> expone objetos; <strong>MIB</strong> describe estructura; <strong>OID</strong> identifica cada objeto. Operaciones: GET, GETNEXT, GETBULK (v2+), SET; TRAP envía notificación sin confirmación de aplicación y INFORM permite confirmación entre entidades según versión.</p>
 <p>SNMPv1/v2c se apoyan en community strings; SNMPv3 añade modelo de seguridad con autenticación e integridad y, opcionalmente, privacidad/cifrado. En producción sensible preferir v3.</p>
 <h3 id="estudio-05">5. Syslog, flows y telemetría</h3>
@@ -20,7 +21,7 @@
 <p>Clasificación/marcado, policing, shaping, colas y prioridad. QoS no crea ancho de banda: administra congestión. El control puede detectar top talkers, aplicaciones anómalas y enlaces saturados; primero se corrige causa y luego se amplía capacidad si procede.</p>
 <h3 id="estudio-08">8. Troubleshooting por capas</h3>
 <p>Secuencia útil: físico (enlace, errores) → VLAN/L2 → IP/gateway → routing → DNS/DHCP → transporte/puertos → aplicación. Comparar alcance, rutas, ARP/NDP, latencia/pérdida y logs. Cambiar muchas variables a la vez destruye evidencia.</p>
-<p>Datos y trampas de test</p>
+<h3 id="estudio-09">9. Datos y trampas de test</h3>
 <ul>
 <li>MIB describe objetos; OID identifica un objeto.</li>
 <li>Polling ≠ trap/inform.</li>
@@ -31,9 +32,9 @@
 <li>QoS no crea ancho de banda.</li>
 <li>FCAPS es un marco de áreas de gestión.</li>
 </ul>
-<p>Aplicación al supuesto práctico</p>
+<h3 id="estudio-10">10. Aplicación al supuesto práctico</h3>
 <p>Propón NMS redundante, SNMPv3, syslog central, flows/telemetría, inventario y backups de configuración, AAA/RBAC, red de gestión, alertas y dashboards. Describe un flujo de incidencia desde alarma hasta diagnóstico por capas y cierre con actualización de baseline/documentación.</p>
-<h3 id="estudio-09">Resumen</h3>
+<h3 id="estudio-11">Resumen</h3>
 <p>Administrar LAN significa conocer y controlar identidad, configuración, estado y tráfico; SNMP es una pieza de una plataforma más amplia de observabilidad y gestión.</p>
 <p><strong>Fuentes base:</strong> A1 118/119 + administración de redes; modernización hacia SNMPv3, flows y telemetría.</p>
 <h2 id="repaso">Resumen de repaso</h2>

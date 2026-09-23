@@ -1,6 +1,6 @@
 <article class="topic-content" data-topic-id="B4-T07" data-coverage-status="complete">
 <p>Material curado del corpus GSI A2 · apuntes V2.1 revisados. Procedencia editorial, no documento oficial.</p>
-<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B4-T07/estudio">Apuntes de estudio</a></li><li><a href="#temario/B4-T07/estudio-01">1. Parámetros de transmisión</a></li><li><a href="#temario/B4-T07/estudio-02">2. Par trenzado y coaxial</a></li><li><a href="#temario/B4-T07/estudio-03">3. Fibra óptica</a></li><li><a href="#temario/B4-T07/estudio-04">4. No guiados</a></li><li><a href="#temario/B4-T07/estudio-05">5. Cableado estructurado</a></li><li><a href="#temario/B4-T07/estudio-06">6. PoE</a></li><li><a href="#temario/B4-T07/estudio-07">7. Selección del medio</a></li><li><a href="#temario/B4-T07/estudio-08">Resumen</a></li><li><a href="#temario/B4-T07/repaso">Resumen de repaso</a></li><li><a href="#temario/B4-T07/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B4-T07/repaso-02">Claves de test</a></li><li><a href="#temario/B4-T07/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B4-T07/repaso-04">Fuentes base del material</a></li></ol></nav>
+<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B4-T07/estudio">Apuntes de estudio</a></li><li><a href="#temario/B4-T07/estudio-01">1. Parámetros de transmisión</a></li><li><a href="#temario/B4-T07/estudio-02">2. Par trenzado y coaxial</a></li><li><a href="#temario/B4-T07/estudio-03">3. Fibra óptica</a></li><li><a href="#temario/B4-T07/estudio-04">4. No guiados</a></li><li><a href="#temario/B4-T07/estudio-05">5. Cableado estructurado</a></li><li><a href="#temario/B4-T07/estudio-06">6. PoE</a></li><li><a href="#temario/B4-T07/estudio-07">7. Selección del medio</a></li><li><a href="#temario/B4-T07/estudio-08">8. Datos y trampas de test</a></li><li><a href="#temario/B4-T07/estudio-09">9. Aplicación al supuesto práctico</a></li><li><a href="#temario/B4-T07/estudio-10">Resumen</a></li><li><a href="#temario/B4-T07/repaso">Resumen de repaso</a></li><li><a href="#temario/B4-T07/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B4-T07/repaso-02">Claves de test</a></li><li><a href="#temario/B4-T07/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B4-T07/repaso-04">Fuentes base del material</a></li></ol></nav>
 <h2 id="estudio">Apuntes de estudio</h2>
 <p><strong>Cobertura oficial que debe quedar dominada:</strong> Medios de transmisión guiados y no guiados (inalámbricos): tipos y parámetros significativos. Elementos de cableado estructurado.</p>
 <h3 id="estudio-01">1. Parámetros de transmisión</h3>
@@ -13,6 +13,7 @@
 <h3 id="estudio-04">4. No guiados</h3>
 <p>Radio, microondas terrestres, satélite e infrarrojo presentan propagación, interferencia, espectro, línea de vista y regulación distintas. El satélite añade latencia de propagación dependiente de órbita. En microondas y radio importan antena, potencia, zona Fresnel y obstáculos.</p>
 <h3 id="estudio-05">5. Cableado estructurado</h3>
+<section class="topic-visual-block" aria-labelledby="b4-t07-visual-01-title"><h4 id="b4-t07-visual-01-title">Cableado estructurado y selección del medio</h4><figure class="topic-visual"><p class="topic-visual__mobile-hint" aria-hidden="true">Desliza horizontalmente para explorar el esquema con texto legible.</p><img src="assets/diagrams/b4/b4-t07-cableado.svg" alt="Recorrido desde entrada de servicios y distribuidor principal por backbone de fibra hacia distribuidores de planta, patch panels, cableado horizontal de cobre y áreas de trabajo, con criterios de distancia, EMI, capacidad y PoE." loading="lazy" decoding="async"><figcaption><span>Sitúa cada elemento físico y ayuda a decidir entre cobre, fibra y medio inalámbrico.</span><strong>Qué debes recordar:</strong> La categoría del cable no es una versión Ethernet; la distancia, interferencia, potencia, transceptor y certificación forman un sistema.</figcaption></figure></section>
 <p>Organiza entrada de servicios, sala/equipamiento, backbone/vertical, distribuidores, horizontal, área de trabajo, patch panels y latiguillos. Debe separarse de potencia según norma/práctica, etiquetarse, documentarse y certificarse. Diseñar rutas y fibras de reserva facilita crecimiento y redundancia.</p>
 <h3 id="estudio-06">6. PoE</h3>
 <p>Power over Ethernet alimenta terminales como AP, cámaras o teléfonos sobre el cable de datos mediante familias IEEE 802.3. En diseño importan potencia por puerto, presupuesto total del switch, categoría/temperatura del mazo y redundancia eléctrica. No memorizar marketing; sí distinguir que PoE añade energía sin cambiar el hecho de que Ethernet transporta datos.</p>
@@ -52,7 +53,7 @@
 <td><p>óptica/transceptores más especializados</p></td>
 </tr>
 </table>
-<p>Datos y trampas de test</p>
+<h3 id="estudio-08">8. Datos y trampas de test</h3>
 <ul>
 <li>Fibra ≠ “sin pérdidas”: tiene atenuación/dispersión.</li>
 <li>Monomodo ≠ multimodo.</li>
@@ -62,9 +63,9 @@
 <li>PoE requiere presupuesto de potencia además de puertos.</li>
 <li>Ancho de banda físico ≠ throughput útil.</li>
 </ul>
-<p>Aplicación al supuesto práctico</p>
+<h3 id="estudio-09">9. Aplicación al supuesto práctico</h3>
 <p>Elige cobre o fibra por distancia, capacidad, EMI, PoE, redundancia y coste. Dibuja MDF/IDF, backbone y horizontal; incluye patch panels, etiquetado, certificación, rutas redundantes y reserva de crecimiento. Para AP/cámaras calcula además presupuesto PoE.</p>
-<h3 id="estudio-08">Resumen</h3>
+<h3 id="estudio-10">Resumen</h3>
 <p>El medio se selecciona por física y operación: capacidad, distancia, ruido, coste y mantenimiento. El cableado estructurado convierte enlaces en una infraestructura documentada y certificable.</p>
 <p><strong>Fuentes base:</strong> A1 108 + 110 + 112; conceptos físicos estables con actualización selectiva.</p>
 <h2 id="repaso">Resumen de repaso</h2>

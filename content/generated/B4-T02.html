@@ -1,6 +1,6 @@
 <article class="topic-content" data-topic-id="B4-T02" data-coverage-status="complete">
 <p>Material curado del corpus GSI A2 · apuntes V2.1 revisados. Procedencia editorial, no documento oficial.</p>
-<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B4-T02/estudio">Apuntes de estudio</a></li><li><a href="#temario/B4-T02/estudio-01">1. Funciones del DBA y arquitectura operativa</a></li><li><a href="#temario/B4-T02/estudio-02">2. Almacenamiento y memoria</a></li><li><a href="#temario/B4-T02/estudio-03">3. Usuarios, roles y seguridad</a></li><li><a href="#temario/B4-T02/estudio-04">4. Transacciones, bloqueos y concurrencia</a></li><li><a href="#temario/B4-T02/estudio-05">5. Rendimiento: planes, índices y estadísticas</a></li><li><a href="#temario/B4-T02/estudio-06">6. Backup, logs y recuperación</a></li><li><a href="#temario/B4-T02/estudio-07">7. Replicación, HA y DR</a></li><li><a href="#temario/B4-T02/estudio-08">8. Mantenimiento y capacidad</a></li><li><a href="#temario/B4-T02/estudio-09">Resumen</a></li><li><a href="#temario/B4-T02/repaso">Resumen de repaso</a></li><li><a href="#temario/B4-T02/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B4-T02/repaso-02">Claves de test</a></li><li><a href="#temario/B4-T02/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B4-T02/repaso-04">Fuentes base del material</a></li></ol></nav>
+<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B4-T02/estudio">Apuntes de estudio</a></li><li><a href="#temario/B4-T02/estudio-01">1. Funciones del DBA y arquitectura operativa</a></li><li><a href="#temario/B4-T02/estudio-02">2. Almacenamiento y memoria</a></li><li><a href="#temario/B4-T02/estudio-03">3. Usuarios, roles y seguridad</a></li><li><a href="#temario/B4-T02/estudio-04">4. Transacciones, bloqueos y concurrencia</a></li><li><a href="#temario/B4-T02/estudio-05">5. Rendimiento: planes, índices y estadísticas</a></li><li><a href="#temario/B4-T02/estudio-06">6. Backup, logs y recuperación</a></li><li><a href="#temario/B4-T02/estudio-07">7. Replicación, HA y DR</a></li><li><a href="#temario/B4-T02/estudio-08">8. Mantenimiento y capacidad</a></li><li><a href="#temario/B4-T02/estudio-09">9. Datos y trampas de test</a></li><li><a href="#temario/B4-T02/estudio-10">10. Aplicación al supuesto práctico</a></li><li><a href="#temario/B4-T02/estudio-11">Resumen</a></li><li><a href="#temario/B4-T02/repaso">Resumen de repaso</a></li><li><a href="#temario/B4-T02/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B4-T02/repaso-02">Claves de test</a></li><li><a href="#temario/B4-T02/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B4-T02/repaso-04">Fuentes base del material</a></li></ol></nav>
 <h2 id="estudio">Apuntes de estudio</h2>
 <p><strong>Cobertura oficial que debe quedar dominada:</strong> Administración de sistemas de gestión de bases de datos.</p>
 <h3 id="estudio-01">1. Funciones del DBA y arquitectura operativa</h3>
@@ -18,13 +18,14 @@
 <p>El ajuste comienza por medir: top queries, latencia, CPU, I/O, waits, locks, conexiones y cache hit según motor. El <strong>plan de ejecución</strong> muestra estrategia de acceso/join; las estadísticas ayudan al optimizador a estimar cardinalidades. Un índice puede acelerar lectura pero encarece escritura, ocupa espacio y exige mantenimiento.</p>
 <p>Orden razonable: reproducir → medir → identificar cuello → cambiar una hipótesis → comparar. Evitar “tuning por recetas”.</p>
 <h3 id="estudio-06">6. Backup, logs y recuperación</h3>
+<section class="topic-visual-block" aria-labelledby="b4-t02-visual-01-title"><h4 id="b4-t02-visual-01-title">Administración del SGBD como servicio recuperable</h4><figure class="topic-visual"><p class="topic-visual__mobile-hint" aria-hidden="true">Desliza horizontalmente para explorar el esquema con texto legible.</p><img src="assets/diagrams/b4/b4-t02-servicio-sgbd.svg" alt="Arquitectura operativa de un SGBD con conexiones, seguridad, memoria, procesos, datos, índices y logs, conectada con monitorización, backup, point-in-time recovery, réplica, alta disponibilidad y desastre." loading="lazy" decoding="async"><figcaption><span>Distingue rendimiento, protección de datos, alta disponibilidad y recuperación.</span><strong>Qué debes recordar:</strong> Una réplica mejora continuidad, pero no sustituye una copia independiente probada; RPO y RTO gobiernan la estrategia.</figcaption></figure></section>
 <p>Una estrategia puede combinar copia física y lógica. Las copias físicas permiten restaurar estructuras del motor; las lógicas exportan objetos/datos y son útiles para portabilidad o recuperaciones granulares. Los logs de transacciones/WAL permiten <strong>point-in-time recovery (PITR)</strong> cuando el motor y la política lo soportan.</p>
 <p>La cadena correcta es backup + retención + copia fuera del fallo común + pruebas de restore + runbook. Una réplica no sustituye al backup: puede replicar borrado, corrupción o error lógico.</p>
 <h3 id="estudio-07">7. Replicación, HA y DR</h3>
 <p>Replicación síncrona reduce posible pérdida a costa de latencia; asíncrona admite retraso. Topologías primario-réplica, multi-primary o cluster varían por producto. Hay que diferenciar <strong>HA local</strong> de <strong>DR</strong> entre dominios de fallo. RPO/RTO determinan cuánto dato y tiempo puede perderse.</p>
 <h3 id="estudio-08">8. Mantenimiento y capacidad</h3>
 <p>Tareas: actualizar motor, renovar certificados, revisar jobs, estadísticas, fragmentación/bloat cuando aplique, crecimiento de logs, capacidad, backups, restauraciones y alertas. Planificar upgrades mayores con compatibilidad, pruebas, réplica/piloto, rollback y ventana.</p>
-<p>Datos y trampas de test</p>
+<h3 id="estudio-09">9. Datos y trampas de test</h3>
 <ul>
 <li>Índice acelera ciertas lecturas pero penaliza escrituras y consume espacio.</li>
 <li>Replicación ≠ backup.</li>
@@ -34,9 +35,9 @@
 <li>Privilegio de sistema/administrativo ≠ privilegio sobre objeto.</li>
 <li>Un plan de ejecución debe analizarse con cardinalidad y métricas, no solo con coste estimado.</li>
 </ul>
-<p>Aplicación al supuesto práctico</p>
+<h3 id="estudio-10">10. Aplicación al supuesto práctico</h3>
 <p>Diseña una plataforma de datos con nodos primarios/réplicas, balanceo o endpoint de failover cuando proceda, roles, cifrado, red, auditoría, backups/PITR, pruebas de restore, monitorización y capacidad. Explica RPO/RTO, dominio de fallo y procedimiento de conmutación/retorno.</p>
-<h3 id="estudio-09">Resumen</h3>
+<h3 id="estudio-11">Resumen</h3>
 <p>Administrar SGBD es gobernar datos y servicio: configuración, seguridad, concurrencia, rendimiento, copia/recuperación, HA, parcheo y capacidad.</p>
 <p><strong>Fuentes base:</strong> A1 063 (01/02/2022) como base + documentación operativa específica; apoyo de conceptos de II.05/III.04.</p>
 <h2 id="repaso">Resumen de repaso</h2>

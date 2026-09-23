@@ -1,6 +1,6 @@
 <article class="topic-content" data-topic-id="B4-T03" data-coverage-status="complete">
 <p>Material curado del corpus GSI A2 · apuntes V2.1 revisados. Procedencia editorial, no documento oficial.</p>
-<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B4-T03/estudio">Apuntes de estudio</a></li><li><a href="#temario/B4-T03/estudio-01">1. Tipos de mantenimiento</a></li><li><a href="#temario/B4-T03/estudio-02">2. Incidente, problema, petición y cambio</a></li><li><a href="#temario/B4-T03/estudio-03">3. SLA, escalado y postmortem</a></li><li><a href="#temario/B4-T03/estudio-04">4. Tipos de copia</a></li><li><a href="#temario/B4-T03/estudio-05">5. Política 3-2-1-1-0 y ransomware</a></li><li><a href="#temario/B4-T03/estudio-06">6. Retención, rotación y restauración</a></li><li><a href="#temario/B4-T03/estudio-07">7. RPO, RTO y ejercicios</a></li><li><a href="#temario/B4-T03/estudio-08">Resumen</a></li><li><a href="#temario/B4-T03/repaso">Resumen de repaso</a></li><li><a href="#temario/B4-T03/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B4-T03/repaso-02">Claves de test</a></li><li><a href="#temario/B4-T03/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B4-T03/repaso-04">Fuentes base del material</a></li></ol></nav>
+<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B4-T03/estudio">Apuntes de estudio</a></li><li><a href="#temario/B4-T03/estudio-01">1. Tipos de mantenimiento</a></li><li><a href="#temario/B4-T03/estudio-02">2. Incidente, problema, petición y cambio</a></li><li><a href="#temario/B4-T03/estudio-03">3. SLA, escalado y postmortem</a></li><li><a href="#temario/B4-T03/estudio-04">4. Tipos de copia</a></li><li><a href="#temario/B4-T03/estudio-05">5. Política 3-2-1-1-0 y ransomware</a></li><li><a href="#temario/B4-T03/estudio-06">6. Retención, rotación y restauración</a></li><li><a href="#temario/B4-T03/estudio-07">7. RPO, RTO y ejercicios</a></li><li><a href="#temario/B4-T03/estudio-08">8. Datos y trampas de test</a></li><li><a href="#temario/B4-T03/estudio-09">9. Aplicación al supuesto práctico</a></li><li><a href="#temario/B4-T03/estudio-10">Resumen</a></li><li><a href="#temario/B4-T03/repaso">Resumen de repaso</a></li><li><a href="#temario/B4-T03/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B4-T03/repaso-02">Claves de test</a></li><li><a href="#temario/B4-T03/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B4-T03/repaso-04">Fuentes base del material</a></li></ol></nav>
 <h2 id="estudio">Apuntes de estudio</h2>
 <p><strong>Cobertura oficial que debe quedar dominada:</strong> Mantenimiento de equipos e instalaciones. Tipos de mantenimiento. Gestión de incidencias. Procedimientos de backup y recuperación.</p>
 <h3 id="estudio-01">1. Tipos de mantenimiento</h3>
@@ -12,6 +12,7 @@
 <h3 id="estudio-03">3. SLA, escalado y postmortem</h3>
 <p>Un SLA expresa compromisos de servicio. Las métricas deben poder medirse. Escalado funcional busca más conocimiento; jerárquico moviliza autoridad/recursos. Un postmortem útil registra línea temporal, impacto, causas/contribuyentes y acciones con responsables; no debe convertirse en búsqueda de culpables.</p>
 <h3 id="estudio-04">4. Tipos de copia</h3>
+<section class="topic-visual-block" aria-labelledby="b4-t03-visual-01-title"><h4 id="b4-t03-visual-01-title">Incidente, problema y recuperación verificable</h4><figure class="topic-visual"><p class="topic-visual__mobile-hint" aria-hidden="true">Desliza horizontalmente para explorar el esquema con texto legible.</p><img src="assets/diagrams/b4/b4-t03-incidente-backup.svg" alt="Dos flujos conectados: incidente desde alerta hasta restauración y revisión, y cadena de copias completa, incremental o diferencial hacia repositorio inmutable, restauración y validación contra RPO y RTO." loading="lazy" decoding="async"><figcaption><span>Separa restaurar el servicio de eliminar la causa y muestra que backup termina en una prueba de recuperación.</span><strong>Qué debes recordar:</strong> Incidente restaura; problema previene recurrencia. Una copia no demuestra recuperabilidad hasta que se restaura y valida.</figcaption></figure></section>
 <p><strong>Completa</strong>: copia todo el conjunto. <strong>Incremental</strong>: cambios desde la última copia de cualquier tipo de la cadena. <strong>Diferencial</strong>: cambios desde la última completa. <strong>Sintética completa</strong>: reconstruye una completa en el repositorio combinando copias previas sin releer todo el origen.</p>
 <p>La elección equilibra ventana de copia, almacenamiento, tráfico y tiempo de restauración. Las bases de datos requieren mecanismos consistentes con transacciones.</p>
 <h3 id="estudio-05">5. Política 3-2-1-1-0 y ransomware</h3>
@@ -21,7 +22,7 @@
 <p>Definir frecuencia, retención diaria/semanal/mensual según necesidad legal y operativa, versionado y expiración. Restaurar puede requerir infraestructura, SO, aplicación, configuración, datos y dependencias. La prueba debe comprobar integridad funcional, no solo que el fichero se lee.</p>
 <h3 id="estudio-07">7. RPO, RTO y ejercicios</h3>
 <p>RPO responde “¿cuánto dato puedo perder?”; RTO, “¿cuánto tiempo puedo estar sin servicio?”. Un RPO muy bajo exige copias/log shipping/replicación frecuentes; un RTO bajo exige automatización, capacidad reservada y runbooks ensayados. Los objetivos se fijan por proceso de negocio, no por deseo técnico.</p>
-<p>Datos y trampas de test</p>
+<h3 id="estudio-08">8. Datos y trampas de test</h3>
 <ul>
 <li>Incidente ≠ problema.</li>
 <li>Incremental: desde última copia de la cadena; diferencial: desde última completa.</li>
@@ -31,9 +32,9 @@
 <li>Una copia no verificada no demuestra recuperabilidad.</li>
 <li>Offline/inmutable protege frente a ciertos ataques, pero no sustituye pruebas.</li>
 </ul>
-<p>Aplicación al supuesto práctico</p>
+<h3 id="estudio-09">9. Aplicación al supuesto práctico</h3>
 <p>Propón clasificación P1-P4 o equivalente por impacto/urgencia, on-call/escalado, NMS→ticket→diagnóstico→recuperación→RCA, y una política de copias vinculada a RPO/RTO. Incluye repositorio fuera del dominio de fallo, inmutabilidad, cifrado y simulacros periódicos de restauración.</p>
-<h3 id="estudio-08">Resumen</h3>
+<h3 id="estudio-10">Resumen</h3>
 <p>Mantener es prevenir, detectar, reparar y aprender. La estrategia de backup solo es válida si permite restaurar dentro del RTO y con pérdida ≤ RPO.</p>
 <p><strong>Fuentes base:</strong> A1 056 v31.1 (11/03/2026) + A1 101/105 y materiales de continuidad.</p>
 <h2 id="repaso">Resumen de repaso</h2>

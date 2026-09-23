@@ -1,0 +1,137 @@
+{
+  "version": 1,
+  "topics": {
+    "B4-T01": {
+      "classification": "REESTRUCTURAR",
+      "replacements": [
+        {"from":"Datos y trampas de test","to":"9. Datos y trampas de test","namedStyleType":"HEADING_2"},
+        {"from":"Aplicación al supuesto práctico","to":"10. Aplicación al supuesto práctico","namedStyleType":"HEADING_2"}
+      ],
+      "visuals": [{"afterHeading":"7. Logs, monitorización, hardening y automatización","src":"assets/diagrams/b4/b4-t01-operacion-so.svg","title":"Ciclo de operación segura del sistema operativo","alt":"Ciclo desde imagen y baseline hacia identidad, servicios, almacenamiento y red, monitorización, parcheo, hardening, automatización, backup y recuperación con mejora continua.","description":"Reúne las responsabilidades operativas que convierten el sistema operativo en una plataforma controlada.","takeaway":"Administrar no es instalar: es mantener configuración, privilegios, capacidad, evidencias y recuperabilidad durante todo el ciclo."}]
+    },
+    "B4-T02": {
+      "classification": "REESTRUCTURAR",
+      "replacements": [
+        {"from":"Datos y trampas de test","to":"9. Datos y trampas de test","namedStyleType":"HEADING_2"},
+        {"from":"Aplicación al supuesto práctico","to":"10. Aplicación al supuesto práctico","namedStyleType":"HEADING_2"}
+      ],
+      "visuals": [{"afterHeading":"6. Backup, logs y recuperación","src":"assets/diagrams/b4/b4-t02-servicio-sgbd.svg","title":"Administración del SGBD como servicio recuperable","alt":"Arquitectura operativa de un SGBD con conexiones, seguridad, memoria, procesos, datos, índices y logs, conectada con monitorización, backup, point-in-time recovery, réplica, alta disponibilidad y desastre.","description":"Distingue rendimiento, protección de datos, alta disponibilidad y recuperación.","takeaway":"Una réplica mejora continuidad, pero no sustituye una copia independiente probada; RPO y RTO gobiernan la estrategia."}]
+    },
+    "B4-T03": {
+      "classification": "REESTRUCTURAR",
+      "replacements": [
+        {"from":"Datos y trampas de test","to":"8. Datos y trampas de test","namedStyleType":"HEADING_2"},
+        {"from":"Aplicación al supuesto práctico","to":"9. Aplicación al supuesto práctico","namedStyleType":"HEADING_2"}
+      ],
+      "visuals": [{"afterHeading":"4. Tipos de copia","src":"assets/diagrams/b4/b4-t03-incidente-backup.svg","title":"Incidente, problema y recuperación verificable","alt":"Dos flujos conectados: incidente desde alerta hasta restauración y revisión, y cadena de copias completa, incremental o diferencial hacia repositorio inmutable, restauración y validación contra RPO y RTO.","description":"Separa restaurar el servicio de eliminar la causa y muestra que backup termina en una prueba de recuperación.","takeaway":"Incidente restaura; problema previene recurrencia. Una copia no demuestra recuperabilidad hasta que se restaura y valida."}]
+    },
+    "B4-T04": {
+      "classification": "REESTRUCTURAR",
+      "replacements": [
+        {"from":"Datos y trampas de test","to":"9. Datos y trampas de test","namedStyleType":"HEADING_2"},
+        {"from":"Aplicación al supuesto práctico","to":"10. Aplicación al supuesto práctico","namedStyleType":"HEADING_2"}
+      ],
+      "visuals": [{"afterHeading":"5. Monitorización y observabilidad","src":"assets/diagrams/b4/b4-t04-config-observabilidad.svg","title":"Controlar configuración, cambio, rendimiento y capacidad","alt":"Ciclo desde inventario y baseline hasta automatización declarativa, solicitud y validación de cambio, métricas logs y trazas, SLI y SLO, análisis de saturación y previsión de capacidad.","description":"Conecta el estado deseado con la evidencia operativa y las decisiones de crecimiento.","takeaway":"Versionar artefactos no sustituye gobernar el servicio; observar y prever permite cambiar antes de incumplir el SLO."}]
+    },
+    "B4-T05": {
+      "classification": "REESTRUCTURAR",
+      "replacements": [
+        {"from":"Datos y trampas de test","to":"9. Datos y trampas de test","namedStyleType":"HEADING_2"},
+        {"from":"Aplicación al supuesto práctico","to":"10. Aplicación al supuesto práctico","namedStyleType":"HEADING_2"}
+      ],
+      "visuals": [{"afterHeading":"2. DAS, NAS, SAN y objeto","src":"assets/diagrams/b4/b4-t05-almacenamiento.svg","title":"Elegir almacenamiento por abstracción y carga","alt":"Comparación entre DAS, NAS, SAN y objeto por unidad expuesta, protocolos y usos, conectada con RAID, multipath, snapshots, replicación, backup y métricas IOPS, throughput y latencia.","description":"Ordena las tecnologías por lo que exponen y por el requisito que resuelven.","takeaway":"Bloque, fichero y objeto son abstracciones distintas; RAID, snapshot, réplica y backup protegen frente a fallos diferentes."}]
+    },
+    "B4-T06": {
+      "classification": "REESTRUCTURAR",
+      "replacements": [
+        {"from":"Datos y trampas de test","to":"8. Datos y trampas de test","namedStyleType":"HEADING_2"},
+        {"from":"Aplicación al supuesto práctico","to":"9. Aplicación al supuesto práctico","namedStyleType":"HEADING_2"}
+      ],
+      "visuals": [{"afterHeading":"7. Recuperación ante desastres","src":"assets/diagrams/b4/b4-t06-cpd-ha-dr.svg","title":"CPD, alta disponibilidad y recuperación ante desastres","alt":"Arquitectura con energía, climatización, red, hosts y almacenamiento redundantes en un sitio para alta disponibilidad, más una segunda sede o zona con replicación, backup, DNS y runbook para desastre.","description":"Separa fallos de componente, de host y de sitio completo.","takeaway":"HA reduce indisponibilidad local; DR recupera otro dominio de fallo. N+1, 2N, RPO y RTO responden preguntas distintas."}]
+    },
+    "B4-T07": {
+      "classification": "REESTRUCTURAR",
+      "replacements": [
+        {"from":"Datos y trampas de test","to":"8. Datos y trampas de test","namedStyleType":"HEADING_2"},
+        {"from":"Aplicación al supuesto práctico","to":"9. Aplicación al supuesto práctico","namedStyleType":"HEADING_2"}
+      ],
+      "visuals": [{"afterHeading":"5. Cableado estructurado","src":"assets/diagrams/b4/b4-t07-cableado.svg","title":"Cableado estructurado y selección del medio","alt":"Recorrido desde entrada de servicios y distribuidor principal por backbone de fibra hacia distribuidores de planta, patch panels, cableado horizontal de cobre y áreas de trabajo, con criterios de distancia, EMI, capacidad y PoE.","description":"Sitúa cada elemento físico y ayuda a decidir entre cobre, fibra y medio inalámbrico.","takeaway":"La categoría del cable no es una versión Ethernet; la distancia, interferencia, potencia, transceptor y certificación forman un sistema."}]
+    },
+    "B4-T08": {
+      "classification": "REESTRUCTURAR",
+      "replacements": [
+        {"from":"Datos y trampas de test","to":"9. Datos y trampas de test","namedStyleType":"HEADING_2"},
+        {"from":"Aplicación al supuesto práctico","to":"10. Aplicación al supuesto práctico","namedStyleType":"HEADING_2"}
+      ],
+      "visuals": [{"afterHeading":"4. VLAN e inter-VLAN","src":"assets/diagrams/b4/b4-t08-lan-segmentada.svg","title":"LAN segmentada: de acceso a routing y seguridad","alt":"Red local con terminales y puntos de acceso en VLAN separadas, switches de acceso con 802.1Q y STP o LACP, función de capa 3 para inter-VLAN y firewall o ACL entre zonas.","description":"Muestra qué función realiza cada capa y dónde se aplica la política.","takeaway":"El switch aprende MAC, la VLAN limita broadcast y la comunicación entre VLAN necesita capa 3; VLAN por sí sola no es firewall."}]
+    },
+    "B4-T09": {
+      "classification": "REESTRUCTURAR",
+      "replacements": [
+        {"from":"Datos y trampas de test","to":"9. Datos y trampas de test","namedStyleType":"HEADING_2"},
+        {"from":"Aplicación al supuesto práctico","to":"10. Aplicación al supuesto práctico","namedStyleType":"HEADING_2"}
+      ],
+      "visuals": [{"afterHeading":"4. SNMP: arquitectura","src":"assets/diagrams/b4/b4-t09-gestion-red.svg","title":"Gestión de red con SNMP y telemetría complementaria","alt":"Plataforma NMS que consulta agentes SNMP mediante OID definidos en MIB y recibe traps o informs, junto con syslog, NetFlow o IPFIX y streaming telemetry hacia correlación, alertas, tickets y diagnóstico.","description":"Separa consulta, notificación, eventos, flujos y métricas de alta frecuencia.","takeaway":"MIB describe y OID identifica; SNMPv3 protege mejor la gestión, mientras syslog y flows responden preguntas diferentes."}]
+    },
+    "B4-T10": {
+      "classification": "REESTRUCTURAR",
+      "replacements": [
+        {"from":"Datos y trampas de test","to":"7. Datos y trampas de test","namedStyleType":"HEADING_2"},
+        {"from":"Aplicación al supuesto práctico","to":"8. Aplicación al supuesto práctico","namedStyleType":"HEADING_2"}
+      ],
+      "visuals": [{"afterHeading":"4. SD-WAN","src":"assets/diagrams/b4/b4-t10-wan.svg","title":"WAN por capas: óptica, transporte, overlay y routing","alt":"Capas de una WAN con WDM en fibra, underlays Internet MPLS o móvil, overlay SD-WAN cifrado con políticas, edges de sede y cloud, y routing OSPF o IS-IS interno y BGP entre sistemas autónomos.","description":"Evita atribuir a cada tecnología funciones de otra capa.","takeaway":"WDM multiplexa luz, MPLS conmuta etiquetas sin cifrar por sí solo, SD-WAN aplica política sobre underlays y BGP enruta por atributos."}]
+    },
+    "B4-T11": {
+      "classification": "REESTRUCTURAR",
+      "replacements": [
+        {"from":"Datos y trampas de test","to":"8. Datos y trampas de test","namedStyleType":"HEADING_2"},
+        {"from":"Aplicación al supuesto práctico","to":"9. Aplicación al supuesto práctico","namedStyleType":"HEADING_2"}
+      ],
+      "visuals": [{"afterHeading":"6. Roaming y planificación RF","src":"assets/diagrams/b4/b4-t11-wifi.svg","title":"Diseño Wi-Fi por capacidad, no solo por cobertura","alt":"Comparación de bandas 2,4, 5 y 6 GHz y flujo de diseño con site survey, canales, potencia, densidad, roaming y PoE, terminando en seguridad WPA3 Enterprise, 802.1X, RADIUS y segmentación.","description":"Relaciona física de radio, acceso compartido, movilidad y control de identidad.","takeaway":"Canal más ancho o señal más fuerte no siempre mejora una WLAN densa; Wi-Fi usa CSMA/CA y la seguridad empresarial necesita identidad."}]
+    },
+    "B4-T12": {
+      "classification": "REESTRUCTURAR",
+      "replacements": [
+        {"from":"Datos y trampas de test","to":"10. Datos y trampas de test","namedStyleType":"HEADING_2"},
+        {"from":"Aplicación al supuesto práctico","to":"11. Aplicación al supuesto práctico","namedStyleType":"HEADING_2"}
+      ],
+      "visuals": [{"afterHeading":"1. Arquitectura por capas y Zero Trust","src":"assets/diagrams/b4/b4-t12-defensa-profundidad.svg","title":"Defensa en profundidad desde identidad hasta respuesta","alt":"Arquitectura de seguridad con usuario y dispositivo, MFA y PAM, NAC y segmentación, firewall WAF IDS e IPS, TLS o IPsec y PKI, protección endpoint, registros SIEM y respuesta bajo principios ENS.","description":"Sitúa controles preventivos, detectivos y de respuesta alrededor del flujo real.","takeaway":"Cifrado, autenticación, autorización, segmentación y detección son funciones distintas; Zero Trust elimina confianza implícita, no la red."}]
+    },
+    "B4-T13": {
+      "classification": "REESTRUCTURAR",
+      "replacements": [
+        {"from":"Datos y trampas de test","to":"9. Datos y trampas de test","namedStyleType":"HEADING_2"},
+        {"from":"Aplicación al supuesto práctico","to":"10. Aplicación al supuesto práctico","namedStyleType":"HEADING_2"}
+      ],
+      "visuals": [{"afterHeading":"6. Arquitectura IoT","src":"assets/diagrams/b4/b4-t13-internet-iot.svg","title":"Internet distribuida y ciclo de un servicio IoT","alt":"Red de redes con sistemas autónomos, BGP, DNS, CDN y HTTP 3 sobre QUIC, conectada a una arquitectura IoT de dispositivo, acceso, gateway edge, broker, plataforma, datos y aplicación con identidad y actualización.","description":"Conecta la arquitectura global de Internet con el recorrido y ciclo de vida de un dispositivo IoT.","takeaway":"BGP intercambia rutas y DNS nombres; en IoT, inventario, credenciales únicas y firmware actualizable son tan esenciales como la conectividad."}]
+    },
+    "B4-T14": {
+      "classification": "REESTRUCTURAR",
+      "replacements": [
+        {"from":"Datos y trampas de test","to":"9. Datos y trampas de test","namedStyleType":"HEADING_2"},
+        {"from":"Aplicación al supuesto práctico","to":"10. Aplicación al supuesto práctico","namedStyleType":"HEADING_2"}
+      ],
+      "visuals": [{"afterHeading":"3. SIP y SDP","src":"assets/diagrams/b4/b4-t14-voip.svg","title":"Señalización y medios en VoIP","alt":"Flujo de llamada donde terminales intercambian SIP y SDP a través de proxy PBX o IMS y SBC, mientras audio viaja por RTP y RTCP, con TLS para señalización, SRTP para medios y QoS extremo a extremo.","description":"Separa control de sesión, descripción de medios y transporte de voz.","takeaway":"SIP señaliza, SDP describe y RTP transporta; SBC aplica política de frontera y QoS administra congestión sin crear capacidad."}]
+    },
+    "B4-T15": {
+      "classification": "REESTRUCTURAR",
+      "replacements": [
+        {"from":"Datos y trampas de test","to":"9. Datos y trampas de test","namedStyleType":"HEADING_2"},
+        {"from":"Aplicación al supuesto práctico","to":"10. Aplicación al supuesto práctico","namedStyleType":"HEADING_2"}
+      ],
+      "visuals": [{"afterHeading":"6. MDM, MAM, MCM, EMM y UEM","src":"assets/diagrams/b4/b4-t15-movil-uem.svg","title":"Evolución móvil y gestión unificada del endpoint","alt":"Línea de generaciones 2G, 3G, 4G LTE, 5G NSA y SA y 5G-Advanced Release 18, conectada con modelos BYOD COPE COBO y controles UEM de inscripción, identidad, cumplimiento, apps y borrado.","description":"Distingue evolución de red móvil de gobierno corporativo del dispositivo.","takeaway":"5G SA y NSA no son lo mismo; MDM gestiona dispositivo y UEM integra además identidad, aplicaciones, contenido y endpoints diversos."}]
+    },
+    "B4-T16": {
+      "classification": "REESTRUCTURAR",
+      "replacements": [
+        {"from":"Datos y trampas de test","to":"10. Datos y trampas de test","namedStyleType":"HEADING_2"},
+        {"from":"Aplicación al supuesto práctico","to":"11. Aplicación al supuesto práctico","namedStyleType":"HEADING_2"},
+        {"from":"ANEXO A — Puertos, protocolos y siglas de alta rentabilidad","fromMarkdown":"# ANEXO A — Puertos, protocolos y siglas de alta rentabilidad","to":"12. Puertos, protocolos y siglas de alta rentabilidad","namedStyleType":"HEADING_2"},
+        {"from":"ANEXO B — Checklist para el segundo ejercicio","fromMarkdown":"# ANEXO B — Checklist para el segundo ejercicio","to":"13. Checklist para el segundo ejercicio","namedStyleType":"HEADING_2"},
+        {"from":"ANEXO C — Estrategia de estudio del Bloque IV","fromMarkdown":"# ANEXO C — Estrategia de estudio del Bloque IV","to":"14. Estrategia de estudio del Bloque IV","namedStyleType":"HEADING_2"},
+        {"from":"Fuentes oficiales de actualización utilizadas","fromMarkdown":"## Fuentes oficiales de actualización utilizadas","to":"15. Fuentes oficiales de actualización","namedStyleType":"HEADING_2"}
+      ],
+      "visuals": [{"afterHeading":"6. Dimensionamiento","src":"assets/diagrams/b4/b4-t16-videoconferencia.svg","title":"Videoconferencia: señalización, medios y dimensionamiento","alt":"Arquitectura con captura, codecs, SIP H323 o WebRTC, ICE STUN y TURN, RTP RTCP, MCU o SFU y participantes, acompañada de la fórmula bitrate por concurrencia, sentidos, overhead y margen.","description":"Une protocolos, arquitectura multipunto, red y cálculo de capacidad.","takeaway":"WebRTC no es un codec; SIP y H.323 señalizan, RTP transporta, TURN relaya y el ancho de banda se calcula por flujos simultáneos."}]
+    }
+  }
+}

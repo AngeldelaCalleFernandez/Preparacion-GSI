@@ -1,6 +1,6 @@
 <article class="topic-content" data-topic-id="B4-T06" data-coverage-status="complete">
 <p>Material curado del corpus GSI A2 · apuntes V2.1 revisados. Procedencia editorial, no documento oficial.</p>
-<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B4-T06/estudio">Apuntes de estudio</a></li><li><a href="#temario/B4-T06/estudio-01">1. Dimensionamiento físico</a></li><li><a href="#temario/B4-T06/estudio-02">2. Energía y climatización</a></li><li><a href="#temario/B4-T06/estudio-03">3. Protección física y ambiental</a></li><li><a href="#temario/B4-T06/estudio-04">4. Virtualización y consolidación</a></li><li><a href="#temario/B4-T06/estudio-05">5. Alta disponibilidad</a></li><li><a href="#temario/B4-T06/estudio-06">6. Balanceo de carga</a></li><li><a href="#temario/B4-T06/estudio-07">7. Recuperación ante desastres</a></li><li><a href="#temario/B4-T06/estudio-08">Resumen</a></li><li><a href="#temario/B4-T06/repaso">Resumen de repaso</a></li><li><a href="#temario/B4-T06/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B4-T06/repaso-02">Claves de test</a></li><li><a href="#temario/B4-T06/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B4-T06/repaso-04">Fuentes base del material</a></li></ol></nav>
+<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B4-T06/estudio">Apuntes de estudio</a></li><li><a href="#temario/B4-T06/estudio-01">1. Dimensionamiento físico</a></li><li><a href="#temario/B4-T06/estudio-02">2. Energía y climatización</a></li><li><a href="#temario/B4-T06/estudio-03">3. Protección física y ambiental</a></li><li><a href="#temario/B4-T06/estudio-04">4. Virtualización y consolidación</a></li><li><a href="#temario/B4-T06/estudio-05">5. Alta disponibilidad</a></li><li><a href="#temario/B4-T06/estudio-06">6. Balanceo de carga</a></li><li><a href="#temario/B4-T06/estudio-07">7. Recuperación ante desastres</a></li><li><a href="#temario/B4-T06/estudio-08">8. Datos y trampas de test</a></li><li><a href="#temario/B4-T06/estudio-09">9. Aplicación al supuesto práctico</a></li><li><a href="#temario/B4-T06/estudio-10">Resumen</a></li><li><a href="#temario/B4-T06/repaso">Resumen de repaso</a></li><li><a href="#temario/B4-T06/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B4-T06/repaso-02">Claves de test</a></li><li><a href="#temario/B4-T06/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B4-T06/repaso-04">Fuentes base del material</a></li></ol></nav>
 <h2 id="estudio">Apuntes de estudio</h2>
 <p><strong>Cobertura oficial que debe quedar dominada:</strong> Planificación física y dimensionamiento de un centro de procesamiento de datos. Virtualización y consolidación de servidores y recursos. Vulnerabilidades, riesgo y protección. Sistemas de alta disponibilidad y balanceo de carga. Recuperación ante desastres.</p>
 <h3 id="estudio-01">1. Dimensionamiento físico</h3>
@@ -18,9 +18,10 @@
 <h3 id="estudio-06">6. Balanceo de carga</h3>
 <p>L4 decide principalmente por IP/puerto/conexión; L7 comprende protocolo de aplicación (p. ej. HTTP) y puede enrutar por host/path/cabeceras. Algoritmos: round-robin, least connections, ponderados o hashing. Health checks retiran nodos no sanos. La persistencia de sesión debe justificarse; preferir servicios stateless cuando sea posible.</p>
 <h3 id="estudio-07">7. Recuperación ante desastres</h3>
+<section class="topic-visual-block" aria-labelledby="b4-t06-visual-01-title"><h4 id="b4-t06-visual-01-title">CPD, alta disponibilidad y recuperación ante desastres</h4><figure class="topic-visual"><p class="topic-visual__mobile-hint" aria-hidden="true">Desliza horizontalmente para explorar el esquema con texto legible.</p><img src="assets/diagrams/b4/b4-t06-cpd-ha-dr.svg" alt="Arquitectura con energía, climatización, red, hosts y almacenamiento redundantes en un sitio para alta disponibilidad, más una segunda sede o zona con replicación, backup, DNS y runbook para desastre." loading="lazy" decoding="async"><figcaption><span>Separa fallos de componente, de host y de sitio completo.</span><strong>Qué debes recordar:</strong> HA reduce indisponibilidad local; DR recupera otro dominio de fallo. N+1, 2N, RPO y RTO responden preguntas distintas.</figcaption></figure></section>
 <p>DR cubre pérdida de sitio/dominio de fallo. Sitio <strong>cold</strong>: infraestructura mínima, más RTO; <strong>warm</strong>: parte preinstalada; <strong>hot</strong>: alta preparación/replicación, mayor coste. Diseñar datos, DNS/routing, identidades, certificados, dependencias externas, backups y runbooks.</p>
 <p>La prueba de DR debe incluir conmutación y <strong>failback</strong>, no solo verificar una copia. RPO/RTO de cada servicio guían replicación y automatización.</p>
-<p>Datos y trampas de test</p>
+<h3 id="estudio-08">8. Datos y trampas de test</h3>
 <ul>
 <li>HA ≠ DR.</li>
 <li>Dos servidores en el mismo CPD no cubren desastre de sitio.</li>
@@ -31,9 +32,9 @@
 <li>Live migration ≠ backup ni DR.</li>
 <li>Activo-activo exige resolver consistencia/estado.</li>
 </ul>
-<p>Aplicación al supuesto práctico</p>
+<h3 id="estudio-09">9. Aplicación al supuesto práctico</h3>
 <p>Dibuja al menos dos dominios de fallo: energía/red/hosts/storage redundantes, cluster y balanceadores; si el caso exige continuidad ante desastre, añade segunda sede/zona, replicación, backups, DNS/routing y runbook. Justifica N+1/2N, capacidad de fallo, RPO/RTO y pruebas de conmutación.</p>
-<h3 id="estudio-08">Resumen</h3>
+<h3 id="estudio-10">Resumen</h3>
 <p>Un CPD fiable combina ingeniería física, eliminación de SPOF, virtualización bien dimensionada, HA local y una estrategia DR probada para fallos de sitio.</p>
 <p><strong>Fuentes base:</strong> A1 053/056/057/128/132 + RELEASE arquitectura; depuración fuerte de material histórico.</p>
 <h2 id="repaso">Resumen de repaso</h2>

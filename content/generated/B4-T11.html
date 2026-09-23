@@ -1,6 +1,6 @@
 <article class="topic-content" data-topic-id="B4-T11" data-coverage-status="complete">
 <p>Material curado del corpus GSI A2 · apuntes V2.1 revisados. Procedencia editorial, no documento oficial.</p>
-<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B4-T11/estudio">Apuntes de estudio</a></li><li><a href="#temario/B4-T11/estudio-01">1. IEEE 802.11 y generaciones</a></li><li><a href="#temario/B4-T11/estudio-02">2. Bandas y canales</a></li><li><a href="#temario/B4-T11/estudio-03">3. Técnicas PHY</a></li><li><a href="#temario/B4-T11/estudio-04">4. Acceso al medio</a></li><li><a href="#temario/B4-T11/estudio-05">5. Modos y arquitectura</a></li><li><a href="#temario/B4-T11/estudio-06">6. Roaming y planificación RF</a></li><li><a href="#temario/B4-T11/estudio-07">7. Seguridad</a></li><li><a href="#temario/B4-T11/estudio-08">Resumen</a></li><li><a href="#temario/B4-T11/repaso">Resumen de repaso</a></li><li><a href="#temario/B4-T11/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B4-T11/repaso-02">Claves de test</a></li><li><a href="#temario/B4-T11/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B4-T11/repaso-04">Actualización 2026</a></li><li><a href="#temario/B4-T11/repaso-05">Fuentes base del material</a></li></ol></nav>
+<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B4-T11/estudio">Apuntes de estudio</a></li><li><a href="#temario/B4-T11/estudio-01">1. IEEE 802.11 y generaciones</a></li><li><a href="#temario/B4-T11/estudio-02">2. Bandas y canales</a></li><li><a href="#temario/B4-T11/estudio-03">3. Técnicas PHY</a></li><li><a href="#temario/B4-T11/estudio-04">4. Acceso al medio</a></li><li><a href="#temario/B4-T11/estudio-05">5. Modos y arquitectura</a></li><li><a href="#temario/B4-T11/estudio-06">6. Roaming y planificación RF</a></li><li><a href="#temario/B4-T11/estudio-07">7. Seguridad</a></li><li><a href="#temario/B4-T11/estudio-08">8. Datos y trampas de test</a></li><li><a href="#temario/B4-T11/estudio-09">9. Aplicación al supuesto práctico</a></li><li><a href="#temario/B4-T11/estudio-10">Resumen</a></li><li><a href="#temario/B4-T11/repaso">Resumen de repaso</a></li><li><a href="#temario/B4-T11/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B4-T11/repaso-02">Claves de test</a></li><li><a href="#temario/B4-T11/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B4-T11/repaso-04">Actualización 2026</a></li><li><a href="#temario/B4-T11/repaso-05">Fuentes base del material</a></li></ol></nav>
 <h2 id="estudio">Apuntes de estudio</h2>
 <p><strong>Cobertura oficial que debe quedar dominada:</strong> Redes inalámbricas. Protocolos. Características funcionales y técnicas. Sistemas de expansión del espectro. Sistemas de acceso. Modos de operación. Seguridad. Normativa reguladora.</p>
 <h3 id="estudio-01">1. IEEE 802.11 y generaciones</h3>
@@ -15,10 +15,11 @@
 <h3 id="estudio-05">5. Modos y arquitectura</h3>
 <p>BSS = conjunto básico alrededor de AP; ESS agrupa BSS con misma red/roaming. Ad-hoc/IBSS carece de AP central (histórico/limitado); mesh interconecta nodos inalámbricamente. En enterprise, control puede ser local, controlador o cloud; la función importa más que el formato.</p>
 <h3 id="estudio-06">6. Roaming y planificación RF</h3>
+<section class="topic-visual-block" aria-labelledby="b4-t11-visual-01-title"><h4 id="b4-t11-visual-01-title">Diseño Wi-Fi por capacidad, no solo por cobertura</h4><figure class="topic-visual"><p class="topic-visual__mobile-hint" aria-hidden="true">Desliza horizontalmente para explorar el esquema con texto legible.</p><img src="assets/diagrams/b4/b4-t11-wifi.svg" alt="Comparación de bandas 2,4, 5 y 6 GHz y flujo de diseño con site survey, canales, potencia, densidad, roaming y PoE, terminando en seguridad WPA3 Enterprise, 802.1X, RADIUS y segmentación." loading="lazy" decoding="async"><figcaption><span>Relaciona física de radio, acceso compartido, movilidad y control de identidad.</span><strong>Qué debes recordar:</strong> Canal más ancho o señal más fuerte no siempre mejora una WLAN densa; Wi-Fi usa CSMA/CA y la seguridad empresarial necesita identidad.</figcaption></figure></section>
 <p>El cliente decide gran parte del roaming. 802.11k/v/r pueden ayudar con vecinos, steering y transición rápida. Diseño requiere site survey, potencia, canales, solapamiento, densidad, capacidad y fuentes de interferencia. “Señal fuerte” no equivale a buena WLAN si todos comparten aire saturado.</p>
 <h3 id="estudio-07">7. Seguridad</h3>
 <p>WEP y WPA antiguos son obsoletos/inseguros. WPA2 usa AES-CCMP en configuraciones modernas; WPA3 mejora autenticación y protección. En empresa: 802.1X/EAP con RADIUS, certificados cuando proceda, segmentación y NAC. Redes de invitados aisladas; IoT separado. Ocultar SSID o filtrar MAC no constituye seguridad robusta.</p>
-<p>Datos y trampas de test</p>
+<h3 id="estudio-08">8. Datos y trampas de test</h3>
 <ul>
 <li>Wi-Fi usa CSMA/CA, no CSMA/CD.</li>
 <li>SSID oculto ≠ seguridad.</li>
@@ -29,9 +30,9 @@
 <li>WPA3/802.1X son preferibles en empresa; WEP está obsoleto.</li>
 <li>MLO es rasgo clave de Wi-Fi 7.</li>
 </ul>
-<p>Aplicación al supuesto práctico</p>
+<h3 id="estudio-09">9. Aplicación al supuesto práctico</h3>
 <p>Diseña cobertura y capacidad mediante survey: número/ubicación de AP, canales/potencia, PoE y uplinks. Separa SSID corporativo, invitados e IoT; usa 802.1X/RADIUS, NAC, VLAN/VRF y políticas. Incluye redundancia del plano de control y monitorización de SNR, utilización, retransmisiones y roaming.</p>
-<h3 id="estudio-08">Resumen</h3>
+<h3 id="estudio-10">Resumen</h3>
 <p>WLAN se diseña como un medio compartido de radio: bandas/canales, PHY/MAC, acceso, roaming, densidad y seguridad. Wi‑Fi 7 amplía capacidad y flexibilidad, pero no cambia los fundamentos de planificación RF.</p>
 <p><strong>Fuentes base:</strong> A1 114 v30.1 (05/09/2024) + actualización Wi‑Fi 7/IEEE 802.11be.</p>
 <h2 id="repaso">Resumen de repaso</h2>

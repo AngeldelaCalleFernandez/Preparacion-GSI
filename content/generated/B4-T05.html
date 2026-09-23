@@ -1,11 +1,12 @@
 <article class="topic-content" data-topic-id="B4-T05" data-coverage-status="complete">
 <p>Material curado del corpus GSI A2 · apuntes V2.1 revisados. Procedencia editorial, no documento oficial.</p>
-<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B4-T05/estudio">Apuntes de estudio</a></li><li><a href="#temario/B4-T05/estudio-01">1. Medios y jerarquía</a></li><li><a href="#temario/B4-T05/estudio-02">2. DAS, NAS, SAN y objeto</a></li><li><a href="#temario/B4-T05/estudio-03">3. RAID y protección local</a></li><li><a href="#temario/B4-T05/estudio-04">4. Cabinas, controladoras, caché y LUN</a></li><li><a href="#temario/B4-T05/estudio-05">5. Protocolos</a></li><li><a href="#temario/B4-T05/estudio-06">6. Virtualización y eficiencia</a></li><li><a href="#temario/B4-T05/estudio-07">7. Rendimiento y dimensionamiento</a></li><li><a href="#temario/B4-T05/estudio-08">8. Administración y seguridad</a></li><li><a href="#temario/B4-T05/estudio-09">Resumen</a></li><li><a href="#temario/B4-T05/repaso">Resumen de repaso</a></li><li><a href="#temario/B4-T05/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B4-T05/repaso-02">Claves de test</a></li><li><a href="#temario/B4-T05/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B4-T05/repaso-04">Fuentes base del material</a></li></ol></nav>
+<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B4-T05/estudio">Apuntes de estudio</a></li><li><a href="#temario/B4-T05/estudio-01">1. Medios y jerarquía</a></li><li><a href="#temario/B4-T05/estudio-02">2. DAS, NAS, SAN y objeto</a></li><li><a href="#temario/B4-T05/estudio-03">3. RAID y protección local</a></li><li><a href="#temario/B4-T05/estudio-04">4. Cabinas, controladoras, caché y LUN</a></li><li><a href="#temario/B4-T05/estudio-05">5. Protocolos</a></li><li><a href="#temario/B4-T05/estudio-06">6. Virtualización y eficiencia</a></li><li><a href="#temario/B4-T05/estudio-07">7. Rendimiento y dimensionamiento</a></li><li><a href="#temario/B4-T05/estudio-08">8. Administración y seguridad</a></li><li><a href="#temario/B4-T05/estudio-09">9. Datos y trampas de test</a></li><li><a href="#temario/B4-T05/estudio-10">10. Aplicación al supuesto práctico</a></li><li><a href="#temario/B4-T05/estudio-11">Resumen</a></li><li><a href="#temario/B4-T05/repaso">Resumen de repaso</a></li><li><a href="#temario/B4-T05/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B4-T05/repaso-02">Claves de test</a></li><li><a href="#temario/B4-T05/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B4-T05/repaso-04">Fuentes base del material</a></li></ol></nav>
 <h2 id="estudio">Apuntes de estudio</h2>
 <p><strong>Cobertura oficial que debe quedar dominada:</strong> Almacenamiento de datos: arquitectura, tipos, componentes, protocolos, gestión y administración. Virtualización del almacenamiento.</p>
 <h3 id="estudio-01">1. Medios y jerarquía</h3>
 <p>HDD ofrece gran capacidad/coste favorable con latencia mecánica; SSD reduce latencia; NVMe usa PCIe y colas/paralelismo adaptados a memoria no volátil. La cinta conserva valor en archivo/copia por coste y aislamiento. El almacenamiento cloud/objeto cambia modelo operativo y de coste, pero no elimina requisitos de durabilidad, acceso y salida.</p>
 <h3 id="estudio-02">2. DAS, NAS, SAN y objeto</h3>
+<section class="topic-visual-block" aria-labelledby="b4-t05-visual-01-title"><h4 id="b4-t05-visual-01-title">Elegir almacenamiento por abstracción y carga</h4><figure class="topic-visual"><p class="topic-visual__mobile-hint" aria-hidden="true">Desliza horizontalmente para explorar el esquema con texto legible.</p><img src="assets/diagrams/b4/b4-t05-almacenamiento.svg" alt="Comparación entre DAS, NAS, SAN y objeto por unidad expuesta, protocolos y usos, conectada con RAID, multipath, snapshots, replicación, backup y métricas IOPS, throughput y latencia." loading="lazy" decoding="async"><figcaption><span>Ordena las tecnologías por lo que exponen y por el requisito que resuelven.</span><strong>Qué debes recordar:</strong> Bloque, fichero y objeto son abstracciones distintas; RAID, snapshot, réplica y backup protegen frente a fallos diferentes.</figcaption></figure></section>
 <table>
 <tr>
 <th scope="col"><p><strong>Modelo
@@ -57,7 +58,7 @@
 <p>Medir IOPS, throughput (MB/s o GB/s), latencia, tamaño de bloque, ratio lectura/escritura, secuencial/aleatorio y concurrencia. Una base OLTP exige perfil distinto de backup secuencial. La capacidad útil debe descontar RAID, snapshots, reservas y crecimiento.</p>
 <h3 id="estudio-08">8. Administración y seguridad</h3>
 <p>Inventario, firmware, salud de discos, pools, capacidad, latencia, rutas, snapshots, replicación y alertas. Seguridad: segmentación de redes de storage, autenticación, cifrado en tránsito/reposo cuando proceda, control de administración y borrado seguro. Para backup, valorar inmutabilidad/WORM.</p>
-<p>Datos y trampas de test</p>
+<h3 id="estudio-09">9. Datos y trampas de test</h3>
 <ul>
 <li>RAID ≠ backup.</li>
 <li>NAS = ficheros; SAN = bloques.</li>
@@ -68,9 +69,9 @@
 <li>RAID 5 tolera típicamente un fallo; RAID 6 dos.</li>
 <li>Zoning y LUN masking actúan en capas diferentes de visibilidad/acceso.</li>
 </ul>
-<p>Aplicación al supuesto práctico</p>
+<h3 id="estudio-10">10. Aplicación al supuesto práctico</h3>
 <p>Clasifica cargas (BD, VM, ficheros, objeto, backup); estima capacidad útil y crecimiento; define rendimiento (IOPS/throughput/latencia); elige DAS/NAS/SAN/objeto; añade RAID, multipath, snapshots/replicación, cifrado, monitorización y backup independiente. Justifica coste y dominio de fallo.</p>
-<h3 id="estudio-09">Resumen</h3>
+<h3 id="estudio-11">Resumen</h3>
 <p>El diseño de almacenamiento se basa en abstracción (bloque/fichero/objeto), rendimiento, disponibilidad, capacidad y recuperabilidad; la virtualización mejora flexibilidad pero exige vigilancia del pool físico.</p>
 <p><strong>Fuentes base:</strong> A1 056 v31.1 (11/03/2026) como fuente principal + A1 057 como apoyo histórico.</p>
 <h2 id="repaso">Resumen de repaso</h2>

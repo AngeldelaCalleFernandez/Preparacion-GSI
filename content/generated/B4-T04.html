@@ -1,6 +1,6 @@
 <article class="topic-content" data-topic-id="B4-T04" data-coverage-status="complete">
 <p>Material curado del corpus GSI A2 · apuntes V2.1 revisados. Procedencia editorial, no documento oficial.</p>
-<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B4-T04/estudio">Apuntes de estudio</a></li><li><a href="#temario/B4-T04/estudio-01">1. Gestión de configuración</a></li><li><a href="#temario/B4-T04/estudio-02">2. Gestión de cambios</a></li><li><a href="#temario/B4-T04/estudio-03">3. Control de versiones</a></li><li><a href="#temario/B4-T04/estudio-04">4. Automatización de operaciones</a></li><li><a href="#temario/B4-T04/estudio-05">5. Monitorización y observabilidad</a></li><li><a href="#temario/B4-T04/estudio-06">6. Rendimiento y cuellos de botella</a></li><li><a href="#temario/B4-T04/estudio-07">7. Gestión de capacidad</a></li><li><a href="#temario/B4-T04/estudio-08">8. Arquitectura de observabilidad</a></li><li><a href="#temario/B4-T04/estudio-09">Resumen</a></li><li><a href="#temario/B4-T04/repaso">Resumen de repaso</a></li><li><a href="#temario/B4-T04/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B4-T04/repaso-02">Claves de test</a></li><li><a href="#temario/B4-T04/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B4-T04/repaso-04">Fuentes base del material</a></li></ol></nav>
+<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B4-T04/estudio">Apuntes de estudio</a></li><li><a href="#temario/B4-T04/estudio-01">1. Gestión de configuración</a></li><li><a href="#temario/B4-T04/estudio-02">2. Gestión de cambios</a></li><li><a href="#temario/B4-T04/estudio-03">3. Control de versiones</a></li><li><a href="#temario/B4-T04/estudio-04">4. Automatización de operaciones</a></li><li><a href="#temario/B4-T04/estudio-05">5. Monitorización y observabilidad</a></li><li><a href="#temario/B4-T04/estudio-06">6. Rendimiento y cuellos de botella</a></li><li><a href="#temario/B4-T04/estudio-07">7. Gestión de capacidad</a></li><li><a href="#temario/B4-T04/estudio-08">8. Arquitectura de observabilidad</a></li><li><a href="#temario/B4-T04/estudio-09">9. Datos y trampas de test</a></li><li><a href="#temario/B4-T04/estudio-10">10. Aplicación al supuesto práctico</a></li><li><a href="#temario/B4-T04/estudio-11">Resumen</a></li><li><a href="#temario/B4-T04/repaso">Resumen de repaso</a></li><li><a href="#temario/B4-T04/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B4-T04/repaso-02">Claves de test</a></li><li><a href="#temario/B4-T04/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B4-T04/repaso-04">Fuentes base del material</a></li></ol></nav>
 <h2 id="estudio">Apuntes de estudio</h2>
 <p><strong>Cobertura oficial que debe quedar dominada:</strong> Gestión de la configuración. Control de cambios y de versiones. Técnicas y herramientas de operación automática. Evaluación y monitorización del rendimiento de sistemas, infraestructuras y servicios. Gestión de la capacidad. Herramientas y técnicas utilizables.</p>
 <h3 id="estudio-01">1. Gestión de configuración</h3>
@@ -15,6 +15,7 @@
 <p>Niveles: scripts → jobs/schedulers → gestión de configuración → orquestación → IaC → pipelines. Imperativo describe pasos; declarativo describe estado objetivo. Idempotencia, manejo de errores, logs, secretos externos, versionado, pruebas y límites de privilegio son requisitos de automatización segura.</p>
 <p>Ejemplos de categorías: PowerShell/shell/Python, Ansible o equivalentes para configuración, Terraform/OpenTofu o equivalentes para infraestructura declarativa, plataformas de orquestación y CI/CD. En examen interesa el patrón, no el producto.</p>
 <h3 id="estudio-05">5. Monitorización y observabilidad</h3>
+<section class="topic-visual-block" aria-labelledby="b4-t04-visual-01-title"><h4 id="b4-t04-visual-01-title">Controlar configuración, cambio, rendimiento y capacidad</h4><figure class="topic-visual"><p class="topic-visual__mobile-hint" aria-hidden="true">Desliza horizontalmente para explorar el esquema con texto legible.</p><img src="assets/diagrams/b4/b4-t04-config-observabilidad.svg" alt="Ciclo desde inventario y baseline hasta automatización declarativa, solicitud y validación de cambio, métricas logs y trazas, SLI y SLO, análisis de saturación y previsión de capacidad." loading="lazy" decoding="async"><figcaption><span>Conecta el estado deseado con la evidencia operativa y las decisiones de crecimiento.</span><strong>Qué debes recordar:</strong> Versionar artefactos no sustituye gobernar el servicio; observar y prever permite cambiar antes de incumplir el SLO.</figcaption></figure></section>
 <p><strong>Monitorización</strong> comprueba estados y métricas conocidas; <strong>observabilidad</strong> persigue inferir el estado interno a partir de señales. Tres señales clásicas: métricas, logs y trazas; además perfiles y eventos. APM combina instrumentación y correlación del rendimiento de aplicaciones.</p>
 <p>SLI = indicador medido; SLO = objetivo interno/operativo; SLA = compromiso formal con consecuencias definidas. Alertar sobre síntomas de usuario suele ser más útil que sobre cualquier métrica interna aislada.</p>
 <h3 id="estudio-06">6. Rendimiento y cuellos de botella</h3>
@@ -24,7 +25,7 @@
 <p>Capacidad traduce demanda futura en recursos y decisiones. Se parte de demanda, perfil horario, crecimiento, estacionalidad, headroom, límites y SLO. Técnicas: tendencias, percentiles, modelos de carga, benchmarks y pruebas. Diferenciar capacity management de autoscaling: el segundo reacciona/ajusta, pero sigue necesitando límites y planificación.</p>
 <h3 id="estudio-08">8. Arquitectura de observabilidad</h3>
 <p>Agentes/exporters → colectores → almacenes de métricas/logs/trazas → correlación → dashboards/alertas → tickets/on-call. Debe proteger datos sensibles, controlar retención y evitar una plataforma de observabilidad que se convierta en SPOF o coste descontrolado.</p>
-<p>Datos y trampas de test</p>
+<h3 id="estudio-09">9. Datos y trampas de test</h3>
 <ul>
 <li>CI = elemento de configuración; CMDB = repositorio/relaciones, no sinónimo de inventario total.</li>
 <li>Cambio estándar ≠ emergencia.</li>
@@ -35,9 +36,9 @@
 <li>Control de versiones ≠ gestión de configuración.</li>
 <li>Capacity planning ≠ sobredimensionar siempre.</li>
 </ul>
-<p>Aplicación al supuesto práctico</p>
+<h3 id="estudio-10">10. Aplicación al supuesto práctico</h3>
 <p>Para un servicio crítico: inventario/CMDB y baselines, config-as-code, pipeline de cambio con aprobación proporcional al riesgo, rollback, métricas/logs/trazas, SLI/SLO, dashboards, alertas, on-call y capacity plan. Añade pruebas de carga y forecast de crecimiento; evita alertas sin acción asociada.</p>
-<h3 id="estudio-09">Resumen</h3>
+<h3 id="estudio-11">Resumen</h3>
 <p>La operación madura controla estado y cambio, automatiza lo repetible, observa el servicio extremo a extremo y planifica capacidad antes de saturarse.</p>
 <p><strong>Fuentes base:</strong> A1 100/102 + material ITIL/operación; tema complementario construido específicamente para GSI.</p>
 <h2 id="repaso">Resumen de repaso</h2>

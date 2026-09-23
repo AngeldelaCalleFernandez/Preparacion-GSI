@@ -1,6 +1,6 @@
 <article class="topic-content" data-topic-id="B4-T14" data-coverage-status="complete">
 <p>Material curado del corpus GSI A2 · apuntes V2.1 revisados. Procedencia editorial, no documento oficial.</p>
-<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B4-T14/estudio">Apuntes de estudio</a></li><li><a href="#temario/B4-T14/estudio-01">1. NGN</a></li><li><a href="#temario/B4-T14/estudio-02">2. IMS</a></li><li><a href="#temario/B4-T14/estudio-03">3. SIP y SDP</a></li><li><a href="#temario/B4-T14/estudio-04">4. RTP/RTCP y códecs</a></li><li><a href="#temario/B4-T14/estudio-05">5. SBC, NAT y seguridad</a></li><li><a href="#temario/B4-T14/estudio-06">6. ToIP y comunicaciones unificadas</a></li><li><a href="#temario/B4-T14/estudio-07">7. QoS</a></li><li><a href="#temario/B4-T14/estudio-08">8. Convergencia fijo-móvil</a></li><li><a href="#temario/B4-T14/estudio-09">Resumen</a></li><li><a href="#temario/B4-T14/repaso">Resumen de repaso</a></li><li><a href="#temario/B4-T14/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B4-T14/repaso-02">Claves de test</a></li><li><a href="#temario/B4-T14/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B4-T14/repaso-04">Fuentes base del material</a></li></ol></nav>
+<nav class="topic-content__toc" aria-label="Índice del tema"><h2>Contenido del tema</h2><ol><li><a href="#temario/B4-T14/estudio">Apuntes de estudio</a></li><li><a href="#temario/B4-T14/estudio-01">1. NGN</a></li><li><a href="#temario/B4-T14/estudio-02">2. IMS</a></li><li><a href="#temario/B4-T14/estudio-03">3. SIP y SDP</a></li><li><a href="#temario/B4-T14/estudio-04">4. RTP/RTCP y códecs</a></li><li><a href="#temario/B4-T14/estudio-05">5. SBC, NAT y seguridad</a></li><li><a href="#temario/B4-T14/estudio-06">6. ToIP y comunicaciones unificadas</a></li><li><a href="#temario/B4-T14/estudio-07">7. QoS</a></li><li><a href="#temario/B4-T14/estudio-08">8. Convergencia fijo-móvil</a></li><li><a href="#temario/B4-T14/estudio-09">9. Datos y trampas de test</a></li><li><a href="#temario/B4-T14/estudio-10">10. Aplicación al supuesto práctico</a></li><li><a href="#temario/B4-T14/estudio-11">Resumen</a></li><li><a href="#temario/B4-T14/repaso">Resumen de repaso</a></li><li><a href="#temario/B4-T14/repaso-01">Núcleo de estudio</a></li><li><a href="#temario/B4-T14/repaso-02">Claves de test</a></li><li><a href="#temario/B4-T14/repaso-03">Enfoque para supuesto práctico</a></li><li><a href="#temario/B4-T14/repaso-04">Fuentes base del material</a></li></ol></nav>
 <h2 id="estudio">Apuntes de estudio</h2>
 <p><strong>Cobertura oficial que debe quedar dominada:</strong> Redes de nueva generación y servicios convergentes (NGN/IMS). VoIP, ToIP y comunicaciones unificadas. Convergencia telefonía fija-telefonía móvil.</p>
 <h3 id="estudio-01">1. NGN</h3>
@@ -8,6 +8,7 @@
 <h3 id="estudio-02">2. IMS</h3>
 <p>IP Multimedia Subsystem es una arquitectura 3GPP para controlar sesiones multimedia IP. Conceptualmente separa acceso de control de sesión y servicios. Entidades clásicas: P-CSCF (primer punto de contacto), I-CSCF (entrada/consulta) y S-CSCF (control de sesión/registro), junto con repositorios de abonado como HSS en arquitecturas tradicionales. En 5G hay evolución de funciones/datos, pero GSI debe dominar la lógica IMS, no memorizar cada release.</p>
 <h3 id="estudio-03">3. SIP y SDP</h3>
+<section class="topic-visual-block" aria-labelledby="b4-t14-visual-01-title"><h4 id="b4-t14-visual-01-title">Señalización y medios en VoIP</h4><figure class="topic-visual"><p class="topic-visual__mobile-hint" aria-hidden="true">Desliza horizontalmente para explorar el esquema con texto legible.</p><img src="assets/diagrams/b4/b4-t14-voip.svg" alt="Flujo de llamada donde terminales intercambian SIP y SDP a través de proxy PBX o IMS y SBC, mientras audio viaja por RTP y RTCP, con TLS para señalización, SRTP para medios y QoS extremo a extremo." loading="lazy" decoding="async"><figcaption><span>Separa control de sesión, descripción de medios y transporte de voz.</span><strong>Qué debes recordar:</strong> SIP señaliza, SDP describe y RTP transporta; SBC aplica política de frontera y QoS administra congestión sin crear capacidad.</figcaption></figure></section>
 <p>SIP señaliza: registra usuarios, inicia, modifica y termina sesiones. Métodos típicos INVITE, ACK, BYE, REGISTER, OPTIONS; respuestas siguen familias 1xx–6xx. SDP describe medios/códecs/puertos dentro de señalización; no transporta audio.</p>
 <h3 id="estudio-04">4. RTP/RTCP y códecs</h3>
 <p>RTP transporta medios en tiempo real sobre UDP habitualmente; RTCP aporta estadísticas/control. Códecs como G.711 o compresores modernos determinan bitrate, calidad, CPU y robustez. El ancho real añade overhead IP/UDP/RTP y, según red, Ethernet/VPN.</p>
@@ -19,7 +20,7 @@
 <p>Voz es sensible a latencia, jitter y pérdida. QoS clasifica/marca (p. ej. DSCP), prioriza colas y evita congestión. Un jitter buffer absorbe variación a costa de latencia. QoS debe ser coherente extremo a extremo; no crea ancho de banda.</p>
 <h3 id="estudio-08">8. Convergencia fijo-móvil</h3>
 <p>Busca continuidad de identidad/servicios entre acceso fijo y móvil: número/usuario, presencia, llamada, mensajería y políticas. IMS es una pieza histórica/arquitectónica clave. En diseño actual puede integrarse UC cloud/on-prem, móvil y SIP trunks manteniendo seguridad y continuidad.</p>
-<p>Datos y trampas de test</p>
+<h3 id="estudio-09">9. Datos y trampas de test</h3>
 <ul>
 <li>SIP señaliza; RTP transporta medios.</li>
 <li>SDP describe sesión/medios; no es codec.</li>
@@ -30,9 +31,9 @@
 <li>RTCP complementa RTP con control/estadísticas.</li>
 <li>P-CSCF/I-CSCF/S-CSCF son funciones IMS clásicas.</li>
 </ul>
-<p>Aplicación al supuesto práctico</p>
+<h3 id="estudio-10">10. Aplicación al supuesto práctico</h3>
 <p>Calcula llamadas simultáneas y bitrate con overhead/margen; diseña PBX/UC redundante, SIP trunk dual, SBC, VLAN voz, QoS extremo a extremo, directorio/MFA de administración, TLS/SRTP cuando aplique, grabación/retención legal si se solicita y continuidad. Separa señalización de medios en el diagrama.</p>
-<h3 id="estudio-09">Resumen</h3>
+<h3 id="estudio-11">Resumen</h3>
 <p>NGN/IMS explican la convergencia de servicios IP; SIP/SDP controlan sesiones y RTP/RTCP los medios. Una ToIP empresarial necesita QoS, SBC, seguridad, redundancia y operación.</p>
 <p><strong>Fuentes base:</strong> A1 116 (24/09/2024, tema 16 págs.) como fuente principal.</p>
 <h2 id="repaso">Resumen de repaso</h2>
