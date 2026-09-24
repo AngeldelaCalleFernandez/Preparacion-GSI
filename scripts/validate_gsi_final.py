@@ -17,7 +17,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 from build_gsi_content import markdown_replacement_pair, markdown_topics
-from build_gsi_authored_questions import load_length_reviews
+from build_gsi_authored_questions import build_p1_questions, load_length_reviews
 
 ROOT=Path(__file__).resolve().parents[1]
 from datetime import date
@@ -141,6 +141,9 @@ def main():
             elif line and not line.startswith('#'):
                 counts[topic]=counts.get(topic,0)+1;drafts[f'AI-GSI-{topic}-{counts[topic]:03}']=(topic,line)
     length_reviews=load_length_reviews()
+    p1_questions={q['id']:q for q in build_p1_questions(sources)}
+    check({q['id'] for q in questions if q['id'].startswith('AI-GSI-P1-')}==set(p1_questions),
+          'Borradores P1 completos y limitados a los cuatro temas')
     for q in questions:
         label=q['id'];check(q['opposition_id']=='OPP-GSI' and q['topic_id'] in topics and q['block_id']==q['topic_id'][:2],label+': identidad GSI y tema válidos')
         check(len(q['options'])==4 and len({o['id'] for o in q['options']})==4 and len({norm(o['text']) for o in q['options']})==4 and sum(o['id']==q['correct_option'] for o in q['options'])==1,label+': cuatro opciones distintas y una correcta')
@@ -157,6 +160,11 @@ def main():
             check(q['provenance']['drive_id'] in known,label+': fuente dentro del inventario interno registrado')
         check(not q['is_active'] or q['validation_status']=='validated',label+': activación exige revisión')
         if q['origin']=='ai':
+            if label in p1_questions:
+                check(q==p1_questions[label],label+': borrador P1 y evidencia canónica sincronizados')
+                check(q['validation_status']=='pending_review' and not q['is_active'],
+                      label+': pregunta P1 no se activa sin revisión humana')
+                continue
             topic,line=drafts[label];fields=line.split('|');section=fields[0]
             expected_options=fields[2:6].copy()
             random.Random(label).shuffle(expected_options)

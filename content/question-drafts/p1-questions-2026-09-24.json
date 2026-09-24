@@ -1,0 +1,186 @@
+{
+  "version": 1,
+  "authored_at": "2026-09-24",
+  "questions": [
+    {
+      "id": "AI-GSI-P1-B2-T02-001",
+      "topic_id": "B2-T02",
+      "subtopic": "Cuentas y contraseñas Unix/Linux",
+      "evidence_paragraph": 0,
+      "statement": "En un Linux con cuentas locales se cambia la contraseña de un usuario. ¿Qué asociación entre los componentes clásicos es correcta?",
+      "options": [
+        "/etc/passwd reúne cuentas y hashes; /etc/shadow solo registra la caducidad; passwd cambia la contraseña.",
+        "/etc/passwd describe las cuentas; /etc/shadow guarda hashes y caducidad; passwd cambia la contraseña.",
+        "/etc/passwd describe las cuentas; /etc/shadow guarda los hashes; passwd solo muestra su caducidad.",
+        "/etc/passwd describe las cuentas; /etc/shadow guarda contraseñas en claro; passwd cambia la contraseña."
+      ],
+      "correct_option": "B",
+      "feedback": {
+        "correct": "/etc/passwd contiene información de cuentas; /etc/shadow separa hashes y datos de expiración. El comando passwd permite gestionar la contraseña.",
+        "incorrect": "No intercambies el papel de los dos archivos: la información de cuenta está en /etc/passwd y los hashes y la expiración en /etc/shadow; passwd gestiona la contraseña."
+      }
+    },
+    {
+      "id": "AI-GSI-P1-B2-T02-002",
+      "topic_id": "B2-T02",
+      "subtopic": "Tareas programadas Unix/Linux",
+      "evidence_paragraph": 0,
+      "statement": "Una tarea debe ejecutarse cada noche sin intervención. En el mecanismo clásico de Unix/Linux, ¿qué relación es correcta?",
+      "options": [
+        "cron ejecuta las tareas; crontab define o edita su planificación.",
+        "cron define la planificación; crontab ejecuta cada tarea.",
+        "cron ejecuta cada tarea solo una vez; crontab limita la planificación al arranque.",
+        "cron consulta la planificación sin ejecutarla; crontab lanza cada entrada al editarla."
+      ],
+      "correct_option": "A",
+      "feedback": {
+        "correct": "cron es el servicio de ejecución periódica; crontab permite definir o editar la programación de las tareas.",
+        "incorrect": "La distinción es entre ejecución y programación: cron ejecuta tareas programadas y crontab establece o edita cuándo se ejecutan."
+      }
+    },
+    {
+      "id": "AI-GSI-P1-B2-T02-003",
+      "topic_id": "B2-T02",
+      "subtopic": "Observación de procesos y sistema",
+      "evidence_paragraph": 0,
+      "statement": "Para diagnosticar lentitud en Linux se desea consultar primero procesos y después estadísticas globales de memoria, paginación, E/S y CPU. ¿Qué pareja cumple esos fines, en ese orden?",
+      "options": [
+        "ps para procesos y vmstat solo para ocupación de sistemas de archivos.",
+        "vmstat para procesos y ps para estadísticas globales de paginación y E/S.",
+        "ps para procesos y vmstat para estadísticas globales.",
+        "ps para procesos y vmstat para configurar la memoria virtual."
+      ],
+      "correct_option": "C",
+      "feedback": {
+        "correct": "ps muestra información de procesos concretos; vmstat resume actividad del sistema, incluida memoria, paginación, E/S y CPU.",
+        "incorrect": "ps responde a la consulta de procesos. vmstat ofrece estadísticas agregadas del sistema; cron y crontab corresponden a tareas programadas."
+      }
+    },
+    {
+      "id": "AI-GSI-P1-B2-T11-001",
+      "topic_id": "B2-T11",
+      "subtopic": "Common Criteria y objeto evaluado",
+      "evidence_paragraph": 0,
+      "statement": "Se pretende evaluar las propiedades de seguridad de un producto TI concreto, no certificar la gestión de seguridad de una organización. ¿Qué marco y objeto corresponden?",
+      "options": [
+        "ISO/IEC 27001 y SGSI.",
+        "ISO 19011 y sistema de gestión auditado.",
+        "Common Criteria / ISO/IEC 15408 y TOE.",
+        "ISO/IEC 27002 y catálogo de controles."
+      ],
+      "correct_option": "C",
+      "feedback": {
+        "correct": "Common Criteria, serie ISO/IEC 15408, evalúa propiedades de seguridad de un TOE (Target of Evaluation). ISO/IEC 27001 se refiere a un SGSI certificable.",
+        "incorrect": "La evaluación de un producto/TOE corresponde a Common Criteria. ISO/IEC 27001 certifica un sistema de gestión; ISO 19011 orienta auditorías e ISO/IEC 27002 guía controles."
+      }
+    },
+    {
+      "id": "AI-GSI-P1-B2-T11-002",
+      "topic_id": "B2-T11",
+      "subtopic": "PP, ST y EAL",
+      "evidence_paragraph": 1,
+      "statement": "En Common Criteria, ¿qué opción relaciona correctamente PP, ST y los niveles clásicos EAL1–EAL7?",
+      "options": [
+        "PP especifica el TOE; ST es un perfil reutilizable; EAL expresa niveles de garantía.",
+        "PP expresa niveles de garantía; ST es un perfil reutilizable; EAL especifica el TOE.",
+        "PP es un perfil reutilizable; ST expresa niveles de garantía; EAL especifica el TOE.",
+        "PP es un perfil reutilizable; ST especifica el TOE; EAL expresa niveles de garantía."
+      ],
+      "correct_option": "D",
+      "feedback": {
+        "correct": "PP reúne requisitos reutilizables para una categoría o necesidad; ST concreta la seguridad del TOE y EAL1–EAL7 son niveles clásicos de garantía de evaluación.",
+        "incorrect": "PP no es la especificación particular del TOE: esa función corresponde al ST. Los EAL1–EAL7 indican niveles clásicos de garantía, no perfiles ni objetivos evaluados."
+      }
+    },
+    {
+      "id": "AI-GSI-P1-B3-T12-001",
+      "topic_id": "B3-T12",
+      "subtopic": "Seguridad a nivel de mensaje SOAP",
+      "evidence_paragraph": 0,
+      "statement": "Una integración SOAP debe transportar tokens y aplicar integridad al propio mensaje, incluso si atraviesa intermediarios. ¿Qué especificación atiende esa función?",
+      "options": [
+        "Web Services Description Language (WSDL).",
+        "Web Services Security (WS-Security).",
+        "Message Transmission Optimization Mechanism (MTOM).",
+        "Universal Description, Discovery and Integration (UDDI)."
+      ],
+      "correct_option": "B",
+      "feedback": {
+        "correct": "WS-Security añade mecanismos de seguridad a nivel de mensaje SOAP, como tokens e integridad. TLS protege el transporte, pero no equivale a esa protección del mensaje.",
+        "incorrect": "WS-Security es la pieza de seguridad del mensaje SOAP. WSDL describe contratos, UDDI registra servicios y MTOM optimiza contenido binario."
+      }
+    },
+    {
+      "id": "AI-GSI-P1-B3-T12-002",
+      "topic_id": "B3-T12",
+      "subtopic": "Contenido binario en SOAP/XML",
+      "evidence_paragraph": 0,
+      "statement": "Un servicio SOAP debe enviar contenido binario sin tratarlo únicamente como texto base64 en el transporte. ¿Qué relación entre tecnologías es correcta?",
+      "options": [
+        "MTOM optimiza la transmisión y se apoya en XOP para el empaquetado XML-binario.",
+        "MTOM describe el contrato y XOP registra el servicio para su descubrimiento.",
+        "MTOM firma el mensaje y XOP transporta los tokens de seguridad.",
+        "MTOM vincula clases Java con XML y XOP valida sus esquemas."
+      ],
+      "correct_option": "A",
+      "feedback": {
+        "correct": "MTOM optimiza la transmisión de contenido binario en SOAP; su implementación se apoya en XOP para el empaquetado XML-binario, preservando el modelo XML.",
+        "incorrect": "MTOM/XOP se ocupan del contenido binario SOAP/XML, no de contratos, registro, firma ni vinculación de objetos Java."
+      }
+    },
+    {
+      "id": "AI-GSI-P1-B3-T12-003",
+      "topic_id": "B3-T12",
+      "subtopic": "XML Binding en Java",
+      "evidence_paragraph": 1,
+      "statement": "Una aplicación Java necesita vincular documentos XML con clases y convertir entre ambos modelos. ¿Qué tecnología corresponde a esa función?",
+      "options": [
+        "XML-binary Optimized Packaging (XOP).",
+        "Web Services Description Language (WSDL).",
+        "Jakarta XML Binding (JAXB).",
+        "Message Transmission Optimization Mechanism (MTOM)."
+      ],
+      "correct_option": "C",
+      "feedback": {
+        "correct": "XML Binding relaciona documentos o esquemas XML con objetos; JAXB es el nombre histórico en Java y Jakarta XML Binding el actual.",
+        "incorrect": "JAXB/Jakarta XML Binding realiza la vinculación XML–objetos. XOP y MTOM tratan contenido binario; WSDL describe interfaces de servicios."
+      }
+    },
+    {
+      "id": "AI-GSI-P1-B4-T09-001",
+      "topic_id": "B4-T09",
+      "subtopic": "SMIv2, ASN.1, MIB y OID",
+      "evidence_paragraph": 0,
+      "statement": "En el modelo clásico de gestión SNMP, ¿qué relación entre SMIv2 y ASN.1 es correcta?",
+      "options": [
+        "SMIv2 es la notación general y ASN.1 fija las reglas particulares de SNMP.",
+        "SMIv2 fija reglas para módulos MIB y ASN.1 aporta la notación formal adaptada.",
+        "SMIv2 asigna cada OID y ASN.1 almacena los valores actuales de la MIB.",
+        "SMIv2 organiza los valores medidos y ASN.1 identifica los objetos gestionados."
+      ],
+      "correct_option": "B",
+      "feedback": {
+        "correct": "SMIv2 establece reglas para definir módulos y objetos de gestión mediante un subconjunto adaptado de ASN.1. La MIB organiza objetos y cada OID los identifica.",
+        "incorrect": "SMIv2 establece reglas de definición; ASN.1 es la notación formal usada. La MIB organiza la información y el OID identifica objetos: no son funciones de ASN.1."
+      }
+    },
+    {
+      "id": "AI-GSI-P1-B4-T09-002",
+      "topic_id": "B4-T09",
+      "subtopic": "RMON en la gestión SNMP",
+      "evidence_paragraph": 1,
+      "statement": "Una sonda aporta a un gestor SNMP estadísticas históricas, alarmas y datos sobre hosts y segmentos mediante MIB específicas. ¿Qué tecnología clásica se emplea?",
+      "options": [
+        "NetFlow/IPFIX.",
+        "SNMPv3.",
+        "Streaming telemetry.",
+        "RMON."
+      ],
+      "correct_option": "D",
+      "feedback": {
+        "correct": "RMON (Remote Network Monitoring) aporta MIB clásicas de monitorización remota con estadísticas, históricos y alarmas. Complementa, no sustituye, flujos y telemetría.",
+        "incorrect": "RMON es la extensión clásica basada en MIB para sondas y monitorización remota SNMP; SNMPv3 trata seguridad, mientras flujos y telemetría cubren otras necesidades."
+      }
+    }
+  ]
+}

@@ -3,9 +3,9 @@
     "dataset_type": "ai",
     "schema_version": "1.0.0",
     "data_version": "2.1.1",
-    "updated_at": "2026-09-23",
+    "updated_at": "2026-09-24",
     "rights": {
-      "sourceName": "Banco GSI generado por IA y revisado",
+      "sourceName": "Banco GSI generado por IA, con preguntas revisadas y pendientes",
       "sourceUrl": "https://github.com/AngeldelaCalleFernandez/Preparacion-GSI",
       "rightsholder": "Autor del repositorio para la selección y revisión registrada; las fuentes subyacentes conservan sus derechos",
       "reuseBasis": "Generación propia basada en evidencias trazadas del corpus; no oficial y no atribuida a PreparaTIC.",
@@ -56453,6 +56453,706 @@
       "is_active": true,
       "created_at": "2026-09-14",
       "updated_at": "2026-09-23"
+    },
+    {
+      "id": "AI-GSI-P1-B2-T02-001",
+      "opposition_id": "OPP-GSI",
+      "origin": "ai",
+      "official_status": "not_official",
+      "validation_status": "pending_review",
+      "block_id": "B2",
+      "topic_id": "B2-T02",
+      "subtopic": "Cuentas y contraseñas Unix/Linux",
+      "exam": null,
+      "statement": "En un Linux con cuentas locales se cambia la contraseña de un usuario. ¿Qué asociación entre los componentes clásicos es correcta?",
+      "options": [
+        {
+          "id": "A",
+          "text": "/etc/passwd reúne cuentas y hashes; /etc/shadow solo registra la caducidad; passwd cambia la contraseña."
+        },
+        {
+          "id": "B",
+          "text": "/etc/passwd describe las cuentas; /etc/shadow guarda hashes y caducidad; passwd cambia la contraseña."
+        },
+        {
+          "id": "C",
+          "text": "/etc/passwd describe las cuentas; /etc/shadow guarda los hashes; passwd solo muestra su caducidad."
+        },
+        {
+          "id": "D",
+          "text": "/etc/passwd describe las cuentas; /etc/shadow guarda contraseñas en claro; passwd cambia la contraseña."
+        }
+      ],
+      "correct_option": "B",
+      "feedback": {
+        "correct": "/etc/passwd contiene información de cuentas; /etc/shadow separa hashes y datos de expiración. El comando passwd permite gestionar la contraseña.",
+        "incorrect": "No intercambies el papel de los dos archivos: la información de cuenta está en /etc/passwd y los hashes y la expiración en /etc/shadow; passwd gestiona la contraseña."
+      },
+      "source": {
+        "type": "generated",
+        "source_id": "SRC-GSI-B2-V21",
+        "document_id": "DOC-GSI-B2-V21",
+        "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+        "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+        "locator": "II.02 / 9. Unix y Linux",
+        "version": "V2.1 / parche P1",
+        "reviewed_at": "2026-09-24",
+        "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+        "evidence": "/etc/passwd contiene información de cuentas y /etc/shadow almacena hashes y datos de expiración de contraseñas en sistemas compatibles; passwd permite gestionar la contraseña de una cuenta. cron ejecuta tareas programadas y crontab define o edita su planificación. ps muestra información de procesos y vmstat resume estadísticas del sistema, como procesos, memoria, paginación, E/S y CPU. Son referencias de administración que conviene reconocer en test, no un catálogo de comandos que memorizar.",
+        "evidence_sha256": "96c9354fc2f833261c5f6ba4349765c9e70ade50e7a99df8747beb4aca087c56",
+        "record_sha256": "9142930b97274f7903efcb1d9fd6895c195d9e668ae6cb6d28ae6d45d14f0e2f",
+        "review_id": null,
+        "review_method": "Borrador IA P1 pendiente de revisión humana; no oficial.",
+        "p1_manifest": "content/enhancements/b2-visuals.json"
+      },
+      "provenance": {
+        "type": "generated",
+        "source_id": "SRC-GSI-B2-V21",
+        "document_id": "DOC-GSI-B2-V21",
+        "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+        "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+        "locator": "II.02 / 9. Unix y Linux",
+        "version": "V2.1 / parche P1",
+        "reviewed_at": "2026-09-24"
+      },
+      "difficulty": "medium",
+      "tags": [
+        "parche-p1-2026-09-24",
+        "pendiente-revision"
+      ],
+      "is_active": false,
+      "created_at": "2026-09-24",
+      "updated_at": "2026-09-24"
+    },
+    {
+      "id": "AI-GSI-P1-B2-T02-002",
+      "opposition_id": "OPP-GSI",
+      "origin": "ai",
+      "official_status": "not_official",
+      "validation_status": "pending_review",
+      "block_id": "B2",
+      "topic_id": "B2-T02",
+      "subtopic": "Tareas programadas Unix/Linux",
+      "exam": null,
+      "statement": "Una tarea debe ejecutarse cada noche sin intervención. En el mecanismo clásico de Unix/Linux, ¿qué relación es correcta?",
+      "options": [
+        {
+          "id": "A",
+          "text": "cron ejecuta las tareas; crontab define o edita su planificación."
+        },
+        {
+          "id": "B",
+          "text": "cron define la planificación; crontab ejecuta cada tarea."
+        },
+        {
+          "id": "C",
+          "text": "cron ejecuta cada tarea solo una vez; crontab limita la planificación al arranque."
+        },
+        {
+          "id": "D",
+          "text": "cron consulta la planificación sin ejecutarla; crontab lanza cada entrada al editarla."
+        }
+      ],
+      "correct_option": "A",
+      "feedback": {
+        "correct": "cron es el servicio de ejecución periódica; crontab permite definir o editar la programación de las tareas.",
+        "incorrect": "La distinción es entre ejecución y programación: cron ejecuta tareas programadas y crontab establece o edita cuándo se ejecutan."
+      },
+      "source": {
+        "type": "generated",
+        "source_id": "SRC-GSI-B2-V21",
+        "document_id": "DOC-GSI-B2-V21",
+        "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+        "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+        "locator": "II.02 / 9. Unix y Linux",
+        "version": "V2.1 / parche P1",
+        "reviewed_at": "2026-09-24",
+        "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+        "evidence": "/etc/passwd contiene información de cuentas y /etc/shadow almacena hashes y datos de expiración de contraseñas en sistemas compatibles; passwd permite gestionar la contraseña de una cuenta. cron ejecuta tareas programadas y crontab define o edita su planificación. ps muestra información de procesos y vmstat resume estadísticas del sistema, como procesos, memoria, paginación, E/S y CPU. Son referencias de administración que conviene reconocer en test, no un catálogo de comandos que memorizar.",
+        "evidence_sha256": "96c9354fc2f833261c5f6ba4349765c9e70ade50e7a99df8747beb4aca087c56",
+        "record_sha256": "fa34e6ced4b2303f8415198cb3666a52f5b89bfb9fe49b0706e71a3e4062470d",
+        "review_id": null,
+        "review_method": "Borrador IA P1 pendiente de revisión humana; no oficial.",
+        "p1_manifest": "content/enhancements/b2-visuals.json"
+      },
+      "provenance": {
+        "type": "generated",
+        "source_id": "SRC-GSI-B2-V21",
+        "document_id": "DOC-GSI-B2-V21",
+        "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+        "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+        "locator": "II.02 / 9. Unix y Linux",
+        "version": "V2.1 / parche P1",
+        "reviewed_at": "2026-09-24"
+      },
+      "difficulty": "medium",
+      "tags": [
+        "parche-p1-2026-09-24",
+        "pendiente-revision"
+      ],
+      "is_active": false,
+      "created_at": "2026-09-24",
+      "updated_at": "2026-09-24"
+    },
+    {
+      "id": "AI-GSI-P1-B2-T02-003",
+      "opposition_id": "OPP-GSI",
+      "origin": "ai",
+      "official_status": "not_official",
+      "validation_status": "pending_review",
+      "block_id": "B2",
+      "topic_id": "B2-T02",
+      "subtopic": "Observación de procesos y sistema",
+      "exam": null,
+      "statement": "Para diagnosticar lentitud en Linux se desea consultar primero procesos y después estadísticas globales de memoria, paginación, E/S y CPU. ¿Qué pareja cumple esos fines, en ese orden?",
+      "options": [
+        {
+          "id": "A",
+          "text": "ps para procesos y vmstat solo para ocupación de sistemas de archivos."
+        },
+        {
+          "id": "B",
+          "text": "vmstat para procesos y ps para estadísticas globales de paginación y E/S."
+        },
+        {
+          "id": "C",
+          "text": "ps para procesos y vmstat para estadísticas globales."
+        },
+        {
+          "id": "D",
+          "text": "ps para procesos y vmstat para configurar la memoria virtual."
+        }
+      ],
+      "correct_option": "C",
+      "feedback": {
+        "correct": "ps muestra información de procesos concretos; vmstat resume actividad del sistema, incluida memoria, paginación, E/S y CPU.",
+        "incorrect": "ps responde a la consulta de procesos. vmstat ofrece estadísticas agregadas del sistema; cron y crontab corresponden a tareas programadas."
+      },
+      "source": {
+        "type": "generated",
+        "source_id": "SRC-GSI-B2-V21",
+        "document_id": "DOC-GSI-B2-V21",
+        "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+        "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+        "locator": "II.02 / 9. Unix y Linux",
+        "version": "V2.1 / parche P1",
+        "reviewed_at": "2026-09-24",
+        "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+        "evidence": "/etc/passwd contiene información de cuentas y /etc/shadow almacena hashes y datos de expiración de contraseñas en sistemas compatibles; passwd permite gestionar la contraseña de una cuenta. cron ejecuta tareas programadas y crontab define o edita su planificación. ps muestra información de procesos y vmstat resume estadísticas del sistema, como procesos, memoria, paginación, E/S y CPU. Son referencias de administración que conviene reconocer en test, no un catálogo de comandos que memorizar.",
+        "evidence_sha256": "96c9354fc2f833261c5f6ba4349765c9e70ade50e7a99df8747beb4aca087c56",
+        "record_sha256": "390d3249e3a648583b6d4a08cbd9c2e7e9e6d766e42aa46cf0e30cdda81c7f6a",
+        "review_id": null,
+        "review_method": "Borrador IA P1 pendiente de revisión humana; no oficial.",
+        "p1_manifest": "content/enhancements/b2-visuals.json"
+      },
+      "provenance": {
+        "type": "generated",
+        "source_id": "SRC-GSI-B2-V21",
+        "document_id": "DOC-GSI-B2-V21",
+        "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+        "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+        "locator": "II.02 / 9. Unix y Linux",
+        "version": "V2.1 / parche P1",
+        "reviewed_at": "2026-09-24"
+      },
+      "difficulty": "medium",
+      "tags": [
+        "parche-p1-2026-09-24",
+        "pendiente-revision"
+      ],
+      "is_active": false,
+      "created_at": "2026-09-24",
+      "updated_at": "2026-09-24"
+    },
+    {
+      "id": "AI-GSI-P1-B2-T11-001",
+      "opposition_id": "OPP-GSI",
+      "origin": "ai",
+      "official_status": "not_official",
+      "validation_status": "pending_review",
+      "block_id": "B2",
+      "topic_id": "B2-T11",
+      "subtopic": "Common Criteria y objeto evaluado",
+      "exam": null,
+      "statement": "Se pretende evaluar las propiedades de seguridad de un producto TI concreto, no certificar la gestión de seguridad de una organización. ¿Qué marco y objeto corresponden?",
+      "options": [
+        {
+          "id": "A",
+          "text": "ISO/IEC 27001 y SGSI."
+        },
+        {
+          "id": "B",
+          "text": "ISO 19011 y sistema de gestión auditado."
+        },
+        {
+          "id": "C",
+          "text": "Common Criteria / ISO/IEC 15408 y TOE."
+        },
+        {
+          "id": "D",
+          "text": "ISO/IEC 27002 y catálogo de controles."
+        }
+      ],
+      "correct_option": "C",
+      "feedback": {
+        "correct": "Common Criteria, serie ISO/IEC 15408, evalúa propiedades de seguridad de un TOE (Target of Evaluation). ISO/IEC 27001 se refiere a un SGSI certificable.",
+        "incorrect": "La evaluación de un producto/TOE corresponde a Common Criteria. ISO/IEC 27001 certifica un sistema de gestión; ISO 19011 orienta auditorías e ISO/IEC 27002 guía controles."
+      },
+      "source": {
+        "type": "generated",
+        "source_id": "SRC-GSI-B2-V21",
+        "document_id": "DOC-GSI-B2-V21",
+        "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+        "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+        "locator": "II.11 / 8.1 Common Criteria / ISO/IEC 15408",
+        "version": "V2.1 / parche P1",
+        "reviewed_at": "2026-09-24",
+        "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+        "evidence": "Common Criteria es el marco internacional de evaluación de propiedades de seguridad de productos TI, normalizado en la serie ISO/IEC 15408. La edición vigente de la Parte 1 es ISO/IEC 15408-1:2026. El objeto evaluado se denomina TOE (Target of Evaluation).",
+        "evidence_sha256": "5c31d9244d3a16cb2d67bed760cbad13c7304e6c3a589479c9d13ad382528497",
+        "record_sha256": "bd06257f4bd2218010c9e9922803718cd897d12670c0823169cfc059a53a0a18",
+        "review_id": null,
+        "review_method": "Borrador IA P1 pendiente de revisión humana; no oficial.",
+        "p1_manifest": "content/enhancements/b2-visuals.json"
+      },
+      "provenance": {
+        "type": "generated",
+        "source_id": "SRC-GSI-B2-V21",
+        "document_id": "DOC-GSI-B2-V21",
+        "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+        "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+        "locator": "II.11 / 8.1 Common Criteria / ISO/IEC 15408",
+        "version": "V2.1 / parche P1",
+        "reviewed_at": "2026-09-24"
+      },
+      "difficulty": "medium",
+      "tags": [
+        "parche-p1-2026-09-24",
+        "pendiente-revision"
+      ],
+      "is_active": false,
+      "created_at": "2026-09-24",
+      "updated_at": "2026-09-24"
+    },
+    {
+      "id": "AI-GSI-P1-B2-T11-002",
+      "opposition_id": "OPP-GSI",
+      "origin": "ai",
+      "official_status": "not_official",
+      "validation_status": "pending_review",
+      "block_id": "B2",
+      "topic_id": "B2-T11",
+      "subtopic": "PP, ST y EAL",
+      "exam": null,
+      "statement": "En Common Criteria, ¿qué opción relaciona correctamente PP, ST y los niveles clásicos EAL1–EAL7?",
+      "options": [
+        {
+          "id": "A",
+          "text": "PP especifica el TOE; ST es un perfil reutilizable; EAL expresa niveles de garantía."
+        },
+        {
+          "id": "B",
+          "text": "PP expresa niveles de garantía; ST es un perfil reutilizable; EAL especifica el TOE."
+        },
+        {
+          "id": "C",
+          "text": "PP es un perfil reutilizable; ST expresa niveles de garantía; EAL especifica el TOE."
+        },
+        {
+          "id": "D",
+          "text": "PP es un perfil reutilizable; ST especifica el TOE; EAL expresa niveles de garantía."
+        }
+      ],
+      "correct_option": "D",
+      "feedback": {
+        "correct": "PP reúne requisitos reutilizables para una categoría o necesidad; ST concreta la seguridad del TOE y EAL1–EAL7 son niveles clásicos de garantía de evaluación.",
+        "incorrect": "PP no es la especificación particular del TOE: esa función corresponde al ST. Los EAL1–EAL7 indican niveles clásicos de garantía, no perfiles ni objetivos evaluados."
+      },
+      "source": {
+        "type": "generated",
+        "source_id": "SRC-GSI-B2-V21",
+        "document_id": "DOC-GSI-B2-V21",
+        "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+        "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+        "locator": "II.11 / 8.1 Common Criteria / ISO/IEC 15408",
+        "version": "V2.1 / parche P1",
+        "reviewed_at": "2026-09-24",
+        "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+        "evidence": "Términos clásicos que conviene reconocer: PP (Protection Profile), conjunto reutilizable de requisitos de seguridad para una categoría o necesidad; ST (Security Target), especificación de seguridad concreta del TOE; y EAL (Evaluation Assurance Level), niveles clásicos de garantía de evaluación EAL1–EAL7. No confundas Common Criteria con ISO/IEC 27001: el primero evalúa propiedades de seguridad de productos/TOE; ISO/IEC 27001 certifica un sistema de gestión de seguridad de la información.",
+        "evidence_sha256": "eaf2ec59a192c16a30d3faa4d427b3c2e72a40f49cc71dcd525f1510d40c58e0",
+        "record_sha256": "af1a9a250fbe7d7f6451230e8ef944503f1d5d046fe2070ff37774a23411ad9b",
+        "review_id": null,
+        "review_method": "Borrador IA P1 pendiente de revisión humana; no oficial.",
+        "p1_manifest": "content/enhancements/b2-visuals.json"
+      },
+      "provenance": {
+        "type": "generated",
+        "source_id": "SRC-GSI-B2-V21",
+        "document_id": "DOC-GSI-B2-V21",
+        "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+        "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+        "locator": "II.11 / 8.1 Common Criteria / ISO/IEC 15408",
+        "version": "V2.1 / parche P1",
+        "reviewed_at": "2026-09-24"
+      },
+      "difficulty": "medium",
+      "tags": [
+        "parche-p1-2026-09-24",
+        "pendiente-revision"
+      ],
+      "is_active": false,
+      "created_at": "2026-09-24",
+      "updated_at": "2026-09-24"
+    },
+    {
+      "id": "AI-GSI-P1-B3-T12-001",
+      "opposition_id": "OPP-GSI",
+      "origin": "ai",
+      "official_status": "not_official",
+      "validation_status": "pending_review",
+      "block_id": "B3",
+      "topic_id": "B3-T12",
+      "subtopic": "Seguridad a nivel de mensaje SOAP",
+      "exam": null,
+      "statement": "Una integración SOAP debe transportar tokens y aplicar integridad al propio mensaje, incluso si atraviesa intermediarios. ¿Qué especificación atiende esa función?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Web Services Description Language (WSDL)."
+        },
+        {
+          "id": "B",
+          "text": "Web Services Security (WS-Security)."
+        },
+        {
+          "id": "C",
+          "text": "Message Transmission Optimization Mechanism (MTOM)."
+        },
+        {
+          "id": "D",
+          "text": "Universal Description, Discovery and Integration (UDDI)."
+        }
+      ],
+      "correct_option": "B",
+      "feedback": {
+        "correct": "WS-Security añade mecanismos de seguridad a nivel de mensaje SOAP, como tokens e integridad. TLS protege el transporte, pero no equivale a esa protección del mensaje.",
+        "incorrect": "WS-Security es la pieza de seguridad del mensaje SOAP. WSDL describe contratos, UDDI registra servicios y MTOM optimiza contenido binario."
+      },
+      "source": {
+        "type": "generated",
+        "source_id": "SRC-GSI-B3-V21",
+        "document_id": "DOC-GSI-B3-V21",
+        "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+        "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+        "locator": "III.12 / 8.9 SOAP clásico",
+        "version": "V2.1 / parche P1",
+        "reviewed_at": "2026-09-24",
+        "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+        "evidence": "En el ecosistema SOAP/WS-* conviene reconocer tres piezas clásicas. WS-Security añade extensiones de seguridad a mensajes SOAP para transportar tokens y aportar integridad y confidencialidad a nivel de mensaje; no equivale a TLS. MTOM (Message Transmission Optimization Mechanism) optimiza la transmisión de contenido binario en mensajes SOAP y su implementación se apoya en XOP (XML-binary Optimized Packaging), evitando tratar el binario únicamente como texto base64 en el cable mientras se preserva el modelo XML del mensaje.",
+        "evidence_sha256": "d6bdb5158f27598f9707af311251c6f0688b46393e8492ff0a7dc35530fdc7e7",
+        "record_sha256": "9263fc47db3529ba556176e234f5920bee917fae3dffb67d4512511577c50109",
+        "review_id": null,
+        "review_method": "Borrador IA P1 pendiente de revisión humana; no oficial.",
+        "p1_manifest": "content/enhancements/b3-visuals.json"
+      },
+      "provenance": {
+        "type": "generated",
+        "source_id": "SRC-GSI-B3-V21",
+        "document_id": "DOC-GSI-B3-V21",
+        "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+        "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+        "locator": "III.12 / 8.9 SOAP clásico",
+        "version": "V2.1 / parche P1",
+        "reviewed_at": "2026-09-24"
+      },
+      "difficulty": "medium",
+      "tags": [
+        "parche-p1-2026-09-24",
+        "pendiente-revision"
+      ],
+      "is_active": false,
+      "created_at": "2026-09-24",
+      "updated_at": "2026-09-24"
+    },
+    {
+      "id": "AI-GSI-P1-B3-T12-002",
+      "opposition_id": "OPP-GSI",
+      "origin": "ai",
+      "official_status": "not_official",
+      "validation_status": "pending_review",
+      "block_id": "B3",
+      "topic_id": "B3-T12",
+      "subtopic": "Contenido binario en SOAP/XML",
+      "exam": null,
+      "statement": "Un servicio SOAP debe enviar contenido binario sin tratarlo únicamente como texto base64 en el transporte. ¿Qué relación entre tecnologías es correcta?",
+      "options": [
+        {
+          "id": "A",
+          "text": "MTOM optimiza la transmisión y se apoya en XOP para el empaquetado XML-binario."
+        },
+        {
+          "id": "B",
+          "text": "MTOM describe el contrato y XOP registra el servicio para su descubrimiento."
+        },
+        {
+          "id": "C",
+          "text": "MTOM firma el mensaje y XOP transporta los tokens de seguridad."
+        },
+        {
+          "id": "D",
+          "text": "MTOM vincula clases Java con XML y XOP valida sus esquemas."
+        }
+      ],
+      "correct_option": "A",
+      "feedback": {
+        "correct": "MTOM optimiza la transmisión de contenido binario en SOAP; su implementación se apoya en XOP para el empaquetado XML-binario, preservando el modelo XML.",
+        "incorrect": "MTOM/XOP se ocupan del contenido binario SOAP/XML, no de contratos, registro, firma ni vinculación de objetos Java."
+      },
+      "source": {
+        "type": "generated",
+        "source_id": "SRC-GSI-B3-V21",
+        "document_id": "DOC-GSI-B3-V21",
+        "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+        "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+        "locator": "III.12 / 8.9 SOAP clásico",
+        "version": "V2.1 / parche P1",
+        "reviewed_at": "2026-09-24",
+        "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+        "evidence": "En el ecosistema SOAP/WS-* conviene reconocer tres piezas clásicas. WS-Security añade extensiones de seguridad a mensajes SOAP para transportar tokens y aportar integridad y confidencialidad a nivel de mensaje; no equivale a TLS. MTOM (Message Transmission Optimization Mechanism) optimiza la transmisión de contenido binario en mensajes SOAP y su implementación se apoya en XOP (XML-binary Optimized Packaging), evitando tratar el binario únicamente como texto base64 en el cable mientras se preserva el modelo XML del mensaje.",
+        "evidence_sha256": "d6bdb5158f27598f9707af311251c6f0688b46393e8492ff0a7dc35530fdc7e7",
+        "record_sha256": "572277e90764bacb8f873812f286e0e5efae0b166e04605c765425040bddf11f",
+        "review_id": null,
+        "review_method": "Borrador IA P1 pendiente de revisión humana; no oficial.",
+        "p1_manifest": "content/enhancements/b3-visuals.json"
+      },
+      "provenance": {
+        "type": "generated",
+        "source_id": "SRC-GSI-B3-V21",
+        "document_id": "DOC-GSI-B3-V21",
+        "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+        "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+        "locator": "III.12 / 8.9 SOAP clásico",
+        "version": "V2.1 / parche P1",
+        "reviewed_at": "2026-09-24"
+      },
+      "difficulty": "medium",
+      "tags": [
+        "parche-p1-2026-09-24",
+        "pendiente-revision"
+      ],
+      "is_active": false,
+      "created_at": "2026-09-24",
+      "updated_at": "2026-09-24"
+    },
+    {
+      "id": "AI-GSI-P1-B3-T12-003",
+      "opposition_id": "OPP-GSI",
+      "origin": "ai",
+      "official_status": "not_official",
+      "validation_status": "pending_review",
+      "block_id": "B3",
+      "topic_id": "B3-T12",
+      "subtopic": "XML Binding en Java",
+      "exam": null,
+      "statement": "Una aplicación Java necesita vincular documentos XML con clases y convertir entre ambos modelos. ¿Qué tecnología corresponde a esa función?",
+      "options": [
+        {
+          "id": "A",
+          "text": "XML-binary Optimized Packaging (XOP)."
+        },
+        {
+          "id": "B",
+          "text": "Web Services Description Language (WSDL)."
+        },
+        {
+          "id": "C",
+          "text": "Jakarta XML Binding (JAXB)."
+        },
+        {
+          "id": "D",
+          "text": "Message Transmission Optimization Mechanism (MTOM)."
+        }
+      ],
+      "correct_option": "C",
+      "feedback": {
+        "correct": "XML Binding relaciona documentos o esquemas XML con objetos; JAXB es el nombre histórico en Java y Jakarta XML Binding el actual.",
+        "incorrect": "JAXB/Jakarta XML Binding realiza la vinculación XML–objetos. XOP y MTOM tratan contenido binario; WSDL describe interfaces de servicios."
+      },
+      "source": {
+        "type": "generated",
+        "source_id": "SRC-GSI-B3-V21",
+        "document_id": "DOC-GSI-B3-V21",
+        "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+        "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+        "locator": "III.12 / 8.9 SOAP clásico",
+        "version": "V2.1 / parche P1",
+        "reviewed_at": "2026-09-24",
+        "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+        "evidence": "XML Binding vincula documentos/esquemas XML con un modelo de objetos para realizar marshalling y unmarshalling. En el ecosistema Java, JAXB es el nombre histórico y todavía habitual; la especificación actual se denomina Jakarta XML Binding. Para examen interesa reconocer función y relación, no memorizar APIs concretas.",
+        "evidence_sha256": "fa9f36d3be587b865ba33c93618b9b0ee28fa18023d6dcf4bcdb62dd76777a19",
+        "record_sha256": "a0204b93452727440ac99d5404f5cb9a6626274ee63d587465635e31bb0a3584",
+        "review_id": null,
+        "review_method": "Borrador IA P1 pendiente de revisión humana; no oficial.",
+        "p1_manifest": "content/enhancements/b3-visuals.json"
+      },
+      "provenance": {
+        "type": "generated",
+        "source_id": "SRC-GSI-B3-V21",
+        "document_id": "DOC-GSI-B3-V21",
+        "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+        "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+        "locator": "III.12 / 8.9 SOAP clásico",
+        "version": "V2.1 / parche P1",
+        "reviewed_at": "2026-09-24"
+      },
+      "difficulty": "medium",
+      "tags": [
+        "parche-p1-2026-09-24",
+        "pendiente-revision"
+      ],
+      "is_active": false,
+      "created_at": "2026-09-24",
+      "updated_at": "2026-09-24"
+    },
+    {
+      "id": "AI-GSI-P1-B4-T09-001",
+      "opposition_id": "OPP-GSI",
+      "origin": "ai",
+      "official_status": "not_official",
+      "validation_status": "pending_review",
+      "block_id": "B4",
+      "topic_id": "B4-T09",
+      "subtopic": "SMIv2, ASN.1, MIB y OID",
+      "exam": null,
+      "statement": "En el modelo clásico de gestión SNMP, ¿qué relación entre SMIv2 y ASN.1 es correcta?",
+      "options": [
+        {
+          "id": "A",
+          "text": "SMIv2 es la notación general y ASN.1 fija las reglas particulares de SNMP."
+        },
+        {
+          "id": "B",
+          "text": "SMIv2 fija reglas para módulos MIB y ASN.1 aporta la notación formal adaptada."
+        },
+        {
+          "id": "C",
+          "text": "SMIv2 asigna cada OID y ASN.1 almacena los valores actuales de la MIB."
+        },
+        {
+          "id": "D",
+          "text": "SMIv2 organiza los valores medidos y ASN.1 identifica los objetos gestionados."
+        }
+      ],
+      "correct_option": "B",
+      "feedback": {
+        "correct": "SMIv2 establece reglas para definir módulos y objetos de gestión mediante un subconjunto adaptado de ASN.1. La MIB organiza objetos y cada OID los identifica.",
+        "incorrect": "SMIv2 establece reglas de definición; ASN.1 es la notación formal usada. La MIB organiza la información y el OID identifica objetos: no son funciones de ASN.1."
+      },
+      "source": {
+        "type": "generated",
+        "source_id": "SRC-GSI-B4-V21",
+        "document_id": "DOC-GSI-B4-V21",
+        "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+        "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+        "locator": "IV.09 / 4.1 Modelo clásico de gestión SNMP",
+        "version": "V2.1 / parche P1",
+        "reviewed_at": "2026-09-24",
+        "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+        "evidence": "SMI (Structure of Management Information) define cómo se describen los módulos, objetos y notificaciones de gestión. En SMIv2, los módulos MIB se escriben con un subconjunto adaptado de ASN.1 (Abstract Syntax Notation One), notación general para describir tipos y estructuras de datos. Regla de test: MIB organiza la información gestionada; OID identifica objetos; SMI fija las reglas de definición; ASN.1 aporta la notación usada por esas definiciones.",
+        "evidence_sha256": "dbcb7f5f45a1e26e4a75553006f0f6776f8bdb2053b0699430636f2e3b5676b8",
+        "record_sha256": "8d589bcedd702c59c5cc29edacc3f4c7713cbe57b126d30d8912ebe5125eb2cf",
+        "review_id": null,
+        "review_method": "Borrador IA P1 pendiente de revisión humana; no oficial.",
+        "p1_manifest": "content/enhancements/b4-visuals.json"
+      },
+      "provenance": {
+        "type": "generated",
+        "source_id": "SRC-GSI-B4-V21",
+        "document_id": "DOC-GSI-B4-V21",
+        "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+        "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+        "locator": "IV.09 / 4.1 Modelo clásico de gestión SNMP",
+        "version": "V2.1 / parche P1",
+        "reviewed_at": "2026-09-24"
+      },
+      "difficulty": "medium",
+      "tags": [
+        "parche-p1-2026-09-24",
+        "pendiente-revision"
+      ],
+      "is_active": false,
+      "created_at": "2026-09-24",
+      "updated_at": "2026-09-24"
+    },
+    {
+      "id": "AI-GSI-P1-B4-T09-002",
+      "opposition_id": "OPP-GSI",
+      "origin": "ai",
+      "official_status": "not_official",
+      "validation_status": "pending_review",
+      "block_id": "B4",
+      "topic_id": "B4-T09",
+      "subtopic": "RMON en la gestión SNMP",
+      "exam": null,
+      "statement": "Una sonda aporta a un gestor SNMP estadísticas históricas, alarmas y datos sobre hosts y segmentos mediante MIB específicas. ¿Qué tecnología clásica se emplea?",
+      "options": [
+        {
+          "id": "A",
+          "text": "NetFlow/IPFIX."
+        },
+        {
+          "id": "B",
+          "text": "SNMPv3."
+        },
+        {
+          "id": "C",
+          "text": "Streaming telemetry."
+        },
+        {
+          "id": "D",
+          "text": "RMON."
+        }
+      ],
+      "correct_option": "D",
+      "feedback": {
+        "correct": "RMON (Remote Network Monitoring) aporta MIB clásicas de monitorización remota con estadísticas, históricos y alarmas. Complementa, no sustituye, flujos y telemetría.",
+        "incorrect": "RMON es la extensión clásica basada en MIB para sondas y monitorización remota SNMP; SNMPv3 trata seguridad, mientras flujos y telemetría cubren otras necesidades."
+      },
+      "source": {
+        "type": "generated",
+        "source_id": "SRC-GSI-B4-V21",
+        "document_id": "DOC-GSI-B4-V21",
+        "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+        "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+        "locator": "IV.09 / 4.1 Modelo clásico de gestión SNMP",
+        "version": "V2.1 / parche P1",
+        "reviewed_at": "2026-09-24",
+        "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+        "evidence": "RMON (Remote Network Monitoring) es una MIB clásica para monitorización remota mediante sondas/monitores. Define objetos y grupos para estadísticas, históricos, alarmas, hosts, matrices, filtros, captura y eventos. Debe reconocerse como parte del modelo clásico de gestión SNMP, no como sustituto de NetFlow/IPFIX o de la telemetría moderna.",
+        "evidence_sha256": "7f9f8737ba4aa5f82d27ed6f7dac05e63b86e9c3c7bac24cefe70b329230878c",
+        "record_sha256": "f3b0cefa3957fa8de64ddb4042d6a4e8f3b99956686252d089d9b7134e8f0f69",
+        "review_id": null,
+        "review_method": "Borrador IA P1 pendiente de revisión humana; no oficial.",
+        "p1_manifest": "content/enhancements/b4-visuals.json"
+      },
+      "provenance": {
+        "type": "generated",
+        "source_id": "SRC-GSI-B4-V21",
+        "document_id": "DOC-GSI-B4-V21",
+        "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+        "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+        "locator": "IV.09 / 4.1 Modelo clásico de gestión SNMP",
+        "version": "V2.1 / parche P1",
+        "reviewed_at": "2026-09-24"
+      },
+      "difficulty": "medium",
+      "tags": [
+        "parche-p1-2026-09-24",
+        "pendiente-revision"
+      ],
+      "is_active": false,
+      "created_at": "2026-09-24",
+      "updated_at": "2026-09-24"
     }
   ]
 }
