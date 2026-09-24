@@ -126,6 +126,21 @@
         "fromMarkdown": "**Base A1:** 065 (+058). El A1 065 es extenso pero de 2023: se conservan fundamentos y se actualizan prácticas de seguridad/arquitectura.",
         "to": "Los fundamentos de navegador, HTTP y servidor se combinan con prácticas actuales de arquitectura responsive, APIs, identidad, seguridad, rendimiento e internacionalización."
       }],
+      "supplements": [
+        {
+          "afterHeading": "REST: cliente/servidor, sin estado, cacheable, interfaz uniforme y sistema por capas.",
+          "title": "8.9 SOAP clásico: WS-Security, MTOM/XOP y XML Binding",
+          "paragraphs": [
+            "En el ecosistema SOAP/WS-* conviene reconocer tres piezas clásicas. WS-Security añade extensiones de seguridad a mensajes SOAP para transportar tokens y aportar integridad y confidencialidad a nivel de mensaje; no equivale a TLS. MTOM (Message Transmission Optimization Mechanism) optimiza la transmisión de contenido binario en mensajes SOAP y su implementación se apoya en XOP (XML-binary Optimized Packaging), evitando tratar el binario únicamente como texto base64 en el cable mientras se preserva el modelo XML del mensaje.",
+            "XML Binding vincula documentos/esquemas XML con un modelo de objetos para realizar marshalling y unmarshalling. En el ecosistema Java, JAXB es el nombre histórico y todavía habitual; la especificación actual se denomina Jakarta XML Binding. Para examen interesa reconocer función y relación, no memorizar APIs concretas."
+          ],
+          "canonicalSource": {
+            "documentId": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+            "locator": "III.12 / 8.9 SOAP clásico",
+            "reviewedAt": "2026-09-24"
+          }
+        }
+      ],
       "visuals": [{"afterHeading":"8.2 Ciclo HTTP y estado","src":"assets/diagrams/b3/b3-t12-web-segura.svg","title":"Petición web, estado y controles de seguridad","alt":"Flujo desde navegador y CDN o reverse proxy hasta API, servicios y datos, mostrando TLS, cookies o tokens, CORS, CSP, control de acceso, validación, caché, observabilidad e internacionalización.","description":"Coloca cada control en la capa donde actúa y muestra que HTTP no mantiene sesión por sí mismo.","takeaway":"TLS protege el transporte; CORS no autentica, CSP no autoriza y la validación de seguridad siempre se repite en servidor."}]
     },
     "B3-T13": {

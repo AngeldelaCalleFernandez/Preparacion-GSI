@@ -71,6 +71,21 @@
         {"from":"Datos y trampas de test","to":"9. Datos y trampas de test","namedStyleType":"HEADING_2"},
         {"from":"Aplicación al supuesto práctico","to":"10. Aplicación al supuesto práctico","namedStyleType":"HEADING_2"}
       ],
+      "supplements": [
+        {
+          "afterHeading": "4. SNMP: arquitectura",
+          "title": "4.1 Modelo clásico de gestión SNMP: SMI, ASN.1 y RMON",
+          "paragraphs": [
+            "SMI (Structure of Management Information) define cómo se describen los módulos, objetos y notificaciones de gestión. En SMIv2, los módulos MIB se escriben con un subconjunto adaptado de ASN.1 (Abstract Syntax Notation One), notación general para describir tipos y estructuras de datos. Regla de test: MIB organiza la información gestionada; OID identifica objetos; SMI fija las reglas de definición; ASN.1 aporta la notación usada por esas definiciones.",
+            "RMON (Remote Network Monitoring) es una MIB clásica para monitorización remota mediante sondas/monitores. Define objetos y grupos para estadísticas, históricos, alarmas, hosts, matrices, filtros, captura y eventos. Debe reconocerse como parte del modelo clásico de gestión SNMP, no como sustituto de NetFlow/IPFIX o de la telemetría moderna."
+          ],
+          "canonicalSource": {
+            "documentId": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+            "locator": "IV.09 / 4.1 Modelo clásico de gestión SNMP",
+            "reviewedAt": "2026-09-24"
+          }
+        }
+      ],
       "visuals": [{"afterHeading":"4. SNMP: arquitectura","src":"assets/diagrams/b4/b4-t09-gestion-red.svg","title":"Gestión de red con SNMP y telemetría complementaria","alt":"Plataforma NMS que consulta agentes SNMP mediante OID definidos en MIB y recibe traps o informs, junto con syslog, NetFlow o IPFIX y streaming telemetry hacia correlación, alertas, tickets y diagnóstico.","description":"Separa consulta, notificación, eventos, flujos y métricas de alta frecuencia.","takeaway":"MIB describe y OID identifica; SNMPv3 protege mejor la gestión, mientras syslog y flows responden preguntas diferentes."}]
     },
     "B4-T10": {
