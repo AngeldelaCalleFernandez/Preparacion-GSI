@@ -17,7 +17,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 from build_gsi_content import markdown_replacement_pair, markdown_topics
-from build_gsi_authored_questions import build_p1_questions, load_length_reviews
+from build_gsi_authored_questions import build_p1_questions, build_p2_questions, load_length_reviews
 
 ROOT=Path(__file__).resolve().parents[1]
 from datetime import date
@@ -142,8 +142,11 @@ def main():
                 counts[topic]=counts.get(topic,0)+1;drafts[f'AI-GSI-{topic}-{counts[topic]:03}']=(topic,line)
     length_reviews=load_length_reviews()
     p1_questions={q['id']:q for q in build_p1_questions(sources)}
+    p2_questions={q['id']:q for q in build_p2_questions(sources)}
     check({q['id'] for q in questions if q['id'].startswith('AI-GSI-P1-')}==set(p1_questions),
           'Borradores P1 completos y limitados a los cuatro temas')
+    check({q['id'] for q in questions if q['id'].startswith('AI-GSI-P2-')}==set(p2_questions),
+          'Borradores P2 completos y limitados a los once temas')
     for q in questions:
         label=q['id'];check(q['opposition_id']=='OPP-GSI' and q['topic_id'] in topics and q['block_id']==q['topic_id'][:2],label+': identidad GSI y tema válidos')
         check(len(q['options'])==4 and len({o['id'] for o in q['options']})==4 and len({norm(o['text']) for o in q['options']})==4 and sum(o['id']==q['correct_option'] for o in q['options'])==1,label+': cuatro opciones distintas y una correcta')
@@ -167,6 +170,14 @@ def main():
                       and q['provenance']['type']=='generated'
                       and q['source']['review_manifest']=='data/gsi-p1-editorial-reviews.json',
                       label+': P1 activa solo con revisión humana de esta versión y origen IA explícito')
+                continue
+            if label in p2_questions:
+                check(q==p2_questions[label],label+': borrador P2 y evidencia canónica sincronizados')
+                check(q['validation_status']=='validated' and q['is_active']
+                      and q['source']['review_id']==label and q['official_status']=='not_official'
+                      and q['provenance']['type']=='generated'
+                      and q['source']['review_manifest']=='data/gsi-p2-editorial-reviews.json',
+                      label+': P2 activa solo con revisión humana de esta versión y origen IA explícito')
                 continue
             topic,line=drafts[label];fields=line.split('|');section=fields[0]
             expected_options=fields[2:6].copy()

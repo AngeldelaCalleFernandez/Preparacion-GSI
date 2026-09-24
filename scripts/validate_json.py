@@ -28,6 +28,7 @@ SCHEMAS = {
     "data/gsi-document-register.json": "schemas/gsi-document-register.schema.json",
     "data/gsi-editorial-reviews.json": "schemas/gsi-editorial-reviews.schema.json",
     "data/gsi-p1-editorial-reviews.json": "schemas/gsi-editorial-reviews.schema.json",
+    "data/gsi-p2-editorial-reviews.json": "schemas/gsi-editorial-reviews.schema.json",
     "data/gsi-practice.json": "schemas/gsi-practice.schema.json",
     "data/topic-content.json": "schemas/topic-content.schema.json",
     "data/syllabi-catalog.json": "schemas/syllabi-catalog.schema.json",

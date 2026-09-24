@@ -22,6 +22,12 @@ RIGHTS = {
 }
 P1_DRAFT = 'content/question-drafts/p1-questions-2026-09-24.json'
 P1_TOPICS = {'B2-T02', 'B2-T11', 'B3-T12', 'B4-T09'}
+P2_DRAFT = 'content/question-drafts/p2-questions-2026-09-24.json'
+P2_COUNTS = {
+    'B2-T01': 1, 'B2-T13': 2, 'B2-T16': 1, 'B3-T01': 1,
+    'B3-T02': 2, 'B3-T09': 1, 'B3-T13': 1, 'B3-T14': 2,
+    'B4-T05': 1, 'B4-T07': 2, 'B4-T10': 2,
+}
 
 def digest(value):
     return hashlib.sha256(value.encode('utf-8')).hexdigest()
@@ -125,6 +131,84 @@ def build_p1_questions(sources):
         raise ValueError(f'{P1_DRAFT}: incomplete or out-of-scope P1 question set')
     return questions
 
+def build_p2_questions(sources):
+    """Compile the 16 P2 drafts only when the human review matches their exact versions."""
+    drafts = load(P2_DRAFT)
+    if drafts.get('version') != 1 or drafts.get('authored_at') != '2026-09-24':
+        raise ValueError(f'{P2_DRAFT}: invalid P2 draft header')
+    review_data = load('data/gsi-p2-editorial-reviews.json')
+    reviews = {review['id']: review for review in review_data['reviews']}
+    confirmation = review_data['confirmation']
+    fingerprint = digest('\n'.join(
+        f"{review['id']}:{review['record_sha256']}:{review['evidence_sha256']}"
+        for review in review_data['reviews']))
+    if (review_data.get('reviewer_type') != 'human' or review_data.get('status') != 'reviewed'
+            or len(reviews) != len(review_data['reviews'])
+            or confirmation['record_count'] != len(reviews)
+            or confirmation['records_sha256'] != fingerprint):
+        raise ValueError('P2 human review manifest has invalid batch confirmation')
+    questions, seen = [], set()
+    for draft in drafts.get('questions', []):
+        topic, qid = draft['topic_id'], draft['id']
+        if topic not in P2_COUNTS or not re.fullmatch(r'AI-GSI-P2-' + topic + r'-\d{3}', qid) or qid in seen:
+            raise ValueError(f'{P2_DRAFT}: invalid or duplicate P2 ID {qid}')
+        seen.add(qid)
+        options = draft['options']
+        if (len(options) != 4 or len({option.casefold() for option in options}) != 4
+                or draft['correct_option'] not in 'ABCD'):
+            raise ValueError(f'{qid}: invalid P2 options or answer')
+        if draft.get('origin') != 'ai' or draft.get('official_status') != 'not_official':
+            raise ValueError(f'{qid}: P2 origin must remain AI and not official')
+        manifest = f'content/enhancements/{topic[:2].lower()}-visuals.json'
+        supplements = load(manifest)['topics'][topic].get('supplements', [])
+        titles = [title.strip() for title in draft['source_supplement_title'].split(';')]
+        matches = [item for title in titles for item in supplements if item['title'] == title]
+        if len(matches) != len(titles) or len(titles) != len(set(titles)):
+            raise ValueError(f'{qid}: P2 supplement missing or ambiguous')
+        index = draft['evidence_paragraph']
+        if not isinstance(index, int) or any(not 0 <= index < len(item['paragraphs']) for item in matches):
+            raise ValueError(f'{qid}: invalid P2 evidence paragraph')
+        evidence = '\n\n'.join(item['paragraphs'][index] for item in matches)
+        record_hash = digest(json.dumps(draft, ensure_ascii=False, sort_keys=True))
+        evidence_hash = digest(evidence)
+        review = reviews.get(qid, {})
+        accepted = (review.get('decision') == 'accepted'
+                    and review.get('record_sha256') == record_hash
+                    and review.get('evidence_sha256') == evidence_hash)
+        if not accepted or draft.get('validation_status') != 'validated' or draft.get('is_active') is not True:
+            raise ValueError(f'{qid}: P2 activation requires a matching human review')
+        canonical_sources = [item['canonicalSource'] for item in matches]
+        source = sources[f'SRC-GSI-{topic[:2]}-V21']
+        if any(item['documentId'] != source['drive_id'] or item['reviewedAt'] != drafts['authored_at']
+               for item in canonical_sources):
+            raise ValueError(f'{qid}: P2 Drive provenance does not match registered source')
+        locator = ' | '.join(dict.fromkeys(item['locator'] for item in canonical_sources))
+        provenance = {'type': 'generated', 'source_id': source['id'],
+                      'document_id': source['documents'][0]['id'], 'drive_id': source['drive_id'],
+                      'url': source['url'], 'locator': locator,
+                      'version': source['version'] + ' / parche P2',
+                      'reviewed_at': drafts['authored_at']}
+        questions.append({
+            'id': qid, 'opposition_id': 'OPP-GSI', 'origin': 'ai',
+            'official_status': 'not_official', 'validation_status': 'validated',
+            'block_id': topic[:2], 'topic_id': topic, 'subtopic': draft['subtopic'],
+            'exam': None, 'statement': draft['statement'],
+            'options': [{'id': key, 'text': value} for key, value in zip('ABCD', options)],
+            'correct_option': draft['correct_option'], 'feedback': draft['feedback'],
+            'source': {**provenance, 'title': source['title'], 'evidence': evidence,
+                       'evidence_sha256': evidence_hash, 'record_sha256': record_hash,
+                       'review_id': qid, 'review_method': review['method'],
+                       'review_manifest': 'data/gsi-p2-editorial-reviews.json',
+                       'p2_manifest': manifest},
+            'provenance': provenance, 'difficulty': 'medium',
+            'tags': ['parche-p2-2026-09-24'], 'is_active': True,
+            'created_at': drafts['authored_at'], 'updated_at': review_data['reviewed_at'],
+        })
+    if ({topic: sum(q['topic_id'] == topic for q in questions) for topic in P2_COUNTS} != P2_COUNTS
+            or set(reviews) != seen or set(review_data['sample_ids']) != seen):
+        raise ValueError(f'{P2_DRAFT}: incomplete or out-of-scope P2 question set')
+    return questions
+
 def main():
     sources = {s['id']: s for s in load('data/sources.json')['sources']}
     review_path = ROOT / 'data/gsi-editorial-reviews.json'
@@ -218,9 +302,11 @@ def main():
     if seen_length_reviews != set(length_reviews):
         raise ValueError(f'AI length review IDs absent from drafts: {sorted(set(length_reviews) - seen_length_reviews)}')
     patch_questions = build_p1_questions(sources)
-    if {q['id'] for q in questions} & {q['id'] for q in patch_questions}:
-        raise ValueError('P1 question IDs collide with previously reviewed AI questions')
-    questions.extend(patch_questions)
+    p2_questions = build_p2_questions(sources)
+    patch_ids = [q['id'] for q in patch_questions + p2_questions]
+    if len(patch_ids) != len(set(patch_ids)) or {q['id'] for q in questions} & set(patch_ids):
+        raise ValueError('Patch question IDs collide with previously reviewed AI questions')
+    questions.extend(patch_questions + p2_questions)
     existing = {q['id']: q for q in load('data/questions-ai.json')['questions']}
     for question in questions:
         previous = existing.get(question['id'])
@@ -233,11 +319,17 @@ def main():
                             'record_sha256': q['source']['record_sha256'],
                             'evidence_sha256': q['source']['evidence_sha256'], 'accepted': q['is_active']}
                            for q in patch_questions)
+    evidence_report.extend({'id': q['id'], 'topic': q['topic_id'], 'section': 'P2',
+                            'statement': q['statement'],
+                            'correct': next(o['text'] for o in q['options'] if o['id'] == q['correct_option']),
+                            'record_sha256': q['source']['record_sha256'],
+                            'evidence_sha256': q['source']['evidence_sha256'], 'accepted': q['is_active']}
+                           for q in p2_questions)
     output = {'metadata': {'dataset_type': 'ai', 'schema_version': '1.0.0', 'data_version': '2.1.1',
                            'updated_at': UPDATED, 'rights': RIGHTS}, 'questions': questions}
     (ROOT / 'data/questions-ai.json').write_text(json.dumps(output, ensure_ascii=False, indent=2) + '\n', 'utf-8')
     (ROOT / 'logs/gsi-authored-evidence.json').write_text(json.dumps(evidence_report, ensure_ascii=False, indent=2) + '\n', 'utf-8')
-    print(f'{len(questions)} authored questions: {sum(q["is_active"] for q in questions)} active with matching human reviews; {sum(q["is_active"] for q in patch_questions)}/{len(patch_questions)} P1 drafts accepted; {len(length_reviews)} separately traced assistant editorial decisions.')
+    print(f'{len(questions)} authored questions: {sum(q["is_active"] for q in questions)} active with matching human reviews; {sum(q["is_active"] for q in patch_questions)}/{len(patch_questions)} P1 and {sum(q["is_active"] for q in p2_questions)}/{len(p2_questions)} P2 drafts accepted; {len(length_reviews)} separately traced assistant editorial decisions.')
     print(counts)
 
 if __name__ == '__main__': main()

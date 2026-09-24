@@ -1,7 +1,7 @@
 {
   "version": 1,
   "authored_at": "2026-09-24",
-  "purpose": "Borradores P2: no se cargan en el banco activo ni en modo examen.",
+  "purpose": "Borradores IA P2 revisados humanamente; fuente trazable de las versiones activas no oficiales.",
   "questions": [
     {
       "id": "AI-GSI-P2-B2-T01-001",
@@ -11,8 +11,8 @@
       "evidence_paragraph": 0,
       "origin": "ai",
       "official_status": "not_official",
-      "validation_status": "pending_human_review",
-      "is_active": false,
+      "validation_status": "validated",
+      "is_active": true,
       "statement": "Un clúster ofrece Single System Image (SSI). ¿Qué puede inferirse de esa propiedad?",
       "options": [
         "Sus nodos comparten necesariamente una única CPU física, aunque tengan discos distintos.",
@@ -34,8 +34,8 @@
       "evidence_paragraph": 0,
       "origin": "ai",
       "official_status": "not_official",
-      "validation_status": "pending_human_review",
-      "is_active": false,
+      "validation_status": "validated",
+      "is_active": true,
       "statement": "Al variar el umbral de un verificador biométrico, ¿qué interpretación de FAR, FRR y EER es correcta?",
       "options": [
         "FAR mide rechazos indebidos; FRR, aceptaciones indebidas; EER es el umbral de coste mínimo.",
@@ -57,8 +57,8 @@
       "evidence_paragraph": 0,
       "origin": "ai",
       "official_status": "not_official",
-      "validation_status": "pending_human_review",
-      "is_active": false,
+      "validation_status": "validated",
+      "is_active": true,
       "statement": "Una persona llama haciéndose pasar por el soporte de la organización para obtener un código de acceso. ¿Cómo se clasifica el canal del engaño?",
       "options": [
         "Vishing, porque el phishing se realiza mediante una comunicación de voz.",
@@ -80,8 +80,8 @@
       "evidence_paragraph": 0,
       "origin": "ai",
       "official_status": "not_official",
-      "validation_status": "pending_human_review",
-      "is_active": false,
+      "validation_status": "validated",
+      "is_active": true,
       "statement": "Un archivo quiere clasificar expedientes de forma estable aunque cambien las carpetas de almacenamiento. ¿Qué instrumento responde a esa necesidad?",
       "options": [
         "Un índice libre de etiquetas que cada usuario asigna a los expedientes según sus búsquedas.",
@@ -103,8 +103,8 @@
       "evidence_paragraph": 0,
       "origin": "ai",
       "official_status": "not_official",
-      "validation_status": "pending_human_review",
-      "is_active": false,
+      "validation_status": "validated",
+      "is_active": true,
       "statement": "Un proyecto adopta ciclos cortos, prototipos, reutilización de componentes y participación intensa de usuarios para acortar entregas. ¿Qué enfoque clásico describe mejor?",
       "options": [
         "Modelo en espiral, cuya iteración se organiza por el análisis de riesgos.",
@@ -126,8 +126,8 @@
       "evidence_paragraph": 0,
       "origin": "ai",
       "official_status": "not_official",
-      "validation_status": "pending_human_review",
-      "is_active": false,
+      "validation_status": "validated",
+      "is_active": true,
       "statement": "Un equipo fija dos semanas para una iteración y, si no cabe todo, reprioriza su alcance sin ampliar el plazo. ¿Qué técnica aplica?",
       "options": [
         "Ruta crítica: se mantiene fijo el alcance y se recalculan las dependencias.",
@@ -149,8 +149,8 @@
       "evidence_paragraph": 0,
       "origin": "ai",
       "official_status": "not_official",
-      "validation_status": "pending_human_review",
-      "is_active": false,
+      "validation_status": "validated",
+      "is_active": true,
       "statement": "Se necesita estimar esfuerzo, coste y calendario de un proyecto software a partir de su tamaño y factores de coste. ¿Qué modelo encaja?",
       "options": [
         "PERT/CPM, que ordena tareas y calcula el calendario por dependencias.",
@@ -172,18 +172,18 @@
       "evidence_paragraph": 0,
       "origin": "ai",
       "official_status": "not_official",
-      "validation_status": "pending_human_review",
-      "is_active": false,
+      "validation_status": "validated",
+      "is_active": true,
       "statement": "Una organización quiere adaptar UML a su dominio mediante estereotipos, propiedades y restricciones, sin definir un metamodelo independiente. ¿Qué mecanismo corresponde?",
       "options": [
-        "MOF, que aplica propiedades etiquetadas a cada instancia del modelo UML.",
-        "Un diagrama de componentes, que redefine el metamodelo de UML para el dominio.",
-        "Un esquema XML, que sustituye estereotipos por clases de implementación.",
-        "Un UML Profile, que especializa UML con estereotipos, propiedades y restricciones."
+        "Un UML Profile define metaclases nuevas con propiedades y restricciones propias; MOF aplica esos estereotipos a los modelos.",
+        "Un UML Profile añade estereotipos, propiedades y restricciones a UML; MOF define directamente los modelos del usuario.",
+        "Un UML Profile redefine el metamodelo UML al añadir estereotipos y restricciones; MOF serializa los diagramas resultantes.",
+        "Un UML Profile especializa UML mediante estereotipos, propiedades y restricciones; MOF se sitúa en el nivel de definición de metamodelos."
       ],
       "correct_option": "D",
       "feedback": {
-        "correct": "Un Profile especializa UML con estereotipos, propiedades antes llamadas tagged values y restricciones. MOF sirve para definir metamodelos; no es el perfil mismo.",
+        "correct": "Un UML Profile especializa UML mediante estereotipos, propiedades y restricciones. Las propiedades de un estereotipo pueden aportar valores conocidos como tagged values cuando se aplica al modelo. MOF (Meta-Object Facility) se emplea para definir metamodelos; no es el Profile.",
         "incorrect": "Si se extiende UML sin crear un metamodelo autónomo, corresponde un UML Profile; MOF opera en el nivel del metamodelado."
       }
     },
@@ -195,8 +195,8 @@
       "evidence_paragraph": 0,
       "origin": "ai",
       "official_status": "not_official",
-      "validation_status": "pending_human_review",
-      "is_active": false,
+      "validation_status": "validated",
+      "is_active": true,
       "statement": "¿Qué relación entre modelos históricos de calidad y evaluación de procesos software es correcta?",
       "options": [
         "McCall agrupa factores del producto; SPICE/ISO/IEC 15504 es la familia vigente para evaluar procesos.",
@@ -206,7 +206,7 @@
       ],
       "correct_option": "B",
       "feedback": {
-        "correct": "McCall clasifica factores de calidad del producto en operación, revisión y transición. SPICE trata la evaluación/mejora de procesos: se asoció a ISO/IEC 15504, retirada y evolucionada hacia ISO/IEC 330xx.",
+        "correct": "McCall clasifica factores clásicos de calidad del producto en operación, revisión y transición. SPICE trata la evaluación y mejora de procesos: se asoció históricamente con ISO/IEC 15504, posteriormente sustituida por la familia ISO/IEC 330xx.",
         "incorrect": "Distingue calidad del producto (McCall) de capacidad de proceso (SPICE); ISO/IEC 15504 es una referencia histórica, no la familia actual principal."
       }
     },
@@ -218,8 +218,8 @@
       "evidence_paragraph": 0,
       "origin": "ai",
       "official_status": "not_official",
-      "validation_status": "pending_human_review",
-      "is_active": false,
+      "validation_status": "validated",
+      "is_active": true,
       "statement": "Una interfaz no informa del progreso, usa términos internos incomprensibles y no permite deshacer. ¿Qué tres heurísticas de Nielsen responden directamente?",
       "options": [
         "Consistencia y estándares; prevención de errores; diseño estético y minimalista.",
@@ -241,8 +241,8 @@
       "evidence_paragraph": 0,
       "origin": "ai",
       "official_status": "not_official",
-      "validation_status": "pending_human_review",
-      "is_active": false,
+      "validation_status": "validated",
+      "is_active": true,
       "statement": "Una misma acción cambia de icono entre pantallas, exige recordar un código y, al fallar, solo muestra «E42». ¿Qué conjunto de mejoras sigue las heurísticas de Nielsen?",
       "options": [
         "Simplificar la pantalla, agilizar atajos para expertos y añadir documentación general.",
@@ -264,8 +264,8 @@
       "evidence_paragraph": 0,
       "origin": "ai",
       "official_status": "not_official",
-      "validation_status": "pending_human_review",
-      "is_active": false,
+      "validation_status": "validated",
+      "is_active": true,
       "statement": "En un servidor con conexión SAS se instalan varios discos sin organización RAID. ¿Qué descripción de HBA y JBOD es correcta?",
       "options": [
         "El HBA conecta el host al almacenamiento; JBOD exige bandas como RAID 0.",
@@ -287,8 +287,8 @@
       "evidence_paragraph": 0,
       "origin": "ai",
       "official_status": "not_official",
-      "validation_status": "pending_human_review",
-      "is_active": false,
+      "validation_status": "validated",
+      "is_active": true,
       "statement": "Se compara la evolución de Power over Ethernet sin entrar en cifras comerciales de potencia. ¿Qué secuencia es correcta?",
       "options": [
         "802.3af es PoE+; 802.3at es PoE; 802.3bt puede utilizar cuatro pares.",
@@ -310,8 +310,8 @@
       "evidence_paragraph": 0,
       "origin": "ai",
       "official_status": "not_official",
-      "validation_status": "pending_human_review",
-      "is_active": false,
+      "validation_status": "validated",
+      "is_active": true,
       "statement": "Un switch alimenta una cámara IP a través del mismo enlace Ethernet que transporta datos. ¿Qué roles PoE desempeñan ambos equipos?",
       "options": [
         "El switch es PSE, suministra energía; la cámara es PD, la recibe.",
@@ -333,8 +333,8 @@
       "evidence_paragraph": 0,
       "origin": "ai",
       "official_status": "not_official",
-      "validation_status": "pending_human_review",
-      "is_active": false,
+      "validation_status": "validated",
+      "is_active": true,
       "statement": "Tras establecer vecindad, dos routers OSPFv2 intercambian resúmenes de la base de estado de enlace, solicitan información y confirman su recepción. ¿Qué conjunto contiene los cinco tipos clásicos de paquete?",
       "options": [
         "Hello, Database Description, Link State Request, Link State Update y Route Refresh.",
@@ -356,8 +356,8 @@
       "evidence_paragraph": 1,
       "origin": "ai",
       "official_status": "not_official",
-      "validation_status": "pending_human_review",
-      "is_active": false,
+      "validation_status": "validated",
+      "is_active": true,
       "statement": "Según los cuatro tipos básicos de mensaje de BGP-4 del RFC 4271, ¿qué asociación de función y mensaje es correcta?",
       "options": [
         "OPEN inicia la sesión; UPDATE anuncia rutas; NOTIFICATION comunica errores; KEEPALIVE mantiene la sesión.",
@@ -367,7 +367,7 @@
       ],
       "correct_option": "A",
       "feedback": {
-        "correct": "Los cuatro mensajes básicos del RFC 4271 son OPEN, UPDATE, NOTIFICATION y KEEPALIVE, con esas funciones respectivamente. Route Refresh es una extensión posterior, no uno de esos cuatro tipos básicos.",
+        "correct": "Los cuatro tipos básicos definidos por RFC 4271 son OPEN, UPDATE, NOTIFICATION y KEEPALIVE, con esas funciones respectivamente. Route Refresh está definido separadamente por RFC 2918 y no forma parte de esos cuatro tipos básicos.",
         "incorrect": "Distingue apertura, anuncio de rutas, notificación de error y mantenimiento de la sesión. Confirmar LSA corresponde a OSPF, no a BGP."
       }
     }

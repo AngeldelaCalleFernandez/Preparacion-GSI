@@ -278,7 +278,7 @@ try {
   await check("editorial review exposes confirmed status without writing progress", async () => {
     const before=await page.evaluate(()=>JSON.stringify(Object.entries(localStorage)));
     await page.goto(base.replace('index.html','review.html'));
-    await page.waitForFunction(()=>document.querySelector('#review-question').options.length===813);
+    await page.waitForFunction((expected)=>document.querySelector('#review-question').options.length===expected,bank.filter(q=>q.origin==='ai').length);
     await page.locator('#review-topic').selectOption('B4-T13');
     assert.equal(await page.locator('#review-question option').count(),20);
     const first=await page.locator('#review-content').innerText();
@@ -288,6 +288,9 @@ try {
     await page.locator('#review-topic').selectOption('');await page.locator('#review-search').fill('AI-GSI-B1-T03-001');
     assert.equal(await page.locator('#review-question option').count(),1);
     await page.locator('#review-search').fill('AI-GSI-P1-B4-T09-002');
+    assert.equal(await page.locator('#review-question option').count(),1);
+    assert.match(await page.locator('#review-content').innerText(),/Generada · validada · activa/);
+    await page.locator('#review-search').fill('AI-GSI-P2-B3-T09-001');
     assert.equal(await page.locator('#review-question option').count(),1);
     assert.match(await page.locator('#review-content').innerText(),/Generada · validada · activa/);
     await page.setViewportSize({width:390,height:844});
