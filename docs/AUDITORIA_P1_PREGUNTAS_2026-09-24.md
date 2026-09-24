@@ -24,7 +24,9 @@ No se halló en las preguntas existentes una afirmación P1 errónea que requiri
 
 Las diez propuestas están en `content/question-drafts/p1-questions-2026-09-24.json` y se compilan al banco IA como `AI-GSI-P1-...`: tres para B2-T02, dos para B2-T11, tres para B3-T12 y dos para B4-T09. Cada una tiene cuatro alternativas, clave única, feedback conceptual y evidencia exacta de uno de los cuatro suplementos P1, vinculada al documento canónico de Drive por ID y localizador. Una primera redacción de WS-Security tenía una pista de longitud por usar solo siglas en los distractores; se corrigió usando los nombres técnicos completos de las cuatro especificaciones. También se afinaron distractores Unix/Linux para contraponer funciones cercanas en lugar de alternativas ajenas al supuesto.
 
-Son **borradores IA no oficiales**, con `validation_status=pending_review` e `is_active=false`. No existe aprobación humana de sus enunciados y no se hereda la confirmación de las 803 preguntas antiguas. Por tanto, la cobertura activa previa sigue siendo la indicada en la tabla hasta que el propietario las revise; no aparecen en entrenamiento ni examen. El compilador y el validador comprueban que las diez propuestas coinciden con su borrador y evidencia y que no puedan activarse automáticamente.
+Son **preguntas IA no oficiales**. La revisión humana del propietario en conversación del 24/09/2026 aprobó seis sin cambios y cuatro tras correcciones concretas: `AI-GSI-P1-B2-T02-003` (feedback incorrecto), `AI-GSI-P1-B2-T11-002` (opciones y feedback correcto), `AI-GSI-P1-B3-T12-003` (feedback correcto) y `AI-GSI-P1-B4-T09-001` (opción B y feedback correcto). Ninguna clave cambió ni se eliminó pregunta. Las otras seis conservan íntegro su contenido. Las diez están ahora `validation_status=validated` e `is_active=true`, sin heredar la confirmación del lote anterior de 803.
+
+La aceptación se registra en `data/gsi-p1-editorial-reviews.json` con el mismo esquema editorial de revisión humana, pero como lote independiente: cada decisión liga el borrador corregido y la evidencia canónica mediante hashes. El compilador solo activa una versión coincidente; el validador coteja el manifiesto, su confirmación de diez registros, los borradores y la procedencia IA.
 
 ## Reproducción y validación
 
@@ -35,6 +37,6 @@ python scripts/run_gsi_suite.py
 git diff --check
 ```
 
-No se modificaron preguntas de otros temas, preguntas oficiales, umbrales, ni respuestas existentes. La siguiente decisión editorial es la revisión humana de las diez propuestas; solo tras ella se podrá contabilizar como entrenamiento activo la cobertura nueva.
+No se modificaron preguntas de otros temas, preguntas oficiales, umbrales, ni respuestas existentes. Las diez P1 pasan al entrenamiento activo tras la aprobación humana de esta versión; no se presenta ninguna como pregunta oficial.
 
-Resultado de esta pasada: compilador **813 IA (803 activas, 10 pendientes)**; auditoría objetiva **1.687 preguntas, código 0, 0 errores, 0 pares similares sin revisar y 0 pistas brutas de longitud en las diez nuevas**. Siguen figurando dos explicaciones breves ya documentadas y ocho avisos de distribución de letras por tema; no se alteraron preguntas para hacer desaparecer esos avisos. La suite `run_gsi_suite.py` terminó con **código 0**: 18.526 controles de integridad, 20 JSON y 18 esquemas válidos, 88 pruebas unitarias y recorrido funcional HTTP correctos. La prueba de navegador comprueba expresamente que una propuesta P1 se muestra como «pendiente de validación · inactiva».
+El resultado de la nueva ejecución de auditoría y suite, y el recuento final de activas, se consignan en los informes generados `logs/gsi-question-quality-audit.json`, `logs/gsi-suite.json` y `data/gsi-coverage-report.json`. La prueba de navegador comprueba expresamente que una propuesta P1 se muestra como «validada · activa».

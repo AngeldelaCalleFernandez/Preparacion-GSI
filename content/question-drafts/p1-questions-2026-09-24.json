@@ -53,7 +53,7 @@
       "correct_option": "C",
       "feedback": {
         "correct": "ps muestra información de procesos concretos; vmstat resume actividad del sistema, incluida memoria, paginación, E/S y CPU.",
-        "incorrect": "ps responde a la consulta de procesos. vmstat ofrece estadísticas agregadas del sistema; cron y crontab corresponden a tareas programadas."
+        "incorrect": "ps muestra información sobre los procesos activos seleccionados; vmstat ofrece estadísticas agregadas de procesos, memoria, paginación, E/S y actividad de CPU. No deben intercambiarse sus funciones."
       }
     },
     {
@@ -81,14 +81,14 @@
       "evidence_paragraph": 1,
       "statement": "En Common Criteria, ¿qué opción relaciona correctamente PP, ST y los niveles clásicos EAL1–EAL7?",
       "options": [
-        "PP especifica el TOE; ST es un perfil reutilizable; EAL expresa niveles de garantía.",
-        "PP expresa niveles de garantía; ST es un perfil reutilizable; EAL especifica el TOE.",
-        "PP es un perfil reutilizable; ST expresa niveles de garantía; EAL especifica el TOE.",
-        "PP es un perfil reutilizable; ST especifica el TOE; EAL expresa niveles de garantía."
+        "PP concreta los requisitos de seguridad de un TOE específico; ST es reutilizable; EAL expresa niveles de garantía.",
+        "PP expresa niveles de garantía; ST es reutilizable; EAL concreta los requisitos de un TOE específico.",
+        "PP es reutilizable; ST expresa niveles de garantía; EAL concreta los requisitos de un TOE específico.",
+        "PP define requisitos reutilizables; ST concreta los requisitos de seguridad de un TOE específico; EAL expresa niveles de garantía."
       ],
       "correct_option": "D",
       "feedback": {
-        "correct": "PP reúne requisitos reutilizables para una categoría o necesidad; ST concreta la seguridad del TOE y EAL1–EAL7 son niveles clásicos de garantía de evaluación.",
+        "correct": "PP permite expresar conjuntos reutilizables de requisitos de seguridad. ST concreta los requisitos y propiedades de seguridad para un TOE determinado. EAL1–EAL7 son niveles clásicos de garantía de evaluación.",
         "incorrect": "PP no es la especificación particular del TOE: esa función corresponde al ST. Los EAL1–EAL7 indican niveles clásicos de garantía, no perfiles ni objetivos evaluados."
       }
     },
@@ -142,7 +142,7 @@
       ],
       "correct_option": "C",
       "feedback": {
-        "correct": "XML Binding relaciona documentos o esquemas XML con objetos; JAXB es el nombre histórico en Java y Jakarta XML Binding el actual.",
+        "correct": "Jakarta XML Binding proporciona el mapeo entre documentos XML y objetos Java. Es la evolución actual de JAXB (Java Architecture for XML Binding), denominación y acrónimo que siguen apareciendo ampliamente en la API y documentación.",
         "incorrect": "JAXB/Jakarta XML Binding realiza la vinculación XML–objetos. XOP y MTOM tratan contenido binario; WSDL describe interfaces de servicios."
       }
     },
@@ -154,13 +154,13 @@
       "statement": "En el modelo clásico de gestión SNMP, ¿qué relación entre SMIv2 y ASN.1 es correcta?",
       "options": [
         "SMIv2 es la notación general y ASN.1 fija las reglas particulares de SNMP.",
-        "SMIv2 fija reglas para módulos MIB y ASN.1 aporta la notación formal adaptada.",
+        "SMIv2 define reglas para los módulos MIB utilizando un subconjunto adaptado de ASN.1.",
         "SMIv2 asigna cada OID y ASN.1 almacena los valores actuales de la MIB.",
         "SMIv2 organiza los valores medidos y ASN.1 identifica los objetos gestionados."
       ],
       "correct_option": "B",
       "feedback": {
-        "correct": "SMIv2 establece reglas para definir módulos y objetos de gestión mediante un subconjunto adaptado de ASN.1. La MIB organiza objetos y cada OID los identifica.",
+        "correct": "SMIv2 define la estructura y las reglas para los módulos de información de gestión mediante un subconjunto adaptado de ASN.1. La MIB agrupa los objetos gestionados y los OID permiten identificarlos.",
         "incorrect": "SMIv2 establece reglas de definición; ASN.1 es la notación formal usada. La MIB organiza la información y el OID identifica objetos: no son funciones de ASN.1."
       }
     },

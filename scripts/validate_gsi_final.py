@@ -162,8 +162,11 @@ def main():
         if q['origin']=='ai':
             if label in p1_questions:
                 check(q==p1_questions[label],label+': borrador P1 y evidencia canónica sincronizados')
-                check(q['validation_status']=='pending_review' and not q['is_active'],
-                      label+': pregunta P1 no se activa sin revisión humana')
+                check(q['validation_status']=='validated' and q['is_active']
+                      and q['source']['review_id']==label and q['official_status']=='not_official'
+                      and q['provenance']['type']=='generated'
+                      and q['source']['review_manifest']=='data/gsi-p1-editorial-reviews.json',
+                      label+': P1 activa solo con revisión humana de esta versión y origen IA explícito')
                 continue
             topic,line=drafts[label];fields=line.split('|');section=fields[0]
             expected_options=fields[2:6].copy()

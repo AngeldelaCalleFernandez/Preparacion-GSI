@@ -289,7 +289,7 @@ try {
     assert.equal(await page.locator('#review-question option').count(),1);
     await page.locator('#review-search').fill('AI-GSI-P1-B4-T09-002');
     assert.equal(await page.locator('#review-question option').count(),1);
-    assert.match(await page.locator('#review-content').innerText(),/Generada · pendiente de validación · inactiva/);
+    assert.match(await page.locator('#review-content').innerText(),/Generada · validada · activa/);
     await page.setViewportSize({width:390,height:844});
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2),true);
     assert.equal(await page.evaluate(()=>JSON.stringify(Object.entries(localStorage))),before);

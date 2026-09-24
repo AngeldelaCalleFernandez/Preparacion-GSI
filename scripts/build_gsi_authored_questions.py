@@ -47,10 +47,21 @@ def load_length_reviews():
     return result
 
 def build_p1_questions(sources):
-    """Compile only the new P1 questions against their traced study supplements."""
+    """Compile P1 drafts; only a matching human review activates each version."""
     drafts = load(P1_DRAFT)
     if drafts.get('version') != 1 or drafts.get('authored_at') != '2026-09-24':
         raise ValueError(f'{P1_DRAFT}: invalid P1 draft header')
+    review_data = load('data/gsi-p1-editorial-reviews.json')
+    reviews = {review['id']: review for review in review_data['reviews']}
+    confirmation = review_data['confirmation']
+    fingerprint = digest('\n'.join(
+        f"{review['id']}:{review['record_sha256']}:{review['evidence_sha256']}"
+        for review in review_data['reviews']))
+    if (review_data.get('reviewer_type') != 'human' or review_data.get('status') != 'reviewed'
+            or len(reviews) != len(review_data['reviews'])
+            or confirmation['record_count'] != len(reviews)
+            or confirmation['records_sha256'] != fingerprint):
+        raise ValueError('P1 human review manifest has invalid batch confirmation')
     questions, seen = [], set()
     for draft in drafts.get('questions', []):
         topic = draft['topic_id']
@@ -76,6 +87,12 @@ def build_p1_questions(sources):
         if not isinstance(index, int) or not 0 <= index < len(supplement['paragraphs']):
             raise ValueError(f'{qid}: invalid evidence paragraph')
         evidence = supplement['paragraphs'][index]
+        record_hash = digest(json.dumps(draft, ensure_ascii=False, sort_keys=True))
+        evidence_hash = digest(evidence)
+        review = reviews.get(qid, {})
+        accepted = (review.get('decision') == 'accepted'
+                    and review.get('record_sha256') == record_hash
+                    and review.get('evidence_sha256') == evidence_hash)
         canonical = supplement['canonicalSource']
         source = sources[f'SRC-GSI-{topic[:2]}-V21']
         if canonical['documentId'] != source['drive_id'] or canonical['reviewedAt'] != drafts['authored_at']:
@@ -85,22 +102,26 @@ def build_p1_questions(sources):
                       'url': source['url'], 'locator': canonical['locator'],
                       'version': source['version'] + ' / parche P1', 'reviewed_at': canonical['reviewedAt']}
         question = {'id': qid, 'opposition_id': 'OPP-GSI', 'origin': 'ai',
-                    'official_status': 'not_official', 'validation_status': 'pending_review',
+                    'official_status': 'not_official', 'validation_status': 'validated' if accepted else 'pending_review',
                     'block_id': topic[:2], 'topic_id': topic, 'subtopic': draft['subtopic'],
                     'exam': None, 'statement': draft['statement'],
                     'options': [{'id': key, 'text': value} for key, value in zip('ABCD', options)],
                     'correct_option': draft['correct_option'], 'feedback': draft['feedback'],
                     'source': {**provenance, 'title': source['title'], 'evidence': evidence,
-                               'evidence_sha256': digest(evidence),
-                               'record_sha256': digest(json.dumps(draft, ensure_ascii=False, sort_keys=True)),
-                               'review_id': None, 'review_method': 'Borrador IA P1 pendiente de revisión humana; no oficial.',
+                               'evidence_sha256': evidence_hash,
+                               'record_sha256': record_hash,
+                               'review_id': qid if accepted else None,
+                               'review_method': review.get('method') if accepted else 'Borrador IA P1 pendiente de revisión humana; no oficial.',
+                               'review_manifest': 'data/gsi-p1-editorial-reviews.json',
                                'p1_manifest': manifest},
                     'provenance': provenance, 'difficulty': 'medium',
-                    'tags': ['parche-p1-2026-09-24', 'pendiente-revision'],
-                    'is_active': False, 'created_at': drafts['authored_at'], 'updated_at': drafts['authored_at']}
+                    'tags': ['parche-p1-2026-09-24'] + ([] if accepted else ['pendiente-revision']),
+                    'is_active': accepted, 'created_at': drafts['authored_at'],
+                    'updated_at': review_data['reviewed_at'] if accepted else drafts['authored_at']}
         questions.append(question)
     expected = {'B2-T02': 3, 'B2-T11': 2, 'B3-T12': 3, 'B4-T09': 2}
-    if {topic: sum(q['topic_id'] == topic for q in questions) for topic in P1_TOPICS} != expected:
+    if ({topic: sum(q['topic_id'] == topic for q in questions) for topic in P1_TOPICS} != expected
+            or set(reviews) != seen):
         raise ValueError(f'{P1_DRAFT}: incomplete or out-of-scope P1 question set')
     return questions
 
@@ -210,13 +231,13 @@ def main():
                             'statement': q['statement'],
                             'correct': next(o['text'] for o in q['options'] if o['id'] == q['correct_option']),
                             'record_sha256': q['source']['record_sha256'],
-                            'evidence_sha256': q['source']['evidence_sha256'], 'accepted': False}
+                            'evidence_sha256': q['source']['evidence_sha256'], 'accepted': q['is_active']}
                            for q in patch_questions)
     output = {'metadata': {'dataset_type': 'ai', 'schema_version': '1.0.0', 'data_version': '2.1.1',
                            'updated_at': UPDATED, 'rights': RIGHTS}, 'questions': questions}
     (ROOT / 'data/questions-ai.json').write_text(json.dumps(output, ensure_ascii=False, indent=2) + '\n', 'utf-8')
     (ROOT / 'logs/gsi-authored-evidence.json').write_text(json.dumps(evidence_report, ensure_ascii=False, indent=2) + '\n', 'utf-8')
-    print(f'{len(questions)} authored questions: {sum(q["is_active"] for q in questions)} active with matching original human reviews; {len(patch_questions)} P1 drafts pending human review; {len(length_reviews)} separately traced assistant editorial decisions.')
+    print(f'{len(questions)} authored questions: {sum(q["is_active"] for q in questions)} active with matching human reviews; {sum(q["is_active"] for q in patch_questions)}/{len(patch_questions)} P1 drafts accepted; {len(length_reviews)} separately traced assistant editorial decisions.')
     print(counts)
 
 if __name__ == '__main__': main()
