@@ -39,6 +39,20 @@
         {"from":"Datos y trampas de test","to":"9. Datos y trampas de test","namedStyleType":"HEADING_2"},
         {"from":"Aplicación al supuesto práctico","to":"10. Aplicación al supuesto práctico","namedStyleType":"HEADING_2"}
       ],
+      "supplements": [
+        {
+          "afterHeading": "2. DAS, NAS, SAN y objeto",
+          "title": "HBA y JBOD",
+          "paragraphs": [
+            "HBA (Host Bus Adapter) es el adaptador que conecta un host con un bus o red de almacenamiento, por ejemplo Fibre Channel o SAS. JBOD (Just a Bunch Of Disks) designa discos presentados sin una organización RAID que aporte por sí misma redundancia; según la implementación, pueden exponerse individualmente o concatenarse. JBOD no es RAID 0, que distribuye datos en bandas."
+          ],
+          "canonicalSource": {
+            "documentId": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+            "locator": "IV.05 / Microdatos clásicos — HBA y JBOD",
+            "reviewedAt": "2026-09-24"
+          }
+        }
+      ],
       "visuals": [{"afterHeading":"2. DAS, NAS, SAN y objeto","src":"assets/diagrams/b4/b4-t05-almacenamiento.svg","title":"Elegir almacenamiento por abstracción y carga","alt":"Comparación entre DAS, NAS, SAN y objeto por unidad expuesta, protocolos y usos, conectada con RAID, multipath, snapshots, replicación, backup y métricas IOPS, throughput y latencia.","description":"Ordena las tecnologías por lo que exponen y por el requisito que resuelven.","takeaway":"Bloque, fichero y objeto son abstracciones distintas; RAID, snapshot, réplica y backup protegen frente a fallos diferentes."}]
     },
     "B4-T06": {
@@ -54,6 +68,20 @@
       "replacements": [
         {"from":"Datos y trampas de test","to":"8. Datos y trampas de test","namedStyleType":"HEADING_2"},
         {"from":"Aplicación al supuesto práctico","to":"9. Aplicación al supuesto práctico","namedStyleType":"HEADING_2"}
+      ],
+      "supplements": [
+        {
+          "afterHeading": "6. PoE",
+          "title": "PoE: IEEE 802.3af/at/bt, PSE y PD",
+          "paragraphs": [
+            "En la evolución de Power over Ethernet, IEEE 802.3af se asocia a PoE, 802.3at a PoE+ y 802.3bt amplía la potencia y puede utilizar los cuatro pares. El PSE (Power Sourcing Equipment) suministra alimentación y el PD (Powered Device) la recibe. Para test importa distinguir generaciones y roles, no memorizar cifras comerciales de potencia."
+          ],
+          "canonicalSource": {
+            "documentId": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+            "locator": "IV.07 / Microdato clásico — Power over Ethernet (PoE)",
+            "reviewedAt": "2026-09-24"
+          }
+        }
       ],
       "visuals": [{"afterHeading":"5. Cableado estructurado","src":"assets/diagrams/b4/b4-t07-cableado.svg","title":"Cableado estructurado y selección del medio","alt":"Recorrido desde entrada de servicios y distribuidor principal por backbone de fibra hacia distribuidores de planta, patch panels, cableado horizontal de cobre y áreas de trabajo, con criterios de distancia, EMI, capacidad y PoE.","description":"Sitúa cada elemento físico y ayuda a decidir entre cobre, fibra y medio inalámbrico.","takeaway":"La categoría del cable no es una versión Ethernet; la distancia, interferencia, potencia, transceptor y certificación forman un sistema."}]
     },
@@ -93,6 +121,21 @@
       "replacements": [
         {"from":"Datos y trampas de test","to":"7. Datos y trampas de test","namedStyleType":"HEADING_2"},
         {"from":"Aplicación al supuesto práctico","to":"8. Aplicación al supuesto práctico","namedStyleType":"HEADING_2"}
+      ],
+      "supplements": [
+        {
+          "afterHeading": "6. RIP, OSPF, IS-IS y BGP",
+          "title": "Mensajes clásicos OSPFv2 y básicos BGP-4",
+          "paragraphs": [
+            "OSPFv2 (RFC 2328) define cinco tipos clásicos de paquete: Hello, Database Description, Link State Request, Link State Update y Link State Acknowledgment. Hello descubre y mantiene vecinos; descripción y solicitud ayudan a sincronizar la base de estado de enlace; Update transporta LSA y Acknowledgment confirma su recepción.",
+            "BGP-4 (RFC 4271) define cuatro tipos básicos de mensaje: OPEN, UPDATE, NOTIFICATION y KEEPALIVE. Son los cuatro del RFC citado, no los únicos mensajes posibles del ecosistema BGP actual: Route Refresh se definió posteriormente como extensión."
+          ],
+          "canonicalSource": {
+            "documentId": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+            "locator": "IV.10 / Microdatos clásicos — Mensajes OSPF y BGP",
+            "reviewedAt": "2026-09-24"
+          }
+        }
       ],
       "visuals": [{"afterHeading":"4. SD-WAN","src":"assets/diagrams/b4/b4-t10-wan.svg","title":"WAN por capas: óptica, transporte, overlay y routing","alt":"Capas de una WAN con WDM en fibra, underlays Internet MPLS o móvil, overlay SD-WAN cifrado con políticas, edges de sede y cloud, y routing OSPF o IS-IS interno y BGP entre sistemas autónomos.","description":"Evita atribuir a cada tecnología funciones de otra capa.","takeaway":"WDM multiplexa luz, MPLS conmuta etiquetas sin cifrar por sí solo, SD-WAN aplica política sobre underlays y BGP enruta por atributos."}]
     },
