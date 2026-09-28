@@ -40,11 +40,12 @@
 </ul>
 <h3 id="estudio-09">7.2 Modelos de despliegue</h3>
 <ul>
-<li><strong>Nube pública</strong>: infraestructura ofrecida por un proveedor a múltiples clientes.</li>
-<li><strong>Nube privada</strong>: dedicada a una organización, alojada interna o externamente.</li>
-<li><strong>Híbrida</strong>: integra recursos privados y públicos con mecanismos de interoperabilidad y operación.</li>
-<li><strong>Multicloud</strong>: uso de más de un proveedor; no implica por sí mismo integración transparente.</li>
+<li><strong>Nube privada</strong>: infraestructura de uso exclusivo de una organización; puede gestionarse interna o externamente y ubicarse dentro o fuera de sus instalaciones.</li>
+<li><strong>Nube comunitaria</strong>: infraestructura de uso exclusivo de una comunidad de organizaciones con intereses compartidos, como misión, seguridad, políticas o cumplimiento.</li>
+<li><strong>Nube pública</strong>: infraestructura disponible para uso abierto del público general.</li>
+<li><strong>Nube híbrida</strong>: composición de dos o más infraestructuras distintas —privada, comunitaria o pública— que mantienen su identidad y se conectan para permitir interoperabilidad y portabilidad de datos y aplicaciones.</li>
 </ul>
+<p>Multicloud designa el uso de servicios de más de un proveedor cloud; no es uno de los cuatro modelos de despliegue de NIST SP 800-145.</p>
 <h3 id="estudio-10">7.3 Componentes y capacidades</h3>
 <p>Una plataforma cloud combina cómputo, redes virtuales, balanceo, almacenamiento de bloque/fichero/objeto, IAM, gestión de claves y secretos, observabilidad, autoscaling, copias, imágenes, APIs de gestión y automatización. La infraestructura se organiza frecuentemente en regiones y zonas de disponibilidad para aislar fallos.</p>
 <h3 id="estudio-11">8. Riesgos y criterios de elección</h3>
@@ -72,9 +73,9 @@
 
 <h2 id="repaso">Resumen de repaso</h2>
 <h3 id="repaso-01">Núcleo de estudio</h3>
-<p>Estudia la evolución desde dispositivos móviles y sistemas personales hasta servidores, clústeres, supercomputadores y arquitecturas de altas prestaciones. Revisa CPU, memoria, buses, almacenamiento, GPU/aceleradores, paralelismo SIMD/MIMD, multiprocesamiento, clúster y conceptos de HPC. Escalabilidad vertical significa aumentar recursos de un nodo; horizontal, añadir nodos. En cloud distingue IaaS, PaaS y SaaS; despliegues público, privado, híbrido y multicloud; elasticidad, autoservicio, pago por uso, agrupación de recursos y acceso por red. Relaciona virtualización, contenedores, almacenamiento distribuido, balanceo, alta disponibilidad y regiones/zonas de disponibilidad. Para la AGE conviene conocer la idea de nube soberana y servicios cloud contratados con requisitos ENS, sin memorizar productos comerciales salvo ejemplos.</p>
+<p>Estudia la evolución desde dispositivos móviles y sistemas personales hasta servidores, clústeres, supercomputadores y arquitecturas de altas prestaciones. Revisa CPU, memoria, buses, almacenamiento, GPU/aceleradores, paralelismo SIMD/MIMD, multiprocesamiento, clúster y conceptos de HPC. Escalabilidad vertical significa aumentar recursos de un nodo; horizontal, añadir nodos. En cloud distingue IaaS, PaaS y SaaS y los cuatro modelos de despliegue de NIST SP 800-145: nube privada, comunitaria, pública e híbrida. Multicloud se refiere al uso de varios proveedores y no es un quinto modelo NIST. Revisa elasticidad, autoservicio, pago por uso, agrupación de recursos y acceso por red. Relaciona virtualización, contenedores, almacenamiento distribuido, balanceo, alta disponibilidad y regiones/zonas de disponibilidad. Para la AGE conviene conocer la idea de nube soberana y servicios cloud contratados con requisitos ENS, sin memorizar productos comerciales salvo ejemplos.</p>
 <h3 id="repaso-02">Claves de test</h3>
-<p>Diferencia escalabilidad y elasticidad; alta disponibilidad y recuperación ante desastres; hipervisor tipo 1 y tipo 2; IaaS/PaaS/SaaS; cloud público/privado/híbrido. En arquitectura, CPU no es lo mismo que núcleo, hilo o socket. Preguntas frecuentes mezclan capacidad, rendimiento, disponibilidad y tolerancia a fallos.</p>
+<p>Diferencia escalabilidad y elasticidad; alta disponibilidad y recuperación ante desastres; hipervisor tipo 1 y tipo 2; IaaS/PaaS/SaaS; NIST SP 800-145: privada, comunitaria, pública e híbrida; multicloud no sustituye a comunitaria. En arquitectura, CPU no es lo mismo que núcleo, hilo o socket. Preguntas frecuentes mezclan capacidad, rendimiento, disponibilidad y tolerancia a fallos.</p>
 <h3 id="repaso-03">Enfoque para supuesto práctico</h3>
 <p>Ante un supuesto, justifica dimensionamiento, crecimiento, HA, zonas, RPO/RTO, cifrado, monitorización y coste. Evita elegir cloud “porque sí”: compara requisitos de datos, latencia, dependencia de proveedor, reversibilidad y ENS.</p>
 <h3 id="repaso-04">Fuentes base del material</h3>

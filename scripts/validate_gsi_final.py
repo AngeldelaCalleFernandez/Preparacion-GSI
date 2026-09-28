@@ -48,6 +48,8 @@ def remove_editorial_layer(text, topic_id, enhancements):
                f'_{visual["description"]}_\n\n'
                f'**Qué debes recordar:** {visual["takeaway"]}\n')
         text=text.replace(block,'')
+    for insertion in enhancement.get('afterParagraphs',[]):
+        text=text.replace('\n\n'+insertion['text'],'',1)
     for replacement in reversed(enhancement.get('replacements',[])):
         source,target=markdown_replacement_pair(replacement)
         text=text.replace(target,source,1)
@@ -96,6 +98,14 @@ def main():
             check(sha(study)==m['study_sha256'] and study in preserved and len(study)==m['study_characters'],tid+': apuntes completos conservados y hash exacto')
         check(len(' '.join(frag.text))>1500 and len(text)>1500,tid+': contenido sustancial')
         check(text.startswith('# '+t['title']+'\n') and '## Resumen de repaso' in text,tid+': título oficial y repaso')
+        if tid=='B2-T01':
+            deployment=re.search(r'(?ms)^### 7\.2 Modelos de despliegue\s*\n(.*?)(?=^### 7\.3 )',text)
+            section=deployment.group(1) if deployment else ''
+            models=re.findall(r'(?m)^\* \*\*([^*]+)\*\*:',section)
+            check(models==['Nube privada','Nube comunitaria','Nube pública','Nube híbrida'],tid+': cuatro modelos de despliegue NIST en orden, sin multicloud')
+            check('Multicloud designa' in section and 'no es uno de los cuatro modelos de despliegue de NIST SP 800-145' in section,tid+': multicloud diferenciado de la taxonomía NIST')
+            recap=text.split('## Resumen de repaso',1)[-1]
+            check('nube privada, comunitaria, pública e híbrida' in recap and 'multicloud no sustituye a comunitaria' in recap,tid+': resumen y claves de test coherentes con NIST')
         check(digest(m['html_path'])==imap[tid]['checksum'],tid+': HTML íntegro')
         check(m['drive_id'] in known and m['url']==source['url'] and m['version']=='V2.1',tid+': fuente canónica inventariada')
         check(not frag.unsafe and len(frag.ids)==len(set(frag.ids)),tid+': HTML seguro, anclas únicas')

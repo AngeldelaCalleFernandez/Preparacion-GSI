@@ -121,7 +121,15 @@ def replace_paragraph_text(elements, replacements, topic_id):
                 raise ValueError(f'Cannot replace empty paragraph in {topic_id}: {current}')
             style = deepcopy(runs[0].get('textRun', {}).get('textStyle', {}))
             updated = current.replace(source, replacement['to'], 1)
-            runs[:] = [{'textRun': {'content': updated, 'textStyle': style}}]
+            bold_label = re.match(r'\* \*\*(.+?)\*\*:', replacement.get('toMarkdown', ''))
+            if bold_label and updated.startswith(bold_label[1] + ':'):
+                plain_style = deepcopy(runs[1].get('textRun', {}).get('textStyle', {})) if len(runs) > 1 else {}
+                runs[:] = [
+                    {'textRun': {'content': bold_label[1], 'textStyle': style}},
+                    {'textRun': {'content': updated[len(bold_label[1]):], 'textStyle': plain_style}},
+                ]
+            else:
+                runs[:] = [{'textRun': {'content': updated, 'textStyle': style}}]
             if replacement.get('namedStyleType'):
                 paragraph.setdefault('paragraphStyle', {})['namedStyleType'] = replacement['namedStyleType']
             found = True
@@ -132,6 +140,21 @@ def replace_paragraph_text(elements, replacements, topic_id):
             pending.append(source)
     if pending:
         raise ValueError(f'Editorial replacements not found in {topic_id}: {pending}')
+    return result
+
+def insert_after_paragraph_text(elements, insertions, topic_id):
+    """Place a declared editorial note after a source paragraph, outside its list."""
+    if not insertions:
+        return elements
+    result = deepcopy(elements)
+    for insertion in insertions:
+        matches = [i for i, element in enumerate(result) if text_of(element) == insertion['after']]
+        if len(matches) != 1:
+            raise ValueError(f'Editorial note anchor not unique in {topic_id}: {insertion["after"]}')
+        result.insert(matches[0] + 1, {'paragraph': {
+            'paragraphStyle': {'namedStyleType': 'NORMAL_TEXT'},
+            'elements': [{'textRun': {'content': insertion['text']}}],
+        }})
     return result
 
 def visual_markup(topic_id, visual, ordinal):
@@ -310,6 +333,8 @@ def corpus_source(path, block, kind, markdown_path=None):
 def render_topic(topic_id, native, summary, source, review_source, locator, enhancement=None):
     enhancement = enhancement or {}
     native = replace_paragraph_text(native, enhancement.get('replacements', []), topic_id)
+    native = insert_after_paragraph_text(native, enhancement.get('afterParagraphs', []), topic_id)
+    summary = replace_paragraph_text(summary, enhancement.get('summaryReplacements', []), topic_id)
     visuals = enhancement.get('visuals', [])
     supplements = enhancement.get('supplements', [])
     visuals_by_heading = {}
@@ -430,8 +455,19 @@ def main():
                 if markdown_source not in study_markdown and markdown_target not in study_markdown:
                     raise ValueError(f'Editorial replacement not found in Markdown {tid}: {markdown_source}')
                 study_markdown = study_markdown.replace(markdown_source, markdown_target, 1)
+            for insertion in enhancement.get('afterParagraphs', []):
+                anchor = insertion.get('afterMarkdown', insertion['after'])
+                if study_markdown.count(anchor) != 1:
+                    raise ValueError(f'Editorial note anchor not unique in Markdown {tid}: {anchor}')
+                study_markdown = study_markdown.replace(anchor, anchor + '\n\n' + insertion['text'], 1)
             study_markdown = inject_markdown_enhancements(study_markdown, enhancement.get('visuals', []), enhancement.get('supplements', []), tid)
-            topic_text = f'# {topic["title"]}\n\n{tid} · Bloque {b} · Tema {number}\n\nFuente: [{source["title"]}]({source["url"]}) · {locator} · {source["version"]} · {source["reviewed_at"]}\n\n' + study_markdown + f'\n\n## Resumen de repaso\n\nFuente: [{review_source["title"]}]({review_source["url"]}) · {locator}\n\n' + summary_md[number] + '\n'
+            reviewed_summary = summary_md[number]
+            for replacement in enhancement.get('summaryReplacements', []):
+                markdown_source, markdown_target = markdown_replacement_pair(replacement)
+                if reviewed_summary.count(markdown_source) != 1:
+                    raise ValueError(f'Editorial summary replacement not unique in {tid}: {markdown_source}')
+                reviewed_summary = reviewed_summary.replace(markdown_source, markdown_target, 1)
+            topic_text = f'# {topic["title"]}\n\n{tid} · Bloque {b} · Tema {number}\n\nFuente: [{source["title"]}]({source["url"]}) · {locator} · {source["version"]} · {source["reviewed_at"]}\n\n' + study_markdown + f'\n\n## Resumen de repaso\n\nFuente: [{review_source["title"]}]({review_source["url"]}) · {locator}\n\n' + reviewed_summary + '\n'
             save(f'content/topics/{tid}.md', topic_text)
             markup, sections = render_topic(tid, native[number], summaries[number], source, review_source, locator, enhancement)
             save(f'content/generated/{tid}.html', markup)

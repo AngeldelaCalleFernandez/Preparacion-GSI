@@ -143,12 +143,12 @@ El estado actual esperado es **0**: las comprobaciones técnicas y el cierre edi
 
 La última ejecución aprobó:
 
-- 19 archivos contra 17 esquemas JSON;
+- 20 archivos de datos contra 18 esquemas JSON;
 - 57 temas y sus referencias;
 - 1964 preguntas con estructura válida;
-- 83 pruebas unitarias;
+- 88 pruebas unitarias;
 - 288 pruebas de regresión;
-- 75 comprobaciones funcionales en navegador;
+- 77 comprobaciones funcionales en navegador;
 - funcionamiento en escritorio, móvil y una subruta de GitHub Pages.
 
 También se comprueban puntuación, temporizadores, persistencia, exportación e importación, rutas relativas, procedencia, exclusión de preguntas pendientes y ausencia de referencias TAI en el producto activo.
