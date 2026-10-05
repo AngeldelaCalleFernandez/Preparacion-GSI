@@ -29,9 +29,10 @@ async function fetchText(path) { const response = await fetch(path, { cache: "no
 async function fetchJson(path) { return JSON.parse(await fetchText(path)); }
 
 const PILOTS = ["B2-T04", "B3-T07", "B4-T08"];
-const [index, syllabus, sources, report, service, testsSource, ...html] = await Promise.all([
+const [index, syllabus, sources, updates, report, service, testsSource, ...html] = await Promise.all([
   fetchJson("../data/topic-content.json"), fetchJson("../data/syllabus.json"),
   fetchJson("../data/sources.json"),
+  fetchJson("../data/updates.json"),
   fetchText("../data/gsi-coverage-report.json"), fetchText("../assets/js/topic-content-service.js?gsi2"),
   fetchText("../tests/phase7b2-tests.js"), ...PILOTS.map((id) => fetchText(`../content/generated/${id}.html`)),
 ]);
@@ -112,7 +113,15 @@ await test("el H1 visible de Temario es único", async () => { const app = await
 await test("los fragmentos empiezan en H2", () => assert(html.every((value) => !/<h1\b/i.test(value) && /<h2\b/i.test(value)), "Jerarquía incorrecta"));
 await test("el informe de cobertura coincide", () => { const coverage=JSON.parse(report);assert(coverage.topic_count===57 && coverage.topics.every((t)=>t.has_source), "Informe desactualizado"); });
 
-await test("todos los temas conservan fecha de revisión", () => assert(index.topics.every((topic) => topic.updatedAt === "2026-09-23"), "Revisión sin fecha"));
+await test("todos los temas conservan fecha de revisión", () => {
+  const current = new Set(["B2-T07", "B2-T13", "B3-T12"]);
+  assert(index.topics.every((topic) => topic.updatedAt === (current.has(topic.topicId) ? "2026-10-05" : "2026-09-23")), "Revisión sin fecha o incoherente");
+});
+await test("el registro de vigencia enlaza fuentes y temas", () => {
+  const expected = new Map([["UPD-2026-001", "current"], ["UPD-2026-002", "transitional"], ["UPD-2026-003", "current"]]);
+  assert(updates.updates.length === expected.size, "Número de actualizaciones inesperado");
+  assert(updates.updates.every((update) => expected.get(update.id) === update.validity_status && sources.sources.some((source) => source.id === update.source_id)), "Actualización sin estado o fuente");
+});
 
 await test("todos los temas tienen secciones trazadas", () => assert(index.topics.every((topic) => topic.sections.length > 3 && topic.sections.every((s) => s.sourceRefs.length)), "Secciones sin fuente"));
 

@@ -30,6 +30,20 @@ function reviewLabel(status) {
   return ({ "not-reviewed": "Sin revisión", "needs-review": "Pendiente de revisión", reviewed: "Revisado" })[status] || "Revisión sin clasificar";
 }
 
+function formatDate(value) {
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value || "");
+  return match ? `${match[3]}/${match[2]}/${match[1]}` : value;
+}
+
+function validityPresentation(status) {
+  return ({
+    current: { className: "pill--review-reviewed", label: "Vigente" },
+    legacy: { className: "pill--count", label: "Histórico / legacy" },
+    transitional: { className: "pill--coverage-partial", label: "Aplicación escalonada" },
+    "review-needed": { className: "pill--review-needs-review", label: "Revisión pendiente" },
+  })[status] || { className: "pill--count", label: "Vigencia sin clasificar" };
+}
+
 function getEntry(topicId) {
   return viewState.index.byTopicId.get(topicId);
 }
@@ -197,11 +211,16 @@ async function renderDetail(routeState) {
   }
   const official = element("p", "lead", `Texto oficial del programa: ${topic.title}`);
   const meta = element("div", "topic-meta");
+  const topicUpdates = viewState.data.updates.updates.filter((update) => update.topic_ids.includes(operationalTopicId));
   meta.append(
     createPill(`pill--coverage-${entry.status}`, statusLabel(entry.status)),
     createPill(`pill--review-${entry.reviewStatus}`, reviewLabel(entry.reviewStatus)),
-    createPill("pill--count", `Actualizado: ${entry.updatedAt}`)
+    createPill("pill--count", `Revisado: ${formatDate(entry.updatedAt)}`)
   );
+  for (const update of topicUpdates) {
+    const presentation = validityPresentation(update.validity_status);
+    meta.append(createPill(presentation.className, presentation.label));
+  }
   const message = element("p", "notice");
   message.id = "topic-detail-message";
   message.hidden = true;
@@ -218,9 +237,10 @@ async function renderDetail(routeState) {
     const fragment = await loadTopicFragment(viewState.index, operationalTopicId);
     if (version !== requestVersion) return;
     content.replaceChildren(fragment);
-    for (const update of viewState.data.updates.updates.filter((u) => u.topic_ids.includes(operationalTopicId))) {
+    for (const update of topicUpdates) {
       const notice = element("aside", "notice");
-      notice.append(element("strong", "", `${update.title} · control ${update.reviewed_at}`), element("p", "", update.summary));
+      const presentation = validityPresentation(update.validity_status);
+      notice.append(element("strong", "", `${update.title} · ${presentation.label} · control ${formatDate(update.reviewed_at)}`), element("p", "", update.summary));
       const link = sourceLink(viewState.data.indexes.sourcesById.get(update.source_id), "Comprobación de vigencia en la fuente oficial");
       if (link) notice.append(link);
       content.prepend(notice);

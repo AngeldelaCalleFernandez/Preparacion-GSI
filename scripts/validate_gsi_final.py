@@ -72,6 +72,7 @@ def main():
         else:checks.append(message)
     syllabus=load('data/syllabus.json'); blocks=syllabus['blocks'];topics={t['id']:t for b in blocks for t in b['topics']}
     manifest=load('data/gsi-source-manifest.json'); index=load('data/topic-content.json');sources={s['id']:s for s in load('data/sources.json')['sources']}
+    updates=load('data/updates.json')['updates']
     enhancements=load_enhancements()
     inventory=load('data/gsi-drive-inventory.json'); known={e['id'] for e in inventory['main']}|{e['id'] for e in inventory['auxiliary']['items']}|{e['id'] for e in inventory['auxiliary']['roots']}
     check([len(b['topics']) for b in blocks]==COUNTS and len(topics)==57,'57 temas; distribución 10/16/15/16')
@@ -129,6 +130,15 @@ def main():
     for origin in ('official','manual','ai'):
         qs=load(f'data/questions-{origin}.json')['questions'];check(all(q['origin']==origin for q in qs),origin+': separación física');questions.extend(qs)
     ids=[q['id'] for q in questions];check(len(ids)==len(set(ids)),'IDs de preguntas únicos')
+    update_ids=[update['id'] for update in updates]
+    check(len(update_ids)==len(set(update_ids)),'IDs de actualizaciones únicos')
+    for update in updates:
+        label=update['id']
+        check(update['source_id'] in sources,label+': fuente de vigencia registrada')
+        check(all(tid in topics and tid.startswith(update['block_id']+'-') for tid in update['topic_ids']),label+': temas y bloque válidos')
+        check(set(update['affected_question_ids']).issubset(ids),label+': preguntas afectadas válidas')
+        check(urlsplit(update['primary_source_url']).scheme=='https',label+': fuente primaria HTTPS')
+        check(all((ROOT/path).is_file() for path in update['affected_files']),label+': archivos afectados existentes')
     signatures=[(norm(q['statement']),tuple(sorted(norm(o['text']) for o in q['options']))) for q in questions]
     check(len(signatures)==len(set(signatures)),'Sin preguntas duplicadas exactas: enunciado y alternativas normalizados')
     official_catalog=load('data/gsi-official-exams.json')
@@ -246,6 +256,7 @@ def main():
         else:kind='SIN CLASIFICAR'
         check(kind!='SIN CLASIFICAR','Referencia histórica clasificada: '+path+':'+str(value['line_number']))
         matches.append({'path':path,'line':value['line_number'],'text':value['lines']['text'].rstrip(),'classification':kind})
+    matches.sort(key=lambda item:(item['path'],item['line'],item['text'],item['classification']))
     save('logs/gsi-legacy-review.json',{'date':DATE,'pattern':r'\bTAI\b|33 temas','scope':'Archivos versionados y no ignorados; originales locales preservados fuera del runtime. Se excluyen logs para evitar autorreferencias y tmp.', 'matches':matches,'unclassified':sum(m['classification']=='SIN CLASIFICAR' for m in matches)})
     report['release_ready']=not errors and not blockers
     save('data/gsi-coverage-report.json',report)

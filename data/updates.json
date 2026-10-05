@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "schema_version": "1.0.0",
-    "data_version": "2.0.0",
-    "updated_at": "2026-09-14"
+    "schema_version": "1.1.0",
+    "data_version": "2.1.0",
+    "updated_at": "2026-10-05"
   },
   "updates": [
     {
@@ -13,12 +13,80 @@
         "B2-T07"
       ],
       "source_id": "SRC-CONTROL-KUBERNETES",
+      "detected_at": "2026-09-14",
+      "concept": "Ramas menores de Kubernetes mantenidas",
+      "update_type": "tecnología",
+      "primary_source_url": "https://kubernetes.io/releases/",
+      "validity_status": "current",
       "previous_version": "Previsión en V2.1 de 21/08/2026",
       "new_version": "Kubernetes 1.37.0",
       "effective_date": "2026-08-26",
-      "reviewed_at": "2026-09-14",
-      "summary": "Los apuntes conservan su revisión de 21 de agosto de 2026 y anunciaban Kubernetes 1.37. El registro oficial confirma su publicación el 26 de agosto de 2026. Este aviso actualiza la vigencia; se conserva íntegro el texto del corpus. Ninguna pregunta activa exige memorizar esa previsión.",
-      "affected_question_ids": []
+      "reviewed_at": "2026-10-05",
+      "summary": "El registro oficial confirma Kubernetes 1.37 y que, a 05/10/2026, las tres ramas menores mantenidas son 1.37, 1.36 y 1.35. Se corrige el resumen de repaso para alinearlo con el cuerpo del tema; ninguna pregunta activa exige memorizar una versión concreta.",
+      "affected_question_ids": [],
+      "affected_files": [
+        "content/enhancements/b2-visuals.json",
+        "content/topics/B2-T07.md",
+        "content/generated/B2-T07.html",
+        "data/topic-content.json",
+        "data/gsi-source-manifest.json"
+      ]
+    },
+    {
+      "id": "UPD-2026-002",
+      "title": "CRA: obligaciones de notificación aplicables desde septiembre de 2026",
+      "block_id": "B2",
+      "topic_ids": [
+        "B2-T13"
+      ],
+      "source_id": "SRC-CONTROL-CRA-2024-2847",
+      "detected_at": "2026-09-29",
+      "concept": "Notificación de vulnerabilidades explotadas activamente e incidentes graves en productos con elementos digitales",
+      "update_type": "normativa",
+      "primary_source_url": "https://eur-lex.europa.eu/eli/reg/2024/2847/oj?locale=es",
+      "validity_status": "transitional",
+      "previous_version": "El tema explicaba respuesta a incidentes sin el calendario escalonado del Reglamento (UE) 2024/2847",
+      "new_version": "Artículo 14 aplicable desde el 11/09/2026; aplicación general desde el 11/12/2027",
+      "effective_date": "2026-09-11",
+      "reviewed_at": "2026-10-05",
+      "summary": "Se incorpora de forma proporcional el CRA: sujetos y destinatarios de la notificación, alerta temprana en 24 horas y fechas de aplicación del capítulo IV, del artículo 14 y del resto del Reglamento. El régimen permanece en aplicación escalonada.",
+      "affected_question_ids": [],
+      "affected_files": [
+        "content/enhancements/b2-visuals.json",
+        "content/topics/B2-T13.md",
+        "content/generated/B2-T13.html",
+        "data/topic-content.json",
+        "data/gsi-source-manifest.json",
+        "data/sources.json"
+      ]
+    },
+    {
+      "id": "UPD-2026-003",
+      "title": "OWASP Top 10:2025 sustituye la edición 2021 como referencia vigente",
+      "block_id": "B3",
+      "topic_ids": [
+        "B3-T12"
+      ],
+      "source_id": "SRC-CONTROL-OWASP-TOP10-2025",
+      "detected_at": "2026-10-01",
+      "concept": "Categorías OWASP Top 10 para riesgos de aplicaciones web",
+      "update_type": "seguridad",
+      "primary_source_url": "https://top10.owasp.org/2025/es/0x00_2025-Introduction/",
+      "validity_status": "current",
+      "previous_version": "OWASP Top 10:2021, incluida SSRF como categoría independiente",
+      "new_version": "OWASP Top 10:2025",
+      "effective_date": null,
+      "reviewed_at": "2026-10-05",
+      "summary": "Se actualizan las diez categorías a la edición 2025. La edición 2021 queda como referencia histórica: SSRF se integra en A01, la cadena de suministro ocupa A03 y A10 incorpora la gestión incorrecta de condiciones excepcionales.",
+      "affected_question_ids": [],
+      "affected_files": [
+        "content/enhancements/b3-visuals.json",
+        "content/topics/B3-T12.md",
+        "content/generated/B3-T12.html",
+        "data/topic-content.json",
+        "data/gsi-source-manifest.json",
+        "data/sources.json"
+      ]
     }
   ]
 }

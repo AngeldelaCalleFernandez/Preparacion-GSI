@@ -40,6 +40,14 @@ try {
   await fs.mkdir(path.join(root, "tmp/gsi"), { recursive: true });
   await page.screenshot({ path: path.join(root, "tmp/gsi/home-desktop.png"), fullPage: true });
   const syllabus = JSON.parse(await fs.readFile(path.join(root, "data/syllabus.json"), "utf8"));
+  await check("currency controls are visible and labelled", async () => {
+    await page.goto(`${base}#temario/B2-T13`);
+    await page.locator('.topic-content[data-topic-id="B2-T13"]').waitFor({ state: "visible" });
+    assert.match(await page.locator("#topic-detail").innerText(), /CRA: obligaciones de notificación[\s\S]*Aplicación escalonada[\s\S]*11\/09\/2026/);
+    await page.goto(`${base}#temario/B3-T12`);
+    await page.locator('.topic-content[data-topic-id="B3-T12"]').waitFor({ state: "visible" });
+    assert.match(await page.locator("#topic-detail").innerText(), /OWASP Top 10:2025[\s\S]*Vigente[\s\S]*A10/);
+  });
   await check("study plan route, dynamic topics and interactive controls", async () => {
     await page.goto(`${base}#plan`);
     await page.locator('[data-view="plan"]').waitFor({ state: "visible" });

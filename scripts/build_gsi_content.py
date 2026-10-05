@@ -442,6 +442,13 @@ def main():
         for topic in block['topics']:
             number, tid = topic['number'], topic['id']
             enhancement = enhancements.get(tid, {})
+            review = enhancement.get('review', {})
+            review_status = review.get('status', 'reviewed')
+            reviewed_at = review.get('reviewedAt', source['reviewed_at'])
+            if review_status not in {'not-reviewed', 'needs-review', 'reviewed'}:
+                raise ValueError(f'Invalid review status for {tid}: {review_status}')
+            if not re.fullmatch(r'\d{4}-\d{2}-\d{2}', reviewed_at):
+                raise ValueError(f'Invalid editorial review date for {tid}: {reviewed_at}')
             locator = f'{ROMAN[b-1]}.{number:02}'
             topic['source_ids'] = [source_boe['id'], source['id'], review_source['id']]
             topic['content'] = {'raw': [{'source_id': source['id'], 'document_id': source['documents'][0]['id'], 'locator': locator, 'reviewed_at': source['reviewed_at']}],
@@ -471,10 +478,10 @@ def main():
             save(f'content/topics/{tid}.md', topic_text)
             markup, sections = render_topic(tid, native[number], summaries[number], source, review_source, locator, enhancement)
             save(f'content/generated/{tid}.html', markup)
-            index['topics'].append({'topicId': tid, 'contentPath': f'content/generated/{tid}.html', 'status': 'complete', 'reviewStatus': 'reviewed', 'updatedAt': source['reviewed_at'],
+            index['topics'].append({'topicId': tid, 'contentPath': f'content/generated/{tid}.html', 'status': 'complete', 'reviewStatus': review_status, 'updatedAt': reviewed_at,
                                     'checksum': hashlib.sha256(markup.encode('utf-8')).hexdigest(), 'sections': sections})
             manifest['topics'].append({'topic_id': tid, 'title': topic['title'], 'source_id': source['id'], 'document_id': source['documents'][0]['id'], 'drive_id': source['drive_id'],
-                                      'url': source['url'], 'locator': locator, 'version': source['version'], 'reviewed_at': source['reviewed_at'], 'source_type': 'curated',
+                                      'url': source['url'], 'locator': locator, 'version': source['version'], 'reviewed_at': reviewed_at, 'source_type': 'curated',
                                       'study_characters': len(md[number]), 'summary_characters': len(summary_md[number]),
                                       'markdown_path': f'content/topics/{tid}.md', 'html_path': f'content/generated/{tid}.html',
                                       'study_sha256': hashlib.sha256(md[number].encode('utf-8')).hexdigest(), 'review_source_id': review_source['id']})

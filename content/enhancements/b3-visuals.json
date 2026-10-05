@@ -121,11 +121,39 @@
     },
     "B3-T12": {
       "classification": "REESCRITURA SELECTIVA",
-      "replacements": [{
-        "from": "Base A1: 065 (+058). El A1 065 es extenso pero de 2023: se conservan fundamentos y se actualizan prácticas de seguridad/arquitectura.",
-        "fromMarkdown": "**Base A1:** 065 (+058). El A1 065 es extenso pero de 2023: se conservan fundamentos y se actualizan prácticas de seguridad/arquitectura.",
-        "to": "Los fundamentos de navegador, HTTP y servidor se combinan con prácticas actuales de arquitectura responsive, APIs, identidad, seguridad, rendimiento e internacionalización."
-      }],
+      "review": {
+        "status": "reviewed",
+        "reviewedAt": "2026-10-05"
+      },
+      "replacements": [
+        {
+          "from": "Base A1: 065 (+058). El A1 065 es extenso pero de 2023: se conservan fundamentos y se actualizan prácticas de seguridad/arquitectura.",
+          "fromMarkdown": "**Base A1:** 065 (+058). El A1 065 es extenso pero de 2023: se conservan fundamentos y se actualizan prácticas de seguridad/arquitectura.",
+          "to": "Los fundamentos de navegador, HTTP y servidor se combinan con prácticas actuales de arquitectura responsive, APIs, identidad, seguridad, rendimiento e internacionalización."
+        },
+        {
+          "from": "OWASP: inyección, control de acceso roto, fallos criptográficos, diseño inseguro, configuración, componentes vulnerables, autenticación, integridad, logging/monitorización y SSRF según categorizaciones vigentes. Controles: validación, parametrización, output encoding, CSP, CSRF defense, sesiones seguras, MFA, rate limit y secretos.",
+          "to": "OWASP Top 10:2025: pérdida de control de acceso, configuración incorrecta de seguridad, fallos de la cadena de suministro de software, fallos criptográficos, inyección, diseño inseguro, fallos de autenticación, fallos de integridad del software o los datos, fallos de registro y alertas de seguridad y gestión incorrecta de condiciones excepcionales. Controles: validación, parametrización, output encoding, CSP, defensa CSRF, sesiones seguras, MFA, rate limiting y gestión de secretos."
+        }
+      ],
+      "supplements": [
+        {
+          "afterHeading": "5. Seguridad",
+          "title": "OWASP Top 10:2025 y relación con 2021",
+          "paragraphs": [
+            "OWASP Top 10:2025 es la edición vigente. La lista de 2021 debe tratarse como histórica: SSRF deja de ser una categoría independiente y se integra en A01; la antigua categoría de componentes vulnerables o desactualizados se amplía a fallos de la cadena de suministro de software en A03; y A10 incorpora la gestión incorrecta de condiciones excepcionales.",
+            "OWASP Top 10 es una guía de concienciación y priorización de riesgos de aplicaciones web, no una norma jurídica ni una lista exhaustiva de controles."
+          ],
+          "sources": [
+            {
+              "title": "OWASP Top 10:2025",
+              "url": "https://top10.owasp.org/2025/es/0x00_2025-Introduction/",
+              "locator": "Introducción y lista A01-A10"
+            }
+          ],
+          "note": "Memoriza la estructura 2025 y comprende los cambios respecto de 2021; aplica controles según el riesgo y la arquitectura, no por mera correspondencia nominal."
+        }
+      ],
       "visuals": [{"afterHeading":"8.2 Ciclo HTTP y estado","src":"assets/diagrams/b3/b3-t12-web-segura.svg","title":"Petición web, estado y controles de seguridad","alt":"Flujo desde navegador y CDN o reverse proxy hasta API, servicios y datos, mostrando TLS, cookies o tokens, CORS, CSP, control de acceso, validación, caché, observabilidad e internacionalización.","description":"Coloca cada control en la capa donde actúa y muestra que HTTP no mantiene sesión por sí mismo.","takeaway":"TLS protege el transporte; CORS no autentica, CSP no autoriza y la validación de seguridad siempre se repite en servidor."}]
     },
     "B3-T13": {
