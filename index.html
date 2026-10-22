@@ -21,6 +21,7 @@
             <li><a href="#inicio" data-route="inicio">Inicio</a></li>
             <li><a href="#temario" data-route="temario">Temario</a></li>
             <li><a href="#plan" data-route="plan">Plan de estudio</a></li>
+            <li><a href="#progreso" data-route="progreso">Mi progreso de estudio</a></li>
             <li><a href="#entrenamiento" data-route="entrenamiento">Entrenamiento</a></li>
             <li><a href="#examen" data-route="examen">Examen</a></li>
             <li><a href="#practica" data-route="practica">Práctica escrita</a></li>
@@ -238,6 +239,68 @@
         </section>
 
         <section id="study-plan-sources" class="study-plan-section" aria-labelledby="study-plan-sources-title"></section>
+      </section>
+
+      <section data-view="progreso" aria-labelledby="study-progress-title" hidden>
+        <p class="eyebrow">Seguimiento personal</p>
+        <h1 id="study-progress-title">Mi progreso de estudio</h1>
+        <p class="lead">Registra el trabajo real de cada tema. Las semanas del plan solo orientan el orden: nunca activan estados ni casillas automáticamente.</p>
+        <p class="notice">El seguimiento se guarda únicamente en este navegador. La copia general de progreso situada al final de la página incluye también estas casillas, fechas y notas.</p>
+        <p id="study-progress-status" class="analytics-storage-status" role="status" aria-live="polite"></p>
+
+        <section aria-labelledby="study-progress-dashboard-title">
+          <h2 id="study-progress-dashboard-title">Panel de seguimiento</h2>
+          <div id="study-progress-summary" class="analytics-summary-grid" aria-live="polite"></div>
+          <div id="study-progress-blocks" class="study-progress-blocks"></div>
+        </section>
+
+        <section class="study-progress-section study-progress-map-section" aria-labelledby="study-progress-map-title">
+          <div class="study-progress-section-heading">
+            <div>
+              <p class="eyebrow">Vista rápida</p>
+              <h2 id="study-progress-map-title">Tu recorrido por el temario</h2>
+            </div>
+            <p class="form-help">Cada ficha representa un tema. El color muestra su estado y el borde destaca qué toca ahora, después o como repaso.</p>
+          </div>
+          <div id="study-progress-quick-bars" class="study-progress-quick-bars" aria-live="polite"></div>
+          <div id="study-progress-legend" class="study-progress-legend" aria-label="Leyenda de estados"></div>
+          <div id="study-progress-roadmap" class="study-progress-roadmap" aria-live="polite"></div>
+        </section>
+
+        <section class="study-progress-section" aria-labelledby="study-progress-now-title">
+          <h2 id="study-progress-now-title">¿Qué estudio ahora?</h2>
+          <div id="study-progress-recommendations" class="study-progress-recommendations" aria-live="polite"></div>
+        </section>
+
+        <section class="study-progress-section" aria-labelledby="study-progress-topics-title">
+          <h2 id="study-progress-topics-title">Seguimiento de los 57 temas</h2>
+          <form id="study-progress-filters" class="training-form" aria-label="Filtrar seguimiento de estudio">
+            <div class="form-grid">
+              <div class="field">
+                <label for="study-progress-filter-block">Bloque</label>
+                <select id="study-progress-filter-block"><option value="">Todos los bloques</option></select>
+              </div>
+              <div class="field">
+                <label for="study-progress-filter-status">Estado</label>
+                <select id="study-progress-filter-status"><option value="">Todos los estados</option></select>
+              </div>
+              <div class="field">
+                <label for="study-progress-filter-review">Repaso</label>
+                <select id="study-progress-filter-review">
+                  <option value="">Todos</option>
+                  <option value="due">Necesitan repaso</option>
+                  <option value="scheduled">Con repaso programado</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="study-progress-search">Código o título</label>
+                <input id="study-progress-search" type="search" autocomplete="off" placeholder="Ej.: III.12 o aplicaciones web">
+              </div>
+            </div>
+          </form>
+          <p id="study-progress-visible-count" class="form-help" aria-live="polite"></p>
+          <div id="study-progress-topics" class="study-progress-topics"></div>
+        </section>
       </section>
 
       <section data-view="entrenamiento" aria-labelledby="training-title" hidden>

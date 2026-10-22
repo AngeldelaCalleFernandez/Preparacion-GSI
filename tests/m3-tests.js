@@ -131,6 +131,22 @@ function analyticsPayload(isDemo = false) {
   return createAnalyticsStore(isDemo, FIXED_DATE);
 }
 
+function studyProgressPayload() {
+  return {
+    version: 1,
+    topics: {
+      "III.12": {
+        status: "in-progress",
+        checks: { firstPass: true, testCorrected: false, review7: false, review30: false, consolidated: false },
+        lastStudiedAt: "2026-10-22",
+        nextReviewAt: "2026-10-29",
+        notes: "Fixture de migración",
+        updatedAt: FIXED_DATE,
+      },
+    },
+  };
+}
+
 function seedV1(storage, logicalKey, payload) {
   storage.setItem(logicalKey, JSON.stringify(payload));
 }
@@ -148,6 +164,7 @@ function seedAllValid(storage) {
   seedV1(storage, "gsi.reinforcement.demo.v1", reinforcementPayload(true));
   seedV1(storage, "gsi.analytics.real.v1", analyticsPayload(false));
   seedV1(storage, "gsi.analytics.demo.v1", analyticsPayload(true));
+  seedV1(storage, "gsi.study-progress.v1", studyProgressPayload());
 }
 
 async function test(name, action) {
@@ -164,7 +181,7 @@ await test("02. contexto sin syllabusId rechazado", () => expectThrows(() => bui
 await test("03. contrato desconocido rechazado", () => expectThrows(() => buildPhysicalPersistenceKey(CONTEXT, "gsi.unknown.v1"), "desconocido"));
 await test("04. builder determinista", () => expect(physical(CONTEXT, LOGICAL_PERSISTENCE_KEYS[0]) === physical(CONTEXT, LOGICAL_PERSISTENCE_KEYS[0])));
 await test("05. contextos diferentes producen claves diferentes", () => expect(physical(CONTEXT, LOGICAL_PERSISTENCE_KEYS[0]) !== physical(OTHER_CONTEXT, LOGICAL_PERSISTENCE_KEYS[0])));
-await test("06. siete contratos producen siete claves", () => expect(new Set(LOGICAL_PERSISTENCE_KEYS.map((key) => physical(CONTEXT, key))).size === 7));
+await test("06. ocho contratos producen ocho claves", () => expect(new Set(LOGICAL_PERSISTENCE_KEYS.map((key) => physical(CONTEXT, key))).size === 8));
 await test("07. builder no depende de short_code", () => expect(physical(CONTEXT, LOGICAL_PERSISTENCE_KEYS[0]) === physical({ ...CONTEXT, short_code: "OTRO" }, LOGICAL_PERSISTENCE_KEYS[0])));
 await test("08. envelope válido", () => expect(validatePersistenceEnvelope(createPersistenceEnvelope(CONTEXT, { ok: true }), CONTEXT).payload.ok));
 await test("09. persistenceVersion incorrecta rechazada", () => expectThrows(() => validatePersistenceEnvelope({ persistenceVersion: 1, oppositionId: CONTEXT.oppositionId, syllabusId: CONTEXT.syllabusId, payload: {} }, CONTEXT), "persistenceVersion"));
@@ -195,7 +212,7 @@ await test("33. v1 permanece byte a byte intacta", () => { const raw = new FakeS
 await test("34. v2 existente no se sobrescribe", () => { const raw = new FakeStorage(); const existing = JSON.stringify(createPersistenceEnvelope(CONTEXT, { ...trainingPayload(), already: true })); raw.setItem(physical(CONTEXT, LOGICAL_PERSISTENCE_KEYS[0]), existing); seedV1(raw, LOGICAL_PERSISTENCE_KEYS[0], trainingPayload()); raw.resetCounters(); const result = migrateV1ToV2(CONTEXT, raw); expect(result.ok && raw.getItem(physical(CONTEXT, LOGICAL_PERSISTENCE_KEYS[0])) === existing && raw.setCalls === 0); });
 await test("35. tombstone impide remigración", () => { const raw = new FakeStorage(); seedV1(raw, LOGICAL_PERSISTENCE_KEYS[0], trainingPayload()); createPersistenceAdapter(CONTEXT, raw).removeItem(LOGICAL_PERSISTENCE_KEYS[0]); raw.resetCounters(); const result = migrateV1ToV2(CONTEXT, raw); expect(result.ok && result.copied === 0 && raw.setCalls === 0); });
 await test("36. segunda migración no escribe copias", () => { const raw = new FakeStorage(); seedV1(raw, LOGICAL_PERSISTENCE_KEYS[0], trainingPayload()); migrateV1ToV2(CONTEXT, raw); raw.resetCounters(); const result = migrateV1ToV2(CONTEXT, raw); expect(result.ok && result.copied === 0 && raw.setCalls === 0); });
-await test("37. varias v1 válidas migran juntas", () => { const raw = new FakeStorage(); seedAllValid(raw); raw.resetCounters(); const result = migrateV1ToV2(CONTEXT, raw); expect(result.ok && result.copied === 7 && raw.setCalls === 7); });
+await test("37. varias v1 válidas migran juntas", () => { const raw = new FakeStorage(); seedAllValid(raw); raw.resetCounters(); const result = migrateV1ToV2(CONTEXT, raw); expect(result.ok && result.copied === 8 && raw.setCalls === 8); });
 await test("38. una v1 corrupta evita todas las escrituras nuevas", () => { const raw = new FakeStorage(); seedV1(raw, LOGICAL_PERSISTENCE_KEYS[0], trainingPayload()); raw.setItem(LOGICAL_PERSISTENCE_KEYS[3], "{"); raw.resetCounters(); const result = migrateV1ToV2(CONTEXT, raw); expect(!result.ok && raw.setCalls === 0 && raw.getItem(physical(CONTEXT, LOGICAL_PERSISTENCE_KEYS[0])) === null); });
 await test("39. fallo de setItem revierte v2 nuevas", () => { const raw = new FakeStorage(); seedV1(raw, LOGICAL_PERSISTENCE_KEYS[0], trainingPayload()); seedV1(raw, LOGICAL_PERSISTENCE_KEYS[3], reinforcementPayload()); raw.resetCounters(); raw.failOnSet = 2; const result = migrateV1ToV2(CONTEXT, raw); expect(!result.ok && raw.getItem(physical(CONTEXT, LOGICAL_PERSISTENCE_KEYS[0])) === null && raw.removeCalls === 1); });
 await test("40. rollback conserva v2 previas", () => { const raw = new FakeStorage(); const prior = JSON.stringify(createPersistenceEnvelope(CONTEXT, { prior: true })); raw.setItem(physical(CONTEXT, LOGICAL_PERSISTENCE_KEYS[0]), prior); seedV1(raw, LOGICAL_PERSISTENCE_KEYS[3], reinforcementPayload()); raw.resetCounters(); raw.failOnSet = 1; const result = migrateV1ToV2(CONTEXT, raw); expect(!result.ok && raw.getItem(physical(CONTEXT, LOGICAL_PERSISTENCE_KEYS[0])) === prior); });

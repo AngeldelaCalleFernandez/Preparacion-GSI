@@ -5,6 +5,7 @@ import { validateExamConfig, isQuestionEligible } from "./exam-engine.js?gsi2";
 import { validateReinforcementStore } from "./reinforcement-storage.js?gsi2";
 import { normaliseAnalyticsStore } from "./analytics-engine.js?gsi2";
 import { WRITTEN_KEY, validateWrittenState } from "./written-practice.js?gsi2";
+import { validateStudyProgressStore } from "./study-progress-engine.js?gsi2";
 
 function keysFor(context) {
   return LOGICAL_PERSISTENCE_KEYS.filter((key) => !key.includes(".demo.")).map((logical) => ({ logical, physical: buildPhysicalPersistenceKey(context, logical) }));
@@ -75,6 +76,7 @@ export function validateProgressBackup(backup, data) {
       valid = result.valid && Array.isArray(payload.attempts) && Array.isArray(payload.sessions)
         && result.store.attempts.length === payload.attempts.length && result.store.sessions.length === payload.sessions.length;
     }
+    else if (logical === "gsi.study-progress.v1") valid = validateStudyProgressStore(payload, data.studyTrackerPlan.topics.map((topic) => topic.code)).valid;
     if (!valid) throw new Error(`Datos incompatibles en ${logical}.`);
     checkReferences(payload);
     if (Array.isArray(payload.questionRefs) && payload.questionRefs.some((q) => !questionIds.has(q.id))) throw new Error("El examen contiene preguntas ajenas a GSI.");

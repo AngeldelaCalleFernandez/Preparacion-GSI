@@ -67,6 +67,48 @@ try {
     assert.match(await page.locator('#study-plan-readiness-result').innerText(), /cerrar provisionalmente/);
     await page.screenshot({ path: path.join(root, "tmp/gsi/study-plan-desktop.png"), fullPage: true });
   });
+  await check("study checklist: 57 empty topics, recommendations, filters and persistence", async () => {
+    await page.goto(`${base}#progreso`);
+    await page.locator('[data-view="progreso"]').waitFor({ state: "visible" });
+    assert.equal(await page.locator('.study-progress-topic').count(), 57);
+    assert.equal(await page.locator('.study-progress-roadmap-block').count(), 4);
+    assert.equal(await page.locator('.study-progress-map-topic').count(), 57);
+    assert.equal(await page.locator('.study-progress-map-topic.is-current').getAttribute('data-study-map-code'), 'II.09');
+    assert.equal(await page.locator('.study-progress-topic[open]').count(), 0);
+    assert.equal(await page.locator('.study-progress-topic input[type="checkbox"]:checked').count(), 0);
+    assert.match(await page.locator('#study-progress-summary').innerText(), /Temas trabajados\s*0[\s\S]*Consolidados\s*0[\s\S]*Pendientes\s*57/);
+    await page.locator('[data-study-map-code="III.12"]').click();
+    assert.equal(await page.locator('[data-study-code="III.12"]').getAttribute('open'), '');
+    await page.locator('#study-status-iii-12').selectOption('in-progress');
+    await page.locator('#study-firstPass-iii-12').check();
+    await page.locator('#study-last-iii-12').fill('2026-10-22');
+    await page.locator('#study-last-iii-12').dispatchEvent('change');
+    await page.locator('#study-next-iii-12').fill('2026-10-01');
+    await page.locator('#study-next-iii-12').dispatchEvent('change');
+    await page.locator('#study-notes-iii-12').fill('Repasar esquemas y preguntas falladas.');
+    await page.waitForFunction(() => {
+      const raw = Object.entries(localStorage).find(([key]) => key.endsWith('.study-progress.v2'))?.[1];
+      return raw && JSON.parse(raw).payload.topics['III.12']?.notes === 'Repasar esquemas y preguntas falladas.';
+    });
+    assert.equal(await page.locator('.study-progress-map-topic.is-current').getAttribute('data-study-map-code'), 'III.12');
+    assert.equal(await page.locator('[data-study-map-code="III.12"]').evaluate((node) => node.classList.contains('is-in-progress')), true);
+    assert.match(await page.locator('#study-progress-quick-bars').innerText(), /Trabajo iniciado[\s\S]*2 %[\s\S]*1 de 57/);
+    assert.match(await page.locator('.study-progress-recommendation').first().innerText(), /III\.12[\s\S]*progreso real/i);
+    await page.locator('#study-progress-filter-block').selectOption('B3');
+    await page.locator('#study-progress-filter-status').selectOption('in-progress');
+    await page.locator('#study-progress-filter-review').selectOption('due');
+    await page.locator('#study-progress-search').fill('III.12');
+    assert.equal(await page.locator('.study-progress-topic:visible').count(), 1);
+    assert.equal(await page.locator('.study-progress-topic:visible').getAttribute('data-study-code'), 'III.12');
+    await page.reload();
+    await page.locator('[data-study-code="III.12"] > summary').click();
+    await page.locator('#study-status-iii-12').waitFor();
+    assert.equal(await page.locator('#study-status-iii-12').inputValue(), 'in-progress');
+    assert.equal(await page.locator('#study-firstPass-iii-12').isChecked(), true);
+    assert.equal(await page.locator('#study-next-iii-12').inputValue(), '2026-10-01');
+    assert.equal(await page.locator('#study-notes-iii-12').inputValue(), 'Repasar esquemas y preguntas falladas.');
+    await page.screenshot({ path: path.join(root, 'tmp/gsi/study-progress-desktop.png'), fullPage: true });
+  });
   for (const block of syllabus.blocks) for (const topic of block.topics) {
     await check(`topic ${topic.id}`, async () => {
       await page.goto(`${base}#temario/${topic.id}`);
@@ -186,21 +228,24 @@ try {
     const downloadPromise=page.waitForEvent("download"); await page.locator("#progress-export").click(); const download=await downloadPromise;
     const backupPath=path.join(root,"tmp/gsi/smoke-progress.json");await download.saveAs(backupPath);
     const backup=JSON.parse(await fs.readFile(backupPath,"utf8"));assert.equal(backup.oppositionId,"OPP-GSI");
+    const studyEntry=Object.entries(backup.entries).find(([key])=>key.endsWith('.study-progress.v2'))?.[1];assert.equal(studyEntry.payload.topics['III.12'].notes,'Repasar esquemas y preguntas falladas.');
     await Promise.all([page.waitForNavigation(),page.locator("#progress-reset").click()]);await page.waitForFunction(()=>document.querySelector("#home-topic-count")?.textContent==="57");
     assert.equal(await page.evaluate(()=>localStorage.getItem("tai.phase3.training.v1")),"historical untouched");
     await Promise.all([page.waitForNavigation(),page.locator("#progress-import").setInputFiles(backupPath)]);
     await page.waitForFunction(()=>Boolean(localStorage.getItem("gsi.OPP-GSI.SYL-GSI-2025.written.v1")),null,{timeout:10000});
     assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem("gsi.OPP-GSI.SYL-GSI-2025.written.v1")).scores.technical),30);
     await page.goto(`${base}#practica`);await page.locator("#written-score").waitFor();assert.equal(await page.locator("#written-score").innerText(),"50 / 50 puntos");
+    await page.goto(`${base}#progreso`);await page.locator('[data-study-code="III.12"] > summary').click();await page.locator('#study-notes-iii-12').waitFor();assert.equal(await page.locator('#study-notes-iii-12').inputValue(),'Repasar esquemas y preguntas falladas.');
   });
   await check("written timeout persists and makes answers read only", async () => {
+    await page.goto(`${base}#practica`);
     await page.getByRole("button",{name:"Elegir otro simulacro",exact:true}).click();await page.getByRole("button",{name:"Elegir opción B · iniciar 180 minutos",exact:true}).click();
     await page.evaluate(()=>{const k="gsi.OPP-GSI.SYL-GSI-2025.written.v1";const v=JSON.parse(localStorage.getItem(k));v.deadlineAt=new Date(Date.now()-1000).toISOString();v.startedAt=new Date(Date.parse(v.deadlineAt)-10800000).toISOString();localStorage.setItem(k,JSON.stringify(v));});
     await page.reload();await page.locator("#written-score").waitFor();assert.equal(await page.locator("#written-answer-1").evaluate(e=>e.readOnly),true);
   });
   await check("mobile main views and keyboard navigation", async () => {
     await page.setViewportSize({width:390,height:844});
-    for(const route of ["inicio","plan","entrenamiento","examen","practica","refuerzo","estadisticas"]) {
+    for(const route of ["inicio","plan","progreso","entrenamiento","examen","practica","refuerzo","estadisticas"]) {
       await page.goto(`${base}#${route}`);await page.locator(`[data-view="${route}"]`).waitFor({state:"visible"});
       assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2),true,route);
       const text=await page.locator(`[data-view="${route}"]`).innerText();assert.doesNotMatch(text,/\bTAI\b|33 temas/);

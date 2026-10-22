@@ -2,6 +2,7 @@ import { normaliseAnalyticsStore } from "./analytics-engine.js?gsi2";
 import { validateActiveExamState } from "./exam-storage.js?gsi2";
 import { buildPhysicalPersistenceKey, createPersistenceEnvelope, LOGICAL_PERSISTENCE_KEYS, parsePersistenceEnvelope } from "./persistence-v2.js?gsi2";
 import { validateReinforcementStore } from "./reinforcement-storage.js?gsi2";
+import { validateStudyProgressStore } from "./study-progress-engine.js?gsi2";
 
 function validationError(message) {
   throw new Error(`Migración v1→v2: ${message}`);
@@ -49,6 +50,7 @@ function validatePayload(logicalKey, payload) {
   if (logicalKey.includes("analytics")) {
     return normaliseAnalyticsStore(payload, expectedMode(logicalKey)).valid;
   }
+  if (logicalKey === "gsi.study-progress.v1") return validateStudyProgressStore(payload).valid;
   return false;
 }
 

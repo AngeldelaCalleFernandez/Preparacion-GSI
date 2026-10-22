@@ -73,9 +73,16 @@ def main():
     syllabus=load('data/syllabus.json'); blocks=syllabus['blocks'];topics={t['id']:t for b in blocks for t in b['topics']}
     manifest=load('data/gsi-source-manifest.json'); index=load('data/topic-content.json');sources={s['id']:s for s in load('data/sources.json')['sources']}
     updates=load('data/updates.json')['updates']
+    tracker=load('data/study-tracker-plan.json')
     enhancements=load_enhancements()
     inventory=load('data/gsi-drive-inventory.json'); known={e['id'] for e in inventory['main']}|{e['id'] for e in inventory['auxiliary']['items']}|{e['id'] for e in inventory['auxiliary']['roots']}
     check([len(b['topics']) for b in blocks]==COUNTS and len(topics)==57,'57 temas; distribución 10/16/15/16')
+    tracker_topics=tracker['topics'];tracker_codes=[item['code'] for item in tracker_topics];tracker_ids=[item['topic_id'] for item in tracker_topics]
+    check(len(tracker_topics)==57 and len(set(tracker_codes))==57 and len(set(tracker_ids))==57,'Seguimiento: 57 códigos e identificadores únicos')
+    expected_locators={tid:t['content']['raw'][0]['locator'] for tid,t in topics.items()}
+    check(all(item['topic_id'] in topics and item['block_id']==item['topic_id'][:2] and expected_locators[item['topic_id']]==item['code'] for item in tracker_topics),'Seguimiento: códigos vinculados al temario oficial')
+    check([sum(item['block_id']==f'B{number}' for item in tracker_topics) for number in range(1,5)]==COUNTS,'Seguimiento: distribución 10/16/15/16')
+    check(not any('situacion' in key.casefold() or 'status' in key.casefold() for item in tracker_topics for key in item),'Seguimiento: sin estados históricos preactivados')
     check([o['id'] for o in load('data/oppositions.json')['oppositions']]==['OPP-GSI'],'Única oposición GSI')
     xml=ET.parse(ROOT/'documents/sources/gsi/BOE-A-2025-26262.xml')
     items=[' '.join(''.join(e.itertext()).split()) for e in xml.find('texto')]

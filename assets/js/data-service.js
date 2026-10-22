@@ -8,6 +8,7 @@ const CATALOG_FILES = Object.freeze({
 const DATA_FILES = Object.freeze({
   sources: "./data/sources.json",
   studyPlan: "./data/study-plan.json",
+  studyTrackerPlan: "./data/study-tracker-plan.json",
   official: "./data/questions-official.json",
   ai: "./data/questions-ai.json",
   manual: "./data/questions-manual.json",
@@ -65,6 +66,16 @@ function assertDataShape(data) {
   assertCollection(data.official, "official", "questions-official.json");
   assertCollection(data.ai, "ai", "questions-ai.json");
   assertCollection(data.manual, "manual", "questions-manual.json");
+  const tracker = data.studyTrackerPlan;
+  const officialTopics = new Map(data.syllabus.blocks.flatMap((block) => block.topics.map((topic) => [topic.id, { blockId: block.id, locator: topic.content?.raw?.find((entry) => entry.locator)?.locator }] )));
+  const trackerCodes = new Set(tracker?.topics?.map((topic) => topic.code));
+  const trackerIds = new Set(tracker?.topics?.map((topic) => topic.topic_id));
+  if (tracker?.metadata?.opposition_id !== data.runtimeContext.oppositionId || tracker?.metadata?.syllabus_id !== data.runtimeContext.syllabusId || tracker?.topics?.length !== 57 || trackerCodes.size !== 57 || trackerIds.size !== 57 || tracker.topics.some((topic) => {
+    const official = officialTopics.get(topic.topic_id);
+    return !official || official.blockId !== topic.block_id || official.locator !== topic.code;
+  })) {
+    throw new Error("El plan de seguimiento no coincide exactamente con los 57 temas oficiales.");
+  }
   if (data.demo) {
     assertCollection(data.demo, "ai", "questions-ai-demo.json");
   }

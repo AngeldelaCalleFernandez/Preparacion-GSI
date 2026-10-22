@@ -6,6 +6,7 @@ export const LOGICAL_PERSISTENCE_KEYS = Object.freeze([
   "gsi.reinforcement.demo.v1",
   "gsi.analytics.real.v1",
   "gsi.analytics.demo.v1",
+  "gsi.study-progress.v1",
 ]);
 
 const SUFFIX_BY_LOGICAL_KEY = Object.freeze({
@@ -16,6 +17,7 @@ const SUFFIX_BY_LOGICAL_KEY = Object.freeze({
   "gsi.reinforcement.demo.v1": "reinforcement.demo",
   "gsi.analytics.real.v1": "analytics.real",
   "gsi.analytics.demo.v1": "analytics.demo",
+  "gsi.study-progress.v1": "study-progress",
 });
 
 const OPPOSITION_ID_RE = /^OPP-[A-Z][A-Z0-9-]*$/;
