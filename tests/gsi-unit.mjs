@@ -74,6 +74,21 @@ test('Selección mezclada reparte preguntas entre los grupos elegidos',()=>{
   assert.equal(topicSelection.filter(q=>q.topic_id==='B1-T01').length,3);
   assert.equal(topicSelection.filter(q=>q.topic_id==='B2-T01').length,3);
 });
+test('Entrenamiento general equilibra bloques y temas aunque los bancos sean desiguales',()=>{
+  const uneven=[...Array(20)].flatMap((_,index)=>[
+    {id:`A-${index}`,block_id:'B1',topic_id:'B1-T01'},
+    {id:`B-${index}`,block_id:'B2',topic_id:'B2-T01'},
+  ]).concat([{id:'A-small',block_id:'B1',topic_id:'B1-T02'},{id:'B-small',block_id:'B2',topic_id:'B2-T02'}]);
+  const result=selectTrainingQuestions(uneven,4,{},()=>.37);
+  assert.deepEqual(Object.fromEntries(['B1','B2'].map(id=>[id,result.filter(q=>q.block_id===id).length])),{B1:2,B2:2});
+  assert.equal(new Set(result.map(q=>q.topic_id)).size,4);
+});
+test('Entrenamiento por bloque recorre sus temas antes de repetirlos',()=>{
+  const pool=filterTrainingQuestions(questions,[],{blockId:'B2'});
+  const result=selectTrainingQuestions(pool,16,{blockId:'B2'},()=>.37);
+  assert.equal(new Set(result.map(q=>q.topic_id)).size,16);
+  assert.ok(result.every(q=>q.block_id==='B2'));
+});
 test('Resumen de entrenamiento cuenta aciertos, fallos y temas para repasar',()=>{
   const sample=questions.filter(q=>q.is_active).slice(0,4);
   const responses=Object.fromEntries(sample.map((q,index)=>[`${q.collection}:${q.id}`,{selectedOption:index<2?q.correct_option:q.options.find(o=>o.id!==q.correct_option).id,correct:index<2}]));

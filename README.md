@@ -28,7 +28,7 @@ En **Examen → Exámenes oficiales INAP**, abre **2022** o **2024**, pulsa **Pr
 
 La publicación de esta revisión, incluidas las auditorías, fue autorizada expresamente por el propietario el 17 de septiembre de 2026.
 
-Consulta la [auditoría completa](docs/FINAL_GSI_AUDIT.md), la [cobertura por tema](data/gsi-coverage-report.json) y el [resultado de la suite](logs/gsi-suite.json).
+Consulta la [auditoría completa](docs/FINAL_GSI_AUDIT.md), la [cobertura por tema](data/gsi-coverage-report.json), la [calidad editorial del banco](docs/GSI_CALIDAD_PREGUNTAS.md) y el [resultado de la suite](logs/gsi-suite.json).
 
 ## Funcionalidades
 
@@ -52,6 +52,8 @@ Consulta la [auditoría completa](docs/FINAL_GSI_AUDIT.md), la [cobertura por te
 La aplicación utiliza HTML5, CSS3 y JavaScript moderno sin frameworks. Los catálogos y bancos se almacenan en JSON y los temas se sirven como HTML estático. No necesita backend, base de datos, cuenta de usuario ni proceso de compilación.
 
 Los datos, el contenido y la lógica se mantienen separados. Las preguntas oficiales, curadas y generadas se guardan en bancos diferentes. Una pregunta generada no entra en entrenamientos o exámenes hasta que esté activa y validada.
+
+La portada, el temario, el plan, el seguimiento y la práctica escrita cargan solo el catálogo ligero. Los tres bancos de preguntas —aproximadamente 5,5 MB sin comprimir— se descargan y validan al entrar por primera vez en Entrenamiento, Examen, Refuerzo o Estadísticas, o al importar una copia. La suite comprueba en Chrome que la portada no solicite esos archivos.
 
 ## Progreso y varios dispositivos
 
@@ -141,17 +143,22 @@ Si Playwright está instalado fuera del repositorio, puedes indicar su archivo `
 
 El estado actual esperado es **0**: las comprobaciones técnicas y el cierre editorial están superados. Las 803 preguntas generadas permanecen identificadas como de origen IA y su revisión corresponde a la versión y hashes registrados.
 
-La última ejecución aprobó:
+La ejecución registrada el **22 de octubre de 2026** terminó con código 0 y
+`technical_pass` y `release_ready` verdaderos. El detalle generado —incluidos
+los recuentos de datos, esquemas, pruebas y comprobaciones funcionales— se
+consulta en [`logs/gsi-suite.json`](logs/gsi-suite.json), que es la evidencia
+vigente y evita mantener una segunda copia manual de cifras que cambia al
+ampliar la suite.
 
-- 20 archivos de datos contra 18 esquemas JSON;
-- 57 temas y sus referencias;
-- 1964 preguntas con estructura válida;
-- 88 pruebas unitarias;
-- 288 pruebas de regresión;
-- 77 comprobaciones funcionales en navegador;
-- funcionamiento en escritorio, móvil y una subruta de GitHub Pages.
+La validación cubre los 57 temas y sus referencias, las 1.964 preguntas, los
+contratos JSON, la sintaxis JavaScript, las pruebas unitarias y de regresión y
+el recorrido funcional en escritorio, móvil y una subruta de GitHub Pages.
 
 También se comprueban puntuación, temporizadores, persistencia, exportación e importación, rutas relativas, procedencia, exclusión de preguntas pendientes y ausencia de referencias TAI en el producto activo.
+
+La criba de calidad editorial es independiente de la validez estructural. El comando `python scripts/analyze_question_quality.py --check` comprueba que el informe y la cola de revisión coincidan con los bancos sin cambiar ninguna pregunta.
+
+La misma suite se ejecuta en GitHub Actions para cada `pull_request`, para cambios en `gsi-only-final` y ramas `codex/**`, y de forma manual. El flujo instala sus dependencias, usa Chrome real y conserva durante 14 días los logs y capturas aunque una comprobación falle.
 
 ## Fuentes, trazabilidad y vigencia
 

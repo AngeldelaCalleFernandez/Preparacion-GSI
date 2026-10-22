@@ -1,6 +1,8 @@
 # Revisión editorial del banco GSI
 
-Estado a 16 de septiembre de 2026: **959 preguntas curadas, 803 generadas y 202 oficiales activas**. Las curadas conservan las claves y explicaciones del corpus revisado. Las generadas conservan su origen IA; las oficiales se importan de cuestionarios y plantillas definitivas del INAP.
+Estado revisado el 22 de octubre de 2026: **959 preguntas curadas, 803 generadas y 202 oficiales activas**. Las curadas conservan las claves y explicaciones del corpus revisado. Las generadas conservan su origen IA; las oficiales se importan de cuestionarios y plantillas definitivas del INAP.
+
+La criba heurística reproducible está en [Calidad editorial del banco](GSI_CALIDAD_PREGUNTAS.md), con el detalle completo en [`logs/gsi-question-quality.json`](../logs/gsi-question-quality.json). Sus hallazgos no cambian claves ni estados: priorizan una revisión humana L3 y mantienen separadas la integridad técnica, la confirmación del propietario y la revisión editorial independiente.
 
 ## Evidencia disponible
 

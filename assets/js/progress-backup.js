@@ -105,7 +105,7 @@ export function importProgress(backup, data, storage) {
 export function resetProgress(context, storage) {
   for (const key of [...keysFor(context).map((k) => k.physical), WRITTEN_KEY]) storage.removeItem(key);
 }
-export function initProgressBackup(data) {
+export function initProgressBackup(data, loadFullData = async () => data) {
   const status = document.querySelector("#backup-status");
   document.querySelector("#progress-export").addEventListener("click", () => {
     try {
@@ -120,9 +120,11 @@ export function initProgressBackup(data) {
     const file = event.target.files[0]; if (!file) return;
     try {
       if (file.size > 20000000) throw new Error("La copia supera 20 MB; comprueba que sea una exportación de progreso GSI.");
-      const backup = validateProgressBackup(JSON.parse(await file.text()), data);
+      status.textContent = "Validando la copia con los bancos de preguntas…";
+      const fullData = await loadFullData();
+      const backup = validateProgressBackup(JSON.parse(await file.text()), fullData);
       if (!window.confirm("La copia es compatible con GSI. ¿Reemplazar el progreso actual por esta copia?")) return;
-      importProgress(backup, data, localStorage); window.location.reload();
+      importProgress(backup, fullData, localStorage); window.location.reload();
     } catch (error) { status.textContent = `Importación cancelada: ${error.message}`; }
     finally { event.target.value = ""; }
   });

@@ -1,0 +1,59 @@
+name: Validación GSI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - gsi-only-final
+      - "codex/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: gsi-validation-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Datos, contenido y aplicación
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Obtener repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Instalar validadores Python
+        run: python -m pip install -r scripts/requirements-validation.txt
+
+      - name: Instalar Playwright y Chrome
+        run: |
+          npm install --no-save --package-lock=false playwright
+          npx playwright install --with-deps chrome
+
+      - name: Ejecutar suite completa
+        run: python scripts/run_gsi_suite.py
+
+      - name: Conservar evidencias
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gsi-validation-${{ github.run_id }}
+          if-no-files-found: warn
+          retention-days: 14
+          path: |
+            logs/gsi-*.json
+            tmp/gsi/*.png

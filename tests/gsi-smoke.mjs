@@ -22,10 +22,11 @@ const base = `http://127.0.0.1:${server.address().port}/gsi-test/index.html`;
 const browser = await chromium.launch({ channel: "chrome", headless: true });
 const context = await browser.newContext({ viewport: { width: 1365, height: 900 } });
 const page = await context.newPage();
-const failures = [], checks = [], consoleErrors = [], broken = [];
+const failures = [], checks = [], consoleErrors = [], broken = [], requestedUrls = [];
 page.on("pageerror", (error) => consoleErrors.push(error.message));
 page.on("console", (message) => { if (message.type() === "error") consoleErrors.push(message.text()); });
 page.on("response", (response) => { if (response.status() >= 400) broken.push(`${response.status()} ${response.url()}`); });
+page.on("request", (request) => requestedUrls.push(request.url()));
 async function check(name, fn) {
   try { await fn(); checks.push(name); console.log(`PASS ${name}`); }
   catch (error) { failures.push({ name, error: error.message }); console.log(`FAIL ${name}: ${error.message}`); }
@@ -36,6 +37,7 @@ try {
     await page.waitForFunction(() => document.querySelector("#home-topic-count").textContent === "57", null, { timeout: 15000 });
     assert.equal(await page.locator("#app-status").innerText(), "");
     assert.match(await page.title(), /Preparación GSI/);
+    assert.equal(requestedUrls.some((url) => /questions-(official|manual|ai)\.json/.test(url)), false, "La portada no debe descargar los bancos de preguntas.");
   });
   await fs.mkdir(path.join(root, "tmp/gsi"), { recursive: true });
   await page.screenshot({ path: path.join(root, "tmp/gsi/home-desktop.png"), fullPage: true });
@@ -125,6 +127,7 @@ try {
   });
   await check("training and persistent response", async () => {
     await page.goto(`${base}#entrenamiento`);
+    await page.waitForFunction(() => ["official", "manual", "ai"].every((origin) => performance.getEntriesByName(new URL(`data/questions-${origin}.json`, location.href).href).length > 0));
     await page.locator("#training-block").selectOption("B1");
     await page.locator("#training-topic").selectOption("B1-T01");
     await page.locator("#training-quantity").fill("1");
@@ -156,8 +159,11 @@ try {
     assert.equal(await page.locator("#written-answer-1").inputValue(), "Respuesta de comprobación del guardado.");
   });
   await check("statistics / reinforcement views", async () => {
-    for (const route of ["estadisticas", "refuerzo"]) { await page.goto(`${base}#${route}`); await page.locator(`[data-view="${route}"]`).waitFor({ state: "visible" }); }
-    assert.equal(await page.locator("#app-status").innerText(), "");
+    for (const route of ["estadisticas", "refuerzo"]) {
+      await page.goto(`${base}#${route}`);
+      await page.locator(`[data-view="${route}"]`).waitFor({ state: "visible" });
+      await page.waitForFunction(() => document.querySelector("#app-status")?.textContent === "");
+    }
   });
   const bank = (await Promise.all(["official", "manual", "ai"].map(async (origin) => JSON.parse(await fs.readFile(path.join(root, `data/questions-${origin}.json`), "utf8")).questions))).flat();
   const pendingTopics = [];
@@ -330,12 +336,18 @@ try {
   });
   await check("editorial review exposes confirmed status without writing progress", async () => {
     const before=await page.evaluate(()=>JSON.stringify(Object.entries(localStorage)));
+    const quality=JSON.parse(await fs.readFile(path.join(root,'logs/gsi-question-quality.json'),'utf8'));
     await page.goto(base.replace('index.html','review.html'));
+    await page.waitForFunction((expected)=>document.querySelector('#review-question').options.length===expected,quality.summary.manual_primary_queue);
+    assert.match(await page.locator('#review-content').innerText(),/Indicios editoriales automáticos/);
+    assert.match(await page.locator('#review-count').innerText(),new RegExp(`${quality.summary.questions} en los bancos · ${quality.summary.questions_with_findings} con indicios`));
+    await page.locator('#review-origin').selectOption('ai');
+    await page.locator('#review-rule').selectOption('');
     await page.waitForFunction(()=>document.querySelector('#review-question').options.length===803);
     await page.locator('#review-topic').selectOption('B4-T13');
     assert.equal(await page.locator('#review-question option').count(),20);
     const first=await page.locator('#review-content').innerText();
-    assert.match(first,/Texto de la sección/);assert.match(first,/Generada · validada · activa/);assert.match(first,/confirmada por el propietario/);
+    assert.match(first,/Texto de respaldo registrado/);assert.match(first,/Generada por IA · validada · activa/);assert.match(first,/confirmada por el propietario/);
     assert.ok((await page.locator('#review-content pre').innerText()).length>100);
     await page.locator('#review-next').click();assert.notEqual(await page.locator('#review-content').innerText(),first);
     await page.locator('#review-topic').selectOption('');await page.locator('#review-search').fill('AI-GSI-B1-T03-001');
@@ -343,6 +355,40 @@ try {
     await page.setViewportSize({width:390,height:844});
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2),true);
     assert.equal(await page.evaluate(()=>JSON.stringify(Object.entries(localStorage))),before);
+  });
+  await check("basic accessibility across main views", async () => {
+    const routes = ["inicio", "temario/B1-T01", "plan", "progreso", "entrenamiento", "examen", "practica", "refuerzo", "estadisticas"];
+    for (const route of routes) {
+      const view = route.split("/")[0];
+      await page.goto(`${base}#${route}`);
+      await page.locator(`[data-view="${view}"]`).waitFor({ state: "visible" });
+      if (["entrenamiento", "examen", "refuerzo", "estadisticas"].includes(view)) {
+        await page.waitForFunction(() => document.querySelector("#app-status")?.textContent === "");
+      }
+      const issues = await page.evaluate((routeName) => {
+        const visible = document.querySelector(`[data-view="${routeName}"]`);
+        const result = [];
+        if (document.documentElement.lang !== "es") result.push("idioma del documento");
+        if (document.querySelector("#main-content")?.getAttribute("tabindex") !== "-1") result.push("foco programático del contenido principal");
+        const ids = [...document.querySelectorAll("[id]")].map((node) => node.id);
+        if (new Set(ids).size !== ids.length) result.push("identificadores duplicados");
+        if (visible.querySelectorAll("h1").length !== 1) result.push("la vista no tiene exactamente un H1");
+        let previousLevel = 0;
+        for (const heading of visible.querySelectorAll("h1,h2,h3,h4,h5,h6")) {
+          const level = Number(heading.tagName.slice(1));
+          if (previousLevel && level > previousLevel + 1) result.push(`salto ${previousLevel}→${level}`);
+          previousLevel = level;
+        }
+        for (const image of visible.querySelectorAll("img")) if (!image.hasAttribute("alt")) result.push("imagen sin alt");
+        for (const control of visible.querySelectorAll("button,a[href],input:not([type=hidden]),select,textarea")) {
+          if (control.hidden || control.closest("[hidden]") || control.getClientRects().length === 0) continue;
+          const labelled = control.getAttribute("aria-label") || control.getAttribute("aria-labelledby") || control.labels?.length || control.textContent?.trim() || control.getAttribute("title") || control.getAttribute("alt") || control.value;
+          if (!labelled) result.push(`${control.tagName.toLowerCase()} sin nombre accesible`);
+        }
+        return result;
+      }, view);
+      assert.deepEqual(issues, [], `${route}: ${issues.join(", ")}`);
+    }
   });
   await check("no console errors or broken HTTP routes", () => { assert.deepEqual(consoleErrors, []); assert.deepEqual(broken, []); });
 } finally {

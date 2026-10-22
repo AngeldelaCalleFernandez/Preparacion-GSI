@@ -28,22 +28,51 @@ function shuffleCopy(items, random = Math.random) {
 }
 
 export function selectTrainingQuestions(questions, quantity, filters = {}, random = Math.random) {
-  const limit = Math.min(Math.max(Number.isInteger(quantity) ? quantity : 0, 0), questions.length);
+  const topicScope = Array.isArray(filters.topicIds) ? [...new Set(filters.topicIds)] : [];
+  const blockScope = Array.isArray(filters.blockIds) ? [...new Set(filters.blockIds)] : [];
+  const scoped = questions.filter((question) => {
+    if (filters.topicId && question.topic_id !== filters.topicId) return false;
+    if (filters.blockId && question.block_id !== filters.blockId) return false;
+    if (topicScope.length && !topicScope.includes(question.topic_id)) return false;
+    if (blockScope.length && !blockScope.includes(question.block_id)) return false;
+    return true;
+  });
+  const limit = Math.min(Math.max(Number.isInteger(quantity) ? quantity : 0, 0), scoped.length);
   if (limit === 0) return [];
-  const topicGroups = Array.isArray(filters.topicIds) ? [...new Set(filters.topicIds)] : [];
-  const blockGroups = Array.isArray(filters.blockIds) ? [...new Set(filters.blockIds)] : [];
-  const groupField = topicGroups.length > 1 ? "topic_id" : blockGroups.length > 1 ? "block_id" : null;
-  const groupIds = groupField === "topic_id" ? topicGroups : groupField === "block_id" ? blockGroups : [];
-  if (!groupField) return shuffleCopy(questions, random).slice(0, limit);
+  const topicIds = [...new Set(scoped.map((question) => question.topic_id))];
+  if (topicIds.length <= 1) return shuffleCopy(scoped, random).slice(0, limit);
 
-  const pools = new Map(groupIds.map((id) => [id, shuffleCopy(questions.filter((question) => question[groupField] === id), random)]));
-  const order = shuffleCopy(groupIds.filter((id) => pools.get(id).length > 0), random);
+  const pools = new Map(topicIds.map((id) => [id, shuffleCopy(scoped.filter((question) => question.topic_id === id), random)]));
+  const topicsByBlock = new Map();
+  for (const question of scoped) {
+    const ids = topicsByBlock.get(question.block_id) ?? [];
+    if (!ids.includes(question.topic_id)) ids.push(question.topic_id);
+    topicsByBlock.set(question.block_id, ids);
+  }
+  const blockOrder = shuffleCopy([...topicsByBlock.keys()], random);
+  const topicOrderByBlock = new Map(
+    [...topicsByBlock].map(([blockId, ids]) => [blockId, shuffleCopy(ids, random)]),
+  );
+  const topicCursorByBlock = new Map(blockOrder.map((blockId) => [blockId, 0]));
   const selected = [];
-  while (selected.length < limit && order.some((id) => pools.get(id).length > 0)) {
-    for (const id of order) {
-      const question = pools.get(id).pop();
-      if (question && selected.length < limit) selected.push(question);
+  while (selected.length < limit) {
+    let added = false;
+    for (const blockId of blockOrder) {
+      const order = topicOrderByBlock.get(blockId);
+      const start = topicCursorByBlock.get(blockId);
+      for (let offset = 0; offset < order.length; offset += 1) {
+        const position = (start + offset) % order.length;
+        const topicId = order[position];
+        const question = pools.get(topicId).pop();
+        if (!question) continue;
+        selected.push(question);
+        topicCursorByBlock.set(blockId, (position + 1) % order.length);
+        added = true;
+        break;
+      }
+      if (selected.length === limit) return selected;
     }
+    if (!added) break;
   }
   return selected;
 }

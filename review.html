@@ -11,9 +11,12 @@
   <main class="shell">
     <p><a href="index.html">Volver al programa de estudio GSI A2</a></p>
     <h1>Revisión editorial de preguntas</h1>
-    <p class="notice">Estas preguntas se generaron a partir del corpus V2.1. Cada ficha muestra su estado actual de revisión y activación. Esta vista permite contrastarlas con su fuente; consultarla no cambia su estado.</p>
+    <p class="notice">Vista de solo lectura de los tres bancos. Los indicios de calidad son heurísticos: sirven para ordenar la revisión, no cambian respuestas ni estados y no sustituyen el contraste humano con la fuente.</p>
     <div class="form-grid">
+      <div class="field"><label for="review-origin">Origen</label><select id="review-origin"><option value="">Todos los orígenes</option><option value="manual" selected>Manuales/curadas</option><option value="ai">Generadas por IA</option><option value="official">Oficiales INAP</option></select></div>
       <div class="field"><label for="review-topic">Tema</label><select id="review-topic"><option value="">Todos los temas del lote</option></select></div>
+      <div class="field"><label for="review-priority">Prioridad heurística</label><select id="review-priority"><option value="">Todas</option><option value="flagged">Con algún indicio</option><option value="P1">P1 · posible error estructural</option><option value="P2">P2 · revisión prioritaria</option><option value="P3">P3 · revisión secundaria</option><option value="clean">Sin indicios automáticos</option></select></div>
+      <div class="field"><label for="review-rule">Indicio</label><select id="review-rule"><option value="">Todos los indicios</option><option value="correct-length-dominance" selected>Correcta mucho más larga</option><option value="absolute-wording-cluster">Distractores absolutos</option><option value="meta-source-wording">Redacción dependiente de la fuente</option><option value="duplicate-option">Alternativas duplicadas</option></select></div>
       <div class="field"><label for="review-search">Buscar por identificador o enunciado</label><input id="review-search" type="search"></div>
       <div class="field"><label for="review-question">Pregunta</label><select id="review-question"></select></div>
     </div>
@@ -22,6 +25,6 @@
     <article id="review-content" aria-live="polite"></article>
   </main>
   <footer class="site-footer shell"><p>Preparación GSI · Creado por <a href="https://github.com/AngeldelaCalleFernandez">AngeldelaCalleFernandez</a>.</p><p><a href="licencia.html" rel="license">Uso gratuito y no comercial, con atribución</a>.</p></footer>
-  <script type="module" src="assets/js/editorial-review.js"></script>
+  <script type="module" src="assets/js/editorial-review.js?gsi3"></script>
 </body>
 </html>
