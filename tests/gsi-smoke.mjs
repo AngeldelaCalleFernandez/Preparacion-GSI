@@ -262,7 +262,8 @@ try {
     await page.screenshot({path:path.join(root,"tmp/gsi/study-plan-mobile.png"),fullPage:true});
     await page.goto(`${base}#temario/B2-T07`);await page.locator('.topic-content[data-topic-id="B2-T07"]').waitFor();assert.match(await page.locator("#topic-detail").innerText(),/1.37 ya publicado/);
     await page.screenshot({path:path.join(root,"tmp/gsi/topic-mobile-viewport.png")});
-    await page.locator('a[data-route="inicio"]').focus();await page.keyboard.press("Enter");assert.match(page.url(),/#inicio$/);
+    await page.locator('a[data-route="inicio"]').focus();
+    await Promise.all([page.waitForURL(/#inicio$/),page.keyboard.press("Enter")]);
     await page.setViewportSize({width:1365,height:900});
   });
 
