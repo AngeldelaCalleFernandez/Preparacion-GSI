@@ -1,5 +1,5 @@
 import { loadAnalyticsStore } from "./analytics-storage.js?gsi2";
-import { filterTrainingQuestions, selectTrainingQuestions, summarizeTrainingResults } from "./training-engine.js?gsi2";
+import { filterTrainingQuestions, selectTrainingQuestions, summarizeTrainingResults } from "./training-engine.js?gsi3";
 import { describeQuestionSource } from "./data-service.js?gsi2";
 import { clearAllResponses, clearDemoResponses, getProgressSummary, getStoredResponses, saveResponse } from "./storage.js?gsi2";
 import {
@@ -153,12 +153,16 @@ export function initTraining(data) {
 
   function updateAvailability() {
     const count = availableQuestions().length;
+    const filters = currentFilters();
     quantityInput.max = Math.max(count, 1);
     if (Number(quantityInput.value) > count && count > 0) quantityInput.value = String(count);
     const mixLabel = mixScope.checked ? ` Mezcla activa: ${checkedValues(mixTopics).length || checkedValues(mixBlocks).length} grupo(s) seleccionado(s).` : "";
+    const balanceLabel = !filters.topicId && (!Array.isArray(filters.topicIds) || filters.topicIds.length !== 1)
+      ? " La sesión se repartirá por bloques y temas antes de repetirlos."
+      : "";
     availability.textContent = count === 0
       ? "No hay preguntas activas que coincidan con esta selección."
-      : `${count} pregunta${count === 1 ? "" : "s"} disponible${count === 1 ? "" : "s"} para esta selección.${mixLabel}`;
+      : `${count} pregunta${count === 1 ? "" : "s"} disponible${count === 1 ? "" : "s"} para esta selección.${mixLabel}${balanceLabel}`;
   }
 
   function persistActiveContext() {
@@ -396,7 +400,7 @@ export function initTraining(data) {
     session.append(createElement("p", "question-progress", `Pregunta ${state.index + 1} de ${state.questions.length}`));
     session.append(createElement("p", "pill", `${originLabel(question)} · ${question.validation_status}`));
     if (describeOfficialQuestion(question)) session.append(createElement("p", "form-help", describeOfficialQuestion(question)));
-    session.append(createElement("p", "question-statement", question.statement));
+    session.append(createElement("h2", "question-statement", question.statement));
     const options = createElement("div", "question-options");
     options.setAttribute("role", "group");
     options.setAttribute("aria-label", "Opciones de respuesta");

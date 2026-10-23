@@ -89,13 +89,13 @@
     },
     {
       "path": "README.md",
-      "line": 115,
+      "line": 117,
       "text": "La identidad activa es `OPP-GSI / SYL-GSI-2025`. El contenido y progreso históricos de TAI permanecen excluidos de la aplicación GSI.",
       "classification": "documentación histórica, explicación de la migración o auditoría de saneamiento"
     },
     {
       "path": "README.md",
-      "line": 154,
+      "line": 157,
       "text": "También se comprueban puntuación, temporizadores, persistencia, exportación e importación, rutas relativas, procedencia, exclusión de preguntas pendientes y ausencia de referencias TAI en el producto activo.",
       "classification": "documentación histórica, explicación de la migración o auditoría de saneamiento"
     },
@@ -1739,25 +1739,25 @@
     },
     {
       "path": "docs/FINAL_GSI_AUDIT.md",
-      "line": 262,
+      "line": 278,
       "text": "Identidad única `OPP-GSI / SYL-GSI-2025`. Las claves lógicas `gsi.*` usan almacenamiento versionado `oposiciones.OPP-GSI.SYL-GSI-2025.*.v2`; la práctica usa `gsi.OPP-GSI.SYL-GSI-2025.written.v1`. No se copian claves TAI ni datos sin identidad GSI. Exportación/importación valida identidades, preguntas, referencias, opciones, sesiones, plazos y rúbrica; el reinicio afecta exclusivamente al progreso GSI. Se admite el estado nulo de una sesión borrada y se intenta revertir cualquier escritura parcial que falle.",
       "classification": "documentación histórica, explicación de la migración o auditoría de saneamiento"
     },
     {
       "path": "docs/FINAL_GSI_AUDIT.md",
-      "line": 266,
+      "line": 282,
       "text": "`archive/tai-before-gsi/` conserva datos, contenidos, pruebas, instrucciones y scripts de la aplicación anterior. `archive/gsi-migration-scripts/` conserva herramientas de migración de una sola ejecución. No se ejecutan desde sus ubicaciones archivadas. Los planes `PLAN_*`, los informes antiguos de fases/M0–M3, `data/protected-artifacts.json`, `data/conversion_report.json`, documentos anteriores y fuentes técnicas históricas permanecen como evidencia fuera del runtime.",
       "classification": "documentación histórica, explicación de la migración o auditoría de saneamiento"
     },
     {
       "path": "docs/FINAL_GSI_AUDIT.md",
-      "line": 268,
+      "line": 284,
       "text": "La búsqueda global `rg -i \"\\bTAI\\b|33 temas\"` se registra con archivo, línea, texto y clasificación en `logs/gsi-legacy-review.json`: 406 líneas en la suite de referencia, 0 sin clasificar. Las coincidencias corresponden a historia conservada, pruebas de rechazo/aislamiento, controles de exclusión o nombres de rutas del repositorio. Los activos `index.html`, `review.html`, `assets/`, los 57 temas y sus HTML no contienen TAI ni marcadores TODO/FIXME. No se han borrado originales para limpiar búsquedas. El inventario no enumera archivos ignorados ni se escanea recursivamente su propio log; su última ejecución puede incluir nuevas líneas de documentación posteriores a la suite.",
       "classification": "documentación histórica, explicación de la migración o auditoría de saneamiento"
     },
     {
       "path": "docs/FINAL_GSI_AUDIT.md",
-      "line": 308,
+      "line": 324,
       "text": "- Las primeras regresiones fallaron por contratos congelados (33 temas, GSI inactivo y claves antiguas). Se adaptaron a los contratos GSI conservando pruebas de puntuación, aislamiento y seguridad. El log inicial se conserva en `logs/gsi-regression-initial.json`.",
       "classification": "documentación histórica, explicación de la migración o auditoría de saneamiento"
     },
@@ -1765,18 +1765,6 @@
       "path": "docs/GSI_SINCRONIZACION_APUNTES_2026-09-23.md",
       "line": 30,
       "text": "`data/sources.json`, `data/gsi-source-manifest.json`, `data/gsi-drive-inventory.json`, `data/topic-content.json`, `data/syllabus.json` y `data/gsi-coverage-report.json` registran los nuevos documentos, fecha de revisión, rutas y hashes. Las fuentes V2.1 anteriores permanecen en el catálogo: sirven de trazabilidad histórica y sustentan la evidencia original de las preguntas IA. No se modificó ningún banco de preguntas, ni estadísticas/progreso, modo examen, diseño general o `archive/`. Tampoco se editó contenido TAI.",
-      "classification": "documentación histórica, explicación de la migración o auditoría de saneamiento"
-    },
-    {
-      "path": "docs/GUIA_DE_ESTUDIO.md",
-      "line": 19,
-      "text": "Si prefieres estudiar desde la copia que ya tienes en `C:\\TAI-proyecto`, sigue estos pasos en ese ordenador:",
-      "classification": "documentación histórica, explicación de la migración o auditoría de saneamiento"
-    },
-    {
-      "path": "docs/GUIA_DE_ESTUDIO.md",
-      "line": 25,
-      "text": "Set-Location -LiteralPath 'C:\\TAI-proyecto'",
       "classification": "documentación histórica, explicación de la migración o auditoría de saneamiento"
     },
     {
@@ -1837,18 +1825,6 @@
       "path": "docs/PRUEBAS_MANUALES_M2.md",
       "line": 11,
       "text": "| M2-02 | Listado de `#temario` | NO EJECUTADA | Muestra 4 bloques y 33 temas. |",
-      "classification": "documentación histórica, explicación de la migración o auditoría de saneamiento"
-    },
-    {
-      "path": "docs/guia-de-estudio.html",
-      "line": 32,
-      "text": "<p>Si prefieres estudiar desde la copia que ya tienes en <code>C:\\TAI-proyecto</code>, sigue estos pasos en ese ordenador:</p>",
-      "classification": "documentación histórica, explicación de la migración o auditoría de saneamiento"
-    },
-    {
-      "path": "docs/guia-de-estudio.html",
-      "line": 34,
-      "text": "<pre tabindex=\"0\" aria-label=\"Comandos para abrir la aplicación\"><code>Set-Location -LiteralPath &#x27;C:\\TAI-proyecto&#x27;",
       "classification": "documentación histórica, explicación de la migración o auditoría de saneamiento"
     },
     {
@@ -2369,73 +2345,79 @@
     },
     {
       "path": "scripts/build_gsi_content.py",
-      "line": 53,
+      "line": 54,
       "text": "    archive = ROOT / 'archive/tai-before-gsi'",
       "classification": "control de exclusión o conservación del archivo"
     },
     {
       "path": "scripts/build_gsi_content.py",
-      "line": 63,
+      "line": 64,
       "text": "    save('archive/tai-before-gsi/README.md', '# Archivo histórico anterior a GSI\\n\\nCopia inmutable de datos y contenidos de la aplicación anterior. No se carga desde la aplicación GSI. Los identificadores locales coincidentes pertenecen a otra oposición y nunca deben importarse como progreso GSI.\\n')",
       "classification": "control de exclusión o conservación del archivo"
     },
     {
+      "path": "scripts/validate_documentation.py",
+      "line": 51,
+      "text": "        if \"C:\\\\TAI-proyecto\" in guide:",
+      "classification": "control de exclusión o conservación del archivo"
+    },
+    {
       "path": "scripts/validate_gsi_final.py",
-      "line": 236,
+      "line": 239,
       "text": "        text=p.read_text('utf-8');check(not re.search(r'\\b(?:TAI|tai|TODO|FIXME)\\b|33 temas',text),p.relative_to(ROOT).as_posix()+': sin TAI ni marcadores pendientes activos')",
       "classification": "control de exclusión o conservación del archivo"
     },
     {
       "path": "scripts/validate_gsi_final.py",
-      "line": 250,
+      "line": 253,
       "text": "    found=subprocess.run(['rg','--json','-i',r'\\bTAI\\b|33 temas','--glob','!logs/**','--glob','!tmp/**','.'],cwd=ROOT,capture_output=True,text=True,encoding='utf-8')",
       "classification": "control de exclusión o conservación del archivo"
     },
     {
       "path": "scripts/validate_gsi_final.py",
-      "line": 267,
+      "line": 270,
       "text": "    save('logs/gsi-legacy-review.json',{'date':DATE,'pattern':r'\\bTAI\\b|33 temas','scope':'Archivos versionados y no ignorados; originales locales preservados fuera del runtime. Se excluyen logs para evitar autorreferencias y tmp.', 'matches':matches,'unclassified':sum(m['classification']=='SIN CLASIFICAR' for m in matches)})",
       "classification": "control de exclusión o conservación del archivo"
     },
     {
       "path": "tests/gsi-smoke.mjs",
-      "line": 227,
+      "line": 233,
       "text": "    await page.evaluate(()=>localStorage.setItem(\"tai.phase3.training.v1\",\"historical untouched\"));",
       "classification": "regresión negativa y aislamiento del historial antiguo"
     },
     {
       "path": "tests/gsi-smoke.mjs",
-      "line": 233,
+      "line": 239,
       "text": "    assert.equal(await page.evaluate(()=>localStorage.getItem(\"tai.phase3.training.v1\")),\"historical untouched\");",
       "classification": "regresión negativa y aislamiento del historial antiguo"
     },
     {
       "path": "tests/gsi-smoke.mjs",
-      "line": 251,
+      "line": 257,
       "text": "      const text=await page.locator(`[data-view=\"${route}\"]`).innerText();assert.doesNotMatch(text,/\\bTAI\\b|33 temas/);",
       "classification": "regresión negativa y aislamiento del historial antiguo"
     },
     {
       "path": "tests/gsi-unit.mjs",
-      "line": 95,
+      "line": 110,
       "text": "test('Migración GSI no copia claves antiguas ni sin identidad',()=>{const raw=new Memory();raw.setItem('tai.phase3.training.v1','legacy untouched');raw.setItem('gsi.phase3.training.v1','unscoped untouched');const before=[...raw.map];const result=migrateV1ToV2(context,raw);assert.ok(result.ok);assert.equal(result.copied,0);assert.deepEqual([...raw.map],before);});",
       "classification": "regresión negativa y aislamiento del historial antiguo"
     },
     {
       "path": "tests/gsi-unit.mjs",
-      "line": 98,
+      "line": 113,
       "text": "function seed(){const raw=new Memory();const adapter=createPersistenceAdapter(context,raw);adapter.setItem('gsi.phase3.training.v1',JSON.stringify(training));adapter.removeItem('gsi.phase4.exam.active.real.v1');adapter.setItem(STUDY_PROGRESS_KEY,JSON.stringify({version:1,topics:{'III.12':{...createDefaultTopicProgress(),status:'in-progress',notes:'Persistente',updatedAt:'2026-10-22T10:00:00.000Z'}}}));raw.setItem(WRITTEN_KEY,JSON.stringify(createWrittenState(practice.cases[0].id)));raw.setItem('tai.phase3.training.v1','historical');return raw;}",
       "classification": "regresión negativa y aislamiento del historial antiguo"
     },
     {
       "path": "tests/gsi-unit.mjs",
-      "line": 99,
+      "line": 114,
       "text": "test('Exportar/importar conserva respuestas, práctica y sesiones borradas',()=>{const raw=seed(),backup=exportProgress(context,raw),target=new Memory();validateProgressBackup(backup,data);importProgress(backup,data,target);assert.equal(target.getItem('tai.phase3.training.v1'),null);assert.deepEqual(exportProgress(context,target).entries,backup.entries);});",
       "classification": "regresión negativa y aislamiento del historial antiguo"
     },
     {
       "path": "tests/gsi-unit.mjs",
-      "line": 103,
+      "line": 118,
       "text": "test('Reinicio borra solo progreso GSI y conserva historial antiguo',()=>{const raw=seed();resetProgress(context,raw);assert.deepEqual([...raw.map],[['tai.phase3.training.v1','historical']]);});",
       "classification": "regresión negativa y aislamiento del historial antiguo"
     },

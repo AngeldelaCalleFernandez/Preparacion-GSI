@@ -15,6 +15,7 @@ from copy import deepcopy
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from import_gsi_documents import render_elements, inline
+from topic_heading_policy import is_probable_body_text, normalize_markdown_headings
 
 ROOT = Path(__file__).resolve().parents[1]
 DATE = '2026-09-23'
@@ -357,7 +358,8 @@ def render_topic(topic_id, native, summary, source, review_source, locator, enha
             p = element.get('paragraph', {})
             style = (p.get('paragraphStyle') or {}).get('namedStyleType', '')
             text = text_of(element)
-            if style.startswith('HEADING_') and text:
+            heading_style = style.startswith('HEADING_') or style in {'TITLE', 'SUBTITLE'}
+            if heading_style and text and not is_probable_body_text(text):
                 if pending:
                     body.append(render_elements(pending)); pending = []
                 ordinal += 1
@@ -375,6 +377,9 @@ def render_topic(topic_id, native, summary, source, review_source, locator, enha
                         matched_visuals.add(ordinal_visual)
                         body.append(visual_markup(topic_id, visual, ordinal_visual))
             else:
+                if heading_style and text:
+                    element = deepcopy(element)
+                    element['paragraph'].setdefault('paragraphStyle', {})['namedStyleType'] = 'NORMAL_TEXT'
                 pending.append(element)
         if pending:
             body.append(render_elements(pending))
@@ -468,12 +473,14 @@ def main():
                     raise ValueError(f'Editorial note anchor not unique in Markdown {tid}: {anchor}')
                 study_markdown = study_markdown.replace(anchor, anchor + '\n\n' + insertion['text'], 1)
             study_markdown = inject_markdown_enhancements(study_markdown, enhancement.get('visuals', []), enhancement.get('supplements', []), tid)
+            study_markdown, _ = normalize_markdown_headings(study_markdown)
             reviewed_summary = summary_md[number]
             for replacement in enhancement.get('summaryReplacements', []):
                 markdown_source, markdown_target = markdown_replacement_pair(replacement)
                 if reviewed_summary.count(markdown_source) != 1:
                     raise ValueError(f'Editorial summary replacement not unique in {tid}: {markdown_source}')
                 reviewed_summary = reviewed_summary.replace(markdown_source, markdown_target, 1)
+            reviewed_summary, _ = normalize_markdown_headings(reviewed_summary)
             topic_text = f'# {topic["title"]}\n\n{tid} · Bloque {b} · Tema {number}\n\nFuente: [{source["title"]}]({source["url"]}) · {locator} · {source["version"]} · {source["reviewed_at"]}\n\n' + study_markdown + f'\n\n## Resumen de repaso\n\nFuente: [{review_source["title"]}]({review_source["url"]}) · {locator}\n\n' + reviewed_summary + '\n'
             save(f'content/topics/{tid}.md', topic_text)
             markup, sections = render_topic(tid, native[number], summaries[number], source, review_source, locator, enhancement)

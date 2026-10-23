@@ -9,10 +9,14 @@ const DATA_FILES = Object.freeze({
   sources: "./data/sources.json",
   studyPlan: "./data/study-plan.json",
   studyTrackerPlan: "./data/study-tracker-plan.json",
+  updates: "./data/updates.json",
+  coverage: "./data/gsi-coverage-report.json",
+});
+
+const QUESTION_FILES = Object.freeze({
   official: "./data/questions-official.json",
   ai: "./data/questions-ai.json",
   manual: "./data/questions-manual.json",
-  updates: "./data/updates.json",
 });
 
 const DEMO_FILE = "./data/demo/questions-ai-demo.json";
@@ -53,7 +57,7 @@ function assertGsiQuestions(data) {
   }
 }
 
-function assertDataShape(data) {
+function assertCoreDataShape(data) {
   if (!Array.isArray(data.syllabus?.blocks) || !Array.isArray(data.sources?.sources) || !Array.isArray(data.updates?.updates) || data.studyPlan?.metadata?.plan_type !== "orientative" || !Array.isArray(data.studyPlan?.phases)) {
     throw new Error("Los datos de temario, fuentes, actualizaciones o planificación no tienen la estructura esperada.");
   }
@@ -63,9 +67,9 @@ function assertDataShape(data) {
   if (!structure || data.syllabus.blocks.length !== structure.block_count || topicCount !== structure.topic_count || JSON.stringify(distribution) !== JSON.stringify(structure.distribution)) {
     throw new Error("El temario cargado no coincide con la estructura declarada por el catálogo runtime.");
   }
-  assertCollection(data.official, "official", "questions-official.json");
-  assertCollection(data.ai, "ai", "questions-ai.json");
-  assertCollection(data.manual, "manual", "questions-manual.json");
+  if (data.coverage?.opposition_id !== data.runtimeContext.oppositionId || data.coverage?.topic_count !== 57 || !Number.isInteger(data.coverage?.question_totals?.active)) {
+    throw new Error("El resumen de cobertura GSI no coincide con el catálogo runtime.");
+  }
   const tracker = data.studyTrackerPlan;
   const officialTopics = new Map(data.syllabus.blocks.flatMap((block) => block.topics.map((topic) => [topic.id, { blockId: block.id, locator: topic.content?.raw?.find((entry) => entry.locator)?.locator }] )));
   const trackerCodes = new Set(tracker?.topics?.map((topic) => topic.code));
@@ -78,6 +82,18 @@ function assertDataShape(data) {
   }
   if (data.demo) {
     assertCollection(data.demo, "ai", "questions-ai-demo.json");
+  }
+}
+
+function assertQuestionData(data) {
+  assertCollection(data.official, "official", "questions-official.json");
+  assertCollection(data.ai, "ai", "questions-ai.json");
+  assertCollection(data.manual, "manual", "questions-manual.json");
+  if (data.demo) assertCollection(data.demo, "ai", "questions-ai-demo.json");
+  assertGsiQuestions(data);
+  const active = combineQuestions(data, Boolean(data.demo)).filter((question) => question.is_active && !question.isDemo).length;
+  if (active !== data.coverage.question_totals.active) {
+    throw new Error("Los bancos de preguntas no coinciden con el resumen de cobertura GSI.");
   }
 }
 
@@ -167,14 +183,30 @@ export async function loadAppData() {
     data.demo = await fetchJson(DEMO_FILE);
   }
   validateLegacySyllabusCompatibility(runtimeContext, data.syllabus);
-  assertDataShape(data);
-  assertGsiQuestions(data);
+  assertCoreDataShape(data);
   return {
     ...data,
     demoEnabled,
     indexes: buildIndexes(data.syllabus, data.sources),
-    questions: combineQuestions(data, demoEnabled),
   };
+}
+
+let questionDataPromise = null;
+
+export function loadQuestionData(coreData) {
+  if (!questionDataPromise) {
+    questionDataPromise = (async () => {
+      const loaded = await Promise.all(Object.entries(QUESTION_FILES).map(async ([name, path]) => [name, await fetchJson(path)]));
+      const data = { ...coreData, ...Object.fromEntries(loaded) };
+      if (coreData.demoEnabled) data.demo = await fetchJson(DEMO_FILE);
+      assertQuestionData(data);
+      return { ...data, questions: combineQuestions(data, coreData.demoEnabled) };
+    })().catch((error) => {
+      questionDataPromise = null;
+      throw error;
+    });
+  }
+  return questionDataPromise;
 }
 
 export function describeQuestionSource(question, indexes) {

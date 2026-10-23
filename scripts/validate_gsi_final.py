@@ -16,6 +16,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 from build_gsi_content import markdown_replacement_pair, markdown_topics
+from topic_heading_policy import normalize_markdown_headings
 
 ROOT=Path(__file__).resolve().parents[1]
 from datetime import date
@@ -103,7 +104,9 @@ def main():
             )
             study=rest[:boundary.start()].strip() if boundary else rest.strip()
             preserved=remove_editorial_layer(text,tid,enhancements)
-            check(sha(study)==m['study_sha256'] and study in preserved and len(study)==m['study_characters'],tid+': apuntes completos conservados y hash exacto')
+            normalized_study,_=normalize_markdown_headings(study)
+            normalized_preserved,_=normalize_markdown_headings(preserved)
+            check(sha(study)==m['study_sha256'] and normalized_study in normalized_preserved and len(study)==m['study_characters'],tid+': apuntes completos conservados y hash exacto')
         check(len(' '.join(frag.text))>1500 and len(text)>1500,tid+': contenido sustancial')
         check(text.startswith('# '+t['title']+'\n') and '## Resumen de repaso' in text,tid+': título oficial y repaso')
         if tid=='B2-T01':

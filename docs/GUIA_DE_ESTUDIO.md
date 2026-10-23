@@ -6,6 +6,8 @@ Creado por [AngeldelaCalleFernandez](https://github.com/AngeldelaCalleFernandez)
 
 **Tu recorrido habitual será: Temario → Entrenamiento → Refuerzo → Estadísticas.** Reserva Examen y Práctica escrita para sesiones más largas.
 
+**Revisión de esta guía: 22 de octubre de 2026.**
+
 ## 1. Abrir la aplicación en ordenador, tableta o móvil
 
 1. Abre [Preparación GSI](https://angeldelacallefernandez.github.io/Preparacion-GSI/) en el navegador de tu dispositivo.
@@ -16,14 +18,14 @@ Verás la portada **Gestión de Sistemas e Informática de la Administración de
 
 ### Opcional: usar la copia local preparada en tu ordenador
 
-Si prefieres estudiar desde la copia que ya tienes en `C:\TAI-proyecto`, sigue estos pasos en ese ordenador:
+Si prefieres estudiar desde una copia local del repositorio, localiza primero la carpeta donde lo clonaste. En el ejemplo siguiente sustituye `C:\ruta\a\Preparacion-GSI` por esa carpeta:
 
 1. Abre el menú Inicio de Windows, escribe **PowerShell** y ábrelo.
 2. Copia estas dos líneas, pégalas y pulsa Intro:
 
 ```powershell
-Set-Location -LiteralPath 'C:\TAI-proyecto'
-.\.venv\Scripts\python.exe -m http.server 8765 --bind 127.0.0.1
+Set-Location -LiteralPath 'C:\ruta\a\Preparacion-GSI'
+python -m http.server 8765 --bind 127.0.0.1
 ```
 
 3. Deja esa ventana abierta. Mantiene disponible la aplicación mientras estudias; puedes minimizarla.
@@ -42,13 +44,15 @@ No abras `index.html` con doble clic: la copia local necesita el servidor HTTP a
 | --- | --- |
 | Inicio | Ver un resumen de la aplicación y de tu actividad reciente. |
 | Temario | Leer los apuntes completos y el resumen de cada tema. |
+| Plan de estudio | Seguir una propuesta semanal de orden y carga de trabajo. |
+| Mi progreso de estudio | Marcar lectura, resumen, test y repaso por tema; guardar fecha y notas. |
 | Entrenamiento | Hacer test con explicación después de cada respuesta. |
 | Examen | Hacer un simulacro con tiempo y corregir al terminar. |
 | Práctica escrita | Resolver un supuesto escribiendo tus respuestas. |
 | Refuerzo | Volver a trabajar preguntas falladas o que te generan dudas. |
 | Estadísticas | Comprobar resultados y decidir qué repasar. |
 
-**Contenido de esta revisión, a 16 de septiembre de 2026:** puedes estudiar y practicar los 57 temas. Hay 1.964 preguntas activas: 959 curadas, 803 generadas cuya revisión ha confirmado el propietario y 202 oficiales del INAP. Todos los temas tienen al menos 20 preguntas revisadas.
+**Contenido de esta revisión, a 22 de octubre de 2026:** puedes estudiar y practicar los 57 temas. Hay 1.964 preguntas activas: 959 curadas, 803 generadas cuya revisión ha confirmado el propietario y 202 oficiales del INAP. Todos los temas tienen al menos 20 preguntas revisadas.
 
 ## 3. Estudiar tu primer tema
 
@@ -59,10 +63,11 @@ No abras `index.html` con doble clic: la copia local necesita el servidor HTTP a
 5. Lee un apartado de los apuntes, sin intentar terminar todo el tema de una vez.
 6. Aparta la vista e intenta explicar con tus palabras lo que acabas de leer.
 7. Vuelve al texto para comprobar lo que te faltó. Al terminar tu sesión, utiliza el **Resumen de repaso** del tema.
+8. Abre **Mi progreso de estudio**, busca el tema y marca solo el trabajo que hayas completado. Puedes guardar la fecha y una nota breve para retomar el estudio.
 
 Puedes usar **Buscar por título o sección** para localizar un asunto concreto. Los enlaces de procedencia permiten consultar el documento del que salen los apuntes; si aparece un aviso de actualización, léelo también.
 
-Los estados de **Cobertura** y **Revisión** describen el material, no cuánto has estudiado tú. La aplicación no marca automáticamente un tema como aprendido por abrirlo. Anota en una libreta o documento el último apartado que has trabajado.
+Los estados de **Cobertura** y **Revisión** describen el material, no cuánto has estudiado tú. La aplicación no marca automáticamente un tema como aprendido por abrirlo: el registro de **Mi progreso de estudio** es deliberadamente manual y se guarda en este navegador.
 
 Si aún no hay test para tu tema, escribe tres preguntas sobre el apartado, intenta responderlas sin mirar y contrasta las respuestas con los apuntes. Es un ejercicio personal; no se añade al banco de la aplicación.
 
@@ -91,7 +96,7 @@ Configura los filtros antes de pulsar **Iniciar entrenamiento**:
 | --- | --- |
 | Un tema concreto | Su bloque y su tema. |
 | Un bloque entero | Su bloque y **Todos los temas**. |
-| Mezclar el banco disponible | **Todos los bloques**, **Todos los temas** y **Todas · test mixto**. |
+| Mezclar el banco disponible | **Todos los bloques**, **Todos los temas** y **Todas · test mixto**. La sesión se reparte por bloques y temas antes de repetirlos, para que los bancos grandes no dominen el test. |
 | Mezclar varios bloques | Activa **Mezclar varios bloques o temas**, marca los bloques y no marques ningún tema. Las preguntas se reparten entre los bloques elegidos. |
 | Mezclar temas de bloques diferentes | Activa **Mezclar varios bloques o temas**, marca sus bloques y después los temas concretos. Las preguntas se reparten entre esos temas. |
 | Preguntas nuevas para ti | En **Selección**, elige **Preguntas no vistas**. |

@@ -24,6 +24,11 @@ def main():
         ('JSON y esquemas', [sys.executable, 'scripts/validate_json.py']),
         ('Referencias', [sys.executable, 'scripts/validate_references.py']),
         ('Preguntas', [sys.executable, 'scripts/validate_questions.py']),
+        ('Jerarquía editorial del temario', [sys.executable, 'scripts/validate_topic_headings.py']),
+        ('Documentación vigente', [sys.executable, 'scripts/validate_documentation.py']),
+        ('Calidad editorial de preguntas', [sys.executable, 'scripts/analyze_question_quality.py', '--check']),
+        ('Pruebas del analizador editorial', [sys.executable, 'tests/question_quality_tests.py']),
+        ('Pruebas de jerarquía del temario', [sys.executable, 'tests/topic_heading_tests.py']),
     ]
     results = []
     if node:

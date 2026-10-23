@@ -2,6 +2,22 @@
 
 > **Aviso de estado:** este documento conserva auditorías y resultados históricos de distintas fases del proyecto. Para el estado vigente del saneamiento de fuentes y derechos de terceros, consulte [AUDITORIA_SANEAMIENTO_PREPARATIC.md](../AUDITORIA_SANEAMIENTO_PREPARATIC.md). Para el resultado técnico vigente, consulte [logs/gsi-suite.json](../logs/gsi-suite.json).
 
+## Estado vigente: 22 de octubre de 2026
+
+La aplicación mantiene los **57 temas** del programa y **1.964 preguntas activas y validadas**: 959 manuales/curadas, 803 generadas por IA y 202 oficiales del INAP. Los bancos permanecen separados. La aceptación de las 803 preguntas generadas está vinculada a la confirmación y a los hashes registrados; no equivale a una revisión editorial independiente pregunta por pregunta.
+
+La última suite registrada terminó con código 0: 19.237 controles de integridad, 21 archivos de datos contra 19 esquemas, 95 pruebas unitarias, 289 pruebas de regresión, seis pruebas específicas del analizador editorial, cinco de jerarquía del temario y 80 comprobaciones funcionales. La evidencia detallada y fechada es [logs/gsi-suite.json](../logs/gsi-suite.json).
+
+Esta revisión ejecuta el plan de mejora posterior a la auditoría: documentación reproducible, criba editorial, selección equilibrada, jerarquía del temario, carga diferida, automatización continua y controles básicos de accesibilidad. Permanecen como trabajo editorial la revisión humana de los 496 candidatos manuales y, como ampliación técnica, probar navegadores adicionales a Chrome; estas tareas no invalidan el resultado técnico actual.
+
+La calidad de preguntas cuenta ahora con una [criba reproducible](GSI_CALIDAD_PREGUNTAS.md) y una vista de revisión de solo lectura para los tres bancos. Se han priorizado 496 preguntas manuales por posible pista de longitud; son candidatos de revisión, no errores confirmados. Ningún estado editorial ni respuesta se cambia automáticamente.
+
+La estructura del temario se regenera con una política común que conserva literalmente el texto, convierte en párrafos los fragmentos extensos marcados erróneamente como títulos y evita H1 internos en los derivados. Los 57 Markdown tienen ahora un único H1 de documento y los 57 fragmentos HTML no contienen H1, encabezados-frase ni saltos de jerarquía. Los hashes de los tres bancos de preguntas no cambiaron durante esta corrección.
+
+La carga inicial ya no descarga los bancos oficial, manual e IA. La portada y las vistas de consulta usan el resumen ligero de cobertura; los bancos se solicitan una sola vez cuando una función de preguntas los necesita y se validan antes de inicializar entrenamiento, examen, refuerzo o estadísticas. El recorrido funcional comprueba tanto la ausencia de esas solicitudes en portada como su carga posterior y el funcionamiento completo de las vistas dependientes.
+
+La suite recorre también las nueve vistas principales para comprobar idioma, foco programático, un único H1 visible, jerarquía sin saltos, textos alternativos, nombres accesibles e identificadores únicos. Esta comprobación detectó y corrigió el H3 de fuente que carecía de H2 previo en Entrenamiento. El flujo de GitHub Actions ejecutará la misma suite en cambios y conservará logs y capturas; su ejecución remota solo podrá confirmarse después de publicar la rama.
+
 ## Mezcla y feedback de test: 21 de septiembre de 2026
 
 Entrenamiento permite seleccionar varios bloques y temas de bloques diferentes. La selección se reparte por turnos entre los grupos elegidos, siempre que tengan preguntas disponibles. El filtro mantiene compatibilidad con la selección anterior de un único bloque o tema y con origen, no vistas y últimos errores.
@@ -16,7 +32,7 @@ El nombre visible pasa a **Preparación GSI** en cabecera, títulos de navegaci�
 
 Se modifican HTML, estilos, títulos del router y temario, documentación y la expectativa de título en el recorrido HTTP. El validador incluye los enlaces de la nueva página y solo admite el nombre histórico en sus URLs de atribución exactas. No se convierten documentos ni se cambia el banco de preguntas. Validación: 19088 controles de integridad, 83 unitarias, 288 regresiones y 75 comprobaciones HTTP; el resultado de la ejecución está en `logs/gsi-suite.json`.
 
-## Estado vigente: 16 de septiembre de 2026
+## Informe histórico: estado de 16 de septiembre de 2026
 
 **Integración validada; publicación autorizada el 17 de septiembre de 2026.** Rama `gsi-only-final`. El commit que contiene este informe se identifica con `git log -1 --format=%H -- docs/FINAL_GSI_AUDIT.md`. El código validado está en `353d598` y la conservación de hashes en Windows en `8308d62`. GitHub Pages publica desde la raíz de esta rama; el estado de despliegue se consulta en las acciones del repositorio.
 
@@ -312,10 +328,10 @@ Tras corregir únicamente la documentación se volvió a comprobar la guía bajo
 - GitHub Pages está publicado por autorización expresa del propietario, con el estado editorial pendiente visible. No se prepara una PR de cierre ni se declara versión estable mientras la suite no alcance código 0.
 - Se corrigió la guía para comenzar por el acceso web desde cualquier dispositivo y explicar cómo trasladar progreso desde la copia local. El README vuelve a enumerar todas las herramientas necesarias para reproducir las pruebas.
 
-## Archivos entregados y siguiente paso
+## Archivos entregados y siguiente paso (histórico, 15 de septiembre)
 
 Principales archivos creados: `scripts/validate_gsi_final.py`, `scripts/run_gsi_suite.py`, importadores/compiladores GSI, `assets/js/written-practice.js`, `assets/js/progress-backup.js`, `assets/js/training-engine.js`, `assets/js/editorial-review.js`, `review.html`, los manifiestos `data/gsi-*`, los tres tests `tests/gsi-*.mjs`, 50 conversiones, 57 Markdown/HTML y la documentación actual. Se modificaron `index.html`, estilos, módulos existentes, catálogos, fuentes, bancos, esquemas, pruebas de regresión y `AGENTS.md`. El detalle de Git se obtiene comparando con `a8e2471`.
 
-Fase técnica completada: conversión, datos, aplicación, exámenes, refuerzo, documentación y publicación de la versión utilizable autorizada. **Fase de versión estable pendiente:** resolver la revisión editorial del lote, regenerar solo aceptaciones válidas, repetir la suite y preparar el cierre únicamente con código 0. No faltan documentos canónicos por convertir; la limitación pendiente es la cobertura validada del banco.
+**Conclusión histórica, superada:** en esta revisión del 15 de septiembre la fase técnica estaba completada, pero la versión estable seguía pendiente de resolver la revisión editorial del lote, regenerar aceptaciones válidas y repetir la suite. El estado actual se describe al principio de este documento; esta conclusión se conserva solo como trazabilidad.
 
 Comprobación adicional de conservación: los 20 scripts trasladados coinciden con su revisión anterior (normalizando finales de línea), sin pérdidas; cero coincidencias de los patrones de credenciales comprobados entre archivos versionados y no ignorados. Evidencia en `logs/gsi-preservation-check.json`. Se retiró una línea vacía sobrante al final de la copia histórica de instrucciones; el original permanece en el historial Git.
