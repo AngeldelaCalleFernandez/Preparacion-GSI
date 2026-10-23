@@ -7,7 +7,7 @@ Exportación reproducible de los tres bancos del producto. Los JSON son la fuent
 | Banco | Registros | Activas y validadas | Versión de datos | Actualización declarada |
 | --- | ---: | ---: | --- | --- |
 | Oficiales INAP | 202 | 202 | 2.1.1 | 2026-09-21 |
-| Manuales/curadas | 959 | 959 | 2.0.2 | 2026-10-23 |
+| Manuales/curadas | 959 | 959 | 2.0.3 | 2026-10-23 |
 | IA no oficial | 803 | 803 | 2.1.1 | 2026-09-21 |
 | **Total** | **1964** | **1964** | — | — |
 
@@ -18,7 +18,7 @@ Exportación reproducible de los tres bancos del producto. Los JSON son la fuent
 | Archivo | SHA-256 |
 | --- | --- |
 | `data/questions-official.json` | `bddf132ba2333d848982263593905206a87e8548179ee7443a8699385c984b9e` |
-| `data/questions-manual.json` | `8b66f2ad61a87a7d28f6d86eff3d6258eac2083c0b57ea932028a96c4af488df` |
+| `data/questions-manual.json` | `81dda98774719ae4c65f4bf5e5315160c7d3ce732348674ded546aa3f3590ff9` |
 | `data/questions-ai.json` | `c1c024271a64ed92773351791353daac8df6f8d034104ef24ae4a367ac81d937` |
 | `data/syllabus.json` | `2370e84e3c098dbe89628cdce92e95e9042a390d2dffe8bb48e3627607750d48` |
 
@@ -15566,11 +15566,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es sanitización en contexto de contenido?
 
-- **A.** Cifrar todo el tráfico.
+- **A.** Comprobar que los datos cumplen el formato, tipo y restricciones esperados antes de procesarlos.
 
-- **B.** Crear un sitemap.
+- **B.** Representar caracteres especiales para que se interpreten como texto en un contexto de salida concreto.
 
-- **C.** Asignar un namespace.
+- **C.** Convertir representaciones equivalentes a una forma canónica antes de compararlas o procesarlas.
 
 - **D.** Transformar o filtrar contenido para eliminar construcciones peligrosas permitiendo solo un subconjunto seguro.
 
@@ -21247,11 +21247,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 - **A.** Un mecanismo técnico que puede identificar o rastrear copias/usuarios sin ser por sí mismo la licencia jurídica.
 
-- **B.** Una licencia copyleft.
+- **B.** Sistema que controla el acceso y uso de contenidos mediante licencias y restricciones técnicas.
 
-- **C.** Un registro de patentes.
+- **C.** Mecanismo criptográfico que acredita autoría e integridad, sin insertar un identificador rastreable en cada copia.
 
-- **D.** Un formato de SBOM.
+- **D.** Hash criptográfico que permite comprobar si el contenido cambió, sin incorporar información dentro de la obra.
 
 **Respuesta correcta:** **A.** Un mecanismo técnico que puede identificar o rastrear copias/usuarios sin ser por sí mismo la licencia jurídica.
 
@@ -21413,13 +21413,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es una SBOM?
 
-- **A.** Un contrato de licencia propietaria.
+- **A.** Informe de análisis que enumera vulnerabilidades detectadas y su severidad en una ejecución concreta.
 
 - **B.** Un inventario estructurado de componentes de software que ayuda a conocer dependencias y versiones; debe complementarse con información fiable de licencias y seguridad.
 
-- **C.** Un DRM.
+- **C.** Archivo que fija versiones exactas y el árbol resuelto de dependencias para reproducir una instalación.
 
-- **D.** Un tipo de patente.
+- **D.** Manifiesto que declara dependencias directas y configuración para un gestor de paquetes.
 
 **Respuesta correcta:** **B.** Un inventario estructurado de componentes de software que ayuda a conocer dependencias y versiones; debe complementarse con información fiable de licencias y seguridad.
 
@@ -21557,13 +21557,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es “lock-in” de proveedor?
 
-- **A.** Un tipo de copyleft.
+- **A.** Interoperabilidad que permite sustituir componentes mediante interfaces abiertas y documentadas.
 
 - **B.** Dependencia que hace costoso o difícil cambiar de proveedor/tecnología por barreras técnicas, contractuales, de datos o licencia.
 
-- **C.** Una garantía de continuidad.
+- **C.** Portabilidad que permite extraer datos y configuraciones en formatos reutilizables por otra solución.
 
-- **D.** Un estándar abierto.
+- **D.** Plan de reversibilidad que define migración, transferencia de conocimiento y salida al terminar un contrato.
 
 **Respuesta correcta:** **B.** Dependencia que hace costoso o difícil cambiar de proveedor/tecnología por barreras técnicas, contractuales, de datos o licencia.
 
@@ -22547,11 +22547,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es un DMS o gestor documental?
 
-- **A.** Un protocolo de red.
+- **A.** Sistema orientado a administrar contenido web, plantillas y publicación de páginas en un sitio.
 
-- **B.** Un lenguaje de marcado.
+- **B.** Plataforma que integra procesos, colaboración y contenidos empresariales de múltiples tipos.
 
-- **C.** Un motor de cálculo HPC.
+- **C.** Sistema que conserva documentos como evidencia y aplica calendarios formales de retención y disposición.
 
 - **D.** Un sistema que gestiona documentos y su ciclo de vida: captura, metadatos, versiones, permisos, búsqueda, retención y disposición.
 
@@ -22619,13 +22619,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es ECM?
 
-- **A.** Un algoritmo de cifrado.
+- **A.** Sistema centrado en captura, metadatos, versiones, permisos y ciclo de vida de documentos.
 
-- **B.** Un estándar de memoria.
+- **B.** Plataforma destinada a crear, organizar y publicar contenidos de un sitio web.
 
 - **C.** Un concepto paraguas de gestión empresarial de contenidos que puede integrar DMS, workflow, records, colaboración y captura.
 
-- **D.** Una licencia de software.
+- **D.** Disciplina y herramientas para modelar, ejecutar y mejorar procesos de negocio.
 
 **Respuesta correcta:** **C.** Un concepto paraguas de gestión empresarial de contenidos que puede integrar DMS, workflow, records, colaboración y captura.
 
@@ -23267,13 +23267,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es una escalada en workflow?
 
-- **A.** Aumentar CPU.
+- **A.** Cambio manual de responsable de una tarea sin que exista un vencimiento o una regla automática.
 
 - **B.** Una regla que deriva o eleva una tarea cuando se incumple un plazo o condición.
 
-- **C.** Cambiar XSD.
+- **C.** Delegación temporal de una tarea a otro actor manteniendo la responsabilidad original.
 
-- **D.** Crear una cookie.
+- **D.** Reejecución automática de una actividad fallida según una política de reintentos.
 
 **Respuesta correcta:** **B.** Una regla que deriva o eleva una tarea cuando se incumple un plazo o condición.
 
@@ -31128,13 +31128,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es boxing?
 
-- **A.** Comprimir un assembly.
+- **A.** Extraer un tipo valor desde `object` mediante una conversión explícita y compatible.
 
-- **B.** Convertir IL en SQL.
+- **B.** Ampliar implícitamente un tipo numérico a otro sin crear un objeto envoltorio.
 
 - **C.** Convertir un tipo valor para tratarlo como `object` o una interfaz compatible, normalmente implicando una envoltura/objeto.
 
-- **D.** Crear un contenedor Docker.
+- **D.** Usar un parámetro genérico para operar con tipos valor sin convertirlos necesariamente a `object`.
 
 **Respuesta correcta:** **C.** Convertir un tipo valor para tratarlo como `object` o una interfaz compatible, normalmente implicando una envoltura/objeto.
 
@@ -32808,13 +32808,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es ASP.NET Core Identity?
 
-- **A.** El CLR.
+- **A.** El entorno de ejecución de .NET que administra código, memoria y excepciones.
 
-- **B.** El ORM EF Core.
+- **B.** El ORM de .NET utilizado para consultar y persistir entidades en bases de datos.
 
 - **C.** Un sistema de pertenencia/gestión de usuarios y credenciales para aplicaciones ASP.NET Core, opcional según arquitectura.
 
-- **D.** El protocolo OAuth 2.0.
+- **D.** Un protocolo de autorización delegada que permite obtener acceso limitado a recursos.
 
 **Respuesta correcta:** **C.** Un sistema de pertenencia/gestión de usuarios y credenciales para aplicaciones ASP.NET Core, opcional según arquitectura.
 
@@ -45253,11 +45253,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué función cumple el core móvil respecto al acceso radio?
 
-- **A.** Solo amplifica señal RF.
+- **A.** Gestiona la modulación, codificación y recursos radio de cada celda de acceso.
 
-- **B.** Solo alimenta antenas.
+- **B.** Transporta tráfico entre estaciones base y el núcleo sin gestionar identidad, sesiones ni movilidad.
 
-- **C.** Únicamente almacena vídeos.
+- **C.** Aloja aplicaciones y contenidos consumidos por el abonado sin proporcionar conectividad de red.
 
 - **D.** Gestiona identidad/autenticación, movilidad, sesiones, políticas y conectividad hacia redes/servicios, entre otras funciones.
 
@@ -45447,11 +45447,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 - **A.** Gestión de dispositivos móviles: enrolment, configuración, inventario, cumplimiento y acciones de seguridad sobre el dispositivo.
 
-- **B.** Un protocolo de radio 5G.
+- **B.** Gestión de aplicaciones móviles y de sus datos corporativos, sin administrar necesariamente todo el dispositivo.
 
-- **C.** Un codec de vídeo.
+- **C.** Gestión de identidades y permisos para autenticar usuarios y autorizar su acceso a recursos.
 
-- **D.** Un tipo de IMS.
+- **D.** Gestión unificada de móviles, ordenadores y otros endpoints mediante políticas comunes.
 
 **Respuesta correcta:** **A.** Gestión de dispositivos móviles: enrolment, configuración, inventario, cumplimiento y acciones de seguridad sobre el dispositivo.
 
@@ -45685,13 +45685,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es enrolment en UEM/MDM?
 
-- **A.** Cambiar de celda 5G.
+- **A.** Instalación inicial de aplicaciones y ajustes antes de entregar un dispositivo al usuario.
 
-- **B.** Codificar vídeo.
+- **B.** Comprobación de que el dispositivo cumple los requisitos de seguridad definidos por la organización.
 
 - **C.** El proceso de registrar/vincular un dispositivo a la gestión corporativa y aplicar identidad/perfiles.
 
-- **D.** Crear un registro DNS.
+- **D.** Eliminación remota, total o selectiva, de los datos administrados en un dispositivo.
 
 **Respuesta correcta:** **C.** El proceso de registrar/vincular un dispositivo a la gestión corporativa y aplicar identidad/perfiles.
 
@@ -46264,13 +46264,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es WebRTC?
 
-- **A.** Un codec de vídeo.
+- **A.** Especificación de señalización que establece llamadas mediante mensajes de control y negociación de sesión.
 
 - **B.** Un conjunto de APIs y protocolos para comunicaciones de audio/vídeo/datos en tiempo real entre navegadores o aplicaciones compatibles.
 
-- **C.** Una PBX física.
+- **C.** Servicio centralizado que retransmite el tráfico multimedia cuando no existe conectividad directa.
 
-- **D.** Un protocolo de routing.
+- **D.** Formato de encapsulación para distribuir exclusivamente vídeo mediante streaming HTTP adaptativo.
 
 **Respuesta correcta:** **B.** Un conjunto de APIs y protocolos para comunicaciones de audio/vídeo/datos en tiempo real entre navegadores o aplicaciones compatibles.
 
@@ -46290,11 +46290,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 - **A.** No; utiliza codecs y protocolos, pero WebRTC es una plataforma/conjunto de APIs y mecanismos de comunicación en tiempo real.
 
-- **B.** Sí, es exactamente AV1.
+- **B.** Sí; define un formato de compresión audiovisual único que sustituye a Opus, VP8, VP9 y H.264.
 
-- **C.** Sí, es Opus.
+- **C.** No; es únicamente un protocolo de señalización que establece sesiones sin transportar medios.
 
-- **D.** Sí, es H.264.
+- **D.** No; es un servicio centralizado de videoconferencia que mezcla siempre los flujos en un servidor.
 
 **Respuesta correcta:** **A.** No; utiliza codecs y protocolos, pero WebRTC es una plataforma/conjunto de APIs y mecanismos de comunicación en tiempo real.
 
@@ -46312,13 +46312,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es ICE?
 
-- **A.** Un codec de audio.
+- **A.** Protocolo de señalización que crea, modifica y finaliza sesiones multimedia entre extremos.
 
 - **B.** Un marco/protocolo para descubrir y comprobar pares de candidatos de conectividad y atravesar NAT en comunicaciones interactivas.
 
-- **C.** Un sistema de ficheros.
+- **C.** Servicio de retransmisión que transporta tráfico cuando no puede establecerse conectividad directa.
 
-- **D.** Un algoritmo de SEO.
+- **D.** Protocolo que permite conocer la dirección pública observada de un cliente y comprobar conectividad básica.
 
 **Respuesta correcta:** **B.** Un marco/protocolo para descubrir y comprobar pares de candidatos de conectividad y atravesar NAT en comunicaciones interactivas.
 
