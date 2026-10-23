@@ -7,7 +7,7 @@ Exportación reproducible de los tres bancos del producto. Los JSON son la fuent
 | Banco | Registros | Activas y validadas | Versión de datos | Actualización declarada |
 | --- | ---: | ---: | --- | --- |
 | Oficiales INAP | 202 | 202 | 2.1.1 | 2026-09-21 |
-| Manuales/curadas | 959 | 959 | 2.0.3 | 2026-10-23 |
+| Manuales/curadas | 959 | 959 | 2.0.4 | 2026-10-23 |
 | IA no oficial | 803 | 803 | 2.1.1 | 2026-09-21 |
 | **Total** | **1964** | **1964** | — | — |
 
@@ -18,7 +18,7 @@ Exportación reproducible de los tres bancos del producto. Los JSON son la fuent
 | Archivo | SHA-256 |
 | --- | --- |
 | `data/questions-official.json` | `bddf132ba2333d848982263593905206a87e8548179ee7443a8699385c984b9e` |
-| `data/questions-manual.json` | `81dda98774719ae4c65f4bf5e5315160c7d3ce732348674ded546aa3f3590ff9` |
+| `data/questions-manual.json` | `b3d6eff82457733f5e3a8da8ef4a264c0f2dbca9382f8e975c8e6de246051b4c` |
 | `data/questions-ai.json` | `c1c024271a64ed92773351791353daac8df6f8d034104ef24ae4a367ac81d937` |
 | `data/syllabus.json` | `2370e84e3c098dbe89628cdce92e95e9042a390d2dffe8bb48e3627607750d48` |
 
@@ -14414,13 +14414,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es una DTD?
 
-- **A.** Una hoja de estilo CSS.
+- **A.** Un esquema XML escrito en XML que define tipos simples y complejos, elementos y restricciones.
 
-- **B.** Un protocolo de sindicación.
+- **B.** Un lenguaje de consulta que selecciona nodos de un documento XML mediante expresiones de ruta.
 
 - **C.** Un mecanismo clásico para declarar estructura y restricciones de un vocabulario XML mediante sintaxis propia heredada de SGML.
 
-- **D.** Una API REST.
+- **D.** Un lenguaje de transformación que genera otros documentos a partir de un árbol XML.
 
 **Respuesta correcta:** **C.** Un mecanismo clásico para declarar estructura y restricciones de un vocabulario XML mediante sintaxis propia heredada de SGML.
 
@@ -24107,11 +24107,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es una red social corporativa?
 
-- **A.** Un sistema operativo.
+- **A.** Portal interno orientado a publicar información corporativa estructurada de forma principalmente unidireccional.
 
-- **B.** Un XSD.
+- **B.** Repositorio colaborativo de páginas enlazadas que conserva historial y permite edición compartida.
 
-- **C.** Un hipervisor.
+- **C.** Herramienta de mensajería en tiempo real centrada en conversaciones directas, grupos y canales.
 
 - **D.** Un entorno de interacción y difusión social dentro de una organización o comunidad controlada.
 
@@ -33026,11 +33026,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 - **A.** Un estándar/ecosistema para instrumentar y exportar trazas, métricas y logs de forma interoperable.
 
-- **B.** Un sistema operativo.
+- **B.** Un backend de monitorización que almacena obligatoriamente todas las métricas y trazas de una organización.
 
-- **C.** Un gestor de paquetes.
+- **C.** Un formato de paneles destinado a representar exclusivamente métricas recogidas por Prometheus.
 
-- **D.** Un ORM.
+- **D.** Un servicio de logging centralizado que reemplaza la instrumentación incluida en las aplicaciones.
 
 **Respuesta correcta:** **A.** Un estándar/ecosistema para instrumentar y exportar trazas, métricas y logs de forma interoperable.
 
@@ -43522,11 +43522,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué afirmación es correcta sobre IMS y 5G?
 
-- **A.** 5G prohíbe IMS.
+- **A.** IMS queda limitado a redes LTE y se elimina por completo al desplegar 5G Standalone.
 
-- **B.** IMS es exactamente el 5G Core.
+- **B.** IMS forma parte del plano de usuario del 5G Core y sustituye a UPF en el transporte de paquetes.
 
-- **C.** IMS solo puede funcionar en 2G.
+- **C.** IMS es el mecanismo de acceso radio que negocia recursos entre el terminal y la gNodeB.
 
 - **D.** IMS continúa siendo relevante para servicios multimedia/voz; la arquitectura móvil evoluciona, pero no convierte IMS en un concepto obsoleto.
 
@@ -46600,13 +46600,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es SVC conceptualmente?
 
-- **A.** Un servidor de correo.
+- **A.** Envío simultáneo de varias codificaciones independientes del mismo vídeo con resoluciones o bitrates distintos.
 
-- **B.** Una VLAN de voz.
+- **B.** Decodificación y recodificación de un flujo para cambiar su codec, resolución o tasa de bits.
 
 - **C.** Codificación escalable en capas que permite adaptar calidad/bitrate seleccionando capas del stream.
 
-- **D.** Un tipo de SIM.
+- **D.** Adición de información redundante al flujo para recuperar determinadas pérdidas sin retransmisión.
 
 **Respuesta correcta:** **C.** Codificación escalable en capas que permite adaptar calidad/bitrate seleccionando capas del stream.
 

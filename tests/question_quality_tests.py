@@ -65,7 +65,7 @@ class QuestionQualityTests(unittest.TestCase):
     def test_current_report_preserves_expected_primary_queue(self):
         report = build_report()
         self.assertEqual(report["summary"]["questions"], 1964)
-        self.assertEqual(report["summary"]["manual_primary_queue"], 476)
+        self.assertEqual(report["summary"]["manual_primary_queue"], 471)
         self.assertEqual(report["ai_editorial_assurance"]["independent_item_review"], "not_recorded")
 
 

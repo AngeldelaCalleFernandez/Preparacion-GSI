@@ -4,11 +4,11 @@ Fecha de preparación: 23 de octubre de 2026.
 
 ## Alcance y estado
 
-Este documento prepara los primeros 20 elementos de la cola actual de 476 preguntas manuales señaladas por la regla `correct-length-dominance`, después del cierre del lote 01. No se ha modificado todavía ninguna pregunta de este lote.
+Este documento registra la revisión de los primeros 20 elementos de la cola de 476 preguntas manuales señaladas por la regla `correct-length-dominance` después del cierre del lote 01. Tras presentar las propuestas 1–5 y solicitar su aprobación expresa, la respuesta «apruebo» de la persona responsable del proyecto autoriza esas cinco decisiones; las decisiones 6–20 siguen pendientes.
 
 Los 20 registros se contrastaron con el solucionario Markdown conservado de su práctica. En todos los casos, la letra correcta del banco coincide con la letra publicada en el solucionario. Esa coincidencia acredita la importación de la clave, pero no sustituye la revisión humana de calidad editorial.
 
-Estado del lote: **20 decisiones humanas L3 pendientes; lote preparado para revisión**.
+Estado del lote: **5 decisiones humanas L3 aprobadas y aplicadas; 15 pendientes**.
 
 ## Criterio de revisión
 
@@ -24,11 +24,11 @@ La señal automática aparece cuando la respuesta correcta tiene al menos 40 car
 
 | Orden | ID | Tema | Relación inicial | Evidencia de clave | Observación editorial | Acción propuesta |
 | ---: | --- | --- | ---: | --- | --- | --- |
-| 1 | `MAN-GSI-P19-009` | B4-T14 | 4,55× | P19, pregunta 9, D | Las alternativas sobre prohibición, equivalencia con 5G Core y uso exclusivo en 2G son absolutas o mezclan capas distintas; la longitud revela D. | Contrastar IMS con 5G Core, acceso radio y evolución de los servicios de voz; conservar D y el resto del registro. |
-| 2 | `MAN-GSI-P18-029` | B2-T09 | 4,50× | P18, pregunta 29, C | CSS, sindicación y REST no compiten con la definición de DTD. | Contrastar DTD con XSD, XPath y XSLT; conservar C y el resto del registro. |
-| 3 | `MAN-GSI-P15-114` | B3-T11 | 4,50× | P15, pregunta 114, A | Sistema operativo, gestor de paquetes y ORM son categorías ajenas a observabilidad. | Contrastar OpenTelemetry con backend de monitorización, formato de paneles y servicio centralizado de logs; conservar A y el resto del registro. |
-| 4 | `MAN-GSI-P19-119` | B4-T16 | 4,50× | P19, pregunta 119, C | Servidor de correo, VLAN de voz y SIM no compiten con una técnica de codificación de vídeo. | Contrastar SVC con simulcast, transcodificación y redundancia ante pérdidas; conservar C y el resto del registro. |
-| 5 | `MAN-GSI-P18-146` | B2-T16 | 4,48× | P18, pregunta 146, D | Sistema operativo, XSD e hipervisor son categorías ajenas a plataformas sociales corporativas. | Contrastar red social corporativa con intranet, wiki y mensajería de equipo; conservar D y el resto del registro. |
+| 1 | `MAN-GSI-P19-009` | B4-T14 | 4,55× | P19, pregunta 9, D | Las alternativas sobre prohibición, equivalencia con 5G Core y uso exclusivo en 2G son absolutas o mezclan capas distintas; la longitud revela D. | **Aprobada y aplicada.** Contrastar IMS con 5G Core, acceso radio y evolución de los servicios de voz; conservar D y el resto del registro. |
+| 2 | `MAN-GSI-P18-029` | B2-T09 | 4,50× | P18, pregunta 29, C | CSS, sindicación y REST no compiten con la definición de DTD. | **Aprobada y aplicada.** Contrastar DTD con XSD, XPath y XSLT; conservar C y el resto del registro. |
+| 3 | `MAN-GSI-P15-114` | B3-T11 | 4,50× | P15, pregunta 114, A | Sistema operativo, gestor de paquetes y ORM son categorías ajenas a observabilidad. | **Aprobada y aplicada.** Contrastar OpenTelemetry con backend de monitorización, formato de paneles y servicio centralizado de logs; conservar A y el resto del registro. |
+| 4 | `MAN-GSI-P19-119` | B4-T16 | 4,50× | P19, pregunta 119, C | Servidor de correo, VLAN de voz y SIM no compiten con una técnica de codificación de vídeo. | **Aprobada y aplicada.** Contrastar SVC con simulcast, transcodificación y redundancia ante pérdidas; conservar C y el resto del registro. |
+| 5 | `MAN-GSI-P18-146` | B2-T16 | 4,48× | P18, pregunta 146, D | Sistema operativo, XSD e hipervisor son categorías ajenas a plataformas sociales corporativas. | **Aprobada y aplicada.** Contrastar red social corporativa con intranet, wiki y mensajería de equipo; conservar D y el resto del registro. |
 | 6 | `MAN-GSI-P14-087` | B1-T05 | 4,45× | P14, pregunta 87, C | Las leyes vecinas se reducen a etiquetas muy breves y solo la correcta reproduce el objeto legal completo. | Formular como objetos normativos comparables las materias de las leyes de violencia de género, igualdad LGTBI y transparencia; conservar C y el resto del registro. |
 | 7 | `MAN-GSI-P15-117` | B3-T11 | 4,37× | P15, pregunta 117, A | Base de datos, NuGet y autenticación no compiten con un modo de publicación de aplicaciones. | Contrastar `single-file` con publicación dependiente del framework, autocontenida y Native AOT; conservar A y el resto del registro. |
 | 8 | `MAN-GSI-P19-092` | B4-T15 | 4,33× | P19, pregunta 92, D | Bitrate RTP, cobertura radio y licencia no son evaluaciones alternativas del estado de un dispositivo. | Contrastar cumplimiento con enrolment, aprovisionamiento e inventario o remediación; conservar D y el resto del registro. |
@@ -56,7 +56,8 @@ La señal automática aparece cuando la respuesta correcta tiene al menos 40 car
 
 - 20 de 20 IDs localizados en el banco manual.
 - 20 de 20 claves coincidentes con sus solucionarios conservados.
-- 20 decisiones editoriales pendientes de aprobación humana L3.
-- Cero modificaciones en `data/questions-manual.json`, `data/questions-official.json` y `data/questions-ai.json`.
+- 5 decisiones editoriales aprobadas y aplicadas; 15 todavía pendientes en este lote.
+- Se modificaron únicamente los tres distractores aprobados de cada una de las preguntas 1–5; se conservaron enunciados, claves correctas, feedback, procedencia, estado de validación y estado activo.
+- `data/questions-official.json` y `data/questions-ai.json` permanecen intactos.
 
-El siguiente control es revisar y aprobar expresamente las propuestas 1–5 antes de modificar cualquier distractor.
+La siguiente intervención debe registrar una decisión humana expresa para las preguntas 6–20 antes de modificar cualquiera de sus distractores.
