@@ -7,7 +7,7 @@ Exportación reproducible de los tres bancos del producto. Los JSON son la fuent
 | Banco | Registros | Activas y validadas | Versión de datos | Actualización declarada |
 | --- | ---: | ---: | --- | --- |
 | Oficiales INAP | 202 | 202 | 2.1.1 | 2026-09-21 |
-| Manuales/curadas | 959 | 959 | 2.0.1 | 2026-09-21 |
+| Manuales/curadas | 959 | 959 | 2.0.2 | 2026-10-23 |
 | IA no oficial | 803 | 803 | 2.1.1 | 2026-09-21 |
 | **Total** | **1964** | **1964** | — | — |
 
@@ -18,7 +18,7 @@ Exportación reproducible de los tres bancos del producto. Los JSON son la fuent
 | Archivo | SHA-256 |
 | --- | --- |
 | `data/questions-official.json` | `bddf132ba2333d848982263593905206a87e8548179ee7443a8699385c984b9e` |
-| `data/questions-manual.json` | `36478c9142c9dd0e9281de61082b149ed45e2fa8a81cfbde944e7df03ac76e7c` |
+| `data/questions-manual.json` | `8b66f2ad61a87a7d28f6d86eff3d6258eac2083c0b57ea932028a96c4af488df` |
 | `data/questions-ai.json` | `c1c024271a64ed92773351791353daac8df6f8d034104ef24ae4a367ac81d937` |
 | `data/syllabus.json` | `2370e84e3c098dbe89628cdce92e95e9042a390d2dffe8bb48e3627607750d48` |
 
@@ -23699,13 +23699,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es BM25 de forma conceptual?
 
-- **A.** Un sistema operativo.
+- **A.** Función de ranking basada en representaciones densas y similitud semántica entre vectores.
 
-- **B.** Un estándar XML.
+- **B.** Método no supervisado que agrupa documentos por semejanza sin utilizar una consulta.
 
 - **C.** Una función/familia de ranking textual basada en coincidencia de términos, frecuencias y longitud, entre otros factores.
 
-- **D.** Un protocolo de voz.
+- **D.** Estrategia de rastreo que decide qué páginas debe descargar primero un buscador.
 
 **Respuesta correcta:** **C.** Una función/familia de ranking textual basada en coincidencia de términos, frecuencias y longitud, entre otros factores.
 
@@ -24059,11 +24059,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es coedición?
 
-- **A.** Un backup.
+- **A.** Edición exclusiva mediante bloqueo del documento hasta que el usuario realiza el check-in.
 
-- **B.** Una técnica SEO.
+- **B.** Creación de copias independientes que se consolidan manualmente al cerrar cada versión.
 
-- **C.** Un feed RSS.
+- **C.** Replicación periódica de un repositorio sin edición simultánea de su contenido.
 
 - **D.** Edición concurrente de un contenido por varias personas con mecanismos de sincronización/conflicto.
 
@@ -43570,11 +43570,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué relación hay entre IMS y SDP?
 
-- **A.** SDP cifra medios.
+- **A.** SDP gestiona el registro y la autenticación de abonados dentro del núcleo IMS.
 
-- **B.** SDP es un codec.
+- **B.** SDP transporta los flujos de audio y vídeo entre los extremos de una sesión IMS.
 
-- **C.** SDP reemplaza a RTP.
+- **C.** SDP sustituye a SIP para establecer, modificar y terminar sesiones multimedia.
 
 - **D.** SDP describe parámetros de medios/sesión que se intercambian dentro de la señalización, mientras IMS/SIP controla la sesión.
 
@@ -45541,13 +45541,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es UEM?
 
-- **A.** Un estándar de radio.
+- **A.** Gestión del ciclo de vida y las políticas aplicadas a aplicaciones móviles corporativas.
 
 - **B.** Unified Endpoint Management, gestión unificada de endpoints móviles y tradicionales desde una plataforma/política común.
 
-- **C.** Una entidad IMS.
+- **C.** Gestión de identidades, autenticación y autorización para acceder a recursos corporativos.
 
-- **D.** Un protocolo de QoS.
+- **D.** Monitorización de equipos y tráfico de red mediante métricas de disponibilidad y rendimiento.
 
 **Respuesta correcta:** **B.** Unified Endpoint Management, gestión unificada de endpoints móviles y tradicionales desde una plataforma/política común.
 
@@ -46792,11 +46792,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es packet loss?
 
-- **A.** Variación de retardo.
+- **A.** Variación del tiempo de llegada de paquetes sucesivos aunque todos alcancen el destino.
 
-- **B.** Un codec.
+- **B.** Tiempo empleado por un paquete para recorrer el trayecto entre origen y destino.
 
-- **C.** Un método SIP.
+- **C.** Regulación deliberada del caudal de un flujo para ajustarlo a una política de red.
 
 - **D.** Pérdida de paquetes durante el transporte, que puede degradar audio/vídeo y disparar mecanismos de recuperación/adaptación.
 

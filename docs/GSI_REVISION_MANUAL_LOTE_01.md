@@ -4,11 +4,11 @@ Fecha de preparación: 23 de octubre de 2026.
 
 ## Alcance y estado
 
-Este documento prepara los primeros 20 elementos de la cola de 496 preguntas manuales señaladas por la regla `correct-length-dominance`. Es una ayuda de revisión de solo lectura: **no aprueba, rechaza ni modifica ninguna pregunta**.
+Este documento registra la revisión de los primeros 20 elementos de la cola inicial de 496 preguntas manuales señaladas por la regla `correct-length-dominance`. Las decisiones 1–5 fueron aprobadas expresamente por la persona responsable del proyecto el 23 de octubre de 2026 mediante la indicación «apruebo 1–5»; las decisiones 6–20 siguen pendientes.
 
 Los 20 registros se contrastaron con el solucionario Markdown conservado de su práctica. En todos los casos, la letra correcta del banco coincide con la letra publicada en el solucionario. Esa coincidencia acredita la importación de la clave, pero no sustituye la revisión humana de calidad editorial.
 
-Estado común del lote: **pendiente de decisión humana L3**.
+Estado del lote: **5 decisiones humanas L3 aprobadas y aplicadas; 15 pendientes**.
 
 ## Criterio de revisión
 
@@ -22,13 +22,13 @@ La señal automática aparece cuando la respuesta correcta tiene al menos 40 car
 
 ## Elementos preparados
 
-| Orden | ID | Tema | Relación | Evidencia de clave | Observación editorial | Acción que debe decidir una persona |
+| Orden | ID | Tema | Relación inicial | Evidencia de clave | Observación editorial | Decisión humana |
 | ---: | --- | --- | ---: | --- | --- | --- |
-| 1 | `MAN-GSI-P19-011` | B4-T14 | 6,20× | P19, pregunta 11, D | Tres distractores extremadamente breves confunden SDP con cifrado, codec o sustitución de RTP. | Mantener o reformular con relaciones IMS/SIP/SDP/RTP de extensión y precisión comparables. |
-| 2 | `MAN-GSI-P18-144` | B2-T16 | 6,19× | P18, pregunta 144, D | Backup, SEO y RSS no compiten con la definición de coedición. | Sustituirlos por funciones cercanas de edición, bloqueo, versionado o colaboración. |
-| 3 | `MAN-GSI-P19-127` | B4-T16 | 5,86× | P19, pregunta 127, D | Solo jitter es próximo; codec y método SIP son categorías ajenas. | Usar fenómenos o métricas de transporte comparables, sin convertir otra opción en correcta. |
-| 4 | `MAN-GSI-P18-129` | B2-T16 | 5,71× | P18, pregunta 129, C | Sistema operativo, XML y voz son distractores manifiestamente ajenos a ranking textual. | Contrastar BM25 con otros modelos o funciones de recuperación de información. |
-| 5 | `MAN-GSI-P19-085` | B4-T15 | 5,71× | P19, pregunta 85, B | Radio, IMS y QoS no son alternativas plausibles a UEM. | Contrastar UEM con MDM, MAM, EMM u otras capacidades de gestión de endpoints. |
+| 1 | `MAN-GSI-P19-011` | B4-T14 | 6,20× | P19, pregunta 11, D | Tres distractores extremadamente breves confunden SDP con cifrado, codec o sustitución de RTP. | **Aprobada y aplicada.** Reformular A–C con relaciones IMS/SIP/SDP de extensión comparable; conservar D y el resto del registro. |
+| 2 | `MAN-GSI-P18-144` | B2-T16 | 6,19× | P18, pregunta 144, D | Backup, SEO y RSS no compiten con la definición de coedición. | **Aprobada y aplicada.** Sustituir A–C por funciones cercanas de edición, bloqueo, versionado o colaboración; conservar D y el resto del registro. |
+| 3 | `MAN-GSI-P19-127` | B4-T16 | 5,86× | P19, pregunta 127, D | Solo jitter es próximo; codec y método SIP son categorías ajenas. | **Aprobada y aplicada.** Sustituir A–C por fenómenos o métricas de transporte comparables; conservar D y el resto del registro. |
+| 4 | `MAN-GSI-P18-129` | B2-T16 | 5,71× | P18, pregunta 129, C | Sistema operativo, XML y voz son distractores manifiestamente ajenos a ranking textual. | **Aprobada y aplicada.** Sustituir A, B y D por conceptos próximos de recuperación de información; conservar C y el resto del registro. |
+| 5 | `MAN-GSI-P19-085` | B4-T15 | 5,71× | P19, pregunta 85, B | Radio, IMS y QoS no son alternativas plausibles a UEM. | **Aprobada y aplicada.** Sustituir A, C y D por capacidades próximas de gestión tecnológica; conservar B y el resto del registro. |
 | 6 | `MAN-GSI-P19-107` | B4-T16 | 5,61× | P19, pregunta 107, B | Codec, sistema de ficheros y SEO no compiten con ICE. | Formular definiciones paralelas de ICE, STUN, TURN o negociación de conectividad. |
 | 7 | `MAN-GSI-P19-105` | B4-T16 | 5,58× | P19, pregunta 105, B | Codec, PBX y routing mezclan categorías demasiado distantes. | Usar descripciones plausibles de plataforma, protocolo o arquitectura de comunicación en tiempo real. |
 | 8 | `MAN-GSI-P18-081` | B2-T16 | 5,42× | P18, pregunta 81, D | Protocolo, lenguaje de marcado y cálculo HPC no compiten con un DMS. | Contrastar DMS con ECM, records management, workflow o repositorios documentales. |
@@ -56,7 +56,8 @@ La señal automática aparece cuando la respuesta correcta tiene al menos 40 car
 
 - 20 de 20 IDs localizados en el banco manual.
 - 20 de 20 claves coincidentes con sus solucionarios conservados.
-- 20 decisiones editoriales todavía pendientes.
-- Cero cambios en `data/questions-manual.json` o en cualquier otro banco.
+- 5 decisiones editoriales aprobadas y aplicadas; 15 todavía pendientes en este lote.
+- Se modificaron únicamente los tres distractores aprobados de cada una de las preguntas 1–5; se conservaron enunciados, claves correctas, feedback, procedencia, estado de validación y estado activo.
+- `data/questions-official.json` y `data/questions-ai.json` permanecen intactos.
 
-La siguiente intervención debe registrar una decisión humana individual por ID antes de reformular distractores o modificar el estado editorial.
+La siguiente intervención debe registrar una decisión humana individual por ID antes de modificar cualquiera de las preguntas 6–20.
