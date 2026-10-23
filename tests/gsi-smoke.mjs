@@ -6,6 +6,7 @@ import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const { chromium } = await import(process.env.PLAYWRIGHT_MODULE ? pathToFileURL(process.env.PLAYWRIGHT_MODULE).href : "playwright");
+const browserChannel = process.env.PLAYWRIGHT_CHANNEL || "chrome";
 const mime = { ".html": "text/html", ".js": "text/javascript", ".json": "application/json", ".css": "text/css", ".md": "text/plain" };
 const server = http.createServer(async (request, response) => {
   try {
@@ -19,7 +20,7 @@ const server = http.createServer(async (request, response) => {
 });
 await new Promise((resolve) => server.listen(0, "127.0.0.1", resolve));
 const base = `http://127.0.0.1:${server.address().port}/gsi-test/index.html`;
-const browser = await chromium.launch({ channel: "chrome", headless: true });
+const browser = await chromium.launch({ channel: browserChannel, headless: true });
 const context = await browser.newContext({ viewport: { width: 1365, height: 900 } });
 const page = await context.newPage();
 const failures = [], checks = [], consoleErrors = [], broken = [], requestedUrls = [];
@@ -394,7 +395,7 @@ try {
   await check("no console errors or broken HTTP routes", () => { assert.deepEqual(consoleErrors, []); assert.deepEqual(broken, []); });
 } finally {
   await fs.mkdir(path.join(root, "logs"), { recursive: true });
-  await fs.writeFile(path.join(root, "logs/gsi-browser-smoke.json"), JSON.stringify({ date: new Date().toISOString(), basePath: "/gsi-test/", checks, failures, consoleErrors, broken }, null, 2));
+  await fs.writeFile(path.join(root, "logs/gsi-browser-smoke.json"), JSON.stringify({ date: new Date().toISOString(), browserChannel, basePath: "/gsi-test/", checks, failures, consoleErrors, broken }, null, 2));
   await browser.close(); await new Promise((resolve) => server.close(resolve));
 }
 if (failures.length) process.exitCode = 1;

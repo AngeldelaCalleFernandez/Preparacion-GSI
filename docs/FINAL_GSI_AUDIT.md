@@ -18,6 +18,12 @@ La carga inicial ya no descarga los bancos oficial, manual e IA. La portada y la
 
 La suite recorre también las nueve vistas principales para comprobar idioma, foco programático, un único H1 visible, jerarquía sin saltos, textos alternativos, nombres accesibles e identificadores únicos. Esta comprobación detectó y corrigió el H3 de fuente que carecía de H2 previo en Entrenamiento. El flujo de GitHub Actions ejecutará la misma suite en cambios y conservará logs y capturas; su ejecución remota solo podrá confirmarse después de publicar la rama.
 
+## Ampliación multinavegador: 23 de octubre de 2026
+
+La aplicación publicada se comprobó también con Microsoft Edge en escritorio (1365×900) y móvil (390×844). Las nueve vistas cargaron con un único H1 visible, sin identificadores duplicados, imágenes sin texto alternativo, desbordamiento horizontal ni errores de consola. Inicio mostró 57 temas y 1.964 preguntas; Temario mostró los 57 temas oficiales y Entrenamiento terminó de validar las 1.964 preguntas.
+
+Los recorridos de regresión y funcional aceptan ahora el canal instalado mediante `PLAYWRIGHT_CHANNEL`, conservando `chrome` como valor predeterminado. El canal se registra en los tres informes de la suite. Esta ampliación verifica otro navegador Chromium; Firefox y Safari/WebKit siguen sin comprobarse y requieren disponer de sus motores de prueba.
+
 ## Mezcla y feedback de test: 21 de septiembre de 2026
 
 Entrenamiento permite seleccionar varios bloques y temas de bloques diferentes. La selección se reparte por turnos entre los grupos elegidos, siempre que tengan preguntas disponibles. El filtro mantiene compatibilidad con la selección anterior de un único bloque o tema y con origen, no vistas y últimos errores.
