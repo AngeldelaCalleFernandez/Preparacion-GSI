@@ -45,6 +45,100 @@ La señal automática aparece cuando la respuesta correcta tiene al menos 40 car
 | 19 | `MAN-GSI-P15-156` | B3-T11 | 4,19× | P15, pregunta 156, C | MSBuild, NuGet y Jakarta Faces no son estrategias multiplataforma de observabilidad. | Contrastar OpenTelemetry con agentes de proveedor, protocolos de métricas y backends de logs; conservar C y el resto del registro. |
 | 20 | `MAN-GSI-P18-060` | B2-T09 | 4,09× | P18, pregunta 60, A | `robots.txt`, índice invertido y daemon son categorías ajenas a la transformación XML. | Contrastar XSLT con validación de esquema, selección XPath y análisis o serialización XML; conservar A y el resto del registro. |
 
+## Propuestas concretas pendientes · decisiones 6–20
+
+Las respuestas correctas indicadas permanecen literalmente intactas. La aprobación de este bloque autoriza únicamente la sustitución de los tres distractores enumerados en cada registro.
+
+### 6. `MAN-GSI-P14-087` · conservar C
+
+- A: Medidas de protección integral contra la violencia de género.
+- B: Igualdad real y efectiva de las personas trans y garantía de los derechos de las personas LGTBI.
+- D: Transparencia, acceso a la información pública y buen gobierno.
+
+### 7. `MAN-GSI-P15-117` · conservar A
+
+- B: Una publicación autocontenida que incorpora el runtime y distribuye los ensamblados de la aplicación como archivos separados.
+- C: Una compilación Native AOT que genera código nativo por adelantado y elimina la dependencia del JIT en ejecución.
+- D: Un paquete NuGet que distribuye bibliotecas y metadatos para que otros proyectos los consuman durante la compilación.
+
+### 8. `MAN-GSI-P19-092` · conservar D
+
+- A: Registro del dispositivo en la plataforma de gestión para asociarlo con una identidad y aplicar políticas.
+- B: Entrega al dispositivo de perfiles, certificados, aplicaciones y parámetros necesarios para su uso corporativo.
+- C: Recopilación del modelo, sistema operativo, aplicaciones instaladas y otros datos de inventario del endpoint.
+
+### 9. `MAN-GSI-P19-082` · conservar D
+
+- A: Gestión de configuración, seguridad e inventario aplicada al dispositivo móvil como conjunto.
+- B: Marco empresarial que integra gestión de dispositivos, aplicaciones, contenido e identidad móvil.
+- C: Gestión del acceso, distribución y protección de documentos corporativos en terminales móviles.
+
+### 10. `MAN-GSI-P19-084` · conservar C
+
+- A: Gestión centrada en la configuración, seguridad e inventario del propio dispositivo móvil.
+- B: Gestión de políticas y datos aplicada específicamente a las aplicaciones móviles corporativas.
+- D: Gestión unificada de móviles, ordenadores y otros endpoints corporativos desde una plataforma común.
+
+### 11. `MAN-GSI-P18-141` · conservar A
+
+- B: Un motor BPM que ejecuta procesos formalizados mediante tareas, reglas y transiciones predefinidas.
+- C: Un repositorio documental orientado al archivo, versionado y retención de documentos corporativos.
+- D: Un directorio corporativo que centraliza identidades, grupos y credenciales para controlar el acceso.
+
+### 12. `MAN-GSI-P18-021` · conservar D
+
+- A: Un lenguaje de marcado con un conjunto predefinido de elementos y semántica orientada a documentos web.
+- B: Un formato ligero de intercambio que representa objetos y arrays mediante pares clave-valor y sintaxis textual.
+- C: Un metalenguaje del que proceden otros lenguajes de marcado y cuya sintaxis es más amplia y compleja.
+
+### 13. `MAN-GSI-P19-103` · conservar D
+
+- A: SIP es el protocolo de transporte multimedia de H.323 y reemplaza a RTP en el envío de audio y vídeo.
+- B: H.323 es un codec audiovisual que SIP negocia dentro de SDP para seleccionar la compresión.
+- C: SIP y H.323 son perfiles del mismo estándar de señalización y utilizan una estructura de mensajes común.
+
+### 14. `MAN-GSI-P15-157` · conservar A
+
+- B: Jakarta EE y .NET son dos especificaciones abiertas equivalentes que se ejecutan mediante servidores intercambiables de distintos proveedores.
+- C: Jakarta EE designa un servidor de aplicaciones mantenido por Eclipse Foundation, mientras .NET define interfaces sin implementación propia.
+- D: La diferencia es sintáctica: Jakarta EE usa Java y .NET usa C#, pero ambos siguen el mismo modelo de estandarización e implementación.
+
+### 15. `MAN-GSI-P18-148` · conservar A
+
+- B: Clasificación automática de contenido mediante reglas o modelos, sin intervención ni decisión de gobierno.
+- C: Control de acceso que determina qué usuarios pueden publicar, leer o administrar cada espacio.
+- D: Registro de auditoría que conserva eventos y acciones para permitir trazabilidad y revisión posterior.
+
+### 16. `MAN-GSI-P18-066` · conservar D
+
+- A: Un mecanismo HTTP que indica qué orígenes externos pueden leer respuestas desde código ejecutado en el navegador.
+- B: Una comprobación de integridad que verifica mediante un hash que un recurso externo no haya sido alterado.
+- C: Una política que habilita o limita capacidades del navegador como cámara, micrófono o geolocalización.
+
+### 17. `MAN-GSI-P19-155` · conservar A
+
+- B: Sustituir la cámara por un modelo 4K y aumentar la tasa de vídeo aunque la imagen actual ya sea correcta.
+- C: Ampliar el ancho de banda y reservar más QoS aunque la red no muestre pérdida, latencia ni jitter relevantes.
+- D: Instalar una pantalla de mayor tamaño y renovar la iluminación sin intervenir sobre la captura de audio.
+
+### 18. `MAN-GSI-P15-024` · conservar B
+
+- A: El subconjunto de reglas que los lenguajes deben respetar para exponer APIs consumibles desde otros lenguajes .NET.
+- C: El entorno de ejecución que carga y ejecuta código administrado, gestiona memoria y aplica servicios de tiempo de ejecución.
+- D: El conjunto de bibliotecas base que aporta colecciones, entrada/salida, redes y otras APIs comunes a .NET.
+
+### 19. `MAN-GSI-P15-156` · conservar C
+
+- A: Usar EventPipe para .NET y Java Flight Recorder para Java, manteniendo canales y modelos de datos separados.
+- B: Exportar únicamente métricas de ambos stacks a Prometheus y mantener trazas y logs con instrumentaciones independientes.
+- D: Centralizar los logs en un backend común sin unificar instrumentación, contexto de trazas ni métricas.
+
+### 20. `MAN-GSI-P18-060` · conservar A
+
+- B: Validar el documento de entrada y el de salida con XML Schema, sin definir reglas de conversión entre ambos.
+- C: Usar expresiones XPath para seleccionar nodos del documento antiguo sin generar la nueva estructura.
+- D: Analizar y serializar el XML con un parser manteniendo los mismos elementos y la misma organización del documento.
+
 ## Fuentes contrastadas
 
 - P14: `documents/markdown/gsi/P14/GSI A2 — PRÁCTICA ACTIVA 14 — TEST BLOQUE I — SOLUCIONARIO COMENTADO.md`, pregunta 87.
