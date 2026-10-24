@@ -55,7 +55,7 @@ Las respuestas correctas permanecen literalmente intactas. La aprobación del lo
 
 - B: La especificación para construir servicios REST mediante recursos, anotaciones, negociación de contenido y clientes HTTP.
 - C: El framework de componentes de interfaz web de servidor que gestiona vistas, componentes y ciclo de vida de la página.
-- D: El modelo de inyección de dependencias y contextos que administra beans, scopes, productores e interceptores.
+- D: El estándar CDI para inyectar dependencias y gestionar beans, ámbitos, productores e interceptores dentro del contenedor.
 
 ### 4. `MAN-GSI-P15-132` · conservar B
 

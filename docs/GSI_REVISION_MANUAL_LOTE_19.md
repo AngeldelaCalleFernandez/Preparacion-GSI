@@ -65,8 +65,8 @@ Las respuestas correctas permanecen literalmente intactas. La aprobación del lo
 
 ### 5. `MAN-GSI-P19-045` · conservar A
 
-- B: Únicamente 5G NR sobre un núcleo LTE/EPC, porque un núcleo 5G no forma parte de la definición ni de los despliegues 5G.
-- C: Solo 5G Core conservando acceso radio 4G, sin necesidad de NR ni otras evoluciones de la interfaz radio.
+- B: El uso de 5G NR sobre un núcleo LTE/EPC, considerando que un núcleo 5G no interviene en la definición ni en los despliegues 5G.
+- C: La implantación de 5G Core manteniendo acceso radio 4G, sin incorporar NR ni otras evoluciones de la interfaz radio.
 - D: Una variante de Wi-Fi para redes locales que comparte espectro, arquitectura y mecanismos de acceso con IEEE 802.11.
 
 ### 6. `MAN-GSI-P15-036` · conservar B
