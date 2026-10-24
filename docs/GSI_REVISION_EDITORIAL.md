@@ -1,6 +1,6 @@
 # Revisión editorial del banco GSI
 
-Estado revisado el 22 de octubre de 2026: **959 preguntas curadas, 803 generadas y 202 oficiales activas**. Las curadas conservan las claves y explicaciones del corpus revisado. Las generadas conservan su origen IA; las oficiales se importan de cuestionarios y plantillas definitivas del INAP.
+Estado revisado el 24 de octubre de 2026: **959 preguntas curadas, 803 generadas y 202 oficiales activas**. Las curadas conservan las claves y explicaciones del corpus revisado. Las generadas conservan su origen IA; las oficiales se importan de cuestionarios y plantillas definitivas del INAP.
 
 La criba heurística reproducible está en [Calidad editorial del banco](GSI_CALIDAD_PREGUNTAS.md), con el detalle completo en [`logs/gsi-question-quality.json`](../logs/gsi-question-quality.json). Sus hallazgos no cambian claves ni estados: priorizan una revisión humana L3 y mantienen separadas la integridad técnica, la confirmación del propietario y la revisión editorial independiente.
 
@@ -19,6 +19,17 @@ Se cotejó una muestra estratificada de 58 preguntas: 41 generadas, una por cada
 Se comprobó automáticamente la coincidencia de las 959 claves importadas con sus solucionarios y la de las 803 preguntas generadas con su fila y sección. Esa comprobación detecta divergencias e integridad, pero no demuestra por sí sola que una pregunta sea inequívoca o esté bien redactada.
 
 Los candidatos a duplicados y sus decisiones editoriales se documentan en `logs/gsi-semantic-review.json`. La búsqueda semántica es heurística y no garantiza detectar todas las paráfrasis del banco.
+
+## Estado de la cola manual por longitud
+
+La cola inicial contenía 496 preguntas manuales/curadas con posible pista formal de longitud. Las 496 están ya contabilizadas en los 25 informes `GSI_REVISION_MANUAL_LOTE_01.md` a `GSI_REVISION_MANUAL_LOTE_25.md`:
+
+- 25 decisiones aprobadas y aplicadas: las 20 del lote 01 y las decisiones 1–5 del lote 02;
+- 471 decisiones pendientes de aprobación: las decisiones 6–20 del lote 02, 20 registros en cada lote 03–24 y 16 registros en el lote 25;
+- cada pendiente dispone de tres distractores concretos y conserva literalmente la respuesta correcta;
+- una comprobación transversal confirma 471 IDs únicos, el mismo orden que `manual_primary_queue`, tres alternativas incorrectas distintas y claves coincidentes con el banco y los solucionarios Markdown.
+
+La preparación de una propuesta no acredita revisión humana L3 ni autoriza su aplicación. Por ello, el informe reproducible sigue mostrando 471 candidatas y los bancos permanecen intactos hasta que la persona responsable apruebe expresamente cada bloque.
 
 ## Confirmación del propietario y activación
 

@@ -133,7 +133,17 @@ Ejecuta la suite desde la raíz del repositorio:
 python scripts/run_gsi_suite.py
 ```
 
-Si Playwright está instalado fuera del repositorio, puedes indicar su archivo `index.mjs` mediante la variable de entorno `PLAYWRIGHT_MODULE`. El runner también detecta el módulo del entorno local preparado. Las pruebas usan el canal `chrome`: instalar solo Chromium no sustituye a Google Chrome.
+Si Playwright está instalado fuera del repositorio, puedes indicar su archivo `index.mjs` mediante la variable de entorno `PLAYWRIGHT_MODULE`. El runner también detecta el módulo del entorno local preparado. Las pruebas usan el canal `chrome` de forma predeterminada: instalar solo Chromium no sustituye a Google Chrome.
+
+Para repetir la suite con otro navegador basado en Chromium que ya esté instalado, define `PLAYWRIGHT_CHANNEL`. Por ejemplo, en PowerShell:
+
+```powershell
+$env:PLAYWRIGHT_CHANNEL = "msedge"
+python scripts/run_gsi_suite.py
+Remove-Item Env:PLAYWRIGHT_CHANNEL
+```
+
+El canal empleado queda registrado en `logs/gsi-suite.json`, `logs/gsi-regression.json` y `logs/gsi-browser-smoke.json`. La automatización de GitHub Actions mantiene Chrome como referencia principal.
 
 | Código | Significado |
 | ---: | --- |

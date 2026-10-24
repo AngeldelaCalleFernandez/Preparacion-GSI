@@ -5,6 +5,7 @@ import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const { chromium } = await import(process.env.PLAYWRIGHT_MODULE ? pathToFileURL(process.env.PLAYWRIGHT_MODULE).href : 'playwright');
+const browserChannel = process.env.PLAYWRIGHT_CHANNEL || 'chrome';
 const mime = { '.html': 'text/html', '.js': 'text/javascript', '.json': 'application/json', '.css': 'text/css' };
 const server = http.createServer(async (request, response) => {
   try {
@@ -15,7 +16,7 @@ const server = http.createServer(async (request, response) => {
   } catch { response.writeHead(404).end(); }
 });
 await new Promise((resolve) => server.listen(0, '127.0.0.1', resolve));
-const browser = await chromium.launch({ channel: 'chrome', headless: true });
+const browser = await chromium.launch({ channel: browserChannel, headless: true });
 const results = [];
 try {
   for (const suite of ['phase4', 'phase5', 'phase6', 'phase7', 'phase7b2', 'm2', 'm3']) {
@@ -28,7 +29,7 @@ try {
     results.push({suite, ...result, errors}); console.log(JSON.stringify(results.at(-1))); await context.close();
   }
 } finally {
-  await fs.writeFile(path.join(root, 'logs/gsi-regression.json'), JSON.stringify({date:new Date().toISOString(),results},null,2)+'\n');
+  await fs.writeFile(path.join(root, 'logs/gsi-regression.json'), JSON.stringify({date:new Date().toISOString(),browserChannel,results},null,2)+'\n');
   await browser.close(); await new Promise((resolve) => server.close(resolve));
 }
 if (results.some((r) => r.failures.length || r.errors.length || !r.total)) process.exitCode=1;
