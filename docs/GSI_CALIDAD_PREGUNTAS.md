@@ -12,7 +12,7 @@ Versión del análisis: `1.0.0`. Preguntas examinadas: **1964**.
 | Manuales/curadas | 959 | 489 | 471 | 51 | 1 |
 | Generadas por IA | 803 | 128 | 30 | 99 | 6 |
 
-La primera cola editorial contiene **471 preguntas manuales/curadas** en las que la respuesta correcta tiene al menos 40 caracteres y duplica la longitud del distractor más extenso. Es una señal de posible pista formal, no una prueba de incorrección.
+La primera cola editorial contiene **471 preguntas manuales/curadas** en las que la respuesta correcta tiene al menos 40 caracteres y duplica la longitud del distractor más extenso. Es una señal de posible pista formal, no una prueba de incorrección. Las 471 cuentan ya con propuestas concretas en los lotes 02 a 25, pero permanecen en la cola porque esas propuestas todavía no tienen aprobación humana ni se han aplicado al banco.
 
 El detalle completo y ordenado está en [`logs/gsi-question-quality.json`](../logs/gsi-question-quality.json).
 
