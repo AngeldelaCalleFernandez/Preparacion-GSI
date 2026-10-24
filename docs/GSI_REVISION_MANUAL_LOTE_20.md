@@ -89,8 +89,8 @@ Las respuestas correctas permanecen literalmente intactas. La aprobación del lo
 
 ### 9. `MAN-GSI-P14-077` · conservar A
 
-- B: Exclusivamente penal, concentrada en tipificar delitos y penas sin medidas preventivas, derechos o asistencia social.
-- C: Exclusivamente laboral, limitada a permisos y prestaciones relacionadas con el empleo y sin tutela judicial o institucional.
+- B: Su alcance sería penal, concentrado en tipificar delitos y penas sin medidas preventivas, derechos o asistencia social.
+- C: Su alcance se limitaría al ámbito laboral, con permisos y prestaciones de empleo pero sin tutela judicial o institucional.
 - D: Centrada solo en campañas de sensibilización, sin mecanismos de protección, asistencia, prevención o respuesta penal.
 
 ### 10. `MAN-GSI-P19-134` · conservar D

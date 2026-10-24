@@ -71,8 +71,8 @@ Las respuestas correctas permanecen literalmente intactas. La aprobación del lo
 
 ### 6. `MAN-GSI-P15-144` · conservar C
 
-- A: Solo .NET separa autenticación y autorización; Jakarta EE permite identificar usuarios, pero no aplicar permisos o roles.
-- B: Solo Jakarta EE puede integrarse con OAuth 2.0 y OpenID Connect; ASP.NET Core exige identidades locales del servidor.
+- A: La separación entre autenticación y autorización existe en .NET, mientras Jakarta EE identifica usuarios sin aplicar permisos o roles.
+- B: La integración con OAuth 2.0 y OpenID Connect corresponde a Jakarta EE, mientras ASP.NET Core exige identidades locales del servidor.
 - D: Ambos implementan exactamente las mismas APIs, filtros y anotaciones de seguridad porque los conceptos comunes obligan al mismo mecanismo.
 
 ### 7. `MAN-GSI-P16-016` · conservar A

@@ -150,8 +150,8 @@ Las respuestas correctas permanecen literalmente intactas. La aprobación del lo
 ### 19. `MAN-GSI-P16-103` · conservar C
 
 - A: No; observar el funcionamiento está prohibido en cualquier circunstancia aunque se haga durante una operación legítimamente autorizada.
-- B: Solo puede realizarse tras obtener autorización judicial específica, incluso por el usuario legítimo en el uso ordinario del programa.
-- D: Únicamente se permite cuando el software está bajo GPL; ninguna licencia propietaria puede quedar sometida al supuesto legal.
+- B: La observación requeriría autorización judicial específica, incluso para el usuario legítimo durante el uso ordinario del programa.
+- D: El supuesto legal se aplicaría cuando el software estuviera bajo GPL, pero no alcanzaría a programas con licencia propietaria.
 
 ### 20. `MAN-GSI-P15-046` · conservar D
 

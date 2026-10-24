@@ -71,8 +71,8 @@ Las respuestas correctas permanecen literalmente intactas. La aprobación del lo
 
 ### 6. `MAN-GSI-P19-018` · conservar B
 
-- A: Ninguno, porque las funciones IMS se ejecutan siempre en un único appliance indivisible definido así por 3GPP.
-- C: Solo un límite de capacidad, sin consecuencias para redundancia, seguridad, encaminamiento o interoperabilidad entre funciones.
+- A: No existiría riesgo, porque las funciones IMS se ejecutarían en un único appliance indivisible definido así por 3GPP.
+- C: El riesgo se limitaría a la capacidad, sin consecuencias para redundancia, seguridad, encaminamiento o interoperabilidad entre funciones.
 - D: Permitiría sustituir todas las entidades IMS por una PBX, ya que ambas arquitecturas definen exactamente las mismas funciones.
 
 ### 7. `MAN-GSI-P18-135` · conservar C

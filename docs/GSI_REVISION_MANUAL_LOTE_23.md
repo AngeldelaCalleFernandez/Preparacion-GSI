@@ -108,8 +108,8 @@ Las respuestas correctas permanecen literalmente intactas. La aprobación del lo
 ### 12. `MAN-GSI-P16-085` · conservar B
 
 - A: Sí, quedan protegidas automáticamente como código por servir de fundamento a una interfaz, aunque carezcan de forma expresiva concreta.
-- C: Solo quedan protegidas si el programa usa una licencia libre, pues las licencias privativas excluyen esas ideas y principios.
-- D: Únicamente quedan protegidas si existe DRM que impida observar o analizar el comportamiento del programa.
+- C: La protección existiría si el programa usara una licencia libre, pues las licencias privativas excluirían esas ideas y principios.
+- D: La presencia de DRM determinaría la protección al impedir observar o analizar el comportamiento del programa.
 
 ### 13. `MAN-GSI-P15-026` · conservar D
 
