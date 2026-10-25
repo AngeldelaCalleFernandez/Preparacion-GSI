@@ -9,10 +9,10 @@ Versión del análisis: `1.0.0`. Preguntas examinadas: **1964**.
 | Banco | Preguntas | Con algún indicio | Respuesta correcta ≥2× distractor más largo | Distractores absolutos | Redacción dependiente de la fuente |
 | --- | ---: | ---: | ---: | ---: | ---: |
 | Oficiales INAP | 202 | 6 | 5 | 1 | 0 |
-| Manuales/curadas | 959 | 454 | 436 | 48 | 1 |
+| Manuales/curadas | 959 | 434 | 416 | 45 | 1 |
 | Generadas por IA | 803 | 128 | 30 | 99 | 6 |
 
-La primera cola editorial contiene **436 preguntas manuales/curadas** en las que la respuesta correcta tiene al menos 40 caracteres y duplica la longitud del distractor más extenso. Es una señal de posible pista formal, no una prueba de incorrección.
+La primera cola editorial contiene **416 preguntas manuales/curadas** en las que la respuesta correcta tiene al menos 40 caracteres y duplica la longitud del distractor más extenso. Es una señal de posible pista formal, no una prueba de incorrección.
 
 El detalle completo y ordenado está en [`logs/gsi-question-quality.json`](../logs/gsi-question-quality.json).
 
@@ -22,26 +22,26 @@ Las primeras candidatas de la cola manual, ordenadas por la relación de longitu
 
 | ID | Tema | Longitud correcta | Máximo distractor | Relación |
 | --- | --- | ---: | ---: | ---: |
-| `MAN-GSI-P18-034` | B2-T09 | 81 | 22 | 3.68× |
-| `MAN-GSI-P18-103` | B2-T16 | 81 | 22 | 3.68× |
-| `MAN-GSI-P16-101` | B2-T14 | 161 | 44 | 3.66× |
-| `MAN-GSI-P15-025` | B3-T11 | 117 | 32 | 3.66× |
-| `MAN-GSI-P15-075` | B3-T11 | 106 | 29 | 3.66× |
-| `MAN-GSI-P14-103` | B1-T08 | 84 | 23 | 3.65× |
-| `MAN-GSI-P19-083` | B4-T15 | 84 | 23 | 3.65× |
-| `MAN-GSI-P18-106` | B2-T16 | 130 | 36 | 3.61× |
-| `MAN-GSI-P19-053` | B4-T15 | 119 | 33 | 3.61× |
-| `MAN-GSI-P19-094` | B4-T15 | 140 | 39 | 3.59× |
-| `MAN-GSI-P19-041` | B4-T15 | 122 | 34 | 3.59× |
-| `MAN-GSI-P19-108` | B4-T16 | 122 | 34 | 3.59× |
-| `MAN-GSI-P16-071` | B2-T14 | 79 | 22 | 3.59× |
-| `MAN-GSI-P19-117` | B4-T16 | 111 | 31 | 3.58× |
-| `MAN-GSI-P17-124` | B2-T02 | 82 | 23 | 3.57× |
-| `MAN-GSI-P19-079` | B4-T15 | 131 | 37 | 3.54× |
-| `MAN-GSI-P19-101` | B4-T16 | 131 | 37 | 3.54× |
-| `MAN-GSI-P15-129` | B3-T10 | 92 | 26 | 3.54× |
-| `MAN-GSI-P19-029` | B4-T14 | 88 | 25 | 3.52× |
-| `MAN-GSI-P16-102` | B2-T14 | 123 | 35 | 3.51× |
+| `MAN-GSI-P19-145` | B4-T15 | 154 | 44 | 3.50× |
+| `MAN-GSI-P15-082` | B3-T11 | 112 | 32 | 3.50× |
+| `MAN-GSI-P15-131` | B3-T10 | 105 | 30 | 3.50× |
+| `MAN-GSI-P15-132` | B3-T10 | 98 | 28 | 3.50× |
+| `MAN-GSI-P15-152` | B3-T11 | 91 | 26 | 3.50× |
+| `MAN-GSI-P17-122` | B2-T02 | 108 | 31 | 3.48× |
+| `MAN-GSI-P16-068` | B2-T14 | 94 | 27 | 3.48× |
+| `MAN-GSI-P18-098` | B2-T16 | 87 | 25 | 3.48× |
+| `MAN-GSI-P18-150` | B2-T16 | 125 | 36 | 3.47× |
+| `MAN-GSI-P16-149` | B2-T14 | 128 | 37 | 3.46× |
+| `MAN-GSI-P19-090` | B4-T15 | 121 | 35 | 3.46× |
+| `MAN-GSI-P19-051` | B4-T15 | 117 | 34 | 3.44× |
+| `MAN-GSI-P18-113` | B2-T16 | 93 | 27 | 3.44× |
+| `MAN-GSI-P15-146` | B3-T11 | 120 | 35 | 3.43× |
+| `MAN-GSI-P15-090` | B3-T11 | 123 | 36 | 3.42× |
+| `MAN-GSI-P19-124` | B4-T16 | 143 | 42 | 3.40× |
+| `MAN-GSI-P16-060` | B2-T14 | 136 | 40 | 3.40× |
+| `MAN-GSI-P18-057` | B2-T09 | 85 | 25 | 3.40× |
+| `MAN-GSI-P19-047` | B4-T15 | 112 | 33 | 3.39× |
+| `MAN-GSI-P16-136` | B2-T14 | 115 | 34 | 3.38× |
 
 ## Rúbrica de revisión
 

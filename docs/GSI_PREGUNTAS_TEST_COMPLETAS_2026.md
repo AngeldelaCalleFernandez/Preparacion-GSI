@@ -18,7 +18,7 @@ Exportación reproducible de los tres bancos del producto. Los JSON son la fuent
 | Archivo | SHA-256 |
 | --- | --- |
 | `data/questions-official.json` | `bddf132ba2333d848982263593905206a87e8548179ee7443a8699385c984b9e` |
-| `data/questions-manual.json` | `94bee42a0803f38c7e2689d1b3b56ec4f93419d50e0349ad083ec785ba874f0a` |
+| `data/questions-manual.json` | `1c131bde875b49484916c036c0dc56c00dfec23b329cdcb193af561d91309067` |
 | `data/questions-ai.json` | `c1c024271a64ed92773351791353daac8df6f8d034104ef24ae4a367ac81d937` |
 | `data/syllabus.json` | `2370e84e3c098dbe89628cdce92e95e9042a390d2dffe8bb48e3627607750d48` |
 
@@ -4441,13 +4441,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** Como regla, el plazo máximo fijado por la norma reguladora de un procedimiento no puede exceder de:
 
-- **A.** 1 año sin excepciones.
+- **A.** Tres meses, que actúan a la vez como plazo supletorio y como máximo que puede establecer la norma reguladora.
 
-- **B.** 30 días.
+- **B.** Un año, salvo que el órgano instructor acuerde reducirlo en función de la complejidad del procedimiento.
 
 - **C.** 6 meses, salvo que una ley establezca uno mayor o así lo prevea el Derecho de la UE.
 
-- **D.** 3 meses en ningún caso.
+- **D.** Seis meses sin excepciones, incluso cuando una ley o una norma de la Unión Europea establezca un plazo superior.
 
 **Respuesta correcta:** **C.** 6 meses, salvo que una ley establezca uno mayor o así lo prevea el Derecho de la UE.
 
@@ -9425,11 +9425,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Para qué sirve Windows Event Log?
 
-- **A.** Compilar controladores.
+- **A.** Programar la ejecución periódica o condicionada de aplicaciones, scripts y tareas de mantenimiento del sistema.
 
-- **B.** Asignar memoria física.
+- **B.** Recopilar contadores de rendimiento de procesador, memoria, disco y red para analizar carga y tendencias.
 
-- **C.** Gestionar paquetes DEB.
+- **C.** Buscar, descargar e instalar actualizaciones del sistema operativo y otros productos administrados de Microsoft.
 
 - **D.** Registrar eventos de sistema, seguridad y aplicaciones para operación y auditoría.
 
@@ -14534,13 +14534,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué problema resuelven principalmente los namespaces?
 
-- **A.** Cifrado de datos.
+- **A.** Comprobar que un documento cumple los elementos, tipos y restricciones declarados en su esquema XML.
 
 - **B.** Colisiones de nombres al mezclar elementos o atributos de vocabularios distintos.
 
-- **C.** Paginación de memoria.
+- **C.** Representar caracteres reservados mediante referencias de entidad para evitar que se interpreten como marcas.
 
-- **D.** Balanceo de carga.
+- **D.** Seleccionar nodos y valores de un documento mediante expresiones de ruta evaluadas sobre su árbol XML.
 
 **Respuesta correcta:** **B.** Colisiones de nombres al mezclar elementos o atributos de vocabularios distintos.
 
@@ -19709,13 +19709,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué herramienta conceptual ayuda a comprobar combinaciones de licencias en el ecosistema EUPL?
 
-- **A.** Un escáner de puertos.
+- **A.** El catálogo SPDX de identificadores y expresiones normalizadas de licencias, sin resolver por sí mismo su compatibilidad.
 
-- **B.** Un compilador Java.
+- **B.** Un escáner que inventaría dependencias y licencias declaradas para preparar una revisión jurídica posterior.
 
 - **C.** El Licensing Assistant / compatibility checker del portal Interoperable Europe.
 
-- **D.** Un sistema DRM.
+- **D.** Un sistema de gestión de derechos que limita técnicamente copia, apertura o reproducción de contenidos digitales.
 
 **Respuesta correcta:** **C.** El Licensing Assistant / compatibility checker del portal Interoperable Europe.
 
@@ -20429,13 +20429,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Puede el usuario legítimo corregir errores necesarios para usar el programa conforme a su finalidad?
 
-- **A.** Nunca, ni siquiera el usuario legítimo.
+- **A.** La corrección corresponde al titular de derechos y el usuario legítimo necesita autorización específica en todos los casos.
 
 - **B.** El artículo 100 contempla reproducción/transformación necesaria, incluida corrección de errores, salvo disposición contractual en contrario en el marco indicado.
 
-- **C.** Solo si publica el código.
+- **C.** El usuario legítimo puede transformar, distribuir y explotar la versión corregida sin límites adicionales.
 
-- **D.** Solo si el programa está en dominio público.
+- **D.** La corrección de errores está permitida únicamente cuando el programa se distribuye con una licencia de código abierto.
 
 **Respuesta correcta:** **B.** El artículo 100 contempla reproducción/transformación necesaria, incluida corrección de errores, salvo disposición contractual en contrario en el marco indicado.
 
@@ -20453,11 +20453,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué regla establece el TRLPI sobre la copia de seguridad necesaria?
 
-- **A.** Está prohibida siempre.
+- **A.** La copia de seguridad está prohibida salvo autorización individual y previa del titular de los derechos del programa.
 
-- **B.** Solo puede hacerla el fabricante.
+- **B.** La copia necesaria para el uso corresponde al fabricante y el usuario legítimo no puede realizarla directamente.
 
-- **C.** Transforma la licencia en copyleft.
+- **C.** La copia de seguridad puede distribuirse libremente a terceros porque no queda vinculada a la licencia del programa.
 
 - **D.** No puede impedirse por contrato a quien tiene derecho a utilizar el programa cuando resulte necesaria para esa utilización.
 
@@ -23075,11 +23075,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es una ontología?
 
-- **A.** Una lista de URLs.
+- **A.** Una clasificación jerárquica que organiza conceptos en categorías y subcategorías mediante relaciones padre-hijo.
 
-- **B.** Una hoja de estilos.
+- **B.** Un vocabulario controlado que recoge términos preferentes, sinónimos y relaciones de mayor o menor amplitud.
 
-- **C.** Un gestor de paquetes.
+- **C.** Un conjunto de campos y reglas que normaliza la descripción de recursos para facilitar intercambio y recuperación.
 
 - **D.** Un modelo más formal de conceptos, propiedades y relaciones dentro de un dominio.
 
@@ -23149,11 +23149,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 - **A.** El feed es una interfaz estructurada publicada por el productor; scraping extrae contenido de páginas sin ese contrato específico.
 
-- **B.** Son siempre lo mismo.
+- **B.** El feed obtiene el HTML de una página y extrae fragmentos mediante selectores definidos por el consumidor.
 
-- **C.** Scraping es un formato XML estándar.
+- **C.** El scraping consume una interfaz estructurada y versionada que el productor publica para distribuir actualizaciones.
 
-- **D.** Un feed nunca contiene metadatos.
+- **D.** La diferencia consiste en el formato: un feed utiliza XML y el scraping utiliza necesariamente JSON.
 
 **Respuesta correcta:** **A.** El feed es una interfaz estructurada publicada por el productor; scraping extrae contenido de páginas sin ese contrato específico.
 
@@ -29949,11 +29949,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué ofrece Jakarta Security?
 
-- **A.** Un motor SQL.
+- **A.** La API de persistencia que mapea entidades Java a tablas y gestiona su ciclo de vida dentro de un contexto.
 
-- **B.** Un compilador JIT.
+- **B.** El modelo de inyección de dependencias y contextos que administra beans, scopes, productores e interceptores.
 
-- **C.** Un gestor de dependencias.
+- **C.** La API utilizada para crear servicios REST mediante recursos, anotaciones, negociación de contenido y clientes HTTP.
 
 - **D.** APIs y mecanismos estandarizados de autenticación/autorización integrados con la plataforma.
 
@@ -30912,13 +30912,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es el CLS?
 
-- **A.** El compilador JIT.
+- **A.** El sistema común que define cómo se declaran, utilizan y gestionan los tipos dentro del entorno .NET.
 
-- **B.** La biblioteca de acceso a datos.
+- **B.** El entorno de ejecución que carga código administrado, gestiona memoria, excepciones y compilación JIT.
 
 - **C.** Un subconjunto de reglas del sistema de tipos orientado a que APIs públicas sean interoperables entre lenguajes .NET.
 
-- **D.** El recolector de basura.
+- **D.** El conjunto de bibliotecas base que ofrece colecciones, entrada/salida, redes y otras APIs comunes.
 
 **Respuesta correcta:** **C.** Un subconjunto de reglas del sistema de tipos orientado a que APIs públicas sean interoperables entre lenguajes .NET.
 
@@ -32088,13 +32088,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es model binding?
 
-- **A.** La creación de índices SQL.
+- **A.** El proceso que selecciona un endpoint comparando la URL y el método HTTP con las plantillas de ruta registradas.
 
-- **B.** La compilación de C# a IL.
+- **B.** La comprobación de reglas y atributos aplicada al modelo ya construido para detectar entradas no válidas.
 
 - **C.** El proceso de obtener datos de la petición y construir/asignar parámetros u objetos del modelo de entrada.
 
-- **D.** La autenticación del usuario.
+- **D.** La resolución de servicios registrados para inyectar las dependencias requeridas por controladores y otros componentes.
 
 **Respuesta correcta:** **C.** El proceso de obtener datos de la petición y construir/asignar parámetros u objetos del modelo de entrada.
 
@@ -44002,13 +44002,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es SDP en una llamada SIP?
 
-- **A.** Un codec de audio.
+- **A.** El protocolo de señalización que intercambia peticiones y respuestas para crear, modificar o finalizar una llamada.
 
 - **B.** Una descripción de los medios y parámetros de sesión, como codecs y puertos/direcciones.
 
-- **C.** Un algoritmo de cifrado.
+- **C.** El protocolo de transporte en tiempo real que lleva muestras multimedia con numeración y marcas temporales.
 
-- **D.** Un sistema de directorio.
+- **D.** El perfil seguro que cifra y autentica paquetes RTP para proteger la confidencialidad e integridad de los medios.
 
 **Respuesta correcta:** **B.** Una descripción de los medios y parámetros de sesión, como codecs y puertos/direcciones.
 
@@ -44485,13 +44485,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué caracteriza de forma general a 2G?
 
-- **A.** Ser una red 5G SA.
+- **A.** Telefonía móvil analógica orientada a voz, con escasa protección y sin servicios digitales de datos.
 
 - **B.** Digitalización de la voz y servicios como SMS, con GSM como referencia y datos añadidos posteriormente mediante GPRS/EDGE.
 
-- **C.** Usar exclusivamente voz sobre IMS.
+- **C.** Acceso móvil de banda ancha basado en UMTS y HSPA, con evolución de datos por paquetes y videollamada.
 
-- **D.** Introducir network slicing.
+- **D.** Red móvil de paquetes basada en LTE, arquitectura all-IP y separación entre acceso radio y núcleo evolucionado.
 
 **Respuesta correcta:** **B.** Digitalización de la voz y servicios como SMS, con GSM como referencia y datos añadidos posteriormente mediante GPRS/EDGE.
 
@@ -44773,11 +44773,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es una celda en comunicaciones móviles?
 
-- **A.** Una tabla de una hoja de cálculo.
+- **A.** Una agrupación de celdas utilizada para gestionar movilidad, localización y paging sin actualizar cada cambio individual.
 
-- **B.** Un paquete SIP.
+- **B.** Una porción direccional de cobertura asociada a una antena o panel dentro de un emplazamiento radio.
 
-- **C.** Un LUN de almacenamiento.
+- **C.** Una frecuencia portadora o canal radio sobre el que se transmiten señales dentro del espectro asignado.
 
 - **D.** Un área/recursos de cobertura radio servidos por infraestructura de acceso, con reutilización y planificación de radio.
 
@@ -45397,13 +45397,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué debería monitorizarse en un enlace móvil empresarial crítico?
 
-- **A.** Solo el icono de barras del teléfono.
+- **A.** Potencia y calidad de señal radio, sin relacionarlas con disponibilidad del servicio, movilidad ni rendimiento extremo a extremo.
 
-- **B.** Solo la versión del navegador.
+- **B.** Latencia, pérdida y throughput de red, sin observar consumo, cambios de celda u operador ni estado del túnel corporativo.
 
 - **C.** Señal/calidad radio, disponibilidad, latencia, pérdida, throughput, consumo, cambios de celda/operador y estado del túnel/servicio.
 
-- **D.** Solo espacio libre en disco.
+- **D.** Disponibilidad de la aplicación empresarial, sin métricas del acceso radio, transporte o conectividad del dispositivo.
 
 **Respuesta correcta:** **C.** Señal/calidad radio, disponibilidad, latencia, pérdida, throughput, consumo, cambios de celda/operador y estado del túnel/servicio.
 
@@ -45493,13 +45493,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es MCM en movilidad empresarial?
 
-- **A.** Mobile Core Modulation.
+- **A.** Mobile Device Management: gestión de configuración, seguridad e inventario del dispositivo móvil.
 
 - **B.** Mobile Content Management: control/distribución de contenido corporativo en móviles.
 
-- **C.** Un método de SIP.
+- **C.** Mobile Application Management: distribución y políticas aplicadas a aplicaciones y sus datos corporativos.
 
-- **D.** Un tipo de SIM.
+- **D.** Enterprise Mobility Management: marco que integra dispositivos, aplicaciones, contenido e identidad móvil.
 
 **Respuesta correcta:** **B.** Mobile Content Management: control/distribución de contenido corporativo en móviles.
 
@@ -45757,11 +45757,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué diferencia hay entre remote wipe completo y borrado selectivo?
 
-- **A.** Son idénticos siempre.
+- **A.** El borrado completo bloquea temporalmente el terminal, mientras el selectivo restablece todos sus datos de fábrica.
 
-- **B.** El selectivo borra la SIM físicamente.
+- **B.** El borrado selectivo elimina físicamente la SIM, mientras el completo retira únicamente el perfil corporativo.
 
-- **C.** El completo solo cierra una aplicación.
+- **C.** Ambos eliminan el mismo conjunto de datos; se diferencian solo por iniciarse desde el dispositivo o desde la consola.
 
 - **D.** El completo intenta eliminar el dispositivo gestionado; el selectivo retira datos/perfil corporativo conservando lo personal cuando procede.
 
@@ -46168,13 +46168,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué describe mejor una arquitectura de videoconferencia?
 
-- **A.** Solo una cámara conectada a HDMI.
+- **A.** El subsistema de captura que obtiene audio y vídeo, los digitaliza y aplica el codec seleccionado antes de enviarlos.
 
-- **B.** Únicamente una aplicación de chat.
+- **B.** La señalización que localiza participantes, negocia capacidades y establece o termina la sesión de comunicación.
 
 - **C.** Captura y codificación, señalización/negociación, transporte de medios, función multipunto si existe y decodificación/presentación.
 
-- **D.** Un sistema de almacenamiento sin red.
+- **D.** El servicio de grabación que almacena la reunión y publica posteriormente el archivo para consulta de los participantes.
 
 **Respuesta correcta:** **C.** Captura y codificación, señalización/negociación, transporte de medios, función multipunto si existe y decodificación/presentación.
 
@@ -46336,11 +46336,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué función cumple STUN?
 
-- **A.** Relay obligatorio de todo tráfico.
+- **A.** Proporcionar un relay que recibe y reenvía los paquetes cuando no puede establecerse un camino directo entre extremos.
 
-- **B.** Cifrar vídeo.
+- **B.** Coordinar candidatos y comprobaciones de conectividad para seleccionar el par de rutas viable de una sesión multimedia.
 
-- **C.** Señalizar sesiones SIP.
+- **C.** Establecer, modificar y finalizar sesiones mediante mensajes de señalización intercambiados entre agentes SIP.
 
 - **D.** Ayudar a un endpoint a conocer su dirección/puerto mapeado por NAT y comprobar conectividad como herramienta de traversal.
 
@@ -46554,11 +46554,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 - **A.** MCU mezcla/transcodifica más en servidor; SFU reenvía selectivamente streams y deja más composición al cliente.
 
-- **B.** Son idénticas.
+- **B.** La MCU reenvía streams sin procesarlos, mientras la SFU decodifica y compone una única mezcla para los participantes.
 
-- **C.** SFU es un codec y MCU una VLAN.
+- **C.** La SFU es un codec escalable y la MCU es el protocolo utilizado para negociar sus capas mediante señalización.
 
-- **D.** MCU solo funciona en 2G.
+- **D.** La diferencia reside en el acceso radio: MCU requiere una red móvil y SFU se utiliza en conexiones fijas.
 
 **Respuesta correcta:** **A.** MCU mezcla/transcodifica más en servidor; SFU reenvía selectivamente streams y deja más composición al cliente.
 

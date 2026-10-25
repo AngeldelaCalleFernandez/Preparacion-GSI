@@ -4,15 +4,15 @@ Fecha de preparación: 24 de octubre de 2026.
 
 ## Alcance y estado
 
-Este documento prepara las 20 candidatas siguientes a las incluidas en el lote 03 dentro de la cola editorial `correct-length-dominance`. Las decisiones permanecen pendientes y no se ha modificado ninguna pregunta de este lote.
+Este documento registra la aplicación de las 20 candidatas siguientes a las incluidas en el lote 03 dentro de la cola editorial `correct-length-dominance`. La instrucción expresa «apruebo lote 04» de la persona responsable del proyecto autoriza las veinte decisiones.
 
 Los 20 registros se contrastaron con el solucionario Markdown conservado de su práctica. En todos los casos, la letra correcta del banco coincide con la letra publicada en el solucionario.
 
-Estado del lote: **20 decisiones pendientes de aprobación humana; cero cambios en los bancos**.
+Estado del lote: **20 decisiones humanas L3 aprobadas y aplicadas; cero pendientes**.
 
 ## Elementos preparados
 
-| Orden | ID | Tema | Relación inicial | Evidencia de clave | Contraste propuesto |
+| Orden | ID | Tema | Relación inicial | Evidencia de clave | Contraste aprobado y aplicado |
 | ---: | --- | --- | ---: | --- | --- |
 | 1 | `MAN-GSI-P18-034` | B2-T09 | 3,68× | P18, pregunta 34, B | Namespaces frente a validación, entidades y selección XPath. |
 | 2 | `MAN-GSI-P18-103` | B2-T16 | 3,68× | P18, pregunta 103, D | Ontología frente a taxonomía, tesauro y esquema de metadatos. |
@@ -35,9 +35,9 @@ Estado del lote: **20 decisiones pendientes de aprobación humana; cero cambios 
 | 19 | `MAN-GSI-P19-029` | B4-T14 | 3,52× | P19, pregunta 29, B | SDP frente a SIP, RTP y SRTP. |
 | 20 | `MAN-GSI-P16-102` | B2-T14 | 3,51× | P16, pregunta 102, D | Copia de seguridad necesaria frente a prohibición, exclusividad o libre distribución. |
 
-## Propuestas concretas pendientes
+## Propuestas concretas aprobadas y aplicadas
 
-Las respuestas correctas permanecen literalmente intactas. La aprobación del lote autorizaría únicamente los tres distractores enumerados en cada registro.
+Las respuestas correctas permanecen literalmente intactas. La aprobación del lote autorizó únicamente los tres distractores enumerados en cada registro.
 
 ### 1. `MAN-GSI-P18-034` · conservar B
 
@@ -168,11 +168,21 @@ Las respuestas correctas permanecen literalmente intactas. La aprobación del lo
 - P18: `documents/markdown/gsi/P18/GSI A2 — PRÁCTICA ACTIVA 18 — HTML, XML, CONTENIDOS, BÚSQUEDA Y SEO — SOLUCIONARIO COMENTADO.md`, preguntas 34, 103 y 106.
 - P19: `documents/markdown/gsi/P19/GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO.md`, preguntas 29, 41, 53, 79, 83, 94, 101, 108 y 117.
 
-## Resultado de la preparación
+## Resultado de la aplicación
 
 - 20 de 20 IDs localizados en el banco manual.
 - 20 de 20 claves coincidentes con sus solucionarios conservados.
-- 20 decisiones editoriales pendientes de aprobación humana.
-- Cero modificaciones en `data/questions-manual.json`, `data/questions-official.json` y `data/questions-ai.json`.
+- 20 decisiones editoriales aprobadas y aplicadas; cero pendientes en este lote.
+- Se modificaron únicamente los tres distractores aprobados de cada pregunta: 20 IDs y 60 textos.
+- Se conservaron enunciados, claves correctas, feedback, procedencia, estado de validación y estado activo.
+- `data/questions-official.json` y `data/questions-ai.json` permanecen intactos.
 
-Este lote solo podrá aplicarse después de recibir aprobación expresa de sus textos concretos.
+## Verificación
+
+- Cola `correct-length-dominance`: de 436 a 416 registros.
+- Preguntas manuales con algún hallazgo heurístico: de 454 a 434.
+- Alertas `absolute-wording-cluster`: de 48 a 45.
+- SHA-256 de partida de `data/questions-manual.json`: `94bee42a0803f38c7e2689d1b3b56ec4f93419d50e0349ad083ec785ba874f0a`.
+- SHA-256 resultante, coincidente con el punto de control previsto: `1c131bde875b49484916c036c0dc56c00dfec23b329cdcb193af561d91309067`.
+
+El siguiente lote pendiente es el 05 y requiere una aprobación humana separada antes de modificarlo.
