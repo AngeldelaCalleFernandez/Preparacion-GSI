@@ -18,7 +18,7 @@ Exportación reproducible de los tres bancos del producto. Los JSON son la fuent
 | Archivo | SHA-256 |
 | --- | --- |
 | `data/questions-official.json` | `bddf132ba2333d848982263593905206a87e8548179ee7443a8699385c984b9e` |
-| `data/questions-manual.json` | `1c131bde875b49484916c036c0dc56c00dfec23b329cdcb193af561d91309067` |
+| `data/questions-manual.json` | `fcfad42e36cf22b772038c37f59a670015977cea36ec8bbd9ec7c47531af3045` |
 | `data/questions-ai.json` | `c1c024271a64ed92773351791353daac8df6f8d034104ef24ae4a367ac81d937` |
 | `data/syllabus.json` | `2370e84e3c098dbe89628cdce92e95e9042a390d2dffe8bb48e3627607750d48` |
 
@@ -9377,13 +9377,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es un servicio de Windows?
 
-- **A.** Una partición NTFS.
+- **A.** Una tarea configurada para iniciar un programa a una hora o ante un evento mediante el Programador de tareas.
 
 - **B.** Un proceso o componente gestionado para ejecutar funciones en segundo plano bajo el Service Control Manager.
 
-- **C.** Una cuenta de Active Directory.
+- **C.** Una aplicación interactiva lanzada al iniciar sesión y vinculada al escritorio y al perfil del usuario conectado.
 
-- **D.** Un paquete RPM.
+- **D.** Un controlador cargado por el kernel para comunicar el sistema operativo con hardware o funciones de bajo nivel.
 
 **Respuesta correcta:** **B.** Un proceso o componente gestionado para ejecutar funciones en segundo plano bajo el Service Control Manager.
 
@@ -15086,11 +15086,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es un callback?
 
-- **A.** Un tipo de documento XML.
+- **A.** Un objeto que representa un resultado disponible en el futuro y permite encadenar operaciones de éxito o error.
 
-- **B.** Una política SEO.
+- **B.** Un componente que publica eventos y notifica a los listeners suscritos cuando recibe una emisión identificada.
 
-- **C.** Un sistema de archivos.
+- **C.** Un bucle que consulta periódicamente el estado de un recurso para detectar si se ha producido algún cambio.
 
 - **D.** Una función pasada o registrada para ejecutarse cuando ocurre una condición o evento.
 
@@ -19447,11 +19447,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 - **A.** GPL se centra en obligaciones asociadas a distribución/conveying; AGPL añade el escenario de interacción remota con software modificado.
 
-- **B.** GPL obliga siempre en SaaS y AGPL nunca.
+- **B.** AGPL reduce el copyleft para bibliotecas enlazadas, mientras GPL añade obligaciones específicas para servicios de red.
 
-- **C.** Ambas son permisivas.
+- **C.** GPL exige publicar modificaciones por el mero uso local, mientras AGPL no contempla interacción remota con usuarios.
 
-- **D.** AGPL no contiene copyleft.
+- **D.** Ambas licencias regulan de la misma forma distribución y uso en red; sus diferencias se limitan al nombre del proyecto GNU.
 
 **Respuesta correcta:** **A.** GPL se centra en obligaciones asociadas a distribución/conveying; AGPL añade el escenario de interacción remota con software modificado.
 
@@ -19637,13 +19637,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es el dominio público?
 
-- **A.** Un tipo de copyleft fuerte.
+- **A.** Una licencia de copyleft que permite reutilización con la condición de mantener determinadas libertades en derivados.
 
 - **B.** Una situación jurídica distinta de una licencia open source; no deben tratarse como sinónimos.
 
-- **C.** Un DRM sin servidor.
+- **C.** Una licencia permisiva que concede derechos de uso y redistribución con obligaciones reducidas de atribución o aviso.
 
-- **D.** Una licencia de Apache.
+- **D.** Un régimen source-available que permite consultar el código, pero conserva restricciones incompatibles con open source.
 
 **Respuesta correcta:** **B.** Una situación jurídica distinta de una licencia open source; no deben tratarse como sinónimos.
 
@@ -21269,13 +21269,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué error es frecuente con DRM?
 
-- **A.** Separar lo técnico de lo jurídico.
+- **A.** Distinguir las capacidades impuestas por la medida técnica de los permisos y límites derivados de licencia y ley.
 
-- **B.** Revisar contrato y ley.
+- **B.** Revisar el contrato, la licencia y la normativa aplicable antes de concluir si un uso concreto está autorizado.
 
 - **C.** Pensar que si una acción está técnicamente permitida por el software, necesariamente está jurídicamente autorizada.
 
-- **D.** Analizar accesibilidad.
+- **D.** Evaluar si el mecanismo afecta a accesibilidad, interoperabilidad, conservación y ejercicio de excepciones legítimas.
 
 **Respuesta correcta:** **C.** Pensar que si una acción está técnicamente permitida por el software, necesariamente está jurídicamente autorizada.
 
@@ -21581,13 +21581,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué factor NO debería omitirse al comparar software libre y propietario?
 
-- **A.** El coste inicial como único criterio.
+- **A.** Comparar el precio de adquisición inicial sin incorporar operación, formación, migración ni costes de salida.
 
 - **B.** Coste total de propiedad, soporte, capacidades, seguridad, interoperabilidad, dependencia, comunidad/proveedor y reversibilidad.
 
-- **C.** La disponibilidad de documentación.
+- **C.** Decidir a partir de la etiqueta libre o propietario sin contrastar capacidades, seguridad ni adecuación al caso.
 
-- **D.** El ciclo de vida.
+- **D.** Valorar el soporte disponible durante el primer año sin revisar ciclo de vida, comunidad, dependencia o reversibilidad.
 
 **Respuesta correcta:** **B.** Coste total de propiedad, soporte, capacidades, seguridad, interoperabilidad, dependencia, comunidad/proveedor y reversibilidad.
 
@@ -22955,13 +22955,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es una plantilla documental?
 
-- **A.** Un algoritmo de crawling.
+- **A.** Una definición de tipo documental que establece metadatos obligatorios, reglas y comportamiento de una clase de documentos.
 
 - **B.** Un patrón reutilizable que estandariza estructura, campos y presentación de documentos.
 
-- **C.** Un índice invertido.
+- **C.** Un workflow que encadena tareas, decisiones y responsables para tramitar un documento durante su ciclo de vida.
 
-- **D.** Un protocolo de voz.
+- **D.** Una hoja de estilos que controla la presentación visual sin aportar por sí misma la estructura reutilizable del documento.
 
 **Respuesta correcta:** **B.** Un patrón reutilizable que estandariza estructura, campos y presentación de documentos.
 
@@ -23315,11 +23315,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es BPMN?
 
-- **A.** Un protocolo de transporte.
+- **A.** Un lenguaje ejecutable para describir la orquestación de servicios y el intercambio de mensajes de un proceso.
 
-- **B.** Una hoja CSS.
+- **B.** Una notación para representar decisiones mediante requisitos, modelos de decisión y tablas de reglas.
 
-- **C.** Un formato de feed.
+- **C.** Una notación orientada a gestión de casos, hitos y tareas cuyo flujo no queda completamente predeterminado.
 
 - **D.** Una notación estandarizada para modelar procesos con eventos, actividades, gateways y flujos.
 
@@ -24203,13 +24203,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Por qué los metadatos también requieren protección?
 
-- **A.** Nunca contienen información útil.
+- **A.** Los metadatos quedan fuera de la protección porque describen el recurso y no forman parte de su contenido principal.
 
-- **B.** Son siempre públicos por definición.
+- **B.** El cifrado del contenido convierte automáticamente en anónimos los nombres, fechas, autores y relaciones expuestos.
 
 - **C.** Pueden revelar información sensible sobre personas, expedientes, clasificación o contexto aunque el contenido esté protegido.
 
-- **D.** No pueden indexarse.
+- **D.** Eliminar el título basta para impedir que otros campos permitan identificar personas, expedientes o contexto sensible.
 
 **Respuesta correcta:** **C.** Pueden revelar información sensible sobre personas, expedientes, clasificación o contexto aunque el contenido esté protegido.
 
@@ -29999,11 +29999,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 - **A.** La especificación base para componentes web que procesan peticiones/respuestas HTTP en el contenedor web.
 
-- **B.** Un gestor de paquetes.
+- **B.** La especificación para construir servicios REST mediante recursos, anotaciones, negociación de contenido y clientes HTTP.
 
-- **C.** Un ORM.
+- **C.** El framework de componentes de interfaz web de servidor que gestiona vistas, componentes y ciclo de vida de la página.
 
-- **D.** Un protocolo de autenticación.
+- **D.** El estándar CDI para inyectar dependencias y gestionar beans, ámbitos, productores e interceptores dentro del contenedor.
 
 **Respuesta correcta:** **A.** La especificación base para componentes web que procesan peticiones/respuestas HTTP en el contenedor web.
 
@@ -30021,13 +30021,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es Jakarta Faces?
 
-- **A.** El reemplazo de CDI.
+- **A.** El modelo de inyección de dependencias y gestión contextual de componentes mediante beans, scopes e interceptores.
 
 - **B.** Un framework de componentes de interfaz web del lado servidor incluido en el ámbito de Jakarta EE.
 
-- **C.** Un servidor de aplicaciones.
+- **C.** La especificación base de componentes web que reciben peticiones HTTP y producen respuestas dentro del contenedor.
 
-- **D.** Un sistema de colas.
+- **D.** La API de persistencia que relaciona entidades Java con tablas y administra su ciclo de vida en un contexto.
 
 **Respuesta correcta:** **B.** Un framework de componentes de interfaz web del lado servidor incluido en el ámbito de Jakarta EE.
 
@@ -32258,11 +32258,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 - **A.** Un ORM moderno para .NET que permite mapear entidades y consultar/persistir datos mediante un modelo de objetos.
 
-- **B.** Una implementación de OAuth 2.0.
+- **B.** La capa de acceso que expone conexiones, comandos y lectores para ejecutar SQL mediante un proveedor de datos .NET.
 
-- **C.** Un gestor de paquetes.
+- **C.** El gestor que restaura, publica y versiona paquetes y dependencias utilizados por proyectos del ecosistema .NET.
 
-- **D.** Un reemplazo del CLR.
+- **D.** El entorno de ejecución que carga código administrado, aplica compilación JIT y gestiona memoria y excepciones.
 
 **Respuesta correcta:** **A.** Un ORM moderno para .NET que permite mapear entidades y consultar/persistir datos mediante un modelo de objetos.
 
@@ -32448,13 +32448,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué técnica puede ayudar a evitar un N+1 cuando realmente se necesitan relaciones asociadas?
 
-- **A.** Añadir `ToString()` a cada entidad.
+- **A.** Recorrer las entidades y cargar cada relación bajo demanda, confiando en que el proveedor agrupe después las consultas.
 
-- **B.** Crear un DbContext singleton global.
+- **B.** Desactivar el seguimiento del contexto, aunque esta opción reduzca coste de tracking pero no el número de consultas emitidas.
 
 - **C.** Diseñar la consulta para traer los datos necesarios de forma controlada, por ejemplo con proyección o carga eager adecuada.
 
-- **D.** Desactivar todos los índices.
+- **D.** Compartir un único DbContext global para reutilizar entidades y relaciones entre todas las peticiones concurrentes.
 
 **Respuesta correcta:** **C.** Diseñar la consulta para traer los datos necesarios de forma controlada, por ejemplo con proyección o carga eager adecuada.
 
@@ -33312,13 +33312,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué equivalencia de herramientas es más razonable?
 
-- **A.** NuGet es el equivalente de WildFly.
+- **A.** NuGet desempeña el papel de un servidor Jakarta EE porque aloja y ejecuta aplicaciones web empresariales.
 
-- **B.** Kestrel equivale a Maven.
+- **B.** Kestrel equivale a Maven o Gradle porque compila proyectos y resuelve todas sus dependencias de build.
 
 - **C.** NuGet gestiona paquetes .NET; Maven/Gradle gestionan dependencias/build en Java/Jakarta; MSBuild orquesta el build .NET.
 
-- **D.** EF Core equivale a Gradle.
+- **D.** EF Core equivale a Gradle porque ambos administran paquetes y orquestan las fases de compilación del proyecto.
 
 **Respuesta correcta:** **C.** NuGet gestiona paquetes .NET; Maven/Gradle gestionan dependencias/build en Java/Jakarta; MSBuild orquesta el build .NET.
 
@@ -33458,11 +33458,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 - **A.** La transición de paquetes `javax.*` a `jakarta.*` y la compatibilidad de librerías/runtime.
 
-- **B.** Sustituir Maven por NuGet.
+- **B.** Actualizar la versión de Java aunque las bibliotecas y el runtime ya sean compatibles con la versión utilizada.
 
-- **C.** Cambiar C# por JavaScript.
+- **C.** Sustituir Maven por Gradle, aun cuando el sistema de build existente admita las dependencias y plugins requeridos.
 
-- **D.** Eliminar la JVM.
+- **D.** Migrar el motor de base de datos aunque el proveedor y el dialecto actual sigan siendo compatibles con la aplicación.
 
 **Respuesta correcta:** **A.** La transición de paquetes `javax.*` a `jakarta.*` y la compatibilidad de librerías/runtime.
 
@@ -44629,13 +44629,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué significa URLLC?
 
-- **A.** Una red social móvil.
+- **A.** Enhanced Mobile Broadband, orientado a altas tasas de datos y capacidad para servicios de banda ancha móvil.
 
-- **B.** Un protocolo de cifrado de disco.
+- **B.** Massive Machine Type Communications, orientado a gran densidad de dispositivos con tráfico reducido y eficiente.
 
 - **C.** Ultra-Reliable Low-Latency Communications, orientado a escenarios que requieren alta fiabilidad y baja latencia.
 
-- **D.** Una versión de LTE solo para voz.
+- **D.** Una técnica de partición lógica que crea slices con funciones y políticas adaptadas a distintos servicios.
 
 **Respuesta correcta:** **C.** Ultra-Reliable Low-Latency Communications, orientado a escenarios que requieren alta fiabilidad y baja latencia.
 
@@ -44725,13 +44725,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué separación conceptual existe en una red móvil?
 
-- **A.** HTML y CSS.
+- **A.** El acceso radio conserva perfiles de abonado y políticas, mientras el core programa recursos físicos de las celdas.
 
-- **B.** Disco y filesystem exclusivamente.
+- **B.** El terminal y las estaciones forman parte del core, mientras autenticación y movilidad se delegan en Internet.
 
 - **C.** Acceso radio (UE/celdas/estaciones) y core, que gestiona movilidad, sesión, autenticación y salida a servicios/datos.
 
-- **D.** DMS y CMS.
+- **D.** Acceso y core son una única función lógica y la separación existente se limita a enlaces de subida y bajada.
 
 **Respuesta correcta:** **C.** Acceso radio (UE/celdas/estaciones) y core, que gestiona movilidad, sesión, autenticación y salida a servicios/datos.
 
@@ -45661,13 +45661,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué significa CYOD?
 
-- **A.** Cualquier equipo sin restricciones.
+- **A.** Bring Your Own Device: el usuario aporta un dispositivo de su propiedad sujeto a las políticas corporativas aplicables.
 
-- **B.** Un protocolo de VPN.
+- **B.** Corporate-Owned, Personally Enabled: la organización posee el equipo y permite un uso personal controlado.
 
 - **C.** Choose Your Own Device: el usuario elige entre un catálogo aprobado, normalmente bajo condiciones corporativas definidas.
 
-- **D.** Un modo de 5G SA.
+- **D.** Corporate-Owned, Business Only: la organización suministra el equipo para uso exclusivamente profesional.
 
 **Respuesta correcta:** **C.** Choose Your Own Device: el usuario elige entre un catálogo aprobado, normalmente bajo condiciones corporativas definidas.
 
@@ -45925,13 +45925,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** Un organismo quiere usar 5G como respaldo de fibra. ¿Qué prueba es imprescindible antes de declararlo redundante?
 
-- **A.** Comprobar solo que el router enciende.
+- **A.** Medir una vez el throughput del enlace 5G desde la misma sede, sin analizar dependencias compartidas con la fibra.
 
-- **B.** Mirar únicamente el icono 5G de un teléfono.
+- **B.** Comprobar la configuración de failover en el router sin provocar la caída del primario ni validar las aplicaciones críticas.
 
 - **C.** Verificar cobertura/capacidad real y que no comparta el mismo operador, obra, energía o dependencia crítica que el primario según objetivo de continuidad.
 
-- **D.** Deshabilitar failover para evitar cambios.
+- **D.** Comparar los SLA contractuales de ambos accesos, sin realizar una prueba de campo de cobertura, capacidad y recuperación.
 
 **Respuesta correcta:** **C.** Verificar cobertura/capacidad real y que no comparta el mismo operador, obra, energía o dependencia crítica que el primario según objetivo de continuidad.
 
@@ -46722,11 +46722,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 - **A.** Porque reuniones cloud y topologías multipunto pueden generar cargas asimétricas y el enlace puede tener capacidades distintas en cada sentido.
 
-- **B.** Porque IP solo funciona en subida.
+- **B.** Porque los codecs transmiten vídeo por la subida y reservan la bajada exclusivamente para el audio recibido.
 
-- **C.** Porque RTP no usa bajada.
+- **C.** Porque RTP utiliza protocolos diferentes en cada sentido y cada protocolo requiere una capacidad fija independiente.
 
-- **D.** Porque el vídeo no consume ancho de banda.
+- **D.** Porque la reserva de QoS convierte cualquier enlace en simétrico y debe comprobarse cuánto ancho de banda queda sin utilizar.
 
 **Respuesta correcta:** **A.** Porque reuniones cloud y topologías multipunto pueden generar cargas asimétricas y el enlace puede tener capacidades distintas en cada sentido.
 
