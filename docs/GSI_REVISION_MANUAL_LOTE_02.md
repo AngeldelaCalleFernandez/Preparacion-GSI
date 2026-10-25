@@ -154,4 +154,18 @@ Las respuestas correctas indicadas permanecen literalmente intactas. La aprobaci
 - Se modificaron únicamente los tres distractores aprobados de cada una de las preguntas 1–5; se conservaron enunciados, claves correctas, feedback, procedencia, estado de validación y estado activo.
 - `data/questions-official.json` y `data/questions-ai.json` permanecen intactos.
 
+## Simulación no mutante de las decisiones 6–20
+
+El 25 de octubre de 2026 se aplicaron las 15 propuestas únicamente en memoria, con el mismo serializador JSON del banco. La serialización sin cambios reprodujo exactamente el hash vigente, por lo que el hash prospectivo es verificable sin escribir ningún archivo:
+
+- 15 IDs y 45 distractores diferentes respecto del banco actual;
+- cero cambios en claves correctas y cero alternativas duplicadas;
+- cola `correct-length-dominance`: de 471 a 456 registros;
+- preguntas manuales con algún hallazgo heurístico: de 489 a 474;
+- alertas `absolute-wording-cluster`: 51 antes y 51 después;
+- SHA-256 vigente de `data/questions-manual.json`: `b3d6eff82457733f5e3a8da8ef4a264c0f2dbca9382f8e975c8e6de246051b4c`;
+- SHA-256 prospectivo tras aplicar exclusivamente estas 45 sustituciones: `2e2051a2412f8c758175e16b3f44bd2092298348339a52806c395915d0398f9b`.
+
+La simulación no modifica el banco ni constituye aprobación humana.
+
 La siguiente intervención debe registrar una decisión humana expresa para las preguntas 6–20 antes de modificar cualquiera de sus distractores.
