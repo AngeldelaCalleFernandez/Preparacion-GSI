@@ -31,6 +31,8 @@ La cola inicial contenía 496 preguntas manuales/curadas con posible pista forma
 
 La preparación de una propuesta no acredita revisión humana L3 ni autoriza su aplicación. Por ello, el informe reproducible sigue mostrando 471 candidatas y los bancos permanecen intactos hasta que la persona responsable apruebe expresamente cada bloque.
 
+El [plan de aplicación editorial](GSI_PLAN_APLICACION_EDITORIAL.md) registra el orden de los 24 bloques pendientes, el hash prospectivo después de cada uno y las comprobaciones exigidas antes de avanzar al siguiente.
+
 ## Confirmación del propietario y activación
 
 Tras el bloqueo inicial, el propietario declaró el 15 de septiembre: «los test estan revisados». Se registra esa declaración de revisión existente para el lote exacto de 803 preguntas, con su identidad de propietario, fecha, hashes de pregunta y evidencia y huella agregada del lote. No se atribuye al agente una revisión humana ni se inventa el método que utilizó el propietario. El registro identifica `reviewer_type: human`, `status: reviewed` y decisiones aceptadas por esa confirmación.
