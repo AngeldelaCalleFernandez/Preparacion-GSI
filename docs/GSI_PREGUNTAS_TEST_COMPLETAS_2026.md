@@ -18,7 +18,7 @@ Exportación reproducible de los tres bancos del producto. Los JSON son la fuent
 | Archivo | SHA-256 |
 | --- | --- |
 | `data/questions-official.json` | `bddf132ba2333d848982263593905206a87e8548179ee7443a8699385c984b9e` |
-| `data/questions-manual.json` | `2e2051a2412f8c758175e16b3f44bd2092298348339a52806c395915d0398f9b` |
+| `data/questions-manual.json` | `94bee42a0803f38c7e2689d1b3b56ec4f93419d50e0349ad083ec785ba874f0a` |
 | `data/questions-ai.json` | `c1c024271a64ed92773351791353daac8df6f8d034104ef24ae4a367ac81d937` |
 | `data/syllabus.json` | `2370e84e3c098dbe89628cdce92e95e9042a390d2dffe8bb48e3627607750d48` |
 
@@ -5983,11 +5983,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** INSIDE se relaciona con:
 
-- **A.** Gestión de nóminas.
+- **A.** El intercambio electrónico de asientos registrales entre administraciones mediante la infraestructura SIR.
 
-- **B.** Supervisión de redes.
+- **B.** La consulta de datos del ciudadano entre organismos mediante servicios de intermediación y verificación.
 
-- **C.** Servicios de voz.
+- **C.** La puesta a disposición y comparecencia del interesado para acceder a notificaciones administrativas electrónicas.
 
 - **D.** Gestión e intercambio de documentos y expedientes electrónicos alineados con el ENI.
 
@@ -9545,11 +9545,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es una distribución Linux?
 
-- **A.** Una única llamada al sistema.
+- **A.** El núcleo que gestiona procesos, memoria, dispositivos y llamadas al sistema, sin incluir el resto del entorno de usuario.
 
-- **B.** Una CPU virtual.
+- **B.** La herramienta que instala, actualiza y elimina paquetes resolviendo versiones y dependencias desde repositorios.
 
-- **C.** Un algoritmo de caché.
+- **C.** Una imagen preparada para ejecutar una aplicación y sus dependencias dentro de un runtime de contenedores.
 
 - **D.** Un sistema que integra kernel, herramientas, bibliotecas, paquetes, instalador y políticas de mantenimiento.
 
@@ -14390,11 +14390,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es una entidad XML predefinida como &lt;?
 
-- **A.** Un tipo de namespace.
+- **A.** Un prefijo declarado para identificar de forma abreviada el URI de un espacio de nombres XML.
 
-- **B.** Un esquema XSD.
+- **B.** Una sección CDATA que permite incluir texto sin interpretar sus caracteres como marcas del documento.
 
-- **C.** Un script ejecutable.
+- **C.** Una referencia numérica que identifica un carácter mediante su código decimal o hexadecimal.
 
 - **D.** Una forma de representar ciertos caracteres con significado especial en la sintaxis.
 
@@ -14438,13 +14438,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es XSD?
 
-- **A.** Un lenguaje de scripting.
+- **A.** Una declaración de estructura XML con sintaxis heredada de SGML y un sistema de tipos más limitado.
 
 - **B.** XML Schema Definition, un lenguaje de esquema basado en XML con tipos y restricciones ricas.
 
-- **C.** Un sistema de ficheros.
+- **C.** Un lenguaje de expresiones que selecciona nodos y valores dentro de un árbol XML.
 
-- **D.** Un formato de imagen.
+- **D.** Un lenguaje declarativo que transforma documentos XML en otros documentos o formatos de salida.
 
 **Respuesta correcta:** **B.** XML Schema Definition, un lenguaje de esquema basado en XML con tipos y restricciones ricas.
 
@@ -15614,13 +15614,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es accesibilidad web en este contexto?
 
-- **A.** Solo aumentar el tamaño de fuente.
+- **A.** Adaptar la cuadrícula y los componentes visuales para que la interfaz responda a distintos tamaños de pantalla.
 
-- **B.** Solo optimizar SEO.
+- **B.** Optimizar estructura, metadatos y contenido para facilitar el rastreo y posicionamiento en motores de búsqueda.
 
 - **C.** Diseñar contenido y controles para que puedan ser percibidos, operados y comprendidos por usuarios con distintas capacidades.
 
-- **D.** Convertir todo a imagen.
+- **D.** Mantener coherencia de color, tipografía y estilo visual para reforzar la identidad gráfica del sitio.
 
 **Respuesta correcta:** **C.** Diseñar contenido y controles para que puedan ser percibidos, operados y comprendidos por usuarios con distintas capacidades.
 
@@ -19061,13 +19061,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué diferencia conceptual conviene recordar entre GPL y AGPL?
 
-- **A.** GPL es permisiva y AGPL propietaria.
+- **A.** AGPL sustituye el copyleft fuerte por condiciones permisivas cuando el software se ofrece como servicio.
 
 - **B.** AGPL añade una obligación específica para usuarios que interactúan remotamente por red con versiones modificadas en los supuestos de la licencia.
 
-- **C.** AGPL elimina el copyleft.
+- **C.** GPL exige entregar el código por el uso privado de una copia, mientras AGPL excluye los servicios accesibles por red.
 
-- **D.** GPL solo sirve para documentación.
+- **D.** AGPL se limita a bibliotecas enlazadas dinámicamente, mientras GPL se aplica a aplicaciones de escritorio.
 
 **Respuesta correcta:** **B.** AGPL añade una obligación específica para usuarios que interactúan remotamente por red con versiones modificadas en los supuestos de la licencia.
 
@@ -19997,13 +19997,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué incluye el concepto de programa de ordenador a efectos del artículo 96?
 
-- **A.** Solo el ejecutable firmado.
+- **A.** Comprende el ejecutable compilado, pero excluye el código fuente y los materiales preparatorios utilizados para crearlo.
 
 - **B.** También su documentación preparatoria, además de la secuencia de instrucciones en cualquiera de sus formas de expresión/fijación.
 
-- **C.** Solo el código fuente publicado.
+- **C.** Incluye las ideas y principios funcionales subyacentes aunque no se hayan expresado o fijado en un programa concreto.
 
-- **D.** Únicamente los manuales de usuario.
+- **D.** Abarca cualquier manual, contrato o documento del proyecto aunque no guarde relación con la elaboración del programa.
 
 **Respuesta correcta:** **B.** También su documentación preparatoria, además de la secuencia de instrucciones en cualquiera de sus formas de expresión/fijación.
 
@@ -20789,13 +20789,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué relación hay entre ingeniería inversa e interoperabilidad?
 
-- **A.** Son siempre ilegales sin excepción.
+- **A.** La interoperabilidad autoriza a descompilar cualquier componente y reutilizar el código obtenido en un producto competidor.
 
 - **B.** La ley puede permitir actos concretos y limitados para interoperabilidad; no existe una autorización genérica de ingeniería inversa para cualquier fin.
 
-- **C.** Son siempre libres sin condiciones.
+- **C.** La excepción permite divulgar la información obtenida y utilizarla para fines distintos de conseguir interoperabilidad.
 
-- **D.** Solo dependen del precio del software.
+- **D.** La excepción cubre la corrección de errores, pero excluye obtener información necesaria para comunicar programas independientes.
 
 **Respuesta correcta:** **B.** La ley puede permitir actos concretos y limitados para interoperabilidad; no existe una autorización genérica de ingeniería inversa para cualquier fin.
 
@@ -22813,11 +22813,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 - **A.** La acción final controlada sobre documentos al terminar su retención: eliminación, transferencia o conservación permanente según política.
 
-- **B.** Publicarlos siempre en Internet.
+- **B.** La clasificación inicial de los documentos en series y cuadros para organizar su gestión desde la creación.
 
-- **C.** Cambiarles la extensión.
+- **C.** La descripción de documentos mediante metadatos que facilitan su identificación, búsqueda y recuperación.
 
-- **D.** Convertirlos necesariamente a PDF.
+- **D.** La aplicación de permisos y restricciones para determinar quién puede consultar o modificar cada documento.
 
 **Respuesta correcta:** **A.** La acción final controlada sobre documentos al terminar su retención: eliminación, transferencia o conservación permanente según política.
 
@@ -23555,13 +23555,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es un índice invertido?
 
-- **A.** Una tabla de rutas IP.
+- **A.** Una estructura que parte de cada documento y enumera los términos, frecuencias o posiciones que contiene.
 
-- **B.** Una ACL de fichero.
+- **B.** Un árbol ordenado que facilita búsquedas por rango y acceso a valores de campos estructurados.
 
 - **C.** Una estructura que asocia términos con los documentos o posiciones donde aparecen.
 
-- **D.** Un feed Atom.
+- **D.** Una colección de vectores que aproxima similitud semántica entre consultas y documentos en un espacio numérico.
 
 **Respuesta correcta:** **C.** Una estructura que asocia términos con los documentos o posiciones donde aparecen.
 
@@ -23675,13 +23675,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué diferencia hay entre stemming y lematización?
 
-- **A.** No existe ninguna diferencia.
+- **A.** Stemming consulta diccionarios para obtener el lema lingüístico, mientras lematización recorta sufijos mediante reglas mecánicas.
 
-- **B.** Stemming solo funciona en imágenes.
+- **B.** Son dos nombres del mismo algoritmo y producen necesariamente la misma forma normalizada para cada término.
 
 - **C.** Ambas reducen variantes; lematización busca formas léxicas más lingüísticas, mientras stemming suele aplicar reglas más mecánicas.
 
-- **D.** Lematización es un protocolo web.
+- **D.** Ambos métodos traducen términos a otro idioma antes de incorporarlos al índice de recuperación.
 
 **Respuesta correcta:** **C.** Ambas reducen variantes; lematización busca formas léxicas más lingüísticas, mientras stemming suele aplicar reglas más mecánicas.
 
@@ -24179,11 +24179,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es DLP en gestión de contenidos?
 
-- **A.** Un motor de búsqueda.
+- **A.** Controles de gestión de derechos que restringen reproducción, copia o apertura de un contenido protegido.
 
-- **B.** Un lenguaje de marcas.
+- **B.** Reglas de conservación que determinan cuánto tiempo se mantiene un documento y cuál será su disposición final.
 
-- **C.** Un formato de feed.
+- **C.** Cifrado de repositorios para proteger la confidencialidad de la información almacenada frente a accesos directos.
 
 - **D.** Controles para detectar o restringir salida/uso inadecuado de información sensible.
 
@@ -32592,13 +32592,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Para qué sirve un token de concurrencia en EF Core?
 
-- **A.** Para autenticar al usuario HTTP.
+- **A.** Una credencial emitida para autenticar al usuario y transportar sus claims durante una petición HTTP.
 
 - **B.** Para detectar conflictos cuando otro proceso modifica una fila entre lectura y actualización, según la estrategia elegida.
 
-- **C.** Para cifrar paquetes NuGet.
+- **C.** Un nivel de aislamiento de transacción que determina qué cambios concurrentes resultan visibles entre operaciones.
 
-- **D.** Para compilar consultas LINQ.
+- **D.** Un identificador empleado para reutilizar el plan o el resultado de una consulta LINQ ya ejecutada.
 
 **Respuesta correcta:** **B.** Para detectar conflictos cuando otro proceso modifica una fila entre lectura y actualización, según la estrategia elegida.
 
@@ -32856,13 +32856,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué aporta OpenID Connect sobre OAuth 2.0?
 
-- **A.** Un compilador AOT.
+- **A.** Un marco de autorización delegada que concede acceso limitado a recursos mediante access tokens y scopes.
 
 - **B.** Una capa de identidad/autenticación estandarizada, incluyendo ID Token y endpoints asociados.
 
-- **C.** Un formato de assembly.
+- **C.** Un formato compacto para representar y firmar claims que puede utilizarse en distintos protocolos de identidad.
 
-- **D.** Un ORM para .NET.
+- **D.** Un protocolo de federación basado en aserciones XML intercambiadas entre proveedor de identidad y servicio.
 
 **Respuesta correcta:** **B.** Una capa de identidad/autenticación estandarizada, incluyendo ID Token y endpoints asociados.
 
@@ -44170,11 +44170,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué integra una plataforma de comunicaciones unificadas (UC)?
 
-- **A.** Solo almacenamiento SAN.
+- **A.** Una plataforma de telefonía empresarial centrada en extensiones, troncales, colas y control de llamadas.
 
-- **B.** Únicamente correo SMTP.
+- **B.** Un servicio corporativo de correo, agenda y calendario compartido orientado a comunicación asíncrona.
 
-- **C.** Solo Wi-Fi de invitados.
+- **C.** Un sistema de salas de videoconferencia dedicado a gestionar cámaras, pantallas y reuniones programadas.
 
 - **D.** Voz, vídeo/reuniones, mensajería, presencia y colaboración alrededor de identidad/directorio.
 
@@ -44845,13 +44845,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué diferencia principal introduce eSIM frente a SIM física?
 
-- **A.** Convierte 4G automáticamente en 5G.
+- **A.** Integra el módem y la antena en el terminal para cambiar automáticamente entre tecnologías de acceso radio.
 
 - **B.** Permite aprovisionar perfiles de suscripción de forma embebida/remota según ecosistema, sin eliminar los mecanismos de autenticación.
 
-- **C.** Elimina al operador.
+- **C.** Sustituye el identificador de la suscripción por una dirección IP permanente configurada en el dispositivo.
 
-- **D.** Desactiva la identidad del abonado.
+- **D.** Prescinde de la autenticación del operador porque la identidad se valida únicamente con credenciales del sistema operativo.
 
 **Respuesta correcta:** **B.** Permite aprovisionar perfiles de suscripción de forma embebida/remota según ecosistema, sin eliminar los mecanismos de autenticación.
 
@@ -45325,11 +45325,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es un APN/DNN conceptualmente?
 
-- **A.** Un codec de voz.
+- **A.** La identidad pública utilizada para registrar al abonado y direccionar servicios dentro de una arquitectura IMS.
 
-- **B.** Un protocolo de videoconferencia.
+- **B.** El identificador de una porción lógica de red 5G que combina tipo de servicio y diferenciador de slice.
 
-- **C.** Un algoritmo de compresión.
+- **C.** El identificador que distingue un flujo de QoS dentro de una sesión de datos y lo asocia a su tratamiento.
 
 - **D.** Un identificador/configuración que selecciona conectividad/servicio de datos del abonado hacia redes de datos, según generación.
 
@@ -46432,13 +46432,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es un codec de vídeo?
 
-- **A.** Un protocolo de señalización.
+- **A.** Un formato contenedor que organiza pistas de audio, vídeo, subtítulos y metadatos dentro de un mismo archivo.
 
 - **B.** Un mecanismo para codificar/decodificar vídeo, equilibrando bitrate, calidad, complejidad y compatibilidad.
 
-- **C.** Un servidor TURN.
+- **C.** Un protocolo de transporte que numera y temporiza paquetes multimedia para su entrega en tiempo real.
 
-- **D.** Una política UEM.
+- **D.** Un protocolo de señalización utilizado para establecer, modificar y finalizar sesiones de comunicación.
 
 **Respuesta correcta:** **B.** Un mecanismo para codificar/decodificar vídeo, equilibrando bitrate, calidad, complejidad y compatibilidad.
 
@@ -46528,13 +46528,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es una SFU?
 
-- **A.** Un codec de audio.
+- **A.** Una unidad multipunto que decodifica, compone y vuelve a codificar los vídeos para entregar una mezcla común.
 
-- **B.** Una función IMS de registro.
+- **B.** Un servidor que coordina la señalización y el establecimiento de sesiones, pero no reenvía los flujos multimedia.
 
 - **C.** Una unidad de reenvío selectivo que distribuye streams/capas sin mezclar y recodificar todo como una MCU clásica.
 
-- **D.** Un servidor DHCP.
+- **D.** Un relay TURN que transporta paquetes cuando los participantes no consiguen conectividad directa mediante ICE.
 
 **Respuesta correcta:** **C.** Una unidad de reenvío selectivo que distribuye streams/capas sin mezclar y recodificar todo como una MCU clásica.
 
@@ -46576,13 +46576,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es simulcast en videoconferencia?
 
-- **A.** Un único stream sin variantes.
+- **A.** Codificar un vídeo en capas dependientes para adaptar su calidad enviando o descartando capas del mismo flujo.
 
-- **B.** Un método SIP de cierre.
+- **B.** Decodificar y volver a codificar un flujo para cambiar su codec, resolución o tasa de bits antes de reenviarlo.
 
 - **C.** Enviar varias versiones simultáneas del mismo vídeo a distintas resoluciones/bitrates para selección adaptativa.
 
-- **D.** Un modo de 5G Core.
+- **D.** Añadir información redundante al flujo para recuperar determinadas pérdidas de paquetes sin solicitar retransmisión.
 
 **Respuesta correcta:** **C.** Enviar varias versiones simultáneas del mismo vídeo a distintas resoluciones/bitrates para selección adaptativa.
 
