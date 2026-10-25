@@ -18,7 +18,7 @@ Exportación reproducible de los tres bancos del producto. Los JSON son la fuent
 | Archivo | SHA-256 |
 | --- | --- |
 | `data/questions-official.json` | `bddf132ba2333d848982263593905206a87e8548179ee7443a8699385c984b9e` |
-| `data/questions-manual.json` | `b3d6eff82457733f5e3a8da8ef4a264c0f2dbca9382f8e975c8e6de246051b4c` |
+| `data/questions-manual.json` | `2e2051a2412f8c758175e16b3f44bd2092298348339a52806c395915d0398f9b` |
 | `data/questions-ai.json` | `c1c024271a64ed92773351791353daac8df6f8d034104ef24ae4a367ac81d937` |
 | `data/syllabus.json` | `2370e84e3c098dbe89628cdce92e95e9042a390d2dffe8bb48e3627607750d48` |
 
@@ -2752,13 +2752,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** La Ley 39/2006 se refiere a:
 
-- **A.** Violencia de género.
+- **A.** Medidas de protección integral contra la violencia de género.
 
-- **B.** Igualdad LGTBI.
+- **B.** Igualdad real y efectiva de las personas trans y garantía de los derechos de las personas LGTBI.
 
 - **C.** Promoción de la autonomía personal y atención a las personas en situación de dependencia.
 
-- **D.** Transparencia.
+- **D.** Transparencia, acceso a la información pública y buen gobierno.
 
 **Respuesta correcta:** **C.** Promoción de la autonomía personal y atención a las personas en situación de dependencia.
 
@@ -14222,11 +14222,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es XML?
 
-- **A.** Un lenguaje de estilos.
+- **A.** Un lenguaje de marcado con un conjunto predefinido de elementos y semántica orientada a documentos web.
 
-- **B.** Un protocolo de red.
+- **B.** Un formato ligero de intercambio que representa objetos y arrays mediante pares clave-valor y sintaxis textual.
 
-- **C.** Una base de datos relacional.
+- **C.** Un metalenguaje del que proceden otros lenguajes de marcado y cuya sintaxis es más amplia y compleja.
 
 - **D.** Un lenguaje/sintaxis extensible para representar documentos y datos estructurados con etiquetas definidas por la aplicación.
 
@@ -15160,11 +15160,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 - **A.** Una transformación XSLT bien controlada, si las reglas de mapeo se expresan adecuadamente.
 
-- **B.** Un archivo robots.txt.
+- **B.** Validar el documento de entrada y el de salida con XML Schema, sin definir reglas de conversión entre ambos.
 
-- **C.** Un índice invertido.
+- **C.** Usar expresiones XPath para seleccionar nodos del documento antiguo sin generar la nueva estructura.
 
-- **D.** Un daemon del sistema.
+- **D.** Analizar y serializar el XML con un parser manteniendo los mismos elementos y la misma organización del documento.
 
 **Respuesta correcta:** **A.** Una transformación XSLT bien controlada, si las reglas de mapeo se expresan adecuadamente.
 
@@ -15302,11 +15302,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es CSP?
 
-- **A.** Un esquema de base de datos.
+- **A.** Un mecanismo HTTP que indica qué orígenes externos pueden leer respuestas desde código ejecutado en el navegador.
 
-- **B.** Un lenguaje de estilos.
+- **B.** Una comprobación de integridad que verifica mediante un hash que un recurso externo no haya sido alterado.
 
-- **C.** Un algoritmo de routing.
+- **C.** Una política que habilita o limita capacidades del navegador como cámara, micrófono o geolocalización.
 
 - **D.** Content Security Policy, un mecanismo del navegador para restringir orígenes y tipos de contenido ejecutable/cargable.
 
@@ -23989,11 +23989,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 - **A.** Una plataforma que facilita coedición, comunicación, tareas, conocimiento o coordinación entre equipos.
 
-- **B.** Un protocolo de routing.
+- **B.** Un motor BPM que ejecuta procesos formalizados mediante tareas, reglas y transiciones predefinidas.
 
-- **C.** Un lenguaje de marcado.
+- **C.** Un repositorio documental orientado al archivo, versionado y retención de documentos corporativos.
 
-- **D.** Una CPU distribuida.
+- **D.** Un directorio corporativo que centraliza identidades, grupos y credenciales para controlar el acceso.
 
 **Respuesta correcta:** **A.** Una plataforma que facilita coedición, comunicación, tareas, conocimiento o coordinación entre equipos.
 
@@ -24157,11 +24157,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 - **A.** Aplicación de reglas para gestionar contenido, abuso, spam y convivencia en espacios de participación.
 
-- **B.** Un algoritmo de cifrado.
+- **B.** Clasificación automática de contenido mediante reglas o modelos, sin intervención ni decisión de gobierno.
 
-- **C.** Una función XSLT.
+- **C.** Control de acceso que determina qué usuarios pueden publicar, leer o administrar cada espacio.
 
-- **D.** Un tipo de sitemap.
+- **D.** Registro de auditoría que conserva eventos y acciones para permitir trazabilidad y revisión posterior.
 
 **Respuesta correcta:** **A.** Aplicación de reglas para gestionar contenido, abuso, spam y convivencia en espacios de participación.
 
@@ -30888,13 +30888,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué define principalmente el CTS?
 
-- **A.** El protocolo de Kestrel.
+- **A.** El subconjunto de reglas que los lenguajes deben respetar para exponer APIs consumibles desde otros lenguajes .NET.
 
 - **B.** Cómo se declaran, usan y gestionan los tipos en el entorno .NET para favorecer interoperabilidad entre lenguajes.
 
-- **C.** Las reglas de estilo de C#.
+- **C.** El entorno de ejecución que carga y ejecuta código administrado, gestiona memoria y aplica servicios de tiempo de ejecución.
 
-- **D.** Los comandos de NuGet.
+- **D.** El conjunto de bibliotecas base que aporta colecciones, entrada/salida, redes y otras APIs comunes a .NET.
 
 **Respuesta correcta:** **B.** Cómo se declaran, usan y gestionan los tipos en el entorno .NET para favorecer interoperabilidad entre lenguajes.
 
@@ -33098,11 +33098,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 - **A.** Una opción de publicación que agrupa gran parte de los artefactos de la aplicación en un único archivo para facilitar distribución.
 
-- **B.** Un tipo de base de datos.
+- **B.** Una publicación autocontenida que incorpora el runtime y distribuye los ensamblados de la aplicación como archivos separados.
 
-- **C.** Un reemplazo de NuGet.
+- **C.** Una compilación Native AOT que genera código nativo por adelantado y elimina la dependencia del JIT en ejecución.
 
-- **D.** Un protocolo de autenticación.
+- **D.** Un paquete NuGet que distribuye bibliotecas y metadatos para que otros proyectos los consuman durante la compilación.
 
 **Respuesta correcta:** **A.** Una opción de publicación que agrupa gran parte de los artefactos de la aplicación en un único archivo para facilitar distribución.
 
@@ -33552,13 +33552,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué tecnología permite una estrategia de observabilidad homogénea entre servicios .NET y Java/Jakarta modernos?
 
-- **A.** MSBuild.
+- **A.** Usar EventPipe para .NET y Java Flight Recorder para Java, manteniendo canales y modelos de datos separados.
 
-- **B.** NuGet exclusivamente.
+- **B.** Exportar únicamente métricas de ambos stacks a Prometheus y mantener trazas y logs con instrumentaciones independientes.
 
 - **C.** OpenTelemetry, mediante instrumentación y exportadores compatibles en ambos ecosistemas.
 
-- **D.** Jakarta Faces.
+- **D.** Centralizar los logs en un backend común sin unificar instrumentación, contexto de trazas ni métricas.
 
 **Respuesta correcta:** **C.** OpenTelemetry, mediante instrumentación y exportadores compatibles en ambos ecosistemas.
 
@@ -33578,11 +33578,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 - **A.** Jakarta EE está organizado fuertemente como conjunto de especificaciones con múltiples implementaciones; .NET es una plataforma/producto con frameworks de Microsoft y ecosistema asociado.
 
-- **B.** .NET es una especificación Jakarta.
+- **B.** Jakarta EE y .NET son dos especificaciones abiertas equivalentes que se ejecutan mediante servidores intercambiables de distintos proveedores.
 
-- **C.** Jakarta EE es un único servidor propietario.
+- **C.** Jakarta EE designa un servidor de aplicaciones mantenido por Eclipse Foundation, mientras .NET define interfaces sin implementación propia.
 
-- **D.** No hay ninguna diferencia de modelo.
+- **D.** La diferencia es sintáctica: Jakarta EE usa Java y .NET usa C#, pero ambos siguen el mismo modelo de estandarización e implementación.
 
 **Respuesta correcta:** **A.** Jakarta EE está organizado fuertemente como conjunto de especificaciones con múltiples implementaciones; .NET es una plataforma/producto con frameworks de Microsoft y ecosistema asociado.
 
@@ -45469,11 +45469,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es MAM?
 
-- **A.** Gestión del espectro.
+- **A.** Gestión de configuración, seguridad e inventario aplicada al dispositivo móvil como conjunto.
 
-- **B.** Un mecanismo RTP.
+- **B.** Marco empresarial que integra gestión de dispositivos, aplicaciones, contenido e identidad móvil.
 
-- **C.** Una topología de red.
+- **C.** Gestión del acceso, distribución y protección de documentos corporativos en terminales móviles.
 
 - **D.** Mobile Application Management: gestión y políticas sobre aplicaciones móviles corporativas.
 
@@ -45517,13 +45517,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es EMM?
 
-- **A.** Una generación de telefonía.
+- **A.** Gestión centrada en la configuración, seguridad e inventario del propio dispositivo móvil.
 
-- **B.** Un codec de audio.
+- **B.** Gestión de políticas y datos aplicada específicamente a las aplicaciones móviles corporativas.
 
 - **C.** Enterprise Mobility Management, un paraguas que integra capacidades como MDM, MAM y gestión de contenido/identidad móvil.
 
-- **D.** Una versión de WebRTC.
+- **D.** Gestión unificada de móviles, ordenadores y otros endpoints corporativos desde una plataforma común.
 
 **Respuesta correcta:** **C.** Enterprise Mobility Management, un paraguas que integra capacidades como MDM, MAM y gestión de contenido/identidad móvil.
 
@@ -45709,11 +45709,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es compliance de dispositivo?
 
-- **A.** Medición del bitrate RTP.
+- **A.** Registro del dispositivo en la plataforma de gestión para asociarlo con una identidad y aplicar políticas.
 
-- **B.** Una prueba de cobertura radio.
+- **B.** Entrega al dispositivo de perfiles, certificados, aplicaciones y parámetros necesarios para su uso corporativo.
 
-- **C.** Una licencia de software.
+- **C.** Recopilación del modelo, sistema operativo, aplicaciones instaladas y otros datos de inventario del endpoint.
 
 - **D.** Evaluación de si el endpoint cumple requisitos como versión, cifrado, bloqueo, ausencia de root/jailbreak y configuración exigida.
 
@@ -46216,11 +46216,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué relación hay entre SIP y H.323?
 
-- **A.** Son el mismo protocolo.
+- **A.** SIP es el protocolo de transporte multimedia de H.323 y reemplaza a RTP en el envío de audio y vídeo.
 
-- **B.** H.323 transporta siempre HTML.
+- **B.** H.323 es un codec audiovisual que SIP negocia dentro de SDP para seleccionar la compresión.
 
-- **C.** SIP es un codec de H.323.
+- **C.** SIP y H.323 son perfiles del mismo estándar de señalización y utilizan una estructura de mensajes común.
 
 - **D.** Son familias de señalización/control diferentes que pueden encontrarse en videoconferencia y requerir interoperabilidad/gateway.
 
@@ -47274,11 +47274,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 - **A.** Mejorar acústica, microfonía, colocación y cancelación de eco antes de aumentar resolución de cámara.
 
-- **B.** Cambiar a 5G-Advanced.
+- **B.** Sustituir la cámara por un modelo 4K y aumentar la tasa de vídeo aunque la imagen actual ya sea correcta.
 
-- **C.** Aumentar almacenamiento.
+- **C.** Ampliar el ancho de banda y reservar más QoS aunque la red no muestre pérdida, latencia ni jitter relevantes.
 
-- **D.** Añadir otro sitemap.
+- **D.** Instalar una pantalla de mayor tamaño y renovar la iluminación sin intervenir sobre la captura de audio.
 
 **Respuesta correcta:** **A.** Mejorar acústica, microfonía, colocación y cancelación de eco antes de aumentar resolución de cámara.
 
