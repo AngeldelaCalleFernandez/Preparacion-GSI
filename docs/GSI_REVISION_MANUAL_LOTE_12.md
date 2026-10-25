@@ -4,15 +4,15 @@ Fecha de preparación: 24 de octubre de 2026.
 
 ## Alcance y estado
 
-Este documento prepara las 20 candidatas siguientes a las incluidas en el lote 11 dentro de la cola editorial `correct-length-dominance`. Las decisiones permanecen pendientes y no se ha modificado ninguna pregunta de este lote.
+Este documento registra la aplicación de las 20 candidatas siguientes a las incluidas en el lote 11 dentro de la cola editorial `correct-length-dominance`. La instrucción expresa «apruebo los lotes 06–20» de la persona responsable del proyecto autoriza las veinte decisiones de este lote.
 
 Los 20 registros se contrastaron con el solucionario Markdown conservado de su práctica. En todos los casos, la letra correcta del banco coincide con la letra publicada en el solucionario.
 
-Estado del lote: **20 decisiones pendientes de aprobación humana; cero cambios en los bancos**.
+Estado del lote: **20 decisiones humanas L3 aprobadas y aplicadas; cero pendientes**.
 
 ## Elementos preparados
 
-| Orden | ID | Tema | Relación inicial | Evidencia de clave | Contraste propuesto |
+| Orden | ID | Tema | Relación inicial | Evidencia de clave | Contraste aprobado y aplicado |
 | ---: | --- | --- | ---: | --- | --- |
 | 1 | `MAN-GSI-P19-152` | B4-T16 | 2,73× | P19, pregunta 152, B | Interworking frente a SBC, transcodificación o proxy parciales. |
 | 2 | `MAN-GSI-P16-143` | B2-T14 | 2,72× | P16, pregunta 143, A | Dependencia sin licencia frente a inferencias por alojamiento o uso interno. |
@@ -35,9 +35,9 @@ Estado del lote: **20 decisiones pendientes de aprobación humana; cero cambios 
 | 19 | `MAN-GSI-P16-014` | B2-T14 | 2,67× | P16, pregunta 14, B | Licencia jurídica frente a control técnico, certificación o transmisión de propiedad. |
 | 20 | `MAN-GSI-P16-092` | B2-T14 | 2,67× | P16, pregunta 92, B | Protección documental frente a registro, licencia concreta o dominio público automáticos. |
 
-## Propuestas concretas pendientes
+## Propuestas concretas aprobadas y aplicadas
 
-Las respuestas correctas permanecen literalmente intactas. La aprobación del lote autorizaría únicamente los tres distractores enumerados en cada registro.
+Las respuestas correctas permanecen literalmente intactas. La aprobación del lote autorizó únicamente los tres distractores enumerados en cada registro.
 
 ### 1. `MAN-GSI-P19-152` · conservar B
 
@@ -168,11 +168,21 @@ Las respuestas correctas permanecen literalmente intactas. La aprobación del lo
 - P18: `documents/markdown/gsi/P18/GSI A2 — PRÁCTICA ACTIVA 18 — HTML, XML, CONTENIDOS, BÚSQUEDA Y SEO — SOLUCIONARIO COMENTADO.md`, preguntas 27, 33 y 109.
 - P19: `documents/markdown/gsi/P19/GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO.md`, preguntas 46, 50, 59, 125 y 152.
 
-## Resultado de la preparación
+## Resultado de la aplicación
 
 - 20 de 20 IDs localizados en el banco manual.
 - 20 de 20 claves coincidentes con sus solucionarios conservados.
-- 20 decisiones editoriales pendientes de aprobación humana.
-- Cero modificaciones en `data/questions-manual.json`, `data/questions-official.json` y `data/questions-ai.json`.
+- 20 decisiones editoriales aprobadas y aplicadas; cero pendientes en este lote.
+- Se modificaron únicamente los tres distractores aprobados de cada pregunta: 20 IDs y 60 textos.
+- Se conservaron enunciados, claves correctas, feedback, procedencia, estado de validación y estado activo.
+- `data/questions-official.json` y `data/questions-ai.json` permanecen intactos.
 
-Este lote solo podrá aplicarse después de recibir aprobación expresa de sus textos concretos.
+## Verificación
+
+- Cola `correct-length-dominance`: de 276 a 256 registros.
+- Preguntas manuales con algún hallazgo heurístico: de 294 a 274.
+- Alertas `absolute-wording-cluster`: 36 antes y 34 después.
+- SHA-256 de partida de `data/questions-manual.json`: `13cc8fbe5f0a9b43944c2fdd82a7dc504acb7d37511963768f610287bb0ee881`.
+- SHA-256 resultante, coincidente con el punto de control previsto: `77330a01c19e4592de40ddf5ad7dce20abcf311ba8bd89c5ec7e61b2a3a41152`.
+
+El siguiente punto de control dentro del mismo bloque aprobado es el lote 13.

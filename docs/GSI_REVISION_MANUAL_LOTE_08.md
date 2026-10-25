@@ -4,15 +4,15 @@ Fecha de preparación: 24 de octubre de 2026.
 
 ## Alcance y estado
 
-Este documento prepara las 20 candidatas siguientes a las incluidas en el lote 07 dentro de la cola editorial `correct-length-dominance`. Las decisiones permanecen pendientes y no se ha modificado ninguna pregunta de este lote.
+Este documento registra la aplicación de las 20 candidatas siguientes a las incluidas en el lote 07 dentro de la cola editorial `correct-length-dominance`. La instrucción expresa «apruebo los lotes 06–20» de la persona responsable del proyecto autoriza las veinte decisiones de este lote.
 
 Los 20 registros se contrastaron con el solucionario Markdown conservado de su práctica. En todos los casos, la letra correcta del banco coincide con la letra publicada en el solucionario.
 
-Estado del lote: **20 decisiones pendientes de aprobación humana; cero cambios en los bancos**.
+Estado del lote: **20 decisiones humanas L3 aprobadas y aplicadas; cero pendientes**.
 
 ## Elementos preparados
 
-| Orden | ID | Tema | Relación inicial | Evidencia de clave | Contraste propuesto |
+| Orden | ID | Tema | Relación inicial | Evidencia de clave | Contraste aprobado y aplicado |
 | ---: | --- | --- | ---: | --- | --- |
 | 1 | `MAN-GSI-P19-140` | B4-T16 | 3,09× | P19, pregunta 140, A | Diagnóstico correlacionado frente a CPU, ancho de banda o codecs aislados. |
 | 2 | `MAN-GSI-P18-062` | B2-T09 | 3,08× | P18, pregunta 62, B | XSS frente a CSRF, inyección SQL y clickjacking. |
@@ -35,9 +35,9 @@ Estado del lote: **20 decisiones pendientes de aprobación humana; cero cambios 
 | 19 | `MAN-GSI-P19-038` | B4-T14 | 3,00× | P19, pregunta 38, C | Jitter buffer frente a cancelación de eco, ocultación de pérdidas y FEC. |
 | 20 | `MAN-GSI-P19-102` | B4-T16 | 3,00× | P19, pregunta 102, A | H.323 frente a SIP, RTP y H.264. |
 
-## Propuestas concretas pendientes
+## Propuestas concretas aprobadas y aplicadas
 
-Las respuestas correctas permanecen literalmente intactas. La aprobación del lote autorizaría únicamente los tres distractores enumerados en cada registro.
+Las respuestas correctas permanecen literalmente intactas. La aprobación del lote autorizó únicamente los tres distractores enumerados en cada registro.
 
 ### 1. `MAN-GSI-P19-140` · conservar A
 
@@ -167,11 +167,21 @@ Las respuestas correctas permanecen literalmente intactas. La aprobación del lo
 - P18: `documents/markdown/gsi/P18/GSI A2 — PRÁCTICA ACTIVA 18 — HTML, XML, CONTENIDOS, BÚSQUEDA Y SEO — SOLUCIONARIO COMENTADO.md`, preguntas 16, 41, 62, 64, 68 y 108.
 - P19: `documents/markdown/gsi/P19/GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO.md`, preguntas 1, 38, 67, 102 y 140.
 
-## Resultado de la preparación
+## Resultado de la aplicación
 
 - 20 de 20 IDs localizados en el banco manual.
 - 20 de 20 claves coincidentes con sus solucionarios conservados.
-- 20 decisiones editoriales pendientes de aprobación humana.
-- Cero modificaciones en `data/questions-manual.json`, `data/questions-official.json` y `data/questions-ai.json`.
+- 20 decisiones editoriales aprobadas y aplicadas; cero pendientes en este lote.
+- Se modificaron únicamente los tres distractores aprobados de cada pregunta: 20 IDs y 60 textos.
+- Se conservaron enunciados, claves correctas, feedback, procedencia, estado de validación y estado activo.
+- `data/questions-official.json` y `data/questions-ai.json` permanecen intactos.
 
-Este lote solo podrá aplicarse después de recibir aprobación expresa de sus textos concretos.
+## Verificación
+
+- Cola `correct-length-dominance`: de 356 a 336 registros.
+- Preguntas manuales con algún hallazgo heurístico: de 374 a 354.
+- Alertas `absolute-wording-cluster`: 38 antes y 38 después.
+- SHA-256 de partida de `data/questions-manual.json`: `3d79b06f6b70574aea1e2df87db393007ea89d19bff14300130afd9586a3a1e6`.
+- SHA-256 resultante, coincidente con el punto de control previsto: `34700fe477c4229291abe2e2f57276da82b12564ecfad2872f0d6866ac373e5c`.
+
+El siguiente punto de control dentro del mismo bloque aprobado es el lote 09.

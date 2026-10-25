@@ -4,15 +4,15 @@ Fecha de preparación: 24 de octubre de 2026.
 
 ## Alcance y estado
 
-Este documento prepara las 20 candidatas siguientes a las incluidas en el lote 15 dentro de la cola editorial `correct-length-dominance`. Las decisiones permanecen pendientes y no se ha modificado ninguna pregunta de este lote.
+Este documento registra la aplicación de las 20 candidatas siguientes a las incluidas en el lote 15 dentro de la cola editorial `correct-length-dominance`. La instrucción expresa «apruebo los lotes 06–20» de la persona responsable del proyecto autoriza las veinte decisiones de este lote.
 
 Los 20 registros se contrastaron con el solucionario Markdown conservado de su práctica. En todos los casos, la letra correcta del banco coincide con la letra publicada en el solucionario.
 
-Estado del lote: **20 decisiones pendientes de aprobación humana; cero cambios en los bancos**.
+Estado del lote: **20 decisiones humanas L3 aprobadas y aplicadas; cero pendientes**.
 
 ## Elementos preparados
 
-| Orden | ID | Tema | Relación inicial | Evidencia de clave | Contraste propuesto |
+| Orden | ID | Tema | Relación inicial | Evidencia de clave | Contraste aprobado y aplicado |
 | ---: | --- | --- | ---: | --- | --- |
 | 1 | `MAN-GSI-P15-093` | B3-T11 | 2,48× | P15, pregunta 93, D | Transacción explícita frente a uso universal, implícito o coordinación insuficiente. |
 | 2 | `MAN-GSI-P18-082` | B2-T16 | 2,48× | P18, pregunta 82, B | CMS frente a DMS, DAM y generador estático. |
@@ -35,9 +35,9 @@ Estado del lote: **20 decisiones pendientes de aprobación humana; cero cambios 
 | 19 | `MAN-GSI-P15-139` | B3-T10 | 2,45× | P15, pregunta 139, C | Java SE y Jakarta EE frente a numeraciones o sustituciones falsas. |
 | 20 | `MAN-GSI-P14-081` | B1-T05 | 2,45× | P14, pregunta 81, A | Ley 4/2023 frente a dependencia, datos y transparencia. |
 
-## Propuestas concretas pendientes
+## Propuestas concretas aprobadas y aplicadas
 
-Las respuestas correctas permanecen literalmente intactas. La aprobación del lote autorizaría únicamente los tres distractores enumerados en cada registro.
+Las respuestas correctas permanecen literalmente intactas. La aprobación del lote autorizó únicamente los tres distractores enumerados en cada registro.
 
 ### 1. `MAN-GSI-P15-093` · conservar D
 
@@ -167,11 +167,21 @@ Las respuestas correctas permanecen literalmente intactas. La aprobación del lo
 - P18: `documents/markdown/gsi/P18/GSI A2 — PRÁCTICA ACTIVA 18 — HTML, XML, CONTENIDOS, BÚSQUEDA Y SEO — SOLUCIONARIO COMENTADO.md`, preguntas 14, 54, 61, 82, 131, 135 y 160.
 - P19: `documents/markdown/gsi/P19/GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO.md`, preguntas 18, 49, 110, 141 y 160.
 
-## Resultado de la preparación
+## Resultado de la aplicación
 
 - 20 de 20 IDs localizados en el banco manual.
 - 20 de 20 claves coincidentes con sus solucionarios conservados.
-- 20 decisiones editoriales pendientes de aprobación humana.
-- Cero modificaciones en `data/questions-manual.json`, `data/questions-official.json` y `data/questions-ai.json`.
+- 20 decisiones editoriales aprobadas y aplicadas; cero pendientes en este lote.
+- Se modificaron únicamente los tres distractores aprobados de cada pregunta: 20 IDs y 60 textos.
+- Se conservaron enunciados, claves correctas, feedback, procedencia, estado de validación y estado activo.
+- `data/questions-official.json` y `data/questions-ai.json` permanecen intactos.
 
-Este lote solo podrá aplicarse después de recibir aprobación expresa de sus textos concretos.
+## Verificación
+
+- Cola `correct-length-dominance`: de 196 a 176 registros.
+- Preguntas manuales con algún hallazgo heurístico: de 214 a 194.
+- Alertas `absolute-wording-cluster`: 31 antes y 29 después.
+- SHA-256 de partida de `data/questions-manual.json`: `bafbc76ae697cce9734d4338e419e97f2270ab96ea24d5b33182d81ce3eff53b`.
+- SHA-256 resultante, coincidente con el punto de control previsto: `78a53c33ae801092b435656f5ec0f1a04615f29e88cdeb16fd6bef3c7f69ad76`.
+
+El siguiente punto de control dentro del mismo bloque aprobado es el lote 17.

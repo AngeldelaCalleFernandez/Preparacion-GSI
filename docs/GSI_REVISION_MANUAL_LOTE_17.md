@@ -4,15 +4,15 @@ Fecha de preparación: 24 de octubre de 2026.
 
 ## Alcance y estado
 
-Este documento prepara las 20 candidatas siguientes a las incluidas en el lote 16 dentro de la cola editorial `correct-length-dominance`. Las decisiones permanecen pendientes y no se ha modificado ninguna pregunta de este lote.
+Este documento registra la aplicación de las 20 candidatas siguientes a las incluidas en el lote 16 dentro de la cola editorial `correct-length-dominance`. La instrucción expresa «apruebo los lotes 06–20» de la persona responsable del proyecto autoriza las veinte decisiones de este lote.
 
 Los 20 registros se contrastaron con el solucionario Markdown conservado de su práctica. En todos los casos, la letra correcta del banco coincide con la letra publicada en el solucionario.
 
-Estado del lote: **20 decisiones pendientes de aprobación humana; cero cambios en los bancos**.
+Estado del lote: **20 decisiones humanas L3 aprobadas y aplicadas; cero pendientes**.
 
 ## Elementos preparados
 
-| Orden | ID | Tema | Relación inicial | Evidencia de clave | Contraste propuesto |
+| Orden | ID | Tema | Relación inicial | Evidencia de clave | Contraste aprobado y aplicado |
 | ---: | --- | --- | ---: | --- | --- |
 | 1 | `MAN-GSI-P19-042` | B4-T15 | 2,45× | P19, pregunta 42, A | 3G frente a evoluciones características de 2G, 4G y 5G. |
 | 2 | `MAN-GSI-P15-100` | B3-T11 | 2,44× | P15, pregunta 100, B | ADO.NET y EF Core frente a inversión de capas o sustitución del motor. |
@@ -35,9 +35,9 @@ Estado del lote: **20 decisiones pendientes de aprobación humana; cero cambios 
 | 19 | `MAN-GSI-P17-090` | B2-T02 | 2,40× | P17, pregunta 90, D | SJF frente a Round Robin, prioridades y FCFS. |
 | 20 | `MAN-GSI-P18-004` | B2-T09 | 2,40× | P18, pregunta 4, C | HTML frente a XHTML, HTTP y JavaScript. |
 
-## Propuestas concretas pendientes
+## Propuestas concretas aprobadas y aplicadas
 
-Las respuestas correctas permanecen literalmente intactas. La aprobación del lote autorizaría únicamente los tres distractores enumerados en cada registro.
+Las respuestas correctas permanecen literalmente intactas. La aprobación del lote autorizó únicamente los tres distractores enumerados en cada registro.
 
 ### 1. `MAN-GSI-P19-042` · conservar A
 
@@ -168,11 +168,21 @@ Las respuestas correctas permanecen literalmente intactas. La aprobación del lo
 - P18: `documents/markdown/gsi/P18/GSI A2 — PRÁCTICA ACTIVA 18 — HTML, XML, CONTENIDOS, BÚSQUEDA Y SEO — SOLUCIONARIO COMENTADO.md`, preguntas 4 y 20.
 - P19: `documents/markdown/gsi/P19/GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO.md`, preguntas 42, 48, 74, 86, 99 y 151.
 
-## Resultado de la preparación
+## Resultado de la aplicación
 
 - 20 de 20 IDs localizados en el banco manual.
 - 20 de 20 claves coincidentes con sus solucionarios conservados.
-- 20 decisiones editoriales pendientes de aprobación humana.
-- Cero modificaciones en `data/questions-manual.json`, `data/questions-official.json` y `data/questions-ai.json`.
+- 20 decisiones editoriales aprobadas y aplicadas; cero pendientes en este lote.
+- Se modificaron únicamente los tres distractores aprobados de cada pregunta: 20 IDs y 60 textos.
+- Se conservaron enunciados, claves correctas, feedback, procedencia, estado de validación y estado activo.
+- `data/questions-official.json` y `data/questions-ai.json` permanecen intactos.
 
-Este lote solo podrá aplicarse después de recibir aprobación expresa de sus textos concretos.
+## Verificación
+
+- Cola `correct-length-dominance`: de 176 a 156 registros.
+- Preguntas manuales con algún hallazgo heurístico: de 194 a 174.
+- Alertas `absolute-wording-cluster`: 29 antes y 26 después.
+- SHA-256 de partida de `data/questions-manual.json`: `78a53c33ae801092b435656f5ec0f1a04615f29e88cdeb16fd6bef3c7f69ad76`.
+- SHA-256 resultante, coincidente con el punto de control previsto: `883f2d8d9a626748786b60073faad2ef0bb25d7c4a34fda7d6dd86e219704371`.
+
+El siguiente punto de control dentro del mismo bloque aprobado es el lote 18.
