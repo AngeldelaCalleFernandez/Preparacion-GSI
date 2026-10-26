@@ -5,7 +5,7 @@
 Base: `gsi-only-final`, commit `a32323ccdd1ec50fbfd51122e0a4fde99c302743`.
 La implementación añade diagnóstico gradual, propuestas por versiones, aceptación por lote y barajado en entrenamiento. El banco activo conserva sus 959 manuales, 803 IA y 202 oficiales.
 
-**La revisión editorial completa sigue pendiente. Hay 20 propuestas preparadas y cero aceptaciones nuevas.** No se presenta la preparación asistida por IA como revisión humana ni independiente. La dificultad sigue siendo orientativa y no está calibrada.
+**La revisión editorial completa sigue pendiente. El piloto de 20 preguntas está aceptado y aplicado localmente; quedan 1.742 decisiones pendientes.** No se presenta la preparación asistida por IA como revisión humana ni independiente. La dificultad sigue siendo orientativa y no está calibrada.
 
 La [ficha del piloto](GSI_REVISION_PILOTO_001.md) reúne las cuatro preguntas manuales citadas en la auditoría y 16 IA, incluyendo DELETE y las 15 siguientes por prioridad e ID en la cola original. Cada una conserva su concepto, clave, procedencia y los IDs de las alternativas. Las 20 propuestas incorporan explicación de los tres distractores y fuentes primarias con localizador y fecha de consulta.
 
@@ -19,7 +19,7 @@ Se revisan las pistas de longitud y redacción sin rellenar las alternativas. Se
 
 En la revisión actual del lote `GSI-EDITORIAL-001` se perfeccionan únicamente `MAN-GSI-P14-014`, `AI-GSI-B2-T06-015`, `AI-GSI-B2-T13-001` y `AI-GSI-B3-T01-004`. La constitucional sigue siendo conceptual; DELETE, SAI y cascada incorporan microcasos. Las otras 16 propuestas se conservan. Se regenera el hash del lote y los de las cuatro propuestas; las instantáneas del banco de partida no cambian.
 
-La [ficha vigente](GSI_REVISION_PILOTO_001.md) sigue pendiente de aprobación expresa. Las versiones previas se conservan en `content/question-reviews/history/`, identificadas por el hash del lote. Esta actualización de propuestas no aplica ni activa preguntas y no publica cambios.
+La [ficha vigente](GSI_REVISION_PILOTO_001.md) refleja la aceptación expresa y la aplicación local de las 20 propuestas del hash `9ef7e9e1ebaf5ffb1aaed76f3213baac8779fc90a52f7d262f697ea9315f1d5b`. La propuesta original conserva sus decisiones de preparación; el recibo separado registra las 20 aceptaciones efectivas. Las versiones previas se conservan en `content/question-reviews/history/`, identificadas por el hash del lote. La preparación y el refinamiento anteriores no aplicaron preguntas. La aplicación posterior autorizada y sus comprobaciones se documentan en el [informe de aplicación](GSI_APLICACION_LOTE_001.md); no se ha publicado ni fusionado.
 
 ## Diagnóstico y cola completa
 
@@ -75,6 +75,6 @@ La sesión guarda `shuffleOptions`, `optionOrderByQuestionKey` y una huella de v
 
 El código 0 de la suite acredita los controles técnicos y de activación vigentes. La nueva revisión completa se informa aparte mediante `editorial_review_complete` y `editorial_pending`: un resultado técnico correcto no certifica calidad L3 ni calibración L4.
 
-El cierre de esta mejora requerirá una decisión humana individual para los 1.762 IDs y que las preguntas que sigan activas cumplan la rúbrica. Hasta entonces, el siguiente hito es revisar el piloto, aplicar únicamente las decisiones aceptadas y validar antes de abordar las restantes incidencias IA.
+El cierre de esta mejora requerirá una decisión humana individual para los 1.762 IDs y que las preguntas que sigan activas cumplan la rúbrica. El piloto se ha aceptado y aplicado. El siguiente hito es preparar el próximo lote de incidencias IA con el mismo estándar y obtener su aprobación expresa antes de aplicarlo.
 
 No se han convertido documentos en este hito y no hay conversiones nuevas pendientes. Los originales documentales permanecen intactos.

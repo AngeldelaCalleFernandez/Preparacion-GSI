@@ -2,9 +2,9 @@
 
 ## Nueva revisión por versiones — 26 de octubre de 2026
 
-El [procedimiento de mejora por lotes](GSI_MEJORA_TESTS.md) añade una capa de revisión individual sobre el banco auditado, sin atribuir nuevas aceptaciones a la confirmación histórica. El [piloto de 20](GSI_REVISION_PILOTO_001.md) está preparado para revisión del propietario. La aceptación de una propuesta depende del texto exacto y de su hash; el progreso completo se publica en `logs/gsi-editorial-progress.json`.
+El [procedimiento de mejora por lotes](GSI_MEJORA_TESTS.md) añade una capa de revisión individual sobre el banco auditado, sin atribuir nuevas aceptaciones a la confirmación histórica. El [piloto de 20](GSI_REVISION_PILOTO_001.md) está aceptado por el propietario mediante el hash exacto y aplicado localmente. El [informe de aplicación](GSI_APLICACION_LOTE_001.md) recoge la comprobación de fuentes, los límites y la validación. La aceptación de una propuesta depende del texto exacto y de su hash; el progreso completo se publica en `logs/gsi-editorial-progress.json`.
 
-El criterio del entrenamiento combina preguntas conceptuales exigentes y microcasos que mantengan su concepto original, con orientación global 70/30 y sin cuotas por lote. El procedimiento recoge los cuatro refinamientos de la propuesta vigente, conservando las otras 16 y las versiones anteriores. Las propuestas nuevas requieren aprobación expresa antes de su aplicación.
+El criterio del entrenamiento combina preguntas conceptuales exigentes y microcasos que mantengan su concepto original, con orientación global 70/30 y sin cuotas por lote. El procedimiento recoge los cuatro refinamientos de la propuesta vigente, conservando las otras 16 y las versiones anteriores. Los siguientes lotes requieren aprobación expresa antes de su aplicación; la aceptación del piloto no se extiende a otras preguntas.
 
 Los borradores y las aceptaciones descritos a continuación conservan su valor como historial del banco original. Las versiones futuras se comprobarán además contra `data/gsi-editorial-revisions.json`.
 

@@ -7,8 +7,8 @@ Exportación reproducible de los tres bancos del producto. Los JSON son la fuent
 | Banco | Registros | Activas y validadas | Versión de datos | Actualización declarada |
 | --- | ---: | ---: | --- | --- |
 | Oficiales INAP | 202 | 202 | 2.1.1 | 2026-09-21 |
-| Manuales/curadas | 959 | 959 | 2.0.4 | 2026-10-23 |
-| IA no oficial | 803 | 803 | 2.1.1 | 2026-09-21 |
+| Manuales/curadas | 959 | 959 | 2.0.5 | 2026-10-26 |
+| IA no oficial | 803 | 803 | 2.1.2 | 2026-10-26 |
 | **Total** | **1964** | **1964** | — | — |
 
 **Estado:** 1964 activas y validadas; 0 excluidas del uso normal. La dificultad declarada en los JSON es orientativa y no equivale a una calibración psicométrica.
@@ -18,8 +18,8 @@ Exportación reproducible de los tres bancos del producto. Los JSON son la fuent
 | Archivo | SHA-256 |
 | --- | --- |
 | `data/questions-official.json` | `bddf132ba2333d848982263593905206a87e8548179ee7443a8699385c984b9e` |
-| `data/questions-manual.json` | `711309c37abb1dfcb280dcaf03054cb783a81f8f60260be14cc4194ee80cfbdb` |
-| `data/questions-ai.json` | `c1c024271a64ed92773351791353daac8df6f8d034104ef24ae4a367ac81d937` |
+| `data/questions-manual.json` | `dc6bb78be015ede11e8a703bdde58a272352e7030fe9db25cbe9a91c041402e0` |
+| `data/questions-ai.json` | `07775eed29f024de16e2fb2bcb16072a306300363a872b03ae373c82c7fac4bd` |
 | `data/syllabus.json` | `2370e84e3c098dbe89628cdce92e95e9042a390d2dffe8bb48e3627607750d48` |
 
 Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar que el documento está sincronizado: `python scripts/export_gsi_questions.py --check`.
@@ -482,25 +482,35 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Procedencia:** manual/curada. **Estado de uso:** activa y validada. **Validación:** `validated`. **Dificultad declarada:** `medium`.
 
-**Enunciado:** ¿Qué afirmación sobre la suspensión individual del artículo 55.2 es correcta?
+**Enunciado:** Para personas determinadas investigadas por actuaciones de bandas armadas o elementos terroristas, ¿qué combinación de derechos y garantías corresponde a la suspensión individual del artículo 55.2 de la Constitución?
 
-- **A.** Permitir que una autoridad administrativa suspenda cualquier derecho del Título I, sin intervención judicial ni determinación individual.
+- **A.** Arts. 17.2, 18.2 y 18.3; autorización administrativa y control parlamentario, sin intervención judicial.
 
-- **B.** Aplicarse exclusivamente durante el estado de sitio y desaparecer como posibilidad constitucional fuera de esa declaración general.
+- **B.** Arts. 17.2, 18.2 y 18.3; intervención judicial y control parlamentario, previa declaración de excepción o sitio.
 
-- **C.** Comprender exactamente los mismos derechos y requisitos que la suspensión general, sin especialidades por sujeto o investigación.
+- **C.** Arts. 17.2, 18.2 y 21.1; intervención judicial y control parlamentario, con desarrollo mediante ley orgánica.
 
-- **D.** Puede afectar a derechos concretos de los artículos 17.2, 18.2 y 18.3 para personas determinadas en investigaciones vinculadas a bandas armadas o terrorismo, con garantías.
+- **D.** Arts. 17.2, 18.2 y 18.3; intervención judicial y control parlamentario, con desarrollo mediante ley orgánica.
 
-**Respuesta correcta:** **D.** Puede afectar a derechos concretos de los artículos 17.2, 18.2 y 18.3 para personas determinadas en investigaciones vinculadas a bandas armadas o terrorismo, con garantías.
+**Respuesta correcta:** **D.** Arts. 17.2, 18.2 y 18.3; intervención judicial y control parlamentario, con desarrollo mediante ley orgánica.
 
-**Explicación:** La suspensión individual tiene objeto, derechos y garantías propios; no coincide con la general.
+**Explicación:** El artículo 55.2 permite que una ley orgánica determine los casos y la forma de suspensión individual de los derechos de los artículos 17.2, 18.2 y 18.3. Exige intervención judicial y control parlamentario, dentro de las investigaciones descritas.
 
-**Feedback tras error:** Según el solucionario: La suspensión individual tiene objeto, derechos y garantías propios; no coincide con la general.
+**Feedback tras error:** Revisa la distinción conceptual entre la respuesta correcta y la alternativa elegida.
+
+**Por qué no A:** La intervención judicial es una garantía necesaria; una autorización administrativa no la sustituye.
+
+**Por qué no B:** La declaración de excepción o sitio pertenece al régimen de suspensión general del apartado 1; no es el requisito del régimen individual del apartado 2.
+
+**Por qué no C:** El artículo 55.2 incluye el secreto de las comunicaciones del artículo 18.3, no el derecho de reunión del artículo 21.1.
 
 **Fuente:** [GSI A2 — PRÁCTICA ACTIVA 14 — TEST BLOQUE I — SOLUCIONARIO COMENTADO](<https://docs.google.com/document/d/1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo/edit>).
 
 **Trazabilidad:** source_id: SRC-GSI-P14-SOL; documento: DOC-GSI-P14-SOL; localizador: Pregunta 14; índice nativo 6360; Base: I.01 §6.
+
+**Revisión editorial efectiva:** `GSI-EDITORIAL-001`.
+
+**Respaldo editorial:** [Constitución Española](<https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229#a55>) · Artículo 55, apartados 1 y 2 · comprobado: 2026-10-26.
 
 #### 18. MAN-GSI-P14-015
 
@@ -8729,23 +8739,33 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué permite un semáforo de conteo?
 
-- **A.** Forzar que se ejecute un único hilo en todo el sistema, aunque existan recursos independientes y varios permisos disponibles.
+- **A.** Garantizar exclusión mutua con propiedad del bloqueo y liberación reservada al hilo que lo adquirió.
 
-- **B.** Controlar acceso concurrente a un número limitado de recursos o señalizar disponibilidad.
+- **B.** Gestionar permisos para limitar accesos concurrentes a recursos o señalizar su disponibilidad.
 
-- **C.** Sustituir la MMU y traducir por software todas las direcciones virtuales a marcos físicos antes de permitir un acceso concurrente.
+- **C.** Bloquear al grupo hasta que todos los participantes alcancen el mismo punto de sincronización.
 
-- **D.** Crear y eliminar cuentas del sistema operativo según aumenta o disminuye el número de recursos disponibles para los procesos.
+- **D.** Conservar en una cola los datos enviados entre productores y consumidores para su lectura posterior.
 
-**Respuesta correcta:** **B.** Controlar acceso concurrente a un número limitado de recursos o señalizar disponibilidad.
+**Respuesta correcta:** **B.** Gestionar permisos para limitar accesos concurrentes a recursos o señalizar su disponibilidad.
 
-**Explicación:** Su contador representa unidades disponibles o eventos según diseño.
+**Explicación:** El contador representa permisos disponibles: adquirir consume un permiso y liberar lo devuelve. Con varios permisos permite acceso concurrente limitado; un semáforo no exige propiedad del hilo.
 
-**Feedback tras error:** Según el solucionario: Su contador representa unidades disponibles o eventos según diseño.
+**Feedback tras error:** Revisa la distinción conceptual entre la respuesta correcta y la alternativa elegida.
+
+**Por qué no A:** Describe la propiedad característica de ciertos bloqueos; un semáforo puede liberarse desde otro hilo.
+
+**Por qué no C:** La reunión de un grupo en un punto describe una barrera, no un contador de permisos.
+
+**Por qué no D:** Una cola transporta elementos; el semáforo cuenta permisos, aunque pueda coordinar el uso de una cola.
 
 **Fuente:** [GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO](<https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit>).
 
 **Trazabilidad:** source_id: SRC-GSI-P17-SOL; documento: DOC-GSI-P17-SOL; localizador: Pregunta 95; índice nativo 9636.
+
+**Revisión editorial efectiva:** `GSI-EDITORIAL-001`.
+
+**Respaldo editorial:** [Oracle: Semaphore](<https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/Semaphore.html>) · Class description; acquire; release; ownership · comprobado: 2026-10-26.
 
 #### 24. MAN-GSI-P17-096
 
@@ -12317,21 +12337,33 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué aporta WS-Security al ecosistema SOAP?
 
-- **A.** Normalización relacional
+- **A.** Describir operaciones y tipos del servicio para que el cliente genere un contrato de invocación.
 
-- **B.** Solo maquetación de formularios
+- **B.** Proteger el canal de transporte mediante TLS, sin mecanismos dentro del mensaje SOAP.
 
-- **C.** Seguridad de mensajes, con firmas, cifrado y tokens según perfil
+- **C.** Proteger mensajes SOAP con firmas, cifrado y tokens de seguridad según el perfil empleado.
 
-- **D.** Asignación de direcciones IP
+- **D.** Coordinar la confirmación o reversión de transacciones distribuidas entre varios servicios.
 
-**Respuesta correcta:** **C.** Seguridad de mensajes, con firmas, cifrado y tokens según perfil
+**Respuesta correcta:** **C.** Proteger mensajes SOAP con firmas, cifrado y tokens de seguridad según el perfil empleado.
 
-**Explicación:** WS-Security aplica mecanismos a mensajes; no describe redes ni presentación.
+**Explicación:** WS-Security define mecanismos de seguridad del mensaje SOAP: integridad, confidencialidad y asociación de tokens. Su uso concreto depende del perfil y de la política de seguridad.
+
+**Feedback tras error:** Revisa la distinción conceptual entre la respuesta correcta y la alternativa elegida.
+
+**Por qué no A:** La descripción del contrato corresponde a WSDL, no a los mecanismos de protección de WS-Security.
+
+**Por qué no B:** TLS protege el transporte; WS-Security incorpora mecanismos en el mensaje y puede complementarlo.
+
+**Por qué no D:** Coordinar transacciones es otra responsabilidad del ecosistema WS-*, no la función de WS-Security.
 
 **Fuente:** [GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)](<https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit>).
 
 **Trazabilidad:** source_id: SRC-GSI-B2-V21; documento: DOC-GSI-B2-V21; localizador: II.06; sección 7. Servicios web clásicos; versión: V2.1; revisión: 2026-08-21.
+
+**Revisión editorial efectiva:** `GSI-EDITORIAL-001`.
+
+**Respaldo editorial:** [OASIS: SOAP Message Security](<https://docs.oasis-open.org/wss-m/wss/v1.1.1/os/wss-SOAPMessageSecurity-v1.1.1-os.html>) · 3 Message Protection Mechanisms; 6 Security Tokens; 8 Signatures; 9 Encryption · comprobado: 2026-10-26.
 
 **Hash editorial del registro:** `d5fdd8316bbefeb922ad5def2cfc1eb0f5c43cea26fbd64b60e33583814dfbea`.
 
@@ -12387,23 +12419,35 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Procedencia:** IA no oficial. **Estado de uso:** activa y validada. **Validación:** `validated`. **Dificultad declarada:** `medium`.
 
-**Enunciado:** ¿Qué significa que DELETE sea idempotente en su efecto deseado?
+**Enunciado:** Una API elimina un recurso con DELETE y responde 204. Una petición idéntica posterior recibe 404 porque el recurso ya no existe. ¿Qué afirmación es correcta sobre la idempotencia de este comportamiento?
 
-- **A.** Debe devolver siempre el mismo código
+- **A.** Para ser idempotente, la repetición tendría que devolver también 204 y el mismo cuerpo de respuesta.
 
-- **B.** Repetirlo busca el mismo estado final aunque las respuestas puedan variar
+- **B.** El cambio de respuesta es compatible con la idempotencia si se mantiene el mismo efecto solicitado sobre el recurso.
 
-- **C.** Solo puede enviarse una vez
+- **C.** El caso convierte DELETE en un método seguro, porque la segunda petición ya no modifica el recurso.
 
-- **D.** No produce ningún efecto
+- **D.** La idempotencia exige que el servidor omita también los registros de actividad de la petición repetida.
 
-**Respuesta correcta:** **B.** Repetirlo busca el mismo estado final aunque las respuestas puedan variar
+**Respuesta correcta:** **B.** El cambio de respuesta es compatible con la idempotencia si se mantiene el mismo efecto solicitado sobre el recurso.
 
-**Explicación:** Idempotencia se refiere al efecto deseado repetido, no a ausencia de efectos ni igualdad literal de respuestas.
+**Explicación:** La idempotencia compara el efecto solicitado al repetir peticiones idénticas, no sus respuestas. El recurso permanece eliminado tras ambas peticiones: recibir después 404 es compatible con esa propiedad y no convierte DELETE en un método seguro.
+
+**Feedback tras error:** Revisa la distinción conceptual entre la respuesta correcta y la alternativa elegida.
+
+**Por qué no A:** El RFC permite que las respuestas a repeticiones difieran; no exige reproducir el código ni el cuerpo de la primera.
+
+**Por qué no C:** Un método seguro no solicita un cambio de estado. DELETE sí lo solicita, aunque un recurso ya eliminado no cambie al repetir la petición.
+
+**Por qué no D:** El servidor puede registrar cada petición por separado. La idempotencia se refiere al efecto solicitado sobre el recurso, no a eliminar todos los efectos auxiliares.
 
 **Fuente:** [GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)](<https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit>).
 
 **Trazabilidad:** source_id: SRC-GSI-B2-V21; documento: DOC-GSI-B2-V21; localizador: II.06; sección 8. REST y HTTP; versión: V2.1; revisión: 2026-08-21.
+
+**Revisión editorial efectiva:** `GSI-EDITORIAL-001`.
+
+**Respaldo editorial:** [IETF: HTTP Semantics](<https://www.rfc-editor.org/rfc/rfc9110.html#section-9.2.2>) · 9.2.2 Idempotent Methods; 9.3.5 DELETE · comprobado: 2026-10-26.
 
 **Hash editorial del registro:** `a5e0debf7de1d3f3167970c891972d296550fd5f082f1f7173ae01f77c30de5a`.
 
@@ -16145,21 +16189,33 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué diferencia categorización ENS y análisis de riesgos?
 
-- **A.** El análisis se limita al tamaño del servidor
+- **A.** La categoría depende de la probabilidad de cada amenaza; el análisis fija el impacto institucional.
 
-- **B.** La categoría deriva del impacto; el análisis profundiza en amenazas, controles y residual
+- **B.** La categoría se basa en el impacto; el análisis examina riesgos y permite justificar su tratamiento.
 
-- **C.** Son exactamente el mismo cálculo
+- **C.** La categoría identifica el riesgo residual; el análisis asigna los niveles de las dimensiones de seguridad.
 
-- **D.** La categoría sustituye todo inventario
+- **D.** La categoría determina una lista definitiva de medidas; el análisis se limita a comprobar su instalación.
 
-**Respuesta correcta:** **B.** La categoría deriva del impacto; el análisis profundiza en amenazas, controles y residual
+**Respuesta correcta:** **B.** La categoría se basa en el impacto; el análisis examina riesgos y permite justificar su tratamiento.
 
-**Explicación:** Ambos procesos están relacionados, pero responden a funciones diferentes.
+**Explicación:** El anexo I fundamenta la categoría en el impacto sobre información y servicios. El artículo 14 exige analizar y tratar riesgos y justificar medidas proporcionadas; categorizar no sustituye esa gestión.
+
+**Feedback tras error:** Revisa la distinción conceptual entre la respuesta correcta y la alternativa elegida.
+
+**Por qué no A:** Intercambia las funciones: la probabilidad de amenazas no es la base de categorización del anexo I.
+
+**Por qué no C:** La categoría no es una medida del riesgo residual tras aplicar controles.
+
+**Por qué no D:** Las medidas deben justificarse frente a los riesgos; la gestión no se reduce a verificar instalaciones.
 
 **Fuente:** [GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)](<https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit>).
 
 **Trazabilidad:** source_id: SRC-GSI-B2-V21; documento: DOC-GSI-B2-V21; localizador: II.10; sección 9. Relación con ENS; versión: V2.1; revisión: 2026-08-21.
+
+**Revisión editorial efectiva:** `GSI-EDITORIAL-001`.
+
+**Respaldo editorial:** [Esquema Nacional de Seguridad](<https://www.boe.es/buscar/act.php?id=BOE-A-2022-7191>) · Artículo 14 y anexo I: categorías de seguridad · comprobado: 2026-10-26.
 
 **Hash editorial del registro:** `23c657d0ee4aed4039e173830b5b6ef6a1a59fe70ec7142a94d97c69729b48e8`.
 
@@ -17472,23 +17528,37 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Procedencia:** IA no oficial. **Estado de uso:** activa y validada. **Validación:** `validated`. **Dificultad declarada:** `medium`.
 
-**Enunciado:** ¿Qué medida protege frente a interrupciones eléctricas y requiere pruebas de autonomía?
+**Enunciado:** Un CPD necesita mantener encendidos sus servidores durante el intervalo entre un corte eléctrico y la entrada en servicio del grupo electrógeno. ¿Qué medida debe dimensionarse y probarse con la carga prevista para cubrir ese intervalo?
 
-- **A.** WAF exclusivamente
+- **A.** Instalar un regulador automático de tensión convencional para estabilizar la salida de la acometida.
 
-- **B.** Firma digital
+- **B.** Instalar fuentes de alimentación redundantes en los servidores, conectadas a la misma acometida.
 
-- **C.** SAI y alimentación de respaldo planificada
+- **C.** Instalar un SAI con baterías para alimentar los servidores hasta que el grupo esté disponible.
 
-- **D.** Índice B+
+- **D.** Instalar un conmutador automático que transfiera la carga al grupo cuando este esté disponible.
 
-**Respuesta correcta:** **C.** SAI y alimentación de respaldo planificada
+**Respuesta correcta:** **C.** Instalar un SAI con baterías para alimentar los servidores hasta que el grupo esté disponible.
 
-**Explicación:** La continuidad eléctrica necesita dimensionamiento, mantenimiento y pruebas; una barrera lógica no la sustituye.
+**Explicación:** El SAI aporta la energía durante el intervalo sin suministro. Su potencia y autonomía deben ser suficientes para la carga prevista hasta que el grupo pueda asumirla. La existencia de un grupo no elimina la necesidad de cubrir su tiempo de arranque.
+
+**Feedback tras error:** Revisa la distinción conceptual entre la respuesta correcta y la alternativa elegida.
+
+**Por qué no A:** Regular la tensión no aporta energía cuando la acometida deja de suministrarla; falta reserva para el intervalo.
+
+**Por qué no B:** Dos fuentes sobre la misma acometida pierden su suministro al producirse ese corte; la redundancia de fuentes no añade autonomía.
+
+**Por qué no D:** El conmutador selecciona una fuente disponible, pero no almacena la energía necesaria mientras el grupo todavía no suministra.
 
 **Fuente:** [GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)](<https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit>).
 
 **Trazabilidad:** source_id: SRC-GSI-B2-V21; documento: DOC-GSI-B2-V21; localizador: II.13; sección 3. Seguridad física; versión: V2.1; revisión: 2026-08-21.
+
+**Revisión editorial efectiva:** `GSI-EDITORIAL-001`.
+
+**Respaldo editorial:** [ENS: instalaciones](<https://www.boe.es/buscar/act.php?id=BOE-A-2022-7191>) · Anexo II, 5.1.4 Energía eléctrica [mp.if.4], refuerzo R1 · comprobado: 2026-10-26.
+
+**Respaldo editorial:** [Eaton: UPS battery backup buying guide](<https://www.eaton.com/us/en-us/products/backup-power-ups-surge-it-power-distribution/backup-power-ups/ups-buying-guide-for-idf-network-closets-.html>) · Understand your battery runtime needs: autonomía según carga y respaldo inmediato hasta el suministro del generador · comprobado: 2026-10-26.
 
 **Hash editorial del registro:** `6f1ca6774efb771e46abb0c5d49d19eaf02cca947ec3859d2497b3e4120f0d4e`.
 
@@ -21725,23 +21795,37 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** Una aplicación usa MIT, Apache-2.0, GPL y componentes propietarios. ¿Qué enfoque es correcto?
 
-- **A.** Decir que todo es MIT porque es la licencia más permisiva.
+- **A.** Aplicar la licencia más permisiva a la distribución completa, manteniendo solo los avisos que esa licencia exige.
 
-- **B.** Analizar cada componente, su forma de combinación/distribución y compatibilidad; no clasificar la aplicación por una sola etiqueta.
+- **B.** Examinar licencias, versiones y forma de combinación o distribución de cada componente antes de decidir la compatibilidad.
 
-- **C.** Decir que todo es propietario porque existe un componente cerrado.
+- **C.** Aplicar la licencia del componente propietario al conjunto, conservando los demás únicamente en un inventario interno.
 
-- **D.** Ignorar versiones y arquitectura.
+- **D.** Considerar compatibles las licencias citadas por permitir uso comercial, sin distinguir enlace, distribución o versión de GPL.
 
-**Respuesta correcta:** **B.** Analizar cada componente, su forma de combinación/distribución y compatibilidad; no clasificar la aplicación por una sola etiqueta.
+**Respuesta correcta:** **B.** Examinar licencias, versiones y forma de combinación o distribución de cada componente antes de decidir la compatibilidad.
 
-**Explicación:** Los sistemas reales son composiciones y el cumplimiento se evalúa por componentes/relaciones.
+**Explicación:** La coexistencia de componentes no determina una licencia única. Deben examinarse permisos y obligaciones de cada versión y la forma de combinación y distribución, incluidas las condiciones de copyleft.
 
-**Feedback tras error:** Según el solucionario: Los sistemas reales son composiciones y el cumplimiento se evalúa por componentes/relaciones.
+**Feedback tras error:** Revisa la distinción conceptual entre la respuesta correcta y la alternativa elegida.
+
+**Por qué no A:** Una licencia permisiva no elimina las obligaciones de los otros componentes.
+
+**Por qué no C:** Incluir código propietario no permite cambiar unilateralmente las condiciones del código recibido.
+
+**Por qué no D:** Permitir uso comercial no resuelve la compatibilidad; versiones, enlace y distribución pueden cambiar el análisis.
 
 **Fuente:** [GSI A2 — PRÁCTICA ACTIVA 16 — LICENCIAS, PROTECCIÓN JURÍDICA Y DRM — SOLUCIONARIO COMENTADO](<https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit>).
 
 **Trazabilidad:** source_id: SRC-GSI-P16-SOL; documento: DOC-GSI-P16-SOL; localizador: Pregunta 155; índice nativo 15981.
+
+**Revisión editorial efectiva:** `GSI-EDITORIAL-001`.
+
+**Respaldo editorial:** [GNU: preguntas frecuentes de licencias](<https://www.gnu.org/licenses/gpl-faq.en.html#GPLIncompatibleLibs>) · GPLIncompatibleLibs; GPLModuleLicense; LicenseCompatibility · comprobado: 2026-10-26.
+
+**Respaldo editorial:** [Apache License](<https://www.apache.org/licenses/LICENSE-2.0>) · Apartados 1 y 4: definiciones y redistribución · comprobado: 2026-10-26.
+
+**Respaldo editorial:** [OSI: MIT License](<https://opensource.org/license/mit>) · Permiso y condición de conservación del aviso · comprobado: 2026-10-26.
 
 #### 159. MAN-GSI-P16-156
 
@@ -21966,23 +22050,35 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Procedencia:** IA no oficial. **Estado de uso:** activa y validada. **Validación:** `validated`. **Dificultad declarada:** `medium`.
 
-**Enunciado:** Una alternativa incumple un requisito legal obligatorio, pero es muy barata. ¿Cómo debe tratarse?
+**Enunciado:** Una oferta incumple una prescripción obligatoria de los pliegos y no se admite una variante que la exceptúe. ¿Cómo debe valorarse su precio reducido?
 
-- **A.** Como equivalente a todas las demás
+- **A.** Compensando el incumplimiento con una mayor puntuación en el criterio económico.
 
-- **B.** Como viable sin revisar la restricción
+- **B.** Admitiendo la oferta y aplazando el cumplimiento al momento de la adjudicación.
 
-- **C.** Como ganadora automática por precio
+- **C.** Otorgando prioridad a su evaluación por mejorar el coste total previsto del contrato.
 
-- **D.** Como incumplimiento eliminatorio, no compensable solo con puntuación económica
+- **D.** Sin compensar el incumplimiento: el precio no convierte en admisible una oferta que contraviene esa prescripción.
 
-**Respuesta correcta:** **D.** Como incumplimiento eliminatorio, no compensable solo con puntuación económica
+**Respuesta correcta:** **D.** Sin compensar el incumplimiento: el precio no convierte en admisible una oferta que contraviene esa prescripción.
 
-**Explicación:** Los requisitos obligatorios no se compensan como criterios ponderables.
+**Explicación:** Las proposiciones deben ajustarse a los pliegos. En el supuesto descrito, un precio menor no compensa el incumplimiento de una prescripción obligatoria ni lo transforma en un criterio ponderable.
+
+**Feedback tras error:** Revisa la distinción conceptual entre la respuesta correcta y la alternativa elegida.
+
+**Por qué no A:** Ponderar precio entre ofertas admisibles no permite sustituir una condición obligatoria.
+
+**Por qué no B:** La hipótesis no permite aplazar el requisito: la oferta debe ajustarse a los pliegos.
+
+**Por qué no C:** El ahorro no elimina el examen previo de admisibilidad de la oferta.
 
 **Fuente:** [GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)](<https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit>).
 
 **Trazabilidad:** source_id: SRC-GSI-B2-V21; documento: DOC-GSI-B2-V21; localizador: II.15; sección 3. Criterios; versión: V2.1; revisión: 2026-08-21.
+
+**Revisión editorial efectiva:** `GSI-EDITORIAL-001`.
+
+**Respaldo editorial:** [Ley de Contratos del Sector Público](<https://www.boe.es/buscar/act.php?id=BOE-A-2017-12902#a139>) · Artículo 139.1: ajuste de las proposiciones a los pliegos · comprobado: 2026-10-26.
 
 **Hash editorial del registro:** `71791c6c2b7c953671f39d0a0c78b50b688196c5189f6c7760b180135630462d`.
 
@@ -24642,21 +24738,33 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué distingue un modelo de ciclo de vida de una metodología?
 
-- **A.** El modelo establece etapas y relaciones; la metodología concreta cómo trabajar
+- **A.** El modelo organiza etapas y relaciones; la metodología concreta prácticas y formas de trabajo.
 
-- **B.** La metodología elimina toda fase
+- **B.** El modelo asigna roles y plantillas; la metodología solo determina la secuencia temporal de etapas.
 
-- **C.** Ambos son lenguajes de programación
+- **C.** El modelo describe exclusivamente pruebas; la metodología organiza el resto del desarrollo.
 
-- **D.** El modelo solo describe tablas
+- **D.** El modelo se aplica a proyectos predictivos; la metodología se reserva a proyectos ágiles.
 
-**Respuesta correcta:** **A.** El modelo establece etapas y relaciones; la metodología concreta cómo trabajar
+**Respuesta correcta:** **A.** El modelo organiza etapas y relaciones; la metodología concreta prácticas y formas de trabajo.
 
-**Explicación:** Etapas y relaciones no equivalen a prácticas concretas de trabajo.
+**Explicación:** Un modelo del ciclo de vida organiza actividades y relaciones temporales. Métodos y prácticas detallan cómo ejecutar el trabajo; ambos pueden combinarse y adaptarse al contexto.
+
+**Feedback tras error:** Revisa la distinción conceptual entre la respuesta correcta y la alternativa elegida.
+
+**Por qué no B:** Invierte la distinción entre organización del ciclo y concreción de las prácticas.
+
+**Por qué no C:** El ciclo abarca el desarrollo completo, no solo sus pruebas.
+
+**Por qué no D:** La distinción no depende de separar proyectos predictivos y ágiles.
 
 **Fuente:** [GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)](<https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit>).
 
 **Trazabilidad:** source_id: SRC-GSI-B3-V21; documento: DOC-GSI-B3-V21; localizador: III.01; sección 1. Concepto; versión: V2.1; revisión: 2026-08-21.
+
+**Revisión editorial efectiva:** `GSI-EDITORIAL-001`.
+
+**Respaldo editorial:** [ISTQB: Foundation Level Syllabus](<https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf>) · 2.1 Software Development Lifecycle; 1.2.3 Errors, Defects, Failures, and Root Causes · comprobado: 2026-10-26.
 
 **Hash editorial del registro:** `b6056a889f4ec068930c3ce9d9397bfe9237653ad4be21d697d2cc66c910d90f`.
 
@@ -24688,23 +24796,37 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Procedencia:** IA no oficial. **Estado de uso:** activa y validada. **Validación:** `validated`. **Dificultad declarada:** `medium`.
 
-**Enunciado:** ¿Qué riesgo tiene una cascada aplicada rígidamente con requisitos cambiantes?
+**Enunciado:** Un proyecto con requisitos que van cambiando aplica una cascada rígida: cierra requisitos, diseño y codificación antes de que los usuarios prueben por primera vez el producto ejecutable en aceptación. Entonces se detecta un cambio necesario en un flujo. ¿Qué riesgo ilustra principalmente este modo de obtener feedback?
 
-- **A.** No permitir hitos en ningún caso
+- **A.** Desviaciones por incorporar cambios sin autorización ni evaluación de su impacto en el proyecto.
 
-- **B.** No poder construir software nunca
+- **B.** Retrasos por repetir pruebas de regresión tras cada entrega parcial del producto a los usuarios.
 
-- **C.** Recibir tarde información que obligue a revisar decisiones anteriores
+- **C.** Retrabajo por descubrir tarde cambios que afectan a requisitos, diseño y código ya cerrados.
 
-- **D.** Carecer siempre de documentación
+- **D.** Inconsistencias por integrar en paralelo varias versiones funcionales de un mismo módulo.
 
-**Respuesta correcta:** **C.** Recibir tarde información que obligue a revisar decisiones anteriores
+**Respuesta correcta:** **C.** Retrabajo por descubrir tarde cambios que afectan a requisitos, diseño y código ya cerrados.
 
-**Explicación:** La secuencia rígida dificulta incorporar cambios y feedback tardío.
+**Explicación:** El contraste ejecutable llega cuando ya existen artefactos dependientes del requisito: cambiar el flujo puede obligar a revisar requisitos, diseño y código. El riesgo es el retrabajo tardío; el modelo no impide realizar antes revisiones estáticas.
+
+**Feedback tras error:** Revisa la distinción conceptual entre la respuesta correcta y la alternativa elegida.
+
+**Por qué no A:** El caso no describe cambios sin autorizar. Un control formal correcto tampoco elimina el coste de descubrir su necesidad demasiado tarde.
+
+**Por qué no B:** No se describen entregas parciales sucesivas a usuarios; su primera prueba del ejecutable se pospone hasta aceptación.
+
+**Por qué no D:** No se atribuye el problema a versiones desarrolladas en paralelo, sino al momento de obtener feedback de los usuarios.
 
 **Fuente:** [GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)](<https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit>).
 
 **Trazabilidad:** source_id: SRC-GSI-B3-V21; documento: DOC-GSI-B3-V21; localizador: III.01; sección 3. Modelos clásicos; versión: V2.1; revisión: 2026-08-21.
+
+**Revisión editorial efectiva:** `GSI-EDITORIAL-001`.
+
+**Respaldo editorial:** [ISTQB: Foundation Level Syllabus](<https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf>) · 2.1 Software Development Lifecycle; 1.2.3 Errors, Defects, Failures, and Root Causes · comprobado: 2026-10-26.
+
+**Respaldo editorial:** [PMI: Choosing the right project approach](<https://www.pmi.org/learning/library/choosing-right-project-approach-9346>) · Predictive, iterative and incremental life cycles; definición inicial y cambios formales · comprobado: 2026-10-26.
 
 **Hash editorial del registro:** `28dc2ff031369045ae92d89ae517fe8675a2ab7525890a877137f8e10b2b3b52`.
 
@@ -25267,23 +25389,35 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Procedencia:** IA no oficial. **Estado de uso:** activa y validada. **Validación:** `validated`. **Dificultad declarada:** `medium`.
 
-**Enunciado:** ¿Qué caracteriza al enfoque predictivo de la tabla?
+**Enunciado:** ¿Qué caracteriza al enfoque predictivo de gestión de proyectos?
 
-- **A.** Mayor definición inicial del alcance y control formal de cambios
+- **A.** Definir inicialmente gran parte del alcance y gestionar sus modificaciones mediante control formal.
 
-- **B.** Ausencia de hitos
+- **B.** Precisar el alcance de cada iteración principalmente a partir de la experiencia del incremento previo.
 
-- **C.** Entregas continuas obligatorias
+- **C.** Gestionar el trabajo mediante flujo continuo y límites de tareas simultáneas como estructura principal.
 
-- **D.** Inexistencia de documentación
+- **D.** Descubrir el alcance mediante experimentos sucesivos sin establecer inicialmente una línea base detallada.
 
-**Respuesta correcta:** **A.** Mayor definición inicial del alcance y control formal de cambios
+**Respuesta correcta:** **A.** Definir inicialmente gran parte del alcance y gestionar sus modificaciones mediante control formal.
 
-**Explicación:** El enfoque predictivo fija más elementos al inicio y controla sus modificaciones.
+**Explicación:** El enfoque predictivo busca definir el alcance con anticipación y controlar sus cambios. Puede admitir ajustes; no implica ausencia de documentación ni prohíbe adaptar el proceso.
+
+**Feedback tras error:** Revisa la distinción conceptual entre la respuesta correcta y la alternativa elegida.
+
+**Por qué no B:** La elaboración progresiva por iteraciones es característica de enfoques iterativos o adaptativos.
+
+**Por qué no C:** El flujo continuo y los límites de trabajo en curso describen otra forma de organizar el trabajo.
+
+**Por qué no D:** El descubrimiento experimental continuo no caracteriza la planificación predictiva descrita.
 
 **Fuente:** [GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)](<https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit>).
 
 **Trazabilidad:** source_id: SRC-GSI-B3-V21; documento: DOC-GSI-B3-V21; localizador: III.02; sección 3. Tradicional vs ágil; versión: V2.1; revisión: 2026-08-21.
+
+**Revisión editorial efectiva:** `GSI-EDITORIAL-001`.
+
+**Respaldo editorial:** [PMI: Choosing the right project approach](<https://www.pmi.org/learning/library/choosing-right-project-approach-9346>) · Predictive, iterative and incremental life cycles; definición inicial y cambios formales · comprobado: 2026-10-26.
 
 **Hash editorial del registro:** `486bdedc0a19afb92f2ab926bd0c4ded954399f5490ed8fab476180fb215551b`.
 
@@ -25485,21 +25619,33 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué debe acompañar a un riesgo identificado del proyecto?
 
-- **A.** Solo un nombre alarmante
+- **A.** Una puntuación agregada y una categoría, dejando la respuesta para cuando ocurra el evento.
 
-- **B.** Una cifra sin responsable
+- **B.** Un responsable y un coste estimado, sustituyendo el seguimiento por una aceptación inicial permanente.
 
-- **C.** Propietario, respuesta y disparadores además de probabilidad e impacto
+- **C.** Probabilidad e impacto, responsable, respuesta prevista y condiciones que disparen su seguimiento o actuación.
 
-- **D.** La eliminación de toda fecha
+- **D.** Una descripción del impacto y una fecha de cierre, dando por aplicada la mitigación desde su planificación.
 
-**Respuesta correcta:** **C.** Propietario, respuesta y disparadores además de probabilidad e impacto
+**Respuesta correcta:** **C.** Probabilidad e impacto, responsable, respuesta prevista y condiciones que disparen su seguimiento o actuación.
 
-**Explicación:** El registro debe permitir actuar y seguir el riesgo, no solo enumerarlo.
+**Explicación:** Un riesgo gestionable requiere valoración, responsable y tratamiento. Los disparadores y el seguimiento permiten decidir cuándo actuar; planificar una mitigación no demuestra que ya sea efectiva.
+
+**Feedback tras error:** Revisa la distinción conceptual entre la respuesta correcta y la alternativa elegida.
+
+**Por qué no A:** La puntuación ayuda a priorizar, pero omite la respuesta anticipada y su responsable.
+
+**Por qué no B:** La aceptación no elimina la necesidad de revisar el riesgo cuando cambian sus condiciones.
+
+**Por qué no D:** Una respuesta planificada debe ejecutarse y verificarse; no equivale a mitigación efectiva.
 
 **Fuente:** [GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)](<https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit>).
 
 **Trazabilidad:** source_id: SRC-GSI-B3-V21; documento: DOC-GSI-B3-V21; localizador: III.02; sección 7. Riesgos y calidad; versión: V2.1; revisión: 2026-08-21.
+
+**Revisión editorial efectiva:** `GSI-EDITORIAL-001`.
+
+**Respaldo editorial:** [NASA: Guidelines for Risk Management](<https://www.nasa.gov/wp-content/uploads/2015/10/s3001_guidelines_for_risk_management_-_ver_g_-_10-25-2017.pdf>) · Tabla 4-6 Risk Planning: Watch, Mitigate, Risk Owner y trigger points · comprobado: 2026-10-26.
 
 **Hash editorial del registro:** `bdc1ba06305dee43f612f4d3b9fdce163d1d40b26b7e69c6c401b4695370d8b6`.
 
@@ -25822,23 +25968,35 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Procedencia:** IA no oficial. **Estado de uso:** activa y validada. **Validación:** `validated`. **Dificultad declarada:** `medium`.
 
-**Enunciado:** ¿Qué formulación es verificable bajo una carga definida?
+**Enunciado:** Bajo una carga de prueba previamente definida, ¿qué requisito fija un criterio de aceptación del tiempo de respuesta verificable?
 
-- **A.** El percentil 95 del tiempo de respuesta será inferior a 2 segundos
+- **A.** El percentil 95 del tiempo de respuesta será inferior a 2 segundos durante la prueba acordada.
 
-- **B.** La aplicación será excelente
+- **B.** El tiempo de respuesta mejorará respecto a la versión anterior en la medida técnicamente posible.
 
-- **C.** El portal resultará moderno
+- **C.** La mayoría de las operaciones ofrecerá una experiencia de respuesta suficientemente fluida.
 
-- **D.** El sistema será muy rápido
+- **D.** El sistema mantendrá una latencia competitiva con productos de características semejantes.
 
-**Respuesta correcta:** **A.** El percentil 95 del tiempo de respuesta será inferior a 2 segundos
+**Respuesta correcta:** **A.** El percentil 95 del tiempo de respuesta será inferior a 2 segundos durante la prueba acordada.
 
-**Explicación:** Un umbral medible con condiciones permite una prueba; adjetivos vagos no definen aceptación.
+**Explicación:** El percentil y el umbral permiten evaluar el resultado bajo condiciones de prueba acordadas. Un adjetivo o una comparación sin referencia medible no fija el mismo criterio de aceptación.
+
+**Feedback tras error:** Revisa la distinción conceptual entre la respuesta correcta y la alternativa elegida.
+
+**Por qué no B:** No define una mejora mínima exigible ni un límite verificable para aceptar la prueba.
+
+**Por qué no C:** No cuantifica la proporción requerida ni el tiempo considerado fluido.
+
+**Por qué no D:** No identifica los productos, las condiciones ni el umbral que permitirían decidir la aceptación.
 
 **Fuente:** [GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)](<https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit>).
 
 **Trazabilidad:** source_id: SRC-GSI-B3-V21; documento: DOC-GSI-B3-V21; localizador: III.03; sección 3. Calidad de requisitos; versión: V2.1; revisión: 2026-08-21.
+
+**Revisión editorial efectiva:** `GSI-EDITORIAL-001`.
+
+**Respaldo editorial:** [NASA: How to Write a Good Requirement](<https://www.nasa.gov/reference/appendix-c-how-to-write-a-good-requirement/>) · Appendix C: Performance; Verifiability/Testability · comprobado: 2026-10-26.
 
 **Hash editorial del registro:** `bd712c3c3799d8fa0b4767f971a448db2fd750a73890326f131019e98b7b8d41`.
 
@@ -26112,21 +26270,33 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué contenido es apropiado en una SRS/ERS?
 
-- **A.** Alcance, actores, requisitos, interfaces, restricciones y aceptación
+- **A.** Contexto y alcance, requisitos funcionales y de calidad, interfaces, restricciones y criterios de verificación.
 
-- **B.** Únicamente un presupuesto
+- **B.** Distribución de componentes, decisiones internas de diseño, patrones y detalle de clases de implementación.
 
-- **C.** Solo código compilado
+- **C.** Estrategia de ejecución de pruebas, recursos del laboratorio, calendario y asignación de casos a probadores.
 
-- **D.** Solo capturas sin texto
+- **D.** Procedimientos operativos, resolución de incidencias conocidas y tareas de mantenimiento en producción.
 
-**Respuesta correcta:** **A.** Alcance, actores, requisitos, interfaces, restricciones y aceptación
+**Respuesta correcta:** **A.** Contexto y alcance, requisitos funcionales y de calidad, interfaces, restricciones y criterios de verificación.
 
-**Explicación:** La especificación debe permitir construir y verificar, incluyendo contexto y trazabilidad.
+**Explicación:** La ERS/SRS define lo que debe satisfacer el software y las condiciones para comprobarlo. Debe describir requisitos e interfaces sin confundirse con un diseño interno o un manual operativo.
+
+**Feedback tras error:** Revisa la distinción conceptual entre la respuesta correcta y la alternativa elegida.
+
+**Por qué no B:** El detalle de solución e implementación corresponde al diseño, no al contenido principal de una ERS.
+
+**Por qué no C:** Organizar la ejecución y los recursos de prueba corresponde a su planificación.
+
+**Por qué no D:** Los procedimientos de operación pertenecen al manual operativo, aunque deriven de requisitos.
 
 **Fuente:** [GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)](<https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit>).
 
 **Trazabilidad:** source_id: SRC-GSI-B3-V21; documento: DOC-GSI-B3-V21; localizador: III.03; sección 7.2. Especificación de requisitos; versión: V2.1; revisión: 2026-08-21.
+
+**Revisión editorial efectiva:** `GSI-EDITORIAL-001`.
+
+**Respaldo editorial:** [NASA: Software Engineering Requirements](<https://nodis3.gsfc.nasa.gov/displayAll.cfm?Internal_ID=N_PR_7150_0002_&page_name=all>) · 3.1 Software Requirements: requisitos, restricciones, interfaces y verificación · comprobado: 2026-10-26.
 
 **Hash editorial del registro:** `a6a162734a6b1798773839acfb66964480f8fd0e8966706b3221c7ee79b4a9ab`.
 
@@ -26307,21 +26477,33 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué debe representar el modelo conceptual antes de elegir índices?
 
-- **A.** Entidades, relaciones, cardinalidades y reglas del negocio
+- **A.** Entidades del dominio, relaciones, cardinalidades y reglas del negocio que deben representarse.
 
-- **B.** Únicamente tamaños de buffers
+- **B.** Tablas del motor elegido, índices compuestos, particiones y ubicación física de sus segmentos.
 
-- **C.** Solo parámetros del motor
+- **C.** Sentencias de creación, tipos propietarios del SGBD y parámetros de almacenamiento de cada tabla.
 
-- **D.** Solo páginas de disco
+- **D.** Planes de ejecución, métodos de acceso a índices y orden concreto de las operaciones de consulta.
 
-**Respuesta correcta:** **A.** Entidades, relaciones, cardinalidades y reglas del negocio
+**Respuesta correcta:** **A.** Entidades del dominio, relaciones, cardinalidades y reglas del negocio que deben representarse.
 
-**Explicación:** La semántica precede a decisiones físicas de almacenamiento.
+**Explicación:** El modelo conceptual describe la información del dominio y sus relaciones. Las decisiones específicas del motor y los accesos físicos se abordan después, sin sustituir el análisis del negocio.
+
+**Feedback tras error:** Revisa la distinción conceptual entre la respuesta correcta y la alternativa elegida.
+
+**Por qué no B:** Mezcla estructuras y decisiones de implementación física posteriores al nivel conceptual.
+
+**Por qué no C:** El DDL y los parámetros específicos del motor pertenecen a la implementación del esquema.
+
+**Por qué no D:** Los planes de ejecución describen cómo acceder a los datos, no qué información representa el dominio.
 
 **Fuente:** [GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)](<https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit>).
 
 **Trazabilidad:** source_id: SRC-GSI-B3-V21; documento: DOC-GSI-B3-V21; localizador: III.04; sección 1. Modelado conceptual; versión: V2.1; revisión: 2026-08-21.
+
+**Revisión editorial efectiva:** `GSI-EDITORIAL-001`.
+
+**Respaldo editorial:** [IBM: Data modeling](<https://www.ibm.com/think/topics/data-modeling>) · Types of data models: conceptual, logical, physical · comprobado: 2026-10-26.
 
 **Hash editorial del registro:** `8bdeebf5df43fa52ada33dc0161d096a763c4156ce16d59c1ea9b9665c36926b`.
 
@@ -26763,21 +26945,33 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** Particionar una tabla grande implica…
 
-- **A.** Eliminar siempre todos los índices
+- **A.** Crear estructuras auxiliares ordenadas para localizar filas sin dividir los datos de la tabla.
 
-- **B.** Garantizar mejora de cualquier consulta
+- **B.** Mantener copias completas de la tabla en varios servidores para mejorar disponibilidad y lectura.
 
-- **C.** Dividirla según estrategia sin sustituir un buen modelo ni los índices necesarios
+- **C.** Dividir físicamente una tabla lógica según una estrategia, manteniendo las decisiones de modelo e índices necesarias.
 
-- **D.** Suprimir restricciones de integridad
+- **D.** Separar las columnas de una entidad en nuevas relaciones para eliminar dependencias y redundancias.
 
-**Respuesta correcta:** **C.** Dividirla según estrategia sin sustituir un buen modelo ni los índices necesarios
+**Respuesta correcta:** **C.** Dividir físicamente una tabla lógica según una estrategia, manteniendo las decisiones de modelo e índices necesarias.
 
-**Explicación:** El particionado debe responder a patrones de acceso y crecimiento y no resuelve por sí solo todo el diseño.
+**Explicación:** El particionado divide una tabla lógica en partes según una estrategia. Sus beneficios dependen del patrón de acceso; no garantiza acelerar toda consulta ni reemplaza el diseño de índices.
+
+**Feedback tras error:** Revisa la distinción conceptual entre la respuesta correcta y la alternativa elegida.
+
+**Por qué no A:** Describe la función de un índice, no la división de los datos en particiones.
+
+**Por qué no B:** Duplicar una tabla completa describe replicación, no particionado.
+
+**Por qué no D:** La descomposición de relaciones corresponde al diseño lógico, no al particionado descrito.
 
 **Fuente:** [GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)](<https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit>).
 
 **Trazabilidad:** source_id: SRC-GSI-B3-V21; documento: DOC-GSI-B3-V21; localizador: III.04; sección 6.6. Índices y diseño físico; versión: V2.1; revisión: 2026-08-21.
+
+**Revisión editorial efectiva:** `GSI-EDITORIAL-001`.
+
+**Respaldo editorial:** [PostgreSQL: Table Partitioning](<https://www.postgresql.org/docs/18/ddl-partitioning.html>) · 5.12.1 Overview; 5.12.2 Declarative Partitioning; 5.12.6 Best Practices · comprobado: 2026-10-26.
 
 **Hash editorial del registro:** `093e4a73cebd3389870ca2cdf2f691c7eb645dab71d4744342aa9abb57753f71`.
 
@@ -27633,21 +27827,33 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué diferencia entrega continua y despliegue continuo?
 
-- **A.** Son sinónimos exactos
+- **A.** La entrega exige publicar cada cambio en producción; el despliegue exige siempre una aprobación manual.
 
-- **B.** El despliegue prohíbe automatización
+- **B.** La entrega automatiza solo compilación; el despliegue comienza cuando se redacta el código de pruebas.
 
-- **C.** La entrega nunca ejecuta pruebas
+- **C.** La entrega evita entornos previos a producción; el despliegue los sustituye por pruebas manuales finales.
 
-- **D.** La entrega puede requerir aprobación; el despliegue publica automáticamente tras los controles
+- **D.** La entrega mantiene cambios listos para publicar con posible aprobación; el despliegue los publica tras superar controles automáticos.
 
-**Respuesta correcta:** **D.** La entrega puede requerir aprobación; el despliegue publica automáticamente tras los controles
+**Respuesta correcta:** **D.** La entrega mantiene cambios listos para publicar con posible aprobación; el despliegue los publica tras superar controles automáticos.
 
-**Explicación:** Ambos automatizan, pero difieren en el paso final a producción.
+**Explicación:** La entrega continua mantiene cambios preparados para su publicación y puede incluir una decisión manual. El despliegue continuo automatiza también el paso a producción tras superar los controles definidos.
+
+**Feedback tras error:** Revisa la distinción conceptual entre la respuesta correcta y la alternativa elegida.
+
+**Por qué no A:** Invierte la diferencia sobre la decisión manual de publicación.
+
+**Por qué no B:** La entrega continua abarca más que compilar; la distinción no es cuándo se escriben las pruebas.
+
+**Por qué no C:** Los entornos y las pruebas previas son compatibles con ambos enfoques.
 
 **Fuente:** [GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)](<https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit>).
 
 **Trazabilidad:** source_id: SRC-GSI-B3-V21; documento: DOC-GSI-B3-V21; localizador: III.06; sección 5. Entrega/despliegue continuo; versión: V2.1; revisión: 2026-08-21.
+
+**Revisión editorial efectiva:** `GSI-EDITORIAL-001`.
+
+**Respaldo editorial:** [Microsoft: Continuous delivery](<https://learn.microsoft.com/en-us/devops/deliver/what-is-continuous-delivery>) · Proceso automatizado y aprobación manual entre etapas · comprobado: 2026-10-26.
 
 **Hash editorial del registro:** `62ff0011693e4e245a68911b221de443594612859d02faa4976afe1d3f751284`.
 
@@ -27705,21 +27911,33 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué aporta infraestructura como código?
 
-- **A.** Dependencia exclusiva de capturas
+- **A.** Inventariar recursos existentes mediante capturas de consola, sin definir un modelo que permita desplegarlos.
 
-- **B.** Cambios manuales sin registro
+- **B.** Documentar la configuración en un manual para repetir cambios desde la interfaz de administración.
 
-- **C.** Definición versionada, revisable y automatizable de infraestructura
+- **C.** Definir infraestructura mediante código versionable, revisable y ejecutable por herramientas de automatización.
 
-- **D.** Ausencia de configuración
+- **D.** Supervisar métricas de los recursos y generar alertas, sin describir cómo provisionar su configuración.
 
-**Respuesta correcta:** **C.** Definición versionada, revisable y automatizable de infraestructura
+**Respuesta correcta:** **C.** Definir infraestructura mediante código versionable, revisable y ejecutable por herramientas de automatización.
 
-**Explicación:** IaC permite revisión y reproducción de cambios de infraestructura.
+**Explicación:** IaC expresa la infraestructura mediante definiciones que pueden versionarse, revisarse y automatizarse. Facilita reproducir cambios; no equivale a conservar capturas ni a monitorizar recursos existentes.
+
+**Feedback tras error:** Revisa la distinción conceptual entre la respuesta correcta y la alternativa elegida.
+
+**Por qué no A:** Un inventario describe lo observado; no define por sí mismo cómo provisionar el entorno.
+
+**Por qué no B:** Un manual puede orientar al operador, pero no ofrece la definición automatizable propia de IaC.
+
+**Por qué no D:** La monitorización observa funcionamiento; no sustituye la definición de infraestructura.
 
 **Fuente:** [GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)](<https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit>).
 
 **Trazabilidad:** source_id: SRC-GSI-B3-V21; documento: DOC-GSI-B3-V21; localizador: III.06; sección 7. IaC y configuración; versión: V2.1; revisión: 2026-08-21.
+
+**Revisión editorial efectiva:** `GSI-EDITORIAL-001`.
+
+**Respaldo editorial:** [Microsoft: Infrastructure as code](<https://learn.microsoft.com/en-us/devops/deliver/what-is-infrastructure-as-code>) · Modelo descriptivo, versionado e infraestructura reproducible · comprobado: 2026-10-26.
 
 **Hash editorial del registro:** `be4ea714026b7d3e1cde3083d60a2e386eaa1d9cd99e4a1aab083e684541991d`.
 
@@ -28068,21 +28286,33 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué cadena describe error, defecto y fallo?
 
-- **A.** Son sinónimos sin matices
+- **A.** Un fallo humano introduce un error del producto, que solo se considera defecto cuando llega a producción.
 
-- **B.** Todo defecto se ejecuta siempre
+- **B.** Un defecto observado causa necesariamente un fallo en cada ejecución, con independencia de las condiciones.
 
-- **C.** Todo error es una parada física
+- **C.** Un error y un fallo son propiedades internas del código; un defecto es la diferencia visible para el usuario.
 
-- **D.** Un error humano puede introducir un defecto cuya ejecución cause un fallo
+- **D.** Un error humano puede introducir un defecto; su ejecución en determinadas condiciones puede manifestar un fallo.
 
-**Respuesta correcta:** **D.** Un error humano puede introducir un defecto cuya ejecución cause un fallo
+**Respuesta correcta:** **D.** Un error humano puede introducir un defecto; su ejecución en determinadas condiciones puede manifestar un fallo.
 
-**Explicación:** Causa humana, defecto del producto y manifestación observable son conceptos distintos.
+**Explicación:** El error es una acción humana equivocada; el defecto queda en un producto de trabajo y el fallo es su manifestación observable. No todo defecto se manifiesta en todas las ejecuciones.
+
+**Feedback tras error:** Revisa la distinción conceptual entre la respuesta correcta y la alternativa elegida.
+
+**Por qué no A:** El defecto puede existir antes de producción; la cadena confunde los términos.
+
+**Por qué no B:** La manifestación de un defecto puede depender de condiciones específicas de ejecución.
+
+**Por qué no C:** Intercambia defecto interno y fallo observable.
 
 **Fuente:** [GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)](<https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit>).
 
 **Trazabilidad:** source_id: SRC-GSI-B3-V21; documento: DOC-GSI-B3-V21; localizador: III.07; sección 2. Error, defecto y fallo; versión: V2.1; revisión: 2026-08-21.
+
+**Revisión editorial efectiva:** `GSI-EDITORIAL-001`.
+
+**Respaldo editorial:** [ISTQB: Foundation Level Syllabus](<https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf>) · 2.1 Software Development Lifecycle; 1.2.3 Errors, Defects, Failures, and Root Causes · comprobado: 2026-10-26.
 
 **Hash editorial del registro:** `a158ab03eab6eaa45be6b4aeeba499a0ad57552084bee591983bc7ed16580d3f`.
 
@@ -32098,13 +32328,23 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Respuesta correcta:** **C.** El proceso de obtener datos de la petición y construir/asignar parámetros u objetos del modelo de entrada.
 
-**Explicación:** El proceso de obtener datos de la petición y construir/asignar parámetros u objetos del modelo de entrada. Binding transforma fuentes HTTP en valores que las acciones/endpoints pueden usar.
+**Explicación:** El model binding obtiene valores de la petición y los convierte en parámetros o propiedades del modelo de entrada. La validación comprueba después las reglas del modelo.
 
-**Feedback tras error:** Según el solucionario: El proceso de obtener datos de la petición y construir/asignar parámetros u objetos del modelo de entrada. Binding transforma fuentes HTTP en valores que las acciones/endpoints pueden usar.
+**Feedback tras error:** Revisa la distinción conceptual entre la respuesta correcta y la alternativa elegida.
+
+**Por qué no A:** Seleccionar el endpoint es responsabilidad del routing; no construye el modelo de entrada.
+
+**Por qué no B:** Comprobar reglas corresponde a validación; se realiza sobre los datos vinculados al modelo.
+
+**Por qué no D:** La inyección de dependencias resuelve servicios registrados; no convierte datos de la petición en el modelo.
 
 **Fuente:** [GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO](<https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit>).
 
 **Trazabilidad:** source_id: SRC-GSI-P15-SOL; documento: DOC-GSI-P15-SOL; localizador: Pregunta 75; índice nativo 16457.
+
+**Revisión editorial efectiva:** `GSI-EDITORIAL-001`.
+
+**Respaldo editorial:** [Microsoft: Model Binding in ASP.NET Core](<https://learn.microsoft.com/en-us/aspnet/core/mvc/models/model-binding?view=aspnetcore-10.0>) · What is Model binding; Model binding and validation · comprobado: 2026-10-26.
 
 #### 79. MAN-GSI-P15-076
 

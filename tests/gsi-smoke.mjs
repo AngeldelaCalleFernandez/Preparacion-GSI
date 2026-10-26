@@ -411,6 +411,50 @@ try {
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2),true);
     assert.equal(await page.evaluate(()=>JSON.stringify(Object.entries(localStorage))),before);
   });
+  const editorialLedger = JSON.parse(await fs.readFile(path.join(root, 'data/gsi-editorial-revisions.json'), 'utf8'));
+  const appliedPilot = editorialLedger.batches.find((entry) => entry.batch.id === 'GSI-EDITORIAL-001');
+  if (appliedPilot) await check("approved pilot: 20 live questions, individual feedback, statistics and reinforcement", async () => {
+    const pilotContext = await browser.newContext({viewport:{width:1365,height:900}});
+    const page = await pilotContext.newPage();
+    page.on('pageerror',error=>consoleErrors.push(error.message));
+    page.on('response',response=>{if(response.status()>=400)broken.push(`${response.status()} ${response.url()}`);});
+    try {
+    const questions = appliedPilot.batch.items.map((item) => ({ ...bank.find((q) => q.id === item.id), collection: item.bank, isDemo: false }));
+    assert.equal(questions.length,20);
+    assert.ok(questions.every(q=>q.is_active && q.validation_status==='validated'));
+    await page.goto(`${base}#entrenamiento`);
+    await page.waitForFunction(()=>document.querySelector('#training-availability')?.textContent.includes('pregunta'));
+    const sessionId = `browser-editorial-pilot-${Date.now()}`;
+    const saved = await page.evaluate(async ({questions,sessionId}) => {
+      const { saveActiveTrainingSession } = await import('./assets/js/analytics-storage.js?gsi4');
+      const { createTrainingOptionOrders, questionVersion, trainingQuestionKey } = await import('./assets/js/training-options.js');
+      return saveActiveTrainingSession(false,{sessionId,isDemo:false,startedAt:new Date().toISOString(),lastActivityAt:new Date().toISOString(),configuredQuestions:questions.length,questionRefs:questions.map(q=>({id:q.id,collection:q.collection})),currentIndex:0,responsesByQuestionKey:{},questionStartedAtByQuestionKey:{},shuffleOptions:true,optionOrderByQuestionKey:createTrainingOptionOrders(questions,true),questionVersionsByQuestionKey:Object.fromEntries(questions.map(q=>[trainingQuestionKey(q),questionVersion(q)]))});
+    },{questions,sessionId});
+    assert.equal(saved.saved,true);
+    await page.reload();
+    await page.locator('#training-session .option-button').first().waitFor({state:'visible'});
+    for (const [index,q] of questions.entries()) {
+      assert.equal(await page.locator('#training-session .question-statement').innerText(),q.statement);
+      const wrong=q.options.filter(o=>o.id!==q.correct_option)[index%3].id;
+      await page.locator(`#training-session .option-button[data-option-id="${wrong}"]`).click();
+      assert.ok((await page.locator('.answer-panel').innerText()).includes(q.feedback.incorrect_options[wrong]));
+      const correctLetter=await page.locator(`#training-session .option-button[data-option-id="${q.correct_option}"] .option-letter`).innerText();
+      assert.ok((await page.locator('.answer-panel').innerText()).includes(`La opción correcta es ${correctLetter}:`));
+      await page.getByRole('button',{name:index===questions.length-1?'Finalizar entrenamiento':'Siguiente pregunta',exact:true}).click();
+    }
+    assert.equal(await page.locator('.training-result-failed').count(),20);
+    const records=await page.evaluate(({sessionId,keys})=>{
+      const payload=(suffix)=>JSON.parse(Object.entries(localStorage).find(([key])=>key.endsWith(suffix))[1]).payload;
+      return {attempts:payload('analytics.real.v2').attempts.filter(a=>a.sessionId===sessionId).length,allInReinforcement:keys.every(key=>Boolean(payload('reinforcement.real.v2').records[key]))};
+    },{sessionId,keys:questions.map(q=>`${q.collection}:${q.id}`)});
+    assert.equal(records.attempts,20);
+    assert.equal(records.allInReinforcement,true);
+    for(const route of ['estadisticas','refuerzo']){
+      await page.goto(`${base}#${route}`);
+      await page.locator(`[data-view="${route}"]`).waitFor({state:'visible'});
+    }
+    } finally { await pilotContext.close(); }
+  });
   await check("basic accessibility across main views", async () => {
     const routes = ["inicio", "temario/B1-T01", "plan", "progreso", "entrenamiento", "examen", "practica", "refuerzo", "estadisticas"];
     for (const route of routes) {

@@ -1,14 +1,14 @@
-# GSI-EDITORIAL-001 — revisión propuesta
+# GSI-EDITORIAL-001 — revisión aplicada
 
 Preparado: 2026-10-26. Preguntas: 20.
 
-**Pendiente de tu revisión humana. Esta ficha no aplica ni activa propuestas.**
+**Aceptación humana registrada: Propietario del proyecto (usuario de este chat) · 2026-10-26. Lote aplicado localmente.**
 
-Hash del lote: `9ef7e9e1ebaf5ffb1aaed76f3213baac8779fc90a52f7d262f697ea9315f1d5b`. Las decisiones forman parte del hash; tras decidir, regenere esta ficha antes de vincular la aceptación.
+Hash del lote: `9ef7e9e1ebaf5ffb1aaed76f3213baac8779fc90a52f7d262f697ea9315f1d5b`. Se conserva el hash de la propuesta aprobada; las decisiones efectivas están en el recibo de aceptación.
 
 ## MAN-GSI-P15-075
 
-Decisión: pending_review · acción: revise.
+Decisión: accepted · acción: revise.
 
 Motivo: Conservar los distractores funcionalmente próximos y explicar cada confusión.
 
@@ -44,7 +44,7 @@ Partida: `c021bb2447ba60d9d8bbc24c271fddaf1eb2465113300350b12449f1994dd864` · p
 
 ## MAN-GSI-P17-095
 
-Decisión: pending_review · acción: revise.
+Decisión: accepted · acción: revise.
 
 Motivo: Sustituir distractores sobre MMU y cuentas por confusiones con primitivas de sincronización.
 
@@ -80,7 +80,7 @@ Partida: `7252e48554cf7b647edc5ba4c8d9fa22cc0ab2de440315f7bf3ba5a2c16b53ef` · p
 
 ## MAN-GSI-P16-155
 
-Decisión: pending_review · acción: revise.
+Decisión: accepted · acción: revise.
 
 Motivo: Comparar estrategias de cumplimiento plausibles y explicitar la dependencia de versiones y forma de combinación.
 
@@ -118,7 +118,7 @@ Partida: `4dc6aad9055c7bf6282130207782b3e845ece656f3ed91cd09f796c0544afa4a` · p
 
 ## MAN-GSI-P14-014
 
-Decisión: pending_review · acción: revise.
+Decisión: accepted · acción: revise.
 
 Motivo: Mantener la evaluación conceptual del artículo 55.2 con alternativas paralelas sobre derechos y garantías, sin concentrar las condiciones en la correcta.
 
@@ -154,7 +154,7 @@ Partida: `33032fc8b7f051a4e5b528b650391aca2c8fae321eb64b0a82ba3905842244af` · p
 
 ## AI-GSI-B2-T06-015
 
-Decisión: pending_review · acción: revise.
+Decisión: accepted · acción: revise.
 
 Motivo: Aplicar la idempotencia a una repetición de DELETE con respuestas distintas; separar efecto solicitado, seguridad y efectos auxiliares.
 
@@ -190,7 +190,7 @@ Partida: `b59d8bd8f8f136f12256690c0cb4cf71caaded35dbfca0eda4a16a19a17c03c0` · p
 
 ## AI-GSI-B2-T06-012
 
-Decisión: pending_review · acción: revise.
+Decisión: accepted · acción: revise.
 
 Motivo: Usar responsabilidades cercanas del ecosistema de servicios como distractores.
 
@@ -226,7 +226,7 @@ Partida: `742caafbce6abaf86fab82a4c05ce53354387a526a05403acf74eb4082372f82` · p
 
 ## AI-GSI-B2-T10-019
 
-Decisión: pending_review · acción: revise.
+Decisión: accepted · acción: revise.
 
 Motivo: Comparar funciones del ENS sin confundir categoría, amenaza y selección de medidas.
 
@@ -262,7 +262,7 @@ Partida: `10a6638adf4c93e71ea720f6ce9791351bc34e2d599ef45f1791a877a2ec7e91` · p
 
 ## AI-GSI-B2-T13-001
 
-Decisión: pending_review · acción: revise.
+Decisión: accepted · acción: revise.
 
 Motivo: Evaluar continuidad eléctrica con un microcaso de arranque del grupo electrógeno y distinguir reserva de energía, acondicionamiento, redundancia y conmutación.
 
@@ -299,7 +299,7 @@ Partida: `dd7374acfad4e38b8958f08a1dae9f971abb7b6cd1dbd26986b818de4d396a37` · p
 
 ## AI-GSI-B2-T15-001
 
-Decisión: pending_review · acción: revise.
+Decisión: accepted · acción: revise.
 
 Motivo: Explicitar el carácter obligatorio del requisito y evitar compensarlo con precio.
 
@@ -335,7 +335,7 @@ Partida: `9199336400b0882c090ac843980749c4aa12146b4cd51147f031f5ecdb799fd3` · p
 
 ## AI-GSI-B3-T01-002
 
-Decisión: pending_review · acción: revise.
+Decisión: accepted · acción: revise.
 
 Motivo: Distinguir organización del ciclo y prácticas de trabajo sin caricaturizar las metodologías.
 
@@ -371,7 +371,7 @@ Partida: `2e8b92111e3ac3ca79c0da7be7aaa88a6bfada816efa78d10891228098ad5582` · p
 
 ## AI-GSI-B3-T01-004
 
-Decisión: pending_review · acción: revise.
+Decisión: accepted · acción: revise.
 
 Motivo: Aplicar el riesgo de feedback tardío a un proyecto en cascada con requisitos cambiantes y comparar riesgos de gestión próximos.
 
@@ -408,7 +408,7 @@ Partida: `5d993bef7e8cae9e6dff27c2cfe4e429c73e63c3f702a39f7ab56e3f466e3b2b` · p
 
 ## AI-GSI-B3-T02-004
 
-Decisión: pending_review · acción: revise.
+Decisión: accepted · acción: revise.
 
 Motivo: Eliminar la referencia a una tabla no mostrada y comparar enfoques de planificación reales.
 
@@ -444,7 +444,7 @@ Partida: `5b5cc3a67340648dadbfe9313c59c90b1693c4aa8e70073aa7239893721ba4cc` · p
 
 ## AI-GSI-B3-T02-013
 
-Decisión: pending_review · acción: revise.
+Decisión: accepted · acción: revise.
 
 Motivo: Comparar registros incompletos del riesgo con una gestión que permite actuar y seguirlo.
 
@@ -480,7 +480,7 @@ Partida: `cd23a07a85a545581bb2325db7bfdc81bb73d649ddd949a380e0e4c4dcace9f9` · p
 
 ## AI-GSI-B3-T03-005
 
-Decisión: pending_review · acción: revise.
+Decisión: accepted · acción: revise.
 
 Motivo: Comparar requisitos de rendimiento próximos y precisar la condición de aceptación.
 
@@ -516,7 +516,7 @@ Partida: `a3afb60252cb6e1be71c161349e7a0e582a171238bfaa752dbe4fec0c199de23` · p
 
 ## AI-GSI-B3-T03-017
 
-Decisión: pending_review · acción: revise.
+Decisión: accepted · acción: revise.
 
 Motivo: Diferenciar una especificación de requisitos de otros documentos de ingeniería.
 
@@ -552,7 +552,7 @@ Partida: `40fde0b0327fd70088c0dbd766db3d213c3a395c087c2804c2cfa009521c4c30` · p
 
 ## AI-GSI-B3-T04-001
 
-Decisión: pending_review · acción: revise.
+Decisión: accepted · acción: revise.
 
 Motivo: Contrastar niveles del modelo de datos en lugar de parámetros físicos aislados.
 
@@ -588,7 +588,7 @@ Partida: `101bae38c869ea9803163c66c2177fe524109d679a431321d8e25f17dc6703a4` · p
 
 ## AI-GSI-B3-T04-020
 
-Decisión: pending_review · acción: revise.
+Decisión: accepted · acción: revise.
 
 Motivo: Separar particionado, índices, fragmentación lógica y replicación.
 
@@ -624,7 +624,7 @@ Partida: `cb133c5724f1d40391297c0416e021ded0e211b20de3fc051a83fa5bf3bd3206` · p
 
 ## AI-GSI-B3-T06-007
 
-Decisión: pending_review · acción: revise.
+Decisión: accepted · acción: revise.
 
 Motivo: Precisar que la diferencia está en el paso a producción y no en omitir controles.
 
@@ -660,7 +660,7 @@ Partida: `71cbd637de9879a705588b65b199102b452633762b42d831358b87a775db7d72` · p
 
 ## AI-GSI-B3-T06-010
 
-Decisión: pending_review · acción: revise.
+Decisión: accepted · acción: revise.
 
 Motivo: Distinguir IaC de inventario, automatización de interfaz y documentos operativos.
 
@@ -696,7 +696,7 @@ Partida: `f6bfe72601261168d810658d749360ef2242477923a77592cef94080fd283faa` · p
 
 ## AI-GSI-B3-T07-003
 
-Decisión: pending_review · acción: revise.
+Decisión: accepted · acción: revise.
 
 Motivo: Comparar secuencias causales próximas sin afirmar que todo defecto produce siempre un fallo.
 

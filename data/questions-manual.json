@@ -2,8 +2,8 @@
   "metadata": {
     "dataset_type": "manual",
     "schema_version": "1.0.0",
-    "data_version": "2.0.4",
-    "updated_at": "2026-10-23",
+    "data_version": "2.0.5",
+    "updated_at": "2026-10-26",
     "rights": {
       "sourceName": "Prácticas y test GSI del proyecto",
       "sourceUrl": "https://github.com/AngeldelaCalleFernandez/Preparacion-GSI",
@@ -857,29 +857,34 @@
       "topic_id": "B1-T01",
       "subtopic": "Base: I.01 §6",
       "exam": null,
-      "statement": "¿Qué afirmación sobre la suspensión individual del artículo 55.2 es correcta?",
+      "statement": "Para personas determinadas investigadas por actuaciones de bandas armadas o elementos terroristas, ¿qué combinación de derechos y garantías corresponde a la suspensión individual del artículo 55.2 de la Constitución?",
       "options": [
         {
           "id": "A",
-          "text": "Permitir que una autoridad administrativa suspenda cualquier derecho del Título I, sin intervención judicial ni determinación individual."
+          "text": "Arts. 17.2, 18.2 y 18.3; autorización administrativa y control parlamentario, sin intervención judicial."
         },
         {
           "id": "B",
-          "text": "Aplicarse exclusivamente durante el estado de sitio y desaparecer como posibilidad constitucional fuera de esa declaración general."
+          "text": "Arts. 17.2, 18.2 y 18.3; intervención judicial y control parlamentario, previa declaración de excepción o sitio."
         },
         {
           "id": "C",
-          "text": "Comprender exactamente los mismos derechos y requisitos que la suspensión general, sin especialidades por sujeto o investigación."
+          "text": "Arts. 17.2, 18.2 y 21.1; intervención judicial y control parlamentario, con desarrollo mediante ley orgánica."
         },
         {
           "id": "D",
-          "text": "Puede afectar a derechos concretos de los artículos 17.2, 18.2 y 18.3 para personas determinadas en investigaciones vinculadas a bandas armadas o terrorismo, con garantías."
+          "text": "Arts. 17.2, 18.2 y 18.3; intervención judicial y control parlamentario, con desarrollo mediante ley orgánica."
         }
       ],
       "correct_option": "D",
       "feedback": {
-        "correct": "La suspensión individual tiene objeto, derechos y garantías propios; no coincide con la general.",
-        "incorrect": "Según el solucionario: La suspensión individual tiene objeto, derechos y garantías propios; no coincide con la general."
+        "correct": "El artículo 55.2 permite que una ley orgánica determine los casos y la forma de suspensión individual de los derechos de los artículos 17.2, 18.2 y 18.3. Exige intervención judicial y control parlamentario, dentro de las investigaciones descritas.",
+        "incorrect": "Revisa la distinción conceptual entre la respuesta correcta y la alternativa elegida.",
+        "incorrect_options": {
+          "A": "La intervención judicial es una garantía necesaria; una autorización administrativa no la sustituye.",
+          "B": "La declaración de excepción o sitio pertenece al régimen de suspensión general del apartado 1; no es el requisito del régimen individual del apartado 2.",
+          "C": "El artículo 55.2 incluye el secreto de las comunicaciones del artículo 18.3, no el derecho de reunión del artículo 21.1."
+        }
       },
       "source": {
         "source_id": "SRC-GSI-P14-SOL",
@@ -890,7 +895,17 @@
         "question_source_id": "SRC-GSI-P14-CUADERNO",
         "question_document_id": "DOC-GSI-P14-CUADERNO",
         "question_locator": "Pregunta 14; índice nativo 5288",
-        "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+        "editorial_references": [
+          {
+            "title": "Constitución Española",
+            "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229#a55",
+            "locator": "Artículo 55, apartados 1 y 2",
+            "version": "Texto consolidado consultado",
+            "checked_at": "2026-10-26"
+          }
+        ],
+        "editorial_revision_id": "GSI-EDITORIAL-001"
       },
       "provenance": {
         "type": "curated",
@@ -909,7 +924,7 @@
       ],
       "is_active": true,
       "created_at": "2026-09-14",
-      "updated_at": "2026-09-14"
+      "updated_at": "2026-10-26"
     },
     {
       "id": "MAN-GSI-P14-015",
@@ -14958,8 +14973,13 @@
       ],
       "correct_option": "C",
       "feedback": {
-        "correct": "El proceso de obtener datos de la petición y construir/asignar parámetros u objetos del modelo de entrada. Binding transforma fuentes HTTP en valores que las acciones/endpoints pueden usar.",
-        "incorrect": "Según el solucionario: El proceso de obtener datos de la petición y construir/asignar parámetros u objetos del modelo de entrada. Binding transforma fuentes HTTP en valores que las acciones/endpoints pueden usar."
+        "correct": "El model binding obtiene valores de la petición y los convierte en parámetros o propiedades del modelo de entrada. La validación comprueba después las reglas del modelo.",
+        "incorrect": "Revisa la distinción conceptual entre la respuesta correcta y la alternativa elegida.",
+        "incorrect_options": {
+          "A": "Seleccionar el endpoint es responsabilidad del routing; no construye el modelo de entrada.",
+          "B": "Comprobar reglas corresponde a validación; se realiza sobre los datos vinculados al modelo.",
+          "D": "La inyección de dependencias resuelve servicios registrados; no convierte datos de la petición en el modelo."
+        }
       },
       "source": {
         "source_id": "SRC-GSI-P15-SOL",
@@ -14970,7 +14990,17 @@
         "question_source_id": "SRC-GSI-P15-CUADERNO",
         "question_document_id": "DOC-GSI-P15-CUADERNO",
         "question_locator": "Pregunta 75; índice nativo 26117",
-        "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+        "editorial_references": [
+          {
+            "title": "Microsoft: Model Binding in ASP.NET Core",
+            "url": "https://learn.microsoft.com/en-us/aspnet/core/mvc/models/model-binding?view=aspnetcore-10.0",
+            "locator": "What is Model binding; Model binding and validation",
+            "version": "ASP.NET Core 10.0",
+            "checked_at": "2026-10-26"
+          }
+        ],
+        "editorial_revision_id": "GSI-EDITORIAL-001"
       },
       "provenance": {
         "type": "curated",
@@ -14989,7 +15019,7 @@
       ],
       "is_active": true,
       "created_at": "2026-09-14",
-      "updated_at": "2026-09-14"
+      "updated_at": "2026-10-26"
     },
     {
       "id": "MAN-GSI-P15-076",
@@ -30301,25 +30331,30 @@
       "options": [
         {
           "id": "A",
-          "text": "Decir que todo es MIT porque es la licencia más permisiva."
+          "text": "Aplicar la licencia más permisiva a la distribución completa, manteniendo solo los avisos que esa licencia exige."
         },
         {
           "id": "B",
-          "text": "Analizar cada componente, su forma de combinación/distribución y compatibilidad; no clasificar la aplicación por una sola etiqueta."
+          "text": "Examinar licencias, versiones y forma de combinación o distribución de cada componente antes de decidir la compatibilidad."
         },
         {
           "id": "C",
-          "text": "Decir que todo es propietario porque existe un componente cerrado."
+          "text": "Aplicar la licencia del componente propietario al conjunto, conservando los demás únicamente en un inventario interno."
         },
         {
           "id": "D",
-          "text": "Ignorar versiones y arquitectura."
+          "text": "Considerar compatibles las licencias citadas por permitir uso comercial, sin distinguir enlace, distribución o versión de GPL."
         }
       ],
       "correct_option": "B",
       "feedback": {
-        "correct": "Los sistemas reales son composiciones y el cumplimiento se evalúa por componentes/relaciones.",
-        "incorrect": "Según el solucionario: Los sistemas reales son composiciones y el cumplimiento se evalúa por componentes/relaciones."
+        "correct": "La coexistencia de componentes no determina una licencia única. Deben examinarse permisos y obligaciones de cada versión y la forma de combinación y distribución, incluidas las condiciones de copyleft.",
+        "incorrect": "Revisa la distinción conceptual entre la respuesta correcta y la alternativa elegida.",
+        "incorrect_options": {
+          "A": "Una licencia permisiva no elimina las obligaciones de los otros componentes.",
+          "C": "Incluir código propietario no permite cambiar unilateralmente las condiciones del código recibido.",
+          "D": "Permitir uso comercial no resuelve la compatibilidad; versiones, enlace y distribución pueden cambiar el análisis."
+        }
       },
       "source": {
         "source_id": "SRC-GSI-P16-SOL",
@@ -30330,7 +30365,31 @@
         "question_source_id": "SRC-GSI-P16-CUADERNO",
         "question_document_id": "DOC-GSI-P16-CUADERNO",
         "question_locator": "Pregunta 155; índice nativo 56289",
-        "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+        "editorial_references": [
+          {
+            "title": "GNU: preguntas frecuentes de licencias",
+            "url": "https://www.gnu.org/licenses/gpl-faq.en.html#GPLIncompatibleLibs",
+            "locator": "GPLIncompatibleLibs; GPLModuleLicense; LicenseCompatibility",
+            "version": "Documento consultado",
+            "checked_at": "2026-10-26"
+          },
+          {
+            "title": "Apache License",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0",
+            "locator": "Apartados 1 y 4: definiciones y redistribución",
+            "version": "2.0",
+            "checked_at": "2026-10-26"
+          },
+          {
+            "title": "OSI: MIT License",
+            "url": "https://opensource.org/license/mit",
+            "locator": "Permiso y condición de conservación del aviso",
+            "version": "MIT",
+            "checked_at": "2026-10-26"
+          }
+        ],
+        "editorial_revision_id": "GSI-EDITORIAL-001"
       },
       "provenance": {
         "type": "curated",
@@ -30349,7 +30408,7 @@
       ],
       "is_active": true,
       "created_at": "2026-09-14",
-      "updated_at": "2026-09-14"
+      "updated_at": "2026-10-26"
     },
     {
       "id": "MAN-GSI-P16-156",
@@ -36701,25 +36760,30 @@
       "options": [
         {
           "id": "A",
-          "text": "Forzar que se ejecute un único hilo en todo el sistema, aunque existan recursos independientes y varios permisos disponibles."
+          "text": "Garantizar exclusión mutua con propiedad del bloqueo y liberación reservada al hilo que lo adquirió."
         },
         {
           "id": "B",
-          "text": "Controlar acceso concurrente a un número limitado de recursos o señalizar disponibilidad."
+          "text": "Gestionar permisos para limitar accesos concurrentes a recursos o señalizar su disponibilidad."
         },
         {
           "id": "C",
-          "text": "Sustituir la MMU y traducir por software todas las direcciones virtuales a marcos físicos antes de permitir un acceso concurrente."
+          "text": "Bloquear al grupo hasta que todos los participantes alcancen el mismo punto de sincronización."
         },
         {
           "id": "D",
-          "text": "Crear y eliminar cuentas del sistema operativo según aumenta o disminuye el número de recursos disponibles para los procesos."
+          "text": "Conservar en una cola los datos enviados entre productores y consumidores para su lectura posterior."
         }
       ],
       "correct_option": "B",
       "feedback": {
-        "correct": "Su contador representa unidades disponibles o eventos según diseño.",
-        "incorrect": "Según el solucionario: Su contador representa unidades disponibles o eventos según diseño."
+        "correct": "El contador representa permisos disponibles: adquirir consume un permiso y liberar lo devuelve. Con varios permisos permite acceso concurrente limitado; un semáforo no exige propiedad del hilo.",
+        "incorrect": "Revisa la distinción conceptual entre la respuesta correcta y la alternativa elegida.",
+        "incorrect_options": {
+          "A": "Describe la propiedad característica de ciertos bloqueos; un semáforo puede liberarse desde otro hilo.",
+          "C": "La reunión de un grupo en un punto describe una barrera, no un contador de permisos.",
+          "D": "Una cola transporta elementos; el semáforo cuenta permisos, aunque pueda coordinar el uso de una cola."
+        }
       },
       "source": {
         "source_id": "SRC-GSI-P17-SOL",
@@ -36730,7 +36794,17 @@
         "question_source_id": "SRC-GSI-P17-CUADERNO",
         "question_document_id": "DOC-GSI-P17-CUADERNO",
         "question_locator": "Pregunta 95; índice nativo 32759",
-        "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+        "editorial_references": [
+          {
+            "title": "Oracle: Semaphore",
+            "url": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/Semaphore.html",
+            "locator": "Class description; acquire; release; ownership",
+            "version": "Java SE 25",
+            "checked_at": "2026-10-26"
+          }
+        ],
+        "editorial_revision_id": "GSI-EDITORIAL-001"
       },
       "provenance": {
         "type": "curated",
@@ -36749,7 +36823,7 @@
       ],
       "is_active": true,
       "created_at": "2026-09-14",
-      "updated_at": "2026-09-14"
+      "updated_at": "2026-10-26"
     },
     {
       "id": "MAN-GSI-P17-096",

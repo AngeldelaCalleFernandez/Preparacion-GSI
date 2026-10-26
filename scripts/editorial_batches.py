@@ -262,9 +262,13 @@ def main():
         verify_ledger()
         if args.batch:
             batch = validate_batch(load(args.batch))
-            materialize(batch, banks())
+            receipt = next((entry for entry in load(ROOT / LEDGER)['batches'] if entry['batch']['id'] == batch['id']), None)
+            if receipt:
+                require(digest(receipt['batch']) == digest(batch), 'El lote indicado difiere del original aprobado y aplicado.')
+                require(not args.apply, 'Este lote ya está aplicado; no se repite su aplicación.')
+            else:
+                materialize(batch, banks())
             if args.render:
-                receipt = next((entry for entry in load(ROOT / LEDGER)['batches'] if entry['batch']['id'] == batch['id']), None)
                 text = render_batch(batch, receipt['approval'] if receipt else None)
                 require(not args.render.exists() or args.render.read_text('utf-8') == text, 'La ficha de salida ya existe con contenido distinto; use otro nombre.')
                 args.render.parent.mkdir(parents=True, exist_ok=True)

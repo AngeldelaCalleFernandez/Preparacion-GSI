@@ -169,7 +169,7 @@ También se comprueban puntuación, temporizadores, persistencia, exportación e
 
 La criba de calidad editorial es independiente de la validez estructural. El comando `python scripts/analyze_question_quality.py --check` comprueba que el informe y la cola de revisión coincidan con los bancos sin cambiar ninguna pregunta.
 
-La [mejora del banco iniciada el 26 de octubre](docs/GSI_MEJORA_TESTS.md) incorpora señales graduales de longitud y feedback y una cola de revisión de 1.762 preguntas manuales e IA. El [piloto de 20 preguntas](docs/GSI_REVISION_PILOTO_001.md) contiene propuestas antes/después y fuentes primarias: permanece pendiente de aceptación humana y no modifica los bancos activos. La dificultad continúa siendo orientativa.
+La [mejora del banco iniciada el 26 de octubre](docs/GSI_MEJORA_TESTS.md) incorpora señales graduales de longitud y feedback y una cola de revisión de 1.762 preguntas manuales e IA. El [piloto de 20 preguntas](docs/GSI_REVISION_PILOTO_001.md) se ha aplicado localmente tras la aceptación editorial expresa del propietario, vinculada al hash exacto aprobado. Conserva los IDs y las claves; la [verificación del lote](docs/GSI_APLICACION_LOTE_001.md) documenta fuentes, límites y validación. Quedan 1.742 preguntas pendientes de esta nueva revisión. La dificultad continúa siendo orientativa.
 
 La misma suite se ejecuta en GitHub Actions para cada `pull_request`, para cambios en `gsi-only-final` y ramas `codex/**`, y de forma manual. El flujo instala sus dependencias, usa Chrome real y conserva durante 14 días los logs y capturas aunque una comprobación falle.
 
