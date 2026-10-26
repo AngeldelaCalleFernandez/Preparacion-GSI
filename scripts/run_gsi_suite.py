@@ -19,6 +19,7 @@ def main():
     bundled = Path.home() / '.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.mjs'
     if not env.get('PLAYWRIGHT_MODULE') and bundled.is_file():
         env['PLAYWRIGHT_MODULE'] = str(bundled)
+    browser_channel = env.get('PLAYWRIGHT_CHANNEL', 'chrome')
     stages = [
         ('Integridad y cobertura GSI', [sys.executable, 'scripts/validate_gsi_final.py']),
         ('JSON y esquemas', [sys.executable, 'scripts/validate_json.py']),
@@ -56,7 +57,7 @@ def main():
     technical = any(r['exit_code'] != 0 and not (r['name'] == 'Integridad y cobertura GSI' and r['exit_code'] == 2) for r in results)
     pending = any(r['name'] == 'Integridad y cobertura GSI' and r['exit_code'] == 2 for r in results)
     code = 1 if technical else 2 if pending else 0
-    report = {'date': datetime.now(timezone.utc).isoformat(), 'exit_code': code, 'technical_pass': not technical, 'release_ready': code == 0, 'stages': results}
+    report = {'date': datetime.now(timezone.utc).isoformat(), 'browser_channel': browser_channel, 'exit_code': code, 'technical_pass': not technical, 'release_ready': code == 0, 'stages': results}
     (ROOT / 'logs').mkdir(exist_ok=True)
     (ROOT / 'logs/gsi-suite.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print(f'Suite completa: código {code}. Informe: logs/gsi-suite.json', flush=True)

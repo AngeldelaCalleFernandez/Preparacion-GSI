@@ -59,7 +59,7 @@ def main() -> int:
             errors.append(f"docs/GSI_VIGENCIA.md no refleja {update_id}.")
 
     audit = read("docs/FINAL_GSI_AUDIT.md")
-    if "## Estado vigente: 22 de octubre de 2026" not in audit:
+    if "## Estado vigente: 23 de octubre de 2026" not in audit:
         errors.append("docs/FINAL_GSI_AUDIT.md no abre con el estado vigente de esta revisión.")
     if "Conclusión histórica, superada" not in audit:
         errors.append("docs/FINAL_GSI_AUDIT.md no distingue la conclusión histórica pendiente.")

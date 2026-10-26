@@ -2,21 +2,29 @@
 
 > **Aviso de estado:** este documento conserva auditorías y resultados históricos de distintas fases del proyecto. Para el estado vigente del saneamiento de fuentes y derechos de terceros, consulte [AUDITORIA_SANEAMIENTO_PREPARATIC.md](../AUDITORIA_SANEAMIENTO_PREPARATIC.md). Para el resultado técnico vigente, consulte [logs/gsi-suite.json](../logs/gsi-suite.json).
 
-## Estado vigente: 22 de octubre de 2026
+## Estado vigente: 23 de octubre de 2026
+
+Actualización editorial del 26 de octubre de 2026: se aplicaron con aprobación humana expresa los lotes 21 a 25 y la revisión residual posterior; las 496 propuestas de la cola inicial y los 18 hallazgos manuales restantes están resueltos.
 
 La aplicación mantiene los **57 temas** del programa y **1.964 preguntas activas y validadas**: 959 manuales/curadas, 803 generadas por IA y 202 oficiales del INAP. Los bancos permanecen separados. La aceptación de las 803 preguntas generadas está vinculada a la confirmación y a los hashes registrados; no equivale a una revisión editorial independiente pregunta por pregunta.
 
 La última suite registrada terminó con código 0: 19.237 controles de integridad, 21 archivos de datos contra 19 esquemas, 95 pruebas unitarias, 289 pruebas de regresión, seis pruebas específicas del analizador editorial, cinco de jerarquía del temario y 80 comprobaciones funcionales. La evidencia detallada y fechada es [logs/gsi-suite.json](../logs/gsi-suite.json).
 
-Esta revisión ejecuta el plan de mejora posterior a la auditoría: documentación reproducible, criba editorial, selección equilibrada, jerarquía del temario, carga diferida, automatización continua y controles básicos de accesibilidad. Permanecen como trabajo editorial la revisión humana de los 496 candidatos manuales y, como ampliación técnica, probar navegadores adicionales a Chrome; estas tareas no invalidan el resultado técnico actual.
+Esta revisión ejecuta el plan de mejora posterior a la auditoría: documentación reproducible, criba editorial, selección equilibrada, jerarquía del temario, carga diferida, automatización continua y controles básicos de accesibilidad. Los lotes de revisión humana han corregido los 496 candidatos manuales de la cola inicial y la [revisión residual](GSI_MEJORA_EDITORIAL_RESIDUAL.md) resolvió las otras 18 señales manuales. El banco manual no activa ninguna regla de la criba actual. Firefox y Safari/WebKit permanecen como ampliación multinavegador no cubierta; esta limitación no invalida el resultado técnico actual.
 
-La calidad de preguntas cuenta ahora con una [criba reproducible](GSI_CALIDAD_PREGUNTAS.md) y una vista de revisión de solo lectura para los tres bancos. Se han priorizado 496 preguntas manuales por posible pista de longitud; son candidatos de revisión, no errores confirmados. Ningún estado editorial ni respuesta se cambia automáticamente.
+La calidad de preguntas cuenta ahora con una [criba reproducible](GSI_CALIDAD_PREGUNTAS.md) y una vista de revisión de solo lectura para los tres bancos. Los 496 candidatos manuales iniciales por posible pista de longitud recibieron aprobación humana expresa y distractores revisados en los lotes 01 a 25. La comprobación transversal localizó esos IDs una sola vez, confirmó sus claves contra el banco y los solucionarios conservados, y verificó los hashes acumulados previstos. La revisión residual reformuló 51 distractores y eliminó una referencia metatextual del enunciado y feedback de `MAN-GSI-P14-068`; conservó las 18 claves, las respuestas correctas y el resto de metadatos.
 
-La estructura del temario se regenera con una política común que conserva literalmente el texto, convierte en párrafos los fragmentos extensos marcados erróneamente como títulos y evita H1 internos en los derivados. Los 57 Markdown tienen ahora un único H1 de documento y los 57 fragmentos HTML no contienen H1, encabezados-frase ni saltos de jerarquía. Los hashes de los tres bancos de preguntas no cambiaron durante esta corrección.
+La estructura del temario se regenera con una política común que conserva literalmente el texto, convierte en párrafos los fragmentos extensos marcados erróneamente como títulos y evita H1 internos en los derivados. Los 57 Markdown tienen ahora un único H1 de documento y los 57 fragmentos HTML no contienen H1, encabezados-frase ni saltos de jerarquía. Los hashes de los tres bancos no cambiaron durante aquella corrección estructural; las revisiones humanas del 23 al 26 de octubre sí actualizaron de forma intencionada el banco manual, sin modificar los bancos oficial e IA.
 
 La carga inicial ya no descarga los bancos oficial, manual e IA. La portada y las vistas de consulta usan el resumen ligero de cobertura; los bancos se solicitan una sola vez cuando una función de preguntas los necesita y se validan antes de inicializar entrenamiento, examen, refuerzo o estadísticas. El recorrido funcional comprueba tanto la ausencia de esas solicitudes en portada como su carga posterior y el funcionamiento completo de las vistas dependientes.
 
 La suite recorre también las nueve vistas principales para comprobar idioma, foco programático, un único H1 visible, jerarquía sin saltos, textos alternativos, nombres accesibles e identificadores únicos. Esta comprobación detectó y corrigió el H3 de fuente que carecía de H2 previo en Entrenamiento. El flujo de GitHub Actions ejecutará la misma suite en cambios y conservará logs y capturas; su ejecución remota solo podrá confirmarse después de publicar la rama.
+
+## Ampliación multinavegador: 23 de octubre de 2026
+
+La aplicación publicada se comprobó también con Microsoft Edge en escritorio (1365×900) y móvil (390×844). Las nueve vistas cargaron con un único H1 visible, sin identificadores duplicados, imágenes sin texto alternativo, desbordamiento horizontal ni errores de consola. Inicio mostró 57 temas y 1.964 preguntas; Temario mostró los 57 temas oficiales y Entrenamiento terminó de validar las 1.964 preguntas.
+
+Los recorridos de regresión y funcional aceptan ahora el canal instalado mediante `PLAYWRIGHT_CHANNEL`, conservando `chrome` como valor predeterminado. El canal se registra en los tres informes de la suite. Esta ampliación verifica otro navegador Chromium; Firefox y Safari/WebKit siguen sin comprobarse y requieren disponer de sus motores de prueba.
 
 ## Mezcla y feedback de test: 21 de septiembre de 2026
 
