@@ -18,7 +18,7 @@ Exportación reproducible de los tres bancos del producto. Los JSON son la fuent
 | Archivo | SHA-256 |
 | --- | --- |
 | `data/questions-official.json` | `bddf132ba2333d848982263593905206a87e8548179ee7443a8699385c984b9e` |
-| `data/questions-manual.json` | `cd92a993cf225468ccd353b72b2d1ef3ca6c3e0d3b1f8d5b1ce3e649dd203069` |
+| `data/questions-manual.json` | `08261968fde52c7180db82a973eee507cf83251f1f99f7cb188e6047ac286491` |
 | `data/questions-ai.json` | `c1c024271a64ed92773351791353daac8df6f8d034104ef24ae4a367ac81d937` |
 | `data/syllabus.json` | `2370e84e3c098dbe89628cdce92e95e9042a390d2dffe8bb48e3627607750d48` |
 
@@ -484,11 +484,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué afirmación sobre la suspensión individual del artículo 55.2 es correcta?
 
-- **A.** Permite suspender cualquier derecho del Título I por resolución administrativa.
+- **A.** Permitir que una autoridad administrativa suspenda cualquier derecho del Título I, sin intervención judicial ni determinación individual.
 
-- **B.** Solo puede aplicarse durante un estado de sitio.
+- **B.** Aplicarse exclusivamente durante el estado de sitio y desaparecer como posibilidad constitucional fuera de esa declaración general.
 
-- **C.** Tiene exactamente la misma lista de derechos que la suspensión general.
+- **C.** Comprender exactamente los mismos derechos y requisitos que la suspensión general, sin especialidades por sujeto o investigación.
 
 - **D.** Puede afectar a derechos concretos de los artículos 17.2, 18.2 y 18.3 para personas determinadas en investigaciones vinculadas a bandas armadas o terrorismo, con garantías.
 
@@ -1546,13 +1546,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** La cuestión de confianza la plantea:
 
-- **A.** El Senado por mayoría simple.
+- **A.** El Senado, mediante acuerdo por mayoría simple adoptado después de solicitar al Congreso un pronunciamiento sobre el programa del Gobierno.
 
 - **B.** El Presidente del Gobierno, previa deliberación del Consejo de Ministros.
 
-- **C.** El Congreso por mayoría absoluta.
+- **C.** El Congreso de los Diputados, mediante acuerdo previo por mayoría absoluta que obliga al Presidente a someterse a la votación de confianza.
 
-- **D.** El Rey a iniciativa propia.
+- **D.** El Rey, por iniciativa propia y sin propuesta del Presidente del Gobierno, tras consultar a los representantes de los grupos políticos.
 
 **Respuesta correcta:** **B.** El Presidente del Gobierno, previa deliberación del Consejo de Ministros.
 
@@ -1714,11 +1714,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** La moción de censura y la cuestión de confianza se diferencian, entre otras cosas, en que:
 
-- **A.** Ambas requieren mayoría absoluta y candidato alternativo.
+- **A.** Ambas iniciativas requieren mayoría absoluta del Congreso y deben incluir desde el principio un candidato alternativo a la Presidencia.
 
-- **B.** La confianza la plantea el Senado.
+- **B.** La cuestión de confianza la plantea el Senado tras deliberar y obliga al Congreso a votar la continuidad del Gobierno por mayoría absoluta.
 
-- **C.** La censura puede aprobarse por mayoría simple.
+- **C.** La moción de censura puede aprobarse por mayoría simple y no necesita proponer una alternativa para sustituir al Presidente del Gobierno.
 
 - **D.** La censura es constructiva y exige mayoría absoluta; la confianza la plantea el Presidente y se otorga por mayoría simple.
 
@@ -2007,11 +2007,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 - **A.** Debe analizarse la naturaleza de los datos, la base, el interés público y la posibilidad de disociación; no basta negar automáticamente.
 
-- **B.** La solicitud debe inadmitirse siempre.
+- **B.** La presencia de cualquier dato personal obliga a inadmitir la solicitud completa, sin examinar su naturaleza ni valorar un acceso parcial.
 
-- **C.** El RGPD deja de aplicarse después del acceso.
+- **C.** El RGPD deja de aplicarse en cuanto se reconoce el derecho de acceso, por lo que la reutilización posterior no queda sujeta a protección.
 
-- **D.** Solo puede concederse con consentimiento en cualquier supuesto.
+- **D.** El acceso requiere consentimiento del afectado en todos los casos y no puede apoyarse en previsiones legales o intereses públicos concurrentes.
 
 **Respuesta correcta:** **A.** Debe analizarse la naturaleza de los datos, la base, el interés público y la posibilidad de disociación; no basta negar automáticamente.
 
@@ -2680,13 +2680,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** Accesibilidad universal significa, en esencia:
 
-- **A.** Ofrecer siempre un único canal digital.
+- **A.** Ofrecer siempre un único canal digital idéntico para todas las personas, evitando alternativas que puedan adaptar la interacción a necesidades distintas.
 
 - **B.** Diseñar entornos, bienes, servicios y procesos para que puedan ser utilizados en condiciones adecuadas por todas las personas, conforme al marco aplicable.
 
-- **C.** Realizar únicamente adaptaciones posteriores cuando alguien las solicite.
+- **C.** Realizar únicamente adaptaciones posteriores cuando una persona las solicite, sin incorporar criterios de accesibilidad al diseño inicial del entorno.
 
-- **D.** Eliminar cualquier necesidad de ajustes razonables.
+- **D.** Eliminar cualquier necesidad de ajustes razonables porque el diseño general garantiza por sí mismo el acceso efectivo en todas las situaciones posibles.
 
 **Respuesta correcta:** **B.** Diseñar entornos, bienes, servicios y procesos para que puedan ser utilizados en condiciones adecuadas por todas las personas, conforme al marco aplicable.
 
@@ -2824,11 +2824,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** Una acción positiva:
 
-- **A.** Es siempre discriminación directa prohibida.
+- **A.** Constituir siempre discriminación directa prohibida, aunque persiga corregir una desigualdad de hecho con medidas razonables y proporcionadas.
 
-- **B.** Solo puede adoptarse por sentencia penal.
+- **B.** Poder adoptarse únicamente mediante sentencia penal firme, sin que el legislador o los poderes públicos puedan establecer medidas específicas.
 
-- **C.** No aparece en la LO 3/2007.
+- **C.** Carecer de reconocimiento en la Ley Orgánica 3/2007, que no contempla actuaciones dirigidas a corregir situaciones patentes de desigualdad.
 
 - **D.** Puede ser compatible con la igualdad cuando se adopta en el marco y con las condiciones legales.
 
@@ -4321,11 +4321,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** El Registro Electrónico General:
 
-- **A.** Es el expediente electrónico.
+- **A.** Ser el propio expediente electrónico y contener necesariamente todos los documentos, índices, firmas y actuaciones de cada procedimiento.
 
-- **B.** Solo funciona en horario de oficina.
+- **B.** Admitir documentos únicamente durante el horario de oficina, aunque el canal electrónico permanezca técnicamente disponible el resto del día.
 
-- **C.** Sustituye a cualquier sistema de notificaciones.
+- **C.** Sustituir a todos los sistemas de notificaciones y practicar por sí mismo cualquier comunicación dirigida a las personas interesadas.
 
 - **D.** Puede recibir documentos electrónicamente y genera recibo/acreditación con fecha/hora y asiento.
 
@@ -4779,11 +4779,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 - **A.** No son sinónimos: la cooperación parte de compromisos voluntarios; la coordinación garantiza coherencia cuando existe competencia para coordinar.
 
-- **B.** Son exactamente lo mismo.
+- **B.** Son conceptos jurídicamente idénticos que describen una relación voluntaria y pueden intercambiarse sin atender a las competencias existentes.
 
-- **C.** La cooperación es obligatoria y la coordinación siempre voluntaria.
+- **C.** La cooperación impone siempre obligaciones unilaterales, mientras la coordinación depende exclusivamente de compromisos voluntarios entre partes.
 
-- **D.** Solo se aplican entre órganos del mismo ministerio.
+- **D.** Solo operan entre órganos de un mismo ministerio y no resultan aplicables a relaciones entre Administraciones territoriales diferentes.
 
 **Respuesta correcta:** **A.** No son sinónimos: la cooperación parte de compromisos voluntarios; la coordinación garantiza coherencia cuando existe competencia para coordinar.
 
@@ -4897,13 +4897,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** Un ciudadano presenta electrónicamente una solicitud en sábado. ¿Cuál es la idea correcta?
 
-- **A.** La presentación es inválida por realizarse en sábado.
+- **A.** Invalidar la solicitud por haberse presentado en sábado, aunque el registro electrónico permita remitir documentos todos los días del año.
 
-- **B.** Se considera automáticamente presentada el viernes anterior.
+- **B.** Retrotraer automáticamente la presentación al viernes anterior para que toda entrada efectuada en un día inhábil conste en uno hábil.
 
 - **C.** El registro puede estar disponible 24x7, pero el cómputo de plazos se rige por las reglas de días hábiles/inhábiles y hora oficial.
 
-- **D.** Al ser electrónico, todos los días pasan a ser hábiles.
+- **D.** Convertir todos los sábados, domingos y festivos en días hábiles para cualquier procedimiento por el solo hecho de utilizar un registro electrónico.
 
 **Respuesta correcta:** **C.** El registro puede estar disponible 24x7, pero el cómputo de plazos se rige por las reglas de días hábiles/inhábiles y hora oficial.
 
@@ -5815,13 +5815,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** VALIDe se orienta principalmente a:
 
-- **A.** Directorio de oficinas.
+- **A.** Mantener el directorio oficial de todas las oficinas de asistencia, con sus horarios, unidades responsables y coordenadas geográficas.
 
-- **B.** Gestión de expedientes interoperables.
+- **B.** Gestionar íntegramente expedientes administrativos interoperables, desde su iniciación hasta el archivo definitivo de cada procedimiento.
 
 - **C.** Verificación/validación y utilidades de firma y certificados de forma interactiva.
 
-- **D.** Interconexión de registros.
+- **D.** Interconectar registros electrónicos y distribuir automáticamente cada asiento entre las unidades administrativas destinatarias.
 
 **Respuesta correcta:** **C.** Verificación/validación y utilidades de firma y certificados de forma interactiva.
 
@@ -6127,11 +6127,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué afirmación sobre la CSAE es correcta?
 
-- **A.** Es la autoridad estatal de protección de datos.
+- **A.** La autoridad estatal independiente que supervisa todos los tratamientos de datos personales realizados por las Administraciones públicas.
 
-- **B.** Es una plataforma de autenticación ciudadana.
+- **B.** La plataforma común que autentica directamente a la ciudadanía y emite por sí misma todos los certificados electrónicos administrativos.
 
-- **C.** Es un órgano jurisdiccional para conflictos tecnológicos.
+- **C.** El órgano jurisdiccional especializado que resuelve con carácter vinculante los conflictos tecnológicos entre Administraciones públicas.
 
 - **D.** Es un órgano técnico de cooperación en administración electrónica que trabaja sobre interoperabilidad y actuaciones conjuntas.
 
@@ -6638,13 +6638,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué diferencia conceptual existe entre arquitectura de 32 y 64 bits?
 
-- **A.** La de 64 bits obliga a usar cloud.
+- **A.** La arquitectura de 64 bits obliga a ejecutar las aplicaciones en cloud porque ningún equipo local puede direccionar su espacio de memoria.
 
 - **B.** Entre otros aspectos, cambia el tamaño natural de registros/direcciones y la capacidad de direccionamiento de memoria.
 
-- **C.** La de 32 bits no puede ejecutar ningún sistema operativo.
+- **C.** Un procesador de 32 bits no puede ejecutar ningún sistema operativo ni utilizar memoria virtual, protección o multitarea preventiva.
 
-- **D.** La de 64 bits elimina las cachés.
+- **D.** La arquitectura de 64 bits elimina todos los niveles de caché al poder direccionar directamente una cantidad mayor de memoria principal.
 
 **Respuesta correcta:** **B.** Entre otros aspectos, cambia el tamaño natural de registros/direcciones y la capacidad de direccionamiento de memoria.
 
@@ -7648,11 +7648,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 - **A.** Detección de fallo, estado replicado o recuperable, pruebas y procedimiento de retorno/operación.
 
-- **B.** Solo un diagrama sin pruebas.
+- **B.** Disponer solo de un diagrama del componente alternativo, sin realizar pruebas de conmutación ni definir cómo recuperar el servicio principal.
 
-- **C.** Una única copia del componente crítico.
+- **C.** Mantener una única copia del componente crítico y confiar en que pueda reconstruirse después del fallo sin estado replicado ni respaldo.
 
-- **D.** Desactivar monitorización para evitar alertas.
+- **D.** Desactivar la monitorización para reducir alertas y efectuar el cambio manualmente cuando los usuarios comuniquen la indisponibilidad.
 
 **Respuesta correcta:** **A.** Detección de fallo, estado replicado o recuperable, pruebas y procedimiento de retorno/operación.
 
@@ -7742,11 +7742,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** Según NIST, ¿qué significa broad network access?
 
-- **A.** El servicio solo puede usarse desde una LAN privada.
+- **A.** Restringir el servicio a una LAN privada y excluir mecanismos estándar que permiten acceder desde plataformas cliente heterogéneas.
 
-- **B.** La red debe ser siempre inalámbrica.
+- **B.** Exigir que toda conexión utilice una red inalámbrica, aunque el servicio sea accesible mediante enlaces fijos y protocolos convencionales.
 
-- **C.** Todos los clientes comparten una única contraseña.
+- **C.** Hacer que todos los clientes compartan una única contraseña para garantizar que reciben por red exactamente las mismas capacidades.
 
 - **D.** Las capacidades están disponibles por red mediante mecanismos estándar para distintos tipos de clientes.
 
@@ -7958,13 +7958,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué caracteriza a una nube híbrida?
 
-- **A.** Usar dos proveedores públicos sin integración.
+- **A.** Utilizar dos proveedores públicos sin integración, conectividad común ni mecanismos coordinados de identidad, gestión o portabilidad.
 
 - **B.** Integra entornos privados y públicos con mecanismos de interoperabilidad/operación conjunta.
 
-- **C.** Mantener todo exclusivamente on-premise.
+- **C.** Mantener todas las cargas exclusivamente en infraestructura local, sin recursos públicos ni relación operativa con servicios de nube.
 
-- **D.** Ejecutar una única VM local.
+- **D.** Ejecutar una única máquina virtual local y denominar pública la red utilizada para administrarla desde otro equipo de la organización.
 
 **Respuesta correcta:** **B.** Integra entornos privados y públicos con mecanismos de interoperabilidad/operación conjunta.
 
@@ -8006,13 +8006,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué diferencia hay entre región y zona de disponibilidad en muchas nubes?
 
-- **A.** Una zona siempre contiene varias regiones.
+- **A.** Una zona contiene necesariamente varias regiones completas y cada una replica todos sus recursos en el mismo dominio de fallo físico.
 
 - **B.** Una región agrupa ubicaciones geográficas; las zonas buscan aislar fallos dentro de la región.
 
-- **C.** Son términos de licenciamiento de software.
+- **C.** Son categorías de licenciamiento que determinan dónde puede ejecutarse el software, pero no describen la organización geográfica de la nube.
 
-- **D.** No tienen relación con diseño de resiliencia.
+- **D.** No influyen en el diseño de resiliencia porque los fallos de infraestructura afectan siempre por igual a todas las ubicaciones del proveedor.
 
 **Respuesta correcta:** **B.** Una región agrupa ubicaciones geográficas; las zonas buscan aislar fallos dentro de la región.
 
@@ -8080,11 +8080,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 - **A.** Dependencia de servicios, APIs o formatos que hacen costosa la migración a otra solución.
 
-- **B.** Capacidad de salir fácilmente sin coste.
+- **B.** La posibilidad garantizada de trasladar cargas, datos y configuraciones a otro proveedor sin adaptación, coste ni interrupción del servicio.
 
-- **C.** Redundancia automática entre proveedores.
+- **C.** La replicación automática y transparente de todos los recursos entre proveedores independientes sin diseñar mecanismos de portabilidad.
 
-- **D.** Una técnica de cifrado.
+- **D.** Una técnica criptográfica que vincula los datos a la clave del proveedor para impedir que terceros puedan descifrarlos durante el tránsito.
 
 **Respuesta correcta:** **A.** Dependencia de servicios, APIs o formatos que hacen costosa la migración a otra solución.
 
@@ -8126,13 +8126,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué afirmación es correcta sobre cloud y administración?
 
-- **A.** Cloud elimina cualquier necesidad de arquitectura.
+- **A.** Eliminar cualquier necesidad de diseñar arquitectura porque el proveedor decide automáticamente topología, resiliencia y dependencias del cliente.
 
-- **B.** No hace falta monitorización.
+- **B.** Hacer innecesaria la monitorización, ya que los servicios gestionados detectan y resuelven todas las degradaciones posibles de la aplicación.
 
 - **C.** Cloud cambia y automatiza parte de la administración, pero no elimina gobierno, seguridad ni operación.
 
-- **D.** El cliente deja de ser responsable de sus datos.
+- **D.** Transferir al proveedor toda responsabilidad sobre los datos, identidades, configuraciones y decisiones de acceso del cliente.
 
 **Respuesta correcta:** **C.** Cloud cambia y automatiza parte de la administración, pero no elimina gobierno, seguridad ni operación.
 
@@ -8174,13 +8174,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** Una Administración quiere migrar a cloud sin quedar atrapada. ¿Qué requisito es más maduro?
 
-- **A.** Confiar en una promesa comercial sin plan de salida.
+- **A.** Confiar únicamente en una promesa comercial de portabilidad, sin definir formatos, responsables, plazos, costes ni pruebas de salida.
 
 - **B.** Definir portabilidad, formatos, exportación, documentación, costes de salida y pruebas de reversibilidad.
 
-- **C.** Prohibir cualquier copia de datos.
+- **C.** Prohibir cualquier copia o exportación de datos para asegurar su consistencia, aunque esa restricción impida migrarlos a otra solución.
 
-- **D.** No documentar dependencias para simplificar.
+- **D.** No documentar dependencias para simplificar la operación y reconstruirlas solo cuando se decida abandonar al proveedor actual.
 
 **Respuesta correcta:** **B.** Definir portabilidad, formatos, exportación, documentación, costes de salida y pruebas de reversibilidad.
 
@@ -8441,13 +8441,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es un hilo?
 
-- **A.** Un proceso completamente aislado con su propio kernel.
+- **A.** Un proceso aislado que dispone siempre de su propio kernel, espacio de direcciones y copia privada de todos los recursos del sistema.
 
-- **B.** Un dispositivo de bloque.
+- **B.** Un dispositivo de bloque lógico que almacena el contexto de ejecución y conserva las instrucciones pendientes de cada proceso.
 
 - **C.** Una unidad de ejecución dentro de un proceso que comparte gran parte de sus recursos con otros hilos del mismo proceso.
 
-- **D.** Un socket físico de CPU.
+- **D.** Un socket físico de CPU reservado de forma exclusiva para ejecutar una única secuencia de instrucciones durante toda su vida.
 
 **Respuesta correcta:** **C.** Una unidad de ejecución dentro de un proceso que comparte gran parte de sus recursos con otros hilos del mismo proceso.
 
@@ -8657,13 +8657,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué diferencia hay entre concurrencia y paralelismo?
 
-- **A.** Son exactamente sinónimos.
+- **A.** Son términos equivalentes que describen siempre la ejecución simultánea de varias instrucciones en procesadores físicos diferentes.
 
-- **B.** Paralelismo solo existe con un único núcleo.
+- **B.** El paralelismo solo puede producirse en un único núcleo, mientras la concurrencia requiere necesariamente varios procesadores.
 
 - **C.** Concurrencia permite progreso solapado de tareas; paralelismo implica ejecución simultánea real.
 
-- **D.** Concurrencia exige varias máquinas físicas.
+- **D.** La concurrencia exige distribuir cada tarea entre máquinas físicas distintas y no puede existir dentro de un solo sistema operativo.
 
 **Respuesta correcta:** **C.** Concurrencia permite progreso solapado de tareas; paralelismo implica ejecución simultánea real.
 
@@ -8729,13 +8729,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué permite un semáforo de conteo?
 
-- **A.** Ejecutar siempre un único hilo por sistema.
+- **A.** Forzar que se ejecute un único hilo en todo el sistema, aunque existan recursos independientes y varios permisos disponibles.
 
 - **B.** Controlar acceso concurrente a un número limitado de recursos o señalizar disponibilidad.
 
-- **C.** Sustituir la MMU.
+- **C.** Sustituir la MMU y traducir por software todas las direcciones virtuales a marcos físicos antes de permitir un acceso concurrente.
 
-- **D.** Crear usuarios del SO.
+- **D.** Crear y eliminar cuentas del sistema operativo según aumenta o disminuye el número de recursos disponibles para los procesos.
 
 **Respuesta correcta:** **B.** Controlar acceso concurrente a un número limitado de recursos o señalizar disponibilidad.
 
@@ -8827,11 +8827,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 - **A.** El modo kernel tiene privilegios superiores; el modo usuario restringe operaciones directas sobre recursos críticos.
 
-- **B.** Modo usuario siempre ejecuta más rápido por definición.
+- **B.** Ejecutar siempre más rápido en modo usuario por definición, aunque una operación requiera servicios privilegiados o produzca cambios de contexto.
 
-- **C.** Modo kernel es una cuenta de Active Directory.
+- **C.** Ser el modo kernel una cuenta especial de Active Directory que recibe permisos administrativos al iniciar sesión en un equipo del dominio.
 
-- **D.** No existe separación de privilegios en sistemas modernos.
+- **D.** No existir separación de privilegios en sistemas modernos, porque todos los procesos acceden directamente al hardware con las mismas facultades.
 
 **Respuesta correcta:** **A.** El modo kernel tiene privilegios superiores; el modo usuario restringe operaciones directas sobre recursos críticos.
 
@@ -9043,11 +9043,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 - **A.** Elegir qué página retirar de memoria cuando se necesita liberar un marco.
 
-- **B.** Seleccionar el siguiente router.
+- **B.** Seleccionar el siguiente router al que debe enviarse cada paquete cuando varias rutas de red presentan el mismo coste administrativo.
 
-- **C.** Elegir qué usuario inicia sesión.
+- **C.** Elegir qué usuario puede iniciar sesión cuando coinciden varias credenciales válidas para una misma cuenta del sistema operativo.
 
-- **D.** Decidir qué licencia instalar.
+- **D.** Decidir qué licencia de software debe instalarse cuando una aplicación admite ediciones con condiciones de uso diferentes.
 
 **Respuesta correcta:** **A.** Elegir qué página retirar de memoria cuando se necesita liberar un marco.
 
@@ -9137,11 +9137,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es un driver?
 
-- **A.** Firmware grabado necesariamente en la placa.
+- **A.** Firmware grabado necesariamente en la placa del equipo que no puede actualizarse ni interactuar con componentes del sistema operativo.
 
-- **B.** Una aplicación SaaS.
+- **B.** Una aplicación SaaS que administra dispositivos a través de Internet y reemplaza las interfaces locales ofrecidas por el fabricante.
 
-- **C.** Un algoritmo de scheduling.
+- **C.** Un algoritmo de planificación que elige el siguiente proceso y controla cualquier periférico sin conocer sus registros ni protocolo.
 
 - **D.** Software que permite al SO controlar un dispositivo concreto mediante una interfaz apropiada.
 
@@ -9185,13 +9185,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué aporta journaling a un sistema de archivos?
 
-- **A.** Cifrar obligatoriamente todo el disco.
+- **A.** Cifrar obligatoriamente todo el disco y registrar las claves dentro del propio journal para recuperarlas después de cualquier reinicio.
 
-- **B.** Eliminar la necesidad de copias.
+- **B.** Eliminar la necesidad de copias de seguridad porque el registro conserva permanentemente todas las versiones y contenidos de cada archivo.
 
 - **C.** Registrar cambios/operaciones para facilitar recuperación de consistencia tras fallos.
 
-- **D.** Convertir cualquier archivo en ejecutable.
+- **D.** Convertir cualquier archivo en ejecutable al registrar sus cambios, aunque sus permisos y su formato no permitan cargarlo como programa.
 
 **Respuesta correcta:** **C.** Registrar cambios/operaciones para facilitar recuperación de consistencia tras fallos.
 
@@ -9307,11 +9307,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 - **A.** Combina decisiones de diseño de varias familias, sin encajar de forma pura en un único modelo.
 
-- **B.** Que alterna entre Windows y Linux cada segundo.
+- **B.** Alternar automáticamente entre Windows y Linux cada segundo y trasladar los procesos activos de un sistema al otro sin interrupción.
 
-- **C.** Que necesita dos CPUs de fabricantes distintos.
+- **C.** Necesitar dos CPU de fabricantes distintos para repartir entre ellas las funciones propias de un microkernel y de un kernel monolítico.
 
-- **D.** Que carece de gestión de memoria.
+- **D.** Carecer de gestión de memoria y delegar todas las decisiones de paginación, protección y asignación directamente a las aplicaciones.
 
 **Respuesta correcta:** **A.** Combina decisiones de diseño de varias familias, sin encajar de forma pura en un único modelo.
 
@@ -9595,11 +9595,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 - **A.** Gestionar unidades y servicios, arranque y otras funciones de sistema.
 
-- **B.** Ser el kernel Linux.
+- **B.** Ser el propio kernel Linux y gestionar directamente memoria virtual, interrupciones, procesos, dispositivos y llamadas al sistema.
 
-- **C.** Sustituir el sistema de archivos.
+- **C.** Sustituir el sistema de archivos mediante una base de datos de unidades que almacena por sí misma todo el contenido persistente.
 
-- **D.** Ser un compilador C.
+- **D.** Actuar como compilador de C integrado en el arranque y reconstruir todos los servicios desde su código fuente cada vez que se inician.
 
 **Respuesta correcta:** **A.** Gestionar unidades y servicios, arranque y otras funciones de sistema.
 
@@ -9737,13 +9737,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué diferencia hay entre paquete y repositorio de paquetes?
 
-- **A.** Son sinónimos exactos.
+- **A.** Son términos equivalentes para el mismo archivo instalable y ambos incluyen necesariamente el catálogo completo de versiones disponibles.
 
-- **B.** El repositorio solo puede contener código fuente.
+- **B.** El repositorio solo puede almacenar código fuente y no admite binarios, metadatos, firmas ni índices para resolver dependencias.
 
 - **C.** El paquete contiene software/metadatos; el repositorio organiza y distribuye paquetes y actualizaciones.
 
-- **D.** Un paquete es siempre un kernel completo.
+- **D.** Un paquete contiene siempre un kernel completo y reemplaza el sistema operativo antes de instalar cualquier aplicación o biblioteca.
 
 **Respuesta correcta:** **C.** El paquete contiene software/metadatos; el repositorio organiza y distribuye paquetes y actualizaciones.
 
@@ -10073,13 +10073,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué riesgo aumenta con dispositivos BYOD sin una política clara?
 
-- **A.** Desaparición automática de malware.
+- **A.** La desaparición automática del malware porque un dispositivo personal no puede ejecutar código malicioso dentro del entorno corporativo.
 
-- **B.** Cumplimiento garantizado por ser dispositivo personal.
+- **B.** El cumplimiento garantizado por ser propiedad del usuario, sin necesidad de requisitos mínimos, inventario, separación o respuesta ante incidentes.
 
 - **C.** Mezcla de datos personales/corporativos, falta de control de parcheo y dificultad de borrado/retirada selectiva.
 
-- **D.** Menor necesidad de identidad.
+- **D.** Una menor necesidad de gestionar identidad y acceso, ya que la posesión del dispositivo personal autentica por sí sola a su propietario.
 
 **Respuesta correcta:** **C.** Mezcla de datos personales/corporativos, falta de control de parcheo y dificultad de borrado/retirada selectiva.
 
@@ -10265,13 +10265,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué criterio resume mejor una selección tecnológica madura entre móvil, servidor, cloud y HPC?
 
-- **A.** Elegir la tecnología más nueva sin analizar requisitos.
+- **A.** Elegir siempre la tecnología más nueva, porque la fecha de lanzamiento garantiza mejor adecuación, estabilidad y operación para cualquier carga.
 
-- **B.** Usar siempre la misma plataforma para cualquier carga.
+- **B.** Utilizar una única plataforma para móvil, servidor, cloud y HPC, aunque sus requisitos de rendimiento, seguridad y soporte sean diferentes.
 
 - **C.** Alinear arquitectura, rendimiento, seguridad, soporte, operación, coste y reversibilidad con los requisitos reales.
 
-- **D.** Decidir solo por frecuencia de CPU.
+- **D.** Decidir exclusivamente por la frecuencia nominal de CPU, sin valorar arquitectura, memoria, red, coste, ecosistema ni reversibilidad.
 
 **Respuesta correcta:** **C.** Alinear arquitectura, rendimiento, seguridad, soporte, operación, coste y reversibilidad con los requisitos reales.
 
@@ -13744,11 +13744,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 - **A.** Un sistema que incorpora etiquetas o metadatos al contenido para representar estructura, semántica o presentación.
 
-- **B.** Un lenguaje que solo puede ejecutar cálculos numéricos.
+- **B.** Un lenguaje destinado únicamente a ejecutar cálculos numéricos y que no puede describir estructura, semántica ni presentación de contenido.
 
-- **C.** Un protocolo de transporte de red.
+- **C.** Un protocolo de transporte que entrega paquetes entre nodos de una red y utiliza etiquetas para seleccionar la ruta física de cada conexión.
 
-- **D.** Un sistema operativo de propósito general.
+- **D.** Un sistema operativo de propósito general que administra procesos, memoria y dispositivos mediante documentos etiquetados por el usuario.
 
 **Respuesta correcta:** **A.** Un sistema que incorpora etiquetas o metadatos al contenido para representar estructura, semántica o presentación.
 
@@ -13766,11 +13766,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es SGML?
 
-- **A.** Una versión moderna de JavaScript.
+- **A.** Una versión moderna de JavaScript orientada a generar de forma dinámica etiquetas HTML y estilos en aplicaciones web interactivas.
 
-- **B.** Un protocolo de sindicación web.
+- **B.** Un protocolo de sindicación que distribuye titulares y resúmenes mediante canales actualizados periódicamente por los publicadores.
 
-- **C.** Un sistema de bases de datos.
+- **C.** Un sistema gestor de bases de datos documentales que almacena registros jerárquicos y ejecuta consultas sobre sus elementos.
 
 - **D.** Un metalenguaje histórico estandarizado para definir lenguajes de marcado.
 
@@ -14008,11 +14008,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 - **A.** Un lenguaje de hojas de estilo para describir presentación de documentos.
 
-- **B.** Un lenguaje de consulta XML.
+- **B.** Un lenguaje de consulta diseñado para seleccionar y transformar nodos XML mediante expresiones que recorren la estructura documental.
 
-- **C.** Un sistema de gestión documental.
+- **C.** Un sistema de gestión documental que almacena versiones, aplica permisos y controla el ciclo de vida completo de los contenidos.
 
-- **D.** Un protocolo de correo.
+- **D.** Un protocolo de correo que transporta mensajes y adjuntos entre servidores y define cómo se presenta visualmente cada documento recibido.
 
 **Respuesta correcta:** **A.** Un lenguaje de hojas de estilo para describir presentación de documentos.
 
@@ -14894,13 +14894,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué ventaja puede ofrecer JSON en muchas APIs?
 
-- **A.** Soporte nativo obligatorio de XSD.
+- **A.** Proporcionar soporte nativo y obligatorio para XSD, incluida la validación de cualquier documento JSON con esquemas XML sin conversión.
 
 - **B.** Modelo sencillo y buena integración con ecosistemas web y objetos/arrays.
 
-- **C.** Namespaces XML incorporados.
+- **C.** Incorporar espacios de nombres XML que evitan colisiones entre propiedades procedentes de vocabularios definidos por organizaciones distintas.
 
-- **D.** Ser un protocolo HTTP.
+- **D.** Actuar como protocolo de transporte sobre HTTP y establecer por sí mismo sesiones, reintentos y códigos de estado entre cliente y servidor.
 
 **Respuesta correcta:** **B.** Modelo sencillo y buena integración con ecosistemas web y objetos/arrays.
 
@@ -15230,13 +15230,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué medida reduce riesgo de XSS al insertar texto no confiable?
 
-- **A.** Desactivar HTTPS.
+- **A.** Desactivar HTTPS para que el navegador pueda identificar el texto no confiable antes de incorporarlo al documento que representa la página.
 
 - **B.** Usar APIs seguras de texto/DOM y escape contextual en lugar de concatenar HTML sin control.
 
-- **C.** Guardar el texto en robots.txt.
+- **C.** Guardar el contenido recibido en `robots.txt` para que los rastreadores impidan al navegador interpretar cualquier etiqueta incluida.
 
-- **D.** Convertirlo siempre a Base64 y ejecutarlo.
+- **D.** Codificar siempre el valor en Base64 y ejecutarlo después en el navegador, confiando en que la codificación elimina su capacidad activa.
 
 **Respuesta correcta:** **B.** Usar APIs seguras de texto/DOM y escape contextual en lugar de concatenar HTML sin control.
 
@@ -15542,13 +15542,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué diferencia hay entre validación en cliente y servidor?
 
-- **A.** La validación de cliente basta para seguridad.
+- **A.** La validación del cliente basta como control de seguridad porque el servidor recibe únicamente datos que el navegador ya ha aprobado.
 
 - **B.** La de cliente mejora UX, pero la de servidor sigue siendo necesaria como frontera de confianza.
 
-- **C.** La de servidor solo se usa en XML.
+- **C.** La validación del servidor solo se utiliza con documentos XML y no resulta necesaria para formularios HTML, JSON ni llamadas de API.
 
-- **D.** No deben existir ambas.
+- **D.** Ambas validaciones son incompatibles y deben excluirse mutuamente para evitar que apliquen reglas distintas sobre una misma entrada.
 
 **Respuesta correcta:** **B.** La de cliente mejora UX, pero la de servidor sigue siendo necesaria como frontera de confianza.
 
@@ -15638,11 +15638,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** Caso final II.09: una AAPP publica formularios HTML y además intercambia expedientes XML. ¿Qué enfoque es más completo?
 
-- **A.** Usar XML como sustituto de toda interfaz web y sin esquema.
+- **A.** Sustituir toda interfaz web por XML sin esquema, semántica HTML ni controles de accesibilidad para que un único formato cubra ambos usos.
 
-- **B.** Insertar secretos en JavaScript y aceptar cualquier XML.
+- **B.** Incluir secretos en JavaScript y aceptar cualquier XML sin restricciones porque el navegador y el parser neutralizan automáticamente las entradas.
 
-- **C.** Eliminar validación para mejorar compatibilidad.
+- **C.** Eliminar toda validación para mejorar la compatibilidad, aunque se reciban estructuras imprevistas, contenido malicioso o versiones incompatibles.
 
 - **D.** Usar HTML semántico/accesible para interfaz, scripts seguros, y XML con namespaces/esquemas/versionado para integración.
 
@@ -18031,11 +18031,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 - **A.** El titular conserva los derechos y concede facultades de uso según la licencia y la ley.
 
-- **B.** Debe ser necesariamente de pago.
+- **B.** Ser necesariamente de pago, aunque el titular pueda distribuirlo gratuitamente manteniendo restricciones y reservándose los derechos.
 
-- **C.** Nunca puede distribuirse gratuitamente.
+- **C.** No poder distribuirse nunca sin precio, porque la gratuidad transforma de forma automática cualquier programa en software libre.
 
-- **D.** Siempre impide cualquier copia de seguridad.
+- **D.** Impedir siempre cualquier copia de seguridad, incluso cuando la licencia o la legislación aplicable permiten realizarla al usuario legítimo.
 
 **Respuesta correcta:** **A.** El titular conserva los derechos y concede facultades de uso según la licencia y la ley.
 
@@ -18509,13 +18509,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué rasgo general caracteriza a una licencia permisiva?
 
-- **A.** Obliga siempre a publicar todo el código de la aplicación final.
+- **A.** Obligar siempre a publicar bajo la misma licencia todo el código de la aplicación final, incluso los componentes independientes y propietarios.
 
 - **B.** Permite reutilización amplia con obligaciones relativamente reducidas, incluso dentro de software propietario según sus términos.
 
-- **C.** Prohíbe la distribución comercial.
+- **C.** Prohibir cualquier distribución comercial o cobro por servicios, aunque se conserven los avisos y se cumplan las restantes condiciones.
 
-- **D.** Equivale a renunciar a todos los derechos.
+- **D.** Equivaler a una renuncia completa a todos los derechos y permitir retirar autoría, avisos o condiciones del código redistribuido.
 
 **Respuesta correcta:** **B.** Permite reutilización amplia con obligaciones relativamente reducidas, incluso dentro de software propietario según sus términos.
 
@@ -18941,13 +18941,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** Una empresa modifica código Apache-2.0 y lo distribuye dentro de un producto. ¿Qué enfoque es correcto?
 
-- **A.** Asumir que puede eliminar toda referencia a terceros.
+- **A.** Eliminar todas las referencias a terceros porque Apache-2.0 transfiere al distribuidor la autoría exclusiva del código incorporado.
 
-- **B.** Publicar obligatoriamente todo el producto bajo AGPL.
+- **B.** Publicar obligatoriamente el producto completo bajo AGPL, aunque los demás componentes sean independientes y usen otras licencias compatibles.
 
 - **C.** Revisar y cumplir las condiciones de Apache-2.0, incluidos avisos y las reglas aplicables a modificaciones/NOTICE.
 
-- **D.** Tratar Apache-2.0 como si fuera una licencia sin texto.
+- **D.** Tratar Apache-2.0 como una licencia sin condiciones y redistribuir el código sin conservar avisos, atribuciones ni documentación aplicable.
 
 **Respuesta correcta:** **C.** Revisar y cumplir las condiciones de Apache-2.0, incluidos avisos y las reglas aplicables a modificaciones/NOTICE.
 
@@ -18965,11 +18965,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué frase resume mejor las permisivas para test?
 
-- **A.** Permisiva significa dominio público.
+- **A.** Significar dominio público y permitir eliminar avisos, atribución y cualquier condición establecida por quien conserva los derechos.
 
-- **B.** Permisiva significa sin uso comercial.
+- **B.** Prohibir el uso comercial, el cobro por distribución y la integración en productos propietarios, aunque se cumplan sus términos.
 
-- **C.** Permisiva significa copyleft de red.
+- **C.** Imponer copyleft de red a todo servicio que interactúe con el programa, con independencia del texto concreto de la licencia permisiva.
 
 - **D.** Amplia reutilización no equivale a ausencia de copyright ni de obligaciones.
 
@@ -18989,13 +18989,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué busca el copyleft, de forma simplificada?
 
-- **A.** Prohibir toda actividad comercial.
+- **A.** Prohibir cualquier actividad comercial, cobro por distribución o prestación de servicios relacionados con el programa cubierto.
 
-- **B.** Convertir automáticamente el software en dominio público.
+- **B.** Convertir automáticamente el software en dominio público, extinguiendo autoría, copyright y todas las condiciones de redistribución.
 
 - **C.** Preservar determinadas libertades y obligaciones al redistribuir el programa o trabajos sujetos a sus condiciones.
 
-- **D.** Sustituir el copyright por DRM.
+- **D.** Sustituir el copyright por controles DRM que impiden estudiar, copiar o modificar el programa aunque la licencia conceda esas facultades.
 
 **Respuesta correcta:** **C.** Preservar determinadas libertades y obligaciones al redistribuir el programa o trabajos sujetos a sus condiciones.
 
@@ -19037,11 +19037,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué afirmación sobre GPL y uso interno es correcta en términos generales?
 
-- **A.** Todo uso interno obliga a publicar el repositorio en Internet.
+- **A.** Ejecutar internamente un programa GPL obliga a publicar en Internet el repositorio completo, aunque no se entregue ninguna copia a terceros.
 
-- **B.** GPL prohíbe modificar para uso interno.
+- **B.** La GPL prohíbe modificar el programa para uso interno porque cualquier obra derivada debe ser autorizada previamente por todos los autores.
 
-- **C.** GPL impide cobrar por el software.
+- **C.** La GPL impide cobrar por distribuir copias o servicios asociados, pues la libertad del software exige necesariamente que sean gratuitos.
 
 - **D.** El mero uso interno sin distribución/conveying no activa por sí solo las obligaciones de entrega de fuente propias de la distribución.
 
@@ -19373,13 +19373,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué debe hacer una organización si detecta una dependencia AGPL en un servicio?
 
-- **A.** Borrarla siempre, sin análisis.
+- **A.** Eliminar siempre la dependencia sin analizar su versión, licencia, forma de integración ni las alternativas disponibles para el servicio.
 
-- **B.** Ignorarla porque no se entregan binarios.
+- **B.** Ignorarla porque no se entregan binarios, aunque usuarios externos interactúen por red con una versión modificada de la aplicación.
 
 - **C.** Analizar cómo se usa/modifica, quién interactúa con ella por red y qué obligaciones concretas resultan.
 
-- **D.** Asumir que toda la infraestructura debe publicarse.
+- **D.** Suponer que toda la infraestructura, incluidos componentes independientes y servicios no relacionados, debe publicarse bajo AGPL.
 
 **Respuesta correcta:** **C.** Analizar cómo se usa/modifica, quién interactúa con ella por red y qué obligaciones concretas resultan.
 
@@ -19397,13 +19397,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué afirmación sobre “viralidad” de GPL es técnicamente más prudente?
 
-- **A.** Cualquier fichero almacenado en el mismo disco pasa a GPL.
+- **A.** Aplicar GPL a cualquier fichero almacenado en el mismo disco, aunque no se combine, derive ni distribuya junto con el programa cubierto.
 
 - **B.** Es mejor hablar de obligaciones de copyleft según combinación y distribución que usar “viral” como regla automática.
 
-- **C.** Toda API que llame a GPL pasa siempre a GPL sin excepción.
+- **C.** Considerar que toda API que invoque software GPL queda siempre bajo GPL, sin examinar arquitectura, relación entre obras ni distribución.
 
-- **D.** La licencia no depende nunca de cómo se combinan obras.
+- **D.** Afirmar que las obligaciones nunca dependen de cómo se combinan o transmiten las obras y que solo importa el nombre de cada fichero.
 
 **Respuesta correcta:** **B.** Es mejor hablar de obligaciones de copyleft según combinación y distribución que usar “viral” como regla automática.
 
@@ -19685,11 +19685,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué riesgo existe al copiar un fragmento de Internet sin información de licencia?
 
-- **A.** Ninguno si el repositorio es público.
+- **A.** No existir ningún riesgo si el repositorio es público, porque la visibilidad del código concede por sí misma permiso para cualquier uso.
 
-- **B.** Ninguno si son menos de 100 líneas.
+- **B.** No existir riesgo cuando el fragmento tiene menos de cien líneas, ya que esa longitud lo excluye automáticamente de cualquier protección.
 
-- **C.** Solo un riesgo de rendimiento.
+- **C.** Existir únicamente un riesgo de rendimiento, sin consecuencias sobre atribución, modificación, incorporación o redistribución del código.
 
 - **D.** No saber si se tiene derecho a incorporarlo, modificarlo o redistribuirlo.
 
@@ -19783,11 +19783,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 - **A.** EUPL contempla obligaciones para distribución/uso en red dentro de su régimen de reciprocidad.
 
-- **B.** EUPL se vuelve permisiva si se usa por red.
+- **B.** Convertirse automáticamente en una licencia permisiva cuando el programa se ofrece por red, dejando de aplicar sus obligaciones de reciprocidad.
 
-- **C.** EUPL prohíbe cualquier SaaS.
+- **C.** Prohibir cualquier modalidad SaaS porque la EUPL solo permite ejecutar el programa después de entregar una copia física al usuario.
 
-- **D.** EUPL solo cubre software de escritorio.
+- **D.** Limitar su cobertura al software de escritorio instalado localmente, sin contemplar distribución ni utilización mediante servicios en red.
 
 **Respuesta correcta:** **A.** EUPL contempla obligaciones para distribución/uso en red dentro de su régimen de reciprocidad.
 
@@ -19853,11 +19853,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué afirmación sobre el código original EUPL al usar una cláusula de compatibilidad es más prudente?
 
-- **A.** La licencia original desaparece automáticamente.
+- **A.** Desaparecer automáticamente la licencia original al aplicar la cláusula, dejando el código previo sin las condiciones que lo cubrían.
 
-- **B.** Todo pasa a dominio público.
+- **B.** Pasar todo el código a dominio público, sin copyright, atribución ni obligaciones, por combinarse con una licencia declarada compatible.
 
-- **C.** Se eliminan las obligaciones de fuente.
+- **C.** Eliminar las obligaciones de facilitar código fuente respecto del componente original, aunque la EUPL siga cubriéndolo en la combinación.
 
 - **D.** La compatibilidad no implica que el código original deje mágicamente de estar cubierto por EUPL.
 
@@ -19877,13 +19877,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué diferencia hay entre compatibilidad jurídica e interoperabilidad técnica?
 
-- **A.** Son el mismo concepto.
+- **A.** Son el mismo concepto y basta con que dos programas intercambien datos para que sus licencias permitan combinarlos y redistribuirlos juntos.
 
-- **B.** La interoperabilidad solo se refiere a copyright.
+- **B.** La interoperabilidad se refiere exclusivamente a derechos de autor y no considera formatos, protocolos, interfaces ni comportamiento técnico.
 
 - **C.** La primera trata de si licencias permiten una combinación/distribución; la segunda de si sistemas pueden intercambiar/funcionar juntos.
 
-- **D.** La compatibilidad jurídica solo se refiere a protocolos de red.
+- **D.** La compatibilidad jurídica solo compara protocolos de red y no afecta a las condiciones impuestas al combinar o distribuir componentes.
 
 **Respuesta correcta:** **C.** La primera trata de si licencias permiten una combinación/distribución; la segunda de si sistemas pueden intercambiar/funcionar juntos.
 
@@ -20045,13 +20045,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Están protegidas por derecho de autor las ideas y principios que sirven de fundamento a las interfaces de un programa?
 
-- **A.** Sí, siempre y de forma automática.
+- **A.** Sí, quedan protegidas automáticamente como código por servir de fundamento a una interfaz, aunque carezcan de forma expresiva concreta.
 
 - **B.** No, no como tales por el derecho de autor sobre programas de ordenador.
 
-- **C.** Solo si el software es libre.
+- **C.** La protección existiría si el programa usara una licencia libre, pues las licencias privativas excluirían esas ideas y principios.
 
-- **D.** Solo si existe DRM.
+- **D.** La presencia de DRM determinaría la protección al impedir observar o analizar el comportamiento del programa.
 
 **Respuesta correcta:** **B.** No, no como tales por el derecho de autor sobre programas de ordenador.
 
@@ -20167,11 +20167,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 - **A.** Ambos son formas del programa; el régimen legal puede abarcar las distintas formas de expresión.
 
-- **B.** Solo el código objeto puede tener copyright.
+- **B.** Proteger mediante derechos de autor únicamente el código objeto ejecutable, mientras el código fuente queda fuera del régimen del programa.
 
-- **C.** El fuente nunca está protegido.
+- **C.** Excluir siempre de protección el código fuente por ser legible y modificable, incluso cuando expresa de forma original un programa de ordenador.
 
-- **D.** El código objeto es una idea abstracta.
+- **D.** Considerar el código objeto una idea abstracta sin forma de expresión, aunque sea la representación compilada de instrucciones del programa.
 
 **Respuesta correcta:** **A.** Ambos son formas del programa; el régimen legal puede abarcar las distintas formas de expresión.
 
@@ -20405,13 +20405,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué regla mental es más útil para examen sobre protección jurídica?
 
-- **A.** Registro obligatorio = nacimiento del copyright.
+- **A.** El registro obligatorio crea el derecho de autor y, antes de inscribir el programa, su código puede copiarse y distribuirse libremente.
 
-- **B.** Compra = cesión de todos los derechos.
+- **B.** Comprar una copia transmite todos los derechos de explotación, incluida la facultad de modificar, sublicenciar y redistribuir el programa.
 
 - **C.** Protección del programa ≠ protección absoluta de ideas; licencia de uso ≠ transmisión de titularidad.
 
-- **D.** Código fuente = sin protección.
+- **D.** El código fuente carece de protección por ser legible, aunque constituya una forma de expresión original de un programa de ordenador.
 
 **Respuesta correcta:** **C.** Protección del programa ≠ protección absoluta de ideas; licencia de uso ≠ transmisión de titularidad.
 
@@ -20525,13 +20525,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** Una condición para la excepción de interoperabilidad es:
 
-- **A.** Que el usuario quiera desarrollar un clon sustancialmente similar.
+- **A.** Que el usuario pretenda desarrollar un clon sustancialmente similar y reutilizar para ello cualquier parte expresiva del programa original.
 
-- **B.** Que se descompile el programa completo aunque no sea necesario.
+- **B.** Que se descompile el programa completo aunque solo una parte limitada resulte necesaria para obtener la información de interoperabilidad.
 
 - **C.** Que la información necesaria no haya sido puesta previamente de manera fácil y rápida a disposición de quien puede invocar la excepción.
 
-- **D.** Que el programa sea gratuito.
+- **D.** Que el programa se distribuya gratuitamente, con independencia de quién realiza los actos, su finalidad y la disponibilidad previa de información.
 
 **Respuesta correcta:** **C.** Que la información necesaria no haya sido puesta previamente de manera fácil y rápida a disposición de quien puede invocar la excepción.
 
@@ -20885,11 +20885,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué regla mental resume este bloque?
 
-- **A.** Comprar una copia autoriza cualquier descompilación.
+- **A.** Adquirir una copia autoriza cualquier descompilación, modificación o redistribución, con independencia de su finalidad y de los límites legales.
 
-- **B.** La interoperabilidad elimina todo copyright.
+- **B.** Conseguir interoperabilidad elimina todos los derechos de autor sobre el programa y permite explotar libremente cualquier parte de su código.
 
-- **C.** Una licencia cubre automáticamente todos los derechos posibles.
+- **C.** Obtener una licencia sobre el software concede automáticamente patentes, marcas y secretos empresariales relacionados, aunque no se mencionen.
 
 - **D.** Usuario legítimo no significa libertad ilimitada: hay límites y excepciones concretas; copyright no agota patentes, marcas ni secretos.
 
@@ -21173,11 +21173,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué significa “reversibilidad” en este contexto?
 
-- **A.** Revertir cada actualización de Windows.
+- **A.** Deshacer cada actualización de Windows y restaurar siempre la versión anterior del sistema, aunque el servicio no dependa de esa plataforma.
 
-- **B.** Eliminar cualquier licencia de terceros.
+- **B.** Eliminar cualquier licencia de terceros para que todos los componentes queden sin condiciones antes de cambiar de proveedor o solución.
 
-- **C.** Convertir automáticamente software propietario en libre.
+- **C.** Convertir automáticamente el software propietario en libre cuando finaliza el contrato, transfiriendo al cliente todo su código y derechos.
 
 - **D.** Poder abandonar o sustituir la solución conservando datos, funcionalidad esencial y capacidad operativa razonable.
 
@@ -21487,11 +21487,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 - **A.** Porque el riesgo de seguridad y mantenimiento también forma parte de la gobernanza de componentes.
 
-- **B.** Porque pierde automáticamente su copyright.
+- **B.** Perder automáticamente el copyright al finalizar el soporte, de modo que cualquier tercero pueda copiar, modificar y redistribuir el componente.
 
-- **C.** Porque se convierte en dominio público.
+- **C.** Pasar inmediatamente al dominio público, aunque la duración de los derechos y las condiciones de licencia no dependan del mantenimiento ofrecido.
 
-- **D.** Porque toda licencia caduca al terminar soporte.
+- **D.** Caducar toda licencia cuando termina el soporte y quedar prohibida desde ese momento cualquier ejecución de las versiones ya obtenidas.
 
 **Respuesta correcta:** **A.** Porque el riesgo de seguridad y mantenimiento también forma parte de la gobernanza de componentes.
 
@@ -21533,11 +21533,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** Un equipo copia código de Stack Overflow o un blog. ¿Qué debe verificar antes de incorporarlo?
 
-- **A.** Nada si el texto era visible públicamente.
+- **A.** No debe comprobar nada si el fragmento era visible públicamente, porque la publicación en una web equivale a renunciar a todos los derechos.
 
-- **B.** Solo que compile.
+- **B.** Basta con verificar que compile en el proyecto, aunque se desconozcan la licencia, la atribución exigida, la seguridad y la procedencia del código.
 
-- **C.** Solo que tenga menos de 20 líneas.
+- **C.** Solo debe comprobar que tenga menos de veinte líneas, pues cualquier fragmento inferior a ese límite carece automáticamente de protección jurídica.
 
 - **D.** Licencia/derechos aplicables, atribución y compatibilidad, además de calidad y seguridad.
 
@@ -21773,11 +21773,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué práctica reduce el riesgo de introducir una licencia incompatible en CI/CD?
 
-- **A.** Desactivar los gestores de paquetes.
+- **A.** Desactivar los gestores de paquetes para que cada dependencia se copie manualmente sin que el pipeline pueda identificar su licencia.
 
-- **B.** Eliminar ficheros LICENSE durante el build.
+- **B.** Eliminar los ficheros `LICENSE` durante la construcción para evitar que los avisos de terceros formen parte de los artefactos publicados.
 
-- **C.** Permitir cualquier dependencia sin revisión.
+- **C.** Permitir cualquier dependencia sin revisión porque las licencias declaradas por un repositorio público son compatibles entre sí por defecto.
 
 - **D.** Escaneo de dependencias/licencias y políticas automáticas con revisión humana para excepciones.
 
@@ -22595,13 +22595,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué diferencia principal hay entre DMS y CMS?
 
-- **A.** Son siempre exactamente iguales.
+- **A.** Ser sistemas siempre equivalentes, con el mismo modelo, funciones y ciclo de vida, aunque se orienten a necesidades de gestión diferentes.
 
-- **B.** DMS solo gestiona imágenes y CMS solo PDFs.
+- **B.** Limitar el DMS exclusivamente a imágenes y el CMS exclusivamente a PDF, sin que ninguno admita otros formatos o tipos de contenido.
 
 - **C.** DMS prioriza documentos/ciclo de vida; CMS prioriza contenidos y publicación/experiencia.
 
-- **D.** CMS no puede tener permisos.
+- **D.** Impedir que un CMS gestione permisos, flujos, versiones o publicación segmentada por usuarios, roles, canales y audiencias.
 
 **Respuesta correcta:** **C.** DMS prioriza documentos/ciclo de vida; CMS prioriza contenidos y publicación/experiencia.
 
@@ -22859,11 +22859,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es clasificación documental?
 
-- **A.** Ordenar solo por tamaño de fichero.
+- **A.** Ordenar los ficheros únicamente por tamaño, sin considerar su función, serie, contexto de creación ni reglas de conservación.
 
-- **B.** Convertir todo a un único formato.
+- **B.** Convertir todos los documentos a un formato único para que la extensión resultante sustituya a cualquier criterio archivístico.
 
-- **C.** Eliminar permisos.
+- **C.** Eliminar los permisos del repositorio para que la ausencia de restricciones determine automáticamente la categoría de cada documento.
 
 - **D.** Asignar documentos a categorías/series/tipos según una estructura controlada.
 
@@ -22885,11 +22885,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 - **A.** Roles, mínimo privilegio, herencias, acceso externo, información sensible y trazabilidad.
 
-- **B.** Dar acceso global para facilitar búsquedas.
+- **B.** Conceder acceso global para facilitar las búsquedas, aunque cada usuario pueda consultar documentos ajenos a sus funciones y necesidad.
 
-- **C.** Usar una única cuenta compartida.
+- **C.** Utilizar una sola cuenta compartida para todo el personal, de modo que los cambios conserven una identidad común y simplifiquen la administración.
 
-- **D.** Desactivar auditoría.
+- **D.** Desactivar la auditoría para reducir almacenamiento, aunque ya no pueda conocerse quién consultó, modificó o compartió información sensible.
 
 **Respuesta correcta:** **A.** Roles, mínimo privilegio, herencias, acceso externo, información sensible y trazabilidad.
 
@@ -22907,13 +22907,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué riesgo tiene guardar documentos sin metadatos fiables?
 
-- **A.** Mejora precisión de búsquedas.
+- **A.** Mejorar la precisión de búsqueda porque la ausencia de campos descriptivos obliga al motor a inferir siempre el significado correcto del texto.
 
-- **B.** Elimina duplicados automáticamente.
+- **B.** Eliminar automáticamente duplicados, ya que dos documentos sin metadatos se reconocen como equivalentes aunque su contenido sea diferente.
 
 - **C.** Dificulta búsqueda, clasificación, retención, trazabilidad y automatización.
 
-- **D.** Garantiza cumplimiento.
+- **D.** Garantizar el cumplimiento normativo al impedir que existan fechas, categorías o responsables que condicionen las reglas de conservación.
 
 **Respuesta correcta:** **C.** Dificulta búsqueda, clasificación, retención, trazabilidad y automatización.
 
@@ -23099,13 +23099,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es sindicación de contenidos?
 
-- **A.** Copiar páginas mediante scraping sin contrato.
+- **A.** Copiar páginas de terceros mediante scraping sin acuerdo ni formato estable y presentar ese contenido como un canal oficial del publicador.
 
 - **B.** Publicar un feed estructurado para que terceros o clientes se suscriban y agreguen novedades.
 
-- **C.** Enviar únicamente correo electrónico.
+- **C.** Enviar exclusivamente mensajes de correo a una lista cerrada, sin ofrecer un formato estructurado que los clientes puedan consultar o agregar.
 
-- **D.** Un sistema de cifrado.
+- **D.** Cifrar el repositorio completo para que los clientes descubran automáticamente las novedades sin recibir metadatos ni elementos publicados.
 
 **Respuesta correcta:** **B.** Publicar un feed estructurado para que terceros o clientes se suscriban y agreguen novedades.
 
@@ -23171,13 +23171,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué suele contener una entrada de feed?
 
-- **A.** Una tabla de páginas de memoria.
+- **A.** La tabla de páginas completa del proceso que publica el feed, incluidos sus marcos físicos y permisos de acceso a memoria.
 
-- **B.** Una ACL de sistema operativo.
+- **B.** La lista exhaustiva de usuarios y permisos del sistema operativo que autoriza la lectura individual de cada elemento publicado.
 
 - **C.** Identificador, título, enlace, fecha y contenido/resumen según formato.
 
-- **D.** Un certificado TLS obligatorio.
+- **D.** La cadena de certificados TLS del servidor, que sustituye al identificador, la fecha y el contenido de cada entrada del canal.
 
 **Respuesta correcta:** **C.** Identificador, título, enlace, fecha y contenido/resumen según formato.
 
@@ -23243,13 +23243,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué es una tarea humana en workflow?
 
-- **A.** Una llamada de sistema del kernel.
+- **A.** Una llamada privilegiada del kernel que detiene el workflow hasta que el sistema operativo libera los recursos solicitados por el proceso.
 
 - **B.** Una actividad que requiere intervención/decisión de una persona o rol.
 
-- **C.** Un sitemap.
+- **C.** Un sitemap generado por el motor del proceso para enumerar todas las pantallas que puede visitar el participante durante la tramitación.
 
-- **D.** Un namespace.
+- **D.** Un namespace que agrupa actividades automáticas y determina qué documentos XML pueden utilizar las personas asignadas al flujo.
 
 **Respuesta correcta:** **B.** Una actividad que requiere intervención/decisión de una persona o rol.
 
@@ -23963,11 +23963,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** Un portal público tiene buen contenido pero el buscador no encuentra sinónimos ni tolera errores. ¿Qué mejora es más directa?
 
-- **A.** Añadir más CSS.
+- **A.** Incrementar las reglas de presentación CSS para que cada sinónimo disponga de un estilo propio en la página de resultados del portal.
 
-- **B.** Bloquear el crawler interno con robots.txt.
+- **B.** Bloquear el rastreador interno mediante `robots.txt` para impedir que indexe variantes ortográficas o términos no presentes literalmente.
 
-- **C.** Eliminar metadatos.
+- **C.** Eliminar títulos, descripciones y demás metadatos para obligar al buscador a basarse exclusivamente en el texto visible de las páginas.
 
 - **D.** Trabajar análisis lingüístico, sinónimos, corrección, facetas y evaluación de precision/recall.
 
@@ -24035,13 +24035,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué riesgo existe con enlaces públicos de documentos?
 
-- **A.** Garantizan mínimo privilegio.
+- **A.** Garantizar el mínimo privilegio porque únicamente las personas expresamente autorizadas pueden conocer o reenviar la dirección pública.
 
 - **B.** Pueden permitir acceso no controlado o reenvío fuera del ámbito previsto.
 
-- **C.** Sustituyen autenticación robusta.
+- **C.** Sustituir la autenticación robusta mediante una URL que verifica por sí sola la identidad, el rol y el contexto del destinatario previsto.
 
-- **D.** Impiden automáticamente descargas.
+- **D.** Impedir automáticamente la descarga, copia o redistribución del documento, aunque el receptor legítimo pueda visualizar todo su contenido.
 
 **Respuesta correcta:** **B.** Pueden permitir acceso no controlado o reenvío fuera del ámbito previsto.
 
@@ -24277,11 +24277,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 - **A.** Centralizar identidad, grupos, SSO, bajas y aplicación coherente de permisos.
 
-- **B.** Eliminar necesidad de autorización.
+- **B.** Suprimir la autorización sobre contenidos porque una identidad autenticada debe recibir siempre acceso completo a todos los repositorios.
 
-- **C.** Hacer públicas todas las carpetas.
+- **C.** Publicar todas las carpetas para evitar sincronizar grupos y roles entre el proveedor de identidad y las herramientas de colaboración.
 
-- **D.** Sustituir el repositorio.
+- **D.** Sustituir el DMS, el CMS y las plataformas colaborativas por el directorio de identidades, que almacenaría también todos sus documentos.
 
 **Respuesta correcta:** **A.** Centralizar identidad, grupos, SSO, bajas y aplicación coherente de permisos.
 
@@ -24395,13 +24395,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué práctica mejora continuidad de una plataforma de contenidos?
 
-- **A.** Confiar solo en versionado.
+- **A.** Confiar exclusivamente en el versionado de documentos, aunque la plataforma, su configuración o todas sus copias fallen a la vez.
 
 - **B.** Backups probados, alta disponibilidad según criticidad, exportación/reversibilidad y recuperación documentada.
 
-- **C.** No probar restauraciones.
+- **C.** Crear copias periódicas sin probar restauraciones, porque la existencia del archivo de backup demuestra por sí sola que puede recuperarse.
 
-- **D.** Depender de un único administrador sin documentación.
+- **D.** Depender de un único administrador sin documentación, procedimientos ni transferencia de conocimiento para resolver cualquier interrupción.
 
 **Respuesta correcta:** **B.** Backups probados, alta disponibilidad según criticidad, exportación/reversibilidad y recuperación documentada.
 
@@ -24419,13 +24419,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** Caso: portal público con DMS, CMS, buscador y colaboración. ¿Qué control transversal es imprescindible?
 
-- **A.** Una cuenta compartida para simplificar.
+- **A.** Compartir una única cuenta entre todos los usuarios para simplificar altas y bajas, aunque se pierdan atribución y mínimo privilegio.
 
-- **B.** Eliminar logs para mejorar rendimiento.
+- **B.** Eliminar los registros de actividad para mejorar el rendimiento, aun cuando resulte imposible investigar accesos o cambios no autorizados.
 
 - **C.** IAM/mínimo privilegio, auditoría, clasificación, retención, seguridad de ficheros y monitorización.
 
-- **D.** Publicar por defecto cualquier documento interno.
+- **D.** Publicar por defecto cualquier documento interno para que el buscador lo indexe, sin clasificación previa ni control sobre información sensible.
 
 **Respuesta correcta:** **C.** IAM/mínimo privilegio, auditoría, clasificación, retención, seguridad de ficheros y monitorización.
 
@@ -30576,11 +30576,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Cuál es la función principal de MSBuild?
 
-- **A.** Gestionar autenticación y autorización.
+- **A.** Gestionar la autenticación y autorización de los usuarios, emitir sus tokens y decidir a qué recursos puede acceder cada identidad.
 
-- **B.** Alojar aplicaciones web en producción.
+- **B.** Alojar directamente aplicaciones web en producción, aceptar las conexiones HTTP y mantener sus procesos disponibles como servidor.
 
-- **C.** Ser el ORM oficial de .NET.
+- **C.** Ser el ORM oficial de .NET y traducir las consultas de objetos a SQL sin utilizar proyectos, objetivos ni tareas de compilación.
 
 - **D.** Orquestar el proceso de compilación a partir de proyectos y objetivos de build.
 
@@ -30792,13 +30792,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué afirmación es correcta al elegir tecnología .NET para un sistema nuevo?
 
-- **A.** Debe elegirse siempre .NET Framework por tener más años.
+- **A.** Elegir siempre .NET Framework por su mayor antigüedad, aunque el sistema nuevo necesite plataformas o capacidades modernas no soportadas.
 
-- **B.** La elección del IDE determina el runtime de producción.
+- **B.** Determinar el runtime de producción exclusivamente a partir del IDE usado por el equipo, con independencia del destino del despliegue.
 
 - **C.** Debe partirse de los requisitos y del stack moderno soportado, evitando asumir que .NET Framework es la opción por defecto.
 
-- **D.** El lenguaje determina por sí solo toda la arquitectura.
+- **D.** Derivar toda la arquitectura del lenguaje escogido, porque las necesidades funcionales y operativas no alteran las decisiones de plataforma.
 
 **Respuesta correcta:** **C.** Debe partirse de los requisitos y del stack moderno soportado, evitando asumir que .NET Framework es la opción por defecto.
 
@@ -30864,11 +30864,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué diferencia fundamental existe entre JIT y AOT?
 
-- **A.** AOT interpreta el código y JIT nunca compila.
+- **A.** Interpretar AOT el código durante cada ejecución, mientras JIT distribuye binarios nativos producidos antes de llegar al destino.
 
-- **B.** Son dos nombres del mismo mecanismo.
+- **B.** Ser dos nombres del mismo mecanismo de compilación y realizar siempre el trabajo en el mismo momento y con idéntica información del entorno.
 
-- **C.** JIT solo sirve para Java y AOT solo para .NET.
+- **C.** Aplicarse JIT únicamente a Java y AOT únicamente a .NET, sin que otros runtimes o lenguajes puedan emplear estrategias semejantes.
 
 - **D.** JIT compila durante la ejecución; AOT compila anticipadamente antes de ejecutar en el destino.
 
@@ -30936,11 +30936,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Cuál es la relación correcta entre CLR, CTS y CLS?
 
-- **A.** Son tres nombres equivalentes.
+- **A.** Son nombres equivalentes para el entorno de ejecución y cada término comprende exactamente los mismos tipos, servicios y reglas.
 
-- **B.** CTS ejecuta el código y CLR solo define nombres de tipos.
+- **B.** CTS ejecuta directamente el código administrado, mientras CLR se limita a establecer los nombres permitidos para los tipos públicos.
 
-- **C.** CLR y CTS son gestores de paquetes y CLS es un servidor web.
+- **C.** CLR y CTS son gestores de paquetes que resuelven dependencias, y CLS es el servidor web encargado de alojar las aplicaciones.
 
 - **D.** CLR es el runtime; CTS define el sistema común de tipos; CLS define reglas de interoperabilidad sobre un subconjunto del CTS.
 
@@ -31272,13 +31272,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué afirmación sobre IL y código máquina es correcta?
 
-- **A.** El CLR ejecuta C# fuente directamente sin etapa intermedia.
+- **A.** Ejecutar el CLR directamente el texto fuente C# sin compilarlo a una representación intermedia ni producir instrucciones para la CPU.
 
-- **B.** IL es siempre el código máquina final x86.
+- **B.** Ser IL siempre código máquina final x86, aunque el ensamblado vaya a ejecutarse en una arquitectura o runtime diferente.
 
 - **C.** IL es independiente de una CPU concreta en un grado mayor; el runtime/JIT o AOT produce código adecuado para el destino.
 
-- **D.** IL solo se usa en archivos de texto.
+- **D.** Utilizarse IL solo en archivos de texto para documentar instrucciones, sin formar parte de ensamblados ni intervenir en su ejecución.
 
 **Respuesta correcta:** **C.** IL es independiente de una CPU concreta en un grado mayor; el runtime/JIT o AOT produce código adecuado para el destino.
 
@@ -31320,11 +31320,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué representa normalmente `Task` o `Task<T>`?
 
-- **A.** Un assembly.
+- **A.** Un ensamblado compilado que agrupa tipos y recursos y que se carga como una unidad independiente en el runtime de .NET.
 
-- **B.** Un hilo físico dedicado obligatorio.
+- **B.** Un hilo físico reservado por el sistema operativo hasta que termina la operación, aunque esta permanezca esperando entrada o salida.
 
-- **C.** Una transacción SQL.
+- **C.** Una transacción de base de datos que confirma automáticamente todos los cambios cuando concluye cualquier método que devuelve un valor.
 
 - **D.** Una operación asíncrona que puede completarse en el futuro, con o sin resultado.
 
@@ -31608,13 +31608,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué contiene normalmente un archivo `.csproj` moderno?
 
-- **A.** El almacenamiento de sesiones de Kestrel.
+- **A.** El almacén interno con todas las sesiones activas de Kestrel, serializadas para recuperarlas cuando se reinicia el servidor web.
 
-- **B.** El código máquina generado por el JIT.
+- **B.** El código máquina definitivo producido por el compilador JIT para todos los entornos y arquitecturas de despliegue del proyecto.
 
 - **C.** La definición del proyecto, TFM, propiedades y referencias, entre otros elementos de build.
 
-- **D.** Las credenciales de todos los usuarios.
+- **D.** Las credenciales personales de los usuarios, incorporadas al proyecto para que estén disponibles durante la compilación y publicación.
 
 **Respuesta correcta:** **C.** La definición del proyecto, TFM, propiedades y referencias, entre otros elementos de build.
 
@@ -31634,11 +31634,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 - **A.** `build` compila; `publish` prepara un conjunto desplegable con los artefactos necesarios según la modalidad elegida.
 
-- **B.** `build` instala el sistema operativo de destino.
+- **B.** Instalar el sistema operativo de destino y configurar sus servicios antes de compilar el código fuente y resolver las referencias del proyecto.
 
-- **C.** `publish` solo ejecuta tests y `build` sube a Internet.
+- **C.** Ejecutar únicamente los tests con `publish`, mientras `build` carga los binarios resultantes en un repositorio público de Internet.
 
-- **D.** Son exactamente equivalentes.
+- **D.** Ser comandos exactamente equivalentes que producen siempre los mismos archivos, sin diferencias de finalidad, dependencias ni despliegue.
 
 **Respuesta correcta:** **A.** `build` compila; `publish` prepara un conjunto desplegable con los artefactos necesarios según la modalidad elegida.
 
@@ -31704,13 +31704,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Para qué sirven herramientas como `dotnet-counters` o `dotnet-trace`?
 
-- **A.** Para sustituir al control de versiones.
+- **A.** Sustituir al sistema de control de versiones mediante la captura continua de todos los cambios efectuados en el código fuente del proyecto.
 
-- **B.** Para gestionar DNS.
+- **B.** Gestionar las zonas, registros y resoluciones DNS utilizadas por la aplicación mientras se ejecuta en cualquier entorno de alojamiento.
 
 - **C.** Para diagnóstico y observación del comportamiento de aplicaciones .NET en ejecución.
 
-- **D.** Para crear esquemas de base de datos.
+- **D.** Crear y migrar automáticamente esquemas de base de datos a partir de las métricas y trazas recogidas durante la ejecución del proceso.
 
 **Respuesta correcta:** **C.** Para diagnóstico y observación del comportamiento de aplicaciones .NET en ejecución.
 
@@ -31920,13 +31920,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Cuál es una práctica correcta con secretos de producción?
 
-- **A.** Incluirlos en mensajes de log para facilitar soporte.
+- **A.** Incluir los secretos en los mensajes de log para que el personal de soporte pueda recuperarlos sin acceder al almacén seguro del entorno.
 
 - **B.** Mantenerlos fuera del código y de repositorios, usando almacenes de secretos o mecanismos seguros del entorno.
 
-- **C.** Guardarlos en `appsettings.json` y subirlos a Git.
+- **C.** Guardarlos directamente en `appsettings.json` y confirmar ese archivo en Git para que todos los despliegues compartan los mismos valores.
 
-- **D.** Codificarlos en Base64 y considerarlos cifrados.
+- **D.** Codificarlos en Base64 y tratarlos como cifrados, aunque cualquier persona con acceso pueda recuperar de forma inmediata el texto original.
 
 **Respuesta correcta:** **B.** Mantenerlos fuera del código y de repositorios, usando almacenes de secretos o mecanismos seguros del entorno.
 
@@ -32424,11 +32424,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué problema describe el patrón N+1 en acceso a datos?
 
-- **A.** Crear N índices automáticamente.
+- **A.** Crear automáticamente N índices nuevos por cada entidad consultada para acelerar el acceso, aunque no se analicen las columnas utilizadas.
 
-- **B.** Ejecutar exactamente N consultas en paralelo de forma óptima.
+- **B.** Ejecutar exactamente N consultas en paralelo como estrategia óptima, sin consultas iniciales ni dependencia del número de elementos recuperados.
 
-- **C.** Guardar N entidades en una sola transacción.
+- **C.** Guardar N entidades mediante una sola transacción, evitando cualquier consulta adicional y reduciendo siempre el coste de acceso a datos.
 
 - **D.** Realizar una consulta inicial y después muchas consultas adicionales, por ejemplo una por cada elemento, generando sobrecoste.
 
@@ -32472,13 +32472,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué riesgo tiene activar lazy loading sin analizar el patrón de acceso?
 
-- **A.** Impide completamente consultar relaciones.
+- **A.** Impedir por completo consultar relaciones porque las propiedades de navegación dejan de estar disponibles durante toda la vida del contexto.
 
 - **B.** Puede ocultar consultas adicionales y favorecer N+1 o acceso inesperado a la base de datos.
 
-- **C.** Deshabilita todas las transacciones.
+- **C.** Deshabilitar todas las transacciones de EF Core, incluidas las iniciadas expresamente antes de acceder a una propiedad relacionada.
 
-- **D.** Convierte EF Core en ADO.NET puro.
+- **D.** Convertir las consultas de EF Core en llamadas ADO.NET sin seguimiento, parámetros ni traducción de expresiones al lenguaje del proveedor.
 
 **Respuesta correcta:** **B.** Puede ocultar consultas adicionales y favorecer N+1 o acceso inesperado a la base de datos.
 
@@ -32568,13 +32568,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué afirmación sobre connection pooling es correcta?
 
-- **A.** Cada `Open` crea obligatoriamente una conexión física nueva sin reutilización.
+- **A.** Crear obligatoriamente una conexión física nueva en cada llamada a `Open`, aunque exista en el pool otra conexión compatible disponible.
 
-- **B.** EF Core no puede usar pooling de conexiones.
+- **B.** Impedir que EF Core utilice el pooling proporcionado por el proveedor, porque su seguimiento de entidades exige conexiones físicas exclusivas.
 
 - **C.** Los proveedores de datos pueden reutilizar conexiones físicas mediante pools; abrir/cerrar lógicamente una conexión no implica siempre crear/destruir una conexión física.
 
-- **D.** El pooling elimina la necesidad de cerrar conexiones.
+- **D.** Hacer innecesario cerrar o liberar las conexiones lógicas, ya que el pool recupera automáticamente cualquier recurso aún utilizado.
 
 **Respuesta correcta:** **C.** Los proveedores de datos pueden reutilizar conexiones físicas mediante pools; abrir/cerrar lógicamente una conexión no implica siempre crear/destruir una conexión física.
 
@@ -32618,11 +32618,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 - **A.** Revisar la consulta y separar o reformular lo que deba ejecutarse en servidor o cliente de forma consciente.
 
-- **B.** Cambiar Kestrel por IIS.
+- **B.** Cambiar Kestrel por IIS para que el servidor web traduzca cualquier expresión LINQ y la convierta automáticamente en SQL válido.
 
-- **C.** Suponer que siempre se ejecutará correctamente en SQL.
+- **C.** Suponer que siempre se ejecutará correctamente en el proveedor, aunque la operación carezca de traducción y afecte a una parte esencial.
 
-- **D.** Desactivar el compilador.
+- **D.** Desactivar el compilador de C# para que EF Core interprete directamente el código fuente y decida en tiempo de ejecución dónde evaluarlo.
 
 **Respuesta correcta:** **A.** Revisar la consulta y separar o reformular lo que deba ejecutarse en servidor o cliente de forma consciente.
 
@@ -32976,13 +32976,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué ventaja aporta el logging estructurado?
 
-- **A.** Sustituir las métricas.
+- **A.** Sustituir completamente las métricas porque cada evento estructurado permite calcular sin agregación cualquier indicador del sistema.
 
-- **B.** Eliminar la necesidad de IDs de correlación.
+- **B.** Eliminar la necesidad de identificadores de correlación, ya que el formato de los campos relaciona automáticamente operaciones distribuidas.
 
 - **C.** Registrar eventos con campos y propiedades que facilitan búsqueda, correlación y análisis automatizado.
 
-- **D.** Garantizar que nunca se almacenen datos sensibles.
+- **D.** Garantizar que nunca se registren datos sensibles, aunque la aplicación incluya contraseñas, tokens o información personal en las propiedades.
 
 **Respuesta correcta:** **C.** Registrar eventos con campos y propiedades que facilitan búsqueda, correlación y análisis automatizado.
 
@@ -43404,11 +43404,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 - **A.** Separar acceso, control de sesión y servicios para facilitar convergencia e independencia del acceso.
 
-- **B.** Obligar a transportar voz por circuitos dedicados.
+- **B.** Obligar a transportar todas las llamadas mediante circuitos dedicados y excluir los servicios multimedia basados en paquetes IP.
 
-- **C.** Eliminar la autenticación del abonado.
+- **C.** Eliminar la autenticación del abonado porque la dirección de red identifica de forma suficiente al usuario y su perfil de servicios.
 
-- **D.** Usar únicamente Wi-Fi como acceso.
+- **D.** Utilizar exclusivamente Wi-Fi como tecnología de acceso y rechazar conexiones procedentes de redes móviles o accesos fijos.
 
 **Respuesta correcta:** **A.** Separar acceso, control de sesión y servicios para facilitar convergencia e independencia del acceso.
 
@@ -43452,11 +43452,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 - **A.** Servir como punto de entrada/interrogación hacia un dominio IMS y ayudar a localizar la función de servicio adecuada.
 
-- **B.** Transportar RTP de todos los usuarios obligatoriamente.
+- **B.** Transportar obligatoriamente todos los paquetes RTP de los usuarios y transcodificar los medios antes de entregarlos al dominio de destino.
 
-- **C.** Gestionar el switch de acceso Ethernet.
+- **C.** Gestionar el conmutador Ethernet de acceso, asignando puertos físicos y VLAN a cada terminal que intenta registrarse en el núcleo IMS.
 
-- **D.** Realizar mezcla de vídeo como MCU.
+- **D.** Mezclar los flujos de audio y vídeo como una MCU y generar una composición audiovisual única para todos los participantes de la sesión.
 
 **Respuesta correcta:** **A.** Servir como punto de entrada/interrogación hacia un dominio IMS y ayudar a localizar la función de servicio adecuada.
 
@@ -43498,13 +43498,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué representa HSS en la arquitectura IMS tradicional?
 
-- **A.** Un protocolo de señalización de vídeo.
+- **A.** Un protocolo específico que transporta la señalización de vídeo entre terminales y negocia directamente la codificación de cada flujo.
 
 - **B.** Un repositorio de datos de abonado, identidad y perfil utilizado por funciones IMS.
 
-- **C.** Un switch de voz físico.
+- **C.** Un conmutador físico de voz que establece circuitos dedicados entre los usuarios antes de que intervenga cualquier función IMS.
 
-- **D.** Un codec de alta eficiencia.
+- **D.** Un códec de alta eficiencia que comprime simultáneamente audio y vídeo y almacena los perfiles multimedia de los abonados.
 
 **Respuesta correcta:** **B.** Un repositorio de datos de abonado, identidad y perfil utilizado por funciones IMS.
 
@@ -44242,11 +44242,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué afirmación es correcta sobre QoS?
 
-- **A.** Duplica automáticamente la capacidad.
+- **A.** Duplicar automáticamente la capacidad física de cada enlace en cuanto se detecta congestión, sin ampliar ni reconfigurar la infraestructura.
 
-- **B.** Hace innecesario dimensionar.
+- **B.** Hacer innecesario dimensionar enlaces y colas porque la priorización evita por completo la saturación, con independencia de la carga ofrecida.
 
-- **C.** Garantiza calidad aunque Internet ignore las marcas.
+- **C.** Garantizar la calidad extremo a extremo aunque redes intermedias de Internet ignoren las marcas y no apliquen la misma política de servicio.
 
 - **D.** Clasifica/marca y prioriza tráfico en congestión, pero no crea ancho de banda ni arregla una ruta insuficiente.
 
@@ -44821,13 +44821,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué función cumple SIM/eSIM?
 
-- **A.** Sustituir el cifrado del sistema operativo.
+- **A.** Sustituir el cifrado del sistema operativo y proteger por sí sola todos los datos, aplicaciones y archivos almacenados en el dispositivo.
 
-- **B.** Mejorar físicamente la antena.
+- **B.** Mejorar físicamente la ganancia y la cobertura de la antena al adaptar de forma dinámica sus elementos radiantes a la red disponible.
 
 - **C.** Alojar/gestionar identidad y credenciales de suscripción para autenticación y acceso a la red.
 
-- **D.** Actuar como servidor TURN.
+- **D.** Actuar como servidor TURN para retransmitir el tráfico multimedia cuando los participantes no pueden establecer conectividad directa.
 
 **Respuesta correcta:** **C.** Alojar/gestionar identidad y credenciales de suscripción para autenticación y acceso a la red.
 
@@ -44869,13 +44869,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Más “G” garantiza siempre menor latencia de aplicación extremo a extremo?
 
-- **A.** Sí, la latencia siempre es cero en 5G.
+- **A.** Garantizar latencia nula en cualquier aplicación porque una generación de acceso radio posterior elimina todos los retardos del recorrido.
 
 - **B.** No; radio es solo una parte y también influyen core, transporte, Internet/cloud, servidor y aplicación.
 
-- **C.** Solo depende de la pantalla.
+- **C.** Hacer que la latencia dependa únicamente de la frecuencia de refresco de la pantalla, sin influencia del transporte ni del servidor remoto.
 
-- **D.** Sí, aunque el servicio esté en otro continente.
+- **D.** Asegurar la misma latencia aunque el servicio se aloje en otro continente, ya que la red de acceso compensa automáticamente la distancia.
 
 **Respuesta correcta:** **B.** No; radio es solo una parte y también influyen core, transporte, Internet/cloud, servidor y aplicación.
 
@@ -45039,11 +45039,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 - **A.** Usa 5G NR con 5G Core de forma autónoma respecto al EPC para la arquitectura principal.
 
-- **B.** Depende obligatoriamente de EPC como core.
+- **B.** Depender obligatoriamente del EPC como núcleo principal y utilizar 5G NR solo como una ampliación radio de la arquitectura 4G existente.
 
-- **C.** Solo puede usar 2G radio.
+- **C.** Funcionar únicamente sobre acceso radio 2G, porque el 5G Core traduce después todas las sesiones a servicios y capacidades de quinta generación.
 
-- **D.** Es una modalidad de Wi-Fi.
+- **D.** Ser una modalidad de Wi-Fi administrada por el operador que no utiliza 5G NR ni funciones específicas del núcleo de red móvil.
 
 **Respuesta correcta:** **A.** Usa 5G NR con 5G Core de forma autónoma respecto al EPC para la arquitectura principal.
 
@@ -45157,13 +45157,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué ventaja puede aportar un core 5G con arquitectura basada en servicios?
 
-- **A.** Eliminar cualquier función de autenticación.
+- **A.** Eliminar todas las funciones de autenticación porque las interfaces entre servicios identifican por sí solas a cada abonado de la red.
 
-- **B.** Obligar a usar TDM.
+- **B.** Obligar a transportar señalización y tráfico mediante TDM, sustituyendo las interfaces de servicio por circuitos físicos dedicados.
 
 - **C.** Mayor modularidad e interacción entre funciones mediante servicios/interfaces definidos.
 
-- **D.** No necesitar observabilidad.
+- **D.** Hacer innecesaria la observabilidad, ya que cada función resuelve automáticamente cualquier fallo de las demás sin métricas ni trazas.
 
 **Respuesta correcta:** **C.** Mayor modularidad e interacción entre funciones mediante servicios/interfaces definidos.
 
@@ -45807,11 +45807,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 - **A.** Marcar incumplimiento y restringir/remediar acceso según riesgo y política.
 
-- **B.** Ignorarlo siempre.
+- **B.** Ignorar siempre la detección para no afectar al usuario, aunque el dispositivo incumpla una condición explícita de acceso corporativo.
 
-- **C.** Desactivar logs.
+- **C.** Desactivar los registros del agente UEM para ocultar el evento y mantener el terminal como conforme sin evaluar el riesgo asociado.
 
-- **D.** Aumentar el bitrate de videollamada.
+- **D.** Aumentar el bitrate de videollamada para compensar la alteración del sistema operativo y recuperar la integridad del dispositivo.
 
 **Respuesta correcta:** **A.** Marcar incumplimiento y restringir/remediar acceso según riesgo y política.
 
@@ -45831,11 +45831,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 - **A.** Facilitar autenticación fuerte y configuración segura de Wi-Fi, VPN o servicios corporativos.
 
-- **B.** Aumentar cobertura radio.
+- **B.** Aumentar la cobertura radio del dispositivo al modificar mediante software la potencia, la ganancia y la orientación física de sus antenas.
 
-- **C.** Sustituir el cifrado de disco.
+- **C.** Sustituir el cifrado de disco, ya que un certificado de cliente protege automáticamente todos los datos almacenados en el terminal.
 
-- **D.** Crear backups automáticos de cualquier app.
+- **D.** Crear copias de seguridad completas de cualquier aplicación, aunque el sistema operativo o la política corporativa impidan acceder a sus datos.
 
 **Respuesta correcta:** **A.** Facilitar autenticación fuerte y configuración segura de Wi-Fi, VPN o servicios corporativos.
 

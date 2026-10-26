@@ -2,15 +2,17 @@
 
 Fecha de simulación: 25 de octubre de 2026.
 
+Estado de ejecución: **completado el 26 de octubre de 2026**. Los 471 registros de este plan se aplicaron con aprobación humana expresa y todos los hashes acumulados coincidieron con sus puntos de control.
+
 ## Alcance
 
-Este documento define puntos de control para aplicar de forma gradual las 471 propuestas todavía pendientes en `GSI_REVISION_MANUAL_LOTE_02.md` a `GSI_REVISION_MANUAL_LOTE_25.md`. No concede aprobación, no modifica preguntas y no sustituye la revisión humana de los textos concretos.
+Este documento definió los puntos de control para aplicar de forma gradual las 471 propuestas que estaban pendientes en `GSI_REVISION_MANUAL_LOTE_02.md` a `GSI_REVISION_MANUAL_LOTE_25.md`. El plan no concedía aprobación ni sustituía la revisión humana de los textos concretos; su ejecución posterior quedó condicionada a las aprobaciones expresas recibidas.
 
 El banco de partida es `data/questions-manual.json`, SHA-256 `b3d6eff82457733f5e3a8da8ef4a264c0f2dbca9382f8e975c8e6de246051b4c`. La serialización en memoria sin cambios reprodujo exactamente ese hash; por ello, los hashes prospectivos de la tabla son comparables con el archivo que resultaría de aplicar cada lote en el orden indicado.
 
 ## Invariantes comprobadas
 
-- 471 IDs pendientes y 471 IDs únicos.
+- 471 IDs inicialmente pendientes y 471 IDs únicos.
 - 1.413 sustituciones de distractores: tres por pregunta.
 - Cero cambios en enunciados, claves correctas, feedback, procedencia, validación o estado activo.
 - Cero alternativas duplicadas después de cada punto de control.
@@ -58,8 +60,8 @@ El banco de partida es `data/questions-manual.json`, SHA-256 `b3d6eff82457733f5e
 6. Ejecutar `python scripts/run_gsi_suite.py` y exigir código 0.
 7. Crear y publicar un commit aislado; no mezclar lotes no aprobados.
 
-## Proyección final
+## Resultado final
 
-Después de aplicar los 471 registros en este orden, la cola `correct-length-dominance` quedaría vacía y no aparecerían alternativas duplicadas. Permanecerían 18 preguntas manuales con otros hallazgos: 17 por `absolute-wording-cluster` y una por `meta-source-wording`, todas fuera del bloque pendiente preparado aquí. Esas señales requieren una revisión separada y no deben resolverse ampliando automáticamente el alcance de estas aprobaciones.
+Después de aplicar los 471 registros en este orden, la cola `correct-length-dominance` quedó vacía y no aparecieron alternativas duplicadas. Permanecen 18 preguntas manuales con otros hallazgos: 17 por `absolute-wording-cluster` y una por `meta-source-wording`, todas fuera del bloque preparado aquí. Esas señales requieren una revisión separada y no deben resolverse ampliando automáticamente el alcance de estas aprobaciones.
 
-Los hashes de esta tabla son previsiones reproducibles, no sustituyen la verificación del archivo real después de cada aplicación.
+Los hashes de esta tabla se calcularon como previsiones reproducibles y se verificaron después de cada aplicación contra el archivo real.

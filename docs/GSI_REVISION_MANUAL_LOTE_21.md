@@ -4,15 +4,15 @@ Fecha de preparación: 24 de octubre de 2026.
 
 ## Alcance y estado
 
-Este documento prepara las 20 candidatas siguientes a las incluidas en el lote 20 dentro de la cola editorial `correct-length-dominance`. Las decisiones permanecen pendientes y no se ha modificado ninguna pregunta de este lote.
+Este documento registra la aplicación de las 20 candidatas siguientes a las incluidas en el lote 20 dentro de la cola editorial `correct-length-dominance`. La instrucción expresa «apruebo los lotes 21 al 25» de la persona responsable del proyecto autoriza las veinte decisiones de este lote.
 
 Los 20 registros se contrastaron con el solucionario Markdown conservado de su práctica. En todos los casos, la letra correcta del banco coincide con la letra publicada en el solucionario.
 
-Estado del lote: **20 decisiones pendientes de aprobación humana; cero cambios en los bancos**.
+Estado del lote: **20 decisiones humanas L3 aprobadas y aplicadas; cero pendientes**.
 
 ## Elementos preparados
 
-| Orden | ID | Tema | Relación inicial | Evidencia de clave | Contraste propuesto |
+| Orden | ID | Tema | Relación inicial | Evidencia de clave | Contraste aprobado y aplicado |
 | ---: | --- | --- | ---: | --- | --- |
 | 1 | `MAN-GSI-P15-055` | B3-T11 | 2,22× | P15, pregunta 55, C | Proyecto MSBuild frente a sesiones, código compilado y credenciales. |
 | 2 | `MAN-GSI-P15-042` | B3-T11 | 2,22× | P15, pregunta 42, D | Tarea asíncrona frente a ensamblado, hilo reservado y transacción. |
@@ -35,9 +35,9 @@ Estado del lote: **20 decisiones pendientes de aprobación humana; cero cambios 
 | 19 | `MAN-GSI-P14-090` | B1-T05 | 2,18× | P14, pregunta 90, D | Acción positiva legal frente a prohibición absoluta, sentencia y ausencia normativa. |
 | 20 | `MAN-GSI-P16-090` | B2-T14 | 2,18× | P16, pregunta 90, A | Formas del programa frente a protección exclusiva, desprotección y mera idea. |
 
-## Propuestas concretas pendientes
+## Propuestas concretas aprobadas y aplicadas
 
-Las respuestas correctas permanecen literalmente intactas. La aprobación del lote autorizaría únicamente los tres distractores enumerados en cada registro.
+Las respuestas correctas permanecen literalmente intactas. La aprobación del lote autorizó únicamente los tres distractores enumerados en cada registro.
 
 ### 1. `MAN-GSI-P15-055` · conservar C
 
@@ -168,11 +168,21 @@ Las respuestas correctas permanecen literalmente intactas. La aprobación del lo
 - P18: `documents/markdown/gsi/P18/GSI A2 — PRÁCTICA ACTIVA 18 — HTML, XML, CONTENIDOS, BÚSQUEDA Y SEO — SOLUCIONARIO COMENTADO.md`, preguntas 12, 94, 107, 140 y 153.
 - P19: `documents/markdown/gsi/P19/GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO.md`, preguntas 55 y 57.
 
-## Resultado de la preparación
+## Resultado de la aplicación
 
 - 20 de 20 IDs localizados en el banco manual.
 - 20 de 20 claves coincidentes con sus solucionarios conservados.
-- 20 decisiones editoriales pendientes de aprobación humana.
-- Cero modificaciones en `data/questions-manual.json`, `data/questions-official.json` y `data/questions-ai.json`.
+- 20 decisiones editoriales aprobadas y aplicadas; cero pendientes en este lote.
+- Se modificaron únicamente los tres distractores aprobados de cada pregunta: 20 IDs y 60 textos.
+- Se conservaron enunciados, claves correctas, feedback, procedencia, estado de validación y estado activo.
+- `data/questions-official.json` y `data/questions-ai.json` permanecen intactos.
 
-Este lote solo podrá aplicarse después de recibir aprobación expresa de sus textos concretos.
+## Verificación
+
+- Cola `correct-length-dominance`: de 96 a 76 registros.
+- Preguntas manuales con algún hallazgo heurístico: de 114 a 94.
+- Alertas `absolute-wording-cluster`: 21 antes y 21 después.
+- SHA-256 de partida de `data/questions-manual.json`: `cd92a993cf225468ccd353b72b2d1ef3ca6c3e0d3b1f8d5b1ce3e649dd203069`.
+- SHA-256 resultante, coincidente con el punto de control previsto: `3a9997a1b24062366883faf934ba2857ff8376691636ed3cbf86d0b6d812c363`.
+
+El siguiente punto de control dentro del mismo bloque aprobado es el lote 22.

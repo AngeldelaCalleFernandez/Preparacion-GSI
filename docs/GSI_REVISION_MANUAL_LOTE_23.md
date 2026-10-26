@@ -4,15 +4,15 @@ Fecha de preparación: 24 de octubre de 2026.
 
 ## Alcance y estado
 
-Este documento prepara las 20 candidatas siguientes a las incluidas en el lote 22 dentro de la cola editorial `correct-length-dominance`. Las decisiones permanecen pendientes y no se ha modificado ninguna pregunta de este lote.
+Este documento registra la aplicación de las 20 candidatas siguientes a las incluidas en el lote 22 dentro de la cola editorial `correct-length-dominance`. La instrucción expresa «apruebo los lotes 21 al 25» de la persona responsable del proyecto autoriza las veinte decisiones de este lote.
 
 Los 20 registros se contrastaron con el solucionario Markdown conservado de su práctica. En todos los casos, la letra correcta del banco coincide con la letra publicada en el solucionario.
 
-Estado del lote: **20 decisiones pendientes de aprobación humana; cero cambios en los bancos**.
+Estado del lote: **20 decisiones humanas L3 aprobadas y aplicadas; cero pendientes**.
 
 ## Elementos preparados
 
-| Orden | ID | Tema | Relación inicial | Evidencia de clave | Contraste propuesto |
+| Orden | ID | Tema | Relación inicial | Evidencia de clave | Contraste aprobado y aplicado |
 | ---: | --- | --- | ---: | --- | --- |
 | 1 | `MAN-GSI-P19-039` | B4-T14 | 2,13× | P19, pregunta 39, D | QoS frente a capacidad, dimensionamiento y garantías externas. |
 | 2 | `MAN-GSI-P14-084` | B1-T05 | 2,12× | P14, pregunta 84, B | Accesibilidad universal frente a canal único, reacción tardía y ausencia de ajustes. |
@@ -35,9 +35,9 @@ Estado del lote: **20 decisiones pendientes de aprobación humana; cero cambios 
 | 19 | `MAN-GSI-P16-039` | B2-T14 | 2,07× | P16, pregunta 39, C | Cumplimiento Apache-2.0 frente a borrar avisos, relicenciar todo y omitir condiciones. |
 | 20 | `MAN-GSI-P18-001` | B2-T09 | 2,07× | P18, pregunta 1, A | Lenguaje de marcas frente a cálculo, transporte y sistema operativo. |
 
-## Propuestas concretas pendientes
+## Propuestas concretas aprobadas y aplicadas
 
-Las respuestas correctas permanecen literalmente intactas. La aprobación del lote autorizaría únicamente los tres distractores enumerados en cada registro.
+Las respuestas correctas permanecen literalmente intactas. La aprobación del lote autorizó únicamente los tres distractores enumerados en cada registro.
 
 ### 1. `MAN-GSI-P19-039` · conservar D
 
@@ -168,11 +168,21 @@ Las respuestas correctas permanecen literalmente intactas. La aprobación del lo
 - P18: `documents/markdown/gsi/P18/GSI A2 — PRÁCTICA ACTIVA 18 — HTML, XML, CONTENIDOS, BÚSQUEDA Y SEO — SOLUCIONARIO COMENTADO.md`, preguntas 1 y 158.
 - P19: `documents/markdown/gsi/P19/GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO.md`, preguntas 39 y 96.
 
-## Resultado de la preparación
+## Resultado de la aplicación
 
 - 20 de 20 IDs localizados en el banco manual.
 - 20 de 20 claves coincidentes con sus solucionarios conservados.
-- 20 decisiones editoriales pendientes de aprobación humana.
-- Cero modificaciones en `data/questions-manual.json`, `data/questions-official.json` y `data/questions-ai.json`.
+- 20 decisiones editoriales aprobadas y aplicadas; cero pendientes en este lote.
+- Se modificaron únicamente los tres distractores aprobados de cada pregunta: 20 IDs y 60 textos.
+- Se conservaron enunciados, claves correctas, feedback, procedencia, estado de validación y estado activo.
+- `data/questions-official.json` y `data/questions-ai.json` permanecen intactos.
 
-Este lote solo podrá aplicarse después de recibir aprobación expresa de sus textos concretos.
+## Verificación
+
+- Cola `correct-length-dominance`: de 56 a 36 registros.
+- Preguntas manuales con algún hallazgo heurístico: de 74 a 54.
+- Alertas `absolute-wording-cluster`: 21 antes y 19 después.
+- SHA-256 de partida de `data/questions-manual.json`: `f0daa1da9b19c20442932dc7575f2814938113cb51c9c07141a2a19341cdc0f9`.
+- SHA-256 resultante, coincidente con el punto de control previsto: `a04fda98ffc3c656bd7db57e359112531c191d2dcb48e4c1f4d7b64a40a4d2ad`.
+
+El siguiente punto de control dentro del mismo bloque aprobado es el lote 24.

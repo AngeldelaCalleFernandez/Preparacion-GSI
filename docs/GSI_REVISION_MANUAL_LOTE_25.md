@@ -8,11 +8,11 @@ Este documento prepara las 16 candidatas finales de la cola editorial `correct-l
 
 Los 16 registros se contrastaron con el solucionario Markdown conservado de su práctica. En todos los casos, la letra correcta del banco coincide con la letra publicada en el solucionario.
 
-Estado del lote: **16 decisiones pendientes de aprobación humana; cero cambios en los bancos**.
+Estado del lote: **16 decisiones humanas L3 aprobadas y aplicadas; cero pendientes**.
 
 ## Elementos preparados
 
-| Orden | ID | Tema | Relación inicial | Evidencia de clave | Contraste propuesto |
+| Orden | ID | Tema | Relación inicial | Evidencia de clave | Contraste aprobado y aplicado |
 | ---: | --- | --- | ---: | --- | --- |
 | 1 | `MAN-GSI-P16-057` | B2-T14 | 2,02× | P16, pregunta 57, C | Dependencia AGPL frente a eliminación, indiferencia por red y publicación total. |
 | 2 | `MAN-GSI-P19-004` | B4-T14 | 2,02× | P19, pregunta 4, A | IMS convergente frente a circuitos, ausencia de autenticación y acceso Wi-Fi único. |
@@ -31,9 +31,9 @@ Estado del lote: **16 decisiones pendientes de aprobación humana; cero cambios 
 | 15 | `MAN-GSI-P16-040` | B2-T14 | 2,00× | P16, pregunta 40, D | Licencia permisiva frente a dominio público, prohibición comercial y copyleft de red. |
 | 16 | `MAN-GSI-P16-070` | B2-T14 | 2,00× | P16, pregunta 70, D | Fragmento sin licencia frente a publicidad, longitud y rendimiento. |
 
-## Propuestas concretas pendientes
+## Propuestas concretas aprobadas y aplicadas
 
-Las respuestas correctas permanecen literalmente intactas. La aprobación del lote autorizaría únicamente los tres distractores enumerados en cada registro.
+Las respuestas correctas permanecen literalmente intactas. La aprobación del lote autorizó únicamente los tres distractores enumerados en cada registro.
 
 ### 1. `MAN-GSI-P16-057` · conservar C
 
@@ -140,11 +140,21 @@ Las respuestas correctas permanecen literalmente intactas. La aprobación del lo
 - P18: `documents/markdown/gsi/P18/GSI A2 — PRÁCTICA ACTIVA 18 — HTML, XML, CONTENIDOS, BÚSQUEDA Y SEO — SOLUCIONARIO COMENTADO.md`, preguntas 104 y 159.
 - P19: `documents/markdown/gsi/P19/GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO.md`, preguntas 4 y 69.
 
-## Resultado de la preparación
+## Resultado de la aplicación
 
 - 16 de 16 IDs localizados en el banco manual.
 - 16 de 16 claves coincidentes con sus solucionarios conservados.
-- 16 decisiones editoriales pendientes de aprobación humana.
-- Cero modificaciones en `data/questions-manual.json`, `data/questions-official.json` y `data/questions-ai.json`.
+- 16 decisiones editoriales aprobadas y aplicadas; cero pendientes en este lote.
+- Se modificaron únicamente los tres distractores aprobados de cada pregunta: 16 IDs y 48 textos.
+- Se conservaron enunciados, claves correctas, feedback, procedencia, estado de validación y estado activo.
+- `data/questions-official.json` y `data/questions-ai.json` permanecen intactos.
 
-Este lote solo podrá aplicarse después de recibir aprobación expresa de sus textos concretos.
+## Verificación
+
+- Cola `correct-length-dominance`: de 16 a 0 registros.
+- Preguntas manuales con algún hallazgo heurístico: de 34 a 18.
+- Alertas `absolute-wording-cluster`: 19 antes y 17 después.
+- SHA-256 de partida de `data/questions-manual.json`: `4807606f22837fe8babb329f356ee571c4cb82f0487961ef15c4cc237b8c47eb`.
+- SHA-256 resultante, coincidente con el punto de control previsto: `08261968fde52c7180db82a973eee507cf83251f1f99f7cb188e6047ac286491`.
+
+La cola `correct-length-dominance` queda agotada. Los 18 hallazgos manuales restantes pertenecen a reglas distintas y quedan fuera de este bloque editorial.

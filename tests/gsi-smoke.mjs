@@ -341,7 +341,12 @@ try {
     const quality=JSON.parse(await fs.readFile(path.join(root,'logs/gsi-question-quality.json'),'utf8'));
     await page.goto(base.replace('index.html','review.html'));
     await page.waitForFunction((expected)=>document.querySelector('#review-question').options.length===expected,quality.summary.manual_primary_queue);
-    assert.match(await page.locator('#review-content').innerText(),/Indicios editoriales automáticos/);
+    const initialReview = await page.locator('#review-content').innerText();
+    if (quality.summary.manual_primary_queue === 0) {
+      assert.match(initialReview, /No hay preguntas que coincidan con estos filtros/);
+    } else {
+      assert.match(initialReview, /Indicios editoriales automáticos/);
+    }
     assert.match(await page.locator('#review-count').innerText(),new RegExp(`${quality.summary.questions} en los bancos · ${quality.summary.questions_with_findings} con indicios`));
     await page.locator('#review-origin').selectOption('ai');
     await page.locator('#review-rule').selectOption('');
