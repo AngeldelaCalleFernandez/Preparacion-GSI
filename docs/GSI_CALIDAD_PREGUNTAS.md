@@ -9,7 +9,7 @@ Versión del análisis: `1.0.0`. Preguntas examinadas: **1964**.
 | Banco | Preguntas | Con algún indicio | Respuesta correcta ≥2× distractor más largo | Distractores absolutos | Redacción dependiente de la fuente |
 | --- | ---: | ---: | ---: | ---: | ---: |
 | Oficiales INAP | 202 | 6 | 5 | 1 | 0 |
-| Manuales/curadas | 959 | 18 | 0 | 17 | 1 |
+| Manuales/curadas | 959 | 0 | 0 | 0 | 0 |
 | Generadas por IA | 803 | 128 | 30 | 99 | 6 |
 
 La primera cola editorial contiene **0 preguntas manuales/curadas** en las que la respuesta correcta tiene al menos 40 caracteres y duplica la longitud del distractor más extenso. Es una señal de posible pista formal, no una prueba de incorrección.

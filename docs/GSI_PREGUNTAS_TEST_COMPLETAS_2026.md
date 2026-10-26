@@ -18,7 +18,7 @@ Exportación reproducible de los tres bancos del producto. Los JSON son la fuent
 | Archivo | SHA-256 |
 | --- | --- |
 | `data/questions-official.json` | `bddf132ba2333d848982263593905206a87e8548179ee7443a8699385c984b9e` |
-| `data/questions-manual.json` | `08261968fde52c7180db82a973eee507cf83251f1f99f7cb188e6047ac286491` |
+| `data/questions-manual.json` | `711309c37abb1dfcb280dcaf03054cb783a81f8f60260be14cc4194ee80cfbdb` |
 | `data/questions-ai.json` | `c1c024271a64ed92773351791353daac8df6f8d034104ef24ae4a367ac81d937` |
 | `data/syllabus.json` | `2370e84e3c098dbe89628cdce92e95e9042a390d2dffe8bb48e3627607750d48` |
 
@@ -1135,11 +1135,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** El Defensor del Pueblo está legitimado para:
 
-- **A.** Solo recurso de casación.
+- **A.** Recurso de casación ante el Tribunal Supremo y revisión de sentencias firmes.
 
-- **B.** Solo cuestión de inconstitucionalidad.
+- **B.** Cuestión de inconstitucionalidad ante el Tribunal Constitucional, como órgano judicial.
 
-- **C.** Ningún proceso constitucional.
+- **C.** Conflicto de competencia entre el Estado y las comunidades autónomas.
 
 - **D.** Recurso de inconstitucionalidad y recurso de amparo.
 
@@ -1957,13 +1957,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** Para ejercer el derecho de acceso a la información pública:
 
-- **A.** Solo pueden solicitar información las personas jurídicas.
+- **A.** La condición de persona jurídica es necesaria para presentar la solicitud.
 
-- **B.** Es obligatorio justificar un perjuicio personal.
+- **B.** La solicitud debe justificar un perjuicio personal concreto.
 
 - **C.** No es obligatorio motivar la solicitud.
 
-- **D.** Siempre debe acreditarse interés legítimo directo.
+- **D.** La acreditación de un interés legítimo directo es requisito de admisión.
 
 **Respuesta correcta:** **C.** No es obligatorio motivar la solicitud.
 
@@ -2171,7 +2171,7 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Procedencia:** manual/curada. **Estado de uso:** activa y validada. **Validación:** `validated`. **Dificultad declarada:** `medium`.
 
-**Enunciado:** Según los apuntes V2.1, el V Plan de Gobierno Abierto abarca el periodo:
+**Enunciado:** ¿Qué periodo abarca el V Plan de Gobierno Abierto?
 
 - **A.** 2021-2025.
 
@@ -2183,9 +2183,9 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Respuesta correcta:** **B.** 2025-2029.
 
-**Explicación:** El V2.1 fija el V Plan 2025-2029.
+**Explicación:** El V Plan de Gobierno Abierto abarca el periodo 2025-2029.
 
-**Feedback tras error:** Según el solucionario: El V2.1 fija el V Plan 2025-2029.
+**Feedback tras error:** La respuesta correcta es 2025-2029.
 
 **Fuente:** [GSI A2 — PRÁCTICA ACTIVA 14 — TEST BLOQUE I — SOLUCIONARIO COMENTADO](<https://docs.google.com/document/d/1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo/edit>).
 
@@ -2488,13 +2488,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Cuál de estos conceptos aparece en la LO 3/2007 según el V2.1?
 
-- **A.** Solo violencia penal.
+- **A.** Violencia penal entre personas sin relación con el sexo.
 
 - **B.** Acoso por razón de sexo.
 
-- **C.** Solo discriminación directa, excluyendo el acoso.
+- **C.** Discriminación directa, pero no las conductas de acoso.
 
-- **D.** Únicamente igualdad retributiva.
+- **D.** Igualdad retributiva, sin otras medidas de igualdad efectiva.
 
 **Respuesta correcta:** **B.** Acoso por razón de sexo.
 
@@ -2584,13 +2584,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Cuál de estas formas de discriminación recoge el V2.1 al explicar la Ley 15/2022?
 
-- **A.** Solo discriminación en el empleo público.
+- **A.** Discriminación limitada a las relaciones de empleo público.
 
 - **B.** Discriminación por asociación.
 
-- **C.** Solo discriminación directa e indirecta.
+- **C.** Discriminación directa e indirecta como categorías exhaustivas.
 
-- **D.** Únicamente discriminación por sexo.
+- **D.** Discriminación basada necesariamente en el sexo de la persona.
 
 **Respuesta correcta:** **B.** Discriminación por asociación.
 
@@ -4249,13 +4249,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Cuál de estos sujetos está obligado a relacionarse electrónicamente con las Administraciones en los términos de la LPAC?
 
-- **A.** Solo funcionarios de carrera.
+- **A.** El personal funcionario de carrera, también en sus trámites estrictamente particulares.
 
-- **B.** Solo mayores de 65 años.
+- **B.** Las personas mayores de 65 años, con independencia del procedimiento.
 
 - **C.** Las personas jurídicas.
 
-- **D.** Todas las personas físicas sin excepción.
+- **D.** Las personas físicas que presentan cualquier solicitud, aunque ninguna norma lo exija.
 
 **Respuesta correcta:** **C.** Las personas jurídicas.
 
@@ -4561,13 +4561,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** El recurso de alzada procede, con carácter general, contra actos que:
 
-- **A.** Siempre sean presuntos.
+- **A.** Actos presuntos con independencia de que agoten o no la vía administrativa.
 
 - **B.** No ponen fin a la vía administrativa.
 
-- **C.** Ponen fin a la vía administrativa.
+- **C.** Ponen fin a la vía administrativa y admiten reposición potestativa.
 
-- **D.** Solo sean reglamentos.
+- **D.** Disposiciones administrativas de carácter general aprobadas por cualquier órgano.
 
 **Respuesta correcta:** **B.** No ponen fin a la vía administrativa.
 
@@ -4947,11 +4947,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 - **A.** Está entre los sujetos obligados a relacionarse electrónicamente en los términos de la LPAC.
 
-- **B.** Puede elegir siempre papel por ser sujeto privado.
+- **B.** Puede optar por el papel en cualquier procedimiento por tratarse de un sujeto privado.
 
-- **C.** Solo está obligada si supera 50 empleados.
+- **C.** Queda obligada únicamente cuando supera cincuenta empleados.
 
-- **D.** Solo está obligada si actúa mediante abogado.
+- **D.** La obligación nace cuando actúa mediante abogado, pero no al hacerlo directamente.
 
 **Respuesta correcta:** **A.** Está entre los sujetos obligados a relacionarse electrónicamente en los términos de la LPAC.
 
@@ -6974,13 +6974,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué objetivo puede perseguir un clúster?
 
-- **A.** Únicamente reducir el tamaño del código fuente.
+- **A.** La reducción del tamaño del código fuente mediante compilación distribuida.
 
-- **B.** Solo sustituir DNS.
+- **B.** La sustitución del servicio DNS por direccionamiento estático entre nodos.
 
 - **C.** Alto rendimiento, alta disponibilidad, balanceo o una combinación.
 
-- **D.** Eliminar todo punto de fallo sin redundancia.
+- **D.** La eliminación de puntos de fallo sin incorporar redundancia entre componentes.
 
 **Respuesta correcta:** **C.** Alto rendimiento, alta disponibilidad, balanceo o una combinación.
 
@@ -7504,11 +7504,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 - **A.** Hardware virtual, un sistema operativo invitado y sus aplicaciones.
 
-- **B.** Solo una imagen de datos sin sistema operativo.
+- **B.** Una imagen de datos ejecutada sin sistema operativo invitado ni hardware virtual.
 
-- **C.** Exclusivamente un proceso que comparte siempre el kernel del host.
+- **C.** Un proceso aislado que comparte el kernel del host como definición general de máquina virtual.
 
-- **D.** Una VLAN sin recursos de cómputo.
+- **D.** Una red VLAN sin recursos virtuales de cómputo ni sistema operativo.
 
 **Respuesta correcta:** **A.** Hardware virtual, un sistema operativo invitado y sus aplicaciones.
 
@@ -7838,11 +7838,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** En IaaS, ¿qué recibe típicamente el cliente?
 
-- **A.** Una aplicación final completa sin gestionar nada.
+- **A.** Una aplicación final completa cuya operación corresponde íntegramente al proveedor.
 
-- **B.** Solo un lenguaje de programación sin infraestructura.
+- **B.** Un entorno de programación gestionado sin recursos de infraestructura configurables.
 
-- **C.** Únicamente correo electrónico como SaaS.
+- **C.** Un servicio de correo electrónico listo para usar por el usuario final.
 
 - **D.** Cómputo, red y almacenamiento virtualizados, gestionando normalmente SO y aplicaciones.
 
@@ -19973,13 +19973,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué protege el derecho de autor sobre software según el TRLPI?
 
-- **A.** Cualquier idea informática aunque nunca se materialice.
+- **A.** Las ideas y principios de un programa aunque no se hayan expresado en código.
 
-- **B.** Solo el nombre comercial.
+- **B.** El nombre comercial del producto como contenido propio del programa.
 
 - **C.** Las formas de expresión del programa, no las ideas y principios abstractos en que se basa.
 
-- **D.** Exclusivamente el soporte físico.
+- **D.** El soporte físico donde se entrega el programa, con independencia de su expresión.
 
 **Respuesta correcta:** **C.** Las formas de expresión del programa, no las ideas y principios abstractos en que se basa.
 
@@ -20069,11 +20069,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué derechos exclusivos enumera el artículo 99, con las limitaciones legales correspondientes?
 
-- **A.** Solo el derecho a registrar una marca.
+- **A.** El registro de la marca bajo la que se comercializa el programa.
 
-- **B.** Únicamente el derecho a cobrar soporte.
+- **B.** El cobro de servicios de soporte y mantenimiento del producto.
 
-- **C.** El derecho a impedir toda interoperabilidad.
+- **C.** La prohibición de cualquier mecanismo de interoperabilidad con otros programas.
 
 - **D.** Reproducción, transformación y distribución pública, entre otros actos descritos.
 
@@ -20335,11 +20335,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 - **A.** Puede quedar ambiguo qué puede modificar, redistribuir, encargar a terceros o reutilizar el cliente.
 
-- **B.** Ninguno: la propiedad intelectual siempre se transmite automáticamente.
+- **B.** La entrega transmite de forma automática todos los derechos de explotación al cliente.
 
-- **C.** Solo un riesgo estético.
+- **C.** La falta de detalle afecta al aspecto visual, pero no a las facultades de uso.
 
-- **D.** El contrato pasa a ser una licencia MIT.
+- **D.** La cláusula convierte el contrato en una licencia MIT por defecto.
 
 **Respuesta correcta:** **A.** Puede quedar ambiguo qué puede modificar, redistribuir, encargar a terceros o reutilizar el cliente.
 
@@ -21005,11 +21005,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Puede existir DRM en contenidos o software con un modelo de licencia concreto sin que DRM sea la licencia?
 
-- **A.** No, DRM sustituye jurídicamente cualquier licencia.
+- **A.** El DRM reemplaza jurídicamente la licencia aplicable al contenido o software.
 
-- **B.** Solo en dominio público.
+- **B.** Su utilización queda reservada a contenidos que ya pertenecen al dominio público.
 
-- **C.** Solo en GPL.
+- **C.** Su utilización queda limitada a software distribuido bajo GPL.
 
 - **D.** Sí; el mecanismo técnico y la licencia siguen siendo conceptos separados.
 
@@ -22643,13 +22643,13 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué son metadatos documentales?
 
-- **A.** El contenido binario completo del documento siempre.
+- **A.** El contenido binario íntegro del documento almacenado en el repositorio.
 
 - **B.** Datos que describen contenido, contexto, estructura, estado o gestión de un documento.
 
-- **C.** Solo el nombre del fichero.
+- **C.** El nombre del fichero, sin información adicional sobre contexto o gestión.
 
-- **D.** Únicamente permisos del sistema operativo.
+- **D.** Los permisos del sistema operativo aplicados al archivo, sin otros datos descriptivos.
 
 **Respuesta correcta:** **B.** Datos que describen contenido, contexto, estructura, estado o gestión de un documento.
 
@@ -30530,11 +30530,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 - **A.** Puede ejecutarse en varios sistemas operativos compatibles, como Windows, Linux y macOS.
 
-- **B.** Solo puede ejecutarse dentro de IIS.
+- **B.** Su ejecución multiplataforma depende de alojarse dentro de IIS.
 
-- **C.** Solo puede ejecutarse en Windows Server.
+- **C.** El runtime moderno está disponible únicamente para Windows Server.
 
-- **D.** Es portable únicamente si se utiliza Visual Studio.
+- **D.** La portabilidad exige compilar el proyecto con Visual Studio.
 
 **Respuesta correcta:** **A.** Puede ejecutarse en varios sistemas operativos compatibles, como Windows, Linux y macOS.
 
@@ -46648,11 +46648,11 @@ Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar
 
 **Enunciado:** ¿Qué variables deben incluirse al dimensionar ancho de banda de videoconferencia?
 
-- **A.** Solo usuarios registrados.
+- **A.** El número total de usuarios registrados, aunque no coincidan en sesiones simultáneas.
 
-- **B.** Solo tamaño del edificio.
+- **B.** La superficie del edificio y el número de salas, sin estimar flujos concurrentes.
 
-- **C.** Únicamente resolución máxima de una cámara sin concurrencia.
+- **C.** La resolución máxima de una cámara tomada aisladamente, sin bitrate ni simultaneidad.
 
 - **D.** Bitrate por flujo, concurrencia real, direcciones subida/bajada, overhead, presentaciones y margen.
 

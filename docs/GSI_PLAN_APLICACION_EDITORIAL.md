@@ -62,6 +62,6 @@ El banco de partida es `data/questions-manual.json`, SHA-256 `b3d6eff82457733f5e
 
 ## Resultado final
 
-Después de aplicar los 471 registros en este orden, la cola `correct-length-dominance` quedó vacía y no aparecieron alternativas duplicadas. Permanecen 18 preguntas manuales con otros hallazgos: 17 por `absolute-wording-cluster` y una por `meta-source-wording`, todas fuera del bloque preparado aquí. Esas señales requieren una revisión separada y no deben resolverse ampliando automáticamente el alcance de estas aprobaciones.
+Después de aplicar los 471 registros en este orden, la cola `correct-length-dominance` quedó vacía y no aparecieron alternativas duplicadas. En ese punto permanecían 18 preguntas manuales con otros hallazgos: 17 por `absolute-wording-cluster` y una por `meta-source-wording`, todas fuera del bloque preparado aquí. Esas señales se trataron posteriormente, con autorización separada, en [GSI_MEJORA_EDITORIAL_RESIDUAL.md](GSI_MEJORA_EDITORIAL_RESIDUAL.md).
 
 Los hashes de esta tabla se calcularon como previsiones reproducibles y se verificaron después de cada aplicación contra el archivo real.
