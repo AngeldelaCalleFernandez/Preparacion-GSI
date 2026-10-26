@@ -89,13 +89,13 @@
     },
     {
       "path": "README.md",
-      "line": 117,
+      "line": 118,
       "text": "La identidad activa es `OPP-GSI / SYL-GSI-2025`. El contenido y progreso históricos de TAI permanecen excluidos de la aplicación GSI.",
       "classification": "documentación histórica, explicación de la migración o auditoría de saneamiento"
     },
     {
       "path": "README.md",
-      "line": 167,
+      "line": 168,
       "text": "También se comprueban puntuación, temporizadores, persistencia, exportación e importación, rutas relativas, procedencia, exclusión de preguntas pendientes y ausencia de referencias TAI en el producto activo.",
       "classification": "documentación histórica, explicación de la migración o auditoría de saneamiento"
     },
@@ -2363,19 +2363,19 @@
     },
     {
       "path": "scripts/validate_gsi_final.py",
-      "line": 239,
+      "line": 246,
       "text": "        text=p.read_text('utf-8');check(not re.search(r'\\b(?:TAI|tai|TODO|FIXME)\\b|33 temas',text),p.relative_to(ROOT).as_posix()+': sin TAI ni marcadores pendientes activos')",
       "classification": "control de exclusión o conservación del archivo"
     },
     {
       "path": "scripts/validate_gsi_final.py",
-      "line": 253,
+      "line": 260,
       "text": "    found=subprocess.run(['rg','--json','-i',r'\\bTAI\\b|33 temas','--glob','!logs/**','--glob','!tmp/**','.'],cwd=ROOT,capture_output=True,text=True,encoding='utf-8')",
       "classification": "control de exclusión o conservación del archivo"
     },
     {
       "path": "scripts/validate_gsi_final.py",
-      "line": 270,
+      "line": 277,
       "text": "    save('logs/gsi-legacy-review.json',{'date':DATE,'pattern':r'\\bTAI\\b|33 temas','scope':'Archivos versionados y no ignorados; originales locales preservados fuera del runtime. Se excluyen logs para evitar autorreferencias y tmp.', 'matches':matches,'unclassified':sum(m['classification']=='SIN CLASIFICAR' for m in matches)})",
       "classification": "control de exclusión o conservación del archivo"
     },
@@ -2399,25 +2399,25 @@
     },
     {
       "path": "tests/gsi-unit.mjs",
-      "line": 110,
+      "line": 164,
       "text": "test('Migración GSI no copia claves antiguas ni sin identidad',()=>{const raw=new Memory();raw.setItem('tai.phase3.training.v1','legacy untouched');raw.setItem('gsi.phase3.training.v1','unscoped untouched');const before=[...raw.map];const result=migrateV1ToV2(context,raw);assert.ok(result.ok);assert.equal(result.copied,0);assert.deepEqual([...raw.map],before);});",
       "classification": "regresión negativa y aislamiento del historial antiguo"
     },
     {
       "path": "tests/gsi-unit.mjs",
-      "line": 113,
+      "line": 167,
       "text": "function seed(){const raw=new Memory();const adapter=createPersistenceAdapter(context,raw);adapter.setItem('gsi.phase3.training.v1',JSON.stringify(training));adapter.removeItem('gsi.phase4.exam.active.real.v1');adapter.setItem(STUDY_PROGRESS_KEY,JSON.stringify({version:1,topics:{'III.12':{...createDefaultTopicProgress(),status:'in-progress',notes:'Persistente',updatedAt:'2026-10-22T10:00:00.000Z'}}}));raw.setItem(WRITTEN_KEY,JSON.stringify(createWrittenState(practice.cases[0].id)));raw.setItem('tai.phase3.training.v1','historical');return raw;}",
       "classification": "regresión negativa y aislamiento del historial antiguo"
     },
     {
       "path": "tests/gsi-unit.mjs",
-      "line": 114,
+      "line": 168,
       "text": "test('Exportar/importar conserva respuestas, práctica y sesiones borradas',()=>{const raw=seed(),backup=exportProgress(context,raw),target=new Memory();validateProgressBackup(backup,data);importProgress(backup,data,target);assert.equal(target.getItem('tai.phase3.training.v1'),null);assert.deepEqual(exportProgress(context,target).entries,backup.entries);});",
       "classification": "regresión negativa y aislamiento del historial antiguo"
     },
     {
       "path": "tests/gsi-unit.mjs",
-      "line": 118,
+      "line": 172,
       "text": "test('Reinicio borra solo progreso GSI y conserva historial antiguo',()=>{const raw=seed();resetProgress(context,raw);assert.deepEqual([...raw.map],[['tai.phase3.training.v1','historical']]);});",
       "classification": "regresión negativa y aislamiento del historial antiguo"
     },

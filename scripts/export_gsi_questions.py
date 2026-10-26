@@ -182,6 +182,10 @@ def build_export() -> str:
                     lines.extend([f"**Explicación:** {correct_feedback}", ""])
                 if incorrect_feedback and incorrect_feedback != correct_feedback:
                     lines.extend([f"**Feedback tras error:** {incorrect_feedback}", ""])
+                for option_id in ('A', 'B', 'C', 'D'):
+                    explanation = feedback.get('incorrect_options', {}).get(option_id)
+                    if explanation:
+                        lines.extend([f"**Por qué no {option_id}:** {one_line(explanation)}", ""])
 
                 source = question.get("source", {})
                 source_title = one_line(source.get("title") or source.get("source_id") or "Fuente no titulada")
@@ -202,6 +206,10 @@ def build_export() -> str:
                         trace.append(f"{label}: {one_line(source[field])}")
                 if trace:
                     lines.extend(["", "**Trazabilidad:** " + "; ".join(trace) + "."])
+                if source.get('editorial_revision_id'):
+                    lines.extend(["", f"**Revisión editorial efectiva:** `{source['editorial_revision_id']}`."])
+                for reference in source.get('editorial_references', []):
+                    lines.extend(["", f"**Respaldo editorial:** [{one_line(reference['title'])}](<{reference['url']}>) · {one_line(reference['locator'])} · comprobado: {reference['checked_at']}."])
                 record_hash = source.get("record_sha256")
                 if record_hash:
                     lines.extend(["", f"**Hash editorial del registro:** `{record_hash}`."])

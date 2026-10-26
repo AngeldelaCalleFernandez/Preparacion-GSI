@@ -1,5 +1,13 @@
 # Revisión editorial del banco GSI
 
+## Nueva revisión por versiones — 26 de octubre de 2026
+
+El [procedimiento de mejora por lotes](GSI_MEJORA_TESTS.md) añade una capa de revisión individual sobre el banco auditado, sin atribuir nuevas aceptaciones a la confirmación histórica. El [piloto de 20](GSI_REVISION_PILOTO_001.md) está preparado para revisión del propietario. La aceptación de una propuesta depende del texto exacto y de su hash; el progreso completo se publica en `logs/gsi-editorial-progress.json`.
+
+El criterio del entrenamiento combina preguntas conceptuales exigentes y microcasos que mantengan su concepto original, con orientación global 70/30 y sin cuotas por lote. El procedimiento recoge los cuatro refinamientos de la propuesta vigente, conservando las otras 16 y las versiones anteriores. Las propuestas nuevas requieren aprobación expresa antes de su aplicación.
+
+Los borradores y las aceptaciones descritos a continuación conservan su valor como historial del banco original. Las versiones futuras se comprobarán además contra `data/gsi-editorial-revisions.json`.
+
 Estado revisado el 24 de octubre de 2026: **959 preguntas curadas, 803 generadas y 202 oficiales activas**. Las curadas conservan las claves y explicaciones del corpus revisado. Las generadas conservan su origen IA; las oficiales se importan de cuestionarios y plantillas definitivas del INAP.
 
 La criba heurística reproducible está en [Calidad editorial del banco](GSI_CALIDAD_PREGUNTAS.md), con el detalle completo en [`logs/gsi-question-quality.json`](../logs/gsi-question-quality.json). Sus hallazgos no cambian claves ni estados: priorizan una revisión humana L3 y mantienen separadas la integridad técnica, la confirmación del propietario y la revisión editorial independiente.

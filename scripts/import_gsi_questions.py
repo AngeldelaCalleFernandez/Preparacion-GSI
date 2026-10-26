@@ -5,6 +5,7 @@ import json
 import re
 from collections import Counter
 from build_gsi_content import ROOT, DATE, VERSION, save, text_of
+from editorial_batches import guard_regeneration
 
 RIGHTS = {
     'sourceName': 'Prácticas y test GSI del proyecto',
@@ -105,6 +106,7 @@ def extract_pack(pack):
     return result, [qsource, source]
 
 def main():
+    guard_regeneration(ROOT, 'data/questions-manual.json')
     data = json.loads((ROOT / 'data/sources.json').read_text('utf-8'))
     data['sources'] = [s for s in data['sources'] if not re.match(r'SRC-GSI-P\d+-', s['id'])]
     questions = []

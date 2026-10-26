@@ -155,6 +155,8 @@ def main():
     official_extracted=load('documents/sources/gsi-official/extracted.json')
     official_records={f"OFF-GSI-INAP-{e['year']}-{'R' if r['reserve'] else 'Q'}{r['number']:03d}":r for e in official_extracted['exams'] for r in (e.get('questions') or [])}
     official_papers={e['id']:e for e in official_catalog['exams']}
+    from editorial_batches import verify_ledger
+    revision_originals=verify_ledger(ROOT)
     reviews=load('data/gsi-editorial-reviews.json');reviewmap={r['id']:r for r in reviews['reviews']}
     if reviews.get('confirmation'):
         confirmation=reviews['confirmation']
@@ -183,6 +185,11 @@ def main():
         else:
             check(q['provenance']['drive_id'] in known,label+': fuente dentro del inventario interno registrado')
         check(not q['is_active'] or q['validation_status']=='validated',label+': activación exige revisión')
+        # New versions are checked against exact human receipts by verify_ledger.
+        # Validate the original draft/evidence snapshot as historical lineage;
+        # never attribute the original acceptance to revised text.
+        q=revision_originals.get(label,q)
+        if q is None:continue  # Replacement: primary evidence and receipt checked above.
         if q['origin']=='ai':
             topic,line=drafts[label];fields=line.split('|');section=fields[0]
             check(q['statement']==fields[1] and sorted(o['text'] for o in q['options'])==sorted(fields[2:6]) and next(o['text'] for o in q['options'] if o['id']==q['correct_option'])==fields[2] and q['feedback']['correct']==fields[6],label+': opciones, respuesta y explicación coinciden con borrador')

@@ -1,4 +1,5 @@
 import { describeQuestionSource } from "./data-service.js?gsi2";
+import { feedbackFor } from "./question-feedback.js";
 import {
   createQuestionReference,
   getTemporalState,
@@ -22,7 +23,7 @@ import {
   createAnalyticsSessionEvent,
 } from "./analytics-events.js?gsi2";
 import { applyStoredAnalyticsEvents } from "./analytics-storage.js?gsi2";
-import { createElement, setStatus } from "./ui.js?gsi2";
+import { appendEditorialReferences, createElement, setStatus } from "./ui.js?gsi4";
 
 function originLabel(origin) {
   return { official: "Oficial", ai: "IA", manual: "Manual", adapted: "Adaptada" }[origin] || origin;
@@ -37,15 +38,11 @@ function formatDate(value) {
   return new Intl.DateTimeFormat("es-ES", { dateStyle: "medium" }).format(new Date(value));
 }
 
-function feedbackFor(question, selectedOption, correct) {
-  if (correct) return question.feedback?.correct || "Respuesta correcta.";
-  return question.feedback?.incorrect_options?.[selectedOption] || question.feedback?.correct || "Consulta la respuesta correcta y su fuente.";
-}
-
 function sourceCard(question, indexes) {
   const source = describeQuestionSource(question, indexes);
   const card = createElement("section", "source-card");
   card.append(createElement("h3", "", "Fuente"));
+  appendEditorialReferences(card, question);
   const title = source.url ? document.createElement("a") : createElement("span");
   title.textContent = source.title;
   if (source.url) {

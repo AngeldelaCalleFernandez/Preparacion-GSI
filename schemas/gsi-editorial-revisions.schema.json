@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "batches"
+  ],
+  "properties": {
+    "version": {
+      "const": 1
+    },
+    "batches": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "batch",
+          "approval"
+        ],
+        "properties": {
+          "batch": {
+            "type": "object"
+          },
+          "approval": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "reviewer",
+              "reviewer_type",
+              "reviewed_at",
+              "method",
+              "statement",
+              "batch_sha256"
+            ],
+            "properties": {
+              "reviewer": {
+                "type": "string",
+                "minLength": 1
+              },
+              "reviewer_type": {
+                "const": "human"
+              },
+              "reviewed_at": {
+                "type": "string",
+                "format": "date"
+              },
+              "method": {
+                "type": "string",
+                "minLength": 1
+              },
+              "statement": {
+                "type": "string",
+                "minLength": 1
+              },
+              "batch_sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "decisions": {
+                "type": "object",
+                "minProperties": 1,
+                "maxProperties": 20,
+                "propertyNames": {
+                  "pattern": "^(AI|MAN)-GSI-"
+                },
+                "additionalProperties": {
+                  "const": "accepted"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

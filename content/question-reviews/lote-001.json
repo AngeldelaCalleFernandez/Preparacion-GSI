@@ -1,0 +1,3644 @@
+{
+  "version": 1,
+  "id": "GSI-EDITORIAL-001",
+  "prepared_at": "2026-10-26",
+  "baseline_commit": "a32323ccdd1ec50fbfd51122e0a4fde99c302743",
+  "items": [
+    {
+      "id": "MAN-GSI-P15-075",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "c021bb2447ba60d9d8bbc24c271fddaf1eb2465113300350b12449f1994dd864",
+      "content_sha256": "7ead640d84b1b6913e7d31a6d4d127f6d3eabb3ec3040fb64b530d701c5d364f",
+      "before": {
+        "id": "MAN-GSI-P15-075",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué es model binding?",
+        "options": [
+          {
+            "id": "A",
+            "text": "El proceso que selecciona un endpoint comparando la URL y el método HTTP con las plantillas de ruta registradas."
+          },
+          {
+            "id": "B",
+            "text": "La comprobación de reglas y atributos aplicada al modelo ya construido para detectar entradas no válidas."
+          },
+          {
+            "id": "C",
+            "text": "El proceso de obtener datos de la petición y construir/asignar parámetros u objetos del modelo de entrada."
+          },
+          {
+            "id": "D",
+            "text": "La resolución de servicios registrados para inyectar las dependencias requeridas por controladores y otros componentes."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "El proceso de obtener datos de la petición y construir/asignar parámetros u objetos del modelo de entrada. Binding transforma fuentes HTTP en valores que las acciones/endpoints pueden usar.",
+          "incorrect": "Según el solucionario: El proceso de obtener datos de la petición y construir/asignar parámetros u objetos del modelo de entrada. Binding transforma fuentes HTTP en valores que las acciones/endpoints pueden usar."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 75; índice nativo 16457",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 75; índice nativo 26117",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 75; índice nativo 16457",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P15-075",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué es model binding?",
+        "options": [
+          {
+            "id": "A",
+            "text": "El proceso que selecciona un endpoint comparando la URL y el método HTTP con las plantillas de ruta registradas."
+          },
+          {
+            "id": "B",
+            "text": "La comprobación de reglas y atributos aplicada al modelo ya construido para detectar entradas no válidas."
+          },
+          {
+            "id": "C",
+            "text": "El proceso de obtener datos de la petición y construir/asignar parámetros u objetos del modelo de entrada."
+          },
+          {
+            "id": "D",
+            "text": "La resolución de servicios registrados para inyectar las dependencias requeridas por controladores y otros componentes."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "El model binding obtiene valores de la petición y los convierte en parámetros o propiedades del modelo de entrada. La validación comprueba después las reglas del modelo.",
+          "incorrect": "Revisa la distinción conceptual entre la respuesta correcta y la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Seleccionar el endpoint es responsabilidad del routing; no construye el modelo de entrada.",
+            "B": "Comprobar reglas corresponde a validación; se realiza sobre los datos vinculados al modelo.",
+            "D": "La inyección de dependencias resuelve servicios registrados; no convierte datos de la petición en el modelo."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 75; índice nativo 16457",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 75; índice nativo 26117",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Microsoft: Model Binding in ASP.NET Core",
+              "url": "https://learn.microsoft.com/en-us/aspnet/core/mvc/models/model-binding?view=aspnetcore-10.0",
+              "locator": "What is Model binding; Model binding and validation",
+              "version": "ASP.NET Core 10.0",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-001"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 75; índice nativo 16457",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Conservar los distractores funcionalmente próximos y explicar cada confusión."
+      ],
+      "references": [
+        {
+          "title": "Microsoft: Model Binding in ASP.NET Core",
+          "url": "https://learn.microsoft.com/en-us/aspnet/core/mvc/models/model-binding?view=aspnetcore-10.0",
+          "locator": "What is Model binding; Model binding and validation",
+          "version": "ASP.NET Core 10.0",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-095",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "7252e48554cf7b647edc5ba4c8d9fa22cc0ab2de440315f7bf3ba5a2c16b53ef",
+      "content_sha256": "3d7a362c38b8b56f30eaae5ccb284e4c975ad852658f7210187182045ab14274",
+      "before": {
+        "id": "MAN-GSI-P17-095",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué permite un semáforo de conteo?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Forzar que se ejecute un único hilo en todo el sistema, aunque existan recursos independientes y varios permisos disponibles."
+          },
+          {
+            "id": "B",
+            "text": "Controlar acceso concurrente a un número limitado de recursos o señalizar disponibilidad."
+          },
+          {
+            "id": "C",
+            "text": "Sustituir la MMU y traducir por software todas las direcciones virtuales a marcos físicos antes de permitir un acceso concurrente."
+          },
+          {
+            "id": "D",
+            "text": "Crear y eliminar cuentas del sistema operativo según aumenta o disminuye el número de recursos disponibles para los procesos."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Su contador representa unidades disponibles o eventos según diseño.",
+          "incorrect": "Según el solucionario: Su contador representa unidades disponibles o eventos según diseño."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 95; índice nativo 9636",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 95; índice nativo 32759",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 95; índice nativo 9636",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-095",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué permite un semáforo de conteo?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Garantizar exclusión mutua con propiedad del bloqueo y liberación reservada al hilo que lo adquirió."
+          },
+          {
+            "id": "B",
+            "text": "Gestionar permisos para limitar accesos concurrentes a recursos o señalizar su disponibilidad."
+          },
+          {
+            "id": "C",
+            "text": "Bloquear al grupo hasta que todos los participantes alcancen el mismo punto de sincronización."
+          },
+          {
+            "id": "D",
+            "text": "Conservar en una cola los datos enviados entre productores y consumidores para su lectura posterior."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "El contador representa permisos disponibles: adquirir consume un permiso y liberar lo devuelve. Con varios permisos permite acceso concurrente limitado; un semáforo no exige propiedad del hilo.",
+          "incorrect": "Revisa la distinción conceptual entre la respuesta correcta y la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Describe la propiedad característica de ciertos bloqueos; un semáforo puede liberarse desde otro hilo.",
+            "C": "La reunión de un grupo en un punto describe una barrera, no un contador de permisos.",
+            "D": "Una cola transporta elementos; el semáforo cuenta permisos, aunque pueda coordinar el uso de una cola."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 95; índice nativo 9636",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 95; índice nativo 32759",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Oracle: Semaphore",
+              "url": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/Semaphore.html",
+              "locator": "Class description; acquire; release; ownership",
+              "version": "Java SE 25",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-001"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 95; índice nativo 9636",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Sustituir distractores sobre MMU y cuentas por confusiones con primitivas de sincronización."
+      ],
+      "references": [
+        {
+          "title": "Oracle: Semaphore",
+          "url": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/Semaphore.html",
+          "locator": "Class description; acquire; release; ownership",
+          "version": "Java SE 25",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P16-155",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "4dc6aad9055c7bf6282130207782b3e845ece656f3ed91cd09f796c0544afa4a",
+      "content_sha256": "eaabb22dcecbc0c8cf5db9f69039d23d0b2a69fdc57d2e5eeb759e018f6ed8ab",
+      "before": {
+        "id": "MAN-GSI-P16-155",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Una aplicación usa MIT, Apache-2.0, GPL y componentes propietarios. ¿Qué enfoque es correcto?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Decir que todo es MIT porque es la licencia más permisiva."
+          },
+          {
+            "id": "B",
+            "text": "Analizar cada componente, su forma de combinación/distribución y compatibilidad; no clasificar la aplicación por una sola etiqueta."
+          },
+          {
+            "id": "C",
+            "text": "Decir que todo es propietario porque existe un componente cerrado."
+          },
+          {
+            "id": "D",
+            "text": "Ignorar versiones y arquitectura."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Los sistemas reales son composiciones y el cumplimiento se evalúa por componentes/relaciones.",
+          "incorrect": "Según el solucionario: Los sistemas reales son composiciones y el cumplimiento se evalúa por componentes/relaciones."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 16 — LICENCIAS, PROTECCIÓN JURÍDICA Y DRM — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 155; índice nativo 15981",
+          "question_source_id": "SRC-GSI-P16-CUADERNO",
+          "question_document_id": "DOC-GSI-P16-CUADERNO",
+          "question_locator": "Pregunta 155; índice nativo 56289",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "drive_id": "115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 155; índice nativo 15981",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-16",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P16-155",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Una aplicación usa MIT, Apache-2.0, GPL y componentes propietarios. ¿Qué enfoque es correcto?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Aplicar la licencia más permisiva a la distribución completa, manteniendo solo los avisos que esa licencia exige."
+          },
+          {
+            "id": "B",
+            "text": "Examinar licencias, versiones y forma de combinación o distribución de cada componente antes de decidir la compatibilidad."
+          },
+          {
+            "id": "C",
+            "text": "Aplicar la licencia del componente propietario al conjunto, conservando los demás únicamente en un inventario interno."
+          },
+          {
+            "id": "D",
+            "text": "Considerar compatibles las licencias citadas por permitir uso comercial, sin distinguir enlace, distribución o versión de GPL."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "La coexistencia de componentes no determina una licencia única. Deben examinarse permisos y obligaciones de cada versión y la forma de combinación y distribución, incluidas las condiciones de copyleft.",
+          "incorrect": "Revisa la distinción conceptual entre la respuesta correcta y la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Una licencia permisiva no elimina las obligaciones de los otros componentes.",
+            "C": "Incluir código propietario no permite cambiar unilateralmente las condiciones del código recibido.",
+            "D": "Permitir uso comercial no resuelve la compatibilidad; versiones, enlace y distribución pueden cambiar el análisis."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 16 — LICENCIAS, PROTECCIÓN JURÍDICA Y DRM — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 155; índice nativo 15981",
+          "question_source_id": "SRC-GSI-P16-CUADERNO",
+          "question_document_id": "DOC-GSI-P16-CUADERNO",
+          "question_locator": "Pregunta 155; índice nativo 56289",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "GNU: preguntas frecuentes de licencias",
+              "url": "https://www.gnu.org/licenses/gpl-faq.en.html#GPLIncompatibleLibs",
+              "locator": "GPLIncompatibleLibs; GPLModuleLicense; LicenseCompatibility",
+              "version": "Documento consultado",
+              "checked_at": "2026-10-26"
+            },
+            {
+              "title": "Apache License",
+              "url": "https://www.apache.org/licenses/LICENSE-2.0",
+              "locator": "Apartados 1 y 4: definiciones y redistribución",
+              "version": "2.0",
+              "checked_at": "2026-10-26"
+            },
+            {
+              "title": "OSI: MIT License",
+              "url": "https://opensource.org/license/mit",
+              "locator": "Permiso y condición de conservación del aviso",
+              "version": "MIT",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-001"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "drive_id": "115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 155; índice nativo 15981",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-16",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Comparar estrategias de cumplimiento plausibles y explicitar la dependencia de versiones y forma de combinación."
+      ],
+      "references": [
+        {
+          "title": "GNU: preguntas frecuentes de licencias",
+          "url": "https://www.gnu.org/licenses/gpl-faq.en.html#GPLIncompatibleLibs",
+          "locator": "GPLIncompatibleLibs; GPLModuleLicense; LicenseCompatibility",
+          "version": "Documento consultado",
+          "checked_at": "2026-10-26"
+        },
+        {
+          "title": "Apache License",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0",
+          "locator": "Apartados 1 y 4: definiciones y redistribución",
+          "version": "2.0",
+          "checked_at": "2026-10-26"
+        },
+        {
+          "title": "OSI: MIT License",
+          "url": "https://opensource.org/license/mit",
+          "locator": "Permiso y condición de conservación del aviso",
+          "version": "MIT",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P14-014",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "33032fc8b7f051a4e5b528b650391aca2c8fae321eb64b0a82ba3905842244af",
+      "content_sha256": "1911b4b4e3c8585fb350f6e46f5492d60a8045da2e382ce3037ee24e0566c4f5",
+      "before": {
+        "id": "MAN-GSI-P14-014",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B1",
+        "topic_id": "B1-T01",
+        "subtopic": "Base: I.01 §6",
+        "exam": null,
+        "statement": "¿Qué afirmación sobre la suspensión individual del artículo 55.2 es correcta?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Permitir que una autoridad administrativa suspenda cualquier derecho del Título I, sin intervención judicial ni determinación individual."
+          },
+          {
+            "id": "B",
+            "text": "Aplicarse exclusivamente durante el estado de sitio y desaparecer como posibilidad constitucional fuera de esa declaración general."
+          },
+          {
+            "id": "C",
+            "text": "Comprender exactamente los mismos derechos y requisitos que la suspensión general, sin especialidades por sujeto o investigación."
+          },
+          {
+            "id": "D",
+            "text": "Puede afectar a derechos concretos de los artículos 17.2, 18.2 y 18.3 para personas determinadas en investigaciones vinculadas a bandas armadas o terrorismo, con garantías."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "La suspensión individual tiene objeto, derechos y garantías propios; no coincide con la general.",
+          "incorrect": "Según el solucionario: La suspensión individual tiene objeto, derechos y garantías propios; no coincide con la general."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P14-SOL",
+          "document_id": "DOC-GSI-P14-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 14 — TEST BLOQUE I — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo/edit",
+          "locator": "Pregunta 14; índice nativo 6360; Base: I.01 §6",
+          "question_source_id": "SRC-GSI-P14-CUADERNO",
+          "question_document_id": "DOC-GSI-P14-CUADERNO",
+          "question_locator": "Pregunta 14; índice nativo 5288",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P14-SOL",
+          "document_id": "DOC-GSI-P14-SOL",
+          "drive_id": "1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo",
+          "url": "https://docs.google.com/document/d/1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo/edit",
+          "locator": "Pregunta 14; índice nativo 6360; Base: I.01 §6",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-14",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P14-014",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B1",
+        "topic_id": "B1-T01",
+        "subtopic": "Base: I.01 §6",
+        "exam": null,
+        "statement": "Para personas determinadas investigadas por actuaciones de bandas armadas o elementos terroristas, ¿qué combinación de derechos y garantías corresponde a la suspensión individual del artículo 55.2 de la Constitución?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Arts. 17.2, 18.2 y 18.3; autorización administrativa y control parlamentario, sin intervención judicial."
+          },
+          {
+            "id": "B",
+            "text": "Arts. 17.2, 18.2 y 18.3; intervención judicial y control parlamentario, previa declaración de excepción o sitio."
+          },
+          {
+            "id": "C",
+            "text": "Arts. 17.2, 18.2 y 21.1; intervención judicial y control parlamentario, con desarrollo mediante ley orgánica."
+          },
+          {
+            "id": "D",
+            "text": "Arts. 17.2, 18.2 y 18.3; intervención judicial y control parlamentario, con desarrollo mediante ley orgánica."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "El artículo 55.2 permite que una ley orgánica determine los casos y la forma de suspensión individual de los derechos de los artículos 17.2, 18.2 y 18.3. Exige intervención judicial y control parlamentario, dentro de las investigaciones descritas.",
+          "incorrect": "Revisa la distinción conceptual entre la respuesta correcta y la alternativa elegida.",
+          "incorrect_options": {
+            "A": "La intervención judicial es una garantía necesaria; una autorización administrativa no la sustituye.",
+            "B": "La declaración de excepción o sitio pertenece al régimen de suspensión general del apartado 1; no es el requisito del régimen individual del apartado 2.",
+            "C": "El artículo 55.2 incluye el secreto de las comunicaciones del artículo 18.3, no el derecho de reunión del artículo 21.1."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P14-SOL",
+          "document_id": "DOC-GSI-P14-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 14 — TEST BLOQUE I — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo/edit",
+          "locator": "Pregunta 14; índice nativo 6360; Base: I.01 §6",
+          "question_source_id": "SRC-GSI-P14-CUADERNO",
+          "question_document_id": "DOC-GSI-P14-CUADERNO",
+          "question_locator": "Pregunta 14; índice nativo 5288",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Constitución Española",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229#a55",
+              "locator": "Artículo 55, apartados 1 y 2",
+              "version": "Texto consolidado consultado",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-001"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P14-SOL",
+          "document_id": "DOC-GSI-P14-SOL",
+          "drive_id": "1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo",
+          "url": "https://docs.google.com/document/d/1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo/edit",
+          "locator": "Pregunta 14; índice nativo 6360; Base: I.01 §6",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-14",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Mantener la evaluación conceptual del artículo 55.2 con alternativas paralelas sobre derechos y garantías, sin concentrar las condiciones en la correcta."
+      ],
+      "references": [
+        {
+          "title": "Constitución Española",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229#a55",
+          "locator": "Artículo 55, apartados 1 y 2",
+          "version": "Texto consolidado consultado",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B2-T06-015",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "b59d8bd8f8f136f12256690c0cb4cf71caaded35dbfca0eda4a16a19a17c03c0",
+      "content_sha256": "cfa940f1226a58cfb6a8976a6b59db1691b170e0699aebde0932ee62c11831ab",
+      "before": {
+        "id": "AI-GSI-B2-T06-015",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T06",
+        "subtopic": "REST y HTTP",
+        "exam": null,
+        "statement": "¿Qué significa que DELETE sea idempotente en su efecto deseado?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Debe devolver siempre el mismo código"
+          },
+          {
+            "id": "B",
+            "text": "Repetirlo busca el mismo estado final aunque las respuestas puedan variar"
+          },
+          {
+            "id": "C",
+            "text": "Solo puede enviarse una vez"
+          },
+          {
+            "id": "D",
+            "text": "No produce ningún efecto"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Idempotencia se refiere al efecto deseado repetido, no a ausencia de efectos ni igualdad literal de respuestas.",
+          "incorrect": "Idempotencia se refiere al efecto deseado repetido, no a ausencia de efectos ni igualdad literal de respuestas."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.06; sección 8. REST y HTTP",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "**REST** es un estilo arquitectónico centrado en recursos, identificadores, representaciones, interfaz uniforme, stateless y caché cuando procede. HTTP aporta métodos y códigos de estado. No existe obligación de que una API HTTP sea RESTful.\n\n* GET: recuperación, seguro e idempotente conceptualmente.\n* PUT: reemplazo/actualización idempotente según semántica.\n* DELETE: idempotente en efecto deseado.\n* POST: procesamiento/creación, no necesariamente idempotente.\n* PATCH: modificación parcial; su idempotencia depende del formato/operación.\n\nDiseña URIs estables, errores estructurados, paginación, filtros, idempotency keys cuando proceda, versionado y límites de tasa.",
+          "evidence_sha256": "cc043f31c31602505a682e331f34f8b0cd4b67ce330f809d0630ca729750ce28",
+          "record_sha256": "a5e0debf7de1d3f3167970c891972d296550fd5f082f1f7173ae01f77c30de5a",
+          "review_id": "AI-GSI-B2-T06-015",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.06; sección 8. REST y HTTP",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B2-T06-015",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T06",
+        "subtopic": "REST y HTTP",
+        "exam": null,
+        "statement": "Una API elimina un recurso con DELETE y responde 204. Una petición idéntica posterior recibe 404 porque el recurso ya no existe. ¿Qué afirmación es correcta sobre la idempotencia de este comportamiento?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Para ser idempotente, la repetición tendría que devolver también 204 y el mismo cuerpo de respuesta."
+          },
+          {
+            "id": "B",
+            "text": "El cambio de respuesta es compatible con la idempotencia si se mantiene el mismo efecto solicitado sobre el recurso."
+          },
+          {
+            "id": "C",
+            "text": "El caso convierte DELETE en un método seguro, porque la segunda petición ya no modifica el recurso."
+          },
+          {
+            "id": "D",
+            "text": "La idempotencia exige que el servidor omita también los registros de actividad de la petición repetida."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "La idempotencia compara el efecto solicitado al repetir peticiones idénticas, no sus respuestas. El recurso permanece eliminado tras ambas peticiones: recibir después 404 es compatible con esa propiedad y no convierte DELETE en un método seguro.",
+          "incorrect": "Revisa la distinción conceptual entre la respuesta correcta y la alternativa elegida.",
+          "incorrect_options": {
+            "A": "El RFC permite que las respuestas a repeticiones difieran; no exige reproducir el código ni el cuerpo de la primera.",
+            "C": "Un método seguro no solicita un cambio de estado. DELETE sí lo solicita, aunque un recurso ya eliminado no cambie al repetir la petición.",
+            "D": "El servidor puede registrar cada petición por separado. La idempotencia se refiere al efecto solicitado sobre el recurso, no a eliminar todos los efectos auxiliares."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.06; sección 8. REST y HTTP",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "**REST** es un estilo arquitectónico centrado en recursos, identificadores, representaciones, interfaz uniforme, stateless y caché cuando procede. HTTP aporta métodos y códigos de estado. No existe obligación de que una API HTTP sea RESTful.\n\n* GET: recuperación, seguro e idempotente conceptualmente.\n* PUT: reemplazo/actualización idempotente según semántica.\n* DELETE: idempotente en efecto deseado.\n* POST: procesamiento/creación, no necesariamente idempotente.\n* PATCH: modificación parcial; su idempotencia depende del formato/operación.\n\nDiseña URIs estables, errores estructurados, paginación, filtros, idempotency keys cuando proceda, versionado y límites de tasa.",
+          "evidence_sha256": "cc043f31c31602505a682e331f34f8b0cd4b67ce330f809d0630ca729750ce28",
+          "record_sha256": "a5e0debf7de1d3f3167970c891972d296550fd5f082f1f7173ae01f77c30de5a",
+          "review_id": "AI-GSI-B2-T06-015",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "IETF: HTTP Semantics",
+              "url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-9.2.2",
+              "locator": "9.2.2 Idempotent Methods; 9.3.5 DELETE",
+              "version": "RFC 9110, junio 2022",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-001"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.06; sección 8. REST y HTTP",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Aplicar la idempotencia a una repetición de DELETE con respuestas distintas; separar efecto solicitado, seguridad y efectos auxiliares."
+      ],
+      "references": [
+        {
+          "title": "IETF: HTTP Semantics",
+          "url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-9.2.2",
+          "locator": "9.2.2 Idempotent Methods; 9.3.5 DELETE",
+          "version": "RFC 9110, junio 2022",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B2-T06-012",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "742caafbce6abaf86fab82a4c05ce53354387a526a05403acf74eb4082372f82",
+      "content_sha256": "35d4d540faf68ccb27f2ddaed68adf37eaec33e93250c116bc4a9f95ce9756eb",
+      "before": {
+        "id": "AI-GSI-B2-T06-012",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T06",
+        "subtopic": "Servicios web clásicos",
+        "exam": null,
+        "statement": "¿Qué aporta WS-Security al ecosistema SOAP?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Normalización relacional"
+          },
+          {
+            "id": "B",
+            "text": "Solo maquetación de formularios"
+          },
+          {
+            "id": "C",
+            "text": "Seguridad de mensajes, con firmas, cifrado y tokens según perfil"
+          },
+          {
+            "id": "D",
+            "text": "Asignación de direcciones IP"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "WS-Security aplica mecanismos a mensajes; no describe redes ni presentación.",
+          "incorrect": "WS-Security aplica mecanismos a mensajes; no describe redes ni presentación."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.06; sección 7. Servicios web clásicos",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "**SOAP** define mensajería XML estructurada; **WSDL** describe contratos de servicio; **XML Schema** define estructuras/tipos. El ecosistema WS-\\* incluye seguridad, políticas y otros aspectos empresariales. SOAP puede operar sobre HTTP y otros transportes; SOAP no es «HTTP con XML».\n\n**WS-Security** añade mecanismos de seguridad a mensajes SOAP, incluyendo firma/cifrado y tokens según perfil. En entornos con requisitos formales o integraciones heredadas estos estándares siguen siendo relevantes.",
+          "evidence_sha256": "826973b1688e4e464d2127572468cae3c73bb44f16a40de8a3430842d31b6218",
+          "record_sha256": "d5fdd8316bbefeb922ad5def2cfc1eb0f5c43cea26fbd64b60e33583814dfbea",
+          "review_id": "AI-GSI-B2-T06-012",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.06; sección 7. Servicios web clásicos",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B2-T06-012",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T06",
+        "subtopic": "Servicios web clásicos",
+        "exam": null,
+        "statement": "¿Qué aporta WS-Security al ecosistema SOAP?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Describir operaciones y tipos del servicio para que el cliente genere un contrato de invocación."
+          },
+          {
+            "id": "B",
+            "text": "Proteger el canal de transporte mediante TLS, sin mecanismos dentro del mensaje SOAP."
+          },
+          {
+            "id": "C",
+            "text": "Proteger mensajes SOAP con firmas, cifrado y tokens de seguridad según el perfil empleado."
+          },
+          {
+            "id": "D",
+            "text": "Coordinar la confirmación o reversión de transacciones distribuidas entre varios servicios."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "WS-Security define mecanismos de seguridad del mensaje SOAP: integridad, confidencialidad y asociación de tokens. Su uso concreto depende del perfil y de la política de seguridad.",
+          "incorrect": "Revisa la distinción conceptual entre la respuesta correcta y la alternativa elegida.",
+          "incorrect_options": {
+            "A": "La descripción del contrato corresponde a WSDL, no a los mecanismos de protección de WS-Security.",
+            "B": "TLS protege el transporte; WS-Security incorpora mecanismos en el mensaje y puede complementarlo.",
+            "D": "Coordinar transacciones es otra responsabilidad del ecosistema WS-*, no la función de WS-Security."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.06; sección 7. Servicios web clásicos",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "**SOAP** define mensajería XML estructurada; **WSDL** describe contratos de servicio; **XML Schema** define estructuras/tipos. El ecosistema WS-\\* incluye seguridad, políticas y otros aspectos empresariales. SOAP puede operar sobre HTTP y otros transportes; SOAP no es «HTTP con XML».\n\n**WS-Security** añade mecanismos de seguridad a mensajes SOAP, incluyendo firma/cifrado y tokens según perfil. En entornos con requisitos formales o integraciones heredadas estos estándares siguen siendo relevantes.",
+          "evidence_sha256": "826973b1688e4e464d2127572468cae3c73bb44f16a40de8a3430842d31b6218",
+          "record_sha256": "d5fdd8316bbefeb922ad5def2cfc1eb0f5c43cea26fbd64b60e33583814dfbea",
+          "review_id": "AI-GSI-B2-T06-012",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "OASIS: SOAP Message Security",
+              "url": "https://docs.oasis-open.org/wss-m/wss/v1.1.1/os/wss-SOAPMessageSecurity-v1.1.1-os.html",
+              "locator": "3 Message Protection Mechanisms; 6 Security Tokens; 8 Signatures; 9 Encryption",
+              "version": "1.1.1, OASIS Standard, 18 mayo 2012",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-001"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.06; sección 7. Servicios web clásicos",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Usar responsabilidades cercanas del ecosistema de servicios como distractores."
+      ],
+      "references": [
+        {
+          "title": "OASIS: SOAP Message Security",
+          "url": "https://docs.oasis-open.org/wss-m/wss/v1.1.1/os/wss-SOAPMessageSecurity-v1.1.1-os.html",
+          "locator": "3 Message Protection Mechanisms; 6 Security Tokens; 8 Signatures; 9 Encryption",
+          "version": "1.1.1, OASIS Standard, 18 mayo 2012",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B2-T10-019",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "10a6638adf4c93e71ea720f6ce9791351bc34e2d599ef45f1791a877a2ec7e91",
+      "content_sha256": "9e11b9e776eea0367e36da232946b7f84600fc4f8e2c881e9945636c7faaa0b1",
+      "before": {
+        "id": "AI-GSI-B2-T10-019",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T10",
+        "subtopic": "Relación con ENS",
+        "exam": null,
+        "statement": "¿Qué diferencia categorización ENS y análisis de riesgos?",
+        "options": [
+          {
+            "id": "A",
+            "text": "El análisis se limita al tamaño del servidor"
+          },
+          {
+            "id": "B",
+            "text": "La categoría deriva del impacto; el análisis profundiza en amenazas, controles y residual"
+          },
+          {
+            "id": "C",
+            "text": "Son exactamente el mismo cálculo"
+          },
+          {
+            "id": "D",
+            "text": "La categoría sustituye todo inventario"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Ambos procesos están relacionados, pero responden a funciones diferentes.",
+          "incorrect": "Ambos procesos están relacionados, pero responden a funciones diferentes."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.10; sección 9. Relación con ENS",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "El ENS exige gestión de seguridad basada en riesgos y análisis/gestión proporcionados. Categorizar un sistema y analizar riesgos son procesos relacionados pero distintos: la categoría deriva del impacto en dimensiones según ENS; el análisis profundiza en amenazas, controles y residual.",
+          "evidence_sha256": "a7dbc1584cc86470a19e8922bf022fae6da483aafff3e4c0d111b914e1c3ec1e",
+          "record_sha256": "23c657d0ee4aed4039e173830b5b6ef6a1a59fe70ec7142a94d97c69729b48e8",
+          "review_id": "AI-GSI-B2-T10-019",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.10; sección 9. Relación con ENS",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B2-T10-019",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T10",
+        "subtopic": "Relación con ENS",
+        "exam": null,
+        "statement": "¿Qué diferencia categorización ENS y análisis de riesgos?",
+        "options": [
+          {
+            "id": "A",
+            "text": "La categoría depende de la probabilidad de cada amenaza; el análisis fija el impacto institucional."
+          },
+          {
+            "id": "B",
+            "text": "La categoría se basa en el impacto; el análisis examina riesgos y permite justificar su tratamiento."
+          },
+          {
+            "id": "C",
+            "text": "La categoría identifica el riesgo residual; el análisis asigna los niveles de las dimensiones de seguridad."
+          },
+          {
+            "id": "D",
+            "text": "La categoría determina una lista definitiva de medidas; el análisis se limita a comprobar su instalación."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "El anexo I fundamenta la categoría en el impacto sobre información y servicios. El artículo 14 exige analizar y tratar riesgos y justificar medidas proporcionadas; categorizar no sustituye esa gestión.",
+          "incorrect": "Revisa la distinción conceptual entre la respuesta correcta y la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Intercambia las funciones: la probabilidad de amenazas no es la base de categorización del anexo I.",
+            "C": "La categoría no es una medida del riesgo residual tras aplicar controles.",
+            "D": "Las medidas deben justificarse frente a los riesgos; la gestión no se reduce a verificar instalaciones."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.10; sección 9. Relación con ENS",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "El ENS exige gestión de seguridad basada en riesgos y análisis/gestión proporcionados. Categorizar un sistema y analizar riesgos son procesos relacionados pero distintos: la categoría deriva del impacto en dimensiones según ENS; el análisis profundiza en amenazas, controles y residual.",
+          "evidence_sha256": "a7dbc1584cc86470a19e8922bf022fae6da483aafff3e4c0d111b914e1c3ec1e",
+          "record_sha256": "23c657d0ee4aed4039e173830b5b6ef6a1a59fe70ec7142a94d97c69729b48e8",
+          "review_id": "AI-GSI-B2-T10-019",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Esquema Nacional de Seguridad",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-7191",
+              "locator": "Artículo 14 y anexo I: categorías de seguridad",
+              "version": "Real Decreto 311/2022, texto consolidado consultado",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-001"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.10; sección 9. Relación con ENS",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Comparar funciones del ENS sin confundir categoría, amenaza y selección de medidas."
+      ],
+      "references": [
+        {
+          "title": "Esquema Nacional de Seguridad",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-7191",
+          "locator": "Artículo 14 y anexo I: categorías de seguridad",
+          "version": "Real Decreto 311/2022, texto consolidado consultado",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B2-T13-001",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "dd7374acfad4e38b8958f08a1dae9f971abb7b6cd1dbd26986b818de4d396a37",
+      "content_sha256": "c9335c80997b8a20e23a515172dfaf5047d0af411a6f5c5fe99aa30c8d94d69f",
+      "before": {
+        "id": "AI-GSI-B2-T13-001",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T13",
+        "subtopic": "Seguridad física",
+        "exam": null,
+        "statement": "¿Qué medida protege frente a interrupciones eléctricas y requiere pruebas de autonomía?",
+        "options": [
+          {
+            "id": "A",
+            "text": "WAF exclusivamente"
+          },
+          {
+            "id": "B",
+            "text": "Firma digital"
+          },
+          {
+            "id": "C",
+            "text": "SAI y alimentación de respaldo planificada"
+          },
+          {
+            "id": "D",
+            "text": "Índice B+"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "La continuidad eléctrica necesita dimensionamiento, mantenimiento y pruebas; una barrera lógica no la sustituye.",
+          "incorrect": "La continuidad eléctrica necesita dimensionamiento, mantenimiento y pruebas; una barrera lógica no la sustituye."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.13; sección 3. Seguridad física",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Protege instalaciones, personas, equipos y soportes frente a acceso no autorizado, incendio, agua, fallo eléctrico, temperatura, sabotaje y otros eventos. Medidas:\n\n* zonificación y perímetros;\n* control de acceso e identificación;\n* registro/acompañamiento de visitas;\n* racks y salas restringidas;\n* UPS, grupos electrógenos y distribución eléctrica redundante;\n* climatización y monitorización ambiental;\n* detección y extinción de incendios adecuada al entorno;\n* protección frente a agua e inundación;\n* inventario, custodia y destrucción segura de soportes;\n* mantenimiento y pruebas periódicas.\n\nLa continuidad física no consiste solo en tener un SAI: requiere capacidad, autonomía, mantenimiento, pruebas y escenarios de fallo.",
+          "evidence_sha256": "8f5bde4b82dfbdc39a1324f4d637d8571f3dc138d3dcd284433f64942fbeca4b",
+          "record_sha256": "6f1ca6774efb771e46abb0c5d49d19eaf02cca947ec3859d2497b3e4120f0d4e",
+          "review_id": "AI-GSI-B2-T13-001",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.13; sección 3. Seguridad física",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B2-T13-001",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T13",
+        "subtopic": "Seguridad física",
+        "exam": null,
+        "statement": "Un CPD necesita mantener encendidos sus servidores durante el intervalo entre un corte eléctrico y la entrada en servicio del grupo electrógeno. ¿Qué medida debe dimensionarse y probarse con la carga prevista para cubrir ese intervalo?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Instalar un regulador automático de tensión convencional para estabilizar la salida de la acometida."
+          },
+          {
+            "id": "B",
+            "text": "Instalar fuentes de alimentación redundantes en los servidores, conectadas a la misma acometida."
+          },
+          {
+            "id": "C",
+            "text": "Instalar un SAI con baterías para alimentar los servidores hasta que el grupo esté disponible."
+          },
+          {
+            "id": "D",
+            "text": "Instalar un conmutador automático que transfiera la carga al grupo cuando este esté disponible."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "El SAI aporta la energía durante el intervalo sin suministro. Su potencia y autonomía deben ser suficientes para la carga prevista hasta que el grupo pueda asumirla. La existencia de un grupo no elimina la necesidad de cubrir su tiempo de arranque.",
+          "incorrect": "Revisa la distinción conceptual entre la respuesta correcta y la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Regular la tensión no aporta energía cuando la acometida deja de suministrarla; falta reserva para el intervalo.",
+            "B": "Dos fuentes sobre la misma acometida pierden su suministro al producirse ese corte; la redundancia de fuentes no añade autonomía.",
+            "D": "El conmutador selecciona una fuente disponible, pero no almacena la energía necesaria mientras el grupo todavía no suministra."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.13; sección 3. Seguridad física",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Protege instalaciones, personas, equipos y soportes frente a acceso no autorizado, incendio, agua, fallo eléctrico, temperatura, sabotaje y otros eventos. Medidas:\n\n* zonificación y perímetros;\n* control de acceso e identificación;\n* registro/acompañamiento de visitas;\n* racks y salas restringidas;\n* UPS, grupos electrógenos y distribución eléctrica redundante;\n* climatización y monitorización ambiental;\n* detección y extinción de incendios adecuada al entorno;\n* protección frente a agua e inundación;\n* inventario, custodia y destrucción segura de soportes;\n* mantenimiento y pruebas periódicas.\n\nLa continuidad física no consiste solo en tener un SAI: requiere capacidad, autonomía, mantenimiento, pruebas y escenarios de fallo.",
+          "evidence_sha256": "8f5bde4b82dfbdc39a1324f4d637d8571f3dc138d3dcd284433f64942fbeca4b",
+          "record_sha256": "6f1ca6774efb771e46abb0c5d49d19eaf02cca947ec3859d2497b3e4120f0d4e",
+          "review_id": "AI-GSI-B2-T13-001",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "ENS: instalaciones",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-7191",
+              "locator": "Anexo II, 5.1.4 Energía eléctrica [mp.if.4], refuerzo R1",
+              "version": "Real Decreto 311/2022, texto consolidado consultado",
+              "checked_at": "2026-10-26"
+            },
+            {
+              "title": "Eaton: UPS battery backup buying guide",
+              "url": "https://www.eaton.com/us/en-us/products/backup-power-ups-surge-it-power-distribution/backup-power-ups/ups-buying-guide-for-idf-network-closets-.html",
+              "locator": "Understand your battery runtime needs: autonomía según carga y respaldo inmediato hasta el suministro del generador",
+              "version": null,
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-001"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.13; sección 3. Seguridad física",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Evaluar continuidad eléctrica con un microcaso de arranque del grupo electrógeno y distinguir reserva de energía, acondicionamiento, redundancia y conmutación."
+      ],
+      "references": [
+        {
+          "title": "ENS: instalaciones",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-7191",
+          "locator": "Anexo II, 5.1.4 Energía eléctrica [mp.if.4], refuerzo R1",
+          "version": "Real Decreto 311/2022, texto consolidado consultado",
+          "checked_at": "2026-10-26"
+        },
+        {
+          "title": "Eaton: UPS battery backup buying guide",
+          "url": "https://www.eaton.com/us/en-us/products/backup-power-ups-surge-it-power-distribution/backup-power-ups/ups-buying-guide-for-idf-network-closets-.html",
+          "locator": "Understand your battery runtime needs: autonomía según carga y respaldo inmediato hasta el suministro del generador",
+          "version": null,
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B2-T15-001",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "9199336400b0882c090ac843980749c4aa12146b4cd51147f031f5ecdb799fd3",
+      "content_sha256": "b2ac836f6933931e6b1370b09181fc13a77a033a0173016d14ae0d7adf770d5d",
+      "before": {
+        "id": "AI-GSI-B2-T15-001",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T15",
+        "subtopic": "Criterios",
+        "exam": null,
+        "statement": "Una alternativa incumple un requisito legal obligatorio, pero es muy barata. ¿Cómo debe tratarse?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Como equivalente a todas las demás"
+          },
+          {
+            "id": "B",
+            "text": "Como viable sin revisar la restricción"
+          },
+          {
+            "id": "C",
+            "text": "Como ganadora automática por precio"
+          },
+          {
+            "id": "D",
+            "text": "Como incumplimiento eliminatorio, no compensable solo con puntuación económica"
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Los requisitos obligatorios no se compensan como criterios ponderables.",
+          "incorrect": "Los requisitos obligatorios no se compensan como criterios ponderables."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.15; sección 3. Criterios",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Técnicos: funcionalidad, rendimiento, escalabilidad, seguridad, interoperabilidad, mantenibilidad, soporte, accesibilidad. Económicos: inversión, operación, licencias, personal, energía, migración y salida. Organizativos: competencias, cambio, dependencia, gobernanza. Jurídicos: protección de datos, ENS, licencias, contratación y conservación.\n\nDistingue **requisito eliminatorio** de criterio ponderable. Una alternativa que incumple una restricción legal no debería «compensarla» con una puntuación económica alta.",
+          "evidence_sha256": "764b97471204eeb5988a6b061a35c12e917cafb1470cd557e63977eaec4f894f",
+          "record_sha256": "71791c6c2b7c953671f39d0a0c78b50b688196c5189f6c7760b180135630462d",
+          "review_id": "AI-GSI-B2-T15-001",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.15; sección 3. Criterios",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B2-T15-001",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T15",
+        "subtopic": "Criterios",
+        "exam": null,
+        "statement": "Una oferta incumple una prescripción obligatoria de los pliegos y no se admite una variante que la exceptúe. ¿Cómo debe valorarse su precio reducido?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Compensando el incumplimiento con una mayor puntuación en el criterio económico."
+          },
+          {
+            "id": "B",
+            "text": "Admitiendo la oferta y aplazando el cumplimiento al momento de la adjudicación."
+          },
+          {
+            "id": "C",
+            "text": "Otorgando prioridad a su evaluación por mejorar el coste total previsto del contrato."
+          },
+          {
+            "id": "D",
+            "text": "Sin compensar el incumplimiento: el precio no convierte en admisible una oferta que contraviene esa prescripción."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Las proposiciones deben ajustarse a los pliegos. En el supuesto descrito, un precio menor no compensa el incumplimiento de una prescripción obligatoria ni lo transforma en un criterio ponderable.",
+          "incorrect": "Revisa la distinción conceptual entre la respuesta correcta y la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Ponderar precio entre ofertas admisibles no permite sustituir una condición obligatoria.",
+            "B": "La hipótesis no permite aplazar el requisito: la oferta debe ajustarse a los pliegos.",
+            "C": "El ahorro no elimina el examen previo de admisibilidad de la oferta."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.15; sección 3. Criterios",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Técnicos: funcionalidad, rendimiento, escalabilidad, seguridad, interoperabilidad, mantenibilidad, soporte, accesibilidad. Económicos: inversión, operación, licencias, personal, energía, migración y salida. Organizativos: competencias, cambio, dependencia, gobernanza. Jurídicos: protección de datos, ENS, licencias, contratación y conservación.\n\nDistingue **requisito eliminatorio** de criterio ponderable. Una alternativa que incumple una restricción legal no debería «compensarla» con una puntuación económica alta.",
+          "evidence_sha256": "764b97471204eeb5988a6b061a35c12e917cafb1470cd557e63977eaec4f894f",
+          "record_sha256": "71791c6c2b7c953671f39d0a0c78b50b688196c5189f6c7760b180135630462d",
+          "review_id": "AI-GSI-B2-T15-001",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Ley de Contratos del Sector Público",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2017-12902#a139",
+              "locator": "Artículo 139.1: ajuste de las proposiciones a los pliegos",
+              "version": "Ley 9/2017, texto consolidado consultado",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-001"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.15; sección 3. Criterios",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Explicitar el carácter obligatorio del requisito y evitar compensarlo con precio."
+      ],
+      "references": [
+        {
+          "title": "Ley de Contratos del Sector Público",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2017-12902#a139",
+          "locator": "Artículo 139.1: ajuste de las proposiciones a los pliegos",
+          "version": "Ley 9/2017, texto consolidado consultado",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T01-002",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "2e8b92111e3ac3ca79c0da7be7aaa88a6bfada816efa78d10891228098ad5582",
+      "content_sha256": "606c69f7a6caa8caff8dbfb8e0f2fce2d3859f644e761f38fbc7e5fccf0635fc",
+      "before": {
+        "id": "AI-GSI-B3-T01-002",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T01",
+        "subtopic": "Concepto",
+        "exam": null,
+        "statement": "¿Qué distingue un modelo de ciclo de vida de una metodología?",
+        "options": [
+          {
+            "id": "A",
+            "text": "El modelo establece etapas y relaciones; la metodología concreta cómo trabajar"
+          },
+          {
+            "id": "B",
+            "text": "La metodología elimina toda fase"
+          },
+          {
+            "id": "C",
+            "text": "Ambos son lenguajes de programación"
+          },
+          {
+            "id": "D",
+            "text": "El modelo solo describe tablas"
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Etapas y relaciones no equivalen a prácticas concretas de trabajo.",
+          "incorrect": "Etapas y relaciones no equivalen a prácticas concretas de trabajo."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.01; sección 1. Concepto",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "El ciclo de vida comprende las etapas por las que pasa un sistema desde la identificación de una necesidad hasta su retirada. La fuente A1 086 diferencia correctamente **ciclo de vida** y **ciclo de desarrollo**: el primero incluye operación/mantenimiento y retirada. El modelo dice qué etapas y relaciones existen; una metodología concreta define cómo trabajar.",
+          "evidence_sha256": "4410b073fd1101cc4890892507302a895bc2034f264f741f78d327336fd2db19",
+          "record_sha256": "b6056a889f4ec068930c3ce9d9397bfe9237653ad4be21d697d2cc66c910d90f",
+          "review_id": "AI-GSI-B3-T01-002",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.01; sección 1. Concepto",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T01-002",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T01",
+        "subtopic": "Concepto",
+        "exam": null,
+        "statement": "¿Qué distingue un modelo de ciclo de vida de una metodología?",
+        "options": [
+          {
+            "id": "A",
+            "text": "El modelo organiza etapas y relaciones; la metodología concreta prácticas y formas de trabajo."
+          },
+          {
+            "id": "B",
+            "text": "El modelo asigna roles y plantillas; la metodología solo determina la secuencia temporal de etapas."
+          },
+          {
+            "id": "C",
+            "text": "El modelo describe exclusivamente pruebas; la metodología organiza el resto del desarrollo."
+          },
+          {
+            "id": "D",
+            "text": "El modelo se aplica a proyectos predictivos; la metodología se reserva a proyectos ágiles."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Un modelo del ciclo de vida organiza actividades y relaciones temporales. Métodos y prácticas detallan cómo ejecutar el trabajo; ambos pueden combinarse y adaptarse al contexto.",
+          "incorrect": "Revisa la distinción conceptual entre la respuesta correcta y la alternativa elegida.",
+          "incorrect_options": {
+            "B": "Invierte la distinción entre organización del ciclo y concreción de las prácticas.",
+            "C": "El ciclo abarca el desarrollo completo, no solo sus pruebas.",
+            "D": "La distinción no depende de separar proyectos predictivos y ágiles."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.01; sección 1. Concepto",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "El ciclo de vida comprende las etapas por las que pasa un sistema desde la identificación de una necesidad hasta su retirada. La fuente A1 086 diferencia correctamente **ciclo de vida** y **ciclo de desarrollo**: el primero incluye operación/mantenimiento y retirada. El modelo dice qué etapas y relaciones existen; una metodología concreta define cómo trabajar.",
+          "evidence_sha256": "4410b073fd1101cc4890892507302a895bc2034f264f741f78d327336fd2db19",
+          "record_sha256": "b6056a889f4ec068930c3ce9d9397bfe9237653ad4be21d697d2cc66c910d90f",
+          "review_id": "AI-GSI-B3-T01-002",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "ISTQB: Foundation Level Syllabus",
+              "url": "https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf",
+              "locator": "2.1 Software Development Lifecycle; 1.2.3 Errors, Defects, Failures, and Root Causes",
+              "version": "4.0.1, 15 septiembre 2024",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-001"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.01; sección 1. Concepto",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Distinguir organización del ciclo y prácticas de trabajo sin caricaturizar las metodologías."
+      ],
+      "references": [
+        {
+          "title": "ISTQB: Foundation Level Syllabus",
+          "url": "https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf",
+          "locator": "2.1 Software Development Lifecycle; 1.2.3 Errors, Defects, Failures, and Root Causes",
+          "version": "4.0.1, 15 septiembre 2024",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T01-004",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "5d993bef7e8cae9e6dff27c2cfe4e429c73e63c3f702a39f7ab56e3f466e3b2b",
+      "content_sha256": "6f445221a4ceab50dd0aa16f84aaded039c117c8cf1b912d09c80bfcdb18a319",
+      "before": {
+        "id": "AI-GSI-B3-T01-004",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T01",
+        "subtopic": "Modelos clásicos",
+        "exam": null,
+        "statement": "¿Qué riesgo tiene una cascada aplicada rígidamente con requisitos cambiantes?",
+        "options": [
+          {
+            "id": "A",
+            "text": "No permitir hitos en ningún caso"
+          },
+          {
+            "id": "B",
+            "text": "No poder construir software nunca"
+          },
+          {
+            "id": "C",
+            "text": "Recibir tarde información que obligue a revisar decisiones anteriores"
+          },
+          {
+            "id": "D",
+            "text": "Carecer siempre de documentación"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "La secuencia rígida dificulta incorporar cambios y feedback tardío.",
+          "incorrect": "La secuencia rígida dificulta incorporar cambios y feedback tardío."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.01; sección 3. Modelos clásicos",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "### Cascada\n\nFases secuenciales. Facilita hitos/documentación, pero responde peor a requisitos cambiantes si se aplica rígidamente.\n\n### Modelo en V\n\nRelaciona fases de especificación/diseño con niveles de verificación y validación. Útil para trazabilidad entre requisitos y pruebas.\n\n### Prototipos\n\nReducen incertidumbre. Pueden ser desechables o evolutivos. Riesgo: convertir prototipo en producción sin arquitectura/calidad suficiente.\n\n### Incremental e iterativo\n\nEntrega partes útiles y refina el producto mediante ciclos. Incremental añade capacidad; iterativo mejora/revisa solución.\n\n### Espiral\n\nDirigido por riesgos: objetivos → identificación/resolución de riesgos → desarrollo/validación → planificación siguiente iteración.",
+          "evidence_sha256": "d79af924b1ebf46d0629e6f7eb812ff7b145246530d344e1bcf00af69572221f",
+          "record_sha256": "28dc2ff031369045ae92d89ae517fe8675a2ab7525890a877137f8e10b2b3b52",
+          "review_id": "AI-GSI-B3-T01-004",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.01; sección 3. Modelos clásicos",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T01-004",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T01",
+        "subtopic": "Modelos clásicos",
+        "exam": null,
+        "statement": "Un proyecto con requisitos que van cambiando aplica una cascada rígida: cierra requisitos, diseño y codificación antes de que los usuarios prueben por primera vez el producto ejecutable en aceptación. Entonces se detecta un cambio necesario en un flujo. ¿Qué riesgo ilustra principalmente este modo de obtener feedback?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Desviaciones por incorporar cambios sin autorización ni evaluación de su impacto en el proyecto."
+          },
+          {
+            "id": "B",
+            "text": "Retrasos por repetir pruebas de regresión tras cada entrega parcial del producto a los usuarios."
+          },
+          {
+            "id": "C",
+            "text": "Retrabajo por descubrir tarde cambios que afectan a requisitos, diseño y código ya cerrados."
+          },
+          {
+            "id": "D",
+            "text": "Inconsistencias por integrar en paralelo varias versiones funcionales de un mismo módulo."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "El contraste ejecutable llega cuando ya existen artefactos dependientes del requisito: cambiar el flujo puede obligar a revisar requisitos, diseño y código. El riesgo es el retrabajo tardío; el modelo no impide realizar antes revisiones estáticas.",
+          "incorrect": "Revisa la distinción conceptual entre la respuesta correcta y la alternativa elegida.",
+          "incorrect_options": {
+            "A": "El caso no describe cambios sin autorizar. Un control formal correcto tampoco elimina el coste de descubrir su necesidad demasiado tarde.",
+            "B": "No se describen entregas parciales sucesivas a usuarios; su primera prueba del ejecutable se pospone hasta aceptación.",
+            "D": "No se atribuye el problema a versiones desarrolladas en paralelo, sino al momento de obtener feedback de los usuarios."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.01; sección 3. Modelos clásicos",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "### Cascada\n\nFases secuenciales. Facilita hitos/documentación, pero responde peor a requisitos cambiantes si se aplica rígidamente.\n\n### Modelo en V\n\nRelaciona fases de especificación/diseño con niveles de verificación y validación. Útil para trazabilidad entre requisitos y pruebas.\n\n### Prototipos\n\nReducen incertidumbre. Pueden ser desechables o evolutivos. Riesgo: convertir prototipo en producción sin arquitectura/calidad suficiente.\n\n### Incremental e iterativo\n\nEntrega partes útiles y refina el producto mediante ciclos. Incremental añade capacidad; iterativo mejora/revisa solución.\n\n### Espiral\n\nDirigido por riesgos: objetivos → identificación/resolución de riesgos → desarrollo/validación → planificación siguiente iteración.",
+          "evidence_sha256": "d79af924b1ebf46d0629e6f7eb812ff7b145246530d344e1bcf00af69572221f",
+          "record_sha256": "28dc2ff031369045ae92d89ae517fe8675a2ab7525890a877137f8e10b2b3b52",
+          "review_id": "AI-GSI-B3-T01-004",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "ISTQB: Foundation Level Syllabus",
+              "url": "https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf",
+              "locator": "2.1 Software Development Lifecycle; 1.2.3 Errors, Defects, Failures, and Root Causes",
+              "version": "4.0.1, 15 septiembre 2024",
+              "checked_at": "2026-10-26"
+            },
+            {
+              "title": "PMI: Choosing the right project approach",
+              "url": "https://www.pmi.org/learning/library/choosing-right-project-approach-9346",
+              "locator": "Predictive, iterative and incremental life cycles; definición inicial y cambios formales",
+              "version": "Artículo de PMI, 2014",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-001"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.01; sección 3. Modelos clásicos",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Aplicar el riesgo de feedback tardío a un proyecto en cascada con requisitos cambiantes y comparar riesgos de gestión próximos."
+      ],
+      "references": [
+        {
+          "title": "ISTQB: Foundation Level Syllabus",
+          "url": "https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf",
+          "locator": "2.1 Software Development Lifecycle; 1.2.3 Errors, Defects, Failures, and Root Causes",
+          "version": "4.0.1, 15 septiembre 2024",
+          "checked_at": "2026-10-26"
+        },
+        {
+          "title": "PMI: Choosing the right project approach",
+          "url": "https://www.pmi.org/learning/library/choosing-right-project-approach-9346",
+          "locator": "Predictive, iterative and incremental life cycles; definición inicial y cambios formales",
+          "version": "Artículo de PMI, 2014",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T02-004",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "5b5cc3a67340648dadbfe9313c59c90b1693c4aa8e70073aa7239893721ba4cc",
+      "content_sha256": "6c5d8a77bfec65221ed6ab515c3468007e1656d1b6fe53a319c048d4f8245c58",
+      "before": {
+        "id": "AI-GSI-B3-T02-004",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T02",
+        "subtopic": "Tradicional vs ágil",
+        "exam": null,
+        "statement": "¿Qué caracteriza al enfoque predictivo de la tabla?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Mayor definición inicial del alcance y control formal de cambios"
+          },
+          {
+            "id": "B",
+            "text": "Ausencia de hitos"
+          },
+          {
+            "id": "C",
+            "text": "Entregas continuas obligatorias"
+          },
+          {
+            "id": "D",
+            "text": "Inexistencia de documentación"
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "El enfoque predictivo fija más elementos al inicio y controla sus modificaciones.",
+          "incorrect": "El enfoque predictivo fija más elementos al inicio y controla sus modificaciones."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.02; sección 3. Tradicional vs ágil",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "| Predictivo | Ágil/adaptativo |\n| --- | --- |\n| alcance más definido al inicio | alcance evoluciona en backlog |\n| plan detallado por fases | planificación progresiva |\n| cambio mediante control formal | cambio esperado y priorizado |\n| entregas más grandes | entregas frecuentes |",
+          "evidence_sha256": "3148a08bd23b2bd177aba4a4b3093fec21e188454e5707d3e2b3422a558d8121",
+          "record_sha256": "486bdedc0a19afb92f2ab926bd0c4ded954399f5490ed8fab476180fb215551b",
+          "review_id": "AI-GSI-B3-T02-004",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.02; sección 3. Tradicional vs ágil",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T02-004",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T02",
+        "subtopic": "Tradicional vs ágil",
+        "exam": null,
+        "statement": "¿Qué caracteriza al enfoque predictivo de gestión de proyectos?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Definir inicialmente gran parte del alcance y gestionar sus modificaciones mediante control formal."
+          },
+          {
+            "id": "B",
+            "text": "Precisar el alcance de cada iteración principalmente a partir de la experiencia del incremento previo."
+          },
+          {
+            "id": "C",
+            "text": "Gestionar el trabajo mediante flujo continuo y límites de tareas simultáneas como estructura principal."
+          },
+          {
+            "id": "D",
+            "text": "Descubrir el alcance mediante experimentos sucesivos sin establecer inicialmente una línea base detallada."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "El enfoque predictivo busca definir el alcance con anticipación y controlar sus cambios. Puede admitir ajustes; no implica ausencia de documentación ni prohíbe adaptar el proceso.",
+          "incorrect": "Revisa la distinción conceptual entre la respuesta correcta y la alternativa elegida.",
+          "incorrect_options": {
+            "B": "La elaboración progresiva por iteraciones es característica de enfoques iterativos o adaptativos.",
+            "C": "El flujo continuo y los límites de trabajo en curso describen otra forma de organizar el trabajo.",
+            "D": "El descubrimiento experimental continuo no caracteriza la planificación predictiva descrita."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.02; sección 3. Tradicional vs ágil",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "| Predictivo | Ágil/adaptativo |\n| --- | --- |\n| alcance más definido al inicio | alcance evoluciona en backlog |\n| plan detallado por fases | planificación progresiva |\n| cambio mediante control formal | cambio esperado y priorizado |\n| entregas más grandes | entregas frecuentes |",
+          "evidence_sha256": "3148a08bd23b2bd177aba4a4b3093fec21e188454e5707d3e2b3422a558d8121",
+          "record_sha256": "486bdedc0a19afb92f2ab926bd0c4ded954399f5490ed8fab476180fb215551b",
+          "review_id": "AI-GSI-B3-T02-004",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "PMI: Choosing the right project approach",
+              "url": "https://www.pmi.org/learning/library/choosing-right-project-approach-9346",
+              "locator": "Predictive, iterative and incremental life cycles; definición inicial y cambios formales",
+              "version": "Artículo de PMI, 2014",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-001"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.02; sección 3. Tradicional vs ágil",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Eliminar la referencia a una tabla no mostrada y comparar enfoques de planificación reales."
+      ],
+      "references": [
+        {
+          "title": "PMI: Choosing the right project approach",
+          "url": "https://www.pmi.org/learning/library/choosing-right-project-approach-9346",
+          "locator": "Predictive, iterative and incremental life cycles; definición inicial y cambios formales",
+          "version": "Artículo de PMI, 2014",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T02-013",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "cd23a07a85a545581bb2325db7bfdc81bb73d649ddd949a380e0e4c4dcace9f9",
+      "content_sha256": "41d0222a246b76d7e1621669f0d0abf8cc11a7ef5469a8ebcb62e42f6beb146e",
+      "before": {
+        "id": "AI-GSI-B3-T02-013",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T02",
+        "subtopic": "Riesgos y calidad",
+        "exam": null,
+        "statement": "¿Qué debe acompañar a un riesgo identificado del proyecto?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Solo un nombre alarmante"
+          },
+          {
+            "id": "B",
+            "text": "Una cifra sin responsable"
+          },
+          {
+            "id": "C",
+            "text": "Propietario, respuesta y disparadores además de probabilidad e impacto"
+          },
+          {
+            "id": "D",
+            "text": "La eliminación de toda fecha"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "El registro debe permitir actuar y seguir el riesgo, no solo enumerarlo.",
+          "incorrect": "El registro debe permitir actuar y seguir el riesgo, no solo enumerarlo."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.02; sección 7. Riesgos y calidad",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Registro de riesgos con probabilidad/impacto, propietario, respuesta y disparadores. Calidad se planifica con Definition of Done, estándares, revisión, automatización y criterios de aceptación.",
+          "evidence_sha256": "0943c199c3d96430b31e0204b2844abe4bc41b388894ff87d784116f6285254f",
+          "record_sha256": "bdc1ba06305dee43f612f4d3b9fdce163d1d40b26b7e69c6c401b4695370d8b6",
+          "review_id": "AI-GSI-B3-T02-013",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.02; sección 7. Riesgos y calidad",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T02-013",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T02",
+        "subtopic": "Riesgos y calidad",
+        "exam": null,
+        "statement": "¿Qué debe acompañar a un riesgo identificado del proyecto?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Una puntuación agregada y una categoría, dejando la respuesta para cuando ocurra el evento."
+          },
+          {
+            "id": "B",
+            "text": "Un responsable y un coste estimado, sustituyendo el seguimiento por una aceptación inicial permanente."
+          },
+          {
+            "id": "C",
+            "text": "Probabilidad e impacto, responsable, respuesta prevista y condiciones que disparen su seguimiento o actuación."
+          },
+          {
+            "id": "D",
+            "text": "Una descripción del impacto y una fecha de cierre, dando por aplicada la mitigación desde su planificación."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Un riesgo gestionable requiere valoración, responsable y tratamiento. Los disparadores y el seguimiento permiten decidir cuándo actuar; planificar una mitigación no demuestra que ya sea efectiva.",
+          "incorrect": "Revisa la distinción conceptual entre la respuesta correcta y la alternativa elegida.",
+          "incorrect_options": {
+            "A": "La puntuación ayuda a priorizar, pero omite la respuesta anticipada y su responsable.",
+            "B": "La aceptación no elimina la necesidad de revisar el riesgo cuando cambian sus condiciones.",
+            "D": "Una respuesta planificada debe ejecutarse y verificarse; no equivale a mitigación efectiva."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.02; sección 7. Riesgos y calidad",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Registro de riesgos con probabilidad/impacto, propietario, respuesta y disparadores. Calidad se planifica con Definition of Done, estándares, revisión, automatización y criterios de aceptación.",
+          "evidence_sha256": "0943c199c3d96430b31e0204b2844abe4bc41b388894ff87d784116f6285254f",
+          "record_sha256": "bdc1ba06305dee43f612f4d3b9fdce163d1d40b26b7e69c6c401b4695370d8b6",
+          "review_id": "AI-GSI-B3-T02-013",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "NASA: Guidelines for Risk Management",
+              "url": "https://www.nasa.gov/wp-content/uploads/2015/10/s3001_guidelines_for_risk_management_-_ver_g_-_10-25-2017.pdf",
+              "locator": "Tabla 4-6 Risk Planning: Watch, Mitigate, Risk Owner y trigger points",
+              "version": "S3001, versión G, 25 octubre 2017",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-001"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.02; sección 7. Riesgos y calidad",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Comparar registros incompletos del riesgo con una gestión que permite actuar y seguirlo."
+      ],
+      "references": [
+        {
+          "title": "NASA: Guidelines for Risk Management",
+          "url": "https://www.nasa.gov/wp-content/uploads/2015/10/s3001_guidelines_for_risk_management_-_ver_g_-_10-25-2017.pdf",
+          "locator": "Tabla 4-6 Risk Planning: Watch, Mitigate, Risk Owner y trigger points",
+          "version": "S3001, versión G, 25 octubre 2017",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T03-005",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "a3afb60252cb6e1be71c161349e7a0e582a171238bfaa752dbe4fec0c199de23",
+      "content_sha256": "d68eb42e406ec904a0992e594843975a8763ca98080bb40a5b3074befa402386",
+      "before": {
+        "id": "AI-GSI-B3-T03-005",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T03",
+        "subtopic": "Calidad de requisitos",
+        "exam": null,
+        "statement": "¿Qué formulación es verificable bajo una carga definida?",
+        "options": [
+          {
+            "id": "A",
+            "text": "El percentil 95 del tiempo de respuesta será inferior a 2 segundos"
+          },
+          {
+            "id": "B",
+            "text": "La aplicación será excelente"
+          },
+          {
+            "id": "C",
+            "text": "El portal resultará moderno"
+          },
+          {
+            "id": "D",
+            "text": "El sistema será muy rápido"
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Un umbral medible con condiciones permite una prueba; adjetivos vagos no definen aceptación.",
+          "incorrect": "Un umbral medible con condiciones permite una prueba; adjetivos vagos no definen aceptación."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.03; sección 3. Calidad de requisitos",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Deben ser necesarios, claros, verificables, consistentes, factibles, trazables, priorizados y sin ambigüedad evitable. Un requisito no funcional debe poder medirse: “rápido” es pobre; “p95 < 2 s bajo X carga” es verificable.",
+          "evidence_sha256": "2c74ed890c61d3e09cef324caca997cfb5a76e473c3c34f325044b03dc0634fb",
+          "record_sha256": "bd712c3c3799d8fa0b4767f971a448db2fd750a73890326f131019e98b7b8d41",
+          "review_id": "AI-GSI-B3-T03-005",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.03; sección 3. Calidad de requisitos",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T03-005",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T03",
+        "subtopic": "Calidad de requisitos",
+        "exam": null,
+        "statement": "Bajo una carga de prueba previamente definida, ¿qué requisito fija un criterio de aceptación del tiempo de respuesta verificable?",
+        "options": [
+          {
+            "id": "A",
+            "text": "El percentil 95 del tiempo de respuesta será inferior a 2 segundos durante la prueba acordada."
+          },
+          {
+            "id": "B",
+            "text": "El tiempo de respuesta mejorará respecto a la versión anterior en la medida técnicamente posible."
+          },
+          {
+            "id": "C",
+            "text": "La mayoría de las operaciones ofrecerá una experiencia de respuesta suficientemente fluida."
+          },
+          {
+            "id": "D",
+            "text": "El sistema mantendrá una latencia competitiva con productos de características semejantes."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "El percentil y el umbral permiten evaluar el resultado bajo condiciones de prueba acordadas. Un adjetivo o una comparación sin referencia medible no fija el mismo criterio de aceptación.",
+          "incorrect": "Revisa la distinción conceptual entre la respuesta correcta y la alternativa elegida.",
+          "incorrect_options": {
+            "B": "No define una mejora mínima exigible ni un límite verificable para aceptar la prueba.",
+            "C": "No cuantifica la proporción requerida ni el tiempo considerado fluido.",
+            "D": "No identifica los productos, las condiciones ni el umbral que permitirían decidir la aceptación."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.03; sección 3. Calidad de requisitos",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Deben ser necesarios, claros, verificables, consistentes, factibles, trazables, priorizados y sin ambigüedad evitable. Un requisito no funcional debe poder medirse: “rápido” es pobre; “p95 < 2 s bajo X carga” es verificable.",
+          "evidence_sha256": "2c74ed890c61d3e09cef324caca997cfb5a76e473c3c34f325044b03dc0634fb",
+          "record_sha256": "bd712c3c3799d8fa0b4767f971a448db2fd750a73890326f131019e98b7b8d41",
+          "review_id": "AI-GSI-B3-T03-005",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "NASA: How to Write a Good Requirement",
+              "url": "https://www.nasa.gov/reference/appendix-c-how-to-write-a-good-requirement/",
+              "locator": "Appendix C: Performance; Verifiability/Testability",
+              "version": "NASA Systems Engineering Handbook, apéndice C",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-001"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.03; sección 3. Calidad de requisitos",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Comparar requisitos de rendimiento próximos y precisar la condición de aceptación."
+      ],
+      "references": [
+        {
+          "title": "NASA: How to Write a Good Requirement",
+          "url": "https://www.nasa.gov/reference/appendix-c-how-to-write-a-good-requirement/",
+          "locator": "Appendix C: Performance; Verifiability/Testability",
+          "version": "NASA Systems Engineering Handbook, apéndice C",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T03-017",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "40fde0b0327fd70088c0dbd766db3d213c3a395c087c2804c2cfa009521c4c30",
+      "content_sha256": "f2609cfa05ca1aa5dd7d3a87d90af1821ccec407b271b28d3888c64d8b74764f",
+      "before": {
+        "id": "AI-GSI-B3-T03-017",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T03",
+        "subtopic": "Especificación de requisitos",
+        "exam": null,
+        "statement": "¿Qué contenido es apropiado en una SRS/ERS?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Alcance, actores, requisitos, interfaces, restricciones y aceptación"
+          },
+          {
+            "id": "B",
+            "text": "Únicamente un presupuesto"
+          },
+          {
+            "id": "C",
+            "text": "Solo código compilado"
+          },
+          {
+            "id": "D",
+            "text": "Solo capturas sin texto"
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "La especificación debe permitir construir y verificar, incluyendo contexto y trazabilidad.",
+          "incorrect": "La especificación debe permitir construir y verificar, incluyendo contexto y trazabilidad."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.03; sección 7.2. Especificación de requisitos",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Una SRS/ERS debe permitir construir y verificar. Estructura útil: alcance, actores, glosario, requisitos funcionales, reglas de negocio, interfaces, datos, requisitos no funcionales, restricciones, supuestos, criterios de aceptación y trazabilidad. La familia ISO/IEC/IEEE 29148 es una referencia de ingeniería de requisitos que puede usarse como apoyo, sin memorizar numeración secundaria salvo que aparezca en test.",
+          "evidence_sha256": "1ace2ae918123c4076a9a2b9f755d326a0dd8db0f2c9437dcb68257231e015f5",
+          "record_sha256": "a6a162734a6b1798773839acfb66964480f8fd0e8966706b3221c7ee79b4a9ab",
+          "review_id": "AI-GSI-B3-T03-017",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.03; sección 7.2. Especificación de requisitos",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T03-017",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T03",
+        "subtopic": "Especificación de requisitos",
+        "exam": null,
+        "statement": "¿Qué contenido es apropiado en una SRS/ERS?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Contexto y alcance, requisitos funcionales y de calidad, interfaces, restricciones y criterios de verificación."
+          },
+          {
+            "id": "B",
+            "text": "Distribución de componentes, decisiones internas de diseño, patrones y detalle de clases de implementación."
+          },
+          {
+            "id": "C",
+            "text": "Estrategia de ejecución de pruebas, recursos del laboratorio, calendario y asignación de casos a probadores."
+          },
+          {
+            "id": "D",
+            "text": "Procedimientos operativos, resolución de incidencias conocidas y tareas de mantenimiento en producción."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "La ERS/SRS define lo que debe satisfacer el software y las condiciones para comprobarlo. Debe describir requisitos e interfaces sin confundirse con un diseño interno o un manual operativo.",
+          "incorrect": "Revisa la distinción conceptual entre la respuesta correcta y la alternativa elegida.",
+          "incorrect_options": {
+            "B": "El detalle de solución e implementación corresponde al diseño, no al contenido principal de una ERS.",
+            "C": "Organizar la ejecución y los recursos de prueba corresponde a su planificación.",
+            "D": "Los procedimientos de operación pertenecen al manual operativo, aunque deriven de requisitos."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.03; sección 7.2. Especificación de requisitos",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Una SRS/ERS debe permitir construir y verificar. Estructura útil: alcance, actores, glosario, requisitos funcionales, reglas de negocio, interfaces, datos, requisitos no funcionales, restricciones, supuestos, criterios de aceptación y trazabilidad. La familia ISO/IEC/IEEE 29148 es una referencia de ingeniería de requisitos que puede usarse como apoyo, sin memorizar numeración secundaria salvo que aparezca en test.",
+          "evidence_sha256": "1ace2ae918123c4076a9a2b9f755d326a0dd8db0f2c9437dcb68257231e015f5",
+          "record_sha256": "a6a162734a6b1798773839acfb66964480f8fd0e8966706b3221c7ee79b4a9ab",
+          "review_id": "AI-GSI-B3-T03-017",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "NASA: Software Engineering Requirements",
+              "url": "https://nodis3.gsfc.nasa.gov/displayAll.cfm?Internal_ID=N_PR_7150_0002_&page_name=all",
+              "locator": "3.1 Software Requirements: requisitos, restricciones, interfaces y verificación",
+              "version": "NPR 7150.2, edición mostrada en el documento",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-001"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.03; sección 7.2. Especificación de requisitos",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Diferenciar una especificación de requisitos de otros documentos de ingeniería."
+      ],
+      "references": [
+        {
+          "title": "NASA: Software Engineering Requirements",
+          "url": "https://nodis3.gsfc.nasa.gov/displayAll.cfm?Internal_ID=N_PR_7150_0002_&page_name=all",
+          "locator": "3.1 Software Requirements: requisitos, restricciones, interfaces y verificación",
+          "version": "NPR 7150.2, edición mostrada en el documento",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T04-001",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "101bae38c869ea9803163c66c2177fe524109d679a431321d8e25f17dc6703a4",
+      "content_sha256": "9c5a753d0c8379c7e1d8ea35b6571630711e000e4eec1ac46e4febb9c7757f74",
+      "before": {
+        "id": "AI-GSI-B3-T04-001",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T04",
+        "subtopic": "Modelado conceptual",
+        "exam": null,
+        "statement": "¿Qué debe representar el modelo conceptual antes de elegir índices?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Entidades, relaciones, cardinalidades y reglas del negocio"
+          },
+          {
+            "id": "B",
+            "text": "Únicamente tamaños de buffers"
+          },
+          {
+            "id": "C",
+            "text": "Solo parámetros del motor"
+          },
+          {
+            "id": "D",
+            "text": "Solo páginas de disco"
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "La semántica precede a decisiones físicas de almacenamiento.",
+          "incorrect": "La semántica precede a decisiones físicas de almacenamiento."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.04; sección 1. Modelado conceptual",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Entidad, atributo, relación, cardinalidad, participación y restricciones. El modelo conceptual debe representar negocio sin contaminarse prematuramente con detalles físicos.",
+          "evidence_sha256": "135511aac3ce565919068c9e30178896599054fb3990c9e680d99fb7c140fb80",
+          "record_sha256": "8bdeebf5df43fa52ada33dc0161d096a763c4156ce16d59c1ea9b9665c36926b",
+          "review_id": "AI-GSI-B3-T04-001",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.04; sección 1. Modelado conceptual",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T04-001",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T04",
+        "subtopic": "Modelado conceptual",
+        "exam": null,
+        "statement": "¿Qué debe representar el modelo conceptual antes de elegir índices?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Entidades del dominio, relaciones, cardinalidades y reglas del negocio que deben representarse."
+          },
+          {
+            "id": "B",
+            "text": "Tablas del motor elegido, índices compuestos, particiones y ubicación física de sus segmentos."
+          },
+          {
+            "id": "C",
+            "text": "Sentencias de creación, tipos propietarios del SGBD y parámetros de almacenamiento de cada tabla."
+          },
+          {
+            "id": "D",
+            "text": "Planes de ejecución, métodos de acceso a índices y orden concreto de las operaciones de consulta."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "El modelo conceptual describe la información del dominio y sus relaciones. Las decisiones específicas del motor y los accesos físicos se abordan después, sin sustituir el análisis del negocio.",
+          "incorrect": "Revisa la distinción conceptual entre la respuesta correcta y la alternativa elegida.",
+          "incorrect_options": {
+            "B": "Mezcla estructuras y decisiones de implementación física posteriores al nivel conceptual.",
+            "C": "El DDL y los parámetros específicos del motor pertenecen a la implementación del esquema.",
+            "D": "Los planes de ejecución describen cómo acceder a los datos, no qué información representa el dominio."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.04; sección 1. Modelado conceptual",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Entidad, atributo, relación, cardinalidad, participación y restricciones. El modelo conceptual debe representar negocio sin contaminarse prematuramente con detalles físicos.",
+          "evidence_sha256": "135511aac3ce565919068c9e30178896599054fb3990c9e680d99fb7c140fb80",
+          "record_sha256": "8bdeebf5df43fa52ada33dc0161d096a763c4156ce16d59c1ea9b9665c36926b",
+          "review_id": "AI-GSI-B3-T04-001",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "IBM: Data modeling",
+              "url": "https://www.ibm.com/think/topics/data-modeling",
+              "locator": "Types of data models: conceptual, logical, physical",
+              "version": "Documento consultado",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-001"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.04; sección 1. Modelado conceptual",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Contrastar niveles del modelo de datos en lugar de parámetros físicos aislados."
+      ],
+      "references": [
+        {
+          "title": "IBM: Data modeling",
+          "url": "https://www.ibm.com/think/topics/data-modeling",
+          "locator": "Types of data models: conceptual, logical, physical",
+          "version": "Documento consultado",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T04-020",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "cb133c5724f1d40391297c0416e021ded0e211b20de3fc051a83fa5bf3bd3206",
+      "content_sha256": "cc4add1e496e1e5d4107cf4f6cc052df3c8f4cca2aa9eeaf4fffaf0a8c98b8cd",
+      "before": {
+        "id": "AI-GSI-B3-T04-020",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T04",
+        "subtopic": "Índices y diseño físico",
+        "exam": null,
+        "statement": "Particionar una tabla grande implica…",
+        "options": [
+          {
+            "id": "A",
+            "text": "Eliminar siempre todos los índices"
+          },
+          {
+            "id": "B",
+            "text": "Garantizar mejora de cualquier consulta"
+          },
+          {
+            "id": "C",
+            "text": "Dividirla según estrategia sin sustituir un buen modelo ni los índices necesarios"
+          },
+          {
+            "id": "D",
+            "text": "Suprimir restricciones de integridad"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "El particionado debe responder a patrones de acceso y crecimiento y no resuelve por sí solo todo el diseño.",
+          "incorrect": "El particionado debe responder a patrones de acceso y crecimiento y no resuelve por sí solo todo el diseño."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.04; sección 6.6. Índices y diseño físico",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "B-tree/B+tree para búsquedas/rangos; hash para igualdad según motor; índice compuesto depende del orden de columnas. Demasiados índices aumentan coste de escritura. Particionado divide grandes tablas por rango/lista/hash u otras estrategias del gestor, pero no sustituye índices ni buen modelo.\n\n**Para supuesto:** dibuja un ER simplificado, justifica normalización, restricciones, transacciones críticas, aislamiento, bloqueo/MVCC, índices y estrategia de crecimiento.",
+          "evidence_sha256": "ec358af953dcd924850ac4ff8e663f5c0df9069b2bab82cf0d8925acff5d3663",
+          "record_sha256": "093e4a73cebd3389870ca2cdf2f691c7eb645dab71d4744342aa9abb57753f71",
+          "review_id": "AI-GSI-B3-T04-020",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.04; sección 6.6. Índices y diseño físico",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T04-020",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T04",
+        "subtopic": "Índices y diseño físico",
+        "exam": null,
+        "statement": "Particionar una tabla grande implica…",
+        "options": [
+          {
+            "id": "A",
+            "text": "Crear estructuras auxiliares ordenadas para localizar filas sin dividir los datos de la tabla."
+          },
+          {
+            "id": "B",
+            "text": "Mantener copias completas de la tabla en varios servidores para mejorar disponibilidad y lectura."
+          },
+          {
+            "id": "C",
+            "text": "Dividir físicamente una tabla lógica según una estrategia, manteniendo las decisiones de modelo e índices necesarias."
+          },
+          {
+            "id": "D",
+            "text": "Separar las columnas de una entidad en nuevas relaciones para eliminar dependencias y redundancias."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "El particionado divide una tabla lógica en partes según una estrategia. Sus beneficios dependen del patrón de acceso; no garantiza acelerar toda consulta ni reemplaza el diseño de índices.",
+          "incorrect": "Revisa la distinción conceptual entre la respuesta correcta y la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Describe la función de un índice, no la división de los datos en particiones.",
+            "B": "Duplicar una tabla completa describe replicación, no particionado.",
+            "D": "La descomposición de relaciones corresponde al diseño lógico, no al particionado descrito."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.04; sección 6.6. Índices y diseño físico",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "B-tree/B+tree para búsquedas/rangos; hash para igualdad según motor; índice compuesto depende del orden de columnas. Demasiados índices aumentan coste de escritura. Particionado divide grandes tablas por rango/lista/hash u otras estrategias del gestor, pero no sustituye índices ni buen modelo.\n\n**Para supuesto:** dibuja un ER simplificado, justifica normalización, restricciones, transacciones críticas, aislamiento, bloqueo/MVCC, índices y estrategia de crecimiento.",
+          "evidence_sha256": "ec358af953dcd924850ac4ff8e663f5c0df9069b2bab82cf0d8925acff5d3663",
+          "record_sha256": "093e4a73cebd3389870ca2cdf2f691c7eb645dab71d4744342aa9abb57753f71",
+          "review_id": "AI-GSI-B3-T04-020",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "PostgreSQL: Table Partitioning",
+              "url": "https://www.postgresql.org/docs/18/ddl-partitioning.html",
+              "locator": "5.12.1 Overview; 5.12.2 Declarative Partitioning; 5.12.6 Best Practices",
+              "version": "PostgreSQL 18",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-001"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.04; sección 6.6. Índices y diseño físico",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Separar particionado, índices, fragmentación lógica y replicación."
+      ],
+      "references": [
+        {
+          "title": "PostgreSQL: Table Partitioning",
+          "url": "https://www.postgresql.org/docs/18/ddl-partitioning.html",
+          "locator": "5.12.1 Overview; 5.12.2 Declarative Partitioning; 5.12.6 Best Practices",
+          "version": "PostgreSQL 18",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T06-007",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "71cbd637de9879a705588b65b199102b452633762b42d831358b87a775db7d72",
+      "content_sha256": "8ad3a7a56bfc3b41623487e28d7c1a93c4c6879b7b41ab1855242ec9dbb758fa",
+      "before": {
+        "id": "AI-GSI-B3-T06-007",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T06",
+        "subtopic": "Entrega/despliegue continuo",
+        "exam": null,
+        "statement": "¿Qué diferencia entrega continua y despliegue continuo?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Son sinónimos exactos"
+          },
+          {
+            "id": "B",
+            "text": "El despliegue prohíbe automatización"
+          },
+          {
+            "id": "C",
+            "text": "La entrega nunca ejecuta pruebas"
+          },
+          {
+            "id": "D",
+            "text": "La entrega puede requerir aprobación; el despliegue publica automáticamente tras los controles"
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Ambos automatizan, pero difieren en el paso final a producción.",
+          "incorrect": "Ambos automatizan, pero difieren en el paso final a producción."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 5. Entrega/despliegue continuo",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Continuous Delivery mantiene software desplegable y puede requerir aprobación; Continuous Deployment despliega automáticamente cambios que superan controles. No son sinónimos.",
+          "evidence_sha256": "9d65299bc6d0f5a06810a59f55c4cfe6ab588d5bb46d39b3e3c867f7e7ca8553",
+          "record_sha256": "62ff0011693e4e245a68911b221de443594612859d02faa4976afe1d3f751284",
+          "review_id": "AI-GSI-B3-T06-007",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 5. Entrega/despliegue continuo",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T06-007",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T06",
+        "subtopic": "Entrega/despliegue continuo",
+        "exam": null,
+        "statement": "¿Qué diferencia entrega continua y despliegue continuo?",
+        "options": [
+          {
+            "id": "A",
+            "text": "La entrega exige publicar cada cambio en producción; el despliegue exige siempre una aprobación manual."
+          },
+          {
+            "id": "B",
+            "text": "La entrega automatiza solo compilación; el despliegue comienza cuando se redacta el código de pruebas."
+          },
+          {
+            "id": "C",
+            "text": "La entrega evita entornos previos a producción; el despliegue los sustituye por pruebas manuales finales."
+          },
+          {
+            "id": "D",
+            "text": "La entrega mantiene cambios listos para publicar con posible aprobación; el despliegue los publica tras superar controles automáticos."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "La entrega continua mantiene cambios preparados para su publicación y puede incluir una decisión manual. El despliegue continuo automatiza también el paso a producción tras superar los controles definidos.",
+          "incorrect": "Revisa la distinción conceptual entre la respuesta correcta y la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Invierte la diferencia sobre la decisión manual de publicación.",
+            "B": "La entrega continua abarca más que compilar; la distinción no es cuándo se escriben las pruebas.",
+            "C": "Los entornos y las pruebas previas son compatibles con ambos enfoques."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 5. Entrega/despliegue continuo",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Continuous Delivery mantiene software desplegable y puede requerir aprobación; Continuous Deployment despliega automáticamente cambios que superan controles. No son sinónimos.",
+          "evidence_sha256": "9d65299bc6d0f5a06810a59f55c4cfe6ab588d5bb46d39b3e3c867f7e7ca8553",
+          "record_sha256": "62ff0011693e4e245a68911b221de443594612859d02faa4976afe1d3f751284",
+          "review_id": "AI-GSI-B3-T06-007",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Microsoft: Continuous delivery",
+              "url": "https://learn.microsoft.com/en-us/devops/deliver/what-is-continuous-delivery",
+              "locator": "Proceso automatizado y aprobación manual entre etapas",
+              "version": "Documento consultado",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-001"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 5. Entrega/despliegue continuo",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Precisar que la diferencia está en el paso a producción y no en omitir controles."
+      ],
+      "references": [
+        {
+          "title": "Microsoft: Continuous delivery",
+          "url": "https://learn.microsoft.com/en-us/devops/deliver/what-is-continuous-delivery",
+          "locator": "Proceso automatizado y aprobación manual entre etapas",
+          "version": "Documento consultado",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T06-010",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "f6bfe72601261168d810658d749360ef2242477923a77592cef94080fd283faa",
+      "content_sha256": "045f7762ddc4f7dc36843aae6305094b8fc9b01edf479aff997ed9211924f85e",
+      "before": {
+        "id": "AI-GSI-B3-T06-010",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T06",
+        "subtopic": "IaC y configuración",
+        "exam": null,
+        "statement": "¿Qué aporta infraestructura como código?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Dependencia exclusiva de capturas"
+          },
+          {
+            "id": "B",
+            "text": "Cambios manuales sin registro"
+          },
+          {
+            "id": "C",
+            "text": "Definición versionada, revisable y automatizable de infraestructura"
+          },
+          {
+            "id": "D",
+            "text": "Ausencia de configuración"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "IaC permite revisión y reproducción de cambios de infraestructura.",
+          "incorrect": "IaC permite revisión y reproducción de cambios de infraestructura."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 7. IaC y configuración",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Infraestructura declarada/versionada, revisable y automatizada. Distingue provisión de infraestructura de configuración de aplicaciones. Evitar cambios manuales no trazados.",
+          "evidence_sha256": "e8d04e2b12c50e0e037cea897fddde1545479490e45f4874f0c75c58e3889f2f",
+          "record_sha256": "be4ea714026b7d3e1cde3083d60a2e386eaa1d9cd99e4a1aab083e684541991d",
+          "review_id": "AI-GSI-B3-T06-010",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 7. IaC y configuración",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T06-010",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T06",
+        "subtopic": "IaC y configuración",
+        "exam": null,
+        "statement": "¿Qué aporta infraestructura como código?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Inventariar recursos existentes mediante capturas de consola, sin definir un modelo que permita desplegarlos."
+          },
+          {
+            "id": "B",
+            "text": "Documentar la configuración en un manual para repetir cambios desde la interfaz de administración."
+          },
+          {
+            "id": "C",
+            "text": "Definir infraestructura mediante código versionable, revisable y ejecutable por herramientas de automatización."
+          },
+          {
+            "id": "D",
+            "text": "Supervisar métricas de los recursos y generar alertas, sin describir cómo provisionar su configuración."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "IaC expresa la infraestructura mediante definiciones que pueden versionarse, revisarse y automatizarse. Facilita reproducir cambios; no equivale a conservar capturas ni a monitorizar recursos existentes.",
+          "incorrect": "Revisa la distinción conceptual entre la respuesta correcta y la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Un inventario describe lo observado; no define por sí mismo cómo provisionar el entorno.",
+            "B": "Un manual puede orientar al operador, pero no ofrece la definición automatizable propia de IaC.",
+            "D": "La monitorización observa funcionamiento; no sustituye la definición de infraestructura."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 7. IaC y configuración",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Infraestructura declarada/versionada, revisable y automatizada. Distingue provisión de infraestructura de configuración de aplicaciones. Evitar cambios manuales no trazados.",
+          "evidence_sha256": "e8d04e2b12c50e0e037cea897fddde1545479490e45f4874f0c75c58e3889f2f",
+          "record_sha256": "be4ea714026b7d3e1cde3083d60a2e386eaa1d9cd99e4a1aab083e684541991d",
+          "review_id": "AI-GSI-B3-T06-010",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Microsoft: Infrastructure as code",
+              "url": "https://learn.microsoft.com/en-us/devops/deliver/what-is-infrastructure-as-code",
+              "locator": "Modelo descriptivo, versionado e infraestructura reproducible",
+              "version": "Documento consultado",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-001"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 7. IaC y configuración",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Distinguir IaC de inventario, automatización de interfaz y documentos operativos."
+      ],
+      "references": [
+        {
+          "title": "Microsoft: Infrastructure as code",
+          "url": "https://learn.microsoft.com/en-us/devops/deliver/what-is-infrastructure-as-code",
+          "locator": "Modelo descriptivo, versionado e infraestructura reproducible",
+          "version": "Documento consultado",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T07-003",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "c85f6f59660a0565efffcb71d760a622c52a491d8b27e769bc79e9b531092c87",
+      "content_sha256": "41ff58d8542dfabf61464e1143400060e464162e45657274f3d9f2cf1bc68321",
+      "before": {
+        "id": "AI-GSI-B3-T07-003",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T07",
+        "subtopic": "Error, defecto y fallo",
+        "exam": null,
+        "statement": "¿Qué cadena describe error, defecto y fallo?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Son sinónimos sin matices"
+          },
+          {
+            "id": "B",
+            "text": "Todo defecto se ejecuta siempre"
+          },
+          {
+            "id": "C",
+            "text": "Todo error es una parada física"
+          },
+          {
+            "id": "D",
+            "text": "Un error humano puede introducir un defecto cuya ejecución cause un fallo"
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Causa humana, defecto del producto y manifestación observable son conceptos distintos.",
+          "incorrect": "Causa humana, defecto del producto y manifestación observable son conceptos distintos."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 2. Error, defecto y fallo",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Error humano puede introducir defecto; el defecto ejecutado puede causar fallo. No son sinónimos.",
+          "evidence_sha256": "3ae7eefa52b94cf56a613eeb77de3ea478ccb587e3c7ba4830e568f32803d29b",
+          "record_sha256": "a158ab03eab6eaa45be6b4aeeba499a0ad57552084bee591983bc7ed16580d3f",
+          "review_id": "AI-GSI-B3-T07-003",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 2. Error, defecto y fallo",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T07-003",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T07",
+        "subtopic": "Error, defecto y fallo",
+        "exam": null,
+        "statement": "¿Qué cadena describe error, defecto y fallo?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Un fallo humano introduce un error del producto, que solo se considera defecto cuando llega a producción."
+          },
+          {
+            "id": "B",
+            "text": "Un defecto observado causa necesariamente un fallo en cada ejecución, con independencia de las condiciones."
+          },
+          {
+            "id": "C",
+            "text": "Un error y un fallo son propiedades internas del código; un defecto es la diferencia visible para el usuario."
+          },
+          {
+            "id": "D",
+            "text": "Un error humano puede introducir un defecto; su ejecución en determinadas condiciones puede manifestar un fallo."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "El error es una acción humana equivocada; el defecto queda en un producto de trabajo y el fallo es su manifestación observable. No todo defecto se manifiesta en todas las ejecuciones.",
+          "incorrect": "Revisa la distinción conceptual entre la respuesta correcta y la alternativa elegida.",
+          "incorrect_options": {
+            "A": "El defecto puede existir antes de producción; la cadena confunde los términos.",
+            "B": "La manifestación de un defecto puede depender de condiciones específicas de ejecución.",
+            "C": "Intercambia defecto interno y fallo observable."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 2. Error, defecto y fallo",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Error humano puede introducir defecto; el defecto ejecutado puede causar fallo. No son sinónimos.",
+          "evidence_sha256": "3ae7eefa52b94cf56a613eeb77de3ea478ccb587e3c7ba4830e568f32803d29b",
+          "record_sha256": "a158ab03eab6eaa45be6b4aeeba499a0ad57552084bee591983bc7ed16580d3f",
+          "review_id": "AI-GSI-B3-T07-003",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "ISTQB: Foundation Level Syllabus",
+              "url": "https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf",
+              "locator": "2.1 Software Development Lifecycle; 1.2.3 Errors, Defects, Failures, and Root Causes",
+              "version": "4.0.1, 15 septiembre 2024",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-001"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 2. Error, defecto y fallo",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Comparar secuencias causales próximas sin afirmar que todo defecto produce siempre un fallo."
+      ],
+      "references": [
+        {
+          "title": "ISTQB: Foundation Level Syllabus",
+          "url": "https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf",
+          "locator": "2.1 Software Development Lifecycle; 1.2.3 Errors, Defects, Failures, and Root Causes",
+          "version": "4.0.1, 15 septiembre 2024",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    }
+  ]
+}

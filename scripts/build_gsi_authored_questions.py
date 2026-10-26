@@ -6,6 +6,7 @@ import random
 import re
 from pathlib import Path
 from datetime import date
+from editorial_batches import guard_regeneration
 
 ROOT = Path(__file__).resolve().parents[1]
 DATE = '2026-09-14'
@@ -27,6 +28,7 @@ def load(path):
     return json.loads((ROOT / path).read_text('utf-8'))
 
 def main():
+    guard_regeneration(ROOT, 'data/questions-ai.json')
     sources = {s['id']: s for s in load('data/sources.json')['sources']}
     review_path = ROOT / 'data/gsi-editorial-reviews.json'
     review_data = json.loads(review_path.read_text('utf-8')) if review_path.exists() else {}

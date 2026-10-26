@@ -19,6 +19,7 @@ except ImportError:
 
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMAS = {
+    "data/gsi-editorial-revisions.json": "schemas/gsi-editorial-revisions.schema.json",
     "data/study-plan.json": "schemas/study-plan.schema.json",
     "data/study-tracker-plan.json": "schemas/study-tracker-plan.schema.json",
     "data/gsi-official-exams.json": "schemas/gsi-official-exams.schema.json",
@@ -41,6 +42,9 @@ SCHEMAS = {
     "documents/sources/technical/manifest.json": "schemas/technical-source-manifest.schema.json",
     "documents/sources/technical/coverage-matrix.json": "schemas/technical-coverage.schema.json",
 }
+
+for proposal in sorted((ROOT / 'content/question-reviews').glob('lote-*.json')):
+    SCHEMAS[proposal.relative_to(ROOT).as_posix()] = 'schemas/editorial-batch.schema.json'
 
 
 def load_json(relative_path: str) -> object:

@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-26",
+  "resolved": true,
+  "incidents": [
+    {
+      "command": "tests/editorial_batch_tests.py",
+      "result": "9 errores iniciales de permisos al crear subcarpetas en el directorio temporal del aislamiento de Windows.",
+      "resolution": "Fixtures trasladadas a tmp/ del repositorio con comprobación de ruta antes de limpiar; 13 pruebas finales correctas."
+    },
+    {
+      "command": "scripts/run_gsi_suite.py",
+      "result": "Chrome: net::ERR_NETWORK_ACCESS_DENIED al conectar con 127.0.0.1.",
+      "resolution": "Suite ejecutada con aprobación del entorno para Chrome y HTTP local; resultado final 0."
+    },
+    {
+      "command": "tests/gsi-smoke.mjs",
+      "result": "La nueva aserción de recarga leyó cero botones antes de que terminara la recuperación asíncrona.",
+      "resolution": "Esperar a que la sesión sea visible antes de comparar orden, letras y respuestas; la comprobación final pasa."
+    },
+    {
+      "command": "Comparación final con Git HEAD",
+      "result": "La comparación byte a byte del registro histórico de revisiones detectó finales de línea mixtos del checkout.",
+      "resolution": "Sin reescribir el archivo: igualdad del JSON y del texto tras normalizar finales de línea; Git no registra modificaciones. Los tres bancos sí son idénticos byte a byte."
+    }
+  ]
+}

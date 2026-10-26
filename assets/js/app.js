@@ -7,7 +7,7 @@ import { initStudyProgress } from "./study-progress.js?gsi2";
 import { configurePersistenceV2 } from "./persistence-v2.js?gsi2";
 import { migrateV1ToV2 } from "./persistence-migration-v2.js?gsi2";
 import { initWrittenPractice } from "./written-practice.js?gsi2";
-import { initProgressBackup } from "./progress-backup.js?gsi3";
+import { initProgressBackup } from "./progress-backup.js?gsi4";
 import { initStatistics, renderAnalyticsHome } from "./statistics.js?gsi2";
 import { clearStatus, setStatus, setText } from "./ui.js?gsi2";
 
@@ -41,10 +41,10 @@ async function initQuestionFeatures() {
   questionFeaturesPromise = (async () => {
     const [data, trainingModule, examModule, reinforcementMigrationModule, reinforcementModule, analyticsMigrationModule] = await Promise.all([
       getFullData(),
-      import("./training.js?gsi3"),
-      import("./exam.js?gsi2"),
+      import("./training.js?gsi4"),
+      import("./exam.js?gsi4"),
       import("./reinforcement-migration.js?gsi2"),
-      import("./reinforcement.js?gsi2"),
+      import("./reinforcement.js?gsi4"),
       import("./analytics-migration.js?gsi2"),
     ]);
     const realMigration = reinforcementMigrationModule.migratePhase3Training(data, false);

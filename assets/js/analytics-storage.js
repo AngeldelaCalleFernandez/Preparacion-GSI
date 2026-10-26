@@ -74,6 +74,12 @@ export function saveActiveTrainingSession(isDemo, session, storage = browserStor
   return saveAnalyticsStore(isDemo, store, storage);
 }
 
+export function saveTrainingShufflePreference(enabled, storage = browserStorage()) {
+  const loaded = loadAnalyticsStore(false, storage);
+  if (!loaded.valid) return { saved: false, error: loaded.error };
+  return saveAnalyticsStore(false, { ...loaded.store, settings: { ...loaded.store.settings, trainingShuffleOptions: Boolean(enabled) } }, storage);
+}
+
 export function loadActiveTrainingSession(isDemo, storage = browserStorage()) {
   return loadAnalyticsStore(isDemo, storage).store.activeTrainingSession;
 }

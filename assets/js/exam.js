@@ -1,5 +1,6 @@
 import { describeQuestionSource } from "./data-service.js?gsi2";
 import { describeOfficialQuestion, renderOfficialExamLibrary } from "./official-exams.js?gsi2";
+import { feedbackFor } from "./question-feedback.js";
 import {
   EXAM_MODES,
   calculateExamResults,
@@ -24,7 +25,7 @@ import {
 } from "./analytics-events.js?gsi2";
 import { applyStoredAnalyticsEvents } from "./analytics-storage.js?gsi2";
 import { applyStoredReinforcementEvents, createReinforcementEvent } from "./reinforcement-storage.js?gsi2";
-import { createElement, setStatus } from "./ui.js?gsi2";
+import { createElement, setStatus } from "./ui.js?gsi4";
 
 function formatNumber(value) {
   return new Intl.NumberFormat("es-ES", { maximumFractionDigits: 2, minimumFractionDigits: 0 }).format(value);
@@ -421,6 +422,7 @@ export function initExam(data) {
       card.append(createElement("p", "", `Tu respuesta: ${selectedText(item.question, item.selectedOption)}`));
       card.append(createElement("p", "", `Respuesta correcta: ${selectedText(item.question, item.question.correct_option)}`));
       card.append(createElement("p", "", item.question.feedback?.correct || "Sin feedback disponible."));
+      if (item.selectedOption && item.selectedOption !== item.question.correct_option && item.question.feedback?.incorrect_options?.[item.selectedOption]) card.append(createElement("p", "", feedbackFor(item.question, item.selectedOption, false)));
       const sourceTitle = createElement("h5", "", "Fuente");
       card.append(sourceTitle, sourceDetails(item.question));
       const actions = createElement("div", "action-row");

@@ -11,6 +11,10 @@ import { getAvailabilityAdvice, findMissingTopicIds } from '../assets/js/study-p
 import { buildStudyRecommendations, createDefaultTopicProgress, createEmptyStudyProgress, filterStudyTopics, summarizeStudyProgress, validateStudyProgressStore } from '../assets/js/study-progress-engine.js?gsi2';
 import { loadStudyProgress, saveTopicProgress, STUDY_PROGRESS_KEY } from '../assets/js/study-progress-storage.js?gsi2';
 import { parseRoute } from '../assets/js/router.js?gsi2';
+import { createTrainingOptionOrders, orderedTrainingOptions, trainingOptionLetter, questionVersion, validateTrainingContext, trainingQuestionKey, dependsOnOptionOrder } from '../assets/js/training-options.js';
+import { feedbackFor } from '../assets/js/question-feedback.js';
+import { createAnalyticsStore } from '../assets/js/analytics-engine.js?gsi2';
+import { saveTrainingShufflePreference } from '../assets/js/analytics-storage.js?gsi2';
 
 const read = async (name) => JSON.parse(await fs.readFile(new URL('../data/'+name+'.json',import.meta.url),'utf8'));
 const syllabus=await read('syllabus'), practice=await read('gsi-practice'), studyPlan=await read('study-plan'), studyTrackerPlan=await read('study-tracker-plan');
@@ -29,6 +33,56 @@ class Memory {
   removeItem(k){this.map.delete(k);}
 }
 const selected=selectExamQuestions(questions,config,()=>.37);
+const shuffleQuestion=questions.find(q=>q.origin==='manual'&&!dependsOnOptionOrder(q));
+const shuffleKey=trainingQuestionKey(shuffleQuestion);
+const shuffledOrders=createTrainingOptionOrders([shuffleQuestion],true,()=>0);
+const shuffleContext={sessionId:'shuffle-fixture',isDemo:false,questionRefs:[{id:shuffleQuestion.id,collection:shuffleQuestion.collection}],shuffleOptions:true,optionOrderByQuestionKey:shuffledOrders,questionVersionsByQuestionKey:{[shuffleKey]:questionVersion(shuffleQuestion)},responsesByQuestionKey:{}};
+test('Barajado separa letras visibles e IDs, sin modificar el banco',()=>{
+  const before=JSON.stringify(shuffleQuestion);
+  assert.deepEqual(shuffledOrders[shuffleKey],['B','C','D','A']);
+  assert.deepEqual(orderedTrainingOptions(shuffleQuestion,shuffledOrders).map(o=>o.displayLetter),['A','B','C','D']);
+  assert.equal(trainingOptionLetter(shuffleQuestion,'B',shuffledOrders),'A');
+  assert.equal(JSON.stringify(shuffleQuestion),before);
+});
+test('Oficiales y referencias a anteriores conservan el orden',()=>{
+  const official=questions.find(q=>q.origin==='official');
+  assert.deepEqual(createTrainingOptionOrders([official],true,()=>0)[trainingQuestionKey(official)],['A','B','C','D']);
+  const dependent={...shuffleQuestion,statement:'¿Son correctas todas las anteriores?'};
+  assert.deepEqual(createTrainingOptionOrders([dependent],true,()=>0)[shuffleKey],['A','B','C','D']);
+  assert.equal(dependsOnOptionOrder({...shuffleQuestion,statement:'¿Qué es una respuesta a incidentes?',options:[...shuffleQuestion.options]}),false);
+});
+test('La sesión conserva su orden y detecta cambios de contenido',()=>{
+  assert.equal(validateTrainingContext(shuffleContext,[shuffleQuestion]),true);
+  assert.equal(validateTrainingContext(shuffleContext,[{...shuffleQuestion,statement:'Otra versión'}]),false);
+  assert.equal(validateTrainingContext(shuffleContext,[{...shuffleQuestion,statement:'Otra versión'}],{checkVersions:false}),true);
+  const legacy={sessionId:'legacy',isDemo:false,questionRefs:shuffleContext.questionRefs};
+  assert.equal(validateTrainingContext(legacy,[shuffleQuestion]),true);
+  assert.equal(validateTrainingContext(legacy,[{...shuffleQuestion,source:{...shuffleQuestion.source,editorial_revision_id:'new'}}]),false);
+});
+test('La sesión rechaza permutaciones y respuestas corruptas',()=>{
+  for(const order of [['A','A','C','D'],['A','B','C'],['A','B','C','X']]) assert.equal(validateTrainingContext({...shuffleContext,optionOrderByQuestionKey:{[shuffleKey]:order}},[shuffleQuestion]),false);
+  assert.equal(validateTrainingContext({...shuffleContext,responsesByQuestionKey:{[shuffleKey]:{selectedOption:'X',correct:false}}},[shuffleQuestion]),false);
+  assert.equal(validateTrainingContext({...shuffleContext,questionVersionsByQuestionKey:null},[shuffleQuestion],{checkVersions:false}),false);
+});
+test('El feedback responde al distractor original y conserva la compatibilidad',()=>{
+  const q={feedback:{correct:'Correcta',incorrect:'General',incorrect_options:{B:'Confusión concreta'}}};
+  assert.equal(feedbackFor(q,'B',false),'Confusión concreta');
+  assert.equal(feedbackFor(q,'C',false),'General');
+  assert.equal(feedbackFor(q,'A',true),'Correcta');
+});
+test('Preferencia, sesión barajada y copia se conservan al importar',()=>{
+  const raw=new Memory(),adapter=createPersistenceAdapter(context,raw);
+  const analytics={...createAnalyticsStore(false),activeTrainingSession:shuffleContext};
+  adapter.setItem('gsi.analytics.real.v1',JSON.stringify(analytics));
+  assert.equal(saveTrainingShufflePreference(false,adapter).saved,true);
+  const backup=exportProgress(context,raw),other=new Memory();
+  importProgress(backup,data,other);
+  const copied=JSON.parse(createPersistenceAdapter(context,other).getItem('gsi.analytics.real.v1'));
+  assert.deepEqual(copied.activeTrainingSession.optionOrderByQuestionKey,shuffledOrders);
+  assert.equal(copied.settings.trainingShuffleOptions,false);
+  backup.entries[buildPhysicalPersistenceKey(context,'gsi.analytics.real.v1')].payload.activeTrainingSession.optionOrderByQuestionKey[shuffleKey]=['A','A','C','D'];
+  assert.throws(()=>validateProgressBackup(backup,data));
+});
 test('Plan orientativo: ruta, seis fases y referencias oficiales válidas',()=>{
   const topics=new Map(syllabus.blocks.flatMap(block=>block.topics.map(topic=>[topic.id,topic])));
   assert.equal(parseRoute('#plan').route,'plan');

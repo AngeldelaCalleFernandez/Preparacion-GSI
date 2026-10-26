@@ -1,3 +1,4 @@
+import { appendEditorialReferences } from "./ui.js?gsi4";
 // Read-only editorial workspace. It cannot approve questions or write progress.
 const origin = document.querySelector("#review-origin");
 const topic = document.querySelector("#review-topic");
@@ -91,7 +92,8 @@ function render() {
     node("h2", `${question.id} · ${question.statement}`),
     node("p", `${label} · ${describeValidation(question)} · ${question.is_active ? "activa" : "inactiva"} · dificultad ${question.difficulty || "no declarada"}`),
   );
-  if (question.source?.review_method) content.append(node("p", question.source.review_method));
+  if (question.source?.editorial_revision_id) content.append(node("p", `Versión editorial: ${question.source.editorial_revision_id}. La aceptación efectiva está ligada a esta versión en el historial de lotes.`));
+  if (question.source?.review_method) content.append(node("p", (question.source.editorial_revision_id ? "Método histórico de la fuente: " : "") + question.source.review_method));
   renderFindings(question);
 
   const options = node("ol", "");
@@ -100,6 +102,8 @@ function render() {
     options.append(node("li", option.text + (option.id === question.correct_option ? " — respuesta registrada" : "")));
   }
   content.append(options, node("h3", "Explicación registrada"), node("p", question.feedback.correct));
+  for (const [id, explanation] of Object.entries(question.feedback.incorrect_options || {})) content.append(node("h4", `Error ${id}`), node("p", explanation));
+  appendEditorialReferences(content, question);
   if (question.feedback.incorrect && question.feedback.incorrect !== question.feedback.correct) {
     content.append(node("h3", "Feedback tras error"), node("p", question.feedback.incorrect));
   }

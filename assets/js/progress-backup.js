@@ -6,6 +6,7 @@ import { validateReinforcementStore } from "./reinforcement-storage.js?gsi2";
 import { normaliseAnalyticsStore } from "./analytics-engine.js?gsi2";
 import { WRITTEN_KEY, validateWrittenState } from "./written-practice.js?gsi2";
 import { validateStudyProgressStore } from "./study-progress-engine.js?gsi2";
+import { validateTrainingContext } from "./training-options.js";
 
 function keysFor(context) {
   return LOGICAL_PERSISTENCE_KEYS.filter((key) => !key.includes(".demo.")).map((logical) => ({ logical, physical: buildPhysicalPersistenceKey(context, logical) }));
@@ -75,6 +76,14 @@ export function validateProgressBackup(backup, data) {
       const result = normaliseAnalyticsStore(payload, false);
       valid = result.valid && Array.isArray(payload.attempts) && Array.isArray(payload.sessions)
         && result.store.attempts.length === payload.attempts.length && result.store.sessions.length === payload.sessions.length;
+        if (valid && payload.activeTrainingSession) {
+          const active = payload.activeTrainingSession;
+          const selected = Array.isArray(active.questionRefs) ? active.questionRefs.map((ref) => {
+            const question = questionsById.get(ref.id);
+            return question && { ...question, collection: question.collection || question.origin };
+          }) : [];
+          valid = selected.every(Boolean) && validateTrainingContext(active, selected, { checkVersions: false });
+        }
     }
     else if (logical === "gsi.study-progress.v1") valid = validateStudyProgressStore(payload, data.studyTrackerPlan.topics.map((topic) => topic.code)).valid;
     if (!valid) throw new Error(`Datos incompatibles en ${logical}.`);

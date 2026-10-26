@@ -16,7 +16,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 JSON_OUTPUT = ROOT / "logs/gsi-question-quality.json"
 MARKDOWN_OUTPUT = ROOT / "docs/GSI_CALIDAD_PREGUNTAS.md"
-ANALYSIS_VERSION = "1.0.0"
+ANALYSIS_VERSION = "2.0.0"
 QUESTION_FILES = (
     ("official", ROOT / "data/questions-official.json", "Oficiales INAP"),
     ("manual", ROOT / "data/questions-manual.json", "Manuales/curadas"),
@@ -50,6 +50,32 @@ def starts_with_absolute(value: object) -> bool:
     return bool(ABSOLUTE_START.search(str(value or "").strip()))
 
 
+def quality_metrics(questions: list[dict]) -> dict:
+    """Report construction signals, never an editorial acceptance or difficulty."""
+    counts = Counter()
+    for q in questions:
+        options = q.get("options", [])
+        correct = next((o for o in options if o.get("id") == q.get("correct_option")), None)
+        if not correct or len(options) != 4:
+            continue
+        lengths = [len(str(o.get("text") or "").strip()) for o in options]
+        correct_length = len(str(correct.get("text") or "").strip())
+        distractor_max = max(length for length, option in zip(lengths, options) if option != correct)
+        ratio = correct_length / distractor_max if distractor_max else 0
+        counts["correct_unique_longest"] += correct_length > distractor_max
+        counts["first_longest_correct"] += options[lengths.index(max(lengths))]["id"] == correct["id"]
+        counts["longest_ties"] += lengths.count(max(lengths)) > 1
+        counts["length_ratio_1_5_to_2"] += 1.5 <= ratio < 2
+        counts["length_ratio_at_least_2"] += ratio >= 2
+        counts["short_correct_feedback"] += len(str(q.get("feedback", {}).get("correct", "")).split()) < 15
+        feedback = q.get("feedback", {})
+        counts["identical_feedback"] += bool(feedback.get("correct")) and normalize_text(feedback.get("correct")) == normalize_text(feedback.get("incorrect"))
+        counts["duplicate_options"] += len({normalize_text(o.get("text")) for o in options}) < 4
+        counts["absolute_wording_cluster"] += sum(starts_with_absolute(o.get("text")) for o in options if o != correct) >= 2 and not starts_with_absolute(correct.get("text"))
+    return {"questions": len(questions), **dict(sorted(counts.items())),
+            "first_longest_accuracy": round(counts["first_longest_correct"] / len(questions) * 100, 2) if questions else None}
+
+
 def analyze_question(question: dict, bank: str) -> dict | None:
     options = question.get("options", [])
     options_by_id = {option.get("id"): option for option in options if isinstance(option, dict)}
@@ -79,6 +105,19 @@ def analyze_question(question: dict, bank: str) -> dict | None:
     max_distractor_length = max(distractor_lengths, default=0)
     findings: list[dict] = []
     score = 0
+
+    ratio = correct_length / max_distractor_length if max_distractor_length else 0
+    if ratio >= 1.5:
+        findings.append({"rule": "length-ratio-high" if ratio >= 2 else "length-ratio-moderate",
+                         "severity": "warning", "message": "Posible pista por longitud; requiere valorar el contenido y justificar la decisión.",
+                         "evidence": {"ratio": round(ratio, 3), "correct_length": correct_length, "max_distractor_length": max_distractor_length}})
+        score += 4 if ratio >= 2 else 2
+    feedback = question.get("feedback", {})
+    if feedback and len(str(feedback.get("correct", "")).split()) < 15:
+        findings.append({"rule": "short-feedback", "severity": "info", "message": "Feedback correcto de menos de 15 palabras; la extensión no acredita suficiencia didáctica."})
+        score += 1
+    if feedback.get("correct") and normalize_text(feedback.get("correct")) == normalize_text(feedback.get("incorrect")):
+        findings.append({"rule": "identical-feedback", "severity": "info", "message": "Acierto y error comparten texto; comprobar explicación de las confusiones."})
 
     if len(normalized_options) != len(set(normalized_options)):
         findings.append(
@@ -162,6 +201,7 @@ def build_report() -> dict:
         for question in questions:
             all_questions.append({"bank": bank, "question": question})
         bank_summaries[bank] = {
+            "quality_metrics": quality_metrics(questions),
             "label": label,
             "questions": len(questions),
             "active_validated": sum(
@@ -278,6 +318,8 @@ def build_report() -> dict:
             "maximum_topics": sorted(topic_id for topic_id, count in topic_counts.items() if count == max(counts)),
             "counts": dict(sorted(topic_counts.items())),
         },
+        "topic_metrics": {topic: {bank: quality_metrics([item["question"] for item in all_questions if item["bank"] == bank and item["question"].get("topic_id") == topic])
+                                  for bank, _, _ in QUESTION_FILES} for topic in sorted(topic_counts)},
         "ai_editorial_assurance": ai_assurance,
         "duplicate_statement_groups": duplicate_statement_groups,
         "manual_primary_queue": manual_queue,
@@ -310,6 +352,13 @@ def render_markdown(report: dict) -> str:
         lines.append(
             f"| {item['label']} | {item['questions']} | {item['questions_with_findings']} | {rules.get('correct-length-dominance', 0)} | {rules.get('absolute-wording-cluster', 0)} | {rules.get('meta-source-wording', 0)} |"
         )
+    lines.extend(["", "## Indicadores ampliados", "",
+                  "Se conserva la regla histórica de 40 caracteres y ratio ≥2. Las señales nuevas no tienen ese mínimo. Los empates de longitud se informan; la estrategia elige la primera máxima en el orden JSON.", "",
+                  "| Banco | Correcta única más larga | Primera máxima: aciertos | Acierto % | Ratio 1,5–<2 | Ratio ≥2 | Feedback <15 palabras | Feedback idéntico |", "| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |"])
+    for bank in ("official", "manual", "ai"):
+        m = by_bank[bank]["quality_metrics"]
+        lines.append(f"| {by_bank[bank]['label']} | {m['correct_unique_longest']} | {m['first_longest_correct']} | {m['first_longest_accuracy']} | {m['length_ratio_1_5_to_2']} | {m['length_ratio_at_least_2']} | {m['short_correct_feedback']} | {m['identical_feedback']} |")
+    lines.extend(["", "Los mismos indicadores por tema y banco están en `topic_metrics` del informe JSON. Una alerta cerrada requiere corrección o justificación registrada; cero alertas no equivale a revisión L3."])
     lines.extend(
         [
             "",

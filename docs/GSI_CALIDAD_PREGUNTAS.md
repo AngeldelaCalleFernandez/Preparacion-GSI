@@ -2,15 +2,27 @@
 
 Este informe se genera de forma determinista desde los tres bancos JSON. Es una **criba heurística no mutante**: señala preguntas que merecen revisión, pero no declara errores, no cambia respuestas y no modifica estados editoriales.
 
-Versión del análisis: `1.0.0`. Preguntas examinadas: **1964**.
+Versión del análisis: `2.0.0`. Preguntas examinadas: **1964**.
 
 ## Resultado
 
 | Banco | Preguntas | Con algún indicio | Respuesta correcta ≥2× distractor más largo | Distractores absolutos | Redacción dependiente de la fuente |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| Oficiales INAP | 202 | 6 | 5 | 1 | 0 |
-| Manuales/curadas | 959 | 0 | 0 | 0 | 0 |
-| Generadas por IA | 803 | 128 | 30 | 99 | 6 |
+| Oficiales INAP | 202 | 202 | 5 | 1 | 0 |
+| Manuales/curadas | 959 | 780 | 0 | 0 | 0 |
+| Generadas por IA | 803 | 803 | 30 | 99 | 6 |
+
+## Indicadores ampliados
+
+Se conserva la regla histórica de 40 caracteres y ratio ≥2. Las señales nuevas no tienen ese mínimo. Los empates de longitud se informan; la estrategia elige la primera máxima en el orden JSON.
+
+| Banco | Correcta única más larga | Primera máxima: aciertos | Acierto % | Ratio 1,5–<2 | Ratio ≥2 | Feedback <15 palabras | Feedback idéntico |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| Oficiales INAP | 68 | 80 | 39.6 | 11 | 8 | 0 | 202 |
+| Manuales/curadas | 465 | 474 | 49.43 | 199 | 5 | 730 | 0 |
+| Generadas por IA | 365 | 378 | 47.07 | 99 | 30 | 705 | 803 |
+
+Los mismos indicadores por tema y banco están en `topic_metrics` del informe JSON. Una alerta cerrada requiere corrección o justificación registrada; cero alertas no equivale a revisión L3.
 
 La primera cola editorial contiene **0 preguntas manuales/curadas** en las que la respuesta correcta tiene al menos 40 caracteres y duplica la longitud del distractor más extenso. Es una señal de posible pista formal, no una prueba de incorrección.
 

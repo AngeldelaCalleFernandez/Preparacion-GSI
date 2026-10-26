@@ -1,4 +1,7 @@
-import { loadAnalyticsStore } from "./analytics-storage.js?gsi2";
+import { loadAnalyticsStore } from "./analytics-storage.js?gsi4";
+import { saveTrainingShufflePreference } from "./analytics-storage.js?gsi4";
+import { createTrainingOptionOrders, orderedTrainingOptions, trainingOptionLetter, questionVersion, validateTrainingContext } from "./training-options.js";
+import { feedbackFor } from "./question-feedback.js";
 import { filterTrainingQuestions, selectTrainingQuestions, summarizeTrainingResults } from "./training-engine.js?gsi3";
 import { describeQuestionSource } from "./data-service.js?gsi2";
 import { clearAllResponses, clearDemoResponses, getProgressSummary, getStoredResponses, saveResponse } from "./storage.js?gsi2";
@@ -17,8 +20,8 @@ import {
   applyStoredAnalyticsEvents,
   loadActiveTrainingSession,
   saveActiveTrainingSession,
-} from "./analytics-storage.js?gsi2";
-import { createElement, setStatus } from "./ui.js?gsi2";
+} from "./analytics-storage.js?gsi4";
+import { appendEditorialReferences, createElement, setStatus } from "./ui.js?gsi4";
 
 function originLabel(question) {
   if (question.isDemo) {
@@ -53,13 +56,9 @@ function createSourceCard(question, indexes) {
   const details = createElement("p", "");
   details.append(title, document.createTextNode(` · ${source.publisher} · Estado: ${source.officialStatus} · ${source.locator}`));
   card.append(details);
+  appendEditorialReferences(card, question);
   if (question.isDemo) card.append(createElement("p", "muted", "Fuente ficticia de demostración; no es una fuente oficial ni un banco real."));
   return card;
-}
-
-function feedbackFor(question, selectedOption, correct) {
-  if (correct) return question.feedback?.correct || "Respuesta correcta.";
-  return question.feedback?.incorrect_options?.[selectedOption] || question.feedback?.correct || "Consulta la respuesta correcta y la fuente indicada.";
 }
 
 function formatReviewDate(value) {
@@ -75,6 +74,12 @@ export function initTraining(data) {
   const originSelect = document.querySelector("#training-origin");
   const historySelect = document.querySelector("#training-history");
   const quantityInput = document.querySelector("#training-quantity");
+  const shuffleInput = document.querySelector("#training-shuffle-options");
+  shuffleInput.checked = loadAnalyticsStore(false).store.settings.trainingShuffleOptions !== false;
+  shuffleInput.addEventListener("change", () => {
+    const saved = saveTrainingShufflePreference(shuffleInput.checked);
+    if (!saved.saved) setStatus(saved.error, "error");
+  });
   const mixScope = document.querySelector("#training-mix-scope");
   const mixSettings = document.querySelector("#training-mix-settings");
   const mixBlocks = document.querySelector("#training-mix-blocks");
@@ -94,6 +99,9 @@ export function initTraining(data) {
     responsesByQuestionKey: {},
     questionStartedAtByQuestionKey: {},
     finished: false,
+    shuffleOptions: false,
+    optionOrderByQuestionKey: {},
+    questionVersionsByQuestionKey: {},
   };
 
   function updateProgressSummary() {
@@ -177,6 +185,9 @@ export function initTraining(data) {
       currentIndex: state.index,
       responsesByQuestionKey: state.responsesByQuestionKey,
       questionStartedAtByQuestionKey: state.questionStartedAtByQuestionKey,
+      shuffleOptions: state.shuffleOptions,
+      optionOrderByQuestionKey: state.optionOrderByQuestionKey,
+      questionVersionsByQuestionKey: state.questionVersionsByQuestionKey,
     });
   }
 
@@ -246,8 +257,8 @@ export function initTraining(data) {
         card.append(
           createElement("h4", "", `${index + 1}. ${entry.question.topic_id}`),
           createElement("p", "", entry.question.statement),
-          createElement("p", "", `Tu respuesta: ${selectedOption ? `${selectedOption.id}. ${selectedOption.text}` : "En blanco"}`),
-          createElement("p", "", `Correcta: ${correctOption.id}. ${correctOption.text}`),
+          createElement("p", "", `Tu respuesta: ${selectedOption ? `${trainingOptionLetter(entry.question, selectedOption.id, state.optionOrderByQuestionKey)}. ${selectedOption.text}` : "En blanco"}`),
+          createElement("p", "", `Correcta: ${trainingOptionLetter(entry.question, correctOption.id, state.optionOrderByQuestionKey)}. ${correctOption.text}`),
           createElement("p", "", feedbackFor(entry.question, entry.response.selectedOption, false)),
         );
         failedList.append(card);
@@ -286,6 +297,9 @@ export function initTraining(data) {
     state.responsesByQuestionKey = {};
     state.questionStartedAtByQuestionKey = {};
     state.finished = false;
+    state.shuffleOptions = shuffleInput.checked;
+    state.optionOrderByQuestionKey = createTrainingOptionOrders(questions, state.shuffleOptions);
+    state.questionVersionsByQuestionKey = Object.fromEntries(questions.map((q) => [questionKey(q), questionVersion(q)]));
     const saved = persistActiveContext();
     if (!saved.saved) setStatus(saved.error || "No se pudo preparar el contexto temporal del entrenamiento.", "error");
     else setStatus(message, "success");
@@ -327,7 +341,7 @@ export function initTraining(data) {
     const correctOption = question.options.find((option) => option.id === question.correct_option);
     const panel = createElement("section", `answer-panel${response.correct ? "" : " answer-panel--incorrect"}`);
     panel.append(createElement("h2", "", response.correct ? "Respuesta correcta" : "Respuesta incorrecta"));
-    panel.append(createElement("p", "", `La opción correcta es ${correctOption.id}: ${correctOption.text}`));
+    panel.append(createElement("p", "", `La opción correcta es ${trainingOptionLetter(question, correctOption.id, state.optionOrderByQuestionKey)}: ${correctOption.text}`));
     panel.append(createElement("p", "", feedbackFor(question, response.selectedOption, response.correct)));
     const actions = createElement("div", "action-row");
     const doubt = createElement("button", "button button--secondary", response.doubted ? "Duda registrada" : "Dudé");
@@ -404,11 +418,11 @@ export function initTraining(data) {
     const options = createElement("div", "question-options");
     options.setAttribute("role", "group");
     options.setAttribute("aria-label", "Opciones de respuesta");
-    for (const option of question.options) {
+    for (const option of orderedTrainingOptions(question, state.optionOrderByQuestionKey)) {
       const button = createElement("button", "option-button");
       button.type = "button";
       button.dataset.optionId = option.id;
-      button.append(createElement("span", "option-letter", option.id), createElement("span", "", option.text));
+      button.append(createElement("span", "option-letter", option.displayLetter), createElement("span", "", option.text));
       if (response) {
         button.disabled = true;
         if (option.id === question.correct_option) button.classList.add("option-button--correct");
@@ -497,11 +511,18 @@ export function initTraining(data) {
       if (!saved || !Array.isArray(saved.questionRefs) || typeof saved.sessionId !== "string") continue;
       const questions = saved.questionRefs.map((reference) => byReference.get(`${reference.collection}:${reference.id}`));
       if (questions.length === 0 || questions.some((question) => !question || question.isDemo !== isDemo)) continue;
+      if (!validateTrainingContext(saved, questions) || questions.some((q) => !q.is_active || q.validation_status !== "validated")) {
+        setStatus("La sesión guardada contiene preguntas modificadas o un orden incompatible. Inicia otro entrenamiento; tu historial se conserva.", "info");
+        continue;
+      }
       state.questions = questions;
       state.index = Math.min(Math.max(Number(saved.currentIndex) || 0, 0), questions.length - 1);
       state.trainingSessionId = saved.sessionId;
       state.startedAt = saved.startedAt;
       state.isDemo = isDemo;
+      state.shuffleOptions = saved.shuffleOptions === true;
+      state.optionOrderByQuestionKey = saved.optionOrderByQuestionKey || createTrainingOptionOrders(questions, false);
+      state.questionVersionsByQuestionKey = saved.questionVersionsByQuestionKey || Object.fromEntries(questions.map((q) => [questionKey(q), questionVersion(q)]));
       state.responsesByQuestionKey = saved.responsesByQuestionKey && typeof saved.responsesByQuestionKey === "object" ? saved.responsesByQuestionKey : {};
       state.questionStartedAtByQuestionKey = saved.questionStartedAtByQuestionKey && typeof saved.questionStartedAtByQuestionKey === "object" ? saved.questionStartedAtByQuestionKey : {};
       state.answered = Boolean(responseFor(questions[state.index]));

@@ -29,6 +29,9 @@ def main():
         ('Documentación vigente', [sys.executable, 'scripts/validate_documentation.py']),
         ('Calidad editorial de preguntas', [sys.executable, 'scripts/analyze_question_quality.py', '--check']),
         ('Pruebas del analizador editorial', [sys.executable, 'tests/question_quality_tests.py']),
+        ('Versiones y propuestas editoriales', [sys.executable, 'scripts/editorial_batches.py']),
+        ('Pruebas del circuito editorial', [sys.executable, 'tests/editorial_batch_tests.py']),
+        ('Progreso de revisión editorial', [sys.executable, 'scripts/editorial_progress.py']),
         ('Pruebas de jerarquía del temario', [sys.executable, 'tests/topic_heading_tests.py']),
     ]
     results = []
@@ -57,7 +60,8 @@ def main():
     technical = any(r['exit_code'] != 0 and not (r['name'] == 'Integridad y cobertura GSI' and r['exit_code'] == 2) for r in results)
     pending = any(r['name'] == 'Integridad y cobertura GSI' and r['exit_code'] == 2 for r in results)
     code = 1 if technical else 2 if pending else 0
-    report = {'date': datetime.now(timezone.utc).isoformat(), 'browser_channel': browser_channel, 'exit_code': code, 'technical_pass': not technical, 'release_ready': code == 0, 'stages': results}
+    editorial = json.loads((ROOT / 'logs/gsi-editorial-progress.json').read_text('utf-8')) if (ROOT / 'logs/gsi-editorial-progress.json').is_file() else {}
+    report = {'date': datetime.now(timezone.utc).isoformat(), 'browser_channel': browser_channel, 'exit_code': code, 'technical_pass': not technical, 'release_ready': code == 0, 'editorial_review_complete': editorial.get('editorial_complete', False), 'editorial_pending': editorial.get('pending'), 'stages': results}
     (ROOT / 'logs').mkdir(exist_ok=True)
     (ROOT / 'logs/gsi-suite.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print(f'Suite completa: código {code}. Informe: logs/gsi-suite.json', flush=True)

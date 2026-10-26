@@ -21,3 +21,18 @@ export function createElement(tagName, className, text) {
   if (text !== undefined) node.textContent = text;
   return node;
 }
+
+export function appendEditorialReferences(container, question) {
+  for (const reference of question.source?.editorial_references || []) {
+    let url;
+    try { url = new URL(reference.url); } catch { continue; }
+    if (url.protocol !== "https:") continue;
+    const paragraph = createElement("p", "");
+    const link = createElement("a", "", reference.title);
+    link.href = url.href;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    paragraph.append(link, document.createTextNode(` · ${reference.locator} · comprobado: ${reference.checked_at}`));
+    container.append(paragraph);
+  }
+}

@@ -36,6 +36,7 @@ Consulta la [auditoría completa](docs/FINAL_GSI_AUDIT.md), la [cobertura por te
 - Búsqueda y filtros por bloque, cobertura y estado editorial.
 - Entrenamiento por uno o varios bloques y temas, preguntas no vistas y últimos errores.
 - Corrección inmediata con explicación y procedencia.
+- Barajado opcional de alternativas en entrenamiento, con orden conservado al reanudar y letras coherentes en la corrección. Las oficiales mantienen su orden original.
 - Resumen final con aciertos, fallos, porcentaje, temas que reforzar y repetición de las falladas.
 - Simulacro GSI de 100 preguntas y 90 minutos, con penalización de un tercio por error.
 - Test configurable con selección de bloques, cantidad y duración.
@@ -151,9 +152,9 @@ El canal empleado queda registrado en `logs/gsi-suite.json`, `logs/gsi-regressio
 | 1 | Fallo técnico o dependencia ausente |
 | 2 | Sin fallos técnicos, pero cierre editorial pendiente |
 
-El estado actual esperado es **0**: las comprobaciones técnicas y el cierre editorial están superados. Las 803 preguntas generadas permanecen identificadas como de origen IA y su revisión corresponde a la versión y hashes registrados.
+El estado técnico esperado es **0**: las comprobaciones técnicas y de activación versionada están superadas. Las 803 preguntas generadas permanecen identificadas como de origen IA y su revisión corresponde a la versión y hashes registrados. La nueva revisión pedagógica completa se informa aparte mediante `editorial_review_complete` y `editorial_pending`; un código 0 no la declara terminada.
 
-La ejecución registrada el **22 de octubre de 2026** terminó con código 0 y
+La ejecución registrada el **26 de octubre de 2026** terminó con código 0 y
 `technical_pass` y `release_ready` verdaderos. El detalle generado —incluidos
 los recuentos de datos, esquemas, pruebas y comprobaciones funcionales— se
 consulta en [`logs/gsi-suite.json`](logs/gsi-suite.json), que es la evidencia
@@ -167,6 +168,8 @@ el recorrido funcional en escritorio, móvil y una subruta de GitHub Pages.
 También se comprueban puntuación, temporizadores, persistencia, exportación e importación, rutas relativas, procedencia, exclusión de preguntas pendientes y ausencia de referencias TAI en el producto activo.
 
 La criba de calidad editorial es independiente de la validez estructural. El comando `python scripts/analyze_question_quality.py --check` comprueba que el informe y la cola de revisión coincidan con los bancos sin cambiar ninguna pregunta.
+
+La [mejora del banco iniciada el 26 de octubre](docs/GSI_MEJORA_TESTS.md) incorpora señales graduales de longitud y feedback y una cola de revisión de 1.762 preguntas manuales e IA. El [piloto de 20 preguntas](docs/GSI_REVISION_PILOTO_001.md) contiene propuestas antes/después y fuentes primarias: permanece pendiente de aceptación humana y no modifica los bancos activos. La dificultad continúa siendo orientativa.
 
 La misma suite se ejecuta en GitHub Actions para cada `pull_request`, para cambios en `gsi-only-final` y ramas `codex/**`, y de forma manual. El flujo instala sus dependencias, usa Chrome real y conserva durante 14 días los logs y capturas aunque una comprobación falle.
 

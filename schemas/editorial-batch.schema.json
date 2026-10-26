@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "id", "prepared_at", "baseline_commit", "items"],
+  "properties": {
+    "version": {"const": 1},
+    "id": {"type": "string", "pattern": "^GSI-EDITORIAL-[0-9]{3}$"},
+    "prepared_at": {"type": "string", "format": "date"},
+    "baseline_commit": {"type": "string", "minLength": 7},
+    "items": {
+      "type": "array", "minItems": 1, "maxItems": 20,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "bank", "action", "decision", "base_sha256", "content_sha256", "before", "after", "reasons", "references", "rubric"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^(AI|MAN)-GSI-"},
+          "bank": {"enum": ["manual", "ai"]},
+          "action": {"enum": ["revise", "retain", "withdraw", "replace"]},
+          "decision": {"enum": ["pending_review", "accepted", "rejected"]},
+          "base_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+          "content_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+          "before": {"type": "object"},
+          "after": {"type": "object"},
+          "reasons": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+          "references": {"type": "array", "minItems": 1, "items": {"type": "object", "additionalProperties": false, "required": ["title", "url", "locator", "version", "checked_at"], "properties": {"title": {"type": "string", "minLength": 1}, "url": {"type": "string", "format": "uri", "pattern": "^https://"}, "locator": {"type": "string", "minLength": 1}, "version": {"type": ["string", "null"]}, "checked_at": {"type": "string", "format": "date"}}}},
+          "rubric": {"type": "object", "additionalProperties": false, "required": ["unique_answer", "plausible_distractors", "parallel_options", "complete_feedback", "primary_evidence", "current_context"], "properties": {"unique_answer": {"type": "boolean"}, "plausible_distractors": {"type": "boolean"}, "parallel_options": {"type": "boolean"}, "complete_feedback": {"type": "boolean"}, "primary_evidence": {"type": "boolean"}, "current_context": {"type": "boolean"}}}
+        }
+      }
+    }
+  }
+}
