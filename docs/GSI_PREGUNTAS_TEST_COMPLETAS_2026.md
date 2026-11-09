@@ -18,8 +18,8 @@ Exportación reproducible de los tres bancos del producto. Los JSON son la fuent
 | Archivo | SHA-256 |
 | --- | --- |
 | `data/questions-official.json` | `bddf132ba2333d848982263593905206a87e8548179ee7443a8699385c984b9e` |
-| `data/questions-manual.json` | `e8eedcc0a2dcd574f8ce289e3fbd9a6de761b1766ba8836a1281246af01b10b9` |
-| `data/questions-ai.json` | `4c4e4e5c41aea6892076505663d7a3e85563b5c5311c71a9c65ba600faba19e0` |
+| `data/questions-manual.json` | `042b7d27de757807e72558f500137b5687a517c4b1f9f9c3316caa1b6fb4e311` |
+| `data/questions-ai.json` | `e71e2d96e789c12b0929779c550b4713fba0d7b64560bbdc179a1158b6354660` |
 | `data/syllabus.json` | `2370e84e3c098dbe89628cdce92e95e9042a390d2dffe8bb48e3627607750d48` |
 
 Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar que el documento está sincronizado: `python scripts/export_gsi_questions.py --check`.

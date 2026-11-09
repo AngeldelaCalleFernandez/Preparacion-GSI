@@ -4,15 +4,18 @@
 from __future__ import annotations
 
 import copy
+import hashlib
 import sys
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from analyze_question_quality import analyze_question, build_report, normalize_text, quality_metrics  # noqa: E402
+from analyze_question_quality import analyze_question, build_report, normalize_text, quality_metrics, sha256_with_lf  # noqa: E402
+from export_gsi_questions import sha256_with_lf as export_sha256_with_lf  # noqa: E402
 
 
 def fixture() -> dict:
@@ -31,6 +34,15 @@ def fixture() -> dict:
 
 
 class QuestionQualityTests(unittest.TestCase):
+    def test_derived_source_hashes_match_published_lf_bytes(self):
+        source_lf = b'{\n  "questions": []\n}\n'
+        expected = hashlib.sha256(source_lf).hexdigest()
+        source = Path("questions.json")
+        for eol in (b"\n", b"\r\n"):
+            with patch.object(Path, "read_bytes", return_value=source_lf.replace(b"\n", eol)):
+                self.assertEqual(sha256_with_lf(source), expected)
+                self.assertEqual(export_sha256_with_lf(source), expected)
+
     def test_normalization_is_case_and_whitespace_insensitive(self):
         self.assertEqual(normalize_text("  ÁRBOL\n azul "), normalize_text("árbol azul"))
 

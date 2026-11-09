@@ -31,8 +31,8 @@ def load_json(path: Path) -> dict:
         return json.load(stream)
 
 
-def sha256(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+def sha256_with_lf(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes().replace(b"\r\n", b"\n")).hexdigest()
 
 
 def one_line(value: object) -> str:
@@ -67,7 +67,7 @@ def build_export() -> str:
                 "usable": usable,
                 "version": collection.get("metadata", {}).get("data_version", "sin versión"),
                 "updated_at": collection.get("metadata", {}).get("updated_at", "sin fecha"),
-                "sha256": sha256(path),
+                "sha256": sha256_with_lf(path),
             }
         )
         for source_order, question in enumerate(questions):
@@ -123,7 +123,7 @@ def build_export() -> str:
     )
     for row in bank_rows:
         lines.append(f"| `{row['path'].relative_to(ROOT).as_posix()}` | `{row['sha256']}` |")
-    lines.append(f"| `data/syllabus.json` | `{sha256(syllabus_path)}` |")
+    lines.append(f"| `data/syllabus.json` | `{sha256_with_lf(syllabus_path)}` |")
     lines.extend(["", "Para regenerar: `python scripts/export_gsi_questions.py --force`. Para comprobar que el documento está sincronizado: `python scripts/export_gsi_questions.py --check`.", "", "## Índice de temas", ""])
 
     for block_id, block in blocks.items():

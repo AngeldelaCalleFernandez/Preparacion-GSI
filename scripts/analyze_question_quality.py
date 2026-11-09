@@ -37,8 +37,8 @@ def load_json(path: Path) -> dict:
         return json.load(stream)
 
 
-def sha256(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+def sha256_with_lf(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes().replace(b"\r\n", b"\n")).hexdigest()
 
 
 def normalize_text(value: object) -> str:
@@ -192,7 +192,7 @@ def build_report() -> dict:
         source_files.append(
             {
                 "path": path.relative_to(ROOT).as_posix(),
-                "sha256": sha256(path),
+                "sha256": sha256_with_lf(path),
                 "data_version": collection.get("metadata", {}).get("data_version"),
                 "updated_at": collection.get("metadata", {}).get("updated_at"),
             }
