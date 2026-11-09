@@ -1,0 +1,3698 @@
+{
+  "version": 1,
+  "id": "GSI-EDITORIAL-007",
+  "prepared_at": "2026-10-26",
+  "baseline_commit": "e3e20ab879518c899806a70575eead28b3b35e6f",
+  "items": [
+    {
+      "id": "AI-GSI-B4-T09-002",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "54f0dcefe1b2e08a585edab03c1372e3650ad879b3d4ea87b7f8e51877a705e1",
+      "content_sha256": "c2d11008194dc69e86c9ff3d86bf10a98a6e7838b6e09ebc1d04947203da89ad",
+      "before": {
+        "id": "AI-GSI-B4-T09-002",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T09",
+        "subtopic": "Inventario y configuración",
+        "exam": null,
+        "statement": "¿Qué debe conservar el inventario de un dispositivo de red?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Solo número de puertos, sin versión ni soporte"
+          },
+          {
+            "id": "B",
+            "text": "Ubicación, versión, interfaces, gestión y dependencias"
+          },
+          {
+            "id": "C",
+            "text": "Únicamente IP sin interfaces ni ubicación"
+          },
+          {
+            "id": "D",
+            "text": "Solo fabricante y fecha de compra"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "El inventario apoya operación, soporte, cambios y recuperación.",
+          "incorrect": "El inventario apoya operación, soporte, cambios y recuperación."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.09; sección 2. Inventario y configuración",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Mantener modelo, serie/activo, ubicación, versión, interfaces, IP de gestión, dependencias, garantía/soporte y baseline. Respaldar configuraciones, controlar cambios, actualizar firmware y sustituir equipos fuera de soporte. Administración debe usar red/VRF de gestión cuando proceda y AAA central.",
+          "evidence_sha256": "dd52ef66e7bb18d3ce400c84425ec32031be1a12da199c4e09f1791d1467adf6",
+          "record_sha256": "40e98e6514cae5a3875b690344a887acd44bb76a4137e9d1254017cc54f2812b",
+          "review_id": "AI-GSI-B4-T09-002",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.09; sección 2. Inventario y configuración",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T09-002",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T09",
+        "subtopic": "Inventario y configuración",
+        "exam": null,
+        "statement": "¿Qué información debe conservar un inventario operativo de dispositivos de red para apoyar cambios y recuperación?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Precio, proveedor y fecha de compra como descripción completa del dispositivo."
+          },
+          {
+            "id": "B",
+            "text": "Identidad, ubicación, versión, interfaces, gestión, dependencias y soporte."
+          },
+          {
+            "id": "C",
+            "text": "Dirección IP y acceso actual como sustitutos de identidad física e historial."
+          },
+          {
+            "id": "D",
+            "text": "Marca y número de puertos como evidencia de versión y configuración vigentes."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "El inventario debe identificar el activo y relacionarlo con su ubicación, versión, interfaces, administración, dependencias y soporte. Esto permite saber qué se cambia o recupera y qué servicios pueden verse afectados; una dirección IP o una ficha de compra no describe por sí sola su estado operativo.",
+          "incorrect": "Revisa el concepto y las condiciones del enunciado para distinguir la alternativa elegida de la respuesta correcta.",
+          "incorrect_options": {
+            "A": "Los datos de compra apoyan gestión económica, pero no acreditan versión instalada, conexiones, dependencias ni cómo administrar o recuperar el equipo.",
+            "C": "Una IP puede cambiar o reutilizarse. No sustituye identidad del activo, ubicación, versión ni historial de configuración.",
+            "D": "Marca y puertos describen parte del hardware; no demuestran qué versión o configuración está instalada ni qué depende del dispositivo."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.09; sección 2. Inventario y configuración",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Mantener modelo, serie/activo, ubicación, versión, interfaces, IP de gestión, dependencias, garantía/soporte y baseline. Respaldar configuraciones, controlar cambios, actualizar firmware y sustituir equipos fuera de soporte. Administración debe usar red/VRF de gestión cuando proceda y AAA central.",
+          "evidence_sha256": "dd52ef66e7bb18d3ce400c84425ec32031be1a12da199c4e09f1791d1467adf6",
+          "record_sha256": "40e98e6514cae5a3875b690344a887acd44bb76a4137e9d1254017cc54f2812b",
+          "review_id": "AI-GSI-B4-T09-002",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "NIST SP 800-128: Guide for Security-Focused Configuration Management of Information Systems",
+              "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-128.pdf",
+              "locator": "§3.1.2 Planning at the System Level, Create or Update System Component Inventory, pp.24–26: identificación, asociación, atributos y seguimiento del componente",
+              "version": "Agosto de 2011, actualizaciones del 10-10-2019",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-007"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.09; sección 2. Inventario y configuración",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Conservar información operativa, ubicación, versión, interfaces y dependencias, diferenciándola de inventario económico o identificación basada solo en IP."
+      ],
+      "references": [
+        {
+          "title": "NIST SP 800-128: Guide for Security-Focused Configuration Management of Information Systems",
+          "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-128.pdf",
+          "locator": "§3.1.2 Planning at the System Level, Create or Update System Component Inventory, pp.24–26: identificación, asociación, atributos y seguimiento del componente",
+          "version": "Agosto de 2011, actualizaciones del 10-10-2019",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T09-003",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "20bbb1198febf13a697427bde1b6e7b03c9be7da0cf96d8647725d4f6b860130",
+      "content_sha256": "a5f0a9a4c211ed13c828da990920a55d28a2937649bb6c652d5718dddc353c33",
+      "before": {
+        "id": "AI-GSI-B4-T09-003",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T09",
+        "subtopic": "Inventario y configuración",
+        "exam": null,
+        "statement": "¿Qué práctica facilita recuperar configuración de equipos?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Solo fotografías externas de equipos"
+          },
+          {
+            "id": "B",
+            "text": "Backups de configuración y control de cambios"
+          },
+          {
+            "id": "C",
+            "text": "Memoria del técnico sin documentación"
+          },
+          {
+            "id": "D",
+            "text": "Únicamente inventario de modelos sin configuración"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Las copias y versiones permiten restaurar un estado conocido.",
+          "incorrect": "Las copias y versiones permiten restaurar un estado conocido."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.09; sección 2. Inventario y configuración",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Mantener modelo, serie/activo, ubicación, versión, interfaces, IP de gestión, dependencias, garantía/soporte y baseline. Respaldar configuraciones, controlar cambios, actualizar firmware y sustituir equipos fuera de soporte. Administración debe usar red/VRF de gestión cuando proceda y AAA central.",
+          "evidence_sha256": "dd52ef66e7bb18d3ce400c84425ec32031be1a12da199c4e09f1791d1467adf6",
+          "record_sha256": "3982b4818df21f2c47d7cef8a8a6ca8adc2fa188e588e41527bbc932da669044",
+          "review_id": "AI-GSI-B4-T09-003",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.09; sección 2. Inventario y configuración",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T09-003",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T09",
+        "subtopic": "Inventario y configuración",
+        "exam": null,
+        "statement": "Un cambio en un switch provoca pérdida de conectividad. ¿Qué preparación facilita volver a una configuración conocida y aprobada?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Conservar la imagen del firmware y darla por copia de toda la configuración."
+          },
+          {
+            "id": "B",
+            "text": "Guardar copias versionadas del estado aprobado y probar su restauración."
+          },
+          {
+            "id": "C",
+            "text": "Exportar logs y estadísticas, tomándolos como estado completo para restaurar."
+          },
+          {
+            "id": "D",
+            "text": "Anotar el modelo y reconstruir el servicio a partir de los valores por defecto."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Las copias versionadas y asociadas al equipo permiten identificar y restaurar un estado aprobado anterior. Deben mantenerse actualizadas, protegidas y contrastadas con la versión y dependencias del equipo; probar la restauración evita dar por recuperable un archivo que no se ha validado.",
+          "incorrect": "Revisa el concepto y las condiciones del enunciado para distinguir la alternativa elegida de la respuesta correcta.",
+          "incorrect_options": {
+            "A": "La imagen del firmware contiene el software del equipo, pero no necesariamente sus VLAN, interfaces, rutas, políticas y demás configuración particular.",
+            "C": "Los registros y estadísticas aportan evidencia de funcionamiento y fallos, pero no constituyen el conjunto completo de parámetros requerido para restaurar el estado.",
+            "D": "Los valores de fábrica no reconstruyen la configuración del servicio. Modelo e inventario no sustituyen conservar las versiones aprobadas."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.09; sección 2. Inventario y configuración",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Mantener modelo, serie/activo, ubicación, versión, interfaces, IP de gestión, dependencias, garantía/soporte y baseline. Respaldar configuraciones, controlar cambios, actualizar firmware y sustituir equipos fuera de soporte. Administración debe usar red/VRF de gestión cuando proceda y AAA central.",
+          "evidence_sha256": "dd52ef66e7bb18d3ce400c84425ec32031be1a12da199c4e09f1791d1467adf6",
+          "record_sha256": "3982b4818df21f2c47d7cef8a8a6ca8adc2fa188e588e41527bbc932da669044",
+          "review_id": "AI-GSI-B4-T09-003",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "NIST SP 800-128: Guide for Security-Focused Configuration Management of Information Systems",
+              "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-128.pdf",
+              "locator": "§3.2 Identifying and Implementing Configurations; §3.3 Controlling Configuration Changes: baseline aprobada, versiones y control del estado",
+              "version": "Agosto de 2011, actualizaciones del 10-10-2019",
+              "checked_at": "2026-10-26"
+            },
+            {
+              "title": "IETF RFC 6241: Network Configuration Protocol (NETCONF)",
+              "url": "https://www.rfc-editor.org/rfc/rfc6241.html",
+              "locator": "§7.3 copy-config: copia de almacenes completos de configuración; §8.7 Distinct Startup Capability",
+              "version": "Junio de 2011; ejemplo de mecanismo de configuración, sin exigir NETCONF en todos los equipos",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-007"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.09; sección 2. Inventario y configuración",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Aplicar copias y control de cambios a una recuperación concreta; distinguir firmware, telemetría y valores de fábrica de la configuración aprobada."
+      ],
+      "references": [
+        {
+          "title": "NIST SP 800-128: Guide for Security-Focused Configuration Management of Information Systems",
+          "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-128.pdf",
+          "locator": "§3.2 Identifying and Implementing Configurations; §3.3 Controlling Configuration Changes: baseline aprobada, versiones y control del estado",
+          "version": "Agosto de 2011, actualizaciones del 10-10-2019",
+          "checked_at": "2026-10-26"
+        },
+        {
+          "title": "IETF RFC 6241: Network Configuration Protocol (NETCONF)",
+          "url": "https://www.rfc-editor.org/rfc/rfc6241.html",
+          "locator": "§7.3 copy-config: copia de almacenes completos de configuración; §8.7 Distinct Startup Capability",
+          "version": "Junio de 2011; ejemplo de mecanismo de configuración, sin exigir NETCONF en todos los equipos",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T09-017",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "29436cbda85feed3391fd191fde0af1b7bfc3b50fc96cbef1729672f268a8910",
+      "content_sha256": "e50c04af7ad79d47c81bd44e07033b9f9220d610896a9fcafc8fff3cab4958c0",
+      "before": {
+        "id": "AI-GSI-B4-T09-017",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T09",
+        "subtopic": "Monitorización",
+        "exam": null,
+        "statement": "¿Qué parámetros deben vigilarse en interfaces?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Únicamente número de puertos físicos"
+          },
+          {
+            "id": "B",
+            "text": "Solo velocidad nominal configurada"
+          },
+          {
+            "id": "C",
+            "text": "Errores, descartes, utilización y estado"
+          },
+          {
+            "id": "D",
+            "text": "Solo direccionamiento, sin errores ni carga"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Estas medidas ayudan a detectar degradación y saturación.",
+          "incorrect": "Estas medidas ayudan a detectar degradación y saturación."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.09; sección 6. Monitorización",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Disponibilidad, estado de interfaces, errores/discards, utilización, latencia, pérdida, CPU/memoria, vecinos, rutas, PoE, temperatura y cambios. Usar percentiles/tendencias y umbrales con histéresis. Alertas deben mapearse a una acción y evitar tormentas.",
+          "evidence_sha256": "205c84df3641dc034ddfaef8d24f541409c0a8f6177d9a7e1ac53113b91db5f8",
+          "record_sha256": "1f4c1c33a0b35ad924b54f0f92f66882b919931ab62def9cd3ce9765a51f05e6",
+          "review_id": "AI-GSI-B4-T09-017",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.09; sección 6. Monitorización",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T09-017",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T09",
+        "subtopic": "Monitorización",
+        "exam": null,
+        "statement": "Un puerto figura activo, pero se observa degradación del tráfico. Además de revisar su configuración, ¿qué medidas de la interfaz deben seguirse en el tiempo?",
+        "options": [
+          {
+            "id": "A",
+            "text": "CPU, memoria, procesos activos y temperatura del chasis."
+          },
+          {
+            "id": "B",
+            "text": "Velocidad nominal, dúplex configurado, MTU y descripción del puerto."
+          },
+          {
+            "id": "C",
+            "text": "Errores, descartes, utilización y estado operativo del puerto."
+          },
+          {
+            "id": "D",
+            "text": "Modelo, serie, firmware y cobertura del contrato de soporte."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Errores, descartes, tráfico/utilización y cambios de estado permiten observar comportamiento de la interfaz y tendencias. Muchos contadores son acumulativos: deben compararse por intervalos y considerar reinicios o discontinuidades. Un puerto activo no garantiza ausencia de degradación ni identifica por sí solo su causa.",
+          "incorrect": "Revisa el concepto y las condiciones del enunciado para distinguir la alternativa elegida de la respuesta correcta.",
+          "incorrect_options": {
+            "A": "Son medidas generales del dispositivo que pueden complementar el diagnóstico, pero no sustituyen observar errores, descartes y tráfico del puerto concreto.",
+            "B": "Son parámetros de configuración y capacidad. Revisarlos es útil, pero no mide cómo evoluciona el tráfico ni los errores que plantea el caso.",
+            "D": "Son datos de inventario y soporte. Identifican el activo, pero no describen la degradación operativa de la interfaz durante el intervalo."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.09; sección 6. Monitorización",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Disponibilidad, estado de interfaces, errores/discards, utilización, latencia, pérdida, CPU/memoria, vecinos, rutas, PoE, temperatura y cambios. Usar percentiles/tendencias y umbrales con histéresis. Alertas deben mapearse a una acción y evitar tormentas.",
+          "evidence_sha256": "205c84df3641dc034ddfaef8d24f541409c0a8f6177d9a7e1ac53113b91db5f8",
+          "record_sha256": "1f4c1c33a0b35ad924b54f0f92f66882b919931ab62def9cd3ce9765a51f05e6",
+          "review_id": "AI-GSI-B4-T09-017",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "IETF RFC 8343: A YANG Data Model for Interface Management",
+              "url": "https://www.rfc-editor.org/rfc/rfc8343.html",
+              "locator": "§3 Interfaces Data Model; §5 Interfaces YANG Module: oper-status, speed, statistics, in/out-errors, in/out-discards y discontinuity-time",
+              "version": "Marzo de 2018",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-007"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.09; sección 6. Monitorización",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Aplicar monitorización de interfaces a un puerto activo con degradación, distinguiendo contadores y estado de configuración e inventario, sin confirmar una causa no medida."
+      ],
+      "references": [
+        {
+          "title": "IETF RFC 8343: A YANG Data Model for Interface Management",
+          "url": "https://www.rfc-editor.org/rfc/rfc8343.html",
+          "locator": "§3 Interfaces Data Model; §5 Interfaces YANG Module: oper-status, speed, statistics, in/out-errors, in/out-discards y discontinuity-time",
+          "version": "Marzo de 2018",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T10-001",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "4750475540efbe357abe9fd83dca9dce97278c4d39e802d62b08daeb8c7447bb",
+      "content_sha256": "9d535ec8c0ce161393ed7155eddc9c719828906d2160300f5744a3a746dae318",
+      "before": {
+        "id": "AI-GSI-B4-T10-001",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T10",
+        "subtopic": "WAN y transportes",
+        "exam": null,
+        "statement": "¿Qué criterios deben compararse al elegir conectividad WAN?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Solo cantidad de direcciones públicas"
+          },
+          {
+            "id": "B",
+            "text": "Capacidad, latencia, disponibilidad, cifrado, diversidad y coste"
+          },
+          {
+            "id": "C",
+            "text": "Solo velocidad nominal"
+          },
+          {
+            "id": "D",
+            "text": "Únicamente coste mensual"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "La WAN debe satisfacer requisitos operativos y dominios de fallo.",
+          "incorrect": "La WAN debe satisfacer requisitos operativos y dominios de fallo."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.10; sección 1. WAN y transportes",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "WAN conecta sedes/CPD/cloud a través de operadores, Internet o infraestructuras propias. Los criterios son capacidad, latencia, disponibilidad, QoS, cifrado, cobertura, coste, diversidad física y tiempo de provisión. Una arquitectura puede combinar varios underlays.",
+          "evidence_sha256": "82d732cf13f426ab0cd749f7a438c16ecd0d86e423f2cde2961256272287b47f",
+          "record_sha256": "26c60a7d3aaf7f7902b55695b0c0d865a607df4c1e324dbc2b5c2876b390dc44",
+          "review_id": "AI-GSI-B4-T10-001",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.10; sección 1. WAN y transportes",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T10-001",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T10",
+        "subtopic": "WAN y transportes",
+        "exam": null,
+        "statement": "Dos ofertas WAN anuncian la misma velocidad para una sede con servicio crítico. ¿Qué evaluación permite comparar su adecuación y continuidad?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Elegir la oferta con más IP públicas, tomando ese dato por garantía de continuidad."
+          },
+          {
+            "id": "B",
+            "text": "Comparar capacidad efectiva, latencia, disponibilidad, cifrado, diversidad física y coste."
+          },
+          {
+            "id": "C",
+            "text": "Elegir la velocidad anunciada sin comprobar pérdidas ni acuerdos de servicio."
+          },
+          {
+            "id": "D",
+            "text": "Elegir la menor cuota mensual, suponiendo equivalente el riesgo de fallo común."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "La selección debe partir de requisitos medibles del servicio y contrastar capacidad, calidad, disponibilidad, protección y costes. La diversidad debe examinar rutas y dependencias reales: contratar marcas distintas no demuestra independencia física ni elimina fallos comunes.",
+          "incorrect": "Revisa el concepto y las condiciones del enunciado para distinguir la alternativa elegida de la respuesta correcta.",
+          "incorrect_options": {
+            "A": "Disponer de más direcciones públicas no demuestra redundancia, calidad ni recuperación. Es un requisito posible, pero no una garantía de continuidad.",
+            "C": "La velocidad anunciada no describe pérdida, latencia, capacidad efectiva ni compromisos de disponibilidad, que pueden diferir entre las ofertas.",
+            "D": "La cuota no mide exposición a fallos comunes. Un menor precio puede corresponder a rutas o dependencias compartidas incompatibles con los objetivos del servicio."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.10; sección 1. WAN y transportes",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "WAN conecta sedes/CPD/cloud a través de operadores, Internet o infraestructuras propias. Los criterios son capacidad, latencia, disponibilidad, QoS, cifrado, cobertura, coste, diversidad física y tiempo de provisión. Una arquitectura puede combinar varios underlays.",
+          "evidence_sha256": "82d732cf13f426ab0cd749f7a438c16ecd0d86e423f2cde2961256272287b47f",
+          "record_sha256": "26c60a7d3aaf7f7902b55695b0c0d865a607df4c1e324dbc2b5c2876b390dc44",
+          "review_id": "AI-GSI-B4-T10-001",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "AWS: Hybrid Networking Lens — AWS Well-Architected Framework",
+              "url": "https://docs.aws.amazon.com/pdfs/wellarchitected/latest/hybrid-networking-lens/hybrid-networking-lens.pdf",
+              "locator": "HNPERF01, Architecture selection, pp.61–63; HNREL04-BP01/BP02, pp.55–56; Deploy secure connectivity: requisitos, costes, redundancia y cifrado",
+              "version": "Edición web/PDF consultada el 26-10-2026; copyright 2026, sin número de versión adicional comprobado",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-007"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.10; sección 1. WAN y transportes",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Aplicar criterios WAN a ofertas de igual velocidad y distinguir diversidad comercial de independencia física y operativa."
+      ],
+      "references": [
+        {
+          "title": "AWS: Hybrid Networking Lens — AWS Well-Architected Framework",
+          "url": "https://docs.aws.amazon.com/pdfs/wellarchitected/latest/hybrid-networking-lens/hybrid-networking-lens.pdf",
+          "locator": "HNPERF01, Architecture selection, pp.61–63; HNREL04-BP01/BP02, pp.55–56; Deploy secure connectivity: requisitos, costes, redundancia y cifrado",
+          "version": "Edición web/PDF consultada el 26-10-2026; copyright 2026, sin número de versión adicional comprobado",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T10-002",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "7ffd90eb8d7e85a390fa3697d26ef29d7039163d95e7509df9e15a672f94f287",
+      "content_sha256": "06d04c7d8645a4057a2390ebd6e99b3f5c312a71fac5eaa14780e5b056dea54e",
+      "before": {
+        "id": "AI-GSI-B4-T10-002",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T10",
+        "subtopic": "WAN y transportes",
+        "exam": null,
+        "statement": "¿Puede una arquitectura WAN combinar varios transportes subyacentes?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Solo si todos son fibra propia"
+          },
+          {
+            "id": "B",
+            "text": "Solo si no utiliza IP"
+          },
+          {
+            "id": "C",
+            "text": "No, debe usar siempre uno solo"
+          },
+          {
+            "id": "D",
+            "text": "Sí, según requisitos y política"
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "La arquitectura puede combinar underlays de distinto tipo.",
+          "incorrect": "La arquitectura puede combinar underlays de distinto tipo."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.10; sección 1. WAN y transportes",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "WAN conecta sedes/CPD/cloud a través de operadores, Internet o infraestructuras propias. Los criterios son capacidad, latencia, disponibilidad, QoS, cifrado, cobertura, coste, diversidad física y tiempo de provisión. Una arquitectura puede combinar varios underlays.",
+          "evidence_sha256": "82d732cf13f426ab0cd749f7a438c16ecd0d86e423f2cde2961256272287b47f",
+          "record_sha256": "2109ab33573559e0eb6f9dc37a7a3326a092ae4b16fb77761e0178c5944d61de",
+          "review_id": "AI-GSI-B4-T10-002",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.10; sección 1. WAN y transportes",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T10-002",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T10",
+        "subtopic": "WAN y transportes",
+        "exam": null,
+        "statement": "¿Puede una arquitectura WAN combinar transportes subyacentes de distintos tipos?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Sí; la arquitectura exige que todos tengan el mismo operador y tecnología."
+          },
+          {
+            "id": "B",
+            "text": "No; cifrar el overlay obliga a mantener un único transporte físico."
+          },
+          {
+            "id": "C",
+            "text": "No; una red lógica no puede construirse sobre transportes heterogéneos."
+          },
+          {
+            "id": "D",
+            "text": "Sí; puede combinar MPLS, Internet o móvil según requisitos y política."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Una WAN puede combinar transportes diferentes como MPLS, Internet y redes móviles, con selección, reparto o respaldo según diseño y política. El overlay lógico puede apoyarse en ellos; combinarlos no implica sumar automáticamente toda su capacidad en un único flujo ni garantizar independencia de fallos.",
+          "incorrect": "Revisa el concepto y las condiciones del enunciado para distinguir la alternativa elegida de la respuesta correcta.",
+          "incorrect_options": {
+            "A": "No hay una exigencia general de compartir operador y tecnología. Precisamente pueden combinarse transportes heterogéneos, valorando su compatibilidad y riesgos comunes.",
+            "B": "El cifrado de túneles no impone un único medio subyacente. La política puede proteger y utilizar conexiones sobre distintos transportes.",
+            "C": "El desacoplamiento lógico permite construir un overlay sobre varias redes subyacentes. Heterogeneidad no lo impide por definición."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.10; sección 1. WAN y transportes",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "WAN conecta sedes/CPD/cloud a través de operadores, Internet o infraestructuras propias. Los criterios son capacidad, latencia, disponibilidad, QoS, cifrado, cobertura, coste, diversidad física y tiempo de provisión. Una arquitectura puede combinar varios underlays.",
+          "evidence_sha256": "82d732cf13f426ab0cd749f7a438c16ecd0d86e423f2cde2961256272287b47f",
+          "record_sha256": "2109ab33573559e0eb6f9dc37a7a3326a092ae4b16fb77761e0178c5944d61de",
+          "review_id": "AI-GSI-B4-T10-002",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Cisco Catalyst SD-WAN Design Guide",
+              "url": "https://www.cisco.com/c/en/us/td/docs/solutions/CVD/SDWAN/cisco-sdwan-design-guide.html",
+              "locator": "Transport Choices: combinaciones MPLS/Internet/LTE; Routing: límites de gestión de rutas estáticas con muchas sedes",
+              "version": "Actualizado el 21-08-2024; principios de selección, sin trasladar sus configuraciones a toda WAN",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-007"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.10; sección 1. WAN y transportes",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Conservar combinación de underlays según requisitos y política, con alternativas sobre restricciones falsas y sin prometer agregación automática por flujo."
+      ],
+      "references": [
+        {
+          "title": "Cisco Catalyst SD-WAN Design Guide",
+          "url": "https://www.cisco.com/c/en/us/td/docs/solutions/CVD/SDWAN/cisco-sdwan-design-guide.html",
+          "locator": "Transport Choices: combinaciones MPLS/Internet/LTE; Routing: límites de gestión de rutas estáticas con muchas sedes",
+          "version": "Actualizado el 21-08-2024; principios de selección, sin trasladar sus configuraciones a toda WAN",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T10-012",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "7432b700f78184710db3c649031aaefa327db28ba3d4e488a08ca06e0ff9db1a",
+      "content_sha256": "55195f802797bc9b7e3a546868f73c3ce840c818e4e88c9d252761fe141f2dae",
+      "before": {
+        "id": "AI-GSI-B4-T10-012",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T10",
+        "subtopic": "SD-WAN",
+        "exam": null,
+        "statement": "¿Qué información puede usar el edge SD-WAN para seleccionar camino?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Un orden fijo de operadores ignorando política"
+          },
+          {
+            "id": "B",
+            "text": "Aplicación, pérdida, jitter, latencia y coste"
+          },
+          {
+            "id": "C",
+            "text": "Solo disponibilidad binaria del enlace sin calidad"
+          },
+          {
+            "id": "D",
+            "text": "Solo capacidad nominal sin medir pérdida ni latencia"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "La selección responde a medidas y políticas por aplicación.",
+          "incorrect": "La selección responde a medidas y políticas por aplicación."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.10; sección 4. SD-WAN",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "SD-WAN desacopla política/control de la elección de múltiples transportes. Underlay = conectividad subyacente (Internet, MPLS, 4G/5G...); overlay = túneles/red lógica. Un controlador/orquestador distribuye políticas; el edge mide SLA de caminos y selecciona según aplicación, pérdida, jitter/latencia y coste.\n\nBeneficios: gestión central, uso activo de varios enlaces y aprovisionamiento; riesgos: dependencia de plataforma, control plane, seguridad de edges y calidad variable del underlay.",
+          "evidence_sha256": "ad62acb1c1c99be6b4fc4f02dfffd6ab993dcffa26f4af8b33c2cba1a8228381",
+          "record_sha256": "4cf31a3f25b7318c82aa895e6161c668ec2b310cf9509adcd68bccd9cdf1e4e1",
+          "review_id": "AI-GSI-B4-T10-012",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.10; sección 4. SD-WAN",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T10-012",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T10",
+        "subtopic": "SD-WAN",
+        "exam": null,
+        "statement": "Una política SD-WAN de voz admite caminos con latencia ≤50 ms, jitter ≤10 ms y pérdida ≤1 %. A mide 20 ms, 25 ms y 0,1 %; B, 40 ms, 5 ms y 0,5 %, respectivamente. El coste desempata entre caminos admisibles y A es más barato. ¿Cuál cumple la política?",
+        "options": [
+          {
+            "id": "A",
+            "text": "A: su menor pérdida compensa superar el jitter máximo."
+          },
+          {
+            "id": "B",
+            "text": "B: cumple los tres límites; el coste no permite admitir A."
+          },
+          {
+            "id": "C",
+            "text": "Cualquiera: ambos están activos y su pérdida es inferior al 1 %."
+          },
+          {
+            "id": "D",
+            "text": "A: su menor coste tiene prioridad sobre los límites de voz."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "El camino B cumple latencia, jitter y pérdida. A supera el máximo de jitter, aunque tenga menor coste y pérdida. La decisión utiliza requisitos de la aplicación y medidas de calidad conforme a la política; en este supuesto el coste solo compara caminos ya admisibles.",
+          "incorrect": "Revisa el concepto y las condiciones del enunciado para distinguir la alternativa elegida de la respuesta correcta.",
+          "incorrect_options": {
+            "A": "La política exige cumplir los tres límites; una pérdida menor no compensa un jitter de 25 ms cuando el máximo permitido es 10 ms.",
+            "C": "Estar activo y cumplir pérdida no basta. También deben satisfacerse los límites de latencia y jitter definidos para voz.",
+            "D": "El coste se usa para desempatar entre caminos admisibles. A no lo es por su jitter, por lo que ser más barato no le da prioridad."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.10; sección 4. SD-WAN",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "SD-WAN desacopla política/control de la elección de múltiples transportes. Underlay = conectividad subyacente (Internet, MPLS, 4G/5G...); overlay = túneles/red lógica. Un controlador/orquestador distribuye políticas; el edge mide SLA de caminos y selecciona según aplicación, pérdida, jitter/latencia y coste.\n\nBeneficios: gestión central, uso activo de varios enlaces y aprovisionamiento; riesgos: dependencia de plataforma, control plane, seguridad de edges y calidad variable del underlay.",
+          "evidence_sha256": "ad62acb1c1c99be6b4fc4f02dfffd6ab993dcffa26f4af8b33c2cba1a8228381",
+          "record_sha256": "4cf31a3f25b7318c82aa895e6161c668ec2b310cf9509adcd68bccd9cdf1e4e1",
+          "review_id": "AI-GSI-B4-T10-012",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Cisco Catalyst SD-WAN Policies Configuration Guide: SLA, Application-Aware Routing",
+              "url": "https://www.cisco.com/c/en/us/td/docs/routers/sdwan/26x-later/policies/policies-configuration-guide/AAR/sla-aar.html",
+              "locator": "Configure SLA: clases con máximos de Loss, Latency y Jitter; Fallback Best Tunnel y criterios de política",
+              "version": "Releases 26.x and later; guía web consultada el 26-10-2026",
+              "checked_at": "2026-10-26"
+            },
+            {
+              "title": "Cisco Catalyst SD-WAN Design Guide",
+              "url": "https://www.cisco.com/c/en/us/td/docs/solutions/CVD/SDWAN/cisco-sdwan-design-guide.html",
+              "locator": "Transport Choices: combinaciones MPLS/Internet/LTE; Routing: límites de gestión de rutas estáticas con muchas sedes",
+              "version": "Actualizado el 21-08-2024; principios de selección, sin trasladar sus configuraciones a toda WAN",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-007"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.10; sección 4. SD-WAN",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Aplicar selección SD-WAN por aplicación, medidas y política a un caso numérico cerrado; separar restricciones SLA y criterio de coste, sin atribuir esos valores a un producto real."
+      ],
+      "references": [
+        {
+          "title": "Cisco Catalyst SD-WAN Policies Configuration Guide: SLA, Application-Aware Routing",
+          "url": "https://www.cisco.com/c/en/us/td/docs/routers/sdwan/26x-later/policies/policies-configuration-guide/AAR/sla-aar.html",
+          "locator": "Configure SLA: clases con máximos de Loss, Latency y Jitter; Fallback Best Tunnel y criterios de política",
+          "version": "Releases 26.x and later; guía web consultada el 26-10-2026",
+          "checked_at": "2026-10-26"
+        },
+        {
+          "title": "Cisco Catalyst SD-WAN Design Guide",
+          "url": "https://www.cisco.com/c/en/us/td/docs/solutions/CVD/SDWAN/cisco-sdwan-design-guide.html",
+          "locator": "Transport Choices: combinaciones MPLS/Internet/LTE; Routing: límites de gestión de rutas estáticas con muchas sedes",
+          "version": "Actualizado el 21-08-2024; principios de selección, sin trasladar sus configuraciones a toda WAN",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T10-015",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "cdecdd2f940ed9b5688101aae1a5e465de42532f3175266474c31fa229be74df",
+      "content_sha256": "709e2fb2f242d6a4d68ff40b9e6b7ddad65170021caf21af75943dcaf45766c9",
+      "before": {
+        "id": "AI-GSI-B4-T10-015",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T10",
+        "subtopic": "Routing estático y dinámico",
+        "exam": null,
+        "statement": "¿Qué ventaja y límite tiene routing estático?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Predecible, pero escala peor en topologías complejas"
+          },
+          {
+            "id": "B",
+            "text": "Siempre converge automáticamente ante cualquier cambio"
+          },
+          {
+            "id": "C",
+            "text": "Solo funciona con IPv6"
+          },
+          {
+            "id": "D",
+            "text": "No requiere configuración"
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Puede ser adecuado en redes sencillas; necesita gestión explícita al crecer.",
+          "incorrect": "Puede ser adecuado en redes sencillas; necesita gestión explícita al crecer."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.10; sección 5. Routing estático y dinámico",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Routing estático es predecible pero escala mal. Protocolos dinámicos intercambian información y convergen tras cambios. Métricas y atributos determinan selección; debe evitarse redistribución indiscriminada.",
+          "evidence_sha256": "6f63089929d049380dda0868e7b1fc18246eac29461d1144533ffff31098d3c6",
+          "record_sha256": "d569c6f5907ae7142466cb2af4af6d556c710ba1a4e497b95aa3bb9327982f1c",
+          "review_id": "AI-GSI-B4-T10-015",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.10; sección 5. Routing estático y dinámico",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T10-015",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T10",
+        "subtopic": "Routing estático y dinámico",
+        "exam": null,
+        "statement": "¿Qué ventaja y limitación caracteriza el uso de rutas estáticas al crecer una topología?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Control explícito de caminos, con mayor carga de mantenimiento al crecer la red."
+          },
+          {
+            "id": "B",
+            "text": "Intercambio automático de cambios con vecinos, sin configurar un protocolo de routing."
+          },
+          {
+            "id": "C",
+            "text": "Cálculo automático de caminos alternativos a partir de la topología completa aprendida."
+          },
+          {
+            "id": "D",
+            "text": "Crecimiento sin revisar rutas, porque el siguiente salto descubre los nuevos destinos."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Las rutas estáticas permiten definir caminos de forma explícita y pueden ser apropiadas en redes sencillas o destinos concretos. Gestionarlas se complica al crecer y cambiar la topología. Pueden combinarse con automatización o seguimiento de disponibilidad, sin convertirse por ello en aprendizaje dinámico de rutas.",
+          "incorrect": "Revisa el concepto y las condiciones del enunciado para distinguir la alternativa elegida de la respuesta correcta.",
+          "incorrect_options": {
+            "B": "Una ruta estática no intercambia automáticamente anuncios de topología. Ese aprendizaje requiere mecanismos adicionales, como protocolos de routing dinámico.",
+            "C": "Calcular alternativas sobre una topología aprendida corresponde a mecanismos de routing dinámico; no es una propiedad que aparezca por definir rutas estáticas.",
+            "D": "El siguiente salto configurado no descubre por sí mismo todos los nuevos destinos. Deben revisarse rutas, resúmenes y condiciones de alcance según el diseño."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.10; sección 5. Routing estático y dinámico",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Routing estático es predecible pero escala mal. Protocolos dinámicos intercambian información y convergen tras cambios. Métricas y atributos determinan selección; debe evitarse redistribución indiscriminada.",
+          "evidence_sha256": "6f63089929d049380dda0868e7b1fc18246eac29461d1144533ffff31098d3c6",
+          "record_sha256": "d569c6f5907ae7142466cb2af4af6d556c710ba1a4e497b95aa3bb9327982f1c",
+          "review_id": "AI-GSI-B4-T10-015",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Cisco: IP Routing Configuration Guide, Protocol-Independent Features",
+              "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9600/software/release/17-15/configuration_guide/rtng/b_1715_rtng_9600_cg/protocol_independent_features.html",
+              "locator": "Static Unicast Routes: rutas definidas por el usuario, distancia administrativa y retirada si no se resuelve siguiente salto/interfaz",
+              "version": "Cisco IOS XE 17.15.x, Catalyst 9600",
+              "checked_at": "2026-10-26"
+            },
+            {
+              "title": "Cisco: IP Addressing Services Configuration Guide",
+              "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9200/software/release/17-15/configuration_guide/ip/b_1715_ip_9200_cg.pdf",
+              "locator": "Configuring Enhanced Object Tracking: asociación de ip route con track; Monitoring Enhanced Object Tracking",
+              "version": "Cisco IOS XE 17.15.x, Catalyst 9200; primera publicación 14-08-2024",
+              "checked_at": "2026-10-26"
+            },
+            {
+              "title": "Cisco Catalyst SD-WAN Design Guide",
+              "url": "https://www.cisco.com/c/en/us/td/docs/solutions/CVD/SDWAN/cisco-sdwan-design-guide.html",
+              "locator": "Transport Choices: combinaciones MPLS/Internet/LTE; Routing: límites de gestión de rutas estáticas con muchas sedes",
+              "version": "Actualizado el 21-08-2024; principios de selección, sin trasladar sus configuraciones a toda WAN",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-007"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.10; sección 5. Routing estático y dinámico",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Conservar predictibilidad y coste de mantenimiento, evitando afirmar que ninguna ruta estática puede retirarse o conmutar automáticamente cuando existe tracking o automatización."
+      ],
+      "references": [
+        {
+          "title": "Cisco: IP Routing Configuration Guide, Protocol-Independent Features",
+          "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9600/software/release/17-15/configuration_guide/rtng/b_1715_rtng_9600_cg/protocol_independent_features.html",
+          "locator": "Static Unicast Routes: rutas definidas por el usuario, distancia administrativa y retirada si no se resuelve siguiente salto/interfaz",
+          "version": "Cisco IOS XE 17.15.x, Catalyst 9600",
+          "checked_at": "2026-10-26"
+        },
+        {
+          "title": "Cisco: IP Addressing Services Configuration Guide",
+          "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9200/software/release/17-15/configuration_guide/ip/b_1715_ip_9200_cg.pdf",
+          "locator": "Configuring Enhanced Object Tracking: asociación de ip route con track; Monitoring Enhanced Object Tracking",
+          "version": "Cisco IOS XE 17.15.x, Catalyst 9200; primera publicación 14-08-2024",
+          "checked_at": "2026-10-26"
+        },
+        {
+          "title": "Cisco Catalyst SD-WAN Design Guide",
+          "url": "https://www.cisco.com/c/en/us/td/docs/solutions/CVD/SDWAN/cisco-sdwan-design-guide.html",
+          "locator": "Transport Choices: combinaciones MPLS/Internet/LTE; Routing: límites de gestión de rutas estáticas con muchas sedes",
+          "version": "Actualizado el 21-08-2024; principios de selección, sin trasladar sus configuraciones a toda WAN",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T11-005",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "0c72a045ef2369f439acfbaf7753a8e9a76ed1601db38baa3d670f7129063c15",
+      "content_sha256": "48f74bc13ccc176e8c5070cda3ce00fa2a557fcb5917445f2f022723aac73c44",
+      "before": {
+        "id": "AI-GSI-B4-T11-005",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T11",
+        "subtopic": "Bandas y canales",
+        "exam": null,
+        "statement": "¿Qué debe verificarse antes de usar 6 GHz?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Regulación aplicable y compatibilidad de equipos"
+          },
+          {
+            "id": "B",
+            "text": "Solo potencia del AP sin compatibilidad ni regulación"
+          },
+          {
+            "id": "C",
+            "text": "Solo que el SSID sea visible"
+          },
+          {
+            "id": "D",
+            "text": "Únicamente la velocidad del uplink"
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Disponibilidad de espectro y soporte del dispositivo condicionan uso.",
+          "incorrect": "Disponibilidad de espectro y soporte del dispositivo condicionan uso."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.11; sección 2. Bandas y canales",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "2,4 GHz: mayor propagación pero poco espectro y más interferencia. 5 GHz: más canales/capacidad y menor alcance típico. 6 GHz: espectro adicional donde regulación lo permite, con equipos compatibles. Anchos de 20/40/80/160 MHz y, con Wi‑Fi 7, hasta 320 MHz en 6 GHz según disponibilidad. Canales más anchos elevan pico pero consumen espectro y pueden empeorar reutilización.",
+          "evidence_sha256": "25e106e9a3b02c881340772eb742a7dd15d3e163255ef872783ae3b68f4bf883",
+          "record_sha256": "7198eadec6a3734f224437adfed8cdc8019f88c23e67193e9d9bf41dfa5f5c51",
+          "review_id": "AI-GSI-B4-T11-005",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.11; sección 2. Bandas y canales",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T11-005",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T11",
+        "subtopic": "Bandas y canales",
+        "exam": null,
+        "statement": "¿Qué debe verificarse antes de activar una WLAN en 6 GHz en el país donde va a desplegarse?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Condiciones regulatorias de uso y compatibilidad de AP, clientes y configuración."
+          },
+          {
+            "id": "B",
+            "text": "La etiqueta Wi-Fi 6 de los equipos, dándola por garantía de soporte de 6 GHz."
+          },
+          {
+            "id": "C",
+            "text": "La visibilidad del SSID en otra banda, dándola por autorización para transmitir en 6 GHz."
+          },
+          {
+            "id": "D",
+            "text": "La disponibilidad de un canal en la interfaz, dándola por autorización en cualquier lugar."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Deben comprobarse la regulación del lugar de despliegue y el soporte efectivo de la banda y sus requisitos por AP y clientes. Espectro, potencia y condiciones de instalación pueden variar. Wi-Fi 6 no implica por sí solo 6 GHz, y que el software permita seleccionar un canal no acredita un uso autorizado.",
+          "incorrect": "Revisa el concepto y las condiciones del enunciado para distinguir la alternativa elegida de la respuesta correcta.",
+          "incorrect_options": {
+            "B": "Wi-Fi 6 identifica prestaciones basadas en 802.11ax, pero la extensión a 6 GHz necesita soporte específico, conocido como Wi-Fi 6E en esa generación.",
+            "C": "Un mismo nombre de red puede anunciarse en otras bandas. Verlo no prueba que los equipos soporten 6 GHz ni que su uso esté permitido en esa ubicación.",
+            "D": "La interfaz de configuración no sustituye la regulación aplicable ni la comprobación del dominio y las condiciones de instalación."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.11; sección 2. Bandas y canales",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "2,4 GHz: mayor propagación pero poco espectro y más interferencia. 5 GHz: más canales/capacidad y menor alcance típico. 6 GHz: espectro adicional donde regulación lo permite, con equipos compatibles. Anchos de 20/40/80/160 MHz y, con Wi‑Fi 7, hasta 320 MHz en 6 GHz según disponibilidad. Canales más anchos elevan pico pero consumen espectro y pueden empeorar reutilización.",
+          "evidence_sha256": "25e106e9a3b02c881340772eb742a7dd15d3e163255ef872783ae3b68f4bf883",
+          "record_sha256": "7198eadec6a3734f224437adfed8cdc8019f88c23e67193e9d9bf41dfa5f5c51",
+          "review_id": "AI-GSI-B4-T11-005",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Decisión de Ejecución (UE) 2021/1067: utilización de 5945–6425 MHz para WAS/RLAN",
+              "url": "https://www.boe.es/buscar/doc.php?id=DOUE-L-2021-80888",
+              "locator": "Artículos 2–3: equipos y condiciones de uso armonizado; anexo; análisis con modificaciones 2024/3157 y 2025/913",
+              "version": "Texto original de 17-06-2021 leído junto con la modificación de 20-05-2025; no se presenta el anexo original como vigente sin cambios",
+              "checked_at": "2026-10-26"
+            },
+            {
+              "title": "Decisión de Ejecución (UE) 2025/913: actualización de condiciones técnicas de 5945–6425 MHz",
+              "url": "https://www.boe.es/buscar/doc.php?id=DOUE-L-2025-80745",
+              "locator": "Artículo 1 y anexo: sustitución del artículo 4 y del anexo de la Decisión 2021/1067",
+              "version": "20-05-2025, publicada el 22-05-2025; modificación posterior a 2024/3157",
+              "checked_at": "2026-10-26"
+            },
+            {
+              "title": "Cisco Catalyst CW9166D1 Access Point Deployment Guide",
+              "url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9164-series-access-points/catalyst-9166i-9164i-dg.html",
+              "locator": "Wi-Fi 6E migration and deployment tips; 6-GHz spectrum considerations; Wi-Fi 6E client devices; Regulatory domain",
+              "version": "Actualizado el 10-11-2023; se usa compatibilidad de banda, no sus condiciones regulatorias como norma vigente",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-007"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.11; sección 2. Bandas y canales",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Conservar regulación y compatibilidad como comprobaciones conjuntas e incorporar la modificación europea de 2025; no presentar toda la banda mundial de 6 GHz como habilitada en España."
+      ],
+      "references": [
+        {
+          "title": "Decisión de Ejecución (UE) 2021/1067: utilización de 5945–6425 MHz para WAS/RLAN",
+          "url": "https://www.boe.es/buscar/doc.php?id=DOUE-L-2021-80888",
+          "locator": "Artículos 2–3: equipos y condiciones de uso armonizado; anexo; análisis con modificaciones 2024/3157 y 2025/913",
+          "version": "Texto original de 17-06-2021 leído junto con la modificación de 20-05-2025; no se presenta el anexo original como vigente sin cambios",
+          "checked_at": "2026-10-26"
+        },
+        {
+          "title": "Decisión de Ejecución (UE) 2025/913: actualización de condiciones técnicas de 5945–6425 MHz",
+          "url": "https://www.boe.es/buscar/doc.php?id=DOUE-L-2025-80745",
+          "locator": "Artículo 1 y anexo: sustitución del artículo 4 y del anexo de la Decisión 2021/1067",
+          "version": "20-05-2025, publicada el 22-05-2025; modificación posterior a 2024/3157",
+          "checked_at": "2026-10-26"
+        },
+        {
+          "title": "Cisco Catalyst CW9166D1 Access Point Deployment Guide",
+          "url": "https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9164-series-access-points/catalyst-9166i-9164i-dg.html",
+          "locator": "Wi-Fi 6E migration and deployment tips; 6-GHz spectrum considerations; Wi-Fi 6E client devices; Regulatory domain",
+          "version": "Actualizado el 10-11-2023; se usa compatibilidad de banda, no sus condiciones regulatorias como norma vigente",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T11-018",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "ff8ed8e905e36902bb646af47293f90653498ea46f811839a48995c408bb60f3",
+      "content_sha256": "195d35503ce515a92c299416993e0ce610084fb7927ff6f6a74952706c25a289",
+      "before": {
+        "id": "AI-GSI-B4-T11-018",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T11",
+        "subtopic": "Roaming y planificación RF",
+        "exam": null,
+        "statement": "¿Qué debe incluir un site survey?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Solo intensidad máxima de señal, sin interferencia"
+          },
+          {
+            "id": "B",
+            "text": "Únicamente cobertura sin estudiar densidad"
+          },
+          {
+            "id": "C",
+            "text": "Canales, potencia, interferencias, densidad y solapamiento"
+          },
+          {
+            "id": "D",
+            "text": "Solo distancia al AP"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "La planificación RF necesita observar cobertura y capacidad.",
+          "incorrect": "La planificación RF necesita observar cobertura y capacidad."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.11; sección 6. Roaming y planificación RF",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "El cliente decide gran parte del roaming. 802.11k/v/r pueden ayudar con vecinos, steering y transición rápida. Diseño requiere site survey, potencia, canales, solapamiento, densidad, capacidad y fuentes de interferencia. “Señal fuerte” no equivale a buena WLAN si todos comparten aire saturado.",
+          "evidence_sha256": "5310a3cbdf23aa1bb0b13cce74136db224b07354600585557b3a0d6386fac202",
+          "record_sha256": "0bf7f6e54bec6facf3c35515890d2ecc503e95f8917ce55787abac887b4c3920",
+          "review_id": "AI-GSI-B4-T11-018",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.11; sección 6. Roaming y planificación RF",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T11-018",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T11",
+        "subtopic": "Roaming y planificación RF",
+        "exam": null,
+        "statement": "En un aula llena, los clientes cercanos al AP reciben señal fuerte, pero el servicio WLAN se degrada. ¿Qué debe incluir el site survey además de la cobertura?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Medir el RSSI máximo y darlo por prueba de capacidad suficiente para todos los clientes."
+          },
+          {
+            "id": "B",
+            "text": "Contar los AP instalados y suponer que aumentar su potencia resuelve la ocupación del canal."
+          },
+          {
+            "id": "C",
+            "text": "Analizar canales, potencia, interferencias, densidad, ocupación y solapamiento de celdas."
+          },
+          {
+            "id": "D",
+            "text": "Medir distancias al AP y dar la cercanía por prueba de ausencia de interferencias."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Una señal fuerte no demuestra capacidad ni calidad del medio compartido. El survey debe observar canales, potencias, interferencias, densidad y uso del aire, junto con cobertura y solapamiento. La planificación debe contrastarse con clientes, aplicaciones y carga representativos, sin deducir una causa única del síntoma.",
+          "incorrect": "Revisa el concepto y las condiciones del enunciado para distinguir la alternativa elegida de la respuesta correcta.",
+          "incorrect_options": {
+            "A": "El RSSI informa de potencia recibida, no de tiempo de aire disponible, contención ni interferencias. Un valor alto puede coexistir con mal servicio.",
+            "B": "Más potencia o AP no garantizan más capacidad. Un diseño de canales y solapamiento inadecuado puede aumentar interferencia o contención.",
+            "D": "La cercanía no elimina emisiones de otros equipos ni saturación del medio. Deben medirse las condiciones RF y la carga."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.11; sección 6. Roaming y planificación RF",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "El cliente decide gran parte del roaming. 802.11k/v/r pueden ayudar con vecinos, steering y transición rápida. Diseño requiere site survey, potencia, canales, solapamiento, densidad, capacidad y fuentes de interferencia. “Señal fuerte” no equivale a buena WLAN si todos comparten aire saturado.",
+          "evidence_sha256": "5310a3cbdf23aa1bb0b13cce74136db224b07354600585557b3a0d6386fac202",
+          "record_sha256": "0bf7f6e54bec6facf3c35515890d2ecc503e95f8917ce55787abac887b4c3920",
+          "review_id": "AI-GSI-B4-T11-018",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Cisco: Wireless Site Survey FAQ",
+              "url": "https://www.cisco.com/c/en/us/support/docs/wireless-mobility/wireless-lan-wlan/68666-wireless-site-survey-faq.html",
+              "locator": "What are the steps to perform a site survey?; cambios para voz: cobertura y capacidad; fuentes de interferencia",
+              "version": "Guía publicada en 2007; principios de medida y planificación, sin recomendar sus herramientas históricas",
+              "checked_at": "2026-10-26"
+            },
+            {
+              "title": "Cisco: Wireless RF Reference Guide",
+              "url": "https://www.cisco.com/c/en/us/td/docs/wireless/controller/9800/technical-reference/wireless-rf-reference-guide.html",
+              "locator": "Review of RF basics; co-channel y adjacent-channel interference; site survey y ocupación del medio",
+              "version": "Actualizado el 18-04-2024; principios RF, sin universalizar tablas de clientes o dominios regulatorios",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-007"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.11; sección 6. Roaming y planificación RF",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Aplicar el survey al contraste señal/capacidad y mantener canales, potencia, interferencia, densidad y solapamiento como conocimiento evaluado."
+      ],
+      "references": [
+        {
+          "title": "Cisco: Wireless Site Survey FAQ",
+          "url": "https://www.cisco.com/c/en/us/support/docs/wireless-mobility/wireless-lan-wlan/68666-wireless-site-survey-faq.html",
+          "locator": "What are the steps to perform a site survey?; cambios para voz: cobertura y capacidad; fuentes de interferencia",
+          "version": "Guía publicada en 2007; principios de medida y planificación, sin recomendar sus herramientas históricas",
+          "checked_at": "2026-10-26"
+        },
+        {
+          "title": "Cisco: Wireless RF Reference Guide",
+          "url": "https://www.cisco.com/c/en/us/td/docs/wireless/controller/9800/technical-reference/wireless-rf-reference-guide.html",
+          "locator": "Review of RF basics; co-channel y adjacent-channel interference; site survey y ocupación del medio",
+          "version": "Actualizado el 18-04-2024; principios RF, sin universalizar tablas de clientes o dominios regulatorios",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T12-001",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "66c02d6aa80ddcbe5f251bd143ad8c11059affa7e18211be196de68a26d968a3",
+      "content_sha256": "ac7e2313497614630e02f8b560643a456377b4d8cb33ca1e9da78d7197390c1b",
+      "before": {
+        "id": "AI-GSI-B4-T12-001",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T12",
+        "subtopic": "Arquitectura por capas y Zero Trust",
+        "exam": null,
+        "statement": "¿Qué debe verificar una arquitectura Zero Trust además de identidad?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Únicamente presencia de una VPN"
+          },
+          {
+            "id": "B",
+            "text": "Solo pertenencia a la LAN"
+          },
+          {
+            "id": "C",
+            "text": "Dispositivo, contexto y privilegios necesarios"
+          },
+          {
+            "id": "D",
+            "text": "Solo dirección privada"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "La confianza no se concede implícitamente por ubicación.",
+          "incorrect": "La confianza no se concede implícitamente por ubicación."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 1. Arquitectura por capas y Zero Trust",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Seguridad en red aplica defensa en profundidad: segmentación, control de identidad, filtrado, cifrado, detección, endpoint, registro y respuesta. Zero Trust no significa “sin red interna”: significa no conceder confianza implícita por ubicación y verificar identidad, dispositivo, contexto y mínimo privilegio de forma continua.",
+          "evidence_sha256": "c5c9ba810906311e22d74d2ba321f79c405e6e24fc80f3c3ed0304e480bff77a",
+          "record_sha256": "4580cab7c0179f4b9cdcc3faf723cf44446c2e28740741459069ce4a0e28e659",
+          "review_id": "AI-GSI-B4-T12-001",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 1. Arquitectura por capas y Zero Trust",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T12-001",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T12",
+        "subtopic": "Arquitectura por capas y Zero Trust",
+        "exam": null,
+        "statement": "Un usuario presenta credenciales válidas desde la LAN corporativa. En un enfoque Zero Trust, ¿qué debe valorar la autorización del recurso además de su identidad?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Conceder acceso amplio por la dirección interna, dando la ubicación por confianza suficiente."
+          },
+          {
+            "id": "B",
+            "text": "Conceder acceso amplio al entrar por VPN, dando el túnel por comprobación de todos los permisos."
+          },
+          {
+            "id": "C",
+            "text": "Evaluar dispositivo, contexto y permisos mínimos necesarios para el recurso solicitado."
+          },
+          {
+            "id": "D",
+            "text": "Conceder acceso amplio por haber superado MFA, dando autenticación por autorización general."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "La identidad autenticada es una entrada de la decisión, no una autorización universal. Deben evaluarse estado del dispositivo, contexto y política de acceso al recurso con privilegios mínimos, revisando condiciones según riesgo. LAN, VPN o MFA pueden aportar controles, pero no conceden confianza implícita a todo acceso.",
+          "incorrect": "Revisa el concepto y las condiciones del enunciado para distinguir la alternativa elegida de la respuesta correcta.",
+          "incorrect_options": {
+            "A": "La ubicación interna no demuestra por sí sola que usuario y dispositivo cumplan la política del recurso ni autoriza acceso amplio.",
+            "B": "Una VPN protege o facilita conectividad, pero no sustituye comprobar postura, contexto y permisos del recurso concreto.",
+            "D": "MFA refuerza la autenticación del usuario. No decide por sí mismo qué acciones o recursos deben autorizarse ni valida toda condición del dispositivo."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 1. Arquitectura por capas y Zero Trust",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Seguridad en red aplica defensa en profundidad: segmentación, control de identidad, filtrado, cifrado, detección, endpoint, registro y respuesta. Zero Trust no significa “sin red interna”: significa no conceder confianza implícita por ubicación y verificar identidad, dispositivo, contexto y mínimo privilegio de forma continua.",
+          "evidence_sha256": "c5c9ba810906311e22d74d2ba321f79c405e6e24fc80f3c3ed0304e480bff77a",
+          "record_sha256": "4580cab7c0179f4b9cdcc3faf723cf44446c2e28740741459069ce4a0e28e659",
+          "review_id": "AI-GSI-B4-T12-001",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "NIST SP 1800-35: Implementing a Zero Trust Architecture, Executive Summary",
+              "url": "https://pages.nist.gov/zero-trust-architecture/VolumeA/ExecutiveSummary.html",
+              "locator": "Executive Summary: evaluación continua de condiciones y solicitudes, riesgo e inexistencia de confianza automática en internos",
+              "version": "Documento final, junio de 2025; material complementario oficial",
+              "checked_at": "2026-10-26"
+            },
+            {
+              "title": "NIST SP 1800-35: Implementing a Zero Trust Architecture, Architecture and Builds",
+              "url": "https://pages.nist.gov/zero-trust-architecture/VolumeB/architecture.html",
+              "locator": "Arquitectura de Enterprise 2, figura 13: IAM y política context-aware; postura del dispositivo desde inventario/MDM",
+              "version": "Documento final, junio de 2025; ejemplo de aplicación del principio, sin exigir esos productos",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-007"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 1. Arquitectura por capas y Zero Trust",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Aplicar identidad, dispositivo, contexto y mínimo privilegio a un acceso desde LAN; diferenciar autenticación, conectividad y autorización sin prohibir VPN o perímetros."
+      ],
+      "references": [
+        {
+          "title": "NIST SP 1800-35: Implementing a Zero Trust Architecture, Executive Summary",
+          "url": "https://pages.nist.gov/zero-trust-architecture/VolumeA/ExecutiveSummary.html",
+          "locator": "Executive Summary: evaluación continua de condiciones y solicitudes, riesgo e inexistencia de confianza automática en internos",
+          "version": "Documento final, junio de 2025; material complementario oficial",
+          "checked_at": "2026-10-26"
+        },
+        {
+          "title": "NIST SP 1800-35: Implementing a Zero Trust Architecture, Architecture and Builds",
+          "url": "https://pages.nist.gov/zero-trust-architecture/VolumeB/architecture.html",
+          "locator": "Arquitectura de Enterprise 2, figura 13: IAM y política context-aware; postura del dispositivo desde inventario/MDM",
+          "version": "Documento final, junio de 2025; ejemplo de aplicación del principio, sin exigir esos productos",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T12-002",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "45a779a36d1d73a26737dd6b47c6a76fec0fe056b6e064fd3bb6b5bb9182d0f5",
+      "content_sha256": "fcb6220b3ca9430a37f703f8210b81eb840e5aefccf41d53ff068252e33eb82b",
+      "before": {
+        "id": "AI-GSI-B4-T12-002",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T12",
+        "subtopic": "Arquitectura por capas y Zero Trust",
+        "exam": null,
+        "statement": "¿Qué controles combina defensa en profundidad de red?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Solo un router caro"
+          },
+          {
+            "id": "B",
+            "text": "Segmentación, identidad, filtrado, cifrado y detección"
+          },
+          {
+            "id": "C",
+            "text": "Solo ocultar direcciones"
+          },
+          {
+            "id": "D",
+            "text": "Únicamente un antivirus sin gestión"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "La protección requiere capas complementarias y respuesta.",
+          "incorrect": "La protección requiere capas complementarias y respuesta."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 1. Arquitectura por capas y Zero Trust",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Seguridad en red aplica defensa en profundidad: segmentación, control de identidad, filtrado, cifrado, detección, endpoint, registro y respuesta. Zero Trust no significa “sin red interna”: significa no conceder confianza implícita por ubicación y verificar identidad, dispositivo, contexto y mínimo privilegio de forma continua.",
+          "evidence_sha256": "c5c9ba810906311e22d74d2ba321f79c405e6e24fc80f3c3ed0304e480bff77a",
+          "record_sha256": "4db033b6d6eb75c3d54508601e2589c8a23240a5f10e47dcae77b4990e6f509b",
+          "review_id": "AI-GSI-B4-T12-002",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 1. Arquitectura por capas y Zero Trust",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T12-002",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T12",
+        "subtopic": "Arquitectura por capas y Zero Trust",
+        "exam": null,
+        "statement": "¿Qué enfoque representa defensa en profundidad para una red?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Concentrar la protección en el cortafuegos perimetral como sustituto de controles internos."
+          },
+          {
+            "id": "B",
+            "text": "Combinar segmentación, identidad, filtrado, cifrado y detección con operación y respuesta."
+          },
+          {
+            "id": "C",
+            "text": "Duplicar el mismo filtro perimetral y dar esa redundancia por cobertura de toda amenaza."
+          },
+          {
+            "id": "D",
+            "text": "Ocultar direcciones mediante NAT y tomar ese cambio por confidencialidad de los datos."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "La defensa en profundidad combina capas complementarias para prevenir, limitar, detectar y responder. Incluye personas, procesos y tecnología; el fallo o evasión de un control no debería agotar la protección. La redundancia de un producto o NAT no sustituyen esa combinación, que tampoco garantiza riesgo cero.",
+          "incorrect": "Revisa el concepto y las condiciones del enunciado para distinguir la alternativa elegida de la respuesta correcta.",
+          "incorrect_options": {
+            "A": "Un perímetro puede ser una capa, pero no cubre por sí solo movimiento interno, credenciales comprometidas ni todos los puntos de entrada.",
+            "C": "Redundar un mismo filtro puede mejorar disponibilidad, pero no aporta necesariamente diversidad de controles frente a amenazas que ambos pasarían por alto.",
+            "D": "NAT modifica direccionamiento; no cifra por ese hecho el contenido ni equivale a una estrategia completa de control, detección y respuesta."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 1. Arquitectura por capas y Zero Trust",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Seguridad en red aplica defensa en profundidad: segmentación, control de identidad, filtrado, cifrado, detección, endpoint, registro y respuesta. Zero Trust no significa “sin red interna”: significa no conceder confianza implícita por ubicación y verificar identidad, dispositivo, contexto y mínimo privilegio de forma continua.",
+          "evidence_sha256": "c5c9ba810906311e22d74d2ba321f79c405e6e24fc80f3c3ed0304e480bff77a",
+          "record_sha256": "4db033b6d6eb75c3d54508601e2589c8a23240a5f10e47dcae77b4990e6f509b",
+          "review_id": "AI-GSI-B4-T12-002",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "NIST CSRC Glossary: defense-in-depth",
+              "url": "https://csrc.nist.gov/glossary/term/defense_in_depth",
+              "locator": "Definitions: capacidades de personas, tecnología y operación en capas; contramedidas heterogéneas; fuentes SP 800-53 Rev.5 y NISTIR 8183",
+              "version": "Glosario web consultado el 26-10-2026",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-007"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 1. Arquitectura por capas y Zero Trust",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Conservar capas complementarias de segmentación, identidad, filtrado, cifrado y detección; distinguir profundidad, redundancia y ocultación de direcciones."
+      ],
+      "references": [
+        {
+          "title": "NIST CSRC Glossary: defense-in-depth",
+          "url": "https://csrc.nist.gov/glossary/term/defense_in_depth",
+          "locator": "Definitions: capacidades de personas, tecnología y operación en capas; contramedidas heterogéneas; fuentes SP 800-53 Rev.5 y NISTIR 8183",
+          "version": "Glosario web consultado el 26-10-2026",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T12-012",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "59a0f223f672d384516be6c69fe4bbff68f9499c82bd7c1f52dd77e2ce99f263",
+      "content_sha256": "54f618a0a4febe714ec2a1aba307738b04cc8e8f2ecfbb308203bf282903812d",
+      "before": {
+        "id": "AI-GSI-B4-T12-012",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T12",
+        "subtopic": "PKI, certificados y firma digital",
+        "exam": null,
+        "statement": "¿Qué debe gestionar una PKI además de emitir certificados?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Únicamente nombres de titulares"
+          },
+          {
+            "id": "B",
+            "text": "Solo emisión inicial, sin políticas ni ciclo de vida"
+          },
+          {
+            "id": "C",
+            "text": "Solo fecha de expedición, sin revocación"
+          },
+          {
+            "id": "D",
+            "text": "Políticas, claves, revocación y ciclo de vida"
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "La confianza necesita gestión continuada y comprobación de estado.",
+          "incorrect": "La confianza necesita gestión continuada y comprobación de estado."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 5. PKI, certificados y firma digital",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Una PKI gestiona CA, certificados, claves, políticas, revocación/estado (CRL/OCSP) y ciclo de vida. En firma digital, el firmante genera una firma con su clave privada sobre el hash/estructura definida; se verifica con la pública/certificado. Aporta autenticidad e integridad y puede sustentar no repudio en el marco jurídico/procedimental adecuado.",
+          "evidence_sha256": "9df130afb47a729abd5692da230811671ef4e272bf2d202c98db789fa626eb3b",
+          "record_sha256": "612fba6ed0da87e61346c90f3160b326a7b4348b47df9c7e26e5b957f6cfe22b",
+          "review_id": "AI-GSI-B4-T12-012",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 5. PKI, certificados y firma digital",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T12-012",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T12",
+        "subtopic": "PKI, certificados y firma digital",
+        "exam": null,
+        "statement": "¿Qué debe gestionar una PKI además de emitir inicialmente certificados?",
+        "options": [
+          {
+            "id": "A",
+            "text": "La publicación del certificado, dando su disponibilidad por prueba de vigencia futura."
+          },
+          {
+            "id": "B",
+            "text": "La fecha de caducidad, tomándola como sustituto de comprobar revocaciones anteriores."
+          },
+          {
+            "id": "C",
+            "text": "El nombre del titular, dando esa coincidencia por validación completa de la confianza."
+          },
+          {
+            "id": "D",
+            "text": "Políticas, protección de claves, renovación, revocación y estado durante el ciclo de vida."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "La confianza requiere políticas y prácticas, protección de claves y gestión de renovación, revocación y estado, además de la emisión. El alcance se reparte entre actores de la PKI: no implica entregar a la CA todas las claves privadas de los usuarios. Una firma o fecha de caducidad no resuelve por sí sola toda validación.",
+          "incorrect": "Revisa el concepto y las condiciones del enunciado para distinguir la alternativa elegida de la respuesta correcta.",
+          "incorrect_options": {
+            "A": "Publicar un certificado permite recuperarlo, pero no acredita que siga vigente, que no se haya revocado o que su uso cumpla la política.",
+            "B": "Un certificado puede revocarse antes de caducar, por ejemplo por compromiso de clave. Su periodo nominal de validez no sustituye gestionar y comprobar estado.",
+            "C": "El nombre no acredita por sí solo cadena, política, uso permitido ni estado. La validación de confianza tiene más condiciones."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 5. PKI, certificados y firma digital",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Una PKI gestiona CA, certificados, claves, políticas, revocación/estado (CRL/OCSP) y ciclo de vida. En firma digital, el firmante genera una firma con su clave privada sobre el hash/estructura definida; se verifica con la pública/certificado. Aporta autenticidad e integridad y puede sustentar no repudio en el marco jurídico/procedimental adecuado.",
+          "evidence_sha256": "9df130afb47a729abd5692da230811671ef4e272bf2d202c98db789fa626eb3b",
+          "record_sha256": "612fba6ed0da87e61346c90f3160b326a7b4348b47df9c7e26e5b957f6cfe22b",
+          "review_id": "AI-GSI-B4-T12-012",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "IETF RFC 3647: Internet X.509 Public Key Infrastructure Certificate Policy and Certification Practices Framework",
+              "url": "https://www.rfc-editor.org/info/rfc3647/",
+              "locator": "§4.4 Certificate Life-Cycle Operational Requirements; §4.6 Technical Security Controls; §4.7 Certificate, CRL, and OCSP Profiles",
+              "version": "Noviembre de 2003, Informational; marco de políticas y prácticas, sin recomendar algoritmos históricos",
+              "checked_at": "2026-10-26"
+            },
+            {
+              "title": "IETF RFC 5280: Internet X.509 Public Key Infrastructure Certificate and CRL Profile",
+              "url": "https://www.rfc-editor.org/rfc/rfc5280.html",
+              "locator": "§3.3 Revocation; §3.5 Management Protocols; §6 validación de rutas y CRL",
+              "version": "Mayo de 2008; perfil base, sin proponer parámetros criptográficos de su edición histórica",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-007"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 5. PKI, certificados y firma digital",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Conservar gestión de políticas, claves, revocación y ciclo de vida y evitar confundir emisión, publicación o expiración con confianza completa; no centralizar por definición claves privadas de todos los titulares."
+      ],
+      "references": [
+        {
+          "title": "IETF RFC 3647: Internet X.509 Public Key Infrastructure Certificate Policy and Certification Practices Framework",
+          "url": "https://www.rfc-editor.org/info/rfc3647/",
+          "locator": "§4.4 Certificate Life-Cycle Operational Requirements; §4.6 Technical Security Controls; §4.7 Certificate, CRL, and OCSP Profiles",
+          "version": "Noviembre de 2003, Informational; marco de políticas y prácticas, sin recomendar algoritmos históricos",
+          "checked_at": "2026-10-26"
+        },
+        {
+          "title": "IETF RFC 5280: Internet X.509 Public Key Infrastructure Certificate and CRL Profile",
+          "url": "https://www.rfc-editor.org/rfc/rfc5280.html",
+          "locator": "§3.3 Revocation; §3.5 Management Protocols; §6 validación de rutas y CRL",
+          "version": "Mayo de 2008; perfil base, sin proponer parámetros criptográficos de su edición histórica",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T12-015",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "c322e718ebf789b9929598768a4706454a88319f801e765eeb6c6db6bc09eda0",
+      "content_sha256": "66050c3d679d05cff5dd9b629d1f901712dc0b9eace8ed442eff3343fe53a16e",
+      "before": {
+        "id": "AI-GSI-B4-T12-015",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T12",
+        "subtopic": "TLS, SSH e IPsec",
+        "exam": null,
+        "statement": "¿Qué protege IPsec?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Solo HTML renderizado"
+          },
+          {
+            "id": "B",
+            "text": "Solo documentos XML"
+          },
+          {
+            "id": "C",
+            "text": "Únicamente correo almacenado"
+          },
+          {
+            "id": "D",
+            "text": "Tráfico IP según su arquitectura y modo"
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "IPsec opera sobre IP y contempla modos transporte y túnel.",
+          "incorrect": "IPsec opera sobre IP y contempla modos transporte y túnel."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 6. TLS, SSH e IPsec",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "TLS protege protocolos de aplicación. En julio de 2026, RFC 9846 volvió a especificar TLS 1.3 y **obsoletó RFC 8446**; para examen importa TLS 1.3 y sus propiedades modernas (AEAD, handshake y eliminación de algoritmos legados), no memorizar cada cambio editorial.\n\nSSH protege administración remota; IPsec protege tráfico IP mediante arquitectura de seguridad con AH/ESP (en la práctica ESP es central) y modos transporte/túnel. No confundir TLS con IPsec: operan en capas y escenarios diferentes.",
+          "evidence_sha256": "39b9741bcf026cf6123901f28961821061c1336d8dd96ff77b952be960737eb7",
+          "record_sha256": "74e09f49dda0bc1f37dd95c6313370f8849ca640fc5f99e956d533c1cd8fd734",
+          "review_id": "AI-GSI-B4-T12-015",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 6. TLS, SSH e IPsec",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T12-015",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T12",
+        "subtopic": "TLS, SSH e IPsec",
+        "exam": null,
+        "statement": "¿Qué ámbito de tráfico protege IPsec según sus políticas y modos de funcionamiento?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Mensajes de aplicación mediante registros TLS propios de cada servicio."
+          },
+          {
+            "id": "B",
+            "text": "Archivos almacenados mediante cifrado del volumen donde permanecen."
+          },
+          {
+            "id": "C",
+            "text": "Tramas Ethernet mediante protección del enlace local entre vecinos."
+          },
+          {
+            "id": "D",
+            "text": "Tráfico IP seleccionado por política, en modo transporte o túnel."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "IPsec aplica servicios de seguridad a tráfico IP seleccionado por políticas y asociaciones de seguridad, con modos transporte y túnel. Los servicios concretos dependen de mecanismos y configuración: no todo tráfico queda cifrado por instalar IPsec, ni se trata de cifrado de disco o protección Ethernet local.",
+          "incorrect": "Revisa el concepto y las condiciones del enunciado para distinguir la alternativa elegida de la respuesta correcta.",
+          "incorrect_options": {
+            "A": "La protección de protocolos de aplicación mediante TLS pertenece a otra arquitectura. IPsec actúa sobre tráfico IP conforme a sus políticas.",
+            "B": "El cifrado de almacenamiento protege datos en reposo y no describe la arquitectura IPsec de protección de comunicaciones.",
+            "C": "La protección de tramas de un enlace Ethernet local corresponde a mecanismos de capa de enlace, como MACsec, no al ámbito IP de IPsec."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 6. TLS, SSH e IPsec",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "TLS protege protocolos de aplicación. En julio de 2026, RFC 9846 volvió a especificar TLS 1.3 y **obsoletó RFC 8446**; para examen importa TLS 1.3 y sus propiedades modernas (AEAD, handshake y eliminación de algoritmos legados), no memorizar cada cambio editorial.\n\nSSH protege administración remota; IPsec protege tráfico IP mediante arquitectura de seguridad con AH/ESP (en la práctica ESP es central) y modos transporte/túnel. No confundir TLS con IPsec: operan en capas y escenarios diferentes.",
+          "evidence_sha256": "39b9741bcf026cf6123901f28961821061c1336d8dd96ff77b952be960737eb7",
+          "record_sha256": "74e09f49dda0bc1f37dd95c6313370f8849ca640fc5f99e956d533c1cd8fd734",
+          "review_id": "AI-GSI-B4-T12-015",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "IETF RFC 4301: Security Architecture for the Internet Protocol",
+              "url": "https://www.rfc-editor.org/rfc/rfc4301.html",
+              "locator": "§3.1 What IPsec Does; §3.2 How IPsec Works; §4.1 Security Associations, modos transporte y túnel; §4.4.1 SPD",
+              "version": "Diciembre de 2005; arquitectura base, sin recomendar suites criptográficas históricas",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-007"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 6. TLS, SSH e IPsec",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Conservar tráfico IP y modos transporte/túnel y compararlos con TLS, cifrado en reposo y seguridad de enlace, sin afirmar cifrado obligatorio de todos los paquetes."
+      ],
+      "references": [
+        {
+          "title": "IETF RFC 4301: Security Architecture for the Internet Protocol",
+          "url": "https://www.rfc-editor.org/rfc/rfc4301.html",
+          "locator": "§3.1 What IPsec Does; §3.2 How IPsec Works; §4.1 Security Associations, modos transporte y túnel; §4.4.1 SPD",
+          "version": "Diciembre de 2005; arquitectura base, sin recomendar suites criptográficas históricas",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P14-001",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "8dd4c7bdb876059cc26f787551593a5a1c2cd09e8e3a31efd5cb6fd5de2a54a8",
+      "content_sha256": "da1fdd742e9dbdc756e01c1364e354b9d2eebd8989d5b6f5b04ba497e9e4e01e",
+      "before": {
+        "id": "MAN-GSI-P14-001",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B1",
+        "topic_id": "B1-T01",
+        "subtopic": "Base: I.01 §3",
+        "exam": null,
+        "statement": "Según el artículo 1 de la Constitución, España se constituye como:",
+        "options": [
+          {
+            "id": "A",
+            "text": "Un Estado social y democrático de Derecho."
+          },
+          {
+            "id": "B",
+            "text": "Un Estado federal social y democrático."
+          },
+          {
+            "id": "C",
+            "text": "Una monarquía constitucional sin referencia al Estado de Derecho."
+          },
+          {
+            "id": "D",
+            "text": "Un Estado unitario y social de Derecho."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "El art. 1 CE define España como Estado social y democrático de Derecho.",
+          "incorrect": "Según el solucionario: El art. 1 CE define España como Estado social y democrático de Derecho."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P14-SOL",
+          "document_id": "DOC-GSI-P14-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 14 — TEST BLOQUE I — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo/edit",
+          "locator": "Pregunta 1; índice nativo 1869; Base: I.01 §3",
+          "question_source_id": "SRC-GSI-P14-CUADERNO",
+          "question_document_id": "DOC-GSI-P14-CUADERNO",
+          "question_locator": "Pregunta 1; índice nativo 1657",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P14-SOL",
+          "document_id": "DOC-GSI-P14-SOL",
+          "drive_id": "1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo",
+          "url": "https://docs.google.com/document/d/1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo/edit",
+          "locator": "Pregunta 1; índice nativo 1869; Base: I.01 §3",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-14",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P14-001",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B1",
+        "topic_id": "B1-T01",
+        "subtopic": "Base: I.01 §3",
+        "exam": null,
+        "statement": "Según el artículo 1 de la Constitución, España se constituye como:",
+        "options": [
+          {
+            "id": "A",
+            "text": "Un Estado social y democrático de Derecho."
+          },
+          {
+            "id": "B",
+            "text": "Un Estado democrático y federal de Derecho."
+          },
+          {
+            "id": "C",
+            "text": "Un Estado liberal y democrático de Derecho."
+          },
+          {
+            "id": "D",
+            "text": "Un Estado social y unitario de Derecho."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "El artículo 1.1 combina las notas social, democrática y de Derecho. Deben distinguirse de la forma política del artículo 1.3 y de la organización territorial: sustituir una de esas notas por federal, liberal o unitario no reproduce la definición preguntada.",
+          "incorrect": "Revisa el concepto y las condiciones del enunciado para distinguir la alternativa elegida de la respuesta correcta.",
+          "incorrect_options": {
+            "B": "Introduce federal y omite social. No es la formulación del artículo 1.1; la organización territorial no sustituye las notas con que este define el Estado.",
+            "C": "Sustituye social por liberal. La definición expresa del artículo 1.1 es social y democrática de Derecho.",
+            "D": "Sustituye democrática por unitario. Aunque puedan estudiarse clasificaciones territoriales, el artículo 1.1 no utiliza ese término en la fórmula preguntada."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P14-SOL",
+          "document_id": "DOC-GSI-P14-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 14 — TEST BLOQUE I — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo/edit",
+          "locator": "Pregunta 1; índice nativo 1869; Base: I.01 §3",
+          "question_source_id": "SRC-GSI-P14-CUADERNO",
+          "question_document_id": "DOC-GSI-P14-CUADERNO",
+          "question_locator": "Pregunta 1; índice nativo 1657",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Constitución Española",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229",
+              "locator": "Artículo 1.1: definición del Estado; contraste con 1.3 y artículo 2, sin sustituir términos del precepto",
+              "version": "Texto consolidado consultado el 26-10-2026; ficha BOE con última actualización publicada el 20-05-2026",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-007"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P14-SOL",
+          "document_id": "DOC-GSI-P14-SOL",
+          "drive_id": "1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo",
+          "url": "https://docs.google.com/document/d/1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo/edit",
+          "locator": "Pregunta 1; índice nativo 1869; Base: I.01 §3",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-14",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Conservar el enunciado y la correcta ya precisos y hacer paralelos los distractores mediante notas próximas de teoría del Estado; completar explicaciones sin introducir un microcaso innecesario."
+      ],
+      "references": [
+        {
+          "title": "Constitución Española",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229",
+          "locator": "Artículo 1.1: definición del Estado; contraste con 1.3 y artículo 2, sin sustituir términos del precepto",
+          "version": "Texto consolidado consultado el 26-10-2026; ficha BOE con última actualización publicada el 20-05-2026",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P14-003",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "32af80e782addbe5c80dff6128bfd50f55bdf48388d737d6021014b63372eab8",
+      "content_sha256": "80769fbe43f8a1a88c20d45e027ad2b2fe9d938d7db93d1e07fead1a3449c086",
+      "before": {
+        "id": "MAN-GSI-P14-003",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B1",
+        "topic_id": "B1-T01",
+        "subtopic": "Base: I.01 §3",
+        "exam": null,
+        "statement": "La soberanía nacional reside en:",
+        "options": [
+          {
+            "id": "A",
+            "text": "El Rey."
+          },
+          {
+            "id": "B",
+            "text": "El Gobierno."
+          },
+          {
+            "id": "C",
+            "text": "El pueblo español."
+          },
+          {
+            "id": "D",
+            "text": "Las Cortes Generales."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "La CE atribuye la soberanía nacional al pueblo español.",
+          "incorrect": "Según el solucionario: La CE atribuye la soberanía nacional al pueblo español."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P14-SOL",
+          "document_id": "DOC-GSI-P14-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 14 — TEST BLOQUE I — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo/edit",
+          "locator": "Pregunta 3; índice nativo 2537; Base: I.01 §3",
+          "question_source_id": "SRC-GSI-P14-CUADERNO",
+          "question_document_id": "DOC-GSI-P14-CUADERNO",
+          "question_locator": "Pregunta 3; índice nativo 2153",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P14-SOL",
+          "document_id": "DOC-GSI-P14-SOL",
+          "drive_id": "1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo",
+          "url": "https://docs.google.com/document/d/1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo/edit",
+          "locator": "Pregunta 3; índice nativo 2537; Base: I.01 §3",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-14",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P14-003",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B1",
+        "topic_id": "B1-T01",
+        "subtopic": "Base: I.01 §3",
+        "exam": null,
+        "statement": "La soberanía nacional reside en:",
+        "options": [
+          {
+            "id": "A",
+            "text": "El Rey."
+          },
+          {
+            "id": "B",
+            "text": "El Gobierno."
+          },
+          {
+            "id": "C",
+            "text": "El pueblo español."
+          },
+          {
+            "id": "D",
+            "text": "Las Cortes Generales."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "El artículo 1.2 atribuye la soberanía nacional al pueblo español y establece que de él emanan los poderes del Estado. Titularidad de la soberanía no equivale a la función de representar al pueblo, ejercer el Gobierno o desempeñar la jefatura del Estado.",
+          "incorrect": "Revisa el concepto y las condiciones del enunciado para distinguir la alternativa elegida de la respuesta correcta.",
+          "incorrect_options": {
+            "A": "El Rey ejerce la jefatura del Estado conforme al artículo 56, pero el titular de la soberanía que identifica el artículo 1.2 es el pueblo español.",
+            "B": "El Gobierno dirige la política y ejerce la función ejecutiva en los términos del artículo 97. No es el titular de la soberanía nacional.",
+            "D": "Las Cortes representan al pueblo español según el artículo 66.1. Representación y ejercicio de funciones constitucionales no trasladan a ellas la titularidad de la soberanía."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P14-SOL",
+          "document_id": "DOC-GSI-P14-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 14 — TEST BLOQUE I — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo/edit",
+          "locator": "Pregunta 3; índice nativo 2537; Base: I.01 §3",
+          "question_source_id": "SRC-GSI-P14-CUADERNO",
+          "question_document_id": "DOC-GSI-P14-CUADERNO",
+          "question_locator": "Pregunta 3; índice nativo 2153",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Constitución Española",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229",
+              "locator": "Artículo 1.2: titularidad de la soberanía; artículos 56.1, 66.1 y 97, órganos y funciones",
+              "version": "Texto consolidado consultado el 26-10-2026; ficha BOE con última actualización publicada el 20-05-2026",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-007"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P14-SOL",
+          "document_id": "DOC-GSI-P14-SOL",
+          "drive_id": "1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo",
+          "url": "https://docs.google.com/document/d/1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo/edit",
+          "locator": "Pregunta 3; índice nativo 2537; Base: I.01 §3",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-14",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Conservar literalmente enunciado y cuatro alternativas ya adecuados y completar la diferencia entre titularidad de soberanía y funciones de órganos constitucionales."
+      ],
+      "references": [
+        {
+          "title": "Constitución Española",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229",
+          "locator": "Artículo 1.2: titularidad de la soberanía; artículos 56.1, 66.1 y 97, órganos y funciones",
+          "version": "Texto consolidado consultado el 26-10-2026; ficha BOE con última actualización publicada el 20-05-2026",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P14-004",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "987c419590a9555120888b8fa526961f59253c1be0d0ea739046f2f8456f5d87",
+      "content_sha256": "c4ef4a5276dcc133b5329582401391f77be8de04a83687c23980b78a77b8ba99",
+      "before": {
+        "id": "MAN-GSI-P14-004",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B1",
+        "topic_id": "B1-T01",
+        "subtopic": "Base: I.01 §3",
+        "exam": null,
+        "statement": "La forma política del Estado español es:",
+        "options": [
+          {
+            "id": "A",
+            "text": "El Estado autonómico."
+          },
+          {
+            "id": "B",
+            "text": "La Monarquía parlamentaria."
+          },
+          {
+            "id": "C",
+            "text": "La Monarquía constitucional presidencialista."
+          },
+          {
+            "id": "D",
+            "text": "La República parlamentaria."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "La forma política es la Monarquía parlamentaria.",
+          "incorrect": "Según el solucionario: La forma política es la Monarquía parlamentaria."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P14-SOL",
+          "document_id": "DOC-GSI-P14-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 14 — TEST BLOQUE I — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo/edit",
+          "locator": "Pregunta 4; índice nativo 2719; Base: I.01 §3",
+          "question_source_id": "SRC-GSI-P14-CUADERNO",
+          "question_document_id": "DOC-GSI-P14-CUADERNO",
+          "question_locator": "Pregunta 4; índice nativo 2301",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P14-SOL",
+          "document_id": "DOC-GSI-P14-SOL",
+          "drive_id": "1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo",
+          "url": "https://docs.google.com/document/d/1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo/edit",
+          "locator": "Pregunta 4; índice nativo 2719; Base: I.01 §3",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-14",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P14-004",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B1",
+        "topic_id": "B1-T01",
+        "subtopic": "Base: I.01 §3",
+        "exam": null,
+        "statement": "Según el artículo 1.3 CE, la forma política del Estado español es:",
+        "options": [
+          {
+            "id": "A",
+            "text": "El Estado autonómico."
+          },
+          {
+            "id": "B",
+            "text": "La Monarquía parlamentaria."
+          },
+          {
+            "id": "C",
+            "text": "La Monarquía constitucional ejecutiva."
+          },
+          {
+            "id": "D",
+            "text": "La República parlamentaria."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "El artículo 1.3 establece la Monarquía parlamentaria. Se distingue la jefatura del Estado de la dirección del Gobierno y se evita confundir forma política con organización territorial. El artículo 97 atribuye al Gobierno la función ejecutiva, no un gobierno personal de la Corona.",
+          "incorrect": "Revisa el concepto y las condiciones del enunciado para distinguir la alternativa elegida de la respuesta correcta.",
+          "incorrect_options": {
+            "A": "Estado autonómico describe la organización territorial; no es la respuesta que el artículo 1.3 establece para la forma política.",
+            "C": "La referencia a una monarquía ejecutiva atribuiría a la Corona un papel de gobierno que no describe la Monarquía parlamentaria del artículo 1.3. La función ejecutiva corresponde al Gobierno en el artículo 97.",
+            "D": "Comparte la referencia parlamentaria, pero sustituye la jefatura monárquica por una republicana y contradice el artículo 1.3."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P14-SOL",
+          "document_id": "DOC-GSI-P14-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 14 — TEST BLOQUE I — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo/edit",
+          "locator": "Pregunta 4; índice nativo 2719; Base: I.01 §3",
+          "question_source_id": "SRC-GSI-P14-CUADERNO",
+          "question_document_id": "DOC-GSI-P14-CUADERNO",
+          "question_locator": "Pregunta 4; índice nativo 2301",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Constitución Española",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229",
+              "locator": "Artículo 1.3: Monarquía parlamentaria; artículos 56.1 y 97: jefatura del Estado y función ejecutiva",
+              "version": "Texto consolidado consultado el 26-10-2026; ficha BOE con última actualización publicada el 20-05-2026",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-007"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P14-SOL",
+          "document_id": "DOC-GSI-P14-SOL",
+          "drive_id": "1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo",
+          "url": "https://docs.google.com/document/d/1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo/edit",
+          "locator": "Pregunta 4; índice nativo 2719; Base: I.01 §3",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-14",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Conservar la correcta y los distractores territorial y republicano, sustituyendo la combinación confusa constitucional presidencialista por una alternativa de monarquía ejecutiva claramente distinta del modelo parlamentario."
+      ],
+      "references": [
+        {
+          "title": "Constitución Española",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229",
+          "locator": "Artículo 1.3: Monarquía parlamentaria; artículos 56.1 y 97: jefatura del Estado y función ejecutiva",
+          "version": "Texto consolidado consultado el 26-10-2026; ficha BOE con última actualización publicada el 20-05-2026",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P14-007",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "d78f4bc2a05005e5df22b1129db51c9dbeae8a524b42ea5569128c800a320319",
+      "content_sha256": "8e5ca474619bd3f13954c1040085a15a403f5e1a5ca2a40b228ff2a6e8a53059",
+      "before": {
+        "id": "MAN-GSI-P14-007",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B1",
+        "topic_id": "B1-T01",
+        "subtopic": "Base: I.01 §4.1",
+        "exam": null,
+        "statement": "A efectos del recurso de amparo, la protección reforzada del artículo 53.2 alcanza:",
+        "options": [
+          {
+            "id": "A",
+            "text": "Solo a los derechos de los artículos 15 a 29, excluyendo el principio de igualdad del artículo 14 y toda referencia al artículo 30.2."
+          },
+          {
+            "id": "B",
+            "text": "A todos los derechos y deberes de los capítulos primero y segundo del Título I, incluidos los artículos 30 a 38 sin distinción."
+          },
+          {
+            "id": "C",
+            "text": "Al artículo 14, a los derechos de los artículos 15-29 y a la objeción de conciencia del artículo 30.2 en los términos constitucionales."
+          },
+          {
+            "id": "D",
+            "text": "A todo el Título I y a los principios rectores, que pueden fundamentar directamente el amparo en idénticas condiciones."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "El V2.1 destaca art. 14 + arts. 15-29 y, para amparo, art. 30.2.",
+          "incorrect": "Según el solucionario: El V2.1 destaca art. 14 + arts. 15-29 y, para amparo, art. 30.2."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P14-SOL",
+          "document_id": "DOC-GSI-P14-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 14 — TEST BLOQUE I — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo/edit",
+          "locator": "Pregunta 7; índice nativo 3676; Base: I.01 §4.1",
+          "question_source_id": "SRC-GSI-P14-CUADERNO",
+          "question_document_id": "DOC-GSI-P14-CUADERNO",
+          "question_locator": "Pregunta 7; índice nativo 2983",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P14-SOL",
+          "document_id": "DOC-GSI-P14-SOL",
+          "drive_id": "1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo",
+          "url": "https://docs.google.com/document/d/1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo/edit",
+          "locator": "Pregunta 7; índice nativo 3676; Base: I.01 §4.1",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-14",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P14-007",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B1",
+        "topic_id": "B1-T01",
+        "subtopic": "Base: I.01 §4.1",
+        "exam": null,
+        "statement": "A efectos del recurso de amparo, la protección reforzada del artículo 53.2 alcanza:",
+        "options": [
+          {
+            "id": "A",
+            "text": "Solo a los derechos de los artículos 15 a 29, excluyendo el principio de igualdad del artículo 14 y toda referencia al artículo 30.2."
+          },
+          {
+            "id": "B",
+            "text": "A todos los derechos y deberes de los capítulos primero y segundo del Título I, incluidos los artículos 30 a 38 sin distinción."
+          },
+          {
+            "id": "C",
+            "text": "Al artículo 14, a los derechos de los artículos 15-29 y a la objeción de conciencia del artículo 30.2 en los términos constitucionales."
+          },
+          {
+            "id": "D",
+            "text": "A todo el Título I y a los principios rectores, que pueden fundamentar directamente el amparo en idénticas condiciones."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Para el amparo, el artículo 53.2 comprende el artículo 14 y los derechos de la sección primera del capítulo segundo, artículos 15 a 29, y añade la objeción de conciencia del artículo 30.2. Esa extensión al amparo no equipara todas las vías de tutela ni incluye todo el título I.",
+          "incorrect": "Revisa el concepto y las condiciones del enunciado para distinguir la alternativa elegida de la respuesta correcta.",
+          "incorrect_options": {
+            "A": "La enumeración excluye indebidamente la igualdad del artículo 14 y la extensión a la objeción de conciencia del artículo 30.2, ambas relevantes para el amparo.",
+            "B": "La protección constitucional de otros derechos y deberes no implica acceso directo al amparo del artículo 53.2. El conjunto de los artículos 30 a 38 no está incluido sin distinción.",
+            "D": "Los principios rectores del capítulo III tienen el régimen del artículo 53.3. No fundamentan directamente amparo en idénticas condiciones que los derechos incluidos en el artículo 53.2."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P14-SOL",
+          "document_id": "DOC-GSI-P14-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 14 — TEST BLOQUE I — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo/edit",
+          "locator": "Pregunta 7; índice nativo 3676; Base: I.01 §4.1",
+          "question_source_id": "SRC-GSI-P14-CUADERNO",
+          "question_document_id": "DOC-GSI-P14-CUADERNO",
+          "question_locator": "Pregunta 7; índice nativo 2983",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Constitución Española",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229",
+              "locator": "Artículo 53.2; artículo 14; sección 1.ª del capítulo II del título I, artículos 15–29; objeción de conciencia del artículo 30.2",
+              "version": "Texto consolidado consultado el 26-10-2026; ficha BOE con última actualización publicada el 20-05-2026",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-007"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P14-SOL",
+          "document_id": "DOC-GSI-P14-SOL",
+          "drive_id": "1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo",
+          "url": "https://docs.google.com/document/d/1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo/edit",
+          "locator": "Pregunta 7; índice nativo 3676; Base: I.01 §4.1",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-14",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Conservar el enunciado y las cuatro alternativas ya precisos y sustituir el comentario sobre apuntes por fundamento constitucional y explicación individual; distinguir la extensión al amparo de otras vías de tutela."
+      ],
+      "references": [
+        {
+          "title": "Constitución Española",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229",
+          "locator": "Artículo 53.2; artículo 14; sección 1.ª del capítulo II del título I, artículos 15–29; objeción de conciencia del artículo 30.2",
+          "version": "Texto consolidado consultado el 26-10-2026; ficha BOE con última actualización publicada el 20-05-2026",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P14-008",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "f19c58e226283c7739491ede7e6717e688cae566eeff61f5e55b058a8a67cb29",
+      "content_sha256": "12e54221c143b012f4c65ee235fc623ee658cfa3c401d0669e42b7f4c6d9fb66",
+      "before": {
+        "id": "MAN-GSI-P14-008",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B1",
+        "topic_id": "B1-T01",
+        "subtopic": "Base: I.01 §4.1",
+        "exam": null,
+        "statement": "El desarrollo de los derechos fundamentales y libertades públicas de la Sección 1.ª se realiza, en los términos del artículo 81 CE, mediante:",
+        "options": [
+          {
+            "id": "A",
+            "text": "Orden ministerial."
+          },
+          {
+            "id": "B",
+            "text": "Ley orgánica."
+          },
+          {
+            "id": "C",
+            "text": "Real decreto."
+          },
+          {
+            "id": "D",
+            "text": "Ley ordinaria en todo caso."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "El desarrollo de esos derechos se reserva a ley orgánica en los términos constitucionales.",
+          "incorrect": "Según el solucionario: El desarrollo de esos derechos se reserva a ley orgánica en los términos constitucionales."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P14-SOL",
+          "document_id": "DOC-GSI-P14-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 14 — TEST BLOQUE I — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo/edit",
+          "locator": "Pregunta 8; índice nativo 4107; Base: I.01 §4.1",
+          "question_source_id": "SRC-GSI-P14-CUADERNO",
+          "question_document_id": "DOC-GSI-P14-CUADERNO",
+          "question_locator": "Pregunta 8; índice nativo 3369",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P14-SOL",
+          "document_id": "DOC-GSI-P14-SOL",
+          "drive_id": "1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo",
+          "url": "https://docs.google.com/document/d/1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo/edit",
+          "locator": "Pregunta 8; índice nativo 4107; Base: I.01 §4.1",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-14",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P14-008",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B1",
+        "topic_id": "B1-T01",
+        "subtopic": "Base: I.01 §4.1",
+        "exam": null,
+        "statement": "El desarrollo directo de los derechos fundamentales y libertades públicas de la Sección 1.ª se realiza, en los términos del artículo 81 CE, mediante:",
+        "options": [
+          {
+            "id": "A",
+            "text": "Orden ministerial."
+          },
+          {
+            "id": "B",
+            "text": "Ley orgánica."
+          },
+          {
+            "id": "C",
+            "text": "Real decreto."
+          },
+          {
+            "id": "D",
+            "text": "Ley ordinaria."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "El artículo 81.1 reserva a ley orgánica el desarrollo de estos derechos y libertades. La reserva se interpreta de forma restrictiva para su desarrollo directo y aspectos esenciales, no para cualquier norma que incida en ellos. La aprobación orgánica exige mayoría absoluta del Congreso en votación final sobre el conjunto.",
+          "incorrect": "Revisa el concepto y las condiciones del enunciado para distinguir la alternativa elegida de la respuesta correcta.",
+          "incorrect_options": {
+            "A": "Una orden ministerial es una disposición reglamentaria y no puede sustituir la ley orgánica en una materia reservada por el artículo 81.",
+            "C": "Un real decreto reglamentario no satisface la reserva de ley orgánica. Tampoco debe confundirse con una ley aprobada con las exigencias del artículo 81.2.",
+            "D": "La ley ordinaria puede regular aspectos no reservados, pero no sustituye a la orgánica en el desarrollo directo y esencial preguntado."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P14-SOL",
+          "document_id": "DOC-GSI-P14-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 14 — TEST BLOQUE I — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo/edit",
+          "locator": "Pregunta 8; índice nativo 4107; Base: I.01 §4.1",
+          "question_source_id": "SRC-GSI-P14-CUADERNO",
+          "question_document_id": "DOC-GSI-P14-CUADERNO",
+          "question_locator": "Pregunta 8; índice nativo 3369",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Constitución Española",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229",
+              "locator": "Artículo 81.1–2: reserva y mayoría de la ley orgánica; artículo 82.1: materias excluidas de delegación legislativa",
+              "version": "Texto consolidado consultado el 26-10-2026; ficha BOE con última actualización publicada el 20-05-2026",
+              "checked_at": "2026-10-26"
+            },
+            {
+              "title": "Tribunal Constitucional: Sentencia 173/1998, de 23 de julio",
+              "url": "https://www.boe.es/buscar/doc.php?id=BOE-T-1998-20050",
+              "locator": "Fundamento jurídico 7: interpretación restrictiva de la reserva de ley orgánica, desarrollo directo y aspectos esenciales; se distingue de alegaciones y voto particular",
+              "version": "STC 173/1998; publicación oficial en BOE de 18-08-1998",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-007"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P14-SOL",
+          "document_id": "DOC-GSI-P14-SOL",
+          "drive_id": "1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo",
+          "url": "https://docs.google.com/document/d/1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo/edit",
+          "locator": "Pregunta 8; índice nativo 4107; Base: I.01 §4.1",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-14",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Conservar el núcleo y la correcta, precisar desarrollo directo y retirar la formulación absoluta en todo caso; respaldar la excepción frente a cualquier mera afectación con el FJ 7 de la STC 173/1998."
+      ],
+      "references": [
+        {
+          "title": "Constitución Española",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229",
+          "locator": "Artículo 81.1–2: reserva y mayoría de la ley orgánica; artículo 82.1: materias excluidas de delegación legislativa",
+          "version": "Texto consolidado consultado el 26-10-2026; ficha BOE con última actualización publicada el 20-05-2026",
+          "checked_at": "2026-10-26"
+        },
+        {
+          "title": "Tribunal Constitucional: Sentencia 173/1998, de 23 de julio",
+          "url": "https://www.boe.es/buscar/doc.php?id=BOE-T-1998-20050",
+          "locator": "Fundamento jurídico 7: interpretación restrictiva de la reserva de ley orgánica, desarrollo directo y aspectos esenciales; se distingue de alegaciones y voto particular",
+          "version": "STC 173/1998; publicación oficial en BOE de 18-08-1998",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P14-009",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "23e4971ef837b7a69f17b31a5414232d2398ca8a33312203e406539fe624f095",
+      "content_sha256": "e36bc31b244b02ab87ffba99b7b5e594dd211e740ac48e523dc87e2e5a124798",
+      "before": {
+        "id": "MAN-GSI-P14-009",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B1",
+        "topic_id": "B1-T01",
+        "subtopic": "Base: I.01 §4.2",
+        "exam": null,
+        "statement": "¿Qué derecho corresponde al artículo 18 CE?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Honor, intimidad, propia imagen, inviolabilidad del domicilio y secreto de las comunicaciones."
+          },
+          {
+            "id": "B",
+            "text": "Elegir libremente residencia y circular por el territorio nacional, así como entrar y salir de España en los términos legales."
+          },
+          {
+            "id": "C",
+            "text": "Obtener tutela efectiva de jueces y tribunales sin indefensión, con las garantías procesales reconocidas constitucionalmente."
+          },
+          {
+            "id": "D",
+            "text": "Ejercer el derecho de petición individual o colectiva por escrito, con los límites específicos previstos para determinados colectivos."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "El art. 18 agrupa esas garantías de la esfera privada y comunicaciones.",
+          "incorrect": "Según el solucionario: El art. 18 agrupa esas garantías de la esfera privada y comunicaciones."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P14-SOL",
+          "document_id": "DOC-GSI-P14-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 14 — TEST BLOQUE I — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo/edit",
+          "locator": "Pregunta 9; índice nativo 4448; Base: I.01 §4.2",
+          "question_source_id": "SRC-GSI-P14-CUADERNO",
+          "question_document_id": "DOC-GSI-P14-CUADERNO",
+          "question_locator": "Pregunta 9; índice nativo 3639",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P14-SOL",
+          "document_id": "DOC-GSI-P14-SOL",
+          "drive_id": "1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo",
+          "url": "https://docs.google.com/document/d/1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo/edit",
+          "locator": "Pregunta 9; índice nativo 4448; Base: I.01 §4.2",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-14",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P14-009",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B1",
+        "topic_id": "B1-T01",
+        "subtopic": "Base: I.01 §4.2",
+        "exam": null,
+        "statement": "¿Qué derecho corresponde al artículo 18 CE?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Honor, intimidad, propia imagen, inviolabilidad del domicilio y secreto de las comunicaciones."
+          },
+          {
+            "id": "B",
+            "text": "Elegir libremente residencia y circular por el territorio nacional, así como entrar y salir de España en los términos legales."
+          },
+          {
+            "id": "C",
+            "text": "Obtener tutela efectiva de jueces y tribunales sin indefensión, con las garantías procesales reconocidas constitucionalmente."
+          },
+          {
+            "id": "D",
+            "text": "Ejercer el derecho de petición individual o colectiva por escrito, con los límites específicos previstos para determinados colectivos."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "El artículo 18.1 reconoce honor, intimidad y propia imagen; los apartados 2 y 3 regulan domicilio y comunicaciones. El apartado 4 añade garantías frente al uso de la informática. La alternativa agrupa derechos de ese artículo sin pretender agotar todas sus reglas, límites y garantías.",
+          "incorrect": "Revisa el concepto y las condiciones del enunciado para distinguir la alternativa elegida de la respuesta correcta.",
+          "incorrect_options": {
+            "B": "La residencia, circulación y entrada o salida de España se regulan en el artículo 19. Son derechos distintos de los agrupados en el artículo 18.",
+            "C": "La tutela judicial efectiva y las garantías procesales corresponden al artículo 24, no al artículo 18.",
+            "D": "El derecho de petición individual o colectiva por escrito se reconoce en el artículo 29, con su regla específica para miembros de cuerpos sujetos a disciplina militar."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P14-SOL",
+          "document_id": "DOC-GSI-P14-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 14 — TEST BLOQUE I — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo/edit",
+          "locator": "Pregunta 9; índice nativo 4448; Base: I.01 §4.2",
+          "question_source_id": "SRC-GSI-P14-CUADERNO",
+          "question_document_id": "DOC-GSI-P14-CUADERNO",
+          "question_locator": "Pregunta 9; índice nativo 3639",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Constitución Española",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229",
+              "locator": "Artículo 18.1–4; contraste con artículos 19 (residencia y circulación), 24 (tutela judicial) y 29 (petición)",
+              "version": "Texto consolidado consultado el 26-10-2026; ficha BOE con última actualización publicada el 20-05-2026",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-007"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P14-SOL",
+          "document_id": "DOC-GSI-P14-SOL",
+          "drive_id": "1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo",
+          "url": "https://docs.google.com/document/d/1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo/edit",
+          "locator": "Pregunta 9; índice nativo 4448; Base: I.01 §4.2",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-14",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Conservar enunciado y alternativas ya construidos, añadir localización precisa de cada distractor y advertir que la lista correcta no agota el artículo 18.4 ni sus límites."
+      ],
+      "references": [
+        {
+          "title": "Constitución Española",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229",
+          "locator": "Artículo 18.1–4; contraste con artículos 19 (residencia y circulación), 24 (tutela judicial) y 29 (petición)",
+          "version": "Texto consolidado consultado el 26-10-2026; ficha BOE con última actualización publicada el 20-05-2026",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P14-010",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "dbf8ae0ae319e0d8fc02ccaf7b887f4d37eee15f7ba3a8f4c22f9e7bc6b62b89",
+      "content_sha256": "1e257ab8031b583343fd124b8755af8b4586be3ebd8cedcbeda680c17f15cdae",
+      "before": {
+        "id": "MAN-GSI-P14-010",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B1",
+        "topic_id": "B1-T01",
+        "subtopic": "Base: I.01 §4",
+        "exam": null,
+        "statement": "Los artículos 39 a 52 de la Constitución contienen:",
+        "options": [
+          {
+            "id": "A",
+            "text": "Derechos fundamentales y libertades públicas."
+          },
+          {
+            "id": "B",
+            "text": "Derechos y deberes de los ciudadanos."
+          },
+          {
+            "id": "C",
+            "text": "Garantías y suspensión de derechos."
+          },
+          {
+            "id": "D",
+            "text": "Principios rectores de la política social y económica."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "El Capítulo III del Título I contiene los principios rectores.",
+          "incorrect": "Según el solucionario: El Capítulo III del Título I contiene los principios rectores."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P14-SOL",
+          "document_id": "DOC-GSI-P14-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 14 — TEST BLOQUE I — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo/edit",
+          "locator": "Pregunta 10; índice nativo 4777; Base: I.01 §4",
+          "question_source_id": "SRC-GSI-P14-CUADERNO",
+          "question_document_id": "DOC-GSI-P14-CUADERNO",
+          "question_locator": "Pregunta 10; índice nativo 3916",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P14-SOL",
+          "document_id": "DOC-GSI-P14-SOL",
+          "drive_id": "1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo",
+          "url": "https://docs.google.com/document/d/1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo/edit",
+          "locator": "Pregunta 10; índice nativo 4777; Base: I.01 §4",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-14",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P14-010",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B1",
+        "topic_id": "B1-T01",
+        "subtopic": "Base: I.01 §4",
+        "exam": null,
+        "statement": "Los artículos 39 a 52 de la Constitución contienen:",
+        "options": [
+          {
+            "id": "A",
+            "text": "Derechos fundamentales y libertades públicas."
+          },
+          {
+            "id": "B",
+            "text": "Derechos y deberes de los ciudadanos."
+          },
+          {
+            "id": "C",
+            "text": "Garantías y suspensión de derechos."
+          },
+          {
+            "id": "D",
+            "text": "Principios rectores de la política social y económica."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Los artículos 39 a 52 integran el capítulo III del título I, dedicado a los principios rectores de la política social y económica. El artículo 53.3 explica su eficacia sobre legislación, práctica judicial y poderes públicos y su alegación ordinaria conforme a las leyes de desarrollo.",
+          "incorrect": "Revisa el concepto y las condiciones del enunciado para distinguir la alternativa elegida de la respuesta correcta.",
+          "incorrect_options": {
+            "A": "Derechos fundamentales y libertades públicas es la rúbrica de la sección primera del capítulo II, artículos 15 a 29, no del capítulo III.",
+            "B": "Derechos y deberes de los ciudadanos es la sección segunda del capítulo II, artículos 30 a 38, anterior al capítulo III.",
+            "C": "Garantías y suspensión de derechos se sitúan en los capítulos IV y V del título I, artículos 53 a 55, no en el tramo 39 a 52."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P14-SOL",
+          "document_id": "DOC-GSI-P14-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 14 — TEST BLOQUE I — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo/edit",
+          "locator": "Pregunta 10; índice nativo 4777; Base: I.01 §4",
+          "question_source_id": "SRC-GSI-P14-CUADERNO",
+          "question_document_id": "DOC-GSI-P14-CUADERNO",
+          "question_locator": "Pregunta 10; índice nativo 3916",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Constitución Española",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229",
+              "locator": "Título I, capítulo III, artículos 39–52; artículo 53.3: eficacia de los principios rectores; contraste con capítulo II y capítulos IV–V",
+              "version": "Texto consolidado consultado el 26-10-2026; ficha BOE con última actualización publicada el 20-05-2026",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-007"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P14-SOL",
+          "document_id": "DOC-GSI-P14-SOL",
+          "drive_id": "1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo",
+          "url": "https://docs.google.com/document/d/1k1o7lDnwQo3zrVmCqVe9azcDO4qKYc_vVdtM3FkLAOo/edit",
+          "locator": "Pregunta 10; índice nativo 4777; Base: I.01 §4",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-14",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Conservar literalmente enunciado y cuatro alternativas ya adecuados y completar la ubicación y el régimen de los principios, sin equipararlos a ausencia de toda eficacia jurídica."
+      ],
+      "references": [
+        {
+          "title": "Constitución Española",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229",
+          "locator": "Título I, capítulo III, artículos 39–52; artículo 53.3: eficacia de los principios rectores; contraste con capítulo II y capítulos IV–V",
+          "version": "Texto consolidado consultado el 26-10-2026; ficha BOE con última actualización publicada el 20-05-2026",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    }
+  ]
+}

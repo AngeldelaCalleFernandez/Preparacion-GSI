@@ -1,0 +1,3876 @@
+{
+  "version": 1,
+  "id": "GSI-EDITORIAL-060",
+  "prepared_at": "2026-10-29",
+  "baseline_commit": "e3e20ab879518c899806a70575eead28b3b35e6f",
+  "items": [
+    {
+      "id": "MAN-GSI-P15-135",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "ffbc547a93382a3423cc5973f6247e1518cc97c49dae1ac030861b2550715c8f",
+      "content_sha256": "d19edcdc9118625bdbcac0126e8073a8982aebf93df421d0b9cb01ba7ee82c25",
+      "before": {
+        "id": "MAN-GSI-P15-135",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T10",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué función tienen Maven o Gradle en un proyecto Jakarta EE?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Implementar Jakarta Persistence."
+          },
+          {
+            "id": "B",
+            "text": "Gestionar build y dependencias; no son el servidor/runtime Jakarta EE."
+          },
+          {
+            "id": "C",
+            "text": "Ejecutar el contenedor web de Jakarta EE por definición."
+          },
+          {
+            "id": "D",
+            "text": "Sustituir a la JVM."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Gestionar build y dependencias; no son el servidor/runtime Jakarta EE. Build tool y runtime son capas distintas, igual que NuGet/MSBuild no equivalen al CLR.",
+          "incorrect": "Según el solucionario: Gestionar build y dependencias; no son el servidor/runtime Jakarta EE. Build tool y runtime son capas distintas, igual que NuGet/MSBuild no equivalen al CLR."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 135; índice nativo 28649",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 135; índice nativo 46170",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 135; índice nativo 28649",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P15-135",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T10",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué función tienen Maven o Gradle en un proyecto Jakarta EE?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Proporcionar el contenedor que ejecuta las aplicaciones de Jakarta EE."
+          },
+          {
+            "id": "B",
+            "text": "Orquestar la construcción y resolver dependencias del proyecto Java."
+          },
+          {
+            "id": "C",
+            "text": "Definir las reglas normativas de las APIs empresariales de Jakarta EE."
+          },
+          {
+            "id": "D",
+            "text": "Ejecutar bytecode y gestionar la memoria de la máquina virtual."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Maven y Gradle automatizan construcción, pruebas y gestión de dependencias mediante sus modelos y plugins. Preparan artefactos que después usa un entorno de ejecución. Un plugin puede iniciar herramientas o un servidor, pero eso no convierte a la herramienta de build en la JVM o en una implementación de Jakarta EE.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "El contenedor realiza contratos de ejecución de la plataforma; producir o lanzar un artefacto con un plugin no es implementar ese contenedor.",
+            "C": "Los contratos normativos los fijan las especificaciones; las herramientas de construcción no los definen por gestionar dependencias.",
+            "D": "Ejecutar bytecode y gestionar memoria corresponde a la máquina virtual, no al propósito de Maven o Gradle."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 135; índice nativo 28649",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 135; índice nativo 46170",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Apache Maven: Introduction",
+              "url": "https://maven.apache.org/what-is-maven.html",
+              "locator": "Introduction; Maven’s Objectives; Providing a uniform build system: POM y plugins",
+              "version": "Documentación pública leída el 29-10-2026. Construcción y gestión del proyecto, sin instalar o ejecutar Maven",
+              "checked_at": "2026-10-29"
+            },
+            {
+              "title": "Gradle User Manual: The Java Plugin",
+              "url": "https://docs.gradle.org/current/userguide/java_plugin.html",
+              "locator": "Tasks, Lifecycle Tasks y Dependency management: compile Java, test y configuraciones de dependencias",
+              "version": "Ruta current con versión 9.8.2 indicada en la página, leída el 29-10-2026. No acredita una instalación o versión local",
+              "checked_at": "2026-10-29"
+            },
+            {
+              "title": "Eclipse Foundation: Jakarta EE Platform 11",
+              "url": "https://jakarta.ee/specifications/platform/11/jakarta-platform-spec-11.0.html",
+              "locator": "2.4.2 servidores y Java SE; 2.13 contratos; 2.24 y9.7 retirada de Jakarta Managed Beans; 5.24 inyección mediada por CDI; 12 compatibilidad",
+              "version": "11.0, 10-03-2025 según cabecera, HTML oficial leído el 29-10-2026. Se distingue especificación histórica de Managed Beans y beans gestionados por CDI",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-060"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 135; índice nativo 28649",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar construcción/dependencias y clave B; comparar capas próximas del ecosistema Java y matizar el posible lanzamiento mediante plugins."
+      ],
+      "references": [
+        {
+          "title": "Apache Maven: Introduction",
+          "url": "https://maven.apache.org/what-is-maven.html",
+          "locator": "Introduction; Maven’s Objectives; Providing a uniform build system: POM y plugins",
+          "version": "Documentación pública leída el 29-10-2026. Construcción y gestión del proyecto, sin instalar o ejecutar Maven",
+          "checked_at": "2026-10-29"
+        },
+        {
+          "title": "Gradle User Manual: The Java Plugin",
+          "url": "https://docs.gradle.org/current/userguide/java_plugin.html",
+          "locator": "Tasks, Lifecycle Tasks y Dependency management: compile Java, test y configuraciones de dependencias",
+          "version": "Ruta current con versión 9.8.2 indicada en la página, leída el 29-10-2026. No acredita una instalación o versión local",
+          "checked_at": "2026-10-29"
+        },
+        {
+          "title": "Eclipse Foundation: Jakarta EE Platform 11",
+          "url": "https://jakarta.ee/specifications/platform/11/jakarta-platform-spec-11.0.html",
+          "locator": "2.4.2 servidores y Java SE; 2.13 contratos; 2.24 y9.7 retirada de Jakarta Managed Beans; 5.24 inyección mediada por CDI; 12 compatibilidad",
+          "version": "11.0, 10-03-2025 según cabecera, HTML oficial leído el 29-10-2026. Se distingue especificación histórica de Managed Beans y beans gestionados por CDI",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P15-136",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "e4f5648eb5aa0820019648cd75cabe77c55059249ed9472d618e6887ffcc22f5",
+      "content_sha256": "d277af7763ca31968eb494ba9ce23eeebbbc1bd1e3eb961c712ae6a4ab62dbc8",
+      "before": {
+        "id": "MAN-GSI-P15-136",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T10",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué cambio de namespace es característico al migrar de Java EE antiguo a Jakarta EE moderno?",
+        "options": [
+          {
+            "id": "A",
+            "text": "De `javax.*` a `jakarta.*` para las APIs transferidas a Jakarta."
+          },
+          {
+            "id": "B",
+            "text": "De `java.*` a `jakarta.*` para todas las clases de la biblioteca estándar incluidas en Java SE y en la JVM."
+          },
+          {
+            "id": "C",
+            "text": "De `jakarta.*` a `javax.*`, recuperando los nombres anteriores en las versiones modernas posteriores a la transferencia."
+          },
+          {
+            "id": "D",
+            "text": "De `javax.*` a `dotnet.*` para mantener interoperabilidad binaria directa entre componentes Jakarta y ensamblados .NET."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "De `javax.*` a `jakarta.*` para las APIs transferidas a Jakarta. La transición de namespace es uno de los impactos de migración más visibles.",
+          "incorrect": "Según el solucionario: De `javax.*` a `jakarta.*` para las APIs transferidas a Jakarta. La transición de namespace es uno de los impactos de migración más visibles."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 136; índice nativo 28816",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 136; índice nativo 46480",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 136; índice nativo 28816",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P15-136",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T10",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Al migrar de Java EE 8 o Jakarta EE 8 a Jakarta EE 9 o posterior, ¿qué criterio describe correctamente el cambio de namespace?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Usar jakarta.* para las APIs Jakarta renombradas y conservar los paquetes de Java SE."
+          },
+          {
+            "id": "B",
+            "text": "Usar jakarta.* para cualquier paquete javax.*, incluidos los pertenecientes a Java SE."
+          },
+          {
+            "id": "C",
+            "text": "Mantener javax.* para las APIs Jakarta renombradas cambiando solo su versión de dependencia."
+          },
+          {
+            "id": "D",
+            "text": "Cambiar solo imports sin revisar descriptores, propiedades o compatibilidad de binarios."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "El cambio de namespace se produce en Jakarta EE 9 para las APIs transferidas y renombradas de la plataforma; Jakarta EE 8 aún conservaba javax. No es una sustitución de todos los paquetes de Java SE: javax.sql.DataSource sigue siendo una API de Java SE. La migración también puede afectar propiedades, descriptores y dependencias; no garantiza compatibilidad binaria con versiones anteriores.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "No todo javax pertenece a Jakarta EE; javax.sql.DataSource es un contraejemplo que se conserva en Java SE.",
+            "C": "Cambiar solo la versión de una dependencia no renombra referencias del código a una API cuya identidad de paquete cambió.",
+            "D": "La migración puede afectar más que imports y rompe compatibilidad de código/binarios para las APIs renombradas; hay que revisar sus otros contratos."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 136; índice nativo 28816",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 136; índice nativo 46480",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Eclipse Foundation: Jakarta EE Platform 9",
+              "url": "https://jakarta.ee/specifications/platform/9/jakarta-platform-spec-9.html",
+              "locator": "12.1.1 Backwards Compatibility; 12.1.1.1 javax to jakarta Namespace; propiedades, descriptores y migración",
+              "version": "9 Final Release, 06-11-2020 según cabecera, HTML leído el 29-10-2026. Jakarta EE 8 mantuvo javax; el cambio se delimita a las APIs Jakarta renombradas",
+              "checked_at": "2026-10-29"
+            },
+            {
+              "title": "Oracle Java SE 17 API: javax.sql.DataSource",
+              "url": "https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html",
+              "locator": "Cabecera: módulo java.sql, paquete javax.sql e interfaz DataSource",
+              "version": "Documentación de Java SE 17 leída el 29-10-2026. Contraejemplo concreto a sustituir indiscriminadamente todo paquete javax",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-060"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 136; índice nativo 28816",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar javax→jakarta y clave A; acotar Jakarta EE 9 y posteriores y añadir excepción Java SE verificable, sin sustitución indiscriminada."
+      ],
+      "references": [
+        {
+          "title": "Eclipse Foundation: Jakarta EE Platform 9",
+          "url": "https://jakarta.ee/specifications/platform/9/jakarta-platform-spec-9.html",
+          "locator": "12.1.1 Backwards Compatibility; 12.1.1.1 javax to jakarta Namespace; propiedades, descriptores y migración",
+          "version": "9 Final Release, 06-11-2020 según cabecera, HTML leído el 29-10-2026. Jakarta EE 8 mantuvo javax; el cambio se delimita a las APIs Jakarta renombradas",
+          "checked_at": "2026-10-29"
+        },
+        {
+          "title": "Oracle Java SE 17 API: javax.sql.DataSource",
+          "url": "https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html",
+          "locator": "Cabecera: módulo java.sql, paquete javax.sql e interfaz DataSource",
+          "version": "Documentación de Java SE 17 leída el 29-10-2026. Contraejemplo concreto a sustituir indiscriminadamente todo paquete javax",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P15-137",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "41399fed09d40cb469be095541f0135e45b5257069b64c64d502af091f1c14ae",
+      "content_sha256": "b57e20d936cf2261bbb769b8af129616ba34dcb22b5bf6ec6b062757fc96400c",
+      "before": {
+        "id": "MAN-GSI-P15-137",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T10",
+        "subtopic": "",
+        "exam": null,
+        "statement": "En Jakarta EE moderno, ¿qué tecnología se prefiere para inyección y componentes gestionados frente al antiguo enfoque de Managed Beans?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Jakarta Mail."
+          },
+          {
+            "id": "B",
+            "text": "CDI."
+          },
+          {
+            "id": "C",
+            "text": "JDBC exclusivamente."
+          },
+          {
+            "id": "D",
+            "text": "Servlet Filters como contenedor DI."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "CDI. CDI es la base moderna para DI y contextos; conviene evitar material antiguo que presente Managed Beans como mecanismo general actual.",
+          "incorrect": "Según el solucionario: CDI. CDI es la base moderna para DI y contextos; conviene evitar material antiguo que presente Managed Beans como mecanismo general actual."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 137; índice nativo 28967",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 137; índice nativo 46786",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 137; índice nativo 28967",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P15-137",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T10",
+        "subtopic": "",
+        "exam": null,
+        "statement": "En Jakarta EE 11, ¿qué tecnología proporciona el modelo de inyección y componentes contextuales frente a la antigua especificación Jakarta Managed Beans?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Jakarta Persistence."
+          },
+          {
+            "id": "B",
+            "text": "CDI."
+          },
+          {
+            "id": "C",
+            "text": "Jakarta Transactions."
+          },
+          {
+            "id": "D",
+            "text": "Jakarta REST."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "CDI aporta inyección de dependencias, resolución por tipos/cualificadores y gestión contextual de instancias. Jakarta EE 11 retira la antigua especificación Jakarta Managed Beans, pero mantiene el modelo de beans gestionados por CDI. Retirar aquella especificación no significa eliminar todos los objetos llamados managed beans ni sustituir CDI por una API de otra responsabilidad.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Persistence se centra en entidades, contexto de persistencia y mapeo; no sustituye el modelo general de inyección contextual de CDI.",
+            "C": "Transactions delimita y coordina unidades transaccionales; puede integrarse con CDI sin convertirse en su modelo de dependencias.",
+            "D": "REST define recursos y APIs de servicios HTTP; puede utilizar CDI, pero no es la especificación general de inyección y contextos."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 137; índice nativo 28967",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 137; índice nativo 46786",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Eclipse Foundation: Jakarta Contexts and Dependency Injection 4.1",
+              "url": "https://jakarta.ee/specifications/cdi/4.1/jakarta-cdi-spec-4.1.html",
+              "locator": "2.1 capacidades del contenedor; 5 inyección y resolución; 6 ámbitos/contextos; 7 ciclo de vida de instancias",
+              "version": "4.1 Final, 07-03-2024 según cabecera, HTML leído el 29-10-2026. No se enseña que hayan desaparecido los CDI managed beans",
+              "checked_at": "2026-10-29"
+            },
+            {
+              "title": "Eclipse Foundation: Jakarta EE Platform 11",
+              "url": "https://jakarta.ee/specifications/platform/11/jakarta-platform-spec-11.0.html",
+              "locator": "2.4.2 servidores y Java SE; 2.13 contratos; 2.24 y9.7 retirada de Jakarta Managed Beans; 5.24 inyección mediada por CDI; 12 compatibilidad",
+              "version": "11.0, 10-03-2025 según cabecera, HTML oficial leído el 29-10-2026. Se distingue especificación histórica de Managed Beans y beans gestionados por CDI",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-060"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 137; índice nativo 28967",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar CDI y clave B; distinguir la especificación retirada Jakarta Managed Beans de los CDI managed beans que siguen vigentes."
+      ],
+      "references": [
+        {
+          "title": "Eclipse Foundation: Jakarta Contexts and Dependency Injection 4.1",
+          "url": "https://jakarta.ee/specifications/cdi/4.1/jakarta-cdi-spec-4.1.html",
+          "locator": "2.1 capacidades del contenedor; 5 inyección y resolución; 6 ámbitos/contextos; 7 ciclo de vida de instancias",
+          "version": "4.1 Final, 07-03-2024 según cabecera, HTML leído el 29-10-2026. No se enseña que hayan desaparecido los CDI managed beans",
+          "checked_at": "2026-10-29"
+        },
+        {
+          "title": "Eclipse Foundation: Jakarta EE Platform 11",
+          "url": "https://jakarta.ee/specifications/platform/11/jakarta-platform-spec-11.0.html",
+          "locator": "2.4.2 servidores y Java SE; 2.13 contratos; 2.24 y9.7 retirada de Jakarta Managed Beans; 5.24 inyección mediada por CDI; 12 compatibilidad",
+          "version": "11.0, 10-03-2025 según cabecera, HTML oficial leído el 29-10-2026. Se distingue especificación histórica de Managed Beans y beans gestionados por CDI",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P15-138",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "36334afe742677c9e7ba835fc1d55862dfc4c110a9d718f997d41ef80f8203f4",
+      "content_sha256": "6154019d651ea2865131c3bf75d16cc0dd75dfa990b3a6c0fb5d8e5dad8bea86",
+      "before": {
+        "id": "MAN-GSI-P15-138",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T10",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Cuál es la diferencia entre una especificación Jakarta EE y una implementación?",
+        "options": [
+          {
+            "id": "A",
+            "text": "La especificación define contratos/semántica; una implementación concreta proporciona el runtime que los ejecuta."
+          },
+          {
+            "id": "B",
+            "text": "Son exactamente el mismo producto."
+          },
+          {
+            "id": "C",
+            "text": "Una implementación no necesita cumplir ninguna especificación."
+          },
+          {
+            "id": "D",
+            "text": "La especificación es un IDE y la implementación un lenguaje."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "La especificación define contratos/semántica; una implementación concreta proporciona el runtime que los ejecuta. Esta distinción explica por qué existen varios runtimes compatibles con la misma plataforma.",
+          "incorrect": "Según el solucionario: La especificación define contratos/semántica; una implementación concreta proporciona el runtime que los ejecuta. Esta distinción explica por qué existen varios runtimes compatibles con la misma plataforma."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 138; índice nativo 29116",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 138; índice nativo 47065",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 138; índice nativo 29116",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P15-138",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T10",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué pareja distingue una especificación Jakarta EE y una implementación, respectivamente?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Contratos normativos / software concreto que los implementa."
+          },
+          {
+            "id": "B",
+            "text": "Software del servidor / reglas normativas de sus APIs."
+          },
+          {
+            "id": "C",
+            "text": "Plantillas del IDE / código de negocio de una aplicación."
+          },
+          {
+            "id": "D",
+            "text": "Versiones de dependencias / tareas de construcción del proyecto."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Una especificación define contratos, semántica y requisitos de conformidad; una implementación aporta el software que realiza esos contratos. Puede haber varios productos compatibles. La compatibilidad se verifica para una versión y ámbito concretos, no por compartir nombre con la especificación. El IDE, el código de negocio y las herramientas de construcción son otras capas.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "Invierte las categorías: el documento normativo no es el servidor instalado y el producto implementa, no reemplaza, sus contratos normativos.",
+            "C": "El entorno de edición y la lógica de negocio no distinguen especificación de plataforma e implementación de sus servicios.",
+            "D": "Dependencias y tareas corresponden a construcción del proyecto, no a la distinción entre contrato normativo y realización."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 138; índice nativo 29116",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 138; índice nativo 47065",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Eclipse Foundation: Jakarta EE Platform 11",
+              "url": "https://jakarta.ee/specifications/platform/11/jakarta-platform-spec-11.0.html",
+              "locator": "2.4.2 servidores y Java SE; 2.13 contratos; 2.24 y9.7 retirada de Jakarta Managed Beans; 5.24 inyección mediada por CDI; 12 compatibilidad",
+              "version": "11.0, 10-03-2025 según cabecera, HTML oficial leído el 29-10-2026. Se distingue especificación histórica de Managed Beans y beans gestionados por CDI",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-060"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 138; índice nativo 29116",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar especificación/implementación y clave A; parejas de conceptos paralelas que separan contrato, producto, aplicación y build."
+      ],
+      "references": [
+        {
+          "title": "Eclipse Foundation: Jakarta EE Platform 11",
+          "url": "https://jakarta.ee/specifications/platform/11/jakarta-platform-spec-11.0.html",
+          "locator": "2.4.2 servidores y Java SE; 2.13 contratos; 2.24 y9.7 retirada de Jakarta Managed Beans; 5.24 inyección mediada por CDI; 12 compatibilidad",
+          "version": "11.0, 10-03-2025 según cabecera, HTML oficial leído el 29-10-2026. Se distingue especificación histórica de Managed Beans y beans gestionados por CDI",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P15-139",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "4d7244f11c6e5eb98add56729e6dc6765d43c6f0f4e62ba585a2cb8710cda60b",
+      "content_sha256": "d4a50957b58d8711e7c17eac99e9d96e62fef4ae14d6945e2fff49d00dd1a249",
+      "before": {
+        "id": "MAN-GSI-P15-139",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T10",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué relación hay entre Java SE y Jakarta EE?",
+        "options": [
+          {
+            "id": "A",
+            "text": "El número de Jakarta EE determina la versión de Java SE: Jakarta EE 11 solo puede significar Java SE 11."
+          },
+          {
+            "id": "B",
+            "text": "Java SE es un perfil reducido definido dentro de Jakarta EE y no puede utilizarse independientemente de un servidor empresarial."
+          },
+          {
+            "id": "C",
+            "text": "Jakarta EE se construye sobre Java SE y añade especificaciones empresariales; no son versiones equivalentes."
+          },
+          {
+            "id": "D",
+            "text": "Jakarta EE sustituye la JVM por un runtime propio incompatible con clases, bibliotecas y herramientas de la plataforma Java SE."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Jakarta EE se construye sobre Java SE y añade especificaciones empresariales; no son versiones equivalentes. La numeración de Jakarta EE no debe interpretarse como versión de Java SE.",
+          "incorrect": "Según el solucionario: Jakarta EE se construye sobre Java SE y añade especificaciones empresariales; no son versiones equivalentes. La numeración de Jakarta EE no debe interpretarse como versión de Java SE."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 139; índice nativo 29332",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 139; índice nativo 47486",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 139; índice nativo 29332",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P15-139",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T10",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué relación hay entre Java SE y Jakarta EE?",
+        "options": [
+          {
+            "id": "A",
+            "text": "El número de Jakarta EE determina la versión de Java SE: Jakarta EE 11 solo puede significar Java SE 11."
+          },
+          {
+            "id": "B",
+            "text": "Java SE es un perfil reducido definido dentro de Jakarta EE y no puede utilizarse independientemente de un servidor empresarial."
+          },
+          {
+            "id": "C",
+            "text": "Jakarta EE se construye sobre Java SE y añade especificaciones empresariales; no son versiones equivalentes."
+          },
+          {
+            "id": "D",
+            "text": "Jakarta EE sustituye la JVM por un runtime propio incompatible con clases, bibliotecas y herramientas de la plataforma Java SE."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Java SE proporciona la base de ejecución y bibliotecas sobre la que Jakarta EE define servicios y contratos adicionales para aplicaciones empresariales. Son líneas de versión diferentes. Por ejemplo, Jakarta EE 11 requiere Java SE 17 como mínimo; la igualdad de números no es una regla. Un producto concreto debe verificarse con su JDK y su certificación.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "La numeración no determina una equivalencia: Jakarta EE 11 no significa Java SE 11; la edición 11 fija mínimo Java SE 17.",
+            "B": "Java SE es una plataforma utilizable por sí misma, no un perfil de Jakarta EE que requiera un servidor empresarial.",
+            "D": "Jakarta EE se apoya en tecnología Java SE; no reemplaza la JVM por un entorno que sea por definición incompatible con ella."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 139; índice nativo 29332",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 139; índice nativo 47486",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Eclipse Foundation: Jakarta EE Platform 11",
+              "url": "https://jakarta.ee/specifications/platform/11/jakarta-platform-spec-11.0.html",
+              "locator": "2.4.2 servidores y Java SE; 2.13 contratos; 2.24 y9.7 retirada de Jakarta Managed Beans; 5.24 inyección mediada por CDI; 12 compatibilidad",
+              "version": "11.0, 10-03-2025 según cabecera, HTML oficial leído el 29-10-2026. Se distingue especificación histórica de Managed Beans y beans gestionados por CDI",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-060"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 139; índice nativo 29332",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar íntegros enunciado y alternativas y clave C; completar relación de capas y versiones con un ejemplo normativo concreto."
+      ],
+      "references": [
+        {
+          "title": "Eclipse Foundation: Jakarta EE Platform 11",
+          "url": "https://jakarta.ee/specifications/platform/11/jakarta-platform-spec-11.0.html",
+          "locator": "2.4.2 servidores y Java SE; 2.13 contratos; 2.24 y9.7 retirada de Jakarta Managed Beans; 5.24 inyección mediada por CDI; 12 compatibilidad",
+          "version": "11.0, 10-03-2025 según cabecera, HTML oficial leído el 29-10-2026. Se distingue especificación histórica de Managed Beans y beans gestionados por CDI",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P15-140",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "1c4a1db97fb43ba0ad7d711638aad1fdc30cffeb1e859b790214770fe8bb3e13",
+      "content_sha256": "0db0cad96e51ce98ac95e28e5f6af4025ad6b6cd588f7336c9f519afc8432e8d",
+      "before": {
+        "id": "MAN-GSI-P15-140",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T10",
+        "subtopic": "",
+        "exam": null,
+        "statement": "En un servicio empresarial Jakarta EE, ¿por qué es importante definir correctamente el límite transaccional?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Mantener una sola transacción durante toda la sesión del usuario para incluir cualquier operación que realice después."
+          },
+          {
+            "id": "B",
+            "text": "Confirmar cada sentencia de persistencia por separado aunque varias formen conjuntamente una única operación de negocio."
+          },
+          {
+            "id": "C",
+            "text": "Para asegurar que las operaciones que forman una unidad de negocio confirmen o reviertan de forma coherente."
+          },
+          {
+            "id": "D",
+            "text": "Definir la transacción solo durante compilación y despliegue porque el contenedor no puede gestionarla en ejecución."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Para asegurar que las operaciones que forman una unidad de negocio confirmen o reviertan de forma coherente. Transacción es una propiedad de consistencia de la unidad de trabajo, no del proceso de build.",
+          "incorrect": "Según el solucionario: Para asegurar que las operaciones que forman una unidad de negocio confirmen o reviertan de forma coherente. Transacción es una propiedad de consistencia de la unidad de trabajo, no del proceso de build."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 140; índice nativo 29525",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 140; índice nativo 47825",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 140; índice nativo 29525",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P15-140",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T10",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Un servicio resta saldo de una cuenta y lo abona en otra dentro del mismo recurso transaccional. Las dos escrituras forman una transferencia. ¿Para qué definir correctamente su límite transaccional?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Confirmar la resta antes de iniciar una nueva transacción para el abono."
+          },
+          {
+            "id": "B",
+            "text": "Mantener abierta la transacción hasta que termine toda la sesión del usuario."
+          },
+          {
+            "id": "C",
+            "text": "Confirmar o revertir conjuntamente las escrituras de la unidad de negocio."
+          },
+          {
+            "id": "D",
+            "text": "Aplicar la transacción a la consulta inicial y dejar las escrituras fuera."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "El límite debe abarcar las escrituras que integran la unidad de negocio para que el recurso transaccional participante las confirme o revierta conjuntamente. Deben aplicarse las reglas de propagación y rollback del contrato; no toda excepción provoca rollback por defecto. Tampoco se incluyen automáticamente correos o llamadas externas que no participan en la transacción.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Confirmar la resta de forma independiente permite que un fallo del abono deje un resultado parcial de la transferencia.",
+            "B": "La sesión del usuario puede contener varias unidades y esperas; prolongar la transacción así no define correctamente esta unidad y puede retener recursos.",
+            "D": "Si las escrituras quedan fuera, la transacción de la consulta no asegura su confirmación o reversión conjunta."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 140; índice nativo 29525",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 140; índice nativo 47825",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Eclipse Foundation: Jakarta Transactions 2.0",
+              "url": "https://jakarta.ee/specifications/transactions/2.0/jakarta-transactions-spec-2.0.html",
+              "locator": "1 Introduction; 3.1 UserTransaction; 3.3 y3.4 recursos participantes; 3.7 Transactional y tratamiento del rollback",
+              "version": "2.0 Final Release, 08-10-2020 según cabecera, HTML leído el 29-10-2026. Unidad transaccional con recursos participantes; no toda excepción o efecto externo provoca rollback automático",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-060"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 140; índice nativo 29525",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar coherencia de la unidad transaccional y clave C; microcaso con un recurso participante y dos escrituras, sin prometer atomicidad de efectos externos."
+      ],
+      "references": [
+        {
+          "title": "Eclipse Foundation: Jakarta Transactions 2.0",
+          "url": "https://jakarta.ee/specifications/transactions/2.0/jakarta-transactions-spec-2.0.html",
+          "locator": "1 Introduction; 3.1 UserTransaction; 3.3 y3.4 recursos participantes; 3.7 Transactional y tratamiento del rollback",
+          "version": "2.0 Final Release, 08-10-2020 según cabecera, HTML leído el 29-10-2026. Unidad transaccional con recursos participantes; no toda excepción o efecto externo provoca rollback automático",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P15-017",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "c9de8a4e6330faddbb84eab62a88d8bfb3d2ae9e41aebf383f3704d81ced654a",
+      "content_sha256": "86a8832ac2528bf7c20c7e7fc2e05c49938368cf91bf66cd44758b42163c8b56",
+      "before": {
+        "id": "MAN-GSI-P15-017",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Para una API HTTP nueva en .NET, ¿qué tecnología encaja mejor como base general?",
+        "options": [
+          {
+            "id": "A",
+            "text": "ASP clásico."
+          },
+          {
+            "id": "B",
+            "text": "Windows Forms."
+          },
+          {
+            "id": "C",
+            "text": "WCF como única opción obligatoria."
+          },
+          {
+            "id": "D",
+            "text": "ASP.NET Core."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "ASP.NET Core. ASP.NET Core es el framework web actual para APIs y aplicaciones HTTP.",
+          "incorrect": "Según el solucionario: ASP.NET Core. ASP.NET Core es el framework web actual para APIs y aplicaciones HTTP."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 17; índice nativo 5622",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 17; índice nativo 6850",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 17; índice nativo 5622",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P15-017",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Un proyecto nuevo usa .NET moderno y debe ofrecer una API HTTP en Windows y Linux. ¿Qué framework web encaja como base general?",
+        "options": [
+          {
+            "id": "A",
+            "text": "ASP.NET Web API 2."
+          },
+          {
+            "id": "B",
+            "text": "ASP.NET Web Forms."
+          },
+          {
+            "id": "C",
+            "text": "WCF de .NET Framework."
+          },
+          {
+            "id": "D",
+            "text": "ASP.NET Core."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "ASP.NET Core ofrece el marco web de .NET moderno para construir APIs HTTP y admite despliegue en sistemas compatibles como Windows y Linux. Tanto Minimal APIs como controladores son opciones válidas según el diseño. Las tecnologías citadas de .NET Framework pertenecen a otra línea de plataforma; no se debe trasladar su configuración a ASP.NET Core como si fueran el mismo producto.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "ASP.NET Web API 2 corresponde al entorno ASP.NET de .NET Framework, no a la base multiplataforma de .NET moderno solicitada.",
+            "B": "Web Forms es un modelo de páginas del ASP.NET de .NET Framework; no es el marco pedido para esta API en Windows y Linux.",
+            "C": "WCF de .NET Framework no es la base web multiplataforma de ASP.NET Core; tener soporte de servicios no identifica el framework solicitado."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 17; índice nativo 5622",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 17; índice nativo 6850",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Microsoft Learn: APIs overview, ASP.NET Core 10",
+              "url": "https://learn.microsoft.com/en-us/aspnet/core/fundamentals/apis?view=aspnetcore-10.0",
+              "locator": "Introducción; Minimal APIs y Controller-based APIs como vías de construir APIs HTTP",
+              "version": "Vista aspnetcore-10.0 leída el 29-10-2026. Ambas vías son válidas; no se enseña una obligación universal de Minimal APIs",
+              "checked_at": "2026-10-29"
+            },
+            {
+              "title": "Microsoft Learn: .NET vs .NET Framework for server apps",
+              "url": "https://learn.microsoft.com/en-us/dotnet/standard/choosing-core-framework-server",
+              "locator": "Introducción; Choose .NET; Choose .NET Framework: evolución, multiplataforma y compatibilidad heredada",
+              "version": "Página pública leída el 29-10-2026; identifica .NET 10 como versión actual en su cuerpo. No se interpreta como fin de soporte de todo .NET Framework",
+              "checked_at": "2026-10-29"
+            },
+            {
+              "title": "Microsoft Learn: .NET glossary",
+              "url": "https://learn.microsoft.com/en-us/dotnet/standard/glossary",
+              "locator": "BCL; .NET; .NET implementation; .NET Standard; ASP.NET Core",
+              "version": "Página pública leída el 29-10-2026. Bibliotecas, implementación, marco web y contrato de APIs son categorías distintas; no se infiere portabilidad universal de cada API",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-060"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 17; índice nativo 5622",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar ASP.NET Core y clave D; requisitos de API HTTP y despliegue multiplataforma que distinguen líneas sin imponer un estilo único de API."
+      ],
+      "references": [
+        {
+          "title": "Microsoft Learn: APIs overview, ASP.NET Core 10",
+          "url": "https://learn.microsoft.com/en-us/aspnet/core/fundamentals/apis?view=aspnetcore-10.0",
+          "locator": "Introducción; Minimal APIs y Controller-based APIs como vías de construir APIs HTTP",
+          "version": "Vista aspnetcore-10.0 leída el 29-10-2026. Ambas vías son válidas; no se enseña una obligación universal de Minimal APIs",
+          "checked_at": "2026-10-29"
+        },
+        {
+          "title": "Microsoft Learn: .NET vs .NET Framework for server apps",
+          "url": "https://learn.microsoft.com/en-us/dotnet/standard/choosing-core-framework-server",
+          "locator": "Introducción; Choose .NET; Choose .NET Framework: evolución, multiplataforma y compatibilidad heredada",
+          "version": "Página pública leída el 29-10-2026; identifica .NET 10 como versión actual en su cuerpo. No se interpreta como fin de soporte de todo .NET Framework",
+          "checked_at": "2026-10-29"
+        },
+        {
+          "title": "Microsoft Learn: .NET glossary",
+          "url": "https://learn.microsoft.com/en-us/dotnet/standard/glossary",
+          "locator": "BCL; .NET; .NET implementation; .NET Standard; ASP.NET Core",
+          "version": "Página pública leída el 29-10-2026. Bibliotecas, implementación, marco web y contrato de APIs son categorías distintas; no se infiere portabilidad universal de cada API",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P15-057",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "484976073295caa6ec81257ae0f20d30843ebe65eb940e061f148f24fca5c38a",
+      "content_sha256": "79c9f8109c10d787c86eb69b631f8ec697b3d53384b5b9a093c7528da5f57bad",
+      "before": {
+        "id": "MAN-GSI-P15-057",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué comando está orientado específicamente a ejecutar la suite de pruebas de un proyecto?",
+        "options": [
+          {
+            "id": "A",
+            "text": "`dotnet nuget push`."
+          },
+          {
+            "id": "B",
+            "text": "`dotnet pack`."
+          },
+          {
+            "id": "C",
+            "text": "`dotnet clean`."
+          },
+          {
+            "id": "D",
+            "text": "`dotnet test`."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "`dotnet test`. `dotnet test` integra la ejecución de proyectos de prueba compatibles.",
+          "incorrect": "Según el solucionario: `dotnet test`. `dotnet test` integra la ejecución de proyectos de prueba compatibles."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 57; índice nativo 13269",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 57; índice nativo 20360",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 57; índice nativo 13269",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P15-057",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué comando está orientado específicamente a ejecutar la suite de pruebas de un proyecto?",
+        "options": [
+          {
+            "id": "A",
+            "text": "`dotnet nuget push`."
+          },
+          {
+            "id": "B",
+            "text": "`dotnet pack`."
+          },
+          {
+            "id": "C",
+            "text": "`dotnet clean`."
+          },
+          {
+            "id": "D",
+            "text": "`dotnet test`."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "dotnet test es el comando de pruebas: coordina la construcción necesaria y ejecuta pruebas con un runner compatible. En el SDK 10 puede usarse VSTest o Microsoft Testing Platform según configuración y soporte; los detalles y opciones dependen del runner. Un verde solo informa de las pruebas efectivamente descubiertas y ejecutadas, no de escenarios ausentes o calidad editorial.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "dotnet nuget push envía un paquete a un origen de paquetes; no es el comando para ejecutar la suite de pruebas.",
+            "B": "dotnet pack genera paquetes para distribución; empaquetar no equivale a ejecutar los tests.",
+            "C": "dotnet clean limpia salidas de construcción; no descubre y ejecuta la suite."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 57; índice nativo 13269",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 57; índice nativo 20360",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Microsoft Learn: dotnet test",
+              "url": "https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-test",
+              "locator": "Name; Description; Choose a test runner: VSTest y Microsoft Testing Platform",
+              "version": "Página pública leída el 29-10-2026. Selección de runner en SDK 10; las novedades de .NET 11 Preview se distinguen de la base estable y no se ejecutan comandos",
+              "checked_at": "2026-10-29"
+            },
+            {
+              "title": "Microsoft Learn: .NET CLI overview",
+              "url": "https://learn.microsoft.com/en-us/dotnet/core/tools/",
+              "locator": "Command structure; Driver; Command y comandos del SDK: build, run, test y publish",
+              "version": "Documentación pública leída el 29-10-2026. Distingue ejecutar una DLL dependiente del framework de invocar comandos que requieren el SDK",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-060"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 57; índice nativo 13269",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar íntegra formulación y alternativas y clave D; explicar los tres comandos próximos y el alcance de un resultado de test."
+      ],
+      "references": [
+        {
+          "title": "Microsoft Learn: dotnet test",
+          "url": "https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-test",
+          "locator": "Name; Description; Choose a test runner: VSTest y Microsoft Testing Platform",
+          "version": "Página pública leída el 29-10-2026. Selección de runner en SDK 10; las novedades de .NET 11 Preview se distinguen de la base estable y no se ejecutan comandos",
+          "checked_at": "2026-10-29"
+        },
+        {
+          "title": "Microsoft Learn: .NET CLI overview",
+          "url": "https://learn.microsoft.com/en-us/dotnet/core/tools/",
+          "locator": "Command structure; Driver; Command y comandos del SDK: build, run, test y publish",
+          "version": "Documentación pública leída el 29-10-2026. Distingue ejecutar una DLL dependiente del framework de invocar comandos que requieren el SDK",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P15-072",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "173d0e8afe7eafcb4c03ea8447b2547d8af51587a9315d769e250048b7ecad7a",
+      "content_sha256": "4277937c6c355af91ef4bc2fa8e307e435a568fa83d7150a65c8104d153c1e26",
+      "before": {
+        "id": "MAN-GSI-P15-072",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué ciclos de vida ofrece típicamente el contenedor DI de ASP.NET Core?",
+        "options": [
+          {
+            "id": "A",
+            "text": "GET, POST y DELETE."
+          },
+          {
+            "id": "B",
+            "text": "Read, Write y Execute."
+          },
+          {
+            "id": "C",
+            "text": "Transient, Scoped y Singleton."
+          },
+          {
+            "id": "D",
+            "text": "Local, Remote y Hybrid."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Transient, Scoped y Singleton. Los lifetimes definen cuántas instancias se crean y cuánto viven.",
+          "incorrect": "Según el solucionario: Transient, Scoped y Singleton. Los lifetimes definen cuántas instancias se crean y cuánto viven."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 72; índice nativo 16014",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 72; índice nativo 25232",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 72; índice nativo 16014",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P15-072",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "En una API ASP.NET Core, X necesita instancia nueva por resolución, Y una compartida dentro de cada petición y Z una durante la vida del contenedor. ¿Qué asignación de ciclos de vida corresponde?",
+        "options": [
+          {
+            "id": "A",
+            "text": "X: Scoped; Y: Transient; Z: Singleton."
+          },
+          {
+            "id": "B",
+            "text": "X: Singleton; Y: Scoped; Z: Transient."
+          },
+          {
+            "id": "C",
+            "text": "X: Transient; Y: Scoped; Z: Singleton."
+          },
+          {
+            "id": "D",
+            "text": "X: Transient; Y: Singleton; Z: Scoped."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Transient crea una instancia por resolución; Scoped reutiliza una dentro de un ámbito; Singleton mantiene una por contenedor. En una API ASP.NET Core el ámbito habitual es la petición, como indica el caso. También pueden crearse scopes explícitos. Singleton no significa una instancia universal por máquina ni hace seguro compartir un servicio Scoped sin respetar su ámbito.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Intercambia las dos primeras duraciones: X necesita instancia por resolución y Y compartir una dentro de la petición.",
+            "B": "Asigna a X la vida del contenedor y a Z una instancia por resolución, al revés de sus requisitos.",
+            "D": "Mantiene X, pero intercambia Y y Z: compartir Y entre peticiones y limitar Z a un scope no cumple el caso."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 72; índice nativo 16014",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 72; índice nativo 25232",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Microsoft Learn: Service lifetimes",
+              "url": "https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection/service-lifetimes",
+              "locator": "Transient; Scoped; Singleton: resolución, ámbito y contenedor; scopes implícitos/ explícitos",
+              "version": "Página pública leída el 29-10-2026, localizada tras redirección del artículo general de DI. Por petición es el ámbito habitual en ASP.NET Core, no definición universal de scope",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-060"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 72; índice nativo 16014",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar Transient/Scoped/Singleton y clave C; microcaso que evalúa su correspondencia con resolución, petición y contenedor."
+      ],
+      "references": [
+        {
+          "title": "Microsoft Learn: Service lifetimes",
+          "url": "https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection/service-lifetimes",
+          "locator": "Transient; Scoped; Singleton: resolución, ámbito y contenedor; scopes implícitos/ explícitos",
+          "version": "Página pública leída el 29-10-2026, localizada tras redirección del artículo general de DI. Por petición es el ámbito habitual en ASP.NET Core, no definición universal de scope",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P15-001",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "07a8677352f7b98969ff12dc7125c01684ea0b504e835a11fa1ff134882b84ea",
+      "content_sha256": "80ee16ae751d98dcde29f8800e19b2a3a8642efb546be777828c49c3902aa868",
+      "before": {
+        "id": "MAN-GSI-P15-001",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "En el ecosistema actual de Microsoft, ¿qué implementación es la principal para nuevo desarrollo multiplataforma?",
+        "options": [
+          {
+            "id": "A",
+            "text": ".NET moderno (.NET 5 y posteriores, actualmente .NET 10 como LTS)."
+          },
+          {
+            "id": "B",
+            "text": ".NET Framework 4.x como única opción recomendada para nuevos proyectos."
+          },
+          {
+            "id": "C",
+            "text": "Silverlight."
+          },
+          {
+            "id": "D",
+            "text": "ASP clásico."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": ".NET moderno (.NET 5 y posteriores, actualmente .NET 10 como LTS). .NET moderno es la línea principal multiplataforma; .NET Framework queda principalmente para aplicaciones heredadas de Windows.",
+          "incorrect": "Según el solucionario: .NET moderno (.NET 5 y posteriores, actualmente .NET 10 como LTS). .NET moderno es la línea principal multiplataforma; .NET Framework queda principalmente para aplicaciones heredadas de Windows."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 1; índice nativo 2768",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 1; índice nativo 1759",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 1; índice nativo 2768",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P15-001",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "En el ecosistema Microsoft, ¿qué línea es la principal para nuevo desarrollo de aplicaciones de servidor multiplataforma?",
+        "options": [
+          {
+            "id": "A",
+            "text": ".NET moderno."
+          },
+          {
+            "id": "B",
+            "text": ".NET Framework."
+          },
+          {
+            "id": "C",
+            "text": ".NET Core 3.1."
+          },
+          {
+            "id": "D",
+            "text": ".NET Standard."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "La línea .NET moderna, sucesora de .NET Core y denominada .NET 5 y posteriores, concentra la evolución principal para nuevo servidor multiplataforma. A la fecha comprobada, .NET 10 es LTS activa. .NET Framework sigue teniendo soporte y usos de compatibilidad en Windows; no se deduce que todo sistema existente deba migrarse de inmediato ni que cada biblioteca o interfaz de .NET sea portable.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": ".NET Framework conserva compatibilidad de aplicaciones Windows, pero no es la línea principal solicitada para servidor nuevo multiplataforma.",
+            "C": ".NET Core 3.1 pertenece a la evolución anterior y está fuera de soporte; no representa una base vigente para el nuevo desarrollo planteado.",
+            "D": ".NET Standard es un contrato de APIs, no una implementación ejecutable del runtime."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 1; índice nativo 2768",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 1; índice nativo 1759",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Microsoft Learn: .NET vs .NET Framework for server apps",
+              "url": "https://learn.microsoft.com/en-us/dotnet/standard/choosing-core-framework-server",
+              "locator": "Introducción; Choose .NET; Choose .NET Framework: evolución, multiplataforma y compatibilidad heredada",
+              "version": "Página pública leída el 29-10-2026; identifica .NET 10 como versión actual en su cuerpo. No se interpreta como fin de soporte de todo .NET Framework",
+              "checked_at": "2026-10-29"
+            },
+            {
+              "title": "Microsoft: .NET and .NET Core Support Policy",
+              "url": "https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core",
+              "locator": "Supported versions, Go-live releases y soporte LTS/STS; filas .NET 10, .NET 9 y.NET 8",
+              "version": "Actualizada 25-10-2026 según página, consultada el 29-10-2026. .NET 10 LTS activa, fin 14-11-2028; .NET 8 también LTS soportada hasta 10-11-2026; .NET 11 RC no es versión estable publicada",
+              "checked_at": "2026-10-29"
+            },
+            {
+              "title": "Microsoft Learn: .NET glossary",
+              "url": "https://learn.microsoft.com/en-us/dotnet/standard/glossary",
+              "locator": "BCL; .NET; .NET implementation; .NET Standard; ASP.NET Core",
+              "version": "Página pública leída el 29-10-2026. Bibliotecas, implementación, marco web y contrato de APIs son categorías distintas; no se infiere portabilidad universal de cada API",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-060"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 1; índice nativo 2768",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar .NET moderno y clave A; alternativas próximas de producto/contrato y fecha de soporte explícita en el respaldo, sin equiparar Framework con abandono."
+      ],
+      "references": [
+        {
+          "title": "Microsoft Learn: .NET vs .NET Framework for server apps",
+          "url": "https://learn.microsoft.com/en-us/dotnet/standard/choosing-core-framework-server",
+          "locator": "Introducción; Choose .NET; Choose .NET Framework: evolución, multiplataforma y compatibilidad heredada",
+          "version": "Página pública leída el 29-10-2026; identifica .NET 10 como versión actual en su cuerpo. No se interpreta como fin de soporte de todo .NET Framework",
+          "checked_at": "2026-10-29"
+        },
+        {
+          "title": "Microsoft: .NET and .NET Core Support Policy",
+          "url": "https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core",
+          "locator": "Supported versions, Go-live releases y soporte LTS/STS; filas .NET 10, .NET 9 y.NET 8",
+          "version": "Actualizada 25-10-2026 según página, consultada el 29-10-2026. .NET 10 LTS activa, fin 14-11-2028; .NET 8 también LTS soportada hasta 10-11-2026; .NET 11 RC no es versión estable publicada",
+          "checked_at": "2026-10-29"
+        },
+        {
+          "title": "Microsoft Learn: .NET glossary",
+          "url": "https://learn.microsoft.com/en-us/dotnet/standard/glossary",
+          "locator": "BCL; .NET; .NET implementation; .NET Standard; ASP.NET Core",
+          "version": "Página pública leída el 29-10-2026. Bibliotecas, implementación, marco web y contrato de APIs son categorías distintas; no se infiere portabilidad universal de cada API",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P15-002",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "831118fde0075d8812836c0d54b8f10e0a365504805a8d475aec67d1a18ebe35",
+      "content_sha256": "0638f58fa0c12d202bac231d4b0263ae2078ebdcf20f545910c34788d5ae452b",
+      "before": {
+        "id": "MAN-GSI-P15-002",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Cuál es la diferencia más importante entre .NET moderno y .NET Framework?",
+        "options": [
+          {
+            "id": "A",
+            "text": ".NET Framework es la línea multiplataforma actual, mientras .NET moderno se conserva para aplicaciones Windows heredadas."
+          },
+          {
+            "id": "B",
+            "text": ".NET moderno es multiplataforma y es la línea principal de evolución; .NET Framework está ligado principalmente a Windows y a compatibilidad heredada."
+          },
+          {
+            "id": "C",
+            "text": "Ambos nombres corresponden al mismo producto y comparten idénticas plataformas, bibliotecas y política de evolución."
+          },
+          {
+            "id": "D",
+            "text": ".NET moderno está limitado a Windows y .NET Framework es la variante orientada a Linux, macOS y contenedores."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": ".NET moderno es multiplataforma y es la línea principal de evolución; .NET Framework está ligado principalmente a Windows y a compatibilidad heredada. La confusión entre .NET y .NET Framework es una trampa clásica: son implementaciones distintas y la evolución principal está en .NET moderno.",
+          "incorrect": "Según el solucionario: .NET moderno es multiplataforma y es la línea principal de evolución; .NET Framework está ligado principalmente a Windows y a compatibilidad heredada. La confusión entre .NET y .NET Framework es una trampa clásica: son implementaciones distintas y la evolución principal está en .NET moderno."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 2; índice nativo 2970",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 2; índice nativo 2102",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 2; índice nativo 2970",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P15-002",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Cuál es la diferencia más importante entre .NET moderno y .NET Framework?",
+        "options": [
+          {
+            "id": "A",
+            "text": ".NET Framework es la línea multiplataforma actual, mientras .NET moderno se conserva para aplicaciones Windows heredadas."
+          },
+          {
+            "id": "B",
+            "text": ".NET moderno es multiplataforma y es la línea principal de evolución; .NET Framework está ligado principalmente a Windows y a compatibilidad heredada."
+          },
+          {
+            "id": "C",
+            "text": "Ambos nombres corresponden al mismo producto y comparten idénticas plataformas, bibliotecas y política de evolución."
+          },
+          {
+            "id": "D",
+            "text": ".NET moderno está limitado a Windows y .NET Framework es la variante orientada a Linux, macOS y contenedores."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": ".NET moderno es la línea de evolución principal y admite varios sistemas operativos; .NET Framework se orienta a Windows y a la compatibilidad de aplicaciones existentes. Son implementaciones distintas con APIs y modelos que pueden solaparse. Esto no implica que cualquier aplicación .NET moderna sea portable sin revisar su UI, dependencias y APIs del sistema, ni que Framework haya perdido todo soporte.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Invierte los papeles: la línea moderna es la de evolución multiplataforma, mientras Framework permanece ligada a Windows.",
+            "C": "Compartir conceptos o algunas APIs no convierte ambas líneas en el mismo producto ni iguala su compatibilidad y evolución.",
+            "D": "También invierte plataformas: .NET moderno admite Linux y macOS además de Windows; Framework no es la variante general para esos sistemas."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 2; índice nativo 2970",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 2; índice nativo 2102",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Microsoft Learn: .NET vs .NET Framework for server apps",
+              "url": "https://learn.microsoft.com/en-us/dotnet/standard/choosing-core-framework-server",
+              "locator": "Introducción; Choose .NET; Choose .NET Framework: evolución, multiplataforma y compatibilidad heredada",
+              "version": "Página pública leída el 29-10-2026; identifica .NET 10 como versión actual en su cuerpo. No se interpreta como fin de soporte de todo .NET Framework",
+              "checked_at": "2026-10-29"
+            },
+            {
+              "title": "Microsoft Learn: Platform compatibility analyzer",
+              "url": "https://learn.microsoft.com/en-us/dotnet/standard/analyzers/platform-compat-analyzer",
+              "locator": "Introducción; SupportedOSPlatform/UnsupportedOSPlatform; diagnósticos por llamadas a APIs específicas y alternativas",
+              "version": "Página pública leída el 29-10-2026. La plataforma no abstrae todo el SO; un RID o publicación autocontenida no transforma APIs exclusivas en portables",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-060"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 2; índice nativo 2970",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar íntegra formulación y clave B; alternativas ya comparan ambas líneas. Añadir límites de portabilidad y soporte."
+      ],
+      "references": [
+        {
+          "title": "Microsoft Learn: .NET vs .NET Framework for server apps",
+          "url": "https://learn.microsoft.com/en-us/dotnet/standard/choosing-core-framework-server",
+          "locator": "Introducción; Choose .NET; Choose .NET Framework: evolución, multiplataforma y compatibilidad heredada",
+          "version": "Página pública leída el 29-10-2026; identifica .NET 10 como versión actual en su cuerpo. No se interpreta como fin de soporte de todo .NET Framework",
+          "checked_at": "2026-10-29"
+        },
+        {
+          "title": "Microsoft Learn: Platform compatibility analyzer",
+          "url": "https://learn.microsoft.com/en-us/dotnet/standard/analyzers/platform-compat-analyzer",
+          "locator": "Introducción; SupportedOSPlatform/UnsupportedOSPlatform; diagnósticos por llamadas a APIs específicas y alternativas",
+          "version": "Página pública leída el 29-10-2026. La plataforma no abstrae todo el SO; un RID o publicación autocontenida no transforma APIs exclusivas en portables",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P15-003",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "e6b4ba8a57cfc0faa891005523577e6fe71f82aae70b84aa8834c9ce828fc0b8",
+      "content_sha256": "36f0609de618aa91d0381ee881f67ebb73918bc46cf21d660eb47ac9995e3d55",
+      "before": {
+        "id": "MAN-GSI-P15-003",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "A fecha de 2026, ¿qué versión se considera LTS activa y de referencia en los apuntes V2.1?",
+        "options": [
+          {
+            "id": "A",
+            "text": ".NET 10."
+          },
+          {
+            "id": "B",
+            "text": ".NET 7."
+          },
+          {
+            "id": "C",
+            "text": ".NET 6."
+          },
+          {
+            "id": "D",
+            "text": ".NET Framework 4.8."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": ".NET 10. .NET 10 es LTS y Microsoft la mantiene soportada hasta noviembre de 2028.",
+          "incorrect": "Según el solucionario: .NET 10. .NET 10 es LTS y Microsoft la mantiene soportada hasta noviembre de 2028."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 3; índice nativo 3270",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 3; índice nativo 2543",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 3; índice nativo 3270",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P15-003",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "A 29 de octubre de 2026, ¿cuál de estas versiones es la LTS estable más reciente de la línea .NET moderna ya publicada?",
+        "options": [
+          {
+            "id": "A",
+            "text": ".NET 10."
+          },
+          {
+            "id": "B",
+            "text": ".NET 9."
+          },
+          {
+            "id": "C",
+            "text": ".NET 8."
+          },
+          {
+            "id": "D",
+            "text": ".NET 7."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "A 29-10-2026, la versión estable LTS más reciente entre las opciones es .NET 10, publicada el 11-11-2025 y con soporte hasta 14-11-2028 según la política consultada. .NET 8 también es LTS y sigue soportada hasta 10-11-2026, pero es anterior. Las versiones preliminares de .NET 11 no cuentan como versión estable publicada. La fecha evita convertir este dato en una afirmación atemporal.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": ".NET 9 es STS, no LTS, en la tabla de soporte consultada; tampoco es más reciente que .NET 10.",
+            "C": ".NET 8 sí es LTS soportada en esa fecha, pero no la LTS estable más reciente entre estas opciones.",
+            "D": ".NET 7 es una versión anterior STS y fuera de soporte; no cumple el criterio preguntado."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 3; índice nativo 3270",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 3; índice nativo 2543",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Microsoft: .NET and .NET Core Support Policy",
+              "url": "https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core",
+              "locator": "Supported versions, Go-live releases y soporte LTS/STS; filas .NET 10, .NET 9 y.NET 8",
+              "version": "Actualizada 25-10-2026 según página, consultada el 29-10-2026. .NET 10 LTS activa, fin 14-11-2028; .NET 8 también LTS soportada hasta 10-11-2026; .NET 11 RC no es versión estable publicada",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-060"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 3; índice nativo 3270",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar identificación de .NET 10 LTS y clave A; fecha exacta y criterio más reciente para no negar la coexistencia de otra LTS soportada."
+      ],
+      "references": [
+        {
+          "title": "Microsoft: .NET and .NET Core Support Policy",
+          "url": "https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core",
+          "locator": "Supported versions, Go-live releases y soporte LTS/STS; filas .NET 10, .NET 9 y.NET 8",
+          "version": "Actualizada 25-10-2026 según página, consultada el 29-10-2026. .NET 10 LTS activa, fin 14-11-2028; .NET 8 también LTS soportada hasta 10-11-2026; .NET 11 RC no es versión estable publicada",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P15-004",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "d72454bcf1a77c3469f318ee49bed733a6ee5613b0899945934d2af4906ead02",
+      "content_sha256": "8d0067d0748f07ce2d910928702f1136a7ea8d27b16ea79093434c3183e919d3",
+      "before": {
+        "id": "MAN-GSI-P15-004",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué componente proporciona el entorno de ejecución administrado en .NET?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Kestrel."
+          },
+          {
+            "id": "B",
+            "text": "NuGet."
+          },
+          {
+            "id": "C",
+            "text": "MSBuild."
+          },
+          {
+            "id": "D",
+            "text": "El CLR (Common Language Runtime)."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "El CLR (Common Language Runtime). El CLR ejecuta código administrado y aporta servicios como GC, manejo de excepciones, carga de tipos y compilación.",
+          "incorrect": "Según el solucionario: El CLR (Common Language Runtime). El CLR ejecuta código administrado y aporta servicios como GC, manejo de excepciones, carga de tipos y compilación."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 4; índice nativo 3360",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 4; índice nativo 2744",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 4; índice nativo 3360",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P15-004",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué componente proporciona el entorno de ejecución administrado en .NET?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Kestrel, como servidor que atiende conexiones HTTP."
+          },
+          {
+            "id": "B",
+            "text": "NuGet, como sistema de distribución de paquetes."
+          },
+          {
+            "id": "C",
+            "text": "MSBuild, como motor de objetivos y tareas de construcción."
+          },
+          {
+            "id": "D",
+            "text": "CLR, como entorno de ejecución del código administrado."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "El CLR es el entorno conceptual que ejecuta código administrado y ofrece servicios como carga y sistema de tipos, excepciones y gestión de memoria. En .NET moderno existen implementaciones y modos de ejecución diferentes. No se debe afirmar que toda aplicación usa JIT: Native AOT compila antes y publica con los componentes de runtime necesarios. Kestrel, NuGet y MSBuild tienen otras responsabilidades.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Kestrel se ocupa de atender HTTP dentro del alojamiento web; no es el motor general de ejecución administrada.",
+            "B": "NuGet distribuye y resuelve paquetes; no proporciona por ese papel el entorno que ejecuta el código administrado.",
+            "C": "MSBuild organiza la construcción mediante proyectos y tareas; no es el runtime del programa ya construido."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 4; índice nativo 3360",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 4; índice nativo 2744",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Microsoft Learn: Common Language Runtime overview",
+              "url": "https://learn.microsoft.com/en-us/dotnet/standard/clr",
+              "locator": "Introducción; metadatos, carga, tipos, excepciones y memoria administrada",
+              "version": "Página pública leída el 29-10-2026. Visión conceptual del CLR, complementada con Native AOT y recursos no administrados para no generalizar JIT o liberación automática de todo recurso",
+              "checked_at": "2026-10-29"
+            },
+            {
+              "title": "Microsoft Learn: Native AOT deployment overview",
+              "url": "https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/",
+              "locator": "Introducción; compilación al publicar, ausencia de JIT durante ejecución y destino concreto; bibliotecas de runtime incluidas",
+              "version": "Página pública leída el 29-10-2026. Native AOT es un contrapunto a afirmar que todo .NET se interpreta o usa JIT; no se realiza publicación",
+              "checked_at": "2026-10-29"
+            },
+            {
+              "title": "Microsoft Learn: An introduction to NuGet",
+              "url": "https://learn.microsoft.com/en-us/nuget/what-is-nuget",
+              "locator": "Introducción y The flow of packages between creators, hosts, and consumers",
+              "version": "Página pública leída el 29-10-2026. Formato/herramientas de paquetes públicos o privados; no runtime, motor de construcción o servidor web",
+              "checked_at": "2026-10-29"
+            },
+            {
+              "title": "Microsoft Learn: MSBuild",
+              "url": "https://learn.microsoft.com/en-us/visualstudio/msbuild/msbuild?view=visualstudio",
+              "locator": "Introducción; Tasks; Targets; dotnet build como interfaz sobre MSBuild",
+              "version": "Página pública leída el 29-10-2026. Motor de construcción mediante proyectos, propiedades, elementos, tareas y objetivos; no exige Visual Studio",
+              "checked_at": "2026-10-29"
+            },
+            {
+              "title": "Microsoft Learn: Kestrel web server in ASP.NET Core",
+              "url": "https://learn.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-10.0",
+              "locator": "Introducción: servidor web multiplataforma de ASP.NET Core; solicitudes y conexiones HTTP",
+              "version": "Vista aspnetcore-10.0 leída el 29-10-2026. Servidor HTTP distinto del CLR y de herramientas de paquetes o construcción",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-060"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 4; índice nativo 3360",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar CLR y clave D; opciones comparan capas y la explicación distingue servicios de runtime de una obligación universal de JIT."
+      ],
+      "references": [
+        {
+          "title": "Microsoft Learn: Common Language Runtime overview",
+          "url": "https://learn.microsoft.com/en-us/dotnet/standard/clr",
+          "locator": "Introducción; metadatos, carga, tipos, excepciones y memoria administrada",
+          "version": "Página pública leída el 29-10-2026. Visión conceptual del CLR, complementada con Native AOT y recursos no administrados para no generalizar JIT o liberación automática de todo recurso",
+          "checked_at": "2026-10-29"
+        },
+        {
+          "title": "Microsoft Learn: Native AOT deployment overview",
+          "url": "https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/",
+          "locator": "Introducción; compilación al publicar, ausencia de JIT durante ejecución y destino concreto; bibliotecas de runtime incluidas",
+          "version": "Página pública leída el 29-10-2026. Native AOT es un contrapunto a afirmar que todo .NET se interpreta o usa JIT; no se realiza publicación",
+          "checked_at": "2026-10-29"
+        },
+        {
+          "title": "Microsoft Learn: An introduction to NuGet",
+          "url": "https://learn.microsoft.com/en-us/nuget/what-is-nuget",
+          "locator": "Introducción y The flow of packages between creators, hosts, and consumers",
+          "version": "Página pública leída el 29-10-2026. Formato/herramientas de paquetes públicos o privados; no runtime, motor de construcción o servidor web",
+          "checked_at": "2026-10-29"
+        },
+        {
+          "title": "Microsoft Learn: MSBuild",
+          "url": "https://learn.microsoft.com/en-us/visualstudio/msbuild/msbuild?view=visualstudio",
+          "locator": "Introducción; Tasks; Targets; dotnet build como interfaz sobre MSBuild",
+          "version": "Página pública leída el 29-10-2026. Motor de construcción mediante proyectos, propiedades, elementos, tareas y objetivos; no exige Visual Studio",
+          "checked_at": "2026-10-29"
+        },
+        {
+          "title": "Microsoft Learn: Kestrel web server in ASP.NET Core",
+          "url": "https://learn.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-10.0",
+          "locator": "Introducción: servidor web multiplataforma de ASP.NET Core; solicitudes y conexiones HTTP",
+          "version": "Vista aspnetcore-10.0 leída el 29-10-2026. Servidor HTTP distinto del CLR y de herramientas de paquetes o construcción",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P15-005",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "025f53066646e31d5de912fc5b78d80afca7ac37752f1305ad755cc90823a6b0",
+      "content_sha256": "5af5de855463304f606bd112ca5cac2369fbbe672090f30c594268b4858d7e91",
+      "before": {
+        "id": "MAN-GSI-P15-005",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué incluye normalmente el SDK de .NET que no es necesario en una máquina que solo ejecuta una aplicación publicada adecuadamente?",
+        "options": [
+          {
+            "id": "A",
+            "text": "El runtime y las bibliotecas de ejecución que necesita una aplicación publicada como dependiente del framework."
+          },
+          {
+            "id": "B",
+            "text": "Los componentes de alojamiento de ASP.NET Core requeridos para servir una aplicación web en el entorno elegido."
+          },
+          {
+            "id": "C",
+            "text": "Herramientas de compilación, plantillas y CLI de desarrollo."
+          },
+          {
+            "id": "D",
+            "text": "Los archivos de configuración y dependencias publicados junto a la aplicación para que el host pueda iniciarla."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Herramientas de compilación, plantillas y CLI de desarrollo. El SDK está orientado al desarrollo; el runtime es el subconjunto necesario para ejecutar aplicaciones dependientes del framework.",
+          "incorrect": "Según el solucionario: Herramientas de compilación, plantillas y CLI de desarrollo. El SDK está orientado al desarrollo; el runtime es el subconjunto necesario para ejecutar aplicaciones dependientes del framework."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 5; índice nativo 3517",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 5; índice nativo 2942",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 5; índice nativo 3517",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P15-005",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Una consola .NET se publica como dependiente del framework. ¿Qué componente del SDK corresponde al desarrollo, en vez de ser un requisito para ejecutarla en un destino preparado?",
+        "options": [
+          {
+            "id": "A",
+            "text": "El runtime y las bibliotecas de ejecución que necesita una aplicación publicada como dependiente del framework."
+          },
+          {
+            "id": "B",
+            "text": "Los componentes de alojamiento de ASP.NET Core requeridos para servir una aplicación web en el entorno elegido."
+          },
+          {
+            "id": "C",
+            "text": "Herramientas de compilación, plantillas y CLI de desarrollo."
+          },
+          {
+            "id": "D",
+            "text": "Los archivos de configuración y dependencias publicados junto a la aplicación para que el host pueda iniciarla."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Las herramientas para compilar, plantillas y comandos de desarrollo pertenecen al SDK. Para limitarse a ejecutar un artefacto publicado no hace falta instalar ese SDK. En una publicación dependiente del framework sí hacen falta un runtime compatible y los demás requisitos de ejecución; una publicación autocontenida incluye su runtime. La ausencia de SDK no elimina dependencias del sistema o de la aplicación.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "El runtime compatible sí es requisito de una aplicación publicada como dependiente del framework, aunque el SDK no lo sea.",
+            "B": "El alojamiento web que corresponda es una dependencia de ejecución en aplicaciones ASP.NET Core; no son las herramientas de desarrollo preguntadas.",
+            "D": "La configuración y las dependencias publicadas forman parte de la ejecución; no equivalen a plantillas y herramientas para desarrollar."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 5; índice nativo 3517",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 5; índice nativo 2942",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Microsoft Learn: .NET application publishing overview",
+              "url": "https://learn.microsoft.com/en-us/dotnet/core/deploying/",
+              "locator": "Publishing modes: self-contained y framework-dependent; Publishing basics y runtime identifier",
+              "version": "Página pública leída el 29-10-2026. Necesidades del destino según modo y plataforma; SDK de desarrollo distinto de runtime y dependencias de ejecución",
+              "checked_at": "2026-10-29"
+            },
+            {
+              "title": "Microsoft Learn: .NET CLI overview",
+              "url": "https://learn.microsoft.com/en-us/dotnet/core/tools/",
+              "locator": "Command structure; Driver; Command y comandos del SDK: build, run, test y publish",
+              "version": "Documentación pública leída el 29-10-2026. Distingue ejecutar una DLL dependiente del framework de invocar comandos que requieren el SDK",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-060"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 5; índice nativo 3517",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar diferencia SDK/destino y clave C, con las cuatro alternativas originales; caso de consola dependiente del framework que delimita requisitos y modo de publicación."
+      ],
+      "references": [
+        {
+          "title": "Microsoft Learn: .NET application publishing overview",
+          "url": "https://learn.microsoft.com/en-us/dotnet/core/deploying/",
+          "locator": "Publishing modes: self-contained y framework-dependent; Publishing basics y runtime identifier",
+          "version": "Página pública leída el 29-10-2026. Necesidades del destino según modo y plataforma; SDK de desarrollo distinto de runtime y dependencias de ejecución",
+          "checked_at": "2026-10-29"
+        },
+        {
+          "title": "Microsoft Learn: .NET CLI overview",
+          "url": "https://learn.microsoft.com/en-us/dotnet/core/tools/",
+          "locator": "Command structure; Driver; Command y comandos del SDK: build, run, test y publish",
+          "version": "Documentación pública leída el 29-10-2026. Distingue ejecutar una DLL dependiente del framework de invocar comandos que requieren el SDK",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P15-006",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "63d4e0498ce927272facd0d5877d28f9e0b869c71a021322cf749f5a9854674e",
+      "content_sha256": "89d098936b2ff17eca170efcb95bb4b2eb7aa6e3c15b541e1e3c71153bc7a412",
+      "before": {
+        "id": "MAN-GSI-P15-006",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Para qué sirve principalmente el comando `dotnet`?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Para sustituir al CLR durante la ejecución."
+          },
+          {
+            "id": "B",
+            "text": "Para compilar, ejecutar, probar, publicar y gestionar proyectos .NET desde la CLI."
+          },
+          {
+            "id": "C",
+            "text": "Para actuar como base de datos relacional."
+          },
+          {
+            "id": "D",
+            "text": "Para reemplazar a Git."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Para compilar, ejecutar, probar, publicar y gestionar proyectos .NET desde la CLI. La CLI `dotnet` centraliza tareas del ciclo de desarrollo y publicación.",
+          "incorrect": "Según el solucionario: Para compilar, ejecutar, probar, publicar y gestionar proyectos .NET desde la CLI. La CLI `dotnet` centraliza tareas del ciclo de desarrollo y publicación."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 6; índice nativo 3716",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 6; índice nativo 3258",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 6; índice nativo 3716",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P15-006",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Para qué sirve principalmente el comando `dotnet`?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Proporcionar el motor que ejecuta IL y realiza la recolección de basura."
+          },
+          {
+            "id": "B",
+            "text": "Ofrecer comandos para construir, probar, publicar y ejecutar aplicaciones."
+          },
+          {
+            "id": "C",
+            "text": "Sustituir la construcción del proyecto mediante la distribución de paquetes."
+          },
+          {
+            "id": "D",
+            "text": "Proporcionar el servidor HTTP y el sistema de rutas de la aplicación web."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "dotnet es el controlador de la CLI: con el SDK permite crear, construir, probar y publicar proyectos, entre otras tareas. También puede iniciar una aplicación dependiente del framework indicando su DLL. Esta segunda función no convierte al controlador en el CLR. Tener solo el runtime no aporta los comandos de desarrollo del SDK ni un servidor web configurado.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Los servicios de ejecución administrada los aporta el runtime; dotnet puede iniciarlo, pero no lo sustituye por ser el controlador CLI.",
+            "C": "Restaurar paquetes es una tarea posible, pero distribuir dependencias no reemplaza los objetivos de construcción.",
+            "D": "El servidor y las rutas pertenecen al alojamiento y al framework web; no son por sí solos el papel del controlador dotnet."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 6; índice nativo 3716",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 6; índice nativo 3258",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Microsoft Learn: .NET CLI overview",
+              "url": "https://learn.microsoft.com/en-us/dotnet/core/tools/",
+              "locator": "Command structure; Driver; Command y comandos del SDK: build, run, test y publish",
+              "version": "Documentación pública leída el 29-10-2026. Distingue ejecutar una DLL dependiente del framework de invocar comandos que requieren el SDK",
+              "checked_at": "2026-10-29"
+            },
+            {
+              "title": "Microsoft Learn: Common Language Runtime overview",
+              "url": "https://learn.microsoft.com/en-us/dotnet/standard/clr",
+              "locator": "Introducción; metadatos, carga, tipos, excepciones y memoria administrada",
+              "version": "Página pública leída el 29-10-2026. Visión conceptual del CLR, complementada con Native AOT y recursos no administrados para no generalizar JIT o liberación automática de todo recurso",
+              "checked_at": "2026-10-29"
+            },
+            {
+              "title": "Microsoft Learn: MSBuild",
+              "url": "https://learn.microsoft.com/en-us/visualstudio/msbuild/msbuild?view=visualstudio",
+              "locator": "Introducción; Tasks; Targets; dotnet build como interfaz sobre MSBuild",
+              "version": "Página pública leída el 29-10-2026. Motor de construcción mediante proyectos, propiedades, elementos, tareas y objetivos; no exige Visual Studio",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-060"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 6; índice nativo 3716",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar propósito de CLI y clave B; distinguir comandos del SDK, host de DLL, runtime, paquetes y alojamiento."
+      ],
+      "references": [
+        {
+          "title": "Microsoft Learn: .NET CLI overview",
+          "url": "https://learn.microsoft.com/en-us/dotnet/core/tools/",
+          "locator": "Command structure; Driver; Command y comandos del SDK: build, run, test y publish",
+          "version": "Documentación pública leída el 29-10-2026. Distingue ejecutar una DLL dependiente del framework de invocar comandos que requieren el SDK",
+          "checked_at": "2026-10-29"
+        },
+        {
+          "title": "Microsoft Learn: Common Language Runtime overview",
+          "url": "https://learn.microsoft.com/en-us/dotnet/standard/clr",
+          "locator": "Introducción; metadatos, carga, tipos, excepciones y memoria administrada",
+          "version": "Página pública leída el 29-10-2026. Visión conceptual del CLR, complementada con Native AOT y recursos no administrados para no generalizar JIT o liberación automática de todo recurso",
+          "checked_at": "2026-10-29"
+        },
+        {
+          "title": "Microsoft Learn: MSBuild",
+          "url": "https://learn.microsoft.com/en-us/visualstudio/msbuild/msbuild?view=visualstudio",
+          "locator": "Introducción; Tasks; Targets; dotnet build como interfaz sobre MSBuild",
+          "version": "Página pública leída el 29-10-2026. Motor de construcción mediante proyectos, propiedades, elementos, tareas y objetivos; no exige Visual Studio",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P15-007",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "ab1e55c967e470bcc6e368e1bc37fb0b985368f58a195e29a5ce17c34abf185a",
+      "content_sha256": "c9c00f71898e5eecd2c2930e8d6550978638739ce9a56a0f1a2857b993858f4f",
+      "before": {
+        "id": "MAN-GSI-P15-007",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué representa la BCL en .NET?",
+        "options": [
+          {
+            "id": "A",
+            "text": "La biblioteca base de tipos y APIs comunes que usan las aplicaciones .NET."
+          },
+          {
+            "id": "B",
+            "text": "Un servidor web incluido en Windows exclusivamente."
+          },
+          {
+            "id": "C",
+            "text": "Un formato de bytecode distinto de IL."
+          },
+          {
+            "id": "D",
+            "text": "Un gestor de paquetes externo."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "La biblioteca base de tipos y APIs comunes que usan las aplicaciones .NET. La Base Class Library aporta colecciones, E/S, redes, texto, concurrencia y muchas APIs fundamentales.",
+          "incorrect": "Según el solucionario: La biblioteca base de tipos y APIs comunes que usan las aplicaciones .NET. La Base Class Library aporta colecciones, E/S, redes, texto, concurrencia y muchas APIs fundamentales."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 7; índice nativo 3879",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 7; índice nativo 3568",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 7; índice nativo 3879",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P15-007",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué representa la BCL en .NET?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Bibliotecas base de tipos y APIs comunes para las aplicaciones .NET."
+          },
+          {
+            "id": "B",
+            "text": "Un entorno que carga tipos y ejecuta código con servicios de memoria."
+          },
+          {
+            "id": "C",
+            "text": "Un motor que procesa proyectos, objetivos y tareas de construcción."
+          },
+          {
+            "id": "D",
+            "text": "Un sistema que distribuye paquetes con sus versiones y dependencias."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "La BCL es el conjunto de bibliotecas base de propósito general sobre el que se apoyan aplicaciones y frameworks de mayor nivel. Incluye tipos y APIs comunes, especialmente de los espacios System.*. Es distinta del runtime que ejecuta código, del motor de construcción y de la distribución de paquetes. Estar en una biblioteca base no hace a cada API compatible con cualquier sistema operativo.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "La carga y ejecución con servicios de memoria describe el runtime; la BCL aporta bibliotecas y contratos de API.",
+            "C": "Proyectos, tareas y objetivos describen el motor de construcción, como MSBuild; no las bibliotecas base de ejecución.",
+            "D": "Versiones y distribución de paquetes corresponden a un sistema como NuGet, no a la definición de BCL."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 7; índice nativo 3879",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 7; índice nativo 3568",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Microsoft Learn: .NET glossary",
+              "url": "https://learn.microsoft.com/en-us/dotnet/standard/glossary",
+              "locator": "BCL; .NET; .NET implementation; .NET Standard; ASP.NET Core",
+              "version": "Página pública leída el 29-10-2026. Bibliotecas, implementación, marco web y contrato de APIs son categorías distintas; no se infiere portabilidad universal de cada API",
+              "checked_at": "2026-10-29"
+            },
+            {
+              "title": "Microsoft Learn: Common Language Runtime overview",
+              "url": "https://learn.microsoft.com/en-us/dotnet/standard/clr",
+              "locator": "Introducción; metadatos, carga, tipos, excepciones y memoria administrada",
+              "version": "Página pública leída el 29-10-2026. Visión conceptual del CLR, complementada con Native AOT y recursos no administrados para no generalizar JIT o liberación automática de todo recurso",
+              "checked_at": "2026-10-29"
+            },
+            {
+              "title": "Microsoft Learn: MSBuild",
+              "url": "https://learn.microsoft.com/en-us/visualstudio/msbuild/msbuild?view=visualstudio",
+              "locator": "Introducción; Tasks; Targets; dotnet build como interfaz sobre MSBuild",
+              "version": "Página pública leída el 29-10-2026. Motor de construcción mediante proyectos, propiedades, elementos, tareas y objetivos; no exige Visual Studio",
+              "checked_at": "2026-10-29"
+            },
+            {
+              "title": "Microsoft Learn: An introduction to NuGet",
+              "url": "https://learn.microsoft.com/en-us/nuget/what-is-nuget",
+              "locator": "Introducción y The flow of packages between creators, hosts, and consumers",
+              "version": "Página pública leída el 29-10-2026. Formato/herramientas de paquetes públicos o privados; no runtime, motor de construcción o servidor web",
+              "checked_at": "2026-10-29"
+            },
+            {
+              "title": "Microsoft Learn: Platform compatibility analyzer",
+              "url": "https://learn.microsoft.com/en-us/dotnet/standard/analyzers/platform-compat-analyzer",
+              "locator": "Introducción; SupportedOSPlatform/UnsupportedOSPlatform; diagnósticos por llamadas a APIs específicas y alternativas",
+              "version": "Página pública leída el 29-10-2026. La plataforma no abstrae todo el SO; un RID o publicación autocontenida no transforma APIs exclusivas en portables",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-060"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 7; índice nativo 3879",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar bibliotecas base y clave A; cuatro capas próximas con forma comparable y límite explícito de portabilidad de APIs."
+      ],
+      "references": [
+        {
+          "title": "Microsoft Learn: .NET glossary",
+          "url": "https://learn.microsoft.com/en-us/dotnet/standard/glossary",
+          "locator": "BCL; .NET; .NET implementation; .NET Standard; ASP.NET Core",
+          "version": "Página pública leída el 29-10-2026. Bibliotecas, implementación, marco web y contrato de APIs son categorías distintas; no se infiere portabilidad universal de cada API",
+          "checked_at": "2026-10-29"
+        },
+        {
+          "title": "Microsoft Learn: Common Language Runtime overview",
+          "url": "https://learn.microsoft.com/en-us/dotnet/standard/clr",
+          "locator": "Introducción; metadatos, carga, tipos, excepciones y memoria administrada",
+          "version": "Página pública leída el 29-10-2026. Visión conceptual del CLR, complementada con Native AOT y recursos no administrados para no generalizar JIT o liberación automática de todo recurso",
+          "checked_at": "2026-10-29"
+        },
+        {
+          "title": "Microsoft Learn: MSBuild",
+          "url": "https://learn.microsoft.com/en-us/visualstudio/msbuild/msbuild?view=visualstudio",
+          "locator": "Introducción; Tasks; Targets; dotnet build como interfaz sobre MSBuild",
+          "version": "Página pública leída el 29-10-2026. Motor de construcción mediante proyectos, propiedades, elementos, tareas y objetivos; no exige Visual Studio",
+          "checked_at": "2026-10-29"
+        },
+        {
+          "title": "Microsoft Learn: An introduction to NuGet",
+          "url": "https://learn.microsoft.com/en-us/nuget/what-is-nuget",
+          "locator": "Introducción y The flow of packages between creators, hosts, and consumers",
+          "version": "Página pública leída el 29-10-2026. Formato/herramientas de paquetes públicos o privados; no runtime, motor de construcción o servidor web",
+          "checked_at": "2026-10-29"
+        },
+        {
+          "title": "Microsoft Learn: Platform compatibility analyzer",
+          "url": "https://learn.microsoft.com/en-us/dotnet/standard/analyzers/platform-compat-analyzer",
+          "locator": "Introducción; SupportedOSPlatform/UnsupportedOSPlatform; diagnósticos por llamadas a APIs específicas y alternativas",
+          "version": "Página pública leída el 29-10-2026. La plataforma no abstrae todo el SO; un RID o publicación autocontenida no transforma APIs exclusivas en portables",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P15-008",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "36a70b52f74209ef43cfafb4dc0293d66937d224ea32f33c9cd6cbf197f3ea59",
+      "content_sha256": "66d01556968a200a643956770b78d1d82a7474c5c377f188ede9a5b53eddbef5",
+      "before": {
+        "id": "MAN-GSI-P15-008",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué significa que una aplicación .NET ejecute código administrado?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Que todo el código se interpreta línea a línea."
+          },
+          {
+            "id": "B",
+            "text": "Que el código se ejecuta bajo los servicios del runtime, como GC, sistema de tipos y manejo de excepciones."
+          },
+          {
+            "id": "C",
+            "text": "Que el código se ejecuta únicamente con privilegios de administrador."
+          },
+          {
+            "id": "D",
+            "text": "Que no puede acceder a recursos del sistema operativo."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Que el código se ejecuta bajo los servicios del runtime, como GC, sistema de tipos y manejo de excepciones. Managed code describe la relación con el runtime, no los privilegios de la cuenta del proceso.",
+          "incorrect": "Según el solucionario: Que el código se ejecuta bajo los servicios del runtime, como GC, sistema de tipos y manejo de excepciones. Managed code describe la relación con el runtime, no los privilegios de la cuenta del proceso."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 8; índice nativo 4064",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 8; índice nativo 3862",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 8; índice nativo 4064",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P15-008",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Un servicio .NET usa una cuenta sin privilegios elevados y accede a un recurso nativo. ¿Qué expresa que su código sea administrado?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Que el recolector cierra todo recurso nativo al terminar cada llamada."
+          },
+          {
+            "id": "B",
+            "text": "Que el runtime aporta tipos, excepciones y GC, sin elevar los permisos."
+          },
+          {
+            "id": "C",
+            "text": "Que el programa obtiene acceso a recursos del SO sin permisos de la cuenta."
+          },
+          {
+            "id": "D",
+            "text": "Que sus métodos no llegan a compilarse a código máquina durante su ciclo."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Administrado describe la relación del código con servicios de ejecución del runtime, no los privilegios de la cuenta. Puede usar recursos del sistema sujetos a permisos y también interoperar con código nativo. El GC gestiona memoria administrada, pero no libera por sí solo cada recurso nativo: hay contratos como Dispose/SafeHandle. El código puede ejecutarse como código máquina obtenido por JIT o AOT.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Seguir la vida de un objeto no implica conocer cómo cerrar su recurso nativo ni hacerlo al final de cada llamada.",
+            "C": "Los servicios del runtime no conceden acceso que el sistema operativo o la cuenta no autoricen.",
+            "D": "Administrado no significa interpretado sin código máquina; existen JIT y compilación anticipada, según el modo de ejecución."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 8; índice nativo 4064",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 8; índice nativo 3862",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Microsoft Learn: What is managed code?",
+              "url": "https://learn.microsoft.com/en-us/dotnet/standard/managed-code",
+              "locator": "Definición y servicios de ejecución; Intermediate Language & execution",
+              "version": "Página pública leída el 29-10-2026. Se usa definición y servicios; su exposición de IL/JIT se matiza con Native AOT y no se equipara código administrado a permisos elevados",
+              "checked_at": "2026-10-29"
+            },
+            {
+              "title": "Microsoft Learn: Common Language Runtime overview",
+              "url": "https://learn.microsoft.com/en-us/dotnet/standard/clr",
+              "locator": "Introducción; metadatos, carga, tipos, excepciones y memoria administrada",
+              "version": "Página pública leída el 29-10-2026. Visión conceptual del CLR, complementada con Native AOT y recursos no administrados para no generalizar JIT o liberación automática de todo recurso",
+              "checked_at": "2026-10-29"
+            },
+            {
+              "title": "Microsoft Learn: Native AOT deployment overview",
+              "url": "https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/",
+              "locator": "Introducción; compilación al publicar, ausencia de JIT durante ejecución y destino concreto; bibliotecas de runtime incluidas",
+              "version": "Página pública leída el 29-10-2026. Native AOT es un contrapunto a afirmar que todo .NET se interpreta o usa JIT; no se realiza publicación",
+              "checked_at": "2026-10-29"
+            },
+            {
+              "title": "Microsoft Learn: Cleaning up unmanaged resources",
+              "url": "https://learn.microsoft.com/en-us/dotnet/standard/garbage-collection/unmanaged",
+              "locator": "Introducción; Dispose, SafeHandle y finalización no determinista",
+              "version": "Página pública leída el 29-10-2026. El GC no conoce por sí solo cómo liberar cada recurso nativo; no se confunde memoria administrada con todo recurso del sistema",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-060"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 8; índice nativo 4064",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar servicios del runtime y clave B; caso de cuenta y recurso nativo que separa ejecución, permisos, memoria y liberación de recursos."
+      ],
+      "references": [
+        {
+          "title": "Microsoft Learn: What is managed code?",
+          "url": "https://learn.microsoft.com/en-us/dotnet/standard/managed-code",
+          "locator": "Definición y servicios de ejecución; Intermediate Language & execution",
+          "version": "Página pública leída el 29-10-2026. Se usa definición y servicios; su exposición de IL/JIT se matiza con Native AOT y no se equipara código administrado a permisos elevados",
+          "checked_at": "2026-10-29"
+        },
+        {
+          "title": "Microsoft Learn: Common Language Runtime overview",
+          "url": "https://learn.microsoft.com/en-us/dotnet/standard/clr",
+          "locator": "Introducción; metadatos, carga, tipos, excepciones y memoria administrada",
+          "version": "Página pública leída el 29-10-2026. Visión conceptual del CLR, complementada con Native AOT y recursos no administrados para no generalizar JIT o liberación automática de todo recurso",
+          "checked_at": "2026-10-29"
+        },
+        {
+          "title": "Microsoft Learn: Native AOT deployment overview",
+          "url": "https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/",
+          "locator": "Introducción; compilación al publicar, ausencia de JIT durante ejecución y destino concreto; bibliotecas de runtime incluidas",
+          "version": "Página pública leída el 29-10-2026. Native AOT es un contrapunto a afirmar que todo .NET se interpreta o usa JIT; no se realiza publicación",
+          "checked_at": "2026-10-29"
+        },
+        {
+          "title": "Microsoft Learn: Cleaning up unmanaged resources",
+          "url": "https://learn.microsoft.com/en-us/dotnet/standard/garbage-collection/unmanaged",
+          "locator": "Introducción; Dispose, SafeHandle y finalización no determinista",
+          "version": "Página pública leída el 29-10-2026. El GC no conoce por sí solo cómo liberar cada recurso nativo; no se confunde memoria administrada con todo recurso del sistema",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P15-009",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "089de0c8f860ba4e9113d95ec33c3144326fe21082107168d8361c6493837ff5",
+      "content_sha256": "e1b780020013cbd63dcbc575923826de52ba9c61b27f63e71bdea8ef3ec06f28",
+      "before": {
+        "id": "MAN-GSI-P15-009",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué afirmación sobre la portabilidad de .NET moderno es correcta?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Puede ejecutarse en varios sistemas operativos compatibles, como Windows, Linux y macOS."
+          },
+          {
+            "id": "B",
+            "text": "Su ejecución multiplataforma depende de alojarse dentro de IIS."
+          },
+          {
+            "id": "C",
+            "text": "El runtime moderno está disponible únicamente para Windows Server."
+          },
+          {
+            "id": "D",
+            "text": "La portabilidad exige compilar el proyecto con Visual Studio."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Puede ejecutarse en varios sistemas operativos compatibles, como Windows, Linux y macOS. La portabilidad depende del runtime y de las APIs usadas, no del IDE.",
+          "incorrect": "Según el solucionario: Puede ejecutarse en varios sistemas operativos compatibles, como Windows, Linux y macOS. La portabilidad depende del runtime y de las APIs usadas, no del IDE."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 9; índice nativo 4274",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 9; índice nativo 4276",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 9; índice nativo 4274",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P15-009",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Una aplicación .NET moderna depende de una API documentada como exclusiva de Windows y debe desplegarse en Linux. ¿Qué exige su portabilidad?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Revisar APIs y dependencias compatibles con el sistema operativo de destino."
+          },
+          {
+            "id": "B",
+            "text": "Publicar autocontenida la aplicación para convertir las APIs Windows en portables."
+          },
+          {
+            "id": "C",
+            "text": "Cambiar de Visual Studio a otro IDE para que las llamadas se adapten a Linux."
+          },
+          {
+            "id": "D",
+            "text": "Seleccionar un RID Linux para sustituir automáticamente las APIs incompatibles."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": ".NET moderno permite ejecutar en sistemas compatibles, pero no abstrae cualquier API o dependencia específica del sistema operativo. Deben revisarse y, cuando proceda, sustituirse o aislarse las llamadas no compatibles. Un RID elige un destino y una publicación autocontenida incorpora el runtime; ninguna de esas opciones convierte por sí sola una API exclusiva de Windows en una API para Linux.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "Incluir el runtime no reescribe APIs o bibliotecas que dependan de Windows; la compatibilidad del código debe revisarse.",
+            "C": "El IDE no cambia el contrato de las APIs ni aporta una traducción automática de llamadas del sistema operativo.",
+            "D": "El identificador de runtime orienta la publicación al destino; no es una capa de compatibilidad que sustituya APIs no soportadas."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 9; índice nativo 4274",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 9; índice nativo 4276",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Microsoft Learn: Platform compatibility analyzer",
+              "url": "https://learn.microsoft.com/en-us/dotnet/standard/analyzers/platform-compat-analyzer",
+              "locator": "Introducción; SupportedOSPlatform/UnsupportedOSPlatform; diagnósticos por llamadas a APIs específicas y alternativas",
+              "version": "Página pública leída el 29-10-2026. La plataforma no abstrae todo el SO; un RID o publicación autocontenida no transforma APIs exclusivas en portables",
+              "checked_at": "2026-10-29"
+            },
+            {
+              "title": "Microsoft Learn: .NET application publishing overview",
+              "url": "https://learn.microsoft.com/en-us/dotnet/core/deploying/",
+              "locator": "Publishing modes: self-contained y framework-dependent; Publishing basics y runtime identifier",
+              "version": "Página pública leída el 29-10-2026. Necesidades del destino según modo y plataforma; SDK de desarrollo distinto de runtime y dependencias de ejecución",
+              "checked_at": "2026-10-29"
+            },
+            {
+              "title": "Microsoft Learn: .NET vs .NET Framework for server apps",
+              "url": "https://learn.microsoft.com/en-us/dotnet/standard/choosing-core-framework-server",
+              "locator": "Introducción; Choose .NET; Choose .NET Framework: evolución, multiplataforma y compatibilidad heredada",
+              "version": "Página pública leída el 29-10-2026; identifica .NET 10 como versión actual en su cuerpo. No se interpreta como fin de soporte de todo .NET Framework",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-060"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 9; índice nativo 4274",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar portabilidad condicionada de .NET y clave A; caso de API específica que distingue runtime multiplataforma, RID, publicación e IDE."
+      ],
+      "references": [
+        {
+          "title": "Microsoft Learn: Platform compatibility analyzer",
+          "url": "https://learn.microsoft.com/en-us/dotnet/standard/analyzers/platform-compat-analyzer",
+          "locator": "Introducción; SupportedOSPlatform/UnsupportedOSPlatform; diagnósticos por llamadas a APIs específicas y alternativas",
+          "version": "Página pública leída el 29-10-2026. La plataforma no abstrae todo el SO; un RID o publicación autocontenida no transforma APIs exclusivas en portables",
+          "checked_at": "2026-10-29"
+        },
+        {
+          "title": "Microsoft Learn: .NET application publishing overview",
+          "url": "https://learn.microsoft.com/en-us/dotnet/core/deploying/",
+          "locator": "Publishing modes: self-contained y framework-dependent; Publishing basics y runtime identifier",
+          "version": "Página pública leída el 29-10-2026. Necesidades del destino según modo y plataforma; SDK de desarrollo distinto de runtime y dependencias de ejecución",
+          "checked_at": "2026-10-29"
+        },
+        {
+          "title": "Microsoft Learn: .NET vs .NET Framework for server apps",
+          "url": "https://learn.microsoft.com/en-us/dotnet/standard/choosing-core-framework-server",
+          "locator": "Introducción; Choose .NET; Choose .NET Framework: evolución, multiplataforma y compatibilidad heredada",
+          "version": "Página pública leída el 29-10-2026; identifica .NET 10 como versión actual en su cuerpo. No se interpreta como fin de soporte de todo .NET Framework",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P15-010",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "419555f4aabf5e609051a39d2a58eabeae44164dbbe4d9ea6b1810c197fe7713",
+      "content_sha256": "be841ede857161823d113a23a5ea7dff6eac077ac9bfe3844c1ae5ccb4458910",
+      "before": {
+        "id": "MAN-GSI-P15-010",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Cuál es la función principal de NuGet?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Gestionar paquetes y dependencias del ecosistema .NET."
+          },
+          {
+            "id": "B",
+            "text": "Servir peticiones HTTP."
+          },
+          {
+            "id": "C",
+            "text": "Administrar usuarios de ASP.NET Core."
+          },
+          {
+            "id": "D",
+            "text": "Compilar IL a código máquina durante la ejecución."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Gestionar paquetes y dependencias del ecosistema .NET. NuGet es el gestor de paquetes; no debe confundirse con MSBuild, CLR o ASP.NET Core.",
+          "incorrect": "Según el solucionario: Gestionar paquetes y dependencias del ecosistema .NET. NuGet es el gestor de paquetes; no debe confundirse con MSBuild, CLR o ASP.NET Core."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 10; índice nativo 4440",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 10; índice nativo 4627",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 10; índice nativo 4440",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P15-010",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Cuál es la función principal de NuGet?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Gestionar paquetes y dependencias para compartir y consumir código .NET."
+          },
+          {
+            "id": "B",
+            "text": "Ejecutar código administrado y ofrecer tipos, excepciones y gestión de memoria."
+          },
+          {
+            "id": "C",
+            "text": "Construir artefactos mediante proyectos, objetivos y tareas de compilación."
+          },
+          {
+            "id": "D",
+            "text": "Atender conexiones HTTP y ejecutar la canalización del servidor web."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "NuGet define el formato y las herramientas para crear, publicar, alojar y consumir paquetes del ecosistema .NET. Permite utilizar orígenes públicos o privados y gestionar dependencias y versiones. Un paquete puede contener bibliotecas y otros recursos; compartirlo no lo convierte en el runtime, el motor de construcción o el servidor HTTP que lo utilizará.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "Los servicios de ejecución administrada son responsabilidad del runtime, no del mecanismo de paquetes.",
+            "C": "La construcción mediante proyectos y objetivos corresponde a un motor como MSBuild; NuGet puede integrarse en el proceso sin sustituirlo.",
+            "D": "Atender HTTP y su canalización corresponde al servidor/framework web; distribuir un paquete que contenga esos componentes no es servir las peticiones."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 10; índice nativo 4440",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 10; índice nativo 4627",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Microsoft Learn: An introduction to NuGet",
+              "url": "https://learn.microsoft.com/en-us/nuget/what-is-nuget",
+              "locator": "Introducción y The flow of packages between creators, hosts, and consumers",
+              "version": "Página pública leída el 29-10-2026. Formato/herramientas de paquetes públicos o privados; no runtime, motor de construcción o servidor web",
+              "checked_at": "2026-10-29"
+            },
+            {
+              "title": "Microsoft Learn: Common Language Runtime overview",
+              "url": "https://learn.microsoft.com/en-us/dotnet/standard/clr",
+              "locator": "Introducción; metadatos, carga, tipos, excepciones y memoria administrada",
+              "version": "Página pública leída el 29-10-2026. Visión conceptual del CLR, complementada con Native AOT y recursos no administrados para no generalizar JIT o liberación automática de todo recurso",
+              "checked_at": "2026-10-29"
+            },
+            {
+              "title": "Microsoft Learn: MSBuild",
+              "url": "https://learn.microsoft.com/en-us/visualstudio/msbuild/msbuild?view=visualstudio",
+              "locator": "Introducción; Tasks; Targets; dotnet build como interfaz sobre MSBuild",
+              "version": "Página pública leída el 29-10-2026. Motor de construcción mediante proyectos, propiedades, elementos, tareas y objetivos; no exige Visual Studio",
+              "checked_at": "2026-10-29"
+            },
+            {
+              "title": "Microsoft Learn: APIs overview, ASP.NET Core 10",
+              "url": "https://learn.microsoft.com/en-us/aspnet/core/fundamentals/apis?view=aspnetcore-10.0",
+              "locator": "Introducción; Minimal APIs y Controller-based APIs como vías de construir APIs HTTP",
+              "version": "Vista aspnetcore-10.0 leída el 29-10-2026. Ambas vías son válidas; no se enseña una obligación universal de Minimal APIs",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-060"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 10; índice nativo 4440",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar gestión de paquetes y clave A; distractores de capas vecinas con forma comparable y distinción entre repositorio, paquete y ejecución."
+      ],
+      "references": [
+        {
+          "title": "Microsoft Learn: An introduction to NuGet",
+          "url": "https://learn.microsoft.com/en-us/nuget/what-is-nuget",
+          "locator": "Introducción y The flow of packages between creators, hosts, and consumers",
+          "version": "Página pública leída el 29-10-2026. Formato/herramientas de paquetes públicos o privados; no runtime, motor de construcción o servidor web",
+          "checked_at": "2026-10-29"
+        },
+        {
+          "title": "Microsoft Learn: Common Language Runtime overview",
+          "url": "https://learn.microsoft.com/en-us/dotnet/standard/clr",
+          "locator": "Introducción; metadatos, carga, tipos, excepciones y memoria administrada",
+          "version": "Página pública leída el 29-10-2026. Visión conceptual del CLR, complementada con Native AOT y recursos no administrados para no generalizar JIT o liberación automática de todo recurso",
+          "checked_at": "2026-10-29"
+        },
+        {
+          "title": "Microsoft Learn: MSBuild",
+          "url": "https://learn.microsoft.com/en-us/visualstudio/msbuild/msbuild?view=visualstudio",
+          "locator": "Introducción; Tasks; Targets; dotnet build como interfaz sobre MSBuild",
+          "version": "Página pública leída el 29-10-2026. Motor de construcción mediante proyectos, propiedades, elementos, tareas y objetivos; no exige Visual Studio",
+          "checked_at": "2026-10-29"
+        },
+        {
+          "title": "Microsoft Learn: APIs overview, ASP.NET Core 10",
+          "url": "https://learn.microsoft.com/en-us/aspnet/core/fundamentals/apis?view=aspnetcore-10.0",
+          "locator": "Introducción; Minimal APIs y Controller-based APIs como vías de construir APIs HTTP",
+          "version": "Vista aspnetcore-10.0 leída el 29-10-2026. Ambas vías son válidas; no se enseña una obligación universal de Minimal APIs",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P15-011",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "423eb51a473b79dd43cce373342c5155f02ee04cc29dedd88d8a641600d415e4",
+      "content_sha256": "053bfe5d2a22e5b0959fe25a55234c50a42dab7bda43222aee2c3a31798b0f32",
+      "before": {
+        "id": "MAN-GSI-P15-011",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Cuál es la función principal de MSBuild?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Gestionar la autenticación y autorización de los usuarios, emitir sus tokens y decidir a qué recursos puede acceder cada identidad."
+          },
+          {
+            "id": "B",
+            "text": "Alojar directamente aplicaciones web en producción, aceptar las conexiones HTTP y mantener sus procesos disponibles como servidor."
+          },
+          {
+            "id": "C",
+            "text": "Ser el ORM oficial de .NET y traducir las consultas de objetos a SQL sin utilizar proyectos, objetivos ni tareas de compilación."
+          },
+          {
+            "id": "D",
+            "text": "Orquestar el proceso de compilación a partir de proyectos y objetivos de build."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Orquestar el proceso de compilación a partir de proyectos y objetivos de build. MSBuild es el motor de construcción utilizado por los proyectos .NET.",
+          "incorrect": "Según el solucionario: Orquestar el proceso de compilación a partir de proyectos y objetivos de build. MSBuild es el motor de construcción utilizado por los proyectos .NET."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 11; índice nativo 4588",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 11; índice nativo 4901",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 11; índice nativo 4588",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P15-011",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Cuál es la función principal de MSBuild?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Resolver y distribuir paquetes para añadir bibliotecas y dependencias."
+          },
+          {
+            "id": "B",
+            "text": "Ejecutar la aplicación y proporcionar tipos, excepciones y memoria administrada."
+          },
+          {
+            "id": "C",
+            "text": "Atender conexiones HTTP y enrutar las peticiones entre componentes web."
+          },
+          {
+            "id": "D",
+            "text": "Orquestar la construcción mediante proyectos, objetivos y tareas."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "MSBuild es el motor de construcción que procesa proyectos, sus propiedades y elementos y ejecuta objetivos compuestos por tareas. dotnet build lo utiliza para los proyectos .NET pertinentes; Visual Studio también lo integra, pero no es requisito tener el IDE. Una tarea puede invocar un compilador u otra herramienta: MSBuild no es por sí mismo el runtime, un ORM o un servidor web.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Resolver y distribuir paquetes describe el papel de NuGet; la restauración puede integrarse con el build sin identificar ambas herramientas.",
+            "B": "Tipos, excepciones y memoria durante la ejecución son servicios del runtime; el motor de construcción prepara artefactos.",
+            "C": "Las conexiones y el enrutamiento web corresponden al alojamiento/framework, no al propósito de los objetivos de MSBuild."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 11; índice nativo 4588",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 11; índice nativo 4901",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Microsoft Learn: MSBuild",
+              "url": "https://learn.microsoft.com/en-us/visualstudio/msbuild/msbuild?view=visualstudio",
+              "locator": "Introducción; Tasks; Targets; dotnet build como interfaz sobre MSBuild",
+              "version": "Página pública leída el 29-10-2026. Motor de construcción mediante proyectos, propiedades, elementos, tareas y objetivos; no exige Visual Studio",
+              "checked_at": "2026-10-29"
+            },
+            {
+              "title": "Microsoft Learn: An introduction to NuGet",
+              "url": "https://learn.microsoft.com/en-us/nuget/what-is-nuget",
+              "locator": "Introducción y The flow of packages between creators, hosts, and consumers",
+              "version": "Página pública leída el 29-10-2026. Formato/herramientas de paquetes públicos o privados; no runtime, motor de construcción o servidor web",
+              "checked_at": "2026-10-29"
+            },
+            {
+              "title": "Microsoft Learn: Common Language Runtime overview",
+              "url": "https://learn.microsoft.com/en-us/dotnet/standard/clr",
+              "locator": "Introducción; metadatos, carga, tipos, excepciones y memoria administrada",
+              "version": "Página pública leída el 29-10-2026. Visión conceptual del CLR, complementada con Native AOT y recursos no administrados para no generalizar JIT o liberación automática de todo recurso",
+              "checked_at": "2026-10-29"
+            },
+            {
+              "title": "Microsoft Learn: APIs overview, ASP.NET Core 10",
+              "url": "https://learn.microsoft.com/en-us/aspnet/core/fundamentals/apis?view=aspnetcore-10.0",
+              "locator": "Introducción; Minimal APIs y Controller-based APIs como vías de construir APIs HTTP",
+              "version": "Vista aspnetcore-10.0 leída el 29-10-2026. Ambas vías son válidas; no se enseña una obligación universal de Minimal APIs",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-060"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 11; índice nativo 4588",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar motor de construcción y clave D; tres responsabilidades reales del ecosistema frente a distractores extremos y precisión tareas/compilador."
+      ],
+      "references": [
+        {
+          "title": "Microsoft Learn: MSBuild",
+          "url": "https://learn.microsoft.com/en-us/visualstudio/msbuild/msbuild?view=visualstudio",
+          "locator": "Introducción; Tasks; Targets; dotnet build como interfaz sobre MSBuild",
+          "version": "Página pública leída el 29-10-2026. Motor de construcción mediante proyectos, propiedades, elementos, tareas y objetivos; no exige Visual Studio",
+          "checked_at": "2026-10-29"
+        },
+        {
+          "title": "Microsoft Learn: An introduction to NuGet",
+          "url": "https://learn.microsoft.com/en-us/nuget/what-is-nuget",
+          "locator": "Introducción y The flow of packages between creators, hosts, and consumers",
+          "version": "Página pública leída el 29-10-2026. Formato/herramientas de paquetes públicos o privados; no runtime, motor de construcción o servidor web",
+          "checked_at": "2026-10-29"
+        },
+        {
+          "title": "Microsoft Learn: Common Language Runtime overview",
+          "url": "https://learn.microsoft.com/en-us/dotnet/standard/clr",
+          "locator": "Introducción; metadatos, carga, tipos, excepciones y memoria administrada",
+          "version": "Página pública leída el 29-10-2026. Visión conceptual del CLR, complementada con Native AOT y recursos no administrados para no generalizar JIT o liberación automática de todo recurso",
+          "checked_at": "2026-10-29"
+        },
+        {
+          "title": "Microsoft Learn: APIs overview, ASP.NET Core 10",
+          "url": "https://learn.microsoft.com/en-us/aspnet/core/fundamentals/apis?view=aspnetcore-10.0",
+          "locator": "Introducción; Minimal APIs y Controller-based APIs como vías de construir APIs HTTP",
+          "version": "Vista aspnetcore-10.0 leída el 29-10-2026. Ambas vías son válidas; no se enseña una obligación universal de Minimal APIs",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    }
+  ]
+}

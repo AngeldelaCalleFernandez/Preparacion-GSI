@@ -1,6 +1,7 @@
 import { describeQuestionSource } from "./data-service.js?gsi2";
 import { describeOfficialQuestion, renderOfficialExamLibrary } from "./official-exams.js?gsi2";
 import { feedbackFor } from "./question-feedback.js";
+import { appendProvisionalReviewNotice } from "./question-review-status.js";
 import {
   EXAM_MODES,
   calculateExamResults,
@@ -233,6 +234,7 @@ export function initExam(data) {
     const card = createElement("article", "exam-question-card");
     if (describeOfficialQuestion(question)) card.append(createElement("p", "form-help", describeOfficialQuestion(question)));
     card.append(createElement("p", "question-statement", question.statement));
+    appendProvisionalReviewNotice(card, question);
     const options = createElement("div", "question-options");
     options.setAttribute("role", "group");
     options.setAttribute("aria-label", "Opciones de respuesta");
@@ -419,6 +421,7 @@ export function initExam(data) {
     for (const item of result.review) {
       const card = createElement("article", "exam-review-card");
       card.append(createElement("h4", "", item.question.statement));
+      appendProvisionalReviewNotice(card, item.question);
       card.append(createElement("p", "", `Tu respuesta: ${selectedText(item.question, item.selectedOption)}`));
       card.append(createElement("p", "", `Respuesta correcta: ${selectedText(item.question, item.question.correct_option)}`));
       card.append(createElement("p", "", item.question.feedback?.correct || "Sin feedback disponible."));

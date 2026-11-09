@@ -1,0 +1,3820 @@
+{
+  "version": 1,
+  "id": "GSI-EDITORIAL-062",
+  "prepared_at": "2026-10-30",
+  "baseline_commit": "e3e20ab879518c899806a70575eead28b3b35e6f",
+  "items": [
+    {
+      "id": "MAN-GSI-P15-033",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "da0f6f73e1f13ddc4d3efefc1b8d5607cfb44517d1404c30c55ebd669be0e5c7",
+      "content_sha256": "96be7b1c03c07ad21d4aa6118e51e95f079921edc8bac889e24c406e49f91c14",
+      "before": {
+        "id": "MAN-GSI-P15-033",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué diferencia básica hay entre tipos valor y tipos referencia?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Los tipos valor viven siempre en la pila y los tipos referencia siempre en el heap, con independencia del contexto donde se almacenen."
+          },
+          {
+            "id": "B",
+            "text": "Asignar un tipo valor comparte la misma instancia, mientras asignar una referencia copia automáticamente todo el objeto apuntado."
+          },
+          {
+            "id": "C",
+            "text": "Los tipos valor contienen su valor directamente según su semántica; las variables de tipo referencia contienen una referencia a un objeto."
+          },
+          {
+            "id": "D",
+            "text": "Ambos tienen idéntica semántica de copia, nullabilidad y boxing; solo cambia la sintaxis utilizada para declararlos."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Los tipos valor contienen su valor directamente según su semántica; las variables de tipo referencia contienen una referencia a un objeto. La distinción influye en copia, nullabilidad, boxing y comportamiento de memoria.",
+          "incorrect": "Según el solucionario: Los tipos valor contienen su valor directamente según su semántica; las variables de tipo referencia contienen una referencia a un objeto. La distinción influye en copia, nullabilidad, boxing y comportamiento de memoria."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 33; índice nativo 8650",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 33; índice nativo 12170",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 33; índice nativo 8650",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P15-033",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué diferencia básica hay entre tipos valor y tipos referencia?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Los tipos valor viven siempre en la pila y los tipos referencia siempre en el heap, con independencia del contexto donde se almacenen."
+          },
+          {
+            "id": "B",
+            "text": "Asignar un tipo valor comparte la misma instancia, mientras asignar una referencia copia automáticamente todo el objeto apuntado."
+          },
+          {
+            "id": "C",
+            "text": "Los tipos valor contienen su valor directamente según su semántica; las variables de tipo referencia contienen una referencia a un objeto."
+          },
+          {
+            "id": "D",
+            "text": "Ambos tienen idéntica semántica de copia, nullabilidad y boxing; solo cambia la sintaxis utilizada para declararlos."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "La diferencia es semántica: una variable de tipo valor contiene el valor y una de referencia contiene una referencia al objeto. En una asignación ordinaria se copia el valor de la variable: el struct se copia, mientras dos referencias pueden apuntar al mismo objeto. Si el struct contiene campos de referencia, se copian esas referencias, no se clonan sus objetos. Esta distinción no fija pila frente a heap.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "El lugar de almacenamiento depende del contexto; un valor puede formar parte de un objeto o estar boxed. Pila frente a heap no define las categorías.",
+            "B": "Invierte las semánticas: asignar la referencia no clona el objeto y copiar un valor no comparte por sí mismo la misma instancia del struct.",
+            "D": "La categoría afecta a copia y conversiones, incluido boxing; no es solo una diferencia de sintaxis."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 33; índice nativo 8650",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 33; índice nativo 12170",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Microsoft: Value types",
+              "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/value-types",
+              "locator": "Introducción; copia en asignación; campos de referencia dentro de structs",
+              "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+              "checked_at": "2026-10-30"
+            },
+            {
+              "title": "Microsoft: Boxing and unboxing",
+              "url": "https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/types/boxing-and-unboxing",
+              "locator": "Introducción; Boxing; ejemplo de copia de int123 y cambio posterior a456",
+              "version": "Leída el 30-10-2026. Se separa semántica de copia de decisiones de almacenamiento y optimizaciones; el ejemplo de pila no define dónde vive siempre una variable.",
+              "checked_at": "2026-10-30"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-062"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 33; índice nativo 8650",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-30"
+      },
+      "reasons": [
+        "Conservar íntegra formulación y clave C; matizar copia superficial de campos de referencia y evitar el mito de la pila."
+      ],
+      "references": [
+        {
+          "title": "Microsoft: Value types",
+          "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/value-types",
+          "locator": "Introducción; copia en asignación; campos de referencia dentro de structs",
+          "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+          "checked_at": "2026-10-30"
+        },
+        {
+          "title": "Microsoft: Boxing and unboxing",
+          "url": "https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/types/boxing-and-unboxing",
+          "locator": "Introducción; Boxing; ejemplo de copia de int123 y cambio posterior a456",
+          "version": "Leída el 30-10-2026. Se separa semántica de copia de decisiones de almacenamiento y optimizaciones; el ejemplo de pila no define dónde vive siempre una variable.",
+          "checked_at": "2026-10-30"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P15-034",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "4a40d47d8c3cad302b223d88009a05fba446c61f62ee629aa1b15f954d71ff31",
+      "content_sha256": "7df0b1f070253379f1928eb8690f05d7213160b98574a94f186364c657ece0f3",
+      "before": {
+        "id": "MAN-GSI-P15-034",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué es boxing?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Extraer un tipo valor desde `object` mediante una conversión explícita y compatible."
+          },
+          {
+            "id": "B",
+            "text": "Ampliar implícitamente un tipo numérico a otro sin crear un objeto envoltorio."
+          },
+          {
+            "id": "C",
+            "text": "Convertir un tipo valor para tratarlo como `object` o una interfaz compatible, normalmente implicando una envoltura/objeto."
+          },
+          {
+            "id": "D",
+            "text": "Usar un parámetro genérico para operar con tipos valor sin convertirlos necesariamente a `object`."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Convertir un tipo valor para tratarlo como `object` o una interfaz compatible, normalmente implicando una envoltura/objeto. Boxing y unboxing son operaciones del sistema de tipos, no de despliegue.",
+          "incorrect": "Según el solucionario: Convertir un tipo valor para tratarlo como `object` o una interfaz compatible, normalmente implicando una envoltura/objeto. Boxing y unboxing son operaciones del sistema de tipos, no de despliegue."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 34; índice nativo 8879",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 34; índice nativo 12577",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 34; índice nativo 8879",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-23"
+      },
+      "after": {
+        "id": "MAN-GSI-P15-034",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué es boxing?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Extraer un tipo valor desde `object` mediante una conversión explícita y compatible."
+          },
+          {
+            "id": "B",
+            "text": "Ampliar implícitamente un tipo numérico a otro sin crear un objeto envoltorio."
+          },
+          {
+            "id": "C",
+            "text": "Convertir un tipo valor para tratarlo como `object` o una interfaz compatible, normalmente implicando una envoltura/objeto."
+          },
+          {
+            "id": "D",
+            "text": "Usar un parámetro genérico para operar con tipos valor sin convertirlos necesariamente a `object`."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Boxing convierte un valor para tratarlo como object o una interfaz implementada. En el caso ordinario de un int, se crea un objeto que contiene una copia del valor; modificar después la variable original no cambia esa copia. No es una conversión numérica ni unboxing. Usar genéricos no implica convertir cada valor a object y puede evitar esas conversiones.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Extraer el valor compatible de un objeto boxed es unboxing, la operación inversa a la preguntada.",
+            "B": "Una conversión numérica cambia la representación o el tipo numérico; no equivale a envolver un valor como objeto.",
+            "D": "Operar mediante un parámetro de tipo es programación genérica y puede evitar boxing; no define la conversión a object."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 34; índice nativo 8879",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 34; índice nativo 12577",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Microsoft: Boxing and unboxing",
+              "url": "https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/types/boxing-and-unboxing",
+              "locator": "Introducción; Boxing; ejemplo de copia de int123 y cambio posterior a456",
+              "version": "Leída el 30-10-2026. Se separa semántica de copia de decisiones de almacenamiento y optimizaciones; el ejemplo de pila no define dónde vive siempre una variable.",
+              "checked_at": "2026-10-30"
+            },
+            {
+              "title": "Microsoft: Generic types and methods",
+              "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/generics",
+              "locator": "Introducción; Generic collections: parámetros de tipo y error de agregar int a List<string>",
+              "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+              "checked_at": "2026-10-30"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-062"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 34; índice nativo 8879",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-30"
+      },
+      "reasons": [
+        "Conservar enunciado, alternativas y clave C; explicar copia y distinguir unboxing, conversión numérica y genéricos."
+      ],
+      "references": [
+        {
+          "title": "Microsoft: Boxing and unboxing",
+          "url": "https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/types/boxing-and-unboxing",
+          "locator": "Introducción; Boxing; ejemplo de copia de int123 y cambio posterior a456",
+          "version": "Leída el 30-10-2026. Se separa semántica de copia de decisiones de almacenamiento y optimizaciones; el ejemplo de pila no define dónde vive siempre una variable.",
+          "checked_at": "2026-10-30"
+        },
+        {
+          "title": "Microsoft: Generic types and methods",
+          "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/generics",
+          "locator": "Introducción; Generic collections: parámetros de tipo y error de agregar int a List<string>",
+          "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+          "checked_at": "2026-10-30"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P15-035",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "7ca5bae4da1ec18e0489d03411f5e9f069c7a1e770d25d56c9184d6903fee0cd",
+      "content_sha256": "94a9b71b7a44bea07a66efb01a47dbdb53923d47b8a522bfe742b850927fafcf",
+      "before": {
+        "id": "MAN-GSI-P15-035",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué aporta el CLR respecto al manejo de excepciones?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Un modelo estructurado y común de excepciones para código administrado."
+          },
+          {
+            "id": "B",
+            "text": "La garantía de que nunca se produce una excepción."
+          },
+          {
+            "id": "C",
+            "text": "La conversión automática de cualquier error en código HTTP 200."
+          },
+          {
+            "id": "D",
+            "text": "El reemplazo de todas las validaciones de entrada."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Un modelo estructurado y común de excepciones para código administrado. El runtime ofrece infraestructura de excepciones, pero la aplicación sigue necesitando diseño y manejo adecuados.",
+          "incorrect": "Según el solucionario: Un modelo estructurado y común de excepciones para código administrado. El runtime ofrece infraestructura de excepciones, pero la aplicación sigue necesitando diseño y manejo adecuados."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 35; índice nativo 9085",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 35; índice nativo 12855",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 35; índice nativo 9085",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P15-035",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué aporta el CLR respecto al manejo de excepciones?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Un modelo común de propagación y tratamiento de excepciones en código administrado."
+          },
+          {
+            "id": "B",
+            "text": "Un mecanismo que reintenta una operación fallida antes de entregarla al manejador."
+          },
+          {
+            "id": "C",
+            "text": "Un sistema que revierte los cambios anteriores al detectar una excepción en ejecución."
+          },
+          {
+            "id": "D",
+            "text": "Un análisis que valida las entradas externas antes de que las procese la aplicación."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "El runtime proporciona un modelo estructurado de excepciones, basado en objetos derivados de System.Exception, que distintos lenguajes .NET pueden utilizar con su propia sintaxis. La aplicación debe decidir qué errores maneja y cómo se recupera. Notificar una excepción no garantiza reintento, rollback o validez de entradas.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "Reintentar requiere una política de recuperación y valorar sus efectos; no es la garantía general del modelo de excepciones.",
+            "C": "Propagar una excepción no revierte automáticamente operaciones o efectos externos ya realizados; hacen falta contratos específicos.",
+            "D": "Validar datos externos es responsabilidad de la aplicación; la infraestructura de excepciones no la sustituye."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 35; índice nativo 9085",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 35; índice nativo 12855",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Microsoft: Handling and throwing exceptions",
+              "url": "https://learn.microsoft.com/en-us/dotnet/standard/exceptions/",
+              "locator": "Introducción; Exceptions; Exceptions vs traditional error-handling methods: System.Exception y modelo común",
+              "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+              "checked_at": "2026-10-30"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-062"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 35; índice nativo 9085",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-30"
+      },
+      "reasons": [
+        "Conservar modelo común de excepciones y clave A; comparar responsabilidades próximas de detección y recuperación."
+      ],
+      "references": [
+        {
+          "title": "Microsoft: Handling and throwing exceptions",
+          "url": "https://learn.microsoft.com/en-us/dotnet/standard/exceptions/",
+          "locator": "Introducción; Exceptions; Exceptions vs traditional error-handling methods: System.Exception y modelo común",
+          "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+          "checked_at": "2026-10-30"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P15-036",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "eb19bce0c2212931018579dfbd4a8126e9248fad96d80c80d25db367fe56e81d",
+      "content_sha256": "d9c6399ea7910e5908b8c916d7300cf190101a93d3cb064d359f51d67dfee64f",
+      "before": {
+        "id": "MAN-GSI-P15-036",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué es un delegado en C#/.NET?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Un evento que controla desde fuera qué suscriptores pueden invocar directamente la operación publicada por otro objeto."
+          },
+          {
+            "id": "B",
+            "text": "Un tipo seguro que representa referencias a métodos con una firma compatible."
+          },
+          {
+            "id": "C",
+            "text": "Una interfaz que obliga a todas las clases implementadoras a proporcionar exactamente el mismo cuerpo para un método."
+          },
+          {
+            "id": "D",
+            "text": "Un árbol de expresión que representa operaciones como datos para inspeccionarlas o traducirlas, sin ser la referencia invocable en sí."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Un tipo seguro que representa referencias a métodos con una firma compatible. Los delegados sustentan callbacks, eventos y muchos patrones funcionales.",
+          "incorrect": "Según el solucionario: Un tipo seguro que representa referencias a métodos con una firma compatible. Los delegados sustentan callbacks, eventos y muchos patrones funcionales."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 36; índice nativo 9279",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 36; índice nativo 13213",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 36; índice nativo 9279",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P15-036",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué es un delegado en C#/.NET?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Un miembro de notificación que permite suscripción y cuya emisión controla el publicador."
+          },
+          {
+            "id": "B",
+            "text": "Un tipo seguro que representa referencias invocables a métodos de firma compatible."
+          },
+          {
+            "id": "C",
+            "text": "Un contrato de miembros que las clases o estructuras implementan para ofrecer operaciones."
+          },
+          {
+            "id": "D",
+            "text": "Una estructura que representa operaciones como datos para inspeccionarlas o traducirlas."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Un delegado es un tipo que permite referirse a métodos e invocarlos con parámetros y retorno compatibles; no exige identidad textual de firmas en todos los casos, pues existen reglas de compatibilidad y varianza. Puede usarse para callbacks y como base de eventos. Un árbol de expresión representa código como datos y puede transformarse en ejecución, pero no es el mismo contrato de referencia invocable.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "La notificación con suscripción y emisión controlada corresponde a un evento, que utiliza un tipo delegado sin ser sinónimo de él.",
+            "C": "Un contrato de miembros describe una interfaz. Un delegado representa una operación invocable con firma compatible.",
+            "D": "La representación de operaciones como nodos corresponde a un árbol de expresión; no es por sí misma una instancia de delegado."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 36; índice nativo 9279",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 36; índice nativo 13213",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Microsoft: Delegates",
+              "url": "https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/delegates/",
+              "locator": "Introducción; firma y retorno compatibles; callbacks; Explore delegate characteristics",
+              "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+              "checked_at": "2026-10-30"
+            },
+            {
+              "title": "Microsoft: Events",
+              "url": "https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/events/",
+              "locator": "Introducción; Events overview: publisher/subscribers y papel de los delegados",
+              "version": "Leída el 30-10-2026. Se usa la separación evento/delegado, no referencias históricas a mecanismos asíncronos de invocación ni una obligación de usar EventHandler en todo evento.",
+              "checked_at": "2026-10-30"
+            },
+            {
+              "title": "Microsoft: Expression trees",
+              "url": "https://learn.microsoft.com/en-us/dotnet/csharp/advanced-topics/expression-trees/",
+              "locator": "Introducción: operaciones como datos; inspección, traducción y relación con proveedores LINQ",
+              "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+              "checked_at": "2026-10-30"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-062"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 36; índice nativo 9279",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-30"
+      },
+      "reasons": [
+        "Conservar delegado y clave B; comparar evento, interfaz y árbol de expresión con definiciones plausibles."
+      ],
+      "references": [
+        {
+          "title": "Microsoft: Delegates",
+          "url": "https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/delegates/",
+          "locator": "Introducción; firma y retorno compatibles; callbacks; Explore delegate characteristics",
+          "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+          "checked_at": "2026-10-30"
+        },
+        {
+          "title": "Microsoft: Events",
+          "url": "https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/events/",
+          "locator": "Introducción; Events overview: publisher/subscribers y papel de los delegados",
+          "version": "Leída el 30-10-2026. Se usa la separación evento/delegado, no referencias históricas a mecanismos asíncronos de invocación ni una obligación de usar EventHandler en todo evento.",
+          "checked_at": "2026-10-30"
+        },
+        {
+          "title": "Microsoft: Expression trees",
+          "url": "https://learn.microsoft.com/en-us/dotnet/csharp/advanced-topics/expression-trees/",
+          "locator": "Introducción: operaciones como datos; inspección, traducción y relación con proveedores LINQ",
+          "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+          "checked_at": "2026-10-30"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P15-037",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "a3f2494946c81548a454550f6d9080ddf95e7124253701e6bf4cabcc79741ad3",
+      "content_sha256": "fce10b978ad015aaf7ef2fc235c9c2faed67256111d81db2565d429adc314707",
+      "before": {
+        "id": "MAN-GSI-P15-037",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué ventaja aportan los genéricos?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Permiten reutilización con seguridad de tipos evitando muchas conversiones y casts en tiempo de ejecución."
+          },
+          {
+            "id": "B",
+            "text": "Obligan a convertir cada valor a `object` y recuperar después su tipo mediante casts comprobados solo en ejecución."
+          },
+          {
+            "id": "C",
+            "text": "Exigen copiar manualmente el mismo código fuente para cada tipo, ya que el compilador no acepta parámetros de tipo."
+          },
+          {
+            "id": "D",
+            "text": "Eliminan toda información de tipo y no permiten restricciones sobre constructores, interfaces o clases base admitidas."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Permiten reutilización con seguridad de tipos evitando muchas conversiones y casts en tiempo de ejecución. Los genéricos permiten código parametrizado por tipo con comprobaciones del compilador/runtime.",
+          "incorrect": "Según el solucionario: Permiten reutilización con seguridad de tipos evitando muchas conversiones y casts en tiempo de ejecución. Los genéricos permiten código parametrizado por tipo con comprobaciones del compilador/runtime."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 37; índice nativo 9439",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 37; índice nativo 13470",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 37; índice nativo 9439",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P15-037",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué ventaja aportan los genéricos?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Reutilizar código con parámetros de tipo y evitar muchas conversiones comprobadas al ejecutar."
+          },
+          {
+            "id": "B",
+            "text": "Reutilizar mediante object y recuperar el tipo con conversiones al consumir cada resultado."
+          },
+          {
+            "id": "C",
+            "text": "Resolver los tipos y miembros mediante enlace dinámico pospuesto hasta ejecutar cada llamada."
+          },
+          {
+            "id": "D",
+            "text": "Crear una sobrecarga distinta por tipo y mantener por separado cada implementación repetida."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Los genéricos parametrizan tipos o métodos manteniendo información y comprobaciones de tipos. Evitan numerosas conversiones desde object y permiten reutilización sin duplicar cada implementación. No eliminan toda conversión o boxing en cualquier uso ni todas las excepciones posibles: la ventaja depende del contrato y de cómo se emplea.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "Una API basada en object puede reutilizar código, pero obliga a recuperar tipos mediante conversiones y pierde parte de las comprobaciones estáticas buscadas.",
+            "C": "Posponer resolución de miembros describe enlace dinámico; los genéricos conservan contratos de tipos en vez de sustituirlos por esa estrategia.",
+            "D": "Duplicar sobrecargas por tipo puede resolver casos concretos, pero no es la reutilización mediante parámetros de tipo que aportan los genéricos."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 37; índice nativo 9439",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 37; índice nativo 13470",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Microsoft: Generic types and methods",
+              "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/generics",
+              "locator": "Introducción; Generic collections: parámetros de tipo y error de agregar int a List<string>",
+              "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+              "checked_at": "2026-10-30"
+            },
+            {
+              "title": "Microsoft: Boxing and unboxing",
+              "url": "https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/types/boxing-and-unboxing",
+              "locator": "Introducción; Boxing; ejemplo de copia de int123 y cambio posterior a456",
+              "version": "Leída el 30-10-2026. Se separa semántica de copia de decisiones de almacenamiento y optimizaciones; el ejemplo de pila no define dónde vive siempre una variable.",
+              "checked_at": "2026-10-30"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-062"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 37; índice nativo 9439",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-30"
+      },
+      "reasons": [
+        "Conservar reutilización tipada y clave A; alternativas cercanas a object, dynamic y duplicación de sobrecargas."
+      ],
+      "references": [
+        {
+          "title": "Microsoft: Generic types and methods",
+          "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/generics",
+          "locator": "Introducción; Generic collections: parámetros de tipo y error de agregar int a List<string>",
+          "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+          "checked_at": "2026-10-30"
+        },
+        {
+          "title": "Microsoft: Boxing and unboxing",
+          "url": "https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/types/boxing-and-unboxing",
+          "locator": "Introducción; Boxing; ejemplo de copia de int123 y cambio posterior a456",
+          "version": "Leída el 30-10-2026. Se separa semántica de copia de decisiones de almacenamiento y optimizaciones; el ejemplo de pila no define dónde vive siempre una variable.",
+          "checked_at": "2026-10-30"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P15-038",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "33c577745806c952350980466d131c7bbc8f6481508691c226f45a7e5af7e8bd",
+      "content_sha256": "b5c2e01419b9924b07585ec9faa361149e2b1a7d4d6fec4f580c8cb35c58f23c",
+      "before": {
+        "id": "MAN-GSI-P15-038",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué permite la reflexión?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Inspeccionar tipos, miembros y metadatos en tiempo de ejecución y, cuando procede, invocarlos dinámicamente."
+          },
+          {
+            "id": "B",
+            "text": "Desactivar el sistema de tipos."
+          },
+          {
+            "id": "C",
+            "text": "Evitar todos los metadatos."
+          },
+          {
+            "id": "D",
+            "text": "Transformar automáticamente una base de datos SQL en NoSQL."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Inspeccionar tipos, miembros y metadatos en tiempo de ejecución y, cuando procede, invocarlos dinámicamente. Reflection usa precisamente los metadatos del runtime; debe emplearse con criterio por coste y compatibilidad AOT.",
+          "incorrect": "Según el solucionario: Inspeccionar tipos, miembros y metadatos en tiempo de ejecución y, cuando procede, invocarlos dinámicamente. Reflection usa precisamente los metadatos del runtime; debe emplearse con criterio por coste y compatibilidad AOT."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 38; índice nativo 9650",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 38; índice nativo 13794",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 38; índice nativo 9650",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P15-038",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué permite la reflexión?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Inspeccionar tipos y miembros en ejecución y, cuando procede, invocarlos dinámicamente."
+          },
+          {
+            "id": "B",
+            "text": "Representar una expresión como nodos de datos para examinarla o traducirla a otra forma."
+          },
+          {
+            "id": "C",
+            "text": "Parametrizar una implementación por tipos y comprobar su contrato durante la compilación."
+          },
+          {
+            "id": "D",
+            "text": "Conservar una referencia tipada a un método para invocarlo con una firma compatible."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "System.Type y System.Reflection permiten examinar ensamblados, tipos, miembros y atributos y, donde es compatible, crear instancias o invocar miembros. La reflexión utiliza metadatos; no desactiva las reglas de tipos ni hace accesible cualquier operación. Recorte y Native AOT pueden limitar información o mecanismos disponibles, por lo que debe revisarse el modo de publicación.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "Un árbol de expresión modela código como datos. Eso no equivale a inspeccionar los metadatos de tipos y miembros cargados.",
+            "C": "Parametrizar por tipos corresponde a genéricos; no requiere por sí mismo inspección dinámica de metadatos.",
+            "D": "Una referencia invocable de firma compatible describe un delegado, distinto de descubrir e inspeccionar miembros mediante reflexión."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 38; índice nativo 9650",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 38; índice nativo 13794",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Microsoft: Reflection in .NET",
+              "url": "https://learn.microsoft.com/en-us/dotnet/fundamentals/reflection/overview",
+              "locator": "Introducción; System.Type y System.Reflection; inspección de tipos/miembros e invocación",
+              "version": "Ruta final tras redirección de reflection/reflection, leída el 30-10-2026. La compatibilidad con recorte y Native AOT se contrasta con la fuente específica.",
+              "checked_at": "2026-10-30"
+            },
+            {
+              "title": "Microsoft: Native AOT",
+              "url": "https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/",
+              "locator": "Introducción; IL a nativo al publicar; destino; ausencia de JIT al ejecutar; limitaciones",
+              "version": "Leída el 30-10-2026. Incluye servicios de runtime; no elimina GC ni garantiza compatibilidad de carga dinámica o reflexión.",
+              "checked_at": "2026-10-30"
+            },
+            {
+              "title": "Microsoft: Expression trees",
+              "url": "https://learn.microsoft.com/en-us/dotnet/csharp/advanced-topics/expression-trees/",
+              "locator": "Introducción: operaciones como datos; inspección, traducción y relación con proveedores LINQ",
+              "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+              "checked_at": "2026-10-30"
+            },
+            {
+              "title": "Microsoft: Generic types and methods",
+              "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/generics",
+              "locator": "Introducción; Generic collections: parámetros de tipo y error de agregar int a List<string>",
+              "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+              "checked_at": "2026-10-30"
+            },
+            {
+              "title": "Microsoft: Delegates",
+              "url": "https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/delegates/",
+              "locator": "Introducción; firma y retorno compatibles; callbacks; Explore delegate characteristics",
+              "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+              "checked_at": "2026-10-30"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-062"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 38; índice nativo 9650",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-30"
+      },
+      "reasons": [
+        "Conservar reflexión y clave A; diferenciar mecanismos próximos y revisar sus límites con AOT."
+      ],
+      "references": [
+        {
+          "title": "Microsoft: Reflection in .NET",
+          "url": "https://learn.microsoft.com/en-us/dotnet/fundamentals/reflection/overview",
+          "locator": "Introducción; System.Type y System.Reflection; inspección de tipos/miembros e invocación",
+          "version": "Ruta final tras redirección de reflection/reflection, leída el 30-10-2026. La compatibilidad con recorte y Native AOT se contrasta con la fuente específica.",
+          "checked_at": "2026-10-30"
+        },
+        {
+          "title": "Microsoft: Native AOT",
+          "url": "https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/",
+          "locator": "Introducción; IL a nativo al publicar; destino; ausencia de JIT al ejecutar; limitaciones",
+          "version": "Leída el 30-10-2026. Incluye servicios de runtime; no elimina GC ni garantiza compatibilidad de carga dinámica o reflexión.",
+          "checked_at": "2026-10-30"
+        },
+        {
+          "title": "Microsoft: Expression trees",
+          "url": "https://learn.microsoft.com/en-us/dotnet/csharp/advanced-topics/expression-trees/",
+          "locator": "Introducción: operaciones como datos; inspección, traducción y relación con proveedores LINQ",
+          "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+          "checked_at": "2026-10-30"
+        },
+        {
+          "title": "Microsoft: Generic types and methods",
+          "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/generics",
+          "locator": "Introducción; Generic collections: parámetros de tipo y error de agregar int a List<string>",
+          "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+          "checked_at": "2026-10-30"
+        },
+        {
+          "title": "Microsoft: Delegates",
+          "url": "https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/delegates/",
+          "locator": "Introducción; firma y retorno compatibles; callbacks; Explore delegate characteristics",
+          "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+          "checked_at": "2026-10-30"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P15-039",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "2044867047a3d26ddd0a6112a93b5ccf03b112506a7aaddb2f3246af885c67fa",
+      "content_sha256": "55874e8ed65bbef892ab02c8f75ad70ae6e0ff33527ece08d5f4502d248d57c7",
+      "before": {
+        "id": "MAN-GSI-P15-039",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Si una aplicación mantiene referencias a objetos que ya no necesita, ¿el GC garantiza que no exista consumo excesivo de memoria?",
+        "options": [
+          {
+            "id": "A",
+            "text": "No, porque .NET no tiene GC."
+          },
+          {
+            "id": "B",
+            "text": "No; mientras los objetos sigan alcanzables, el GC no puede considerarlos basura."
+          },
+          {
+            "id": "C",
+            "text": "Sí; el GC elimina cualquier objeto que lleve más de un minuto creado."
+          },
+          {
+            "id": "D",
+            "text": "Sí; el GC identifica la intención del programador."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "No; mientras los objetos sigan alcanzables, el GC no puede considerarlos basura. La memoria administrada puede sufrir fugas lógicas cuando se retienen referencias innecesarias.",
+          "incorrect": "Según el solucionario: No; mientras los objetos sigan alcanzables, el GC no puede considerarlos basura. La memoria administrada puede sufrir fugas lógicas cuando se retienen referencias innecesarias."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 39; índice nativo 9882",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 39; índice nativo 14116",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 39; índice nativo 9882",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P15-039",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Un diccionario estático alcanzable conserva referencias fuertes a objetos que el negocio ya no necesita. ¿Garantiza el GC que esa retención no produzca consumo excesivo?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Sí; el GC detecta que no vuelven a usarse y elimina las entradas retenidas."
+          },
+          {
+            "id": "B",
+            "text": "No; sus referencias fuertes alcanzables impiden considerarlos basura."
+          },
+          {
+            "id": "C",
+            "text": "Sí; una colección forzada recupera también los objetos aún referenciados."
+          },
+          {
+            "id": "D",
+            "text": "No; antes debe invocarse Dispose para que cualquier objeto sea recolectable."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "El GC calcula alcanzabilidad desde raíces, no utilidad de negocio. Un diccionario estático alcanzable que mantiene referencias fuertes puede retener objetos innecesarios y producir crecimiento de memoria. Quitar referencias puede hacerlos candidatos a recolección, sin prometer recuperación inmediata. Dispose gestiona recursos según su contrato; no es una condición universal para recolectar objetos.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "El GC no decide eliminar entradas por predecir su uso futuro; mientras exista un camino de referencias fuertes, el objeto sigue alcanzable.",
+            "C": "Forzar una colección no convierte en basura a objetos que siguen alcanzables mediante referencias fuertes.",
+            "D": "Muchos objetos no implementan IDisposable. Invocarlo no es el requisito general de alcanzabilidad para que el GC recupere memoria."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 39; índice nativo 9882",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 39; índice nativo 14116",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Microsoft: GC fundamentals",
+              "url": "https://learn.microsoft.com/en-us/dotnet/standard/garbage-collection/fundamentals",
+              "locator": "Memory release: raíces, grafo de referencias fuertes y objetos inalcanzables",
+              "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+              "checked_at": "2026-10-30"
+            },
+            {
+              "title": "Microsoft: using statement",
+              "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/using",
+              "locator": "IDisposable; salida con excepción; await using; reescritura try/finally",
+              "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+              "checked_at": "2026-10-30"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-062"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 39; índice nativo 9882",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-30"
+      },
+      "reasons": [
+        "Conservar retención de objetos y clave B; caso acotado a referencias fuertes desde un diccionario estático alcanzable."
+      ],
+      "references": [
+        {
+          "title": "Microsoft: GC fundamentals",
+          "url": "https://learn.microsoft.com/en-us/dotnet/standard/garbage-collection/fundamentals",
+          "locator": "Memory release: raíces, grafo de referencias fuertes y objetos inalcanzables",
+          "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+          "checked_at": "2026-10-30"
+        },
+        {
+          "title": "Microsoft: using statement",
+          "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/using",
+          "locator": "IDisposable; salida con excepción; await using; reescritura try/finally",
+          "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+          "checked_at": "2026-10-30"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P15-040",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "8047df8abc4ec3a1df6a21767c2b656a6570735d5dbec063f796a94c69d7d470",
+      "content_sha256": "206a93b4fba9369795b24276242e46fbeb59c763ddbaa5c297e8da3d82ccc1d1",
+      "before": {
+        "id": "MAN-GSI-P15-040",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué afirmación sobre IL y código máquina es correcta?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Ejecutar el CLR directamente el texto fuente C# sin compilarlo a una representación intermedia ni producir instrucciones para la CPU."
+          },
+          {
+            "id": "B",
+            "text": "Ser IL siempre código máquina final x86, aunque el ensamblado vaya a ejecutarse en una arquitectura o runtime diferente."
+          },
+          {
+            "id": "C",
+            "text": "IL es independiente de una CPU concreta en un grado mayor; el runtime/JIT o AOT produce código adecuado para el destino."
+          },
+          {
+            "id": "D",
+            "text": "Utilizarse IL solo en archivos de texto para documentar instrucciones, sin formar parte de ensamblados ni intervenir en su ejecución."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "IL es independiente de una CPU concreta en un grado mayor; el runtime/JIT o AOT produce código adecuado para el destino. La separación entre IL y código nativo facilita portabilidad y optimización por runtime.",
+          "incorrect": "Según el solucionario: IL es independiente de una CPU concreta en un grado mayor; el runtime/JIT o AOT produce código adecuado para el destino. La separación entre IL y código nativo facilita portabilidad y optimización por runtime."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 40; índice nativo 10067",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 40; índice nativo 14542",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 40; índice nativo 10067",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P15-040",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué afirmación sobre IL y código máquina es correcta?",
+        "options": [
+          {
+            "id": "A",
+            "text": "IL contiene las instrucciones nativas de la CPU elegida al compilar el código fuente."
+          },
+          {
+            "id": "B",
+            "text": "JIT convierte código máquina en IL para que luego lo interprete el CLR en cada llamada."
+          },
+          {
+            "id": "C",
+            "text": "IL es una representación intermedia; JIT o AOT generan código nativo para el destino."
+          },
+          {
+            "id": "D",
+            "text": "Disponer de IL garantiza ejecutar cualquier biblioteca sin revisar sistema o dependencias."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "CIL es un conjunto de instrucciones intermedio que no equivale al código máquina de una CPU concreta. JIT lo transforma durante ejecución y AOT antes de ella, según el modelo. Esto facilita separar compilación de lenguaje y destino, pero no garantiza portabilidad de APIs o dependencias nativas específicas. Native AOT produce un artefacto para un entorno concreto.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Confunde representación intermedia con instrucciones finales de CPU; generar IL no significa producir ya código x86 o ARM nativo.",
+            "B": "Invierte la conversión y añade interpretación obligatoria: JIT genera nativo desde IL, no IL desde nativo para interpretarlo después.",
+            "D": "Una dependencia nativa o una API de un sistema puede impedir ejecutar el componente en otro destino aunque exista IL."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 40; índice nativo 10067",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 40; índice nativo 14542",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Microsoft: Managed execution",
+              "url": "https://learn.microsoft.com/en-us/dotnet/standard/managed-execution-process",
+              "locator": "Compile to CIL; Compile CIL to native code; Compilation by the JIT compiler",
+              "version": "Leída el 30-10-2026. IL/metadatos y JIT tradicional; apartados históricos NGen y seguridad no describen todos los modos modernos.",
+              "checked_at": "2026-10-30"
+            },
+            {
+              "title": "Microsoft: Native AOT",
+              "url": "https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/",
+              "locator": "Introducción; IL a nativo al publicar; destino; ausencia de JIT al ejecutar; limitaciones",
+              "version": "Leída el 30-10-2026. Incluye servicios de runtime; no elimina GC ni garantiza compatibilidad de carga dinámica o reflexión.",
+              "checked_at": "2026-10-30"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-062"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 40; índice nativo 10067",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-30"
+      },
+      "reasons": [
+        "Conservar IL frente a código máquina y clave C; precisar direcciones de conversión y límites de portabilidad."
+      ],
+      "references": [
+        {
+          "title": "Microsoft: Managed execution",
+          "url": "https://learn.microsoft.com/en-us/dotnet/standard/managed-execution-process",
+          "locator": "Compile to CIL; Compile CIL to native code; Compilation by the JIT compiler",
+          "version": "Leída el 30-10-2026. IL/metadatos y JIT tradicional; apartados históricos NGen y seguridad no describen todos los modos modernos.",
+          "checked_at": "2026-10-30"
+        },
+        {
+          "title": "Microsoft: Native AOT",
+          "url": "https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/",
+          "locator": "Introducción; IL a nativo al publicar; destino; ausencia de JIT al ejecutar; limitaciones",
+          "version": "Leída el 30-10-2026. Incluye servicios de runtime; no elimina GC ni garantiza compatibilidad de carga dinámica o reflexión.",
+          "checked_at": "2026-10-30"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P15-041",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "caa7a86bf842a74f434bebf1a726efab2e8dbebae95fe463114e86c4207c04cf",
+      "content_sha256": "352014787761372379f39691f3d8a50af2dcad2a39e1fbf412a572df96cfaadd",
+      "before": {
+        "id": "MAN-GSI-P15-041",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué expresa principalmente `async`/`await` en C#?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Un modelo para componer operaciones asíncronas sin bloquear innecesariamente el hilo mientras se espera."
+          },
+          {
+            "id": "B",
+            "text": "Que se crea un proceso independiente."
+          },
+          {
+            "id": "C",
+            "text": "Que el código se ejecutará siempre en varios núcleos en paralelo."
+          },
+          {
+            "id": "D",
+            "text": "Que se desactiva el manejo de excepciones."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Un modelo para componer operaciones asíncronas sin bloquear innecesariamente el hilo mientras se espera. Asincronía y paralelismo no son sinónimos; `await` facilita esperas no bloqueantes.",
+          "incorrect": "Según el solucionario: Un modelo para componer operaciones asíncronas sin bloquear innecesariamente el hilo mientras se espera. Asincronía y paralelismo no son sinónimos; `await` facilita esperas no bloqueantes."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 41; índice nativo 10334",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 41; índice nativo 14973",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 41; índice nativo 10334",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P15-041",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué expresa principalmente `async`/`await` en C#?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Componer operaciones asíncronas y esperar su finalización sin bloquear el hilo por esa espera."
+          },
+          {
+            "id": "B",
+            "text": "Reservar un hilo del sistema para cada operación hasta que complete su entrada o salida."
+          },
+          {
+            "id": "C",
+            "text": "Repartir las operaciones del método entre núcleos para ejecutarlas en paralelo por defecto."
+          },
+          {
+            "id": "D",
+            "text": "Capturar las excepciones de cada operación y sustituirlas por el valor predeterminado del resultado."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "async/await permite expresar una composición asíncrona con flujo legible. Si la operación esperada no ha terminado, await puede suspender el método y devolver control sin bloquear ese hilo por la espera. Si ya terminó, puede continuar sin suspender. No crea automáticamente paralelismo o un hilo exclusivo y las excepciones siguen debiendo manejarse.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "Una operación asíncrona no necesita por definición un hilo reservado mientras espera entrada o salida.",
+            "C": "Asincronía y paralelismo son dimensiones distintas; el modificador async no distribuye automáticamente todo el método entre núcleos.",
+            "D": "await permite observar y propagar errores de la operación; no los transforma automáticamente en resultados predeterminados."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 41; índice nativo 10334",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 41; índice nativo 14973",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Microsoft: Asynchronous programming",
+              "url": "https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/",
+              "locator": "Task asynchronous programming model; asincronía frente a paralelismo; esperar sin bloquear el hilo",
+              "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+              "checked_at": "2026-10-30"
+            },
+            {
+              "title": "Microsoft: await operator",
+              "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/await",
+              "locator": "Introducción: suspensión del método, no del hilo; operación ya completada sin suspensión",
+              "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+              "checked_at": "2026-10-30"
+            },
+            {
+              "title": "Microsoft: Task class",
+              "url": "https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task?view=net-10.0",
+              "locator": "Definition; Remarks; CompletedTask; IsCompleted, IsCanceled, IsFaulted",
+              "version": "Vista net-10.0 leída el 30-10-2026. La página agrega variantes y aviso prerelease: se usa el contrato estable de Task, no se asume que toda Task sea un trabajo con hilo dedicado.",
+              "checked_at": "2026-10-30"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-062"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 41; índice nativo 10334",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-30"
+      },
+      "reasons": [
+        "Conservar composición asíncrona y clave A; separar espera, planificación, paralelismo y propagación de errores."
+      ],
+      "references": [
+        {
+          "title": "Microsoft: Asynchronous programming",
+          "url": "https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/",
+          "locator": "Task asynchronous programming model; asincronía frente a paralelismo; esperar sin bloquear el hilo",
+          "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+          "checked_at": "2026-10-30"
+        },
+        {
+          "title": "Microsoft: await operator",
+          "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/await",
+          "locator": "Introducción: suspensión del método, no del hilo; operación ya completada sin suspensión",
+          "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+          "checked_at": "2026-10-30"
+        },
+        {
+          "title": "Microsoft: Task class",
+          "url": "https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task?view=net-10.0",
+          "locator": "Definition; Remarks; CompletedTask; IsCompleted, IsCanceled, IsFaulted",
+          "version": "Vista net-10.0 leída el 30-10-2026. La página agrega variantes y aviso prerelease: se usa el contrato estable de Task, no se asume que toda Task sea un trabajo con hilo dedicado.",
+          "checked_at": "2026-10-30"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P15-042",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "aa344a295ff67ede595dc9cc5085a6f7efc2f5726826771a75d96ea65ce27e22",
+      "content_sha256": "1789fb253569b7cb935676dbd0707a40a0b0eea64262ece2ebde5b16e6beb314",
+      "before": {
+        "id": "MAN-GSI-P15-042",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué representa normalmente `Task` o `Task<T>`?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Un ensamblado compilado que agrupa tipos y recursos y que se carga como una unidad independiente en el runtime de .NET."
+          },
+          {
+            "id": "B",
+            "text": "Un hilo físico reservado por el sistema operativo hasta que termina la operación, aunque esta permanezca esperando entrada o salida."
+          },
+          {
+            "id": "C",
+            "text": "Una transacción de base de datos que confirma automáticamente todos los cambios cuando concluye cualquier método que devuelve un valor."
+          },
+          {
+            "id": "D",
+            "text": "Una operación asíncrona que puede completarse en el futuro, con o sin resultado."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Una operación asíncrona que puede completarse en el futuro, con o sin resultado. Task modela trabajo asíncrono; no implica por sí misma un hilo exclusivo.",
+          "incorrect": "Según el solucionario: Una operación asíncrona que puede completarse en el futuro, con o sin resultado. Task modela trabajo asíncrono; no implica por sí misma un hilo exclusivo."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 42; índice nativo 10531",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 42; índice nativo 15342",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 42; índice nativo 10531",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P15-042",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué representa normalmente `Task` o `Task<T>`?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Una referencia invocable al método que inicia el trabajo, con parámetros y retorno compatibles."
+          },
+          {
+            "id": "B",
+            "text": "Un hilo del sistema reservado hasta que la operación termine, incluso mientras espera entrada o salida."
+          },
+          {
+            "id": "C",
+            "text": "Una señal de petición de cancelación que el trabajo debe consultar para decidir si se detiene."
+          },
+          {
+            "id": "D",
+            "text": "Una representación de la finalización de una operación, con o sin resultado según su tipo."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Task representa una operación y su finalización; Task<T> permite además obtener un resultado T. Puede estar pendiente o ya completada, y terminar con éxito, cancelación o error. No implica un hilo exclusivo ni que el trabajo haya empezado necesariamente al construir cualquier Task. La petición de cancelación y el método invocable son otros contratos.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Referirse a un método para invocarlo describe un delegado; no el estado de finalización representado por Task.",
+            "B": "La abstracción de tarea no equivale a un hilo físico reservado; por ejemplo, una tarea ya completada tampoco requiere esperar en uno.",
+            "C": "Una petición cooperativa de cancelación se expresa con un contrato como CancellationToken; no define la operación y su finalización."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 42; índice nativo 10531",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 42; índice nativo 15342",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Microsoft: Task class",
+              "url": "https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task?view=net-10.0",
+              "locator": "Definition; Remarks; CompletedTask; IsCompleted, IsCanceled, IsFaulted",
+              "version": "Vista net-10.0 leída el 30-10-2026. La página agrega variantes y aviso prerelease: se usa el contrato estable de Task, no se asume que toda Task sea un trabajo con hilo dedicado.",
+              "checked_at": "2026-10-30"
+            },
+            {
+              "title": "Microsoft: await operator",
+              "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/await",
+              "locator": "Introducción: suspensión del método, no del hilo; operación ya completada sin suspensión",
+              "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+              "checked_at": "2026-10-30"
+            },
+            {
+              "title": "Microsoft: Delegates",
+              "url": "https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/delegates/",
+              "locator": "Introducción; firma y retorno compatibles; callbacks; Explore delegate characteristics",
+              "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+              "checked_at": "2026-10-30"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-062"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 42; índice nativo 10531",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-30"
+      },
+      "reasons": [
+        "Conservar Task y clave D; evitar prometer finalización solo futura o equivalencia entre Task e hilo."
+      ],
+      "references": [
+        {
+          "title": "Microsoft: Task class",
+          "url": "https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task?view=net-10.0",
+          "locator": "Definition; Remarks; CompletedTask; IsCompleted, IsCanceled, IsFaulted",
+          "version": "Vista net-10.0 leída el 30-10-2026. La página agrega variantes y aviso prerelease: se usa el contrato estable de Task, no se asume que toda Task sea un trabajo con hilo dedicado.",
+          "checked_at": "2026-10-30"
+        },
+        {
+          "title": "Microsoft: await operator",
+          "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/await",
+          "locator": "Introducción: suspensión del método, no del hilo; operación ya completada sin suspensión",
+          "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+          "checked_at": "2026-10-30"
+        },
+        {
+          "title": "Microsoft: Delegates",
+          "url": "https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/delegates/",
+          "locator": "Introducción; firma y retorno compatibles; callbacks; Explore delegate characteristics",
+          "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+          "checked_at": "2026-10-30"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P15-043",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "014d5102024e8ddc43a2ce5d82efc7de7994ad105c4d4fd05548f57508d783ed",
+      "content_sha256": "b843af60855f204e1fb96f2be00a829f074bb5d03ccba0f6db28aa0f518ac7a3",
+      "before": {
+        "id": "MAN-GSI-P15-043",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué problema puede causar abusar de `.Result` o `.Wait()` sobre operaciones asíncronas?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Que la base de datos pierda índices."
+          },
+          {
+            "id": "B",
+            "text": "Bloqueos, pérdida de escalabilidad y, en ciertos contextos, interbloqueos."
+          },
+          {
+            "id": "C",
+            "text": "Que el compilador convierta el proyecto en Java."
+          },
+          {
+            "id": "D",
+            "text": "Que NuGet elimine paquetes."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Bloqueos, pérdida de escalabilidad y, en ciertos contextos, interbloqueos. El patrón sync-over-async puede bloquear hilos y romper el beneficio de la asincronía.",
+          "incorrect": "Según el solucionario: Bloqueos, pérdida de escalabilidad y, en ciertos contextos, interbloqueos. El patrón sync-over-async puede bloquear hilos y romper el beneficio de la asincronía."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 43; índice nativo 10694",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 43; índice nativo 15608",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 43; índice nativo 10694",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P15-043",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "En el hilo de una interfaz de un solo hilo se accede a Result de una tarea incompleta. Para completarse, esta necesita una continuación publicada en ese mismo contexto UI. ¿Qué puede ocurrir?",
+        "options": [
+          {
+            "id": "A",
+            "text": "La continuación cambia de hilo por efecto de Result y permite completar sin bloquear la interfaz."
+          },
+          {
+            "id": "B",
+            "text": "Puede producirse interbloqueo: el hilo espera la tarea y esta necesita volver a ese mismo hilo."
+          },
+          {
+            "id": "C",
+            "text": "La espera convierte la tarea en cancelada y libera la continuación sin intervención de la aplicación."
+          },
+          {
+            "id": "D",
+            "text": "Result devuelve un valor provisional mientras la continuación termina en el hilo de interfaz."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "En este contexto existe una dependencia circular: Result bloquea el hilo UI hasta que termina la tarea, pero la tarea necesita ejecutar una continuación en ese hilo ocupado. await permite devolver control para que avance el bucle de mensajes. No toda espera síncrona produce interbloqueo: aquí importan tarea incompleta y contexto capturado. En otros entornos bloquear puede igualmente reducir capacidad de atender trabajo.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Result no libera el hilo ni reubica por sí mismo la continuación capturada; mantiene la espera síncrona.",
+            "C": "Bloquear con Result no cancela automáticamente la tarea ni elimina la dependencia de su continuación.",
+            "D": "Result espera un resultado terminado o propaga un error; no entrega un valor provisional para evitar el bloqueo."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 43; índice nativo 10694",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 43; índice nativo 15608",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Microsoft .NET Blog: Await, and UI, and deadlocks! Oh my!",
+              "url": "https://devblogs.microsoft.com/dotnet/await-and-ui-and-deadlocks-oh-my/",
+              "locator": "button1_Click con LoadStringAsync y s.Result; dependencia circular con retorno al hilo UI; alternativa await",
+              "version": "Stephen Toub, 13-01-2011, leído el 30-10-2026. Explicación histórica del mecanismo de contexto UI, contrastada con await actual; no recomendación de instalar Async CTP ni regla de interbloqueo en todo contexto.",
+              "checked_at": "2026-10-30"
+            },
+            {
+              "title": "Microsoft: await operator",
+              "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/await",
+              "locator": "Introducción: suspensión del método, no del hilo; operación ya completada sin suspensión",
+              "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+              "checked_at": "2026-10-30"
+            },
+            {
+              "title": "Microsoft: Task class",
+              "url": "https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task?view=net-10.0",
+              "locator": "Definition; Remarks; CompletedTask; IsCompleted, IsCanceled, IsFaulted",
+              "version": "Vista net-10.0 leída el 30-10-2026. La página agrega variantes y aviso prerelease: se usa el contrato estable de Task, no se asume que toda Task sea un trabajo con hilo dedicado.",
+              "checked_at": "2026-10-30"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-062"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 43; índice nativo 10694",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-30"
+      },
+      "reasons": [
+        "Conservar riesgo de sync-over-async y clave B; fijar el contexto UI y la continuación necesaria para justificar el interbloqueo."
+      ],
+      "references": [
+        {
+          "title": "Microsoft .NET Blog: Await, and UI, and deadlocks! Oh my!",
+          "url": "https://devblogs.microsoft.com/dotnet/await-and-ui-and-deadlocks-oh-my/",
+          "locator": "button1_Click con LoadStringAsync y s.Result; dependencia circular con retorno al hilo UI; alternativa await",
+          "version": "Stephen Toub, 13-01-2011, leído el 30-10-2026. Explicación histórica del mecanismo de contexto UI, contrastada con await actual; no recomendación de instalar Async CTP ni regla de interbloqueo en todo contexto.",
+          "checked_at": "2026-10-30"
+        },
+        {
+          "title": "Microsoft: await operator",
+          "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/await",
+          "locator": "Introducción: suspensión del método, no del hilo; operación ya completada sin suspensión",
+          "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+          "checked_at": "2026-10-30"
+        },
+        {
+          "title": "Microsoft: Task class",
+          "url": "https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task?view=net-10.0",
+          "locator": "Definition; Remarks; CompletedTask; IsCompleted, IsCanceled, IsFaulted",
+          "version": "Vista net-10.0 leída el 30-10-2026. La página agrega variantes y aviso prerelease: se usa el contrato estable de Task, no se asume que toda Task sea un trabajo con hilo dedicado.",
+          "checked_at": "2026-10-30"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P15-044",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "09d248a9b8737735328e9d431329452c951371098a68fc57ab47f7586e09b36f",
+      "content_sha256": "08cad8c43a5344905431942602fcab51fc794e58566bc5025a5ce31b248c7d3d",
+      "before": {
+        "id": "MAN-GSI-P15-044",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué significa ejecución diferida en muchas consultas LINQ?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Que la consulta se ejecuta dos veces obligatoriamente."
+          },
+          {
+            "id": "B",
+            "text": "Que la consulta siempre se ejecuta al compilar."
+          },
+          {
+            "id": "C",
+            "text": "Que la consulta no se evalúa hasta que se enumera o materializa."
+          },
+          {
+            "id": "D",
+            "text": "Que LINQ solo funciona con bases de datos."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Que la consulta no se evalúa hasta que se enumera o materializa. Comprender cuándo se ejecuta una consulta evita efectos inesperados y trabajo repetido.",
+          "incorrect": "Según el solucionario: Que la consulta no se evalúa hasta que se enumera o materializa. Comprender cuándo se ejecuta una consulta evita efectos inesperados y trabajo repetido."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 44; índice nativo 10864",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 44; índice nativo 15952",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 44; índice nativo 10864",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P15-044",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Con LINQ to Objects se ejecuta: var datos = new List<int> { 1, 2 }; var q = datos.Where(x => x > 1); datos.Add(3); Sin otros cambios, ¿cuándo se aplica el filtro y qué obtiene al enumerar q?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Al definir q se filtra y se conserva una copia del resultado con el elemento 2."
+          },
+          {
+            "id": "B",
+            "text": "Al agregar 3 se vuelve a ejecutar el filtro y se actualiza un resultado almacenado en q."
+          },
+          {
+            "id": "C",
+            "text": "Al enumerar q se aplica el filtro y se observan los elementos 2 y 3 presentes entonces."
+          },
+          {
+            "id": "D",
+            "text": "Al definir q se abre un enumerador que queda invalidado por cualquier cambio posterior."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Where sobre esta lista define una consulta diferida: el filtro se aplica cuando se enumera. Como se agrega 3 antes de empezar esa enumeración, aparecen 2 y 3. Crear la consulta no materializa una copia ni mantiene un resultado incremental actualizado. Modificar una List mientras se recorre su enumerador es otro caso; aquí la modificación ocurre antes. ToList o ToArray materializan al llamarse.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Confunde construir la consulta con materializar una instantánea; no se ha llamado a ToList o ToArray.",
+            "B": "Agregar a la lista no recorre automáticamente la consulta ni actualiza una caché de resultados mantenida por q.",
+            "D": "Definir Where no inicia ese recorrido; no hay un enumerador en curso invalidado por la modificación previa a enumerar."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 44; índice nativo 10864",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 44; índice nativo 15952",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Microsoft: Introduction to LINQ queries",
+              "url": "https://learn.microsoft.com/en-us/dotnet/csharp/linq/get-started/introduction-to-linq-queries",
+              "locator": "Three parts of a query; Query execution; Deferred; ToList/ToArray frente a enumeración",
+              "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+              "checked_at": "2026-10-30"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-062"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 44; índice nativo 10864",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-30"
+      },
+      "reasons": [
+        "Conservar ejecución diferida y clave C; caso acotado a List y Where con modificación anterior al recorrido."
+      ],
+      "references": [
+        {
+          "title": "Microsoft: Introduction to LINQ queries",
+          "url": "https://learn.microsoft.com/en-us/dotnet/csharp/linq/get-started/introduction-to-linq-queries",
+          "locator": "Three parts of a query; Query execution; Deferred; ToList/ToArray frente a enumeración",
+          "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+          "checked_at": "2026-10-30"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P15-045",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "43eec3c8111bdf6992b551f825b2bc9a352220910aed2bbcd601194c4cfd33f9",
+      "content_sha256": "166c3a2fe63a42afc4a2cd3b624159afb6ee655a14417c37943d8aeb008d95a6",
+      "before": {
+        "id": "MAN-GSI-P15-045",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Cuando se usa LINQ sobre `IQueryable` de EF Core, ¿qué ocurre normalmente?",
+        "options": [
+          {
+            "id": "A",
+            "text": "El CLR delega la consulta en NuGet."
+          },
+          {
+            "id": "B",
+            "text": "El proveedor intenta traducir la expresión a una consulta del origen, por ejemplo SQL."
+          },
+          {
+            "id": "C",
+            "text": "LINQ se convierte en JavaScript."
+          },
+          {
+            "id": "D",
+            "text": "Todo se descarga siempre a memoria antes de filtrar."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "El proveedor intenta traducir la expresión a una consulta del origen, por ejemplo SQL. IQueryable permite que el proveedor procese el árbol de expresión y traduzca operaciones compatibles.",
+          "incorrect": "Según el solucionario: El proveedor intenta traducir la expresión a una consulta del origen, por ejemplo SQL. IQueryable permite que el proveedor procese el árbol de expresión y traduzca operaciones compatibles."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 45; índice nativo 11025",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 45; índice nativo 16289",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 45; índice nativo 11025",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P15-045",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Al componer LINQ sobre IQueryable con un proveedor relacional de EF Core, ¿qué papel tiene normalmente el proveedor?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Los operadores ejecutan sus delegados en cliente antes de que el proveedor reciba el filtro."
+          },
+          {
+            "id": "B",
+            "text": "El proveedor procesa el árbol de expresión e intenta traducir operaciones compatibles al origen."
+          },
+          {
+            "id": "C",
+            "text": "El proveedor conserva los predicados como datos, sin ejecutarlos al enumerar la consulta."
+          },
+          {
+            "id": "D",
+            "text": "La consulta se materializa al construir cada Where y sus resultados se guardan en el contexto."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Con IQueryable y un proveedor relacional de EF Core, la expresión representa la consulta y se traducen las operaciones compatibles, normalmente a SQL al ejecutarla. No toda función de C# es traducible. En EF Core3+ un filtro no traducible fuera de la proyección superior provoca un error en vez de descargar todo silenciosamente; esa proyección sí admite evaluación parcial en cliente.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Describe ejecución local con delegados, no la representación que el proveedor puede inspeccionar y traducir antes de ejecutar.",
+            "C": "Representar predicados no significa omitirlos: al ejecutar, el proveedor debe darles significado según su soporte o informar de incompatibilidad.",
+            "D": "Componer Where no materializa por sí solo el resultado ni hace de la consulta una caché del contexto."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 45; índice nativo 11025",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 45; índice nativo 16289",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Microsoft: EF Core client vs server evaluation",
+              "url": "https://learn.microsoft.com/en-us/ef/core/querying/client-eval",
+              "locator": "Introducción; Unsupported client evaluation; Explicit client evaluation",
+              "version": "Leída el 30-10-2026. EF Core3.0 y posteriores: proyección superior puede evaluarse parcialmente en cliente; un Where no traducible no se descarga silenciosamente para filtrar.",
+              "checked_at": "2026-10-30"
+            },
+            {
+              "title": "Microsoft: IQueryable<T>",
+              "url": "https://learn.microsoft.com/en-us/dotnet/api/system.linq.iqueryable-1?view=net-10.0",
+              "locator": "Definition e interfaces heredadas; Remarks: Expression, Provider y traducción",
+              "version": "Vista net-10.0 leída el 30-10-2026. IQueryable<T> también es IEnumerable<T>; el proveedor y los operadores elegidos determinan ejecución y traducción.",
+              "checked_at": "2026-10-30"
+            },
+            {
+              "title": "Microsoft: Expression trees",
+              "url": "https://learn.microsoft.com/en-us/dotnet/csharp/advanced-topics/expression-trees/",
+              "locator": "Introducción: operaciones como datos; inspección, traducción y relación con proveedores LINQ",
+              "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+              "checked_at": "2026-10-30"
+            },
+            {
+              "title": "Microsoft: Introduction to LINQ queries",
+              "url": "https://learn.microsoft.com/en-us/dotnet/csharp/linq/get-started/introduction-to-linq-queries",
+              "locator": "Three parts of a query; Query execution; Deferred; ToList/ToArray frente a enumeración",
+              "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+              "checked_at": "2026-10-30"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-062"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 45; índice nativo 11025",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-30"
+      },
+      "reasons": [
+        "Conservar traducción por proveedor y clave B; delimitar EF Core relacional y tratamiento de expresiones no traducibles."
+      ],
+      "references": [
+        {
+          "title": "Microsoft: EF Core client vs server evaluation",
+          "url": "https://learn.microsoft.com/en-us/ef/core/querying/client-eval",
+          "locator": "Introducción; Unsupported client evaluation; Explicit client evaluation",
+          "version": "Leída el 30-10-2026. EF Core3.0 y posteriores: proyección superior puede evaluarse parcialmente en cliente; un Where no traducible no se descarga silenciosamente para filtrar.",
+          "checked_at": "2026-10-30"
+        },
+        {
+          "title": "Microsoft: IQueryable<T>",
+          "url": "https://learn.microsoft.com/en-us/dotnet/api/system.linq.iqueryable-1?view=net-10.0",
+          "locator": "Definition e interfaces heredadas; Remarks: Expression, Provider y traducción",
+          "version": "Vista net-10.0 leída el 30-10-2026. IQueryable<T> también es IEnumerable<T>; el proveedor y los operadores elegidos determinan ejecución y traducción.",
+          "checked_at": "2026-10-30"
+        },
+        {
+          "title": "Microsoft: Expression trees",
+          "url": "https://learn.microsoft.com/en-us/dotnet/csharp/advanced-topics/expression-trees/",
+          "locator": "Introducción: operaciones como datos; inspección, traducción y relación con proveedores LINQ",
+          "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+          "checked_at": "2026-10-30"
+        },
+        {
+          "title": "Microsoft: Introduction to LINQ queries",
+          "url": "https://learn.microsoft.com/en-us/dotnet/csharp/linq/get-started/introduction-to-linq-queries",
+          "locator": "Three parts of a query; Query execution; Deferred; ToList/ToArray frente a enumeración",
+          "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+          "checked_at": "2026-10-30"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P15-046",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "cb98df636ac749fc575a2f8954c38b4da0b98c99385ce3b91bef19ab8a1844c1",
+      "content_sha256": "6ec67d4535625cc5618becec18429ea93b416de710ec4c4869838e85329a756e",
+      "before": {
+        "id": "MAN-GSI-P15-046",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué diferencia general hay entre `IEnumerable<T>` e `IQueryable<T>` en acceso a datos?",
+        "options": [
+          {
+            "id": "A",
+            "text": "`IEnumerable<T>` siempre se traduce a SQL en el servidor, mientras `IQueryable<T>` solo puede recorrer objetos ya cargados."
+          },
+          {
+            "id": "B",
+            "text": "Ambos ejecutan necesariamente la consulta en memoria y ningún proveedor puede inspeccionar o traducir sus expresiones."
+          },
+          {
+            "id": "C",
+            "text": "`IQueryable<T>` obliga a recuperar toda la fuente antes de filtrar, por lo que nunca puede delegar operaciones en el origen."
+          },
+          {
+            "id": "D",
+            "text": "`IEnumerable` opera sobre enumeración .NET; `IQueryable` puede representar una consulta que un proveedor traduzca a otro lenguaje/origen."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "`IEnumerable` opera sobre enumeración .NET; `IQueryable` puede representar una consulta que un proveedor traduzca a otro lenguaje/origen. La diferencia es crucial para saber dónde se ejecuta el filtrado y qué puede traducirse.",
+          "incorrect": "Según el solucionario: `IEnumerable` opera sobre enumeración .NET; `IQueryable` puede representar una consulta que un proveedor traduzca a otro lenguaje/origen. La diferencia es crucial para saber dónde se ejecuta el filtrado y qué puede traducirse."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 46; índice nativo 11222",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 46; índice nativo 16639",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 46; índice nativo 11222",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P15-046",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Una consulta relacional de EF Core se compone como consulta.Where(p => p.Activo), o como consulta.AsEnumerable().Where(p => p.Activo). Al enumerar ambas, ¿qué diferencia importa?",
+        "options": [
+          {
+            "id": "A",
+            "text": "AsEnumerable materializa la fuente al llamarse y conserva una copia antes del segundo Where."
+          },
+          {
+            "id": "B",
+            "text": "Ambos Where entregan el mismo árbol al proveedor porque el objeto de origen sigue siendo el mismo."
+          },
+          {
+            "id": "C",
+            "text": "El segundo Where no puede consultar datos remotos porque IEnumerable exige una lista ya cargada."
+          },
+          {
+            "id": "D",
+            "text": "El segundo Where filtra mediante enumeración local; el primero puede traducirse al origen."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "IQueryable<T> representa expresiones que procesa su proveedor y también implementa IEnumerable<T>. AsEnumerable conserva el origen, pero cambia el tipo de compilación y selecciona operadores Enumerable: el Where posterior usa su predicado en cliente al enumerar. No materializa de inmediato ni transforma en local las operaciones anteriores de la consulta. Debe valorarse cuántos datos llegan antes del filtro local.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "AsEnumerable no es ToList: no recorre o almacena por sí mismo todos los elementos cuando se llama.",
+            "B": "La resolución de operadores cambia con el tipo de compilación; conservar el mismo origen no convierte el segundo predicado en la expresión Queryable original.",
+            "C": "IEnumerable permite enumeración diferida y un origen remoto puede producir sus elementos; no obliga a tener previamente una lista materializada."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 46; índice nativo 11222",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 46; índice nativo 16639",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Microsoft: IQueryable<T>",
+              "url": "https://learn.microsoft.com/en-us/dotnet/api/system.linq.iqueryable-1?view=net-10.0",
+              "locator": "Definition e interfaces heredadas; Remarks: Expression, Provider y traducción",
+              "version": "Vista net-10.0 leída el 30-10-2026. IQueryable<T> también es IEnumerable<T>; el proveedor y los operadores elegidos determinan ejecución y traducción.",
+              "checked_at": "2026-10-30"
+            },
+            {
+              "title": "Microsoft: Enumerable.AsEnumerable",
+              "url": "https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.asenumerable?view=net-10.0",
+              "locator": "Definition; Remarks: mismo origen con tipo de compilación IEnumerable<T> y selección de operadores",
+              "version": "Vista net-10.0 leída el 30-10-2026. Cambia resolución de operadores; no equivale a ToList, materialización inmediata o garantía de que toda la consulta anterior pase al cliente.",
+              "checked_at": "2026-10-30"
+            },
+            {
+              "title": "Microsoft: EF Core client vs server evaluation",
+              "url": "https://learn.microsoft.com/en-us/ef/core/querying/client-eval",
+              "locator": "Introducción; Unsupported client evaluation; Explicit client evaluation",
+              "version": "Leída el 30-10-2026. EF Core3.0 y posteriores: proyección superior puede evaluarse parcialmente en cliente; un Where no traducible no se descarga silenciosamente para filtrar.",
+              "checked_at": "2026-10-30"
+            },
+            {
+              "title": "Microsoft: Introduction to LINQ queries",
+              "url": "https://learn.microsoft.com/en-us/dotnet/csharp/linq/get-started/introduction-to-linq-queries",
+              "locator": "Three parts of a query; Query execution; Deferred; ToList/ToArray frente a enumeración",
+              "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+              "checked_at": "2026-10-30"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-062"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 46; índice nativo 11222",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-30"
+      },
+      "reasons": [
+        "Conservar IEnumerable frente a IQueryable y clave D; comparar ubicación de un filtro después de AsEnumerable sin confundirlo con ToList."
+      ],
+      "references": [
+        {
+          "title": "Microsoft: IQueryable<T>",
+          "url": "https://learn.microsoft.com/en-us/dotnet/api/system.linq.iqueryable-1?view=net-10.0",
+          "locator": "Definition e interfaces heredadas; Remarks: Expression, Provider y traducción",
+          "version": "Vista net-10.0 leída el 30-10-2026. IQueryable<T> también es IEnumerable<T>; el proveedor y los operadores elegidos determinan ejecución y traducción.",
+          "checked_at": "2026-10-30"
+        },
+        {
+          "title": "Microsoft: Enumerable.AsEnumerable",
+          "url": "https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.asenumerable?view=net-10.0",
+          "locator": "Definition; Remarks: mismo origen con tipo de compilación IEnumerable<T> y selección de operadores",
+          "version": "Vista net-10.0 leída el 30-10-2026. Cambia resolución de operadores; no equivale a ToList, materialización inmediata o garantía de que toda la consulta anterior pase al cliente.",
+          "checked_at": "2026-10-30"
+        },
+        {
+          "title": "Microsoft: EF Core client vs server evaluation",
+          "url": "https://learn.microsoft.com/en-us/ef/core/querying/client-eval",
+          "locator": "Introducción; Unsupported client evaluation; Explicit client evaluation",
+          "version": "Leída el 30-10-2026. EF Core3.0 y posteriores: proyección superior puede evaluarse parcialmente en cliente; un Where no traducible no se descarga silenciosamente para filtrar.",
+          "checked_at": "2026-10-30"
+        },
+        {
+          "title": "Microsoft: Introduction to LINQ queries",
+          "url": "https://learn.microsoft.com/en-us/dotnet/csharp/linq/get-started/introduction-to-linq-queries",
+          "locator": "Three parts of a query; Query execution; Deferred; ToList/ToArray frente a enumeración",
+          "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+          "checked_at": "2026-10-30"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P15-047",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "d613e98904ba648b30c2fde34b2c4dc5d3a12c2e2fa31e8e1bc93627d9238da9",
+      "content_sha256": "c82db0e199d1f093f5d4c17759d1fff437bf8af2e80a7f9e8c1835b2da7ea901",
+      "before": {
+        "id": "MAN-GSI-P15-047",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué aporta una instrucción `using` sobre un objeto `IDisposable`?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Añadir automáticamente un finalizador al tipo para que el runtime libere el recurso cuando decida ejecutar la recolección."
+          },
+          {
+            "id": "B",
+            "text": "Garantiza la llamada a `Dispose` al salir del ámbito, incluso ante excepciones, según el patrón generado."
+          },
+          {
+            "id": "C",
+            "text": "Forzar una recolección de basura al final del bloque y mantener el objeto fuera del alcance durante el resto del proceso."
+          },
+          {
+            "id": "D",
+            "text": "Llamar a `Dispose` únicamente cuando el bloque termina normalmente, omitiéndolo si una instrucción produce una excepción."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Garantiza la llamada a `Dispose` al salir del ámbito, incluso ante excepciones, según el patrón generado. `using` expresa gestión determinista de recursos.",
+          "incorrect": "Según el solucionario: Garantiza la llamada a `Dispose` al salir del ámbito, incluso ante excepciones, según el patrón generado. `using` expresa gestión determinista de recursos."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 47; índice nativo 11457",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 47; índice nativo 17073",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 47; índice nativo 11457",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P15-047",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué aporta una instrucción `using` sobre un objeto `IDisposable`?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Añadir automáticamente un finalizador al tipo para que el runtime libere el recurso cuando decida ejecutar la recolección."
+          },
+          {
+            "id": "B",
+            "text": "Garantiza la llamada a `Dispose` al salir del ámbito, incluso ante excepciones, según el patrón generado."
+          },
+          {
+            "id": "C",
+            "text": "Forzar una recolección de basura al final del bloque y mantener el objeto fuera del alcance durante el resto del proceso."
+          },
+          {
+            "id": "D",
+            "text": "Llamar a `Dispose` únicamente cuando el bloque termina normalmente, omitiéndolo si una instrucción produce una excepción."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Para un recurso adquirido no nulo, using genera una disposición equivalente a try/finally: invoca Dispose al abandonar su ámbito, también por una excepción o return dentro del flujo ordinario. No fuerza GC ni garantiza que una implementación defectuosa de Dispose libere correctamente todo recurso. Tampoco es garantía frente a terminación abrupta del proceso; la memoria del objeto sigue su gestión habitual.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "using no añade un finalizador al tipo; expresa una llamada de disposición al salir del ámbito.",
+            "C": "No se introduce una llamada a GC.Collect ni se reserva el objeto fuera de alcance durante el resto del proceso.",
+            "D": "El patrón con finally permite llamar a Dispose también al salir por excepción; no se limita a terminación normal."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 47; índice nativo 11457",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 47; índice nativo 17073",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Microsoft: using statement",
+              "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/using",
+              "locator": "IDisposable; salida con excepción; await using; reescritura try/finally",
+              "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+              "checked_at": "2026-10-30"
+            },
+            {
+              "title": "Microsoft: GC fundamentals",
+              "url": "https://learn.microsoft.com/en-us/dotnet/standard/garbage-collection/fundamentals",
+              "locator": "Memory release: raíces, grafo de referencias fuertes y objetos inalcanzables",
+              "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+              "checked_at": "2026-10-30"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-062"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 47; índice nativo 11457",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-30"
+      },
+      "reasons": [
+        "Conservar íntegros enunciado, opciones y clave B; precisar llamada, flujo ordinario y objeto no nulo frente a garantías absolutas de cierre."
+      ],
+      "references": [
+        {
+          "title": "Microsoft: using statement",
+          "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/using",
+          "locator": "IDisposable; salida con excepción; await using; reescritura try/finally",
+          "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+          "checked_at": "2026-10-30"
+        },
+        {
+          "title": "Microsoft: GC fundamentals",
+          "url": "https://learn.microsoft.com/en-us/dotnet/standard/garbage-collection/fundamentals",
+          "locator": "Memory release: raíces, grafo de referencias fuertes y objetos inalcanzables",
+          "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+          "checked_at": "2026-10-30"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P15-049",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "91791388e8864690250c29a6d255acb028582dd6e98c197c8524905e4f56a390",
+      "content_sha256": "412f057e2b954a3ba150ee189032e47ff9f99d4a59e8cabd38976b2dc6590537",
+      "before": {
+        "id": "MAN-GSI-P15-049",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué característica definen principalmente los `record` de C#?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Una forma concisa de modelar datos con semántica de igualdad por valor especialmente útil para modelos inmutables o DTOs."
+          },
+          {
+            "id": "B",
+            "text": "Una entidad que EF Core almacena y sigue automáticamente por el mero hecho de declararla como `record` en el lenguaje."
+          },
+          {
+            "id": "C",
+            "text": "Un tipo valor que siempre se aloja en la pila y no puede declarar miembros mutables ni utilizar herencia entre records."
+          },
+          {
+            "id": "D",
+            "text": "Una estructura binaria para escribir eventos secuenciales en disco, equivalente a un formato de logging del runtime."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Una forma concisa de modelar datos con semántica de igualdad por valor especialmente útil para modelos inmutables o DTOs. Los records son una característica del lenguaje, no una tecnología de persistencia.",
+          "incorrect": "Según el solucionario: Una forma concisa de modelar datos con semántica de igualdad por valor especialmente útil para modelos inmutables o DTOs. Los records son una característica del lenguaje, no una tecnología de persistencia."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 49; índice nativo 11842",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 49; índice nativo 17754",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 49; índice nativo 11842",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P15-049",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué aporta principalmente el modificador record de C# al modelar datos?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Sintetizar comportamiento para modelar datos, incluida igualdad por valor de sus miembros."
+          },
+          {
+            "id": "B",
+            "text": "Aplicar igualdad por identidad de objeto a sus instancias aunque almacenen los mismos datos."
+          },
+          {
+            "id": "C",
+            "text": "Imponer inmutabilidad profunda de los datos y de cada objeto referenciado por sus propiedades."
+          },
+          {
+            "id": "D",
+            "text": "Registrar el tipo como entidad persistente y construir el seguimiento de cambios del proveedor."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "record añade comportamiento sintetizado para tipos centrados en datos, incluida igualdad por valor según sus miembros. Puede declararse como record class, de referencia, o record struct, de valor. No obliga a inmutabilidad profunda: miembros mutables y objetos referenciados requieren atención, y with hace una copia superficial. La igualdad de cada miembro sigue su contrato; no significa comparación profunda automática ni persistencia.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "La igualdad sintetizada de records no se limita a identidad de referencia; dos instancias distintas pueden ser iguales por sus datos.",
+            "C": "Un record puede declarar miembros mutables y conservar referencias a objetos mutables; init tampoco crea inmutabilidad profunda.",
+            "D": "Ser record es una característica del lenguaje; persistencia y seguimiento dependen del modelo y configuración del proveedor, no de ese modificador por sí solo."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 49; índice nativo 11842",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 49; índice nativo 17754",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Microsoft: Records",
+              "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/record",
+              "locator": "Introducción; Immutability; Value equality; shallow copy de with",
+              "version": "Leída el 30-10-2026. record class es referencia y record struct valor; igualdad sintetizada no implica inmutabilidad profunda ni comparación recursiva de cualquier miembro.",
+              "checked_at": "2026-10-30"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-062"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 49; índice nativo 11842",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-30"
+      },
+      "reasons": [
+        "Conservar modelado de datos e igualdad y clave A; distinguir clase/struct, copia superficial y persistencia."
+      ],
+      "references": [
+        {
+          "title": "Microsoft: Records",
+          "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/record",
+          "locator": "Introducción; Immutability; Value equality; shallow copy de with",
+          "version": "Leída el 30-10-2026. record class es referencia y record struct valor; igualdad sintetizada no implica inmutabilidad profunda ni comparación recursiva de cualquier miembro.",
+          "checked_at": "2026-10-30"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P15-050",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "7377af9a0264196604ed40d029b72cb4265260fd2d6e254ee22cf6561723fcf3",
+      "content_sha256": "159edfb1d25d614fbdd93f09dbefb7fd6e7abd5870b798addff17b3750d2a4e4",
+      "before": {
+        "id": "MAN-GSI-P15-050",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Para qué sirven las nullable reference types?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Para permitir que cualquier tipo valor sea siempre null sin `?`."
+          },
+          {
+            "id": "B",
+            "text": "Para cifrar referencias."
+          },
+          {
+            "id": "C",
+            "text": "Para expresar y analizar en compilación si una referencia puede ser nula, reduciendo errores de null."
+          },
+          {
+            "id": "D",
+            "text": "Para desactivar todas las advertencias del compilador."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Para expresar y analizar en compilación si una referencia puede ser nula, reduciendo errores de null. Es una ayuda de análisis estático; no cambia por sí sola todas las garantías del runtime.",
+          "incorrect": "Según el solucionario: Para expresar y analizar en compilación si una referencia puede ser nula, reduciendo errores de null. Es una ayuda de análisis estático; no cambia por sí sola todas las garantías del runtime."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 50; índice nativo 12056",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 50; índice nativo 18095",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 50; índice nativo 12056",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P15-050",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Con nullable habilitado, una operación devuelve string? y el compilador advierte al usar su propiedad Length sin comprobar null. ¿Qué aporta esta característica?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Convertir las referencias anulables en valores Nullable<T> comprobados por el runtime."
+          },
+          {
+            "id": "B",
+            "text": "Insertar una comprobación en ejecución que sustituye null por una instancia predeterminada."
+          },
+          {
+            "id": "C",
+            "text": "Expresar la posible nulidad y analizar su uso en compilación para emitir advertencias."
+          },
+          {
+            "id": "D",
+            "text": "Hacer que el operador ! compruebe la referencia y rechace null antes de usar el objeto."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "La anotación string? expresa intención de nulidad y el análisis de flujo comprueba usos para generar advertencias de compilación. No crea un tipo de runtime distinto ni impide por sí solo que llegue null. Debe comprobarse el valor cuando corresponda. El operador ! informa al análisis, pero no comprueba, transforma o sustituye null en ejecución; ignorar advertencias puede seguir causando NullReferenceException.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Nullable<T> es el mecanismo para tipos valor anulables. Las anotaciones de referencias no convierten string? en un envoltorio de ese tipo.",
+            "B": "El análisis no inserta una sustitución automática por una instancia predeterminada; esa política necesita código explícito.",
+            "D": "El operador de supresión ! no realiza una comprobación en ejecución; afirma algo al análisis y puede ocultar una advertencia sin resolver el problema."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 50; índice nativo 12056",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 50; índice nativo 18095",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Microsoft: Nullable reference types",
+              "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/null-safety/nullable-reference-types",
+              "locator": "Introducción; Null-state analysis; Override the warnings with !; Known pitfalls",
+              "version": "Ruta final tras redirección de nullable-references, leída el 30-10-2026. Anotaciones y advertencias de compilación, no nuevo tipo de runtime ni chequeo automático por !.",
+              "checked_at": "2026-10-30"
+            },
+            {
+              "title": "Microsoft: Handling and throwing exceptions",
+              "url": "https://learn.microsoft.com/en-us/dotnet/standard/exceptions/",
+              "locator": "Introducción; Exceptions; Exceptions vs traditional error-handling methods: System.Exception y modelo común",
+              "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+              "checked_at": "2026-10-30"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-062"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 50; índice nativo 12056",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-30"
+      },
+      "reasons": [
+        "Conservar análisis estático de nulabilidad y clave C; caso de advertencia que distingue anotación, comprobación y supresión."
+      ],
+      "references": [
+        {
+          "title": "Microsoft: Nullable reference types",
+          "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/null-safety/nullable-reference-types",
+          "locator": "Introducción; Null-state analysis; Override the warnings with !; Known pitfalls",
+          "version": "Ruta final tras redirección de nullable-references, leída el 30-10-2026. Anotaciones y advertencias de compilación, no nuevo tipo de runtime ni chequeo automático por !.",
+          "checked_at": "2026-10-30"
+        },
+        {
+          "title": "Microsoft: Handling and throwing exceptions",
+          "url": "https://learn.microsoft.com/en-us/dotnet/standard/exceptions/",
+          "locator": "Introducción; Exceptions; Exceptions vs traditional error-handling methods: System.Exception y modelo común",
+          "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+          "checked_at": "2026-10-30"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P15-051",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "47b37791caba2e814bd30947d25898e8b8340c1865da93daa5c3169a7352a489",
+      "content_sha256": "c30daa29b2ee8bed1a7862ca7bb1bfce46899afdfc224f6aa6e9a2c95e3eb491",
+      "before": {
+        "id": "MAN-GSI-P15-051",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué permite el pattern matching moderno de C#?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Parametrizar clases y métodos por tipos comprobados por el compilador para reutilizar código sin conversiones repetidas."
+          },
+          {
+            "id": "B",
+            "text": "Inspeccionar tipos, miembros y atributos en ejecución mediante metadatos, sin expresarlos como patrones en `is` o `switch`."
+          },
+          {
+            "id": "C",
+            "text": "Comprobar formas, tipos y propiedades de datos con patrones expresivos en `is` y `switch`."
+          },
+          {
+            "id": "D",
+            "text": "Componer consultas sobre secuencias mediante operadores LINQ, con independencia de que se discriminen formas o tipos."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Comprobar formas, tipos y propiedades de datos con patrones expresivos en `is` y `switch`. El pattern matching mejora claridad al discriminar tipos y valores.",
+          "incorrect": "Según el solucionario: Comprobar formas, tipos y propiedades de datos con patrones expresivos en `is` y `switch`. El pattern matching mejora claridad al discriminar tipos y valores."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 51; índice nativo 12256",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 51; índice nativo 18455",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 51; índice nativo 12256",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P15-051",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué permite el pattern matching moderno de C#?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Parametrizar clases y métodos por tipos comprobados por el compilador para reutilizar código sin conversiones repetidas."
+          },
+          {
+            "id": "B",
+            "text": "Inspeccionar tipos, miembros y atributos en ejecución mediante metadatos, sin expresarlos como patrones en `is` o `switch`."
+          },
+          {
+            "id": "C",
+            "text": "Comprobar formas, tipos y propiedades de datos con patrones expresivos en `is` y `switch`."
+          },
+          {
+            "id": "D",
+            "text": "Componer consultas sobre secuencias mediante operadores LINQ, con independencia de que se discriminen formas o tipos."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Los patrones prueban un valor evaluado frente a tipos, constantes o formas y propiedades, en is o switch. Permiten extraer información y usar un tipo más preciso en la rama coincidente. No equivalen a reflexión general, parametrización genérica o consulta de secuencias. Un patrón de propiedades no coincide con null; las ramas y su orden deben cubrir los casos relevantes.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Parametrizar clases y métodos describe genéricos, no comprobar un valor mediante patrones.",
+            "B": "Inspeccionar metadatos mediante reflexión es un mecanismo distinto de los patrones expresados en is o switch.",
+            "D": "Componer consultas de secuencias corresponde a LINQ; puede utilizar patrones en sus expresiones, pero no define el mecanismo de pattern matching."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 51; índice nativo 12256",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 51; índice nativo 18455",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Microsoft: Pattern matching",
+              "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/patterns/pattern-matching",
+              "locator": "Introducción; is, case y brazos switch; patrones de tipo, propiedades y valores",
+              "version": "Ruta final tras redirección de functional/pattern-matching, leída el 30-10-2026. Se usan patrones consolidados, no novedades preview.",
+              "checked_at": "2026-10-30"
+            },
+            {
+              "title": "Microsoft: Generic types and methods",
+              "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/generics",
+              "locator": "Introducción; Generic collections: parámetros de tipo y error de agregar int a List<string>",
+              "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+              "checked_at": "2026-10-30"
+            },
+            {
+              "title": "Microsoft: Reflection in .NET",
+              "url": "https://learn.microsoft.com/en-us/dotnet/fundamentals/reflection/overview",
+              "locator": "Introducción; System.Type y System.Reflection; inspección de tipos/miembros e invocación",
+              "version": "Ruta final tras redirección de reflection/reflection, leída el 30-10-2026. La compatibilidad con recorte y Native AOT se contrasta con la fuente específica.",
+              "checked_at": "2026-10-30"
+            },
+            {
+              "title": "Microsoft: Introduction to LINQ queries",
+              "url": "https://learn.microsoft.com/en-us/dotnet/csharp/linq/get-started/introduction-to-linq-queries",
+              "locator": "Three parts of a query; Query execution; Deferred; ToList/ToArray frente a enumeración",
+              "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+              "checked_at": "2026-10-30"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-062"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 51; índice nativo 12256",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-30"
+      },
+      "reasons": [
+        "Conservar formulación completa y clave C; separar patrones, genéricos, reflexión y LINQ."
+      ],
+      "references": [
+        {
+          "title": "Microsoft: Pattern matching",
+          "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/patterns/pattern-matching",
+          "locator": "Introducción; is, case y brazos switch; patrones de tipo, propiedades y valores",
+          "version": "Ruta final tras redirección de functional/pattern-matching, leída el 30-10-2026. Se usan patrones consolidados, no novedades preview.",
+          "checked_at": "2026-10-30"
+        },
+        {
+          "title": "Microsoft: Generic types and methods",
+          "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/generics",
+          "locator": "Introducción; Generic collections: parámetros de tipo y error de agregar int a List<string>",
+          "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+          "checked_at": "2026-10-30"
+        },
+        {
+          "title": "Microsoft: Reflection in .NET",
+          "url": "https://learn.microsoft.com/en-us/dotnet/fundamentals/reflection/overview",
+          "locator": "Introducción; System.Type y System.Reflection; inspección de tipos/miembros e invocación",
+          "version": "Ruta final tras redirección de reflection/reflection, leída el 30-10-2026. La compatibilidad con recorte y Native AOT se contrasta con la fuente específica.",
+          "checked_at": "2026-10-30"
+        },
+        {
+          "title": "Microsoft: Introduction to LINQ queries",
+          "url": "https://learn.microsoft.com/en-us/dotnet/csharp/linq/get-started/introduction-to-linq-queries",
+          "locator": "Three parts of a query; Query execution; Deferred; ToList/ToArray frente a enumeración",
+          "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+          "checked_at": "2026-10-30"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P15-052",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "5184b563ba574df43fd50b534b7b653a228a3e07e92519c6ad56d9aa86b27dc0",
+      "content_sha256": "a79a90cf641caff3f192ed69b74099ea2068b5de245ae53ccdda85e9bbde5934",
+      "before": {
+        "id": "MAN-GSI-P15-052",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Cuál es una ventaja de los genéricos en APIs y colecciones?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Eliminar la necesidad de compilar."
+          },
+          {
+            "id": "B",
+            "text": "Mantener información de tipos y reducir casts inseguros."
+          },
+          {
+            "id": "C",
+            "text": "Convertir todos los tipos a string."
+          },
+          {
+            "id": "D",
+            "text": "Obligar a serializar todos los valores."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Mantener información de tipos y reducir casts inseguros. La seguridad de tipos es una de las razones centrales de los genéricos.",
+          "incorrect": "Según el solucionario: Mantener información de tipos y reducir casts inseguros. La seguridad de tipos es una de las razones centrales de los genéricos."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 52; índice nativo 12423",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 52; índice nativo 18740",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 52; índice nativo 12423",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P15-052",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Una API recibe List<int> y se intenta ejecutar numeros.Add(\"7\"). ¿Qué ventaja de los genéricos ilustra el contrato de esa colección?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Admitir la cadena y convertirla automáticamente a int al agregarla a la lista."
+          },
+          {
+            "id": "B",
+            "text": "Comprobar el tipo al compilar y rechazar ese argumento incompatible con int."
+          },
+          {
+            "id": "C",
+            "text": "Guardar cualquier argumento como object y exigir un cast al leer cada elemento."
+          },
+          {
+            "id": "D",
+            "text": "Posponer la comprobación del argumento hasta que se enumere la lista por primera vez."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "List<int> declara un contrato cuyo Add recibe un int. Pasar la cadena \"7\" no lo satisface y produce un error de compilación; la conversión de texto a número debe decidirse explícitamente. El parámetro de tipo mantiene esa comprobación sin una colección basada en object ni casts para recuperar el tipo de cada elemento. No elimina toda excepción posible de la aplicación.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "No existe conversión implícita general de string a int al llamar a Add; analizar o convertir texto requiere una operación apropiada.",
+            "C": "Describe el contrato de una colección basada en object, no Add de List<int> con su tipo concreto.",
+            "D": "La incompatibilidad del argumento se detecta al compilar la llamada; no se aplaza hasta recorrer la lista."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 52; índice nativo 12423",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 52; índice nativo 18740",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Microsoft: Generic types and methods",
+              "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/generics",
+              "locator": "Introducción; Generic collections: parámetros de tipo y error de agregar int a List<string>",
+              "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+              "checked_at": "2026-10-30"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-062"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 52; índice nativo 12423",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-30"
+      },
+      "reasons": [
+        "Conservar seguridad de tipos y clave B; caso de API genérica que rechaza una inserción incompatible."
+      ],
+      "references": [
+        {
+          "title": "Microsoft: Generic types and methods",
+          "url": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/generics",
+          "locator": "Introducción; Generic collections: parámetros de tipo y error de agregar int a List<string>",
+          "version": "Texto público consultado el 30-10-2026; sin instalación ni ejecución de .NET.",
+          "checked_at": "2026-10-30"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P15-053",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "5ae3e10e7fa0752b346b8426edb46aed8d7537059c1a1679c57d651fdba58583",
+      "content_sha256": "7b75fea3acc9c1c499cbc3ad6b8374b422454933b7bc440b4ac071eced8fbc2a",
+      "before": {
+        "id": "MAN-GSI-P15-053",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué hace `dotnet restore`?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Restaura las dependencias de paquetes necesarias para el proyecto."
+          },
+          {
+            "id": "B",
+            "text": "Ejecuta las pruebas unitarias."
+          },
+          {
+            "id": "C",
+            "text": "Publica la aplicación en producción."
+          },
+          {
+            "id": "D",
+            "text": "Repara el sistema operativo."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Restaura las dependencias de paquetes necesarias para el proyecto. Restore resuelve paquetes; en muchos comandos modernos se ejecuta implícitamente cuando hace falta.",
+          "incorrect": "Según el solucionario: Restaura las dependencias de paquetes necesarias para el proyecto. Restore resuelve paquetes; en muchos comandos modernos se ejecuta implícitamente cuando hace falta."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 53; índice nativo 12560",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 53; índice nativo 19035",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 53; índice nativo 12560",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P15-053",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T11",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué hace `dotnet restore`?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Resuelve y restaura los paquetes y herramientas de dependencia que requiere el proyecto."
+          },
+          {
+            "id": "B",
+            "text": "Compila los archivos fuente y genera los ensamblados de salida de la aplicación."
+          },
+          {
+            "id": "C",
+            "text": "Descubre las pruebas del proyecto y ejecuta sus casos con el runner configurado."
+          },
+          {
+            "id": "D",
+            "text": "Genera los artefactos de publicación para distribuir y ejecutar en un entorno de destino."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "dotnet restore resuelve dependencias de paquetes y herramientas y prepara los activos necesarios a partir de caché y orígenes configurados, descargando cuando hace falta. No es compilación, ejecución de pruebas o publicación. Otros comandos pueden restaurar implícitamente y --no-restore permite evitar ese paso cuando ya está resuelto. Restaurar no acredita por sí solo seguridad o calidad de las dependencias.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "Compilar fuentes y producir ensamblados corresponde a build; que build pueda restaurar implícitamente no convierte restore en compilación.",
+            "C": "Ejecutar pruebas corresponde a test y su runner. Restaurar sus dependencias no equivale a descubrir y ejecutar casos.",
+            "D": "Preparar artefactos distribuibles corresponde a publish, que puede usar una restauración implícita, pero realiza otro trabajo."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 15 — .NET Y JAKARTA EE — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 53; índice nativo 12560",
+          "question_source_id": "SRC-GSI-P15-CUADERNO",
+          "question_document_id": "DOC-GSI-P15-CUADERNO",
+          "question_locator": "Pregunta 53; índice nativo 19035",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Microsoft: dotnet restore",
+              "url": "https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-restore",
+              "locator": "Name; Description; restauración implícita y --no-restore",
+              "version": "Documentación aplicable SDK6+ leída el 30-10-2026. Resolver paquetes y usar caché no es compilar, probar, desplegar ni demostrar seguridad de dependencias. No se ejecuta restore.",
+              "checked_at": "2026-10-30"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-062"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P15-SOL",
+          "document_id": "DOC-GSI-P15-SOL",
+          "drive_id": "1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c",
+          "url": "https://docs.google.com/document/d/1UBydymrSl7YLGQ3UDqlaXJ4psTY1YsEnxIkyGLGuZ9c/edit",
+          "locator": "Pregunta 53; índice nativo 12560",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-15",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-30"
+      },
+      "reasons": [
+        "Conservar restauración de dependencias y clave A; contrastar comandos reales sin afirmar descarga o ejecución obligatoria."
+      ],
+      "references": [
+        {
+          "title": "Microsoft: dotnet restore",
+          "url": "https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-restore",
+          "locator": "Name; Description; restauración implícita y --no-restore",
+          "version": "Documentación aplicable SDK6+ leída el 30-10-2026. Resolver paquetes y usar caché no es compilar, probar, desplegar ni demostrar seguridad de dependencias. No se ejecuta restore.",
+          "checked_at": "2026-10-30"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    }
+  ]
+}

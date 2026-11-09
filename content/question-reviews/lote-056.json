@@ -1,0 +1,3684 @@
+{
+  "version": 1,
+  "id": "GSI-EDITORIAL-056",
+  "prepared_at": "2026-10-29",
+  "baseline_commit": "e3e20ab879518c899806a70575eead28b3b35e6f",
+  "items": [
+    {
+      "id": "AI-GSI-B3-T06-001",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "25a377d76c4df74b141090d377592ca0627ae1da760db94a149d38ddaaa58cad",
+      "content_sha256": "f1cabc180b85d04b3b113f755e41d1aec4b966408791cda9e3d98173992dd30a",
+      "before": {
+        "id": "AI-GSI-B3-T06-001",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T06",
+        "subtopic": "Construcción",
+        "exam": null,
+        "statement": "¿Qué contribuye a construir código mantenible?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Una única función para todo"
+          },
+          {
+            "id": "B",
+            "text": "Dependencias sin control"
+          },
+          {
+            "id": "C",
+            "text": "Ausencia de estándares"
+          },
+          {
+            "id": "D",
+            "text": "Modularidad, revisión y pruebas automatizadas"
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "La construcción incorpora calidad y revisión, no solo producción de código.",
+          "incorrect": "La construcción incorpora calidad y revisión, no solo producción de código."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 1. Construcción",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Convierte diseño/requisitos en código mantenible. Prácticas: estándares, modularidad, revisión, análisis estático, gestión de dependencias, testing automatizado y control de versiones.",
+          "evidence_sha256": "59e8529405ca3446ab60e89dd836c5f9b6947d9cf27994b2cb4f9241b70badec",
+          "record_sha256": "6b3c64fc7775a623e8537d5c5237ea99c9b34cbd15a189f08b99565fba3243f8",
+          "review_id": "AI-GSI-B3-T06-001",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 1. Construcción",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T06-001",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T06",
+        "subtopic": "Construcción",
+        "exam": null,
+        "statement": "¿Qué contribuye a construir código mantenible?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Concentrar responsabilidades distintas para reducir el número de funciones."
+          },
+          {
+            "id": "B",
+            "text": "Dar prioridad al número de líneas producidas como medida suficiente de calidad."
+          },
+          {
+            "id": "C",
+            "text": "Delegar la detección de regresiones en las incidencias que lleguen de producción."
+          },
+          {
+            "id": "D",
+            "text": "Separar responsabilidades, revisar cambios y probar comportamientos relevantes."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Separar responsabilidades comprensibles facilita localizar y cambiar una parte sin arrastrar dependencias innecesarias. La revisión contrasta diseño, claridad y comportamiento; las pruebas pertinentes aportan evidencia frente a regresiones. Estas prácticas se complementan: ni dividir por dividir ni acumular pruebas triviales garantiza mantenibilidad. Deben ajustarse a la complejidad y al riesgo del cambio.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Concentrar tareas no relacionadas puede aumentar acoplamiento y dificultar entender los efectos de una modificación.",
+            "B": "Más líneas no demuestra claridad, corrección o facilidad de evolución; la medida no basta para valorar calidad.",
+            "C": "Esperar incidencias detecta problemas tarde y no sustituye revisar y comprobar cambios antes de usarlos."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 1. Construcción",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Convierte diseño/requisitos en código mantenible. Prácticas: estándares, modularidad, revisión, análisis estático, gestión de dependencias, testing automatizado y control de versiones.",
+          "evidence_sha256": "59e8529405ca3446ab60e89dd836c5f9b6947d9cf27994b2cb4f9241b70badec",
+          "record_sha256": "6b3c64fc7775a623e8537d5c5237ea99c9b34cbd15a189f08b99565fba3243f8",
+          "review_id": "AI-GSI-B3-T06-001",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Google Engineering Practices: What to look for in a code review",
+              "url": "https://google.github.io/eng-practices/review/reviewer/looking-for.html",
+              "locator": "Design; Functionality; Complexity; Tests; Documentation",
+              "version": "Guía pública leída el 29-10-2026, sin número de edición indicado en el cuerpo. Complejidad comprensible y pruebas pertinentes, sin convertir una lista de prácticas en garantía de calidad",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-056"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 1. Construcción",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar mantenibilidad y clave D; prácticas comparables y límites de modularidad/revisión/pruebas sin garantías automáticas."
+      ],
+      "references": [
+        {
+          "title": "Google Engineering Practices: What to look for in a code review",
+          "url": "https://google.github.io/eng-practices/review/reviewer/looking-for.html",
+          "locator": "Design; Functionality; Complexity; Tests; Documentation",
+          "version": "Guía pública leída el 29-10-2026, sin número de edición indicado en el cuerpo. Complejidad comprensible y pruebas pertinentes, sin convertir una lista de prácticas en garantía de calidad",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T06-002",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "39b311c1bdb59507c456cf8bebd64a3a610bfdeb50963c153b129d81948999ce",
+      "content_sha256": "2a89a5548343f670f83e9a4c66a6a3837e6b8bf232afe721926d8d74780023ff",
+      "before": {
+        "id": "AI-GSI-B3-T06-002",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T06",
+        "subtopic": "Git",
+        "exam": null,
+        "statement": "¿Qué objetivo central aporta el control de versiones?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Garantizar corrección funcional automáticamente"
+          },
+          {
+            "id": "B",
+            "text": "Sustituir todas las pruebas"
+          },
+          {
+            "id": "C",
+            "text": "Evitar toda documentación"
+          },
+          {
+            "id": "D",
+            "text": "Trazabilidad y colaboración"
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Versionar permite identificar y coordinar cambios, pero no prueba su calidad.",
+          "incorrect": "Versionar permite identificar y coordinar cambios, pero no prueba su calidad."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 2. Git",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Repositorio, commit, branch, merge/rebase, tag, pull request. El objetivo no es memorizar comandos, sino trazabilidad y colaboración. Branching debe ser tan simple como permita el modelo de entrega.",
+          "evidence_sha256": "175ec0bf33b55d84fe0ecd577787900d07aa80f1d463deb9ba640fc8bf09c116",
+          "record_sha256": "b4678b00d0456b97aa38f0b67cc64330c50d05cbaee48dcbd4293e4ee0c43438",
+          "review_id": "AI-GSI-B3-T06-002",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 2. Git",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T06-002",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T06",
+        "subtopic": "Git",
+        "exam": null,
+        "statement": "¿Qué objetivo central aporta el control de versiones?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Certificar que cada cambio registrado satisface los requisitos funcionales."
+          },
+          {
+            "id": "B",
+            "text": "Resolver los conflictos entre desarrolladores sin revisión de su significado."
+          },
+          {
+            "id": "C",
+            "text": "Decidir la versión que debe publicarse solo por ser la más reciente."
+          },
+          {
+            "id": "D",
+            "text": "Registrar y comparar cambios para coordinar y recuperar versiones identificables."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "El control de versiones conserva cambios identificables y permite comparar, atribuir y recuperar estados registrados. Un historial compartido ayuda a coordinar trabajo y analizar cómo se llegó a una versión. Un commit no certifica comportamiento correcto: la revisión y las pruebas aportan evidencia distinta. Recuperar una versión de archivos tampoco revierte automáticamente una base de datos o efectos externos.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Registrar contenido no demuestra que cumpla los requisitos; puede versionarse código defectuoso.",
+            "B": "El gestor ayuda a combinar cambios, pero un conflicto o una combinación semánticamente incorrecta requiere criterio.",
+            "C": "Ser reciente no equivale a estar aceptado para publicación. El historial no sustituye esa decisión."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 2. Git",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Repositorio, commit, branch, merge/rebase, tag, pull request. El objetivo no es memorizar comandos, sino trazabilidad y colaboración. Branching debe ser tan simple como permita el modelo de entrega.",
+          "evidence_sha256": "175ec0bf33b55d84fe0ecd577787900d07aa80f1d463deb9ba640fc8bf09c116",
+          "record_sha256": "b4678b00d0456b97aa38f0b67cc64330c50d05cbaee48dcbd4293e4ee0c43438",
+          "review_id": "AI-GSI-B3-T06-002",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Pro Git: About Version Control",
+              "url": "https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control",
+              "locator": "1.1 About Version Control; cambios, comparación y recuperación; Centralized/Distributed Version Control Systems",
+              "version": "Pro Git, segunda edición, capítulo público leído el 29-10-2026. Versionar no demuestra corrección ni elimina conflictos",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-056"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 2. Git",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar trazabilidad/colaboración y clave D; distinguir registro de cambios, corrección y autorización de entrega."
+      ],
+      "references": [
+        {
+          "title": "Pro Git: About Version Control",
+          "url": "https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control",
+          "locator": "1.1 About Version Control; cambios, comparación y recuperación; Centralized/Distributed Version Control Systems",
+          "version": "Pro Git, segunda edición, capítulo público leído el 29-10-2026. Versionar no demuestra corrección ni elimina conflictos",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T06-003",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "a1e060997512fb2dadbb88d7b132eb9cf3871883b01914e85bc8816de61be173",
+      "content_sha256": "59981a9990dd357d9e5bfc9acae33091933b9a2b7fccb962bd97f8a6d4970be0",
+      "before": {
+        "id": "AI-GSI-B3-T06-003",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T06",
+        "subtopic": "Build reproducible",
+        "exam": null,
+        "statement": "¿Qué favorece reproducir una construcción?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Cambiar herramientas en cada ejecución"
+          },
+          {
+            "id": "B",
+            "text": "Descargas manuales no documentadas"
+          },
+          {
+            "id": "C",
+            "text": "Dependencias fijadas y lockfiles"
+          },
+          {
+            "id": "D",
+            "text": "Versiones flotantes sin registro"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "La reproducibilidad exige controlar entradas, herramientas y dependencias.",
+          "incorrect": "La reproducibilidad exige controlar entradas, herramientas y dependencias."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 3. Build reproducible",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Dependencias fijadas, lockfiles, repositorios controlados, artefactos inmutables, versiones, checksums, SBOM. “Funciona en mi máquina” se reduce con entornos reproducibles y CI.",
+          "evidence_sha256": "e201c6af6d8446d3586219a5645700914925abfe398b22ff27dd5f306e3b4f14",
+          "record_sha256": "5e59bc5fd035ea142512bcf312b71fe4513d6a446dbaa7cff99098b44a44758c",
+          "review_id": "AI-GSI-B3-T06-003",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 3. Build reproducible",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T06-003",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T06",
+        "subtopic": "Build reproducible",
+        "exam": null,
+        "statement": "Dos instalaciones del mismo commit resuelven versiones transitivas distintas. ¿Qué medida reduce esa variación de dependencias?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Mantener rangos flotantes y resolverlos de nuevo en cada instalación."
+          },
+          {
+            "id": "B",
+            "text": "Compartir el comando de instalación sin registrar el árbol resuelto."
+          },
+          {
+            "id": "C",
+            "text": "Versionar el lockfile y usar una instalación que respete sus resoluciones."
+          },
+          {
+            "id": "D",
+            "text": "Actualizar las dependencias transitivas antes de cada ejecución del build."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "El lockfile registra versiones y resoluciones concretas del árbol de dependencias y debe utilizarse de forma consistente. Así se evita que una nueva resolución cambie las dependencias con el mismo código. Favorece reproducibilidad, pero no basta para garantizar artefactos idénticos: también importan fuentes, herramientas, entorno e instrucciones. No se cambia aquí el stack ni se añade un gestor al proyecto.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Resolver rangos en momentos distintos puede seleccionar versiones diferentes y conserva la variación descrita.",
+            "B": "El mismo comando puede resolver otro árbol si las versiones siguen flotando o no se respeta un registro exacto.",
+            "D": "Actualizar entradas antes de cada build introduce variación; la actualización debe ser un cambio controlado y revisable."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 3. Build reproducible",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Dependencias fijadas, lockfiles, repositorios controlados, artefactos inmutables, versiones, checksums, SBOM. “Funciona en mi máquina” se reduce con entornos reproducibles y CI.",
+          "evidence_sha256": "e201c6af6d8446d3586219a5645700914925abfe398b22ff27dd5f306e3b4f14",
+          "record_sha256": "5e59bc5fd035ea142512bcf312b71fe4513d6a446dbaa7cff99098b44a44758c",
+          "review_id": "AI-GSI-B3-T06-003",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "npm: package-lock.json",
+              "url": "https://docs.npmjs.com/cli/v11/configuring-npm/package-lock-json/",
+              "locator": "Description: árbol exacto de dependencias e inclusión del lockfile en control de versiones",
+              "version": "Documentación CLI v11, selector 11.21.1 Legacy al consultar el 29-10-2026. Se cita como ejemplo de lockfile, no versión local o recomendación de instalar una versión antigua",
+              "checked_at": "2026-10-29"
+            },
+            {
+              "title": "Reproducible Builds: Definitions",
+              "url": "https://reproducible-builds.org/docs/definition/",
+              "locator": "When is a build reproducible?; Explanations: fuentes, entorno, instrucciones y artefactos idénticos bit a bit",
+              "version": "Definición pública leída el 29-10-2026, sin versión numerada indicada. Lockfile es una entrada controlada, no garantía suficiente de reproducibilidad total",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-056"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 3. Build reproducible",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar dependencias fijadas y clave C; microcaso de resolución distinta para un mismo commit y límite de lockfile."
+      ],
+      "references": [
+        {
+          "title": "npm: package-lock.json",
+          "url": "https://docs.npmjs.com/cli/v11/configuring-npm/package-lock-json/",
+          "locator": "Description: árbol exacto de dependencias e inclusión del lockfile en control de versiones",
+          "version": "Documentación CLI v11, selector 11.21.1 Legacy al consultar el 29-10-2026. Se cita como ejemplo de lockfile, no versión local o recomendación de instalar una versión antigua",
+          "checked_at": "2026-10-29"
+        },
+        {
+          "title": "Reproducible Builds: Definitions",
+          "url": "https://reproducible-builds.org/docs/definition/",
+          "locator": "When is a build reproducible?; Explanations: fuentes, entorno, instrucciones y artefactos idénticos bit a bit",
+          "version": "Definición pública leída el 29-10-2026, sin versión numerada indicada. Lockfile es una entrada controlada, no garantía suficiente de reproducibilidad total",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T06-004",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "2d1fcab8fe0fd0e93d150e469a58740f4f76325b419a48ba6baf4bf2c8b1bbac",
+      "content_sha256": "dd0ecc64bdb8a0611d87c0b4f6c17fdba769a47c0b92b497e162fe67d335920f",
+      "before": {
+        "id": "AI-GSI-B3-T06-004",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T06",
+        "subtopic": "Build reproducible",
+        "exam": null,
+        "statement": "¿Para qué sirven checksums de artefactos?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Comprobar identidad e integridad de los archivos"
+          },
+          {
+            "id": "B",
+            "text": "Sustituir la revisión de licencias"
+          },
+          {
+            "id": "C",
+            "text": "Decidir automáticamente si cumplen requisitos funcionales"
+          },
+          {
+            "id": "D",
+            "text": "Definir roles del equipo"
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Los checksums identifican contenido; no validan por sí solos comportamiento ni condiciones legales.",
+          "incorrect": "Los checksums identifican contenido; no validan por sí solos comportamiento ni condiciones legales."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 3. Build reproducible",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Dependencias fijadas, lockfiles, repositorios controlados, artefactos inmutables, versiones, checksums, SBOM. “Funciona en mi máquina” se reduce con entornos reproducibles y CI.",
+          "evidence_sha256": "e201c6af6d8446d3586219a5645700914925abfe398b22ff27dd5f306e3b4f14",
+          "record_sha256": "a058c262f654d78a86e782843ad5f3025dd79862ab387845bad4cb2cb4943aae",
+          "review_id": "AI-GSI-B3-T06-004",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 3. Build reproducible",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T06-004",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T06",
+        "subtopic": "Build reproducible",
+        "exam": null,
+        "statement": "Se descarga un artefacto y se dispone de su SHA-256 esperado por un canal fiable. ¿Para qué sirve calcular y comparar el SHA-256 del archivo recibido?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Comparar el contenido recibido con el resumen esperado de referencia."
+          },
+          {
+            "id": "B",
+            "text": "Acreditar quién publicó el archivo solo por calcular su hash local."
+          },
+          {
+            "id": "C",
+            "text": "Confirmar que el archivo cumple todos los requisitos funcionales."
+          },
+          {
+            "id": "D",
+            "text": "Determinar que todas sus dependencias permiten el uso previsto por licencia."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Comparar un resumen criptográfico del archivo con una referencia obtenida de forma fiable ayuda a comprobar integridad del contenido. Una discrepancia revela que no coincide con esa referencia; una coincidencia no ejecuta el programa ni demuestra su corrección funcional. El hash aislado no autentica al autor: si alguien sustituye archivo y resumen en un canal no confiable, la comparación no detecta esa suplantación.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "Un resumen calculado localmente identifica contenido, pero no vincula por sí solo el archivo a una identidad de autor.",
+            "C": "Un programa con fallos también tiene hash; el resumen no sustituye las pruebas de comportamiento.",
+            "D": "La licencia se determina a partir de sus términos y procedencia, no del valor de un hash."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 3. Build reproducible",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Dependencias fijadas, lockfiles, repositorios controlados, artefactos inmutables, versiones, checksums, SBOM. “Funciona en mi máquina” se reduce con entornos reproducibles y CI.",
+          "evidence_sha256": "e201c6af6d8446d3586219a5645700914925abfe398b22ff27dd5f306e3b4f14",
+          "record_sha256": "a058c262f654d78a86e782843ad5f3025dd79862ab387845bad4cb2cb4943aae",
+          "review_id": "AI-GSI-B3-T06-004",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Reproducible Builds: Cryptographic checksums",
+              "url": "https://reproducible-builds.org/docs/checksums/",
+              "locator": "Comparación byte a byte; intercambio de resúmenes criptográficos y ejemplo de firma",
+              "version": "Página pública leída el 29-10-2026, sin edición numerada. Se exige referencia fiable; comparar un resumen no ejecuta pruebas funcionales o revisión de licencias",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-056"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 3. Build reproducible",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar comprobación de contenido y clave A; microcaso con referencia fiable, sin equiparar integridad, autenticidad y calidad."
+      ],
+      "references": [
+        {
+          "title": "Reproducible Builds: Cryptographic checksums",
+          "url": "https://reproducible-builds.org/docs/checksums/",
+          "locator": "Comparación byte a byte; intercambio de resúmenes criptográficos y ejemplo de firma",
+          "version": "Página pública leída el 29-10-2026, sin edición numerada. Se exige referencia fiable; comparar un resumen no ejecuta pruebas funcionales o revisión de licencias",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T06-005",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "2ba9435026b270afb9f27d6199aefa100c39d7ddb311186b8fb09d048f3d5e8e",
+      "content_sha256": "66033f5e77078725bd427581a65d9615d444d417c266fca0954565c942a6ceb3",
+      "before": {
+        "id": "AI-GSI-B3-T06-005",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T06",
+        "subtopic": "Integración continua",
+        "exam": null,
+        "statement": "¿Qué caracteriza la integración continua?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Mantener cambios aislados indefinidamente"
+          },
+          {
+            "id": "B",
+            "text": "Esperar al final del proyecto para combinar ramas"
+          },
+          {
+            "id": "C",
+            "text": "Publicar sin compilar ni probar"
+          },
+          {
+            "id": "D",
+            "text": "Integrar cambios frecuentes con construcción y pruebas automáticas"
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "CI acorta el intervalo para detectar incompatibilidades al integrar.",
+          "incorrect": "CI acorta el intervalo para detectar incompatibilidades al integrar."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 4. Integración continua",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Cambios frecuentes integrados en rama compartida con build y pruebas automáticas. Pipeline típico: checkout → dependencias → compile/build → static analysis → unit tests → package → security scans → artefacto.",
+          "evidence_sha256": "301fc189d3d083f23b4969da8c56df639eb56a7cc9b8005b4ec9c3cb3a5afce3",
+          "record_sha256": "ddee067a6bc88d583ad592e1bfd32ccbc02db72f45cd4c04c3283066e720e9d2",
+          "review_id": "AI-GSI-B3-T06-005",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 4. Integración continua",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T06-005",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T06",
+        "subtopic": "Integración continua",
+        "exam": null,
+        "statement": "¿Qué caracteriza la integración continua?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Conservar ramas separadas y probar cada una sin integrarlas en una base compartida."
+          },
+          {
+            "id": "B",
+            "text": "Programar una única combinación al final y resolver entonces incompatibilidades."
+          },
+          {
+            "id": "C",
+            "text": "Publicar automáticamente cada cambio aunque no se ejecute una construcción."
+          },
+          {
+            "id": "D",
+            "text": "Integrar cambios pequeños con frecuencia y verificar la base compartida automáticamente."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "La integración continua combina trabajo frecuente en una base compartida y ejecuta construcción y pruebas automáticas para obtener feedback temprano. Los fallos deben atenderse y los resultados estar disponibles al equipo. Ejecutar un servidor de CI sobre ramas que permanecen aisladas no basta para practicar integración continua. Tampoco significa desplegar en producción cada cambio sin otra decisión.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Probar ramas aisladas no comprueba que el trabajo integrado conviva en la base compartida.",
+            "B": "La combinación tardía retrasa la detección de incompatibilidades que CI busca acortar.",
+            "C": "Publicar sin verificar no define CI; entrega y despliegue tienen controles y decisiones adicionales."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 4. Integración continua",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Cambios frecuentes integrados en rama compartida con build y pruebas automáticas. Pipeline típico: checkout → dependencias → compile/build → static analysis → unit tests → package → security scans → artefacto.",
+          "evidence_sha256": "301fc189d3d083f23b4969da8c56df639eb56a7cc9b8005b4ec9c3cb3a5afce3",
+          "record_sha256": "ddee067a6bc88d583ad592e1bfd32ccbc02db72f45cd4c04c3283066e720e9d2",
+          "review_id": "AI-GSI-B3-T06-005",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "DORA: Continuous integration",
+              "url": "https://dora.dev/capabilities/continuous-integration/",
+              "locator": "How to implement CI: integración frecuente en rama principal compartida, build y tests automáticos; resultados visibles y reparación",
+              "version": "Texto público leído el 29-10-2026, sin edición numerada. Las cifras de investigación no se convierten en cuota obligatoria por organización; CI no implica publicación automática",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-056"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 4. Integración continua",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar integración frecuente y clave D; diferenciar práctica de CI, uso de una herramienta y despliegue automático."
+      ],
+      "references": [
+        {
+          "title": "DORA: Continuous integration",
+          "url": "https://dora.dev/capabilities/continuous-integration/",
+          "locator": "How to implement CI: integración frecuente en rama principal compartida, build y tests automáticos; resultados visibles y reparación",
+          "version": "Texto público leído el 29-10-2026, sin edición numerada. Las cifras de investigación no se convierten en cuota obligatoria por organización; CI no implica publicación automática",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T06-006",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "ee9d4b87c9e2304da8f81f6ea8e378048d28fdb330d73ed61869e4337807e87d",
+      "content_sha256": "20b47496db9cc4d516628d43d3805c5fdc1f92e163c689e1d5ee912994f4f023",
+      "before": {
+        "id": "AI-GSI-B3-T06-006",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T06",
+        "subtopic": "Integración continua",
+        "exam": null,
+        "statement": "¿Qué salida útil produce un pipeline de construcción?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Un binario reconstruido fuera del pipeline sin trazabilidad"
+          },
+          {
+            "id": "B",
+            "text": "Un conjunto de fuentes sin comprobar que puedan empaquetarse"
+          },
+          {
+            "id": "C",
+            "text": "Solo logs sin artefacto identificable"
+          },
+          {
+            "id": "D",
+            "text": "Un artefacto empaquetado y validado"
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "El pipeline automatiza pasos que culminan en un artefacto trazable.",
+          "incorrect": "El pipeline automatiza pasos que culminan en un artefacto trazable."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 4. Integración continua",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Cambios frecuentes integrados en rama compartida con build y pruebas automáticas. Pipeline típico: checkout → dependencias → compile/build → static analysis → unit tests → package → security scans → artefacto.",
+          "evidence_sha256": "301fc189d3d083f23b4969da8c56df639eb56a7cc9b8005b4ec9c3cb3a5afce3",
+          "record_sha256": "40c7f790dd59545b1d8eb4bfb8d61ced170b3a70aee9215c888ec8bb47b7ccda",
+          "review_id": "AI-GSI-B3-T06-006",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 4. Integración continua",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T06-006",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T06",
+        "subtopic": "Integración continua",
+        "exam": null,
+        "statement": "En un pipeline cuyo objetivo es construir y empaquetar una versión entregable, ¿qué salida debe poder conservarse y promoverse?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Una copia de trabajo modificable sin vincularla a la revisión construida."
+          },
+          {
+            "id": "B",
+            "text": "Una caché de dependencias que no identifica el producto empaquetado."
+          },
+          {
+            "id": "C",
+            "text": "Un log correcto que no conserva el paquete obtenido en esa ejecución."
+          },
+          {
+            "id": "D",
+            "text": "Un paquete identificable vinculado a su origen y a los controles ejecutados."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Un pipeline de construcción y empaquetado útil deja un artefacto identificable y trazable a sus entradas y resultados. El paquete es la salida que podrá promoverse según los controles y aprobaciones del proyecto. Logs y cachés ayudan, pero no sustituyen ese producto. Superar los controles definidos no certifica ausencia de defectos ni obliga a publicar automáticamente.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Una copia modificable sin revisión identificada no permite saber qué contenido produjo la entrega.",
+            "B": "La caché acelera trabajo y puede ser una salida auxiliar; no sustituye el artefacto solicitado.",
+            "C": "El log aporta evidencia del proceso, pero no permite promover el mismo paquete si este no se conserva."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 4. Integración continua",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Cambios frecuentes integrados en rama compartida con build y pruebas automáticas. Pipeline típico: checkout → dependencias → compile/build → static analysis → unit tests → package → security scans → artefacto.",
+          "evidence_sha256": "301fc189d3d083f23b4969da8c56df639eb56a7cc9b8005b4ec9c3cb3a5afce3",
+          "record_sha256": "40c7f790dd59545b1d8eb4bfb8d61ced170b3a70aee9215c888ec8bb47b7ccda",
+          "review_id": "AI-GSI-B3-T06-006",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Apache Maven: Introduction to the Build Lifecycle",
+              "url": "https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html",
+              "locator": "Build Lifecycle Basics; fases validate/compile/test/package/verify/install/deploy y plugins vinculados",
+              "version": "Guía pública leída el 29-10-2026. Se usa Maven como ejemplo de coordinación; fases y verificaciones dependen del proyecto y no se ejecuta ningún comando de la guía",
+              "checked_at": "2026-10-29"
+            },
+            {
+              "title": "Reproducible Builds: Definitions",
+              "url": "https://reproducible-builds.org/docs/definition/",
+              "locator": "When is a build reproducible?; Explanations: fuentes, entorno, instrucciones y artefactos idénticos bit a bit",
+              "version": "Definición pública leída el 29-10-2026, sin versión numerada indicada. Lockfile es una entrada controlada, no garantía suficiente de reproducibilidad total",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-056"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 4. Integración continua",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar artefacto empaquetado/validado y clave D; precisar trazabilidad y alcance de validación sin prometer calidad universal."
+      ],
+      "references": [
+        {
+          "title": "Apache Maven: Introduction to the Build Lifecycle",
+          "url": "https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html",
+          "locator": "Build Lifecycle Basics; fases validate/compile/test/package/verify/install/deploy y plugins vinculados",
+          "version": "Guía pública leída el 29-10-2026. Se usa Maven como ejemplo de coordinación; fases y verificaciones dependen del proyecto y no se ejecuta ningún comando de la guía",
+          "checked_at": "2026-10-29"
+        },
+        {
+          "title": "Reproducible Builds: Definitions",
+          "url": "https://reproducible-builds.org/docs/definition/",
+          "locator": "When is a build reproducible?; Explanations: fuentes, entorno, instrucciones y artefactos idénticos bit a bit",
+          "version": "Definición pública leída el 29-10-2026, sin versión numerada indicada. Lockfile es una entrada controlada, no garantía suficiente de reproducibilidad total",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T06-008",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "940d739a4ef7a050adedb758de5cab249a81ed049a202915c1de2c971f76dbe7",
+      "content_sha256": "1f27f5a3eb3134845e4fd08f4928fc29ed92ce187a0231eb278202813066c055",
+      "before": {
+        "id": "AI-GSI-B3-T06-008",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T06",
+        "subtopic": "DevOps",
+        "exam": null,
+        "statement": "¿Qué describe DevOps?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Solo un cargo que asume todo el trabajo"
+          },
+          {
+            "id": "B",
+            "text": "Cultura y prácticas de colaboración entre desarrollo y operación"
+          },
+          {
+            "id": "C",
+            "text": "Un producto único obligatorio"
+          },
+          {
+            "id": "D",
+            "text": "La eliminación de operación"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Responsabilidad compartida, automatización y feedback reducen fricción.",
+          "incorrect": "Responsabilidad compartida, automatización y feedback reducen fricción."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 6. DevOps",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Cultura/prácticas para reducir fricción desarrollo-operación mediante automatización, responsabilidad compartida, feedback y observabilidad. DevSecOps integra seguridad en todo el flujo.",
+          "evidence_sha256": "40db76889e378260c43ab349e5316950dfcc1c345fe83f3755b3d864c36f9aff",
+          "record_sha256": "e66bc5652c8df5654b6a5ddcd8dcd88fee19758852e88a8a8573fa4411861e21",
+          "review_id": "AI-GSI-B3-T06-008",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 6. DevOps",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T06-008",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T06",
+        "subtopic": "DevOps",
+        "exam": null,
+        "statement": "¿Qué describe DevOps?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Unificar todos los roles en una persona como condición del modelo."
+          },
+          {
+            "id": "B",
+            "text": "Compartir responsabilidad y feedback entre desarrollo y operación."
+          },
+          {
+            "id": "C",
+            "text": "Adoptar una plataforma de automatización como sustituto del cambio cultural."
+          },
+          {
+            "id": "D",
+            "text": "Trasladar al equipo de operación la responsabilidad por todos los fallos del producto."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "DevOps combina cultura y prácticas para colaborar a lo largo del ciclo de entrega y operación, con feedback, automatización y responsabilidad compartida. No impone que una persona asuma todos los roles o que desaparezcan las especialidades. Comprar herramientas puede ayudar a las prácticas, pero no elimina por sí solo silos o problemas de coordinación.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Colaborar no exige concentrar todas las competencias y tareas en una sola persona.",
+            "C": "La plataforma no sustituye acuerdos de trabajo, comunicación y responsabilidad compartida.",
+            "D": "Transferir toda la culpa mantiene la separación que se pretende mejorar y no comparte responsabilidad."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 6. DevOps",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Cultura/prácticas para reducir fricción desarrollo-operación mediante automatización, responsabilidad compartida, feedback y observabilidad. DevSecOps integra seguridad en todo el flujo.",
+          "evidence_sha256": "40db76889e378260c43ab349e5316950dfcc1c345fe83f3755b3d864c36f9aff",
+          "record_sha256": "e66bc5652c8df5654b6a5ddcd8dcd88fee19758852e88a8a8573fa4411861e21",
+          "review_id": "AI-GSI-B3-T06-008",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "AWS: What is DevOps?",
+              "url": "https://aws.amazon.com/devops/what-is-devops/",
+              "locator": "DevOps Model Defined; How DevOps Works; Improved Collaboration; DevOps Cultural Philosophy",
+              "version": "Definición y prácticas públicas leídas el 29-10-2026, sin edición numerada. Colaboración y responsabilidad compartida no requieren fusionar todos los roles ni usar productos AWS",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-056"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 6. DevOps",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar colaboración desarrollo/operación y clave B; distinguir cultura, roles, herramientas y reparto de responsabilidad."
+      ],
+      "references": [
+        {
+          "title": "AWS: What is DevOps?",
+          "url": "https://aws.amazon.com/devops/what-is-devops/",
+          "locator": "DevOps Model Defined; How DevOps Works; Improved Collaboration; DevOps Cultural Philosophy",
+          "version": "Definición y prácticas públicas leídas el 29-10-2026, sin edición numerada. Colaboración y responsabilidad compartida no requieren fusionar todos los roles ni usar productos AWS",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T06-009",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "2124b875328507bbb31e3032c6778b579ec9c80f1589044eae40d33dd795b7ec",
+      "content_sha256": "de3da9c57cd5c0b6331ee70b49c11b79aa3e4cbcf3e6841fc497eca502147b1f",
+      "before": {
+        "id": "AI-GSI-B3-T06-009",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T06",
+        "subtopic": "DevOps",
+        "exam": null,
+        "statement": "¿Qué añade DevSecOps al flujo?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Publicación de secretos para facilitar pruebas"
+          },
+          {
+            "id": "B",
+            "text": "Supresión de revisiones"
+          },
+          {
+            "id": "C",
+            "text": "Integración de seguridad durante todo el proceso"
+          },
+          {
+            "id": "D",
+            "text": "Seguridad solo en la última auditoría"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "La seguridad se integra en construcción, entrega y operación.",
+          "incorrect": "La seguridad se integra en construcción, entrega y operación."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 6. DevOps",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Cultura/prácticas para reducir fricción desarrollo-operación mediante automatización, responsabilidad compartida, feedback y observabilidad. DevSecOps integra seguridad en todo el flujo.",
+          "evidence_sha256": "40db76889e378260c43ab349e5316950dfcc1c345fe83f3755b3d864c36f9aff",
+          "record_sha256": "183dd5a9f7e373b5e2671494947a5c461a08fc9041d596e72770d09e80d8dc24",
+          "review_id": "AI-GSI-B3-T06-009",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 6. DevOps",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T06-009",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T06",
+        "subtopic": "DevOps",
+        "exam": null,
+        "statement": "¿Qué añade DevSecOps al flujo?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Dejar la seguridad para una auditoría independiente tras terminar el desarrollo."
+          },
+          {
+            "id": "B",
+            "text": "Ejecutar un escáner aislado y tratar sus resultados como corrección automática."
+          },
+          {
+            "id": "C",
+            "text": "Integrar prácticas de seguridad en diseño, construcción, entrega y operación."
+          },
+          {
+            "id": "D",
+            "text": "Asignar todos los riesgos a operación una vez publicada la versión."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "DevSecOps incorpora seguridad al flujo de trabajo y sus responsabilidades durante el ciclo de vida. Diseñar requisitos, revisar, analizar, probar y responder a vulnerabilidades son actividades complementarias según el riesgo. No basta añadir un escáner ni se elimina una auditoría final que resulte pertinente. Los hallazgos necesitan evaluación y tratamiento, no solo un indicador verde.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Un control tardío puede aportar evidencia, pero no integra prevención y comprobación durante el ciclo.",
+            "B": "Detectar una alerta no equivale a corregirla; la herramienta aislada no cubre todas las responsabilidades.",
+            "D": "Trasladar el riesgo al final deja fuera actividades previas y rompe la responsabilidad compartida."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 6. DevOps",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Cultura/prácticas para reducir fricción desarrollo-operación mediante automatización, responsabilidad compartida, feedback y observabilidad. DevSecOps integra seguridad en todo el flujo.",
+          "evidence_sha256": "40db76889e378260c43ab349e5316950dfcc1c345fe83f3755b3d864c36f9aff",
+          "record_sha256": "183dd5a9f7e373b5e2671494947a5c461a08fc9041d596e72770d09e80d8dc24",
+          "review_id": "AI-GSI-B3-T06-009",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "NIST SP 800-218: Secure Software Development Framework",
+              "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf",
+              "locator": "§1.1 integración de seguridad durante SDLC; PO.4 criterios de comprobación; PS.2 integridad de releases; PW.7 revisión/análisis y PW.8 pruebas",
+              "version": "SSDF v1.1, febrero de 2022, contrastado con ficha CSRC; PDF de 36 páginas leído textualmente el 29-10-2026. Versión explícita, sin afirmar que sea la última publicada o una obligación española universal",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-056"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 6. DevOps",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar seguridad durante el flujo y clave C; actividades y tratamiento de resultados sin convertir herramientas en garantías."
+      ],
+      "references": [
+        {
+          "title": "NIST SP 800-218: Secure Software Development Framework",
+          "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf",
+          "locator": "§1.1 integración de seguridad durante SDLC; PO.4 criterios de comprobación; PS.2 integridad de releases; PW.7 revisión/análisis y PW.8 pruebas",
+          "version": "SSDF v1.1, febrero de 2022, contrastado con ficha CSRC; PDF de 36 páginas leído textualmente el 29-10-2026. Versión explícita, sin afirmar que sea la última publicada o una obligación española universal",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T06-011",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "d90222b5974f500d2f4bb84dc743725a9efc4f408a3d9d0dd5b75aed527da552",
+      "content_sha256": "89e8e116177ac5344668ac1649ea7cb1ad8c68279e8a2b9dcaaaff5e895f2f86",
+      "before": {
+        "id": "AI-GSI-B3-T06-011",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T06",
+        "subtopic": "Estrategias de despliegue",
+        "exam": null,
+        "statement": "¿Qué puede impedir un rollback correcto de la aplicación?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Una migración de base de datos incompatible"
+          },
+          {
+            "id": "B",
+            "text": "Versionar los cambios"
+          },
+          {
+            "id": "C",
+            "text": "Tener un plan de reversión"
+          },
+          {
+            "id": "D",
+            "text": "Conservar el artefacto anterior"
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Revertir binarios no basta si el esquema ya no admite esa versión.",
+          "incorrect": "Revertir binarios no basta si el esquema ya no admite esa versión."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 8. Estrategias de despliegue",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Rolling, blue-green, canary y feature flags. Rollback debe contemplar compatibilidad de esquema de BD y migraciones.",
+          "evidence_sha256": "52cbb54fe9db3432694084b1306d6311b9b575e6c5373c0f7668162afdcb4928",
+          "record_sha256": "548fb04f2efd18880e0961096dd691ccc727667b55256640274158d358022fcf",
+          "review_id": "AI-GSI-B3-T06-011",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 8. Estrategias de despliegue",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T06-011",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T06",
+        "subtopic": "Estrategias de despliegue",
+        "exam": null,
+        "statement": "Una migración elimina una columna que aún consulta la versión anterior. Se ejecuta su mismo binario conservado, con su configuración original y sin reconstruirlo. ¿Qué limitación de rollback ilustra el caso?",
+        "options": [
+          {
+            "id": "A",
+            "text": "El esquema migrado no satisface las consultas del binario anterior."
+          },
+          {
+            "id": "B",
+            "text": "La resolución de otras dependencias al reconstruir el binario anterior."
+          },
+          {
+            "id": "C",
+            "text": "La pérdida del artefacto previo durante la limpieza del repositorio."
+          },
+          {
+            "id": "D",
+            "text": "Una configuración exclusiva de la versión nueva mantenida en el retorno."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Si la versión anterior consulta una columna eliminada, volver a su binario no restaura esa columna ni sus datos. La compatibilidad de código, esquema y datos forma parte de la reversión y debe verificarse. Guardar el binario o un plan ayuda, pero no compensa una transición incompatible. Restaurar una copia de datos puede perder cambios posteriores y no debe confundirse con revertir solo la aplicación.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "El caso ejecuta el mismo binario sin reconstruirlo; no describe una resolución nueva durante un build. En otros casos, reconstruir sí puede cambiar entradas.",
+            "C": "El artefacto previo está conservado y se ejecuta; su pérdida no es la limitación descrita.",
+            "D": "Se usa la configuración original del binario anterior. El problema sigue en el esquema cambiado, no en conservar la configuración nueva."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 8. Estrategias de despliegue",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Rolling, blue-green, canary y feature flags. Rollback debe contemplar compatibilidad de esquema de BD y migraciones.",
+          "evidence_sha256": "52cbb54fe9db3432694084b1306d6311b9b575e6c5373c0f7668162afdcb4928",
+          "record_sha256": "548fb04f2efd18880e0961096dd691ccc727667b55256640274158d358022fcf",
+          "review_id": "AI-GSI-B3-T06-011",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Sandeep Pokkunuri: Ensuring rollback safety during deployments",
+              "url": "https://builder.aws.com/content/3F04j2yRAAMBuPSPs50xwXZqg01/ensuring-rollback-safety-during-deployments",
+              "locator": "Introduction; Standalone vs. distributed software deployments; compatibilidad entre versiones y datos durante avance/reversión",
+              "version": "Artículo de AWS Builders Library, publicado y modificado 05-12-2019 según cuerpo; URL original redirige a Builder Center, leído el 29-10-2026. Principios de compatibilidad, no guía específica de DDL",
+              "checked_at": "2026-10-29"
+            },
+            {
+              "title": "Prisma Data Guide: Using the expand and contract pattern for schema changes",
+              "url": "https://www.prisma.io/dataguide/types/relational/expand-and-contract-pattern",
+              "locator": "How to use: pasos 1–7, estructura paralela, datos, interfaz y retirada tras actualizar clientes; límites de rollback",
+              "version": "Revisión de fuente 41ccbc7d5038f7b4391787911e24ad936598fab2 indicada por la página, leída el 29-10-2026. Se toma el patrón conceptual, sin instalar ORM o ejecutar migraciones de ejemplo",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-056"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 8. Estrategias de despliegue",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar incompatibilidad de migración y clave A; microcaso que distingue esquema, reconstrucción, pérdida de artefacto y configuración mediante condiciones explícitas."
+      ],
+      "references": [
+        {
+          "title": "Sandeep Pokkunuri: Ensuring rollback safety during deployments",
+          "url": "https://builder.aws.com/content/3F04j2yRAAMBuPSPs50xwXZqg01/ensuring-rollback-safety-during-deployments",
+          "locator": "Introduction; Standalone vs. distributed software deployments; compatibilidad entre versiones y datos durante avance/reversión",
+          "version": "Artículo de AWS Builders Library, publicado y modificado 05-12-2019 según cuerpo; URL original redirige a Builder Center, leído el 29-10-2026. Principios de compatibilidad, no guía específica de DDL",
+          "checked_at": "2026-10-29"
+        },
+        {
+          "title": "Prisma Data Guide: Using the expand and contract pattern for schema changes",
+          "url": "https://www.prisma.io/dataguide/types/relational/expand-and-contract-pattern",
+          "locator": "How to use: pasos 1–7, estructura paralela, datos, interfaz y retirada tras actualizar clientes; límites de rollback",
+          "version": "Revisión de fuente 41ccbc7d5038f7b4391787911e24ad936598fab2 indicada por la página, leída el 29-10-2026. Se toma el patrón conceptual, sin instalar ORM o ejecutar migraciones de ejemplo",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T06-012",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "c13e77f54e22f0694b98ba8aaa8608346a42204f31849805ac65b970578d6935",
+      "content_sha256": "825fbcb982b44d062ffcbf11827711c0c92ac7f6edd407acc63105da9ca00076",
+      "before": {
+        "id": "AI-GSI-B3-T06-012",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T06",
+        "subtopic": "Supply chain",
+        "exam": null,
+        "statement": "¿Por qué deben protegerse runners y repositorios de artefactos?",
+        "options": [
+          {
+            "id": "A",
+            "text": "No pueden afectar a producción"
+          },
+          {
+            "id": "B",
+            "text": "Su seguridad sustituye todas las demás"
+          },
+          {
+            "id": "C",
+            "text": "Forman parte de la cadena de suministro del software"
+          },
+          {
+            "id": "D",
+            "text": "Solo contienen documentación inocua por definición"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Un compromiso del pipeline puede modificar lo que finalmente se despliega.",
+          "incorrect": "Un compromiso del pipeline puede modificar lo que finalmente se despliega."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 9. Supply chain",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Dependencias, artefactos, firmas, SBOM, secretos, provenance, repositorios y runners. El pipeline es infraestructura crítica.",
+          "evidence_sha256": "b4da343945ef26152853e6e521b0d9a34e5ae81666bd64da7eb862e8671c2bf0",
+          "record_sha256": "26bdac59ea9054ce8b2e5510e4630c9eaf9d6357af7a4ef81ce2d34d893382da",
+          "review_id": "AI-GSI-B3-T06-012",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 9. Supply chain",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T06-012",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T06",
+        "subtopic": "Supply chain",
+        "exam": null,
+        "statement": "¿Por qué deben protegerse runners y repositorios de artefactos?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Porque sus registros de ejecución sustituyen el control de acceso de producción."
+          },
+          {
+            "id": "B",
+            "text": "Porque su aislamiento hace innecesario revisar quién puede modificar el build."
+          },
+          {
+            "id": "C",
+            "text": "Porque pueden modificar el código o los artefactos que se entregan al producto."
+          },
+          {
+            "id": "D",
+            "text": "Porque publicar el código fuente impide que un paquete sea sustituido después."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Los runners ejecutan el proceso de construcción y los repositorios sirven sus resultados. Si se comprometen, pueden alterar el contenido entregado o exponer permisos y secretos del flujo. Son parte de la cadena de suministro: se controlan accesos, procedencia e integridad con medidas apropiadas al entorno. Protegerlos no sustituye la seguridad de la aplicación o de producción.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Un log informa, pero no concede ni limita los permisos de producción y no sustituye su control de acceso.",
+            "B": "El aislamiento y los permisos deben verificarse; no se presume que cualquier runner sea seguro frente a código no confiable.",
+            "D": "Publicar fuentes no impide sustituir un artefacto o manipular cómo se construye; se necesita verificar la relación."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 9. Supply chain",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Dependencias, artefactos, firmas, SBOM, secretos, provenance, repositorios y runners. El pipeline es infraestructura crítica.",
+          "evidence_sha256": "b4da343945ef26152853e6e521b0d9a34e5ae81666bd64da7eb862e8671c2bf0",
+          "record_sha256": "26bdac59ea9054ce8b2e5510e4630c9eaf9d6357af7a4ef81ce2d34d893382da",
+          "review_id": "AI-GSI-B3-T06-012",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "GitHub Actions: Secure use reference",
+              "url": "https://docs.github.com/en/actions/reference/security/secure-use",
+              "locator": "Writing workflows; Using third-party actions; Hardening for self-hosted runners: código no confiable, permisos y acceso a secretos",
+              "version": "Documentación pública leída el 29-10-2026, URL final de la referencia de seguridad. No se configura un runner ni se consultan credenciales; usar acciones fijadas no elimina todo riesgo",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-056"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 9. Supply chain",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar cadena de suministro y clave C; describir capacidades reales de modificación y límites de aislamiento/publicidad."
+      ],
+      "references": [
+        {
+          "title": "GitHub Actions: Secure use reference",
+          "url": "https://docs.github.com/en/actions/reference/security/secure-use",
+          "locator": "Writing workflows; Using third-party actions; Hardening for self-hosted runners: código no confiable, permisos y acceso a secretos",
+          "version": "Documentación pública leída el 29-10-2026, URL final de la referencia de seguridad. No se configura un runner ni se consultan credenciales; usar acciones fijadas no elimina todo riesgo",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T06-013",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "aaec71718b962e405aa1d919b3ecd9508541845b80c3933faedb838f81de1e27",
+      "content_sha256": "f5f86e84bdf761042c09c9fc6afb4293a7cfd840c9f9e29f670d5ce32033c553",
+      "before": {
+        "id": "AI-GSI-B3-T06-013",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T06",
+        "subtopic": "Documentación",
+        "exam": null,
+        "statement": "¿Qué ventaja aporta docs-as-code?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Eliminar la necesidad de escribir documentación"
+          },
+          {
+            "id": "B",
+            "text": "Convertir toda ayuda en código ejecutable"
+          },
+          {
+            "id": "C",
+            "text": "Evitar revisión editorial"
+          },
+          {
+            "id": "D",
+            "text": "Versionar documentación técnica junto a cambios del producto"
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "La documentación puede mantenerse trazable con el código sin dejar de ser legible.",
+          "incorrect": "La documentación puede mantenerse trazable con el código sin dejar de ser legible."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 10. Documentación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Arquitectura, ADR, API, operación/runbooks, instalación, usuario y soporte. Docs-as-code puede versionar documentación técnica con código.",
+          "evidence_sha256": "1707730cd9cdcfa335c44b8b31caa2f2eacc82e9e0224157e1eaf1c1a280c1e3",
+          "record_sha256": "674fe398a79d2495f6fdf85714a7a435acd7e71a53abf2908453e121d4b3e1b6",
+          "review_id": "AI-GSI-B3-T06-013",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 10. Documentación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T06-013",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T06",
+        "subtopic": "Documentación",
+        "exam": null,
+        "statement": "¿Qué ventaja aporta docs-as-code?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Obtener documentación correcta por el solo hecho de compilar el código fuente."
+          },
+          {
+            "id": "B",
+            "text": "Tratar el texto técnico como instrucciones ejecutables para el entorno de producción."
+          },
+          {
+            "id": "C",
+            "text": "Excluir revisiones humanas porque las comprobaciones automáticas validan su significado."
+          },
+          {
+            "id": "D",
+            "text": "Versionar y revisar documentación con un flujo coordinado con los cambios del producto."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Docs-as-code usa prácticas y herramientas del desarrollo para mantener documentación: texto, control de versiones, revisión y comprobaciones automatizadas apropiadas. Esto permite revisar el cambio de producto junto a su explicación y conservar historial. No exige un único repositorio ni elimina la necesidad de claridad, revisión editorial o contraste con el comportamiento real.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Compilar código no demuestra que su documentación sea completa o comprensible para el destinatario.",
+            "B": "Tratar el texto con un flujo de código no significa ejecutar sus instrucciones contra producción.",
+            "C": "Un comprobador de enlaces o formato no valida por sí solo el significado o la utilidad del documento."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 10. Documentación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Arquitectura, ADR, API, operación/runbooks, instalación, usuario y soporte. Docs-as-code puede versionar documentación técnica con código.",
+          "evidence_sha256": "1707730cd9cdcfa335c44b8b31caa2f2eacc82e9e0224157e1eaf1c1a280c1e3",
+          "record_sha256": "674fe398a79d2495f6fdf85714a7a435acd7e71a53abf2908453e121d4b3e1b6",
+          "review_id": "AI-GSI-B3-T06-013",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Write the Docs: Docs as code",
+              "url": "https://www.writethedocs.org/guide/docs-as-code/",
+              "locator": "Docs as code: herramientas, control de versiones, revisión, pruebas y trabajo integrado con producto",
+              "version": "Eric Holscher y comunidad Write the Docs; texto público leído el 29-10-2026, sin edición numerada. No exige el mismo repositorio ni convierte documentación en programa ejecutable",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-056"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 10. Documentación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar documentación trazable y clave D; distinguir flujo, ubicación física y revisión editorial."
+      ],
+      "references": [
+        {
+          "title": "Write the Docs: Docs as code",
+          "url": "https://www.writethedocs.org/guide/docs-as-code/",
+          "locator": "Docs as code: herramientas, control de versiones, revisión, pruebas y trabajo integrado con producto",
+          "version": "Eric Holscher y comunidad Write the Docs; texto público leído el 29-10-2026, sin edición numerada. No exige el mismo repositorio ni convierte documentación en programa ejecutable",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T06-014",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "641679855a9adc3c9a8009ad88fc5024d012bf3f0187ee93370c3bbe4b39600a",
+      "content_sha256": "79a38653f54cbc9478f84670ce44db6c0967ec932785ca097b805662deb839b6",
+      "before": {
+        "id": "AI-GSI-B3-T06-014",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T06",
+        "subtopic": "Entornos de construcción y generación de código",
+        "exam": null,
+        "statement": "¿Qué función cumple una herramienta de build?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Gestionar exclusivamente llamadas telefónicas"
+          },
+          {
+            "id": "B",
+            "text": "Certificar la identidad del usuario"
+          },
+          {
+            "id": "C",
+            "text": "Sustituir un registro de riesgos"
+          },
+          {
+            "id": "D",
+            "text": "Coordinar construcción, dependencias, pruebas y empaquetado según el entorno"
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "El entorno de construcción reúne herramientas con funciones distintas pero coordinadas.",
+          "incorrect": "El entorno de construcción reúne herramientas con funciones distintas pero coordinadas."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 11.1. Entornos de construcción y generación de código",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "**Base A1:** 097 + 102. Se amplían los elementos que el epígrafe oficial enumera de manera literal.\n\nUn entorno de construcción integra compiladores/intérpretes, gestor de dependencias, build tool, análisis estático, tests, empaquetado y repositorio de artefactos. Ejemplos de categorías: Maven/Gradle en Java, dotnet CLI/MSBuild en .NET, npm/pnpm/yarn en JS, make/CMake en C/C++. Memoriza la función, no una bandera concreta.\n\nLa **generación de código** puede partir de modelos, schemas, contratos OpenAPI/AsyncAPI, ORM o IDL. Reduce trabajo repetitivo, pero el código generado debe versionarse o reproducirse de forma determinista según estrategia y no editarse manualmente si se regenerará.",
+          "evidence_sha256": "2e589a8d095451ee42ba1a5d51ad4aa0d7b9dcdc4545c94dbbef41579ad08574",
+          "record_sha256": "328d0d218e143daea9e868c4e38e979f4c20ea551d56c8de8d651d7eaeef033e",
+          "review_id": "AI-GSI-B3-T06-014",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 11.1. Entornos de construcción y generación de código",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T06-014",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T06",
+        "subtopic": "Entornos de construcción y generación de código",
+        "exam": null,
+        "statement": "¿Qué función cumple una herramienta de build?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Editar y colorear archivos fuente durante la escritura del programa."
+          },
+          {
+            "id": "B",
+            "text": "Inspeccionar manualmente la ejecución para localizar una excepción concreta."
+          },
+          {
+            "id": "C",
+            "text": "Definir qué decisión arquitectónica debe aceptarse antes de cada cambio."
+          },
+          {
+            "id": "D",
+            "text": "Ordenar tareas de construcción y sus dependencias hasta obtener las salidas previstas."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Una herramienta de build coordina tareas y dependencias del proceso, por ejemplo compilar, ejecutar pruebas configuradas y empaquetar. Las acciones concretas se definen mediante configuración, plugins o reglas. El editor ayuda a escribir y el depurador a investigar una ejecución; no son esa coordinación. Una herramienta de build no decide por sí sola si una arquitectura o un requisito son adecuados.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "La edición de fuentes es función del editor o IDE, aunque este pueda invocar el build.",
+            "B": "La depuración inspecciona una ejecución; no define el grafo de tareas y salidas de construcción.",
+            "C": "La aceptación de una decisión corresponde al proceso del proyecto; no es la función técnica del build."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 11.1. Entornos de construcción y generación de código",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "**Base A1:** 097 + 102. Se amplían los elementos que el epígrafe oficial enumera de manera literal.\n\nUn entorno de construcción integra compiladores/intérpretes, gestor de dependencias, build tool, análisis estático, tests, empaquetado y repositorio de artefactos. Ejemplos de categorías: Maven/Gradle en Java, dotnet CLI/MSBuild en .NET, npm/pnpm/yarn en JS, make/CMake en C/C++. Memoriza la función, no una bandera concreta.\n\nLa **generación de código** puede partir de modelos, schemas, contratos OpenAPI/AsyncAPI, ORM o IDL. Reduce trabajo repetitivo, pero el código generado debe versionarse o reproducirse de forma determinista según estrategia y no editarse manualmente si se regenerará.",
+          "evidence_sha256": "2e589a8d095451ee42ba1a5d51ad4aa0d7b9dcdc4545c94dbbef41579ad08574",
+          "record_sha256": "328d0d218e143daea9e868c4e38e979f4c20ea551d56c8de8d651d7eaeef033e",
+          "review_id": "AI-GSI-B3-T06-014",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Apache Maven: Introduction to the Build Lifecycle",
+              "url": "https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html",
+              "locator": "Build Lifecycle Basics; fases validate/compile/test/package/verify/install/deploy y plugins vinculados",
+              "version": "Guía pública leída el 29-10-2026. Se usa Maven como ejemplo de coordinación; fases y verificaciones dependen del proyecto y no se ejecuta ningún comando de la guía",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-056"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 11.1. Entornos de construcción y generación de código",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar coordinación de construcción y clave D; sustituir distractores ajenos por funciones de herramientas cercanas."
+      ],
+      "references": [
+        {
+          "title": "Apache Maven: Introduction to the Build Lifecycle",
+          "url": "https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html",
+          "locator": "Build Lifecycle Basics; fases validate/compile/test/package/verify/install/deploy y plugins vinculados",
+          "version": "Guía pública leída el 29-10-2026. Se usa Maven como ejemplo de coordinación; fases y verificaciones dependen del proyecto y no se ejecuta ningún comando de la guía",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T06-015",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "5aef505c9301084f66d34217ab169acf0286397b1e284d7a070ec2e2fbc5855f",
+      "content_sha256": "8dfd4412dd421e5843d5d65dd9697d7440768becf371d19c195fcdc814310f5b",
+      "before": {
+        "id": "AI-GSI-B3-T06-015",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T06",
+        "subtopic": "Entornos de construcción y generación de código",
+        "exam": null,
+        "statement": "Un cliente se genera desde OpenAPI y se regenerará después. ¿Qué debe evitarse?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Versionar la estrategia de generación"
+          },
+          {
+            "id": "B",
+            "text": "Reproducción determinista"
+          },
+          {
+            "id": "C",
+            "text": "Ediciones manuales que se perderán sin estrategia explícita"
+          },
+          {
+            "id": "D",
+            "text": "Conservar el contrato fuente"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "La generación debe ser reproducible y las modificaciones deben situarse donde sobrevivan a regeneración.",
+          "incorrect": "La generación debe ser reproducible y las modificaciones deben situarse donde sobrevivan a regeneración."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 11.1. Entornos de construcción y generación de código",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "**Base A1:** 097 + 102. Se amplían los elementos que el epígrafe oficial enumera de manera literal.\n\nUn entorno de construcción integra compiladores/intérpretes, gestor de dependencias, build tool, análisis estático, tests, empaquetado y repositorio de artefactos. Ejemplos de categorías: Maven/Gradle en Java, dotnet CLI/MSBuild en .NET, npm/pnpm/yarn en JS, make/CMake en C/C++. Memoriza la función, no una bandera concreta.\n\nLa **generación de código** puede partir de modelos, schemas, contratos OpenAPI/AsyncAPI, ORM o IDL. Reduce trabajo repetitivo, pero el código generado debe versionarse o reproducirse de forma determinista según estrategia y no editarse manualmente si se regenerará.",
+          "evidence_sha256": "2e589a8d095451ee42ba1a5d51ad4aa0d7b9dcdc4545c94dbbef41579ad08574",
+          "record_sha256": "9ed0d5a5cbe635d0e22fbf1271356d81a513e9fee60ac969de1bc800fd66cc36",
+          "review_id": "AI-GSI-B3-T06-015",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 11.1. Entornos de construcción y generación de código",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T06-015",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T06",
+        "subtopic": "Entornos de construcción y generación de código",
+        "exam": null,
+        "statement": "Un cliente OpenAPI se regenerará y la herramienta sobrescribe sus archivos de salida. ¿Qué práctica debe evitarse si no hay una estrategia que conserve el cambio?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Conservar contrato y parámetros de generación bajo control de versiones."
+          },
+          {
+            "id": "B",
+            "text": "Fijar la versión del generador y comprobar el resultado regenerado."
+          },
+          {
+            "id": "C",
+            "text": "Modificar a mano archivos que se sobrescriben sin preservar esos cambios."
+          },
+          {
+            "id": "D",
+            "text": "Situar extensiones en plantillas o capas previstas y revisar su compatibilidad."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Si una regeneración sobrescribe un archivo, editarlo a mano sin una estrategia hace que el cambio no sobreviva. Deben identificarse entradas, versión y configuración, y ubicar extensiones en plantillas, capas o mecanismos de preservación elegidos y probados. Ignorar un archivo puede conservarlo, pero también dejarlo desfasado: no equivale a sincronizarlo con un contrato nuevo. Se revisa y prueba el resultado generado.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Conservar las entradas facilita repetir y revisar la generación; no es la modificación frágil que se pide evitar.",
+            "B": "Controlar la versión y comprobar la salida ayuda a gestionar cambios del generador, sin garantizar corrección por sí solo.",
+            "D": "Una extensión en mecanismos previstos puede sobrevivir si se mantiene y verifica; es una estrategia explícita."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 11.1. Entornos de construcción y generación de código",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "**Base A1:** 097 + 102. Se amplían los elementos que el epígrafe oficial enumera de manera literal.\n\nUn entorno de construcción integra compiladores/intérpretes, gestor de dependencias, build tool, análisis estático, tests, empaquetado y repositorio de artefactos. Ejemplos de categorías: Maven/Gradle en Java, dotnet CLI/MSBuild en .NET, npm/pnpm/yarn en JS, make/CMake en C/C++. Memoriza la función, no una bandera concreta.\n\nLa **generación de código** puede partir de modelos, schemas, contratos OpenAPI/AsyncAPI, ORM o IDL. Reduce trabajo repetitivo, pero el código generado debe versionarse o reproducirse de forma determinista según estrategia y no editarse manualmente si se regenerará.",
+          "evidence_sha256": "2e589a8d095451ee42ba1a5d51ad4aa0d7b9dcdc4545c94dbbef41579ad08574",
+          "record_sha256": "9ed0d5a5cbe635d0e22fbf1271356d81a513e9fee60ac969de1bc800fd66cc36",
+          "review_id": "AI-GSI-B3-T06-015",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "OpenAPI Generator: Customization",
+              "url": "https://openapi-generator.tech/docs/customization/",
+              "locator": "User-defined Templates; Ignore file format; Customizing the generator: control sobre sobrescritura y configuración",
+              "version": "Documentación pública leída el 29-10-2026. Se cita disponibilidad de plantillas desde 5.0.0 sin inferir versión instalada. Las opciones de preservación requieren estrategia, pruebas y revisión; no se regenera un cliente real",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-056"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 11.1. Entornos de construcción y generación de código",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar riesgo de edición sobrescrita y clave C; precisar opciones reales de extensión y límite de ignorar archivos."
+      ],
+      "references": [
+        {
+          "title": "OpenAPI Generator: Customization",
+          "url": "https://openapi-generator.tech/docs/customization/",
+          "locator": "User-defined Templates; Ignore file format; Customizing the generator: control sobre sobrescritura y configuración",
+          "version": "Documentación pública leída el 29-10-2026. Se cita disponibilidad de plantillas desde 5.0.0 sin inferir versión instalada. Las opciones de preservación requieren estrategia, pruebas y revisión; no se regenera un cliente real",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T06-016",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "861d0ec410d3c97b74a84869325e440fd9d50b98e1d96e342c7025f6a2b5ec1b",
+      "content_sha256": "29aa28c903349448c1e25a01d0098d375123a3fd6b3c15bfa7ab4614e8906bbf",
+      "before": {
+        "id": "AI-GSI-B3-T06-016",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T06",
+        "subtopic": "Entornos y promoción",
+        "exam": null,
+        "statement": "¿Cómo deberían tratarse las migraciones de base de datos en despliegues progresivos?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Versionadas y compatibles con las versiones coexistentes"
+          },
+          {
+            "id": "B",
+            "text": "Sin pruebas porque son datos"
+          },
+          {
+            "id": "C",
+            "text": "Como cambios manuales sin registro"
+          },
+          {
+            "id": "D",
+            "text": "Suponiendo que solo existe una instancia siempre"
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "La coexistencia durante promoción exige compatibilidad del esquema.",
+          "incorrect": "La coexistencia durante promoción exige compatibilidad del esquema."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 11.2. Entornos y promoción",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Desarrollo → integración/test → preproducción → producción, con configuración externa y artefacto inmutable. Promover **el mismo artefacto** reduce diferencias. Bases de datos requieren migraciones versionadas y compatibles con despliegues progresivos.",
+          "evidence_sha256": "b21e46663545c7726e565b76eac295673b5741726c7872581350d7a88a50d165",
+          "record_sha256": "d2eea112d4bbc75cf60a5b1410df3f33e790e59e6083916a6b61cfa435076e8b",
+          "review_id": "AI-GSI-B3-T06-016",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 11.2. Entornos y promoción",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T06-016",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T06",
+        "subtopic": "Entornos y promoción",
+        "exam": null,
+        "statement": "En un despliegue progresivo conviven instancias antigua y nueva que usan la misma base de datos. ¿Cómo debe tratarse una migración que cambia su estructura?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Versionar la migración y mantener interfaces de datos compatibles mientras coexistan."
+          },
+          {
+            "id": "B",
+            "text": "Renombrar de inmediato la columna original y exigir que las instancias antiguas se adapten."
+          },
+          {
+            "id": "C",
+            "text": "Dejar cada cambio de esquema al criterio manual de la instancia que arranque primero."
+          },
+          {
+            "id": "D",
+            "text": "Eliminar la estructura anterior en cuanto una sola instancia nueva pase sus pruebas."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Mientras dos versiones acceden a los mismos datos, el esquema y las operaciones deben servir a ambas. El patrón expandir y contraer permite añadir estructura, migrar datos y clientes y retirar lo anterior cuando ya no se usa, con pruebas y coordinación de escrituras. Versionar ayuda a repetir y auditar la transición; no basta si el contenido rompe a clientes coexistentes. La política de rollback debe revisarse antes de cambios destructivos.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "Renombrar una columna que aún lee la versión antigua rompe su contrato durante la coexistencia.",
+            "C": "Cambios manuales no coordinados pueden competir y dejar estados distintos; no resuelven compatibilidad o trazabilidad.",
+            "D": "Que funcione una instancia nueva no demuestra que ya no existan clientes antiguos usando la estructura previa."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 11.2. Entornos y promoción",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Desarrollo → integración/test → preproducción → producción, con configuración externa y artefacto inmutable. Promover **el mismo artefacto** reduce diferencias. Bases de datos requieren migraciones versionadas y compatibles con despliegues progresivos.",
+          "evidence_sha256": "b21e46663545c7726e565b76eac295673b5741726c7872581350d7a88a50d165",
+          "record_sha256": "d2eea112d4bbc75cf60a5b1410df3f33e790e59e6083916a6b61cfa435076e8b",
+          "review_id": "AI-GSI-B3-T06-016",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Prisma Data Guide: Using the expand and contract pattern for schema changes",
+              "url": "https://www.prisma.io/dataguide/types/relational/expand-and-contract-pattern",
+              "locator": "How to use: pasos 1–7, estructura paralela, datos, interfaz y retirada tras actualizar clientes; límites de rollback",
+              "version": "Revisión de fuente 41ccbc7d5038f7b4391787911e24ad936598fab2 indicada por la página, leída el 29-10-2026. Se toma el patrón conceptual, sin instalar ORM o ejecutar migraciones de ejemplo",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-056"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 11.2. Entornos y promoción",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar migraciones compatibles y clave A; microcaso de coexistencia para distinguir expansión y retirada prematura."
+      ],
+      "references": [
+        {
+          "title": "Prisma Data Guide: Using the expand and contract pattern for schema changes",
+          "url": "https://www.prisma.io/dataguide/types/relational/expand-and-contract-pattern",
+          "locator": "How to use: pasos 1–7, estructura paralela, datos, interfaz y retirada tras actualizar clientes; límites de rollback",
+          "version": "Revisión de fuente 41ccbc7d5038f7b4391787911e24ad936598fab2 indicada por la página, leída el 29-10-2026. Se toma el patrón conceptual, sin instalar ORM o ejecutar migraciones de ejemplo",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T06-017",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "ca65d9d3f62a5bfab6592a3d937c43866140d0d16e4ceaef3eb69d59bc6c40cf",
+      "content_sha256": "f6b2074723e89b5fee4d9d56b67856c24712ec988bec2c0251d1f90d5d8f9e17",
+      "before": {
+        "id": "AI-GSI-B3-T06-017",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T06",
+        "subtopic": "Quality gates",
+        "exam": null,
+        "statement": "¿Qué hace útil un quality gate?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Medir solo número de herramientas"
+          },
+          {
+            "id": "B",
+            "text": "Acumular herramientas sin atender resultados"
+          },
+          {
+            "id": "C",
+            "text": "Aceptar automáticamente cualquier alerta"
+          },
+          {
+            "id": "D",
+            "text": "Vincularlo a riesgo y capacidad de corregir hallazgos"
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Los controles deben ser accionables y proporcionales, no una fuente de ruido.",
+          "incorrect": "Los controles deben ser accionables y proporcionales, no una fuente de ruido."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 11.3. Quality gates",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Compilación, tests, cobertura mínima razonada, análisis estático, SAST, dependencia/SCA, secretos, imagen, IaC y políticas de licencia. Un gate debe estar vinculado a riesgo; acumular herramientas sin capacidad de corregir hallazgos genera ruido.",
+          "evidence_sha256": "0dfdd3004f87832e31f4d96ee9227e4e386303c2d72fddd6b8133990d375a071",
+          "record_sha256": "5aeb48fb07252dfb5de5bcbdffc88297c8bd80281206b6fbd085360d44139050",
+          "review_id": "AI-GSI-B3-T06-017",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 11.3. Quality gates",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T06-017",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T06",
+        "subtopic": "Quality gates",
+        "exam": null,
+        "statement": "¿Qué hace útil un quality gate?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Contar herramientas conectadas y usar ese número como criterio suficiente de salida."
+          },
+          {
+            "id": "B",
+            "text": "Archivar todos los avisos sin definir qué resultado permite avanzar o exige corregir."
+          },
+          {
+            "id": "C",
+            "text": "Desactivar un control al primer fallo para conservar una secuencia de builds verdes."
+          },
+          {
+            "id": "D",
+            "text": "Definir criterios proporcionados al riesgo, con decisiones y tratamiento de hallazgos."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Un quality gate contrasta resultados con criterios definidos y determina si se puede avanzar o hay que tratar un hallazgo. Debe tener evidencia, responsables y medidas proporcionadas al riesgo. Acumular herramientas o umbrales sin capacidad de interpretar y corregir produce ruido. Superar el gate acredita esos controles, no calidad absoluta ni aceptación editorial de un contenido distinto.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "El número de herramientas no indica si se comprobó un riesgo relevante o se trató un fallo.",
+            "B": "Sin criterio ni respuesta al resultado, registrar avisos no establece una puerta de decisión útil.",
+            "C": "Ocultar el control para mantener verde elimina evidencia; corresponde investigar, corregir o justificar una excepción trazable."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 11.3. Quality gates",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Compilación, tests, cobertura mínima razonada, análisis estático, SAST, dependencia/SCA, secretos, imagen, IaC y políticas de licencia. Un gate debe estar vinculado a riesgo; acumular herramientas sin capacidad de corregir hallazgos genera ruido.",
+          "evidence_sha256": "0dfdd3004f87832e31f4d96ee9227e4e386303c2d72fddd6b8133990d375a071",
+          "record_sha256": "5aeb48fb07252dfb5de5bcbdffc88297c8bd80281206b6fbd085360d44139050",
+          "review_id": "AI-GSI-B3-T06-017",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "SonarQube Server: Understanding quality gates",
+              "url": "https://docs.sonarsource.com/sonarqube-server/quality-standards-administration/managing-quality-gates/introduction-to-quality-gates",
+              "locator": "Introducción; condiciones por métrica/operador/umbral; política, código nuevo/general y resultado de gate",
+              "version": "Página identifica SonarQube Server 2026.5 al consultar el 29-10-2026. Ejemplo de implementación, sin recomendar producto o imponer sus umbrales al banco de preguntas",
+              "checked_at": "2026-10-29"
+            },
+            {
+              "title": "NIST SP 800-218: Secure Software Development Framework",
+              "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf",
+              "locator": "§1.1 integración de seguridad durante SDLC; PO.4 criterios de comprobación; PS.2 integridad de releases; PW.7 revisión/análisis y PW.8 pruebas",
+              "version": "SSDF v1.1, febrero de 2022, contrastado con ficha CSRC; PDF de 36 páginas leído textualmente el 29-10-2026. Versión explícita, sin afirmar que sea la última publicada o una obligación española universal",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-056"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 11.3. Quality gates",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar control accionable según riesgo y clave D; distinguir medida, decisión y tratamiento de resultados."
+      ],
+      "references": [
+        {
+          "title": "SonarQube Server: Understanding quality gates",
+          "url": "https://docs.sonarsource.com/sonarqube-server/quality-standards-administration/managing-quality-gates/introduction-to-quality-gates",
+          "locator": "Introducción; condiciones por métrica/operador/umbral; política, código nuevo/general y resultado de gate",
+          "version": "Página identifica SonarQube Server 2026.5 al consultar el 29-10-2026. Ejemplo de implementación, sin recomendar producto o imponer sus umbrales al banco de preguntas",
+          "checked_at": "2026-10-29"
+        },
+        {
+          "title": "NIST SP 800-218: Secure Software Development Framework",
+          "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf",
+          "locator": "§1.1 integración de seguridad durante SDLC; PO.4 criterios de comprobación; PS.2 integridad de releases; PW.7 revisión/análisis y PW.8 pruebas",
+          "version": "SSDF v1.1, febrero de 2022, contrastado con ficha CSRC; PDF de 36 páginas leído textualmente el 29-10-2026. Versión explícita, sin afirmar que sea la última publicada o una obligación española universal",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T06-018",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "28678d93247baf160174932654bf7605ccc3f5e980e0362e158c4f388a1daa6b",
+      "content_sha256": "13c99a94a5dc254d53715e973da11fa3702530a0d248d1080fc3f54bd11cebbc",
+      "before": {
+        "id": "AI-GSI-B3-T06-018",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T06",
+        "subtopic": "Documentación exigible",
+        "exam": null,
+        "statement": "¿Qué documento recoge contexto, alternativas y consecuencias de una decisión arquitectónica?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Manual de usuario orientado a tareas"
+          },
+          {
+            "id": "B",
+            "text": "ADR"
+          },
+          {
+            "id": "C",
+            "text": "Referencia de endpoints de API"
+          },
+          {
+            "id": "D",
+            "text": "Runbook de respuesta a incidencias"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Un ADR conserva el razonamiento de una decisión de arquitectura.",
+          "incorrect": "Un ADR conserva el razonamiento de una decisión de arquitectura."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 11.4. Documentación exigible",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "| Documento | Para quién / qué resuelve |\n| --- | --- |\n| arquitectura/ADR | decisiones, contexto, alternativas, consecuencias |\n| API/contratos | integradores/desarrolladores |\n| manual de instalación/despliegue | operación/implantación |\n| manual de explotación/runbook | operación, incidencias, backup, recuperación |\n| manual de usuario | tareas funcionales y ayuda |\n| administración | roles, configuración, parametrización y seguridad |",
+          "evidence_sha256": "57be5f6f67b15fbc0329facb827d44d80e6337530d8bd61d43a75b5b5f3a1615",
+          "record_sha256": "882b08d5f0c9af01f38fdd15b6fd0f23576cb06df72b915be1cc4c07b4c46ffb",
+          "review_id": "AI-GSI-B3-T06-018",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 11.4. Documentación exigible",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T06-018",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T06",
+        "subtopic": "Documentación exigible",
+        "exam": null,
+        "statement": "¿Qué documento recoge contexto, alternativas y consecuencias de una decisión arquitectónica?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Manual de usuario orientado a tareas"
+          },
+          {
+            "id": "B",
+            "text": "ADR"
+          },
+          {
+            "id": "C",
+            "text": "Referencia de endpoints de API"
+          },
+          {
+            "id": "D",
+            "text": "Runbook de respuesta a incidencias"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Un ADR registra una decisión arquitectónica relevante, su contexto, estado y consecuencias; las alternativas ayudan a comprender el razonamiento. Si otra decisión lo sustituye, se conserva y se enlaza el reemplazo en lugar de borrar por qué se decidió. El formato puede variar. Un ADR no reemplaza las instrucciones operativas ni la referencia de una API.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Un manual de tareas ayuda al usuario a operar funciones; no se centra en la justificación de una decisión arquitectónica.",
+            "C": "La referencia de endpoints define cómo integrar una API, no el contexto y consecuencias de una decisión.",
+            "D": "El runbook guía una actuación operativa; su objetivo no es conservar el razonamiento arquitectónico."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 11.4. Documentación exigible",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "| Documento | Para quién / qué resuelve |\n| --- | --- |\n| arquitectura/ADR | decisiones, contexto, alternativas, consecuencias |\n| API/contratos | integradores/desarrolladores |\n| manual de instalación/despliegue | operación/implantación |\n| manual de explotación/runbook | operación, incidencias, backup, recuperación |\n| manual de usuario | tareas funcionales y ayuda |\n| administración | roles, configuración, parametrización y seguridad |",
+          "evidence_sha256": "57be5f6f67b15fbc0329facb827d44d80e6337530d8bd61d43a75b5b5f3a1615",
+          "record_sha256": "882b08d5f0c9af01f38fdd15b6fd0f23576cb06df72b915be1cc4c07b4c46ffb",
+          "review_id": "AI-GSI-B3-T06-018",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Michael Nygard: Documenting Architecture Decisions",
+              "url": "https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions",
+              "locator": "Decision: Context, Decision, Status, Consequences; conservar decisiones sustituidas y referencia a reemplazo",
+              "version": "Artículo original de 15-11-2011, leído el 29-10-2026. Su ADR de ejemplo marcado Accepted no constituye aprobación de ninguna propuesta del proyecto",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-056"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 11.4. Documentación exigible",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar íntegra formulación y clave B; documentos y finalidad ya bien distinguidos. Ampliar estado e historial."
+      ],
+      "references": [
+        {
+          "title": "Michael Nygard: Documenting Architecture Decisions",
+          "url": "https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions",
+          "locator": "Decision: Context, Decision, Status, Consequences; conservar decisiones sustituidas y referencia a reemplazo",
+          "version": "Artículo original de 15-11-2011, leído el 29-10-2026. Su ADR de ejemplo marcado Accepted no constituye aprobación de ninguna propuesta del proyecto",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T06-019",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "1d8605d3e2dc50f045ee3960403413ecd22685472060d3ef3fd4c5079ce8655b",
+      "content_sha256": "7e47a06ae24c62808d453a5816da1126f1aa66d438b58fe1df0d95d5088ff5fd",
+      "before": {
+        "id": "AI-GSI-B3-T06-019",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T06",
+        "subtopic": "Documentación exigible",
+        "exam": null,
+        "statement": "¿Qué documentación sirve a operación para incidencias, copias y recuperación?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Catálogo funcional para usuarios finales"
+          },
+          {
+            "id": "B",
+            "text": "Runbook o manual de explotación"
+          },
+          {
+            "id": "C",
+            "text": "Registro de decisiones arquitectónicas sin procedimientos"
+          },
+          {
+            "id": "D",
+            "text": "Referencia de sintaxis de la API"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "El manual operativo debe permitir ejecutar procedimientos de explotación.",
+          "incorrect": "El manual operativo debe permitir ejecutar procedimientos de explotación."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 11.4. Documentación exigible",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "| Documento | Para quién / qué resuelve |\n| --- | --- |\n| arquitectura/ADR | decisiones, contexto, alternativas, consecuencias |\n| API/contratos | integradores/desarrolladores |\n| manual de instalación/despliegue | operación/implantación |\n| manual de explotación/runbook | operación, incidencias, backup, recuperación |\n| manual de usuario | tareas funcionales y ayuda |\n| administración | roles, configuración, parametrización y seguridad |",
+          "evidence_sha256": "57be5f6f67b15fbc0329facb827d44d80e6337530d8bd61d43a75b5b5f3a1615",
+          "record_sha256": "cc8e63a5cd809b9951a2d0672ce9347bd695be58ce8f30dc5f404679503645a7",
+          "review_id": "AI-GSI-B3-T06-019",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 11.4. Documentación exigible",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T06-019",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T06",
+        "subtopic": "Documentación exigible",
+        "exam": null,
+        "statement": "¿Qué documentación sirve a operación para incidencias, copias y recuperación?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Catálogo funcional para usuarios finales"
+          },
+          {
+            "id": "B",
+            "text": "Runbook o manual de explotación"
+          },
+          {
+            "id": "C",
+            "text": "Registro de decisiones arquitectónicas sin procedimientos"
+          },
+          {
+            "id": "D",
+            "text": "Referencia de sintaxis de la API"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "El runbook o manual de explotación recoge procedimientos operativos concretos: pasos, condiciones previas, permisos, verificación del resultado y respuesta a errores. Debe estar actualizado y ser utilizable por operación. Puede complementarse con diagnóstico y escalado; no sustituye comprobar que una copia puede restaurarse o que el procedimiento funciona. Aquí se pregunta por instrucciones de explotación, no por la nomenclatura de toda organización.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "El catálogo funcional explica capacidades al usuario, sin detallar necesariamente recuperación y operación.",
+            "C": "El registro conserva decisiones y motivos; al carecer de procedimientos no guía la actuación operativa planteada.",
+            "D": "La sintaxis de API orienta llamadas e integración, sin constituir por sí misma procedimientos de copias y recuperación."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 11.4. Documentación exigible",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "| Documento | Para quién / qué resuelve |\n| --- | --- |\n| arquitectura/ADR | decisiones, contexto, alternativas, consecuencias |\n| API/contratos | integradores/desarrolladores |\n| manual de instalación/despliegue | operación/implantación |\n| manual de explotación/runbook | operación, incidencias, backup, recuperación |\n| manual de usuario | tareas funcionales y ayuda |\n| administración | roles, configuración, parametrización y seguridad |",
+          "evidence_sha256": "57be5f6f67b15fbc0329facb827d44d80e6337530d8bd61d43a75b5b5f3a1615",
+          "record_sha256": "cc8e63a5cd809b9951a2d0672ce9347bd695be58ce8f30dc5f404679503645a7",
+          "review_id": "AI-GSI-B3-T06-019",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "AWS Well-Architected: Use runbooks to perform procedures",
+              "url": "https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/ops_ready_to_support_use_runbooks.html",
+              "locator": "OPS07-BP03: definición, resultado, herramientas/permisos, manejo de errores y actualización de procedimientos",
+              "version": "Página pública leída el 29-10-2026, ruta latest sin atribuirle una edición numerada. Un runbook documenta procedimientos; un playbook diagnóstico puede complementarlo, sin nomenclatura universal rígida",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-056"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.06; sección 11.4. Documentación exigible",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar íntegra formulación y clave B; contraste de documentación ya preciso. Ampliar verificación y mantenimiento del procedimiento."
+      ],
+      "references": [
+        {
+          "title": "AWS Well-Architected: Use runbooks to perform procedures",
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/ops_ready_to_support_use_runbooks.html",
+          "locator": "OPS07-BP03: definición, resultado, herramientas/permisos, manejo de errores y actualización de procedimientos",
+          "version": "Página pública leída el 29-10-2026, ruta latest sin atribuirle una edición numerada. Un runbook documenta procedimientos; un playbook diagnóstico puede complementarlo, sin nomenclatura universal rígida",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T07-001",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "ad8b11d62a4e10df54271baad035a6b2ff80689cd5f49d4b749c013e45f5cbd4",
+      "content_sha256": "2fb668db616273104f528ea54dcad4249dd70d810d806d085956f3a2e4fb77f4",
+      "before": {
+        "id": "AI-GSI-B3-T07-001",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T07",
+        "subtopic": "Principios",
+        "exam": null,
+        "statement": "¿Qué pueden demostrar las pruebas sobre defectos?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Su presencia, sin garantizar su ausencia"
+          },
+          {
+            "id": "B",
+            "text": "Que no hace falta analizar riesgos"
+          },
+          {
+            "id": "C",
+            "text": "Que el sistema satisface cualquier necesidad posible"
+          },
+          {
+            "id": "D",
+            "text": "La ausencia absoluta en todos los escenarios"
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "El testing reduce incertidumbre, pero no prueba corrección universal.",
+          "incorrect": "El testing reduce incertidumbre, pero no prueba corrección universal."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 1. Principios",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Los principios de prueba pueden agruparse en tres ideas: probar reduce incertidumbre, pero no demuestra ausencia de defectos; la exhaustividad no es viable, por lo que conviene empezar pronto y concentrar el esfuerzo donde se acumulan fallos; y la estrategia debe adaptarse al contexto, renovar los casos para evitar pérdida de eficacia y comprobar que el producto satisface la necesidad, no solo que carece de errores conocidos.",
+          "evidence_sha256": "aca2418b98955d235f80fb99526fc408d292481a5f7e3a7a13d810b391143234",
+          "record_sha256": "ff76c6c5188a0f857baf53ffe4c2b90f793cc45c11b20723ebb33ea49999cf66",
+          "review_id": "AI-GSI-B3-T07-001",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 1. Principios",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T07-001",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T07",
+        "subtopic": "Principios",
+        "exam": null,
+        "statement": "¿Qué pueden demostrar las pruebas sobre defectos?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Pueden revelar defectos sin garantizar que no queden otros sin detectar."
+          },
+          {
+            "id": "B",
+            "text": "Cada caso superado demuestra corrección de todos los escenarios equivalentes."
+          },
+          {
+            "id": "C",
+            "text": "La ausencia de fallos observados certifica cualquier uso futuro del sistema."
+          },
+          {
+            "id": "D",
+            "text": "Cubrir todos los requisitos escritos descarta necesidades de usuario no previstas."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Un fallo observado puede revelar un defecto. Que los casos ejecutados pasen no garantiza que no queden defectos en otros escenarios. La evidencia de pruebas debe interpretarse dentro de su alcance; no equivale a una demostración formal de corrección.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "Superar un caso no demuestra por sí solo todos los escenarios que se consideren semejantes.",
+            "C": "Los usos futuros pueden incluir situaciones no cubiertas por las pruebas ejecutadas.",
+            "D": "Los requisitos escritos pueden omitir necesidades; cobertura no demuestra adecuación universal."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 1. Principios",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Los principios de prueba pueden agruparse en tres ideas: probar reduce incertidumbre, pero no demuestra ausencia de defectos; la exhaustividad no es viable, por lo que conviene empezar pronto y concentrar el esfuerzo donde se acumulan fallos; y la estrategia debe adaptarse al contexto, renovar los casos para evitar pérdida de eficacia y comprobar que el producto satisface la necesidad, no solo que carece de errores conocidos.",
+          "evidence_sha256": "aca2418b98955d235f80fb99526fc408d292481a5f7e3a7a13d810b391143234",
+          "record_sha256": "ff76c6c5188a0f857baf53ffe4c2b90f793cc45c11b20723ebb33ea49999cf66",
+          "review_id": "AI-GSI-B3-T07-001",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "ISTQB: Certified Tester Foundation Level Syllabus",
+              "url": "https://istqb.org/?download_id=3345&sdm_process_download=1",
+              "locator": "§1.3 principios 1 y 5: evidencia de defectos y tests wear out; §2.2.3 regresión útil",
+              "version": "v4.0.1 de 15-09-2024 según portada/pie; PDF de 78 páginas leído textualmente el 29-10-2026. El parámetro de descarga conserva un título web v4.0, pero el documento es v4.0.1",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-056"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 1. Principios",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar evidencia de presencia y clave A; distractores de inferencias excesivas próximas a cobertura y equivalencia."
+      ],
+      "references": [
+        {
+          "title": "ISTQB: Certified Tester Foundation Level Syllabus",
+          "url": "https://istqb.org/?download_id=3345&sdm_process_download=1",
+          "locator": "§1.3 principios 1 y 5: evidencia de defectos y tests wear out; §2.2.3 regresión útil",
+          "version": "v4.0.1 de 15-09-2024 según portada/pie; PDF de 78 páginas leído textualmente el 29-10-2026. El parámetro de descarga conserva un título web v4.0, pero el documento es v4.0.1",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T07-002",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "2daa4aba730f35118fecd435fe1e2264752f4f489b30f13e83a1d386f8beaea4",
+      "content_sha256": "67a1b49521db502e7ab1613e268e0c713c3a233bc43a0450377670ddc7436d0c",
+      "before": {
+        "id": "AI-GSI-B3-T07-002",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T07",
+        "subtopic": "Principios",
+        "exam": null,
+        "statement": "¿Por qué se revisan y renuevan casos de prueba?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Porque nunca deben repetirse pruebas de regresión"
+          },
+          {
+            "id": "B",
+            "text": "Repetir siempre los mismos puede dejar de descubrir nuevos defectos"
+          },
+          {
+            "id": "C",
+            "text": "Porque una prueba solo es válida una vez"
+          },
+          {
+            "id": "D",
+            "text": "Porque los requisitos dejan de importar"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "La paradoja del pesticida aconseja evolucionar pruebas sin abandonar regresión útil.",
+          "incorrect": "La paradoja del pesticida aconseja evolucionar pruebas sin abandonar regresión útil."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 1. Principios",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Los principios de prueba pueden agruparse en tres ideas: probar reduce incertidumbre, pero no demuestra ausencia de defectos; la exhaustividad no es viable, por lo que conviene empezar pronto y concentrar el esfuerzo donde se acumulan fallos; y la estrategia debe adaptarse al contexto, renovar los casos para evitar pérdida de eficacia y comprobar que el producto satisface la necesidad, no solo que carece de errores conocidos.",
+          "evidence_sha256": "aca2418b98955d235f80fb99526fc408d292481a5f7e3a7a13d810b391143234",
+          "record_sha256": "2583ff8ead4c2f49c9f9e3b9c8850acd03c61d734aed4f36a504fc41435802fc",
+          "review_id": "AI-GSI-B3-T07-002",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 1. Principios",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T07-002",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T07",
+        "subtopic": "Principios",
+        "exam": null,
+        "statement": "¿Cómo se evita que una suite deje de descubrir defectos nuevos sin perder la regresión útil?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Sustituir toda regresión en cada ejecución para que nunca se repita un caso."
+          },
+          {
+            "id": "B",
+            "text": "Ampliar y ajustar casos y datos para nuevos riesgos, conservando regresión útil."
+          },
+          {
+            "id": "C",
+            "text": "Considerar inválida cualquier prueba tras su primera ejecución satisfactoria."
+          },
+          {
+            "id": "D",
+            "text": "Mantener idénticos casos y datos aunque cambien requisitos y riesgos."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Los casos y datos necesitan evolucionar para descubrir defectos nuevos. Esto complementa la repetición de regresión útil, que detecta efectos adversos de cambios. Renovar no significa desechar automáticamente las comprobaciones que siguen aportando evidencia.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "La regresión útil requiere repetición; el principio no ordena sustituirla toda.",
+            "C": "Una ejecución satisfactoria no invalida el caso para detectar una regresión posterior.",
+            "D": "Congelar el conjunto puede dejar sin cubrir riesgos o comportamientos nuevos."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 1. Principios",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Los principios de prueba pueden agruparse en tres ideas: probar reduce incertidumbre, pero no demuestra ausencia de defectos; la exhaustividad no es viable, por lo que conviene empezar pronto y concentrar el esfuerzo donde se acumulan fallos; y la estrategia debe adaptarse al contexto, renovar los casos para evitar pérdida de eficacia y comprobar que el producto satisface la necesidad, no solo que carece de errores conocidos.",
+          "evidence_sha256": "aca2418b98955d235f80fb99526fc408d292481a5f7e3a7a13d810b391143234",
+          "record_sha256": "2583ff8ead4c2f49c9f9e3b9c8850acd03c61d734aed4f36a504fc41435802fc",
+          "review_id": "AI-GSI-B3-T07-002",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "ISTQB: Certified Tester Foundation Level Syllabus",
+              "url": "https://istqb.org/?download_id=3345&sdm_process_download=1",
+              "locator": "§1.3 principios 1 y 5: evidencia de defectos y tests wear out; §2.2.3 regresión útil",
+              "version": "v4.0.1 de 15-09-2024 según portada/pie; PDF de 78 páginas leído textualmente el 29-10-2026. El parámetro de descarga conserva un título web v4.0, pero el documento es v4.0.1",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-056"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 1. Principios",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar evolución de pruebas y clave B; principio tests wear out sin prohibir regresión ni declarar caducidad por uso."
+      ],
+      "references": [
+        {
+          "title": "ISTQB: Certified Tester Foundation Level Syllabus",
+          "url": "https://istqb.org/?download_id=3345&sdm_process_download=1",
+          "locator": "§1.3 principios 1 y 5: evidencia de defectos y tests wear out; §2.2.3 regresión útil",
+          "version": "v4.0.1 de 15-09-2024 según portada/pie; PDF de 78 páginas leído textualmente el 29-10-2026. El parámetro de descarga conserva un título web v4.0, pero el documento es v4.0.1",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T07-005",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "ad7321610208e848b0a534edb0c59dd4e86cb2208e68ca805088b95820ec4c07",
+      "content_sha256": "c49dbc1f91d31b650307a72717b1fbe94a313fa6181b4566157de21bb32c4118",
+      "before": {
+        "id": "AI-GSI-B3-T07-005",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T07",
+        "subtopic": "Niveles",
+        "exam": null,
+        "statement": "¿Qué nivel examina interacción entre componentes?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Unidad aislada exclusivamente"
+          },
+          {
+            "id": "B",
+            "text": "Inspección física exclusivamente"
+          },
+          {
+            "id": "C",
+            "text": "Aceptación contractual exclusivamente"
+          },
+          {
+            "id": "D",
+            "text": "Integración"
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Integración atiende interfaces e interacciones entre unidades.",
+          "incorrect": "Integración atiende interfaces e interacciones entre unidades."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 4. Niveles",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "* unitarias/componente;\n* integración;\n* sistema;\n* aceptación.\n\nLa pirámide de pruebas favorece muchas unitarias rápidas, menos integración y menos E2E costosas, adaptada al contexto.",
+          "evidence_sha256": "3c7b73b1c9e3b6e14c998ae7c62fa2de14e74b8a441a25cc1e6ea2fec195a320",
+          "record_sha256": "54417c4e09da3cdcc93d6ddb39280ff5179794eb7876fe8f1553591988eb239d",
+          "review_id": "AI-GSI-B3-T07-005",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 4. Niveles",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T07-005",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T07",
+        "subtopic": "Niveles",
+        "exam": null,
+        "statement": "Dos componentes pasan sus pruebas aisladas. Al conectarlos se comprueba su intercambio de fechas por una interfaz, sin ejecutar el resto del sistema. ¿Qué nivel se está probando?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Pruebas de un componente con el otro sustituido por un doble."
+          },
+          {
+            "id": "B",
+            "text": "Pruebas del sistema completo mediante un recorrido de usuario de extremo a extremo."
+          },
+          {
+            "id": "C",
+            "text": "Pruebas de aceptación de negocio con los usuarios destinatarios."
+          },
+          {
+            "id": "D",
+            "text": "Pruebas de integración de componentes sobre su interfaz e intercambio de datos."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "El objeto de esta prueba es la interacción técnica entre dos componentes reales y su contrato de intercambio. Corresponde a integración de componentes. Probarlos por separado no verifica que formatos y supuestos coincidan al conectarlos. No se ejecuta aquí todo el sistema ni se evalúa aceptación de negocio.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Sustituir al colaborador por un doble puede ocultar el desacuerdo entre los dos componentes reales.",
+            "B": "El caso limita el alcance a dos componentes; no describe un recorrido del sistema completo.",
+            "C": "La aceptación valora adecuación al negocio; aquí se verifica una interfaz técnica concreta."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 4. Niveles",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "* unitarias/componente;\n* integración;\n* sistema;\n* aceptación.\n\nLa pirámide de pruebas favorece muchas unitarias rápidas, menos integración y menos E2E costosas, adaptada al contexto.",
+          "evidence_sha256": "3c7b73b1c9e3b6e14c998ae7c62fa2de14e74b8a441a25cc1e6ea2fec195a320",
+          "record_sha256": "54417c4e09da3cdcc93d6ddb39280ff5179794eb7876fe8f1553591988eb239d",
+          "review_id": "AI-GSI-B3-T07-005",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Microsoft Engineering Fundamentals Playbook: Integration Testing",
+              "url": "https://microsoft.github.io/code-with-engineering-playbook/automated-testing/integration-testing/",
+              "locator": "Integration Testing; Why Integration Testing; Integration Testing Design Blocks: interacciones técnicas frente a aceptación de negocio",
+              "version": "Última actualización 10-12-2024 según pie; texto público leído el 29-10-2026. La clasificación se delimita por objetivo y alcance, sin imponer una pirámide fija",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-056"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 4. Niveles",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar interacción entre componentes y clave D; microcaso de contrato y alcance para distinguir niveles próximos."
+      ],
+      "references": [
+        {
+          "title": "Microsoft Engineering Fundamentals Playbook: Integration Testing",
+          "url": "https://microsoft.github.io/code-with-engineering-playbook/automated-testing/integration-testing/",
+          "locator": "Integration Testing; Why Integration Testing; Integration Testing Design Blocks: interacciones técnicas frente a aceptación de negocio",
+          "version": "Última actualización 10-12-2024 según pie; texto público leído el 29-10-2026. La clasificación se delimita por objetivo y alcance, sin imponer una pirámide fija",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    }
+  ]
+}

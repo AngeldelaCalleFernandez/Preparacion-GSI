@@ -1,0 +1,557 @@
+{
+  "batch_id": "GSI-EDITORIAL-054",
+  "batch_sha256": "6fe38eadb1b10b25e57a639122d14ac0d5743f49a31c093275297ae0ea28ccb5",
+  "verified_at": "2026-11-05T11:03:55.402210+00:00",
+  "status": "awaiting_owner_approval",
+  "questions": 20,
+  "simulated_ai_changes": 20,
+  "applied": 0,
+  "new_approvals": 0,
+  "questions_with_keys_and_option_ids_preserved": 20,
+  "individual_distractor_explanations": 60,
+  "sources": {
+    "https://www.nasa.gov/reference/4-3-logical-decomposition/": {
+      "title": "NASA Systems Engineering Handbook: 4.3 Logical Decomposition",
+      "locators": [
+        "4.3.1.2.1 modelos y objetivos; 4.3.1.2.2 análisis funcional, relaciones, comportamientos y restricciones; contraste iterativo con interesados"
+      ],
+      "rechecked_at": "2026-11-05"
+    },
+    "https://www.nasa.gov/reference/appendix-c-how-to-write-a-good-requirement/": {
+      "title": "NASA: Appendix C, How to Write a Good Requirement",
+      "locators": [
+        "C.4 Performance, Correctness y Verifiability/Testability: criterios, precisión y verificación por prueba, demostración, inspección o análisis"
+      ],
+      "rechecked_at": "2026-11-05"
+    },
+    "https://sre.google/workbook/implementing-slos/": {
+      "title": "Google: The Site Reliability Workbook, Implementing SLOs",
+      "locators": [
+        "What to Measure, SLI specification/implementation; Choosing an Appropriate Time Window: ventana móvil/calendario, numerador, denominador y objetivo"
+      ],
+      "rechecked_at": "2026-11-05"
+    },
+    "https://pages.nist.gov/800-63-4/sp800-63b.html": {
+      "title": "NIST SP 800-63B-4: Authentication and Authenticator Management",
+      "locators": [
+        "Introduction; §2 Authentication Assurance Levels y AAL2; dos factores distintos y tipos de autenticadores"
+      ],
+      "rechecked_at": "2026-11-05"
+    },
+    "https://www.postgresql.org/docs/18/ddl-constraints.html": {
+      "title": "PostgreSQL 18: 5.5 Constraints",
+      "locators": [
+        "5.5.1 CHECK y NULL; 5.5.2 NOT NULL; 5.5.3 UNIQUE; 5.5.4 PK; 5.5.5 FK, ejemplos products/orders/order_items y asociación N:M"
+      ],
+      "rechecked_at": "2026-11-05"
+    },
+    "https://db-book.com/slides-dir/PDF-dir/ch7.pdf": {
+      "title": "Silberschatz, Korth y Sudarshan: Database System Concepts, Normalization",
+      "locators": [
+        "7.23–7.28: BCNF, descomposición y dependencias; 7.65–7.73: 3FN, reunión sin pérdida y preservación; 7.90 Denormalization for Performance"
+      ],
+      "rechecked_at": "2026-11-05",
+      "document": {
+        "path": "tmp/pdfs/gsi-editorial-054-relational-design.pdf",
+        "pdf_pages": 93,
+        "slides_visually_checked": {
+          "7.27": 24,
+          "7.69": 64
+        },
+        "sha256": "2cc2f9de85362f5c560227523c5433285cce7f145f02d55416cae20b6e6f4d5b"
+      }
+    },
+    "https://www.postgresql.org/docs/18/transaction-iso.html": {
+      "title": "PostgreSQL 18: 13.2 Transaction Isolation",
+      "locators": [
+        "Definiciones dirty read, nonrepeatable read, phantom read; 13.2.1 Read Committed y actualizaciones; 13.2.2–3 snapshots y serialización"
+      ],
+      "rechecked_at": "2026-11-05"
+    },
+    "https://www.postgresql.org/docs/18/indexes-types.html": {
+      "title": "PostgreSQL 18: 11.2 Index Types",
+      "locators": [
+        "11.2.1 B-tree: igualdad, rangos y orden; 11.2.2 hash: igualdad; familias GIN/GiST/BRIN y sus operadores"
+      ],
+      "rechecked_at": "2026-11-05"
+    },
+    "https://www.postgresql.org/docs/18/ddl-partitioning.html": {
+      "title": "PostgreSQL 18: 5.12 Table Partitioning",
+      "locators": [
+        "5.12.1 Overview: una tabla lógica en piezas físicas; 5.12.2 particiones y decisiones de almacenamiento; beneficios según patrón de uso"
+      ],
+      "rechecked_at": "2026-11-05"
+    },
+    "https://www.postgresql.org/docs/18/using-explain.html": {
+      "title": "PostgreSQL 18: 14.1 Using EXPLAIN",
+      "locators": [
+        "Introducción; EXPLAIN Basics, costes y planes; EXPLAIN ANALYZE y Caveats: medición y ejecución real de consultas"
+      ],
+      "rechecked_at": "2026-11-05"
+    },
+    "https://www.cs.utexas.edu/~mitra/csSpring2012/cs327/lectures/normal.html": {
+      "title": "UT Austin, A. Mitra: The Process of Normalization",
+      "locators": [
+        "Functional Dependencies: dependencia plena/parcial; Second Normal Form: 1FN y ningún atributo no primo dependiente de parte de una clave candidata"
+      ],
+      "rechecked_at": "2026-11-05"
+    },
+    "https://www.db-book.com/slides-dir/PDF-dir/ch18.pdf": {
+      "title": "Silberschatz, Korth y Sudarshan: Database System Concepts, Concurrency Control",
+      "locators": [
+        "18.9–18.13: 2PL básico, estricto y conversiones; 18.22–18.24: prevención de deadlock; 18.48–18.50: validación optimista; 18.54: multiversión"
+      ],
+      "rechecked_at": "2026-11-05",
+      "document": {
+        "path": "tmp/pdfs/gsi-editorial-054-concurrency.pdf",
+        "pdf_pages": 90,
+        "slides_visually_checked": {
+          "18.9": 8
+        },
+        "sha256": "5a8bcc5272e2bcded418a931ce3becc442090a3bc1ac913599682ed539d120ed"
+      }
+    },
+    "https://www.postgresql.org/docs/18/mvcc-intro.html": {
+      "title": "PostgreSQL 18: 13.1 Concurrency Control, Introduction",
+      "locators": [
+        "Modelo multiversión, instantáneas, lecturas/escrituras y coexistencia de bloqueos explícitos"
+      ],
+      "rechecked_at": "2026-11-05"
+    },
+    "https://www.postgresql.org/docs/18/explicit-locking.html": {
+      "title": "PostgreSQL 18: 13.3 Explicit Locking",
+      "locators": [
+        "13.3.2 bloqueo de filas; 13.3.4 deadlocks: orden consistente, transacciones abiertas, víctima y reintentos"
+      ],
+      "rechecked_at": "2026-11-05"
+    }
+  },
+  "source_note": "Referencias de versión explícita de PostgreSQL 18. Los ejemplos se verifican en memoria o como modelos de dependencias y concurrencia. La descarga preserva los PDF originales. La captura web de una diapositiva devolvió cache miss y se sustituyó por lectura y render local del PDF público.",
+  "per_question": [
+    {
+      "id": "AI-GSI-B3-T03-018",
+      "key": "A",
+      "base_sha256": "b4b21b1f8764ebc8e26059d697a819e6e4cabb8bbe54ceedc58fbfd5af744746",
+      "proposed_sha256": "440dde744e5d80f473a26949eb7a4fe179d5e9bc074a1c834926cd70d57f70dd",
+      "sources": [
+        "https://www.nasa.gov/reference/4-3-logical-decomposition/",
+        "https://www.nasa.gov/reference/appendix-c-how-to-write-a-good-requirement/"
+      ]
+    },
+    {
+      "id": "AI-GSI-B3-T03-019",
+      "key": "D",
+      "base_sha256": "04fa4042ddaeaf3a3a15d8bcf0c98c3d3ab940cbce9e1a48445f1ad2ff9973bd",
+      "proposed_sha256": "836eef0408a15069b03daaf78718ab2b29cef39bb83578beff28786a1b18ddca",
+      "sources": [
+        "https://sre.google/workbook/implementing-slos/",
+        "https://www.nasa.gov/reference/appendix-c-how-to-write-a-good-requirement/"
+      ]
+    },
+    {
+      "id": "AI-GSI-B3-T03-020",
+      "key": "A",
+      "base_sha256": "4642fd7ab0d7d171d11d77051f7a8f001f6f52085da9fad1441372d0739d789f",
+      "proposed_sha256": "1348732d7c51d1de9a827dfe195119878a374c77e48907d984fb9e6a5306f39b",
+      "sources": [
+        "https://pages.nist.gov/800-63-4/sp800-63b.html",
+        "https://www.nasa.gov/reference/appendix-c-how-to-write-a-good-requirement/"
+      ]
+    },
+    {
+      "id": "AI-GSI-B3-T04-002",
+      "key": "C",
+      "base_sha256": "dd1284d92f660edecf5e977fe18e3a4fd5df4996fbcf76a3e39d98137be7b406",
+      "proposed_sha256": "72b3e78d0b1d9293857566e46bce54dcf4aa056f73798ad4e515a810cfc1a214",
+      "sources": [
+        "https://www.postgresql.org/docs/18/ddl-constraints.html"
+      ]
+    },
+    {
+      "id": "AI-GSI-B3-T04-003",
+      "key": "B",
+      "base_sha256": "c52dbdb2b1d113f716b45649d81e60af5826f1827385c86a3f150e88999eca6a",
+      "proposed_sha256": "ab08972598a090390088755841b5ef2fb92e89a1341fd0ce439f85760a9f7064",
+      "sources": [
+        "https://www.postgresql.org/docs/18/ddl-constraints.html"
+      ]
+    },
+    {
+      "id": "AI-GSI-B3-T04-004",
+      "key": "B",
+      "base_sha256": "b10d51329589621b47bec50dd691792137009210f5facd26be9ab81efe841eb5",
+      "proposed_sha256": "debe6d8ff0f38d379e7d23fdc180599b02778be7de5aef127a363a0710284b8a",
+      "sources": [
+        "https://db-book.com/slides-dir/PDF-dir/ch7.pdf"
+      ]
+    },
+    {
+      "id": "AI-GSI-B3-T04-005",
+      "key": "D",
+      "base_sha256": "753b230e79e27b852b80e83762e68afa2e519b38363349e46d55a4d6b30847fa",
+      "proposed_sha256": "f27a02da03acb3a24228a30d247d82b5a622b9916a508e96a623aa8badf7a4f0",
+      "sources": [
+        "https://www.postgresql.org/docs/18/ddl-constraints.html"
+      ]
+    },
+    {
+      "id": "AI-GSI-B3-T04-006",
+      "key": "D",
+      "base_sha256": "f37ded292edbb68685c05b148aa199f159ff2c496c389b4aa348f20571e6542f",
+      "proposed_sha256": "e77e9f6b2a8b42a2aeb2eae766076cb93ab265ac97f0e0bd73515c4904f541df",
+      "sources": [
+        "https://www.postgresql.org/docs/18/ddl-constraints.html",
+        "https://www.postgresql.org/docs/18/transaction-iso.html"
+      ]
+    },
+    {
+      "id": "AI-GSI-B3-T04-007",
+      "key": "C",
+      "base_sha256": "1b97e3422641e860b282468cdc0c7caeddc46e7b377035b11a045820e6c25b92",
+      "proposed_sha256": "4d365f0d7eca6d5ab003f56baf2400fd612e8cf2a0c94545d330059c23b793dd",
+      "sources": [
+        "https://www.postgresql.org/docs/18/indexes-types.html",
+        "https://www.postgresql.org/docs/18/ddl-partitioning.html",
+        "https://www.postgresql.org/docs/18/using-explain.html"
+      ]
+    },
+    {
+      "id": "AI-GSI-B3-T04-008",
+      "key": "A",
+      "base_sha256": "d8d467908f6b7e13a4dd8ba8d32c4a02bab4c3cf87c797ef825b05cd1af986ab",
+      "proposed_sha256": "fc128bd983aec77b632d3774b14b110fba8b93c9fea12d1314ac9d1a9cf3b209",
+      "sources": [
+        "https://www.cs.utexas.edu/~mitra/csSpring2012/cs327/lectures/normal.html",
+        "https://db-book.com/slides-dir/PDF-dir/ch7.pdf"
+      ]
+    },
+    {
+      "id": "AI-GSI-B3-T04-009",
+      "key": "A",
+      "base_sha256": "aef886b4d3a13202813f2951835a44725e3fde4177c76b04821ebb0fc25a97a1",
+      "proposed_sha256": "31f8f57b4b47315df7e795e1fc4aa0fcf48dfc4d0fd9e8261cffd6c57507ee0f",
+      "sources": [
+        "https://db-book.com/slides-dir/PDF-dir/ch7.pdf"
+      ]
+    },
+    {
+      "id": "AI-GSI-B3-T04-010",
+      "key": "C",
+      "base_sha256": "799ebde666a8d9348cab7a5a4346600f13fcb3aa50798c3c55587710ead4427b",
+      "proposed_sha256": "ad3fb5b04241203d43a60303f0c4390671b60416d2f8e7d92a7b5ae36f62c91f",
+      "sources": [
+        "https://db-book.com/slides-dir/PDF-dir/ch7.pdf",
+        "https://www.postgresql.org/docs/18/using-explain.html"
+      ]
+    },
+    {
+      "id": "AI-GSI-B3-T04-011",
+      "key": "C",
+      "base_sha256": "dd62898703b5374bd6d68a54cfd7e7df8ff05c5fc60e53e9c6bbc90044c4fd24",
+      "proposed_sha256": "e0157bb12f13108f39dd85ee93dda4ac6efbdd2bda9ccbd563eabc37fb05676f",
+      "sources": [
+        "https://www.postgresql.org/docs/18/transaction-iso.html",
+        "https://www.db-book.com/slides-dir/PDF-dir/ch18.pdf"
+      ]
+    },
+    {
+      "id": "AI-GSI-B3-T04-012",
+      "key": "C",
+      "base_sha256": "b6fc733c76d4122d295a703c5c358e65180bc57be1e78c98861552c35b882cd1",
+      "proposed_sha256": "2fcc00dabacb11597bf18496946d9f96fc257ac79d68d7a1e3d68e0d9eaf89bc",
+      "sources": [
+        "https://www.postgresql.org/docs/18/transaction-iso.html"
+      ]
+    },
+    {
+      "id": "AI-GSI-B3-T04-014",
+      "key": "A",
+      "base_sha256": "1a2be1036041a8b8195340a92acfe6722b02639aadd0f85cfb83908c17224859",
+      "proposed_sha256": "7a615d35d3bc86fcd83ce1d4e2d437ef794376540f2a968d33671c1a7db5652e",
+      "sources": [
+        "https://www.postgresql.org/docs/18/mvcc-intro.html",
+        "https://www.postgresql.org/docs/18/transaction-iso.html",
+        "https://www.db-book.com/slides-dir/PDF-dir/ch18.pdf"
+      ]
+    },
+    {
+      "id": "AI-GSI-B3-T04-015",
+      "key": "D",
+      "base_sha256": "31966d8712eea1c4b1300d7656fde7587f46c1e7e4bd320b3b678c8ea8a56e2a",
+      "proposed_sha256": "f9dfeea47e2e4b476c59c6180221fe475ba0e2c366fb00583922e61f7da8a15e",
+      "sources": [
+        "https://www.postgresql.org/docs/18/explicit-locking.html",
+        "https://www.db-book.com/slides-dir/PDF-dir/ch18.pdf"
+      ]
+    },
+    {
+      "id": "AI-GSI-B3-T04-016",
+      "key": "B",
+      "base_sha256": "e4e6b47bf1271cabd6c117d2ae94f0f44e41e43dfc8ba50e05904928aca1e421",
+      "proposed_sha256": "d7c75be5abf8cc75f608167738dbeeb460447a79e75b5abddcdc9ed60eb7b7cd",
+      "sources": [
+        "https://www.db-book.com/slides-dir/PDF-dir/ch18.pdf"
+      ]
+    },
+    {
+      "id": "AI-GSI-B3-T04-017",
+      "key": "A",
+      "base_sha256": "bf325b7c941f891742200c84b48186d1765860c5dfe0d493620d6fa35f6334ff",
+      "proposed_sha256": "20fd12e68a93e11f70aec57cdae5ec2200e92faf8e9cb9bea83940e8333872ac",
+      "sources": [
+        "https://www.postgresql.org/docs/18/explicit-locking.html",
+        "https://www.db-book.com/slides-dir/PDF-dir/ch18.pdf"
+      ]
+    },
+    {
+      "id": "AI-GSI-B3-T04-019",
+      "key": "D",
+      "base_sha256": "94398c6c03b8b4698eab4b48f355f2d4b029424263409d2fff6df3012dbb8259",
+      "proposed_sha256": "dcf051e78036039e4698295554e84c8cc534e417a7680625f27a88adec1de174",
+      "sources": [
+        "https://www.postgresql.org/docs/18/indexes-types.html",
+        "https://www.postgresql.org/docs/18/using-explain.html"
+      ]
+    },
+    {
+      "id": "AI-GSI-B3-T04-013",
+      "key": "D",
+      "base_sha256": "f1cdd30c041bae936e8bf8fc78435b7ee3dc05b8e2caf7d21b713602b83b30e2",
+      "proposed_sha256": "8a34748af3cdb10516312e2acb744aec2bb829baf8f79c418c002efda68fb62f",
+      "sources": [
+        "https://www.db-book.com/slides-dir/PDF-dir/ch18.pdf",
+        "https://www.postgresql.org/docs/18/transaction-iso.html"
+      ]
+    }
+  ],
+  "semantic_checks": {
+    "second_normal_form_supporting_example": true,
+    "lossless_bcnf_does_not_imply_dependency_preservation": true,
+    "check_unknown_and_not_null_are_distinct": true,
+    "one_to_many_fk_repeats_parent_and_rejects_missing_reference": true,
+    "many_to_many_association_cardinality_and_pair_constraint": true,
+    "lost_update_case_and_serial_counter_value": true,
+    "atomic_version_validation_model_rejects_stale_write": true,
+    "two_phase_locking_separation_and_possible_wait_cycle": true
+  },
+  "semantic_details": {
+    "second_normal_form": {
+      "attributes": [
+        "A",
+        "B",
+        "C"
+      ],
+      "fds": [
+        "A→C"
+      ],
+      "candidate_keys": [
+        "AB"
+      ],
+      "non_prime": [
+        "C"
+      ],
+      "partial_dependency": "A→C; A es parte propia de AB",
+      "lossless_decomposition": [
+        "AC",
+        "AB"
+      ]
+    },
+    "bcnf_counterexample": {
+      "attributes": [
+        "A",
+        "B",
+        "C"
+      ],
+      "fds": [
+        "AB→C",
+        "C→B"
+      ],
+      "candidate_keys": [
+        "AB",
+        "AC"
+      ],
+      "decomposition": [
+        "CB",
+        "AC"
+      ],
+      "components_in_bcnf": true,
+      "lossless_join": true,
+      "intersection_determines": "C→CB",
+      "not_preserved": "AB→C",
+      "ab_closure_under_projected_fds": [
+        "A",
+        "B"
+      ],
+      "local_tables": [
+        [
+          {
+            "C": 1,
+            "B": 9
+          },
+          {
+            "C": 2,
+            "B": 9
+          }
+        ],
+        [
+          {
+            "A": 7,
+            "C": 1
+          },
+          {
+            "A": 7,
+            "C": 2
+          }
+        ]
+      ],
+      "join_violating_ab_to_c": [
+        {
+          "C": 1,
+          "B": 9,
+          "A": 7
+        },
+        {
+          "C": 2,
+          "B": 9,
+          "A": 7
+        }
+      ]
+    },
+    "sql_check": {
+      "values": [
+        null,
+        -1,
+        0,
+        3
+      ],
+      "accepted": [
+        true,
+        false,
+        true,
+        true
+      ],
+      "not_null_accepts_negative": true
+    },
+    "one_to_many": {
+      "two_children_same_parent": true,
+      "orphan_rejected": true,
+      "mandatory_child_fk_checked": true,
+      "parent_with_no_children_allowed": true
+    },
+    "many_to_many": {
+      "valid_associations": [
+        [
+          1,
+          10
+        ],
+        [
+          1,
+          20
+        ],
+        [
+          2,
+          10
+        ]
+      ],
+      "duplicate_pair_rejected": true,
+      "unknown_student_rejected": true
+    },
+    "lost_update": {
+      "initial": 100,
+      "first_write": 110,
+      "second_stale_write": 120,
+      "observed": 120,
+      "serial_increment_result": 130,
+      "lost_increment": 10,
+      "key": "C"
+    },
+    "optimistic_model": {
+      "stale_write_rejected": true,
+      "retry_result": {
+        "value": 130,
+        "version": 2
+      },
+      "scope": "Modelo secuencial con compare-and-set atómico asumido, no prueba de concurrencia real o motor instalado."
+    },
+    "two_phase_locking": {
+      "valid": [
+        [
+          "lock",
+          "A"
+        ],
+        [
+          "lock",
+          "B"
+        ],
+        [
+          "unlock",
+          "A"
+        ],
+        [
+          "unlock",
+          "B"
+        ]
+      ],
+      "invalid": [
+        [
+          "lock",
+          "A"
+        ],
+        [
+          "unlock",
+          "A"
+        ],
+        [
+          "lock",
+          "B"
+        ]
+      ],
+      "deadlock_example": "T1 tiene X(A), T2 tiene X(B); cada una pide el otro recurso. Ninguna liberó bloqueos; ambas siguen creciendo y pueden esperar en ciclo.",
+      "waits": {
+        "T1": "T2",
+        "T2": "T1"
+      }
+    }
+  },
+  "unchanged_file_sha256": {
+    "data/questions-ai.json": "07775eed29f024de16e2fb2bcb16072a306300363a872b03ae373c82c7fac4bd",
+    "data/questions-manual.json": "608d81e43838e6812923a52284c7a632679a4380e9c570f0e72ff9c57f00f00b",
+    "data/questions-official.json": "bddf132ba2333d848982263593905206a87e8548179ee7443a8699385c984b9e",
+    "data/gsi-editorial-revisions.json": "72280f76ae11e5a760574840de6f789c09efb52595131c878b006f1e5f09baf3",
+    "content/question-reviews/lote-054.json": "6a72e694284bd698150cfedc5b40e84300a933b95db269a973fdd99625a49483",
+    "docs/GSI_REVISION_LOTE_054.md": "118073c7e5283e3e3c3bc33ef78aafb556844981bc93d890b3cf429ff6db4bf0",
+    "logs/gsi-editorial-054-preparation.json": "c5170de2003e40ef1985f7e6fcd8074d5dedbc36a803583be900a4f4ea4a3daa"
+  },
+  "quality_before": {
+    "questions": 20,
+    "absolute_wording_cluster": 0,
+    "correct_unique_longest": 9,
+    "duplicate_options": 0,
+    "first_longest_correct": 9,
+    "identical_feedback": 20,
+    "length_ratio_1_5_to_2": 3,
+    "length_ratio_at_least_2": 0,
+    "longest_ties": 1,
+    "short_correct_feedback": 19,
+    "first_longest_accuracy": 45.0
+  },
+  "quality_proposed": {
+    "questions": 20,
+    "absolute_wording_cluster": 0,
+    "correct_unique_longest": 3,
+    "duplicate_options": 0,
+    "first_longest_correct": 4,
+    "identical_feedback": 0,
+    "length_ratio_1_5_to_2": 0,
+    "length_ratio_at_least_2": 0,
+    "longest_ties": 3,
+    "short_correct_feedback": 0,
+    "first_longest_accuracy": 20.0
+  },
+  "plan_progress": {
+    "total": 1762,
+    "reviewed": 40,
+    "pending": 1722,
+    "editorial_complete": false
+  }
+}

@@ -41,10 +41,10 @@ async function initQuestionFeatures() {
   questionFeaturesPromise = (async () => {
     const [data, trainingModule, examModule, reinforcementMigrationModule, reinforcementModule, analyticsMigrationModule] = await Promise.all([
       getFullData(),
-      import("./training.js?gsi4"),
-      import("./exam.js?gsi4"),
+      import("./training.js?gsi5"),
+      import("./exam.js?gsi5"),
       import("./reinforcement-migration.js?gsi2"),
-      import("./reinforcement.js?gsi4"),
+      import("./reinforcement.js?gsi5"),
       import("./analytics-migration.js?gsi2"),
     ]);
     const realMigration = reinforcementMigrationModule.migratePhase3Training(data, false);

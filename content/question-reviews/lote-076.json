@@ -1,0 +1,3754 @@
+{
+  "version": 1,
+  "id": "GSI-EDITORIAL-076",
+  "prepared_at": "2026-11-03",
+  "baseline_commit": "e3e20ab879518c899806a70575eead28b3b35e6f",
+  "items": [
+    {
+      "id": "AI-GSI-B4-T08-002",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "71353eb6625408a163e2607d62a33b27536984bb11c6e089733855baf52476cb",
+      "content_sha256": "7d118b08fbd765964d4c8f93a8361f30aa549184c1a9f6c3e024e3389dbdab14",
+      "before": {
+        "id": "AI-GSI-B4-T08-002",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T08",
+        "subtopic": "Arquitectura Ethernet",
+        "exam": null,
+        "statement": "¿Qué diferencia MAC e IP en la trama y la pila?",
+        "options": [
+          {
+            "id": "A",
+            "text": "IP solo existe en capa física"
+          },
+          {
+            "id": "B",
+            "text": "MAC identifica en enlace; IP pertenece a red"
+          },
+          {
+            "id": "C",
+            "text": "MAC identifica una sesión jurídica"
+          },
+          {
+            "id": "D",
+            "text": "MAC e IP son siempre la misma dirección"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Son identificadores de niveles distintos de comunicación.",
+          "incorrect": "Son identificadores de niveles distintos de comunicación."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 1. Arquitectura Ethernet",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Ethernet IEEE 802.3 es la familia dominante en LAN cableadas. Opera a nivel físico y enlace; la trama contiene direcciones MAC origen/destino, tipo/longitud según formato, datos y FCS. La MAC es identificación de enlace; IP pertenece a capa de red.\n\nEn Ethernet conmutada full-duplex no hay colisiones normales y CSMA/CD queda como concepto histórico asociado a medio compartido/half-duplex.",
+          "evidence_sha256": "92c2ca8856f8743d4f4ab91e7b3d6fdfed32c4799be9e3ee10086277b8eccd01",
+          "record_sha256": "17e7e5f6e082c516be00eb545de8e44ac38eecadf3b0703e566c8bff12a1dacd",
+          "review_id": "AI-GSI-B4-T08-002",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 1. Arquitectura Ethernet",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T08-002",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T08",
+        "subtopic": "Arquitectura Ethernet",
+        "exam": null,
+        "statement": "¿Qué diferencia el papel de las direcciones MAC e IP al enviar un paquete por Ethernet?",
+        "options": [
+          {
+            "id": "A",
+            "text": "MAC pertenece a red; IP identifica interfaces en enlace."
+          },
+          {
+            "id": "B",
+            "text": "MAC identifica en enlace; IP proporciona direccionamiento de red."
+          },
+          {
+            "id": "C",
+            "text": "MAC identifica procesos; IP selecciona puertos de transporte."
+          },
+          {
+            "id": "D",
+            "text": "MAC identifica el destino remoto; IP el siguiente salto local."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "MAC e IP cumplen funciones de capas distintas: enlace Ethernet y red IP. En una ruta con routers, la trama se dirige al siguiente salto del enlace, mientras el paquete conserva su destino IP salvo mecanismos que lo modifiquen. Una MAC no demuestra identidad del usuario ni tiene que ser inmutable.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Invierte las funciones de enlace y red.",
+            "C": "La selección de procesos mediante puertos corresponde al transporte, no a la función de MAC o IP.",
+            "D": "Invierte el alcance típico: la MAC usada en ese enlace corresponde al siguiente salto, no necesariamente al equipo remoto."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 1. Arquitectura Ethernet",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Ethernet IEEE 802.3 es la familia dominante en LAN cableadas. Opera a nivel físico y enlace; la trama contiene direcciones MAC origen/destino, tipo/longitud según formato, datos y FCS. La MAC es identificación de enlace; IP pertenece a capa de red.\n\nEn Ethernet conmutada full-duplex no hay colisiones normales y CSMA/CD queda como concepto histórico asociado a medio compartido/half-duplex.",
+          "evidence_sha256": "92c2ca8856f8743d4f4ab91e7b3d6fdfed32c4799be9e3ee10086277b8eccd01",
+          "record_sha256": "17e7e5f6e082c516be00eb545de8e44ac38eecadf3b0703e566c8bff12a1dacd",
+          "review_id": "AI-GSI-B4-T08-002",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "IETF: RFC 1122, Requirements for Internet Hosts",
+              "url": "https://www.rfc-editor.org/rfc/rfc1122.html",
+              "locator": "§1.1.3 Internet Protocol Suite; §2.3.3 Ethernet and IEEE 802 Encapsulation; §2.4 Link/Internet Layer Interface",
+              "version": "RFC 1122, octubre1989, HTML comprobado 03-11-2026. Se usa separación enlace/IP y traducción de direcciones IPv4; no se extrapolan sus valores históricos de MTU, framing o ARP a IPv6.",
+              "checked_at": "2026-11-03"
+            },
+            {
+              "title": "Cisco: Configure MAC",
+              "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr2-fwd/cdp-lldp-mac-udld/cdp-lldp-mac-udld-configuration-guide/c-configure-mac.html",
+              "locator": "MAC Address Table Management: MAC address learning y Frame forwarding; MAC address table creation",
+              "version": "Guía HTML comprobada 03-11-2026. Historial menciona IOS XE26.2.1; se usa aprendizaje origen/puerto/VLAN sin imponer versión o límites de tabla. No se asume MAC siempre universal, fija o prueba de identidad.",
+              "checked_at": "2026-11-03"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-076"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 1. Arquitectura Ethernet",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-03"
+      },
+      "reasons": [
+        "Conservar contraste de capas y clave B; evitar MAC como identidad absoluta y comparar funciones próximas."
+      ],
+      "references": [
+        {
+          "title": "IETF: RFC 1122, Requirements for Internet Hosts",
+          "url": "https://www.rfc-editor.org/rfc/rfc1122.html",
+          "locator": "§1.1.3 Internet Protocol Suite; §2.3.3 Ethernet and IEEE 802 Encapsulation; §2.4 Link/Internet Layer Interface",
+          "version": "RFC 1122, octubre1989, HTML comprobado 03-11-2026. Se usa separación enlace/IP y traducción de direcciones IPv4; no se extrapolan sus valores históricos de MTU, framing o ARP a IPv6.",
+          "checked_at": "2026-11-03"
+        },
+        {
+          "title": "Cisco: Configure MAC",
+          "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr2-fwd/cdp-lldp-mac-udld/cdp-lldp-mac-udld-configuration-guide/c-configure-mac.html",
+          "locator": "MAC Address Table Management: MAC address learning y Frame forwarding; MAC address table creation",
+          "version": "Guía HTML comprobada 03-11-2026. Historial menciona IOS XE26.2.1; se usa aprendizaje origen/puerto/VLAN sin imponer versión o límites de tabla. No se asume MAC siempre universal, fija o prueba de identidad.",
+          "checked_at": "2026-11-03"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T08-003",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "f0176bc7e7f8891e9b474a4f072761a9416e9f9e60872acd4aa674c094820865",
+      "content_sha256": "5da7c1af2af58be5f632434f19dc53fb1bd7bbb27d473bcac8c12e861bd3f30e",
+      "before": {
+        "id": "AI-GSI-B4-T08-003",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T08",
+        "subtopic": "Arquitectura Ethernet",
+        "exam": null,
+        "statement": "En Ethernet conmutada full-duplex, ¿qué papel tiene CSMA/CD?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Detecta colisiones normales en cada transmisión full-duplex"
+          },
+          {
+            "id": "B",
+            "text": "Queda como concepto asociado al medio compartido o half-duplex"
+          },
+          {
+            "id": "C",
+            "text": "Es obligatorio para routing IP"
+          },
+          {
+            "id": "D",
+            "text": "Sustituye a STP"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "La conmutación full-duplex evita las colisiones propias del medio compartido.",
+          "incorrect": "La conmutación full-duplex evita las colisiones propias del medio compartido."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 1. Arquitectura Ethernet",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Ethernet IEEE 802.3 es la familia dominante en LAN cableadas. Opera a nivel físico y enlace; la trama contiene direcciones MAC origen/destino, tipo/longitud según formato, datos y FCS. La MAC es identificación de enlace; IP pertenece a capa de red.\n\nEn Ethernet conmutada full-duplex no hay colisiones normales y CSMA/CD queda como concepto histórico asociado a medio compartido/half-duplex.",
+          "evidence_sha256": "92c2ca8856f8743d4f4ab91e7b3d6fdfed32c4799be9e3ee10086277b8eccd01",
+          "record_sha256": "fe3179659d41f92ba2646babba782b4dbd83a98defd137db2b790ab249d0eb22",
+          "review_id": "AI-GSI-B4-T08-003",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 1. Arquitectura Ethernet",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T08-003",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T08",
+        "subtopic": "Arquitectura Ethernet",
+        "exam": null,
+        "statement": "En Ethernet conmutada full-duplex, ¿qué papel tiene CSMA/CD?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Arbitra el acceso de las transmisiones simultáneas del enlace."
+          },
+          {
+            "id": "B",
+            "text": "Se asocia al funcionamiento compartido o half-duplex anterior."
+          },
+          {
+            "id": "C",
+            "text": "Selecciona el puerto de salida según la dirección MAC destino."
+          },
+          {
+            "id": "D",
+            "text": "Evita bucles al bloquear los caminos redundantes de la VLAN."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "En un enlace Ethernet full-duplex correctamente establecido no se utiliza CSMA/CD: ambos extremos pueden transmitir simultáneamente. La detección y recuperación de colisiones pertenece al funcionamiento half-duplex de Ethernet compartida. No debe confundirse una colisión con congestión, errores físicos o un desajuste de dúplex.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "La operación full-duplex no necesita arbitraje del acceso al medio mediante CSMA/CD.",
+            "C": "Seleccionar salida mediante MAC corresponde a conmutación, no al control de acceso CSMA/CD.",
+            "D": "Controlar bucles de la topología es función de spanning tree, distinta de tratar colisiones."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 1. Arquitectura Ethernet",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Ethernet IEEE 802.3 es la familia dominante en LAN cableadas. Opera a nivel físico y enlace; la trama contiene direcciones MAC origen/destino, tipo/longitud según formato, datos y FCS. La MAC es identificación de enlace; IP pertenece a capa de red.\n\nEn Ethernet conmutada full-duplex no hay colisiones normales y CSMA/CD queda como concepto histórico asociado a medio compartido/half-duplex.",
+          "evidence_sha256": "92c2ca8856f8743d4f4ab91e7b3d6fdfed32c4799be9e3ee10086277b8eccd01",
+          "record_sha256": "fe3179659d41f92ba2646babba782b4dbd83a98defd137db2b790ab249d0eb22",
+          "review_id": "AI-GSI-B4-T08-003",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Cisco: Troubleshooting Ethernet",
+              "url": "https://www.cisco.com/en/US/docs/internetworking/troubleshooting/guide/tr1904.html",
+              "locator": "Ethernet Operations: CSMA/CD en half-duplex y ausencia de uso en full-duplex; Collision Domains",
+              "version": "Guía histórica HTML comprobada 03-11-2026. La relación de colisiones es conceptual; no se presentan velocidades, distancias o recomendaciones antiguas como límites actuales.",
+              "checked_at": "2026-11-03"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-076"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 1. Arquitectura Ethernet",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-03"
+      },
+      "reasons": [
+        "Conservar enunciado y clave B; cuatro mecanismos LAN relacionados y alcance full-duplex bien establecido."
+      ],
+      "references": [
+        {
+          "title": "Cisco: Troubleshooting Ethernet",
+          "url": "https://www.cisco.com/en/US/docs/internetworking/troubleshooting/guide/tr1904.html",
+          "locator": "Ethernet Operations: CSMA/CD en half-duplex y ausencia de uso en full-duplex; Collision Domains",
+          "version": "Guía histórica HTML comprobada 03-11-2026. La relación de colisiones es conceptual; no se presentan velocidades, distancias o recomendaciones antiguas como límites actuales.",
+          "checked_at": "2026-11-03"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T08-004",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "c0c96d5b4a0c34205a4e7deb04ddd2cb6e974e1a688f77f158252f2097860ac3",
+      "content_sha256": "b754d1f1c4babc2d49bd5db2d2d633f6dcb9973a5715f043418e4aef86e235e6",
+      "before": {
+        "id": "AI-GSI-B4-T08-004",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T08",
+        "subtopic": "Topologías y dominios",
+        "exam": null,
+        "statement": "¿Qué equipo no separa dominios de colisión entre sus puertos?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Router"
+          },
+          {
+            "id": "B",
+            "text": "Switch"
+          },
+          {
+            "id": "C",
+            "text": "Switch multicapa"
+          },
+          {
+            "id": "D",
+            "text": "Hub"
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "El hub repite señales; el switch separa colisiones por puerto.",
+          "incorrect": "El hub repite señales; el switch separa colisiones por puerto."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 2. Topologías y dominios",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Físicamente predomina estrella alrededor de switches, aunque la topología lógica puede incluir enlaces redundantes. Un hub/repetidor no separa colisiones; un switch crea dominios de colisión por puerto; una VLAN delimita broadcast L2. Router/L3 separa dominios de broadcast y enruta entre subredes.",
+          "evidence_sha256": "4a9773bba43442c8d694a8bede3418eb38331e4759b0455b1cce6150ca027332",
+          "record_sha256": "5b863c457f5964c94304a15b83d5ba0fced256f68783a539cfb4f2302f232e28",
+          "review_id": "AI-GSI-B4-T08-004",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 2. Topologías y dominios",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T08-004",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T08",
+        "subtopic": "Topologías y dominios",
+        "exam": null,
+        "statement": "¿Qué equipo no separa dominios de colisión entre sus puertos?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Router"
+          },
+          {
+            "id": "B",
+            "text": "Switch"
+          },
+          {
+            "id": "C",
+            "text": "Switch multicapa"
+          },
+          {
+            "id": "D",
+            "text": "Hub"
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "El hub es un repetidor de capa física: propaga señales entre sus puertos y mantiene un medio compartido. Un switch o bridge separa los segmentos al conmutar tramas; un router también delimita enlaces. En enlaces full-duplex no se producen las colisiones del Ethernet compartido, aunque siga siendo útil distinguir los equipos.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "El router delimita enlaces al reenviar paquetes entre interfaces, en lugar de repetir señales en un medio compartido.",
+            "B": "El switch separa segmentos por puerto mediante conmutación; no se comporta como un repetidor multipuerto.",
+            "C": "La capacidad multicapa añade funciones de red al switch, sin convertir sus puertos en un medio físico compartido."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 2. Topologías y dominios",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Físicamente predomina estrella alrededor de switches, aunque la topología lógica puede incluir enlaces redundantes. Un hub/repetidor no separa colisiones; un switch crea dominios de colisión por puerto; una VLAN delimita broadcast L2. Router/L3 separa dominios de broadcast y enruta entre subredes.",
+          "evidence_sha256": "4a9773bba43442c8d694a8bede3418eb38331e4759b0455b1cce6150ca027332",
+          "record_sha256": "5b863c457f5964c94304a15b83d5ba0fced256f68783a539cfb4f2302f232e28",
+          "review_id": "AI-GSI-B4-T08-004",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Cisco: Troubleshoot LAN Switching Environments",
+              "url": "https://www.cisco.com/c/en/us/support/docs/lan-switching/ethernet/12006-chapter22.html",
+              "locator": "LAN Switching Introduction: Hubs and Switches; Transparent Bridging, aprendizaje y bucles de tramas inundadas",
+              "version": "HTML comprobado 03-11-2026. Repetidor físico frente a conmutación y circulación de tramas; ejemplos de equipos, enlaces y comandos históricos no se trasladan al proyecto.",
+              "checked_at": "2026-11-03"
+            },
+            {
+              "title": "Cisco: Troubleshooting Ethernet",
+              "url": "https://www.cisco.com/en/US/docs/internetworking/troubleshooting/guide/tr1904.html",
+              "locator": "Ethernet Operations: CSMA/CD en half-duplex y ausencia de uso en full-duplex; Collision Domains",
+              "version": "Guía histórica HTML comprobada 03-11-2026. La relación de colisiones es conceptual; no se presentan velocidades, distancias o recomendaciones antiguas como límites actuales.",
+              "checked_at": "2026-11-03"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-076"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 2. Topologías y dominios",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-03"
+      },
+      "reasons": [
+        "Conservar formulación completa y clave D: cuatro equipos comparables. Añadir explicación física y distinción full-duplex."
+      ],
+      "references": [
+        {
+          "title": "Cisco: Troubleshoot LAN Switching Environments",
+          "url": "https://www.cisco.com/c/en/us/support/docs/lan-switching/ethernet/12006-chapter22.html",
+          "locator": "LAN Switching Introduction: Hubs and Switches; Transparent Bridging, aprendizaje y bucles de tramas inundadas",
+          "version": "HTML comprobado 03-11-2026. Repetidor físico frente a conmutación y circulación de tramas; ejemplos de equipos, enlaces y comandos históricos no se trasladan al proyecto.",
+          "checked_at": "2026-11-03"
+        },
+        {
+          "title": "Cisco: Troubleshooting Ethernet",
+          "url": "https://www.cisco.com/en/US/docs/internetworking/troubleshooting/guide/tr1904.html",
+          "locator": "Ethernet Operations: CSMA/CD en half-duplex y ausencia de uso en full-duplex; Collision Domains",
+          "version": "Guía histórica HTML comprobada 03-11-2026. La relación de colisiones es conceptual; no se presentan velocidades, distancias o recomendaciones antiguas como límites actuales.",
+          "checked_at": "2026-11-03"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T08-005",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "bbf8a7d33eaeff482550b8201940f05ed90599eb451a35db11b6bb4a77d81a24",
+      "content_sha256": "3db6049278eb32386d9ce507270c6d3b3af5a2d3ab7f7b121c5eaf3b75e14072",
+      "before": {
+        "id": "AI-GSI-B4-T08-005",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T08",
+        "subtopic": "Topologías y dominios",
+        "exam": null,
+        "statement": "¿Qué función permite comunicar subredes y separar broadcast?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Routing de capa 3"
+          },
+          {
+            "id": "B",
+            "text": "Un hub pasivo"
+          },
+          {
+            "id": "C",
+            "text": "Amplificación eléctrica exclusivamente"
+          },
+          {
+            "id": "D",
+            "text": "Repetición de capa 1"
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Un router o switch L3 encamina entre redes.",
+          "incorrect": "Un router o switch L3 encamina entre redes."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 2. Topologías y dominios",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Físicamente predomina estrella alrededor de switches, aunque la topología lógica puede incluir enlaces redundantes. Un hub/repetidor no separa colisiones; un switch crea dominios de colisión por puerto; una VLAN delimita broadcast L2. Router/L3 separa dominios de broadcast y enruta entre subredes.",
+          "evidence_sha256": "4a9773bba43442c8d694a8bede3418eb38331e4759b0455b1cce6150ca027332",
+          "record_sha256": "14a6366e3c0d94902b345f47ef4971d5086ca7fecddc400d4013f05863f6d0b5",
+          "review_id": "AI-GSI-B4-T08-005",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 2. Topologías y dominios",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T08-005",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T08",
+        "subtopic": "Topologías y dominios",
+        "exam": null,
+        "statement": "¿Qué función comunica subredes IP distintas sin extender entre ellas el broadcast Ethernet?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Encaminar paquetes entre interfaces de distintas subredes."
+          },
+          {
+            "id": "B",
+            "text": "Conmutar tramas por sus MAC dentro de una misma VLAN."
+          },
+          {
+            "id": "C",
+            "text": "Repetir señales entre los puertos de un medio compartido."
+          },
+          {
+            "id": "D",
+            "text": "Agregar enlaces físicos compatibles en un canal lógico."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "El routing de capa 3 reenvía paquetes entre subredes mediante sus interfaces y tabla de rutas. Delimita los dominios de broadcast de enlace: un broadcast Ethernet no se propaga entre ellos como una trama conmutada. Puede realizarlo un router o un switch con función L3; comunicar no equivale a autorizar todo tráfico.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "Conmutar dentro de una VLAN conserva el mismo dominio lógico de enlace y no resuelve por sí solo el encaminamiento entre subredes.",
+            "C": "Un repetidor extiende el medio físico; no toma decisiones de routing o separa sus dominios de broadcast.",
+            "D": "La agregación aporta un enlace lógico con varios miembros, sin sustituir las decisiones entre subredes."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 2. Topologías y dominios",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Físicamente predomina estrella alrededor de switches, aunque la topología lógica puede incluir enlaces redundantes. Un hub/repetidor no separa colisiones; un switch crea dominios de colisión por puerto; una VLAN delimita broadcast L2. Router/L3 separa dominios de broadcast y enruta entre subredes.",
+          "evidence_sha256": "4a9773bba43442c8d694a8bede3418eb38331e4759b0455b1cce6150ca027332",
+          "record_sha256": "14a6366e3c0d94902b345f47ef4971d5086ca7fecddc400d4013f05863f6d0b5",
+          "review_id": "AI-GSI-B4-T08-005",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Cisco: Configure Inter-VLAN Routing with Catalyst Switches",
+              "url": "https://www.cisco.com/c/en/us/support/docs/lan-switching/inter-vlan-routing/41260-189.html",
+              "locator": "Background Information: comunicación entre VLAN mediante dispositivo L3; Configure, SVI y routing",
+              "version": "Ejemplo IOS XE16.12.7/IOS03.09.00E, HTML comprobado 03-11-2026. Se usa necesidad de routing entre subredes. Se excluye la frase imprecisa que llama collision domains a VLAN: se separan dominios de broadcast. Sin ejecutar configuración.",
+              "checked_at": "2026-11-03"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-076"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 2. Topologías y dominios",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-03"
+      },
+      "reasons": [
+        "Conservar función L3 y clave A; contrastar forwarding, repetición y agregación, sin distractores ajenos."
+      ],
+      "references": [
+        {
+          "title": "Cisco: Configure Inter-VLAN Routing with Catalyst Switches",
+          "url": "https://www.cisco.com/c/en/us/support/docs/lan-switching/inter-vlan-routing/41260-189.html",
+          "locator": "Background Information: comunicación entre VLAN mediante dispositivo L3; Configure, SVI y routing",
+          "version": "Ejemplo IOS XE16.12.7/IOS03.09.00E, HTML comprobado 03-11-2026. Se usa necesidad de routing entre subredes. Se excluye la frase imprecisa que llama collision domains a VLAN: se separan dominios de broadcast. Sin ejecutar configuración.",
+          "checked_at": "2026-11-03"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T08-006",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "f84fae0df4703c76f8564435f37eb72a54ca3e06a4934df61c31f1361a3fe70a",
+      "content_sha256": "1134d1cdc75a818052a1fdeb0afa7aa5d734e31c33da630acdb9fd5841a1b180",
+      "before": {
+        "id": "AI-GSI-B4-T08-006",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T08",
+        "subtopic": "Switching y tabla MAC",
+        "exam": null,
+        "statement": "¿Qué dirección observa el switch para aprender una asociación de puerto?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Puerto TCP de aplicación"
+          },
+          {
+            "id": "B",
+            "text": "MAC destino exclusivamente"
+          },
+          {
+            "id": "C",
+            "text": "MAC origen"
+          },
+          {
+            "id": "D",
+            "text": "IP pública del servidor DNS"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "El aprendizaje usa dirección origen y puerto de entrada.",
+          "incorrect": "El aprendizaje usa dirección origen y puerto de entrada."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 3. Switching y tabla MAC",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "El switch aprende MAC observando dirección origen y puerto. Si conoce destino, reenvía por puerto asociado; si es desconocido o broadcast, inunda dentro de la VLAN. Entradas envejecen. Bucles L2 generan tormentas y aprendizaje inestable, de ahí STP.",
+          "evidence_sha256": "19d004f1b460e7bfe1294568eea99748679984a5d603702e7934185f4d5a5650",
+          "record_sha256": "a9d0cbaff0c082b97c658d1126f97db8c263e8257e9a9e289c9ad88d47bc7884",
+          "review_id": "AI-GSI-B4-T08-006",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 3. Switching y tabla MAC",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T08-006",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T08",
+        "subtopic": "Switching y tabla MAC",
+        "exam": null,
+        "statement": "Un switch recibe una trama válida por un puerto en estado de aprendizaje. ¿Qué asociación aprende de esa recepción en su VLAN?",
+        "options": [
+          {
+            "id": "A",
+            "text": "La MAC destino, asociada al puerto de entrada."
+          },
+          {
+            "id": "B",
+            "text": "La MAC origen, asociada al puerto de salida."
+          },
+          {
+            "id": "C",
+            "text": "La MAC origen, asociada al puerto de entrada."
+          },
+          {
+            "id": "D",
+            "text": "La MAC destino, asociada al puerto de salida."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "El aprendizaje dinámico tradicional toma la MAC origen de la trama recibida y la relaciona con su puerto de entrada y VLAN. Esa asociación permitirá reenviar futuras tramas dirigidas a ese origen. La búsqueda de la MAC destino decide el reenvío, pero no es el dato que se aprende de esa recepción.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "El destino no prueba que ese equipo esté detrás del puerto por el que llegó la trama.",
+            "B": "Reconoce la dirección correcta, pero invierte el puerto observado: se aprende dónde entró la trama.",
+            "D": "Combina la búsqueda de destino con el resultado de forwarding, sin describir el aprendizaje por recepción."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 3. Switching y tabla MAC",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "El switch aprende MAC observando dirección origen y puerto. Si conoce destino, reenvía por puerto asociado; si es desconocido o broadcast, inunda dentro de la VLAN. Entradas envejecen. Bucles L2 generan tormentas y aprendizaje inestable, de ahí STP.",
+          "evidence_sha256": "19d004f1b460e7bfe1294568eea99748679984a5d603702e7934185f4d5a5650",
+          "record_sha256": "a9d0cbaff0c082b97c658d1126f97db8c263e8257e9a9e289c9ad88d47bc7884",
+          "review_id": "AI-GSI-B4-T08-006",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Cisco: Configure MAC",
+              "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr2-fwd/cdp-lldp-mac-udld/cdp-lldp-mac-udld-configuration-guide/c-configure-mac.html",
+              "locator": "MAC Address Table Management: MAC address learning y Frame forwarding; MAC address table creation",
+              "version": "Guía HTML comprobada 03-11-2026. Historial menciona IOS XE26.2.1; se usa aprendizaje origen/puerto/VLAN sin imponer versión o límites de tabla. No se asume MAC siempre universal, fija o prueba de identidad.",
+              "checked_at": "2026-11-03"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-076"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 3. Switching y tabla MAC",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-03"
+      },
+      "reasons": [
+        "Conservar aprendizaje por origen y clave C; microcaso y cuatro pares dirección/puerto con errores cercanos."
+      ],
+      "references": [
+        {
+          "title": "Cisco: Configure MAC",
+          "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr2-fwd/cdp-lldp-mac-udld/cdp-lldp-mac-udld-configuration-guide/c-configure-mac.html",
+          "locator": "MAC Address Table Management: MAC address learning y Frame forwarding; MAC address table creation",
+          "version": "Guía HTML comprobada 03-11-2026. Historial menciona IOS XE26.2.1; se usa aprendizaje origen/puerto/VLAN sin imponer versión o límites de tabla. No se asume MAC siempre universal, fija o prueba de identidad.",
+          "checked_at": "2026-11-03"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T08-007",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "bc706470444aa6f536bf98635435ede71e5c3fce7c3d41d330417941905bc792",
+      "content_sha256": "a364e315b3bb046a2e5d25976c4d4255067f908950f8b8ae46b90fe9de3c5ccc",
+      "before": {
+        "id": "AI-GSI-B4-T08-007",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T08",
+        "subtopic": "Switching y tabla MAC",
+        "exam": null,
+        "statement": "El destino MAC es desconocido para un switch. ¿Qué hace normalmente?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Inunda dentro de la VLAN correspondiente"
+          },
+          {
+            "id": "B",
+            "text": "Envía necesariamente a todas las VLAN"
+          },
+          {
+            "id": "C",
+            "text": "Descarta siempre sin aprender"
+          },
+          {
+            "id": "D",
+            "text": "Consulta obligatoriamente BGP"
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "El flooding queda limitado al dominio lógico de enlace.",
+          "incorrect": "El flooding queda limitado al dominio lógico de enlace."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 3. Switching y tabla MAC",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "El switch aprende MAC observando dirección origen y puerto. Si conoce destino, reenvía por puerto asociado; si es desconocido o broadcast, inunda dentro de la VLAN. Entradas envejecen. Bucles L2 generan tormentas y aprendizaje inestable, de ahí STP.",
+          "evidence_sha256": "19d004f1b460e7bfe1294568eea99748679984a5d603702e7934185f4d5a5650",
+          "record_sha256": "cbd501da7edfa0c1f63c3656f3621787ea191c70b5f1b155f2569904df101890",
+          "review_id": "AI-GSI-B4-T08-007",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 3. Switching y tabla MAC",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T08-007",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T08",
+        "subtopic": "Switching y tabla MAC",
+        "exam": null,
+        "statement": "Llega por VLAN 10 una trama unicast cuya MAC destino no está aprendida. Con flooding permitido, ¿por dónde la reenvía el switch?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Por los demás puertos habilitados para reenvío en VLAN 10."
+          },
+          {
+            "id": "B",
+            "text": "Por todos los puertos habilitados, también los de VLAN 20."
+          },
+          {
+            "id": "C",
+            "text": "Por el puerto de entrada hasta recibir respuesta del destino."
+          },
+          {
+            "id": "D",
+            "text": "Por el puerto cuya MAC propia coincida con la MAC origen."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Si el destino unicast no figura en la tabla de esa VLAN y se permite flooding, el switch replica la trama hacia los demás puertos de reenvío de VLAN 10. Excluye la entrada y no cruza a VLAN 20. Políticas de seguridad o supresión pueden cambiar este comportamiento; desconocido no significa broadcast de destino.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "La inundación ordinaria se mantiene en la VLAN de recepción; no se extiende a otro dominio de broadcast.",
+            "C": "Reenviar por la entrada no ayuda a alcanzar un destino desconocido y está excluido de la inundación normal.",
+            "D": "La MAC propia del switch no sirve para inferir dónde está el destino desconocido a partir de la MAC origen."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 3. Switching y tabla MAC",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "El switch aprende MAC observando dirección origen y puerto. Si conoce destino, reenvía por puerto asociado; si es desconocido o broadcast, inunda dentro de la VLAN. Entradas envejecen. Bucles L2 generan tormentas y aprendizaje inestable, de ahí STP.",
+          "evidence_sha256": "19d004f1b460e7bfe1294568eea99748679984a5d603702e7934185f4d5a5650",
+          "record_sha256": "cbd501da7edfa0c1f63c3656f3621787ea191c70b5f1b155f2569904df101890",
+          "review_id": "AI-GSI-B4-T08-007",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Cisco: Unicast Flooding in Switched Campus Networks",
+              "url": "https://www.cisco.com/c/en/us/support/docs/switches/catalyst-6000-series-switches/23563-143.html?referring_site=smartnavRD",
+              "locator": "Problem Definition; Causes of Flooding: puertos forwarding de la VLAN, excepto entrada; controles de flooding",
+              "version": "Actualización indicada08-02-2016, HTML comprobado 03-11-2026. Caso con flooding ordinario permitido; no se universaliza a puertos bloqueados, políticas de seguridad, EVPN o supresión configurada.",
+              "checked_at": "2026-11-03"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-076"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 3. Switching y tabla MAC",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-03"
+      },
+      "reasons": [
+        "Conservar flooding por VLAN y clave A; explicitar unicast desconocido, forwarding, entrada y ausencia de supresión."
+      ],
+      "references": [
+        {
+          "title": "Cisco: Unicast Flooding in Switched Campus Networks",
+          "url": "https://www.cisco.com/c/en/us/support/docs/switches/catalyst-6000-series-switches/23563-143.html?referring_site=smartnavRD",
+          "locator": "Problem Definition; Causes of Flooding: puertos forwarding de la VLAN, excepto entrada; controles de flooding",
+          "version": "Actualización indicada08-02-2016, HTML comprobado 03-11-2026. Caso con flooding ordinario permitido; no se universaliza a puertos bloqueados, políticas de seguridad, EVPN o supresión configurada.",
+          "checked_at": "2026-11-03"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T08-008",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "232e782b21c9605478d1453d70c4fb92aa006988c250d445e5cb7da2d4aa6797",
+      "content_sha256": "25e447ec4e0659bcfe1b4b57814d911c88496f9b9f241e6c6dfbb16d5027d58f",
+      "before": {
+        "id": "AI-GSI-B4-T08-008",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T08",
+        "subtopic": "Switching y tabla MAC",
+        "exam": null,
+        "statement": "¿Qué efecto tienen bucles L2 sin control?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Reducción automática de broadcast"
+          },
+          {
+            "id": "B",
+            "text": "Aumento garantizado de capacidad útil"
+          },
+          {
+            "id": "C",
+            "text": "Tormentas y aprendizaje MAC inestable"
+          },
+          {
+            "id": "D",
+            "text": "Cifrado del tráfico"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Los bucles pueden replicar tramas y desestabilizar tablas.",
+          "incorrect": "Los bucles pueden replicar tramas y desestabilizar tablas."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 3. Switching y tabla MAC",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "El switch aprende MAC observando dirección origen y puerto. Si conoce destino, reenvía por puerto asociado; si es desconocido o broadcast, inunda dentro de la VLAN. Entradas envejecen. Bucles L2 generan tormentas y aprendizaje inestable, de ahí STP.",
+          "evidence_sha256": "19d004f1b460e7bfe1294568eea99748679984a5d603702e7934185f4d5a5650",
+          "record_sha256": "80425beb85ab8931a1d9a31387e127e11c8bca518057e7a435654e651adecc4f",
+          "review_id": "AI-GSI-B4-T08-008",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 3. Switching y tabla MAC",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T08-008",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T08",
+        "subtopic": "Switching y tabla MAC",
+        "exam": null,
+        "statement": "¿Qué efecto tienen bucles L2 sin control?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Descartes por colisiones del medio en los enlaces full-duplex."
+          },
+          {
+            "id": "B",
+            "text": "Bloqueo de puertos al agotarse el TTL de las tramas de enlace."
+          },
+          {
+            "id": "C",
+            "text": "Replicación de tramas y cambios inestables de aprendizaje MAC."
+          },
+          {
+            "id": "D",
+            "text": "Creación de rutas IP alternativas mediante las tablas de enlace."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Un bucle de reenvío L2 puede recircular y multiplicar tramas inundadas. La misma MAC origen puede reaparecer por diferentes puertos y desestabilizar el aprendizaje. El resultado puede saturar enlaces y equipos; Ethernet no dispone del TTL de IP para detener esa circulación. No toda fluctuación de MAC demuestra por sí sola un bucle.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Un bucle puede congestionar enlaces full-duplex, pero no crea las colisiones propias de un medio half-duplex compartido.",
+            "B": "Las tramas Ethernet no tienen un TTL de enlace que agote el bucle y bloquee automáticamente sus puertos.",
+            "D": "La circulación de tramas no calcula rutas IP ni convierte la tabla MAC en una tabla de routing."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 3. Switching y tabla MAC",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "El switch aprende MAC observando dirección origen y puerto. Si conoce destino, reenvía por puerto asociado; si es desconocido o broadcast, inunda dentro de la VLAN. Entradas envejecen. Bucles L2 generan tormentas y aprendizaje inestable, de ahí STP.",
+          "evidence_sha256": "19d004f1b460e7bfe1294568eea99748679984a5d603702e7934185f4d5a5650",
+          "record_sha256": "80425beb85ab8931a1d9a31387e127e11c8bca518057e7a435654e651adecc4f",
+          "review_id": "AI-GSI-B4-T08-008",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Cisco: Troubleshoot LAN Switching Environments",
+              "url": "https://www.cisco.com/c/en/us/support/docs/lan-switching/ethernet/12006-chapter22.html",
+              "locator": "LAN Switching Introduction: Hubs and Switches; Transparent Bridging, aprendizaje y bucles de tramas inundadas",
+              "version": "HTML comprobado 03-11-2026. Repetidor físico frente a conmutación y circulación de tramas; ejemplos de equipos, enlaces y comandos históricos no se trasladan al proyecto.",
+              "checked_at": "2026-11-03"
+            },
+            {
+              "title": "Cisco: Configure MAC",
+              "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr2-fwd/cdp-lldp-mac-udld/cdp-lldp-mac-udld-configuration-guide/c-configure-mac.html",
+              "locator": "MAC Address Table Management: MAC address learning y Frame forwarding; MAC address table creation",
+              "version": "Guía HTML comprobada 03-11-2026. Historial menciona IOS XE26.2.1; se usa aprendizaje origen/puerto/VLAN sin imponer versión o límites de tabla. No se asume MAC siempre universal, fija o prueba de identidad.",
+              "checked_at": "2026-11-03"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-076"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 3. Switching y tabla MAC",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-03"
+      },
+      "reasons": [
+        "Conservar bucles/tormentas/aprendizaje y clave C; cuatro consecuencias plausibles con mecanismos diferenciados."
+      ],
+      "references": [
+        {
+          "title": "Cisco: Troubleshoot LAN Switching Environments",
+          "url": "https://www.cisco.com/c/en/us/support/docs/lan-switching/ethernet/12006-chapter22.html",
+          "locator": "LAN Switching Introduction: Hubs and Switches; Transparent Bridging, aprendizaje y bucles de tramas inundadas",
+          "version": "HTML comprobado 03-11-2026. Repetidor físico frente a conmutación y circulación de tramas; ejemplos de equipos, enlaces y comandos históricos no se trasladan al proyecto.",
+          "checked_at": "2026-11-03"
+        },
+        {
+          "title": "Cisco: Configure MAC",
+          "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr2-fwd/cdp-lldp-mac-udld/cdp-lldp-mac-udld-configuration-guide/c-configure-mac.html",
+          "locator": "MAC Address Table Management: MAC address learning y Frame forwarding; MAC address table creation",
+          "version": "Guía HTML comprobada 03-11-2026. Historial menciona IOS XE26.2.1; se usa aprendizaje origen/puerto/VLAN sin imponer versión o límites de tabla. No se asume MAC siempre universal, fija o prueba de identidad.",
+          "checked_at": "2026-11-03"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T08-009",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "9ccdcb90752e5225775076ecaa2f960b19aa0e2d1beea7fd55863cca723fdd01",
+      "content_sha256": "c7b614f6c124c8e1d16a820e122a7caac1b9c5cac1624b5151d98127aabeb3d2",
+      "before": {
+        "id": "AI-GSI-B4-T08-009",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T08",
+        "subtopic": "VLAN e inter-VLAN",
+        "exam": null,
+        "statement": "¿Qué estándar etiqueta VLAN en trunks?",
+        "options": [
+          {
+            "id": "A",
+            "text": "TLS"
+          },
+          {
+            "id": "B",
+            "text": "DNS"
+          },
+          {
+            "id": "C",
+            "text": "IEEE 802.3 como etiqueta VLAN específica"
+          },
+          {
+            "id": "D",
+            "text": "IEEE 802.1Q"
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "802.1Q permite transportar identificación VLAN en enlaces trunk.",
+          "incorrect": "802.1Q permite transportar identificación VLAN en enlaces trunk."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 4. VLAN e inter-VLAN",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "VLAN separa redes lógicas sobre switches. IEEE 802.1Q etiqueta tramas en enlaces trunk; puertos de acceso pertenecen normalmente a una VLAN sin etiqueta hacia el terminal. Comunicación entre VLAN requiere función L3 (router o switch multicapa) y políticas de filtrado.",
+          "evidence_sha256": "e37e4f02da6a96fa2dea408889250bbabc957f1496efdafa6fb9d9d1a11341cd",
+          "record_sha256": "7948db4b27e51b5c30c38d77322c237688ad3d078466ffc930379c36219b5423",
+          "review_id": "AI-GSI-B4-T08-009",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 4. VLAN e inter-VLAN",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T08-009",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T08",
+        "subtopic": "VLAN e inter-VLAN",
+        "exam": null,
+        "statement": "¿Qué familia IEEE define el etiquetado VLAN utilizado en trunks Ethernet?",
+        "options": [
+          {
+            "id": "A",
+            "text": "IEEE 802.1X."
+          },
+          {
+            "id": "B",
+            "text": "IEEE 802.1AE."
+          },
+          {
+            "id": "C",
+            "text": "IEEE 802.1AX."
+          },
+          {
+            "id": "D",
+            "text": "IEEE 802.1Q."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "IEEE 802.1Q es la familia de bridges y VLAN que define el etiquetado VLAN empleado en trunks Ethernet. El etiquetado identifica el dominio lógico de la trama; no cifra su contenido ni autoriza al emisor. Un trunk puede incluir tráfico de VLAN nativa sin etiqueta según su configuración.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "IEEE 802.1X trata control de acceso basado en puertos, no es el formato de etiqueta VLAN del trunk.",
+            "B": "IEEE 802.1AE corresponde a MAC Security; proteger tramas no es la identificación VLAN802.1Q.",
+            "C": "IEEE 802.1AX trata agregación de enlaces; agrupar miembros no es etiquetar una VLAN."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 4. VLAN e inter-VLAN",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "VLAN separa redes lógicas sobre switches. IEEE 802.1Q etiqueta tramas en enlaces trunk; puertos de acceso pertenecen normalmente a una VLAN sin etiqueta hacia el terminal. Comunicación entre VLAN requiere función L3 (router o switch multicapa) y políticas de filtrado.",
+          "evidence_sha256": "e37e4f02da6a96fa2dea408889250bbabc957f1496efdafa6fb9d9d1a11341cd",
+          "record_sha256": "7948db4b27e51b5c30c38d77322c237688ad3d078466ffc930379c36219b5423",
+          "review_id": "AI-GSI-B4-T08-009",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "IEEE 802.1: 802.1Q-2022, Bridges and Bridged Networks",
+              "url": "https://1.ieee802.org/maintenance/p802-1q-rev/",
+              "locator": "Descripción del alcance y Current Status: Published as IEEE Std802.1Q-2022",
+              "version": "Página primaria de revisión publicada2022, comprobada 03-11-2026. Se identifica familia de bridges/VLAN; no se declara lectura íntegra de la norma o que no haya enmiendas/proyectos posteriores.",
+              "checked_at": "2026-11-03"
+            },
+            {
+              "title": "Cisco: Configure VLAN",
+              "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr2-fwd/vlan/vlan-configuration-guide/configure-vlan.html",
+              "locator": "Types of VLAN; VLAN Port Membership Modes, tabla Static-access/Trunk/Voice VLAN; IEEE 802.1Q trunking encapsulation",
+              "version": "Guía IOS XE17 HTML comprobada 03-11-2026. Caso de acceso de datos sin voice VLAN; hay excepciones de voz y VLAN nativa sin etiqueta en trunks. Una VLAN de gestión no asegura disponibilidad o cifrado por sí misma.",
+              "checked_at": "2026-11-03"
+            },
+            {
+              "title": "IEEE 802.1: 802.1AX-2020, Link Aggregation",
+              "url": "https://1.ieee802.org/tsn/802-1ax-rev/",
+              "locator": "Descripción: enlaces full-duplex punto a punto como un LAG tratado como enlace único; Current Status",
+              "version": "Página primaria de revisión2020 comprobada 03-11-2026. Se lee alcance HTML, no texto íntegro del estándar. No garantiza suma de capacidad a un flujo ni ausencia de fallos comunes.",
+              "checked_at": "2026-11-03"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-076"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 4. VLAN e inter-VLAN",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-03"
+      },
+      "reasons": [
+        "Conservar familia802.1Q y clave D; cuatro estándares de la familia802.1, sin confundir tagging con cifrado o agregación."
+      ],
+      "references": [
+        {
+          "title": "IEEE 802.1: 802.1Q-2022, Bridges and Bridged Networks",
+          "url": "https://1.ieee802.org/maintenance/p802-1q-rev/",
+          "locator": "Descripción del alcance y Current Status: Published as IEEE Std802.1Q-2022",
+          "version": "Página primaria de revisión publicada2022, comprobada 03-11-2026. Se identifica familia de bridges/VLAN; no se declara lectura íntegra de la norma o que no haya enmiendas/proyectos posteriores.",
+          "checked_at": "2026-11-03"
+        },
+        {
+          "title": "Cisco: Configure VLAN",
+          "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr2-fwd/vlan/vlan-configuration-guide/configure-vlan.html",
+          "locator": "Types of VLAN; VLAN Port Membership Modes, tabla Static-access/Trunk/Voice VLAN; IEEE 802.1Q trunking encapsulation",
+          "version": "Guía IOS XE17 HTML comprobada 03-11-2026. Caso de acceso de datos sin voice VLAN; hay excepciones de voz y VLAN nativa sin etiqueta en trunks. Una VLAN de gestión no asegura disponibilidad o cifrado por sí misma.",
+          "checked_at": "2026-11-03"
+        },
+        {
+          "title": "IEEE 802.1: 802.1AX-2020, Link Aggregation",
+          "url": "https://1.ieee802.org/tsn/802-1ax-rev/",
+          "locator": "Descripción: enlaces full-duplex punto a punto como un LAG tratado como enlace único; Current Status",
+          "version": "Página primaria de revisión2020 comprobada 03-11-2026. Se lee alcance HTML, no texto íntegro del estándar. No garantiza suma de capacidad a un flujo ni ausencia de fallos comunes.",
+          "checked_at": "2026-11-03"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T08-010",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "d4187699bf0af7e31e0dc9d4ea7399e3fac0d6e86289c50b9cd02dee02486f3e",
+      "content_sha256": "fe1ea7abcbb549b9262121ce1fc2903381dfae9de44d86d9825b84029c9310f5",
+      "before": {
+        "id": "AI-GSI-B4-T08-010",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T08",
+        "subtopic": "VLAN e inter-VLAN",
+        "exam": null,
+        "statement": "¿Qué caracteriza normalmente a un puerto de acceso?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Una VPN intercontinental siempre"
+          },
+          {
+            "id": "B",
+            "text": "Solo tráfico óptico"
+          },
+          {
+            "id": "C",
+            "text": "Todas las VLAN etiquetadas obligatoriamente"
+          },
+          {
+            "id": "D",
+            "text": "Una VLAN hacia el terminal sin etiquetado"
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "El acceso difiere del trunk, que transporta varias VLAN etiquetadas según configuración.",
+          "incorrect": "El acceso difiere del trunk, que transporta varias VLAN etiquetadas según configuración."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 4. VLAN e inter-VLAN",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "VLAN separa redes lógicas sobre switches. IEEE 802.1Q etiqueta tramas en enlaces trunk; puertos de acceso pertenecen normalmente a una VLAN sin etiqueta hacia el terminal. Comunicación entre VLAN requiere función L3 (router o switch multicapa) y políticas de filtrado.",
+          "evidence_sha256": "e37e4f02da6a96fa2dea408889250bbabc957f1496efdafa6fb9d9d1a11341cd",
+          "record_sha256": "dc745a5b2bf38936347413405ad49387b4fb0b08098550c5acae4ffde90ed56b",
+          "review_id": "AI-GSI-B4-T08-010",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 4. VLAN e inter-VLAN",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T08-010",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T08",
+        "subtopic": "VLAN e inter-VLAN",
+        "exam": null,
+        "statement": "Un PC sin etiquetado VLAN debe conectarse a una única VLAN de datos, sin voice VLAN. ¿Qué configuración corresponde?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Un trunk que presenta al PC varias VLAN con etiqueta."
+          },
+          {
+            "id": "B",
+            "text": "Un enlace agregado que reparte las tramas entre miembros."
+          },
+          {
+            "id": "C",
+            "text": "Un puerto enrutado que termina un enlace IP de capa 3."
+          },
+          {
+            "id": "D",
+            "text": "Un acceso que asocia las tramas sin etiqueta a una VLAN."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Un puerto de acceso de datos asigna el tráfico sin etiqueta del PC a la VLAN configurada y entrega normalmente esas tramas al terminal sin etiqueta. El caso excluye voice VLAN y otras extensiones. El comportamiento de un trunk con VLAN nativa no convierte en equivalentes los modos de acceso y trunk.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "El terminal descrito no usa etiquetas ni varias VLAN; ese modo corresponde a un trunk hacia un equipo compatible.",
+            "B": "La agregación agrupa miembros físicos y es una función distinta de la pertenencia de acceso a una VLAN.",
+            "C": "Un puerto enrutado tiene función L3 propia; no es el puerto de acceso de datos descrito."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 4. VLAN e inter-VLAN",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "VLAN separa redes lógicas sobre switches. IEEE 802.1Q etiqueta tramas en enlaces trunk; puertos de acceso pertenecen normalmente a una VLAN sin etiqueta hacia el terminal. Comunicación entre VLAN requiere función L3 (router o switch multicapa) y políticas de filtrado.",
+          "evidence_sha256": "e37e4f02da6a96fa2dea408889250bbabc957f1496efdafa6fb9d9d1a11341cd",
+          "record_sha256": "dc745a5b2bf38936347413405ad49387b4fb0b08098550c5acae4ffde90ed56b",
+          "review_id": "AI-GSI-B4-T08-010",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Cisco: Configure VLAN",
+              "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr2-fwd/vlan/vlan-configuration-guide/configure-vlan.html",
+              "locator": "Types of VLAN; VLAN Port Membership Modes, tabla Static-access/Trunk/Voice VLAN; IEEE 802.1Q trunking encapsulation",
+              "version": "Guía IOS XE17 HTML comprobada 03-11-2026. Caso de acceso de datos sin voice VLAN; hay excepciones de voz y VLAN nativa sin etiqueta en trunks. Una VLAN de gestión no asegura disponibilidad o cifrado por sí misma.",
+              "checked_at": "2026-11-03"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-076"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 4. VLAN e inter-VLAN",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-03"
+      },
+      "reasons": [
+        "Conservar acceso sin etiqueta y clave D; caso de PC sin etiquetado ni voice VLAN para excluir excepciones reales."
+      ],
+      "references": [
+        {
+          "title": "Cisco: Configure VLAN",
+          "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr2-fwd/vlan/vlan-configuration-guide/configure-vlan.html",
+          "locator": "Types of VLAN; VLAN Port Membership Modes, tabla Static-access/Trunk/Voice VLAN; IEEE 802.1Q trunking encapsulation",
+          "version": "Guía IOS XE17 HTML comprobada 03-11-2026. Caso de acceso de datos sin voice VLAN; hay excepciones de voz y VLAN nativa sin etiqueta en trunks. Una VLAN de gestión no asegura disponibilidad o cifrado por sí misma.",
+          "checked_at": "2026-11-03"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T08-011",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "b80d32fb290c08a71887dc6d503cfb968a0040cde50692cbf97b1a4e4268f0ba",
+      "content_sha256": "b18078f560270a1624e7e4769c52892bd4dfb9bfb66ce3b5296d0eb27b810e2e",
+      "before": {
+        "id": "AI-GSI-B4-T08-011",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T08",
+        "subtopic": "VLAN e inter-VLAN",
+        "exam": null,
+        "statement": "¿Qué necesita comunicación inter-VLAN?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Cambiar las etiquetas sin routing"
+          },
+          {
+            "id": "B",
+            "text": "Función L3 y políticas de filtrado"
+          },
+          {
+            "id": "C",
+            "text": "Solo un trunk sin función de red"
+          },
+          {
+            "id": "D",
+            "text": "Unir ambas VLAN mediante un hub"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Separar VLAN no crea por sí solo routing ni autorización entre ellas.",
+          "incorrect": "Separar VLAN no crea por sí solo routing ni autorización entre ellas."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 4. VLAN e inter-VLAN",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "VLAN separa redes lógicas sobre switches. IEEE 802.1Q etiqueta tramas en enlaces trunk; puertos de acceso pertenecen normalmente a una VLAN sin etiqueta hacia el terminal. Comunicación entre VLAN requiere función L3 (router o switch multicapa) y políticas de filtrado.",
+          "evidence_sha256": "e37e4f02da6a96fa2dea408889250bbabc957f1496efdafa6fb9d9d1a11341cd",
+          "record_sha256": "8f022111edb85a57bc8e5dc6e4a96d132e892acd868ae14232ea9afb2185180f",
+          "review_id": "AI-GSI-B4-T08-011",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 4. VLAN e inter-VLAN",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T08-011",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T08",
+        "subtopic": "VLAN e inter-VLAN",
+        "exam": null,
+        "statement": "Dos subredes en VLAN distintas deben comunicarse manteniendo su separación. El trunk ya transporta ambas. ¿Qué función falta y qué debe revisarse?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Ampliar la lista de VLAN permitidas en el trunk entre switches."
+          },
+          {
+            "id": "B",
+            "text": "Configurar routing L3 y autorizar el tráfico según la política."
+          },
+          {
+            "id": "C",
+            "text": "Asignar a las dos VLAN la misma instancia de spanning tree."
+          },
+          {
+            "id": "D",
+            "text": "Aprender las MAC de ambas VLAN por un único puerto físico."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Mantener dos subredes en VLAN distintas y comunicar sus equipos exige una función de routing y direccionamiento adecuados. Además, el tráfico debe estar permitido por las políticas aplicables. Un trunk transporta VLAN, pero no encamina entre ellas; la mera existencia de rutas tampoco acredita que todo acceso deba estar autorizado.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "El trunk conserva separados los dominios que transporta; permitir sus etiquetas no crea encaminamiento entre subredes.",
+            "C": "Compartir instancia MST puede compartir topología L2, sin fusionar VLAN o habilitar routing entre ellas.",
+            "D": "El aprendizaje MAC se interpreta por VLAN; compartir puerto de llegada no crea conectividad L3 entre subredes."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 4. VLAN e inter-VLAN",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "VLAN separa redes lógicas sobre switches. IEEE 802.1Q etiqueta tramas en enlaces trunk; puertos de acceso pertenecen normalmente a una VLAN sin etiqueta hacia el terminal. Comunicación entre VLAN requiere función L3 (router o switch multicapa) y políticas de filtrado.",
+          "evidence_sha256": "e37e4f02da6a96fa2dea408889250bbabc957f1496efdafa6fb9d9d1a11341cd",
+          "record_sha256": "8f022111edb85a57bc8e5dc6e4a96d132e892acd868ae14232ea9afb2185180f",
+          "review_id": "AI-GSI-B4-T08-011",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Cisco: Configure Inter-VLAN Routing with Catalyst Switches",
+              "url": "https://www.cisco.com/c/en/us/support/docs/lan-switching/inter-vlan-routing/41260-189.html",
+              "locator": "Background Information: comunicación entre VLAN mediante dispositivo L3; Configure, SVI y routing",
+              "version": "Ejemplo IOS XE16.12.7/IOS03.09.00E, HTML comprobado 03-11-2026. Se usa necesidad de routing entre subredes. Se excluye la frase imprecisa que llama collision domains a VLAN: se separan dominios de broadcast. Sin ejecutar configuración.",
+              "checked_at": "2026-11-03"
+            },
+            {
+              "title": "Cisco: VLAN Best Practices and Security Tips",
+              "url": "https://www.cisco.com/c/en/us/support/docs/smb/routers/cisco-rv-series-small-business-routers/1778-tz-VLAN-Best-Practices-and-Security-Tips-for-Cisco-Business-Routers.html",
+              "locator": "Best Practice5: Inter-VLAN Routing, aplicar ACL al acceso a servidores; consideraciones de VLAN hopping",
+              "version": "Guía Cisco Business HTML comprobada 03-11-2026. Se usa filtrado complementario a segmentación; no se adopta como regla universal la recomendación de evitar routing inter-VLAN o topologías/productos concretos.",
+              "checked_at": "2026-11-03"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-076"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 4. VLAN e inter-VLAN",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-03"
+      },
+      "reasons": [
+        "Conservar routing/política inter-VLAN y clave B; caso con separación que debe mantenerse, sin implicar ACL explícita obligatoria en todo dispositivo."
+      ],
+      "references": [
+        {
+          "title": "Cisco: Configure Inter-VLAN Routing with Catalyst Switches",
+          "url": "https://www.cisco.com/c/en/us/support/docs/lan-switching/inter-vlan-routing/41260-189.html",
+          "locator": "Background Information: comunicación entre VLAN mediante dispositivo L3; Configure, SVI y routing",
+          "version": "Ejemplo IOS XE16.12.7/IOS03.09.00E, HTML comprobado 03-11-2026. Se usa necesidad de routing entre subredes. Se excluye la frase imprecisa que llama collision domains a VLAN: se separan dominios de broadcast. Sin ejecutar configuración.",
+          "checked_at": "2026-11-03"
+        },
+        {
+          "title": "Cisco: VLAN Best Practices and Security Tips",
+          "url": "https://www.cisco.com/c/en/us/support/docs/smb/routers/cisco-rv-series-small-business-routers/1778-tz-VLAN-Best-Practices-and-Security-Tips-for-Cisco-Business-Routers.html",
+          "locator": "Best Practice5: Inter-VLAN Routing, aplicar ACL al acceso a servidores; consideraciones de VLAN hopping",
+          "version": "Guía Cisco Business HTML comprobada 03-11-2026. Se usa filtrado complementario a segmentación; no se adopta como regla universal la recomendación de evitar routing inter-VLAN o topologías/productos concretos.",
+          "checked_at": "2026-11-03"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T08-012",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "0455a0322987783cf5dc09868d85469e2bda89a1bed64f1b8b7ddecd98f006c3",
+      "content_sha256": "fdf87b7c770814b653fd1ac3c8dcef139b754a82832590558529b00aa0ece9a4",
+      "before": {
+        "id": "AI-GSI-B4-T08-012",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T08",
+        "subtopic": "STP, RSTP/MSTP y agregación",
+        "exam": null,
+        "statement": "¿Qué hace STP frente a caminos redundantes?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Bloquea caminos para una topología sin bucles"
+          },
+          {
+            "id": "B",
+            "text": "Asigna direcciones IP"
+          },
+          {
+            "id": "C",
+            "text": "Agrega siempre todos los enlaces activos"
+          },
+          {
+            "id": "D",
+            "text": "Cifra todas las tramas"
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "STP mantiene redundancia utilizable evitando bucles de enlace.",
+          "incorrect": "STP mantiene redundancia utilizable evitando bucles de enlace."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 5. STP, RSTP/MSTP y agregación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "STP crea una topología libre de bucles bloqueando caminos redundantes; RSTP acelera convergencia; MSTP permite mapear VLAN a instancias. LACP negocia agregación de enlaces para capacidad y redundancia, pero un flujo concreto puede quedar limitado a un miembro según hashing.",
+          "evidence_sha256": "b11fed0bcf6e1880615d1963e2c082fcd0d7d5ff18663fb6656bd9e88dc58989",
+          "record_sha256": "0be37bdaf4971fab73b40f5b87a3cb96c10a2413fc99bc4762cc96d8bde73abf",
+          "review_id": "AI-GSI-B4-T08-012",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 5. STP, RSTP/MSTP y agregación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T08-012",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T08",
+        "subtopic": "STP, RSTP/MSTP y agregación",
+        "exam": null,
+        "statement": "¿Qué hace STP frente a caminos redundantes?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Selecciona una topología de reenvío y bloquea caminos de datos."
+          },
+          {
+            "id": "B",
+            "text": "Agrupa los enlaces redundantes como un único puerto lógico."
+          },
+          {
+            "id": "C",
+            "text": "Distribuye cada flujo por un miembro mediante una función hash."
+          },
+          {
+            "id": "D",
+            "text": "Reenvía cada trama por las rutas disponibles de menor coste IP."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "STP obtiene una topología lógica de enlace sin bucles deshabilitando el reenvío de datos por determinados caminos redundantes. No elimina necesariamente el enlace físico: un puerto bloqueado puede seguir recibiendo BPDUs. Si cambia la topología, un camino de reserva puede pasar a utilizarse tras la convergencia.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "Agrupar enlaces en un puerto lógico corresponde a link aggregation, no al árbol de expansión.",
+            "C": "El hashing distribuye tráfico en un agregado; STP elige qué caminos reenvían dentro de su topología.",
+            "D": "STP actúa sobre bridges y costes de enlace, no calcula rutas IP para cada trama."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 5. STP, RSTP/MSTP y agregación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "STP crea una topología libre de bucles bloqueando caminos redundantes; RSTP acelera convergencia; MSTP permite mapear VLAN a instancias. LACP negocia agregación de enlaces para capacidad y redundancia, pero un flujo concreto puede quedar limitado a un miembro según hashing.",
+          "evidence_sha256": "b11fed0bcf6e1880615d1963e2c082fcd0d7d5ff18663fb6656bd9e88dc58989",
+          "record_sha256": "0be37bdaf4971fab73b40f5b87a3cb96c10a2413fc99bc4762cc96d8bde73abf",
+          "review_id": "AI-GSI-B4-T08-012",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Cisco: Spanning Tree Protocol",
+              "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr2-fwd/stp/stp-configuration-guide/m-stp.html",
+              "locator": "Spanning tree topology and bridge protocol data units; Blocking state functions",
+              "version": "Guía IOS XE17 HTML comprobada 03-11-2026. Bloqueo lógico de datos, no desconexión física. Se excluyen generalizaciones históricas sobre una única instancia802.1Q y valores por defecto de producto.",
+              "checked_at": "2026-11-03"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-076"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 5. STP, RSTP/MSTP y agregación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-03"
+      },
+      "reasons": [
+        "Conservar árbol sin bucles y clave A; alternativas de selección/reparto de caminos y bloqueo lógico preciso."
+      ],
+      "references": [
+        {
+          "title": "Cisco: Spanning Tree Protocol",
+          "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr2-fwd/stp/stp-configuration-guide/m-stp.html",
+          "locator": "Spanning tree topology and bridge protocol data units; Blocking state functions",
+          "version": "Guía IOS XE17 HTML comprobada 03-11-2026. Bloqueo lógico de datos, no desconexión física. Se excluyen generalizaciones históricas sobre una única instancia802.1Q y valores por defecto de producto.",
+          "checked_at": "2026-11-03"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T08-013",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "83663d59aedd3a74f0509082116d3c3104e7839251f157e507ad04014bcbad37",
+      "content_sha256": "63b7cf60bafecf448126f84528c8802a627cfd394c79529747b4da4051a57a9d",
+      "before": {
+        "id": "AI-GSI-B4-T08-013",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T08",
+        "subtopic": "STP, RSTP/MSTP y agregación",
+        "exam": null,
+        "statement": "¿Qué mejora RSTP respecto a STP clásico?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Direccionamiento IPv6 automático"
+          },
+          {
+            "id": "B",
+            "text": "Convergencia más rápida"
+          },
+          {
+            "id": "C",
+            "text": "Mayor tamaño de MAC"
+          },
+          {
+            "id": "D",
+            "text": "Cifrado obligatorio"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "RSTP acelera recuperación de la topología libre de bucles.",
+          "incorrect": "RSTP acelera recuperación de la topología libre de bucles."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 5. STP, RSTP/MSTP y agregación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "STP crea una topología libre de bucles bloqueando caminos redundantes; RSTP acelera convergencia; MSTP permite mapear VLAN a instancias. LACP negocia agregación de enlaces para capacidad y redundancia, pero un flujo concreto puede quedar limitado a un miembro según hashing.",
+          "evidence_sha256": "b11fed0bcf6e1880615d1963e2c082fcd0d7d5ff18663fb6656bd9e88dc58989",
+          "record_sha256": "b73d2a83d58dc1dacad91f9bd33ca2c220a7287e1799372f1be1ab8559fe24e5",
+          "review_id": "AI-GSI-B4-T08-013",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 5. STP, RSTP/MSTP y agregación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T08-013",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T08",
+        "subtopic": "STP, RSTP/MSTP y agregación",
+        "exam": null,
+        "statement": "¿Qué mejora RSTP respecto a STP clásico?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Mayor número de VLAN identificables con el mismo etiquetado."
+          },
+          {
+            "id": "B",
+            "text": "Convergencia más rápida de la topología libre de bucles."
+          },
+          {
+            "id": "C",
+            "text": "Mayor capacidad agregada al repartir cada flujo entre enlaces."
+          },
+          {
+            "id": "D",
+            "text": "Cifrado de las BPDUs para autenticar los switches vecinos."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "RSTP acelera la transición a una topología de reenvío sin bucles mediante roles y mecanismos de confirmación entre bridges, especialmente en enlaces punto a punto. El beneficio depende de configuración e interoperabilidad; puede recurrir a mecanismos más lentos con equipos antiguos. No garantiza tiempo cero o una duración universal.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "El espacio de identificadores VLAN depende del etiquetado, no de la rapidez de spanning tree.",
+            "C": "El reparto dentro de un agregado es otro mecanismo; RSTP no suma enlaces para cada flujo.",
+            "D": "La transición rápida no introduce por sí misma cifrado o autenticación criptográfica de las BPDUs."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 5. STP, RSTP/MSTP y agregación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "STP crea una topología libre de bucles bloqueando caminos redundantes; RSTP acelera convergencia; MSTP permite mapear VLAN a instancias. LACP negocia agregación de enlaces para capacidad y redundancia, pero un flujo concreto puede quedar limitado a un miembro según hashing.",
+          "evidence_sha256": "b11fed0bcf6e1880615d1963e2c082fcd0d7d5ff18663fb6656bd9e88dc58989",
+          "record_sha256": "b73d2a83d58dc1dacad91f9bd33ca2c220a7287e1799372f1be1ab8559fe24e5",
+          "review_id": "AI-GSI-B4-T08-013",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Cisco: Understand Rapid Spanning Tree Protocol",
+              "url": "https://www.cisco.com/c/en/us/support/docs/lan-switching/spanning-tree-protocol/24062-146.html",
+              "locator": "Rapid Transition to Forwarding State; Link Type; Proposal/Agreement Sequence; Compatibility with802.1D",
+              "version": "HTML comprobado 03-11-2026. Mejora condicionada por enlaces, configuración e interoperabilidad; no convergencia instantánea o tiempo fijo garantizado.",
+              "checked_at": "2026-11-03"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-076"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 5. STP, RSTP/MSTP y agregación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-03"
+      },
+      "reasons": [
+        "Conservar enunciado y clave B; mejorar distractores LAN y acotar la mejora sin tiempos garantizados."
+      ],
+      "references": [
+        {
+          "title": "Cisco: Understand Rapid Spanning Tree Protocol",
+          "url": "https://www.cisco.com/c/en/us/support/docs/lan-switching/spanning-tree-protocol/24062-146.html",
+          "locator": "Rapid Transition to Forwarding State; Link Type; Proposal/Agreement Sequence; Compatibility with802.1D",
+          "version": "HTML comprobado 03-11-2026. Mejora condicionada por enlaces, configuración e interoperabilidad; no convergencia instantánea o tiempo fijo garantizado.",
+          "checked_at": "2026-11-03"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T08-014",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "71621f1a0219a632502644b2cae8f4baf76c9528ed5af5b4f753f98e15471a96",
+      "content_sha256": "1f80ac39276fa54aef6f52b18d1ca95c7cb299ddcc5bcd759f774e7e69934d1b",
+      "before": {
+        "id": "AI-GSI-B4-T08-014",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T08",
+        "subtopic": "STP, RSTP/MSTP y agregación",
+        "exam": null,
+        "statement": "¿Qué permite MSTP?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Sustituir todos los routers"
+          },
+          {
+            "id": "B",
+            "text": "Mapear VLAN a instancias de árbol"
+          },
+          {
+            "id": "C",
+            "text": "Autenticar mediante huella"
+          },
+          {
+            "id": "D",
+            "text": "Resolver nombres públicos"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "MSTP organiza varias VLAN en instancias de spanning tree.",
+          "incorrect": "MSTP organiza varias VLAN en instancias de spanning tree."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 5. STP, RSTP/MSTP y agregación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "STP crea una topología libre de bucles bloqueando caminos redundantes; RSTP acelera convergencia; MSTP permite mapear VLAN a instancias. LACP negocia agregación de enlaces para capacidad y redundancia, pero un flujo concreto puede quedar limitado a un miembro según hashing.",
+          "evidence_sha256": "b11fed0bcf6e1880615d1963e2c082fcd0d7d5ff18663fb6656bd9e88dc58989",
+          "record_sha256": "483fade02821bda2f02049a0acbdcb8a8cd10970b757473416ffb1b2eb53b70a",
+          "review_id": "AI-GSI-B4-T08-014",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 5. STP, RSTP/MSTP y agregación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T08-014",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T08",
+        "subtopic": "STP, RSTP/MSTP y agregación",
+        "exam": null,
+        "statement": "¿Qué permite MSTP?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Asignar cada puerto físico a varias direcciones de gateway IP."
+          },
+          {
+            "id": "B",
+            "text": "Agrupar VLAN en instancias con una topología de árbol común."
+          },
+          {
+            "id": "C",
+            "text": "Agregar enlaces físicos como un único miembro de una VLAN."
+          },
+          {
+            "id": "D",
+            "text": "Mapear cada dirección MAC a una instancia de encaminamiento."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "MSTP permite asociar varias VLAN a una instancia de spanning tree y compartir su topología de reenvío dentro de la región. No fusiona esas VLAN ni habilita comunicación entre ellas. Pueden planificarse distintas instancias para usar caminos diferentes; pertenecer a una instancia sigue siendo una decisión de topología L2.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Asignar gateways es una configuración de capa 3; no describe la relación VLAN/instancia de árbol.",
+            "C": "La agregación trata enlaces físicos, mientras MSTP asocia VLAN con árboles lógicos.",
+            "D": "MSTP no crea una instancia de routing por MAC; el aprendizaje de direcciones y el árbol son funciones distintas."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 5. STP, RSTP/MSTP y agregación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "STP crea una topología libre de bucles bloqueando caminos redundantes; RSTP acelera convergencia; MSTP permite mapear VLAN a instancias. LACP negocia agregación de enlaces para capacidad y redundancia, pero un flujo concreto puede quedar limitado a un miembro según hashing.",
+          "evidence_sha256": "b11fed0bcf6e1880615d1963e2c082fcd0d7d5ff18663fb6656bd9e88dc58989",
+          "record_sha256": "483fade02821bda2f02049a0acbdcb8a8cd10970b757473416ffb1b2eb53b70a",
+          "review_id": "AI-GSI-B4-T08-014",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Cisco: Understand the Multiple Spanning Tree Protocol",
+              "url": "https://www.cisco.com/c/en/us/support/docs/lan-switching/spanning-tree-protocol/24248-147.html",
+              "locator": "MST Case; MST Region; Two VLANs Mapped to the Same Instance Block the Same Ports",
+              "version": "HTML comprobado 03-11-2026. Varias VLAN por instancia y topología compartida; referencias802.1s/802.1w históricas integradas en evolución802.1Q. No se generaliza una instancia por VLAN ni el texto CST a todas las revisiones actuales.",
+              "checked_at": "2026-11-03"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-076"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 5. STP, RSTP/MSTP y agregación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-03"
+      },
+      "reasons": [
+        "Conservar enunciado y clave B; cuatro asociaciones de red próximas y aclarar que compartir árbol no fusiona VLAN."
+      ],
+      "references": [
+        {
+          "title": "Cisco: Understand the Multiple Spanning Tree Protocol",
+          "url": "https://www.cisco.com/c/en/us/support/docs/lan-switching/spanning-tree-protocol/24248-147.html",
+          "locator": "MST Case; MST Region; Two VLANs Mapped to the Same Instance Block the Same Ports",
+          "version": "HTML comprobado 03-11-2026. Varias VLAN por instancia y topología compartida; referencias802.1s/802.1w históricas integradas en evolución802.1Q. No se generaliza una instancia por VLAN ni el texto CST a todas las revisiones actuales.",
+          "checked_at": "2026-11-03"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T08-015",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "6d89bd93b65b72173345e733170aa06778f0d8f44c8f8761c0668d304f7e47dc",
+      "content_sha256": "5e4c5e7f0515195dfdc2bc1a91d89701cfa6a7b8848972e46ac721fb52cbfe6d",
+      "before": {
+        "id": "AI-GSI-B4-T08-015",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T08",
+        "subtopic": "STP, RSTP/MSTP y agregación",
+        "exam": null,
+        "statement": "¿Qué negocia LACP?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Certificados web"
+          },
+          {
+            "id": "B",
+            "text": "Claves primarias"
+          },
+          {
+            "id": "C",
+            "text": "Agregación de enlaces"
+          },
+          {
+            "id": "D",
+            "text": "Direcciones DHCP"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "LACP coordina enlaces agregados para redundancia y capacidad.",
+          "incorrect": "LACP coordina enlaces agregados para redundancia y capacidad."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 5. STP, RSTP/MSTP y agregación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "STP crea una topología libre de bucles bloqueando caminos redundantes; RSTP acelera convergencia; MSTP permite mapear VLAN a instancias. LACP negocia agregación de enlaces para capacidad y redundancia, pero un flujo concreto puede quedar limitado a un miembro según hashing.",
+          "evidence_sha256": "b11fed0bcf6e1880615d1963e2c082fcd0d7d5ff18663fb6656bd9e88dc58989",
+          "record_sha256": "650a23958e46d92183a6212a7817e1a1a252bb8f9b73e858812caf2eb66f32d5",
+          "review_id": "AI-GSI-B4-T08-015",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 5. STP, RSTP/MSTP y agregación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T08-015",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T08",
+        "subtopic": "STP, RSTP/MSTP y agregación",
+        "exam": null,
+        "statement": "¿Qué negocia LACP?",
+        "options": [
+          {
+            "id": "A",
+            "text": "La topología sin bucles mediante intercambio de BPDUs."
+          },
+          {
+            "id": "B",
+            "text": "La pertenencia de terminales a VLAN mediante autenticación."
+          },
+          {
+            "id": "C",
+            "text": "La agrupación de enlaces compatibles en un canal lógico."
+          },
+          {
+            "id": "D",
+            "text": "La elección de rutas IP mediante anuncios entre vecinos."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "LACP intercambia información con el extremo vecino para coordinar qué enlaces compatibles participan en una agregación lógica. La agregación puede aportar capacidad conjunta y redundancia bajo sus condiciones de diseño. La negociación no determina por sí sola el algoritmo de reparto ni garantiza que un flujo use la suma de todos los miembros.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Intercambiar BPDUs para una topología sin bucles es función de spanning tree.",
+            "B": "El control de acceso del terminal puede usar 802.1X y políticas, no la negociación de miembros LACP.",
+            "D": "Los protocolos de routing intercambian información de red, distinta de la selección de enlaces del agregado."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 5. STP, RSTP/MSTP y agregación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "STP crea una topología libre de bucles bloqueando caminos redundantes; RSTP acelera convergencia; MSTP permite mapear VLAN a instancias. LACP negocia agregación de enlaces para capacidad y redundancia, pero un flujo concreto puede quedar limitado a un miembro según hashing.",
+          "evidence_sha256": "b11fed0bcf6e1880615d1963e2c082fcd0d7d5ff18663fb6656bd9e88dc58989",
+          "record_sha256": "650a23958e46d92183a6212a7817e1a1a252bb8f9b73e858812caf2eb66f32d5",
+          "review_id": "AI-GSI-B4-T08-015",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Cisco: EtherChannel",
+              "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr2-fwd/etherchannel/etherchannel-configuration-guide/m_ethernetchannel.html",
+              "locator": "Link Aggregation Control Protocol; LACP modes active/passive; EtherChannel logical link",
+              "version": "Guía IOS XE17 con historial17.18.1, HTML comprobada 03-11-2026. Intercambio y compatibilidad de miembros;802.3ad es procedencia histórica, familia actual802.1AX. No se confunde negociación LACP con el algoritmo de reparto.",
+              "checked_at": "2026-11-03"
+            },
+            {
+              "title": "IEEE 802.1: 802.1AX-2020, Link Aggregation",
+              "url": "https://1.ieee802.org/tsn/802-1ax-rev/",
+              "locator": "Descripción: enlaces full-duplex punto a punto como un LAG tratado como enlace único; Current Status",
+              "version": "Página primaria de revisión2020 comprobada 03-11-2026. Se lee alcance HTML, no texto íntegro del estándar. No garantiza suma de capacidad a un flujo ni ausencia de fallos comunes.",
+              "checked_at": "2026-11-03"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-076"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 5. STP, RSTP/MSTP y agregación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-03"
+      },
+      "reasons": [
+        "Conservar negociación de agregación y clave C; contrastar protocolos de control y separar LACP del hashing."
+      ],
+      "references": [
+        {
+          "title": "Cisco: EtherChannel",
+          "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr2-fwd/etherchannel/etherchannel-configuration-guide/m_ethernetchannel.html",
+          "locator": "Link Aggregation Control Protocol; LACP modes active/passive; EtherChannel logical link",
+          "version": "Guía IOS XE17 con historial17.18.1, HTML comprobada 03-11-2026. Intercambio y compatibilidad de miembros;802.3ad es procedencia histórica, familia actual802.1AX. No se confunde negociación LACP con el algoritmo de reparto.",
+          "checked_at": "2026-11-03"
+        },
+        {
+          "title": "IEEE 802.1: 802.1AX-2020, Link Aggregation",
+          "url": "https://1.ieee802.org/tsn/802-1ax-rev/",
+          "locator": "Descripción: enlaces full-duplex punto a punto como un LAG tratado como enlace único; Current Status",
+          "version": "Página primaria de revisión2020 comprobada 03-11-2026. Se lee alcance HTML, no texto íntegro del estándar. No garantiza suma de capacidad a un flujo ni ausencia de fallos comunes.",
+          "checked_at": "2026-11-03"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T08-016",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "0f55fb5629ede3196803d8df9cca1029150b521957fee0d95482537f967dbe5c",
+      "content_sha256": "c28c7275ee1038dffc065a8c9337447e1ee31f394bfa236e03c071434656bd0f",
+      "before": {
+        "id": "AI-GSI-B4-T08-016",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T08",
+        "subtopic": "STP, RSTP/MSTP y agregación",
+        "exam": null,
+        "statement": "Un agregado tiene varios enlaces. ¿Qué puede limitar un flujo individual?",
+        "options": [
+          {
+            "id": "A",
+            "text": "No poder transportar datos nunca"
+          },
+          {
+            "id": "B",
+            "text": "Usar siempre la suma total garantizada"
+          },
+          {
+            "id": "C",
+            "text": "Necesitar broadcast para cada paquete"
+          },
+          {
+            "id": "D",
+            "text": "Quedar asignado a un miembro según hashing"
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "La distribución de flujos no garantiza sumar todos los enlaces para uno solo.",
+          "incorrect": "La distribución de flujos no garantiza sumar todos los enlaces para uno solo."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 5. STP, RSTP/MSTP y agregación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "STP crea una topología libre de bucles bloqueando caminos redundantes; RSTP acelera convergencia; MSTP permite mapear VLAN a instancias. LACP negocia agregación de enlaces para capacidad y redundancia, pero un flujo concreto puede quedar limitado a un miembro según hashing.",
+          "evidence_sha256": "b11fed0bcf6e1880615d1963e2c082fcd0d7d5ff18663fb6656bd9e88dc58989",
+          "record_sha256": "eaeccc641c97bcf834b57a9215772b3e07b213b2385c1fb2b83431f2ed26a81a",
+          "review_id": "AI-GSI-B4-T08-016",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 5. STP, RSTP/MSTP y agregación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T08-016",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T08",
+        "subtopic": "STP, RSTP/MSTP y agregación",
+        "exam": null,
+        "statement": "Un agregado tiene cuatro miembros de 1 Gb/s y usa hashing por flujo. ¿Qué límite puede afectar a una única conversación persistente?",
+        "options": [
+          {
+            "id": "A",
+            "text": "El límite de 4 Gb/s que cada flujo negocia a través de LACP."
+          },
+          {
+            "id": "B",
+            "text": "La reserva de tres miembros para retransmitir ese flujo."
+          },
+          {
+            "id": "C",
+            "text": "El reparto cíclico de cada paquete entre los cuatro enlaces."
+          },
+          {
+            "id": "D",
+            "text": "La capacidad del miembro al que el hash asigna ese flujo."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Con hashing por flujo, los campos que identifican la conversación seleccionan un miembro. Ese flujo no dispone por ello de los 4 Gb/s nominales conjuntos: queda sujeto al miembro de 1 Gb/s y a otros límites y sobrecargas. Flujos distintos pueden distribuirse entre miembros; LACP coordina la agregación, no negocia un caudal por conversación.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "LACP no negocia un límite agregado de 4 Gb/s para cada flujo; la capacidad conjunta no implica esa velocidad individual.",
+            "B": "La asignación de un flujo no obliga a dejar el resto en reserva para sus retransmisiones.",
+            "C": "El supuesto especifica hashing por flujo, no reparto paquete a paquete; este último podría reordenar la conversación."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 5. STP, RSTP/MSTP y agregación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "STP crea una topología libre de bucles bloqueando caminos redundantes; RSTP acelera convergencia; MSTP permite mapear VLAN a instancias. LACP negocia agregación de enlaces para capacidad y redundancia, pero un flujo concreto puede quedar limitado a un miembro según hashing.",
+          "evidence_sha256": "b11fed0bcf6e1880615d1963e2c082fcd0d7d5ff18663fb6656bd9e88dc58989",
+          "record_sha256": "eaeccc641c97bcf834b57a9215772b3e07b213b2385c1fb2b83431f2ed26a81a",
+          "review_id": "AI-GSI-B4-T08-016",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Cisco: Understand EtherChannel Load Balance and Redundancy",
+              "url": "https://www.cisco.com/c/en/us/support/docs/lan-switching/etherchannel/12023-4.html?referring_site=bodynav",
+              "locator": "Determine the Link Across Which to Send Traffic: hashing determinista, conservación de orden y selección de miembro",
+              "version": "HTML comprobado 03-11-2026. Caso con reparto por flujo; rangos0–7, ocho miembros y tablas son específicos de plataformas antiguas, no límites universales. LACP y hashing cumplen funciones distintas.",
+              "checked_at": "2026-11-03"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-076"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 5. STP, RSTP/MSTP y agregación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-03"
+      },
+      "reasons": [
+        "Conservar límite por hashing y clave D; caso con cuatro miembros de 1 Gb/s, sin afirmar rendimiento medido o garantizado."
+      ],
+      "references": [
+        {
+          "title": "Cisco: Understand EtherChannel Load Balance and Redundancy",
+          "url": "https://www.cisco.com/c/en/us/support/docs/lan-switching/etherchannel/12023-4.html?referring_site=bodynav",
+          "locator": "Determine the Link Across Which to Send Traffic: hashing determinista, conservación de orden y selección de miembro",
+          "version": "HTML comprobado 03-11-2026. Caso con reparto por flujo; rangos0–7, ocho miembros y tablas son específicos de plataformas antiguas, no límites universales. LACP y hashing cumplen funciones distintas.",
+          "checked_at": "2026-11-03"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T08-018",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "040948e1b3875938d3f56221ef1b94427d398e000649e430b247de94d7201d6e",
+      "content_sha256": "522e15a92f1f711b89987ae513a3a05d00e5f09508b3e49384df37bf064b5cf9",
+      "before": {
+        "id": "AI-GSI-B4-T08-018",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T08",
+        "subtopic": "Seguridad LAN",
+        "exam": null,
+        "statement": "¿Por qué una VLAN sola no basta como frontera de seguridad?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Porque cifra automáticamente"
+          },
+          {
+            "id": "B",
+            "text": "Porque no separa broadcast nunca"
+          },
+          {
+            "id": "C",
+            "text": "Porque sustituye toda autenticación"
+          },
+          {
+            "id": "D",
+            "text": "Necesita políticas de acceso y controles entre zonas"
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "La segmentación organiza dominios; el acceso permitido requiere controles adicionales.",
+          "incorrect": "La segmentación organiza dominios; el acceso permitido requiere controles adicionales."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 7. Seguridad LAN",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Segmentación por VLAN/subred, ACL/firewall interzona, 802.1X/NAC, port security, DHCP snooping, Dynamic ARP Inspection donde exista, BPDU guard, control de puertos no usados, administración por SSH/HTTPS, AAA central y logs. La VLAN por sí sola no es frontera de seguridad suficiente.",
+          "evidence_sha256": "92ec3295ca30e3590c797a36594ea4a8c4cda5255e49050320d4d0f672b8c5a8",
+          "record_sha256": "7b691195b371ed692e7cd3dd2b16ca525bdd4e58945183c2b6dd86c0b5b4a699",
+          "review_id": "AI-GSI-B4-T08-018",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 7. Seguridad LAN",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T08-018",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T08",
+        "subtopic": "Seguridad LAN",
+        "exam": null,
+        "statement": "¿Por qué una VLAN, por sí sola, no define una frontera completa de seguridad?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Porque debe habilitarse un trunk para convertir separación en cifrado."
+          },
+          {
+            "id": "B",
+            "text": "Porque la separación deja de existir si las VLAN comparten un switch."
+          },
+          {
+            "id": "C",
+            "text": "Porque la pertenencia a VLAN determina la identidad del administrador."
+          },
+          {
+            "id": "D",
+            "text": "Porque el acceso entre zonas requiere políticas y controles propios."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Una VLAN delimita un dominio lógico de enlace, pero no define por sí sola quién puede acceder a cada servicio. Al comunicar zonas hay que aplicar y verificar la política prevista, por ejemplo mediante ACL o firewall, y proteger pertenencia y puertos. La eficacia depende de la configuración y controles, no del nombre o número de VLAN.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Transportar VLAN en un trunk no cifra el tráfico ni sustituye los controles de acceso.",
+            "B": "Un switch puede mantener varias VLAN separadas; compartir chasis no elimina automáticamente esa separación lógica.",
+            "C": "La VLAN no acredita identidad administrativa o permisos sobre el equipo; hacen falta mecanismos específicos."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 7. Seguridad LAN",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Segmentación por VLAN/subred, ACL/firewall interzona, 802.1X/NAC, port security, DHCP snooping, Dynamic ARP Inspection donde exista, BPDU guard, control de puertos no usados, administración por SSH/HTTPS, AAA central y logs. La VLAN por sí sola no es frontera de seguridad suficiente.",
+          "evidence_sha256": "92ec3295ca30e3590c797a36594ea4a8c4cda5255e49050320d4d0f672b8c5a8",
+          "record_sha256": "7b691195b371ed692e7cd3dd2b16ca525bdd4e58945183c2b6dd86c0b5b4a699",
+          "review_id": "AI-GSI-B4-T08-018",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Cisco: VLAN Best Practices and Security Tips",
+              "url": "https://www.cisco.com/c/en/us/support/docs/smb/routers/cisco-rv-series-small-business-routers/1778-tz-VLAN-Best-Practices-and-Security-Tips-for-Cisco-Business-Routers.html",
+              "locator": "Best Practice5: Inter-VLAN Routing, aplicar ACL al acceso a servidores; consideraciones de VLAN hopping",
+              "version": "Guía Cisco Business HTML comprobada 03-11-2026. Se usa filtrado complementario a segmentación; no se adopta como regla universal la recomendación de evitar routing inter-VLAN o topologías/productos concretos.",
+              "checked_at": "2026-11-03"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-076"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 7. Seguridad LAN",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-03"
+      },
+      "reasons": [
+        "Conservar defensa complementaria y clave D; evitar negar la separación real de VLAN o exigir un producto concreto."
+      ],
+      "references": [
+        {
+          "title": "Cisco: VLAN Best Practices and Security Tips",
+          "url": "https://www.cisco.com/c/en/us/support/docs/smb/routers/cisco-rv-series-small-business-routers/1778-tz-VLAN-Best-Practices-and-Security-Tips-for-Cisco-Business-Routers.html",
+          "locator": "Best Practice5: Inter-VLAN Routing, aplicar ACL al acceso a servidores; consideraciones de VLAN hopping",
+          "version": "Guía Cisco Business HTML comprobada 03-11-2026. Se usa filtrado complementario a segmentación; no se adopta como regla universal la recomendación de evitar routing inter-VLAN o topologías/productos concretos.",
+          "checked_at": "2026-11-03"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T08-019",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "06af595642711d9e79c53210316e4775ab9c228c0ce24efc08c5913193d8125b",
+      "content_sha256": "71acb569abb53b5358f4058ff662bcbf306d7b514a8f1731f30a4138d96d9b14",
+      "before": {
+        "id": "AI-GSI-B4-T08-019",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T08",
+        "subtopic": "Seguridad LAN",
+        "exam": null,
+        "statement": "¿Qué práctica protege la administración LAN?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Administración anónima"
+          },
+          {
+            "id": "B",
+            "text": "Telnet con credenciales compartidas"
+          },
+          {
+            "id": "C",
+            "text": "SSH/HTTPS, AAA central y logs"
+          },
+          {
+            "id": "D",
+            "text": "Puertos no usados abiertos sin control"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Protocolos seguros e identidad permiten limitar y auditar acciones.",
+          "incorrect": "Protocolos seguros e identidad permiten limitar y auditar acciones."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 7. Seguridad LAN",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Segmentación por VLAN/subred, ACL/firewall interzona, 802.1X/NAC, port security, DHCP snooping, Dynamic ARP Inspection donde exista, BPDU guard, control de puertos no usados, administración por SSH/HTTPS, AAA central y logs. La VLAN por sí sola no es frontera de seguridad suficiente.",
+          "evidence_sha256": "92ec3295ca30e3590c797a36594ea4a8c4cda5255e49050320d4d0f672b8c5a8",
+          "record_sha256": "9f89ed52f3d0cd2397ca56f3d282fd186020ffd851ecdc04c1ba917ee63e05dc",
+          "review_id": "AI-GSI-B4-T08-019",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 7. Seguridad LAN",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T08-019",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T08",
+        "subtopic": "Seguridad LAN",
+        "exam": null,
+        "statement": "¿Qué práctica protege la administración LAN?",
+        "options": [
+          {
+            "id": "A",
+            "text": "SSH/HTTPS con cuenta compartida y registro de acceso deshabilitado."
+          },
+          {
+            "id": "B",
+            "text": "Telnet/HTTP con cuentas individuales y autorización centralizada."
+          },
+          {
+            "id": "C",
+            "text": "SSH/HTTPS con cuentas individuales, autorización y registro de acciones."
+          },
+          {
+            "id": "D",
+            "text": "SSH/HTTPS con cuentas individuales y el mismo privilegio máximo."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "La administración necesita confidencialidad de sesión, identidad individual, permisos adecuados y trazabilidad. SSH y HTTPS donde esté soportado el servicio protegen el canal; AAA puede centralizar autenticación, autorización y registro. El cifrado por sí solo no restringe privilegios ni permite atribuir acciones si se comparte una cuenta.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "El canal cifrado no resuelve la atribución individual ni compensa deshabilitar los registros.",
+            "B": "Las cuentas y autorización son útiles, pero Telnet/HTTP exponen la sesión sin cifrado de esos protocolos.",
+            "D": "Una identidad individual no justifica asignar a todos privilegio máximo; deben limitarse según sus funciones."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 7. Seguridad LAN",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Segmentación por VLAN/subred, ACL/firewall interzona, 802.1X/NAC, port security, DHCP snooping, Dynamic ARP Inspection donde exista, BPDU guard, control de puertos no usados, administración por SSH/HTTPS, AAA central y logs. La VLAN por sí sola no es frontera de seguridad suficiente.",
+          "evidence_sha256": "92ec3295ca30e3590c797a36594ea4a8c4cda5255e49050320d4d0f672b8c5a8",
+          "record_sha256": "9f89ed52f3d0cd2397ca56f3d282fd186020ffd851ecdc04c1ba917ee63e05dc",
+          "review_id": "AI-GSI-B4-T08-019",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Cisco: IOS XR Software Hardening Guide",
+              "url": "https://sec.cloudapps.cisco.com/security/center/resources/Cisco-IOS-XR-HardeningGuide",
+              "locator": "Secure Interactive Management Session; Authentication, Authorization and Accounting; Redundant AAA Servers; logging",
+              "version": "Guía HTML comprobada 03-11-2026. Cifrado, identidad, autorización y registro. HTTPS solo donde exista gestión web compatible; el texto indica HTTP web server deprecado en IOS XR. Sin copiar comandos o imponer versión de producto.",
+              "checked_at": "2026-11-03"
+            },
+            {
+              "title": "Cisco: Campus LAN and Wireless LAN Solution Design Guide",
+              "url": "https://www.cisco.com/c/en/us/td/docs/solutions/CVD/Campus/cisco-campus-lan-wlan-design-guide.html",
+              "locator": "Campus Wired LAN Design Fundamentals: Access/Distribution/Core; Two-tier design; Administrative Access Control",
+              "version": "Guía HTML comprobada 03-11-2026. Jerarquía de funciones y posible core colapsado; acceso individual, protocolos cifrados y logs. Cifras de equipos, productos o reglas de contraseña no se presentan como obligaciones universales.",
+              "checked_at": "2026-11-03"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-076"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 7. Seguridad LAN",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-03"
+      },
+      "reasons": [
+        "Conservar enunciado y clave C; cuatro combinaciones de controles reales, sin AAA central como requisito universal."
+      ],
+      "references": [
+        {
+          "title": "Cisco: IOS XR Software Hardening Guide",
+          "url": "https://sec.cloudapps.cisco.com/security/center/resources/Cisco-IOS-XR-HardeningGuide",
+          "locator": "Secure Interactive Management Session; Authentication, Authorization and Accounting; Redundant AAA Servers; logging",
+          "version": "Guía HTML comprobada 03-11-2026. Cifrado, identidad, autorización y registro. HTTPS solo donde exista gestión web compatible; el texto indica HTTP web server deprecado en IOS XR. Sin copiar comandos o imponer versión de producto.",
+          "checked_at": "2026-11-03"
+        },
+        {
+          "title": "Cisco: Campus LAN and Wireless LAN Solution Design Guide",
+          "url": "https://www.cisco.com/c/en/us/td/docs/solutions/CVD/Campus/cisco-campus-lan-wlan-design-guide.html",
+          "locator": "Campus Wired LAN Design Fundamentals: Access/Distribution/Core; Two-tier design; Administrative Access Control",
+          "version": "Guía HTML comprobada 03-11-2026. Jerarquía de funciones y posible core colapsado; acceso individual, protocolos cifrados y logs. Cifras de equipos, productos o reglas de contraseña no se presentan como obligaciones universales.",
+          "checked_at": "2026-11-03"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T08-020",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "55c8b15058cd5354610bfcc108fbfade0378cef61fad3418b1e8228543128498",
+      "content_sha256": "58649ccc9a7bac07e13de202c547c7be68e274cddbba94a34aa977eee8b0c100",
+      "before": {
+        "id": "AI-GSI-B4-T08-020",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T08",
+        "subtopic": "Diseño jerárquico",
+        "exam": null,
+        "statement": "¿Qué modelo jerárquico se cita para redes medianas o grandes?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Primario, réplica y archivo"
+          },
+          {
+            "id": "B",
+            "text": "Físico, enlace y transporte como jerarquía de campus"
+          },
+          {
+            "id": "C",
+            "text": "Acceso, distribución y core"
+          },
+          {
+            "id": "D",
+            "text": "Cliente, servidor y base de datos"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "La jerarquía estructura funciones y puede adaptarse o colapsarse según tamaño.",
+          "incorrect": "La jerarquía estructura funciones y puede adaptarse o colapsarse según tamaño."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 8. Diseño jerárquico",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Acceso-distribución-core es un modelo útil en redes medianas/grandes; en campus modernos puede colapsarse core/distribución. Redundancia, rutas, QoS y capacidad se diseñan según tamaño. Evitar extender L2 sin necesidad reduce dominios de fallo.\n\nDatos y trampas de test\n\n* Switch aprende MAC origen.\n* Router decide por IP/prefijo.\n* VLAN separa broadcast; inter-VLAN requiere L3.\n* 802.1Q = etiquetado VLAN.\n* STP evita bucles L2; RSTP converge más rápido.\n* CSMA/CD es esencialmente histórico en Ethernet full-duplex conmutada.\n* LACP agrega enlaces; no significa que un único flujo use suma de todos siempre.\n* VLAN ≠ firewall.\n\nAplicación al supuesto práctico\n\nDiseña acceso/distribución/core o arquitectura equivalente, VLAN/subred por función, routing inter-VLAN controlado, redundancia, STP/RSTP o diseño L3, LACP, QoS y NAC/802.1X. Incluye administración segura y monitorización; justifica dominios de fallo.",
+          "evidence_sha256": "15d39e195f0469c206c07811c5a53f39c8d7aea5796ad5f5b3743611584e5adb",
+          "record_sha256": "7631fd0469acf153ee5056aff455fd0f92db5823253a778079fb2a01ec7ccfec",
+          "review_id": "AI-GSI-B4-T08-020",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 8. Diseño jerárquico",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T08-020",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T08",
+        "subtopic": "Diseño jerárquico",
+        "exam": null,
+        "statement": "¿Qué modelo jerárquico se cita para redes medianas o grandes?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Acceso, agregación y presentación de aplicaciones."
+          },
+          {
+            "id": "B",
+            "text": "Enlace, red y transporte de la pila de protocolos."
+          },
+          {
+            "id": "C",
+            "text": "Acceso, distribución y núcleo de la red de campus."
+          },
+          {
+            "id": "D",
+            "text": "Perímetro, zona desmilitarizada y red de servidores."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "El modelo jerárquico de campus organiza funciones en acceso, distribución y núcleo o core. Acceso conecta terminales, distribución agrega y aplica políticas, y el núcleo interconecta bloques. Según tamaño y requisitos pueden colapsarse distribución y core. Son funciones de diseño, no las capas de protocolo ni una obligación de tres equipos físicos.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Mezcla funciones de conectividad con presentación de aplicaciones; no identifica la jerarquía de campus citada.",
+            "B": "Son capas de protocolos, una clasificación diferente de las funciones de acceso/distribución/núcleo.",
+            "D": "Son zonas o posiciones de seguridad, que pueden coexistir con la jerarquía pero no la sustituyen."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 8. Diseño jerárquico",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Acceso-distribución-core es un modelo útil en redes medianas/grandes; en campus modernos puede colapsarse core/distribución. Redundancia, rutas, QoS y capacidad se diseñan según tamaño. Evitar extender L2 sin necesidad reduce dominios de fallo.\n\nDatos y trampas de test\n\n* Switch aprende MAC origen.\n* Router decide por IP/prefijo.\n* VLAN separa broadcast; inter-VLAN requiere L3.\n* 802.1Q = etiquetado VLAN.\n* STP evita bucles L2; RSTP converge más rápido.\n* CSMA/CD es esencialmente histórico en Ethernet full-duplex conmutada.\n* LACP agrega enlaces; no significa que un único flujo use suma de todos siempre.\n* VLAN ≠ firewall.\n\nAplicación al supuesto práctico\n\nDiseña acceso/distribución/core o arquitectura equivalente, VLAN/subred por función, routing inter-VLAN controlado, redundancia, STP/RSTP o diseño L3, LACP, QoS y NAC/802.1X. Incluye administración segura y monitorización; justifica dominios de fallo.",
+          "evidence_sha256": "15d39e195f0469c206c07811c5a53f39c8d7aea5796ad5f5b3743611584e5adb",
+          "record_sha256": "7631fd0469acf153ee5056aff455fd0f92db5823253a778079fb2a01ec7ccfec",
+          "review_id": "AI-GSI-B4-T08-020",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Cisco: Campus LAN and Wireless LAN Solution Design Guide",
+              "url": "https://www.cisco.com/c/en/us/td/docs/solutions/CVD/Campus/cisco-campus-lan-wlan-design-guide.html",
+              "locator": "Campus Wired LAN Design Fundamentals: Access/Distribution/Core; Two-tier design; Administrative Access Control",
+              "version": "Guía HTML comprobada 03-11-2026. Jerarquía de funciones y posible core colapsado; acceso individual, protocolos cifrados y logs. Cifras de equipos, productos o reglas de contraseña no se presentan como obligaciones universales.",
+              "checked_at": "2026-11-03"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-076"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.08; sección 8. Diseño jerárquico",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-03"
+      },
+      "reasons": [
+        "Conservar enunciado y clave C; contrastar jerarquía, capas y zonas, permitiendo core colapsado."
+      ],
+      "references": [
+        {
+          "title": "Cisco: Campus LAN and Wireless LAN Solution Design Guide",
+          "url": "https://www.cisco.com/c/en/us/td/docs/solutions/CVD/Campus/cisco-campus-lan-wlan-design-guide.html",
+          "locator": "Campus Wired LAN Design Fundamentals: Access/Distribution/Core; Two-tier design; Administrative Access Control",
+          "version": "Guía HTML comprobada 03-11-2026. Jerarquía de funciones y posible core colapsado; acceso individual, protocolos cifrados y logs. Cifras de equipos, productos o reglas de contraseña no se presentan como obligaciones universales.",
+          "checked_at": "2026-11-03"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T09-001",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "440db57cfc2761623767624893092f02a6c439f7108ca461ff4e6887d3906f88",
+      "content_sha256": "53cb43f7c39efc3be3bbaf892121fb3fc5ee3489a8255929a2117521629e2228",
+      "before": {
+        "id": "AI-GSI-B4-T09-001",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T09",
+        "subtopic": "Modelo FCAPS",
+        "exam": null,
+        "statement": "¿Qué áreas reúne FCAPS?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Fuentes, columnas, filas, páginas y estilos"
+          },
+          {
+            "id": "B",
+            "text": "Solo filtrado y cifrado"
+          },
+          {
+            "id": "C",
+            "text": "Fallos, configuración, contabilidad, rendimiento y seguridad"
+          },
+          {
+            "id": "D",
+            "text": "Formato, compilación, archivo, pruebas y despliegue"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "FCAPS estructura áreas de gestión de red, no una herramienta concreta.",
+          "incorrect": "FCAPS estructura áreas de gestión de red, no una herramienta concreta."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.09; sección 1. Modelo FCAPS",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "FCAPS resume áreas de gestión: Fault, Configuration, Accounting, Performance y Security. No es una herramienta concreta; sirve para estructurar operación: detectar fallos, controlar configuración, contabilizar/uso, medir rendimiento y proteger administración.",
+          "evidence_sha256": "3fe125940a05f7a4fa2a45e50a9b7eb9b3eaa86a5422e4817d4168c9d6763ee5",
+          "record_sha256": "ea0025a7b4a137ba932939388ec7bc17080c888708ae18b32573d50dba0fb5b3",
+          "review_id": "AI-GSI-B4-T09-001",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.09; sección 1. Modelo FCAPS",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T09-001",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T09",
+        "subtopic": "Modelo FCAPS",
+        "exam": null,
+        "statement": "¿Qué áreas reúne FCAPS?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Fallos, configuración, autenticación, rendimiento y seguridad."
+          },
+          {
+            "id": "B",
+            "text": "Fallos, configuración, contabilidad, replicación y seguridad."
+          },
+          {
+            "id": "C",
+            "text": "Fallos, configuración, contabilidad, rendimiento y seguridad."
+          },
+          {
+            "id": "D",
+            "text": "Flujos, configuración, contabilidad, rendimiento y seguridad."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "FCAPS agrupa cinco áreas funcionales de gestión: fallos, configuración, contabilidad, rendimiento y seguridad. Accounting contempla el uso de recursos y su contabilización; no significa autenticación. Las áreas ayudan a organizar funciones y pueden apoyarse en diferentes protocolos o herramientas; no son cinco capas de una pila de comunicaciones.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Sustituye contabilidad por autenticación; esta es una función de seguridad, no el significado de la A.",
+            "B": "La P corresponde a performance o rendimiento, no a replicación.",
+            "D": "La F corresponde a fault o fallos, no a flujos; estos pueden ser datos útiles para otras áreas."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.09; sección 1. Modelo FCAPS",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "FCAPS resume áreas de gestión: Fault, Configuration, Accounting, Performance y Security. No es una herramienta concreta; sirve para estructurar operación: detectar fallos, controlar configuración, contabilizar/uso, medir rendimiento y proteger administración.",
+          "evidence_sha256": "3fe125940a05f7a4fa2a45e50a9b7eb9b3eaa86a5422e4817d4168c9d6763ee5",
+          "record_sha256": "ea0025a7b4a137ba932939388ec7bc17080c888708ae18b32573d50dba0fb5b3",
+          "review_id": "AI-GSI-B4-T09-001",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "UIT-T: M.3400 (02/2000), ficha de recomendación",
+              "url": "https://www.itu.int/rec/T-REC-M.3400-200002-I/es",
+              "locator": "Cabecera: Funciones de gestión de la red de gestión de las telecomunicaciones; aprobación04-02-2000 y Estado En vigor",
+              "version": "Ficha pública comprobada 03-11-2026. Metadatos de recomendación; no se atribuye lectura íntegra del PDF gratuito o de documentos TIES.",
+              "checked_at": "2026-11-03"
+            },
+            {
+              "title": "UIT-T: M.3400 (02/2000), índice español",
+              "url": "https://www.itu.int/dms_pubrec/itu-t/rec/m/T-REC-M.3400-200002-I!!TOC-HTM-S.htm",
+              "locator": "Apartados5 Calidad de funcionamiento;6 Averías;7 Configuración;8 Contabilidad;9 Seguridad; §8.1 medición de utilización",
+              "version": "Índice HTML oficial comprobado 03-11-2026. Se usa para enumerar cinco áreas y distinguir contabilidad/accounting de autenticación; no es lectura del cuerpo completo de la recomendación.",
+              "checked_at": "2026-11-03"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-076"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.09; sección 1. Modelo FCAPS",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-03"
+      },
+      "reasons": [
+        "Conservar cinco áreas y clave C; sustituciones cercanas de una sola área, con accounting bien diferenciado."
+      ],
+      "references": [
+        {
+          "title": "UIT-T: M.3400 (02/2000), ficha de recomendación",
+          "url": "https://www.itu.int/rec/T-REC-M.3400-200002-I/es",
+          "locator": "Cabecera: Funciones de gestión de la red de gestión de las telecomunicaciones; aprobación04-02-2000 y Estado En vigor",
+          "version": "Ficha pública comprobada 03-11-2026. Metadatos de recomendación; no se atribuye lectura íntegra del PDF gratuito o de documentos TIES.",
+          "checked_at": "2026-11-03"
+        },
+        {
+          "title": "UIT-T: M.3400 (02/2000), índice español",
+          "url": "https://www.itu.int/dms_pubrec/itu-t/rec/m/T-REC-M.3400-200002-I!!TOC-HTM-S.htm",
+          "locator": "Apartados5 Calidad de funcionamiento;6 Averías;7 Configuración;8 Contabilidad;9 Seguridad; §8.1 medición de utilización",
+          "version": "Índice HTML oficial comprobado 03-11-2026. Se usa para enumerar cinco áreas y distinguir contabilidad/accounting de autenticación; no es lectura del cuerpo completo de la recomendación.",
+          "checked_at": "2026-11-03"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T09-004",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "5a9948cd94f80bca9713d24b4d26fe07f6ef6a7a59267bc837b4112704730c48",
+      "content_sha256": "65ae093d78c7dc49b23b678f83b823333b0e09d09b24b2b2d290b5b8e4b50771",
+      "before": {
+        "id": "AI-GSI-B4-T09-004",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T09",
+        "subtopic": "Inventario y configuración",
+        "exam": null,
+        "statement": "¿Qué aporta una red o VRF de gestión cuando procede?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Aumentar ilimitadamente capacidad"
+          },
+          {
+            "id": "B",
+            "text": "Separar el plano administrativo del tráfico ordinario"
+          },
+          {
+            "id": "C",
+            "text": "Eliminar toda autenticación"
+          },
+          {
+            "id": "D",
+            "text": "Sustituir actualizaciones"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "La separación reduce exposición y debe complementarse con AAA y políticas.",
+          "incorrect": "La separación reduce exposición y debe complementarse con AAA y políticas."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.09; sección 2. Inventario y configuración",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Mantener modelo, serie/activo, ubicación, versión, interfaces, IP de gestión, dependencias, garantía/soporte y baseline. Respaldar configuraciones, controlar cambios, actualizar firmware y sustituir equipos fuera de soporte. Administración debe usar red/VRF de gestión cuando proceda y AAA central.",
+          "evidence_sha256": "dd52ef66e7bb18d3ce400c84425ec32031be1a12da199c4e09f1791d1467adf6",
+          "record_sha256": "7fb16de3771998fc6845972437254abd530e0b81979d0d9ea68f1479092a06d9",
+          "review_id": "AI-GSI-B4-T09-004",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.09; sección 2. Inventario y configuración",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T09-004",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T09",
+        "subtopic": "Inventario y configuración",
+        "exam": null,
+        "statement": "La gestión usa una VRF propia sobre los mismos equipos y enlaces de producción. ¿Qué aporta directamente esa VRF?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Garantizar capacidad reservada para cada sesión administrativa."
+          },
+          {
+            "id": "B",
+            "text": "Separar el tráfico administrativo mediante un dominio de routing."
+          },
+          {
+            "id": "C",
+            "text": "Autenticar al administrador mediante el identificador de la VRF."
+          },
+          {
+            "id": "D",
+            "text": "Proporcionar un acceso físico independiente de los enlaces de datos."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Una VRF permite separar tablas y dominios de routing para el tráfico de gestión. Puede reducir exposición si se controlan rutas y accesos, pero necesita identidad, autorización y registro. Si comparte equipos y enlaces con producción, esa separación lógica no proporciona por sí sola una red física fuera de banda o capacidad reservada.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Separar tablas de routing no reserva ancho de banda; esa capacidad requiere mecanismos y recursos adicionales.",
+            "C": "El identificador de la VRF no es una credencial ni prueba la identidad o permisos del administrador.",
+            "D": "La VRF del caso comparte infraestructura; la independencia física exige otro diseño y recursos."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.09; sección 2. Inventario y configuración",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Mantener modelo, serie/activo, ubicación, versión, interfaces, IP de gestión, dependencias, garantía/soporte y baseline. Respaldar configuraciones, controlar cambios, actualizar firmware y sustituir equipos fuera de soporte. Administración debe usar red/VRF de gestión cuando proceda y AAA central.",
+          "evidence_sha256": "dd52ef66e7bb18d3ce400c84425ec32031be1a12da199c4e09f1791d1467adf6",
+          "record_sha256": "7fb16de3771998fc6845972437254abd530e0b81979d0d9ea68f1479092a06d9",
+          "review_id": "AI-GSI-B4-T09-004",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Cisco: Out of band best practices",
+              "url": "https://www.cisco.com/c/en/us/solutions/collateral/service-provider/out-of-band-best-practices-wp.html",
+              "locator": "Managed Network Devices: Isolation of Management Traffic; Jumpservers: Access Control y Auditing",
+              "version": "Guía HTML comprobada 03-11-2026. Separación lógica por VRF y controles; una VRF compartiendo infraestructura no equivale a red física fuera de banda ni garantiza recuperación ante caída de producción.",
+              "checked_at": "2026-11-03"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-076"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.09; sección 2. Inventario y configuración",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-03"
+      },
+      "reasons": [
+        "Conservar separación de gestión y clave B; caso VRF con infraestructura compartida para distinguir aislamiento lógico y OOB."
+      ],
+      "references": [
+        {
+          "title": "Cisco: Out of band best practices",
+          "url": "https://www.cisco.com/c/en/us/solutions/collateral/service-provider/out-of-band-best-practices-wp.html",
+          "locator": "Managed Network Devices: Isolation of Management Traffic; Jumpservers: Access Control y Auditing",
+          "version": "Guía HTML comprobada 03-11-2026. Separación lógica por VRF y controles; una VRF compartiendo infraestructura no equivale a red física fuera de banda ni garantiza recuperación ante caída de producción.",
+          "checked_at": "2026-11-03"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    }
+  ]
+}

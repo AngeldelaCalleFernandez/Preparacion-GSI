@@ -1,5 +1,7 @@
 """Exercise editorial writes only in temporary directories with fictional receipts."""
 import copy
+import contextlib
+import io
 import sys
 import tempfile
 import unittest
@@ -10,6 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from editorial_batches import RUBRIC, LEDGER, apply_batch, banks, digest, guard_regeneration, load, materialize, validate_approval, validate_batch, verify_ledger, write
 from prepare_editorial_pilot import PROPOSALS, REFINED_IDS, refresh_pending_proposal, render_batch
+from editorial_batches import main as editorial_main, render_batch as render_editorial_batch
 
 
 def fixture(bank='manual'):
@@ -47,6 +50,31 @@ class BatchTests(unittest.TestCase):
         before = self.snapshot()
         materialize(self.batch, banks(self.root))
         self.assertEqual(before, self.snapshot())
+
+    def test_literal_render_preserves_question_text_and_source_links(self):
+        item = self.batch['items'][0]
+        item['after']['statement'] = '<p>Uno<br>Dos</p> con `meta charset` & datos.'
+        item['after']['options'][0]['text'] = '<head>.'
+        item['after']['feedback']['correct'] = 'Texto literal: **énfasis** y [referencia].'
+        item['references'][0]['url'] += '?first=1&second=2'
+        before = digest(self.batch)
+        legacy = render_editorial_batch(self.batch)
+        literal = render_editorial_batch(self.batch, literal_content=True)
+        self.assertIn('<p>Uno<br>Dos</p>', legacy)
+        self.assertIn('&lt;p&gt;Uno&lt;br&gt;Dos&lt;/p&gt; con \\`meta charset\\` &amp; datos.', literal)
+        self.assertIn('&lt;head&gt;.', literal)
+        self.assertIn('\\*\\*énfasis\\*\\* y \\[referencia\\].', literal)
+        self.assertIn('[Test-only evidence](https://example.org/evidence?first=1&second=2)', literal)
+        self.assertEqual(before, digest(self.batch))
+        self.assertEqual(legacy, render_editorial_batch(self.batch, literal_content=False))
+
+    def test_literal_cli_requires_render_target(self):
+        with patch('sys.argv', ['editorial_batches.py', '--literal-content']):
+            with contextlib.redirect_stderr(io.StringIO()) as stderr:
+                with self.assertRaises(SystemExit) as error:
+                    editorial_main()
+        self.assertEqual(error.exception.code, 2)
+        self.assertIn('--literal-content requiere --render', stderr.getvalue())
 
     def test_human_receipt_and_exact_decisions_required(self):
         for change in ({'reviewer_type': 'ai'}, {'reviewer': ''}, {'batch_sha256': '0' * 64}, {'reviewed_at': '2026-10-25'}):

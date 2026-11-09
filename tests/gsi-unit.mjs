@@ -56,8 +56,10 @@ test('La sesión conserva su orden y detecta cambios de contenido',()=>{
   assert.equal(validateTrainingContext(shuffleContext,[{...shuffleQuestion,statement:'Otra versión'}]),false);
   assert.equal(validateTrainingContext(shuffleContext,[{...shuffleQuestion,statement:'Otra versión'}],{checkVersions:false}),true);
   const legacy={sessionId:'legacy',isDemo:false,questionRefs:shuffleContext.questionRefs};
-  assert.equal(validateTrainingContext(legacy,[shuffleQuestion]),true);
-  assert.equal(validateTrainingContext(legacy,[{...shuffleQuestion,source:{...shuffleQuestion.source,editorial_revision_id:'new'}}]),false);
+  const legacyQuestion={...shuffleQuestion,source:{...shuffleQuestion.source}};
+  delete legacyQuestion.source.editorial_revision_id;
+  assert.equal(validateTrainingContext(legacy,[legacyQuestion]),true);
+  assert.equal(validateTrainingContext(legacy,[{...legacyQuestion,source:{...legacyQuestion.source,editorial_revision_id:'new'}}]),false);
 });
 test('La sesión rechaza permutaciones y respuestas corruptas',()=>{
   for(const order of [['A','A','C','D'],['A','B','C'],['A','B','C','X']]) assert.equal(validateTrainingContext({...shuffleContext,optionOrderByQuestionKey:{[shuffleKey]:order}},[shuffleQuestion]),false);

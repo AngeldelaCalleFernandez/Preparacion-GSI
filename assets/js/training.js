@@ -2,6 +2,7 @@ import { loadAnalyticsStore } from "./analytics-storage.js?gsi4";
 import { saveTrainingShufflePreference } from "./analytics-storage.js?gsi4";
 import { createTrainingOptionOrders, orderedTrainingOptions, trainingOptionLetter, questionVersion, validateTrainingContext } from "./training-options.js";
 import { feedbackFor } from "./question-feedback.js";
+import { appendProvisionalReviewNotice, PROVISIONAL_REVIEW_QUESTION_ID } from "./question-review-status.js";
 import { filterTrainingQuestions, selectTrainingQuestions, summarizeTrainingResults } from "./training-engine.js?gsi3";
 import { describeQuestionSource } from "./data-service.js?gsi2";
 import { clearAllResponses, clearDemoResponses, getProgressSummary, getStoredResponses, saveResponse } from "./storage.js?gsi2";
@@ -261,6 +262,7 @@ export function initTraining(data) {
           createElement("p", "", `Correcta: ${trainingOptionLetter(entry.question, correctOption.id, state.optionOrderByQuestionKey)}. ${correctOption.text}`),
           createElement("p", "", feedbackFor(entry.question, entry.response.selectedOption, false)),
         );
+        appendProvisionalReviewNotice(card, entry.question);
         failedList.append(card);
       }
       details.append(failedList);
@@ -412,9 +414,11 @@ export function initTraining(data) {
     session.hidden = false;
     session.replaceChildren();
     session.append(createElement("p", "question-progress", `Pregunta ${state.index + 1} de ${state.questions.length}`));
-    session.append(createElement("p", "pill", `${originLabel(question)} · ${question.validation_status}`));
+    const status = question.id === PROVISIONAL_REVIEW_QUESTION_ID ? "revisión independiente pendiente" : question.validation_status;
+    session.append(createElement("p", "pill", `${originLabel(question)} · ${status}`));
     if (describeOfficialQuestion(question)) session.append(createElement("p", "form-help", describeOfficialQuestion(question)));
     session.append(createElement("h2", "question-statement", question.statement));
+    appendProvisionalReviewNotice(session, question);
     const options = createElement("div", "question-options");
     options.setAttribute("role", "group");
     options.setAttribute("aria-label", "Opciones de respuesta");

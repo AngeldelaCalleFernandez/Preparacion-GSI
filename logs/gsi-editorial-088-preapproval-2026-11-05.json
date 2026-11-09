@@ -1,0 +1,508 @@
+{
+  "batch_id": "GSI-EDITORIAL-088",
+  "batch_sha256": "5b253178d587affe7908f84f447487b88e0977b309222b86827a60378e1e6668",
+  "verified_at": "2026-11-05T11:13:52.416529+00:00",
+  "status": "awaiting_owner_approval",
+  "questions": 20,
+  "simulated_manual_changes": 20,
+  "applied": 0,
+  "new_approvals": 0,
+  "questions_with_keys_and_option_ids_preserved": 20,
+  "individual_distractor_explanations": 60,
+  "sources": {
+    "https://learn.microsoft.com/en-us/microsoftteams/rooms/room-planning-guidance": {
+      "title": "Microsoft Learn: Meeting room guidance for Teams",
+      "locators": [
+        "Infrastructure: Acoustic wall/floor treatments y Lighting; Signature Teams Boardroom: Room Acoustics y Lighting"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "consulted_for_088",
+      "note": "Para P19-136, el apoyo directo está en Camera, Camera options y Display, donde se comprueban campo de visión, cobertura, distancia y legibilidad. El localizador original apunta sobre todo a acústica e iluminación, útil para P19-155. Se registra aquí la ubicación complementaria sin alterar la propuesta."
+    },
+    "https://www.boe.es/buscar/doc.php?id=DOUE-L-2016-80807": {
+      "title": "BOE/DOUE: Reglamento(UE)2016/679, RGPD",
+      "locators": [
+        "RGPD artículos5.1a–c/e,13.1 y25.1–2 consultados en085;32.1–4 leído para088: seguridad proporcional al riesgo y verificación"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "rechecked_additional_sections_for_088",
+      "note": "Se releen la limitación de conservación del artículo 5.1.e y las medidas proporcionales al riesgo del artículo 32. El criterio distingue las finalidades justificadas y sus excepciones de una política indiscriminada por defecto."
+    },
+    "https://www.ncsc.gov.uk/guidance/secure-communication-principles": {
+      "title": "NCSC: Secure communications principles",
+      "locators": [
+        "Principios1: tránsito/participantes;3: autenticación/dispositivo;4: auditoría;5: administración/ciclo de vida;6:metadatos;7:proveedor/datos"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "consulted_for_088"
+    },
+    "https://www.w3.org/TR/remote-meetings/": {
+      "title": "W3C: Accessibility of Remote Meetings",
+      "locators": [
+        "§3.1–3.3 selección/plataforma; §5.1 Organizing accessible remote meetings: captions,teclado,ayudas y métodos de conexión"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "consulted_for_088"
+    },
+    "https://learn.microsoft.com/en-us/microsoftteams/prepare-network": {
+      "title": "Microsoft Learn: Prepare your organization network for Teams",
+      "locators": [
+        "Network optimization: OptimizeWiFi; Bandwidth requirements: tráfico de audio/vídeo/presentación, subidas/bajadas y variabilidad"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "consulted_for_088"
+    },
+    "https://www.w3.org/TR/webrtc-stats/": {
+      "title": "W3C: Identifiers for WebRTC Statistics API",
+      "locators": [
+        "§1 Introduction; §8.4 RTCReceivedRtpStreamStats; §8.5 RTCInboundRtpStreamStats: packetsLost,jitter,frames,bytes y descarte de buffer"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "consulted_for_088"
+    },
+    "https://www.rfc-editor.org/rfc/rfc5481.html": {
+      "title": "IETF RFC5481: Packet Delay Variation Applicability Statement",
+      "locators": [
+        "§1 Introduction y §1.2: delay variation,IPDV/PDV, retardo y umbral de pérdida"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "consulted_for_088"
+    },
+    "https://www.rfc-editor.org/rfc/rfc7005.html": {
+      "title": "IETF: RFC7005, RTCP XR Report Block for De-Jitter Buffer Metric Reporting",
+      "locators": [
+        "§3 De-Jitter Buffer Operation; §3.2 fixed y §3.3 adaptive: retención, reproducción y descartes"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "consulted_for_088"
+    },
+    "https://www.rfc-editor.org/rfc/rfc8445.html": {
+      "title": "IETF RFC8445: Interactive Connectivity Establishment",
+      "locators": [
+        "§1 Introduction; §2 Overview of ICE, candidatos y comprobaciones de pares; §4 Terminology"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "reused_086_same_day"
+    },
+    "https://www.rfc-editor.org/rfc/rfc8489.html": {
+      "title": "IETF RFC8489: Session Traversal Utilities for NAT",
+      "locators": [
+        "Abstract; §1 Introduction; §2 Overview of Operation, Binding y dirección reflejada"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "reused_086_same_day"
+    },
+    "https://www.rfc-editor.org/rfc/rfc8656.html": {
+      "title": "IETF RFC8656: Traversal Using Relays around NAT",
+      "locators": [
+        "Abstract y §1 Introduction: servidor intermediario, dirección relayed y relación con ICE"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "reused_086_same_day"
+    },
+    "https://www.w3.org/TR/webrtc/": {
+      "title": "W3C: WebRTC, Real-Time Communication in Browsers",
+      "locators": [
+        "§4.2.2 RTCIceServer: URI/credenciales; §4.2.3 RTCIceTransportPolicy: relay/all y privacidad de direcciones"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "rechecked_additional_sections_for_088",
+      "note": "Se comprobó §4.2.3 para relay y all. Usar relay puede proteger las direcciones IP en casos concretos. La recomendación de revisar coste y dependencia no descarta un relay obligatorio deliberado."
+    },
+    "https://www.rfc-editor.org/rfc/rfc8866.html": {
+      "title": "IETF: RFC8866, Session Description Protocol",
+      "locators": [
+        "§1 descripción sin protocolo de transporte; §3.1 SIP y offer/answer; §2 Media Description"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "reused_086_same_day"
+    },
+    "https://www.rfc-editor.org/rfc/rfc7667.html": {
+      "title": "IETF RFC7667: RTP Topologies",
+      "locators": [
+        "§3.6.1 Media-Mixing Mixer; §3.7 Selective Forwarding Middlebox, especialmente distribución y composición en cliente"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "consulted_for_088"
+    },
+    "https://www.rfc-editor.org/rfc/rfc4123.html": {
+      "title": "RFC4123: SIP-H.323 Interworking Requirements",
+      "locators": [
+        "§1 Introduction; §2 Definitions; §3 Functionality within the SIP-H.323 IWF"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "reused_086_same_day"
+    },
+    "https://www.itu.int/dms_pubrec/itu-t/rec/h/T-REC-H.323-202203-I!!SUM-HTM-E.htm": {
+      "title": "ITU-T Recommendation H.323: Summary",
+      "locators": [
+        "Summary,párrafos1–3: entidades,multimedia sobre paquetes,ámbitos de red,configuraciones e interworking"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "consulted_for_088"
+    },
+    "https://www.rfc-editor.org/rfc/rfc8825.html": {
+      "title": "IETF RFC8825: Overview, Real-Time Protocols for Browser-Based Applications",
+      "locators": [
+        "§2.2 relaciónAPI/protocolo y endpoints; §3 Architecture and Functionality Groups, figuras1–2; §4–7 transporte, protección, formatos y gestión"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "reused_086_same_day"
+    },
+    "https://learn.microsoft.com/en-us/microsoftteams/network-planner": {
+      "title": "Microsoft Learn: Use the Network planner for Teams",
+      "locators": [
+        "Introducción; Build your plan; Create a report: ubicaciones,actividad/perfiles y capacidad de red"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "consulted_for_088"
+    },
+    "https://www.rfc-editor.org/rfc/rfc7874.html": {
+      "title": "IETF RFC7874: WebRTC Audio Codec and Processing Requirements",
+      "locators": [
+        "RFC7874 §5 Acoustic Echo Cancellation: control de eco,algoritmos y usos donde conviene desactivarlo; §3 codecs para contexto previo"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "reused_086_same_day"
+    },
+    "https://www.rfc-editor.org/rfc/rfc2474.html": {
+      "title": "IETF RFC2474: Definition of the DS Field in IPv4 and IPv6",
+      "locators": [
+        "Abstract y §3: DSCP seleccionaPHB, clasificación,políticas y remarcado entre dominios"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "consulted_for_088"
+    },
+    "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview": {
+      "title": "Microsoft Learn: What is Conditional Access?",
+      "locators": [
+        "Overview; Common signals; Common decisions: identidad,dispositivo,aplicación y riesgo para decidir acceso"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "reused_086_same_day"
+    },
+    "https://www.itu.int/rec/T-REC-H.323-202203-I/en": {
+      "title": "ITU-T H.323(03/2022): ficha de recomendación",
+      "locators": [
+        "Título,fecha de aprobación16-03-2022,Status In force y enlaceSummary"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "consulted_for_088"
+    },
+    "https://www.rfc-editor.org/rfc/rfc3261.html": {
+      "title": "IETF: RFC3261, Session Initiation Protocol",
+      "locators": [
+        "§1–3 control y ejemplo de llamada; §9 CANCEL; §10 registro; §11 OPTIONS; §13 INVITE; §15.1 BYE"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "reused_086_same_day"
+    },
+    "https://www.rfc-editor.org/rfc/rfc3550.html": {
+      "title": "IETF: RFC3550, RTP",
+      "locators": [
+        "§1 Introduction: secuencia, tiempo y falta de garantía QoS; §6 RTCP, feedback de distribución"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "reused_086_same_day"
+    }
+  },
+  "priority_question": {
+    "id": "MAN-GSI-P19-157",
+    "key": "C",
+    "active_sha256": "e097c092c6e7dee74bce03b4ce52133c106d79fb63a74ee3860993a9a36f8c54",
+    "proposed_sha256": "cfbeebdf9c2c40a9217cd379609d122ae5914c41ab73626666cb0204bd93853f",
+    "confirmed_ambiguity": "La pregunta activa pide un problema principal y las cuatro opciones describen problemas plausibles.",
+    "proposed_resolution": "Pide una conclusión defendible sobre gobierno. Solo C identifica la falta de reglas de finalidad, acceso y conservación, y pide definir un ciclo de vida.",
+    "review_by_option": {
+      "A": "Un coste de almacenamiento bajo no justifica por sí solo el plazo.",
+      "B": "El cifrado del tránsito no determina el acceso posterior ni el plazo.",
+      "C": "La gobernanza exige definir propósito, acceso, protección, conservación y destino del archivo.",
+      "D": "Delegar tareas al anfitrión no excluye las políticas corporativas."
+    }
+  },
+  "arithmetic": {
+    "base_mbps_per_direction": 75,
+    "with_margin_mbps_per_direction": 90,
+    "margin_percent": 20
+  },
+  "per_question": [
+    {
+      "id": "MAN-GSI-P19-136",
+      "key": "B",
+      "base_sha256": "9e12c113c791238cabfb70face3629df68a0a905f373874e8cee2699e274e359",
+      "proposed_sha256": "a8cb1f3d96652ec8dc9b36f468fee7bf282389da773a2b71f803b6a23367df72",
+      "sources": [
+        "https://learn.microsoft.com/en-us/microsoftteams/rooms/room-planning-guidance"
+      ]
+    },
+    {
+      "id": "MAN-GSI-P19-138",
+      "key": "C",
+      "base_sha256": "a724e47687d6d9bf1cd4e2ad9637bc2d205c6fc0edd206dd94334f16ad8fb4ff",
+      "proposed_sha256": "8ccd6d694bf2ed1f559afe9df5d8b4f039e5723e388da16b50e6d29b7890349f",
+      "sources": [
+        "https://www.boe.es/buscar/doc.php?id=DOUE-L-2016-80807",
+        "https://www.ncsc.gov.uk/guidance/secure-communication-principles"
+      ]
+    },
+    {
+      "id": "MAN-GSI-P19-139",
+      "key": "B",
+      "base_sha256": "b0ccaab9b4aab7376704d9cf0f0c899459ea775680f0ad4c639f6b273445c1d7",
+      "proposed_sha256": "ed8911b45676da75eb767f69cc828c5dc030d8fbf37ad04123fcf86870f21468",
+      "sources": [
+        "https://www.w3.org/TR/remote-meetings/"
+      ]
+    },
+    {
+      "id": "MAN-GSI-P19-140",
+      "key": "A",
+      "base_sha256": "7e16535b45575784838b4f9da9ed4b44bff5e0862d51aa4fe0b4b86331572618",
+      "proposed_sha256": "3d3995dde00c393ae50cd2a5b6f1a60c5342f9d087cf9b3d4e0025c3890d324d",
+      "sources": [
+        "https://learn.microsoft.com/en-us/microsoftteams/prepare-network",
+        "https://www.w3.org/TR/webrtc-stats/",
+        "https://www.rfc-editor.org/rfc/rfc5481.html",
+        "https://www.rfc-editor.org/rfc/rfc7005.html"
+      ]
+    },
+    {
+      "id": "MAN-GSI-P19-149",
+      "key": "D",
+      "base_sha256": "68d2524968490b08a9ab245ae580cee11e8ff9539922e25efc67742825024cbf",
+      "proposed_sha256": "b426a65fe531da8da6bc751586c2a7ce04d7c436c8bc98178c04072e4f2eb633",
+      "sources": [
+        "https://www.rfc-editor.org/rfc/rfc8445.html",
+        "https://www.rfc-editor.org/rfc/rfc8489.html",
+        "https://www.rfc-editor.org/rfc/rfc8656.html",
+        "https://www.w3.org/TR/webrtc/",
+        "https://www.rfc-editor.org/rfc/rfc8866.html"
+      ]
+    },
+    {
+      "id": "MAN-GSI-P19-150",
+      "key": "D",
+      "base_sha256": "f776bef540632bb0f8a5dd3a1d0453ded2d776562e1202ad643de1c0afe3828e",
+      "proposed_sha256": "10c937dbf8ad2554be218005df95af423723d03a1826db7e0aa0978de5a968a1",
+      "sources": [
+        "https://www.rfc-editor.org/rfc/rfc8656.html",
+        "https://www.rfc-editor.org/rfc/rfc8445.html",
+        "https://www.w3.org/TR/webrtc/"
+      ]
+    },
+    {
+      "id": "MAN-GSI-P19-151",
+      "key": "A",
+      "base_sha256": "2c0416267c4713748452d0f5e738340f4d901fd384a409b5a54e264ebc7f31df",
+      "proposed_sha256": "7f38117dcce57a7129acd45dcbdd22967f2b78d147752054a4a32c4cbac67e06",
+      "sources": [
+        "https://www.rfc-editor.org/rfc/rfc7667.html",
+        "https://www.rfc-editor.org/rfc/rfc8656.html"
+      ]
+    },
+    {
+      "id": "MAN-GSI-P19-152",
+      "key": "B",
+      "base_sha256": "5266da0d858fd92dbbbf22d5909c96474620db464e74165932c170507d5f9298",
+      "proposed_sha256": "fadb72c3438b4a089f36c0bafefc1ec55e4cfa29f0dd6f050b3883a03a8fa291",
+      "sources": [
+        "https://www.rfc-editor.org/rfc/rfc4123.html",
+        "https://www.itu.int/dms_pubrec/itu-t/rec/h/T-REC-H.323-202203-I!!SUM-HTM-E.htm",
+        "https://www.rfc-editor.org/rfc/rfc8825.html"
+      ]
+    },
+    {
+      "id": "MAN-GSI-P19-153",
+      "key": "C",
+      "base_sha256": "4e2126800c1601b3362f803936953b4408994d25be0605d06faf24544f597e78",
+      "proposed_sha256": "963fe6b40d7c608f03c32904782b429d6bf91ac8eb422304d08ad8d049504032",
+      "sources": [
+        "https://learn.microsoft.com/en-us/microsoftteams/prepare-network",
+        "https://learn.microsoft.com/en-us/microsoftteams/network-planner"
+      ]
+    },
+    {
+      "id": "MAN-GSI-P19-154",
+      "key": "C",
+      "base_sha256": "d95abbde0b741d9f971ed52398c3bcd002b287424c268f5d0a192764f305e36c",
+      "proposed_sha256": "d37b64176a9f62544b8b9c5b83fcf8f1d98fb9df278ea7dfd7e0e1453243a4d2",
+      "sources": [
+        "https://learn.microsoft.com/en-us/microsoftteams/prepare-network",
+        "https://learn.microsoft.com/en-us/microsoftteams/network-planner"
+      ]
+    },
+    {
+      "id": "MAN-GSI-P19-155",
+      "key": "A",
+      "base_sha256": "fc8271e9f5311b1d29ea3843eba83a4ba7b84bfc8d5a932b70b9d395f9a6b860",
+      "proposed_sha256": "8a6cb27c5604cf1f5b314f3a52b636d527e1c14725b58426fec93d2ae58cc165",
+      "sources": [
+        "https://learn.microsoft.com/en-us/microsoftteams/rooms/room-planning-guidance",
+        "https://www.rfc-editor.org/rfc/rfc7874.html"
+      ]
+    },
+    {
+      "id": "MAN-GSI-P19-156",
+      "key": "B",
+      "base_sha256": "2da02034288ced16c7b22285f41d88ed95dd7858c72817dc7b831920b30e82a7",
+      "proposed_sha256": "38f4c83531f4565766e483fc80f8db5457b60f02fd71193cf0f8deab6ff7752e",
+      "sources": [
+        "https://www.rfc-editor.org/rfc/rfc2474.html",
+        "https://learn.microsoft.com/en-us/microsoftteams/prepare-network"
+      ]
+    },
+    {
+      "id": "MAN-GSI-P19-157",
+      "key": "C",
+      "base_sha256": "e097c092c6e7dee74bce03b4ce52133c106d79fb63a74ee3860993a9a36f8c54",
+      "proposed_sha256": "cfbeebdf9c2c40a9217cd379609d122ae5914c41ab73626666cb0204bd93853f",
+      "sources": [
+        "https://www.boe.es/buscar/doc.php?id=DOUE-L-2016-80807",
+        "https://www.ncsc.gov.uk/guidance/secure-communication-principles"
+      ]
+    },
+    {
+      "id": "MAN-GSI-P19-158",
+      "key": "A",
+      "base_sha256": "bbad8de9e633e689327ee11e61868a2668d05d45ca2b78bad7cd7522676a1460",
+      "proposed_sha256": "7ab2f190456becae8b47b1fc7faacab2b434233b405d3ca47448cd29f4b31160",
+      "sources": [
+        "https://www.ncsc.gov.uk/guidance/secure-communication-principles",
+        "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
+      ]
+    },
+    {
+      "id": "MAN-GSI-P19-102",
+      "key": "A",
+      "base_sha256": "5b2a9ce1bdadc9ff0b96206b22cc791074269738b260defa76a7156a8e530ef1",
+      "proposed_sha256": "e52418c49adea3ca22bb99cea8810a378b4548ff3fa0bfed4b943ab40ec3ff86",
+      "sources": [
+        "https://www.itu.int/dms_pubrec/itu-t/rec/h/T-REC-H.323-202203-I!!SUM-HTM-E.htm",
+        "https://www.itu.int/rec/T-REC-H.323-202203-I/en",
+        "https://www.rfc-editor.org/rfc/rfc3261.html",
+        "https://www.rfc-editor.org/rfc/rfc3550.html"
+      ]
+    },
+    {
+      "id": "MAN-GSI-P19-108",
+      "key": "D",
+      "base_sha256": "4c40a23fa1e53ad6f89eb22234ec7a6da3326850fffcfec454ba31288c1da750",
+      "proposed_sha256": "ec3b50429fca5d8e91133974d87ff309a10047bcbc6f512460dfaed9c75844ff",
+      "sources": [
+        "https://www.rfc-editor.org/rfc/rfc8489.html",
+        "https://www.rfc-editor.org/rfc/rfc8445.html",
+        "https://www.rfc-editor.org/rfc/rfc8656.html",
+        "https://www.rfc-editor.org/rfc/rfc3261.html"
+      ]
+    },
+    {
+      "id": "MAN-GSI-P19-109",
+      "key": "D",
+      "base_sha256": "7b5b8e9391078f37a1811509e6d856dbb81cf15e52617c091792de0b4819c24b",
+      "proposed_sha256": "846ab10269a7038e4d12f61ee92d008c6277a6b385ed83248d0cbfe6247f1b2e",
+      "sources": [
+        "https://www.rfc-editor.org/rfc/rfc8656.html",
+        "https://www.rfc-editor.org/rfc/rfc8445.html",
+        "https://www.w3.org/TR/webrtc/",
+        "https://www.rfc-editor.org/rfc/rfc7667.html"
+      ]
+    },
+    {
+      "id": "MAN-GSI-P19-124",
+      "key": "A",
+      "base_sha256": "8486906e4b72854f0d2e2b085df6e19c3a1c0d432278f86e9ac5634b9858c27a",
+      "proposed_sha256": "7d1d09fc546a8fd7dbef31482df5a06037b3d354349c11e1490f698a76ec1692",
+      "sources": [
+        "https://learn.microsoft.com/en-us/microsoftteams/prepare-network",
+        "https://learn.microsoft.com/en-us/microsoftteams/network-planner",
+        "https://www.rfc-editor.org/rfc/rfc7667.html",
+        "https://www.rfc-editor.org/rfc/rfc3550.html",
+        "https://www.rfc-editor.org/rfc/rfc2474.html"
+      ]
+    },
+    {
+      "id": "MAN-GSI-P19-129",
+      "key": "C",
+      "base_sha256": "89d18c7f871cc6601ba75ec484ac901f7942c4f669906d80ae0486cfe139d6ec",
+      "proposed_sha256": "68396f226092057f78da3618083392fc48fdf1b3abed2f06b40afd23b5d68360",
+      "sources": [
+        "https://www.rfc-editor.org/rfc/rfc2474.html",
+        "https://learn.microsoft.com/en-us/microsoftteams/prepare-network"
+      ]
+    },
+    {
+      "id": "MAN-GSI-P19-137",
+      "key": "B",
+      "base_sha256": "dae4fb21f7b2a10412c7fc86834c74c0b36d97c68eb8ac32ac65220be19dc0fa",
+      "proposed_sha256": "458bf0ee3ed094b381b230b1e8ad6211f75965a650df3f3d1b44dba17fd7d633",
+      "sources": [
+        "https://www.ncsc.gov.uk/guidance/secure-communication-principles",
+        "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview",
+        "https://www.boe.es/buscar/doc.php?id=DOUE-L-2016-80807"
+      ]
+    }
+  ],
+  "unchanged_file_sha256": {
+    "data/questions-ai.json": "07775eed29f024de16e2fb2bcb16072a306300363a872b03ae373c82c7fac4bd",
+    "data/questions-manual.json": "608d81e43838e6812923a52284c7a632679a4380e9c570f0e72ff9c57f00f00b",
+    "data/questions-official.json": "bddf132ba2333d848982263593905206a87e8548179ee7443a8699385c984b9e",
+    "data/gsi-editorial-revisions.json": "72280f76ae11e5a760574840de6f789c09efb52595131c878b006f1e5f09baf3",
+    "content/question-reviews/lote-088.json": "7d59950de95cb7f10307430ce8b8e9cef8c0286b4461da0ae23c69ee9a1661bd",
+    "docs/GSI_REVISION_LOTE_088.md": "8295c797182e3047459c955ae273005676cf5dbdff49cab1a5c2e76f3bdeb7af",
+    "logs/gsi-editorial-088-preparation.json": "bc3c185ae373941c504220d46ec107bc609ba07a2cef2979792db9d6ce70d5a4"
+  },
+  "quality_before": {
+    "questions": 20,
+    "absolute_wording_cluster": 0,
+    "correct_unique_longest": 5,
+    "duplicate_options": 0,
+    "first_longest_correct": 5,
+    "identical_feedback": 0,
+    "length_ratio_1_5_to_2": 2,
+    "length_ratio_at_least_2": 1,
+    "longest_ties": 1,
+    "short_correct_feedback": 14,
+    "first_longest_accuracy": 25.0
+  },
+  "quality_proposed": {
+    "questions": 20,
+    "absolute_wording_cluster": 0,
+    "correct_unique_longest": 3,
+    "duplicate_options": 0,
+    "first_longest_correct": 3,
+    "identical_feedback": 0,
+    "length_ratio_1_5_to_2": 0,
+    "length_ratio_at_least_2": 0,
+    "longest_ties": 0,
+    "short_correct_feedback": 0,
+    "first_longest_accuracy": 15.0
+  },
+  "plan_progress": {
+    "total": 1762,
+    "reviewed": 40,
+    "pending": 1722,
+    "editorial_complete": false
+  },
+  "pending_priority_batches": {
+    "GSI-EDITORIAL-054": {
+      "batch_sha256": "6fe38eadb1b10b25e57a639122d14ac0d5743f49a31c093275297ae0ea28ccb5",
+      "verification": "logs/gsi-editorial-054-preapproval-2026-11-05.json"
+    },
+    "GSI-EDITORIAL-055": {
+      "batch_sha256": "989299c7fdc7e026d7c0020a9920e4d5cc973a1cf2b47e298b65dd16ea80c99d",
+      "verification": "logs/gsi-editorial-055-preapproval-2026-11-05.json"
+    },
+    "GSI-EDITORIAL-085": {
+      "batch_sha256": "39289ed0bf82f4e575973ecdec4af06c0c7a2a945efdbcafc23df6c1aa883150",
+      "verification": "logs/gsi-editorial-085-preapproval-2026-11-05.json"
+    },
+    "GSI-EDITORIAL-086": {
+      "batch_sha256": "7619aeaf466bd53e475220f028ce69aa8f91d5ffeb675bd7a3341bf315ac5d83",
+      "verification": "logs/gsi-editorial-086-preapproval-2026-11-05.json"
+    },
+    "GSI-EDITORIAL-088": {
+      "batch_sha256": "5b253178d587affe7908f84f447487b88e0977b309222b86827a60378e1e6668",
+      "verification": "logs/gsi-editorial-088-preapproval-2026-11-05.json"
+    }
+  }
+}

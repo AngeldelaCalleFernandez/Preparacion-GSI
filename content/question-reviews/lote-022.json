@@ -1,0 +1,3694 @@
+{
+  "version": 1,
+  "id": "GSI-EDITORIAL-022",
+  "prepared_at": "2026-10-27",
+  "baseline_commit": "e3e20ab879518c899806a70575eead28b3b35e6f",
+  "items": [
+    {
+      "id": "MAN-GSI-P17-016",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "a8ca1dd986d2ab4700111ad53dca963c4ed4dcedc5f22ec0ac69df0effe53dfd",
+      "content_sha256": "eef4cc057193837ecb7713fe067b940269ed12f6924853003742f0d59d23dcc5",
+      "before": {
+        "id": "MAN-GSI-P17-016",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué diferencia conceptual existe entre arquitectura de 32 y 64 bits?",
+        "options": [
+          {
+            "id": "A",
+            "text": "La arquitectura de 64 bits obliga a ejecutar las aplicaciones en cloud porque ningún equipo local puede direccionar su espacio de memoria."
+          },
+          {
+            "id": "B",
+            "text": "Entre otros aspectos, cambia el tamaño natural de registros/direcciones y la capacidad de direccionamiento de memoria."
+          },
+          {
+            "id": "C",
+            "text": "Un procesador de 32 bits no puede ejecutar ningún sistema operativo ni utilizar memoria virtual, protección o multitarea preventiva."
+          },
+          {
+            "id": "D",
+            "text": "La arquitectura de 64 bits elimina todos los niveles de caché al poder direccionar directamente una cantidad mayor de memoria principal."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "El ancho de palabra/direcciones afecta capacidad y ABI, no determina por sí solo cloud ni SO.",
+          "incorrect": "Según el solucionario: El ancho de palabra/direcciones afecta capacidad y ABI, no determina por sí solo cloud ni SO."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 16; índice nativo 3320",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 16; índice nativo 7282",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 16; índice nativo 3320",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-016",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Al comparar x86 de 32 bits con su extensión x64, ¿qué diferencia arquitectónica es correcta?",
+        "options": [
+          {
+            "id": "A",
+            "text": "El paso a 64 bits duplica por sí mismo la velocidad de cualquier programa."
+          },
+          {
+            "id": "B",
+            "text": "Se amplían registros y capacidad de direccionamiento; los límites efectivos dependen del diseño."
+          },
+          {
+            "id": "C",
+            "text": "La etiqueta de 64 bits fija también en 64 bits el tamaño de todo dato del programa."
+          },
+          {
+            "id": "D",
+            "text": "El cambio afecta al bus externo, conservando registros y direcciones de 32 bits."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "En la extensión x86 a x64 se amplían registros generales y capacidades de direccionamiento, con efectos en ABI y punteros. La etiqueta de 64 bits no significa usar los 64 bits para todas las direcciones físicas o virtuales, ni que todo entero mida 64 bits. El hardware, el modo de ejecución y el SO imponen límites efectivos; tampoco garantizan duplicar el rendimiento.",
+          "incorrect": "Contrasta el mecanismo y las condiciones descritos en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "El rendimiento depende de carga, código, memoria y plataforma. La anchura de registros no acredita una aceleración universal de dos veces.",
+            "C": "La ABI distingue tipos, registros y punteros. Ampliar el modelo no transforma cada dato, por ejemplo un byte, en un objeto de 64 bits.",
+            "D": "x64 amplía registros generales y capacidad de direccionamiento, no solo una conexión externa que dejase ambos elementos sin cambios."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 16; índice nativo 3320",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 16; índice nativo 7282",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Microsoft: x64 architecture",
+              "url": "https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/x64-architecture",
+              "locator": "Introducción, Registers y Addressing modes: extensión x86, registros y direccionamiento",
+              "version": "Página consultada; ejemplo x86/x64, sin generalizar anchos efectivos o ABI a toda arquitectura",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "Microsoft: Virtual Address Space (Programming Guide for 64-bit Windows)",
+              "url": "https://learn.microsoft.com/en-us/windows/win32/winprog64/virtual-address-space",
+              "locator": "Párrafos iniciales: espacio virtual, punteros de 64 bits y limitación opcional de asignaciones",
+              "version": "Actualización 10-12-2020; ejemplo Windows, sin fijar límites actuales de RAM física",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-022"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 16; índice nativo 3320",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar anchura y direccionamiento, clave B; acotar al ejemplo x86/x64 y distinguir límites efectivos, tipos y rendimiento."
+      ],
+      "references": [
+        {
+          "title": "Microsoft: x64 architecture",
+          "url": "https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/x64-architecture",
+          "locator": "Introducción, Registers y Addressing modes: extensión x86, registros y direccionamiento",
+          "version": "Página consultada; ejemplo x86/x64, sin generalizar anchos efectivos o ABI a toda arquitectura",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "Microsoft: Virtual Address Space (Programming Guide for 64-bit Windows)",
+          "url": "https://learn.microsoft.com/en-us/windows/win32/winprog64/virtual-address-space",
+          "locator": "Párrafos iniciales: espacio virtual, punteros de 64 bits y limitación opcional de asignaciones",
+          "version": "Actualización 10-12-2020; ejemplo Windows, sin fijar límites actuales de RAM física",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-018",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "3660bb0043b5faaaad5cdd37cf613c09bc5ea19d4131e561b5393ee7e0f4ff34",
+      "content_sha256": "1c47b40ff66bbeee38c51584dd2f96348848c98b05d9b744b954076a2081f497",
+      "before": {
+        "id": "MAN-GSI-P17-018",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "En un servidor con varios sockets, ¿qué problema puede aparecer si una tarea accede constantemente a memoria remota en una topología NUMA?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Pérdida automática de la licencia del sistema operativo."
+          },
+          {
+            "id": "B",
+            "text": "Conversión del sistema en una arquitectura SISD."
+          },
+          {
+            "id": "C",
+            "text": "Mayor latencia y menor rendimiento por mala localidad de memoria."
+          },
+          {
+            "id": "D",
+            "text": "Eliminación de la caché de CPU."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "En NUMA la localidad importa: memoria local suele ser más rápida que memoria asociada a otro nodo NUMA.",
+          "incorrect": "Según el solucionario: En NUMA la localidad importa: memoria local suele ser más rápida que memoria asociada a otro nodo NUMA."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 18; índice nativo 3507",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 18; índice nativo 8092",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 18; índice nativo 3507",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-018",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "En un servidor con varios sockets, ¿qué problema puede aparecer si una tarea accede constantemente a memoria remota en una topología NUMA?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Disminución de latencia al convertirse la memoria remota en una caché del procesador."
+          },
+          {
+            "id": "B",
+            "text": "Fallo de página a disco en cada acceso, aunque los datos residan en RAM remota."
+          },
+          {
+            "id": "C",
+            "text": "Mayor latencia y posible pérdida de rendimiento por mala localidad de memoria."
+          },
+          {
+            "id": "D",
+            "text": "Latencia uniforme, pues todas las regiones de RAM están a la misma distancia."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "En NUMA el coste de acceso depende de la relación entre CPU y nodo de memoria. Acceder repetidamente a RAM de otro nodo puede aumentar latencia y tráfico de interconexión frente a memoria local. No implica por sí mismo un fallo de página a disco. La magnitud depende de la topología y carga; conviene medir localidad y colocación, sin imponer afinidad fija como solución universal.",
+          "incorrect": "Contrasta el mecanismo y las condiciones descritos en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "La memoria de otro nodo sigue siendo RAM, no se convierte por estar remota en caché local ni obtiene automáticamente menor latencia.",
+            "B": "Distancia NUMA y paginación a disco son fenómenos distintos. El caso plantea datos residentes en RAM, accesibles por la interconexión.",
+            "D": "La no uniformidad del acceso es precisamente la característica de NUMA. Coherencia de caché no equivale a igual distancia o latencia."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 18; índice nativo 3507",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 18; índice nativo 8092",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Microsoft: NUMA Architecture",
+              "url": "https://learn.microsoft.com/en-us/windows/win32/procthread/numa-support",
+              "locator": "Introducción, primeros cuatro párrafos: nodos, memoria próxima/remota y localidad de planificación/asignación",
+              "version": "Solo fundamento de localidad; no se prescribe afinidad fija ni configuración de grupos o registro",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-022"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 18; índice nativo 3507",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar microcaso NUMA y clave C; sustituir distractores ajenos por caché, paginación y acceso uniforme."
+      ],
+      "references": [
+        {
+          "title": "Microsoft: NUMA Architecture",
+          "url": "https://learn.microsoft.com/en-us/windows/win32/procthread/numa-support",
+          "locator": "Introducción, primeros cuatro párrafos: nodos, memoria próxima/remota y localidad de planificación/asignación",
+          "version": "Solo fundamento de localidad; no se prescribe afinidad fija ni configuración de grupos o registro",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-046",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "f5594df0a3b3fb697fcc41d3d72a283f93189b43dfbd9d07a0eba5d13f856ec9",
+      "content_sha256": "0669b17ccd5b7e338268126a51ed44c40a4585a7654d270904a0f37790df309d",
+      "before": {
+        "id": "MAN-GSI-P17-046",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué diferencia conceptual hay entre alta disponibilidad y tolerancia a fallos?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Son siempre exactamente lo mismo."
+          },
+          {
+            "id": "B",
+            "text": "La tolerancia a fallos busca seguir funcionando pese al fallo; HA puede aceptar una conmutación o interrupción mínima."
+          },
+          {
+            "id": "C",
+            "text": "HA solo se aplica a desarrollo y tolerancia a fallos a redes."
+          },
+          {
+            "id": "D",
+            "text": "Tolerancia a fallos exige una sola copia de cada componente."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "La tolerancia a fallos suele implicar continuidad más inmediata que un esquema de failover tradicional.",
+          "incorrect": "Según el solucionario: La tolerancia a fallos suele implicar continuidad más inmediata que un esquema de failover tradicional."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 46; índice nativo 5749",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 46; índice nativo 17277",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 46; índice nativo 5749",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-046",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Para un conjunto definido de fallos, ¿qué comparación describe mejor alta disponibilidad (HA) y tolerancia a fallos?",
+        "options": [
+          {
+            "id": "A",
+            "text": "HA y tolerancia a fallos son categorías incompatibles que no pueden coexistir."
+          },
+          {
+            "id": "B",
+            "text": "La tolerancia busca continuidad ante fallos previstos; HA puede admitir una breve recuperación."
+          },
+          {
+            "id": "C",
+            "text": "La tolerancia se acredita con copias históricas, sin capacidad operativa alternativa."
+          },
+          {
+            "id": "D",
+            "text": "HA se define por duplicar equipos, sin considerar interrupciones del servicio."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "La tolerancia a fallos persigue mantener la operación ante un conjunto definido de fallos, con la continuidad especificada. Alta disponibilidad busca reducir indisponibilidad y puede incluir conmutación o recuperación con una interrupción breve. Son objetivos y técnicas relacionados, con terminología y garantías dependientes del contexto; no categorías excluyentes ni garantía ante cualquier fallo. La redundancia debe funcionar a nivel de servicio.",
+          "incorrect": "Contrasta el mecanismo y las condiciones descritos en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Una solución puede combinar objetivos de disponibilidad y técnicas tolerantes a fallos. No hay una incompatibilidad técnica entre ambos.",
+            "C": "Las copias permiten recuperar estados históricos, pero no acreditan por sí mismas seguir prestando el servicio durante un fallo.",
+            "D": "Duplicar equipos es un medio posible. La disponibilidad se evalúa sobre el servicio y su indisponibilidad, no por contar componentes."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 46; índice nativo 5749",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 46; índice nativo 17277",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "AWS: Fault tolerance and fault isolation",
+              "url": "https://docs.aws.amazon.com/whitepapers/latest/availability-and-beyond-improving-resilience/fault-tolerance-and-fault-isolation.html",
+              "locator": "Primeros párrafos de Fault tolerance and fault isolation; Static stability: continuidad, capacidad redundante y alcance del fallo",
+              "version": "Whitepaper latest consultado; no se adopta una separación terminológica universal HA/FT",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "Microsoft Learn: Business continuity, high availability, and disaster recovery",
+              "url": "https://learn.microsoft.com/en-us/azure/reliability/concept-business-continuity-high-availability-disaster-recovery",
+              "locator": "High availability, Fault tolerance, Scalability and elasticity; Disaster recovery plans, Backups y Testing and drills: objetivos, reservas de capacidad, recuperación y pruebas",
+              "version": "Actualización 01-06-2026; clasificación HA/DR según riesgos y carga, sin umbral universal de disponibilidad; consulta real el 27-10-2026",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-022"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 46; índice nativo 5749",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar comparación HA/tolerancia y clave B; hacer explícitos alcance y solapamiento, sin una separación absoluta de etiquetas."
+      ],
+      "references": [
+        {
+          "title": "AWS: Fault tolerance and fault isolation",
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/availability-and-beyond-improving-resilience/fault-tolerance-and-fault-isolation.html",
+          "locator": "Primeros párrafos de Fault tolerance and fault isolation; Static stability: continuidad, capacidad redundante y alcance del fallo",
+          "version": "Whitepaper latest consultado; no se adopta una separación terminológica universal HA/FT",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "Microsoft Learn: Business continuity, high availability, and disaster recovery",
+          "url": "https://learn.microsoft.com/en-us/azure/reliability/concept-business-continuity-high-availability-disaster-recovery",
+          "locator": "High availability, Fault tolerance, Scalability and elasticity; Disaster recovery plans, Backups y Testing and drills: objetivos, reservas de capacidad, recuperación y pruebas",
+          "version": "Actualización 01-06-2026; clasificación HA/DR según riesgos y carga, sin umbral universal de disponibilidad; consulta real el 27-10-2026",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-050",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "bb0fbcd46d1ad8ea35891a8e25ea10476171072f9cabe67708d9082b86c8f766",
+      "content_sha256": "7f4220b3bf37c566739a3d48c5fd838a8450c2845cc599db9bfd0f5621afdeb1",
+      "before": {
+        "id": "MAN-GSI-P17-050",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué es un hipervisor de tipo 1?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Una aplicación que siempre necesita un SO anfitrión de escritorio."
+          },
+          {
+            "id": "B",
+            "text": "Un contenedor OCI."
+          },
+          {
+            "id": "C",
+            "text": "Un controlador de dominio."
+          },
+          {
+            "id": "D",
+            "text": "Un hipervisor que se ejecuta directamente sobre el hardware o con una capa mínima especializada."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Tipo 1 se asocia a bare metal; tipo 2 se ejecuta sobre un SO host.",
+          "incorrect": "Según el solucionario: Tipo 1 se asocia a bare metal; tipo 2 se ejecuta sobre un SO host."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 50; índice nativo 6062",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 50; índice nativo 18554",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 50; índice nativo 6062",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-050",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué caracteriza a un hipervisor de tipo 1 en la clasificación bare metal/alojado?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Un hipervisor alojado como aplicación sobre un sistema operativo anfitrión generalista."
+          },
+          {
+            "id": "B",
+            "text": "Un entorno de procesos aislados que comparte el núcleo del sistema anfitrión."
+          },
+          {
+            "id": "C",
+            "text": "Un programa que emula una CPU para ejecutar una aplicación sin virtualizar un SO."
+          },
+          {
+            "id": "D",
+            "text": "Una capa de virtualización que controla el hardware bajo los sistemas operativos invitados."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "El tipo 1 o bare metal sitúa el hipervisor sobre el hardware, bajo los sistemas operativos invitados. Puede apoyarse en una partición o entorno de gestión con controladores, como muestra Hyper-V; su existencia no lo convierte por sí sola en tipo 2. La clasificación describe la posición de la capa, no que toda gestión y E/S deban residir dentro de un único componente mínimo.",
+          "incorrect": "Contrasta el mecanismo y las condiciones descritos en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Describe el esquema alojado tipo 2. El hipervisor depende de un SO anfitrión generalista bajo esa capa.",
+            "B": "Describe aislamiento mediante contenedores de procesos. Compartir el núcleo no es la definición de hipervisor bare metal.",
+            "C": "La emulación para una aplicación no caracteriza la ubicación de un hipervisor que proporciona hardware virtual a sistemas invitados."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 50; índice nativo 6062",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 50; índice nativo 18554",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Oracle VirtualBox User Guide: About Oracle VirtualBox",
+              "url": "https://docs.oracle.com/en/virtualization/virtualbox/7.2/user/Introduction.html",
+              "locator": "Oracle VirtualBox Components y Features, Portability y Virtual Hardware: host, guest OS, VM y hosted/type 2 frente a bare metal/type 1",
+              "version": "Guía rama 7.2 consultada; fundamentos, no recomendación de instalación ni compatibilidades o límites operativos; consulta real el 27-10-2026",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "Microsoft: Hyper-V Architecture",
+              "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/architecture",
+              "locator": "Introducción; Root and child partitions; Glossary, Hypervisor: capa sobre hardware y partición de gestión",
+              "version": "Actualización 21-01-2026; URL final tras redirección; no se equipara partición raíz con hipervisor alojado tipo 2",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-022"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 50; índice nativo 6062",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar tipo 1 y clave D; comparar capas y matizar partición de gestión, sin confundir interfaz Windows con tipo 2."
+      ],
+      "references": [
+        {
+          "title": "Oracle VirtualBox User Guide: About Oracle VirtualBox",
+          "url": "https://docs.oracle.com/en/virtualization/virtualbox/7.2/user/Introduction.html",
+          "locator": "Oracle VirtualBox Components y Features, Portability y Virtual Hardware: host, guest OS, VM y hosted/type 2 frente a bare metal/type 1",
+          "version": "Guía rama 7.2 consultada; fundamentos, no recomendación de instalación ni compatibilidades o límites operativos; consulta real el 27-10-2026",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "Microsoft: Hyper-V Architecture",
+          "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/architecture",
+          "locator": "Introducción; Root and child partitions; Glossary, Hypervisor: capa sobre hardware y partición de gestión",
+          "version": "Actualización 21-01-2026; URL final tras redirección; no se equipara partición raíz con hipervisor alojado tipo 2",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-057",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "51891fdcf8ec885d8daf0169dd3e4d0c1ca90db082b9d2f867bf758965e73a3e",
+      "content_sha256": "695ab6b508fe63387800c22fc25e058bcda3c0d89af615d0b3ead4eb031b02c7",
+      "before": {
+        "id": "MAN-GSI-P17-057",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué función tiene un balanceador de carga?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Hacer copias de seguridad del código fuente."
+          },
+          {
+            "id": "B",
+            "text": "Sustituir el sistema operativo invitado."
+          },
+          {
+            "id": "C",
+            "text": "Convertir automáticamente una app en microservicios."
+          },
+          {
+            "id": "D",
+            "text": "Distribuir peticiones o conexiones entre varias instancias según una política."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "El balanceo ayuda a rendimiento y disponibilidad, pero no resuelve por sí solo todos los SPOF.",
+          "incorrect": "Según el solucionario: El balanceo ayuda a rendimiento y disponibilidad, pero no resuelve por sí solo todos los SPOF."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 57; índice nativo 6562",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 57; índice nativo 20706",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 57; índice nativo 6562",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-057",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué función tiene un balanceador de carga?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Aumentar o reducir el número de instancias según la demanda medida."
+          },
+          {
+            "id": "B",
+            "text": "Replicar los cambios de datos entre las instancias del servicio."
+          },
+          {
+            "id": "C",
+            "text": "Recoger métricas del servicio y notificar si superan umbrales."
+          },
+          {
+            "id": "D",
+            "text": "Distribuir peticiones o conexiones entre destinos según una política."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "El balanceador decide a qué destino enviar tráfico según la política y capacidades configuradas. Los controles de salud pueden ayudar a evitar destinos no disponibles. Crear instancias corresponde a escalado y replicar estado a otros mecanismos. Balancear no asegura por sí mismo consistencia, capacidad suficiente o eliminación de todos los puntos únicos de fallo; también deben revisarse sus dependencias y diseño.",
+          "incorrect": "Contrasta el mecanismo y las condiciones descritos en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Describe escalado de capacidad. Un balanceador puede integrarse con él, pero distribuir tráfico y crear o retirar instancias son funciones diferentes.",
+            "B": "La replicación mantiene copias o estado de datos. El reparto de peticiones no sincroniza automáticamente la información entre destinos.",
+            "C": "Monitorizar y alertar aporta observación. Sin seleccionar un destino para el tráfico no realiza la función de balanceo."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 57; índice nativo 6562",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 57; índice nativo 20706",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "AWS: What is Elastic Load Balancing?",
+              "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/what-is-load-balancing.html",
+              "locator": "Introducción, Load balancer benefits y Related services: reparto de tráfico, health checks y distinción de Auto Scaling",
+              "version": "Guía latest; ejemplo ELB, sin universalizar políticas, garantías o comportamiento cuando todos los destinos fallan",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-022"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 57; índice nativo 6562",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar balanceo y clave D; comparar escalado, replicación y observabilidad, sin distractores ajenos."
+      ],
+      "references": [
+        {
+          "title": "AWS: What is Elastic Load Balancing?",
+          "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/what-is-load-balancing.html",
+          "locator": "Introducción, Load balancer benefits y Related services: reparto de tráfico, health checks y distinción de Auto Scaling",
+          "version": "Guía latest; ejemplo ELB, sin universalizar políticas, garantías o comportamiento cuando todos los destinos fallan",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-058",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "2f15a5f220bfad728671d272e8adebf534e502344c1a73688d923fccd2d1f05d",
+      "content_sha256": "d531cfe85d5a56a81b60072706f872bbc5a8c8fca9701945179001d66211fb6b",
+      "before": {
+        "id": "MAN-GSI-P17-058",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué debe acompañar a una estrategia de failover para que sea confiable?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Detección de fallo, estado replicado o recuperable, pruebas y procedimiento de retorno/operación."
+          },
+          {
+            "id": "B",
+            "text": "Disponer solo de un diagrama del componente alternativo, sin realizar pruebas de conmutación ni definir cómo recuperar el servicio principal."
+          },
+          {
+            "id": "C",
+            "text": "Mantener una única copia del componente crítico y confiar en que pueda reconstruirse después del fallo sin estado replicado ni respaldo."
+          },
+          {
+            "id": "D",
+            "text": "Desactivar la monitorización para reducir alertas y efectuar el cambio manualmente cuando los usuarios comuniquen la indisponibilidad."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "La redundancia no sirve si la conmutación no está probada o el estado no es coherente.",
+          "incorrect": "Según el solucionario: La redundancia no sirve si la conmutación no está probada o el estado no es coherente."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 58; índice nativo 6665",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 58; índice nativo 21035",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 58; índice nativo 6665",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-058",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Un servicio con estado dispone de un entorno alternativo para conmutar ante fallo. ¿Qué conjunto permite comprobar que la estrategia es operativa?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Detección y activación, estado recuperable coherente, pruebas y operación posterior definida."
+          },
+          {
+            "id": "B",
+            "text": "Ampliación del servidor alternativo sin comprobar datos ni ruta de acceso al servicio."
+          },
+          {
+            "id": "C",
+            "text": "Replicación de datos sin ensayar arranque, dependencias o criterios de conmutación."
+          },
+          {
+            "id": "D",
+            "text": "Medición continua de carga sin definir quién activa el alternativo ni cómo hacerlo."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Una conmutación de un servicio con estado debe poder activarse ante criterios conocidos, disponer de estado coherente o recuperable y restaurar también dependencias y acceso. Las pruebas contrastan el servicio y sus objetivos, no solo el encendido de una máquina. Después se verifica la operación y se prepara el retorno si procede; no se exige volver inmediatamente a un entorno que sigue fallando.",
+          "incorrect": "Contrasta el mecanismo y las condiciones descritos en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "Tener capacidad de cómputo no demuestra que datos y conectividad permitan reanudar el servicio en condiciones correctas.",
+            "C": "La réplica cubre una parte. Arranque, identidades, red, dependencias y activación también pueden impedir que el servicio funcione.",
+            "D": "Medir carga no establece por sí solo un procedimiento de recuperación ni responsables o condiciones para ejecutarlo."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 58; índice nativo 6665",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 58; índice nativo 21035",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Microsoft: Architecture strategies for disaster recovery",
+              "url": "https://learn.microsoft.com/en-us/azure/well-architected/reliability/disaster-recovery",
+              "locator": "RE:09; Define disaster thresholds; Design recovery-aware architecture; Prepare infrastructure and recovery procedures; Practice with regular drills: activación, estado, dependencias, pruebas y failback",
+              "version": "Guía en línea; se aprovechan principios operativos, sin equiparar todo failover con desastre regional ni imponer retorno inmediato",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "AWS: Fault tolerance and fault isolation",
+              "url": "https://docs.aws.amazon.com/whitepapers/latest/availability-and-beyond-improving-resilience/fault-tolerance-and-fault-isolation.html",
+              "locator": "Primeros párrafos de Fault tolerance and fault isolation; Static stability: continuidad, capacidad redundante y alcance del fallo",
+              "version": "Whitepaper latest consultado; no se adopta una separación terminológica universal HA/FT",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-022"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 58; índice nativo 6665",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar estrategia fiable de failover y clave A; contextualizar servicio con estado y distinguir requisitos completos de medios parciales."
+      ],
+      "references": [
+        {
+          "title": "Microsoft: Architecture strategies for disaster recovery",
+          "url": "https://learn.microsoft.com/en-us/azure/well-architected/reliability/disaster-recovery",
+          "locator": "RE:09; Define disaster thresholds; Design recovery-aware architecture; Prepare infrastructure and recovery procedures; Practice with regular drills: activación, estado, dependencias, pruebas y failback",
+          "version": "Guía en línea; se aprovechan principios operativos, sin equiparar todo failover con desastre regional ni imponer retorno inmediato",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "AWS: Fault tolerance and fault isolation",
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/availability-and-beyond-improving-resilience/fault-tolerance-and-fault-isolation.html",
+          "locator": "Primeros párrafos de Fault tolerance and fault isolation; Static stability: continuidad, capacidad redundante y alcance del fallo",
+          "version": "Whitepaper latest consultado; no se adopta una separación terminológica universal HA/FT",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-081",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "1a33f54a396f3358762b857f165ef2f89ee2eeb088fc62fd818514bb6a03144f",
+      "content_sha256": "e9450d9e8256e700550e407a85b72f587e8dca4fdeca1a47eafc62c2310bd4d0",
+      "before": {
+        "id": "MAN-GSI-P17-081",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Cuál es la función general de un sistema operativo?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Compilar obligatoriamente todo el código fuente."
+          },
+          {
+            "id": "B",
+            "text": "Sustituir todas las aplicaciones de negocio."
+          },
+          {
+            "id": "C",
+            "text": "Actuar únicamente como firewall."
+          },
+          {
+            "id": "D",
+            "text": "Gestionar hardware y ofrecer abstracciones/servicios a aplicaciones y usuarios."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "El SO gestiona procesos, memoria, E/S, ficheros, usuarios, protección y comunicaciones.",
+          "incorrect": "Según el solucionario: El SO gestiona procesos, memoria, E/S, ficheros, usuarios, protección y comunicaciones."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 81; índice nativo 8571",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 81; índice nativo 28818",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 81; índice nativo 8571",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-081",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Cuál es la función general de un sistema operativo?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Transformar programas fuente en ejecutables mediante reglas de compilación."
+          },
+          {
+            "id": "B",
+            "text": "Coordinar funcionalidades de negocio y los datos propios de una aplicación."
+          },
+          {
+            "id": "C",
+            "text": "Ofrecer herramientas interactivas de edición y construcción de programas."
+          },
+          {
+            "id": "D",
+            "text": "Gestionar recursos y ofrecer abstracciones y servicios a programas y usuarios."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "El SO arbitra recursos como CPU, memoria, dispositivos y almacenamiento, y ofrece abstracciones e interfaces para utilizarlos. Procesos, memoria virtual, archivos y mecanismos de protección facilitan ejecutar aplicaciones compartiendo la máquina. Un compilador, una aplicación de negocio o un entorno de desarrollo utilizan esos servicios y tienen responsabilidades diferentes, aunque puedan distribuirse junto al sistema.",
+          "incorrect": "Contrasta el mecanismo y las condiciones descritos en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "La compilación es función de un compilador. No define la gestión general de recursos e interfaces del SO.",
+            "B": "La lógica funcional de una aplicación utiliza los servicios del sistema, pero no sustituye su responsabilidad general sobre recursos.",
+            "C": "Describe un entorno de desarrollo. Edición y construcción de software no son la función general que define al SO."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 81; índice nativo 8571",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 81; índice nativo 28818",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Arpaci-Dusseau: OSTEP, Introduction to Operating Systems",
+              "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/intro.pdf",
+              "locator": "Capítulo 2, introducción pp. 1–2 y 2.5 Design Goals, p. 11: gestión, abstracciones e interfaces",
+              "version": "PDF de autores, versión 1.10 impresa; no se infiere fecha de publicación de copyright",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-022"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 81; índice nativo 8571",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar función general y clave D; comparar responsabilidades de software reales y evitar firewall como único papel."
+      ],
+      "references": [
+        {
+          "title": "Arpaci-Dusseau: OSTEP, Introduction to Operating Systems",
+          "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/intro.pdf",
+          "locator": "Capítulo 2, introducción pp. 1–2 y 2.5 Design Goals, p. 11: gestión, abstracciones e interfaces",
+          "version": "PDF de autores, versión 1.10 impresa; no se infiere fecha de publicación de copyright",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-082",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "b3a54e5053fe35ec825da7f8a0062256b6eddf5904cbaa892fb3eacf215b30f3",
+      "content_sha256": "ab35b8ce0e960ef3ff4d20d9586c91bd95b8b55c58cbf15021d9fd06eecd9fba",
+      "before": {
+        "id": "MAN-GSI-P17-082",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué es un proceso?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Una dirección IP."
+          },
+          {
+            "id": "B",
+            "text": "Un programa en ejecución con espacio de direcciones, estado y recursos asociados."
+          },
+          {
+            "id": "C",
+            "text": "Un archivo de configuración sin ejecutar."
+          },
+          {
+            "id": "D",
+            "text": "Un núcleo físico de CPU."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "El proceso es una instancia de ejecución gestionada por el SO.",
+          "incorrect": "Según el solucionario: El proceso es una instancia de ejecución gestionada por el SO."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 82; índice nativo 8667",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 82; índice nativo 29145",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 82; índice nativo 8667",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-082",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué es un proceso?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Un archivo ejecutable que contiene instrucciones guardadas antes de iniciarse."
+          },
+          {
+            "id": "B",
+            "text": "Una instancia de programa en ejecución, con estado y recursos administrados."
+          },
+          {
+            "id": "C",
+            "text": "Una secuencia de ejecución que comparte los recursos de su proceso contenedor."
+          },
+          {
+            "id": "D",
+            "text": "Un procesador lógico que el hardware presenta al planificador del sistema."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Un proceso es una instancia de ejecución con estado y recursos gestionados por el SO. Incluye un espacio de direcciones y estructuras de control; puede contener varios hilos. El mismo ejecutable puede originar distintos procesos. Estar en ejecución en este sentido no exige ocupar CPU en todo momento: el proceso puede estar preparado o bloqueado y seguir existiendo como instancia.",
+          "incorrect": "Contrasta el mecanismo y las condiciones descritos en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Describe el programa almacenado. Sin la instancia y su estado de ejecución no constituye por ese hecho un proceso.",
+            "C": "Describe un hilo dentro de un proceso. No el contenedor de recursos y espacio de direcciones que se pregunta.",
+            "D": "Un procesador lógico es un recurso de ejecución presentado por hardware. El proceso es una entidad software gestionada."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 82; índice nativo 8667",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 82; índice nativo 29145",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Arpaci-Dusseau: OSTEP, The Abstraction: The Process",
+              "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-intro.pdf",
+              "locator": "Capítulo 4: 4.1 The Abstraction: A Process, pp. 2–3; 4.4 Process States, pp. 5–7; separación de política/mecanismo p. 3",
+              "version": "PDF de autores, versión 1.10 impresa; modelo didáctico simplificado",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "Microsoft: About Processes and Threads",
+              "url": "https://learn.microsoft.com/en-us/windows/win32/procthread/about-processes-and-threads",
+              "locator": "Primeros cuatro párrafos: recursos del proceso, hilo planificable, contexto propio, memoria compartida y multitarea",
+              "version": "Actualización 14-07-2025; se usan fundamentos, sin generalizar detalles de UMS o fibras",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-022"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 82; índice nativo 8667",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar proceso y clave B; contrastar programa, hilo y CPU lógica, distinguiendo instancia activa de estado running."
+      ],
+      "references": [
+        {
+          "title": "Arpaci-Dusseau: OSTEP, The Abstraction: The Process",
+          "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-intro.pdf",
+          "locator": "Capítulo 4: 4.1 The Abstraction: A Process, pp. 2–3; 4.4 Process States, pp. 5–7; separación de política/mecanismo p. 3",
+          "version": "PDF de autores, versión 1.10 impresa; modelo didáctico simplificado",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "Microsoft: About Processes and Threads",
+          "url": "https://learn.microsoft.com/en-us/windows/win32/procthread/about-processes-and-threads",
+          "locator": "Primeros cuatro párrafos: recursos del proceso, hilo planificable, contexto propio, memoria compartida y multitarea",
+          "version": "Actualización 14-07-2025; se usan fundamentos, sin generalizar detalles de UMS o fibras",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-083",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "89ad9b176a9ab3bc14c0943887ab53963484132feb68c6a39f62e9ebde55dae2",
+      "content_sha256": "35875705c38b49f8701c9b4a317ff3178c3a12613bbbf96486b0ce6493b41aa0",
+      "before": {
+        "id": "MAN-GSI-P17-083",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué es un hilo?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Un proceso aislado que dispone siempre de su propio kernel, espacio de direcciones y copia privada de todos los recursos del sistema."
+          },
+          {
+            "id": "B",
+            "text": "Un dispositivo de bloque lógico que almacena el contexto de ejecución y conserva las instrucciones pendientes de cada proceso."
+          },
+          {
+            "id": "C",
+            "text": "Una unidad de ejecución dentro de un proceso que comparte gran parte de sus recursos con otros hilos del mismo proceso."
+          },
+          {
+            "id": "D",
+            "text": "Un socket físico de CPU reservado de forma exclusiva para ejecutar una única secuencia de instrucciones durante toda su vida."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Los hilos comparten espacio de direcciones y otros recursos del proceso.",
+          "incorrect": "Según el solucionario: Los hilos comparten espacio de direcciones y otros recursos del proceso."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 83; índice nativo 8738",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 83; índice nativo 29399",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 83; índice nativo 8738",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-083",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué describe un hilo software dentro de un proceso?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Una instancia con espacio de direcciones separado del proceso que la contiene."
+          },
+          {
+            "id": "B",
+            "text": "Un conjunto de instrucciones almacenadas que aún carece de contexto de ejecución."
+          },
+          {
+            "id": "C",
+            "text": "Una secuencia con contexto propio que comparte recursos de su proceso."
+          },
+          {
+            "id": "D",
+            "text": "Una unidad física de CPU dedicada a contener instrucciones y registros."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Un hilo software es una secuencia de ejecución dentro de un proceso. Mantiene contexto propio, como contador de programa, registros y pila, y comparte el espacio de direcciones y otros recursos del proceso. Las pilas son lógicamente de cada hilo, pero se sitúan en ese espacio compartido; no implican aislamiento de memoria entre hilos. Un hilo software tampoco se identifica con una unidad física de CPU.",
+          "incorrect": "Contrasta el mecanismo y las condiciones descritos en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Un hilo del proceso comparte su espacio de direcciones. Un espacio separado corresponde al aislamiento habitual entre procesos.",
+            "B": "Las instrucciones almacenadas describen código. El hilo necesita además una secuencia y estado de ejecución.",
+            "D": "Confunde entidad software con hardware. Un hilo puede ser desplanificado o ejecutar en distintos procesadores según la política."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 83; índice nativo 8738",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 83; índice nativo 29399",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Arpaci-Dusseau: OSTEP, Concurrency: An Introduction",
+              "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+              "locator": "Capítulo 26, introducción pp. 1–2 y 26.1 Why Use Threads?, pp. 2–3; 26.4, pp. 9–10: registros, pilas, dirección compartida e intercalado",
+              "version": "PDF de autores, versión 1.10 impresa; pilas lógicamente propias dentro del mismo espacio de direcciones",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "Microsoft: About Processes and Threads",
+              "url": "https://learn.microsoft.com/en-us/windows/win32/procthread/about-processes-and-threads",
+              "locator": "Primeros cuatro párrafos: recursos del proceso, hilo planificable, contexto propio, memoria compartida y multitarea",
+              "version": "Actualización 14-07-2025; se usan fundamentos, sin generalizar detalles de UMS o fibras",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-022"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 83; índice nativo 8738",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar hilo y clave C; precisar software, contexto propio y pila en espacio compartido."
+      ],
+      "references": [
+        {
+          "title": "Arpaci-Dusseau: OSTEP, Concurrency: An Introduction",
+          "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+          "locator": "Capítulo 26, introducción pp. 1–2 y 26.1 Why Use Threads?, pp. 2–3; 26.4, pp. 9–10: registros, pilas, dirección compartida e intercalado",
+          "version": "PDF de autores, versión 1.10 impresa; pilas lógicamente propias dentro del mismo espacio de direcciones",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "Microsoft: About Processes and Threads",
+          "url": "https://learn.microsoft.com/en-us/windows/win32/procthread/about-processes-and-threads",
+          "locator": "Primeros cuatro párrafos: recursos del proceso, hilo planificable, contexto propio, memoria compartida y multitarea",
+          "version": "Actualización 14-07-2025; se usan fundamentos, sin generalizar detalles de UMS o fibras",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-084",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "f25c5311e622430e01605d5439cfc2da616c61d369a574823ec2ddf29dec511e",
+      "content_sha256": "bbcec2e064e8d600528e752e5cee4b6ee74f8744e9b62e451edf6214f0e9e53b",
+      "before": {
+        "id": "MAN-GSI-P17-084",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué diferencia básica hay entre proceso e hilo?",
+        "options": [
+          {
+            "id": "A",
+            "text": "No existe ninguna diferencia."
+          },
+          {
+            "id": "B",
+            "text": "Los hilos siempre tienen su propio sistema operativo."
+          },
+          {
+            "id": "C",
+            "text": "Los procesos están más aislados; los hilos del mismo proceso comparten memoria y recursos."
+          },
+          {
+            "id": "D",
+            "text": "Un proceso es hardware y un hilo es almacenamiento."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Compartir memoria hace los hilos ligeros pero exige sincronización.",
+          "incorrect": "Según el solucionario: Compartir memoria hace los hilos ligeros pero exige sincronización."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 84; índice nativo 8819",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 84; índice nativo 29709",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 84; índice nativo 8819",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-084",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué diferencia básica hay entre proceso e hilo?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Los procesos comparten por defecto todo el espacio virtual; los hilos lo tienen separado."
+          },
+          {
+            "id": "B",
+            "text": "Los procesos reúnen recursos, mientras los hilos de un mismo proceso comparten un único contexto de registros."
+          },
+          {
+            "id": "C",
+            "text": "Los procesos tienen espacios virtuales normalmente separados; sus hilos comparten el del proceso."
+          },
+          {
+            "id": "D",
+            "text": "Los procesos no pueden compartir memoria, aunque se solicite un mecanismo explícito al SO."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "La separación habitual de espacios virtuales entre procesos ofrece aislamiento, aunque pueden establecer memoria compartida y otros canales IPC. Los hilos de un mismo proceso comparten ese espacio y recursos, conservando sus contextos de ejecución. Compartir facilita comunicación pero exige coordinar accesos al estado mutable. No debe confundirse espacio compartido con un único conjunto de registros o pila para todos los hilos.",
+          "incorrect": "Contrasta el mecanismo y las condiciones descritos en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Invierte el modelo habitual. Los hilos comparten el espacio del proceso; los procesos distintos suelen tener espacios separados.",
+            "B": "Compartir recursos no fusiona los contextos de ejecución. Cada hilo mantiene su estado de registros y su secuencia.",
+            "D": "El aislamiento por defecto no impide compartir memoria de forma explícita. El SO ofrece mecanismos IPC para cooperación entre procesos."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 84; índice nativo 8819",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 84; índice nativo 29709",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Oracle: Processes and Threads",
+              "url": "https://docs.oracle.com/javase/tutorial/essential/concurrency/procthread.html",
+              "locator": "Introducción, Processes y Threads: concurrencia con un núcleo, aislamiento habitual e intercambio de recursos",
+              "version": "Tutorial escrito para JDK 8, advertencia expresa de antigüedad; solo conceptos de ejecución, no recomendación de versión o API actual",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "Arpaci-Dusseau: OSTEP, Concurrency: An Introduction",
+              "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+              "locator": "Capítulo 26, introducción pp. 1–2 y 26.1 Why Use Threads?, pp. 2–3; 26.4, pp. 9–10: registros, pilas, dirección compartida e intercalado",
+              "version": "PDF de autores, versión 1.10 impresa; pilas lógicamente propias dentro del mismo espacio de direcciones",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "Microsoft: About Processes and Threads",
+              "url": "https://learn.microsoft.com/en-us/windows/win32/procthread/about-processes-and-threads",
+              "locator": "Primeros cuatro párrafos: recursos del proceso, hilo planificable, contexto propio, memoria compartida y multitarea",
+              "version": "Actualización 14-07-2025; se usan fundamentos, sin generalizar detalles de UMS o fibras",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-022"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 84; índice nativo 8819",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar comparación proceso/hilo y clave C; distinguir aislamiento por defecto, IPC y contexto propio."
+      ],
+      "references": [
+        {
+          "title": "Oracle: Processes and Threads",
+          "url": "https://docs.oracle.com/javase/tutorial/essential/concurrency/procthread.html",
+          "locator": "Introducción, Processes y Threads: concurrencia con un núcleo, aislamiento habitual e intercambio de recursos",
+          "version": "Tutorial escrito para JDK 8, advertencia expresa de antigüedad; solo conceptos de ejecución, no recomendación de versión o API actual",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "Arpaci-Dusseau: OSTEP, Concurrency: An Introduction",
+          "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+          "locator": "Capítulo 26, introducción pp. 1–2 y 26.1 Why Use Threads?, pp. 2–3; 26.4, pp. 9–10: registros, pilas, dirección compartida e intercalado",
+          "version": "PDF de autores, versión 1.10 impresa; pilas lógicamente propias dentro del mismo espacio de direcciones",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "Microsoft: About Processes and Threads",
+          "url": "https://learn.microsoft.com/en-us/windows/win32/procthread/about-processes-and-threads",
+          "locator": "Primeros cuatro párrafos: recursos del proceso, hilo planificable, contexto propio, memoria compartida y multitarea",
+          "version": "Actualización 14-07-2025; se usan fundamentos, sin generalizar detalles de UMS o fibras",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-085",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "288e12df050275f11d1f0f8c974239ae2db3c6cbd9923834bb0df9afa9ae38a7",
+      "content_sha256": "18916c145831ba17ca67b923a6f55df6c79c1a78e37ea92193d9071fd23e9325",
+      "before": {
+        "id": "MAN-GSI-P17-085",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Cuál es un estado clásico de proceso?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Preparado (ready), esperando CPU."
+          },
+          {
+            "id": "B",
+            "text": "Encriptado."
+          },
+          {
+            "id": "C",
+            "text": "Montado."
+          },
+          {
+            "id": "D",
+            "text": "Indexado."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Estados clásicos incluyen nuevo, preparado, ejecución, bloqueado/espera y terminado.",
+          "incorrect": "Según el solucionario: Estados clásicos incluyen nuevo, preparado, ejecución, bloqueado/espera y terminado."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 85; índice nativo 8895",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 85; índice nativo 30052",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 85; índice nativo 8895",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-085",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "En el modelo clásico de estados, un proceso ha terminado su E/S y puede continuar, pero espera que le asignen CPU. ¿En qué estado está?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Preparado: puede continuar cuando el planificador le asigne CPU."
+          },
+          {
+            "id": "B",
+            "text": "Bloqueado: aún necesita que finalice la operación de entrada/salida."
+          },
+          {
+            "id": "C",
+            "text": "En ejecución: ya está realizando instrucciones en un procesador."
+          },
+          {
+            "id": "D",
+            "text": "Terminado: ha completado su trabajo y no puede volver a ejecutarse."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "En el modelo clásico simplificado, preparado significa que puede ejecutarse pero aún no ha recibido CPU. Al finalizar la espera de E/S pasa de bloqueado a preparado; no tiene por qué empezar inmediatamente. En ejecución ocupa un procesador y terminado ya no continúa la instancia. Los nombres y estados adicionales varían entre sistemas, por lo que el caso explicita el modelo.",
+          "incorrect": "Contrasta el mecanismo y las condiciones descritos en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "La operación de E/S ya ha finalizado en el caso. No queda ese evento pendiente que justifique mantenerlo bloqueado.",
+            "C": "Poder ejecutar no equivale a estar ejecutando. El enunciado dice que todavía espera asignación de CPU.",
+            "D": "Finalizar una E/S no significa finalizar todo el proceso. La instancia tiene trabajo que puede continuar."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 85; índice nativo 8895",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 85; índice nativo 30052",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Arpaci-Dusseau: OSTEP, The Abstraction: The Process",
+              "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-intro.pdf",
+              "locator": "Capítulo 4: 4.1 The Abstraction: A Process, pp. 2–3; 4.4 Process States, pp. 5–7; separación de política/mecanismo p. 3",
+              "version": "PDF de autores, versión 1.10 impresa; modelo didáctico simplificado",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "Microsoft: Context Switches",
+              "url": "https://learn.microsoft.com/en-us/windows/win32/procthread/context-switches",
+              "locator": "Introducción y lista de pasos: guardar contexto, colas preparadas, restaurar y reanudar; tareas bloqueadas",
+              "version": "Ejemplo de Windows, sin generalizar orden de colas a todo SO",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-022"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 85; índice nativo 8895",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar estado ready y clave A; microcaso que distingue esperar CPU de esperar un evento."
+      ],
+      "references": [
+        {
+          "title": "Arpaci-Dusseau: OSTEP, The Abstraction: The Process",
+          "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-intro.pdf",
+          "locator": "Capítulo 4: 4.1 The Abstraction: A Process, pp. 2–3; 4.4 Process States, pp. 5–7; separación de política/mecanismo p. 3",
+          "version": "PDF de autores, versión 1.10 impresa; modelo didáctico simplificado",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "Microsoft: Context Switches",
+          "url": "https://learn.microsoft.com/en-us/windows/win32/procthread/context-switches",
+          "locator": "Introducción y lista de pasos: guardar contexto, colas preparadas, restaurar y reanudar; tareas bloqueadas",
+          "version": "Ejemplo de Windows, sin generalizar orden de colas a todo SO",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-086",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "f0ab2c351994bab564f9aa6301cd40f8f709a78e429a10a776f07a7a0df36490",
+      "content_sha256": "ffb028fa401e7991d452ab809c344d9391ef2e37129e643569e4d7aa63e987e6",
+      "before": {
+        "id": "MAN-GSI-P17-086",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué hace el planificador de CPU?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Realizar el cambio de contexto una vez elegida la tarea, cargando sus registros y transfiriéndole el control del procesador."
+          },
+          {
+            "id": "B",
+            "text": "Gestionar las peticiones de entrada/salida y decidir el orden físico en que el dispositivo atiende sus operaciones pendientes."
+          },
+          {
+            "id": "C",
+            "text": "Asignar marcos de memoria a cada proceso y traducir sus direcciones virtuales antes de permitir que utilice CPU."
+          },
+          {
+            "id": "D",
+            "text": "Selecciona qué tarea/hilo ejecutará el procesador según la política del SO."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "La planificación distribuye tiempo de CPU.",
+          "incorrect": "Según el solucionario: La planificación distribuye tiempo de CPU."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 86; índice nativo 8988",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 86; índice nativo 30223",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 86; índice nativo 8988",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-086",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué hace el planificador de CPU?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Realizar el cambio de contexto una vez elegida la tarea, cargando sus registros y transfiriéndole el control del procesador."
+          },
+          {
+            "id": "B",
+            "text": "Gestionar las peticiones de entrada/salida y decidir el orden físico en que el dispositivo atiende sus operaciones pendientes."
+          },
+          {
+            "id": "C",
+            "text": "Asignar marcos de memoria a cada proceso y traducir sus direcciones virtuales antes de permitir que utilice CPU."
+          },
+          {
+            "id": "D",
+            "text": "Selecciona qué tarea/hilo ejecutará el procesador según la política del SO."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "El planificador elige la tarea preparada que recibirá CPU de acuerdo con una política. Se distingue conceptualmente de los mecanismos que guardan y restauran contexto para ejecutar la decisión. También existen decisiones de planificación de E/S o gestión de memoria, pero no son la selección de CPU preguntada. En un sistema real esos mecanismos cooperan y pueden estar próximos en la implementación.",
+          "incorrect": "Contrasta el mecanismo y las condiciones descritos en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Describe el mecanismo de despacho y cambio de contexto posterior a elegir una tarea. No el criterio de selección del planificador.",
+            "B": "Describe planificación de E/S. Decide sobre solicitudes de un dispositivo, no qué tarea preparada recibe procesador.",
+            "C": "Describe gestión y traducción de memoria. Puede condicionar ejecución, pero no define la selección de tarea según la política de CPU."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 86; índice nativo 8988",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 86; índice nativo 30223",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Arpaci-Dusseau: OSTEP, The Abstraction: The Process",
+              "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-intro.pdf",
+              "locator": "Capítulo 4: 4.1 The Abstraction: A Process, pp. 2–3; 4.4 Process States, pp. 5–7; separación de política/mecanismo p. 3",
+              "version": "PDF de autores, versión 1.10 impresa; modelo didáctico simplificado",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "Arpaci-Dusseau: OSTEP, Mechanism: Limited Direct Execution",
+              "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-mechanisms.pdf",
+              "locator": "Capítulo 6: 6.2 Problem #1: Restricted Operations, pp. 2–7; 6.3 Problem #2: Switching Between Processes, Saving and Restoring Context, pp. 7–10: trap, decisión y cambio de contexto",
+              "version": "PDF de autores, versión 1.10; no toda entrada al núcleo cambia de tarea",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-022"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 86; índice nativo 8988",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar literalmente enunciado y alternativas ya próximas al concepto; completar política frente a mecanismo y claves sin reescritura innecesaria."
+      ],
+      "references": [
+        {
+          "title": "Arpaci-Dusseau: OSTEP, The Abstraction: The Process",
+          "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-intro.pdf",
+          "locator": "Capítulo 4: 4.1 The Abstraction: A Process, pp. 2–3; 4.4 Process States, pp. 5–7; separación de política/mecanismo p. 3",
+          "version": "PDF de autores, versión 1.10 impresa; modelo didáctico simplificado",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "Arpaci-Dusseau: OSTEP, Mechanism: Limited Direct Execution",
+          "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-mechanisms.pdf",
+          "locator": "Capítulo 6: 6.2 Problem #1: Restricted Operations, pp. 2–7; 6.3 Problem #2: Switching Between Processes, Saving and Restoring Context, pp. 7–10: trap, decisión y cambio de contexto",
+          "version": "PDF de autores, versión 1.10; no toda entrada al núcleo cambia de tarea",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-087",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "46b0a65abb962347c0d96d119a1a814c501f5b95a1395aa04156d369a70f07a6",
+      "content_sha256": "c125882be691abc07f2e65d41384ec7f231924ba27440b3645aa8d611c2fa9ad",
+      "before": {
+        "id": "MAN-GSI-P17-087",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué caracteriza a FCFS/FIFO?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Da siempre prioridad al proceso más corto conocido."
+          },
+          {
+            "id": "B",
+            "text": "Usa obligatoriamente quantum."
+          },
+          {
+            "id": "C",
+            "text": "Atiende trabajos aproximadamente en orden de llegada."
+          },
+          {
+            "id": "D",
+            "text": "Es un algoritmo de cifrado."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "FCFS es simple, pero puede producir efecto convoy.",
+          "incorrect": "Según el solucionario: FCFS es simple, pero puede producir efecto convoy."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 87; índice nativo 9039",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 87; índice nativo 30485",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 87; índice nativo 9039",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-087",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "En el modelo clásico de planificación de CPU, ¿qué criterio caracteriza a FCFS/FIFO?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Elegir la tarea cuya próxima ráfaga de CPU se estima más breve."
+          },
+          {
+            "id": "B",
+            "text": "Alternar las tareas preparadas mediante turnos de duración limitada."
+          },
+          {
+            "id": "C",
+            "text": "Atender las tareas por orden de entrada a la cola de preparados."
+          },
+          {
+            "id": "D",
+            "text": "Seleccionar según el nivel de prioridad asignado a cada tarea."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "FCFS o FIFO atiende según el orden de llegada a la cola. En su forma clásica no expropiativa, una tarea mantiene CPU hasta terminar su ráfaga o bloquearse. Puede producir efecto convoy: trabajos cortos esperan detrás de uno largo. No utiliza como criterio básico ni duración estimada, ni prioridad diferenciada, ni turnos periódicos de quantum.",
+          "incorrect": "Contrasta el mecanismo y las condiciones descritos en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Describe la preferencia de SJF por duración estimada. FIFO no reordena la cola según esa estimación.",
+            "B": "Describe Round Robin. El turno limitado permite retirar CPU a una tarea y continuar con otra.",
+            "D": "Describe planificación por prioridad. FIFO emplea el orden de llegada, sin que prioridad sea el criterio básico."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 87; índice nativo 9039",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 87; índice nativo 30485",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Arpaci-Dusseau: OSTEP, Scheduling: Introduction",
+              "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-sched.pdf",
+              "locator": "Capítulo 7: 7.1 Workload Assumptions, pp. 1–2; 7.3 FIFO, pp. 2–4; 7.4 SJF, pp. 4–5; 7.5 STCF, pp. 5–6; 7.7 Round Robin, pp. 7–8",
+              "version": "PDF de autores, versión 1.10; modelos y supuestos explícitos, no política vigente de un SO concreto",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-022"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 87; índice nativo 9039",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar FCFS y clave C; precisar cola y variante clásica, con políticas vecinas como distractores."
+      ],
+      "references": [
+        {
+          "title": "Arpaci-Dusseau: OSTEP, Scheduling: Introduction",
+          "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-sched.pdf",
+          "locator": "Capítulo 7: 7.1 Workload Assumptions, pp. 1–2; 7.3 FIFO, pp. 2–4; 7.4 SJF, pp. 4–5; 7.5 STCF, pp. 5–6; 7.7 Round Robin, pp. 7–8",
+          "version": "PDF de autores, versión 1.10; modelos y supuestos explícitos, no política vigente de un SO concreto",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-088",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "0cb72e1bc250f6998cbec234fe59574277c2c3d06c4b23d3cfdf930e2461ee58",
+      "content_sha256": "016800de083dbba9d1fd9e35055b4e1d6314a6b10a613485ce3b119d1867bb7a",
+      "before": {
+        "id": "MAN-GSI-P17-088",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué caracteriza a Round Robin?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Reparte CPU mediante quantums de tiempo entre tareas preparadas."
+          },
+          {
+            "id": "B",
+            "text": "Ejecuta siempre un proceso hasta terminar."
+          },
+          {
+            "id": "C",
+            "text": "Selecciona por número de archivos abiertos."
+          },
+          {
+            "id": "D",
+            "text": "No permite preempción."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Round Robin es típico de tiempo compartido y usa quantum.",
+          "incorrect": "Según el solucionario: Round Robin es típico de tiempo compartido y usa quantum."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 88; índice nativo 9098",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 88; índice nativo 30746",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 88; índice nativo 9098",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-088",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué caracteriza a Round Robin?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Alternar tareas preparadas, con un quantum como límite de cada turno."
+          },
+          {
+            "id": "B",
+            "text": "Elegir la tarea de menor ráfaga estimada y dejar que la complete."
+          },
+          {
+            "id": "C",
+            "text": "Mantener CPU hasta completar la ráfaga, siguiendo el orden de llegada."
+          },
+          {
+            "id": "D",
+            "text": "Elegir la tarea con mayor prioridad, sin rotación entre iguales."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Round Robin recorre la cola de preparados por turnos. Una tarea puede ceder CPU antes por terminar o bloquearse; si agota el quantum sin hacerlo y hay otras preparadas, vuelve a la cola. El tamaño del quantum equilibra respuesta y coste de cambios de contexto. No se deduce que cada tarea consuma siempre el turno completo ni que la política optimice toda métrica.",
+          "incorrect": "Contrasta el mecanismo y las condiciones descritos en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "Describe SJF no expropiativo. Round Robin no elige el siguiente turno por duración estimada.",
+            "C": "Describe FCFS clásico. El límite de quantum permite alternar antes de terminar una ráfaga larga.",
+            "D": "Una prioridad puede combinarse con otras políticas, pero eliminar rotación entre iguales no define Round Robin."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 88; índice nativo 9098",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 88; índice nativo 30746",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Arpaci-Dusseau: OSTEP, Scheduling: Introduction",
+              "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-sched.pdf",
+              "locator": "Capítulo 7: 7.1 Workload Assumptions, pp. 1–2; 7.3 FIFO, pp. 2–4; 7.4 SJF, pp. 4–5; 7.5 STCF, pp. 5–6; 7.7 Round Robin, pp. 7–8",
+              "version": "PDF de autores, versión 1.10; modelos y supuestos explícitos, no política vigente de un SO concreto",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "Microsoft: Scheduling Priorities",
+              "url": "https://learn.microsoft.com/en-us/windows/win32/procthread/scheduling-priorities",
+              "locator": "Introducción, tres primeros párrafos y Priority Class: reparto por turnos entre iguales y riesgo de monopolio por prioridad alta",
+              "version": "Ejemplo Windows; no se universalizan niveles numéricos, clases o política a otros SO",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-022"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 88; índice nativo 9098",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar RR y clave A; matizar límite de turno y bloqueo anticipado, sin exigir consumir siempre todo el quantum."
+      ],
+      "references": [
+        {
+          "title": "Arpaci-Dusseau: OSTEP, Scheduling: Introduction",
+          "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-sched.pdf",
+          "locator": "Capítulo 7: 7.1 Workload Assumptions, pp. 1–2; 7.3 FIFO, pp. 2–4; 7.4 SJF, pp. 4–5; 7.5 STCF, pp. 5–6; 7.7 Round Robin, pp. 7–8",
+          "version": "PDF de autores, versión 1.10; modelos y supuestos explícitos, no política vigente de un SO concreto",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "Microsoft: Scheduling Priorities",
+          "url": "https://learn.microsoft.com/en-us/windows/win32/procthread/scheduling-priorities",
+          "locator": "Introducción, tres primeros párrafos y Priority Class: reparto por turnos entre iguales y riesgo de monopolio por prioridad alta",
+          "version": "Ejemplo Windows; no se universalizan niveles numéricos, clases o política a otros SO",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-089",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "dd8fcee5dae570e8045f92627e8b715f44155fbc01a322b2a61058c3bedfca42",
+      "content_sha256": "600b3e0040c8091b2351249c07692623108f8da1b0f8d3235e32063d9012b244",
+      "before": {
+        "id": "MAN-GSI-P17-089",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué riesgo tienen las prioridades si no existe mecanismo de envejecimiento u otra compensación?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Desaparición de la memoria virtual."
+          },
+          {
+            "id": "B",
+            "text": "Inanición de tareas de baja prioridad."
+          },
+          {
+            "id": "C",
+            "text": "Duplicación de sockets físicos."
+          },
+          {
+            "id": "D",
+            "text": "Conversión automática en deadlock."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Starvation ocurre cuando una tarea espera indefinidamente por preferencia continua de otras.",
+          "incorrect": "Según el solucionario: Starvation ocurre cuando una tarea espera indefinidamente por preferencia continua de otras."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 89; índice nativo 9164",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 89; índice nativo 31020",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 89; índice nativo 9164",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-089",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "En una planificación por prioridad sin envejecimiento ni compensación, siempre hay tareas de prioridad alta preparadas. Otra de prioridad baja no recibe CPU. ¿Qué riesgo ilustra?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Bloqueo mutuo por una espera circular de recursos retenidos."
+          },
+          {
+            "id": "B",
+            "text": "Inanición por postergación reiterada de la tarea menos prioritaria."
+          },
+          {
+            "id": "C",
+            "text": "Inversión de prioridad por un recurso retenido por una tarea inferior."
+          },
+          {
+            "id": "D",
+            "text": "Livelock por reacciones continuas de tareas que impiden su avance."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Una tarea preparada puede sufrir inanición si siempre se eligen otras y no hay compensación que le asegure progreso. No necesita estar bloqueada esperando un recurso. Aging o mecanismos de aumento de prioridad pueden mitigar el problema según la política. La inversión de prioridad requiere una dependencia respecto de una tarea inferior; deadlock y livelock describen otros problemas de progreso.",
+          "incorrect": "Contrasta el mecanismo y las condiciones descritos en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "El caso no presenta recursos retenidos en una espera circular. La tarea pierde la selección de CPU frente a otras.",
+            "C": "Falta la dependencia respecto de un recurso retenido por una tarea de prioridad inferior que caracteriza la inversión de prioridad.",
+            "D": "No se describe una secuencia de reacciones activas sin progreso. Se describe falta de servicio por la selección reiterada de otras tareas."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 89; índice nativo 9164",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 89; índice nativo 31020",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Arpaci-Dusseau: OSTEP, Scheduling: The Multi-Level Feedback Queue",
+              "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-sched-mlfq.pdf",
+              "locator": "Capítulo 8: final de 8.2 y 8.3 Attempt #2: The Priority Boost, pp. 5–7: inanición y compensación",
+              "version": "PDF de autores, versión 1.10; boost periódico es un ejemplo, no idéntico a toda implementación de aging",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "Microsoft: Scheduling Priorities",
+              "url": "https://learn.microsoft.com/en-us/windows/win32/procthread/scheduling-priorities",
+              "locator": "Introducción, tres primeros párrafos y Priority Class: reparto por turnos entre iguales y riesgo de monopolio por prioridad alta",
+              "version": "Ejemplo Windows; no se universalizan niveles numéricos, clases o política a otros SO",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "Oracle: Starvation and Livelock",
+              "url": "https://docs.oracle.com/javase/tutorial/essential/concurrency/starvelive.html",
+              "locator": "Starvation y Livelock: falta de acceso regular frente a actividad reactiva sin progreso",
+              "version": "Tutorial JDK 8, con advertencia de antigüedad; conceptos, sin utilizar disponibilidad de API o versión actual",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-022"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 89; índice nativo 9164",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar riesgo de prioridades y clave B; microcaso de tarea preparada con contraste entre cuatro problemas de progreso."
+      ],
+      "references": [
+        {
+          "title": "Arpaci-Dusseau: OSTEP, Scheduling: The Multi-Level Feedback Queue",
+          "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-sched-mlfq.pdf",
+          "locator": "Capítulo 8: final de 8.2 y 8.3 Attempt #2: The Priority Boost, pp. 5–7: inanición y compensación",
+          "version": "PDF de autores, versión 1.10; boost periódico es un ejemplo, no idéntico a toda implementación de aging",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "Microsoft: Scheduling Priorities",
+          "url": "https://learn.microsoft.com/en-us/windows/win32/procthread/scheduling-priorities",
+          "locator": "Introducción, tres primeros párrafos y Priority Class: reparto por turnos entre iguales y riesgo de monopolio por prioridad alta",
+          "version": "Ejemplo Windows; no se universalizan niveles numéricos, clases o política a otros SO",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "Oracle: Starvation and Livelock",
+          "url": "https://docs.oracle.com/javase/tutorial/essential/concurrency/starvelive.html",
+          "locator": "Starvation y Livelock: falta de acceso regular frente a actividad reactiva sin progreso",
+          "version": "Tutorial JDK 8, con advertencia de antigüedad; conceptos, sin utilizar disponibilidad de API o versión actual",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-090",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "00ae64643bd9c506c461fa5f0630639fcfc12c3f28eb4698165696ac0a4ab07b",
+      "content_sha256": "aec67820be392aee3566282662233f98def2a4dd415a25393eaaebd9d8c8da78",
+      "before": {
+        "id": "MAN-GSI-P17-090",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué objetivo tiene SJF?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Asignar a cada tarea un quantum y alternarlas en una cola circular para repartir periódicamente el procesador."
+          },
+          {
+            "id": "B",
+            "text": "Ejecutar primero la tarea con mayor prioridad y aplicar reglas adicionales cuando varias comparten el mismo nivel."
+          },
+          {
+            "id": "C",
+            "text": "Atender las tareas según su orden de llegada, sin utilizar una estimación de duración para decidir cuál continúa."
+          },
+          {
+            "id": "D",
+            "text": "Favorecer trabajos con menor duración estimada para reducir espera media en condiciones ideales."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "SJF depende de estimar duración y puede perjudicar trabajos largos.",
+          "incorrect": "Según el solucionario: SJF depende de estimar duración y puede perjudicar trabajos largos."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 90; índice nativo 9265",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 90; índice nativo 31326",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 90; índice nativo 9265",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-090",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué objetivo tiene SJF?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Asignar a cada tarea un quantum y alternarlas en una cola circular para repartir periódicamente el procesador."
+          },
+          {
+            "id": "B",
+            "text": "Ejecutar primero la tarea con mayor prioridad y aplicar reglas adicionales cuando varias comparten el mismo nivel."
+          },
+          {
+            "id": "C",
+            "text": "Atender las tareas según su orden de llegada, sin utilizar una estimación de duración para decidir cuál continúa."
+          },
+          {
+            "id": "D",
+            "text": "Favorecer trabajos con menor duración estimada para reducir espera media en condiciones ideales."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "SJF da preferencia a la duración más corta estimada. En el modelo ideal de trabajos disponibles a la vez, duraciones conocidas y solo CPU, ordenar así reduce espera media y tiempo medio de retorno. En sistemas reales se estiman ráfagas y las llegadas alteran el resultado. No garantiza equidad para trabajos largos; su variante con expropiación por tiempo restante se distingue como SRTF o STCF.",
+          "incorrect": "Contrasta el mecanismo y las condiciones descritos en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Describe reparto por turnos Round Robin, orientado a respuesta y alternancia. No ordena por duración estimada como SJF.",
+            "B": "Describe prioridad asignada, que puede obedecer a criterios distintos de duración. No es el criterio específico de SJF.",
+            "C": "Describe FCFS/FIFO. Mantiene orden de llegada en vez de favorecer el trabajo estimado más breve."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 90; índice nativo 9265",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 90; índice nativo 31326",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Arpaci-Dusseau: OSTEP, Scheduling: Introduction",
+              "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-sched.pdf",
+              "locator": "Capítulo 7: 7.1 Workload Assumptions, pp. 1–2; 7.3 FIFO, pp. 2–4; 7.4 SJF, pp. 4–5; 7.5 STCF, pp. 5–6; 7.7 Round Robin, pp. 7–8",
+              "version": "PDF de autores, versión 1.10; modelos y supuestos explícitos, no política vigente de un SO concreto",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-022"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 90; índice nativo 9265",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar literalmente formulación y comparación de cuatro políticas; completar supuestos, estimación y diferencia con la variante expropiativa."
+      ],
+      "references": [
+        {
+          "title": "Arpaci-Dusseau: OSTEP, Scheduling: Introduction",
+          "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-sched.pdf",
+          "locator": "Capítulo 7: 7.1 Workload Assumptions, pp. 1–2; 7.3 FIFO, pp. 2–4; 7.4 SJF, pp. 4–5; 7.5 STCF, pp. 5–6; 7.7 Round Robin, pp. 7–8",
+          "version": "PDF de autores, versión 1.10; modelos y supuestos explícitos, no política vigente de un SO concreto",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-091",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "c9aa27e627aaa3ae05f067ec241796719a535ca02adb6491f884d2a945cdb630",
+      "content_sha256": "eddb3c85eeb4ab29ecf7eed76d531cdad92d7f1b010b3f331ffb0899b34bb56f",
+      "before": {
+        "id": "MAN-GSI-P17-091",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué es un cambio de contexto?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Cambiar el sistema de archivos de NTFS a ext4."
+          },
+          {
+            "id": "B",
+            "text": "Guardar/restaurar estado para cambiar la CPU de una tarea a otra."
+          },
+          {
+            "id": "C",
+            "text": "Mover una VM a otra región cloud por definición."
+          },
+          {
+            "id": "D",
+            "text": "Renombrar un proceso."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Context switching tiene coste y es parte de la multitarea.",
+          "incorrect": "Según el solucionario: Context switching tiene coste y es parte de la multitarea."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 91; índice nativo 9341",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 91; índice nativo 31624",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 91; índice nativo 9341",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-091",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué es un cambio de contexto?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Entrar en modo núcleo para atender una llamada y volver a la misma tarea."
+          },
+          {
+            "id": "B",
+            "text": "Guardar y restaurar estado para pasar de una tarea ejecutable a otra."
+          },
+          {
+            "id": "C",
+            "text": "Cargar código y recursos para crear una nueva instancia de proceso."
+          },
+          {
+            "id": "D",
+            "text": "Cambiar correspondencias de direcciones virtuales mediante una tabla de páginas."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Un cambio de contexto guarda estado de la tarea saliente y restaura el de otra para continuar su ejecución. Puede ocurrir entre hilos del mismo proceso sin cambiar el espacio de direcciones. Entrar al núcleo no obliga a seleccionar otra tarea: puede atenderse la llamada y volver a la misma. La conmutación tiene coste, cuyo detalle depende de la arquitectura y el SO.",
+          "incorrect": "Contrasta el mecanismo y las condiciones descritos en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Describe un cambio de modo con retorno a la misma tarea. No implica por sí solo la conmutación de tareas que se pregunta.",
+            "C": "Describe creación o carga de una instancia. Cambiar contexto puede reanudar una ya existente sin crear un proceso nuevo.",
+            "D": "La traducción de memoria es otro mecanismo. Puede relacionarse con conmutar procesos, pero entre hilos del mismo proceso el espacio puede mantenerse."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 91; índice nativo 9341",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 91; índice nativo 31624",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Microsoft: Context Switches",
+              "url": "https://learn.microsoft.com/en-us/windows/win32/procthread/context-switches",
+              "locator": "Introducción y lista de pasos: guardar contexto, colas preparadas, restaurar y reanudar; tareas bloqueadas",
+              "version": "Ejemplo de Windows, sin generalizar orden de colas a todo SO",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "Arpaci-Dusseau: OSTEP, Mechanism: Limited Direct Execution",
+              "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-mechanisms.pdf",
+              "locator": "Capítulo 6: 6.2 Problem #1: Restricted Operations, pp. 2–7; 6.3 Problem #2: Switching Between Processes, Saving and Restoring Context, pp. 7–10: trap, decisión y cambio de contexto",
+              "version": "PDF de autores, versión 1.10; no toda entrada al núcleo cambia de tarea",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "Arpaci-Dusseau: OSTEP, Concurrency: An Introduction",
+              "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+              "locator": "Capítulo 26, introducción pp. 1–2 y 26.1 Why Use Threads?, pp. 2–3; 26.4, pp. 9–10: registros, pilas, dirección compartida e intercalado",
+              "version": "PDF de autores, versión 1.10 impresa; pilas lógicamente propias dentro del mismo espacio de direcciones",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-022"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 91; índice nativo 9341",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar cambio de contexto y clave B; separar cambio de modo, creación de proceso y traducción de memoria."
+      ],
+      "references": [
+        {
+          "title": "Microsoft: Context Switches",
+          "url": "https://learn.microsoft.com/en-us/windows/win32/procthread/context-switches",
+          "locator": "Introducción y lista de pasos: guardar contexto, colas preparadas, restaurar y reanudar; tareas bloqueadas",
+          "version": "Ejemplo de Windows, sin generalizar orden de colas a todo SO",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "Arpaci-Dusseau: OSTEP, Mechanism: Limited Direct Execution",
+          "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-mechanisms.pdf",
+          "locator": "Capítulo 6: 6.2 Problem #1: Restricted Operations, pp. 2–7; 6.3 Problem #2: Switching Between Processes, Saving and Restoring Context, pp. 7–10: trap, decisión y cambio de contexto",
+          "version": "PDF de autores, versión 1.10; no toda entrada al núcleo cambia de tarea",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "Arpaci-Dusseau: OSTEP, Concurrency: An Introduction",
+          "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+          "locator": "Capítulo 26, introducción pp. 1–2 y 26.1 Why Use Threads?, pp. 2–3; 26.4, pp. 9–10: registros, pilas, dirección compartida e intercalado",
+          "version": "PDF de autores, versión 1.10 impresa; pilas lógicamente propias dentro del mismo espacio de direcciones",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-092",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "312d4e001c78f270a02c70f57f8361e6e8acb1150756ac8bc98985e05add5f36",
+      "content_sha256": "61caa9fd3b7c37dfb692e4867fa2cf0f282eb575d54cd1601d946c671180abe9",
+      "before": {
+        "id": "MAN-GSI-P17-092",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué diferencia hay entre concurrencia y paralelismo?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Son términos equivalentes que describen siempre la ejecución simultánea de varias instrucciones en procesadores físicos diferentes."
+          },
+          {
+            "id": "B",
+            "text": "El paralelismo solo puede producirse en un único núcleo, mientras la concurrencia requiere necesariamente varios procesadores."
+          },
+          {
+            "id": "C",
+            "text": "Concurrencia permite progreso solapado de tareas; paralelismo implica ejecución simultánea real."
+          },
+          {
+            "id": "D",
+            "text": "La concurrencia exige distribuir cada tarea entre máquinas físicas distintas y no puede existir dentro de un solo sistema operativo."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Puede haber concurrencia en un solo núcleo mediante intercalado.",
+          "incorrect": "Según el solucionario: Puede haber concurrencia en un solo núcleo mediante intercalado."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 92; índice nativo 9408",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 92; índice nativo 31906",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 92; índice nativo 9408",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-092",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué diferencia hay entre concurrencia y paralelismo?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Concurrencia y paralelismo designan por igual la ejecución física simultánea."
+          },
+          {
+            "id": "B",
+            "text": "Concurrencia exige varios procesadores; paralelismo puede obtenerse solo intercalando tareas."
+          },
+          {
+            "id": "C",
+            "text": "Concurrencia admite progreso intercalado; paralelismo requiere ejecución simultánea."
+          },
+          {
+            "id": "D",
+            "text": "Concurrencia describe el número de procesos; paralelismo, la cantidad de memoria que comparten."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "La concurrencia permite estructurar y coordinar varias tareas cuyo progreso se solapa en el tiempo. Puede realizarse por intercalado en un único recurso de ejecución. El paralelismo añade ejecución simultánea aprovechando varios recursos. Tener varios hilos permite esa posibilidad, pero no garantiza que ejecuten a la vez: influyen hardware, planificación y dependencias. Compartir memoria no define por sí mismo ninguno de los dos.",
+          "incorrect": "Contrasta el mecanismo y las condiciones descritos en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Identifica ambos conceptos y excluye la concurrencia por intercalado. La simultaneidad física caracteriza al paralelismo.",
+            "B": "Invierte la distinción. Intercalar puede dar concurrencia sin ejecución física simultánea.",
+            "D": "Ni el recuento de procesos ni la cantidad de memoria compartida definen el solapamiento y la simultaneidad. También hay concurrencia entre hilos."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 92; índice nativo 9408",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 92; índice nativo 31906",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Oracle: Processes and Threads",
+              "url": "https://docs.oracle.com/javase/tutorial/essential/concurrency/procthread.html",
+              "locator": "Introducción, Processes y Threads: concurrencia con un núcleo, aislamiento habitual e intercambio de recursos",
+              "version": "Tutorial escrito para JDK 8, advertencia expresa de antigüedad; solo conceptos de ejecución, no recomendación de versión o API actual",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "Arpaci-Dusseau: OSTEP, Concurrency: An Introduction",
+              "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+              "locator": "Capítulo 26, introducción pp. 1–2 y 26.1 Why Use Threads?, pp. 2–3; 26.4, pp. 9–10: registros, pilas, dirección compartida e intercalado",
+              "version": "PDF de autores, versión 1.10 impresa; pilas lógicamente propias dentro del mismo espacio de direcciones",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-022"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 92; índice nativo 9408",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar concurrencia/paralelismo y clave C; alternativas breves comparables, sin exigir distribución ni múltiples núcleos para toda concurrencia."
+      ],
+      "references": [
+        {
+          "title": "Oracle: Processes and Threads",
+          "url": "https://docs.oracle.com/javase/tutorial/essential/concurrency/procthread.html",
+          "locator": "Introducción, Processes y Threads: concurrencia con un núcleo, aislamiento habitual e intercambio de recursos",
+          "version": "Tutorial escrito para JDK 8, advertencia expresa de antigüedad; solo conceptos de ejecución, no recomendación de versión o API actual",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "Arpaci-Dusseau: OSTEP, Concurrency: An Introduction",
+          "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+          "locator": "Capítulo 26, introducción pp. 1–2 y 26.1 Why Use Threads?, pp. 2–3; 26.4, pp. 9–10: registros, pilas, dirección compartida e intercalado",
+          "version": "PDF de autores, versión 1.10 impresa; pilas lógicamente propias dentro del mismo espacio de direcciones",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-093",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "4f0c758997c5c16e6fabddcb7b776d73029fd8e2a58c0af2a8055f151c444521",
+      "content_sha256": "eccd1bff6a3517b2d698560565312be3b80316e1c44df2b8249a7b3a8ae65065",
+      "before": {
+        "id": "MAN-GSI-P17-093",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué es una condición de carrera?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Un resultado dependiente del orden/timing de accesos concurrentes a estado compartido."
+          },
+          {
+            "id": "B",
+            "text": "Un bloqueo mutuo en el que varias tareas esperan recursos retenidos entre sí y ninguna puede continuar su ejecución."
+          },
+          {
+            "id": "C",
+            "text": "Una situación en la que las tareas cambian de estado y reaccionan continuamente, pero no consiguen realizar trabajo útil."
+          },
+          {
+            "id": "D",
+            "text": "La espera indefinida de una tarea porque otras reciben repetidamente el recurso o tiempo de CPU que necesita para avanzar."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Las carreras se evitan con diseño y sincronización adecuados.",
+          "incorrect": "Según el solucionario: Las carreras se evitan con diseño y sincronización adecuados."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 93; índice nativo 9481",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 93; índice nativo 32240",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 93; índice nativo 9481",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-093",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Dos hilos incrementan el mismo contador mediante lectura y escritura separadas, sin sincronización. Ambos leen 10 y ambos escriben 11. ¿Qué problema muestra este intercalado?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Condición de carrera con actualización perdida por intercalado de accesos."
+          },
+          {
+            "id": "B",
+            "text": "Bloqueo mutuo por esperar recursos que cada hilo retiene para el otro."
+          },
+          {
+            "id": "C",
+            "text": "Livelock porque ambos hilos siguen reaccionando sin realizar trabajo útil."
+          },
+          {
+            "id": "D",
+            "text": "Inanición porque uno de los hilos no llega a obtener tiempo de ejecución."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Ambos hilos calculan su incremento desde el mismo valor antiguo y la última escritura sustituye a la anterior. El resultado depende del intercalado: es una condición de carrera con actualización perdida. El caso explicita lectura y escritura separadas y no atómicas; no se presupone que cualquier operación de un lenguaje tenga esa semántica. Los dos hilos progresan, pero la actualización conjunta es incorrecta.",
+          "incorrect": "Contrasta el mecanismo y las condiciones descritos en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "Los hilos terminan sus operaciones; no hay una espera circular de recursos que les impida continuar.",
+            "C": "No se describe actividad reactiva indefinida. Existe trabajo terminado con un resultado incorrecto por acceso al mismo estado.",
+            "D": "Los dos leen y escriben. Ninguno queda privado de ejecución como en la inanición planteada."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 93; índice nativo 9481",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 93; índice nativo 32240",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Oracle: Thread Interference",
+              "url": "https://docs.oracle.com/javase/tutorial/essential/concurrency/interfere.html",
+              "locator": "Counter; descomposición de incremento en lectura/modificación/escritura y ejemplo de intercalado con actualización perdida",
+              "version": "Tutorial JDK 8, con advertencia de antigüedad; no se deduce atomicidad de todas las instrucciones o lenguajes",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "Arpaci-Dusseau: OSTEP, Concurrency: An Introduction",
+              "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+              "locator": "Capítulo 26, introducción pp. 1–2 y 26.1 Why Use Threads?, pp. 2–3; 26.4, pp. 9–10: registros, pilas, dirección compartida e intercalado",
+              "version": "PDF de autores, versión 1.10 impresa; pilas lógicamente propias dentro del mismo espacio de direcciones",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "Oracle: Starvation and Livelock",
+              "url": "https://docs.oracle.com/javase/tutorial/essential/concurrency/starvelive.html",
+              "locator": "Starvation y Livelock: falta de acceso regular frente a actividad reactiva sin progreso",
+              "version": "Tutorial JDK 8, con advertencia de antigüedad; conceptos, sin utilizar disponibilidad de API o versión actual",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-022"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 93; índice nativo 9481",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar carrera y clave A; microcaso con intercalado explícito y sin suposiciones ocultas sobre atomicidad del lenguaje."
+      ],
+      "references": [
+        {
+          "title": "Oracle: Thread Interference",
+          "url": "https://docs.oracle.com/javase/tutorial/essential/concurrency/interfere.html",
+          "locator": "Counter; descomposición de incremento en lectura/modificación/escritura y ejemplo de intercalado con actualización perdida",
+          "version": "Tutorial JDK 8, con advertencia de antigüedad; no se deduce atomicidad de todas las instrucciones o lenguajes",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "Arpaci-Dusseau: OSTEP, Concurrency: An Introduction",
+          "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf",
+          "locator": "Capítulo 26, introducción pp. 1–2 y 26.1 Why Use Threads?, pp. 2–3; 26.4, pp. 9–10: registros, pilas, dirección compartida e intercalado",
+          "version": "PDF de autores, versión 1.10 impresa; pilas lógicamente propias dentro del mismo espacio de direcciones",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "Oracle: Starvation and Livelock",
+          "url": "https://docs.oracle.com/javase/tutorial/essential/concurrency/starvelive.html",
+          "locator": "Starvation y Livelock: falta de acceso regular frente a actividad reactiva sin progreso",
+          "version": "Tutorial JDK 8, con advertencia de antigüedad; conceptos, sin utilizar disponibilidad de API o versión actual",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-094",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "4f316a013c4345fe042c9c903be52c49ac189ee50887748571a29fc57cb341f5",
+      "content_sha256": "f8db7f78e4a115af237ff865b582d783c4dfe29e3cbb11993a6d15701b59653e",
+      "before": {
+        "id": "MAN-GSI-P17-094",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Para qué se usa un mutex?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Mantener un contador de permisos para admitir hasta un número determinado de accesos simultáneos a un recurso."
+          },
+          {
+            "id": "B",
+            "text": "Permitir que una tarea espere una condición y sea notificada cuando otro hilo modifica el estado asociado."
+          },
+          {
+            "id": "C",
+            "text": "Elegir qué proceso recibe CPU y durante cuánto tiempo según prioridad, quantum u otra política de planificación."
+          },
+          {
+            "id": "D",
+            "text": "Para proporcionar exclusión mutua sobre una sección o recurso compartido."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "El mutex protege secciones críticas frente a acceso simultáneo incompatible.",
+          "incorrect": "Según el solucionario: El mutex protege secciones críticas frente a acceso simultáneo incompatible."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 94; índice nativo 9551",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 94; índice nativo 32517",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 94; índice nativo 9551",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-094",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Para qué se usa un mutex?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Admitir hasta tres accesos simultáneos mediante un contador de permisos."
+          },
+          {
+            "id": "B",
+            "text": "Suspender tareas hasta una notificación de que una condición puede haber cambiado."
+          },
+          {
+            "id": "C",
+            "text": "Asignar tiempo de CPU a tareas preparadas según una política de planificación."
+          },
+          {
+            "id": "D",
+            "text": "Proporcionar exclusión mutua al acceder a una sección o recurso compartido."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Un mutex permite que un único propietario acceda a la sección o recurso protegido cada vez. La protección requiere que los accesos incompatibles respeten el mismo protocolo de bloqueo. No garantiza por sí solo ausencia de deadlock, equidad FIFO o corrección de todos los datos. El conteo de varios permisos y la notificación de condiciones cumplen otras funciones; sus semánticas dependen de la API.",
+          "incorrect": "Contrasta el mecanismo y las condiciones descritos en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Describe un semáforo contador con capacidad tres. Permitir varios accesos simultáneos no expresa la exclusión de un mutex; un semáforo binario puede usarse de otra forma.",
+            "B": "Describe la espera y notificación de una condición. Una notificación no concede por sí misma propiedad exclusiva sobre el recurso.",
+            "C": "Describe planificación de CPU. Un mutex coordina acceso entre tareas y no decide por sí solo la política general de ejecución."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 94; índice nativo 9551",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 94; índice nativo 32517",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Arpaci-Dusseau: OSTEP, Locks",
+              "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-locks.pdf",
+              "locator": "Capítulo 28: 28.1 Locks: The Basic Idea y 28.2 Pthread Locks, pp. 1–2; 28.4 Evaluating Locks, p. 3: exclusión y equidad son propiedades distintas",
+              "version": "PDF de autores, versión 1.10; no se generalizan reglas de recursión o desbloqueo a todas las API",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "Microsoft: Mutex Objects",
+              "url": "https://learn.microsoft.com/en-us/windows/win32/sync/mutex-objects",
+              "locator": "Primeros párrafos, propiedad por un hilo y coordinación; párrafo de ausencia de garantía FIFO; mutex entre procesos",
+              "version": "Actualización 07-01-2021; solo exclusión y alcance, sin trasladar semántica recursiva de Windows a POSIX",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-022"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 94; índice nativo 9551",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar exclusión mutua y clave D; precisar capacidad tres para no confundir el distractor con un semáforo binario utilizable como exclusión."
+      ],
+      "references": [
+        {
+          "title": "Arpaci-Dusseau: OSTEP, Locks",
+          "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/threads-locks.pdf",
+          "locator": "Capítulo 28: 28.1 Locks: The Basic Idea y 28.2 Pthread Locks, pp. 1–2; 28.4 Evaluating Locks, p. 3: exclusión y equidad son propiedades distintas",
+          "version": "PDF de autores, versión 1.10; no se generalizan reglas de recursión o desbloqueo a todas las API",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "Microsoft: Mutex Objects",
+          "url": "https://learn.microsoft.com/en-us/windows/win32/sync/mutex-objects",
+          "locator": "Primeros párrafos, propiedad por un hilo y coordinación; párrafo de ausencia de garantía FIFO; mutex entre procesos",
+          "version": "Actualización 07-01-2021; solo exclusión y alcance, sin trasladar semántica recursiva de Windows a POSIX",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    }
+  ]
+}

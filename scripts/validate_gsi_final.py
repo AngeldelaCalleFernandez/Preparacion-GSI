@@ -26,6 +26,16 @@ def load(p): return json.loads((ROOT/p).read_text('utf-8'))
 def sha(s): return hashlib.sha256(s.encode('utf-8')).hexdigest()
 def digest(p): return hashlib.sha256((ROOT/p).read_bytes()).hexdigest()
 def norm(s): return re.sub(r'\W+',' ',unicodedata.normalize('NFKC',s).casefold()).strip()
+
+
+def option_signature(text):
+    text = text.strip()
+    # Delimiters and case can distinguish markup alternatives, even invalid ones.
+    if text.startswith('<') and text.endswith('>'):
+        return text
+    return norm(text)
+
+
 def save(p,x): (ROOT/p).write_text(json.dumps(x,ensure_ascii=False,indent=2)+'\n','utf-8')
 
 def load_enhancements():
@@ -149,7 +159,7 @@ def main():
         check(set(update['affected_question_ids']).issubset(ids),label+': preguntas afectadas válidas')
         check(urlsplit(update['primary_source_url']).scheme=='https',label+': fuente primaria HTTPS')
         check(all((ROOT/path).is_file() for path in update['affected_files']),label+': archivos afectados existentes')
-    signatures=[(norm(q['statement']),tuple(sorted(norm(o['text']) for o in q['options']))) for q in questions]
+    signatures=[(norm(q['statement']),tuple(sorted(option_signature(o['text']) for o in q['options']))) for q in questions]
     check(len(signatures)==len(set(signatures)),'Sin preguntas duplicadas exactas: enunciado y alternativas normalizados')
     official_catalog=load('data/gsi-official-exams.json')
     official_extracted=load('documents/sources/gsi-official/extracted.json')
@@ -172,7 +182,7 @@ def main():
                 counts[topic]=counts.get(topic,0)+1;drafts[f'AI-GSI-{topic}-{counts[topic]:03}']=(topic,line)
     for q in questions:
         label=q['id'];check(q['opposition_id']=='OPP-GSI' and q['topic_id'] in topics and q['block_id']==q['topic_id'][:2],label+': identidad GSI y tema válidos')
-        check(len(q['options'])==4 and len({o['id'] for o in q['options']})==4 and len({norm(o['text']) for o in q['options']})==4 and sum(o['id']==q['correct_option'] for o in q['options'])==1,label+': cuatro opciones distintas y una correcta')
+        check(len(q['options'])==4 and len({o['id'] for o in q['options']})==4 and len({option_signature(o['text']) for o in q['options']})==4 and sum(o['id']==q['correct_option'] for o in q['options'])==1,label+': cuatro opciones distintas y una correcta')
         check(bool(q['feedback']['correct'].strip()) and q['provenance']['source_id'] in sources and bool(q['provenance']['locator']),label+': explicación y procedencia')
         if q['origin']=='official':
             original=official_records.get(label,{})

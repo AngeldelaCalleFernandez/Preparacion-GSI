@@ -14,6 +14,8 @@ Para empezar, consulta la [guía paso a paso](https://angeldelacallefernandez.gi
 
 ## Estado actual
 
+**Versión provisional de estudio · 9 de noviembre de 2026.** La auditoría editorial independiente sigue pendiente. La pregunta NUMA `MAN-GSI-P17-026` está marcada por una posible ambigüedad. [Alcance de la versión provisional](docs/GSI_VERSION_PROVISIONAL.md).
+
 La aplicación funciona y los 57 temas tienen apuntes completos, resumen y procedencia. El banco contiene:
 
 | Origen | Activas | Pendientes |
@@ -26,7 +28,7 @@ La aplicación contiene **1.964 preguntas activas** y los **57 temas tienen al m
 
 En **Examen → Exámenes oficiales INAP**, abre **2022** o **2024**, pulsa **Preparar este examen** y después **Iniciar examen**. Cada convocatoria ofrece 100 preguntas evaluables en 90 minutos, con plantilla definitiva y sustitución de anuladas por reservas. Hay 12 enlaces oficiales a cuestionarios, plantillas, supuestos escritos y criterios de 2022, 2024 y 2025. La plantilla consultada de **2025 es provisional**: se ofrece para lectura, sin activar su corrección automática. [Detalle de la importación](docs/GSI_EXAMENES_OFICIALES.md).
 
-La publicación de esta revisión, incluidas las auditorías, fue autorizada expresamente por el propietario el 17 de septiembre de 2026.
+La edición inicial se autorizó el 17 de septiembre de 2026. El propietario autorizó el 9 de noviembre de 2026 la publicación provisional del banco mejorado.
 
 Consulta la [auditoría completa](docs/FINAL_GSI_AUDIT.md), la [cobertura por tema](data/gsi-coverage-report.json), la [calidad editorial del banco](docs/GSI_CALIDAD_PREGUNTAS.md) y el [resultado de la suite](logs/gsi-suite.json).
 
@@ -146,6 +148,16 @@ Remove-Item Env:PLAYWRIGHT_CHANNEL
 
 El canal empleado queda registrado en `logs/gsi-suite.json`, `logs/gsi-regression.json` y `logs/gsi-browser-smoke.json`. La automatización de GitHub Actions mantiene Chrome como referencia principal.
 
+El recorrido HTTP lee del historial el último lote editorial aplicado. Para cada pregunta activa del lote comprueba el texto y la corrección de las cuatro alternativas con barajado. También verifica la reanudación, el número de intentos guardados y la aparición de los fallos en Refuerzo. El nombre del control registra el ID del lote probado.
+
+Para comprobar las versiones activas de todos los lotes del historial, ejecuta el recorrido directamente con Node y Playwright disponible. La ejecución ampliada guarda su propio informe en `logs/gsi-browser-smoke-editorial.json`.
+
+```powershell
+$env:GSI_SMOKE_ALL_EDITORIAL = "1"
+node tests/gsi-smoke.mjs
+Remove-Item Env:GSI_SMOKE_ALL_EDITORIAL
+```
+
 | Código | Significado |
 | ---: | --- |
 | 0 | Pruebas técnicas y cobertura editorial superadas |
@@ -169,7 +181,7 @@ También se comprueban puntuación, temporizadores, persistencia, exportación e
 
 La criba de calidad editorial es independiente de la validez estructural. El comando `python scripts/analyze_question_quality.py --check` comprueba que el informe y la cola de revisión coincidan con los bancos sin cambiar ninguna pregunta.
 
-La [mejora del banco iniciada el 26 de octubre](docs/GSI_MEJORA_TESTS.md) incorpora señales graduales de longitud y feedback y una cola de revisión de 1.762 preguntas manuales e IA. El [piloto de 20 preguntas](docs/GSI_REVISION_PILOTO_001.md) se ha aplicado localmente tras la aceptación editorial expresa del propietario, vinculada al hash exacto aprobado. Conserva los IDs y las claves; la [verificación del lote](docs/GSI_APLICACION_LOTE_001.md) documenta fuentes, límites y validación. Quedan 1.742 preguntas pendientes de esta nueva revisión. La dificultad continúa siendo orientativa.
+La mejora del banco iniciada el 26 de octubre incorpora señales de longitud y feedback y abarca 1.762 preguntas manuales y de IA. Las 1.762 preguntas conservan su identificador, clave y versión histórica. Los 78 lotes previamente pendientes de ratificación se ratificaron por hash para la publicación provisional. [Estado editorial](docs/GSI_VERSION_PROVISIONAL.md). La dificultad continúa siendo orientativa. [Plan editorial](docs/GSI_MEJORA_TESTS.md) · [Informe de cierre](docs/GSI_CIERRE_EDITORIAL_2026-11-09.md).
 
 La misma suite se ejecuta en GitHub Actions para cada `pull_request`, para cambios en `gsi-only-final` y ramas `codex/**`, y de forma manual. El flujo instala sus dependencias, usa Chrome real y conserva durante 14 días los logs y capturas aunque una comprobación falle.
 

@@ -1,0 +1,3642 @@
+{
+  "version": 1,
+  "id": "GSI-EDITORIAL-003",
+  "prepared_at": "2026-10-26",
+  "baseline_commit": "e3e20ab879518c899806a70575eead28b3b35e6f",
+  "items": [
+    {
+      "id": "AI-GSI-B1-T07-018",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "1d6f3980fce267c360276afceebef7070e24de2b081ebb31a88722b6a14bc170",
+      "content_sha256": "46ea0e7434cbcb11c0f19f8d0486af8e36faed63d89d6c406961bc5cd477ed0b",
+      "before": {
+        "id": "AI-GSI-B1-T07-018",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B1",
+        "topic_id": "B1-T07",
+        "subtopic": "Brechas",
+        "exam": null,
+        "statement": "¿Qué relación existe entre una incidencia informática y una brecha de datos personales?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Una incidencia TI no es automáticamente una brecha de datos personales"
+          },
+          {
+            "id": "B",
+            "text": "Solo existe brecha si se ha probado un perjuicio económico"
+          },
+          {
+            "id": "C",
+            "text": "Solo los ataques externos pueden ser brechas"
+          },
+          {
+            "id": "D",
+            "text": "Toda parada de impresora es necesariamente una brecha notificable"
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Hay que valorar la afectación a datos personales y el riesgo; las equivalencias automáticas son incorrectas.",
+          "incorrect": "Hay que valorar la afectación a datos personales y el riesgo; las equivalencias automáticas son incorrectas."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B1-V21",
+          "document_id": "DOC-GSI-B1-V21",
+          "drive_id": "1G4Gpao0ou7tGmBQ1iTLtC2pWcljbIEezmsh5ZHFPXYg",
+          "url": "https://docs.google.com/document/d/1G4Gpao0ou7tGmBQ1iTLtC2pWcljbIEezmsh5ZHFPXYg/edit",
+          "locator": "I.07; sección 11. Brechas",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-24",
+          "title": "GSI_A2 — BLOQUE I — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (10 temas)",
+          "evidence": "Se documentan y pueden requerir notificación a autoridad en **72 horas desde que se tiene constancia**, salvo que sea improbable que entrañe riesgo. Si puede entrañar alto riesgo puede requerirse comunicación a afectados, con excepciones.\n\nIncidencia TI ≠ automáticamente brecha de datos.",
+          "evidence_sha256": "b129edf9064c1f0f170d5c535d925bf6b2449ae26e407ab0541fa62aeabd0c12",
+          "record_sha256": "a6ff34c549974ecd26942243204df1b0f543ec51f24170148ed471cfd2dede89",
+          "review_id": "AI-GSI-B1-T07-018",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B1-V21",
+          "document_id": "DOC-GSI-B1-V21",
+          "drive_id": "1G4Gpao0ou7tGmBQ1iTLtC2pWcljbIEezmsh5ZHFPXYg",
+          "url": "https://docs.google.com/document/d/1G4Gpao0ou7tGmBQ1iTLtC2pWcljbIEezmsh5ZHFPXYg/edit",
+          "locator": "I.07; sección 11. Brechas",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B1-T07-018",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B1",
+        "topic_id": "B1-T07",
+        "subtopic": "Brechas",
+        "exam": null,
+        "statement": "¿Qué relación existe entre una incidencia informática y una brecha de datos personales?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Una incidencia TI puede no ser una brecha; hay que determinar si afecta a datos personales."
+          },
+          {
+            "id": "B",
+            "text": "Una incidencia se convierte en brecha al confirmarse la extracción de datos por un tercero."
+          },
+          {
+            "id": "C",
+            "text": "Una incidencia que afecte a datos personales solo es brecha cuando causa un daño acreditado."
+          },
+          {
+            "id": "D",
+            "text": "Una incidencia con datos personales es brecha notificable en cuanto se abre un ticket de soporte."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Una brecha requiere una violación de seguridad que afecte a datos personales, incluida pérdida, alteración o acceso no autorizado. Su existencia y la obligación de notificarla son valoraciones diferentes; esta última depende del riesgo.",
+          "incorrect": "Contrasta la alternativa elegida con la explicación del concepto y las condiciones del enunciado.",
+          "incorrect_options": {
+            "B": "La extracción por terceros es un posible caso, pero también puede haber brecha por pérdida o alteración accidental o por acceso interno no autorizado.",
+            "C": "No es necesario acreditar un daño ya producido para identificar una brecha. Se valora también el riesgo para derechos y libertades.",
+            "D": "Abrir un ticket no determina la naturaleza del incidente ni obliga por sí mismo a notificarlo; hay que evaluar afectación y riesgo conforme al RGPD."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B1-V21",
+          "document_id": "DOC-GSI-B1-V21",
+          "drive_id": "1G4Gpao0ou7tGmBQ1iTLtC2pWcljbIEezmsh5ZHFPXYg",
+          "url": "https://docs.google.com/document/d/1G4Gpao0ou7tGmBQ1iTLtC2pWcljbIEezmsh5ZHFPXYg/edit",
+          "locator": "I.07; sección 11. Brechas",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-24",
+          "title": "GSI_A2 — BLOQUE I — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (10 temas)",
+          "evidence": "Se documentan y pueden requerir notificación a autoridad en **72 horas desde que se tiene constancia**, salvo que sea improbable que entrañe riesgo. Si puede entrañar alto riesgo puede requerirse comunicación a afectados, con excepciones.\n\nIncidencia TI ≠ automáticamente brecha de datos.",
+          "evidence_sha256": "b129edf9064c1f0f170d5c535d925bf6b2449ae26e407ab0541fa62aeabd0c12",
+          "record_sha256": "a6ff34c549974ecd26942243204df1b0f543ec51f24170148ed471cfd2dede89",
+          "review_id": "AI-GSI-B1-T07-018",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Reglamento (UE) 2016/679 (RGPD)",
+              "url": "https://www.boe.es/buscar/doc.php?id=DOUE-L-2016-80807",
+              "locator": "Artículos 4.12, 33.1 y 34.1: brecha, notificación y comunicación",
+              "version": "Reglamento de 27-04-2016; preceptos comprobados el 26-10-2026",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-003"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B1-V21",
+          "document_id": "DOC-GSI-B1-V21",
+          "drive_id": "1G4Gpao0ou7tGmBQ1iTLtC2pWcljbIEezmsh5ZHFPXYg",
+          "url": "https://docs.google.com/document/d/1G4Gpao0ou7tGmBQ1iTLtC2pWcljbIEezmsh5ZHFPXYg/edit",
+          "locator": "I.07; sección 11. Brechas",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Conservar el enunciado y distinguir incidente, brecha y notificación, sustituyendo distractores absurdos por confusiones habituales sobre exfiltración, daño y procedimiento."
+      ],
+      "references": [
+        {
+          "title": "Reglamento (UE) 2016/679 (RGPD)",
+          "url": "https://www.boe.es/buscar/doc.php?id=DOUE-L-2016-80807",
+          "locator": "Artículos 4.12, 33.1 y 34.1: brecha, notificación y comunicación",
+          "version": "Reglamento de 27-04-2016; preceptos comprobados el 26-10-2026",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B1-T09-004",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "c866064d67502bb071364ea09ed1048c87499ce21d93f6d316f5c25bc6771f52",
+      "content_sha256": "28c9aa6a2bbc05b476c8d163f414586bfaf106ae06232d996b682f51c4ee76e2",
+      "before": {
+        "id": "AI-GSI-B1-T09-004",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B1",
+        "topic_id": "B1-T09",
+        "subtopic": "Documento electrónico",
+        "exam": null,
+        "statement": "¿Qué conjunto describe adecuadamente un documento electrónico administrativo?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Contenido, identificador, metadatos y garantías de integridad y autenticidad"
+          },
+          {
+            "id": "B",
+            "text": "Solo un nombre de fichero legible"
+          },
+          {
+            "id": "C",
+            "text": "Cualquier imagen sin necesidad de contexto o garantías"
+          },
+          {
+            "id": "D",
+            "text": "Solo una fila sin contenido ni metadatos"
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "El documento requiere identificación, contexto y garantías para conservarse e interoperar.",
+          "incorrect": "El documento requiere identificación, contexto y garantías para conservarse e interoperar."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B1-V21",
+          "document_id": "DOC-GSI-B1-V21",
+          "drive_id": "1G4Gpao0ou7tGmBQ1iTLtC2pWcljbIEezmsh5ZHFPXYg",
+          "url": "https://docs.google.com/document/d/1G4Gpao0ou7tGmBQ1iTLtC2pWcljbIEezmsh5ZHFPXYg/edit",
+          "locator": "I.09; sección 5. Documento electrónico",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-24",
+          "title": "GSI_A2 — BLOQUE I — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (10 temas)",
+          "evidence": "Un documento electrónico administrativo debe poder identificarse, conservarse, interoperar y mantener integridad/autenticidad.\n\nElementos habituales: - contenido; - metadatos; - firma/sello cuando proceda; - identificador; - formato; - relación con expediente; - evidencias de validación cuando sean necesarias.\n\nEl ENI/NTI concreta estructuras y metadatos mínimos.",
+          "evidence_sha256": "5b940108e69f74479a6e6f767eabb3cb1ae4c61eccb0816454213d9f4de4f20c",
+          "record_sha256": "3010a9796355b248086b0a5c8284f8b876e52cd7047fdc9c4f0af9778adee410",
+          "review_id": "AI-GSI-B1-T09-004",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B1-V21",
+          "document_id": "DOC-GSI-B1-V21",
+          "drive_id": "1G4Gpao0ou7tGmBQ1iTLtC2pWcljbIEezmsh5ZHFPXYg",
+          "url": "https://docs.google.com/document/d/1G4Gpao0ou7tGmBQ1iTLtC2pWcljbIEezmsh5ZHFPXYg/edit",
+          "locator": "I.09; sección 5. Documento electrónico",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B1-T09-004",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B1",
+        "topic_id": "B1-T09",
+        "subtopic": "Documento electrónico",
+        "exam": null,
+        "statement": "¿Qué conjunto es coherente con los requisitos de validez del documento electrónico administrativo del artículo 26 de la Ley 39/2015?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Contenido individualizable, identificación, referencia temporal, metadatos y las firmas que correspondan."
+          },
+          {
+            "id": "B",
+            "text": "Contenido e identificación por nombre de fichero, sustituyendo con ese nombre los metadatos exigidos."
+          },
+          {
+            "id": "C",
+            "text": "Contenido y firma electrónica, de modo que la firma dispense de identificar y fechar el documento."
+          },
+          {
+            "id": "D",
+            "text": "Contenido y fecha de emisión, presumiendo su origen por el servidor que almacena el archivo."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "El artículo 26.2 exige contenido identificable, datos de individualización, referencia temporal, metadatos mínimos y las firmas aplicables. El apartado 3 contempla documentos sin firma, pero exige identificar su origen.",
+          "incorrect": "Contrasta la alternativa elegida con la explicación del concepto y las condiciones del enunciado.",
+          "incorrect_options": {
+            "B": "El nombre del archivo no sustituye los metadatos mínimos exigidos ni garantiza por sí mismo la individualización administrativa.",
+            "C": "La firma no dispensa de identificación, referencia temporal y metadatos; son requisitos distintos.",
+            "D": "El lugar de almacenamiento no acredita por sí solo el origen ni sustituye los datos y garantías que exige el artículo 26."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B1-V21",
+          "document_id": "DOC-GSI-B1-V21",
+          "drive_id": "1G4Gpao0ou7tGmBQ1iTLtC2pWcljbIEezmsh5ZHFPXYg",
+          "url": "https://docs.google.com/document/d/1G4Gpao0ou7tGmBQ1iTLtC2pWcljbIEezmsh5ZHFPXYg/edit",
+          "locator": "I.09; sección 5. Documento electrónico",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-24",
+          "title": "GSI_A2 — BLOQUE I — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (10 temas)",
+          "evidence": "Un documento electrónico administrativo debe poder identificarse, conservarse, interoperar y mantener integridad/autenticidad.\n\nElementos habituales: - contenido; - metadatos; - firma/sello cuando proceda; - identificador; - formato; - relación con expediente; - evidencias de validación cuando sean necesarias.\n\nEl ENI/NTI concreta estructuras y metadatos mínimos.",
+          "evidence_sha256": "5b940108e69f74479a6e6f767eabb3cb1ae4c61eccb0816454213d9f4de4f20c",
+          "record_sha256": "3010a9796355b248086b0a5c8284f8b876e52cd7047fdc9c4f0af9778adee410",
+          "review_id": "AI-GSI-B1-T09-004",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Ley 39/2015 del Procedimiento Administrativo Común",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-10565#a26",
+              "locator": "Artículo 26.2 y 26.3: requisitos y supuestos sin firma",
+              "version": "Texto consolidado consultado el 26-10-2026",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-003"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B1-V21",
+          "document_id": "DOC-GSI-B1-V21",
+          "drive_id": "1G4Gpao0ou7tGmBQ1iTLtC2pWcljbIEezmsh5ZHFPXYg",
+          "url": "https://docs.google.com/document/d/1G4Gpao0ou7tGmBQ1iTLtC2pWcljbIEezmsh5ZHFPXYg/edit",
+          "locator": "I.09; sección 5. Documento electrónico",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Precisar identificación, contexto y garantías con el precepto exacto, incluyendo referencia temporal y la excepción de firma cuando procede."
+      ],
+      "references": [
+        {
+          "title": "Ley 39/2015 del Procedimiento Administrativo Común",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-10565#a26",
+          "locator": "Artículo 26.2 y 26.3: requisitos y supuestos sin firma",
+          "version": "Texto consolidado consultado el 26-10-2026",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B1-T09-006",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "65e9424d257f55d328f3a32864cc26628e492ca2fa20f141804a6757a4f08646",
+      "content_sha256": "f92b37fbfda6231ad1242a15d61f69a4ff753153ae0c83a75ec8851c7a641e03",
+      "before": {
+        "id": "AI-GSI-B1-T09-006",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B1",
+        "topic_id": "B1-T09",
+        "subtopic": "Copias auténticas, digitalización y archivo",
+        "exam": null,
+        "statement": "¿Qué debe preservar una copia auténtica?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Solo la apariencia visual, sin competencia para expedirla"
+          },
+          {
+            "id": "B",
+            "text": "Únicamente el nombre del archivo, sin relación con el original"
+          },
+          {
+            "id": "C",
+            "text": "La relación con el original y las garantías del proceso competente"
+          },
+          {
+            "id": "D",
+            "text": "Una declaración informal del operador sin procedimiento"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "La copia auténtica exige proceso y competencias previstos, con relación al original.",
+          "incorrect": "La copia auténtica exige proceso y competencias previstos, con relación al original."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B1-V21",
+          "document_id": "DOC-GSI-B1-V21",
+          "drive_id": "1G4Gpao0ou7tGmBQ1iTLtC2pWcljbIEezmsh5ZHFPXYg",
+          "url": "https://docs.google.com/document/d/1G4Gpao0ou7tGmBQ1iTLtC2pWcljbIEezmsh5ZHFPXYg/edit",
+          "locator": "I.09; sección 7. Copias auténticas, digitalización y archivo",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-24",
+          "title": "GSI_A2 — BLOQUE I — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (10 temas)",
+          "evidence": "Las copias auténticas deben seguir procesos/competencias previstos y conservar relación con original. La digitalización transforma documentos en papel a documentos electrónicos con garantías cuando proceda.\n\nArchivo electrónico debe garantizar: - autenticidad; - integridad; - disponibilidad; - accesibilidad; - conservación; - trazabilidad; - migración de formatos; - seguridad; - aplicación de calendario de conservación/eliminación.",
+          "evidence_sha256": "83f9b95558c2e56db6df807b58f2e668f0b2657c29439e83e011a3436768cf0e",
+          "record_sha256": "025b13de793fa38c3c0b6239981d4c17c314ae6a7fcc37449916f6a14b07e610",
+          "review_id": "AI-GSI-B1-T09-006",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B1-V21",
+          "document_id": "DOC-GSI-B1-V21",
+          "drive_id": "1G4Gpao0ou7tGmBQ1iTLtC2pWcljbIEezmsh5ZHFPXYg",
+          "url": "https://docs.google.com/document/d/1G4Gpao0ou7tGmBQ1iTLtC2pWcljbIEezmsh5ZHFPXYg/edit",
+          "locator": "I.09; sección 7. Copias auténticas, digitalización y archivo",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B1-T09-006",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B1",
+        "topic_id": "B1-T09",
+        "subtopic": "Copias auténticas, digitalización y archivo",
+        "exam": null,
+        "statement": "Una copia electrónica cambia el formato del documento original. ¿Qué es necesario para que pueda tener carácter de copia auténtica conforme al artículo 27 de la Ley 39/2015?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Que conserve la representación visual, aunque la expida una unidad sin competencia para copiar."
+          },
+          {
+            "id": "B",
+            "text": "Que reproduzca los mismos bytes y conserve el nombre del archivo, aunque no identifique al emisor."
+          },
+          {
+            "id": "C",
+            "text": "Que la expida el órgano competente y garantice su identidad y el contenido mediante el proceso previsto."
+          },
+          {
+            "id": "D",
+            "text": "Que conserve la firma del original como imagen, dando esa reproducción por garantía de autenticidad."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "La copia auténtica puede cambiar de formato, pero requiere órgano competente y garantías de su identidad y contenido. Las copias electrónicas incorporan metadatos que acreditan su condición y se ajustan al ENI y al ENS.",
+          "incorrect": "Contrasta la alternativa elegida con la explicación del concepto y las condiciones del enunciado.",
+          "incorrect_options": {
+            "A": "La semejanza visual no corrige la falta de competencia ni acredita las garantías del proceso de copiado.",
+            "B": "El artículo 27 admite cambio de formato: no exige identidad de bytes. Copiar bytes y nombre tampoco sustituye identificar al órgano competente.",
+            "D": "Una imagen de una firma no equivale a una firma verificable ni acredita el proceso competente de copia auténtica."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B1-V21",
+          "document_id": "DOC-GSI-B1-V21",
+          "drive_id": "1G4Gpao0ou7tGmBQ1iTLtC2pWcljbIEezmsh5ZHFPXYg",
+          "url": "https://docs.google.com/document/d/1G4Gpao0ou7tGmBQ1iTLtC2pWcljbIEezmsh5ZHFPXYg/edit",
+          "locator": "I.09; sección 7. Copias auténticas, digitalización y archivo",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-24",
+          "title": "GSI_A2 — BLOQUE I — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (10 temas)",
+          "evidence": "Las copias auténticas deben seguir procesos/competencias previstos y conservar relación con original. La digitalización transforma documentos en papel a documentos electrónicos con garantías cuando proceda.\n\nArchivo electrónico debe garantizar: - autenticidad; - integridad; - disponibilidad; - accesibilidad; - conservación; - trazabilidad; - migración de formatos; - seguridad; - aplicación de calendario de conservación/eliminación.",
+          "evidence_sha256": "83f9b95558c2e56db6df807b58f2e668f0b2657c29439e83e011a3436768cf0e",
+          "record_sha256": "025b13de793fa38c3c0b6239981d4c17c314ae6a7fcc37449916f6a14b07e610",
+          "review_id": "AI-GSI-B1-T09-006",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Ley 39/2015 del Procedimiento Administrativo Común",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-10565#a27",
+              "locator": "Artículo 27.1, 27.2 y 27.3.a): competencia, identidad, contenido y cambio de formato",
+              "version": "Texto consolidado consultado el 26-10-2026",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-003"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B1-V21",
+          "document_id": "DOC-GSI-B1-V21",
+          "drive_id": "1G4Gpao0ou7tGmBQ1iTLtC2pWcljbIEezmsh5ZHFPXYg",
+          "url": "https://docs.google.com/document/d/1G4Gpao0ou7tGmBQ1iTLtC2pWcljbIEezmsh5ZHFPXYg/edit",
+          "locator": "I.09; sección 7. Copias auténticas, digitalización y archivo",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Distinguir autenticidad jurídica de similitud visual, igualdad binaria o imagen de firma; explicitar que el cambio de formato está permitido."
+      ],
+      "references": [
+        {
+          "title": "Ley 39/2015 del Procedimiento Administrativo Común",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-10565#a27",
+          "locator": "Artículo 27.1, 27.2 y 27.3.a): competencia, identidad, contenido y cambio de formato",
+          "version": "Texto consolidado consultado el 26-10-2026",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B1-T09-010",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "85b10279e5aaa9de16e9a95174ca80222dd2b94198cf468295bc83191b8c4f92",
+      "content_sha256": "4040d6b4ebf97e6cec2dbb9fd72380404d839eb3520ecb80757c8280ce8b92a8",
+      "before": {
+        "id": "AI-GSI-B1-T09-010",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B1",
+        "topic_id": "B1-T09",
+        "subtopic": "ENS — RD 311/2022",
+        "exam": null,
+        "statement": "Para valorar la seguridad de un sistema público, ¿qué criterio debe prevalecer sobre el tamaño de sus servidores?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Solo el número de servidores instalados"
+          },
+          {
+            "id": "B",
+            "text": "El impacto de incidentes en la información y los servicios"
+          },
+          {
+            "id": "C",
+            "text": "Exclusivamente el presupuesto del proyecto"
+          },
+          {
+            "id": "D",
+            "text": "Únicamente la antigüedad de los equipos"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "El ENS se fundamenta en impacto y riesgos, no en magnitudes físicas aisladas.",
+          "incorrect": "El ENS se fundamenta en impacto y riesgos, no en magnitudes físicas aisladas."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B1-V21",
+          "document_id": "DOC-GSI-B1-V21",
+          "drive_id": "1G4Gpao0ou7tGmBQ1iTLtC2pWcljbIEezmsh5ZHFPXYg",
+          "url": "https://docs.google.com/document/d/1G4Gpao0ou7tGmBQ1iTLtC2pWcljbIEezmsh5ZHFPXYg/edit",
+          "locator": "I.09; sección 10. ENS — RD 311/2022",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-24",
+          "title": "GSI_A2 — BLOQUE I — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (10 temas)",
+          "evidence": "### 10.1 Finalidad y ámbito\n\nEl ENS establece principios y requisitos para protección adecuada de información/servicios en su ámbito, incluida aplicación a proveedores privados cuando prestan determinados servicios a entidades públicas en virtud de relación contractual y normativa aplicable.\n\n### 10.2 Dimensiones de seguridad: ACIDT\n\n* **A**utenticidad.\n* **C**onfidencialidad.\n* **I**ntegridad.\n* **D**isponibilidad.\n* **T**razabilidad.\n\nLa categoría no se decide por “tamaño del servidor”, sino por impacto de incidentes sobre estas dimensiones y servicios/información.\n\n### 10.3 Siete principios básicos\n\n* seguridad como proceso integral;\n* gestión de seguridad basada en riesgos;\n* prevención, detección, respuesta y conservación;\n* líneas de defensa;\n* vigilancia continua;\n* reevaluación periódica;\n* diferenciación de responsabilidades.\n\n### 10.4 Requisitos mínimos\n\nDebes reconocer: - organización e implantación del proceso de seguridad; - análisis/gestión de riesgos; - gestión de personal; - profesionalidad; - autorización/control de accesos; - protección de instalaciones; - adquisición de productos y contratación de servicios de seguridad; - mínimo privilegio; - integridad/actualización; - protección de información almacenada/en tránsito; - prevención frente a sistemas interconectados; - registro de actividad y detección de código dañino; - incidentes; - continuidad; - mejora continua.",
+          "evidence_sha256": "8ca878e40b585ba0eda449e55e5de59a787aef5f25d9ee7cc4b46db92da1ef7d",
+          "record_sha256": "e004c86df6db67aaaec9fc15faeab95c02585fd50a1ada405bbb942f982af982",
+          "review_id": "AI-GSI-B1-T09-010",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B1-V21",
+          "document_id": "DOC-GSI-B1-V21",
+          "drive_id": "1G4Gpao0ou7tGmBQ1iTLtC2pWcljbIEezmsh5ZHFPXYg",
+          "url": "https://docs.google.com/document/d/1G4Gpao0ou7tGmBQ1iTLtC2pWcljbIEezmsh5ZHFPXYg/edit",
+          "locator": "I.09; sección 10. ENS — RD 311/2022",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B1-T09-010",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B1",
+        "topic_id": "B1-T09",
+        "subtopic": "ENS — RD 311/2022",
+        "exam": null,
+        "statement": "Para determinar la categoría ENS de un sistema, ¿qué criterio resulta decisivo frente al tamaño o número de sus servidores?",
+        "options": [
+          {
+            "id": "A",
+            "text": "La capacidad instalada de los equipos que soportan las aplicaciones de producción."
+          },
+          {
+            "id": "B",
+            "text": "El impacto de incidentes en la información y los servicios, valorado por dimensiones de seguridad."
+          },
+          {
+            "id": "C",
+            "text": "El coste de reposición de la infraestructura, usado como medida del conjunto de consecuencias."
+          },
+          {
+            "id": "D",
+            "text": "La cantidad de usuarios del sistema, empleada como sustituto de valorar las funciones afectadas."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "El anexo I del ENS categoriza por las consecuencias de incidentes en las dimensiones de seguridad. Infraestructura, costes o usuarios pueden aportar contexto, pero no sustituyen valorar el impacto en información y servicios.",
+          "incorrect": "Contrasta la alternativa elegida con la explicación del concepto y las condiciones del enunciado.",
+          "incorrect_options": {
+            "A": "La potencia o capacidad de los equipos no determina por sí misma las consecuencias de un incidente ni la categoría ENS.",
+            "C": "El coste de reposición es una parte posible del impacto, pero no resume daños a funciones, personas, activos o cumplimiento normativo.",
+            "D": "El número de usuarios no mide por sí solo la gravedad de las consecuencias para cada información y servicio."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B1-V21",
+          "document_id": "DOC-GSI-B1-V21",
+          "drive_id": "1G4Gpao0ou7tGmBQ1iTLtC2pWcljbIEezmsh5ZHFPXYg",
+          "url": "https://docs.google.com/document/d/1G4Gpao0ou7tGmBQ1iTLtC2pWcljbIEezmsh5ZHFPXYg/edit",
+          "locator": "I.09; sección 10. ENS — RD 311/2022",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-24",
+          "title": "GSI_A2 — BLOQUE I — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (10 temas)",
+          "evidence": "### 10.1 Finalidad y ámbito\n\nEl ENS establece principios y requisitos para protección adecuada de información/servicios en su ámbito, incluida aplicación a proveedores privados cuando prestan determinados servicios a entidades públicas en virtud de relación contractual y normativa aplicable.\n\n### 10.2 Dimensiones de seguridad: ACIDT\n\n* **A**utenticidad.\n* **C**onfidencialidad.\n* **I**ntegridad.\n* **D**isponibilidad.\n* **T**razabilidad.\n\nLa categoría no se decide por “tamaño del servidor”, sino por impacto de incidentes sobre estas dimensiones y servicios/información.\n\n### 10.3 Siete principios básicos\n\n* seguridad como proceso integral;\n* gestión de seguridad basada en riesgos;\n* prevención, detección, respuesta y conservación;\n* líneas de defensa;\n* vigilancia continua;\n* reevaluación periódica;\n* diferenciación de responsabilidades.\n\n### 10.4 Requisitos mínimos\n\nDebes reconocer: - organización e implantación del proceso de seguridad; - análisis/gestión de riesgos; - gestión de personal; - profesionalidad; - autorización/control de accesos; - protección de instalaciones; - adquisición de productos y contratación de servicios de seguridad; - mínimo privilegio; - integridad/actualización; - protección de información almacenada/en tránsito; - prevención frente a sistemas interconectados; - registro de actividad y detección de código dañino; - incidentes; - continuidad; - mejora continua.",
+          "evidence_sha256": "8ca878e40b585ba0eda449e55e5de59a787aef5f25d9ee7cc4b46db92da1ef7d",
+          "record_sha256": "e004c86df6db67aaaec9fc15faeab95c02585fd50a1ada405bbb942f982af982",
+          "review_id": "AI-GSI-B1-T09-010",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Real Decreto 311/2022: Esquema Nacional de Seguridad",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-7191",
+              "locator": "Anexo I, §§1–4: impacto, dimensiones, niveles y categoría",
+              "version": "Texto consolidado consultado el 26-10-2026",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-003"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B1-V21",
+          "document_id": "DOC-GSI-B1-V21",
+          "drive_id": "1G4Gpao0ou7tGmBQ1iTLtC2pWcljbIEezmsh5ZHFPXYg",
+          "url": "https://docs.google.com/document/d/1G4Gpao0ou7tGmBQ1iTLtC2pWcljbIEezmsh5ZHFPXYg/edit",
+          "locator": "I.09; sección 10. ENS — RD 311/2022",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Concretar la categorización ENS y sustituir indicadores físicos aislados por distractores que confunden contexto con evaluación del impacto."
+      ],
+      "references": [
+        {
+          "title": "Real Decreto 311/2022: Esquema Nacional de Seguridad",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-7191",
+          "locator": "Anexo I, §§1–4: impacto, dimensiones, niveles y categoría",
+          "version": "Texto consolidado consultado el 26-10-2026",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B2-T03-013",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "b4a75e5a3938a484814690dd3bd9ccdf797983ecd2456a0243bd06cd998e0e91",
+      "content_sha256": "ebfc9e05fe9562b2b3e79339f43a4a535ceb86d56c23c709adc0734e6cd7862d",
+      "before": {
+        "id": "AI-GSI-B2-T03-013",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T03",
+        "subtopic": "Lógico y declarativo",
+        "exam": null,
+        "statement": "¿Qué elementos son característicos de la programación lógica?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Únicamente asignaciones a registros"
+          },
+          {
+            "id": "B",
+            "text": "Exclusivamente hojas de estilo"
+          },
+          {
+            "id": "C",
+            "text": "Hechos y reglas"
+          },
+          {
+            "id": "D",
+            "text": "Solo jerarquías de clases"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "El paradigma lógico expresa hechos y reglas, como en Prolog.",
+          "incorrect": "El paradigma lógico expresa hechos y reglas, como en Prolog."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.03; sección 6. Lógico y declarativo",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "En programación declarativa se expresa **qué resultado** se desea y el motor decide gran parte de cómo obtenerlo. SQL es el ejemplo esencial: la consulta describe el conjunto deseado y el optimizador elige un plan. En programación lógica se expresan hechos y reglas, como en Prolog.",
+          "evidence_sha256": "8ae5d488710d0506d321f1f7acaba229541bf94ef3beed89eeec96eed94496c0",
+          "record_sha256": "0f22d74c884bd5e2ad906dd6132b8d10e3c7fddd07a5c2ba816e3ce487aba66d",
+          "review_id": "AI-GSI-B2-T03-013",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.03; sección 6. Lógico y declarativo",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B2-T03-013",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T03",
+        "subtopic": "Lógico y declarativo",
+        "exam": null,
+        "statement": "¿Cómo se expresa principalmente el conocimiento en la programación lógica, como en Prolog?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Con secuencias de asignaciones que describen los cambios de estado paso a paso."
+          },
+          {
+            "id": "B",
+            "text": "Con composiciones de funciones que transforman valores sin modificar su estado."
+          },
+          {
+            "id": "C",
+            "text": "Con hechos y reglas sobre relaciones, a los que se plantean consultas."
+          },
+          {
+            "id": "D",
+            "text": "Con clases que reúnen estado y operaciones y se especializan mediante herencia."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Los hechos y las reglas expresan relaciones; las consultas buscan soluciones que el sistema puede demostrar con ellas. Esta organización caracteriza el enfoque lógico, aunque Prolog también disponga de mecanismos de control.",
+          "incorrect": "Contrasta la alternativa elegida con la explicación del concepto y las condiciones del enunciado.",
+          "incorrect_options": {
+            "A": "La secuencia de cambios de estado describe el enfoque imperativo; no es la forma principal de representar conocimiento lógico en Prolog.",
+            "B": "Componer funciones puras es característico del paradigma funcional; una base lógica se expresa mediante predicados, hechos y reglas.",
+            "D": "Clases, estado y herencia corresponden al enfoque orientado a objetos; no definen la base de conocimiento lógica."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.03; sección 6. Lógico y declarativo",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "En programación declarativa se expresa **qué resultado** se desea y el motor decide gran parte de cómo obtenerlo. SQL es el ejemplo esencial: la consulta describe el conjunto deseado y el optimizador elige un plan. En programación lógica se expresan hechos y reglas, como en Prolog.",
+          "evidence_sha256": "8ae5d488710d0506d321f1f7acaba229541bf94ef3beed89eeec96eed94496c0",
+          "record_sha256": "0f22d74c884bd5e2ad906dd6132b8d10e3c7fddd07a5c2ba816e3ce487aba66d",
+          "review_id": "AI-GSI-B2-T03-013",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "SWI-Prolog Reference Manual: Getting started quickly",
+              "url": "https://www.swi-prolog.org/man/quickstart.html",
+              "locator": "§2.1.1 Starting SWI-Prolog; §2.1.2 Adding rules from the console; §2.1.3 Executing a query",
+              "version": "Manual web consultado el 26-10-2026",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-003"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.03; sección 6. Lógico y declarativo",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Contrastar paradigmas reales con alternativas próximas y comparables; conservar hechos y reglas como concepto sin negar mecanismos adicionales de Prolog."
+      ],
+      "references": [
+        {
+          "title": "SWI-Prolog Reference Manual: Getting started quickly",
+          "url": "https://www.swi-prolog.org/man/quickstart.html",
+          "locator": "§2.1.1 Starting SWI-Prolog; §2.1.2 Adding rules from the console; §2.1.3 Executing a query",
+          "version": "Manual web consultado el 26-10-2026",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B2-T03-020",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "730e1ff5a7604db692b87cee657c3245525b472392b5766d4b9cbcdec91c21b3",
+      "content_sha256": "d4821e0ab3965087b7ce2900d0cf9da70bb313535655112a2bb78cc7786d4617",
+      "before": {
+        "id": "AI-GSI-B2-T03-020",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T03",
+        "subtopic": "Criterios de selección",
+        "exam": null,
+        "statement": "Al seleccionar lenguaje para un servicio público mantenible, ¿qué criterio es más completo?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Solo la preferencia personal del primer desarrollador"
+          },
+          {
+            "id": "B",
+            "text": "El número de palabras reservadas como único indicador"
+          },
+          {
+            "id": "C",
+            "text": "Requisitos, soporte, seguridad, ecosistema y coste de mantenimiento"
+          },
+          {
+            "id": "D",
+            "text": "Solo la popularidad en una encuesta"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "La elección debe justificarse por requisitos y ciclo de vida, no por un indicador aislado.",
+          "incorrect": "La elección debe justificarse por requisitos y ciclo de vida, no por un indicador aislado."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.03; sección 11. Criterios de selección",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Lenguaje y runtime deben evaluarse por requisitos funcionales/no funcionales, rendimiento, seguridad, ecosistema, disponibilidad de profesionales, soporte, ciclo de vida, portabilidad, integración, observabilidad, herramientas de pruebas, despliegue y coste de mantenimiento. La moda o preferencia del equipo no es criterio suficiente.",
+          "evidence_sha256": "227eb32dba6cee9e1c1ec2097f06316e7d861783f3ee55a65b90e27b22dd269c",
+          "record_sha256": "3406261a28f59100d8dca3836de3d548d4925013f39f21b12a94a134a3c48273",
+          "review_id": "AI-GSI-B2-T03-020",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.03; sección 11. Criterios de selección",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B2-T03-020",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T03",
+        "subtopic": "Criterios de selección",
+        "exam": null,
+        "statement": "Al seleccionar lenguaje para un servicio público mantenible, ¿qué criterio es más completo?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Elegir el lenguaje que mejor conoce quien inicia el proyecto, sin valorar la continuidad del equipo."
+          },
+          {
+            "id": "B",
+            "text": "Elegir el lenguaje con mejor resultado en un microbenchmark, extrapolándolo al servicio completo."
+          },
+          {
+            "id": "C",
+            "text": "Contrastar requisitos, seguridad, soporte, ecosistema y mantenimiento durante la vida del servicio."
+          },
+          {
+            "id": "D",
+            "text": "Elegir el lenguaje con mayor adopción reciente, dando su popularidad por garantía de soporte futuro."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "La selección debe responder a requisitos y ciclo de vida, incluyendo seguridad, capacidades del ecosistema, competencias y soporte. Una ventaja de sintaxis o rendimiento aislada no demuestra que la solución sea mantenible.",
+          "incorrect": "Contrasta la alternativa elegida con la explicación del concepto y las condiciones del enunciado.",
+          "incorrect_options": {
+            "A": "La experiencia del equipo es relevante, pero depender de la preferencia de una sola persona no evalúa continuidad, soporte o requisitos.",
+            "B": "Un microbenchmark cubre una operación y un entorno concretos; no acredita rendimiento global, seguridad o coste de mantenimiento.",
+            "D": "La adopción aporta información, pero no garantiza estabilidad de bibliotecas, actualizaciones ni soporte durante la vida prevista del servicio."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.03; sección 11. Criterios de selección",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Lenguaje y runtime deben evaluarse por requisitos funcionales/no funcionales, rendimiento, seguridad, ecosistema, disponibilidad de profesionales, soporte, ciclo de vida, portabilidad, integración, observabilidad, herramientas de pruebas, despliegue y coste de mantenimiento. La moda o preferencia del equipo no es criterio suficiente.",
+          "evidence_sha256": "227eb32dba6cee9e1c1ec2097f06316e7d861783f3ee55a65b90e27b22dd269c",
+          "record_sha256": "3406261a28f59100d8dca3836de3d548d4925013f39f21b12a94a134a3c48273",
+          "review_id": "AI-GSI-B2-T03-020",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Microsoft Azure: Application design of mission-critical workloads",
+              "url": "https://learn.microsoft.com/en-us/azure/well-architected/mission-critical/mission-critical-application-design",
+              "locator": "Programming language selection and uptime impact; Design considerations",
+              "version": "Guía actualizada el 28-05-2026; consultada el 26-10-2026",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-003"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.03; sección 11. Criterios de selección",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Conservar el enunciado útil y reemplazar indicadores absurdos por sesgos reales de selección: familiaridad individual, microbenchmark y popularidad."
+      ],
+      "references": [
+        {
+          "title": "Microsoft Azure: Application design of mission-critical workloads",
+          "url": "https://learn.microsoft.com/en-us/azure/well-architected/mission-critical/mission-critical-application-design",
+          "locator": "Programming language selection and uptime impact; Design considerations",
+          "version": "Guía actualizada el 28-05-2026; consultada el 26-10-2026",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B2-T04-005",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "2fc1b1d91bfec96e9efa066332bf48b35e207bcb34f53ba83f6c0d8f768d7282",
+      "content_sha256": "255c49cc5a18e05ed998f8f502685d8507cbc39724d43facabc859408d6cc9be",
+      "before": {
+        "id": "AI-GSI-B2-T04-005",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T04",
+        "subtopic": "Data Warehouse",
+        "exam": null,
+        "statement": "¿Qué propiedades clásicas caracterizan al Data Warehouse?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Exclusivamente transacciones cortas en tiempo real"
+          },
+          {
+            "id": "B",
+            "text": "Volátil, aislado, sin historia y orientado a edición puntual"
+          },
+          {
+            "id": "C",
+            "text": "Orientado a temas, integrado, variable en el tiempo y no volátil"
+          },
+          {
+            "id": "D",
+            "text": "Solo documentos sin estructura ni metadatos"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "El DW integra historia para análisis; su finalidad difiere de la operación transaccional.",
+          "incorrect": "El DW integra historia para análisis; su finalidad difiere de la operación transaccional."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.04; sección 4. Data Warehouse",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Un Data Warehouse integra información de múltiples fuentes para análisis histórico. La formulación clásica de Inmon lo caracteriza como **orientado a temas, integrado, variable en el tiempo y no volátil**. El objetivo no es procesar transacciones de negocio en tiempo real, sino facilitar análisis coherente.\n\n**Data Mart** es un subconjunto especializado por área o materia. En enfoque top-down se construye primero un DW corporativo y después datamarts; en enfoque bottom-up se crean datamarts conformados y se integran progresivamente.",
+          "evidence_sha256": "cf9c833cd5ba7fd4797a8b2e35b4741e603353872f82f4eec185d6c317dfbaee",
+          "record_sha256": "477478584c513046b0aa87e428c802a3f4c6209a8da0615cba8774f3fc33f411",
+          "review_id": "AI-GSI-B2-T04-005",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.04; sección 4. Data Warehouse",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B2-T04-005",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T04",
+        "subtopic": "Data Warehouse",
+        "exam": null,
+        "statement": "Según la caracterización clásica de Inmon, ¿qué propiedades describen un Data Warehouse?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Orientado a aplicaciones, integrado, histórico y no volátil."
+          },
+          {
+            "id": "B",
+            "text": "Orientado a temas, integrado, centrado en el dato actual y volátil."
+          },
+          {
+            "id": "C",
+            "text": "Orientado a temas, integrado, variable en el tiempo y no volátil."
+          },
+          {
+            "id": "D",
+            "text": "Orientado a temas, separado por fuentes, histórico y no volátil."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "La caracterización clásica combina organización por temas, integración de fuentes, perspectiva histórica y estabilidad de lo cargado. No volatilidad diferencia su uso analítico de la actualización transaccional cotidiana; no significa que ninguna implementación pueda corregir datos.",
+          "incorrect": "Contrasta la alternativa elegida con la explicación del concepto y las condiciones del enunciado.",
+          "incorrect_options": {
+            "A": "La orientación clásica es por temas de análisis, no por las aplicaciones operativas que originaron los datos.",
+            "B": "Centrarse en el estado actual y su actualización frecuente describe necesidades operativas; se pierden la perspectiva temporal y la no volatilidad de la definición clásica.",
+            "D": "Mantener fuentes separadas sin integración no resuelve discrepancias de formatos, unidades o significado, que son propias de la integración del almacén."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.04; sección 4. Data Warehouse",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Un Data Warehouse integra información de múltiples fuentes para análisis histórico. La formulación clásica de Inmon lo caracteriza como **orientado a temas, integrado, variable en el tiempo y no volátil**. El objetivo no es procesar transacciones de negocio en tiempo real, sino facilitar análisis coherente.\n\n**Data Mart** es un subconjunto especializado por área o materia. En enfoque top-down se construye primero un DW corporativo y después datamarts; en enfoque bottom-up se crean datamarts conformados y se integran progresivamente.",
+          "evidence_sha256": "cf9c833cd5ba7fd4797a8b2e35b4741e603353872f82f4eec185d6c317dfbaee",
+          "record_sha256": "477478584c513046b0aa87e428c802a3f4c6209a8da0615cba8774f3fc33f411",
+          "review_id": "AI-GSI-B2-T04-005",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Oracle: What Is a Data Warehouse?",
+              "url": "https://www.oracle.com/database/what-is-a-data-warehouse/",
+              "locator": "What Is a Data Warehouse?; Four unique characteristics (William Inmon)",
+              "version": "Artículo de 08-06-2023, consultado el 26-10-2026",
+              "checked_at": "2026-10-26"
+            },
+            {
+              "title": "Microsoft: Dimensional modeling fact tables",
+              "url": "https://learn.microsoft.com/en-us/fabric/data-warehouse/dimensional-modeling-fact-tables",
+              "locator": "Fact table types: Transaction fact tables; actualización para corregir errores",
+              "version": "Documentación web consultada el 26-10-2026",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-003"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.04; sección 4. Data Warehouse",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Identificar expresamente la definición clásica y enfrentar errores en cada propiedad, evitando convertir no volatilidad en prohibición absoluta de corregir datos."
+      ],
+      "references": [
+        {
+          "title": "Oracle: What Is a Data Warehouse?",
+          "url": "https://www.oracle.com/database/what-is-a-data-warehouse/",
+          "locator": "What Is a Data Warehouse?; Four unique characteristics (William Inmon)",
+          "version": "Artículo de 08-06-2023, consultado el 26-10-2026",
+          "checked_at": "2026-10-26"
+        },
+        {
+          "title": "Microsoft: Dimensional modeling fact tables",
+          "url": "https://learn.microsoft.com/en-us/fabric/data-warehouse/dimensional-modeling-fact-tables",
+          "locator": "Fact table types: Transaction fact tables; actualización para corregir errores",
+          "version": "Documentación web consultada el 26-10-2026",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B2-T04-008",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "4fc429d2b5fe8ab46813988b26abc9a14b66c1b1f32b22cbebadc49b5d5d4430",
+      "content_sha256": "7d893ef65a4cd4acd2bc678915848b60b93da28c6f2d96f535fd459250f2c636",
+      "before": {
+        "id": "AI-GSI-B2-T04-008",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T04",
+        "subtopic": "Aprovisionamiento: ETL/ELT, staging y ODS",
+        "exam": null,
+        "statement": "En ETL, ¿cuándo se realiza la transformación principal respecto a la carga?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Siempre después de cargar en destino"
+          },
+          {
+            "id": "B",
+            "text": "Nunca, porque ETL solo extrae"
+          },
+          {
+            "id": "C",
+            "text": "Solo después de visualizar el informe"
+          },
+          {
+            "id": "D",
+            "text": "Antes de cargar en el destino"
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "ETL extrae, transforma y carga; ELT carga antes de transformar en la plataforma destino.",
+          "incorrect": "ETL extrae, transforma y carga; ELT carga antes de transformar en la plataforma destino."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.04; sección 5. Aprovisionamiento: ETL/ELT, staging y ODS",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "**ETL**: extraer de fuentes, transformar/depurar/homogeneizar y cargar en destino. **ELT**: carga primero en una plataforma capaz y transforma posteriormente. No son dogmas: la elección depende de arquitectura, volumen, gobierno y herramientas.\n\n* **Staging area**: zona temporal de recepción/preparación.\n* **ODS (Operational Data Store)**: almacén integrado de datos operacionales recientes, habitualmente más normalizado y con menor profundidad histórica que el DW.\n* **Metadatos**: describen significado, origen, estructura y transformación.\n* **Linaje**: permite saber de dónde procede un dato y qué transformaciones ha sufrido.\n* **Calidad**: exactitud, completitud, consistencia, unicidad, validez, oportunidad, etc.",
+          "evidence_sha256": "0be4e52923d7a19d282574bf6d5980874a73d1ab3f61fcde8e3ac4d94acccd9f",
+          "record_sha256": "9829650159dcfb75398a1aa45f9ae85a1c5cf6f99982e401671bb9ec79af151d",
+          "review_id": "AI-GSI-B2-T04-008",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.04; sección 5. Aprovisionamiento: ETL/ELT, staging y ODS",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B2-T04-008",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T04",
+        "subtopic": "Aprovisionamiento: ETL/ELT, staging y ODS",
+        "exam": null,
+        "statement": "En ETL, ¿cuándo se realiza la transformación principal respecto a la carga?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Después de cargar los datos en el destino."
+          },
+          {
+            "id": "B",
+            "text": "Antes de extraer los datos desde el origen."
+          },
+          {
+            "id": "C",
+            "text": "Al representar los datos en los informes."
+          },
+          {
+            "id": "D",
+            "text": "Antes de cargar en el destino."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "En ETL se extraen los datos, se transforman y después se cargan en el sistema destino. Puede utilizarse un área temporal; ELT sitúa la transformación después de cargar los datos en destino.",
+          "incorrect": "Contrasta la alternativa elegida con la explicación del concepto y las condiciones del enunciado.",
+          "incorrect_options": {
+            "A": "Cargar primero en destino y transformar después corresponde al orden ELT, no al ETL preguntado.",
+            "B": "La transformación de los datos extraídos sigue a la extracción; no se define como modificar el sistema de origen antes de extraer.",
+            "C": "Dar formato al informe pertenece a presentación y no sustituye la transformación del flujo de integración."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.04; sección 5. Aprovisionamiento: ETL/ELT, staging y ODS",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "**ETL**: extraer de fuentes, transformar/depurar/homogeneizar y cargar en destino. **ELT**: carga primero en una plataforma capaz y transforma posteriormente. No son dogmas: la elección depende de arquitectura, volumen, gobierno y herramientas.\n\n* **Staging area**: zona temporal de recepción/preparación.\n* **ODS (Operational Data Store)**: almacén integrado de datos operacionales recientes, habitualmente más normalizado y con menor profundidad histórica que el DW.\n* **Metadatos**: describen significado, origen, estructura y transformación.\n* **Linaje**: permite saber de dónde procede un dato y qué transformaciones ha sufrido.\n* **Calidad**: exactitud, completitud, consistencia, unicidad, validez, oportunidad, etc.",
+          "evidence_sha256": "0be4e52923d7a19d282574bf6d5980874a73d1ab3f61fcde8e3ac4d94acccd9f",
+          "record_sha256": "9829650159dcfb75398a1aa45f9ae85a1c5cf6f99982e401671bb9ec79af151d",
+          "review_id": "AI-GSI-B2-T04-008",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "IBM: What is ETL (Extract, Transform, Load)?",
+              "url": "https://www.ibm.com/think/topics/etl",
+              "locator": "ETL versus ELT; Differences between ETL and ELT: Order and location of steps; How ETL works",
+              "version": "Artículo web consultado el 26-10-2026",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-003"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.04; sección 5. Aprovisionamiento: ETL/ELT, staging y ODS",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Conservar enunciado y respuesta correcta ya precisos; comparar las posiciones del tratamiento en origen, destino y presentación sin añadir un caso de relleno."
+      ],
+      "references": [
+        {
+          "title": "IBM: What is ETL (Extract, Transform, Load)?",
+          "url": "https://www.ibm.com/think/topics/etl",
+          "locator": "ETL versus ELT; Differences between ETL and ELT: Order and location of steps; How ETL works",
+          "version": "Artículo web consultado el 26-10-2026",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B2-T04-014",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "87de9cbddd03fbb60c111677e530fdb2d0841411510740e25fa9cadcbe28ffac",
+      "content_sha256": "7c3c466d717ced9ee0ecf1a157a97a4499a244e3e766878517774d16b533c990",
+      "before": {
+        "id": "AI-GSI-B2-T04-014",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T04",
+        "subtopic": "Modelo dimensional",
+        "exam": null,
+        "statement": "En un modelo dimensional, ¿qué contiene principalmente una tabla de hechos?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Exclusivamente documentos PDF"
+          },
+          {
+            "id": "B",
+            "text": "Únicamente usuarios y contraseñas"
+          },
+          {
+            "id": "C",
+            "text": "Medidas y claves hacia dimensiones"
+          },
+          {
+            "id": "D",
+            "text": "Solo descripciones jerárquicas sin eventos medibles"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Los hechos representan eventos o procesos medibles; las dimensiones aportan ejes descriptivos.",
+          "incorrect": "Los hechos representan eventos o procesos medibles; las dimensiones aportan ejes descriptivos."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.04; sección 6. Modelo dimensional",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "La **tabla de hechos** representa eventos o procesos medibles y contiene medidas y claves hacia dimensiones. Las **dimensiones** aportan ejes descriptivos como tiempo, organización, producto, territorio o usuario. Una decisión fundamental es el **grano** del hecho: qué representa exactamente una fila.\n\nEsquema **estrella**: hecho central con dimensiones normalmente desnormalizadas. **Copo de nieve**: dimensiones más normalizadas. El modelo dimensional favorece comprensión y consultas analíticas.",
+          "evidence_sha256": "a63485f57e32abdbfb545a7811eed87562a44643ec6b4491d5a3e57863adcc44",
+          "record_sha256": "e8179f11c17e99a983553360cd96937557900e7921727bf6e3a99e482f125f1f",
+          "review_id": "AI-GSI-B2-T04-014",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.04; sección 6. Modelo dimensional",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B2-T04-014",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T04",
+        "subtopic": "Modelo dimensional",
+        "exam": null,
+        "statement": "Se diseña un modelo dimensional para analizar solicitudes, con una fila de hechos por solicitud resuelta. ¿Qué contenido corresponde a esa tabla de hechos?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Denominación de la unidad, dirección y jerarquía de sus dependencias administrativas."
+          },
+          {
+            "id": "B",
+            "text": "Descripción del tipo de solicitud, su familia y los textos de ayuda para clasificarla."
+          },
+          {
+            "id": "C",
+            "text": "Duración e importe del trámite, junto con claves de fecha, unidad y tipo de solicitud."
+          },
+          {
+            "id": "D",
+            "text": "Identificación del calendario, nombre del mes y relaciones entre ejercicios y trimestres."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "La fila registra medidas del evento al grano fijado —una solicitud resuelta— y claves que permiten analizarlo por dimensiones. Las dimensiones aportan descripciones; también existen tablas de hechos sin medidas numéricas.",
+          "incorrect": "Contrasta la alternativa elegida con la explicación del concepto y las condiciones del enunciado.",
+          "incorrect_options": {
+            "A": "La denominación y jerarquía describen la dimensión unidad; no representan las medidas de cada solicitud resuelta.",
+            "B": "La descripción y familia clasifican el tipo de solicitud y corresponden a atributos de esa dimensión.",
+            "D": "Nombre del mes, ejercicio y trimestre describen una dimensión temporal; no son las medidas del evento de tramitación."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.04; sección 6. Modelo dimensional",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "La **tabla de hechos** representa eventos o procesos medibles y contiene medidas y claves hacia dimensiones. Las **dimensiones** aportan ejes descriptivos como tiempo, organización, producto, territorio o usuario. Una decisión fundamental es el **grano** del hecho: qué representa exactamente una fila.\n\nEsquema **estrella**: hecho central con dimensiones normalmente desnormalizadas. **Copo de nieve**: dimensiones más normalizadas. El modelo dimensional favorece comprensión y consultas analíticas.",
+          "evidence_sha256": "a63485f57e32abdbfb545a7811eed87562a44643ec6b4491d5a3e57863adcc44",
+          "record_sha256": "e8179f11c17e99a983553360cd96937557900e7921727bf6e3a99e482f125f1f",
+          "review_id": "AI-GSI-B2-T04-014",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Microsoft: Understand star schema and the importance for Power BI",
+              "url": "https://learn.microsoft.com/en-us/power-bi/guidance/star-schema",
+              "locator": "Star schema overview: Dimension tables y Fact tables; Measures; Factless fact tables",
+              "version": "Documentación web consultada el 26-10-2026",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-003"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.04; sección 6. Modelo dimensional",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Aplicar la distinción medidas/claves frente a atributos descriptivos con un grano explícito, conservando el concepto y la excepción de hechos sin medidas."
+      ],
+      "references": [
+        {
+          "title": "Microsoft: Understand star schema and the importance for Power BI",
+          "url": "https://learn.microsoft.com/en-us/power-bi/guidance/star-schema",
+          "locator": "Star schema overview: Dimension tables y Fact tables; Measures; Factless fact tables",
+          "version": "Documentación web consultada el 26-10-2026",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B2-T04-016",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "de8a281ac5eb4440ae9fd01e6f437bab1a1e053c39dc32e070083c5344d64ec6",
+      "content_sha256": "a42c6d5684ce04aea84f76182cbaade7aa3f968abeeaf46ba7c01aaa87dc157a",
+      "before": {
+        "id": "AI-GSI-B2-T04-016",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T04",
+        "subtopic": "OLTP vs OLAP",
+        "exam": null,
+        "statement": "¿Qué carga corresponde típicamente a OLTP?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Solo cubos sin escrituras"
+          },
+          {
+            "id": "B",
+            "text": "Exclusivamente entrenamiento de modelos predictivos"
+          },
+          {
+            "id": "C",
+            "text": "Solo agregaciones históricas extensas"
+          },
+          {
+            "id": "D",
+            "text": "Muchas transacciones cortas sobre operaciones actuales"
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "OLTP prioriza integridad y latencia transaccional; OLAP atiende consultas analíticas complejas.",
+          "incorrect": "OLTP prioriza integridad y latencia transaccional; OLAP atiende consultas analíticas complejas."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.04; sección 7. OLTP vs OLAP",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "| Aspecto | OLTP | OLAP |\n| --- | --- | --- |\n| Objetivo | Registrar operaciones | Analizar información |\n| Carga | Muchas transacciones cortas | Consultas complejas/agregaciones |\n| Datos | Actuales, detalle | Históricos e integrados |\n| Modelo | Normalizado con frecuencia | Dimensional/multidimensional frecuente |\n| Escritura | Continua | Cargas planificadas/streaming según arquitectura |\n| Prioridad | Integridad y latencia transaccional | Rendimiento analítico |\n\nOLAP ofrece operaciones clásicas: **roll-up** (agregar), **drill-down** (más detalle), **slice** (seleccionar una dimensión/valor), **dice** (subcubo), **pivot** (reorientar ejes). Puede implementarse como MOLAP, ROLAP o HOLAP según almacenamiento y motor.",
+          "evidence_sha256": "19cadd635f85206d8f57abf4cd59b331979a49c9233d3220de45842c0bdea259",
+          "record_sha256": "e1a405a4470457c471e7a57cbc874d9199bdd4a7ae27beef33ec89d649241ec2",
+          "review_id": "AI-GSI-B2-T04-016",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.04; sección 7. OLTP vs OLAP",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B2-T04-016",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T04",
+        "subtopic": "OLTP vs OLAP",
+        "exam": null,
+        "statement": "Un portal debe confirmar con baja latencia altas y cambios individuales de expedientes realizados por muchos usuarios. ¿Qué perfil de carga es típico de OLTP?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Agregaciones extensas de varios años para comparar la evolución entre organismos."
+          },
+          {
+            "id": "B",
+            "text": "Recorridos periódicos del histórico para ajustar los parámetros de un modelo predictivo."
+          },
+          {
+            "id": "C",
+            "text": "Exploraciones de grandes volúmenes para construir resúmenes por muchas dimensiones."
+          },
+          {
+            "id": "D",
+            "text": "Transacciones cortas y concurrentes que consultan y actualizan las operaciones actuales."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "OLTP atiende operaciones de negocio frecuentes y concurrentes sobre cantidades acotadas de datos, con integridad y respuesta rápida. El análisis amplio del histórico corresponde a un perfil analítico, aunque pueda usar los mismos datos de origen.",
+          "incorrect": "Contrasta la alternativa elegida con la explicación del concepto y las condiciones del enunciado.",
+          "incorrect_options": {
+            "A": "Comparar agregados de varios años es una carga analítica típica de OLAP, no la operación individual del portal.",
+            "B": "Ajustar un modelo sobre el histórico es un proceso de análisis o aprendizaje, distinto de confirmar transacciones operativas.",
+            "C": "Explorar grandes conjuntos y resumirlos por dimensiones describe una carga analítica, frente a las operaciones cortas planteadas."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.04; sección 7. OLTP vs OLAP",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "| Aspecto | OLTP | OLAP |\n| --- | --- | --- |\n| Objetivo | Registrar operaciones | Analizar información |\n| Carga | Muchas transacciones cortas | Consultas complejas/agregaciones |\n| Datos | Actuales, detalle | Históricos e integrados |\n| Modelo | Normalizado con frecuencia | Dimensional/multidimensional frecuente |\n| Escritura | Continua | Cargas planificadas/streaming según arquitectura |\n| Prioridad | Integridad y latencia transaccional | Rendimiento analítico |\n\nOLAP ofrece operaciones clásicas: **roll-up** (agregar), **drill-down** (más detalle), **slice** (seleccionar una dimensión/valor), **dice** (subcubo), **pivot** (reorientar ejes). Puede implementarse como MOLAP, ROLAP o HOLAP según almacenamiento y motor.",
+          "evidence_sha256": "19cadd635f85206d8f57abf4cd59b331979a49c9233d3220de45842c0bdea259",
+          "record_sha256": "e1a405a4470457c471e7a57cbc874d9199bdd4a7ae27beef33ec89d649241ec2",
+          "review_id": "AI-GSI-B2-T04-016",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Oracle: What Is Online Transaction Processing (OLTP)?",
+              "url": "https://www.oracle.com/database/what-is-oltp/",
+              "locator": "OLTP Defined; OLTP Versus OLAP",
+              "version": "Artículo de 01-08-2023, consultado el 26-10-2026",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-003"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.04; sección 7. OLTP vs OLAP",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Distinguir perfiles de trabajo reales con un caso de tramitación, sin identificar OLTP por una tecnología o producto concreto."
+      ],
+      "references": [
+        {
+          "title": "Oracle: What Is Online Transaction Processing (OLTP)?",
+          "url": "https://www.oracle.com/database/what-is-oltp/",
+          "locator": "OLTP Defined; OLTP Versus OLAP",
+          "version": "Artículo de 01-08-2023, consultado el 26-10-2026",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B2-T04-020",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "4edb3bc4467cb240e806eca9778c6df1eda3d20c79a9fe5306985c3418a4b96a",
+      "content_sha256": "be977bad1aa751fc617b3bb32f974b4808b0152fedd79881ec878d40fffaca19",
+      "before": {
+        "id": "AI-GSI-B2-T04-020",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T04",
+        "subtopic": "KPI, KGI y cuadro de mando",
+        "exam": null,
+        "statement": "¿Qué necesita un indicador para ser útil como KPI?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Definición, fórmula, fuente, periodicidad, responsable y objetivo o umbral"
+          },
+          {
+            "id": "B",
+            "text": "Solo un gráfico circular"
+          },
+          {
+            "id": "C",
+            "text": "Ausencia de contexto para facilitar comparaciones"
+          },
+          {
+            "id": "D",
+            "text": "Solo un valor numérico grande"
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Un KPI debe relacionarse con objetivos y tener definición operativa; no toda cifra es clave.",
+          "incorrect": "Un KPI debe relacionarse con objetivos y tener definición operativa; no toda cifra es clave."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.04; sección 8. KPI, KGI y cuadro de mando",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Un indicador útil debe tener definición, fórmula, fuente, periodicidad, responsable, objetivo/umbral y contexto. Diferencia métrica de **KPI**: no toda cifra es clave. El cuadro debe mostrar evolución, desviaciones y capacidad de profundizar, no solo valores absolutos.",
+          "evidence_sha256": "17d8be3c1ffd4f2a1254e8e337f89995bc887cda187c04ee614eced89427a6fc",
+          "record_sha256": "ecd705c9be95da1a5ab9648dc42b47136f00d9c2e772a81263ab836f39061616",
+          "review_id": "AI-GSI-B2-T04-020",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.04; sección 8. KPI, KGI y cuadro de mando",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B2-T04-020",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T04",
+        "subtopic": "KPI, KGI y cuadro de mando",
+        "exam": null,
+        "statement": "¿Qué necesita un indicador para ser útil como KPI?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Definición operativa, cálculo y fuente, periodicidad, responsable y vínculo con un objetivo."
+          },
+          {
+            "id": "B",
+            "text": "Nombre atractivo, valor actual y un gráfico elegido para destacar su evolución positiva."
+          },
+          {
+            "id": "C",
+            "text": "Fórmula y fuente de datos, dejando el objetivo y la interpretación a criterio de cada lector."
+          },
+          {
+            "id": "D",
+            "text": "Objetivo y umbral de alerta, cambiando la fórmula cuando no se alcance el resultado esperado."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Un KPI debe permitir valorar un objetivo mediante una medida definida y repetible. Fuente, cálculo, frecuencia y responsabilidad hacen interpretable su evolución; la fórmula no se cambia para aparentar cumplimiento.",
+          "incorrect": "Contrasta la alternativa elegida con la explicación del concepto y las condiciones del enunciado.",
+          "incorrect_options": {
+            "B": "La presentación visual ayuda a comunicar, pero no define qué se mide ni su relación con un objetivo o su reproducibilidad.",
+            "C": "Sin objetivo e interpretación compartidos, la misma cifra puede conducir a conclusiones incompatibles; calcularla no basta para que sea clave.",
+            "D": "Cambiar la fórmula para alcanzar el umbral rompe la comparabilidad. Un cambio metodológico legítimo debe justificarse y documentarse, no ocultar desviaciones."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.04; sección 8. KPI, KGI y cuadro de mando",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Un indicador útil debe tener definición, fórmula, fuente, periodicidad, responsable, objetivo/umbral y contexto. Diferencia métrica de **KPI**: no toda cifra es clave. El cuadro debe mostrar evolución, desviaciones y capacidad de profundizar, no solo valores absolutos.",
+          "evidence_sha256": "17d8be3c1ffd4f2a1254e8e337f89995bc887cda187c04ee614eced89427a6fc",
+          "record_sha256": "ecd705c9be95da1a5ab9648dc42b47136f00d9c2e772a81263ab836f39061616",
+          "review_id": "AI-GSI-B2-T04-020",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "NIST SP 800-55v1: Measurement Guide for Information Security, Volume 1",
+              "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-55v1.pdf",
+              "locator": "§3.1.1 Measures Documentation, pp.12–14: Goal, Formula, Target, Implementation evidence, Time-based reference y Responsible parties",
+              "version": "Diciembre de 2024",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-003"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.04; sección 8. KPI, KGI y cuadro de mando",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Conservar el enunciado y el concepto de definición operativa; contrastar cálculo, presentación y manipulación del objetivo sin imponer una plantilla normativa universal."
+      ],
+      "references": [
+        {
+          "title": "NIST SP 800-55v1: Measurement Guide for Information Security, Volume 1",
+          "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-55v1.pdf",
+          "locator": "§3.1.1 Measures Documentation, pp.12–14: Goal, Formula, Target, Implementation evidence, Time-based reference y Responsible parties",
+          "version": "Diciembre de 2024",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B2-T06-002",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "c3aee00c4a505ced60c9a653476ab006eabdb9f12a302c2f8bdc6365704a3c3e",
+      "content_sha256": "c8fdd86bba95cc0cc2862cb7aeb6156114b2b6cdfccd555f6dd3414cd4726c8f",
+      "before": {
+        "id": "AI-GSI-B2-T06-002",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T06",
+        "subtopic": "Cliente-servidor",
+        "exam": null,
+        "statement": "Un proceso atiende peticiones y consulta otro servicio. ¿Qué roles desempeña?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Servidor y cliente según la interacción"
+          },
+          {
+            "id": "B",
+            "text": "Solo cliente por definición permanente"
+          },
+          {
+            "id": "C",
+            "text": "Solo servidor por definición permanente"
+          },
+          {
+            "id": "D",
+            "text": "Ninguno si comparte máquina física"
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Cliente y servidor son roles lógicos relativos a cada interacción.",
+          "incorrect": "Cliente y servidor son roles lógicos relativos a cada interacción."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.06; sección 3. Cliente-servidor",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "El cliente solicita una función mediante una interfaz/protocolo y el servidor la presta. Los roles son lógicos: un proceso puede actuar como servidor para unos componentes y cliente de otros.\n\n### 3.1 Dos capas\n\nPresentación/lógica pueden residir en cliente y datos en servidor. Ventajas: simplicidad inicial y respuesta local. Inconvenientes: clientes pesados, despliegue complejo, acoplamiento a BD y menor control central.\n\n### 3.2 Tres o N capas\n\n* **Presentación**: interacción y validaciones de interfaz.\n* **Lógica de aplicación/dominio**: reglas de negocio y casos de uso.\n* **Persistencia/acceso a datos**: repositorios, SGBD y almacenamiento.\n\nAñadir capas lógicas no obliga a usar servidores físicos distintos. La separación mejora mantenibilidad, seguridad, pruebas y escalado, aunque incrementa llamadas y arquitectura.",
+          "evidence_sha256": "00367d61412059f18c5178d83affb7724371a887da1b42d28ace151596990af7",
+          "record_sha256": "d9fa25d52393b9337b045a4ba7de5facf7abea2953e792a6ef214d1446728790",
+          "review_id": "AI-GSI-B2-T06-002",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.06; sección 3. Cliente-servidor",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B2-T06-002",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T06",
+        "subtopic": "Cliente-servidor",
+        "exam": null,
+        "statement": "Un proceso atiende peticiones y consulta otro servicio. ¿Qué roles desempeña?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Servidor al atender la petición recibida y cliente al consultar el otro servicio."
+          },
+          {
+            "id": "B",
+            "text": "Cliente al atender la petición recibida y servidor al consultar el otro servicio."
+          },
+          {
+            "id": "C",
+            "text": "Servidor en ambas interacciones, porque un proceso que publica una API conserva ese rol."
+          },
+          {
+            "id": "D",
+            "text": "Cliente en ambas interacciones, porque el proceso inicia una consulta a otro servicio."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Cliente y servidor son roles relativos a cada interacción: quien atiende la petición actúa como servidor y quien solicita al otro servicio actúa como cliente. Un mismo proceso puede ejercer ambos roles.",
+          "incorrect": "Contrasta la alternativa elegida con la explicación del concepto y las condiciones del enunciado.",
+          "incorrect_options": {
+            "B": "Invierte los roles: recibir y responder a una petición es actuar como servidor; iniciar la consulta al otro servicio es actuar como cliente.",
+            "C": "Publicar una API no fija el rol para todas las conexiones; al consultar otro servicio ese mismo proceso actúa como cliente.",
+            "D": "Iniciar una consulta no elimina el rol de servidor que el proceso cumple al responder a su solicitante."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.06; sección 3. Cliente-servidor",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "El cliente solicita una función mediante una interfaz/protocolo y el servidor la presta. Los roles son lógicos: un proceso puede actuar como servidor para unos componentes y cliente de otros.\n\n### 3.1 Dos capas\n\nPresentación/lógica pueden residir en cliente y datos en servidor. Ventajas: simplicidad inicial y respuesta local. Inconvenientes: clientes pesados, despliegue complejo, acoplamiento a BD y menor control central.\n\n### 3.2 Tres o N capas\n\n* **Presentación**: interacción y validaciones de interfaz.\n* **Lógica de aplicación/dominio**: reglas de negocio y casos de uso.\n* **Persistencia/acceso a datos**: repositorios, SGBD y almacenamiento.\n\nAñadir capas lógicas no obliga a usar servidores físicos distintos. La separación mejora mantenibilidad, seguridad, pruebas y escalado, aunque incrementa llamadas y arquitectura.",
+          "evidence_sha256": "00367d61412059f18c5178d83affb7724371a887da1b42d28ace151596990af7",
+          "record_sha256": "d9fa25d52393b9337b045a4ba7de5facf7abea2953e792a6ef214d1446728790",
+          "review_id": "AI-GSI-B2-T06-002",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "IETF RFC 9110: HTTP Semantics",
+              "url": "https://www.rfc-editor.org/rfc/rfc9110.html",
+              "locator": "§3.3 Connections, Clients, and Servers",
+              "version": "RFC 9110, junio de 2022",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-003"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.06; sección 3. Cliente-servidor",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Conservar el microcaso original bien planteado y exigir identificar el rol en cada dirección, evitando confundir rol lógico con tipo permanente de proceso."
+      ],
+      "references": [
+        {
+          "title": "IETF RFC 9110: HTTP Semantics",
+          "url": "https://www.rfc-editor.org/rfc/rfc9110.html",
+          "locator": "§3.3 Connections, Clients, and Servers",
+          "version": "RFC 9110, junio de 2022",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B2-T06-004",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "3517b7861161528e56183a305f03f9af7d43a4394c14b9eeb520f5b914b82dbf",
+      "content_sha256": "fe84c68320504d065bcb5e9b249d8e0ef82875c20878a2672922a69ec0760038",
+      "before": {
+        "id": "AI-GSI-B2-T06-004",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T06",
+        "subtopic": "Cliente-servidor",
+        "exam": null,
+        "statement": "¿Dónde corresponde ubicar las reglas de negocio en una arquitectura de tres capas?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Exclusivamente en el sistema de archivos"
+          },
+          {
+            "id": "B",
+            "text": "Lógica de aplicación o dominio"
+          },
+          {
+            "id": "C",
+            "text": "Solo en el balanceador"
+          },
+          {
+            "id": "D",
+            "text": "Exclusivamente en estilos visuales"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "La capa de dominio concentra casos de uso y reglas, separada de presentación y persistencia.",
+          "incorrect": "La capa de dominio concentra casos de uso y reglas, separada de presentación y persistencia."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.06; sección 3. Cliente-servidor",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "El cliente solicita una función mediante una interfaz/protocolo y el servidor la presta. Los roles son lógicos: un proceso puede actuar como servidor para unos componentes y cliente de otros.\n\n### 3.1 Dos capas\n\nPresentación/lógica pueden residir en cliente y datos en servidor. Ventajas: simplicidad inicial y respuesta local. Inconvenientes: clientes pesados, despliegue complejo, acoplamiento a BD y menor control central.\n\n### 3.2 Tres o N capas\n\n* **Presentación**: interacción y validaciones de interfaz.\n* **Lógica de aplicación/dominio**: reglas de negocio y casos de uso.\n* **Persistencia/acceso a datos**: repositorios, SGBD y almacenamiento.\n\nAñadir capas lógicas no obliga a usar servidores físicos distintos. La separación mejora mantenibilidad, seguridad, pruebas y escalado, aunque incrementa llamadas y arquitectura.",
+          "evidence_sha256": "00367d61412059f18c5178d83affb7724371a887da1b42d28ace151596990af7",
+          "record_sha256": "cfeddc09bf5e2ac5be0743e90695df585b959b33f6b18e39961834635a3277ed",
+          "review_id": "AI-GSI-B2-T06-004",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.06; sección 3. Cliente-servidor",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B2-T06-004",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T06",
+        "subtopic": "Cliente-servidor",
+        "exam": null,
+        "statement": "En la separación lógica clásica de tres capas —presentación, negocio y acceso a datos—, ¿dónde corresponde concentrar las reglas de negocio?",
+        "options": [
+          {
+            "id": "A",
+            "text": "En la presentación, para vincular las reglas a cada formulario de entrada."
+          },
+          {
+            "id": "B",
+            "text": "En la lógica de aplicación o dominio, separadas de presentación y persistencia."
+          },
+          {
+            "id": "C",
+            "text": "En el acceso a datos, para identificar todas las reglas con restricciones del almacenamiento."
+          },
+          {
+            "id": "D",
+            "text": "En el balanceo de red, para aplicar las reglas antes de seleccionar la instancia de aplicación."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "La capa de negocio expresa las reglas y operaciones del dominio; presentación y acceso a datos cumplen otras responsabilidades. Se trata de separación lógica: no exige que cada capa resida en una máquina distinta.",
+          "incorrect": "Contrasta la alternativa elegida con la explicación del concepto y las condiciones del enunciado.",
+          "incorrect_options": {
+            "A": "La presentación puede validar formato o interacción, pero ubicar ahí las reglas del dominio las acopla a cada interfaz y dificulta reutilizarlas.",
+            "C": "Las restricciones de almacenamiento pueden reforzar integridad, pero no sustituyen el conjunto de reglas y operaciones de negocio.",
+            "D": "El balanceador distribuye tráfico; no es la capa destinada a expresar los criterios y operaciones del dominio."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.06; sección 3. Cliente-servidor",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "El cliente solicita una función mediante una interfaz/protocolo y el servidor la presta. Los roles son lógicos: un proceso puede actuar como servidor para unos componentes y cliente de otros.\n\n### 3.1 Dos capas\n\nPresentación/lógica pueden residir en cliente y datos en servidor. Ventajas: simplicidad inicial y respuesta local. Inconvenientes: clientes pesados, despliegue complejo, acoplamiento a BD y menor control central.\n\n### 3.2 Tres o N capas\n\n* **Presentación**: interacción y validaciones de interfaz.\n* **Lógica de aplicación/dominio**: reglas de negocio y casos de uso.\n* **Persistencia/acceso a datos**: repositorios, SGBD y almacenamiento.\n\nAñadir capas lógicas no obliga a usar servidores físicos distintos. La separación mejora mantenibilidad, seguridad, pruebas y escalado, aunque incrementa llamadas y arquitectura.",
+          "evidence_sha256": "00367d61412059f18c5178d83affb7724371a887da1b42d28ace151596990af7",
+          "record_sha256": "cfeddc09bf5e2ac5be0743e90695df585b959b33f6b18e39961834635a3277ed",
+          "review_id": "AI-GSI-B2-T06-004",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Microsoft Azure Architecture Center: N-tier architecture style",
+              "url": "https://learn.microsoft.com/en-us/azure/architecture/guide/architecture-styles/n-tier",
+              "locator": "Introducción: logical layers y physical tiers; nota sobre Business tier y Web tier del ejemplo de arquitectura",
+              "version": "Documentación web consultada el 26-10-2026",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-003"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.06; sección 3. Cliente-servidor",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Delimitar el modelo de capas y distinguir reglas de negocio de validación de interfaz, integridad persistente y distribución de tráfico."
+      ],
+      "references": [
+        {
+          "title": "Microsoft Azure Architecture Center: N-tier architecture style",
+          "url": "https://learn.microsoft.com/en-us/azure/architecture/guide/architecture-styles/n-tier",
+          "locator": "Introducción: logical layers y physical tiers; nota sobre Business tier y Web tier del ejemplo de arquitectura",
+          "version": "Documentación web consultada el 26-10-2026",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B2-T08-018",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "2e75070c171cb24dd1234e80bee5256232f8b5664e16c53f887e89c9e956c8ed",
+      "content_sha256": "86c803df9c87e617a7533ef0b899de7014b8ea72dba81eae68986070b20bc3d8",
+      "before": {
+        "id": "AI-GSI-B2-T08-018",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T08",
+        "subtopic": "Routing",
+        "exam": null,
+        "statement": "Hay una ruta /24 y una ruta por defecto que coinciden con el destino. ¿Cuál se selecciona por especificidad?",
+        "options": [
+          {
+            "id": "A",
+            "text": "La /24"
+          },
+          {
+            "id": "B",
+            "text": "La que se escribió primero necesariamente"
+          },
+          {
+            "id": "C",
+            "text": "Ninguna hasta consultar DNS"
+          },
+          {
+            "id": "D",
+            "text": "Siempre la ruta por defecto"
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "El router utiliza la coincidencia de prefijo más específica.",
+          "incorrect": "El router utiliza la coincidencia de prefijo más específica."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.08; sección 11. Routing",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Un router decide el siguiente salto utilizando tabla de rutas y la coincidencia de prefijo más específica. Rutas pueden ser conectadas, estáticas o aprendidas dinámicamente. La **ruta por defecto** se usa cuando no existe una más específica.\n\n* **IGP**: dentro de un sistema autónomo. OSPF es protocolo de estado de enlace; calcula rutas con coste.\n* **EGP**: entre sistemas autónomos. BGP es el protocolo interdominio de Internet y selecciona rutas con políticas y atributos, no solo «camino más corto».\n* **RIP**: vector distancia histórico, métrica por saltos; útil conceptualmente.",
+          "evidence_sha256": "550d0760074c8ac3ed7ff2135171d206c14d2dccbaf3e0c523756a947e197860",
+          "record_sha256": "07a0aee85d1aa4b60a2bfbc362185d29795610ff93d8599c827c940c9cab9d43",
+          "review_id": "AI-GSI-B2-T08-018",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.08; sección 11. Routing",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B2-T08-018",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T08",
+        "subtopic": "Routing",
+        "exam": null,
+        "statement": "La tabla de reenvío IPv4 contiene rutas utilizables 10.20.30.0/24 y 0.0.0.0/0. Para el destino 10.20.30.8, sin reglas de encaminamiento por políticas, ¿qué selección responde al prefijo más específico?",
+        "options": [
+          {
+            "id": "A",
+            "text": "10.20.30.0/24, porque coincide con más bits del destino que la ruta por defecto."
+          },
+          {
+            "id": "B",
+            "text": "0.0.0.0/0, si fue instalada antes que la ruta hacia la subred del destino."
+          },
+          {
+            "id": "C",
+            "text": "0.0.0.0/0, porque su cobertura de todas las redes la hace preferente para reenviar."
+          },
+          {
+            "id": "D",
+            "text": "Las dos rutas por igual, porque ambas coinciden con la dirección de destino."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Ambas rutas coinciden, pero /24 aporta un prefijo más largo que /0 y se selecciona por especificidad. El orden de instalación no sustituye esa regla; elegir entre rutas al mismo prefijo plantea otros criterios.",
+          "incorrect": "Contrasta la alternativa elegida con la explicación del concepto y las condiciones del enunciado.",
+          "incorrect_options": {
+            "B": "El orden de instalación no hace preferente a la ruta por defecto frente a una coincidencia más específica ya utilizable.",
+            "C": "La ruta por defecto cubre más destinos precisamente porque es menos específica; se utiliza cuando no queda una coincidencia más larga.",
+            "D": "Coincidir con el destino no implica igual preferencia. La longitud del prefijo distingue estas dos rutas y no justifica repartir entre ambas."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.08; sección 11. Routing",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Un router decide el siguiente salto utilizando tabla de rutas y la coincidencia de prefijo más específica. Rutas pueden ser conectadas, estáticas o aprendidas dinámicamente. La **ruta por defecto** se usa cuando no existe una más específica.\n\n* **IGP**: dentro de un sistema autónomo. OSPF es protocolo de estado de enlace; calcula rutas con coste.\n* **EGP**: entre sistemas autónomos. BGP es el protocolo interdominio de Internet y selecciona rutas con políticas y atributos, no solo «camino más corto».\n* **RIP**: vector distancia histórico, métrica por saltos; útil conceptualmente.",
+          "evidence_sha256": "550d0760074c8ac3ed7ff2135171d206c14d2dccbaf3e0c523756a947e197860",
+          "record_sha256": "07a0aee85d1aa4b60a2bfbc362185d29795610ff93d8599c827c940c9cab9d43",
+          "review_id": "AI-GSI-B2-T08-018",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "IETF RFC 1812: Requirements for IP Version 4 Routers",
+              "url": "https://www.rfc-editor.org/rfc/rfc1812.html",
+              "locator": "§5.2.4.3 Next Hop Address, reglas (1) Basic Match y (2) Longest Match",
+              "version": "RFC 1812, junio de 1995; regla de selección IPv4",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-003"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.08; sección 11. Routing",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Precisar tabla de reenvío, coincidencia de dirección y ausencia de políticas; mantener la comparación /24 frente a /0 sin introducir empates o rutas no instaladas."
+      ],
+      "references": [
+        {
+          "title": "IETF RFC 1812: Requirements for IP Version 4 Routers",
+          "url": "https://www.rfc-editor.org/rfc/rfc1812.html",
+          "locator": "§5.2.4.3 Next Hop Address, reglas (1) Basic Match y (2) Longest Match",
+          "version": "RFC 1812, junio de 1995; regla de selección IPv4",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B2-T10-008",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "c6c4fea289f0e0587cb04aff5a4fd289aa20e15e972fd002594efb24348dc315",
+      "content_sha256": "ef20bbfda543468b4181408ea57adb1a9012ab5f736af16dc998200a22d9a780",
+      "before": {
+        "id": "AI-GSI-B2-T10-008",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T10",
+        "subtopic": "Ciclo de gestión de riesgos",
+        "exam": null,
+        "statement": "¿Cuándo debe revisarse un análisis de riesgos?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Únicamente cuando se contrata otra herramienta"
+          },
+          {
+            "id": "B",
+            "text": "Solo cuando se compra el primer activo"
+          },
+          {
+            "id": "C",
+            "text": "Ante cambios, incidentes y nuevas amenazas de forma continuada"
+          },
+          {
+            "id": "D",
+            "text": "Nunca después de la aceptación inicial"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "El riesgo evoluciona con exposición, activos y controles; la revisión forma parte del ciclo.",
+          "incorrect": "El riesgo evoluciona con exposición, activos y controles; la revisión forma parte del ciclo."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.10; sección 3. Ciclo de gestión de riesgos",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "* Establecer contexto, alcance, criterios y responsables.\n* Inventariar activos y dependencias.\n* Valorar activos/servicios e impacto por dimensiones relevantes.\n* Identificar amenazas y vulnerabilidades.\n* Identificar salvaguardas existentes y su madurez.\n* Estimar impacto y probabilidad/frecuencia.\n* Calcular/valorar riesgos.\n* Compararlos con criterios de aceptación.\n* Seleccionar tratamiento.\n* Aprobar riesgo residual por responsable competente.\n* Revisar de forma continua ante cambios, incidentes y nuevas amenazas.",
+          "evidence_sha256": "5fc720bb02e01f2b6a2c42e7c7ff1cb8ee21454115ad2f228ecadb609f0da91e",
+          "record_sha256": "0e6b9b7073209d111e3a260d0dc0967ac65f39a40d0a5ceb3600070c8171af4f",
+          "review_id": "AI-GSI-B2-T10-008",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.10; sección 3. Ciclo de gestión de riesgos",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B2-T10-008",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T10",
+        "subtopic": "Ciclo de gestión de riesgos",
+        "exam": null,
+        "statement": "¿Qué enfoque mantiene actualizado el análisis de riesgos de un sistema conforme al ciclo de seguridad del ENS?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Revisar el inventario cuando cambien los activos y dar por estables las amenazas externas."
+          },
+          {
+            "id": "B",
+            "text": "Actualizar el análisis al renovar la herramienta y usar esa fecha como siguiente punto de revisión."
+          },
+          {
+            "id": "C",
+            "text": "Revisarlo periódicamente y ante cambios, incidentes o amenazas que alteren la valoración."
+          },
+          {
+            "id": "D",
+            "text": "Conservar la aceptación inicial como valoración vigente mientras no se sustituya todo el sistema."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "El riesgo evoluciona con activos, amenazas, exposición y controles. El ENS combina vigilancia y reevaluación periódica; su auditoría comprueba además revisión y aprobación anual del análisis, sin excluir revisiones motivadas por cambios relevantes.",
+          "incorrect": "Contrasta la alternativa elegida con la explicación del concepto y las condiciones del enunciado.",
+          "incorrect_options": {
+            "A": "Actualizar activos no basta si cambian amenazas, exposición o eficacia de controles; esos factores también pueden alterar la valoración.",
+            "B": "La revisión no puede depender del ciclo comercial de una herramienta; debe responder al ciclo de seguridad y a cambios relevantes.",
+            "D": "Aceptar un riesgo no congela su valoración. Cambios parciales o nuevas amenazas pueden invalidar los supuestos antes de sustituir el sistema completo."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.10; sección 3. Ciclo de gestión de riesgos",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "* Establecer contexto, alcance, criterios y responsables.\n* Inventariar activos y dependencias.\n* Valorar activos/servicios e impacto por dimensiones relevantes.\n* Identificar amenazas y vulnerabilidades.\n* Identificar salvaguardas existentes y su madurez.\n* Estimar impacto y probabilidad/frecuencia.\n* Calcular/valorar riesgos.\n* Compararlos con criterios de aceptación.\n* Seleccionar tratamiento.\n* Aprobar riesgo residual por responsable competente.\n* Revisar de forma continua ante cambios, incidentes y nuevas amenazas.",
+          "evidence_sha256": "5fc720bb02e01f2b6a2c42e7c7ff1cb8ee21454115ad2f228ecadb609f0da91e",
+          "record_sha256": "0e6b9b7073209d111e3a260d0dc0967ac65f39a40d0a5ceb3600070c8171af4f",
+          "review_id": "AI-GSI-B2-T10-008",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Real Decreto 311/2022: Esquema Nacional de Seguridad",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-7191",
+              "locator": "Artículo 10.2–3; artículo 14; anexo III §1.1.d): análisis de riesgos, revisión y aprobación anual",
+              "version": "Texto consolidado consultado el 26-10-2026",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-003"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.10; sección 3. Ciclo de gestión de riesgos",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Añadir periodicidad y referencia ENS a revisión anual sin confundirla con una evaluación estática o con el calendario de compra de herramientas."
+      ],
+      "references": [
+        {
+          "title": "Real Decreto 311/2022: Esquema Nacional de Seguridad",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-7191",
+          "locator": "Artículo 10.2–3; artículo 14; anexo III §1.1.d): análisis de riesgos, revisión y aprobación anual",
+          "version": "Texto consolidado consultado el 26-10-2026",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B2-T11-001",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "8545232bf93b5f232ac31dfc497788308aee135c23d5fe2e5900dc9659bab77b",
+      "content_sha256": "b709568211e355d0107d39415361c9b64c3698b3e86a4c4c9355661566af2fa2",
+      "before": {
+        "id": "AI-GSI-B2-T11-001",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T11",
+        "subtopic": "Concepto y objetivo",
+        "exam": null,
+        "statement": "¿Qué requiere una auditoría además de encontrar fallos?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Solo una lista de opiniones"
+          },
+          {
+            "id": "B",
+            "text": "Únicamente un escaneo sin contexto"
+          },
+          {
+            "id": "C",
+            "text": "Buscar cualquier error fuera del mandato"
+          },
+          {
+            "id": "D",
+            "text": "Alcance, criterios, evidencias y conclusiones trazables"
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "La auditoría es una evaluación sistemática contra criterios, no una búsqueda indiscriminada.",
+          "incorrect": "La auditoría es una evaluación sistemática contra criterios, no una búsqueda indiscriminada."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.11; sección 1. Concepto y objetivo",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "La auditoría informática es un proceso sistemático de obtención y evaluación de evidencias para determinar si los sistemas, controles y procesos protegen activos, mantienen integridad/seguridad, cumplen criterios y apoyan eficazmente los objetivos. El A1 038 es la fuente específica y se complementa con A1 047 para riesgos y A1 048 para ENS.\n\nAuditar no es «buscar fallos» sin criterio. Debe existir **alcance**, **criterios**, **evidencia**, **hallazgos**, conclusión y seguimiento.",
+          "evidence_sha256": "f5845c3b1740d0760613f6a2964d6fec3a1c950a715ae5a359f501abec689fd7",
+          "record_sha256": "ebeabafe710c55fc8c08d8f70f297404e3427867f30804030091e0019fbb611e",
+          "review_id": "AI-GSI-B2-T11-001",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.11; sección 1. Concepto y objetivo",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B2-T11-001",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T11",
+        "subtopic": "Concepto y objetivo",
+        "exam": null,
+        "statement": "¿Qué enfoque convierte una búsqueda de fallos en una auditoría con conclusiones justificadas?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Ampliar las comprobaciones hasta reunir muchos fallos, aunque se alejen del objetivo acordado."
+          },
+          {
+            "id": "B",
+            "text": "Adoptar el resultado del escáner como dictamen, dejando a la herramienta definir el alcance."
+          },
+          {
+            "id": "C",
+            "text": "Clasificar los fallos por gravedad y deducir el cumplimiento sin explicitar criterios de evaluación."
+          },
+          {
+            "id": "D",
+            "text": "Definir alcance y criterios, obtener evidencia y vincular a ella los hallazgos y las conclusiones."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Una auditoría evalúa un objeto delimitado contra criterios y fundamenta sus conclusiones en evidencia suficiente y apropiada. El número de fallos o la salida de una herramienta no constituyen por sí mismos un dictamen.",
+          "incorrect": "Contrasta la alternativa elegida con la explicación del concepto y las condiciones del enunciado.",
+          "incorrect_options": {
+            "A": "Acumular fallos ajenos al objetivo no sustituye un alcance definido ni mejora necesariamente la conclusión sobre lo auditado.",
+            "B": "El escáner aporta información dentro de procedimientos de auditoría; no determina por sí solo alcance, criterios ni dictamen.",
+            "C": "La gravedad ayuda a priorizar, pero no permite juzgar cumplimiento sin relacionar evidencia y criterios aplicables."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.11; sección 1. Concepto y objetivo",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "La auditoría informática es un proceso sistemático de obtención y evaluación de evidencias para determinar si los sistemas, controles y procesos protegen activos, mantienen integridad/seguridad, cumplen criterios y apoyan eficazmente los objetivos. El A1 038 es la fuente específica y se complementa con A1 047 para riesgos y A1 048 para ENS.\n\nAuditar no es «buscar fallos» sin criterio. Debe existir **alcance**, **criterios**, **evidencia**, **hallazgos**, conclusión y seguimiento.",
+          "evidence_sha256": "f5845c3b1740d0760613f6a2964d6fec3a1c950a715ae5a359f501abec689fd7",
+          "record_sha256": "ebeabafe710c55fc8c08d8f70f297404e3427867f30804030091e0019fbb611e",
+          "review_id": "AI-GSI-B2-T11-001",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "INTOSAI ISSAI 100: Fundamental Principles of Public-Sector Auditing",
+              "url": "https://www.issai.org/wp-content/uploads/2019/08/ISSAI-100-EN.pdf",
+              "locator": "§§26–27, 50–53: objeto, criterios, planificación, evidencia y conclusiones",
+              "version": "IFPP 2019; principios revisados en 2013",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-003"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.11; sección 1. Concepto y objetivo",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Sustituir opciones caricaturescas por errores plausibles de alcance, dependencia del escáner y confusión entre gravedad y cumplimiento."
+      ],
+      "references": [
+        {
+          "title": "INTOSAI ISSAI 100: Fundamental Principles of Public-Sector Auditing",
+          "url": "https://www.issai.org/wp-content/uploads/2019/08/ISSAI-100-EN.pdf",
+          "locator": "§§26–27, 50–53: objeto, criterios, planificación, evidencia y conclusiones",
+          "version": "IFPP 2019; principios revisados en 2013",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B2-T11-004",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "a7bee6def032c15984143e5c1e03f717a3e27a5ea77bb63e3cebe923e9ef1c18",
+      "content_sha256": "044d3b415d2f1449378e7c5b9e80549e7cfb2a4e9a5b34ba132ccf31bfc320c8",
+      "before": {
+        "id": "AI-GSI-B2-T11-004",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T11",
+        "subtopic": "Principios de auditoría",
+        "exam": null,
+        "statement": "¿Cómo debe ser la evidencia de auditoría?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Exclusivamente verbal sin contraste"
+          },
+          {
+            "id": "B",
+            "text": "Abundante aunque no guarde relación"
+          },
+          {
+            "id": "C",
+            "text": "Siempre anónima y sin fecha"
+          },
+          {
+            "id": "D",
+            "text": "Suficiente, pertinente y fiable"
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "La calidad y pertinencia importan además del volumen; debe conservarse trazabilidad.",
+          "incorrect": "La calidad y pertinencia importan además del volumen; debe conservarse trazabilidad."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.11; sección 3. Principios de auditoría",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Independencia y objetividad; competencia profesional; planificación basada en riesgos; evidencia suficiente, pertinente y fiable; confidencialidad; trazabilidad; debido cuidado profesional. El auditor no debería evaluar de forma acrítica controles que él mismo diseñó/operó cuando ello comprometa independencia.",
+          "evidence_sha256": "bee1c36994731708ac164a142ad16ceaaa0e545ae6a223611dea9388601ee283",
+          "record_sha256": "673330b0f734615a91bb9f3c3633d2b866472a3ac95913ffed772576b525a231",
+          "review_id": "AI-GSI-B2-T11-004",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.11; sección 3. Principios de auditoría",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B2-T11-004",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T11",
+        "subtopic": "Principios de auditoría",
+        "exam": null,
+        "statement": "¿Qué caracteriza una evidencia de auditoría suficiente y apropiada para sustentar una conclusión?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Un volumen elevado de registros, aunque su relación con el criterio no esté comprobada."
+          },
+          {
+            "id": "B",
+            "text": "Un documento aprobado por la dirección, aunque corresponda a un periodo ya superado."
+          },
+          {
+            "id": "C",
+            "text": "Una muestra técnicamente detallada, aunque su origen y método de obtención no puedan verificarse."
+          },
+          {
+            "id": "D",
+            "text": "Cantidad suficiente para el objetivo y calidad pertinente, válida y fiable de la información."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Suficiencia se refiere a cantidad; adecuación, a calidad, incluida pertinencia, validez y fiabilidad. La evaluación considera qué conclusión se pretende sostener y las limitaciones de la evidencia, no solo su volumen.",
+          "incorrect": "Contrasta la alternativa elegida con la explicación del concepto y las condiciones del enunciado.",
+          "incorrect_options": {
+            "A": "Muchos registros no compensan que no respondan al criterio o a la afirmación que se audita.",
+            "B": "La aprobación del documento no demuestra que describa el periodo y el estado auditados; deben comprobarse su vigencia y pertinencia.",
+            "C": "El detalle técnico no sustituye conocer el origen y la obtención necesarios para valorar fiabilidad y reproducibilidad."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.11; sección 3. Principios de auditoría",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Independencia y objetividad; competencia profesional; planificación basada en riesgos; evidencia suficiente, pertinente y fiable; confidencialidad; trazabilidad; debido cuidado profesional. El auditor no debería evaluar de forma acrítica controles que él mismo diseñó/operó cuando ello comprometa independencia.",
+          "evidence_sha256": "bee1c36994731708ac164a142ad16ceaaa0e545ae6a223611dea9388601ee283",
+          "record_sha256": "673330b0f734615a91bb9f3c3633d2b866472a3ac95913ffed772576b525a231",
+          "review_id": "AI-GSI-B2-T11-004",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "INTOSAI ISSAI 100: Fundamental Principles of Public-Sector Auditing",
+              "url": "https://www.issai.org/wp-content/uploads/2019/08/ISSAI-100-EN.pdf",
+              "locator": "§51, p.26: cantidad suficiente y calidad pertinente, válida y fiable; §52",
+              "version": "IFPP 2019; principios revisados en 2013",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-003"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.11; sección 3. Principios de auditoría",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Diferenciar cantidad de calidad y evaluar pertinencia, vigencia y origen, sin descartar toda evidencia verbal ni prescribir volumen fijo."
+      ],
+      "references": [
+        {
+          "title": "INTOSAI ISSAI 100: Fundamental Principles of Public-Sector Auditing",
+          "url": "https://www.issai.org/wp-content/uploads/2019/08/ISSAI-100-EN.pdf",
+          "locator": "§51, p.26: cantidad suficiente y calidad pertinente, válida y fiable; §52",
+          "version": "IFPP 2019; principios revisados en 2013",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B2-T11-006",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "a594f3c8d04261ad5b3982e739519b4851497221a8bb72738683eab8454dd7b7",
+      "content_sha256": "6d978c4aebd2d4f4b0117bff5943b20ed8efb1b59327deeb8c1e57539aba016d",
+      "before": {
+        "id": "AI-GSI-B2-T11-006",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T11",
+        "subtopic": "Ciclo de auditoría",
+        "exam": null,
+        "statement": "¿Qué elementos hacen accionable un plan de remediación?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Únicamente una puntuación de satisfacción"
+          },
+          {
+            "id": "B",
+            "text": "Responsable, prioridad y fecha"
+          },
+          {
+            "id": "C",
+            "text": "Solo una recomendación sin destinatario"
+          },
+          {
+            "id": "D",
+            "text": "Una promesa de mejora sin seguimiento"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Las acciones necesitan asignación y plazos para poder verificarse.",
+          "incorrect": "Las acciones necesitan asignación y plazos para poder verificarse."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.11; sección 4. Ciclo de auditoría",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "* **Mandato y alcance**: sistema, procesos, periodo, ubicaciones, exclusiones.\n* **Criterios**: ENS, políticas, RGPD/LOPDGDD, ISO, contrato, procedimientos, etc.\n* **Análisis preliminar de riesgos** y plan de trabajo.\n* **Trabajo de campo**: entrevistas, documentación, observación, configuración, logs, muestreo y pruebas.\n* **Contraste de evidencia** y elaboración de hallazgos.\n* **Informe**: condición, criterio, causa, riesgo/efecto y recomendación.\n* **Plan de acciones**: responsable, prioridad y fecha.\n* **Seguimiento** y verificación de cierre.",
+          "evidence_sha256": "e9968bc655e170b9c60454df3bffd4e7ec8ea43fdfe0ac11586aa4809f98002d",
+          "record_sha256": "649c1e49d5c91d220ce0c69644fbe76a66cb50fa3371651722a3c72ce9366c41",
+          "review_id": "AI-GSI-B2-T11-006",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.11; sección 4. Ciclo de auditoría",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B2-T11-006",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T11",
+        "subtopic": "Ciclo de auditoría",
+        "exam": null,
+        "statement": "¿Qué convierte una recomendación de auditoría en una acción de remediación gestionable y verificable?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Añadir una estimación de coste y una lista de herramientas, dejando abierta la ejecución."
+          },
+          {
+            "id": "B",
+            "text": "Definir acción, responsable, prioridad, plazo y evidencia con la que comprobar su cierre."
+          },
+          {
+            "id": "C",
+            "text": "Asignar la recomendación a un área, sin concretar quién responde de los hitos ni cuándo vencen."
+          },
+          {
+            "id": "D",
+            "text": "Incorporar la gravedad del hallazgo al informe, dando su clasificación por seguimiento suficiente."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Una acción gestionable concreta qué se hará, quién responde y en qué plazo, con prioridad y comprobación del resultado. Registrar o presupuestar una recomendación no acredita su ejecución ni permite cerrarla sin evidencia.",
+          "incorrect": "Contrasta la alternativa elegida con la explicación del concepto y las condiciones del enunciado.",
+          "incorrect_options": {
+            "A": "Costes y herramientas pueden apoyar el plan, pero sin asignación y plazo no se gobierna su ejecución.",
+            "C": "Nombrar un área de forma genérica deja ambiguas responsabilidad y fechas; deben concretarse para seguir y exigir los hitos.",
+            "D": "Clasificar gravedad ayuda a priorizar, pero no sustituye asignar actuaciones y verificar que corrigen la debilidad."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.11; sección 4. Ciclo de auditoría",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "* **Mandato y alcance**: sistema, procesos, periodo, ubicaciones, exclusiones.\n* **Criterios**: ENS, políticas, RGPD/LOPDGDD, ISO, contrato, procedimientos, etc.\n* **Análisis preliminar de riesgos** y plan de trabajo.\n* **Trabajo de campo**: entrevistas, documentación, observación, configuración, logs, muestreo y pruebas.\n* **Contraste de evidencia** y elaboración de hallazgos.\n* **Informe**: condición, criterio, causa, riesgo/efecto y recomendación.\n* **Plan de acciones**: responsable, prioridad y fecha.\n* **Seguimiento** y verificación de cierre.",
+          "evidence_sha256": "e9968bc655e170b9c60454df3bffd4e7ec8ea43fdfe0ac11586aa4809f98002d",
+          "record_sha256": "649c1e49d5c91d220ce0c69644fbe76a66cb50fa3371651722a3c72ce9366c41",
+          "review_id": "AI-GSI-B2-T11-006",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "CMS Information Security and Privacy Program: POA&M Handbook",
+              "url": "https://security.cms.gov/learn/cms-plan-action-and-milestones-poam-handbook",
+              "locator": "Develop a Corrective Action Plan (CAP); Appropriate milestones; Assign a completion date; Execute the Corrective Action Plan",
+              "version": "Manual web consultado el 26-10-2026; guía de gestión, no obligación jurídica española",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-003"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.11; sección 4. Ciclo de auditoría",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Completar responsable, prioridad y fecha con acción y criterio de cierre, evitando confundir registro, presupuesto o severidad con remediación ejecutada."
+      ],
+      "references": [
+        {
+          "title": "CMS Information Security and Privacy Program: POA&M Handbook",
+          "url": "https://security.cms.gov/learn/cms-plan-action-and-milestones-poam-handbook",
+          "locator": "Develop a Corrective Action Plan (CAP); Appropriate milestones; Assign a completion date; Execute the Corrective Action Plan",
+          "version": "Manual web consultado el 26-10-2026; guía de gestión, no obligación jurídica española",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B2-T11-010",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "b2b47091f953446b98078197a07bc056b8da5e5f839faa36fdce3fdcf6b85cb1",
+      "content_sha256": "6e33cebe0bb24ad464087c91256920c33b41f3e2baf83e61a136d63e24241fea",
+      "before": {
+        "id": "AI-GSI-B2-T11-010",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T11",
+        "subtopic": "Técnicas y herramientas",
+        "exam": null,
+        "statement": "¿Qué evidencia resulta especialmente útil para auditar recuperación?",
+        "options": [
+          {
+            "id": "A",
+            "text": "La existencia de una licencia de backup"
+          },
+          {
+            "id": "B",
+            "text": "Resultados de restauraciones y pruebas de backups"
+          },
+          {
+            "id": "C",
+            "text": "Solo informes de trabajos de copia sin restaurar"
+          },
+          {
+            "id": "D",
+            "text": "Únicamente el tamaño ocupado del repositorio"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Las pruebas de restauración evidencian capacidad real; adquirir una herramienta no acredita funcionamiento.",
+          "incorrect": "Las pruebas de restauración evidencian capacidad real; adquirir una herramienta no acredita funcionamiento."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.11; sección 6. Técnicas y herramientas",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "* Entrevistas y cuestionarios.\n* Revisión de políticas, procedimientos, arquitectura e inventarios.\n* Revisión de configuración y hardening.\n* Análisis de usuarios, roles, privilegios y segregación de funciones.\n* Consulta de logs y SIEM.\n* Escáneres de vulnerabilidades y cumplimiento.\n* Análisis de red/configuración de firewalls.\n* Muestreo de transacciones y pruebas de controles.\n* Revisión de backups/restauraciones.\n* Pruebas físicas de acceso/energía/ambiente.\n* Scripts de auditoría para correlacionar inventario, cuentas, parches o eventos.\n\nUna auditoría puede utilizar resultados de pentest, pero **auditoría ≠ pentest**. El pentest busca explotar vulnerabilidades dentro de reglas de compromiso; la auditoría evalúa un conjunto más amplio de controles y criterios.",
+          "evidence_sha256": "c3c096f14a95b2c2525825b4988e74b8e57379dfd5f308d6121671c9e86e1746",
+          "record_sha256": "789681a4fac1c8ccce7c1cc283f2b0c2c83f38f1324327f39d088c5e31a9da03",
+          "review_id": "AI-GSI-B2-T11-010",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.11; sección 6. Técnicas y herramientas",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B2-T11-010",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T11",
+        "subtopic": "Técnicas y herramientas",
+        "exam": null,
+        "statement": "El informe de copias muestra trabajos completados sin error. Para auditar la capacidad de recuperación, ¿qué evidencia adicional es más directa?",
+        "options": [
+          {
+            "id": "A",
+            "text": "El inventario de licencias de la herramienta, junto con su fecha de renovación y soporte."
+          },
+          {
+            "id": "B",
+            "text": "El registro de una restauración probada, con integridad de los datos y resultado de las comprobaciones."
+          },
+          {
+            "id": "C",
+            "text": "El historial de tamaños y duración de las copias, sin haber utilizado sus datos para restaurar."
+          },
+          {
+            "id": "D",
+            "text": "El procedimiento de recuperación aprobado, sin resultados de su ejecución en un entorno de prueba."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Una restauración probada aporta evidencia de que los datos pueden recuperarse y utilizarse bajo las condiciones ensayadas. Los trabajos completados no prueban por sí solos recuperación; deben documentarse alcance, verificaciones y limitaciones de la prueba.",
+          "incorrect": "Contrasta la alternativa elegida con la explicación del concepto y las condiciones del enunciado.",
+          "incorrect_options": {
+            "A": "Licencias y soporte acreditan disponibilidad contractual de la herramienta, no que una copia concreta permita recuperar datos utilizables.",
+            "C": "Tamaño y duración describen la ejecución de la copia, pero no prueban que pueda restaurarse ni que el resultado sea íntegro.",
+            "D": "El procedimiento define lo previsto; sin ejecutarlo no demuestra el resultado real del proceso de recuperación."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.11; sección 6. Técnicas y herramientas",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "* Entrevistas y cuestionarios.\n* Revisión de políticas, procedimientos, arquitectura e inventarios.\n* Revisión de configuración y hardening.\n* Análisis de usuarios, roles, privilegios y segregación de funciones.\n* Consulta de logs y SIEM.\n* Escáneres de vulnerabilidades y cumplimiento.\n* Análisis de red/configuración de firewalls.\n* Muestreo de transacciones y pruebas de controles.\n* Revisión de backups/restauraciones.\n* Pruebas físicas de acceso/energía/ambiente.\n* Scripts de auditoría para correlacionar inventario, cuentas, parches o eventos.\n\nUna auditoría puede utilizar resultados de pentest, pero **auditoría ≠ pentest**. El pentest busca explotar vulnerabilidades dentro de reglas de compromiso; la auditoría evalúa un conjunto más amplio de controles y criterios.",
+          "evidence_sha256": "c3c096f14a95b2c2525825b4988e74b8e57379dfd5f308d6121671c9e86e1746",
+          "record_sha256": "789681a4fac1c8ccce7c1cc283f2b0c2c83f38f1324327f39d088c5e31a9da03",
+          "review_id": "AI-GSI-B2-T11-010",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "CISA, NSA, FBI y MS-ISAC: #StopRansomware Guide",
+              "url": "https://www.ic3.gov/CSA/2023/231019.pdf",
+              "locator": "Part 1, Preparing for Ransomware and Data Extortion Incidents, p.5: disponibilidad e integridad de copias en un escenario de recuperación",
+              "version": "Versión 3.0, octubre de 2023; copia primaria publicada por FBI IC3",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-003"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.11; sección 6. Técnicas y herramientas",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Distinguir ejecución de copia, documentación y restauración validada con un caso de auditoría, sin generalizar una prueba a todos los escenarios."
+      ],
+      "references": [
+        {
+          "title": "CISA, NSA, FBI y MS-ISAC: #StopRansomware Guide",
+          "url": "https://www.ic3.gov/CSA/2023/231019.pdf",
+          "locator": "Part 1, Preparing for Ransomware and Data Extortion Incidents, p.5: disponibilidad e integridad de copias en un escenario de recuperación",
+          "version": "Versión 3.0, octubre de 2023; copia primaria publicada por FBI IC3",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B2-T11-015",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "6e1817554098109977266b65f4294677213bd185c635e638275dff589471fbc6",
+      "content_sha256": "edd28464f3cb02ccc7a56753aa1366ce61cf64f79d67a7a341bf7765e9c1083a",
+      "before": {
+        "id": "AI-GSI-B2-T11-015",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T11",
+        "subtopic": "Auditoría ENS",
+        "exam": null,
+        "statement": "¿Qué debe revisar una auditoría ENS además de medidas técnicas?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Solo velocidad de procesadores"
+          },
+          {
+            "id": "B",
+            "text": "Política, roles, riesgos, aplicabilidad y evidencias"
+          },
+          {
+            "id": "C",
+            "text": "Solo número de usuarios inscritos"
+          },
+          {
+            "id": "D",
+            "text": "Solo tamaño de la sede web"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "ENS comprende organización, operación y protección, con evidencias de aplicación.",
+          "incorrect": "ENS comprende organización, operación y protección, con evidencias de aplicación."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.11; sección 9. Auditoría ENS",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "El ENS (RD 311/2022) establece auditorías de seguridad en los casos y periodicidad aplicables. La fuente A1 048 actualizada en marzo de 2026 recuerda que los sistemas de categoría básica se apoyan en autoevaluación para la declaración de conformidad, mientras media/alta requieren los mecanismos de auditoría/certificación previstos. También procede auditoría extraordinaria ante modificaciones sustanciales que puedan repercutir en seguridad.\n\nLa guía CCN-STIC 802 desarrolla auditoría ENS. Debes distinguir:\n\n* **Categoría del sistema**: deriva de valoración ENS.\n* **Auditoría de seguridad**: evaluación periódica y ante cambios relevantes.\n* **Conformidad ENS**: declaración/certificación conforme al régimen.\n* **ISO 27001**: certificación de SGSI, relacionada pero no equivalente.\n\nEn auditoría ENS se revisan política, roles, análisis de riesgos, Declaración de Aplicabilidad, medidas del marco organizativo/operacional/protección, evidencias, incidentes, continuidad, terceros y mejora.",
+          "evidence_sha256": "075c80233810b3c97a2374731f358412d3e58da6062dd4a10a32532ca373e4bc",
+          "record_sha256": "86b5a2c6dfb0b951b8982b56795f9f97f6b89594abb74d69fc57486fb4333d98",
+          "review_id": "AI-GSI-B2-T11-015",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.11; sección 9. Auditoría ENS",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B2-T11-015",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T11",
+        "subtopic": "Auditoría ENS",
+        "exam": null,
+        "statement": "Además de controles técnicos, ¿qué debe comprobarse al auditar un sistema de categoría MEDIA conforme al ENS?",
+        "options": [
+          {
+            "id": "A",
+            "text": "El inventario y las fichas de fabricantes, tomándolos como sustitutos de la asignación de responsabilidades."
+          },
+          {
+            "id": "B",
+            "text": "La política y los roles, el análisis de riesgos, la aplicabilidad de medidas y las evidencias de cumplimiento."
+          },
+          {
+            "id": "C",
+            "text": "La compra de herramientas recomendadas, tomándola como demostración de que todos los procedimientos funcionan."
+          },
+          {
+            "id": "D",
+            "text": "Las vulnerabilidades detectadas, sin contrastar organización ni documentación para evitar juicios no técnicos."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "El anexo III exige comprobar organización, responsabilidades, riesgos, medidas aplicables y evidencias, además de aspectos técnicos. La categoría MEDIA requiere auditoría; en BÁSICA puede bastar autoevaluación documentada en los términos del ENS.",
+          "incorrect": "Contrasta la alternativa elegida con la explicación del concepto y las condiciones del enunciado.",
+          "incorrect_options": {
+            "A": "Inventario y fabricantes aportan contexto técnico, pero no acreditan que la organización haya definido y asignado roles de seguridad.",
+            "C": "Adquirir herramientas no acredita su implantación ni el funcionamiento del conjunto de procedimientos y medidas aplicables.",
+            "D": "Limitarse a vulnerabilidades excluye comprobaciones organizativas y documentales expresamente incluidas en el objeto de la auditoría ENS."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.11; sección 9. Auditoría ENS",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "El ENS (RD 311/2022) establece auditorías de seguridad en los casos y periodicidad aplicables. La fuente A1 048 actualizada en marzo de 2026 recuerda que los sistemas de categoría básica se apoyan en autoevaluación para la declaración de conformidad, mientras media/alta requieren los mecanismos de auditoría/certificación previstos. También procede auditoría extraordinaria ante modificaciones sustanciales que puedan repercutir en seguridad.\n\nLa guía CCN-STIC 802 desarrolla auditoría ENS. Debes distinguir:\n\n* **Categoría del sistema**: deriva de valoración ENS.\n* **Auditoría de seguridad**: evaluación periódica y ante cambios relevantes.\n* **Conformidad ENS**: declaración/certificación conforme al régimen.\n* **ISO 27001**: certificación de SGSI, relacionada pero no equivalente.\n\nEn auditoría ENS se revisan política, roles, análisis de riesgos, Declaración de Aplicabilidad, medidas del marco organizativo/operacional/protección, evidencias, incidentes, continuidad, terceros y mejora.",
+          "evidence_sha256": "075c80233810b3c97a2374731f358412d3e58da6062dd4a10a32532ca373e4bc",
+          "record_sha256": "86b5a2c6dfb0b951b8982b56795f9f97f6b89594abb74d69fc57486fb4333d98",
+          "review_id": "AI-GSI-B2-T11-015",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Real Decreto 311/2022: Esquema Nacional de Seguridad",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-7191",
+              "locator": "Artículos 28 y 31; anexo III §§1.1–1.3 y 2: objeto, evidencias y niveles de auditoría",
+              "version": "Texto consolidado consultado el 26-10-2026",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-003"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.11; sección 9. Auditoría ENS",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Concretar categoría MEDIA para no atribuir auditoría obligatoria a todos los sistemas; contrastar organización y evidencia con meras compras o escaneos."
+      ],
+      "references": [
+        {
+          "title": "Real Decreto 311/2022: Esquema Nacional de Seguridad",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-7191",
+          "locator": "Artículos 28 y 31; anexo III §§1.1–1.3 y 2: objeto, evidencias y niveles de auditoría",
+          "version": "Texto consolidado consultado el 26-10-2026",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    }
+  ]
+}

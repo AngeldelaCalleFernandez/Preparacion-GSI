@@ -1,0 +1,3694 @@
+{
+  "version": 1,
+  "id": "GSI-EDITORIAL-023",
+  "prepared_at": "2026-10-27",
+  "baseline_commit": "e3e20ab879518c899806a70575eead28b3b35e6f",
+  "items": [
+    {
+      "id": "MAN-GSI-P17-096",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "c64a9a274ffaa1b2488affc214eec7d4409d9e272d83bf8b94948469a66ebe76",
+      "content_sha256": "3a112776c9d2aafcf6a3702e60a5b3afd49c23d79c0b5ef5cc858a789e18b9d4",
+      "before": {
+        "id": "MAN-GSI-P17-096",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué es un monitor en concurrencia?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Un mecanismo de exclusión mutua que permite a un único hilo poseer el bloqueo asociado a una sección crítica."
+          },
+          {
+            "id": "B",
+            "text": "Un contador sincronizado que limita cuántos hilos pueden acceder simultáneamente a un recurso compartido."
+          },
+          {
+            "id": "C",
+            "text": "Una abstracción que encapsula estado y sincronización, normalmente con exclusión mutua y condiciones."
+          },
+          {
+            "id": "D",
+            "text": "Un mecanismo que permite esperar y ser notificado cuando cambia una condición protegida por sincronización."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Monitor es un concepto de sincronización, no un dispositivo de visualización.",
+          "incorrect": "Según el solucionario: Monitor es un concepto de sincronización, no un dispositivo de visualización."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 96; índice nativo 9712",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 96; índice nativo 33037",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 96; índice nativo 9712",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-096",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué es un monitor en concurrencia?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Un mecanismo de exclusión mutua que permite a un único hilo poseer el bloqueo asociado a una sección crítica."
+          },
+          {
+            "id": "B",
+            "text": "Un contador sincronizado que limita cuántos hilos pueden acceder simultáneamente a un recurso compartido."
+          },
+          {
+            "id": "C",
+            "text": "Una abstracción que encapsula estado y sincronización, normalmente con exclusión mutua y condiciones."
+          },
+          {
+            "id": "D",
+            "text": "Un mecanismo que permite esperar y ser notificado cuando cambia una condición protegida por sincronización."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Un monitor reúne estado compartido, operaciones que lo manipulan y reglas de sincronización. La exclusión mutua protege la entrada y las condiciones permiten esperar a que sea posible continuar. No es únicamente el bloqueo ni una variable de condición aislada. Mesa y Java son ejemplos con reglas concretas de espera y notificación; la abstracción no garantiza por sí sola ausencia de deadlock, inanición o errores del protocolo de uso.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Describe un mutex o bloqueo de exclusión. Es un ingrediente posible, pero no integra por sí solo estado, operaciones y condiciones como el monitor.",
+            "B": "Describe un semáforo contador. Controlar un número de permisos no constituye la abstracción que encapsula datos y operaciones.",
+            "D": "Describe una variable de condición y su notificación. Es una parte de la coordinación, no el conjunto encapsulado del monitor."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 96; índice nativo 9712",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 96; índice nativo 33037",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Lampson y Redell: Experience with Processes and Monitors in Mesa",
+              "url": "https://people.eecs.berkeley.edu/~brewer/cs262/Mesa.pdf",
+              "locator": "Secciones 3 Monitors y 3.1 Monitor modules, PDF p. 6; 4 Condition variables, PDF pp. 10–11: estado, operaciones, exclusión y espera",
+              "version": "Artículo publicado en CACM 23(2), febrero 1980, pp. 105–117; copia de 23 páginas con aviso de OCR histórico y posibles errores. No se ejecuta conversión/OCR ni se trasladan detalles de planificación de Mesa a otros monitores",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "Oracle: Java Language Specification, Threads and Locks",
+              "url": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-17.html",
+              "locator": "17.1 Synchronization y 17.2 Wait Sets and Notification: monitor asociado al objeto, exclusión y conjunto de espera",
+              "version": "Java SE 25, edición identificada de la especificación; ejemplo de implementación, sin afirmar que sea la última edición ni universalizar semántica a todo monitor",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-023"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 96; índice nativo 9712",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar literalmente enunciado y alternativas ya bien diferenciados; completar explicación del monitor frente a mutex, semáforo y condición."
+      ],
+      "references": [
+        {
+          "title": "Lampson y Redell: Experience with Processes and Monitors in Mesa",
+          "url": "https://people.eecs.berkeley.edu/~brewer/cs262/Mesa.pdf",
+          "locator": "Secciones 3 Monitors y 3.1 Monitor modules, PDF p. 6; 4 Condition variables, PDF pp. 10–11: estado, operaciones, exclusión y espera",
+          "version": "Artículo publicado en CACM 23(2), febrero 1980, pp. 105–117; copia de 23 páginas con aviso de OCR histórico y posibles errores. No se ejecuta conversión/OCR ni se trasladan detalles de planificación de Mesa a otros monitores",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "Oracle: Java Language Specification, Threads and Locks",
+          "url": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-17.html",
+          "locator": "17.1 Synchronization y 17.2 Wait Sets and Notification: monitor asociado al objeto, exclusión y conjunto de espera",
+          "version": "Java SE 25, edición identificada de la especificación; ejemplo de implementación, sin afirmar que sea la última edición ni universalizar semántica a todo monitor",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-098",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "4238fa9eb49053a58e69d16f5daa6dabeb392c3c33d74d75f7677d6c4d14af93",
+      "content_sha256": "6f452ac8aaf59db3b5a96c055eb7ac83c042e23de0dfebc993705ac6b3c34ef4",
+      "before": {
+        "id": "MAN-GSI-P17-098",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué es una llamada al sistema (system call)?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Una llamada HTTP a un SaaS necesariamente."
+          },
+          {
+            "id": "B",
+            "text": "Un mecanismo por el que un programa solicita un servicio al kernel."
+          },
+          {
+            "id": "C",
+            "text": "Una interrupción eléctrica."
+          },
+          {
+            "id": "D",
+            "text": "Un cambio de licencia."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Las aplicaciones usan syscalls para operaciones privilegiadas gestionadas por el SO.",
+          "incorrect": "Según el solucionario: Las aplicaciones usan syscalls para operaciones privilegiadas gestionadas por el SO."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 98; índice nativo 9913",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 98; índice nativo 33519",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 98; índice nativo 9913",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-098",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué es una llamada al sistema (system call)?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Una llamada a una rutina de biblioteca que se resuelve en modo usuario."
+          },
+          {
+            "id": "B",
+            "text": "Una interfaz para que un programa solicite al núcleo un servicio del sistema."
+          },
+          {
+            "id": "C",
+            "text": "Una excepción provocada al ejecutar una instrucción inválida para la CPU."
+          },
+          {
+            "id": "D",
+            "text": "Una petición de red a una aplicación que expone una API de servicio."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "La llamada al sistema es la interfaz mediante la que una aplicación solicita servicios al núcleo, por ejemplo gestionar archivos, procesos o memoria. Suele invocarse a través de una biblioteca, pero no toda función de biblioteca realiza una syscall ni existe correspondencia obligatoria uno-a-uno. El núcleo comprueba las condiciones y permisos correspondientes; entrar mediante esa interfaz no convierte al programa en código privilegiado permanente.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Una rutina resuelta íntegramente en modo usuario no solicita por ese hecho un servicio al núcleo. Biblioteca e interfaz de sistema son capas distintas.",
+            "C": "Una excepción por instrucción inválida comunica un fallo de ejecución. No equivale a la petición intencional de un servicio mediante syscall.",
+            "D": "Una API de una aplicación remota no es la interfaz aplicación/kernel. Su implementación puede usar syscalls, pero son niveles diferentes."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 98; índice nativo 9913",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 98; índice nativo 33519",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Linux man-pages: syscalls(2)",
+              "url": "https://man7.org/linux/man-pages/man2/syscalls.2.html",
+              "locator": "DESCRIPTION y System calls and library wrapper functions: interfaz aplicación/kernel y envolturas de biblioteca",
+              "version": "Página primaria del proyecto Linux man-pages consultada; sin deducir correspondencia uno-a-uno entre funciones de biblioteca y syscalls",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "Arpaci-Dusseau: OSTEP, Mechanism: Limited Direct Execution",
+              "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-mechanisms.pdf",
+              "locator": "Capítulo 6: 6.2 Problem #1: Restricted Operations, pp. 2–7; 6.3 Problem #2: Switching Between Processes, Saving and Restoring Context, pp. 7–10: trap, decisión y cambio de contexto",
+              "version": "PDF de autores, versión 1.10; no toda entrada al núcleo cambia de tarea",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-023"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 98; índice nativo 9913",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar syscall y clave B; comparar biblioteca, excepción y API remota sin distractores de licencia o electricidad."
+      ],
+      "references": [
+        {
+          "title": "Linux man-pages: syscalls(2)",
+          "url": "https://man7.org/linux/man-pages/man2/syscalls.2.html",
+          "locator": "DESCRIPTION y System calls and library wrapper functions: interfaz aplicación/kernel y envolturas de biblioteca",
+          "version": "Página primaria del proyecto Linux man-pages consultada; sin deducir correspondencia uno-a-uno entre funciones de biblioteca y syscalls",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "Arpaci-Dusseau: OSTEP, Mechanism: Limited Direct Execution",
+          "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-mechanisms.pdf",
+          "locator": "Capítulo 6: 6.2 Problem #1: Restricted Operations, pp. 2–7; 6.3 Problem #2: Switching Between Processes, Saving and Restoring Context, pp. 7–10: trap, decisión y cambio de contexto",
+          "version": "PDF de autores, versión 1.10; no toda entrada al núcleo cambia de tarea",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-099",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "0a103c3a4670c4ba25194f037897305709a2e7faff331b702957a023fdb7bc19",
+      "content_sha256": "b1c2900575c67057524fd39bbe1c83ac691e4ef698c2ed38973a1cb1afc21376",
+      "before": {
+        "id": "MAN-GSI-P17-099",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué diferencia hay entre modo usuario y modo kernel?",
+        "options": [
+          {
+            "id": "A",
+            "text": "El modo kernel tiene privilegios superiores; el modo usuario restringe operaciones directas sobre recursos críticos."
+          },
+          {
+            "id": "B",
+            "text": "Ejecutar siempre más rápido en modo usuario por definición, aunque una operación requiera servicios privilegiados o produzca cambios de contexto."
+          },
+          {
+            "id": "C",
+            "text": "Ser el modo kernel una cuenta especial de Active Directory que recibe permisos administrativos al iniciar sesión en un equipo del dominio."
+          },
+          {
+            "id": "D",
+            "text": "No existir separación de privilegios en sistemas modernos, porque todos los procesos acceden directamente al hardware con las mismas facultades."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "La separación protege el sistema frente a fallos o acciones no autorizadas de aplicaciones.",
+          "incorrect": "Según el solucionario: La separación protege el sistema frente a fallos o acciones no autorizadas de aplicaciones."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 99; índice nativo 10006",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 99; índice nativo 33794",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 99; índice nativo 10006",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-099",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué diferencia hay entre modo usuario y modo kernel?",
+        "options": [
+          {
+            "id": "A",
+            "text": "El núcleo dispone de privilegios que limitan el acceso directo desde modo usuario a recursos protegidos."
+          },
+          {
+            "id": "B",
+            "text": "La diferencia consiste en prioridad de CPU: el modo kernel es una clase de planificación más alta."
+          },
+          {
+            "id": "C",
+            "text": "El modo kernel corresponde a la cuenta administradora y el modo usuario a las cuentas sin esa función."
+          },
+          {
+            "id": "D",
+            "text": "La diferencia está en la dirección usada: las aplicaciones emplean físicas y el núcleo solo virtuales."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "La separación de modos limita las operaciones privilegiadas y el acceso a recursos del sistema. El código de usuario solicita servicios a través de interfaces controladas. El modo del procesador no es una cuenta ni una prioridad de planificación, y no se define por física frente a virtual. La separación contribuye a protección y aislamiento, sin implicar que todo fallo de aplicación sea inocuo o que exista una ventaja fija de velocidad.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "Prioridad de planificación y nivel de privilegio son conceptos distintos. Una tarea prioritaria no adquiere por ello facultades de núcleo.",
+            "C": "Una identidad administradora puede ejecutar aplicaciones en modo usuario. Las credenciales no son el modo de privilegio de la CPU.",
+            "D": "El uso de direcciones físicas o virtuales no define esa separación. En sistemas con memoria virtual, ambos modos pueden utilizar direcciones virtuales."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 99; índice nativo 10006",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 99; índice nativo 33794",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Microsoft: User mode and kernel mode",
+              "url": "https://learn.microsoft.com/en-us/windows-hardware/drivers/gettingstarted/user-mode-and-kernel-mode",
+              "locator": "Introducción; User mode; Kernel mode: privilegios, direcciones protegidas y controladores",
+              "version": "Actualización 29-10-2025; ejemplo Windows, sin convertir aislamiento en garantía absoluta frente a todo fallo o explotación",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "Arpaci-Dusseau: OSTEP, Mechanism: Limited Direct Execution",
+              "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-mechanisms.pdf",
+              "locator": "Capítulo 6: 6.2 Problem #1: Restricted Operations, pp. 2–7; 6.3 Problem #2: Switching Between Processes, Saving and Restoring Context, pp. 7–10: trap, decisión y cambio de contexto",
+              "version": "PDF de autores, versión 1.10; no toda entrada al núcleo cambia de tarea",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-023"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 99; índice nativo 10006",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar separación de privilegios y clave A; distinguir prioridad, identidad y traducción de direcciones."
+      ],
+      "references": [
+        {
+          "title": "Microsoft: User mode and kernel mode",
+          "url": "https://learn.microsoft.com/en-us/windows-hardware/drivers/gettingstarted/user-mode-and-kernel-mode",
+          "locator": "Introducción; User mode; Kernel mode: privilegios, direcciones protegidas y controladores",
+          "version": "Actualización 29-10-2025; ejemplo Windows, sin convertir aislamiento en garantía absoluta frente a todo fallo o explotación",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "Arpaci-Dusseau: OSTEP, Mechanism: Limited Direct Execution",
+          "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-mechanisms.pdf",
+          "locator": "Capítulo 6: 6.2 Problem #1: Restricted Operations, pp. 2–7; 6.3 Problem #2: Switching Between Processes, Saving and Restoring Context, pp. 7–10: trap, decisión y cambio de contexto",
+          "version": "PDF de autores, versión 1.10; no toda entrada al núcleo cambia de tarea",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-100",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "561b097c70307884d37af9f84c0a547ffc90f36d97f393068723145e26a77633",
+      "content_sha256": "f35c89b0ea807344eff9e1ff7680fbf249be4e40dcf0b16d381801db807b2a26",
+      "before": {
+        "id": "MAN-GSI-P17-100",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Si un servicio tiene muchos hilos bloqueados esperando E/S, ¿qué conclusión es más razonable?",
+        "options": [
+          {
+            "id": "A",
+            "text": "La carga puede estar limitada por E/S; añadir CPU no garantiza resolver el cuello de botella."
+          },
+          {
+            "id": "B",
+            "text": "La solución es siempre duplicar la frecuencia de CPU."
+          },
+          {
+            "id": "C",
+            "text": "La espera de E/S demuestra que no hay concurrencia."
+          },
+          {
+            "id": "D",
+            "text": "Hay que desactivar interrupciones."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Primero se debe identificar el recurso limitante: CPU, disco, red, bloqueo, etc.",
+          "incorrect": "Según el solucionario: Primero se debe identificar el recurso limitante: CPU, disco, red, bloqueo, etc."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 100; índice nativo 10106",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 100; índice nativo 34193",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 100; índice nativo 10106",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-100",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Si un servicio tiene muchos hilos bloqueados esperando E/S, ¿qué conclusión es más razonable?",
+        "options": [
+          {
+            "id": "A",
+            "text": "La E/S puede limitar el avance; conviene medir antes de ampliar CPU."
+          },
+          {
+            "id": "B",
+            "text": "La CPU es el recurso limitante, pues esperar E/S indica saturación de cálculo."
+          },
+          {
+            "id": "C",
+            "text": "Los hilos bloqueados compiten por CPU de forma continua mientras esperan E/S."
+          },
+          {
+            "id": "D",
+            "text": "Añadir hilos reduce la latencia propia de cada operación del dispositivo."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "La espera de E/S puede limitar el servicio, por lo que añadir CPU no garantiza resolver el problema. Conviene medir latencia, colas, actividad del dispositivo o red y capacidad efectiva de cómputo. Un hilo bloqueado no ejecuta espera activa; el SO puede dar CPU a otros preparados. Muchos hilos esperando tampoco prueban por sí solos saturación del dispositivo: el diagnóstico debe confirmar el recurso limitante.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "El estado de espera no acredita consumo de CPU elevado. Puede haber capacidad de cómputo ociosa mientras el servicio espera al recurso de E/S.",
+            "C": "Bloqueado y espera activa son distintos. El planificador no trata al hilo bloqueado como preparado hasta que pueda continuar.",
+            "D": "Más concurrencia puede solapar trabajo, pero no reduce por definición la latencia de cada operación y puede aumentar colas o presión."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 100; índice nativo 10106",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 100; índice nativo 34193",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Arpaci-Dusseau: OSTEP, The Abstraction: The Process",
+              "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-intro.pdf",
+              "locator": "Capítulo 4: 4.1 The Abstraction: A Process, pp. 2–3; 4.4 Process States, pp. 5–7; separación de política/mecanismo p. 3",
+              "version": "PDF de autores, versión 1.10 impresa; modelo didáctico simplificado",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "Arpaci-Dusseau: OSTEP, I/O Devices",
+              "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/file-devices.pdf",
+              "locator": "Capítulo 36: 36.3 The Canonical Protocol, p. 4; 36.4 Lowering CPU Overhead With Interrupts, pp. 5–6; figura 36.4, p. 9: polling, interrupciones, solapamiento y capa de bloques",
+              "version": "PDF de autores, versión impresa 1.10; modelo didáctico, sin inferir fecha de publicación del copyright",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-023"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 100; índice nativo 10106",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar el microcaso y clave A; sustituir recetas absolutas por confusiones sobre estado bloqueado, CPU y concurrencia."
+      ],
+      "references": [
+        {
+          "title": "Arpaci-Dusseau: OSTEP, The Abstraction: The Process",
+          "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-intro.pdf",
+          "locator": "Capítulo 4: 4.1 The Abstraction: A Process, pp. 2–3; 4.4 Process States, pp. 5–7; separación de política/mecanismo p. 3",
+          "version": "PDF de autores, versión 1.10 impresa; modelo didáctico simplificado",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "Arpaci-Dusseau: OSTEP, I/O Devices",
+          "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/file-devices.pdf",
+          "locator": "Capítulo 36: 36.3 The Canonical Protocol, p. 4; 36.4 Lowering CPU Overhead With Interrupts, pp. 5–6; figura 36.4, p. 9: polling, interrupciones, solapamiento y capa de bloques",
+          "version": "PDF de autores, versión impresa 1.10; modelo didáctico, sin inferir fecha de publicación del copyright",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-101",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "c485b2545a8bcdf7600d8d481e92aa1bef4c86c408bc1e47e7952d4392394149",
+      "content_sha256": "fb85f71471bb2492b60b39a002387151ce6f37b956c6891d43a078e42e0e164d",
+      "before": {
+        "id": "MAN-GSI-P17-101",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué proporciona la memoria virtual a un proceso?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Acceso directo a toda la RAM de otros procesos."
+          },
+          {
+            "id": "B",
+            "text": "Persistencia garantizada tras apagar el equipo."
+          },
+          {
+            "id": "C",
+            "text": "Una copia de seguridad automática de archivos."
+          },
+          {
+            "id": "D",
+            "text": "Un espacio de direcciones lógico protegido y abstraído de la memoria física concreta."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Cada proceso trabaja con direcciones virtuales que el sistema traduce y protege.",
+          "incorrect": "Según el solucionario: Cada proceso trabaja con direcciones virtuales que el sistema traduce y protege."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 101; índice nativo 10246",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 101; índice nativo 34640",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 101; índice nativo 10246",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-101",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué proporciona la memoria virtual a un proceso?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Un área de disco que conserva automáticamente el estado de ejecución tras apagar."
+          },
+          {
+            "id": "B",
+            "text": "Acceso a toda la RAM física, con independencia de los permisos de sus páginas."
+          },
+          {
+            "id": "C",
+            "text": "Una zona de intercambio que sustituye todas las páginas residentes en memoria."
+          },
+          {
+            "id": "D",
+            "text": "Un espacio de direcciones lógico, con traducción y protección respecto a memoria física."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "La memoria virtual presenta al proceso un espacio de direcciones y traduce sus accesos hacia recursos físicos con comprobaciones de protección. Facilita aislamiento y colocación flexible, además de mecanismos de compartición controlada. No se reduce al archivo de intercambio ni exige que todas las páginas estén en disco. Tampoco conserva automáticamente una ejecución después de apagar ni autoriza acceder a cualquier memoria de otro proceso.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Persistir una ejecución requiere mecanismos específicos. La abstracción de direcciones virtuales no equivale a una imagen recuperable tras apagar.",
+            "B": "La traducción incorpora protección. Disponer de un espacio virtual no concede acceso indiscriminado a toda RAM física.",
+            "C": "Intercambio y residencia son mecanismos posibles dentro de la gestión de memoria. La memoria virtual no es exclusivamente swap ni desplaza toda página de RAM."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 101; índice nativo 10246",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 101; índice nativo 34640",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Arpaci-Dusseau: OSTEP, The Abstraction: Address Spaces",
+              "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/vm-intro.pdf",
+              "locator": "Capítulo 13: 13.3 The Address Space, pp. 3–5, y 13.4 Goals, pp. 5–6: abstracción, traducción y protección",
+              "version": "PDF de autores, versión impresa 1.10; modelo didáctico, sin inferir fecha de publicación del copyright",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "Arpaci-Dusseau: OSTEP, Paging: Introduction",
+              "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/vm-paging.pdf",
+              "locator": "Capítulo 18, introducción y 18.1 A Simple Example And Overview, pp. 1–4: páginas, marcos y tabla de traducción",
+              "version": "PDF de autores, versión impresa 1.10; modelo didáctico, sin inferir fecha de publicación del copyright",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-023"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 101; índice nativo 10246",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar abstracción protegida y clave D; distinguir espacio virtual, intercambio, persistencia y acceso sin permisos."
+      ],
+      "references": [
+        {
+          "title": "Arpaci-Dusseau: OSTEP, The Abstraction: Address Spaces",
+          "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/vm-intro.pdf",
+          "locator": "Capítulo 13: 13.3 The Address Space, pp. 3–5, y 13.4 Goals, pp. 5–6: abstracción, traducción y protección",
+          "version": "PDF de autores, versión impresa 1.10; modelo didáctico, sin inferir fecha de publicación del copyright",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "Arpaci-Dusseau: OSTEP, Paging: Introduction",
+          "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/vm-paging.pdf",
+          "locator": "Capítulo 18, introducción y 18.1 A Simple Example And Overview, pp. 1–4: páginas, marcos y tabla de traducción",
+          "version": "PDF de autores, versión impresa 1.10; modelo didáctico, sin inferir fecha de publicación del copyright",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-102",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "93f6e839806c48ca280bf363636420dbc22248b4dd6166669a6fd7205e2a6b4b",
+      "content_sha256": "de756dc378b1725e547d14b0c38cfeb0eac02053d002f8458a0d693db59e00e0",
+      "before": {
+        "id": "MAN-GSI-P17-102",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué diferencia básica hay entre dirección virtual y física?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Ambas identifican siempre la misma posición en RAM y se exponen sin traducción a todos los procesos del sistema."
+          },
+          {
+            "id": "B",
+            "text": "La física forma parte del espacio privado de cada proceso, mientras la virtual es una dirección global compartida por el hardware."
+          },
+          {
+            "id": "C",
+            "text": "La virtual es un nombre almacenado en DNS que el sistema resuelve antes de localizar la memoria física del equipo."
+          },
+          {
+            "id": "D",
+            "text": "La virtual pertenece al espacio lógico del proceso y se traduce a una ubicación física mediante hardware/SO."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "La traducción permite aislamiento y gestión flexible de memoria.",
+          "incorrect": "Según el solucionario: La traducción permite aislamiento y gestión flexible de memoria."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 102; índice nativo 10336",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 102; índice nativo 34987",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 102; índice nativo 10336",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-102",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Dos procesos usan el mismo valor numérico de dirección virtual. En un sistema con espacios separados y memoria paginada, ¿qué afirmación es correcta?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Ambos accesos identifican necesariamente la misma celda de RAM del equipo."
+          },
+          {
+            "id": "B",
+            "text": "Solo un proceso puede usar ese valor, porque las direcciones virtuales son globalmente únicas."
+          },
+          {
+            "id": "C",
+            "text": "Los valores leídos deben coincidir, aunque cada acceso llegue a una ubicación física distinta."
+          },
+          {
+            "id": "D",
+            "text": "Cada dirección se interpreta en su espacio virtual y puede traducirse a una ubicación física distinta."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "El valor numérico de una dirección virtual se interpreta dentro del espacio del proceso y su traducción. Dos procesos pueden usar el mismo valor y acceder a marcos distintos con contenidos diferentes. También pueden mapear memoria compartida si se configura expresamente. Por tanto, ni igualdad ni diferencia física se deducen solo de comparar los números virtuales; hay que conocer el mapeo y los permisos.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "La coincidencia numérica virtual no determina la traducción física. Cada proceso puede tener un mapeo diferente.",
+            "B": "Las direcciones virtuales no han de ser únicas entre todos los procesos. La separación de espacios permite reutilizar valores.",
+            "C": "El contenido depende de la memoria mapeada. Dos ubicaciones diferentes no deben contener el mismo dato por compartir el número virtual."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 102; índice nativo 10336",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 102; índice nativo 34987",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Arpaci-Dusseau: OSTEP, The Abstraction: Address Spaces",
+              "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/vm-intro.pdf",
+              "locator": "Capítulo 13: 13.3 The Address Space, pp. 3–5, y 13.4 Goals, pp. 5–6: abstracción, traducción y protección",
+              "version": "PDF de autores, versión impresa 1.10; modelo didáctico, sin inferir fecha de publicación del copyright",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "Arpaci-Dusseau: OSTEP, Paging: Introduction",
+              "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/vm-paging.pdf",
+              "locator": "Capítulo 18, introducción y 18.1 A Simple Example And Overview, pp. 1–4: páginas, marcos y tabla de traducción",
+              "version": "PDF de autores, versión impresa 1.10; modelo didáctico, sin inferir fecha de publicación del copyright",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-023"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 102; índice nativo 10336",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar traducción virtual/física y clave D; microcaso que distingue identidad numérica de mapeo y compartición."
+      ],
+      "references": [
+        {
+          "title": "Arpaci-Dusseau: OSTEP, The Abstraction: Address Spaces",
+          "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/vm-intro.pdf",
+          "locator": "Capítulo 13: 13.3 The Address Space, pp. 3–5, y 13.4 Goals, pp. 5–6: abstracción, traducción y protección",
+          "version": "PDF de autores, versión impresa 1.10; modelo didáctico, sin inferir fecha de publicación del copyright",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "Arpaci-Dusseau: OSTEP, Paging: Introduction",
+          "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/vm-paging.pdf",
+          "locator": "Capítulo 18, introducción y 18.1 A Simple Example And Overview, pp. 1–4: páginas, marcos y tabla de traducción",
+          "version": "PDF de autores, versión impresa 1.10; modelo didáctico, sin inferir fecha de publicación del copyright",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-103",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "be1e2993cceecdf6f59b53da368a975813343a276aaacbd1e2a7c2780ad8c3a7",
+      "content_sha256": "f017069f13c9742fc2ef11d06cd345a923a3150fc32f110465ec4fdbcc7c11d8",
+      "before": {
+        "id": "MAN-GSI-P17-103",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué es paginación?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Dividir memoria virtual y física en unidades de tamaño fijo llamadas páginas/marcos."
+          },
+          {
+            "id": "B",
+            "text": "Dividir el espacio de direcciones en segmentos lógicos de tamaño variable asociados a código, datos o pila."
+          },
+          {
+            "id": "C",
+            "text": "Trasladar un proceso completo entre memoria principal y almacenamiento secundario para liberar capacidad física."
+          },
+          {
+            "id": "D",
+            "text": "Copiar bloques usados con frecuencia a líneas de memoria caché para reducir el tiempo medio de acceso del procesador."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Paginación usa unidades de tamaño fijo para mapear memoria virtual y física.",
+          "incorrect": "Según el solucionario: Paginación usa unidades de tamaño fijo para mapear memoria virtual y física."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 103; índice nativo 10410",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 103; índice nativo 35322",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 103; índice nativo 10410",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-103",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué es paginación?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Dividir memoria virtual y física en unidades de tamaño fijo llamadas páginas/marcos."
+          },
+          {
+            "id": "B",
+            "text": "Dividir el espacio de direcciones en segmentos lógicos de tamaño variable asociados a código, datos o pila."
+          },
+          {
+            "id": "C",
+            "text": "Trasladar un proceso completo entre memoria principal y almacenamiento secundario para liberar capacidad física."
+          },
+          {
+            "id": "D",
+            "text": "Copiar bloques usados con frecuencia a líneas de memoria caché para reducir el tiempo medio de acceso del procesador."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "La paginación divide el espacio virtual en páginas y la memoria física en marcos que permiten alojarlas. Las tablas relacionan ambas unidades sin exigir que todas las páginas del proceso ocupen marcos contiguos. Tamaño fijo se refiere a las unidades del esquema de traducción: una arquitectura puede admitir varios tamaños de página. No es segmentación lógica variable, intercambio de un proceso completo ni caché de datos.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "Describe segmentación clásica por regiones lógicas de longitud variable. No la división en páginas y marcos del modelo paginado.",
+            "C": "Describe intercambio de un proceso completo. Paginación organiza y traduce unidades de memoria con granularidad distinta.",
+            "D": "Describe almacenamiento de datos en caché. Aunque usa unidades de transferencia, no define el mapeo entre páginas virtuales y marcos físicos."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 103; índice nativo 10410",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 103; índice nativo 35322",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Arpaci-Dusseau: OSTEP, Paging: Introduction",
+              "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/vm-paging.pdf",
+              "locator": "Capítulo 18, introducción y 18.1 A Simple Example And Overview, pp. 1–4: páginas, marcos y tabla de traducción",
+              "version": "PDF de autores, versión impresa 1.10; modelo didáctico, sin inferir fecha de publicación del copyright",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "Arpaci-Dusseau: OSTEP, Segmentation",
+              "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/vm-segmentation.pdf",
+              "locator": "Capítulo 16, 16.1 Segmentation: Generalized Base/Bounds, pp. 1–4: segmentos lógicos, base y límites",
+              "version": "PDF de autores, versión impresa 1.10; modelo didáctico, sin inferir fecha de publicación del copyright",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-023"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 103; índice nativo 10410",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar literalmente concepto, enunciado y alternativas; completar no contigüidad y coexistencia de tamaños de página sin modificar la clave A."
+      ],
+      "references": [
+        {
+          "title": "Arpaci-Dusseau: OSTEP, Paging: Introduction",
+          "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/vm-paging.pdf",
+          "locator": "Capítulo 18, introducción y 18.1 A Simple Example And Overview, pp. 1–4: páginas, marcos y tabla de traducción",
+          "version": "PDF de autores, versión impresa 1.10; modelo didáctico, sin inferir fecha de publicación del copyright",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "Arpaci-Dusseau: OSTEP, Segmentation",
+          "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/vm-segmentation.pdf",
+          "locator": "Capítulo 16, 16.1 Segmentation: Generalized Base/Bounds, pp. 1–4: segmentos lógicos, base y límites",
+          "version": "PDF de autores, versión impresa 1.10; modelo didáctico, sin inferir fecha de publicación del copyright",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-104",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "7cc4237ef000074d4be5de2d15698485d3b7fbbd775208bdb0f2dfd0597e7e2d",
+      "content_sha256": "0e38a16c8185d46b75b8693bc6be0d4cfe86ce0957f600f4ec72558514382ca7",
+      "before": {
+        "id": "MAN-GSI-P17-104",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué caracteriza a la segmentación clásica?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Usa unidades lógicas de tamaño variable asociadas a partes del programa/datos."
+          },
+          {
+            "id": "B",
+            "text": "Dividir memoria virtual y física en páginas y marcos de tamaño fijo que se relacionan mediante tablas de páginas."
+          },
+          {
+            "id": "C",
+            "text": "Reservar dinámicamente objetos en el heap sin estructura lógica visible ni asociación con código, datos o pila del programa."
+          },
+          {
+            "id": "D",
+            "text": "Organizar almacenamiento en bloques físicos de tamaño fijo utilizados por el sistema de archivos para ubicar contenido."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Paginación y segmentación son técnicas distintas de gestión de memoria.",
+          "incorrect": "Según el solucionario: Paginación y segmentación son técnicas distintas de gestión de memoria."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 104; índice nativo 10496",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 104; índice nativo 35575",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 104; índice nativo 10496",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-104",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué caracteriza a la segmentación clásica?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Dividir el espacio en regiones lógicas de longitud variable, como código, datos o pila."
+          },
+          {
+            "id": "B",
+            "text": "Dividir los espacios virtual y físico en páginas y marcos de un tamaño fijo."
+          },
+          {
+            "id": "C",
+            "text": "Guardar líneas de datos recientes en caché para reducir accesos a memoria principal."
+          },
+          {
+            "id": "D",
+            "text": "Intercambiar un proceso completo con almacenamiento para liberar memoria principal."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "La segmentación clásica trata regiones lógicas del espacio de direcciones con base y límites propios, y tamaños que pueden diferir. Permite organizar código, datos o pila y comprobar accesos dentro del segmento. Se distingue de la granularidad fija del modelo de paginación. Existen combinaciones de técnicas y arquitecturas con otros modelos; el término clásico evita atribuir segmentación activa idéntica a todo equipo moderno.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "Describe paginación. Páginas y marcos de tamaño fijo no expresan la división por regiones lógicas variables.",
+            "C": "Describe una caché de datos. Su objetivo de latencia no define segmentos con base y límites.",
+            "D": "Describe intercambio de una instancia completa. No define la estructura lógica ni la traducción por segmentos del espacio virtual."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 104; índice nativo 10496",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 104; índice nativo 35575",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Arpaci-Dusseau: OSTEP, Segmentation",
+              "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/vm-segmentation.pdf",
+              "locator": "Capítulo 16, 16.1 Segmentation: Generalized Base/Bounds, pp. 1–4: segmentos lógicos, base y límites",
+              "version": "PDF de autores, versión impresa 1.10; modelo didáctico, sin inferir fecha de publicación del copyright",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "Arpaci-Dusseau: OSTEP, Paging: Introduction",
+              "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/vm-paging.pdf",
+              "locator": "Capítulo 18, introducción y 18.1 A Simple Example And Overview, pp. 1–4: páginas, marcos y tabla de traducción",
+              "version": "PDF de autores, versión impresa 1.10; modelo didáctico, sin inferir fecha de publicación del copyright",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-023"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 104; índice nativo 10496",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar segmentación clásica y clave A; paralelizar redacción y contrastar tres técnicas reales de memoria."
+      ],
+      "references": [
+        {
+          "title": "Arpaci-Dusseau: OSTEP, Segmentation",
+          "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/vm-segmentation.pdf",
+          "locator": "Capítulo 16, 16.1 Segmentation: Generalized Base/Bounds, pp. 1–4: segmentos lógicos, base y límites",
+          "version": "PDF de autores, versión impresa 1.10; modelo didáctico, sin inferir fecha de publicación del copyright",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "Arpaci-Dusseau: OSTEP, Paging: Introduction",
+          "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/vm-paging.pdf",
+          "locator": "Capítulo 18, introducción y 18.1 A Simple Example And Overview, pp. 1–4: páginas, marcos y tabla de traducción",
+          "version": "PDF de autores, versión impresa 1.10; modelo didáctico, sin inferir fecha de publicación del copyright",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-105",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "0dfeeed9b23bcead2345e90558331d73a8be6124f0740c815c75e7cd7776dd95",
+      "content_sha256": "5e1ffd5331b7fc75d70a24ef7c3de3f8c6940c51b76015f140708cf5e66961c2",
+      "before": {
+        "id": "MAN-GSI-P17-105",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué almacena conceptualmente una TLB?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Líneas recientes de datos e instrucciones leídas de memoria principal para evitar repetir accesos al mismo contenido."
+          },
+          {
+            "id": "B",
+            "text": "La tabla completa de páginas de cada proceso, incluida su jerarquía y todas las entradas residentes en memoria."
+          },
+          {
+            "id": "C",
+            "text": "Traducciones recientes de direcciones virtuales a físicas para acelerar acceso."
+          },
+          {
+            "id": "D",
+            "text": "El historial de saltos tomados y destinos previstos que utiliza la CPU para anticipar el flujo de instrucciones."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "La TLB es una caché de traducciones de memoria.",
+          "incorrect": "Según el solucionario: La TLB es una caché de traducciones de memoria."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 105; índice nativo 10577",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 105; índice nativo 35857",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 105; índice nativo 10577",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-105",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué almacena conceptualmente una TLB?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Líneas de datos e instrucciones para evitar acceder al mismo contenido en RAM."
+          },
+          {
+            "id": "B",
+            "text": "La tabla de páginas completa del proceso, con todas sus entradas residentes."
+          },
+          {
+            "id": "C",
+            "text": "Traducciones recientes de direcciones virtuales a físicas para acelerar acceso."
+          },
+          {
+            "id": "D",
+            "text": "Destinos de saltos previstos para anticipar el flujo de instrucciones de CPU."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "La TLB guarda un conjunto limitado de traducciones virtuales a físicas, junto con atributos relevantes de acceso según la arquitectura. Un acierto evita consultar la estructura de traducción en memoria. Un fallo de TLB puede resolverse consultando una tabla válida para una página residente: no implica necesariamente un fallo de página ni lectura de disco. No es una caché de contenido ni la copia completa de las tablas.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Describe cachés de datos o instrucciones. La TLB almacena información de traducción, no el contenido general de las líneas de memoria.",
+            "B": "La capacidad de TLB es limitada y no contiene por definición todas las traducciones de cada proceso. Las tablas son estructuras diferentes.",
+            "D": "Describe predicción de saltos. Anticipar control de ejecución y traducir direcciones tienen funciones y entradas distintas."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 105; índice nativo 10577",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 105; índice nativo 35857",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Arpaci-Dusseau: OSTEP, Paging: Faster Translations (TLBs)",
+              "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/vm-tlbs.pdf",
+              "locator": "Capítulo 19, introducción y 19.1 TLB Basic Algorithm, pp. 1–3: caché de traducciones y fallo de TLB frente a acceso a tabla",
+              "version": "PDF de autores, versión impresa 1.10; modelo didáctico, sin inferir fecha de publicación del copyright",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-023"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 105; índice nativo 10577",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar enunciado, correcta y clave C; abreviar distractores de caché de contenido, tabla completa y predictor de saltos para compararlos sin explicaciones superfluas dentro de las alternativas."
+      ],
+      "references": [
+        {
+          "title": "Arpaci-Dusseau: OSTEP, Paging: Faster Translations (TLBs)",
+          "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/vm-tlbs.pdf",
+          "locator": "Capítulo 19, introducción y 19.1 TLB Basic Algorithm, pp. 1–3: caché de traducciones y fallo de TLB frente a acceso a tabla",
+          "version": "PDF de autores, versión impresa 1.10; modelo didáctico, sin inferir fecha de publicación del copyright",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-107",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "9b26a9d9dbd67c105aa4b34526dac08e4b4f168d790b5f5df1bbdd587a1ed01a",
+      "content_sha256": "3e21382de954f6761404ea3e861b1cf1da446beffea98874737ac1f6ffd6b626",
+      "before": {
+        "id": "MAN-GSI-P17-107",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué es thrashing?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Aprovechar localidad temporal y espacial para aumentar aciertos de caché y reducir el tiempo medio de acceso a memoria."
+          },
+          {
+            "id": "B",
+            "text": "Exceso de fallos de página y movimiento de memoria que deja poco tiempo para trabajo útil."
+          },
+          {
+            "id": "C",
+            "text": "Mantener tareas bloqueadas circularmente porque cada una espera un recurso que otra conserva y ninguna puede continuar."
+          },
+          {
+            "id": "D",
+            "text": "Trasladar de forma planificada un proceso completo a almacenamiento secundario para liberar memoria durante un periodo."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Thrashing ocurre cuando la presión de memoria provoca paginación intensa.",
+          "incorrect": "Según el solucionario: Thrashing ocurre cuando la presión de memoria provoca paginación intensa."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 107; índice nativo 10753",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 107; índice nativo 36404",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 107; índice nativo 10753",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-107",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué es thrashing?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Aprovechar localidad temporal y espacial para aumentar aciertos de caché y reducir el tiempo medio de acceso a memoria."
+          },
+          {
+            "id": "B",
+            "text": "Exceso de fallos de página y movimiento de memoria que deja poco tiempo para trabajo útil."
+          },
+          {
+            "id": "C",
+            "text": "Mantener tareas bloqueadas circularmente porque cada una espera un recurso que otra conserva y ninguna puede continuar."
+          },
+          {
+            "id": "D",
+            "text": "Trasladar de forma planificada un proceso completo a almacenamiento secundario para liberar memoria durante un periodo."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Thrashing describe paginación tan intensa que gran parte del esfuerzo se dedica a traer y expulsar páginas, con escaso progreso útil. Puede aparecer si los conjuntos de trabajo activos desbordan la memoria disponible. No basta observar algún fallo de página: debe valorarse la presión y su efecto sostenido. Reducir carga concurrente, revisar localidad o ampliar capacidad son decisiones que requieren diagnóstico, no una receta única de CPU.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "La localidad aprovechada mejora aciertos. Thrashing describe el efecto contrario: movimiento intenso y poco trabajo útil bajo presión de memoria.",
+            "C": "Describe deadlock por espera circular. Thrashing puede ocurrir con tareas que progresan lentamente por la actividad de paginación.",
+            "D": "Una decisión planificada de intercambio completo no es por sí misma thrashing. El problema es la actividad repetida que domina la ejecución útil."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 107; índice nativo 10753",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 107; índice nativo 36404",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Arpaci-Dusseau: OSTEP, Beyond Physical Memory: Policies",
+              "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/vm-beyondphys-policy.pdf",
+              "locator": "Capítulo 22: introducción p. 1; 22.5 Using History: LRU, pp. 7–8; 22.7–22.8, pp. 11–12; 22.11 Thrashing, p. 14: víctima, localidad, aproximaciones y presión de memoria",
+              "version": "PDF de autores, versión impresa 1.10; modelo didáctico, sin inferir fecha de publicación del copyright",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-023"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 107; índice nativo 10753",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar literalmente definición y distractores próximos; completar presión, conjunto de trabajo y diferencia de paginación normal, con clave B."
+      ],
+      "references": [
+        {
+          "title": "Arpaci-Dusseau: OSTEP, Beyond Physical Memory: Policies",
+          "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/vm-beyondphys-policy.pdf",
+          "locator": "Capítulo 22: introducción p. 1; 22.5 Using History: LRU, pp. 7–8; 22.7–22.8, pp. 11–12; 22.11 Thrashing, p. 14: víctima, localidad, aproximaciones y presión de memoria",
+          "version": "PDF de autores, versión impresa 1.10; modelo didáctico, sin inferir fecha de publicación del copyright",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-108",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "31af88d1a9562d5f9d9b192fc8f85a83cca61d90e125bb24f1e4383893f9eb71",
+      "content_sha256": "755e3d6d4b00503ce60581bef9578e735df59006d1fcde18e667fee87bc4171f",
+      "before": {
+        "id": "MAN-GSI-P17-108",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué intenta un algoritmo de reemplazo de páginas?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Elegir qué página retirar de memoria cuando se necesita liberar un marco."
+          },
+          {
+            "id": "B",
+            "text": "Seleccionar el siguiente router al que debe enviarse cada paquete cuando varias rutas de red presentan el mismo coste administrativo."
+          },
+          {
+            "id": "C",
+            "text": "Elegir qué usuario puede iniciar sesión cuando coinciden varias credenciales válidas para una misma cuenta del sistema operativo."
+          },
+          {
+            "id": "D",
+            "text": "Decidir qué licencia de software debe instalarse cuando una aplicación admite ediciones con condiciones de uso diferentes."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "FIFO, LRU/aproximaciones y otros algoritmos gestionan sustitución de páginas.",
+          "incorrect": "Según el solucionario: FIFO, LRU/aproximaciones y otros algoritmos gestionan sustitución de páginas."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 108; índice nativo 10836",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 108; índice nativo 36677",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 108; índice nativo 10836",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-108",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Un sistema paginado necesita cargar otra página y no dispone de marcos libres. ¿Qué debe decidir su política de reemplazo?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Qué página residente candidata retirar para reutilizar un marco físico."
+          },
+          {
+            "id": "B",
+            "text": "Qué página virtual se solicita al descomponer la dirección del acceso."
+          },
+          {
+            "id": "C",
+            "text": "Qué tarea preparada recibirá CPU en el siguiente turno de ejecución."
+          },
+          {
+            "id": "D",
+            "text": "Qué permisos de acceso deben concederse a la página que se solicita."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "La política de reemplazo selecciona una página residente candidata a expulsión cuando hace falta reutilizar un marco. La selección debe respetar restricciones de gestión; no toda página tiene por qué ser expulsable. Si se ha modificado y su estado debe conservarse, puede requerir escritura previa. Identificar la dirección, comprobar permisos o planificar CPU son decisiones diferentes que cooperan con la gestión de memoria.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "Identificar la página solicitada forma parte de interpretar y traducir el acceso. La política de reemplazo decide qué residente cede un marco.",
+            "C": "Describe planificación de CPU. El problema del caso es disponibilidad de un marco físico, no selección del siguiente hilo.",
+            "D": "La autorización del acceso no es la elección de víctima. Tener permiso no determina qué página puede dejar la memoria."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 108; índice nativo 10836",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 108; índice nativo 36677",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Arpaci-Dusseau: OSTEP, Beyond Physical Memory: Policies",
+              "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/vm-beyondphys-policy.pdf",
+              "locator": "Capítulo 22: introducción p. 1; 22.5 Using History: LRU, pp. 7–8; 22.7–22.8, pp. 11–12; 22.11 Thrashing, p. 14: víctima, localidad, aproximaciones y presión de memoria",
+              "version": "PDF de autores, versión impresa 1.10; modelo didáctico, sin inferir fecha de publicación del copyright",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "Arpaci-Dusseau: OSTEP, Paging: Introduction",
+              "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/vm-paging.pdf",
+              "locator": "Capítulo 18, introducción y 18.1 A Simple Example And Overview, pp. 1–4: páginas, marcos y tabla de traducción",
+              "version": "PDF de autores, versión impresa 1.10; modelo didáctico, sin inferir fecha de publicación del copyright",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-023"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 108; índice nativo 10836",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar selección de víctima y clave A; microcaso de falta de marcos con distractores de funciones cercanas del SO."
+      ],
+      "references": [
+        {
+          "title": "Arpaci-Dusseau: OSTEP, Beyond Physical Memory: Policies",
+          "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/vm-beyondphys-policy.pdf",
+          "locator": "Capítulo 22: introducción p. 1; 22.5 Using History: LRU, pp. 7–8; 22.7–22.8, pp. 11–12; 22.11 Thrashing, p. 14: víctima, localidad, aproximaciones y presión de memoria",
+          "version": "PDF de autores, versión impresa 1.10; modelo didáctico, sin inferir fecha de publicación del copyright",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "Arpaci-Dusseau: OSTEP, Paging: Introduction",
+          "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/vm-paging.pdf",
+          "locator": "Capítulo 18, introducción y 18.1 A Simple Example And Overview, pp. 1–4: páginas, marcos y tabla de traducción",
+          "version": "PDF de autores, versión impresa 1.10; modelo didáctico, sin inferir fecha de publicación del copyright",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-109",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "5a99dbb7525090f4557eb3fb2164f4e30c5edba281511e4db92ed219a1237102",
+      "content_sha256": "b12a5ce346ead362f7f9b31f8199f79e6f4e7043958ca211d70ce12a73bbf086",
+      "before": {
+        "id": "MAN-GSI-P17-109",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué ventaja conceptual busca LRU?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Eliminar cualquier page fault futuro."
+          },
+          {
+            "id": "B",
+            "text": "Evitar el uso de memoria virtual."
+          },
+          {
+            "id": "C",
+            "text": "Retirar páginas no usadas recientemente, aprovechando localidad temporal."
+          },
+          {
+            "id": "D",
+            "text": "Ordenar procesos por prioridad."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "LRU se basa en la hipótesis de que uso reciente predice reutilización.",
+          "incorrect": "Según el solucionario: LRU se basa en la hipótesis de que uso reciente predice reutilización."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 109; índice nativo 10923",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 109; índice nativo 36968",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 109; índice nativo 10923",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-109",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué criterio utiliza LRU y qué propiedad del acceso intenta aprovechar?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Retirar la página que entró primero en memoria, atendiendo al orden de llegada."
+          },
+          {
+            "id": "B",
+            "text": "Retirar la página con menor número de accesos, atendiendo a frecuencia acumulada."
+          },
+          {
+            "id": "C",
+            "text": "Retirar la página menos recientemente referenciada, aprovechando localidad temporal."
+          },
+          {
+            "id": "D",
+            "text": "Retirar la página cuyo próximo acceso será más lejano, conociendo las referencias futuras."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "LRU utiliza la antigüedad de la última referencia: expulsa la página que lleva más tiempo sin usarse. Se apoya en localidad temporal, la expectativa de reutilizar lo reciente. No equivale a menor frecuencia, mayor tiempo de residencia o conocimiento del futuro. Es una heurística que puede fallar según la carga; una implementación exacta tiene coste y los sistemas pueden recurrir a aproximaciones.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Describe FIFO por llegada a memoria. Una página antigua puede haber sido usada muy recientemente y conservarse bajo LRU.",
+            "B": "Describe LFU por frecuencia. Muchas referencias antiguas no equivalen a una referencia reciente.",
+            "D": "Describe la política óptima ideal que necesita conocer el futuro. LRU utiliza historial reciente, no información futura exacta."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 109; índice nativo 10923",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 109; índice nativo 36968",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Arpaci-Dusseau: OSTEP, Beyond Physical Memory: Policies",
+              "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/vm-beyondphys-policy.pdf",
+              "locator": "Capítulo 22: introducción p. 1; 22.5 Using History: LRU, pp. 7–8; 22.7–22.8, pp. 11–12; 22.11 Thrashing, p. 14: víctima, localidad, aproximaciones y presión de memoria",
+              "version": "PDF de autores, versión impresa 1.10; modelo didáctico, sin inferir fecha de publicación del copyright",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-023"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 109; índice nativo 10923",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar ventaja conceptual de LRU y clave C; comparar FIFO, LFU y óptimo con criterios paralelos y sin promesas de eliminar fallos."
+      ],
+      "references": [
+        {
+          "title": "Arpaci-Dusseau: OSTEP, Beyond Physical Memory: Policies",
+          "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/vm-beyondphys-policy.pdf",
+          "locator": "Capítulo 22: introducción p. 1; 22.5 Using History: LRU, pp. 7–8; 22.7–22.8, pp. 11–12; 22.11 Thrashing, p. 14: víctima, localidad, aproximaciones y presión de memoria",
+          "version": "PDF de autores, versión impresa 1.10; modelo didáctico, sin inferir fecha de publicación del copyright",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-110",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "3a1b70d65ca8ee8e0414e814d4f22582b9557d21eaf53462f671cff85c49b587",
+      "content_sha256": "c9ec9561fd1572a22de09f61367c8163b8f134c7e87ca68ed2688ed28287790f",
+      "before": {
+        "id": "MAN-GSI-P17-110",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué es una interrupción de hardware?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Una instrucción ejecutada por un proceso para solicitar voluntariamente un servicio protegido al núcleo del sistema."
+          },
+          {
+            "id": "B",
+            "text": "Una comprobación repetitiva en la que la CPU consulta el estado del periférico hasta detectar que está preparado."
+          },
+          {
+            "id": "C",
+            "text": "El procedimiento de guardar y restaurar registros cuando el planificador cambia la ejecución de un proceso a otro."
+          },
+          {
+            "id": "D",
+            "text": "Una señal que notifica a la CPU un evento que requiere atención."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Las interrupciones permiten reaccionar a dispositivos sin sondeo constante.",
+          "incorrect": "Según el solucionario: Las interrupciones permiten reaccionar a dispositivos sin sondeo constante."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 110; índice nativo 11003",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 110; índice nativo 37249",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 110; índice nativo 11003",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-110",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué es una interrupción de hardware?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Una instrucción software que solicita un servicio al núcleo."
+          },
+          {
+            "id": "B",
+            "text": "Un sondeo repetido del estado de un dispositivo por la CPU."
+          },
+          {
+            "id": "C",
+            "text": "El guardado y restauración de estado para cambiar de tarea."
+          },
+          {
+            "id": "D",
+            "text": "Una señal que notifica a la CPU un evento que requiere atención."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Una interrupción de hardware comunica a la CPU un evento de un dispositivo o temporizador mediante el mecanismo previsto por la arquitectura. El sistema puede atenderlo con una rutina y reanudar o planificar trabajo. No es una syscall voluntaria ni el sondeo del registro de estado. Su atención puede depender de máscaras, prioridades y otros factores; no obliga a cambiar de proceso ni garantiza respuesta instantánea.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Describe una solicitud software de servicio al núcleo. Aunque ambas transfieran control a código del sistema, la causa es distinta.",
+            "B": "Describe polling: la CPU consulta el estado repetidamente. Una interrupción notifica un evento en lugar de requerir ese sondeo continuo.",
+            "C": "Describe cambio de contexto entre tareas. Puede relacionarse con atender un evento, pero no es la notificación de hardware en sí."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 110; índice nativo 11003",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 110; índice nativo 37249",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Arpaci-Dusseau: OSTEP, I/O Devices",
+              "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/file-devices.pdf",
+              "locator": "Capítulo 36: 36.3 The Canonical Protocol, p. 4; 36.4 Lowering CPU Overhead With Interrupts, pp. 5–6; figura 36.4, p. 9: polling, interrupciones, solapamiento y capa de bloques",
+              "version": "PDF de autores, versión impresa 1.10; modelo didáctico, sin inferir fecha de publicación del copyright",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "Arpaci-Dusseau: OSTEP, Mechanism: Limited Direct Execution",
+              "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-mechanisms.pdf",
+              "locator": "Capítulo 6: 6.2 Problem #1: Restricted Operations, pp. 2–7; 6.3 Problem #2: Switching Between Processes, Saving and Restoring Context, pp. 7–10: trap, decisión y cambio de contexto",
+              "version": "PDF de autores, versión 1.10; no toda entrada al núcleo cambia de tarea",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-023"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 110; índice nativo 11003",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar enunciado, correcta y clave D; abreviar los tres mecanismos alternativos manteniendo causa y función, y explicar sus diferencias en el feedback."
+      ],
+      "references": [
+        {
+          "title": "Arpaci-Dusseau: OSTEP, I/O Devices",
+          "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/file-devices.pdf",
+          "locator": "Capítulo 36: 36.3 The Canonical Protocol, p. 4; 36.4 Lowering CPU Overhead With Interrupts, pp. 5–6; figura 36.4, p. 9: polling, interrupciones, solapamiento y capa de bloques",
+          "version": "PDF de autores, versión impresa 1.10; modelo didáctico, sin inferir fecha de publicación del copyright",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "Arpaci-Dusseau: OSTEP, Mechanism: Limited Direct Execution",
+          "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-mechanisms.pdf",
+          "locator": "Capítulo 6: 6.2 Problem #1: Restricted Operations, pp. 2–7; 6.3 Problem #2: Switching Between Processes, Saving and Restoring Context, pp. 7–10: trap, decisión y cambio de contexto",
+          "version": "PDF de autores, versión 1.10; no toda entrada al núcleo cambia de tarea",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-111",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "cd87c630dcbf8b3f0a5b0a36cdb43f2edfffdd29095f514d950a357c49c00372",
+      "content_sha256": "95f41b74982ff6e00c686cb165d93aaf1a3675132bebaa3ad39652d5fce210a1",
+      "before": {
+        "id": "MAN-GSI-P17-111",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué diferencia hay entre interrupción y polling?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Son exactamente lo mismo."
+          },
+          {
+            "id": "B",
+            "text": "Polling siempre consume cero CPU."
+          },
+          {
+            "id": "C",
+            "text": "La interrupción notifica eventos; polling consulta repetidamente el estado."
+          },
+          {
+            "id": "D",
+            "text": "Las interrupciones solo existen en almacenamiento cloud."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Cada técnica tiene costes; muchos dispositivos usan interrupciones para evitar sondeo continuo.",
+          "incorrect": "Según el solucionario: Cada técnica tiene costes; muchos dispositivos usan interrupciones para evitar sondeo continuo."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 111; índice nativo 11088",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 111; índice nativo 37482",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 111; índice nativo 11088",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-111",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué diferencia hay entre interrupción y polling?",
+        "options": [
+          {
+            "id": "A",
+            "text": "La interrupción consulta el estado periódicamente; polling recibe una notificación del dispositivo."
+          },
+          {
+            "id": "B",
+            "text": "Ambos consultan el registro de estado; se distinguen por usar periodos de sondeo diferentes."
+          },
+          {
+            "id": "C",
+            "text": "La interrupción notifica un evento; polling comprueba repetidamente el estado del dispositivo."
+          },
+          {
+            "id": "D",
+            "text": "La interrupción transfiere el contenido por DMA; polling almacena el contenido en caché de CPU."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "La interrupción permite notificar un evento al procesador, mientras polling comprueba estado de forma repetida. El sondeo puede consumir CPU y la atención de interrupciones también tiene coste. Ninguna técnica es mejor para toda carga: latencia del dispositivo, frecuencia de eventos y objetivos influyen. Existen esquemas híbridos y agrupación de eventos; notificación y movimiento de datos mediante DMA son funciones distintas.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Invierte los mecanismos. En polling el software consulta; la notificación de evento es la característica de la interrupción.",
+            "B": "Reducir ambos a periodos de consulta elimina la diferencia de quién inicia la notificación y cómo se detecta el evento.",
+            "D": "DMA trata movimiento de datos y no define la diferencia de detección del estado. Puede combinarse con notificaciones o sondeo."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 111; índice nativo 11088",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 111; índice nativo 37482",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Arpaci-Dusseau: OSTEP, I/O Devices",
+              "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/file-devices.pdf",
+              "locator": "Capítulo 36: 36.3 The Canonical Protocol, p. 4; 36.4 Lowering CPU Overhead With Interrupts, pp. 5–6; figura 36.4, p. 9: polling, interrupciones, solapamiento y capa de bloques",
+              "version": "PDF de autores, versión impresa 1.10; modelo didáctico, sin inferir fecha de publicación del copyright",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-023"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 111; índice nativo 11088",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar contraste interrupción/polling y clave C; introducir errores próximos y explicar costes y combinaciones sin superioridad universal."
+      ],
+      "references": [
+        {
+          "title": "Arpaci-Dusseau: OSTEP, I/O Devices",
+          "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/file-devices.pdf",
+          "locator": "Capítulo 36: 36.3 The Canonical Protocol, p. 4; 36.4 Lowering CPU Overhead With Interrupts, pp. 5–6; figura 36.4, p. 9: polling, interrupciones, solapamiento y capa de bloques",
+          "version": "PDF de autores, versión impresa 1.10; modelo didáctico, sin inferir fecha de publicación del copyright",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-113",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "006bb3e1564386c849d559225cd9613e578f59e37a630aab08c9f295617ac35d",
+      "content_sha256": "f5c9c0f5f5223518c1edc505aa34510ffefc2c39dc2aa0813fa46ce385418f23",
+      "before": {
+        "id": "MAN-GSI-P17-113",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué diferencia conceptual hay entre dispositivo de bloque y de carácter?",
+        "options": [
+          {
+            "id": "A",
+            "text": "El de bloque siempre es una GPU y el de carácter una CPU."
+          },
+          {
+            "id": "B",
+            "text": "No existe ninguna diferencia en sistemas operativos."
+          },
+          {
+            "id": "C",
+            "text": "El de bloque trabaja con unidades direccionables de datos; el de carácter expone típicamente un flujo secuencial."
+          },
+          {
+            "id": "D",
+            "text": "El de carácter solo se usa en cloud."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Es una clasificación clásica de interfaces de E/S.",
+          "incorrect": "Según el solucionario: Es una clasificación clásica de interfaces de E/S."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 113; índice nativo 11295",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 113; índice nativo 38068",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 113; índice nativo 11295",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-113",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué diferencia conceptual hay entre dispositivo de bloque y de carácter?",
+        "options": [
+          {
+            "id": "A",
+            "text": "El de bloque expone un flujo sin posiciones; el de carácter utiliza bloques direccionables."
+          },
+          {
+            "id": "B",
+            "text": "La unidad de bloque es una palabra de CPU; la de carácter coincide con el tamaño de la caché."
+          },
+          {
+            "id": "C",
+            "text": "El de bloque ofrece bloques direccionables; el de carácter suele ofrecer un flujo de bytes."
+          },
+          {
+            "id": "D",
+            "text": "El de bloque implica persistencia de los datos; el de carácter implica perderlos al cerrar."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "La clasificación distingue interfaces: bloque ofrece unidades direccionables, y carácter suele exponer un flujo de bytes, como un terminal. No determina si el soporte es mecánico, electrónico, físico o virtual, ni su persistencia. Tampoco significa que toda operación de carácter transfiera un solo byte o que todo dispositivo de carácter prohíba posicionamiento: la semántica concreta la define cada interfaz.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Invierte el contraste clásico. El acceso por bloques direccionables se asocia a la interfaz de bloque.",
+            "B": "El tamaño de una palabra o línea de caché no define esas clases de dispositivo. Son conceptos de interfaz de E/S diferentes.",
+            "D": "Persistencia y tipo de interfaz son ejes distintos. Hay dispositivos de bloque en RAM y la clasificación no impone perder datos al cerrar."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 113; índice nativo 11295",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 113; índice nativo 38068",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Linux Kernel Labs: Block Device Drivers",
+              "url": "https://linux-kernel-labs.github.io/refs/heads/master/labs/block_device_drivers.html",
+              "locator": "Overview, primeros dos párrafos: bloques direccionables y contraste con interfaz de carácter",
+              "version": "Material de autores de Linux Kernel Labs, cabecera 5.10.14; solo conceptos de interfaz, sin adoptar comparaciones universales de velocidad, límites de bloque o API vigente",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "Arpaci-Dusseau: OSTEP, I/O Devices",
+              "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/file-devices.pdf",
+              "locator": "Capítulo 36: 36.3 The Canonical Protocol, p. 4; 36.4 Lowering CPU Overhead With Interrupts, pp. 5–6; figura 36.4, p. 9: polling, interrupciones, solapamiento y capa de bloques",
+              "version": "PDF de autores, versión impresa 1.10; modelo didáctico, sin inferir fecha de publicación del copyright",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-023"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 113; índice nativo 11295",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar interfaz bloque/carácter y clave C; no universalizar secuencialidad, tamaño de transferencia, velocidad o persistencia."
+      ],
+      "references": [
+        {
+          "title": "Linux Kernel Labs: Block Device Drivers",
+          "url": "https://linux-kernel-labs.github.io/refs/heads/master/labs/block_device_drivers.html",
+          "locator": "Overview, primeros dos párrafos: bloques direccionables y contraste con interfaz de carácter",
+          "version": "Material de autores de Linux Kernel Labs, cabecera 5.10.14; solo conceptos de interfaz, sin adoptar comparaciones universales de velocidad, límites de bloque o API vigente",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "Arpaci-Dusseau: OSTEP, I/O Devices",
+          "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/file-devices.pdf",
+          "locator": "Capítulo 36: 36.3 The Canonical Protocol, p. 4; 36.4 Lowering CPU Overhead With Interrupts, pp. 5–6; figura 36.4, p. 9: polling, interrupciones, solapamiento y capa de bloques",
+          "version": "PDF de autores, versión impresa 1.10; modelo didáctico, sin inferir fecha de publicación del copyright",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-114",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "9035b6b5b7e326c8e267a81d0fe5ff2b61f5d2b4a66b4e91f32053666698d2cd",
+      "content_sha256": "d6ea7cb82f1393a33f9967a03fb6a352d11c1e7eaf6a07db4dc48fa83389aa78",
+      "before": {
+        "id": "MAN-GSI-P17-114",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué aporta journaling a un sistema de archivos?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Cifrar obligatoriamente todo el disco y registrar las claves dentro del propio journal para recuperarlas después de cualquier reinicio."
+          },
+          {
+            "id": "B",
+            "text": "Eliminar la necesidad de copias de seguridad porque el registro conserva permanentemente todas las versiones y contenidos de cada archivo."
+          },
+          {
+            "id": "C",
+            "text": "Registrar cambios/operaciones para facilitar recuperación de consistencia tras fallos."
+          },
+          {
+            "id": "D",
+            "text": "Convertir cualquier archivo en ejecutable al registrar sus cambios, aunque sus permisos y su formato no permitan cargarlo como programa."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Journaling mejora recuperación del sistema de archivos, pero no sustituye backup.",
+          "incorrect": "Según el solucionario: Journaling mejora recuperación del sistema de archivos, pero no sustituye backup."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 114; índice nativo 11355",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 114; índice nativo 38472",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 114; índice nativo 11355",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-114",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Tras un apagado inesperado, un sistema de archivos necesita recuperar la consistencia de sus estructuras. ¿Qué aporta el journaling a esa recuperación?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Comprobar la validez funcional de todas las operaciones de negocio realizadas."
+          },
+          {
+            "id": "B",
+            "text": "Conservar versiones históricas de cada fichero para recuperar cualquier borrado."
+          },
+          {
+            "id": "C",
+            "text": "Registrar cambios para recuperar consistencia de las estructuras tras el fallo."
+          },
+          {
+            "id": "D",
+            "text": "Garantizar persistencia de todo dato aún almacenado en buffers de la aplicación."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "El journal registra actualizaciones con un protocolo que permite recuperar consistencia del sistema de archivos después de una interrupción. El alcance puede ser metadatos o incluir datos, según implementación y configuración; ext4 ilustra esa diferencia. No conserva por definición todo historial de ficheros, no verifica reglas de negocio ni persiste automáticamente buffers de la aplicación. Por ello no sustituye copias de seguridad o requisitos explícitos de durabilidad.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "La consistencia estructural del sistema de archivos no acredita que la aplicación haya respetado todas sus reglas de negocio.",
+            "B": "Un registro de recuperación no es por definición un backup de versiones ni permite restaurar cualquier borrado histórico.",
+            "D": "Un buffer que la aplicación no ha enviado al sistema de almacenamiento queda fuera de esa garantía. Journal no convierte todo estado en persistente."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 114; índice nativo 11355",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 114; índice nativo 38472",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Arpaci-Dusseau: OSTEP, Crash Consistency: FSCK and Journaling",
+              "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/file-journaling.pdf",
+              "locator": "Capítulo 42, introducción pp. 1–2 y 42.3 Solution #2: Journaling (or Write-Ahead Logging), desde p. 7: registro previo y recuperación de consistencia",
+              "version": "PDF de autores, versión impresa 1.10; modelo didáctico, sin inferir fecha de publicación del copyright",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "Linux Kernel: Journal (jbd2)",
+              "url": "https://docs.kernel.org/filesystems/ext4/journal.html",
+              "locator": "3.6, párrafos iniciales y 3.6.1 Layout: metadatos, commit, replay y modos data=ordered/journal/writeback",
+              "version": "Documentación de ext4 consultada; ejemplo de implementación, sin generalizar garantías de datos de todos los journals ni fijar una versión de kernel",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-023"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 114; índice nativo 11355",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar journaling y clave C; microcaso de reinicio con contraste entre consistencia, historial, reglas de negocio y buffers."
+      ],
+      "references": [
+        {
+          "title": "Arpaci-Dusseau: OSTEP, Crash Consistency: FSCK and Journaling",
+          "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/file-journaling.pdf",
+          "locator": "Capítulo 42, introducción pp. 1–2 y 42.3 Solution #2: Journaling (or Write-Ahead Logging), desde p. 7: registro previo y recuperación de consistencia",
+          "version": "PDF de autores, versión impresa 1.10; modelo didáctico, sin inferir fecha de publicación del copyright",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "Linux Kernel: Journal (jbd2)",
+          "url": "https://docs.kernel.org/filesystems/ext4/journal.html",
+          "locator": "3.6, párrafos iniciales y 3.6.1 Layout: metadatos, commit, replay y modos data=ordered/journal/writeback",
+          "version": "Documentación de ext4 consultada; ejemplo de implementación, sin generalizar garantías de datos de todos los journals ni fijar una versión de kernel",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-115",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "110b7de8fe2076b83ccb34f51b9ebadcce9de3b707f5cfd0e4206cddf1586102",
+      "content_sha256": "03d11a79940dc6afcd373db1a752acc6aa15b566d08a5dae9a4970193b480cd5",
+      "before": {
+        "id": "MAN-GSI-P17-115",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué es una ACL de fichero?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Una lista de sesiones que mantienen abierto el fichero y los desplazamientos actuales de lectura o escritura de cada proceso."
+          },
+          {
+            "id": "B",
+            "text": "Una lista de control de acceso que asigna permisos a identidades o grupos."
+          },
+          {
+            "id": "C",
+            "text": "Un conjunto de hashes utilizado para comprobar integridad del contenido, sin expresar permisos para usuarios o grupos."
+          },
+          {
+            "id": "D",
+            "text": "La tabla de sistemas de archivos montados, sus puntos de montaje y opciones generales aplicadas al volumen completo."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "ACL permite permisos más expresivos que modelos simples propietario/grupo/otros.",
+          "incorrect": "Según el solucionario: ACL permite permisos más expresivos que modelos simples propietario/grupo/otros."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 115; índice nativo 11446",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 115; índice nativo 38791",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 115; índice nativo 11446",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-115",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué es una ACL de fichero?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Una lista de ficheros abiertos y sus posiciones actuales de lectura o escritura."
+          },
+          {
+            "id": "B",
+            "text": "Una lista de control de acceso que asigna permisos a identidades o grupos."
+          },
+          {
+            "id": "C",
+            "text": "Un conjunto de hashes que permite comprobar el contenido de un fichero."
+          },
+          {
+            "id": "D",
+            "text": "Una tabla de volúmenes montados, puntos de montaje y opciones de cada volumen."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Una ACL de control de acceso reúne entradas que relacionan identidades o grupos con permisos sobre un objeto. Permite expresar autorizaciones más específicas que las tres clases básicas de propietario, grupo y otros. El detalle depende del modelo: las ACL Linux descritas en acl(5) incluyen máscara; en Windows se distinguen DACL de autorización y SACL de auditoría. No son una lista de archivos abiertos, hashes o montajes.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Describe información de sesiones o descriptores abiertos y sus posiciones. No establece los permisos concedidos a identidades.",
+            "C": "Los hashes permiten comprobar contenido, pero no constituyen reglas de autorización para sujetos y operaciones.",
+            "D": "Describe configuración de montajes de volúmenes. No las entradas de acceso a un fichero para usuarios o grupos."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 115; índice nativo 11446",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 115; índice nativo 38791",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Proyecto acl: acl(5)",
+              "url": "https://man7.org/linux/man-pages/man5/acl.5.html",
+              "locator": "DESCRIPTION; ACL TYPES; ACL ENTRIES; ACCESS CHECK ALGORITHM; STANDARDS: permisos de usuarios/grupos, máscara y comprobación",
+              "version": "Manual primario de Andreas Gruenbacher, procedente del repositorio upstream del proyecto acl; modelo Linux basado en borrador POSIX.1e, no estándar final universal ni ACL con deny de Windows",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "Microsoft: Access control lists",
+              "url": "https://learn.microsoft.com/en-us/windows/win32/secauthz/access-control-lists",
+              "locator": "Introducción y DACLs and SACLs: entradas ACE, identidades, permisos y diferencia entre autorización y auditoría",
+              "version": "Actualización 10-07-2025; ejemplo Windows, sin universalizar orden de ACE, herencia, lista nula o lista vacía a otros modelos",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-023"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 115; índice nativo 11446",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar enunciado, correcta y clave B; eliminar longitud superflua de distractores de ficheros abiertos, hashes y montajes sin alterar el concepto."
+      ],
+      "references": [
+        {
+          "title": "Proyecto acl: acl(5)",
+          "url": "https://man7.org/linux/man-pages/man5/acl.5.html",
+          "locator": "DESCRIPTION; ACL TYPES; ACL ENTRIES; ACCESS CHECK ALGORITHM; STANDARDS: permisos de usuarios/grupos, máscara y comprobación",
+          "version": "Manual primario de Andreas Gruenbacher, procedente del repositorio upstream del proyecto acl; modelo Linux basado en borrador POSIX.1e, no estándar final universal ni ACL con deny de Windows",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "Microsoft: Access control lists",
+          "url": "https://learn.microsoft.com/en-us/windows/win32/secauthz/access-control-lists",
+          "locator": "Introducción y DACLs and SACLs: entradas ACE, identidades, permisos y diferencia entre autorización y auditoría",
+          "version": "Actualización 10-07-2025; ejemplo Windows, sin universalizar orden de ACE, herencia, lista nula o lista vacía a otros modelos",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-116",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "de0ae27ac139df4183bd78da9e7f1e72750020c3d9ee8ed8558bfa957a74441e",
+      "content_sha256": "45a003f749b1631b25717790e35fe42824edbf54ce1ba60f722ad2d26cbd4ee5",
+      "before": {
+        "id": "MAN-GSI-P17-116",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "En Unix/Linux, ¿qué representan rwx?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Permisos de lectura, escritura y ejecución."
+          },
+          {
+            "id": "B",
+            "text": "Reinicio, warning y XML."
+          },
+          {
+            "id": "C",
+            "text": "Ruta, web y extensión."
+          },
+          {
+            "id": "D",
+            "text": "RAM, workspace y XFS."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "El modelo clásico usa r/w/x para propietario, grupo y otros.",
+          "incorrect": "Según el solucionario: El modelo clásico usa r/w/x para propietario, grupo y otros."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 116; índice nativo 11536",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 116; índice nativo 39047",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 116; índice nativo 11536",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-116",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Al inspeccionar los permisos de un fichero ordinario en Unix/Linux aparecen r, w y x. ¿Qué operaciones representan, respectivamente?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Leer el contenido, modificarlo y ejecutarlo."
+          },
+          {
+            "id": "B",
+            "text": "Listar nombres, crear entradas y recorrer directorios."
+          },
+          {
+            "id": "C",
+            "text": "Cambiar propietario, grupo y permisos del fichero."
+          },
+          {
+            "id": "D",
+            "text": "Bloquear el fichero, sincronizarlo y copiarlo."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "En un fichero ordinario, r, w y x representan lectura, escritura y ejecución. Se expresan para las clases de propietario, grupo y otros, con posibles controles adicionales. En directorios, lectura y escritura se refieren a entradas y x a búsqueda o recorrido; por eso el caso acota el objeto. El bit x no acredita un formato ejecutable válido, y escribir el fichero no concede por sí mismo borrarlo del directorio.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "Describe operaciones de directorio y sus entradas. El caso pregunta por el significado de los permisos sobre un fichero ordinario.",
+            "C": "Propiedad, grupo y cambios de modo requieren reglas de autorización propias. No son la traducción de r, w y x.",
+            "D": "Bloqueo y sincronización son mecanismos diferentes. Copiar combina operaciones de lectura y escritura, pero no es el significado de x."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 116; índice nativo 11536",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 116; índice nativo 39047",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Linux man-pages: unlink(2)",
+              "url": "https://man7.org/linux/man-pages/man2/unlink.2.html",
+              "locator": "DESCRIPTION; ERRORS, EACCES y EPERM: eliminar un nombre, permisos del directorio, búsqueda y restricciones adicionales",
+              "version": "Linux man-pages 6.19, fecha de página 08-02-2026; solo distinción entre escribir contenido y borrar una entrada, sin ejecutar operaciones",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "Linux man-pages: inode(7)",
+              "url": "https://man7.org/linux/man-pages/man7/inode.7.html",
+              "locator": "File type and mode: S_IRUSR/S_IWUSR/S_IXUSR y equivalentes de grupo/otros",
+              "version": "Página primaria Linux man-pages consultada; se distinguen bits de permiso y bits especiales, sin reglas de bloqueo obligatorio históricas",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "Linux man-pages: path_resolution(7)",
+              "url": "https://man7.org/linux/man-pages/man7/path_resolution.7.html",
+              "locator": "Step 2: walk along the path y Permissions: permiso de búsqueda en directorios y distinción fichero/directorio",
+              "version": "Linux man-pages 6.19, fecha de página 08-02-2026; sin usar límites actuales de enlaces, namespaces o API",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-023"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 116; índice nativo 11536",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar significado de rwx y clave A; caso mínimo de fichero ordinario para evitar ambigüedad con directorios y sustituir siglas arbitrarias."
+      ],
+      "references": [
+        {
+          "title": "Linux man-pages: unlink(2)",
+          "url": "https://man7.org/linux/man-pages/man2/unlink.2.html",
+          "locator": "DESCRIPTION; ERRORS, EACCES y EPERM: eliminar un nombre, permisos del directorio, búsqueda y restricciones adicionales",
+          "version": "Linux man-pages 6.19, fecha de página 08-02-2026; solo distinción entre escribir contenido y borrar una entrada, sin ejecutar operaciones",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "Linux man-pages: inode(7)",
+          "url": "https://man7.org/linux/man-pages/man7/inode.7.html",
+          "locator": "File type and mode: S_IRUSR/S_IWUSR/S_IXUSR y equivalentes de grupo/otros",
+          "version": "Página primaria Linux man-pages consultada; se distinguen bits de permiso y bits especiales, sin reglas de bloqueo obligatorio históricas",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "Linux man-pages: path_resolution(7)",
+          "url": "https://man7.org/linux/man-pages/man7/path_resolution.7.html",
+          "locator": "Step 2: walk along the path y Permissions: permiso de búsqueda en directorios y distinción fichero/directorio",
+          "version": "Linux man-pages 6.19, fecha de página 08-02-2026; sin usar límites actuales de enlaces, namespaces o API",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-117",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "f3320558b1b972102856fe9200a3fed673ae9978e66742a9d94cb86192a1635b",
+      "content_sha256": "ffd6c19bdab897fd2ae248ab69da7a849d055c060323ebccfc6fe706df521814",
+      "before": {
+        "id": "MAN-GSI-P17-117",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué caracteriza a un kernel monolítico?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Todo servicio se ejecuta obligatoriamente fuera del kernel."
+          },
+          {
+            "id": "B",
+            "text": "Muchos servicios del sistema se ejecutan en espacio privilegiado del kernel."
+          },
+          {
+            "id": "C",
+            "text": "No puede cargar drivers."
+          },
+          {
+            "id": "D",
+            "text": "No soporta multitarea."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Linux suele describirse como monolítico modular; los diseños reales pueden combinar técnicas.",
+          "incorrect": "Según el solucionario: Linux suele describirse como monolítico modular; los diseños reales pueden combinar técnicas."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 117; índice nativo 11606",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 117; índice nativo 39266",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 117; índice nativo 11606",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-117",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué caracteriza a un kernel monolítico?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Mantener servicios esenciales en el núcleo y ofrecer otros desde procesos de usuario separados."
+          },
+          {
+            "id": "B",
+            "text": "Integrar muchos servicios del sistema en el espacio privilegiado del núcleo."
+          },
+          {
+            "id": "C",
+            "text": "Situar los servicios del SO en máquinas virtuales, cada una con su propio sistema invitado."
+          },
+          {
+            "id": "D",
+            "text": "Ejecutar los servicios como bibliotecas de usuario sin una capa privilegiada que los proteja."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "El diseño monolítico integra muchos servicios del SO, como controladores o sistemas de archivos, dentro del espacio privilegiado del núcleo. Eso no equivale a carecer de estructura interna o prohibir módulos cargables: modularidad del código y separación por espacios son decisiones distintas. Se distingue del microkernel que desplaza más servicios a procesos separados. Las arquitecturas reales combinan técnicas y no se clasifican solo por tamaño del binario.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Describe el principio microkernel de núcleo esencial y servicios externos, en vez de la integración privilegiada monolítica.",
+            "C": "Describe aislamiento mediante virtualización de sistemas invitados. No define por sí mismo la organización interna de cada núcleo.",
+            "D": "Eliminar una capa privilegiada no caracteriza el monolítico. Sus servicios se integran precisamente en el núcleo protegido."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 117; índice nativo 11606",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 117; índice nativo 39266",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "QNX: Microkernel architecture",
+              "url": "https://qnx.com/developers/docs/8.0/com.qnx.doc.neutrino.sys_arch/topic/intro_MICROKERNELARCH.html",
+              "locator": "Cuerpo principal: definición de servicios mínimos y procesos cooperantes; modularidad; IPC; comparación gráfica monolítico/microkernel",
+              "version": "QNX SDP 8.0 System Architecture; no se adoptan afirmaciones comerciales de protección completa, ausencia de impacto o fiabilidad garantizada",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "QNX: A small microkernel and message passing",
+              "url": "https://qnx.com/developers/docs/8.0/com.qnx.doc.neutrino.getting_started/topic/s1_msg_Microkernel_and_messages.html",
+              "locator": "Cuerpo principal: servicios opcionales, drivers como procesos de usuario y message passing entre módulos",
+              "version": "QNX SDP 8.0, página actualizada 11-06-2026 según consulta; ejemplo concreto, no conjunto idéntico de servicios para todos los microkernels",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "Linux Kernel: Building External Modules",
+              "url": "https://docs.kernel.org/kbuild/modules.html",
+              "locator": "Introduction y How to Build External Modules, primer párrafo: soporte de módulos y configuración",
+              "version": "Documentación kbuild consultada; solo modularidad de construcción/carga, sin introducir compilación o instalación en esta aplicación ni recomendar API o comandos",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-023"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 117; índice nativo 11606",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar núcleo monolítico y clave B; distinguir ubicación de servicios, módulos y virtualización sin atribuir falta de drivers o multitarea."
+      ],
+      "references": [
+        {
+          "title": "QNX: Microkernel architecture",
+          "url": "https://qnx.com/developers/docs/8.0/com.qnx.doc.neutrino.sys_arch/topic/intro_MICROKERNELARCH.html",
+          "locator": "Cuerpo principal: definición de servicios mínimos y procesos cooperantes; modularidad; IPC; comparación gráfica monolítico/microkernel",
+          "version": "QNX SDP 8.0 System Architecture; no se adoptan afirmaciones comerciales de protección completa, ausencia de impacto o fiabilidad garantizada",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "QNX: A small microkernel and message passing",
+          "url": "https://qnx.com/developers/docs/8.0/com.qnx.doc.neutrino.getting_started/topic/s1_msg_Microkernel_and_messages.html",
+          "locator": "Cuerpo principal: servicios opcionales, drivers como procesos de usuario y message passing entre módulos",
+          "version": "QNX SDP 8.0, página actualizada 11-06-2026 según consulta; ejemplo concreto, no conjunto idéntico de servicios para todos los microkernels",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "Linux Kernel: Building External Modules",
+          "url": "https://docs.kernel.org/kbuild/modules.html",
+          "locator": "Introduction y How to Build External Modules, primer párrafo: soporte de módulos y configuración",
+          "version": "Documentación kbuild consultada; solo modularidad de construcción/carga, sin introducir compilación o instalación en esta aplicación ni recomendar API o comandos",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-118",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "aacb16bbcafe0d9f28ab8b20a610602b85f557a1e4f354a16d04f9f9ab8da5e2",
+      "content_sha256": "5f4464dcfb4a32a2fe49c1ed6d2c864ac650d4d9ea16e7c8e83935b9e7e52f42",
+      "before": {
+        "id": "MAN-GSI-P17-118",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué idea busca un microkernel?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Ejecutar todas las aplicaciones en modo kernel."
+          },
+          {
+            "id": "B",
+            "text": "Mantener en el núcleo mínimo funciones esenciales y mover más servicios a espacios separados."
+          },
+          {
+            "id": "C",
+            "text": "Eliminar comunicación entre componentes."
+          },
+          {
+            "id": "D",
+            "text": "Usar una sola tarea para todo el sistema."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "El microkernel reduce funciones privilegiadas, a costa de más comunicación entre componentes.",
+          "incorrect": "Según el solucionario: El microkernel reduce funciones privilegiadas, a costa de más comunicación entre componentes."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 118; índice nativo 11709",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 118; índice nativo 39560",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 118; índice nativo 11709",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-118",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T02",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué idea busca un microkernel?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Reducir el tamaño del binario comprimido, conservando todos los servicios en un único espacio privilegiado."
+          },
+          {
+            "id": "B",
+            "text": "Conservar funciones esenciales en el núcleo y desplazar más servicios a procesos separados."
+          },
+          {
+            "id": "C",
+            "text": "Mantener todos los servicios en el núcleo, organizándolos en módulos que puedan cargarse."
+          },
+          {
+            "id": "D",
+            "text": "Ejecutar cada servicio en un invitado virtual completo sobre una capa de hipervisor."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "El microkernel conserva funciones esenciales y utiliza procesos separados para ofrecer más servicios mediante interfaces e IPC. QNX ilustra esa organización, aunque el conjunto preciso de funciones varía entre diseños. El objetivo es estructura modular y separación de responsabilidades, no simplemente comprimir un binario. IPC introduce costes y decisiones de diseño; la arquitectura no garantiza por sí sola seguridad perfecta, mayor rendimiento o ausencia de fallos.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Reducir bytes sin cambiar el reparto de servicios no establece una arquitectura microkernel. Tamaño y ubicación de responsabilidades no son equivalentes.",
+            "C": "Módulos dentro del mismo espacio privilegiado permiten modularidad, pero no aportan la separación de servicios a procesos que busca el microkernel.",
+            "D": "Un invitado completo por servicio describe virtualización. El microkernel coordina procesos de servicio y no requiere un SO invitado para cada uno."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 118; índice nativo 11709",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 118; índice nativo 39560",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "QNX: Microkernel architecture",
+              "url": "https://qnx.com/developers/docs/8.0/com.qnx.doc.neutrino.sys_arch/topic/intro_MICROKERNELARCH.html",
+              "locator": "Cuerpo principal: definición de servicios mínimos y procesos cooperantes; modularidad; IPC; comparación gráfica monolítico/microkernel",
+              "version": "QNX SDP 8.0 System Architecture; no se adoptan afirmaciones comerciales de protección completa, ausencia de impacto o fiabilidad garantizada",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "QNX: A small microkernel and message passing",
+              "url": "https://qnx.com/developers/docs/8.0/com.qnx.doc.neutrino.getting_started/topic/s1_msg_Microkernel_and_messages.html",
+              "locator": "Cuerpo principal: servicios opcionales, drivers como procesos de usuario y message passing entre módulos",
+              "version": "QNX SDP 8.0, página actualizada 11-06-2026 según consulta; ejemplo concreto, no conjunto idéntico de servicios para todos los microkernels",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "Linux Kernel: Building External Modules",
+              "url": "https://docs.kernel.org/kbuild/modules.html",
+              "locator": "Introduction y How to Build External Modules, primer párrafo: soporte de módulos y configuración",
+              "version": "Documentación kbuild consultada; solo modularidad de construcción/carga, sin introducir compilación o instalación en esta aplicación ni recomendar API o comandos",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-023"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 118; índice nativo 11709",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar objetivo microkernel y clave B; contrastar tamaño, módulos en núcleo y virtualización, precisando IPC y ausencia de garantías absolutas."
+      ],
+      "references": [
+        {
+          "title": "QNX: Microkernel architecture",
+          "url": "https://qnx.com/developers/docs/8.0/com.qnx.doc.neutrino.sys_arch/topic/intro_MICROKERNELARCH.html",
+          "locator": "Cuerpo principal: definición de servicios mínimos y procesos cooperantes; modularidad; IPC; comparación gráfica monolítico/microkernel",
+          "version": "QNX SDP 8.0 System Architecture; no se adoptan afirmaciones comerciales de protección completa, ausencia de impacto o fiabilidad garantizada",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "QNX: A small microkernel and message passing",
+          "url": "https://qnx.com/developers/docs/8.0/com.qnx.doc.neutrino.getting_started/topic/s1_msg_Microkernel_and_messages.html",
+          "locator": "Cuerpo principal: servicios opcionales, drivers como procesos de usuario y message passing entre módulos",
+          "version": "QNX SDP 8.0, página actualizada 11-06-2026 según consulta; ejemplo concreto, no conjunto idéntico de servicios para todos los microkernels",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "Linux Kernel: Building External Modules",
+          "url": "https://docs.kernel.org/kbuild/modules.html",
+          "locator": "Introduction y How to Build External Modules, primer párrafo: soporte de módulos y configuración",
+          "version": "Documentación kbuild consultada; solo modularidad de construcción/carga, sin introducir compilación o instalación en esta aplicación ni recomendar API o comandos",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    }
+  ]
+}

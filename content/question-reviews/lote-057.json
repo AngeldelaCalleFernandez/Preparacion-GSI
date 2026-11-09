@@ -1,0 +1,3726 @@
+{
+  "version": 1,
+  "id": "GSI-EDITORIAL-057",
+  "prepared_at": "2026-10-29",
+  "baseline_commit": "e3e20ab879518c899806a70575eead28b3b35e6f",
+  "items": [
+    {
+      "id": "AI-GSI-B3-T07-006",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "8aa03678e9e2707906e2b38456263c46d7ce99d25b708045b9272759d6a4c83f",
+      "content_sha256": "a96504a8cff1c9c77942db4270783c22b53bec1eaf2273824a10109b196d941c",
+      "before": {
+        "id": "AI-GSI-B3-T07-006",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T07",
+        "subtopic": "Niveles",
+        "exam": null,
+        "statement": "¿Por qué la pirámide suele limitar el número de E2E respecto a unitarias?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Las unitarias prueban por sí solas toda integración"
+          },
+          {
+            "id": "B",
+            "text": "Las E2E nunca aportan valor"
+          },
+          {
+            "id": "C",
+            "text": "Toda aplicación exige exactamente igual distribución"
+          },
+          {
+            "id": "D",
+            "text": "Las E2E suelen ser más costosas y lentas"
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "La estrategia equilibra coste y cobertura según contexto.",
+          "incorrect": "La estrategia equilibra coste y cobertura según contexto."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 4. Niveles",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "* unitarias/componente;\n* integración;\n* sistema;\n* aceptación.\n\nLa pirámide de pruebas favorece muchas unitarias rápidas, menos integración y menos E2E costosas, adaptada al contexto.",
+          "evidence_sha256": "3c7b73b1c9e3b6e14c998ae7c62fa2de14e74b8a441a25cc1e6ea2fec195a320",
+          "record_sha256": "9156f43a1d2662a8d6411df404836c329dd161c8e843a55907ea6f22d452ac7c",
+          "review_id": "AI-GSI-B3-T07-006",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 4. Niveles",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T07-006",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T07",
+        "subtopic": "Niveles",
+        "exam": null,
+        "statement": "¿Por qué la pirámide suele limitar el número de E2E respecto a unitarias?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Las unitarias sustituyen comprobar los acuerdos entre componentes reales."
+          },
+          {
+            "id": "B",
+            "text": "Las pruebas E2E dejan de aportar evidencia cuando existen pruebas de bajo nivel."
+          },
+          {
+            "id": "C",
+            "text": "La misma proporción entre niveles se aplica sin analizar el producto o sus riesgos."
+          },
+          {
+            "id": "D",
+            "text": "Los flujos completos suelen costar más de ejecutar, diagnosticar y mantener."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "La pirámide orienta a equilibrar evidencia y coste: probar flujos completos suele requerir más preparación y diagnóstico y puede ser más lento o frágil. No es una ley sobre todas las herramientas o productos. Las E2E siguen siendo útiles para riesgos que los niveles inferiores no cubren; la mezcla se adapta al contexto y a la fiabilidad real de la suite.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Aislar unidades no comprueba por sí solo que los componentes reales acuerden formatos, protocolos o configuración.",
+            "B": "Las E2E aportan evidencia sobre recorridos completos y colaboración real; su coste no las vuelve inútiles.",
+            "C": "La proporción es una decisión contextual. Una cuota fija ignora costes, arquitectura y riesgos concretos."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 4. Niveles",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "* unitarias/componente;\n* integración;\n* sistema;\n* aceptación.\n\nLa pirámide de pruebas favorece muchas unitarias rápidas, menos integración y menos E2E costosas, adaptada al contexto.",
+          "evidence_sha256": "3c7b73b1c9e3b6e14c998ae7c62fa2de14e74b8a441a25cc1e6ea2fec195a320",
+          "record_sha256": "9156f43a1d2662a8d6411df404836c329dd161c8e843a55907ea6f22d452ac7c",
+          "review_id": "AI-GSI-B3-T07-006",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Martin Fowler: Test Pyramid",
+              "url": "https://martinfowler.com/bliki/TestPyramid.html",
+              "locator": "Equilibrio entre pruebas de bajo nivel y de flujo completo; costes, fragilidad y excepciones en nota 2",
+              "version": "Artículo de 01-05-2012 leído el 29-10-2026. Orientación contextual, sin cuota universal o afirmación de que toda E2E sea lenta",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-057"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 4. Niveles",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar coste relativo de E2E y clave D; distinguir orientación, evidencia entre niveles y excepciones sin cuotas."
+      ],
+      "references": [
+        {
+          "title": "Martin Fowler: Test Pyramid",
+          "url": "https://martinfowler.com/bliki/TestPyramid.html",
+          "locator": "Equilibrio entre pruebas de bajo nivel y de flujo completo; costes, fragilidad y excepciones en nota 2",
+          "version": "Artículo de 01-05-2012 leído el 29-10-2026. Orientación contextual, sin cuota universal o afirmación de que toda E2E sea lenta",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T07-007",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "e4b3dd344d1ce8e10553547f582550385d46b9fedb82dd7ea109b58b9a254fc7",
+      "content_sha256": "ad237f638a2e8790428da16daa17bb29132c439ef39536cd28d54394cce70b4f",
+      "before": {
+        "id": "AI-GSI-B3-T07-007",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T07",
+        "subtopic": "Caja negra",
+        "exam": null,
+        "statement": "Probar valores próximos al mínimo y máximo permitido utiliza…",
+        "options": [
+          {
+            "id": "A",
+            "text": "Cobertura de sentencias"
+          },
+          {
+            "id": "B",
+            "text": "Análisis de valores límite"
+          },
+          {
+            "id": "C",
+            "text": "Análisis de licencias"
+          },
+          {
+            "id": "D",
+            "text": "Ordenación de logs"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Los límites son puntos donde suelen concentrarse errores de validación.",
+          "incorrect": "Los límites son puntos donde suelen concentrarse errores de validación."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 6. Caja negra",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Particiones de equivalencia, valores límite, tablas de decisión, transición de estados, casos de uso.",
+          "evidence_sha256": "1f455152c8922ad105857f25d29bcaf00771c5438907e0f826496bfe9b693ea4",
+          "record_sha256": "ae002a6c4801da3f58a7542b2bdf5d8fec005ef5bd7ffe1b722d2fb9759b6477",
+          "review_id": "AI-GSI-B3-T07-007",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 6. Caja negra",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T07-007",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T07",
+        "subtopic": "Caja negra",
+        "exam": null,
+        "statement": "Un campo admite enteros de 18 a 65, ambos incluidos. Se prueban 17, 18, 19, 64, 65 y 66. ¿Qué técnica centra estos casos en las fronteras?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Partición de equivalencia con un representante interior de cada clase."
+          },
+          {
+            "id": "B",
+            "text": "Análisis de valores límite con vecinos de ambos extremos."
+          },
+          {
+            "id": "C",
+            "text": "Pruebas de transición entre estados del flujo de trabajo."
+          },
+          {
+            "id": "D",
+            "text": "Tabla de decisión para combinaciones de varias condiciones."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Se ejercitan las fronteras 18 y 65 y sus vecinos inmediatos, adecuados para detectar errores de inclusión o desplazamiento del intervalo. Es análisis de valores límite sobre un dominio ordenado. Elegir un representante interior por clase, modelar estados o combinar condiciones tiene otros objetivos.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Un representante interior no describe concentrar los casos en cada frontera y sus vecinos.",
+            "C": "El ejemplo no recorre estados y eventos; cambia el valor de una entrada ordenada.",
+            "D": "No se combinan condiciones independientes para decidir acciones; se examinan fronteras numéricas."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 6. Caja negra",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Particiones de equivalencia, valores límite, tablas de decisión, transición de estados, casos de uso.",
+          "evidence_sha256": "1f455152c8922ad105857f25d29bcaf00771c5438907e0f826496bfe9b693ea4",
+          "record_sha256": "ae002a6c4801da3f58a7542b2bdf5d8fec005ef5bd7ffe1b722d2fb9759b6477",
+          "review_id": "AI-GSI-B3-T07-007",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "ISTQB: Certified Tester Foundation Level Syllabus",
+              "url": "https://istqb.org/?download_id=3345&sdm_process_download=1",
+              "locator": "4.2.2 valores límite; 4.2.3 tablas de decisión; 2.2.3 confirmación/regresión; 5.1.3 criterios de salida; 5.5 severidad y prioridad",
+              "version": "v4.0.1 de 15-09-2024, PDF de 78 páginas leído textualmente el 29-10-2026. Se conservan técnicas y distinciones del temario; no se atribuye calibración o acreditación al lote",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-057"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 6. Caja negra",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar valores límite y clave B; microcaso entero con extremos inclusivos explícitos."
+      ],
+      "references": [
+        {
+          "title": "ISTQB: Certified Tester Foundation Level Syllabus",
+          "url": "https://istqb.org/?download_id=3345&sdm_process_download=1",
+          "locator": "4.2.2 valores límite; 4.2.3 tablas de decisión; 2.2.3 confirmación/regresión; 5.1.3 criterios de salida; 5.5 severidad y prioridad",
+          "version": "v4.0.1 de 15-09-2024, PDF de 78 páginas leído textualmente el 29-10-2026. Se conservan técnicas y distinciones del temario; no se atribuye calibración o acreditación al lote",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T07-008",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "d4ea2c7cb54f68481012825da3c622f42acdf2d02c33357b941e96c9e1bdd500",
+      "content_sha256": "49e205cc2022f21aed5fc03559b12fdc8668e050fc1c5d9d3105025a82110ab1",
+      "before": {
+        "id": "AI-GSI-B3-T07-008",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T07",
+        "subtopic": "Caja negra",
+        "exam": null,
+        "statement": "Para combinaciones de condiciones y acciones, ¿qué técnica resulta apropiada?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Tabla de decisión"
+          },
+          {
+            "id": "B",
+            "text": "Partición de equivalencia sin modelar combinaciones de reglas"
+          },
+          {
+            "id": "C",
+            "text": "Cobertura de sentencias basada en la estructura interna del código"
+          },
+          {
+            "id": "D",
+            "text": "Análisis de valores límite para una única variable numérica"
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Las tablas organizan reglas y combinaciones con sus resultados esperados.",
+          "incorrect": "Las tablas organizan reglas y combinaciones con sus resultados esperados."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 6. Caja negra",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Particiones de equivalencia, valores límite, tablas de decisión, transición de estados, casos de uso.",
+          "evidence_sha256": "1f455152c8922ad105857f25d29bcaf00771c5438907e0f826496bfe9b693ea4",
+          "record_sha256": "770457b0a07c8b4258f798405c5425097047d5e82c8d316d56b219db13702d77",
+          "review_id": "AI-GSI-B3-T07-008",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 6. Caja negra",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T07-008",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T07",
+        "subtopic": "Caja negra",
+        "exam": null,
+        "statement": "Para combinaciones de condiciones y acciones, ¿qué técnica resulta apropiada?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Tabla de decisión"
+          },
+          {
+            "id": "B",
+            "text": "Partición de equivalencia sin modelar combinaciones de reglas"
+          },
+          {
+            "id": "C",
+            "text": "Cobertura de sentencias basada en la estructura interna del código"
+          },
+          {
+            "id": "D",
+            "text": "Análisis de valores límite para una única variable numérica"
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Una tabla de decisión relaciona combinaciones de condiciones con acciones esperadas. Permite revisar reglas factibles y detectar combinaciones omitidas o contradictorias. No mide por sí misma la ejecución interna del programa.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "Elegir representantes sin modelar combinaciones no documenta la interacción entre reglas.",
+            "C": "La cobertura de sentencias mira estructura ejecutada, no reglas de condiciones y acciones.",
+            "D": "Explorar extremos de una variable no modela las combinaciones planteadas."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 6. Caja negra",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Particiones de equivalencia, valores límite, tablas de decisión, transición de estados, casos de uso.",
+          "evidence_sha256": "1f455152c8922ad105857f25d29bcaf00771c5438907e0f826496bfe9b693ea4",
+          "record_sha256": "770457b0a07c8b4258f798405c5425097047d5e82c8d316d56b219db13702d77",
+          "review_id": "AI-GSI-B3-T07-008",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "ISTQB: Certified Tester Foundation Level Syllabus",
+              "url": "https://istqb.org/?download_id=3345&sdm_process_download=1",
+              "locator": "4.2.2 valores límite; 4.2.3 tablas de decisión; 2.2.3 confirmación/regresión; 5.1.3 criterios de salida; 5.5 severidad y prioridad",
+              "version": "v4.0.1 de 15-09-2024, PDF de 78 páginas leído textualmente el 29-10-2026. Se conservan técnicas y distinciones del temario; no se atribuye calibración o acreditación al lote",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-057"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 6. Caja negra",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar íntegra formulación y clave A; el contraste entre técnicas ya delimita el objetivo. Ampliar uso y límites."
+      ],
+      "references": [
+        {
+          "title": "ISTQB: Certified Tester Foundation Level Syllabus",
+          "url": "https://istqb.org/?download_id=3345&sdm_process_download=1",
+          "locator": "4.2.2 valores límite; 4.2.3 tablas de decisión; 2.2.3 confirmación/regresión; 5.1.3 criterios de salida; 5.5 severidad y prioridad",
+          "version": "v4.0.1 de 15-09-2024, PDF de 78 páginas leído textualmente el 29-10-2026. Se conservan técnicas y distinciones del temario; no se atribuye calibración o acreditación al lote",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T07-009",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "b655925e97feee80b1ce51c9b3c3300925b73c6100e46cce552d90bb8b324b0a",
+      "content_sha256": "4b580b7692cf4c8ea2de81d4eab39418edd0d9e1bde84e03b4ab4bfc7160bcae",
+      "before": {
+        "id": "AI-GSI-B3-T07-009",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T07",
+        "subtopic": "Caja blanca",
+        "exam": null,
+        "statement": "Alcanzar 100 % de cobertura de líneas significa…",
+        "options": [
+          {
+            "id": "A",
+            "text": "Ausencia garantizada de errores"
+          },
+          {
+            "id": "B",
+            "text": "Cobertura de todos los caminos"
+          },
+          {
+            "id": "C",
+            "text": "Que se ejecutaron esas líneas, no que falten defectos"
+          },
+          {
+            "id": "D",
+            "text": "Satisfacción automática de usuarios"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Cobertura de ejecución no demuestra corrección de aserciones ni exhaustividad de escenarios.",
+          "incorrect": "Cobertura de ejecución no demuestra corrección de aserciones ni exhaustividad de escenarios."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 7. Caja blanca",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Cobertura de sentencias, ramas/decisiones, condiciones y caminos. 100% cobertura de líneas no significa ausencia de defectos.",
+          "evidence_sha256": "65a96d80a60bf1bddabb6043b81453dd84850dced528722f8731cbc883d9fa9c",
+          "record_sha256": "d4d36c5d8e868e74c3027f47f2c008331e7de4e12845758361dd599d21806616",
+          "review_id": "AI-GSI-B3-T07-009",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 7. Caja blanca",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T07-009",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T07",
+        "subtopic": "Caja blanca",
+        "exam": null,
+        "statement": "En el código instrumentado incluido en la medición, ¿qué permite concluir un 100 % de cobertura de líneas?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Se han recorrido todas las combinaciones de condiciones del programa."
+          },
+          {
+            "id": "B",
+            "text": "Se han comprobado todos los caminos posibles en cualquier número de iteraciones."
+          },
+          {
+            "id": "C",
+            "text": "Se ejecutaron las líneas ejecutables medidas, sin demostrar que el resultado sea correcto."
+          },
+          {
+            "id": "D",
+            "text": "Las aserciones verifican completamente los requisitos asociados a cada línea."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "El porcentaje se refiere a líneas ejecutables incluidas en la medición que fueron ejercitadas. No prueba que haya aserciones adecuadas, que se hayan recorrido ramas y caminos, o que el resultado cumpla los requisitos. Exclusiones e instrumentación afectan al denominador. Una línea puede contener varias decisiones o comportamientos que una sola ejecución no distingue.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Ejecutar líneas no exige haber ejercitado cada combinación lógica de sus condiciones.",
+            "B": "Los bucles y decisiones pueden generar muchos caminos aunque todas las líneas se hayan alcanzado.",
+            "D": "La cobertura de ejecución no evalúa la calidad ni la existencia de las aserciones sobre requisitos."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 7. Caja blanca",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Cobertura de sentencias, ramas/decisiones, condiciones y caminos. 100% cobertura de líneas no significa ausencia de defectos.",
+          "evidence_sha256": "65a96d80a60bf1bddabb6043b81453dd84850dced528722f8731cbc883d9fa9c",
+          "record_sha256": "d4d36c5d8e868e74c3027f47f2c008331e7de4e12845758361dd599d21806616",
+          "review_id": "AI-GSI-B3-T07-009",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Martin Fowler: Test Coverage",
+              "url": "https://martinfowler.com/bliki/TestCoverage.html",
+              "locator": "Cobertura como detector de partes no ejercitadas; límites de porcentaje y calidad de aserciones",
+              "version": "Artículo de 17-04-2012 leído el 29-10-2026. No se adoptan sus porcentajes de ejemplo como umbral del proyecto",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-057"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 7. Caja blanca",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar alcance limitado de cobertura y clave C; precisar código medido e instrumentación, sin equiparar líneas con caminos o aserciones."
+      ],
+      "references": [
+        {
+          "title": "Martin Fowler: Test Coverage",
+          "url": "https://martinfowler.com/bliki/TestCoverage.html",
+          "locator": "Cobertura como detector de partes no ejercitadas; límites de porcentaje y calidad de aserciones",
+          "version": "Artículo de 17-04-2012 leído el 29-10-2026. No se adoptan sus porcentajes de ejemplo como umbral del proyecto",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T07-010",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "4e160894c0d8412041d1538cb41adc59bf0d78c9b95a48e827d0906366b5cb15",
+      "content_sha256": "9d0300cfab976dcd115505654a2c7997b27c5aaa9588d31ccffc64ef2e2cd6f1",
+      "before": {
+        "id": "AI-GSI-B3-T07-010",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T07",
+        "subtopic": "TDD",
+        "exam": null,
+        "statement": "¿Qué secuencia corresponde a TDD?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Deploy, Delete, Forget"
+          },
+          {
+            "id": "B",
+            "text": "Design, Release, Retire"
+          },
+          {
+            "id": "C",
+            "text": "Read, Encrypt, Archive"
+          },
+          {
+            "id": "D",
+            "text": "Red, Green, Refactor"
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "TDD empieza por un test que falla, implementa lo necesario y refactoriza.",
+          "incorrect": "TDD empieza por un test que falla, implementa lo necesario y refactoriza."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 8. TDD",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Red → Green → Refactor. TDD es técnica de desarrollo guiada por tests unitarios, no sustituto de estrategia completa de pruebas.",
+          "evidence_sha256": "9390a402f776c8231bd895d378b5671fddf0218669801e49073c107fef31d4b7",
+          "record_sha256": "096b7c6b9b6c2e8be5db037179e644a9c14ea67dcde324f9f5f612bf980f90a0",
+          "review_id": "AI-GSI-B3-T07-010",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 8. TDD",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T07-010",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T07",
+        "subtopic": "TDD",
+        "exam": null,
+        "statement": "¿Qué secuencia corresponde a TDD?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Green → Red → Refactor."
+          },
+          {
+            "id": "B",
+            "text": "Refactor → Green → Red."
+          },
+          {
+            "id": "C",
+            "text": "Red → Refactor → Green."
+          },
+          {
+            "id": "D",
+            "text": "Red → Green → Refactor."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "El ciclo habitual comienza con una prueba que falla por la funcionalidad pendiente, implementa lo necesario para que pase y refactoriza manteniendo el comportamiento comprobado. Antes se elige el caso que guiará el siguiente incremento. Un fallo de instalación no cumple por sí mismo el propósito de la fase roja. TDD no sustituye todos los niveles o tipos de prueba.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Empezar por una implementación verde antes del nuevo caso no describe el ciclo test-first que se pregunta.",
+            "B": "Refactorizar antes de obtener la evidencia del nuevo comportamiento no es el orden del ciclo habitual.",
+            "C": "La fase verde precede a reorganizar el código preservando comportamiento; no se omite hacer pasar el nuevo caso."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 8. TDD",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Red → Green → Refactor. TDD es técnica de desarrollo guiada por tests unitarios, no sustituto de estrategia completa de pruebas.",
+          "evidence_sha256": "9390a402f776c8231bd895d378b5671fddf0218669801e49073c107fef31d4b7",
+          "record_sha256": "096b7c6b9b6c2e8be5db037179e644a9c14ea67dcde324f9f5f612bf980f90a0",
+          "review_id": "AI-GSI-B3-T07-010",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Martin Fowler: Test Driven Development",
+              "url": "https://martinfowler.com/bliki/TestDrivenDevelopment.html",
+              "locator": "Tres pasos: prueba, implementación y refactorización; Red-Green-Refactor; lista de casos y revisiones",
+              "version": "Actualización de 11-12-2023 sobre entrada original de 2005, leída el 29-10-2026. Técnica de desarrollo, no sustituto de toda la estrategia de pruebas",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-057"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 8. TDD",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar Red-Green-Refactor y clave D; permutaciones plausibles de las mismas fases y explicación del objetivo de cada una."
+      ],
+      "references": [
+        {
+          "title": "Martin Fowler: Test Driven Development",
+          "url": "https://martinfowler.com/bliki/TestDrivenDevelopment.html",
+          "locator": "Tres pasos: prueba, implementación y refactorización; Red-Green-Refactor; lista de casos y revisiones",
+          "version": "Actualización de 11-12-2023 sobre entrada original de 2005, leída el 29-10-2026. Técnica de desarrollo, no sustituto de toda la estrategia de pruebas",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T07-011",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "619d4fa846e98de8411159f3f9a9b6bd862b9434cfb23bfb2033a2c59f107a31",
+      "content_sha256": "7352af88761e0112c9995993062aae936e901a18164e388659212f4eed6f4070",
+      "before": {
+        "id": "AI-GSI-B3-T07-011",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T07",
+        "subtopic": "Dobles de prueba",
+        "exam": null,
+        "statement": "¿Qué riesgo tiene abusar de mocks?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Garantizar independencia de diseño siempre"
+          },
+          {
+            "id": "B",
+            "text": "Probar automáticamente la integración real"
+          },
+          {
+            "id": "C",
+            "text": "Acoplar las pruebas a detalles de implementación"
+          },
+          {
+            "id": "D",
+            "text": "Eliminar todo mantenimiento"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Los dobles ayudan a aislar, pero demasiado detalle simulado vuelve frágiles los tests.",
+          "incorrect": "Los dobles ayudan a aislar, pero demasiado detalle simulado vuelve frágiles los tests."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 9. Dobles de prueba",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Dummy, stub, spy, mock y fake. El exceso de mocks acopla test a implementación.",
+          "evidence_sha256": "0fed74f242ba87513a96595dcad97f2c3f19438e633ea1f7e13a6dd346a87410",
+          "record_sha256": "a20cc6e1554b01859c41f0063c2e1aabee8b6af2dcd846ef7c07d7b74c2a19a8",
+          "review_id": "AI-GSI-B3-T07-011",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 9. Dobles de prueba",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T07-011",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T07",
+        "subtopic": "Dobles de prueba",
+        "exam": null,
+        "statement": "¿Qué efecto en mantenimiento puede provocar verificar con mocks secuencias internas que no forman parte del contrato observable?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Reducir cambios de pruebas cuando se reorganiza el interior sin cambiar el contrato."
+          },
+          {
+            "id": "B",
+            "text": "Comprobar la integración real del colaborador mediante una simulación aislada."
+          },
+          {
+            "id": "C",
+            "text": "Obligar a modificar pruebas tras refactorizaciones que conservan el comportamiento."
+          },
+          {
+            "id": "D",
+            "text": "Convertir el orden interno de llamadas en un requisito funcional acordado con usuarios."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Si las expectativas fijan llamadas internas ajenas al contrato, una refactorización compatible puede romper el test aunque el resultado observable no cambie. Esto acopla la prueba a la implementación y aumenta mantenimiento. Los dobles siguen siendo útiles para aislar dependencias; verificar una interacción que sí pertenece al contrato puede ser pertinente. El riesgo es fijar detalles accidentales, no el mero uso de mocks.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "El acoplamiento a llamadas accidentales tiende a exigir más cambios de pruebas, no a protegerlas de reorganizaciones internas.",
+            "B": "La simulación no demuestra que el colaborador real mantenga el mismo comportamiento o protocolo.",
+            "D": "Una expectativa del test no convierte por sí sola un detalle en requisito acordado del producto."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 9. Dobles de prueba",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Dummy, stub, spy, mock y fake. El exceso de mocks acopla test a implementación.",
+          "evidence_sha256": "0fed74f242ba87513a96595dcad97f2c3f19438e633ea1f7e13a6dd346a87410",
+          "record_sha256": "a20cc6e1554b01859c41f0063c2e1aabee8b6af2dcd846ef7c07d7b74c2a19a8",
+          "review_id": "AI-GSI-B3-T07-011",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Andrew Trenk: Testing on the Toilet, Don’t Overuse Mocks",
+              "url": "https://testing.googleblog.com/2013/05/testing-on-toilet-dont-overuse-mocks.html",
+              "locator": "Problemas de legibilidad, mantenimiento y fidelidad; expectativas que filtran detalles de implementación",
+              "version": "Google Testing Blog, 28-05-2013, leído el 29-10-2026. No prohíbe dobles ni verificar interacciones que pertenezcan al contrato",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-057"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 9. Dobles de prueba",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar riesgo de acoplamiento y clave C; delimitar llamadas que no pertenecen al contrato para no condenar toda verificación de interacciones."
+      ],
+      "references": [
+        {
+          "title": "Andrew Trenk: Testing on the Toilet, Don’t Overuse Mocks",
+          "url": "https://testing.googleblog.com/2013/05/testing-on-toilet-dont-overuse-mocks.html",
+          "locator": "Problemas de legibilidad, mantenimiento y fidelidad; expectativas que filtran detalles de implementación",
+          "version": "Google Testing Blog, 28-05-2013, leído el 29-10-2026. No prohíbe dobles ni verificar interacciones que pertenezcan al contrato",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T07-012",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "f9847a414184751017cf93f6ed981a59b8e38d3a788ffaa8c415043a24e71a6c",
+      "content_sha256": "03d27c9b4b7d80d71f8519bbbaa29accb839c457ec7dd25c08972d9ded60cee2",
+      "before": {
+        "id": "AI-GSI-B3-T07-012",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T07",
+        "subtopic": "Automatización",
+        "exam": null,
+        "statement": "Una prueba falla intermitentemente sin cambios relevantes. ¿Cómo debe tratarse?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Como resultado que se ignora siempre"
+          },
+          {
+            "id": "B",
+            "text": "Como defecto del sistema de pruebas que debe investigarse"
+          },
+          {
+            "id": "C",
+            "text": "Como autorización para borrar la suite"
+          },
+          {
+            "id": "D",
+            "text": "Como prueba fiable por definición"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Los flaky tests degradan confianza y requieren diagnóstico.",
+          "incorrect": "Los flaky tests degradan confianza y requieren diagnóstico."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 10. Automatización",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Tests deterministas, rápidos, aislados y con datos controlados. CI ejecuta suites. Gestionar flaky tests como defectos del sistema de pruebas.",
+          "evidence_sha256": "f57b6217300cb7277ff687d3ade38f62d43dd2b953520ad81b376c8a91a6cb8d",
+          "record_sha256": "e7164e8bb56c4ae6f3ad3844114f45a74d7423949b04cec709bf97ddb527bf9f",
+          "review_id": "AI-GSI-B3-T07-012",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 10. Automatización",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T07-012",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T07",
+        "subtopic": "Automatización",
+        "exam": null,
+        "statement": "Con el mismo commit, una prueba alterna éxito y fallo sin un cambio relevante conocido. ¿Cómo debe tratarse?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Repetirla hasta obtener verde y cerrar el fallo sin conservar los resultados anteriores."
+          },
+          {
+            "id": "B",
+            "text": "Investigar fuentes de no determinismo en la prueba, el entorno y el producto."
+          },
+          {
+            "id": "C",
+            "text": "Retirarla sin registrar qué riesgo o comportamiento quedará sin comprobación."
+          },
+          {
+            "id": "D",
+            "text": "Clasificarla como fiable por el número de veces que termina pasando."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "La alternancia exige diagnóstico, no asumir que el primer verde resuelve el problema. Se conservan evidencias y se investigan tiempos, datos compartidos, orden, infraestructura y concurrencia del producto. Una cuarentena temporal puede requerir responsable y seguimiento; no equivale a corregir la causa ni demuestra que el producto esté libre de defectos.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Reintentar hasta verde puede ocultar un fallo real y pierde información sobre la alternancia.",
+            "C": "Retirar sin seguimiento deja un riesgo sin gestionar; el tratamiento debe ser explícito.",
+            "D": "Una frecuencia alta de éxito no elimina la falta de fiabilidad o su causa."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 10. Automatización",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Tests deterministas, rápidos, aislados y con datos controlados. CI ejecuta suites. Gestionar flaky tests como defectos del sistema de pruebas.",
+          "evidence_sha256": "f57b6217300cb7277ff687d3ade38f62d43dd2b953520ad81b376c8a91a6cb8d",
+          "record_sha256": "e7164e8bb56c4ae6f3ad3844114f45a74d7423949b04cec709bf97ddb527bf9f",
+          "review_id": "AI-GSI-B3-T07-012",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "John Micco: Flaky Tests at Google and How We Mitigate Them",
+              "url": "https://testing.googleblog.com/2016/05/flaky-tests-at-google-and-how-we.html",
+              "locator": "Definición de resultados alternos con el mismo código; causas de concurrencia, comportamiento no determinista, terceros e infraestructura",
+              "version": "Google Testing Blog, 27-05-2016, leído el 29-10-2026. Las tasas observadas entonces no se presentan como métricas actuales; la causa puede estar en prueba, entorno o producto",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-057"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 10. Automatización",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar investigación de flaky tests y clave B; evitar atribuir la causa exclusivamente al código del test."
+      ],
+      "references": [
+        {
+          "title": "John Micco: Flaky Tests at Google and How We Mitigate Them",
+          "url": "https://testing.googleblog.com/2016/05/flaky-tests-at-google-and-how-we.html",
+          "locator": "Definición de resultados alternos con el mismo código; causas de concurrencia, comportamiento no determinista, terceros e infraestructura",
+          "version": "Google Testing Blog, 27-05-2016, leído el 29-10-2026. Las tasas observadas entonces no se presentan como métricas actuales; la causa puede estar en prueba, entorno o producto",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T07-013",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "e18c11f5519de202f183107f7865bd648c1e5115109d9a5bfcd755b78ecd3a61",
+      "content_sha256": "295a1b10031bc9a9c2f70e74efb7cf7f80b3d80191b202e9ea4d3bafd3797fc1",
+      "before": {
+        "id": "AI-GSI-B3-T07-013",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T07",
+        "subtopic": "Criterios de aceptación y salida",
+        "exam": null,
+        "statement": "Todos los tests pasan, pero faltan escenarios críticos. ¿Puede considerarse suficiente el resultado?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Sí, el porcentaje de éxito basta siempre"
+          },
+          {
+            "id": "B",
+            "text": "No, debe valorarse cobertura y riesgo residual"
+          },
+          {
+            "id": "C",
+            "text": "Sí, si hay muchas líneas de código"
+          },
+          {
+            "id": "D",
+            "text": "Sí, si se ejecutaron rápido"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "El éxito de casos existentes no cubre los casos ausentes.",
+          "incorrect": "El éxito de casos existentes no cubre los casos ausentes."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 11. Criterios de aceptación y salida",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Cobertura de requisitos, defectos críticos abiertos, tasa de éxito, rendimiento, seguridad y riesgo residual. “Todos los tests pasan” no basta si faltan escenarios.",
+          "evidence_sha256": "7c55a4ba7d68e49f9f61da46479246e74240181a11c1cd0d4cab57cfcbf41c2e",
+          "record_sha256": "2d7c394e9a4bc62b773ae49d88b40ee31a348d02fd5c0c8e3d518a98683fab1f",
+          "review_id": "AI-GSI-B3-T07-013",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 11. Criterios de aceptación y salida",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T07-013",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T07",
+        "subtopic": "Criterios de aceptación y salida",
+        "exam": null,
+        "statement": "Pasan todos los casos ejecutados, pero falta un escenario identificado como crítico. ¿Basta ese verde por sí solo para declarar suficientes las pruebas?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Sí; el porcentaje de éxito sustituye comprobar qué riesgos ejercitan los casos."
+          },
+          {
+            "id": "B",
+            "text": "No; faltan evidencias críticas y una decisión explícita sobre el riesgo residual."
+          },
+          {
+            "id": "C",
+            "text": "Sí; la rapidez de la ejecución compensa los escenarios que no se incluyeron."
+          },
+          {
+            "id": "D",
+            "text": "Sí; repetir los mismos casos aumenta la cobertura de los escenarios ausentes."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Un resultado verde no aporta evidencia sobre escenarios ausentes. Deben revisarse alcance, criterios de salida y riesgo residual; cualquier excepción requiere decisión documentada de quien corresponda. No se deduce suficiencia solo de la tasa de éxito.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "La tasa describe casos ejecutados, no el alcance de los omitidos.",
+            "C": "Ejecutar rápido no comprueba el escenario crítico ausente.",
+            "D": "Repetir casos no crea evidencia sobre entradas o flujos que no ejercitan."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 11. Criterios de aceptación y salida",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Cobertura de requisitos, defectos críticos abiertos, tasa de éxito, rendimiento, seguridad y riesgo residual. “Todos los tests pasan” no basta si faltan escenarios.",
+          "evidence_sha256": "7c55a4ba7d68e49f9f61da46479246e74240181a11c1cd0d4cab57cfcbf41c2e",
+          "record_sha256": "2d7c394e9a4bc62b773ae49d88b40ee31a348d02fd5c0c8e3d518a98683fab1f",
+          "review_id": "AI-GSI-B3-T07-013",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "ISTQB: Certified Tester Foundation Level Syllabus",
+              "url": "https://istqb.org/?download_id=3345&sdm_process_download=1",
+              "locator": "4.2.2 valores límite; 4.2.3 tablas de decisión; 2.2.3 confirmación/regresión; 5.1.3 criterios de salida; 5.5 severidad y prioridad",
+              "version": "v4.0.1 de 15-09-2024, PDF de 78 páginas leído textualmente el 29-10-2026. Se conservan técnicas y distinciones del temario; no se atribuye calibración o acreditación al lote",
+              "checked_at": "2026-10-29"
+            },
+            {
+              "title": "Martin Fowler: Test Coverage",
+              "url": "https://martinfowler.com/bliki/TestCoverage.html",
+              "locator": "Cobertura como detector de partes no ejercitadas; límites de porcentaje y calidad de aserciones",
+              "version": "Artículo de 17-04-2012 leído el 29-10-2026. No se adoptan sus porcentajes de ejemplo como umbral del proyecto",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-057"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 11. Criterios de aceptación y salida",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar cobertura/riesgo residual y clave B; separar verde técnico de decisión de suficiencia o excepción."
+      ],
+      "references": [
+        {
+          "title": "ISTQB: Certified Tester Foundation Level Syllabus",
+          "url": "https://istqb.org/?download_id=3345&sdm_process_download=1",
+          "locator": "4.2.2 valores límite; 4.2.3 tablas de decisión; 2.2.3 confirmación/regresión; 5.1.3 criterios de salida; 5.5 severidad y prioridad",
+          "version": "v4.0.1 de 15-09-2024, PDF de 78 páginas leído textualmente el 29-10-2026. Se conservan técnicas y distinciones del temario; no se atribuye calibración o acreditación al lote",
+          "checked_at": "2026-10-29"
+        },
+        {
+          "title": "Martin Fowler: Test Coverage",
+          "url": "https://martinfowler.com/bliki/TestCoverage.html",
+          "locator": "Cobertura como detector de partes no ejercitadas; límites de porcentaje y calidad de aserciones",
+          "version": "Artículo de 17-04-2012 leído el 29-10-2026. No se adoptan sus porcentajes de ejemplo como umbral del proyecto",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T07-015",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "c611a02dcd846898a5989debb6eb2581d70f402dc27cf3ea24502ed7dd899d64",
+      "content_sha256": "4487fafc43abacbbfb9104556de85342f4b44e44ec6b2f03e2a9a921754104e0",
+      "before": {
+        "id": "AI-GSI-B3-T07-015",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T07",
+        "subtopic": "Datos de prueba",
+        "exam": null,
+        "statement": "¿Qué opción reduce riesgo al preparar datos de prueba personales?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Copiar producción sin controles"
+          },
+          {
+            "id": "B",
+            "text": "Suponer que seudonimizar elimina toda protección"
+          },
+          {
+            "id": "C",
+            "text": "Publicar identificadores reales en fixtures"
+          },
+          {
+            "id": "D",
+            "text": "Datos sintéticos o anonimizados cuando sea viable"
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "La seudonimización puede conservar carácter personal; los datos requieren controles y versión.",
+          "incorrect": "La seudonimización puede conservar carácter personal; los datos requieren controles y versión."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 11.2. Datos de prueba",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Los datos deben cubrir particiones, límites, excepciones y combinaciones. En sistemas con datos personales se prefieren datos sintéticos o anonimizados cuando sea viable; copiar producción a test sin control es un riesgo. La **seudonimización** puede seguir siendo dato personal. Es importante poder recrear datasets y conocer su versión.",
+          "evidence_sha256": "450faffd76410cc3a950cd0d354c3c119c92d6ddca02a42e2e985190a44c5e75",
+          "record_sha256": "3abe1a1c011647c1bc6fbfca65669a3bf62d3087ab23d0145586ba094468adcb",
+          "review_id": "AI-GSI-B3-T07-015",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 11.2. Datos de prueba",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T07-015",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T07",
+        "subtopic": "Datos de prueba",
+        "exam": null,
+        "statement": "Un entorno de pruebas no necesita identificar personas reales. ¿Qué medida reduce la exposición de datos al preparar sus fixtures?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Copiar una muestra de producción conservando sus identificadores para mantener realismo."
+          },
+          {
+            "id": "B",
+            "text": "Seudonimizar y considerar por ese solo hecho que el conjunto ya no es personal."
+          },
+          {
+            "id": "C",
+            "text": "Eliminar nombres y conservar combinaciones únicas de atributos sin evaluar identificación."
+          },
+          {
+            "id": "D",
+            "text": "Usar datos sintéticos o anónimos adecuados y comprobar riesgos de identificación."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Si no se necesita identificar personas, deben preferirse datos adecuados que reduzcan esa exposición. Los sintéticos o anonimizados requieren comprobar utilidad y riesgo de identificación; una etiqueta no garantiza anonimato. La seudonimización puede mantener carácter personal y exige controles. El RGPD distingue anonimato de atribución con información adicional y exige limitar datos a lo necesario para la finalidad.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "La muestra conserva identificadores y exposición que el objetivo de la prueba no necesita.",
+            "B": "Separar información adicional no convierte automáticamente los datos en anónimos.",
+            "C": "Sin nombres aún puede identificarse por combinaciones indirectas; hay que valorar ese riesgo."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 11.2. Datos de prueba",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Los datos deben cubrir particiones, límites, excepciones y combinaciones. En sistemas con datos personales se prefieren datos sintéticos o anonimizados cuando sea viable; copiar producción a test sin control es un riesgo. La **seudonimización** puede seguir siendo dato personal. Es importante poder recrear datasets y conocer su versión.",
+          "evidence_sha256": "450faffd76410cc3a950cd0d354c3c119c92d6ddca02a42e2e985190a44c5e75",
+          "record_sha256": "3abe1a1c011647c1bc6fbfca65669a3bf62d3087ab23d0145586ba094468adcb",
+          "review_id": "AI-GSI-B3-T07-015",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "BOE: Reglamento (UE) 2016/679",
+              "url": "https://www.boe.es/buscar/doc.php?id=DOUE-L-2016-80807",
+              "locator": "Considerando 26: identificabilidad y anonimato; artículo 4.5: seudonimización; artículo 5.1.c: minimización; análisis y correcciones vinculadas",
+              "version": "Texto original DOUE L119 de 04-05-2016 en BOE, leído el 29-10-2026; se consultan las correcciones de 2018 y 2021. La seudonimización no se equipara a anonimato ni toda generación sintética a ausencia de riesgo",
+              "checked_at": "2026-10-29"
+            },
+            {
+              "title": "BOE: Corrección de errores del RGPD de 2018",
+              "url": "https://www.boe.es/buscar/doc.php?id=DOUE-L-2018-80845",
+              "locator": "Texto de corrección vinculado en análisis del RGPD; contraste del respaldo normativo de anonimato/seudonimización",
+              "version": "DOUE L127 de 23-05-2018, pp.3–7; página oficial consultada el 29-10-2026. No se usa como definición alternativa de anonimización",
+              "checked_at": "2026-10-29"
+            },
+            {
+              "title": "BOE: Corrección de errores del RGPD de 2021",
+              "url": "https://www.boe.es/buscar/doc.php?id=DOUE-L-2021-80264",
+              "locator": "Texto de corrección vinculado en análisis del RGPD; contraste del respaldo normativo de anonimato/seudonimización",
+              "version": "DOUE L74 de 04-03-2021, pp.35–38; página oficial consultada el 29-10-2026. No se interpreta como una autorización para copiar datos a pruebas",
+              "checked_at": "2026-10-29"
+            },
+            {
+              "title": "PDPC Singapur, traducción AEPD: Guía básica de anonimización",
+              "url": "https://www.aepd.es/documento/guia-basica-anonimizacion.pdf",
+              "locator": "Caso E, p.16: datos sintéticos para desarrollo/pruebas y supuestos; pasos 1–5: identificadores, técnicas y riesgo de reidentificación/divulgación",
+              "version": "Edición española de octubre de 2022 según portada, PDF de 72 páginas leído textualmente el 29-10-2026. Autoría PDPC y traducción/prólogo AEPD; guía técnica, no norma española autónoma",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-057"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 11.2. Datos de prueba",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar datos sintéticos/anonimizados y clave D; caso que no necesita identidad, con límites jurídicos y técnicos explícitos."
+      ],
+      "references": [
+        {
+          "title": "BOE: Reglamento (UE) 2016/679",
+          "url": "https://www.boe.es/buscar/doc.php?id=DOUE-L-2016-80807",
+          "locator": "Considerando 26: identificabilidad y anonimato; artículo 4.5: seudonimización; artículo 5.1.c: minimización; análisis y correcciones vinculadas",
+          "version": "Texto original DOUE L119 de 04-05-2016 en BOE, leído el 29-10-2026; se consultan las correcciones de 2018 y 2021. La seudonimización no se equipara a anonimato ni toda generación sintética a ausencia de riesgo",
+          "checked_at": "2026-10-29"
+        },
+        {
+          "title": "BOE: Corrección de errores del RGPD de 2018",
+          "url": "https://www.boe.es/buscar/doc.php?id=DOUE-L-2018-80845",
+          "locator": "Texto de corrección vinculado en análisis del RGPD; contraste del respaldo normativo de anonimato/seudonimización",
+          "version": "DOUE L127 de 23-05-2018, pp.3–7; página oficial consultada el 29-10-2026. No se usa como definición alternativa de anonimización",
+          "checked_at": "2026-10-29"
+        },
+        {
+          "title": "BOE: Corrección de errores del RGPD de 2021",
+          "url": "https://www.boe.es/buscar/doc.php?id=DOUE-L-2021-80264",
+          "locator": "Texto de corrección vinculado en análisis del RGPD; contraste del respaldo normativo de anonimato/seudonimización",
+          "version": "DOUE L74 de 04-03-2021, pp.35–38; página oficial consultada el 29-10-2026. No se interpreta como una autorización para copiar datos a pruebas",
+          "checked_at": "2026-10-29"
+        },
+        {
+          "title": "PDPC Singapur, traducción AEPD: Guía básica de anonimización",
+          "url": "https://www.aepd.es/documento/guia-basica-anonimizacion.pdf",
+          "locator": "Caso E, p.16: datos sintéticos para desarrollo/pruebas y supuestos; pasos 1–5: identificadores, técnicas y riesgo de reidentificación/divulgación",
+          "version": "Edición española de octubre de 2022 según portada, PDF de 72 páginas leído textualmente el 29-10-2026. Autoría PDPC y traducción/prólogo AEPD; guía técnica, no norma española autónoma",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T07-017",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "652df4930e62c7caef1e7ac2c7465ee0cf220d153888c604161d18242499fc31",
+      "content_sha256": "40085e2fd8432683165baa0fae552e79256da7c795df8785698c39d168bb7303",
+      "before": {
+        "id": "AI-GSI-B3-T07-017",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T07",
+        "subtopic": "Pruebas de procedimientos",
+        "exam": null,
+        "statement": "¿Qué demuestra probar un procedimiento de recuperación?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Que el runbook puede ejecutarse en condiciones definidas"
+          },
+          {
+            "id": "B",
+            "text": "Que escribirlo ya garantizaba recuperación"
+          },
+          {
+            "id": "C",
+            "text": "Que nunca habrá desastres"
+          },
+          {
+            "id": "D",
+            "text": "Que ya no se necesitan copias"
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "La ejecución aporta evidencia que un documento sin probar no proporciona.",
+          "incorrect": "La ejecución aporta evidencia que un documento sin probar no proporciona."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 11.4. Pruebas de procedimientos",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Comprueban que procedimientos operativos son ejecutables: alta/baja de usuarios, backup/restauración, recuperación ante desastre, escalado de incidencias, operación batch, cambio, parcheo, gestión de certificados, contingencia y actuación manual. Un runbook que nadie ha probado no es evidencia de recuperabilidad.",
+          "evidence_sha256": "a43e5874c13581eb8c599f8d1ca170258466f13be014488ed359c56328141b9a",
+          "record_sha256": "dd9ae6a67b9b2a5f76be3f9bd5ccbd04eb46a431877f04012b93697b43d1cd07",
+          "review_id": "AI-GSI-B3-T07-017",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 11.4. Pruebas de procedimientos",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T07-017",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T07",
+        "subtopic": "Pruebas de procedimientos",
+        "exam": null,
+        "statement": "Se ensaya restaurar una copia en un entorno representativo y se comprueba la integridad del resultado. ¿Qué evidencia aporta ese ensayo?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Recuperación ejecutable en las condiciones y con los límites del ensayo realizado."
+          },
+          {
+            "id": "B",
+            "text": "Validez de cualquier copia futura aunque cambien su contenido o formato."
+          },
+          {
+            "id": "C",
+            "text": "Cumplimiento del objetivo de recuperación de otro servicio que no se ensayó."
+          },
+          {
+            "id": "D",
+            "text": "Ausencia de necesidad de revisar el procedimiento tras cambios de permisos."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Ejecutar una restauración y comprobar su resultado aporta evidencia sobre el procedimiento, los medios y las condiciones ensayadas. Se documentan resultados y se corrigen carencias. No garantiza todas las copias o incidentes futuros: cambios en datos, permisos o infraestructura pueden exigir nuevos ensayos y mantenimiento del plan.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "Una copia futura puede tener problemas que este ensayo no comprueba; su formato o contenido pueden cambiar.",
+            "C": "El objetivo de otro servicio requiere su propia evidencia y condiciones, no se acredita por este ensayo.",
+            "D": "Los permisos afectan a ejecución y acceso; cambiarlos puede invalidar pasos que antes funcionaban."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 11.4. Pruebas de procedimientos",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Comprueban que procedimientos operativos son ejecutables: alta/baja de usuarios, backup/restauración, recuperación ante desastre, escalado de incidencias, operación batch, cambio, parcheo, gestión de certificados, contingencia y actuación manual. Un runbook que nadie ha probado no es evidencia de recuperabilidad.",
+          "evidence_sha256": "a43e5874c13581eb8c599f8d1ca170258466f13be014488ed359c56328141b9a",
+          "record_sha256": "dd9ae6a67b9b2a5f76be3f9bd5ccbd04eb46a431877f04012b93697b43d1cd07",
+          "review_id": "AI-GSI-B3-T07-017",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "NIST SP 800-34 Rev.1: Contingency Planning Guide",
+              "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-34r1.pdf",
+              "locator": "3.5 y 3.5.1 TT&E/Testing: objetivos, comprobación de recuperación y documentación; 3.6 mantenimiento del plan",
+              "version": "Revisión 1, mayo de 2010, PDF de 149 páginas en esta URL, leído textualmente el 29-10-2026. Referencia metodológica histórica, sin imponer requisitos federales estadounidenses al proyecto",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-057"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 11.4. Pruebas de procedimientos",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar evidencia de procedimiento ejecutable y clave A; microcaso de restauración con validación del resultado y alcance explícito."
+      ],
+      "references": [
+        {
+          "title": "NIST SP 800-34 Rev.1: Contingency Planning Guide",
+          "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-34r1.pdf",
+          "locator": "3.5 y 3.5.1 TT&E/Testing: objetivos, comprobación de recuperación y documentación; 3.6 mantenimiento del plan",
+          "version": "Revisión 1, mayo de 2010, PDF de 149 páginas en esta URL, leído textualmente el 29-10-2026. Referencia metodológica histórica, sin imponer requisitos federales estadounidenses al proyecto",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T07-018",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "e1ea5ba70e62ff3861d27b63e3f92619e10b7c6cf1a891d8fde694e0ce76a2e3",
+      "content_sha256": "03ad5264b21c1418e58becb73c9e1caed29e604a8a967cc0ec3e5e0b6a80fd86",
+      "before": {
+        "id": "AI-GSI-B3-T07-018",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T07",
+        "subtopic": "Pruebas de datos",
+        "exam": null,
+        "statement": "¿Qué controles ayudan a verificar una migración de datos?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Dar por válidos los datos si terminó la importación"
+          },
+          {
+            "id": "B",
+            "text": "Conteos, totales de control, claves y reconciliación"
+          },
+          {
+            "id": "C",
+            "text": "Comparar únicamente el tamaño físico de los ficheros"
+          },
+          {
+            "id": "D",
+            "text": "Solo comprobar que exista la tabla destino"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "La migración debe comprobar completitud, integridad y transformaciones.",
+          "incorrect": "La migración debe comprobar completitud, integridad y transformaciones."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 11.5. Pruebas de datos",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Validan migraciones, integridad, completitud, exactitud, reconciliación, duplicados, formatos, reglas de negocio y calidad. En una migración: conteos origen/destino, sumas/control totals, muestreo de registros, claves/referencias, excepciones y trazabilidad de transformaciones.",
+          "evidence_sha256": "3a3c1551ff06e7828373a92f0401e37ce7185163759ec15f06aced56460c5710",
+          "record_sha256": "ca0bf9f3de3fe1d3e58d6b8dba80a193e4129fb5520932ef6db325e7e2aab4d8",
+          "review_id": "AI-GSI-B3-T07-018",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 11.5. Pruebas de datos",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T07-018",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T07",
+        "subtopic": "Pruebas de datos",
+        "exam": null,
+        "statement": "¿Qué controles ayudan a verificar una migración de datos?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Dar por válidos los datos si terminó la importación"
+          },
+          {
+            "id": "B",
+            "text": "Conteos, totales de control, claves y reconciliación"
+          },
+          {
+            "id": "C",
+            "text": "Comparar únicamente el tamaño físico de los ficheros"
+          },
+          {
+            "id": "D",
+            "text": "Solo comprobar que exista la tabla destino"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Conteos, totales, claves y reconciliación aportan controles complementarios. Igualar conteos o sumas no prueba por sí solo que cada registro sea correcto: puede haber valores intercambiados o transformaciones erróneas que mantengan esos agregados. Se contrastan correspondencias, reglas y excepciones según el alcance de la migración y un corte comparable.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Terminar la importación informa del proceso, sin demostrar exactitud y completitud del resultado.",
+            "C": "El tamaño físico depende del formato y no prueba correspondencia de registros o valores.",
+            "D": "Que exista la tabla no comprueba sus filas, claves o transformaciones."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 11.5. Pruebas de datos",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Validan migraciones, integridad, completitud, exactitud, reconciliación, duplicados, formatos, reglas de negocio y calidad. En una migración: conteos origen/destino, sumas/control totals, muestreo de registros, claves/referencias, excepciones y trazabilidad de transformaciones.",
+          "evidence_sha256": "3a3c1551ff06e7828373a92f0401e37ce7185163759ec15f06aced56460c5710",
+          "record_sha256": "ca0bf9f3de3fe1d3e58d6b8dba80a193e4129fb5520932ef6db325e7e2aab4d8",
+          "review_id": "AI-GSI-B3-T07-018",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "AWS DMS: Data validation",
+              "url": "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Validating.html",
+              "locator": "Introducción y limitaciones: comparación de filas origen/destino, discrepancias, consumo y cambios concurrentes",
+              "version": "Guía pública en ruta latest leída el 29-10-2026, sin inferir edición o instalación local. Es ejemplo de contraste; no todo conteo o total demuestra exactitud de registros",
+              "checked_at": "2026-10-29"
+            },
+            {
+              "title": "UK Government: The Government Data Quality Framework",
+              "url": "https://www.gov.uk/government/publications/the-government-data-quality-framework/the-government-data-quality-framework",
+              "locator": "Data lifecycle; Data quality dimensions: completeness, uniqueness, consistency, validity y accuracy",
+              "version": "Publicado el 03-12-2020 según página, leído el 29-10-2026. Completitud y exactitud son distintas; marco de ejemplo, no obligación española inferida",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-057"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 11.5. Pruebas de datos",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar íntegra formulación y clave B; controles y distractores ya próximos al concepto. Precisar límites de agregados y corte comparable."
+      ],
+      "references": [
+        {
+          "title": "AWS DMS: Data validation",
+          "url": "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Validating.html",
+          "locator": "Introducción y limitaciones: comparación de filas origen/destino, discrepancias, consumo y cambios concurrentes",
+          "version": "Guía pública en ruta latest leída el 29-10-2026, sin inferir edición o instalación local. Es ejemplo de contraste; no todo conteo o total demuestra exactitud de registros",
+          "checked_at": "2026-10-29"
+        },
+        {
+          "title": "UK Government: The Government Data Quality Framework",
+          "url": "https://www.gov.uk/government/publications/the-government-data-quality-framework/the-government-data-quality-framework",
+          "locator": "Data lifecycle; Data quality dimensions: completeness, uniqueness, consistency, validity y accuracy",
+          "version": "Publicado el 03-12-2020 según página, leído el 29-10-2026. Completitud y exactitud son distintas; marco de ejemplo, no obligación española inferida",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T07-019",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "cf321e70a0e7690141be570daedb4b2c046a79de027c41f44e2e08b420bed682",
+      "content_sha256": "d8e27b898cca6f9d997795b93401bdec773de394788478da7915d92f66fe565f",
+      "before": {
+        "id": "AI-GSI-B3-T07-019",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T07",
+        "subtopic": "Gestión de defectos",
+        "exam": null,
+        "statement": "¿Qué diferencia retest y regresión?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Son siempre la misma actividad"
+          },
+          {
+            "id": "B",
+            "text": "Regresión solo prueba hardware"
+          },
+          {
+            "id": "C",
+            "text": "Retest confirma el defecto corregido; regresión busca efectos sobre lo existente"
+          },
+          {
+            "id": "D",
+            "text": "Retest elimina necesidad de resultado esperado"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Ambas comprobaciones se complementan tras un cambio.",
+          "incorrect": "Ambas comprobaciones se complementan tras un cambio."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 11.8. Gestión de defectos",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Ciclo: registrar → clasificar severidad/prioridad → asignar → corregir → retest → cerrar/reabrir. **Severidad** refleja impacto; **prioridad** urgencia de resolución. La regresión comprueba que cambios no rompen lo existente; el retest confirma el defecto concreto.",
+          "evidence_sha256": "a9f479c3abae71661b2bc1ec2f6acd23f92b6d1c47db48583b3bbed7e1eec174",
+          "record_sha256": "6055bb346a166ac45ea6b566b8af441b14864da521a622ff6f368f39380c750b",
+          "review_id": "AI-GSI-B3-T07-019",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 11.8. Gestión de defectos",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T07-019",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T07",
+        "subtopic": "Gestión de defectos",
+        "exam": null,
+        "statement": "Tras corregir un defecto, ¿qué distingue las pruebas de confirmación —retest— de las de regresión?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Confirmación busca efectos colaterales; regresión comprueba el defecto concreto."
+          },
+          {
+            "id": "B",
+            "text": "Confirmación es revisión sin ejecución; regresión es aceptación de negocio."
+          },
+          {
+            "id": "C",
+            "text": "Confirmación verifica la corrección concreta; regresión busca efectos adversos del cambio."
+          },
+          {
+            "id": "D",
+            "text": "Confirmación mide líneas ejecutadas; regresión decide la prioridad del defecto."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "La confirmación comprueba la corrección del defecto tratado; la regresión busca consecuencias adversas del cambio. Se complementan. Su alcance se elige según impacto; no son garantía universal ni equivalen a priorización o cobertura.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Invierte los objetivos de ambas actividades.",
+            "B": "Confunde las actividades con revisión estática y aceptación de negocio.",
+            "D": "Cobertura y priorización no definen confirmación ni regresión."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 11.8. Gestión de defectos",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Ciclo: registrar → clasificar severidad/prioridad → asignar → corregir → retest → cerrar/reabrir. **Severidad** refleja impacto; **prioridad** urgencia de resolución. La regresión comprueba que cambios no rompen lo existente; el retest confirma el defecto concreto.",
+          "evidence_sha256": "a9f479c3abae71661b2bc1ec2f6acd23f92b6d1c47db48583b3bbed7e1eec174",
+          "record_sha256": "6055bb346a166ac45ea6b566b8af441b14864da521a622ff6f368f39380c750b",
+          "review_id": "AI-GSI-B3-T07-019",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "ISTQB: Certified Tester Foundation Level Syllabus",
+              "url": "https://istqb.org/?download_id=3345&sdm_process_download=1",
+              "locator": "4.2.2 valores límite; 4.2.3 tablas de decisión; 2.2.3 confirmación/regresión; 5.1.3 criterios de salida; 5.5 severidad y prioridad",
+              "version": "v4.0.1 de 15-09-2024, PDF de 78 páginas leído textualmente el 29-10-2026. Se conservan técnicas y distinciones del temario; no se atribuye calibración o acreditación al lote",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-057"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 11.8. Gestión de defectos",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar retest/confirmación frente a regresión y clave C; comparar objetivos próximos sin distractores de hardware ajenos."
+      ],
+      "references": [
+        {
+          "title": "ISTQB: Certified Tester Foundation Level Syllabus",
+          "url": "https://istqb.org/?download_id=3345&sdm_process_download=1",
+          "locator": "4.2.2 valores límite; 4.2.3 tablas de decisión; 2.2.3 confirmación/regresión; 5.1.3 criterios de salida; 5.5 severidad y prioridad",
+          "version": "v4.0.1 de 15-09-2024, PDF de 78 páginas leído textualmente el 29-10-2026. Se conservan técnicas y distinciones del temario; no se atribuye calibración o acreditación al lote",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T07-020",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "488bfe0998c7e2eaae710ac2e045b11457ecb85318516f0fbf63b4f7204f8fb1",
+      "content_sha256": "5e82795551b6e96b008cf237ebdb52362ec16d715238c395702f6febbbaf1e8a",
+      "before": {
+        "id": "AI-GSI-B3-T07-020",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T07",
+        "subtopic": "Gestión de defectos",
+        "exam": null,
+        "statement": "¿Qué diferencia severidad y prioridad de un defecto?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Ambas son tamaño del archivo"
+          },
+          {
+            "id": "B",
+            "text": "Severidad es quién lo registra"
+          },
+          {
+            "id": "C",
+            "text": "Severidad es impacto; prioridad es urgencia de resolución"
+          },
+          {
+            "id": "D",
+            "text": "Prioridad mide solo antigüedad"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Impacto y urgencia pueden diferir según contexto y planificación.",
+          "incorrect": "Impacto y urgencia pueden diferir según contexto y planificación."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 11.8. Gestión de defectos",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Ciclo: registrar → clasificar severidad/prioridad → asignar → corregir → retest → cerrar/reabrir. **Severidad** refleja impacto; **prioridad** urgencia de resolución. La regresión comprueba que cambios no rompen lo existente; el retest confirma el defecto concreto.",
+          "evidence_sha256": "a9f479c3abae71661b2bc1ec2f6acd23f92b6d1c47db48583b3bbed7e1eec174",
+          "record_sha256": "c97695de5151c9be62c6d643951d014718642ebd1c542b3e0aa6d1ff8d5706b0",
+          "review_id": "AI-GSI-B3-T07-020",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 11.8. Gestión de defectos",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T07-020",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T07",
+        "subtopic": "Gestión de defectos",
+        "exam": null,
+        "statement": "¿Qué diferencia severidad y prioridad de un defecto?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Severidad expresa urgencia de reparación; prioridad expresa grado de impacto."
+          },
+          {
+            "id": "B",
+            "text": "Severidad cuenta las líneas del parche; prioridad cuenta los casos de prueba."
+          },
+          {
+            "id": "C",
+            "text": "Severidad expresa impacto; prioridad orienta urgencia u orden de resolución."
+          },
+          {
+            "id": "D",
+            "text": "Severidad mide antigüedad; prioridad mide esfuerzo técnico estimado del arreglo."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Severidad valora impacto; prioridad guía qué resolver antes. Se relacionan, pero contexto y compromisos pueden producir órdenes distintos. Antigüedad, tamaño del parche y esfuerzo son otros datos de gestión.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Intercambia impacto y prioridad de resolución.",
+            "B": "El tamaño del parche y el número de casos no son esas clasificaciones.",
+            "D": "Antigüedad y esfuerzo no definen impacto ni prioridad."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 11.8. Gestión de defectos",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Ciclo: registrar → clasificar severidad/prioridad → asignar → corregir → retest → cerrar/reabrir. **Severidad** refleja impacto; **prioridad** urgencia de resolución. La regresión comprueba que cambios no rompen lo existente; el retest confirma el defecto concreto.",
+          "evidence_sha256": "a9f479c3abae71661b2bc1ec2f6acd23f92b6d1c47db48583b3bbed7e1eec174",
+          "record_sha256": "c97695de5151c9be62c6d643951d014718642ebd1c542b3e0aa6d1ff8d5706b0",
+          "review_id": "AI-GSI-B3-T07-020",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "ISTQB: Certified Tester Foundation Level Syllabus",
+              "url": "https://istqb.org/?download_id=3345&sdm_process_download=1",
+              "locator": "4.2.2 valores límite; 4.2.3 tablas de decisión; 2.2.3 confirmación/regresión; 5.1.3 criterios de salida; 5.5 severidad y prioridad",
+              "version": "v4.0.1 de 15-09-2024, PDF de 78 páginas leído textualmente el 29-10-2026. Se conservan técnicas y distinciones del temario; no se atribuye calibración o acreditación al lote",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-057"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.07; sección 11.8. Gestión de defectos",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar impacto/urgencia y clave C; clasificaciones y métricas cercanas, sin equiparar prioridad con severidad."
+      ],
+      "references": [
+        {
+          "title": "ISTQB: Certified Tester Foundation Level Syllabus",
+          "url": "https://istqb.org/?download_id=3345&sdm_process_download=1",
+          "locator": "4.2.2 valores límite; 4.2.3 tablas de decisión; 2.2.3 confirmación/regresión; 5.1.3 criterios de salida; 5.5 severidad y prioridad",
+          "version": "v4.0.1 de 15-09-2024, PDF de 78 páginas leído textualmente el 29-10-2026. Se conservan técnicas y distinciones del temario; no se atribuye calibración o acreditación al lote",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T08-001",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "72de3b54488a129fb06814356b901e3402cd0302f849f966fd95b7a0cc5da333",
+      "content_sha256": "4e80ef43b60baa306ca3b34010532a0c57024c916086e7f643e5eb54e3be68a9",
+      "before": {
+        "id": "AI-GSI-B3-T08-001",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T08",
+        "subtopic": "Instalación",
+        "exam": null,
+        "statement": "¿Qué caracteriza una instalación controlada?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Solo copiar el ejecutable"
+          },
+          {
+            "id": "B",
+            "text": "Pasos improvisados sin registro"
+          },
+          {
+            "id": "C",
+            "text": "Omitir integraciones y certificados"
+          },
+          {
+            "id": "D",
+            "text": "Configuración y validación repetibles y auditables"
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Instalar incluye entorno, datos, integraciones, secretos y observabilidad.",
+          "incorrect": "Instalar incluye entorno, datos, integraciones, secretos y observabilidad."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.08; sección 1. Instalación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Preparación de entornos, configuración, datos, integraciones, certificados/secretos, observabilidad y validación. Todo debe poder repetirse y auditarse.",
+          "evidence_sha256": "a67a454837c327833e14f4a48f89475f3f1fd47e15a48dcc5d81498836be81a2",
+          "record_sha256": "d7a91ce79fa75b77c7fe24d4e5657d5675151edd2862184c672f65acadc6bbbd",
+          "review_id": "AI-GSI-B3-T08-001",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.08; sección 1. Instalación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T08-001",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T08",
+        "subtopic": "Instalación",
+        "exam": null,
+        "statement": "¿Qué caracteriza una instalación controlada?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Copiar el ejecutable y dar por validado el entorno si el proceso arranca."
+          },
+          {
+            "id": "B",
+            "text": "Repetir comandos sin registrar versiones, parámetros o resultados."
+          },
+          {
+            "id": "C",
+            "text": "Comprobar archivos presentes sin verificar configuración o integraciones necesarias."
+          },
+          {
+            "id": "D",
+            "text": "Aplicar pasos y configuración controlados, registrar versión y validar resultados."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Una instalación controlada identifica entradas, entorno y configuración, aplica un procedimiento repetible y conserva evidencia de validación. Arrancar el proceso no prueba que dependencias, integraciones o permisos sean adecuados. Configuración controlada no significa publicar secretos en el repositorio: credenciales y parámetros sensibles necesitan su mecanismo protegido. El detalle y la evidencia se ajustan al riesgo del sistema.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "El arranque es una comprobación parcial; puede haber fallos de integración o configuración que no aparezcan al iniciar.",
+            "B": "Sin entradas y resultados identificados no se sabe qué se repitió ni cómo contrastarlo o auditarlo.",
+            "C": "La presencia física no demuestra que el servicio pueda cumplir sus funciones en ese entorno."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.08; sección 1. Instalación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Preparación de entornos, configuración, datos, integraciones, certificados/secretos, observabilidad y validación. Todo debe poder repetirse y auditarse.",
+          "evidence_sha256": "a67a454837c327833e14f4a48f89475f3f1fd47e15a48dcc5d81498836be81a2",
+          "record_sha256": "d7a91ce79fa75b77c7fe24d4e5657d5675151edd2862184c672f65acadc6bbbd",
+          "review_id": "AI-GSI-B3-T08-001",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "NIST SP 800-128: Security-Focused Configuration Management",
+              "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-128.pdf",
+              "locator": "3.2 configuración de línea base; 3.3.2 solicitud, impacto, pruebas, aprobación, implementación y verificación; 3.3.3 análisis de impacto",
+              "version": "Agosto de 2011 con actualizaciones hasta 10-10-2019 según portada, PDF de 99 páginas leído textualmente el 29-10-2026. Se usa el proceso y evidencia, sin exigir un CAB para cada cambio",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-057"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.08; sección 1. Instalación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar repetibilidad/auditoría y clave D; distinguir instalación verificable de copia, arranque y repetición sin evidencia."
+      ],
+      "references": [
+        {
+          "title": "NIST SP 800-128: Security-Focused Configuration Management",
+          "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-128.pdf",
+          "locator": "3.2 configuración de línea base; 3.3.2 solicitud, impacto, pruebas, aprobación, implementación y verificación; 3.3.3 análisis de impacto",
+          "version": "Agosto de 2011 con actualizaciones hasta 10-10-2019 según portada, PDF de 99 páginas leído textualmente el 29-10-2026. Se usa el proceso y evidencia, sin exigir un CAB para cada cambio",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T08-002",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "9cd41d31365a61709d4dd96bba464b44b372accbe7d26c7f47b880925cd721a6",
+      "content_sha256": "4e269a88d4a22cc4c42712ce0577b06a9564fcb33a35184a91881d94128c1984",
+      "before": {
+        "id": "AI-GSI-B3-T08-002",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T08",
+        "subtopic": "Migración",
+        "exam": null,
+        "statement": "¿Qué debe preceder a migrar datos a producción?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Suponer compatibilidad por compartir formato"
+          },
+          {
+            "id": "B",
+            "text": "Eliminar el origen antes de validar"
+          },
+          {
+            "id": "C",
+            "text": "Omitir inventario"
+          },
+          {
+            "id": "D",
+            "text": "Mapeo, limpieza, pruebas y reconciliación"
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "La preparación reduce pérdidas e incoherencias durante la transición.",
+          "incorrect": "La preparación reduce pérdidas e incoherencias durante la transición."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.08; sección 2. Migración",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Inventario, mapeo de datos, limpieza, pruebas, reconciliación, ventana de cambio, rollback y validación. Estrategias: big bang, fases, paralelo y piloto.",
+          "evidence_sha256": "d4838cde7809bd14656ccfbca3df1b4eaa0e5d35d630c1dc5b4e601bcd5347b4",
+          "record_sha256": "0b136efe892dfcad8efe7ed984092e0d9a17455dc46f672ff0038d2c04053723",
+          "review_id": "AI-GSI-B3-T08-002",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.08; sección 2. Migración",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T08-002",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T08",
+        "subtopic": "Migración",
+        "exam": null,
+        "statement": "Antes de migrar datos a producción, ¿qué preparación permite contrastar correspondencia, calidad y capacidad de recuperación?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Considerar equivalentes los datos de igual formato sin revisar su significado o reglas."
+          },
+          {
+            "id": "B",
+            "text": "Reservar las comprobaciones para después de retirar el origen y sus copias."
+          },
+          {
+            "id": "C",
+            "text": "Validar que exista el esquema destino sin ensayar la transformación de registros."
+          },
+          {
+            "id": "D",
+            "text": "Definir mapeos, tratar calidad, ensayar la migración y acordar reconciliación y recuperación."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Preparar la migración exige saber qué se mueve, cómo se transforma y cómo se comprobará. Se identifican reglas, calidad, dependencias, ensayos, criterios de reconciliación y recuperación antes del cambio real. El mismo formato puede representar unidades o significados diferentes. La limpieza debe ser trazable y responder a reglas; no autoriza eliminar datos arbitrariamente.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Formato igual no prueba correspondencia semántica o cumplimiento de reglas de destino.",
+            "B": "Retirar medios de recuperación antes de validar aumenta el riesgo y dificulta corregir pérdidas.",
+            "C": "Un esquema existente no prueba mapeo, calidad o completitud de las filas migradas."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.08; sección 2. Migración",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Inventario, mapeo de datos, limpieza, pruebas, reconciliación, ventana de cambio, rollback y validación. Estrategias: big bang, fases, paralelo y piloto.",
+          "evidence_sha256": "d4838cde7809bd14656ccfbca3df1b4eaa0e5d35d630c1dc5b4e601bcd5347b4",
+          "record_sha256": "0b136efe892dfcad8efe7ed984092e0d9a17455dc46f672ff0038d2c04053723",
+          "review_id": "AI-GSI-B3-T08-002",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "AWS Prescriptive Guidance: Pre-cutover stage",
+              "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/best-practices-migration-cutover/pre-cutover-stage.html",
+              "locator": "Developing a cutover plan; Creating a cutover runbook: dependencias, pruebas, responsables, duraciones y tiempo de rollback",
+              "version": "Página pública en ruta latest leída el 29-10-2026. Ejemplo de planificación; no se migra infraestructura o configura AWS",
+              "checked_at": "2026-10-29"
+            },
+            {
+              "title": "UK Government: The Government Data Quality Framework",
+              "url": "https://www.gov.uk/government/publications/the-government-data-quality-framework/the-government-data-quality-framework",
+              "locator": "Data lifecycle; Data quality dimensions: completeness, uniqueness, consistency, validity y accuracy",
+              "version": "Publicado el 03-12-2020 según página, leído el 29-10-2026. Completitud y exactitud son distintas; marco de ejemplo, no obligación española inferida",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-057"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.08; sección 2. Migración",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar preparación de migración y clave D; relacionar mapeo/calidad/ensayo/reconciliación con recuperación sin prometer pérdida cero."
+      ],
+      "references": [
+        {
+          "title": "AWS Prescriptive Guidance: Pre-cutover stage",
+          "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/best-practices-migration-cutover/pre-cutover-stage.html",
+          "locator": "Developing a cutover plan; Creating a cutover runbook: dependencias, pruebas, responsables, duraciones y tiempo de rollback",
+          "version": "Página pública en ruta latest leída el 29-10-2026. Ejemplo de planificación; no se migra infraestructura o configura AWS",
+          "checked_at": "2026-10-29"
+        },
+        {
+          "title": "UK Government: The Government Data Quality Framework",
+          "url": "https://www.gov.uk/government/publications/the-government-data-quality-framework/the-government-data-quality-framework",
+          "locator": "Data lifecycle; Data quality dimensions: completeness, uniqueness, consistency, validity y accuracy",
+          "version": "Publicado el 03-12-2020 según página, leído el 29-10-2026. Completitud y exactitud son distintas; marco de ejemplo, no obligación española inferida",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T08-003",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "0c09e78e463eab50374b12aa86fbe7391ed092d1134e037d1041c8ba05928d96",
+      "content_sha256": "98de1819e986b8ec4c9ddbb33a98abc15760ce610eab514d81ee1bb19827fa33",
+      "before": {
+        "id": "AI-GSI-B3-T08-003",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T08",
+        "subtopic": "Migración",
+        "exam": null,
+        "statement": "¿Qué debe definirse alrededor de una ventana de migración?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Ausencia de responsables"
+          },
+          {
+            "id": "B",
+            "text": "Validación y rollback"
+          },
+          {
+            "id": "C",
+            "text": "Solo la hora de inicio"
+          },
+          {
+            "id": "D",
+            "text": "Borrado inmediato de todas las copias"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "La ventana debe permitir decidir y recuperar ante fallos.",
+          "incorrect": "La ventana debe permitir decidir y recuperar ante fallos."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.08; sección 2. Migración",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Inventario, mapeo de datos, limpieza, pruebas, reconciliación, ventana de cambio, rollback y validación. Estrategias: big bang, fases, paralelo y piloto.",
+          "evidence_sha256": "d4838cde7809bd14656ccfbca3df1b4eaa0e5d35d630c1dc5b4e601bcd5347b4",
+          "record_sha256": "dc87ae91d65d09cc5269be469ecd3e2fb08df51653c077bf70438c09a4e94b92",
+          "review_id": "AI-GSI-B3-T08-003",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.08; sección 2. Migración",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T08-003",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T08",
+        "subtopic": "Migración",
+        "exam": null,
+        "statement": "Una migración tiene ventana de 23:00 a 01:00 y el rollback requiere 30 minutos. ¿Qué debe quedar definido antes de empezar para no agotar el tiempo de recuperación?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Fijar el inicio y dejar abierta la duración de validación durante la ventana."
+          },
+          {
+            "id": "B",
+            "text": "Fijar criterios de validación y un límite para decidir retorno con margen suficiente."
+          },
+          {
+            "id": "C",
+            "text": "Empezar a validar al cerrar la ventana y decidir después si se necesita volver."
+          },
+          {
+            "id": "D",
+            "text": "Medir el tiempo de rollback por primera vez cuando haya fallado la migración."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "La ventana necesita criterios, responsables y puntos de decisión que dejen tiempo de recuperación. Con fin a la 01:00 y rollback de 30 minutos, sin otro margen, decidir después de las 00:30 ya no permitiría terminar dentro de esa ventana. Si hay diagnóstico, comunicación o verificación adicional hay que reservar más. Deben contemplarse también datos nuevos y condiciones del retorno, no solo su duración.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Sin acotar validación y decisión puede agotarse el tiempo necesario para retornar.",
+            "C": "Esperar a cerrar la ventana impide usarla para una recuperación de 30 minutos.",
+            "D": "Conocer la duración tras el fallo llega tarde para presupuestarla y fijar un punto de decisión previo."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.08; sección 2. Migración",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Inventario, mapeo de datos, limpieza, pruebas, reconciliación, ventana de cambio, rollback y validación. Estrategias: big bang, fases, paralelo y piloto.",
+          "evidence_sha256": "d4838cde7809bd14656ccfbca3df1b4eaa0e5d35d630c1dc5b4e601bcd5347b4",
+          "record_sha256": "dc87ae91d65d09cc5269be469ecd3e2fb08df51653c077bf70438c09a4e94b92",
+          "review_id": "AI-GSI-B3-T08-003",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "AWS Prescriptive Guidance: Pre-cutover stage",
+              "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/best-practices-migration-cutover/pre-cutover-stage.html",
+              "locator": "Developing a cutover plan; Creating a cutover runbook: dependencias, pruebas, responsables, duraciones y tiempo de rollback",
+              "version": "Página pública en ruta latest leída el 29-10-2026. Ejemplo de planificación; no se migra infraestructura o configura AWS",
+              "checked_at": "2026-10-29"
+            },
+            {
+              "title": "AWS Prescriptive Guidance: Cutover stage",
+              "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/best-practices-migration-cutover/cutover-stage.html",
+              "locator": "Rollback: checkpoints, criterios, decisor, datos nuevos y pruebas de restauración en entornos inferiores",
+              "version": "Página pública en ruta latest leída el 29-10-2026. La recuperación debe contemplar datos y tiempo; no basta cambiar binarios o redirigir tráfico en cualquier caso",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-057"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.08; sección 2. Migración",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar validación/rollback y clave B; microcaso de ventana nocturna para evaluar margen y decisión antes del agotamiento."
+      ],
+      "references": [
+        {
+          "title": "AWS Prescriptive Guidance: Pre-cutover stage",
+          "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/best-practices-migration-cutover/pre-cutover-stage.html",
+          "locator": "Developing a cutover plan; Creating a cutover runbook: dependencias, pruebas, responsables, duraciones y tiempo de rollback",
+          "version": "Página pública en ruta latest leída el 29-10-2026. Ejemplo de planificación; no se migra infraestructura o configura AWS",
+          "checked_at": "2026-10-29"
+        },
+        {
+          "title": "AWS Prescriptive Guidance: Cutover stage",
+          "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/best-practices-migration-cutover/cutover-stage.html",
+          "locator": "Rollback: checkpoints, criterios, decisor, datos nuevos y pruebas de restauración en entornos inferiores",
+          "version": "Página pública en ruta latest leída el 29-10-2026. La recuperación debe contemplar datos y tiempo; no basta cambiar binarios o redirigir tráfico en cualquier caso",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T08-004",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "2482d3354414e32a71a309978df898726f971cfdee4ffd079f5234e2eb9b3a6f",
+      "content_sha256": "56b11221492489ef1b241a1e3aff31ac139662da8d947f6a002c0803471ecf2a",
+      "before": {
+        "id": "AI-GSI-B3-T08-004",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T08",
+        "subtopic": "Gestión del cambio",
+        "exam": null,
+        "statement": "¿Qué secuencia corresponde a gestión de cambio?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Ejecutar primero y olvidar el registro"
+          },
+          {
+            "id": "B",
+            "text": "Evaluar impacto, aprobar, planificar, ejecutar y validar"
+          },
+          {
+            "id": "C",
+            "text": "Aprobar sin conocer riesgo"
+          },
+          {
+            "id": "D",
+            "text": "Cerrar antes de comprobar"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "El cambio sigue controles proporcionales y termina con validación y cierre.",
+          "incorrect": "El cambio sigue controles proporcionales y termina con validación y cierre."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.08; sección 3. Gestión del cambio",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "RFC/cambio → evaluación de impacto/riesgo → aprobación según modelo → planificación → ejecución → validación → cierre. Cambios estándar/preautorizados pueden agilizar operación.",
+          "evidence_sha256": "cc0d937300ab09b5645ab7ec19deba4da66ac434287beeb8541195340fca2600",
+          "record_sha256": "1511a164ce133b8626907c9fc581a5252037d358c65bc252af56ae38b657635c",
+          "review_id": "AI-GSI-B3-T08-004",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.08; sección 3. Gestión del cambio",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T08-004",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T08",
+        "subtopic": "Gestión del cambio",
+        "exam": null,
+        "statement": "En un cambio planificado que requiere autorización específica, ¿qué secuencia conserva control previo y cierre con evidencia?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Ejecutar → medir impacto → solicitar autorización → registrar el cierre."
+          },
+          {
+            "id": "B",
+            "text": "Evaluar y planificar → autorizar → ejecutar → validar y registrar el cierre."
+          },
+          {
+            "id": "C",
+            "text": "Autorizar → ejecutar → definir alcance y riesgos → validar resultados."
+          },
+          {
+            "id": "D",
+            "text": "Evaluar → cerrar la solicitud → ejecutar → documentar desviaciones."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Para el cambio planificado que requiere autorización específica se evalúan impacto y plan, se obtiene la decisión correspondiente, se ejecuta y se valida antes del cierre. La profundidad, autoridad y pasos concretos dependen del modelo. Una urgencia o un cambio preautorizado puede tener otro tratamiento, manteniendo controles y trazabilidad; no se exige un comité para toda modificación.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "La evaluación y autorización llegan después de ejecutar, por lo que no controlan previamente el cambio del caso.",
+            "C": "Definir alcance y riesgo después de ejecutar impide basar en ellos la autorización.",
+            "D": "Cerrar antes de la ejecución y validación deja el cierre sin evidencia del resultado."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.08; sección 3. Gestión del cambio",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "RFC/cambio → evaluación de impacto/riesgo → aprobación según modelo → planificación → ejecución → validación → cierre. Cambios estándar/preautorizados pueden agilizar operación.",
+          "evidence_sha256": "cc0d937300ab09b5645ab7ec19deba4da66ac434287beeb8541195340fca2600",
+          "record_sha256": "1511a164ce133b8626907c9fc581a5252037d358c65bc252af56ae38b657635c",
+          "review_id": "AI-GSI-B3-T08-004",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "NIST SP 800-128: Security-Focused Configuration Management",
+              "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-128.pdf",
+              "locator": "3.2 configuración de línea base; 3.3.2 solicitud, impacto, pruebas, aprobación, implementación y verificación; 3.3.3 análisis de impacto",
+              "version": "Agosto de 2011 con actualizaciones hasta 10-10-2019 según portada, PDF de 99 páginas leído textualmente el 29-10-2026. Se usa el proceso y evidencia, sin exigir un CAB para cada cambio",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-057"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.08; sección 3. Gestión del cambio",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar evaluación/autorización/ejecución/validación y clave B; explicitar cambio planificado no preautorizado y evitar una secuencia universal rígida."
+      ],
+      "references": [
+        {
+          "title": "NIST SP 800-128: Security-Focused Configuration Management",
+          "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-128.pdf",
+          "locator": "3.2 configuración de línea base; 3.3.2 solicitud, impacto, pruebas, aprobación, implementación y verificación; 3.3.3 análisis de impacto",
+          "version": "Agosto de 2011 con actualizaciones hasta 10-10-2019 según portada, PDF de 99 páginas leído textualmente el 29-10-2026. Se usa el proceso y evidencia, sin exigir un CAB para cada cambio",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T08-005",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "a27248373615785d09218063c898a697e2b653663f108baebda5dda31121342f",
+      "content_sha256": "0a486f66eaa8d62d85baff6034c93e0b3eec894ebc4e641c3a9dbe723c2f6c72",
+      "before": {
+        "id": "AI-GSI-B3-T08-005",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T08",
+        "subtopic": "Gestión del cambio",
+        "exam": null,
+        "statement": "¿Qué puede agilizar cambios repetibles de bajo riesgo bajo un modelo definido?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Suprimir toda trazabilidad"
+          },
+          {
+            "id": "B",
+            "text": "Cambios estándar preautorizados"
+          },
+          {
+            "id": "C",
+            "text": "Declarar todos los cambios urgentes"
+          },
+          {
+            "id": "D",
+            "text": "Omitir criterios de aceptación"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "La preautorización se encuadra en un procedimiento; no elimina controles.",
+          "incorrect": "La preautorización se encuadra en un procedimiento; no elimina controles."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.08; sección 3. Gestión del cambio",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "RFC/cambio → evaluación de impacto/riesgo → aprobación según modelo → planificación → ejecución → validación → cierre. Cambios estándar/preautorizados pueden agilizar operación.",
+          "evidence_sha256": "cc0d937300ab09b5645ab7ec19deba4da66ac434287beeb8541195340fca2600",
+          "record_sha256": "ae2282cccbfdbe206f3bc703e9f7c3b6bc62b67f4e0200816cbcea3a6a433a19",
+          "review_id": "AI-GSI-B3-T08-005",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.08; sección 3. Gestión del cambio",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T08-005",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T08",
+        "subtopic": "Gestión del cambio",
+        "exam": null,
+        "statement": "¿Qué puede agilizar cambios repetibles de bajo riesgo bajo un modelo definido?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Cambios normales con autorización retrospectiva por defecto."
+          },
+          {
+            "id": "B",
+            "text": "Cambios estándar conforme a un modelo previamente autorizado."
+          },
+          {
+            "id": "C",
+            "text": "Cambios de emergencia declarados para evitar comprobar elegibilidad."
+          },
+          {
+            "id": "D",
+            "text": "Cambios fuera del registro porque el mismo trabajo ya se realizó antes."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Un cambio estándar es repetible, de bajo riesgo y se realiza mediante un proceso documentado y aprobado de antemano. Cada ejecución debe cumplir las condiciones del modelo y conservar el control y registro correspondientes. Haber repetido una tarea no la convierte automáticamente en estándar; cambiar su alcance o riesgo puede requerir otra evaluación.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Autorizar retrospectivamente por defecto no equivale a un modelo estándar aprobado antes de ejecutar.",
+            "C": "La emergencia responde a urgencia real y tratamiento definido, no a evitar condiciones de elegibilidad.",
+            "D": "La repetición no elimina trazabilidad ni demuestra que exista una preautorización válida."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.08; sección 3. Gestión del cambio",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "RFC/cambio → evaluación de impacto/riesgo → aprobación según modelo → planificación → ejecución → validación → cierre. Cambios estándar/preautorizados pueden agilizar operación.",
+          "evidence_sha256": "cc0d937300ab09b5645ab7ec19deba4da66ac434287beeb8541195340fca2600",
+          "record_sha256": "ae2282cccbfdbe206f3bc703e9f7c3b6bc62b67f4e0200816cbcea3a6a433a19",
+          "review_id": "AI-GSI-B3-T08-005",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Atlassian: Types of change management for ITSM teams",
+              "url": "https://www.atlassian.com/itsm/change-management/types",
+              "locator": "Standard changes: bajo riesgo, repetición, proceso documentado y preaprobado; contraste con normal/emergency",
+              "version": "Página pública leída el 29-10-2026, sin edición numerada indicada. La preautorización requiere elegibilidad y modelo; no elimina registro, validación o controles",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-057"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.08; sección 3. Gestión del cambio",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar cambios estándar preautorizados y clave B; distinguir elegibilidad, repetición, urgencia y ausencia de registro."
+      ],
+      "references": [
+        {
+          "title": "Atlassian: Types of change management for ITSM teams",
+          "url": "https://www.atlassian.com/itsm/change-management/types",
+          "locator": "Standard changes: bajo riesgo, repetición, proceso documentado y preaprobado; contraste con normal/emergency",
+          "version": "Página pública leída el 29-10-2026, sin edición numerada indicada. La preautorización requiere elegibilidad y modelo; no elimina registro, validación o controles",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T08-006",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "9ac2c08649c6ca27f7463e6587f680412ef1256dca69289f4763f60a7e18796d",
+      "content_sha256": "1d4eb88194793b9879cda566890b0e2ee1b50c51045c7be9827a0e72ed616e6d",
+      "before": {
+        "id": "AI-GSI-B3-T08-006",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T08",
+        "subtopic": "Postimplantación",
+        "exam": null,
+        "statement": "¿Qué describe hypercare después de implantar?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Solo compra de licencias"
+          },
+          {
+            "id": "B",
+            "text": "Retirada inmediata del soporte"
+          },
+          {
+            "id": "C",
+            "text": "Soporte reforzado y seguimiento inicial"
+          },
+          {
+            "id": "D",
+            "text": "Congelación eterna del producto"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "El soporte reforzado ayuda a estabilizar y atender incidencias de adopción.",
+          "incorrect": "El soporte reforzado ayuda a estabilizar y atender incidencias de adopción."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.08; sección 4. Postimplantación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Hypercare, monitorización, soporte reforzado, métricas, incidencias, adopción, rendimiento y revisión post-implantación. Comparar beneficios reales con caso de negocio.",
+          "evidence_sha256": "49e46d0c210a8ebaec4d7367fbefcc03c545f60f636d2690ebeba13da493b82b",
+          "record_sha256": "7dab75b404aa97c6342620bc8ab3eeaf4536344627e8e209d94a66fdd4182470",
+          "review_id": "AI-GSI-B3-T08-006",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.08; sección 4. Postimplantación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T08-006",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T08",
+        "subtopic": "Postimplantación",
+        "exam": null,
+        "statement": "¿Qué describe hypercare después de implantar?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Soporte ordinario sin refuerzo específico desde el primer día de uso del sistema."
+          },
+          {
+            "id": "B",
+            "text": "Congelación de la operación hasta que no quede ninguna incidencia pendiente."
+          },
+          {
+            "id": "C",
+            "text": "Refuerzo inicial de soporte y seguimiento con criterios de salida."
+          },
+          {
+            "id": "D",
+            "text": "Seguimiento limitado al cierre administrativo sin atender la operación inicial."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Hypercare es un periodo inicial tras la puesta en servicio con atención y recursos reforzados para estabilizar operación y adopción. Se definen responsables, seguimiento y criterios para pasar al soporte ordinario. No tiene una duración universal ni sustituye el soporte posterior. La transición necesita evidencia de que el servicio y el equipo de soporte están preparados.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "El caso de hypercare incorpora refuerzo inicial; pasar directamente a soporte ordinario no describe ese periodo.",
+            "B": "El refuerzo acompaña la operación y trata incidencias; no exige paralizar el servicio hasta una ausencia absoluta.",
+            "D": "Cerrar documentación sin atender operación y usuarios no cumple el propósito del soporte reforzado."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.08; sección 4. Postimplantación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Hypercare, monitorización, soporte reforzado, métricas, incidencias, adopción, rendimiento y revisión post-implantación. Comparar beneficios reales con caso de negocio.",
+          "evidence_sha256": "49e46d0c210a8ebaec4d7367fbefcc03c545f60f636d2690ebeba13da493b82b",
+          "record_sha256": "7dab75b404aa97c6342620bc8ab3eeaf4536344627e8e209d94a66fdd4182470",
+          "review_id": "AI-GSI-B3-T08-006",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Microsoft Learn: Plan your support operations",
+              "url": "https://learn.microsoft.com/en-us/dynamics365/guidance/implementation-guide/transition-to-support-operations",
+              "locator": "Hypercare: recursos reforzados tras go-live, criterios de salida, expectativas, documentación y transición a soporte",
+              "version": "Página pública de guía Dynamics365 leída el 29-10-2026. El cuerpo se obtiene junto a un aviso de autorización; no se inicia sesión ni se intenta eludir acceso. No se fija duración universal",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-057"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.08; sección 4. Postimplantación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar soporte reforzado inicial y clave C; precisar seguimiento y salida, sin plazo universal o abandono de soporte posterior."
+      ],
+      "references": [
+        {
+          "title": "Microsoft Learn: Plan your support operations",
+          "url": "https://learn.microsoft.com/en-us/dynamics365/guidance/implementation-guide/transition-to-support-operations",
+          "locator": "Hypercare: recursos reforzados tras go-live, criterios de salida, expectativas, documentación y transición a soporte",
+          "version": "Página pública de guía Dynamics365 leída el 29-10-2026. El cuerpo se obtiene junto a un aviso de autorización; no se inicia sesión ni se intenta eludir acceso. No se fija duración universal",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T08-007",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "f4574ce22fad3084a1b99da71647f483e4c0b7341758aeb7a8c705db1a952e3e",
+      "content_sha256": "77f601c58fcc4fe1bad7d0097c95a01ef7d98e6d482b4a0011488df3fe1a8ef0",
+      "before": {
+        "id": "AI-GSI-B3-T08-007",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T08",
+        "subtopic": "Mantenimiento",
+        "exam": null,
+        "statement": "¿Cómo debe tratarse la deuda técnica?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Como riesgo y coste futuro a gestionar"
+          },
+          {
+            "id": "B",
+            "text": "Como una garantía de mayor calidad"
+          },
+          {
+            "id": "C",
+            "text": "Como sustituto de la planificación"
+          },
+          {
+            "id": "D",
+            "text": "Como algo que desaparece al desplegar"
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "La deuda puede aumentar costes de cambio y mantenimiento.",
+          "incorrect": "La deuda puede aumentar costes de cambio y mantenimiento."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.08; sección 5. Mantenimiento",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "* correctivo;\n* adaptativo;\n* perfectivo/evolutivo;\n* preventivo.\n\nLa deuda técnica aumenta coste futuro y debe gestionarse como riesgo/coste, no como categoría de mantenimiento separada necesariamente.",
+          "evidence_sha256": "f251b5bc67031c431ab9a456c5f7b5755d027e138443601b0731955fc577135f",
+          "record_sha256": "849d25e349cd51bfc22c8a5132041ebe08fdd11e2ada031aa53386851f041a71",
+          "review_id": "AI-GSI-B3-T08-007",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.08; sección 5. Mantenimiento",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T08-007",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T08",
+        "subtopic": "Mantenimiento",
+        "exam": null,
+        "statement": "¿Qué enfoque aplica la metáfora de deuda técnica a la evolución de un sistema?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Identificar su coste y riesgo de evolución y priorizar su tratamiento con el valor del cambio."
+          },
+          {
+            "id": "B",
+            "text": "Valorarla solo por los defectos visibles, sin considerar el coste de modificar el sistema."
+          },
+          {
+            "id": "C",
+            "text": "Tratarla como una categoría contable que no influye en esfuerzo técnico futuro."
+          },
+          {
+            "id": "D",
+            "text": "Dar por amortizado su coste cuando la versión que la contiene llega a producción."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "La metáfora de deuda técnica hace visible que una solución puede facilitar una entrega y añadir coste posterior de comprensión o cambio. Debe identificarse y gestionarse con sus riesgos y valor, sin confundirla con todo defecto o con una obligación de reescribirlo todo de inmediato. Desplegar no elimina por sí mismo las dificultades acumuladas. La deuda no es necesariamente una categoría separada de mantenimiento.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "Puede haber coste de evolución aun sin fallos visibles para el usuario; contar defectos no basta.",
+            "C": "La metáfora se refiere a consecuencias técnicas de diseño e implementación, no solo a un asiento contable.",
+            "D": "Poner en producción la solución no elimina el coste que sus decisiones puedan imponer después."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.08; sección 5. Mantenimiento",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "* correctivo;\n* adaptativo;\n* perfectivo/evolutivo;\n* preventivo.\n\nLa deuda técnica aumenta coste futuro y debe gestionarse como riesgo/coste, no como categoría de mantenimiento separada necesariamente.",
+          "evidence_sha256": "f251b5bc67031c431ab9a456c5f7b5755d027e138443601b0731955fc577135f",
+          "record_sha256": "849d25e349cd51bfc22c8a5132041ebe08fdd11e2ada031aa53386851f041a71",
+          "review_id": "AI-GSI-B3-T08-007",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Ward Cunningham: The WyCash Portfolio Management System",
+              "url": "https://c2.com/doc/oopsla92.html",
+              "locator": "Párrafos sobre consolidación, primera entrega como deuda y coste posterior como interés",
+              "version": "Experience Report OOPSLA92, texto fechado 26-03-1992, leído el 29-10-2026. Metáfora de coste técnico, no categoría contable o porcentaje financiero literal",
+              "checked_at": "2026-10-29"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-057"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.08; sección 5. Mantenimiento",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-29"
+      },
+      "reasons": [
+        "Conservar coste/riesgo futuro y clave A; reconocer valor inmediato y gestión contextual sin convertir toda deuda en fallo funcional."
+      ],
+      "references": [
+        {
+          "title": "Ward Cunningham: The WyCash Portfolio Management System",
+          "url": "https://c2.com/doc/oopsla92.html",
+          "locator": "Párrafos sobre consolidación, primera entrega como deuda y coste posterior como interés",
+          "version": "Experience Report OOPSLA92, texto fechado 26-03-1992, leído el 29-10-2026. Metáfora de coste técnico, no categoría contable o porcentaje financiero literal",
+          "checked_at": "2026-10-29"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    }
+  ]
+}

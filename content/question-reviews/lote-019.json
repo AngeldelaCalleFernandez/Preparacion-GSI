@@ -1,0 +1,3820 @@
+{
+  "version": 1,
+  "id": "GSI-EDITORIAL-019",
+  "prepared_at": "2026-10-27",
+  "baseline_commit": "e3e20ab879518c899806a70575eead28b3b35e6f",
+  "items": [
+    {
+      "id": "MAN-GSI-P17-017",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "7b8430397b20d3771833b3d040ca732ce594f212ff77209e86aeb536f538632f",
+      "content_sha256": "f2813c7730f1ae37599e2afccf9db060b7a88556d0249887e071d8ec148449ee",
+      "before": {
+        "id": "MAN-GSI-P17-017",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué afirmación es correcta sobre RISC y CISC como conceptos arquitectónicos?",
+        "options": [
+          {
+            "id": "A",
+            "text": "RISC utiliza únicamente instrucciones simples de longitud fija y garantiza que cada una termine en un ciclo en cualquier diseño."
+          },
+          {
+            "id": "B",
+            "text": "CISC exige microcódigo, impide segmentación y ejecuta directamente instrucciones complejas sin descomposición interna."
+          },
+          {
+            "id": "C",
+            "text": "Son categorías mutuamente excluyentes: un procesador moderno no puede exponer un repertorio y traducirlo a operaciones internas diferentes."
+          },
+          {
+            "id": "D",
+            "text": "Son enfoques de diseño del repertorio y ejecución de instrucciones; los procesadores modernos pueden combinar técnicas internas de ambos enfoques."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Son categorías de arquitectura de instrucciones, no de almacenamiento o red.",
+          "incorrect": "Según el solucionario: Son categorías de arquitectura de instrucciones, no de almacenamiento o red."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 17; índice nativo 3422",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 17; índice nativo 7665",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 17; índice nativo 3422",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-017",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué afirmación es correcta sobre RISC y CISC como conceptos arquitectónicos?",
+        "options": [
+          {
+            "id": "A",
+            "text": "RISC utiliza únicamente instrucciones simples de longitud fija y garantiza que cada una termine en un ciclo en cualquier diseño."
+          },
+          {
+            "id": "B",
+            "text": "CISC exige microcódigo, impide segmentación y ejecuta directamente instrucciones complejas sin descomposición interna."
+          },
+          {
+            "id": "C",
+            "text": "Son categorías mutuamente excluyentes: un procesador moderno no puede exponer un repertorio y traducirlo a operaciones internas diferentes."
+          },
+          {
+            "id": "D",
+            "text": "Son enfoques de diseño del repertorio y ejecución de instrucciones; los procesadores modernos pueden combinar técnicas internas de ambos enfoques."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "RISC y CISC describen enfoques históricos del repertorio de instrucciones y su diseño, pero una ISA no determina por sí sola la microarquitectura. Un procesador puede traducir instrucciones visibles a microoperaciones internas y emplear segmentación o ejecución fuera de orden. El ejemplo Intel documenta esa traducción; el manual histórico RISC-V separa ISA e implementación y admite codificación comprimida. Las etiquetas no garantizan un ciclo por instrucción ni una técnica interna exclusiva.",
+          "incorrect": "Revisa la arquitectura, relación o medida descrita por el contenido de la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Convierte tendencias de diseño en garantías universales. Una ISA de familia RISC puede tener extensiones de distintas longitudes, y la duración de instrucciones depende de implementación, dependencias y memoria.",
+            "B": "CISC no impide segmentar ni descomponer instrucciones. El ejemplo IA-32/Intel 64 usa pipeline, decodificadores y microoperaciones, con microcódigo para ciertos casos.",
+            "C": "Confunde repertorio visible e implementación. Que las instrucciones de la ISA se traduzcan a otras operaciones internas es compatible con conservar su comportamiento arquitectónico."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 17; índice nativo 3422",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 17; índice nativo 7665",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "The RISC-V Instruction Set Manual, Volume I: Base User-Level ISA",
+              "url": "https://docs.riscv.org/reference/isa/original/_attachments/riscv-unprivileged.pdf",
+              "locator": "Secciones 1 y 2.2, pp. impresas 1 y 4 (PDF pp. 3 y 6): separación de ISA y microarquitectura, longitud base y extensión comprimida; ejemplo histórico, no norma RISC-V actual",
+              "version": "Versión 1.0, 13-05-2011; UCB/EECS-2011-62; consulta real el 27-10-2026",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "Intel: Optimizing Earlier Generations of Intel 64 and IA-32 Processor Architectures, Throughput, and Latency",
+              "url": "https://cdrdv2-public.intel.com/821614/356477-Optimization-Reference-Manual-V2-050.pdf",
+              "locator": "Sección 2.1.1.1 y tabla 2-1, pp. 2-3–2-4: instrucciones IA-32/Intel 64 decodificadas a microoperaciones, pipeline y MSROM; ejemplo Sandy Bridge",
+              "version": "Documento 356477-050US, abril 2024; describe generaciones anteriores, sin presentarse como manual de CPU vigente; consulta real el 27-10-2026",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-019"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 17; índice nativo 3422",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar literalmente enunciado y alternativas ya defendibles; desarrollar separación ISA/microarquitectura y excepciones con ejemplos primarios, sin convertir etiquetas en reglas de ciclos."
+      ],
+      "references": [
+        {
+          "title": "The RISC-V Instruction Set Manual, Volume I: Base User-Level ISA",
+          "url": "https://docs.riscv.org/reference/isa/original/_attachments/riscv-unprivileged.pdf",
+          "locator": "Secciones 1 y 2.2, pp. impresas 1 y 4 (PDF pp. 3 y 6): separación de ISA y microarquitectura, longitud base y extensión comprimida; ejemplo histórico, no norma RISC-V actual",
+          "version": "Versión 1.0, 13-05-2011; UCB/EECS-2011-62; consulta real el 27-10-2026",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "Intel: Optimizing Earlier Generations of Intel 64 and IA-32 Processor Architectures, Throughput, and Latency",
+          "url": "https://cdrdv2-public.intel.com/821614/356477-Optimization-Reference-Manual-V2-050.pdf",
+          "locator": "Sección 2.1.1.1 y tabla 2-1, pp. 2-3–2-4: instrucciones IA-32/Intel 64 decodificadas a microoperaciones, pipeline y MSROM; ejemplo Sandy Bridge",
+          "version": "Documento 356477-050US, abril 2024; describe generaciones anteriores, sin presentarse como manual de CPU vigente; consulta real el 27-10-2026",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-019",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "1619bc55572840bcb907997df6c8222b669d80dcbf425df6a5576eaba329e0dc",
+      "content_sha256": "193346659b5556be11d29b535feab712204fbf24b2348f7052802a1cbcb72528",
+      "before": {
+        "id": "MAN-GSI-P17-019",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Por qué no debe confundirse capacidad con rendimiento?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Porque son exactamente la misma métrica."
+          },
+          {
+            "id": "B",
+            "text": "Porque la capacidad solo existe en sistemas móviles."
+          },
+          {
+            "id": "C",
+            "text": "Porque el rendimiento solo depende del tamaño del disco."
+          },
+          {
+            "id": "D",
+            "text": "Un sistema puede almacenar o admitir mucho volumen y, sin embargo, responder lentamente bajo carga."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Capacidad, throughput y latencia deben evaluarse por separado.",
+          "incorrect": "Según el solucionario: Capacidad, throughput y latencia deben evaluarse por separado."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 19; índice nativo 3619",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 19; índice nativo 8502",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 19; índice nativo 3619",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-019",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Un almacenamiento admite más terabytes que otro, pero responde más lentamente con una carga de acceso comparable. ¿Qué conclusión es coherente?",
+        "options": [
+          {
+            "id": "A",
+            "text": "La capacidad en terabytes equivale a la tasa de operaciones por segundo bajo carga."
+          },
+          {
+            "id": "B",
+            "text": "La capacidad nominal determina la latencia, con independencia del patrón de acceso."
+          },
+          {
+            "id": "C",
+            "text": "El espacio libre permite deducir el throughput sin medir las operaciones completadas."
+          },
+          {
+            "id": "D",
+            "text": "La capacidad mide volumen; latencia y throughput describen el rendimiento de la carga."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Admitir más volumen no implica responder antes ni completar más operaciones por segundo. La capacidad en TB describe cuánto puede almacenarse; la latencia expresa duración de respuesta y el throughput trabajo completado por tiempo. Deben medirse con una carga y condiciones comparables. El caso no indica la causa de la diferencia: no basta para atribuirla a disco, CPU, red o grado de ocupación.",
+          "incorrect": "Revisa la arquitectura, relación o medida descrita por el contenido de la alternativa elegida.",
+          "incorrect_options": {
+            "A": "TB es una unidad de volumen y operaciones por segundo es una tasa. El número de TB no se transforma directamente en throughput.",
+            "B": "La latencia depende de la carga, patrón de acceso y recursos, entre otros factores. La capacidad nominal no fija el tiempo de cada petición.",
+            "C": "El espacio disponible informa de ocupación, no de operaciones completadas por tiempo. Puede afectar al comportamiento, pero no sustituye la medición."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 19; índice nativo 3619",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 19; índice nativo 8502",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Microsoft Learn: Load testing for serving endpoints",
+              "url": "https://learn.microsoft.com/en-us/azure/databricks/machine-learning/model-serving/what-is-load-test",
+              "locator": "Load testing concepts and definitions, filas Latency, Client concurrency, Endpoint concurrency y Requests per second (RPS); se usan definiciones, no proporcionalidad universal entre métricas",
+              "version": "Documentación en línea; contexto de endpoint, sin convertir configuración concreta de Databricks en requisito general; consulta real el 27-10-2026",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "SPEC Open Systems Group Policies and Procedures",
+              "url": "https://www.spec.org/osg/policy/",
+              "locator": "Secciones 2.7.4–2.7.7: resultados comparables/reproducibles, condiciones documentadas, alcance y representatividad",
+              "version": "V2.22, 19-08-2024 indicada en Recent Revisions; fundamentos de medición, no reglas específicas de una ejecución SPEC propia; consulta real el 27-10-2026",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "IBM Cloud Docs: Block Storage capacity and performance",
+              "url": "https://cloud.ibm.com/docs/vpc?topic=vpc-capacity-performance",
+              "locator": "Capacity; How I/O size affects performance; How concurrency and queue depth affect performance: volumen, IOPS, throughput y tamaño de operación; se usan relaciones, no límites comerciales concretos",
+              "version": "Documentación en línea sin versión documental indicada; sin recomendación de perfil ni extrapolar cifras de producto; consulta real 27-10-2026",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-019"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 19; índice nativo 3619",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar diferencia capacidad/rendimiento y clave D; microcaso de dos almacenamientos para distinguir volumen, tiempo y tasa sin diagnosticar una causa no medida."
+      ],
+      "references": [
+        {
+          "title": "Microsoft Learn: Load testing for serving endpoints",
+          "url": "https://learn.microsoft.com/en-us/azure/databricks/machine-learning/model-serving/what-is-load-test",
+          "locator": "Load testing concepts and definitions, filas Latency, Client concurrency, Endpoint concurrency y Requests per second (RPS); se usan definiciones, no proporcionalidad universal entre métricas",
+          "version": "Documentación en línea; contexto de endpoint, sin convertir configuración concreta de Databricks en requisito general; consulta real el 27-10-2026",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "SPEC Open Systems Group Policies and Procedures",
+          "url": "https://www.spec.org/osg/policy/",
+          "locator": "Secciones 2.7.4–2.7.7: resultados comparables/reproducibles, condiciones documentadas, alcance y representatividad",
+          "version": "V2.22, 19-08-2024 indicada en Recent Revisions; fundamentos de medición, no reglas específicas de una ejecución SPEC propia; consulta real el 27-10-2026",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "IBM Cloud Docs: Block Storage capacity and performance",
+          "url": "https://cloud.ibm.com/docs/vpc?topic=vpc-capacity-performance",
+          "locator": "Capacity; How I/O size affects performance; How concurrency and queue depth affect performance: volumen, IOPS, throughput y tamaño de operación; se usan relaciones, no límites comerciales concretos",
+          "version": "Documentación en línea sin versión documental indicada; sin recomendación de perfil ni extrapolar cifras de producto; consulta real 27-10-2026",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-020",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "58aa03d5dc33c095ff3d1ea6eb79ade53ac270acfd6bb411b9e6183e1b1b203a",
+      "content_sha256": "007a8c782e2495a0eb90250db7e80c85401ac1c742169d237727d9c97b1d29e0",
+      "before": {
+        "id": "MAN-GSI-P17-020",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Para una carga de IA con gran cantidad de operaciones matriciales paralelas, ¿qué decisión es más razonable evaluar?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Sustituir toda la RAM por almacenamiento en cinta."
+          },
+          {
+            "id": "B",
+            "text": "Usar aceleradores como GPU, comparando coste, memoria, software y rendimiento real de la carga."
+          },
+          {
+            "id": "C",
+            "text": "Eliminar el sistema operativo."
+          },
+          {
+            "id": "D",
+            "text": "Forzar un único hilo para maximizar paralelismo."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "La selección de aceleradores debe ligarse al perfil de cálculo y a su ecosistema.",
+          "incorrect": "Según el solucionario: La selección de aceleradores debe ligarse al perfil de cálculo y a su ecosistema."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 20; índice nativo 3690",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 20; índice nativo 8876",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 20; índice nativo 3690",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-020",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Para una carga de IA con gran cantidad de operaciones matriciales paralelas, ¿qué decisión es más razonable evaluar?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Elegir la GPU con mayor pico teórico, aunque la matriz no quepa en su memoria."
+          },
+          {
+            "id": "B",
+            "text": "Medir aceleradores con la carga real, considerando memoria, transferencias, coste y software."
+          },
+          {
+            "id": "C",
+            "text": "Comparar GPU por capacidad de memoria, prescindiendo del coste de mover los datos."
+          },
+          {
+            "id": "D",
+            "text": "Elegir por número de núcleos, suponiendo el mismo rendimiento por núcleo en toda carga."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Una carga matricial paralela puede beneficiarse de aceleradores, pero la decisión requiere medir el trabajo real y la solución completa. Memoria disponible, movimientos de datos, bibliotecas, precisión numérica y costes condicionan el resultado. El pico de cálculo o un recuento de núcleos no sustituyen la medida. El enunciado propone evaluar alternativas, sin garantizar que una GPU concreta supere siempre a CPU u otro acelerador.",
+          "incorrect": "Revisa la arquitectura, relación o medida descrita por el contenido de la alternativa elegida.",
+          "incorrect_options": {
+            "A": "El pico teórico no comprueba capacidad ni coste de procesar la matriz. Existen estrategias por bloques, pero hay que evaluar su memoria y transferencias antes de elegir por el pico.",
+            "C": "La capacidad es necesaria para organizar los datos, pero ignorar movimientos entre host y dispositivo puede ocultar el coste dominante. Memoria y rendimiento no son la misma medida.",
+            "D": "Los núcleos de arquitecturas distintas no son unidades de rendimiento equivalentes. El número no recoge instrucciones, precisión, ancho de banda o eficiencia de esta carga."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 20; índice nativo 3690",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 20; índice nativo 8876",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "NVIDIA CUDA C++ Best Practices Guide",
+              "url": "https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html",
+              "locator": "Secciones 2.2 Assess/Parallelize/Optimize/Deploy, 4.1.1 Creating the Profile y 4.1.3 Understanding Scaling: carga realista, fracción paralelizable y transferencias",
+              "version": "Versión 13.4 consultada; alcance CUDA, sin recomendar compra o garantizar mejora para toda carga; consulta real el 27-10-2026",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "SPEC Open Systems Group Policies and Procedures",
+              "url": "https://www.spec.org/osg/policy/",
+              "locator": "Secciones 2.7.4–2.7.7: resultados comparables/reproducibles, condiciones documentadas, alcance y representatividad",
+              "version": "V2.22, 19-08-2024 indicada en Recent Revisions; fundamentos de medición, no reglas específicas de una ejecución SPEC propia; consulta real el 27-10-2026",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-019"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 20; índice nativo 3690",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar caso matricial y clave B; sustituir cinta, ausencia de SO y un hilo por errores reales de selección basados en pico, memoria o recuento de núcleos."
+      ],
+      "references": [
+        {
+          "title": "NVIDIA CUDA C++ Best Practices Guide",
+          "url": "https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html",
+          "locator": "Secciones 2.2 Assess/Parallelize/Optimize/Deploy, 4.1.1 Creating the Profile y 4.1.3 Understanding Scaling: carga realista, fracción paralelizable y transferencias",
+          "version": "Versión 13.4 consultada; alcance CUDA, sin recomendar compra o garantizar mejora para toda carga; consulta real el 27-10-2026",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "SPEC Open Systems Group Policies and Procedures",
+          "url": "https://www.spec.org/osg/policy/",
+          "locator": "Secciones 2.7.4–2.7.7: resultados comparables/reproducibles, condiciones documentadas, alcance y representatividad",
+          "version": "V2.22, 19-08-2024 indicada en Recent Revisions; fundamentos de medición, no reglas específicas de una ejecución SPEC propia; consulta real el 27-10-2026",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-021",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "30f01e7c6b7e2cb2daffe9bca838af4e5a616706a361e98251a55296826f1297",
+      "content_sha256": "a5dc0be67b5c4d3581c17f9897c711daac536fe402cc3f899e936a7f4e3b5943",
+      "before": {
+        "id": "MAN-GSI-P17-021",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Según Flynn, ¿qué caracteriza a SISD?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Una instrucción y múltiples flujos de datos."
+          },
+          {
+            "id": "B",
+            "text": "Múltiples instrucciones y múltiples datos."
+          },
+          {
+            "id": "C",
+            "text": "Un flujo de instrucciones y un flujo de datos."
+          },
+          {
+            "id": "D",
+            "text": "Múltiples instrucciones sobre un único flujo de datos como caso típico general."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "SISD representa el modelo secuencial clásico.",
+          "incorrect": "Según el solucionario: SISD representa el modelo secuencial clásico."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 21; índice nativo 3827",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 21; índice nativo 9334",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 21; índice nativo 3827",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-021",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Según Flynn, ¿qué caracteriza a SISD?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Un flujo de instrucciones y varios flujos de datos."
+          },
+          {
+            "id": "B",
+            "text": "Varios flujos de instrucciones y varios flujos de datos."
+          },
+          {
+            "id": "C",
+            "text": "Un flujo de instrucciones y un flujo de datos."
+          },
+          {
+            "id": "D",
+            "text": "Varios flujos de instrucciones y un flujo de datos."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "SISD combina un flujo de instrucciones con uno de datos en la taxonomía de Flynn. La clasificación se refiere a esos dos ejes en el nivel considerado, no al número de programas instalados ni a que toda máquina moderna carezca de paralelismo interno. Una organización mayor puede contener componentes con distintas clasificaciones. El carácter secuencial del modelo clásico no impone por sí solo una instrucción terminada por ciclo.",
+          "incorrect": "Revisa la arquitectura, relación o medida descrita por el contenido de la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Un flujo de instrucciones aplicado a varios flujos de datos corresponde a SIMD. Cambia el eje de datos respecto de SISD.",
+            "B": "Varios flujos de ambos tipos corresponden a MIMD. No es la combinación single/single solicitada.",
+            "D": "Varios flujos de instrucciones sobre un único flujo de datos corresponden a MISD. Su rareza práctica no altera la definición."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 21; índice nativo 3827",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 21; índice nativo 9334",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Cornell Virtual Workshop: Taxonomy of Parallel Computers",
+              "url": "https://cvw.cac.cornell.edu/parallel/hpc/taxonomy-parallel-computers",
+              "locator": "Tabla Instruction Stream / Data Stream y párrafos SISD, SIMD, MISD, MIMD y SPMD; combinación de niveles y diferencia arquitectura/programa",
+              "version": "Página primaria sin versión documental declarada; consulta real el 27-10-2026",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "LLNL: Introduction to Parallel Computing Tutorial",
+              "url": "https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial",
+              "locator": "Flynn's Classical Taxonomy, apartado Single Instruction, Single Data (SISD)",
+              "version": "Versión 16-06-2026 declarada; material docente de fundamentos, sin extrapolar ejemplos históricos o tendencias a todos los equipos; consulta real el 27-10-2026",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-019"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 21; índice nativo 3827",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar definición SISD y clave C; cuatro combinaciones simétricas de los ejes de Flynn, retirando la pista de caso típico general de MISD."
+      ],
+      "references": [
+        {
+          "title": "Cornell Virtual Workshop: Taxonomy of Parallel Computers",
+          "url": "https://cvw.cac.cornell.edu/parallel/hpc/taxonomy-parallel-computers",
+          "locator": "Tabla Instruction Stream / Data Stream y párrafos SISD, SIMD, MISD, MIMD y SPMD; combinación de niveles y diferencia arquitectura/programa",
+          "version": "Página primaria sin versión documental declarada; consulta real el 27-10-2026",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "LLNL: Introduction to Parallel Computing Tutorial",
+          "url": "https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial",
+          "locator": "Flynn's Classical Taxonomy, apartado Single Instruction, Single Data (SISD)",
+          "version": "Versión 16-06-2026 declarada; material docente de fundamentos, sin extrapolar ejemplos históricos o tendencias a todos los equipos; consulta real el 27-10-2026",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-022",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "68b9d38d183ce8564955880f2bcbf9c31245dd89489c2fe0779ec7184da8a8aa",
+      "content_sha256": "46fe8a6f2d4795cccc91e7675fd1071e8a0fa476d25a09c8c2d6190731572ce0",
+      "before": {
+        "id": "MAN-GSI-P17-022",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Según Flynn, ¿qué caracteriza a SIMD?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Un único dato controla múltiples sistemas operativos."
+          },
+          {
+            "id": "B",
+            "text": "Múltiples instrucciones actúan siempre sobre un único dato."
+          },
+          {
+            "id": "C",
+            "text": "No existe paralelismo de datos."
+          },
+          {
+            "id": "D",
+            "text": "Una misma instrucción actúa sobre múltiples datos."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "SIMD es típico de procesamiento vectorial y muchas cargas GPU.",
+          "incorrect": "Según el solucionario: SIMD es típico de procesamiento vectorial y muchas cargas GPU."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 22; índice nativo 3881",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 22; índice nativo 9654",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 22; índice nativo 3881",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-022",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Según Flynn, ¿qué caracteriza a SIMD?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Varios flujos de instrucciones actúan sobre varios flujos de datos."
+          },
+          {
+            "id": "B",
+            "text": "Varios flujos de instrucciones actúan sobre un único flujo de datos."
+          },
+          {
+            "id": "C",
+            "text": "Un único flujo de instrucciones actúa sobre un único flujo de datos."
+          },
+          {
+            "id": "D",
+            "text": "Una misma instrucción actúa sobre múltiples datos."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "SIMD aplica un mismo flujo de instrucciones a varios elementos de datos, como en operaciones vectoriales. No significa ejecutar varios programas independientes ni exige que el sistema completo sea SIMD. Un procesador MIMD puede incorporar unidades SIMD; ejecutar el mismo programa en procesos independientes es SPMD y no basta para clasificarlo como SIMD. Se mantiene el nivel de abstracción de la taxonomía.",
+          "incorrect": "Revisa la arquitectura, relación o medida descrita por el contenido de la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Describe MIMD: múltiples flujos de instrucciones y datos. La coincidencia ocasional de instrucciones no transforma sus flujos independientes en SIMD.",
+            "B": "Describe MISD: varios flujos de instrucciones y uno de datos. Es la combinación inversa de los ejes de SIMD.",
+            "C": "Describe SISD, con un solo flujo de cada tipo. No expresa la operación sobre múltiples datos de SIMD."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 22; índice nativo 3881",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 22; índice nativo 9654",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Cornell Virtual Workshop: Taxonomy of Parallel Computers",
+              "url": "https://cvw.cac.cornell.edu/parallel/hpc/taxonomy-parallel-computers",
+              "locator": "Tabla Instruction Stream / Data Stream y párrafos SISD, SIMD, MISD, MIMD y SPMD; combinación de niveles y diferencia arquitectura/programa",
+              "version": "Página primaria sin versión documental declarada; consulta real el 27-10-2026",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "LLNL: Introduction to Parallel Computing Tutorial",
+              "url": "https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial",
+              "locator": "Flynn's Classical Taxonomy, Single Instruction, Multiple Data (SIMD); Parallel Programming Models, SPMD",
+              "version": "Versión 16-06-2026 declarada; material docente de fundamentos, sin extrapolar ejemplos históricos o tendencias a todos los equipos; consulta real el 27-10-2026",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-019"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 22; índice nativo 3881",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar concepto SIMD y clave D; comparar las cuatro combinaciones reales y explicar SPMD frente a arquitectura sin igualar toda GPU a SIMD puro."
+      ],
+      "references": [
+        {
+          "title": "Cornell Virtual Workshop: Taxonomy of Parallel Computers",
+          "url": "https://cvw.cac.cornell.edu/parallel/hpc/taxonomy-parallel-computers",
+          "locator": "Tabla Instruction Stream / Data Stream y párrafos SISD, SIMD, MISD, MIMD y SPMD; combinación de niveles y diferencia arquitectura/programa",
+          "version": "Página primaria sin versión documental declarada; consulta real el 27-10-2026",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "LLNL: Introduction to Parallel Computing Tutorial",
+          "url": "https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial",
+          "locator": "Flynn's Classical Taxonomy, Single Instruction, Multiple Data (SIMD); Parallel Programming Models, SPMD",
+          "version": "Versión 16-06-2026 declarada; material docente de fundamentos, sin extrapolar ejemplos históricos o tendencias a todos los equipos; consulta real el 27-10-2026",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-023",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "983a9f385aa8e04f7b0c82307ec25f104e55b1f67d15b06c6b5026770c310052",
+      "content_sha256": "3fa26a3501d6992f6085781edb3e061202d2367b4bd3c29097e70b4533b364e7",
+      "before": {
+        "id": "MAN-GSI-P17-023",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Según Flynn, ¿qué caracteriza a MIMD?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Múltiples flujos de instrucciones operan sobre múltiples flujos de datos."
+          },
+          {
+            "id": "B",
+            "text": "Una única instrucción sobre un único dato."
+          },
+          {
+            "id": "C",
+            "text": "Una instrucción sobre múltiples datos."
+          },
+          {
+            "id": "D",
+            "text": "Un modelo exclusivo de tarjetas de red."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "MIMD es común en multiprocesadores y sistemas distribuidos.",
+          "incorrect": "Según el solucionario: MIMD es común en multiprocesadores y sistemas distribuidos."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 23; índice nativo 3952",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 23; índice nativo 9956",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 23; índice nativo 3952",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-023",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Según Flynn, ¿qué caracteriza a MIMD?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Múltiples flujos de instrucciones operan sobre múltiples flujos de datos."
+          },
+          {
+            "id": "B",
+            "text": "Un único flujo de instrucciones opera sobre un único flujo de datos."
+          },
+          {
+            "id": "C",
+            "text": "Un único flujo de instrucciones opera sobre múltiples flujos de datos."
+          },
+          {
+            "id": "D",
+            "text": "Múltiples flujos de instrucciones operan sobre un único flujo de datos."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "MIMD permite flujos de instrucciones independientes sobre distintos flujos de datos. Es compatible con multiprocesadores, multinúcleos y nodos de un clúster, con las diferencias de memoria de cada diseño. Los procesadores pueden ejecutar el mismo programa con caminos distintos; no necesitan ejecutar siempre programas diferentes. Tampoco queda excluida la presencia de unidades SIMD dentro de cada nodo.",
+          "incorrect": "Revisa la arquitectura, relación o medida descrita por el contenido de la alternativa elegida.",
+          "incorrect_options": {
+            "B": "La combinación de un flujo de instrucciones y uno de datos es SISD. No describe los dos ejes múltiples de MIMD.",
+            "C": "Un único flujo de instrucciones sobre varios datos es SIMD. MIMD permite independencia de los flujos de instrucciones.",
+            "D": "Varios flujos de instrucciones y uno de datos forman MISD. Cambia el eje de datos respecto de MIMD."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 23; índice nativo 3952",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 23; índice nativo 9956",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Cornell Virtual Workshop: Taxonomy of Parallel Computers",
+              "url": "https://cvw.cac.cornell.edu/parallel/hpc/taxonomy-parallel-computers",
+              "locator": "Tabla Instruction Stream / Data Stream y párrafos SISD, SIMD, MISD, MIMD y SPMD; combinación de niveles y diferencia arquitectura/programa",
+              "version": "Página primaria sin versión documental declarada; consulta real el 27-10-2026",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "LLNL: Introduction to Parallel Computing Tutorial",
+              "url": "https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial",
+              "locator": "Flynn's Classical Taxonomy, Multiple Instruction, Multiple Data (MIMD)",
+              "version": "Versión 16-06-2026 declarada; material docente de fundamentos, sin extrapolar ejemplos históricos o tendencias a todos los equipos; consulta real el 27-10-2026",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-019"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 23; índice nativo 3952",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar definición MIMD y clave A; sustituir tarjeta de red por MISD y mantener las cuatro combinaciones con redacción comparable."
+      ],
+      "references": [
+        {
+          "title": "Cornell Virtual Workshop: Taxonomy of Parallel Computers",
+          "url": "https://cvw.cac.cornell.edu/parallel/hpc/taxonomy-parallel-computers",
+          "locator": "Tabla Instruction Stream / Data Stream y párrafos SISD, SIMD, MISD, MIMD y SPMD; combinación de niveles y diferencia arquitectura/programa",
+          "version": "Página primaria sin versión documental declarada; consulta real el 27-10-2026",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "LLNL: Introduction to Parallel Computing Tutorial",
+          "url": "https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial",
+          "locator": "Flynn's Classical Taxonomy, Multiple Instruction, Multiple Data (MIMD)",
+          "version": "Versión 16-06-2026 declarada; material docente de fundamentos, sin extrapolar ejemplos históricos o tendencias a todos los equipos; consulta real el 27-10-2026",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-024",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "5755b38cc36dfb54d909eddab7876149da3216e495669df14348e0dbb7f7e844",
+      "content_sha256": "6e097a793b10765725936aa2e79399f30fd1a544ee8bbe3417bf96c8b9fe73cb",
+      "before": {
+        "id": "MAN-GSI-P17-024",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué categoría de Flynn es poco habitual como arquitectura general de propósito común?",
+        "options": [
+          {
+            "id": "A",
+            "text": "SISD."
+          },
+          {
+            "id": "B",
+            "text": "MISD."
+          },
+          {
+            "id": "C",
+            "text": "SIMD."
+          },
+          {
+            "id": "D",
+            "text": "MIMD."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "MISD aparece mucho menos como arquitectura general que SISD/SIMD/MIMD.",
+          "incorrect": "Según el solucionario: MISD aparece mucho menos como arquitectura general que SISD/SIMD/MIMD."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 24; índice nativo 4020",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 24; índice nativo 10257",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 24; índice nativo 4020",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-024",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué categoría de Flynn es poco habitual como arquitectura general de propósito común?",
+        "options": [
+          {
+            "id": "A",
+            "text": "SISD."
+          },
+          {
+            "id": "B",
+            "text": "MISD."
+          },
+          {
+            "id": "C",
+            "text": "SIMD."
+          },
+          {
+            "id": "D",
+            "text": "MIMD."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "MISD es la combinación de varios flujos de instrucciones con uno de datos y es poco habitual como arquitectura general. Las fuentes docentes señalan ejemplos limitados o posibles, como filtros distintos sobre una señal, sin afirmar que sea imposible. SISD, SIMD y MIMD aparecen en modelos o niveles habituales de cómputo. La clasificación no debe confundirse con los nombres SPMD o MPMD de modelos de programación.",
+          "incorrect": "Revisa la arquitectura, relación o medida descrita por el contenido de la alternativa elegida.",
+          "incorrect_options": {
+            "A": "SISD es el modelo clásico de un flujo de instrucciones y uno de datos. La pregunta busca la combinación especialmente poco habitual como arquitectura general.",
+            "C": "SIMD es habitual en procesamiento vectorial y en unidades de paralelismo de datos. No es la categoría rara preguntada.",
+            "D": "MIMD es común en multinúcleos y clústeres. Puede incluir componentes SIMD sin dejar de representar flujos independientes a otro nivel."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 24; índice nativo 4020",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 24; índice nativo 10257",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Cornell Virtual Workshop: Taxonomy of Parallel Computers",
+              "url": "https://cvw.cac.cornell.edu/parallel/hpc/taxonomy-parallel-computers",
+              "locator": "Tabla Instruction Stream / Data Stream y párrafos SISD, SIMD, MISD, MIMD y SPMD; combinación de niveles y diferencia arquitectura/programa",
+              "version": "Página primaria sin versión documental declarada; consulta real el 27-10-2026",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "LLNL: Introduction to Parallel Computing Tutorial",
+              "url": "https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial",
+              "locator": "Flynn's Classical Taxonomy, Multiple Instruction, Single Data (MISD)",
+              "version": "Versión 16-06-2026 declarada; material docente de fundamentos, sin extrapolar ejemplos históricos o tendencias a todos los equipos; consulta real el 27-10-2026",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-019"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 24; índice nativo 4020",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar literalmente enunciado y cuatro siglas; explicar rareza sin convertirla en inexistencia ni afirmar un ejemplo discutible como único."
+      ],
+      "references": [
+        {
+          "title": "Cornell Virtual Workshop: Taxonomy of Parallel Computers",
+          "url": "https://cvw.cac.cornell.edu/parallel/hpc/taxonomy-parallel-computers",
+          "locator": "Tabla Instruction Stream / Data Stream y párrafos SISD, SIMD, MISD, MIMD y SPMD; combinación de niveles y diferencia arquitectura/programa",
+          "version": "Página primaria sin versión documental declarada; consulta real el 27-10-2026",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "LLNL: Introduction to Parallel Computing Tutorial",
+          "url": "https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial",
+          "locator": "Flynn's Classical Taxonomy, Multiple Instruction, Single Data (MISD)",
+          "version": "Versión 16-06-2026 declarada; material docente de fundamentos, sin extrapolar ejemplos históricos o tendencias a todos los equipos; consulta real el 27-10-2026",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-025",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "c7c1370f5e008c87244a0d97043e52e1666cd1bd9b90db62ebaac1ecca0eb9d3",
+      "content_sha256": "a2726f35ebf3953ceba6e82704b3fad526f553350df0c5aef4827873f2b2e00e",
+      "before": {
+        "id": "MAN-GSI-P17-025",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué diferencia esencial hay entre UMA y NUMA?",
+        "options": [
+          {
+            "id": "A",
+            "text": "En UMA cada procesador tiene memoria local con distinta latencia, mientras NUMA ofrece acceso uniforme a toda la memoria."
+          },
+          {
+            "id": "B",
+            "text": "NUMA elimina la sincronización y coherencia entre procesadores porque cada nodo trabaja siempre con datos completamente separados."
+          },
+          {
+            "id": "C",
+            "text": "En UMA el tiempo de acceso a memoria es aproximadamente uniforme; en NUMA depende de la localidad del nodo de memoria."
+          },
+          {
+            "id": "D",
+            "text": "UMA se aplica solo a almacenamiento persistente y NUMA únicamente a memoria RAM de un único procesador sin nodos."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "La diferencia central es la topología/latencia de acceso a memoria.",
+          "incorrect": "Según el solucionario: La diferencia central es la topología/latencia de acceso a memoria."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 25; índice nativo 4099",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 25; índice nativo 10435",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 25; índice nativo 4099",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-025",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué diferencia esencial hay entre UMA y NUMA?",
+        "options": [
+          {
+            "id": "A",
+            "text": "En UMA cada procesador tiene memoria local con distinta latencia, mientras NUMA ofrece acceso uniforme a toda la memoria."
+          },
+          {
+            "id": "B",
+            "text": "NUMA elimina la sincronización y coherencia entre procesadores porque cada nodo trabaja siempre con datos completamente separados."
+          },
+          {
+            "id": "C",
+            "text": "En UMA el tiempo de acceso a memoria es aproximadamente uniforme; en NUMA depende de la localidad del nodo de memoria."
+          },
+          {
+            "id": "D",
+            "text": "UMA se aplica solo a almacenamiento persistente y NUMA únicamente a memoria RAM de un único procesador sin nodos."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "UMA describe acceso a memoria aproximadamente uniforme en el nivel de comparación considerado; NUMA distingue costes según la proximidad entre CPU y memoria. En ccNUMA puede existir un espacio de memoria compartido y coherencia hardware pese a que la memoria esté distribuida físicamente entre nodos. La localidad no elimina sincronización ni obliga a que cada nodo tenga un socket, memoria y CPU propios. Cachés, contención y carga afectan a tiempos observados.",
+          "incorrect": "Revisa la arquitectura, relación o medida descrita por el contenido de la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Intercambia los conceptos: el acceso aproximadamente uniforme corresponde a UMA y la dependencia de la localidad a NUMA.",
+            "B": "NUMA no elimina compartir datos ni sincronizar. En ccNUMA varios procesadores pueden acceder al espacio compartido y el hardware mantiene coherencia, sin hacer atómicas las actualizaciones del programa.",
+            "D": "La distinción se refiere a organización y coste de acceso a memoria, no a separar disco persistente de RAM en un único procesador sin nodos."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 25; índice nativo 4099",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 25; índice nativo 10435",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Linux: What is NUMA?",
+              "url": "https://docs.kernel.org/mm/numa.html",
+              "locator": "Perspectiva hardware, ccNUMA, distancia entre celdas, asignación local y afinidad; nodos pueden carecer de CPU o memoria",
+              "version": "Documentación en línea, sin fijar versión de implementación ni asumir que todo nodo es un socket; consulta real el 27-10-2026",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "LLNL: Introduction to Parallel Computing Tutorial",
+              "url": "https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial",
+              "locator": "Parallel Computer Memory Architectures, Shared Memory: UMA y NUMA; responsabilidad de sincronización",
+              "version": "Versión 16-06-2026 declarada; material docente de fundamentos, sin extrapolar ejemplos históricos o tendencias a todos los equipos; consulta real el 27-10-2026",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-019"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 25; índice nativo 4099",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar literalmente enunciado y alternativas; precisar ccNUMA, localidad y límites de uniformidad sin confundir distribución física con modelo de mensajes."
+      ],
+      "references": [
+        {
+          "title": "Linux: What is NUMA?",
+          "url": "https://docs.kernel.org/mm/numa.html",
+          "locator": "Perspectiva hardware, ccNUMA, distancia entre celdas, asignación local y afinidad; nodos pueden carecer de CPU o memoria",
+          "version": "Documentación en línea, sin fijar versión de implementación ni asumir que todo nodo es un socket; consulta real el 27-10-2026",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "LLNL: Introduction to Parallel Computing Tutorial",
+          "url": "https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial",
+          "locator": "Parallel Computer Memory Architectures, Shared Memory: UMA y NUMA; responsabilidad de sincronización",
+          "version": "Versión 16-06-2026 declarada; material docente de fundamentos, sin extrapolar ejemplos históricos o tendencias a todos los equipos; consulta real el 27-10-2026",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-026",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "1d0c525b81f43175a6203ed3df040a18f35840be751f081e02e8941c0d7a1c60",
+      "content_sha256": "4f5f553a467a64f7a454ceccd7513dce4f09551962045360f2bd496348fec15b",
+      "before": {
+        "id": "MAN-GSI-P17-026",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué práctica favorece el rendimiento en NUMA?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Mover aleatoriamente los datos entre nodos en cada acceso."
+          },
+          {
+            "id": "B",
+            "text": "Desactivar todas las cachés."
+          },
+          {
+            "id": "C",
+            "text": "Usar siempre un único proceso sin medir."
+          },
+          {
+            "id": "D",
+            "text": "Mantener hilos y datos con buena afinidad/localidad cuando sea posible."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Afinidad y localidad reducen accesos remotos costosos.",
+          "incorrect": "Según el solucionario: Afinidad y localidad reducen accesos remotos costosos."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 26; índice nativo 4175",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 26; índice nativo 10803",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 26; índice nativo 4175",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-026",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "En un sistema NUMA, unos hilos acceden repetidamente a datos situados en otro nodo y la medición muestra coste de acceso remoto. ¿Qué práctica conviene evaluar?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Migrar los hilos de nodo en cada fase, conservando siempre los datos en el nodo inicial."
+          },
+          {
+            "id": "B",
+            "text": "Intercalar todas las páginas entre nodos sin distinguir qué hilos las usan con mayor frecuencia."
+          },
+          {
+            "id": "C",
+            "text": "Concentrar todos los hilos en un núcleo, sin comprobar contención ni capacidad disponible."
+          },
+          {
+            "id": "D",
+            "text": "Probar afinidad de hilos y datos con buena localidad, midiendo el efecto sobre la carga."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Si predominan accesos remotos a los mismos datos, colocar hilos y memoria cerca puede reducir ese coste en NUMA. La elección debe contrastarse con la carga: fijar afinidad sin considerar saturación, ancho de banda o memoria disponible también puede empeorar el resultado. No se requiere desactivar cachés ni se garantiza que una política de asignación sea óptima para todo patrón de acceso.",
+          "incorrect": "Revisa la arquitectura, relación o medida descrita por el contenido de la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Mover hilos conservando los datos puede alejarlos de la memoria que usan y añadir migraciones. No conserva de forma estable la localidad relevante del caso.",
+            "B": "Intercalar páginas puede ser útil para ciertas cargas o reparto de ancho de banda, pero aplicarlo sin conocer quién accede no trata específicamente los datos remotos concentrados del caso.",
+            "C": "La concentración puede reducir paralelismo y crear contención. Sin medir no se justifica como respuesta al problema de localidad NUMA."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 26; índice nativo 4175",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 26; índice nativo 10803",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Linux: What is NUMA?",
+              "url": "https://docs.kernel.org/mm/numa.html",
+              "locator": "Perspectiva hardware, ccNUMA, distancia entre celdas, asignación local y afinidad; nodos pueden carecer de CPU o memoria",
+              "version": "Documentación en línea, sin fijar versión de implementación ni asumir que todo nodo es un socket; consulta real el 27-10-2026",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "Ubuntu Server: CPU affinity, NUMA placement, and isolation",
+              "url": "https://ubuntu.com/server/docs/explanation/performance/perf-tune-affinity-numa/",
+              "locator": "Introducción y CPU and memory topology: localidad, políticas y necesidad de medir; fijaciones manuales pueden dejar núcleos ociosos o sobrecargar un nodo",
+              "version": "Documentación en línea, sin fijar versión de distribución; consulta real el 27-10-2026",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-019"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 26; índice nativo 4175",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar afinidad/localidad y clave D; microcaso de accesos remotos, con políticas reales y límites de afinidad e intercalado."
+      ],
+      "references": [
+        {
+          "title": "Linux: What is NUMA?",
+          "url": "https://docs.kernel.org/mm/numa.html",
+          "locator": "Perspectiva hardware, ccNUMA, distancia entre celdas, asignación local y afinidad; nodos pueden carecer de CPU o memoria",
+          "version": "Documentación en línea, sin fijar versión de implementación ni asumir que todo nodo es un socket; consulta real el 27-10-2026",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "Ubuntu Server: CPU affinity, NUMA placement, and isolation",
+          "url": "https://ubuntu.com/server/docs/explanation/performance/perf-tune-affinity-numa/",
+          "locator": "Introducción y CPU and memory topology: localidad, políticas y necesidad de medir; fijaciones manuales pueden dejar núcleos ociosos o sobrecargar un nodo",
+          "version": "Documentación en línea, sin fijar versión de distribución; consulta real el 27-10-2026",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-027",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "d5ab2ffc41f88213a57af380f8b57c4c0dce82e5dbcab3c11f5dfc56ec19e4ec",
+      "content_sha256": "8ae9015745b13ec5c6ed78cbf745412f95f5aebc9a68a225f97fd0e8dfe53980",
+      "before": {
+        "id": "MAN-GSI-P17-027",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué caracteriza principalmente a un mainframe?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Gran capacidad transaccional, E/S, disponibilidad y aislamiento de cargas."
+          },
+          {
+            "id": "B",
+            "text": "Maximizar exclusivamente FLOPS científicos."
+          },
+          {
+            "id": "C",
+            "text": "Ser necesariamente un ordenador portátil."
+          },
+          {
+            "id": "D",
+            "text": "No admitir virtualización."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Mainframe y supercomputador optimizan perfiles de carga distintos.",
+          "incorrect": "Según el solucionario: Mainframe y supercomputador optimizan perfiles de carga distintos."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 27; índice nativo 4238",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 27; índice nativo 11118",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 27; índice nativo 4238",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-027",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué caracteriza principalmente a un mainframe?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Gran capacidad transaccional, E/S, disponibilidad y aislamiento de cargas."
+          },
+          {
+            "id": "B",
+            "text": "Cálculo científico intensivo optimizado para acelerar grandes simulaciones paralelas."
+          },
+          {
+            "id": "C",
+            "text": "Interacción gráfica local optimizada para diseño y visualización en un puesto de trabajo."
+          },
+          {
+            "id": "D",
+            "text": "Almacenamiento compartido optimizado para servir archivos a equipos conectados por red."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Un mainframe se orienta a gran volumen transaccional y de E/S, operación continuada y aislamiento de cargas, con mecanismos de virtualización y fiabilidad. Esto describe su orientación general, no una tarea exclusiva ni una garantía de ausencia de fallos. Puede ejecutar cargas variadas y relacionarse con clústeres o aceleradores. Se distingue por ese conjunto de prioridades, no por el tamaño físico histórico o por maximizar solo FLOPS.",
+          "incorrect": "Revisa la arquitectura, relación o medida descrita por el contenido de la alternativa elegida.",
+          "incorrect_options": {
+            "B": "Describe principalmente la orientación de supercomputación/HPC. Un mainframe puede realizar cálculo, pero el conjunto de transacciones, E/S y continuidad es lo que distingue la respuesta adecuada.",
+            "C": "Describe una estación de trabajo gráfica. Una interfaz gráfica no es el rasgo principal de una plataforma central transaccional.",
+            "D": "Describe el papel de un servidor de archivos o almacenamiento de red. Un mainframe puede servir datos, pero no se define únicamente por ese servicio."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 27; índice nativo 4238",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 27; índice nativo 11118",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "IBM: What is a mainframe?",
+              "url": "https://www.ibm.com/think/topics/mainframe",
+              "locator": "Mainframe, defined, párrafo inicial; How does a modern mainframe work?, Operating systems y Workload isolation and virtualization: transacciones, E/S, continuidad y aislamiento",
+              "version": "Publicación 08-04-2024, actualización 03-09-2026; solo fundamentos, sin adoptar cuotas de mercado, cifras de producto o garantías absolutas; consulta real el 27-10-2026",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "Cornell Virtual Workshop: High Performance Computing",
+              "url": "https://cvw.cac.cornell.edu/parallel/hpc/high-performance-computing",
+              "locator": "Definición inicial y distinción HPC/HTC; solo fundamentos y cómputo a gran escala, sin tomar cifras o noticias históricas como actuales",
+              "version": "Página primaria sin versión documental declarada; consulta real el 27-10-2026",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-019"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 27; índice nativo 4238",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar orientación mainframe y clave A; comparar HPC, estación gráfica y servidor de archivos en lugar de portátil o ausencia de virtualización."
+      ],
+      "references": [
+        {
+          "title": "IBM: What is a mainframe?",
+          "url": "https://www.ibm.com/think/topics/mainframe",
+          "locator": "Mainframe, defined, párrafo inicial; How does a modern mainframe work?, Operating systems y Workload isolation and virtualization: transacciones, E/S, continuidad y aislamiento",
+          "version": "Publicación 08-04-2024, actualización 03-09-2026; solo fundamentos, sin adoptar cuotas de mercado, cifras de producto o garantías absolutas; consulta real el 27-10-2026",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "Cornell Virtual Workshop: High Performance Computing",
+          "url": "https://cvw.cac.cornell.edu/parallel/hpc/high-performance-computing",
+          "locator": "Definición inicial y distinción HPC/HTC; solo fundamentos y cómputo a gran escala, sin tomar cifras o noticias históricas como actuales",
+          "version": "Página primaria sin versión documental declarada; consulta real el 27-10-2026",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-028",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "4802ad3afb83183a2a51daf2f6cb473c2de8d15b130887392cd75bc43219f839",
+      "content_sha256": "299a90f6d0812ae72c7f1e9b6989e9459f925d739f6c96bf056fa5fd38f375e5",
+      "before": {
+        "id": "MAN-GSI-P17-028",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué caracteriza principalmente a un supercomputador?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Maximizar capacidad de cálculo para cargas científicas o técnicas de gran escala."
+          },
+          {
+            "id": "B",
+            "text": "Servir únicamente páginas HTML estáticas."
+          },
+          {
+            "id": "C",
+            "text": "Ser siempre un servidor monoprocesador."
+          },
+          {
+            "id": "D",
+            "text": "Priorizar exclusivamente impresión de documentos."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "La supercomputación se orienta a cálculo intensivo y paralelismo masivo.",
+          "incorrect": "Según el solucionario: La supercomputación se orienta a cálculo intensivo y paralelismo masivo."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 28; índice nativo 4313",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 28; índice nativo 11421",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 28; índice nativo 4313",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-028",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué caracteriza principalmente a un supercomputador?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Maximizar capacidad de cálculo para cargas científicas o técnicas de gran escala."
+          },
+          {
+            "id": "B",
+            "text": "Priorizar transacciones y E/S con aislamiento de cargas para operación empresarial continuada."
+          },
+          {
+            "id": "C",
+            "text": "Priorizar respuesta gráfica e interacción de un usuario en aplicaciones locales de diseño."
+          },
+          {
+            "id": "D",
+            "text": "Priorizar capacidad de archivo y acceso a documentos compartidos a través de una red."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "La supercomputación busca resolver problemas de cálculo de gran escala, científicos o técnicos, mediante recursos y organización adecuados a esas cargas. Suele combinar paralelismo, memoria e interconexiones, y puede incluir aceleradores. No se define por un único número de procesadores ni por una tarea exclusivamente científica: también hay usos industriales y de IA. Una medida de LINPACK describe esa prueba, no todo su rendimiento.",
+          "incorrect": "Revisa la arquitectura, relación o medida descrita por el contenido de la alternativa elegida.",
+          "incorrect_options": {
+            "B": "Es la orientación transaccional y de continuidad característica de un mainframe. Puede haber solapamientos de cargas, pero no define la prioridad de cálculo de supercomputación preguntada.",
+            "C": "Describe el foco de una estación de trabajo interactiva. El rendimiento gráfico local no equivale al cómputo coordinado de gran escala.",
+            "D": "Describe una prioridad de almacenamiento y servicio documental. Puede apoyar al supercomputador, pero no es el objetivo principal que lo caracteriza."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 28; índice nativo 4313",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 28; índice nativo 11421",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Cornell Virtual Workshop: High Performance Computing",
+              "url": "https://cvw.cac.cornell.edu/parallel/hpc/high-performance-computing",
+              "locator": "Definición inicial y distinción HPC/HTC; solo fundamentos y cómputo a gran escala, sin tomar cifras o noticias históricas como actuales",
+              "version": "Página primaria sin versión documental declarada; consulta real el 27-10-2026",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "IBM: What is a mainframe?",
+              "url": "https://www.ibm.com/think/topics/mainframe",
+              "locator": "Mainframe, defined, párrafo inicial; How does a modern mainframe work?, Operating systems y Workload isolation and virtualization: transacciones, E/S, continuidad y aislamiento",
+              "version": "Publicación 08-04-2024, actualización 03-09-2026; solo fundamentos, sin adoptar cuotas de mercado, cifras de producto o garantías absolutas; consulta real el 27-10-2026",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "TOP500: The Linpack Benchmark",
+              "url": "https://top500.org/project/linpack/",
+              "locator": "Párrafos de sistema lineal denso, alcance de la medida y Rmax/Rpeak; no se usa posición o cifra de un ranking",
+              "version": "Página primaria sin versión documental declarada; consulta real el 27-10-2026",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-019"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 28; índice nativo 4313",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar finalidad de cálculo a gran escala y clave A; comparar orientaciones de plataformas reales sin exigir ciencia exclusiva ni arquitectura monoprocesador."
+      ],
+      "references": [
+        {
+          "title": "Cornell Virtual Workshop: High Performance Computing",
+          "url": "https://cvw.cac.cornell.edu/parallel/hpc/high-performance-computing",
+          "locator": "Definición inicial y distinción HPC/HTC; solo fundamentos y cómputo a gran escala, sin tomar cifras o noticias históricas como actuales",
+          "version": "Página primaria sin versión documental declarada; consulta real el 27-10-2026",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "IBM: What is a mainframe?",
+          "url": "https://www.ibm.com/think/topics/mainframe",
+          "locator": "Mainframe, defined, párrafo inicial; How does a modern mainframe work?, Operating systems y Workload isolation and virtualization: transacciones, E/S, continuidad y aislamiento",
+          "version": "Publicación 08-04-2024, actualización 03-09-2026; solo fundamentos, sin adoptar cuotas de mercado, cifras de producto o garantías absolutas; consulta real el 27-10-2026",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "TOP500: The Linpack Benchmark",
+          "url": "https://top500.org/project/linpack/",
+          "locator": "Párrafos de sistema lineal denso, alcance de la medida y Rmax/Rpeak; no se usa posición o cifra de un ranking",
+          "version": "Página primaria sin versión documental declarada; consulta real el 27-10-2026",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-029",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "0c11d4eb08592151964adae079c80acb3543ebc154bed5e159ec74708ac9afc9",
+      "content_sha256": "b45b2cc7a147f6887f1bcef0b0e7ba4bf0c84a75044f19b887fb606adb243443",
+      "before": {
+        "id": "MAN-GSI-P17-029",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué es un clúster de computación?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Un conjunto de nodos independientes conectados y coordinados para prestar capacidad conjunta."
+          },
+          {
+            "id": "B",
+            "text": "Un único equipo multiprocesador cuyos núcleos comparten memoria y sistema operativo, sin nodos independientes conectados por red."
+          },
+          {
+            "id": "C",
+            "text": "Un balanceador que reparte peticiones entre destinos, aunque no coordine sus recursos ni convierta esos servidores en una capacidad conjunta."
+          },
+          {
+            "id": "D",
+            "text": "Un sistema de almacenamiento distribuido que replica bloques, considerado clúster de computación aunque no ejecute cargas coordinadas."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "El clúster coordina varios nodos mediante red y software.",
+          "incorrect": "Según el solucionario: El clúster coordina varios nodos mediante red y software."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 29; índice nativo 4394",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 29; índice nativo 11756",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 29; índice nativo 4394",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-029",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué es un clúster de computación?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Un conjunto de nodos independientes conectados y coordinados para prestar capacidad conjunta."
+          },
+          {
+            "id": "B",
+            "text": "Un único equipo multiprocesador cuyos núcleos comparten memoria y sistema operativo, sin nodos independientes conectados por red."
+          },
+          {
+            "id": "C",
+            "text": "Un balanceador que reparte peticiones entre destinos, aunque no coordine sus recursos ni convierta esos servidores en una capacidad conjunta."
+          },
+          {
+            "id": "D",
+            "text": "Un sistema de almacenamiento distribuido que replica bloques, considerado clúster de computación aunque no ejecute cargas coordinadas."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Un clúster de computación coordina varios nodos conectados para ofrecer capacidad conjunta. Cada nodo puede tener procesadores, memoria y sistema operativo propios, y la interconexión permite comunicar tareas. No basta la existencia de un balanceador aislado para definir toda esa coordinación. Hay clústeres de almacenamiento y diseños mixtos: la distinción del enunciado se refiere al propósito de computación, sin negar esas otras clases.",
+          "incorrect": "Revisa la arquitectura, relación o medida descrita por el contenido de la alternativa elegida.",
+          "incorrect_options": {
+            "B": "Describe una máquina multiprocesador de memoria compartida, no varios nodos independientes conectados como recurso conjunto. Un nodo del clúster sí puede tener esa organización interna.",
+            "C": "Un balanceador distribuye tráfico, pero el texto excluye coordinación de recursos como capacidad conjunta. Ese componente por sí solo no define el clúster de computación.",
+            "D": "Replica bloques para un objetivo de almacenamiento y excluye cargas de cómputo coordinadas. Puede ser un clúster de almacenamiento, pero el caso no lo convierte en clúster de computación."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 29; índice nativo 4394",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 29; índice nativo 11756",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Cornell Virtual Workshop: Clusters",
+              "url": "https://cvw.cac.cornell.edu/parallel/hpc/clusters",
+              "locator": "Párrafos de definición, nodos, planificador e interconexiones: máquinas coordinadas como recurso y comunicación de tareas",
+              "version": "Página primaria sin versión documental declarada; consulta real el 27-10-2026",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "LLNL: Introduction to Parallel Computing Tutorial",
+              "url": "https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial",
+              "locator": "Overview, Parallel Computers; General Terminology, Node; Hybrid Distributed-Shared Memory",
+              "version": "Versión 16-06-2026 declarada; material docente de fundamentos, sin extrapolar ejemplos históricos o tendencias a todos los equipos; consulta real el 27-10-2026",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-019"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 29; índice nativo 4394",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar literalmente enunciado y alternativas; completar nodo e interconexión y reconocer clústeres de almacenamiento, evitando negar su existencia."
+      ],
+      "references": [
+        {
+          "title": "Cornell Virtual Workshop: Clusters",
+          "url": "https://cvw.cac.cornell.edu/parallel/hpc/clusters",
+          "locator": "Párrafos de definición, nodos, planificador e interconexiones: máquinas coordinadas como recurso y comunicación de tareas",
+          "version": "Página primaria sin versión documental declarada; consulta real el 27-10-2026",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "LLNL: Introduction to Parallel Computing Tutorial",
+          "url": "https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial",
+          "locator": "Overview, Parallel Computers; General Terminology, Node; Hybrid Distributed-Shared Memory",
+          "version": "Versión 16-06-2026 declarada; material docente de fundamentos, sin extrapolar ejemplos históricos o tendencias a todos los equipos; consulta real el 27-10-2026",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-030",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "85a7f09be0da1510b0801250e1246c86e566ddf62647e354f4b70a2478d3e9c7",
+      "content_sha256": "8af26912f5b49d96dcb920b55dc8a0a171ad158f7a9c95100380e553948bf672",
+      "before": {
+        "id": "MAN-GSI-P17-030",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué objetivo puede perseguir un clúster?",
+        "options": [
+          {
+            "id": "A",
+            "text": "La reducción del tamaño del código fuente mediante compilación distribuida."
+          },
+          {
+            "id": "B",
+            "text": "La sustitución del servicio DNS por direccionamiento estático entre nodos."
+          },
+          {
+            "id": "C",
+            "text": "Alto rendimiento, alta disponibilidad, balanceo o una combinación."
+          },
+          {
+            "id": "D",
+            "text": "La eliminación de puntos de fallo sin incorporar redundancia entre componentes."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Los clústeres se diseñan según objetivo: HPC, HA, balanceo, etc.",
+          "incorrect": "Según el solucionario: Los clústeres se diseñan según objetivo: HPC, HA, balanceo, etc."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 30; índice nativo 4460",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 30; índice nativo 12061",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 30; índice nativo 4460",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-030",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué objetivo puede perseguir un clúster?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Priorizar cómputo científico implica usar los nodos como un equipo de memoria uniforme."
+          },
+          {
+            "id": "B",
+            "text": "Orientarlo a disponibilidad exige mantener todos los nodos ejecutando la misma tarea."
+          },
+          {
+            "id": "C",
+            "text": "Puede priorizar cálculo paralelo, continuidad de servicio, reparto de carga o combinaciones."
+          },
+          {
+            "id": "D",
+            "text": "Repartir peticiones entre nodos convierte la interconexión en un recurso prescindible."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Un clúster puede diseñarse para cálculo de alto rendimiento, disponibilidad o reparto de carga, y combinar objetivos. Cada objetivo exige mecanismos y mediciones específicos: paralelización y comunicación, detección y recuperación de fallos o distribución de peticiones. Conectar nodos no produce automáticamente esas propiedades ni elimina puntos de fallo o costes de comunicación. La arquitectura y el software determinan cómo se logran.",
+          "incorrect": "Revisa la arquitectura, relación o medida descrita por el contenido de la alternativa elegida.",
+          "incorrect_options": {
+            "A": "El cálculo paralelo puede usar memoria distribuida y mensajes entre nodos. No exige convertir el conjunto en una máquina UMA.",
+            "B": "La alta disponibilidad admite diferentes configuraciones, como activo/pasivo o servicios repartidos. No obliga a ejecutar simultáneamente la misma tarea en todos los nodos.",
+            "D": "La distribución de peticiones sigue necesitando comunicaciones con nodos y, según diseño, coordinación. El reparto no elimina la infraestructura que las transporta."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 30; índice nativo 4460",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 30; índice nativo 12061",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "IBM: What is cluster computing?",
+              "url": "https://www.ibm.com/think/topics/cluster-computing",
+              "locator": "Types of clusters: High-availability clusters, Load-balancing clusters y High-performance computing clusters; se usa clasificación funcional, no promesas universales ni definición restrictiva de grid",
+              "version": "Página primaria sin versión documental declarada; consulta real el 27-10-2026",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "Cornell Virtual Workshop: Clusters",
+              "url": "https://cvw.cac.cornell.edu/parallel/hpc/clusters",
+              "locator": "Párrafos de definición, nodos, planificador e interconexiones: máquinas coordinadas como recurso y comunicación de tareas",
+              "version": "Página primaria sin versión documental declarada; consulta real el 27-10-2026",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "LLNL: Introduction to Parallel Computing Tutorial",
+              "url": "https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial",
+              "locator": "Parallel Computer Memory Architectures, Distributed Memory; Load Balancing",
+              "version": "Versión 16-06-2026 declarada; material docente de fundamentos, sin extrapolar ejemplos históricos o tendencias a todos los equipos; consulta real el 27-10-2026",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-019"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 30; índice nativo 4460",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar pluralidad de objetivos y clave C; comparar decisiones arquitectónicas cercanas sin reducir código fuente, reemplazar DNS o prometer ausencia automática de fallos."
+      ],
+      "references": [
+        {
+          "title": "IBM: What is cluster computing?",
+          "url": "https://www.ibm.com/think/topics/cluster-computing",
+          "locator": "Types of clusters: High-availability clusters, Load-balancing clusters y High-performance computing clusters; se usa clasificación funcional, no promesas universales ni definición restrictiva de grid",
+          "version": "Página primaria sin versión documental declarada; consulta real el 27-10-2026",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "Cornell Virtual Workshop: Clusters",
+          "url": "https://cvw.cac.cornell.edu/parallel/hpc/clusters",
+          "locator": "Párrafos de definición, nodos, planificador e interconexiones: máquinas coordinadas como recurso y comunicación de tareas",
+          "version": "Página primaria sin versión documental declarada; consulta real el 27-10-2026",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "LLNL: Introduction to Parallel Computing Tutorial",
+          "url": "https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial",
+          "locator": "Parallel Computer Memory Architectures, Distributed Memory; Load Balancing",
+          "version": "Versión 16-06-2026 declarada; material docente de fundamentos, sin extrapolar ejemplos históricos o tendencias a todos los equipos; consulta real el 27-10-2026",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-031",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "1f93a085c8d98528331a91df83a5093572866675819603723c3f627af854ba65",
+      "content_sha256": "c111f4318588465a9c78bfbd59b12b342a2a0163dfe9dfce0d80907edc261821",
+      "before": {
+        "id": "MAN-GSI-P17-031",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué distingue conceptualmente a grid computing?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Es sinónimo exacto de una única máquina virtual."
+          },
+          {
+            "id": "B",
+            "text": "Obliga a que todos los nodos estén en la misma placa base."
+          },
+          {
+            "id": "C",
+            "text": "Es un sistema de permisos POSIX."
+          },
+          {
+            "id": "D",
+            "text": "Agrega recursos autónomos y potencialmente distribuidos entre distintos dominios para compartir capacidad."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Grid coordina recursos distribuidos y autónomos; no es lo mismo que cloud.",
+          "incorrect": "Según el solucionario: Grid coordina recursos distribuidos y autónomos; no es lo mismo que cloud."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 31; índice nativo 4533",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 31; índice nativo 12351",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 31; índice nativo 4533",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-031",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué distingue conceptualmente a grid computing?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Un clúster local con control central de nodos bajo una única política administrativa."
+          },
+          {
+            "id": "B",
+            "text": "Un servicio de recursos aprovisionables bajo demanda con elasticidad y uso medido."
+          },
+          {
+            "id": "C",
+            "text": "Un sistema SMP que ofrece memoria compartida a procesadores dentro de un equipo."
+          },
+          {
+            "id": "D",
+            "text": "Recursos autónomos de distintos dominios que se coordinan mediante reglas compartidas."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Grid se centra en compartir y coordinar recursos que conservan autonomía en diferentes dominios de control. El texto de Foster añade protocolos e interfaces generales y abiertos y un uso coordinado que aporte servicio. Los dominios pueden pertenecer a una o varias organizaciones: distancia física y recursos ociosos no son requisitos exclusivos. Puede integrar clústeres y relacionarse con cloud sin ser sinónimo de ellos.",
+          "incorrect": "Revisa la arquitectura, relación o medida descrita por el contenido de la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Describe un clúster gestionado bajo control central. Puede aportar recursos a un grid, pero por sí solo no expresa la autonomía de dominios que distingue el concepto.",
+            "B": "Describe características del modelo cloud según NIST. Grid no queda definido por ofrecer necesariamente autoservicio elástico y uso medido.",
+            "C": "Describe memoria compartida de un equipo multiprocesador. Es otra organización de recursos, distinta de coordinar dominios autónomos."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 31; índice nativo 4533",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 31; índice nativo 12351",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Ian Foster: What is the Grid? A Three Point Checklist",
+              "url": "https://marketing.globuscs.info/production/strapi/uploads/What_Is_The_Grid_98bdb2b767.pdf",
+              "locator": "A Grid Checklist, pp. 2–3: dominios de control autónomos, protocolos e interfaces generales abiertos y uso coordinado; listado de publicaciones Globus enlaza este original",
+              "version": "20-07-2002; artículo primario fundacional, sin recomendar software histórico; consulta real el 27-10-2026",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "NIST SP 800-145: The NIST Definition of Cloud Computing",
+              "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf",
+              "locator": "Sección 2, pp. impresas 2–3: definición, cinco características esenciales, modelos de servicio y despliegue",
+              "version": "Septiembre 2011; errata editorial incorporada 27-04-2012; consulta real el 27-10-2026",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "Cornell Virtual Workshop: Clusters",
+              "url": "https://cvw.cac.cornell.edu/parallel/hpc/clusters",
+              "locator": "Párrafos de definición, nodos, planificador e interconexiones: máquinas coordinadas como recurso y comunicación de tareas",
+              "version": "Página primaria sin versión documental declarada; consulta real el 27-10-2026",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-019"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 31; índice nativo 4533",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar autonomía y coordinación grid y clave D; comparar clúster, cloud y SMP, sin restringir grid a equipos ociosos o a organizaciones geográficamente separadas."
+      ],
+      "references": [
+        {
+          "title": "Ian Foster: What is the Grid? A Three Point Checklist",
+          "url": "https://marketing.globuscs.info/production/strapi/uploads/What_Is_The_Grid_98bdb2b767.pdf",
+          "locator": "A Grid Checklist, pp. 2–3: dominios de control autónomos, protocolos e interfaces generales abiertos y uso coordinado; listado de publicaciones Globus enlaza este original",
+          "version": "20-07-2002; artículo primario fundacional, sin recomendar software histórico; consulta real el 27-10-2026",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "NIST SP 800-145: The NIST Definition of Cloud Computing",
+          "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf",
+          "locator": "Sección 2, pp. impresas 2–3: definición, cinco características esenciales, modelos de servicio y despliegue",
+          "version": "Septiembre 2011; errata editorial incorporada 27-04-2012; consulta real el 27-10-2026",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "Cornell Virtual Workshop: Clusters",
+          "url": "https://cvw.cac.cornell.edu/parallel/hpc/clusters",
+          "locator": "Párrafos de definición, nodos, planificador e interconexiones: máquinas coordinadas como recurso y comunicación de tareas",
+          "version": "Página primaria sin versión documental declarada; consulta real el 27-10-2026",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-032",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "9abfc22aec5ad2db78d1f064fd76c2cede858822ae0d281f9c630d81e35cc233",
+      "content_sha256": "48f71665678ddfac23acd46f1c41fa93d1b093e2b05cfac983c7010c59258013",
+      "before": {
+        "id": "MAN-GSI-P17-032",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué afirmación es correcta sobre clúster, grid y cloud?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Son conceptos relacionados con computación distribuida/recursos, pero no son sinónimos."
+          },
+          {
+            "id": "B",
+            "text": "Son tres nombres para el mismo producto."
+          },
+          {
+            "id": "C",
+            "text": "Cloud es siempre un clúster físico de un solo nodo."
+          },
+          {
+            "id": "D",
+            "text": "Grid implica necesariamente SaaS."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Cada modelo resuelve organización y provisión de recursos de forma distinta.",
+          "incorrect": "Según el solucionario: Cada modelo resuelve organización y provisión de recursos de forma distinta."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 32; índice nativo 4616",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 32; índice nativo 12715",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 32; índice nativo 4616",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-032",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué asociación distingue mejor clúster, grid y cloud en su uso habitual?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Clúster: nodos coordinados; grid: dominios autónomos; cloud: provisión elástica bajo demanda."
+          },
+          {
+            "id": "B",
+            "text": "Clúster: provisión elástica; grid: nodos bajo control central; cloud: dominios autónomos."
+          },
+          {
+            "id": "C",
+            "text": "Clúster: dominios autónomos; grid: provisión elástica; cloud: nodos bajo control central."
+          },
+          {
+            "id": "D",
+            "text": "Clúster: provisión elástica; grid: dominios autónomos; cloud: nodos bajo control central."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "La asociación distingue organización de nodos coordinados, compartición entre dominios autónomos y modelo de provisión bajo demanda. No son categorías mutuamente excluyentes: un cloud puede apoyarse en clústeres y un grid puede incorporar recursos de otros modelos. La elasticidad por sí sola tampoco agota la definición NIST de cloud, que añade autoservicio, acceso por red, agrupación de recursos y servicio medido.",
+          "incorrect": "Revisa la arquitectura, relación o medida descrita por el contenido de la alternativa elegida.",
+          "incorrect_options": {
+            "B": "Atribuye al grid el control central propio del ejemplo de clúster y al cloud la autonomía de dominios. La provisión elástica no define por sí sola todo clúster.",
+            "C": "Rota las características distintivas: autonomía de dominios corresponde al grid, provisión elástica al modelo cloud y nodos coordinados al clúster.",
+            "D": "La descripción de grid es adecuada, pero intercambia provisión cloud y organización de un clúster. Un soporte de nodos no basta para acreditar las características de servicio cloud."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 32; índice nativo 4616",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 32; índice nativo 12715",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Cornell Virtual Workshop: Clusters",
+              "url": "https://cvw.cac.cornell.edu/parallel/hpc/clusters",
+              "locator": "Párrafos de definición, nodos, planificador e interconexiones: máquinas coordinadas como recurso y comunicación de tareas",
+              "version": "Página primaria sin versión documental declarada; consulta real el 27-10-2026",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "Ian Foster: What is the Grid? A Three Point Checklist",
+              "url": "https://marketing.globuscs.info/production/strapi/uploads/What_Is_The_Grid_98bdb2b767.pdf",
+              "locator": "A Grid Checklist, pp. 2–3: dominios de control autónomos, protocolos e interfaces generales abiertos y uso coordinado; listado de publicaciones Globus enlaza este original",
+              "version": "20-07-2002; artículo primario fundacional, sin recomendar software histórico; consulta real el 27-10-2026",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "NIST SP 800-145: The NIST Definition of Cloud Computing",
+              "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf",
+              "locator": "Sección 2, pp. impresas 2–3: definición, cinco características esenciales, modelos de servicio y despliegue",
+              "version": "Septiembre 2011; errata editorial incorporada 27-04-2012; consulta real el 27-10-2026",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-019"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 32; índice nativo 4616",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar distinción clúster/grid/cloud y clave A; comparar asociaciones parcialmente correctas, explicando que pueden combinarse sin ser sinónimos."
+      ],
+      "references": [
+        {
+          "title": "Cornell Virtual Workshop: Clusters",
+          "url": "https://cvw.cac.cornell.edu/parallel/hpc/clusters",
+          "locator": "Párrafos de definición, nodos, planificador e interconexiones: máquinas coordinadas como recurso y comunicación de tareas",
+          "version": "Página primaria sin versión documental declarada; consulta real el 27-10-2026",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "Ian Foster: What is the Grid? A Three Point Checklist",
+          "url": "https://marketing.globuscs.info/production/strapi/uploads/What_Is_The_Grid_98bdb2b767.pdf",
+          "locator": "A Grid Checklist, pp. 2–3: dominios de control autónomos, protocolos e interfaces generales abiertos y uso coordinado; listado de publicaciones Globus enlaza este original",
+          "version": "20-07-2002; artículo primario fundacional, sin recomendar software histórico; consulta real el 27-10-2026",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "NIST SP 800-145: The NIST Definition of Cloud Computing",
+          "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf",
+          "locator": "Sección 2, pp. impresas 2–3: definición, cinco características esenciales, modelos de servicio y despliegue",
+          "version": "Septiembre 2011; errata editorial incorporada 27-04-2012; consulta real el 27-10-2026",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-033",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "e14cb114b498fd553ed2ad8a13f66278dd510848a0d501591a9efa4e344f6a56",
+      "content_sha256": "a8bf983d07f7aa38013862e074049164cec30086c20b5d0a30a4f29d3c3b0085",
+      "before": {
+        "id": "MAN-GSI-P17-033",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "En memoria compartida, ¿qué problema exige mecanismos de sincronización?",
+        "options": [
+          {
+            "id": "A",
+            "text": "La imposibilidad absoluta de compartir datos."
+          },
+          {
+            "id": "B",
+            "text": "La ausencia de cualquier caché."
+          },
+          {
+            "id": "C",
+            "text": "El hecho de que cada proceso tenga su propio disco físico."
+          },
+          {
+            "id": "D",
+            "text": "Varias tareas pueden acceder y modificar estado compartido de forma concurrente."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Estado compartido introduce carreras y coherencia/sincronización.",
+          "incorrect": "Según el solucionario: Estado compartido introduce carreras y coherencia/sincronización."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 33; índice nativo 4701",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 33; índice nativo 13054",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 33; índice nativo 4701",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-033",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Dos tareas actualizan un contador compartido mediante lectura, suma y escritura sin coordinar la secuencia. Ambas pueden leer el mismo valor antes de escribir. ¿Qué problema debe resolverse?",
+        "options": [
+          {
+            "id": "A",
+            "text": "La latencia de accesos remotos a memoria situada en otro nodo NUMA."
+          },
+          {
+            "id": "B",
+            "text": "La contención de ancho de banda al leer grandes bloques de datos disjuntos."
+          },
+          {
+            "id": "C",
+            "text": "El desequilibrio de trabajo entre tareas que esperan al llegar a una barrera."
+          },
+          {
+            "id": "D",
+            "text": "La interferencia entre actualizaciones concurrentes de un mismo estado compartido."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Si dos tareas leen el mismo contador y después escriben cada una su incremento sin coordinar la operación completa, una actualización puede sobrescribir la otra. Hay un problema de concurrencia sobre estado compartido: se necesita exclusión, una operación atómica apropiada u otro diseño que garantice la actualización. La coherencia hardware no convierte la secuencia de lectura, suma y escritura en una operación indivisible. Las reglas concretas dependen del lenguaje y mecanismo utilizado.",
+          "incorrect": "Revisa la arquitectura, relación o medida descrita por el contenido de la alternativa elegida.",
+          "incorrect_options": {
+            "A": "NUMA puede afectar al tiempo de acceso, pero acercar los datos no hace indivisible una actualización compuesta. No resuelve que dos tareas sobrescriban el incremento.",
+            "B": "La contención puede reducir throughput incluso sobre datos disjuntos. El caso describe conflicto lógico sobre el mismo estado, no solo saturación por lecturas.",
+            "C": "Una distribución desigual de trabajo causa esperas de rendimiento. No explica ni corrige la pérdida de una actualización sobre el contador."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 33; índice nativo 4701",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 33; índice nativo 13054",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "LLNL: Introduction to Parallel Computing Tutorial",
+              "url": "https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial",
+              "locator": "Data Dependencies, Loop independent data dependence y How to Handle Data Dependencies; Shared Memory, responsabilidad de sincronización",
+              "version": "Versión 16-06-2026 declarada; material docente de fundamentos, sin extrapolar ejemplos históricos o tendencias a todos los equipos; consulta real el 27-10-2026",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "Linux: What is NUMA?",
+              "url": "https://docs.kernel.org/mm/numa.html",
+              "locator": "Perspectiva hardware, ccNUMA, distancia entre celdas, asignación local y afinidad; nodos pueden carecer de CPU o memoria",
+              "version": "Documentación en línea, sin fijar versión de implementación ni asumir que todo nodo es un socket; consulta real el 27-10-2026",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-019"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 33; índice nativo 4701",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar necesidad de sincronización y clave D; microcaso de contador actualizado por lectura/suma/escritura, diferenciando corrección lógica y problemas de rendimiento."
+      ],
+      "references": [
+        {
+          "title": "LLNL: Introduction to Parallel Computing Tutorial",
+          "url": "https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial",
+          "locator": "Data Dependencies, Loop independent data dependence y How to Handle Data Dependencies; Shared Memory, responsabilidad de sincronización",
+          "version": "Versión 16-06-2026 declarada; material docente de fundamentos, sin extrapolar ejemplos históricos o tendencias a todos los equipos; consulta real el 27-10-2026",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "Linux: What is NUMA?",
+          "url": "https://docs.kernel.org/mm/numa.html",
+          "locator": "Perspectiva hardware, ccNUMA, distancia entre celdas, asignación local y afinidad; nodos pueden carecer de CPU o memoria",
+          "version": "Documentación en línea, sin fijar versión de implementación ni asumir que todo nodo es un socket; consulta real el 27-10-2026",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-034",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "50b2bdb48f4948527f55672a510d4e9dee52651447428750ff699de5d866d277",
+      "content_sha256": "1d5f51114d03db08fc07a113e7b86314aa074724a083bca3a6d976a55db7cc03",
+      "before": {
+        "id": "MAN-GSI-P17-034",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "En memoria distribuida, ¿cómo se intercambian típicamente datos entre nodos?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Leyendo todos la misma dirección física de RAM local."
+          },
+          {
+            "id": "B",
+            "text": "Usando exclusivamente interrupciones de teclado."
+          },
+          {
+            "id": "C",
+            "text": "Mediante comunicación/mensajes a través de una interconexión."
+          },
+          {
+            "id": "D",
+            "text": "Mediante el registro de Windows."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Los nodos no comparten necesariamente un espacio físico de memoria.",
+          "incorrect": "Según el solucionario: Los nodos no comparten necesariamente un espacio físico de memoria."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 34; índice nativo 4775",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 34; índice nativo 13412",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 34; índice nativo 4775",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-034",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "En el modelo clásico de memoria distribuida, con espacios privados por proceso, ¿cómo se intercambian típicamente datos entre nodos?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Accediendo a un espacio común de memoria con cargas y almacenes ordinarios de CPU."
+          },
+          {
+            "id": "B",
+            "text": "Confiando en la coherencia de caché local para propagar cambios a todos los demás nodos."
+          },
+          {
+            "id": "C",
+            "text": "Mediante comunicación y mensajes a través de la interconexión entre los nodos."
+          },
+          {
+            "id": "D",
+            "text": "Tratando direcciones virtuales iguales como referencia al mismo objeto remoto."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "En el modelo clásico de memoria distribuida, cada proceso trabaja con su espacio y comunica los datos que otros necesitan mediante operaciones de comunicación. MPI es un ejemplo habitual; una implementación puede optimizar el transporte según dónde estén los procesos. El modelo no se convierte en memoria compartida porque dos procesos usen el mismo valor de dirección virtual. También existen diseños híbridos y otras abstracciones sobre el hardware.",
+          "incorrect": "Revisa la arquitectura, relación o medida descrita por el contenido de la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Describe acceso ordinario a memoria compartida. El enunciado delimita espacios privados y comunicación entre nodos; una abstracción compartida adicional sería otro modelo.",
+            "B": "La coherencia local de un nodo no publica automáticamente sus datos privados en los otros nodos del sistema. Hace falta la comunicación que requiere el modelo.",
+            "D": "El mismo número de dirección en espacios privados puede designar objetos distintos. No identifica por sí solo memoria remota ni realiza la transferencia."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 34; índice nativo 4775",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 34; índice nativo 13412",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "LLNL: Introduction to Parallel Computing Tutorial",
+              "url": "https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial",
+              "locator": "Parallel Computer Memory Architectures, Distributed Memory; Distributed Memory / Message Passing Model; Hybrid Model",
+              "version": "Versión 16-06-2026 declarada; material docente de fundamentos, sin extrapolar ejemplos históricos o tendencias a todos los equipos; consulta real el 27-10-2026",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-019"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 34; índice nativo 4775",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar intercambio mediante comunicación y clave C; acotar el modelo clásico con espacios privados, frente a cargas compartidas, coherencia local y confusión de direcciones."
+      ],
+      "references": [
+        {
+          "title": "LLNL: Introduction to Parallel Computing Tutorial",
+          "url": "https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial",
+          "locator": "Parallel Computer Memory Architectures, Distributed Memory; Distributed Memory / Message Passing Model; Hybrid Model",
+          "version": "Versión 16-06-2026 declarada; material docente de fundamentos, sin extrapolar ejemplos históricos o tendencias a todos los equipos; consulta real el 27-10-2026",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-035",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "0e12efd9b12a92c91a1ae34e277f8b4048ea7ac49fc9104d43db8abe1b2489b3",
+      "content_sha256": "218f50548e2015532bd24156aa0356506e5867cc1b91599651bba801bdbd5f97",
+      "before": {
+        "id": "MAN-GSI-P17-035",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué expresa la ley de Amdahl de forma cualitativa?",
+        "options": [
+          {
+            "id": "A",
+            "text": "El rendimiento siempre crece linealmente sin límite."
+          },
+          {
+            "id": "B",
+            "text": "Duplicar nodos reduce siempre el rendimiento a la mitad."
+          },
+          {
+            "id": "C",
+            "text": "La latencia de red desaparece con más procesadores."
+          },
+          {
+            "id": "D",
+            "text": "La parte no paralelizable limita el speedup máximo aunque se añadan más recursos."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "El trabajo serial limita la aceleración total; por eso el escalado no es infinito.",
+          "incorrect": "Según el solucionario: El trabajo serial limita la aceleración total; por eso el escalado no es infinito."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 35; índice nativo 4851",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 35; índice nativo 13754",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 35; índice nativo 4851",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-035",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué expresa la ley de Amdahl de forma cualitativa?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Al crecer el problema con los procesadores, puede mantenerse el tiempo de resolución."
+          },
+          {
+            "id": "B",
+            "text": "La distancia entre CPU y memoria determina la diferencia entre accesos locales y remotos."
+          },
+          {
+            "id": "C",
+            "text": "Repartir trabajo entre tareas reduce esperas debidas a una distribución desigual de carga."
+          },
+          {
+            "id": "D",
+            "text": "Para un problema fijo, la fracción no paralelizable limita la aceleración total."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "La ley de Amdahl considera un trabajo de tamaño fijo y la fracción que puede acelerarse. Aunque esa parte se haga muy rápida, la fracción serial sigue consumiendo tiempo y limita el speedup total; el modelo ideal supone además costes simplificados. Comunicación, sincronización y desequilibrio pueden reducir la mejora real. Cambiar el tamaño del problema al añadir recursos corresponde a otra pregunta de escalado.",
+          "incorrect": "Revisa la arquitectura, relación o medida descrita por el contenido de la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Describe la idea de escalado débil o problema creciente, relacionada con Gustafson. No expresa la limitación serial del trabajo fijo de Amdahl.",
+            "B": "Describe localidad NUMA y costes de memoria. Es un factor de rendimiento, pero no la relación entre fracción serial y aceleración total que formula Amdahl.",
+            "C": "Describe balanceo de carga. Reducir esperas ayuda, pero no elimina el tiempo de una parte que sigue siendo serial."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 35; índice nativo 4851",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 35; índice nativo 13754",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "LLNL: Introduction to Parallel Computing Tutorial",
+              "url": "https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial",
+              "locator": "Potential Benefits, Limits and Costs of Parallel Programming, Amdahl's Law; Scalability, strong/weak scaling",
+              "version": "Versión 16-06-2026 declarada; material docente de fundamentos, sin extrapolar ejemplos históricos o tendencias a todos los equipos; consulta real el 27-10-2026",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "NVIDIA CUDA C++ Best Practices Guide",
+              "url": "https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html",
+              "locator": "Secciones 2.2 Assess/Parallelize/Optimize/Deploy, 4.1.1 Creating the Profile y 4.1.3 Understanding Scaling: carga realista, fracción paralelizable y transferencias",
+              "version": "Versión 13.4 consultada; alcance CUDA, sin recomendar compra o garantizar mejora para toda carga; consulta real el 27-10-2026",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-019"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 35; índice nativo 4851",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar límite serial y clave D; comparar escalado débil, localidad y balanceo como conceptos próximos, explicitando tamaño fijo y costes del modelo."
+      ],
+      "references": [
+        {
+          "title": "LLNL: Introduction to Parallel Computing Tutorial",
+          "url": "https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial",
+          "locator": "Potential Benefits, Limits and Costs of Parallel Programming, Amdahl's Law; Scalability, strong/weak scaling",
+          "version": "Versión 16-06-2026 declarada; material docente de fundamentos, sin extrapolar ejemplos históricos o tendencias a todos los equipos; consulta real el 27-10-2026",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "NVIDIA CUDA C++ Best Practices Guide",
+          "url": "https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html",
+          "locator": "Secciones 2.2 Assess/Parallelize/Optimize/Deploy, 4.1.1 Creating the Profile y 4.1.3 Understanding Scaling: carga realista, fracción paralelizable y transferencias",
+          "version": "Versión 13.4 consultada; alcance CUDA, sin recomendar compra o garantizar mejora para toda carga; consulta real el 27-10-2026",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-036",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "0264b1a5d3ddada473463c8007e472fcabd7e54aaea75ccf7431bc514db9dac3",
+      "content_sha256": "4195d8c1300d0bd16812d5f58fe471b715657fd6451759821b14e9e6a3f7fcbe",
+      "before": {
+        "id": "MAN-GSI-P17-036",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué métrica se usa habitualmente para expresar capacidad de cálculo en HPC de coma flotante?",
+        "options": [
+          {
+            "id": "A",
+            "text": "RPO."
+          },
+          {
+            "id": "B",
+            "text": "FLOPS y sus múltiplos, interpretados siempre junto con la carga/benchmark."
+          },
+          {
+            "id": "C",
+            "text": "Número de usuarios de Active Directory."
+          },
+          {
+            "id": "D",
+            "text": "TTL de DNS."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "FLOPS mide operaciones de coma flotante por segundo, aunque no sustituye benchmarks representativos.",
+          "incorrect": "Según el solucionario: FLOPS mide operaciones de coma flotante por segundo, aunque no sustituye benchmarks representativos."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 36; índice nativo 4942",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 36; índice nativo 14117",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 36; índice nativo 4942",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-036",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué métrica se usa habitualmente para expresar capacidad de cálculo en HPC de coma flotante?",
+        "options": [
+          {
+            "id": "A",
+            "text": "GB/s: volumen de datos transferido por segundo en una comunicación."
+          },
+          {
+            "id": "B",
+            "text": "FLOPS: operaciones de coma flotante por segundo en una carga especificada."
+          },
+          {
+            "id": "C",
+            "text": "IOPS: operaciones de entrada/salida completadas por segundo en almacenamiento."
+          },
+          {
+            "id": "D",
+            "text": "MIPS: millones de instrucciones ejecutadas por segundo en un procesador."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "FLOPS expresa operaciones de coma flotante por segundo; sus múltiplos permiten informar de tasas de cálculo. Hay que precisar carga, precisión numérica y si se trata de pico teórico o rendimiento medido. TOP500 distingue Rpeak y Rmax para su prueba de sistemas lineales densos. Ninguna cifra aislada describe todas las cargas: ancho de banda, memoria y comunicación también condicionan el rendimiento de una aplicación.",
+          "incorrect": "Revisa la arquitectura, relación o medida descrita por el contenido de la alternativa elegida.",
+          "incorrect_options": {
+            "A": "GB/s mide transferencia de datos, no operaciones aritméticas de coma flotante. Puede limitar una carga HPC, pero es una magnitud diferente.",
+            "C": "IOPS mide operaciones de E/S y depende de tamaño y patrón de acceso, entre otros factores. No es una tasa de cálculo de coma flotante.",
+            "D": "La acepción clásica de MIPS cuenta millones de instrucciones por segundo, con mezclas y trabajo por instrucción diferentes. En capacidad mainframe también se publican ratings relativos: tampoco son un recuento de operaciones de coma flotante de esta carga."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 36; índice nativo 4942",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 36; índice nativo 14117",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "TOP500: The Linpack Benchmark",
+              "url": "https://top500.org/project/linpack/",
+              "locator": "Párrafos de sistema lineal denso, alcance de la medida y Rmax/Rpeak; no se usa posición o cifra de un ranking",
+              "version": "Página primaria sin versión documental declarada; consulta real el 27-10-2026",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "SPEC Open Systems Group Policies and Procedures",
+              "url": "https://www.spec.org/osg/policy/",
+              "locator": "Secciones 2.7.4–2.7.7: resultados comparables/reproducibles, condiciones documentadas, alcance y representatividad",
+              "version": "V2.22, 19-08-2024 indicada en Recent Revisions; fundamentos de medición, no reglas específicas de una ejecución SPEC propia; consulta real el 27-10-2026",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "Jack Dongarra: Frequently Asked Questions on the Linpack Benchmark and Top500",
+              "url": "https://netlib.org/utk/people/JackDongarra/faq-linpack.html",
+              "locator": "Epígrafes What is a Mflop/s?, What is the theoretical peak performance? y How does the Linpack Benchmark performance relate to my application?: tasa, precisión y alcance",
+              "version": "FAQ histórica, fecha textual Last updated 5/8/2007 3:29 PM; solo definiciones, no lista actual ni reglas vigentes del benchmark; consulta real 27-10-2026",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "IBM Cloud Docs: Block Storage capacity and performance",
+              "url": "https://cloud.ibm.com/docs/vpc?topic=vpc-capacity-performance",
+              "locator": "Capacity; How I/O size affects performance; How concurrency and queue depth affect performance: volumen, IOPS, throughput y tamaño de operación; se usan relaciones, no límites comerciales concretos",
+              "version": "Documentación en línea sin versión documental indicada; sin recomendación de perfil ni extrapolar cifras de producto; consulta real 27-10-2026",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "IBM Z IntelliMagic Vision for z/OS: MIPS specification",
+              "url": "https://www.ibm.com/docs/en/ibm-z-intellimagic/1.1.x?topic=step-mips-specification",
+              "locator": "Párrafos iniciales: MIPS (Millions of Instructions Per Second), ratings LSPR/PCI y estimaciones de capacidad; no se equiparan índices relativos a recuentos directos de instrucciones",
+              "version": "Rama 1.1.x; contenido primario indexado consultado; apertura directa rechazada con HTTP 403, sin atribuir lectura directa exitosa ni versión operativa actual; consulta real 27-10-2026",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-019"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 36; índice nativo 4942",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar FLOPS y clave B; comparar cuatro tasas técnicas reales y explicar precisión, carga y pico frente a medida sin equiparar rankings al rendimiento universal."
+      ],
+      "references": [
+        {
+          "title": "TOP500: The Linpack Benchmark",
+          "url": "https://top500.org/project/linpack/",
+          "locator": "Párrafos de sistema lineal denso, alcance de la medida y Rmax/Rpeak; no se usa posición o cifra de un ranking",
+          "version": "Página primaria sin versión documental declarada; consulta real el 27-10-2026",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "SPEC Open Systems Group Policies and Procedures",
+          "url": "https://www.spec.org/osg/policy/",
+          "locator": "Secciones 2.7.4–2.7.7: resultados comparables/reproducibles, condiciones documentadas, alcance y representatividad",
+          "version": "V2.22, 19-08-2024 indicada en Recent Revisions; fundamentos de medición, no reglas específicas de una ejecución SPEC propia; consulta real el 27-10-2026",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "Jack Dongarra: Frequently Asked Questions on the Linpack Benchmark and Top500",
+          "url": "https://netlib.org/utk/people/JackDongarra/faq-linpack.html",
+          "locator": "Epígrafes What is a Mflop/s?, What is the theoretical peak performance? y How does the Linpack Benchmark performance relate to my application?: tasa, precisión y alcance",
+          "version": "FAQ histórica, fecha textual Last updated 5/8/2007 3:29 PM; solo definiciones, no lista actual ni reglas vigentes del benchmark; consulta real 27-10-2026",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "IBM Cloud Docs: Block Storage capacity and performance",
+          "url": "https://cloud.ibm.com/docs/vpc?topic=vpc-capacity-performance",
+          "locator": "Capacity; How I/O size affects performance; How concurrency and queue depth affect performance: volumen, IOPS, throughput y tamaño de operación; se usan relaciones, no límites comerciales concretos",
+          "version": "Documentación en línea sin versión documental indicada; sin recomendación de perfil ni extrapolar cifras de producto; consulta real 27-10-2026",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "IBM Z IntelliMagic Vision for z/OS: MIPS specification",
+          "url": "https://www.ibm.com/docs/en/ibm-z-intellimagic/1.1.x?topic=step-mips-specification",
+          "locator": "Párrafos iniciales: MIPS (Millions of Instructions Per Second), ratings LSPR/PCI y estimaciones de capacidad; no se equiparan índices relativos a recuentos directos de instrucciones",
+          "version": "Rama 1.1.x; contenido primario indexado consultado; apertura directa rechazada con HTTP 403, sin atribuir lectura directa exitosa ni versión operativa actual; consulta real 27-10-2026",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P17-037",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "cd27bdeef7f191cc15eb92e98d1cca219fc1d3bf557d8badc71b942429149017",
+      "content_sha256": "442d28bf5210a886c527e4e3fed485dbbd77805ea9a804c92578ddca5e56d0e7",
+      "before": {
+        "id": "MAN-GSI-P17-037",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué es un benchmark útil?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Cualquier número de marketing sin metodología."
+          },
+          {
+            "id": "B",
+            "text": "Solo la frecuencia nominal de la CPU."
+          },
+          {
+            "id": "C",
+            "text": "Una prueba reproducible y representativa del tipo de carga que se quiere comparar."
+          },
+          {
+            "id": "D",
+            "text": "Una prueba que cambia condiciones entre alternativas."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "La comparabilidad exige metodología y carga representativa.",
+          "incorrect": "Según el solucionario: La comparabilidad exige metodología y carga representativa."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 37; índice nativo 5051",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 37; índice nativo 14410",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 37; índice nativo 5051",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P17-037",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T01",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Se comparan dos equipos para ejecutar una aplicación. ¿Qué planteamiento de benchmark aporta una comparación útil?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Comparar picos teóricos aunque procedan de operaciones y precisiones numéricas distintas."
+          },
+          {
+            "id": "B",
+            "text": "Usar la frecuencia nominal de CPU como sustituto de medir el tiempo de la aplicación."
+          },
+          {
+            "id": "C",
+            "text": "Repetir una carga representativa con condiciones y métricas documentadas y comparables."
+          },
+          {
+            "id": "D",
+            "text": "Elegir para cada equipo una carga distinta que permita mostrar su mejor resultado."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Un benchmark útil para esa decisión debe representar el trabajo que interesa y permitir reproducir e interpretar la comparación. Se documentan carga, tamaño, versiones, configuración, métricas y condiciones relevantes, con repeticiones que permitan valorar variabilidad. No se exige que cada componente de dos equipos sea idéntico, sino entender qué se compara. Un test sintético puede ser útil para su alcance, sin sustituir toda aplicación real.",
+          "incorrect": "Revisa la arquitectura, relación o medida descrita por el contenido de la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Cambiar operación o precisión puede cambiar el trabajo contado. Dos cifras de pico no acreditan el comportamiento de la aplicación ni constituyen una comparación homogénea.",
+            "B": "La frecuencia no incorpora instrucciones, memoria, paralelismo o software de la aplicación. No reemplaza medir su tiempo o throughput.",
+            "D": "Cambiar la carga entre equipos impide atribuir la diferencia al sistema para el mismo trabajo de interés. Mostrar el mejor caso propio no responde a la comparación solicitada."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 17 — COMPUTADORES, CLOUD Y SISTEMAS OPERATIVOS — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 37; índice nativo 5051",
+          "question_source_id": "SRC-GSI-P17-CUADERNO",
+          "question_document_id": "DOC-GSI-P17-CUADERNO",
+          "question_locator": "Pregunta 37; índice nativo 14410",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "SPEC Open Systems Group Policies and Procedures",
+              "url": "https://www.spec.org/osg/policy/",
+              "locator": "Secciones 2.7.4–2.7.7: resultados comparables/reproducibles, condiciones documentadas, alcance y representatividad",
+              "version": "V2.22, 19-08-2024 indicada en Recent Revisions; fundamentos de medición, no reglas específicas de una ejecución SPEC propia; consulta real el 27-10-2026",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "NVIDIA CUDA C++ Best Practices Guide",
+              "url": "https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html",
+              "locator": "Secciones 2.2 Assess/Parallelize/Optimize/Deploy, 4.1.1 Creating the Profile y 4.1.3 Understanding Scaling: carga realista, fracción paralelizable y transferencias",
+              "version": "Versión 13.4 consultada; alcance CUDA, sin recomendar compra o garantizar mejora para toda carga; consulta real el 27-10-2026",
+              "checked_at": "2026-10-27"
+            },
+            {
+              "title": "TOP500: The Linpack Benchmark",
+              "url": "https://top500.org/project/linpack/",
+              "locator": "Párrafos de sistema lineal denso, alcance de la medida y Rmax/Rpeak; no se usa posición o cifra de un ranking",
+              "version": "Página primaria sin versión documental declarada; consulta real el 27-10-2026",
+              "checked_at": "2026-10-27"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-019"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P17-SOL",
+          "document_id": "DOC-GSI-P17-SOL",
+          "drive_id": "1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ",
+          "url": "https://docs.google.com/document/d/1mDWu-0jTvtHMQCXUfjvC4XgWheKNDStuNe7oLUXuyCQ/edit",
+          "locator": "Pregunta 37; índice nativo 5051",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-17",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-27"
+      },
+      "reasons": [
+        "Conservar reproducibilidad y representatividad y clave C; microcaso de comparación de equipos con cuatro planes de medición plausibles."
+      ],
+      "references": [
+        {
+          "title": "SPEC Open Systems Group Policies and Procedures",
+          "url": "https://www.spec.org/osg/policy/",
+          "locator": "Secciones 2.7.4–2.7.7: resultados comparables/reproducibles, condiciones documentadas, alcance y representatividad",
+          "version": "V2.22, 19-08-2024 indicada en Recent Revisions; fundamentos de medición, no reglas específicas de una ejecución SPEC propia; consulta real el 27-10-2026",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "NVIDIA CUDA C++ Best Practices Guide",
+          "url": "https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html",
+          "locator": "Secciones 2.2 Assess/Parallelize/Optimize/Deploy, 4.1.1 Creating the Profile y 4.1.3 Understanding Scaling: carga realista, fracción paralelizable y transferencias",
+          "version": "Versión 13.4 consultada; alcance CUDA, sin recomendar compra o garantizar mejora para toda carga; consulta real el 27-10-2026",
+          "checked_at": "2026-10-27"
+        },
+        {
+          "title": "TOP500: The Linpack Benchmark",
+          "url": "https://top500.org/project/linpack/",
+          "locator": "Párrafos de sistema lineal denso, alcance de la medida y Rmax/Rpeak; no se usa posición o cifra de un ranking",
+          "version": "Página primaria sin versión documental declarada; consulta real el 27-10-2026",
+          "checked_at": "2026-10-27"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    }
+  ]
+}

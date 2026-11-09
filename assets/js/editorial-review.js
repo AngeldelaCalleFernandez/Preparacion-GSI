@@ -1,4 +1,5 @@
 import { appendEditorialReferences } from "./ui.js?gsi4";
+import { appendProvisionalReviewNotice, PROVISIONAL_REVIEW_QUESTION_ID } from "./question-review-status.js";
 // Read-only editorial workspace. It cannot approve questions or write progress.
 const origin = document.querySelector("#review-origin");
 const topic = document.querySelector("#review-topic");
@@ -52,6 +53,7 @@ function safeHttpsUrl(value) {
 }
 
 function describeValidation(question) {
+  if (question.id === PROVISIONAL_REVIEW_QUESTION_ID) return "revisión independiente pendiente";
   return ({ validated: "validada", pending_review: "pendiente de validación", draft: "borrador", rejected: "rechazada" })[question.validation_status]
     || question.validation_status
     || "sin estado";
@@ -92,6 +94,7 @@ function render() {
     node("h2", `${question.id} · ${question.statement}`),
     node("p", `${label} · ${describeValidation(question)} · ${question.is_active ? "activa" : "inactiva"} · dificultad ${question.difficulty || "no declarada"}`),
   );
+  appendProvisionalReviewNotice(content, question);
   if (question.source?.editorial_revision_id) content.append(node("p", `Versión editorial: ${question.source.editorial_revision_id}. La aceptación efectiva está ligada a esta versión en el historial de lotes.`));
   if (question.source?.review_method) content.append(node("p", (question.source.editorial_revision_id ? "Método histórico de la fuente: " : "") + question.source.review_method));
   renderFindings(question);

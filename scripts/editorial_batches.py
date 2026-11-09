@@ -5,7 +5,9 @@ from __future__ import annotations
 import argparse
 import copy
 import hashlib
+import html
 import json
+import re
 from datetime import date
 from pathlib import Path
 from urllib.parse import urlsplit
@@ -227,7 +229,14 @@ def apply_batch(root, batch, approval):
         raise
 
 
-def render_batch(batch, approval=None):
+def render_batch(batch, approval=None, *, literal_content=False):
+    def content(value):
+        if not literal_content:
+            return value
+        # Question fields are plain text in the application. Preserve that meaning
+        # in Markdown while leaving the report's headings and source links intact.
+        return re.sub(r'([\\`*_{}\[\]#!|~])', r'\\\1', html.escape(value, quote=False))
+
     if approval is not None:
         validate_approval(batch, approval)
     status = 'revisión aplicada' if approval else 'revisión propuesta'
@@ -237,16 +246,22 @@ def render_batch(batch, approval=None):
              notice, '', f"Hash del lote: `{digest(batch)}`. {hash_notice}", '']
     for item in batch['items']:
         decision = approval.get('decisions', {}).get(item['id'], item['decision']) if approval else item['decision']
-        lines += [f"## {item['id']}", '', f"Decisión: {decision} · acción: {item['action']}.", '', 'Motivo: ' + ' '.join(item['reasons']), '']
+        lines += [f"## {item['id']}", '', f"Decisión: {decision} · acción: {item['action']}.", '', 'Motivo: ' + content(' '.join(item['reasons'])), '']
         for name in ('before', 'after'):
             q = item[name]
-            lines += ['### ' + ('Antes' if name == 'before' else 'Propuesta'), '', q['statement'], '']
-            lines += [f"- {o['id']}. {o['text']}" + (' **(correcta)**' if o['id'] == q['correct_option'] else '') for o in q['options']]
-            lines += ['', 'Explicación: ' + q['feedback']['correct'], '']
+            lines += ['### ' + ('Antes' if name == 'before' else 'Propuesta'), '', content(q['statement']), '']
+            lines += [f"- {o['id']}. {content(o['text'])}" + (' **(correcta)**' if o['id'] == q['correct_option'] else '') for o in q['options']]
+            lines += ['', 'Explicación: ' + content(q['feedback']['correct']), '']
             if name == 'after':
-                lines += [f"- Error {key}: {value}" for key, value in q['feedback'].get('incorrect_options', {}).items()]
+                lines += [f"- Error {key}: {content(value)}" for key, value in q['feedback'].get('incorrect_options', {}).items()]
                 lines += ['']
-        lines += [f"- [{r['title']}]({r['url']}) · {r['locator']} · versión: {r.get('version', 'no declarada')} · comprobado: {r['checked_at']}" for r in item['references']]
+        for reference in item['references']:
+            title = content(reference['title'])
+            locator = content(reference['locator'])
+            version = reference.get('version', 'no declarada')
+            if literal_content:
+                version = content(version or 'no declarada')
+            lines += [f"- [{title}]({reference['url']}) · {locator} · versión: {version} · comprobado: {reference['checked_at']}"]
         lines += ['', f"Partida: `{item['base_sha256']}` · propuesta: `{item['content_sha256']}`", '']
     return '\n'.join(lines)
 
@@ -257,7 +272,10 @@ def main():
     parser.add_argument('--approval', type=Path, help='Aceptación humana real ligada al hash del lote decidido.')
     parser.add_argument('--apply', action='store_true')
     parser.add_argument('--render', type=Path, help='Ficha Markdown del lote; rechaza una salida distinta existente.')
+    parser.add_argument('--literal-content', action='store_true', help='Mostrar HTML y Markdown de los campos como texto literal; conserva el formato histórico por defecto.')
     args = parser.parse_args()
+    if args.literal_content and not args.render:
+        parser.error('--literal-content requiere --render y un lote indicado con --batch.')
     try:
         verify_ledger()
         if args.batch:
@@ -269,7 +287,7 @@ def main():
             else:
                 materialize(batch, banks())
             if args.render:
-                text = render_batch(batch, receipt['approval'] if receipt else None)
+                text = render_batch(batch, receipt['approval'] if receipt else None, literal_content=args.literal_content)
                 require(not args.render.exists() or args.render.read_text('utf-8') == text, 'La ficha de salida ya existe con contenido distinto; use otro nombre.')
                 args.render.parent.mkdir(parents=True, exist_ok=True)
                 args.render.write_text(text, 'utf-8')

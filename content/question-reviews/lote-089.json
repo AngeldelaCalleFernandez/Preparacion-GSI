@@ -1,0 +1,504 @@
+{
+  "version": 1,
+  "id": "GSI-EDITORIAL-089",
+  "prepared_at": "2026-11-04",
+  "baseline_commit": "e3e20ab879518c899806a70575eead28b3b35e6f",
+  "items": [
+    {
+      "id": "MAN-GSI-P19-159",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "cf6ba7290588256705e9b9c8a33e4a79c2bf6f38a296853c0484e31b0b0146bb",
+      "content_sha256": "5339a4dd711be68b8d0d50a25adec8009e81dfbad612958d0ddd6de98d243b75",
+      "before": {
+        "id": "MAN-GSI-P19-159",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T16",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué conjunto de señales permite diagnosticar una mala experiencia de comunicación extremo a extremo?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Métricas de endpoint, RTP/RTCP/WebRTC, LAN/WLAN, WAN/Internet, SBC/plataforma y servicio, correlacionadas temporalmente."
+          },
+          {
+            "id": "B",
+            "text": "Uso de CPU, memoria y dispositivos del endpoint, sin relacionarlo con transporte, acceso, plataforma ni servicio."
+          },
+          {
+            "id": "C",
+            "text": "Latencia de un ping al gateway local, sin métricas RTP, pérdida, jitter, WAN o estado de los participantes remotos."
+          },
+          {
+            "id": "D",
+            "text": "Logs de registro de la plataforma y número de usuarios conectados, sin evidencia temporal de endpoints o red."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Un problema de voz/vídeo puede originarse en múltiples capas; la correlación reduce diagnósticos por intuición.",
+          "incorrect": "Según el solucionario: Un problema de voz/vídeo puede originarse en múltiples capas; la correlación reduce diagnósticos por intuición."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 159; índice nativo 16411",
+          "question_source_id": "SRC-GSI-P19-CUADERNO",
+          "question_document_id": "DOC-GSI-P19-CUADERNO",
+          "question_locator": "Pregunta 159; índice nativo 50603",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "drive_id": "1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 159; índice nativo 16411",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-19",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P19-159",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T16",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué conjunto de señales permite diagnosticar una mala experiencia de comunicación extremo a extremo?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Métricas de endpoint, RTP/RTCP/WebRTC, LAN/WLAN, WAN/Internet, SBC/plataforma y servicio, correlacionadas temporalmente."
+          },
+          {
+            "id": "B",
+            "text": "Uso de CPU, memoria y dispositivos del endpoint, sin relacionarlo con transporte, acceso, plataforma ni servicio."
+          },
+          {
+            "id": "C",
+            "text": "Latencia de un ping al gateway local, sin métricas RTP, pérdida, jitter, WAN o estado de los participantes remotos."
+          },
+          {
+            "id": "D",
+            "text": "Logs de registro de la plataforma y número de usuarios conectados, sin evidencia temporal de endpoints o red."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Una experiencia de comunicación puede degradarse en captura y procesamiento del terminal, en acceso local, en la ruta de red o en plataformas y servicios. Correlacionar tiempos de fallo con métricas de esos tramos permite contrastar hipótesis y localizar mejor la causa. Las estadísticas de medios complementan logs y medidas de red. Deben usarse los componentes que realmente existan: no toda llamada atraviesa un SBC y una medida aislada de CPU o ping no describe toda la experiencia.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "Los recursos del endpoint ayudan al diagnóstico, pero sin relacionarlos con medios, acceso y plataforma no se distinguen bien causas externas o compartidas.",
+            "C": "El ping al gateway local solo observa parte del trayecto y un tipo de intercambio; no representa necesariamente transporte de medios o experiencia de participantes remotos.",
+            "D": "Registro y número de conexiones informan sobre la plataforma, pero sin contexto temporal de red y terminales no explican la entrega y reproducción de medios."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 159; índice nativo 16411",
+          "question_source_id": "SRC-GSI-P19-CUADERNO",
+          "question_document_id": "DOC-GSI-P19-CUADERNO",
+          "question_locator": "Pregunta 159; índice nativo 50603",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Google SRE: Monitoring Distributed Systems",
+              "url": "https://sre.google/sre-book/monitoring-distributed-systems/",
+              "locator": "Definitions; Black-box versus white-box; The Four Golden Signals: latencia,tráfico,errores,saturación y experiencia de servicio",
+              "version": "Capítulo6 del libroSRE, HTML comprobado el04-11-2026. Principios de monitorización, no lista normativa de contadores celulares o prueba de disponibilidad de una sede. Se complementa con arquitectura/rendimientoLTE y privacidad de telemetría.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "Microsoft Learn: Prepare your organization network for Teams",
+              "url": "https://learn.microsoft.com/en-us/microsoftteams/prepare-network",
+              "locator": "Network optimization: OptimizeWiFi; Bandwidth requirements: tráfico de audio/vídeo/presentación, subidas/bajadas y variabilidad",
+              "version": "HTML actualizado09-07-2026, comprobado04-11-2026. Ejemplo de planificación de medios interactivos, no bitrate universal, mínimo contractual o recomendación de omitir controles. Se excluyen instrucciones deVPN/IDS y cifras comerciales como reglas para toda plataforma.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "W3C: Identifiers for WebRTC Statistics API",
+              "url": "https://www.w3.org/TR/webrtc-stats/",
+              "locator": "§1 Introduction; §8.4 RTCReceivedRtpStreamStats; §8.5 RTCInboundRtpStreamStats: packetsLost,jitter,frames,bytes y descarte de buffer",
+              "version": "Candidate Recommendation Draft25-09-2025, trabajo en curso, comprobado04-11-2026. Ejemplo primario de métricas y unidades, no norma final, soporte uniforme o API deMOS. Se distingue paquetes perdidos de descartados para reproducción.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "IETF RFC5481: Packet Delay Variation Applicability Statement",
+              "url": "https://www.rfc-editor.org/rfc/rfc5481.html",
+              "locator": "§1 Introduction y §1.2: delay variation,IPDV/PDV, retardo y umbral de pérdida",
+              "version": "Informational, marzo2009, HTML comprobado04-11-2026. Distingue familia de métricas, no una fórmula universal dejitter ni equivalencia exacta conRTT o intervalo bruto de recepción.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "IETF: RFC7005, RTCP XR Report Block for De-Jitter Buffer Metric Reporting",
+              "url": "https://www.rfc-editor.org/rfc/rfc7005.html",
+              "locator": "§3 De-Jitter Buffer Operation; §3.2 fixed y §3.3 adaptive: retención, reproducción y descartes",
+              "version": "Septiembre de 2013, HTML comprobado el 04-11-2026. Compromiso de variación/retardo; no corrige pérdidas físicas ni autoriza aumentar buffer sin límite.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "IETF: RFC 5853, Requirements from SIP Session Border Controller Deployments",
+              "url": "https://www.rfc-editor.org/rfc/rfc5853.html",
+              "locator": "§2 Background; §3.1 topology hiding; §3.2 media management; §3.3 capability mismatches",
+              "version": "Informational, abril de 2010, HTML comprobado el 04-11-2026. Funciones observadas y problemas arquitectónicos, no paquete obligatorio de prestaciones o receta de seguridad. Puede intermediar medios según diseño; no todos los SBC hacen lo mismo.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-089"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "drive_id": "1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 159; índice nativo 16411",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-19",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar pregunta completa de diagnóstico y claveA; explicar correlación temporal y alcance parcial de cada fuente, sin imponerSBC en toda arquitectura."
+      ],
+      "references": [
+        {
+          "title": "Google SRE: Monitoring Distributed Systems",
+          "url": "https://sre.google/sre-book/monitoring-distributed-systems/",
+          "locator": "Definitions; Black-box versus white-box; The Four Golden Signals: latencia,tráfico,errores,saturación y experiencia de servicio",
+          "version": "Capítulo6 del libroSRE, HTML comprobado el04-11-2026. Principios de monitorización, no lista normativa de contadores celulares o prueba de disponibilidad de una sede. Se complementa con arquitectura/rendimientoLTE y privacidad de telemetría.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "Microsoft Learn: Prepare your organization network for Teams",
+          "url": "https://learn.microsoft.com/en-us/microsoftteams/prepare-network",
+          "locator": "Network optimization: OptimizeWiFi; Bandwidth requirements: tráfico de audio/vídeo/presentación, subidas/bajadas y variabilidad",
+          "version": "HTML actualizado09-07-2026, comprobado04-11-2026. Ejemplo de planificación de medios interactivos, no bitrate universal, mínimo contractual o recomendación de omitir controles. Se excluyen instrucciones deVPN/IDS y cifras comerciales como reglas para toda plataforma.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "W3C: Identifiers for WebRTC Statistics API",
+          "url": "https://www.w3.org/TR/webrtc-stats/",
+          "locator": "§1 Introduction; §8.4 RTCReceivedRtpStreamStats; §8.5 RTCInboundRtpStreamStats: packetsLost,jitter,frames,bytes y descarte de buffer",
+          "version": "Candidate Recommendation Draft25-09-2025, trabajo en curso, comprobado04-11-2026. Ejemplo primario de métricas y unidades, no norma final, soporte uniforme o API deMOS. Se distingue paquetes perdidos de descartados para reproducción.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "IETF RFC5481: Packet Delay Variation Applicability Statement",
+          "url": "https://www.rfc-editor.org/rfc/rfc5481.html",
+          "locator": "§1 Introduction y §1.2: delay variation,IPDV/PDV, retardo y umbral de pérdida",
+          "version": "Informational, marzo2009, HTML comprobado04-11-2026. Distingue familia de métricas, no una fórmula universal dejitter ni equivalencia exacta conRTT o intervalo bruto de recepción.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "IETF: RFC7005, RTCP XR Report Block for De-Jitter Buffer Metric Reporting",
+          "url": "https://www.rfc-editor.org/rfc/rfc7005.html",
+          "locator": "§3 De-Jitter Buffer Operation; §3.2 fixed y §3.3 adaptive: retención, reproducción y descartes",
+          "version": "Septiembre de 2013, HTML comprobado el 04-11-2026. Compromiso de variación/retardo; no corrige pérdidas físicas ni autoriza aumentar buffer sin límite.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "IETF: RFC 5853, Requirements from SIP Session Border Controller Deployments",
+          "url": "https://www.rfc-editor.org/rfc/rfc5853.html",
+          "locator": "§2 Background; §3.1 topology hiding; §3.2 media management; §3.3 capability mismatches",
+          "version": "Informational, abril de 2010, HTML comprobado el 04-11-2026. Funciones observadas y problemas arquitectónicos, no paquete obligatorio de prestaciones o receta de seguridad. Puede intermediar medios según diseño; no todos los SBC hacen lo mismo.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P19-160",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "d1bc531d28034f518b49ee6a9fb75acb9e793da9aeddaa5bc4ea4b16448885b5",
+      "content_sha256": "db87fd7453e98c77a73d35db76e8d4411f7f3f92cb54afb72acbf30efa33e308",
+      "before": {
+        "id": "MAN-GSI-P19-160",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T16",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Caso final: se quiere cerrar IV.14–IV.16 con una arquitectura corporativa moderna. ¿Qué enfoque es más completo?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Elegir un producto único de comunicaciones y asumir que reemplaza diseño WAN/LAN, seguridad, UEM, capacidad, continuidad y operación."
+          },
+          {
+            "id": "B",
+            "text": "Diseñar UC/IMS-SIP donde aplique, UEM y conectividad móvil, videoconferencia WebRTC/SIP, QoS/capacidad, salas, seguridad, monitorización, redundancia y casos de interoperabilidad."
+          },
+          {
+            "id": "C",
+            "text": "Estudiar definiciones de IMS, 5G y WebRTC sin dimensionamiento, flujos, controles de endpoint ni pruebas de interoperabilidad reales."
+          },
+          {
+            "id": "D",
+            "text": "Sustituir toda conectividad fija por 5G y considerar innecesarios QoS, SBC, gestión de terminales, monitorización y redundancia."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "La respuesta integra arquitectura, movilidad, medios, calidad, endpoint, seguridad y operación de los tres epígrafes.",
+          "incorrect": "Según el solucionario: La respuesta integra arquitectura, movilidad, medios, calidad, endpoint, seguridad y operación de los tres epígrafes."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 160; índice nativo 16532",
+          "question_source_id": "SRC-GSI-P19-CUADERNO",
+          "question_document_id": "DOC-GSI-P19-CUADERNO",
+          "question_locator": "Pregunta 160; índice nativo 50986",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "drive_id": "1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 160; índice nativo 16532",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-19",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P19-160",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T16",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Un organismo integra telefonía, móviles gestionados y salas con usuarios remotos. ¿Qué enfoque cubre mejor el diseño y su operación?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Centralizar telefonía y codecs, dando por cubiertos con ello movilidad, salas, permisos y operación de los demás servicios."
+          },
+          {
+            "id": "B",
+            "text": "Coordinar flujos y plataformas, endpoints e identidad, acceso y capacidad, salas, seguridad, continuidad e interoperabilidad probada."
+          },
+          {
+            "id": "C",
+            "text": "Desplegar movilidad y UEM, aceptando red fija y conferencia sin contrastar flujos, recursos o compatibilidad entre sus componentes."
+          },
+          {
+            "id": "D",
+            "text": "Contratar conferencia cloud, considerando suficiente su SLA para capacidad de acceso, endpoints y continuidad de la sede."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "El diseño integrado relaciona flujos y servicios con identidad, endpoints, conectividad, capacidad, condiciones de sala y operación segura. Deben contrastarse continuidad e interoperabilidad en los escenarios relevantes, además de gestionar cambios y bajas. UC, SIP/IMS, UEM o WebRTC pueden encajar según requisitos; ninguna etiqueta o compra sustituye validar dependencias. Integrar no exige una única marca, todas esas tecnologías en cualquier sede o idénticos controles en cada recurso.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Centralizar telefonía y formatos puede simplificar una parte, pero no demuestra por sí solo gestión de móviles, salas, accesos o ciclo de vida del resto.",
+            "C": "Movilidad y UEM son piezas útiles; dar por válidos sin contraste los flujos y recursos de red y conferencia deja dependencias e interoperabilidad sin verificar.",
+            "D": "El SLA del servicio cloud no demuestra capacidad del acceso, postura de equipos o continuidad local; esas dependencias también forman parte del diseño."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 160; índice nativo 16532",
+          "question_source_id": "SRC-GSI-P19-CUADERNO",
+          "question_document_id": "DOC-GSI-P19-CUADERNO",
+          "question_locator": "Pregunta 160; índice nativo 50986",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "NCSC: Secure communications principles",
+              "url": "https://www.ncsc.gov.uk/guidance/secure-communication-principles",
+              "locator": "Principios1: tránsito/participantes;3: autenticación/dispositivo;4: auditoría;5: administración/ciclo de vida;6:metadatos;7:proveedor/datos",
+              "version": "HTML público comprobado04-11-2026. Guía británica para evaluar servicios, no obligación normativa española o garantía por una función. Auditoría/retención y permisos tienen alcance necesario,administración restringida y justificación.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "Microsoft Learn: Prepare your organization network for Teams",
+              "url": "https://learn.microsoft.com/en-us/microsoftteams/prepare-network",
+              "locator": "Network optimization: OptimizeWiFi; Bandwidth requirements: tráfico de audio/vídeo/presentación, subidas/bajadas y variabilidad",
+              "version": "HTML actualizado09-07-2026, comprobado04-11-2026. Ejemplo de planificación de medios interactivos, no bitrate universal, mínimo contractual o recomendación de omitir controles. Se excluyen instrucciones deVPN/IDS y cifras comerciales como reglas para toda plataforma.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "Microsoft Learn: What is Microsoft Intune?",
+              "url": "https://learn.microsoft.com/en-us/intune/fundamentals/what-is-intune",
+              "locator": "What Intune does; How Intune is used: MDM,MAM or both; How Intune works with Microsoft Entra",
+              "version": "HTML público comprobado el04-11-2026. Ejemplo primario de gestión dispositivo/aplicaciones e identidad; admite plataformas de escritorio. No se prescribe cloud, producto, licencias o un modo de control idéntico para toda inscripción.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "NCSC CAF B5: Resilient networks and systems",
+              "url": "https://www.ncsc.gov.uk/collection/cyber-assessment-framework/caf-objective-b/principle-b5-resilient-networks-and-systems",
+              "locator": "Guidance: Capacity; Diversity and dependencies; Physical Resilience: capacidad, dependencias y alternativas útiles",
+              "version": "HTML comprobado el04-11-2026. Guía británica aplicada como criterio técnico, sin fuerza normativa AGE o garantía de continuidad por contratar dos operadores.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "IETF RFC7667: RTP Topologies",
+              "url": "https://www.rfc-editor.org/rfc/rfc7667.html",
+              "locator": "§3.6.1 Media-Mixing Mixer; §3.7 Selective Forwarding Middlebox, especialmente distribución y composición en cliente",
+              "version": "Informational, noviembre2015, HTML comprobado04-11-2026. MCU clásica de composición frente a reenvío selectivoSFU/SFM; no todas lasMCU son mezcladores ni todo productoSFU excluye módulos adicionales. Coste,retardo y escala dependen del diseño.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "RFC4123: SIP-H.323 Interworking Requirements",
+              "url": "https://www.rfc-editor.org/rfc/rfc4123.html",
+              "locator": "§1 Introduction; §2 Definitions; §3 Functionality within the SIP-H.323 IWF",
+              "version": "Informational, julio2005, HTML comprobado04-11-2026. Documento histórico con notaIESG de cautela, usado para funciones de interworking, no receta actual de despliegue/seguridad; transcodificación es distinta de conversión de señalización.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "Microsoft Learn: What is Conditional Access?",
+              "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview",
+              "locator": "Overview; Common signals; Common decisions: identidad,dispositivo,aplicación y riesgo para decidir acceso",
+              "version": "HTML público comprobado el04-11-2026. Ejemplo de motor de política; después de primer factor en este producto, sin igualarlo a cortafuegos universal o prometer prevención de todo ataque.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-089"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "drive_id": "1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 160; índice nativo 16532",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-19",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar integración de arquitectura, movilidad, conferencia y operación y claveB; caso de diseño corporativo con cuatro planes plausibles de alcance comparable, sin producto único o obligatoriedad de toda tecnología."
+      ],
+      "references": [
+        {
+          "title": "NCSC: Secure communications principles",
+          "url": "https://www.ncsc.gov.uk/guidance/secure-communication-principles",
+          "locator": "Principios1: tránsito/participantes;3: autenticación/dispositivo;4: auditoría;5: administración/ciclo de vida;6:metadatos;7:proveedor/datos",
+          "version": "HTML público comprobado04-11-2026. Guía británica para evaluar servicios, no obligación normativa española o garantía por una función. Auditoría/retención y permisos tienen alcance necesario,administración restringida y justificación.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "Microsoft Learn: Prepare your organization network for Teams",
+          "url": "https://learn.microsoft.com/en-us/microsoftteams/prepare-network",
+          "locator": "Network optimization: OptimizeWiFi; Bandwidth requirements: tráfico de audio/vídeo/presentación, subidas/bajadas y variabilidad",
+          "version": "HTML actualizado09-07-2026, comprobado04-11-2026. Ejemplo de planificación de medios interactivos, no bitrate universal, mínimo contractual o recomendación de omitir controles. Se excluyen instrucciones deVPN/IDS y cifras comerciales como reglas para toda plataforma.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "Microsoft Learn: What is Microsoft Intune?",
+          "url": "https://learn.microsoft.com/en-us/intune/fundamentals/what-is-intune",
+          "locator": "What Intune does; How Intune is used: MDM,MAM or both; How Intune works with Microsoft Entra",
+          "version": "HTML público comprobado el04-11-2026. Ejemplo primario de gestión dispositivo/aplicaciones e identidad; admite plataformas de escritorio. No se prescribe cloud, producto, licencias o un modo de control idéntico para toda inscripción.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "NCSC CAF B5: Resilient networks and systems",
+          "url": "https://www.ncsc.gov.uk/collection/cyber-assessment-framework/caf-objective-b/principle-b5-resilient-networks-and-systems",
+          "locator": "Guidance: Capacity; Diversity and dependencies; Physical Resilience: capacidad, dependencias y alternativas útiles",
+          "version": "HTML comprobado el04-11-2026. Guía británica aplicada como criterio técnico, sin fuerza normativa AGE o garantía de continuidad por contratar dos operadores.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "IETF RFC7667: RTP Topologies",
+          "url": "https://www.rfc-editor.org/rfc/rfc7667.html",
+          "locator": "§3.6.1 Media-Mixing Mixer; §3.7 Selective Forwarding Middlebox, especialmente distribución y composición en cliente",
+          "version": "Informational, noviembre2015, HTML comprobado04-11-2026. MCU clásica de composición frente a reenvío selectivoSFU/SFM; no todas lasMCU son mezcladores ni todo productoSFU excluye módulos adicionales. Coste,retardo y escala dependen del diseño.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "RFC4123: SIP-H.323 Interworking Requirements",
+          "url": "https://www.rfc-editor.org/rfc/rfc4123.html",
+          "locator": "§1 Introduction; §2 Definitions; §3 Functionality within the SIP-H.323 IWF",
+          "version": "Informational, julio2005, HTML comprobado04-11-2026. Documento histórico con notaIESG de cautela, usado para funciones de interworking, no receta actual de despliegue/seguridad; transcodificación es distinta de conversión de señalización.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "Microsoft Learn: What is Conditional Access?",
+          "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview",
+          "locator": "Overview; Common signals; Common decisions: identidad,dispositivo,aplicación y riesgo para decidir acceso",
+          "version": "HTML público comprobado el04-11-2026. Ejemplo de motor de política; después de primer factor en este producto, sin igualarlo a cortafuegos universal o prometer prevención de todo ataque.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    }
+  ]
+}

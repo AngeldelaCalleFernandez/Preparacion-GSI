@@ -9,8 +9,8 @@ Versión del análisis: `2.0.0`. Preguntas examinadas: **1964**.
 | Banco | Preguntas | Con algún indicio | Respuesta correcta ≥2× distractor más largo | Distractores absolutos | Redacción dependiente de la fuente |
 | --- | ---: | ---: | ---: | ---: | ---: |
 | Oficiales INAP | 202 | 202 | 5 | 1 | 0 |
-| Manuales/curadas | 959 | 777 | 0 | 0 | 0 |
-| Generadas por IA | 803 | 787 | 15 | 97 | 6 |
+| Manuales/curadas | 959 | 0 | 0 | 0 | 0 |
+| Generadas por IA | 803 | 0 | 0 | 0 | 0 |
 
 ## Indicadores ampliados
 
@@ -19,8 +19,8 @@ Se conserva la regla histórica de 40 caracteres y ratio ≥2. Las señales nuev
 | Banco | Correcta única más larga | Primera máxima: aciertos | Acierto % | Ratio 1,5–<2 | Ratio ≥2 | Feedback <15 palabras | Feedback idéntico |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | Oficiales INAP | 68 | 80 | 39.6 | 11 | 8 | 0 | 202 |
-| Manuales/curadas | 463 | 472 | 49.22 | 198 | 5 | 727 | 0 |
-| Generadas por IA | 357 | 370 | 46.08 | 98 | 15 | 691 | 787 |
+| Manuales/curadas | 261 | 294 | 30.66 | 0 | 0 | 0 | 0 |
+| Generadas por IA | 171 | 210 | 26.15 | 0 | 0 | 0 | 0 |
 
 Los mismos indicadores por tema y banco están en `topic_metrics` del informe JSON. Una alerta cerrada requiere corrección o justificación registrada; cero alertas no equivale a revisión L3.
 

@@ -1,0 +1,591 @@
+{
+  "batch_id": "GSI-EDITORIAL-086",
+  "batch_sha256": "7619aeaf466bd53e475220f028ce69aa8f91d5ffeb675bd7a3341bf315ac5d83",
+  "verified_at": "2026-11-05T11:11:31.372745+00:00",
+  "status": "awaiting_owner_approval",
+  "questions": 20,
+  "simulated_manual_changes": 20,
+  "applied": 0,
+  "new_approvals": 0,
+  "questions_with_keys_and_option_ids_preserved": 20,
+  "individual_distractor_explanations": 60,
+  "sources": {
+    "https://learn.microsoft.com/en-us/intune/fundamentals/what-is-intune": {
+      "title": "Microsoft Learn: What is Microsoft Intune?",
+      "locators": [
+        "What Intune does; How Intune is used: MDM,MAM or both; How Intune works with Microsoft Entra"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "reused_085_same_day"
+    },
+    "https://www.ibm.com/think/topics/enterprise-mobility-management": {
+      "title": "IBM: What is enterprise mobility management?",
+      "locators": [
+        "Core components: MDM/MAM/MCM/IAM; Enterprise mobility management vs unified endpoint management"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "reused_085_same_day"
+    },
+    "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-124r2.pdf": {
+      "title": "NIST SP800-124r2: Guidelines for Managing the Security of Mobile Devices in the Enterprise",
+      "locators": [
+        "§3.2.3–3.2.4; §4.1.1–4.1.5; §4.2.1/4.2.2/4.2.7; §4.3.1/4.3.3/4.3.12; §5.1.3/5.4.2 y comienzo5.5. PDF25–33/35–36/42/44–46/54–56; impresas15–23/25–26/32/34–36/44–46."
+      ],
+      "checked_date": "2026-11-05",
+      "method": "reused_085_same_day",
+      "document": {
+        "path": "tmp/pdfs/gsi-editorial-085-nist-sp800124r2.pdf",
+        "sha256": "4f6c85849df515c712c80957a1bb9563167a001fc97e13d1302410c169b55c8f",
+        "selected_pages_rechecked_for_086": [],
+        "pages_visually_rechecked_for_086": []
+      }
+    },
+    "https://www.ncsc.gov.uk/collection/cyber-assessment-framework/caf-objective-b/principle-b5-resilient-networks-and-systems": {
+      "title": "NCSC CAF B5: Resilient networks and systems",
+      "locators": [
+        "Guidance: Capacity; Diversity and dependencies; Physical Resilience: capacidad, dependencias y alternativas útiles"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "reused_085_same_day_and_rechecked_capacity_for_086"
+    },
+    "https://developer.att.com/technical-library/network-technologies/long-term-evolution": {
+      "title": "AT&T Developer: Long Term Evolution, LTE Architecture",
+      "locators": [
+        "LTE Architecture: E-UTRAN/eNB, EPC, interfaces S1/X2, MME/S-GW/P-GW; LTE Performance: caudal real depende de usuarios, radio y backhaul"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "reused_085_same_day"
+    },
+    "https://learn.microsoft.com/en-us/intune/app-management/overview": {
+      "title": "Microsoft Learn: What is Intune app management?",
+      "locators": [
+        "Mobile Application Management basics: apps/datos, MDM+MAM y MAM en dispositivos no inscritos"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "reused_085_same_day"
+    },
+    "https://developers.google.com/android/work/requirements/work-profile": {
+      "title": "Android Enterprise: Work profile on personally-owned devices",
+      "locators": [
+        "Introducción; Device security:2.2 Work security challenge y2.5 Wipe and lock"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "reused_085_same_day"
+    },
+    "https://www.boe.es/buscar/doc.php?id=DOUE-L-2016-80807": {
+      "title": "BOE/DOUE: Reglamento(UE)2016/679, RGPD",
+      "locators": [
+        "Artículos5.1a–c/e: transparencia,finalidad,minimización y conservación;13.1: información;25.1–2: diseño y defecto"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "reused_085_same_day"
+    },
+    "https://learn.microsoft.com/en-us/intune/device-security/compliance/overview": {
+      "title": "Microsoft Learn: Device compliance policies in Intune",
+      "locators": [
+        "Device compliance policies: evaluación de reglas, ausencia de root/jailbreak, acciones por incumplimiento y acceso condicional"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "reused_085_same_day"
+    },
+    "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview": {
+      "title": "Microsoft Learn: What is Conditional Access?",
+      "locators": [
+        "Overview; Common signals; Common decisions: identidad,dispositivo,aplicación y riesgo para decidir acceso"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "reused_085_same_day"
+    },
+    "https://www.itu.int/dms_pubrec/itu-r/rec/m/R-REC-M.2083-0-201509-I!!PDF-E.pdf": {
+      "title": "ITU-R Recommendation M.2083: IMT vision",
+      "locators": [
+        "§4 Usage scenarios: eMBB,URLLC y mMTC; figura2. PDF13–14, impresas11–12."
+      ],
+      "checked_date": "2026-11-05",
+      "method": "consulted_for_086",
+      "document": {
+        "path": "tmp/pdfs/gsi-editorial-083-itu-m2083-201509.pdf",
+        "sha256": "cd4e6f1b2dc7bfdc8f2efcefcd3aa3fa2f1739ff69d9e839b2cc12ef06d8d46a",
+        "selected_pages_rechecked_for_086": [
+          13,
+          14
+        ],
+        "pages_visually_rechecked_for_086": [
+          14
+        ]
+      }
+    },
+    "https://www.ericsson.com/en/reports-and-papers/ericsson-technology-review/articles/mobile-miracles": {
+      "title": "Ericsson Technology Review: The history of mobile internet",
+      "locators": [
+        "2G: the arrival of SMS and limited data services; 3G: the concept of mobile internet is born; 4G LTE: completing the shift"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "consulted_for_086"
+    },
+    "https://www.ericsson.com/en/reports-and-papers/white-papers/voice-and-communication-services-in-4g-and-5g-networks": {
+      "title": "Ericsson: Voice and communication services in4G and5G networks",
+      "locators": [
+        "VoLTE – A foundation for a global communication services ecosystem; Voice in5G networks: figuras1–3, EPC/IMS/CSFB y SA/NSA"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "consulted_for_086"
+    },
+    "https://www.rfc-editor.org/rfc/rfc6269.html": {
+      "title": "IETF RFC6269: Issues with IP Address Sharing",
+      "locators": [
+        "§5 Port Allocation; §5.2 Incoming Ports; §5.2.1 Port Negotiation"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "consulted_for_086"
+    },
+    "https://www.etsi.org/deliver/etsi_ts/123500_123599/123501/18.12.00_60/ts_123501v181200p.pdf": {
+      "title": "ETSI TS123501: System architecture for the5G System",
+      "locators": [
+        "TS23.501 §5.6.1 PDU/DNN, §5.7.1.1 QFI, §5.9.6 DNN/APN y §5.15.1–2 S-NSSAI/recursos compartidos. PDF141/177/244–245/252–254, impresas140/176/243–244/251–253."
+      ],
+      "checked_date": "2026-11-05",
+      "method": "consulted_for_086",
+      "document": {
+        "path": "tmp/pdfs/gsi-editorial-084-etsi-123501-v181200.pdf",
+        "sha256": "2ef71f81a87c86967dc623741b5a3479338844661067a3bb13089fffe6fed2ac",
+        "selected_pages_rechecked_for_086": [
+          141,
+          177,
+          244,
+          245,
+          252,
+          253,
+          254
+        ],
+        "pages_visually_rechecked_for_086": [
+          244,
+          252
+        ]
+      },
+      "note": "La edición citada, V18.12.0, confirma equivalencia DNN/APN en §5.9.6 y AMF común a varias instancias de slice en §5.15.1. Se distingue DNN, S-NSSAI y QFI. La lectura seleccionada no acredita independencia física de un despliegue concreto."
+    },
+    "https://learn.microsoft.com/en-us/entra/identity/users/users-revoke-access": {
+      "title": "Microsoft Learn: Revoke user access in EntraID",
+      "locators": [
+        "Overview; Microsoft Entra environment; When access is revoked; Best practices: baja, tokens, sesiones y datos locales"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "reused_085_same_day"
+    },
+    "https://learn.microsoft.com/en-us/intune/device-management/actions/": {
+      "title": "Microsoft Learn: Device actions in Intune",
+      "locators": [
+        "Retire frente a Wipe; Check the status of the action: estado de servidor y ejecución en cliente"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "reused_085_same_day"
+    },
+    "https://www.cyber.gc.ca/en/guidance/security-considerations-mobile-device-deployments-itsap70002": {
+      "title": "Canadian Centre for Cyber Security: Security considerations for mobile device deployments",
+      "locators": [
+        "Mobile device deployment models: COBO,COPE,BYOD; Unified endpoint management"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "reused_085_same_day"
+    },
+    "https://www.rfc-editor.org/rfc/rfc8825.html": {
+      "title": "IETF RFC8825: Overview, Real-Time Protocols for Browser-Based Applications",
+      "locators": [
+        "§2.2 relaciónAPI/protocolo y endpoints; §3 Architecture and Functionality Groups, figuras1–2; §4–7 transporte, protección, formatos y gestión"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "consulted_for_086"
+    },
+    "https://www.rfc-editor.org/rfc/rfc3550.html": {
+      "title": "IETF: RFC3550, RTP",
+      "locators": [
+        "§1 Introduction: secuencia, tiempo y falta de garantía QoS; §6 RTCP, feedback de distribución"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "consulted_for_086"
+    },
+    "https://www.rfc-editor.org/rfc/rfc4123.html": {
+      "title": "RFC4123: SIP-H.323 Interworking Requirements",
+      "locators": [
+        "§1 Introduction; §2 Definitions; §3 Functionality within the SIP-H.323 IWF"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "consulted_for_086"
+    },
+    "https://www.rfc-editor.org/rfc/rfc3261.html": {
+      "title": "IETF: RFC3261, Session Initiation Protocol",
+      "locators": [
+        "§1–3 control y ejemplo de llamada; §9 CANCEL; §10 registro; §11 OPTIONS; §13 INVITE; §15.1 BYE"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "consulted_for_086"
+    },
+    "https://www.rfc-editor.org/rfc/rfc8866.html": {
+      "title": "IETF: RFC8866, Session Description Protocol",
+      "locators": [
+        "§1 descripción sin protocolo de transporte; §3.1 SIP y offer/answer; §2 Media Description"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "consulted_for_086"
+    },
+    "https://www.rfc-editor.org/rfc/rfc8445.html": {
+      "title": "IETF RFC8445: Interactive Connectivity Establishment",
+      "locators": [
+        "§1 Introduction; §2 Overview of ICE, candidatos y comprobaciones de pares; §4 Terminology"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "consulted_for_086"
+    },
+    "https://www.rfc-editor.org/rfc/rfc8489.html": {
+      "title": "IETF RFC8489: Session Traversal Utilities for NAT",
+      "locators": [
+        "Abstract; §1 Introduction; §2 Overview of Operation, Binding y dirección reflejada"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "consulted_for_086"
+    },
+    "https://www.rfc-editor.org/rfc/rfc3711.html": {
+      "title": "IETF: RFC3711, The Secure Real-time Transport Protocol",
+      "locators": [
+        "§1 Introduction y §2 Goals and Features: protección RTP/RTCP; §7 gestión de claves"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "consulted_for_086"
+    },
+    "https://datatracker.ietf.org/doc/html/rfc5764": {
+      "title": "IETF RFC5764: DTLS Extension to Establish Keys for SRTP",
+      "locators": [
+        "Abstract y §1 Introduction: uso deDTLS para establecer clavesSRTP"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "consulted_for_086"
+    },
+    "https://www.w3.org/TR/webrtc/": {
+      "title": "W3C: WebRTC, Real-Time Communication in Browsers",
+      "locators": [
+        "Abstract; definición y alcance de APIs ECMAScript/WebIDL para medios y datos"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "consulted_for_086"
+    },
+    "https://www.rfc-editor.org/rfc/rfc7742.html": {
+      "title": "IETF RFC7742: WebRTC Video Processing and Codec Requirements",
+      "locators": [
+        "§5 Mandatory-to-Implement Video Codec; §6.1 VP8 y §6.2 H.264, parámetros de codificación/recepción"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "consulted_for_086"
+    },
+    "https://www.rfc-editor.org/rfc/rfc7874.html": {
+      "title": "IETF RFC7874: WebRTC Audio Codec and Processing Requirements",
+      "locators": [
+        "§3 Codec Requirements: implementación de Opus yG.711PCMA/PCMU, otros codecs y oferta"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "consulted_for_086"
+    },
+    "https://www.rfc-editor.org/rfc/rfc8656.html": {
+      "title": "IETF RFC8656: Traversal Using Relays around NAT",
+      "locators": [
+        "Abstract y §1 Introduction: servidor intermediario, dirección relayed y relación con ICE"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "consulted_for_086"
+    },
+    "https://www.rfc-editor.org/rfc/rfc3264.html": {
+      "title": "IETF RFC3264: An Offer/Answer Model with SDP",
+      "locators": [
+        "Abstract y §1 Introduction: modelo de oferta/respuesta utilizando descripcionesSDP"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "consulted_for_086"
+    },
+    "https://www.rfc-editor.org/rfc/rfc6386.html": {
+      "title": "RFC6386: VP8 Data Format and Decoding Guide",
+      "locators": [
+        "Abstract y §1 Introduction: datos comprimidos, reconstrucción y reducción de tasa/calidad"
+      ],
+      "checked_date": "2026-11-05",
+      "method": "consulted_for_086"
+    }
+  },
+  "priority_question": {
+    "id": "MAN-GSI-P19-080",
+    "key": "B",
+    "active_sha256": "0ff771400e363376f81ef942da8bd6505092e9e0ac1427b49c5e2a186ac16fc6",
+    "proposed_sha256": "7224b209b77f502604fe48f09df78ac7296ec419e8ed2813eeb7a730126260b2",
+    "confirmed_ambiguity": "En la versión activa también son riesgos defendibles asumir independencia de dos perfiles, medir solo en condiciones favorables o dar continuidad por garantizada con slicing.",
+    "proposed_resolution": "La pregunta exige una valoración de continuidad. Solo B compara las dependencias de cobertura, capacidad y dominio de fallo con la continuidad exigida.",
+    "review_by_option": {
+      "A": "La capacidad anunciada no prueba tolerancia a pérdida del enlace.",
+      "B": "La evaluación del servicio incluye cobertura, capacidad y dependencias compartidas ante fallos.",
+      "C": "Dos perfiles pueden depender de la misma radio, núcleo o alimentación.",
+      "D": "El slicing admite funciones compartidas y por sí solo no establece un camino físico independiente."
+    }
+  },
+  "per_question": [
+    {
+      "id": "MAN-GSI-P19-100",
+      "key": "D",
+      "base_sha256": "d648d6f8bcea6e9f6ae23045e9a367c826f7461f387f99deccfc40bb31c772b4",
+      "proposed_sha256": "2302d0af458bcb77f89b90e7b59229f1d1b8d51b64dcbfab24e702198db72cba",
+      "sources": [
+        "https://learn.microsoft.com/en-us/intune/fundamentals/what-is-intune",
+        "https://www.ibm.com/think/topics/enterprise-mobility-management",
+        "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-124r2.pdf"
+      ]
+    },
+    {
+      "id": "MAN-GSI-P19-145",
+      "key": "C",
+      "base_sha256": "3fa0460831a14c6b713e22946fcd6ec7ba82be1b3f1af851f6679ad03f20d8de",
+      "proposed_sha256": "b8b78d88837255bc25d71f3be857f08c460d6fceea5c050046da9f88e3292879",
+      "sources": [
+        "https://www.ncsc.gov.uk/collection/cyber-assessment-framework/caf-objective-b/principle-b5-resilient-networks-and-systems",
+        "https://developer.att.com/technical-library/network-technologies/long-term-evolution"
+      ]
+    },
+    {
+      "id": "MAN-GSI-P19-146",
+      "key": "D",
+      "base_sha256": "1ddb403c3d8f068ea054c36700efeeb48e479b6840a847135679b131562408b9",
+      "proposed_sha256": "cd7336cbd19585bc31bd0728353beed1a225283bbabd26bdc65a2f7c1c2c6524",
+      "sources": [
+        "https://learn.microsoft.com/en-us/intune/app-management/overview",
+        "https://developers.google.com/android/work/requirements/work-profile",
+        "https://www.boe.es/buscar/doc.php?id=DOUE-L-2016-80807",
+        "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-124r2.pdf"
+      ]
+    },
+    {
+      "id": "MAN-GSI-P19-148",
+      "key": "A",
+      "base_sha256": "afbbe18624d48c1ed43a15a6e7933ed58b06099b75eeb78163cc2d570f37473c",
+      "proposed_sha256": "f63154a5066a593670251a052926a3b3d2ed82467a556b6645f4718aac497f26",
+      "sources": [
+        "https://learn.microsoft.com/en-us/intune/device-security/compliance/overview",
+        "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview",
+        "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-124r2.pdf"
+      ]
+    },
+    {
+      "id": "MAN-GSI-P19-047",
+      "key": "C",
+      "base_sha256": "d0a5541684852f28aa8cca20401a4d28f3f5f5bcb964e39eded133243269fff6",
+      "proposed_sha256": "1a4d3dcca77d62e051aa7962a0972a041bcc1f22c84098466c7e14a8931434f6",
+      "sources": [
+        "https://www.itu.int/dms_pubrec/itu-r/rec/m/R-REC-M.2083-0-201509-I!!PDF-E.pdf"
+      ]
+    },
+    {
+      "id": "MAN-GSI-P19-060",
+      "key": "D",
+      "base_sha256": "2fd40e37d130eac958b899c6d907c5dbb769d53a80f6979197e42d5c6609a524",
+      "proposed_sha256": "c62c122fc7a1b93bf0c3042df9fbc0040b0995ff606e91f3016ccd9c8f3f811a",
+      "sources": [
+        "https://www.ericsson.com/en/reports-and-papers/ericsson-technology-review/articles/mobile-miracles",
+        "https://developer.att.com/technical-library/network-technologies/long-term-evolution",
+        "https://www.ericsson.com/en/reports-and-papers/white-papers/voice-and-communication-services-in-4g-and-5g-networks"
+      ]
+    },
+    {
+      "id": "MAN-GSI-P19-075",
+      "key": "A",
+      "base_sha256": "ffc4a4139950a44c77be168bbadf9e04ab0daf60a58e5ead9d1beda8fc2645c3",
+      "proposed_sha256": "af9a26cd352d3fad63b59922755d28a1ca28293dbc266af50f3c625d5463b435",
+      "sources": [
+        "https://www.rfc-editor.org/rfc/rfc6269.html"
+      ]
+    },
+    {
+      "id": "MAN-GSI-P19-076",
+      "key": "D",
+      "base_sha256": "9ce353f4d3ffc6d7862533c995dbb4271ba0a3a3cc0962b494a2227e3235ee77",
+      "proposed_sha256": "173c7633e3f2081d51430f6eaf597c6283acbc1022378276d55a7eabe8be8ea8",
+      "sources": [
+        "https://www.etsi.org/deliver/etsi_ts/123500_123599/123501/18.12.00_60/ts_123501v181200p.pdf"
+      ]
+    },
+    {
+      "id": "MAN-GSI-P19-080",
+      "key": "B",
+      "base_sha256": "0ff771400e363376f81ef942da8bd6505092e9e0ac1427b49c5e2a186ac16fc6",
+      "proposed_sha256": "7224b209b77f502604fe48f09df78ac7296ec419e8ed2813eeb7a730126260b2",
+      "sources": [
+        "https://www.ncsc.gov.uk/collection/cyber-assessment-framework/caf-objective-b/principle-b5-resilient-networks-and-systems",
+        "https://developer.att.com/technical-library/network-technologies/long-term-evolution",
+        "https://www.etsi.org/deliver/etsi_ts/123500_123599/123501/18.12.00_60/ts_123501v181200p.pdf"
+      ]
+    },
+    {
+      "id": "MAN-GSI-P19-147",
+      "key": "B",
+      "base_sha256": "8ed25fe5ded40ff88d6a8d578a21a5352f04231295ff5ad0b208312c606d5e81",
+      "proposed_sha256": "59915be91a69af829cbb54408d5b3944913098b80eca504667133ed726f3731a",
+      "sources": [
+        "https://learn.microsoft.com/en-us/entra/identity/users/users-revoke-access",
+        "https://learn.microsoft.com/en-us/intune/device-management/actions/",
+        "https://www.cyber.gc.ca/en/guidance/security-considerations-mobile-device-deployments-itsap70002",
+        "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-124r2.pdf"
+      ]
+    },
+    {
+      "id": "MAN-GSI-P19-101",
+      "key": "C",
+      "base_sha256": "0b74907aab20bec623d43ed4932313ae99dc118c3d396c004a7afcc9f8c05720",
+      "proposed_sha256": "8d260d6dc2c7c954cac4fec709dce8fce3a30f129a5dbf723bc297f2b5d5e6cb",
+      "sources": [
+        "https://www.rfc-editor.org/rfc/rfc8825.html",
+        "https://www.rfc-editor.org/rfc/rfc3550.html"
+      ]
+    },
+    {
+      "id": "MAN-GSI-P19-103",
+      "key": "D",
+      "base_sha256": "e05440dd461f4375ab42a2fdbe008fe7327aff0f95ecdd2dd9d39e333403b9c1",
+      "proposed_sha256": "ae5e6731966a17f4946bc30d4f67f1522c23cdd9385714af05e4e25ebb34d51a",
+      "sources": [
+        "https://www.rfc-editor.org/rfc/rfc4123.html",
+        "https://www.rfc-editor.org/rfc/rfc3261.html",
+        "https://www.rfc-editor.org/rfc/rfc3550.html"
+      ]
+    },
+    {
+      "id": "MAN-GSI-P19-104",
+      "key": "C",
+      "base_sha256": "b95f644da35e5cf32eba40c9d05c49410d7390a91e282d4165ee1b807fbc9791",
+      "proposed_sha256": "d79dd4355319ab0bdaf46d5642a47ec5ebdebbeb3e1e04681c88e620594d6981",
+      "sources": [
+        "https://www.rfc-editor.org/rfc/rfc3550.html",
+        "https://www.rfc-editor.org/rfc/rfc3261.html",
+        "https://www.rfc-editor.org/rfc/rfc8866.html",
+        "https://www.rfc-editor.org/rfc/rfc8445.html",
+        "https://www.rfc-editor.org/rfc/rfc8489.html",
+        "https://www.rfc-editor.org/rfc/rfc3711.html",
+        "https://datatracker.ietf.org/doc/html/rfc5764"
+      ]
+    },
+    {
+      "id": "MAN-GSI-P19-105",
+      "key": "B",
+      "base_sha256": "a7868b047184e784a7bc3ace7c0b2d2c2e7048ee6c92ee642095a9a13ef85f1d",
+      "proposed_sha256": "b1cc42d1ffa144f180125b94882388c4f643c45220f5a12469a0743f662e7054",
+      "sources": [
+        "https://www.w3.org/TR/webrtc/",
+        "https://www.rfc-editor.org/rfc/rfc8825.html"
+      ]
+    },
+    {
+      "id": "MAN-GSI-P19-106",
+      "key": "A",
+      "base_sha256": "cfb5c0b822e1588a97e5151e811e56179c9d501f82b52a2a0049d69481aa8e27",
+      "proposed_sha256": "9939a35fcc9c9aca3a3489fe61adcc5ebd7a6fa0e7bae4dea387fe1974154bfa",
+      "sources": [
+        "https://www.w3.org/TR/webrtc/",
+        "https://www.rfc-editor.org/rfc/rfc8825.html",
+        "https://www.rfc-editor.org/rfc/rfc7742.html",
+        "https://www.rfc-editor.org/rfc/rfc7874.html"
+      ]
+    },
+    {
+      "id": "MAN-GSI-P19-107",
+      "key": "B",
+      "base_sha256": "ae989dc2a9f7bff605accb2f92904fa5fafb11defd3f72ed7b35229ec803a45a",
+      "proposed_sha256": "8031b4b71050f31b059690a515c31aff6fcd0e990d8db76295da62f0397f488f",
+      "sources": [
+        "https://www.rfc-editor.org/rfc/rfc8445.html",
+        "https://www.rfc-editor.org/rfc/rfc8489.html",
+        "https://www.rfc-editor.org/rfc/rfc8656.html"
+      ]
+    },
+    {
+      "id": "MAN-GSI-P19-110",
+      "key": "D",
+      "base_sha256": "878bc0543bfa60ddb2984f593b06b3cf23965c0052a8cfbd401bbb8a828d5228",
+      "proposed_sha256": "b425f5ab2d6c246461687b8acfac0e4bd4b6bf7089527b6008e2f0265ea141bd",
+      "sources": [
+        "https://www.rfc-editor.org/rfc/rfc8489.html",
+        "https://www.rfc-editor.org/rfc/rfc8656.html",
+        "https://www.rfc-editor.org/rfc/rfc8445.html"
+      ]
+    },
+    {
+      "id": "MAN-GSI-P19-111",
+      "key": "B",
+      "base_sha256": "f66108ada726cd9ab5ff68e9ecea09cdcf475c0de98d2d3f6e2b5a2b2bc37f65",
+      "proposed_sha256": "eca9caea9c26116acdd72fab6af98e837dcb87fc113fb51043a3008cab53c3bc",
+      "sources": [
+        "https://www.rfc-editor.org/rfc/rfc8866.html",
+        "https://www.rfc-editor.org/rfc/rfc3264.html",
+        "https://www.rfc-editor.org/rfc/rfc3550.html",
+        "https://www.rfc-editor.org/rfc/rfc8445.html",
+        "https://www.rfc-editor.org/rfc/rfc3711.html"
+      ]
+    },
+    {
+      "id": "MAN-GSI-P19-112",
+      "key": "B",
+      "base_sha256": "6041be00be73e01e2169bc21b356bb026f34ca45799549de70861dfd37cc201d",
+      "proposed_sha256": "a73afc0c76347d2aeea18b31d6aabdcc1ae0d7e8699bb0dfd4b691efc9b5883d",
+      "sources": [
+        "https://www.rfc-editor.org/rfc/rfc6386.html",
+        "https://www.rfc-editor.org/rfc/rfc7742.html",
+        "https://www.rfc-editor.org/rfc/rfc8825.html",
+        "https://www.rfc-editor.org/rfc/rfc3550.html",
+        "https://www.rfc-editor.org/rfc/rfc3261.html"
+      ]
+    },
+    {
+      "id": "MAN-GSI-P19-113",
+      "key": "A",
+      "base_sha256": "29c85a2cfaa4a8c7c3f5dc4aceaf9fcffe94f49d147ba259590acff075254c06",
+      "proposed_sha256": "60279732507e819c2bbe2c0173c2d3864559c3cbfc5d1d9dc22f18d74df65979",
+      "sources": [
+        "https://www.rfc-editor.org/rfc/rfc7874.html"
+      ]
+    }
+  ],
+  "scope": "Contraste editorial y simulación. La revisión no prueba conmutación de un operador ni disponibilidad real de un enlace.",
+  "unchanged_file_sha256": {
+    "data/questions-ai.json": "07775eed29f024de16e2fb2bcb16072a306300363a872b03ae373c82c7fac4bd",
+    "data/questions-manual.json": "608d81e43838e6812923a52284c7a632679a4380e9c570f0e72ff9c57f00f00b",
+    "data/questions-official.json": "bddf132ba2333d848982263593905206a87e8548179ee7443a8699385c984b9e",
+    "data/gsi-editorial-revisions.json": "72280f76ae11e5a760574840de6f789c09efb52595131c878b006f1e5f09baf3",
+    "content/question-reviews/lote-086.json": "d9066e3081d0062f9b5e8c07f07f6ebcbf45dfc21895177fa0fa04f5d7244027",
+    "docs/GSI_REVISION_LOTE_086.md": "8fad2ad53a421c94e8d4cebafdb9fe8652eea0fc181638e9722f2b53b7fba4d2",
+    "logs/gsi-editorial-086-preparation.json": "8d77cc4141d3a2f7a1f280c9948f3faa4d40fff3dd3df099089518c528299fdd"
+  },
+  "quality_before": {
+    "questions": 20,
+    "absolute_wording_cluster": 0,
+    "correct_unique_longest": 10,
+    "duplicate_options": 0,
+    "first_longest_correct": 11,
+    "identical_feedback": 0,
+    "length_ratio_1_5_to_2": 2,
+    "length_ratio_at_least_2": 0,
+    "longest_ties": 3,
+    "short_correct_feedback": 14,
+    "first_longest_accuracy": 55.0
+  },
+  "quality_proposed": {
+    "questions": 20,
+    "absolute_wording_cluster": 0,
+    "correct_unique_longest": 6,
+    "duplicate_options": 0,
+    "first_longest_correct": 6,
+    "identical_feedback": 0,
+    "length_ratio_1_5_to_2": 0,
+    "length_ratio_at_least_2": 0,
+    "longest_ties": 4,
+    "short_correct_feedback": 0,
+    "first_longest_accuracy": 30.0
+  },
+  "plan_progress": {
+    "total": 1762,
+    "reviewed": 40,
+    "pending": 1722,
+    "editorial_complete": false
+  }
+}

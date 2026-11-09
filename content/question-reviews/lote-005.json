@@ -1,0 +1,3726 @@
+{
+  "version": 1,
+  "id": "GSI-EDITORIAL-005",
+  "prepared_at": "2026-10-26",
+  "baseline_commit": "e3e20ab879518c899806a70575eead28b3b35e6f",
+  "items": [
+    {
+      "id": "AI-GSI-B3-T09-002",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "78cb1e0040d680afc98da3ef11fa6baa68528b1e88c2ae6c287b6ed125ba8342",
+      "content_sha256": "64ab7ada8792b13b722d4cc39b6a4c863de52c461f2012a8531e4bc8e1de0b3d",
+      "before": {
+        "id": "AI-GSI-B3-T09-002",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T09",
+        "subtopic": "SOLID",
+        "exam": null,
+        "statement": "¿Cómo deben entenderse SOLID según los apuntes?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Un estándar de cableado"
+          },
+          {
+            "id": "B",
+            "text": "Heurísticas de diseño, no obligación de multiplicar clases"
+          },
+          {
+            "id": "C",
+            "text": "Leyes matemáticas de ejecución"
+          },
+          {
+            "id": "D",
+            "text": "Un compilador"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Los principios orientan decisiones según contexto, sin imponer complejidad artificial.",
+          "incorrect": "Los principios orientan decisiones según contexto, sin imponer complejidad artificial."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.09; sección 2. SOLID",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "SRP, OCP, LSP, ISP y DIP como heurísticas. No son leyes matemáticas ni obligan a crear muchas clases.",
+          "evidence_sha256": "e2fe355c08bc419a6a3d13102cd20e682d6054f515bc345f68eb731afa993e00",
+          "record_sha256": "ad6cfa26da479b72c9c4e7d7a5ac2328c1a6d1d5d3859bcb4e4cd7d2ad026c97",
+          "review_id": "AI-GSI-B3-T09-002",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.09; sección 2. SOLID",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T09-002",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T09",
+        "subtopic": "SOLID",
+        "exam": null,
+        "statement": "¿Cómo deben utilizarse los principios SOLID al tomar decisiones de diseño?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Como una regla para crear una clase distinta por cada operación del programa."
+          },
+          {
+            "id": "B",
+            "text": "Como criterios para valorar responsabilidades, dependencias y cambios en su contexto."
+          },
+          {
+            "id": "C",
+            "text": "Como una receta para añadir una interfaz por clase aunque no exista variación."
+          },
+          {
+            "id": "D",
+            "text": "Como una garantía de corrección del comportamiento que permite prescindir de pruebas."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "SOLID orienta cómo separar responsabilidades y gestionar dependencias y cambios. Aplicarlo requiere juicio sobre el problema: añadir clases o interfaces sin una separación útil puede introducir complejidad, y ningún principio reemplaza comprobar el comportamiento.",
+          "incorrect": "Revisa el concepto y las condiciones del enunciado para distinguir la alternativa elegida de la respuesta correcta.",
+          "incorrect_options": {
+            "A": "Separar razones de cambio no equivale a asignar una clase a cada operación. Operaciones que responden a una misma responsabilidad pueden permanecer juntas.",
+            "C": "Depender de abstracciones útiles no exige una interfaz por clase. Una abstracción sin necesidad de separación o variación puede añadir coste sin mejorar el diseño.",
+            "D": "SOLID trata estructura y dependencias. Un diseño que siga esos criterios puede contener errores funcionales y necesita verificación."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.09; sección 2. SOLID",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "SRP, OCP, LSP, ISP y DIP como heurísticas. No son leyes matemáticas ni obligan a crear muchas clases.",
+          "evidence_sha256": "e2fe355c08bc419a6a3d13102cd20e682d6054f515bc345f68eb731afa993e00",
+          "record_sha256": "ad6cfa26da479b72c9c4e7d7a5ac2328c1a6d1d5d3859bcb4e4cd7d2ad026c97",
+          "review_id": "AI-GSI-B3-T09-002",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Robert C. Martin: Solid Relevance",
+              "url": "https://blog.cleancoder.com/uncle-bob/2020/10/18/Solid-Relevance.html",
+              "locator": "SRP, OCP, LSP, ISP y DIP: razones de cambio, separación, abstracciones y dependencias",
+              "version": "18-10-2020; texto conceptual, no especificación obligatoria",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-005"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.09; sección 2. SOLID",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Conservar SOLID como orientación contextual y sustituir opciones ajenas al diseño por interpretaciones rígidas o confusiones reales sobre clases, interfaces y pruebas."
+      ],
+      "references": [
+        {
+          "title": "Robert C. Martin: Solid Relevance",
+          "url": "https://blog.cleancoder.com/uncle-bob/2020/10/18/Solid-Relevance.html",
+          "locator": "SRP, OCP, LSP, ISP y DIP: razones de cambio, separación, abstracciones y dependencias",
+          "version": "18-10-2020; texto conceptual, no especificación obligatoria",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T09-012",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "418076afeb46ad244266086383df4bfca1ace2b9c6a43e0eb4f829a555792f49",
+      "content_sha256": "45f44ed12f3aa083191e19bc4fdc6692f3aff4254200e487422676faab239d4c",
+      "before": {
+        "id": "AI-GSI-B3-T09-012",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T09",
+        "subtopic": "UP con más detalle",
+        "exam": null,
+        "statement": "¿Qué actividades destacan en Transición de UP?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Solo visión inicial del negocio"
+          },
+          {
+            "id": "B",
+            "text": "Eliminar todo soporte"
+          },
+          {
+            "id": "C",
+            "text": "Despliegue, formación, correcciones y aceptación"
+          },
+          {
+            "id": "D",
+            "text": "Únicamente identificar riesgos sin construir"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Transición lleva el producto a sus usuarios y operación.",
+          "incorrect": "Transición lleva el producto a sus usuarios y operación."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.09; sección 8.2. UP con más detalle",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "* **Inicio:** visión, alcance, caso de negocio y riesgos principales.\n* **Elaboración:** arquitectura base ejecutable, requisitos/riesgos significativos.\n* **Construcción:** completar funcionalidad incrementalmente.\n* **Transición:** despliegue, formación, correcciones y aceptación.\n\nLas disciplinas —requisitos, análisis/diseño, implementación, pruebas, despliegue, configuración/cambio, proyecto y entorno— aparecen con distinta intensidad a lo largo de las fases.",
+          "evidence_sha256": "10edf86e6c7b85e0c48e5aa4c932da644f90bc231650a790106d7472ebbd94ae",
+          "record_sha256": "84a5f05d1e33491e6e611541bdbab673744e6886add2f21f197581c1f18b47e4",
+          "review_id": "AI-GSI-B3-T09-012",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.09; sección 8.2. UP con más detalle",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T09-012",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T09",
+        "subtopic": "UP con más detalle",
+        "exam": null,
+        "statement": "¿Qué actividades destacan en la fase de Transición del Proceso Unificado (UP)?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Definir la visión inicial, justificar la inversión y delimitar el alcance del producto."
+          },
+          {
+            "id": "B",
+            "text": "Resolver los principales riesgos arquitectónicos y establecer la arquitectura base."
+          },
+          {
+            "id": "C",
+            "text": "Desplegar, formar a los usuarios, corregir incidencias y obtener aceptación."
+          },
+          {
+            "id": "D",
+            "text": "Construir e integrar la funcionalidad principal hasta disponer de una versión desplegable."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Transición busca llevar una versión utilizable a sus usuarios: despliegue, formación, aceptación y ajustes a partir del uso. Puede incluir iteraciones de corrección; las disciplinas no quedan confinadas de forma absoluta a una sola fase.",
+          "incorrect": "Revisa el concepto y las condiciones del enunciado para distinguir la alternativa elegida de la respuesta correcta.",
+          "incorrect_options": {
+            "A": "Visión, viabilidad y alcance son focos propios del inicio. Pueden revisarse después, pero no describen el propósito distintivo de Transición.",
+            "B": "Reducir los riesgos principales y estabilizar la arquitectura caracteriza Elaboración. Transición parte de una versión suficientemente madura para desplegar.",
+            "D": "Completar e integrar la funcionalidad principal caracteriza Construcción. Transición se centra en su puesta a disposición y aceptación por los usuarios."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.09; sección 8.2. UP con más detalle",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "* **Inicio:** visión, alcance, caso de negocio y riesgos principales.\n* **Elaboración:** arquitectura base ejecutable, requisitos/riesgos significativos.\n* **Construcción:** completar funcionalidad incrementalmente.\n* **Transición:** despliegue, formación, correcciones y aceptación.\n\nLas disciplinas —requisitos, análisis/diseño, implementación, pruebas, despliegue, configuración/cambio, proyecto y entorno— aparecen con distinta intensidad a lo largo de las fases.",
+          "evidence_sha256": "10edf86e6c7b85e0c48e5aa4c932da644f90bc231650a790106d7472ebbd94ae",
+          "record_sha256": "84a5f05d1e33491e6e611541bdbab673744e6886add2f21f197581c1f18b47e4",
+          "review_id": "AI-GSI-B3-T09-012",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "IBM: The IBM Rational Unified Process for System z",
+              "url": "https://www.redbooks.ibm.com/redbooks/pdfs/sg247362.pdf",
+              "locator": "§2.4.4 Transition Phase, pp.24–26; §4.5.1 Transition objectives, p.47",
+              "version": "Primera edición, julio de 2007, SG24-7362-00; descripción histórica de RUP",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-005"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.09; sección 8.2. UP con más detalle",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Conservar el concepto de entrega a usuarios y comparar con objetivos auténticos de las otras fases, sin presentar UP como una cascada de disciplinas exclusivas."
+      ],
+      "references": [
+        {
+          "title": "IBM: The IBM Rational Unified Process for System z",
+          "url": "https://www.redbooks.ibm.com/redbooks/pdfs/sg247362.pdf",
+          "locator": "§2.4.4 Transition Phase, pp.24–26; §4.5.1 Transition objectives, p.47",
+          "version": "Primera edición, julio de 2007, SG24-7362-00; descripción histórica de RUP",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T12-019",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "791ae15dcb4249279f29da356f8a466448ad60e2183e975c672a67b896a15ed7",
+      "content_sha256": "4220aefe824915cdcdf41a72c694b44346800032ed98403616b1921ab5452b73",
+      "before": {
+        "id": "AI-GSI-B3-T12-019",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T12",
+        "subtopic": "Identidad",
+        "exam": null,
+        "statement": "¿Qué debe validarse al aceptar un JWT firmado?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Firma, emisor, audiencia, expiración y claims pertinentes"
+          },
+          {
+            "id": "B",
+            "text": "Solo que tenga tres fragmentos"
+          },
+          {
+            "id": "C",
+            "text": "Que pueda decodificarse como texto"
+          },
+          {
+            "id": "D",
+            "text": "Solo su longitud"
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Decodificar no valida confianza ni destinatario o vigencia del token.",
+          "incorrect": "Decodificar no valida confianza ni destinatario o vigencia del token."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.12; sección 8.5. Identidad",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "OAuth 2.0 delega autorización; OpenID Connect añade autenticación/identidad. JWT es un formato de token, no un protocolo. Debe validarse firma, issuer, audience, expiración y claims; no se cifra por defecto.",
+          "evidence_sha256": "8a9a2ccceba434556db91eea3c9bd23abf3a2eede602b78b5947615d7433739b",
+          "record_sha256": "6edd6a4047507c76684d4a0e28fba081d4ecb21c73d21ca17ea6e44dfa4c89ab",
+          "review_id": "AI-GSI-B3-T12-019",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.12; sección 8.5. Identidad",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T12-019",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T12",
+        "subtopic": "Identidad",
+        "exam": null,
+        "statement": "Una API exige JWT firmados con emisor, audiencia y caducidad definidos por su perfil. ¿Qué debe comprobar antes de aceptar uno?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Firma con clave y algoritmo admitidos, emisor, audiencia, vigencia y claims exigidos."
+          },
+          {
+            "id": "B",
+            "text": "Firma con el algoritmo indicado por el propio token, dando por confiables sus claims."
+          },
+          {
+            "id": "C",
+            "text": "Firma con una clave del emisor, aceptando cualquier audiencia mientras no haya caducado."
+          },
+          {
+            "id": "D",
+            "text": "Emisor y audiencia del contenido decodificado, sin verificar su autenticidad criptográfica."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "La API debe verificar la firma usando algoritmos y claves admitidos y validar el emisor, el destinatario, la vigencia y los requisitos de su perfil. Decodificar no autentica; una firma válida tampoco hace válido un token destinado a otra API.",
+          "incorrect": "Revisa el concepto y las condiciones del enunciado para distinguir la alternativa elegida de la respuesta correcta.",
+          "incorrect_options": {
+            "B": "El algoritmo recibido no establece por sí mismo la política de confianza. Además de verificar criptografía con parámetros permitidos, deben validarse los claims requeridos.",
+            "C": "Una firma correcta y la caducidad no sustituyen comprobar la audiencia. Un token auténtico para otro destinatario no autoriza esta API.",
+            "D": "Decodificar permite leer un contenido que cualquiera puede construir. Sin verificar autenticidad, emisor y audiencia declarados no son fiables."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.12; sección 8.5. Identidad",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "OAuth 2.0 delega autorización; OpenID Connect añade autenticación/identidad. JWT es un formato de token, no un protocolo. Debe validarse firma, issuer, audience, expiración y claims; no se cifra por defecto.",
+          "evidence_sha256": "8a9a2ccceba434556db91eea3c9bd23abf3a2eede602b78b5947615d7433739b",
+          "record_sha256": "6edd6a4047507c76684d4a0e28fba081d4ecb21c73d21ca17ea6e44dfa4c89ab",
+          "review_id": "AI-GSI-B3-T12-019",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "IETF RFC 8725: JSON Web Token Best Current Practices",
+              "url": "https://www.rfc-editor.org/rfc/rfc8725.html",
+              "locator": "§§3.1–3.3: algoritmos y operaciones criptográficas; §3.8: emisor; §3.9: audiencia; §3.12: reglas de validación según perfil",
+              "version": "BCP 225, febrero de 2020",
+              "checked_at": "2026-10-26"
+            },
+            {
+              "title": "IETF RFC 7519: JSON Web Token",
+              "url": "https://www.rfc-editor.org/rfc/rfc7519.html",
+              "locator": "§4.1: obligatoriedad de claims dependiente de la aplicación; §§4.1.1, 4.1.3 y 4.1.4: iss, aud y exp",
+              "version": "Mayo de 2015; actualizado en buenas prácticas por RFC 8725",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-005"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.12; sección 8.5. Identidad",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Precisar el perfil que exige iss, aud y exp y distinguir validación criptográfica y semántica; no afirmar que todos los claims registrados sean obligatorios en cualquier JWT."
+      ],
+      "references": [
+        {
+          "title": "IETF RFC 8725: JSON Web Token Best Current Practices",
+          "url": "https://www.rfc-editor.org/rfc/rfc8725.html",
+          "locator": "§§3.1–3.3: algoritmos y operaciones criptográficas; §3.8: emisor; §3.9: audiencia; §3.12: reglas de validación según perfil",
+          "version": "BCP 225, febrero de 2020",
+          "checked_at": "2026-10-26"
+        },
+        {
+          "title": "IETF RFC 7519: JSON Web Token",
+          "url": "https://www.rfc-editor.org/rfc/rfc7519.html",
+          "locator": "§4.1: obligatoriedad de claims dependiente de la aplicación; §§4.1.1, 4.1.3 y 4.1.4: iss, aud y exp",
+          "version": "Mayo de 2015; actualizado en buenas prácticas por RFC 8725",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T12-020",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "8c3829abf83023b2373fd2288e952c9cbb7cd9690a5e371308eb8266833f66c0",
+      "content_sha256": "39ed503b94633ec9b078026bf0edfecbb3a0c94f8f9a0f5091ec1bd4cca273a4",
+      "before": {
+        "id": "AI-GSI-B3-T12-020",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T12",
+        "subtopic": "Internacionalización/localización",
+        "exam": null,
+        "statement": "Una cita futura depende de la hora local y sus reglas. ¿Qué conviene conservar además del instante cuando corresponda?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Solo un desplazamiento fijo como representación universal de zona"
+          },
+          {
+            "id": "B",
+            "text": "La zona horaria y su contexto de reglas"
+          },
+          {
+            "id": "C",
+            "text": "Solo la fecha sin hora ni zona"
+          },
+          {
+            "id": "D",
+            "text": "Únicamente el formato visual de presentación"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Las reglas locales pueden cambiar; un offset no representa toda la zona.",
+          "incorrect": "Las reglas locales pueden cambiar; un offset no representa toda la zona."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.12; sección 8.6. Internacionalización/localización",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Unicode/UTF-8, locale, idioma, pluralización, collation, formatos de fecha/número/moneda, calendarios, RTL y zonas horarias. Almacenar instantes en UTC es habitual, pero hay eventos futuros ligados a zona local que requieren conservar zona/regla, no solo offset.",
+          "evidence_sha256": "8548603aa939d292dbed5641809e2539493dabbecf468e7c7154b79948927a16",
+          "record_sha256": "007ea59f0182f8b962de218da90d9297e0ca3d2a4ac3241ffb50a83636777d06",
+          "review_id": "AI-GSI-B3-T12-020",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.12; sección 8.6. Internacionalización/localización",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T12-020",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T12",
+        "subtopic": "Internacionalización/localización",
+        "exam": null,
+        "statement": "Una cita futura debe seguir celebrándose a las 09:00 de una localidad aunque cambien sus reglas de horario estacional. Además del instante calculado, ¿qué conviene conservar para recalcularlo?",
+        "options": [
+          {
+            "id": "A",
+            "text": "La fecha y hora local y un desplazamiento UTC fijo para todas las fechas."
+          },
+          {
+            "id": "B",
+            "text": "La fecha y hora local previstas, la zona identificada y el contexto de reglas usado."
+          },
+          {
+            "id": "C",
+            "text": "El instante UTC y la abreviatura de zona, usada como identificador inequívoco."
+          },
+          {
+            "id": "D",
+            "text": "Fecha y hora local y la zona que tenga el navegador al consultar la agenda."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "La intención es conservar una hora civil en una zona concreta. Su identificador y las reglas pertinentes permiten revisar el instante si cambian las normas; el desplazamiento usado inicialmente no describe la evolución de esa zona. También deben resolverse horas ambiguas o inexistentes.",
+          "incorrect": "Revisa el concepto y las condiciones del enunciado para distinguir la alternativa elegida de la respuesta correcta.",
+          "incorrect_options": {
+            "A": "Un desplazamiento indica una diferencia respecto a UTC en un momento, pero no incorpora las reglas futuras. Fijarlo puede desplazar la cita respecto a las 09:00 deseadas.",
+            "C": "Las abreviaturas pueden ser ambiguas y el instante fija un momento, no la intención de mantener la hora civil si cambian las reglas.",
+            "D": "La zona del navegador puede pertenecer a otro lugar o cambiar durante un viaje. No identifica de forma estable la localidad de la cita."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.12; sección 8.6. Internacionalización/localización",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Unicode/UTF-8, locale, idioma, pluralización, collation, formatos de fecha/número/moneda, calendarios, RTL y zonas horarias. Almacenar instantes en UTC es habitual, pero hay eventos futuros ligados a zona local que requieren conservar zona/regla, no solo offset.",
+          "evidence_sha256": "8548603aa939d292dbed5641809e2539493dabbecf468e7c7154b79948927a16",
+          "record_sha256": "007ea59f0182f8b962de218da90d9297e0ca3d2a4ac3241ffb50a83636777d06",
+          "review_id": "AI-GSI-B3-T12-020",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "W3C: Working with Time and Timezones",
+              "url": "https://www.w3.org/TR/timezone/",
+              "locator": "§3.3.2 What defines a time zone?; §4.2.2 Past and Future Events",
+              "version": "Group Draft Note, 26-07-2025; guía en borrador, no Recomendación W3C",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-005"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.12; sección 8.6. Internacionalización/localización",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Conservar el microcaso de cita futura y explicitar la intención de hora local, distinguiendo zona, offset, abreviatura y configuración del cliente."
+      ],
+      "references": [
+        {
+          "title": "W3C: Working with Time and Timezones",
+          "url": "https://www.w3.org/TR/timezone/",
+          "locator": "§3.3.2 What defines a time zone?; §4.2.2 Past and Future Events",
+          "version": "Group Draft Note, 26-07-2025; guía en borrador, no Recomendación W3C",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T13-013",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "abaa7dcd810827d55bb87c19baeb0854337e96ff88a2e514768534a838bc8555",
+      "content_sha256": "bcd68b0acc3ec88edf77cc5f2fb17bef4e29d7ff7929e1077d3b624ec5313984",
+      "before": {
+        "id": "AI-GSI-B3-T13-013",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T13",
+        "subtopic": "SQuaRE y modelos de calidad",
+        "exam": null,
+        "statement": "¿Qué organiza la familia SQuaRE?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Requisitos y evaluación de calidad"
+          },
+          {
+            "id": "B",
+            "text": "Una jerarquía de permisos de red"
+          },
+          {
+            "id": "C",
+            "text": "Únicamente programación gráfica"
+          },
+          {
+            "id": "D",
+            "text": "Solo transporte de mensajes"
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "SQuaRE relaciona modelos, requisitos, medidas y evaluación de calidad.",
+          "incorrect": "SQuaRE relaciona modelos, requisitos, medidas y evaluación de calidad."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.13; sección 6.1. SQuaRE y modelos de calidad",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "**Base A1 correcta:** 103, versión 31.1 actualizada 24/02/2026. Se elimina la vieja derivación hacia A1 050. **Complemento oficial:** ISO/IEC 25010:2023 es la edición vigente del modelo de calidad de producto y define nueve características.\n\nLa familia **SQuaRE (ISO/IEC 25000)** organiza requisitos y evaluación de calidad. Para estudiar no es necesario memorizar todas las partes, pero sí entender la cadena: definir modelo/requisitos → seleccionar medidas → evaluar → aceptar/mejorar.",
+          "evidence_sha256": "57649cc1b0c65e6ba289eec54325fa4182977d4ede3880f8a0ae6eb642452f7a",
+          "record_sha256": "1612ebb61fed7d213432d9c0dad07c6e9399b80b839d867a58c5e02a1e3b43ad",
+          "review_id": "AI-GSI-B3-T13-013",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.13; sección 6.1. SQuaRE y modelos de calidad",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T13-013",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T13",
+        "subtopic": "SQuaRE y modelos de calidad",
+        "exam": null,
+        "statement": "¿Qué organiza la familia de normas SQuaRE?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Requisitos, modelos, medidas y evaluación de calidad de sistemas y software."
+          },
+          {
+            "id": "B",
+            "text": "Procesos de gestión de servicios, como incidentes, niveles de servicio y peticiones."
+          },
+          {
+            "id": "C",
+            "text": "Controles y requisitos para gestionar la seguridad de la información de la organización."
+          },
+          {
+            "id": "D",
+            "text": "Prácticas para establecer el cronograma, el presupuesto y los contratos de un proyecto."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "SQuaRE agrupa normas sobre requisitos y evaluación de calidad de sistemas y software y relaciona sus modelos, medidas y documentos. Puede apoyar la gestión del proyecto o la seguridad del producto, pero su objeto no es sustituir sus marcos de gestión.",
+          "incorrect": "Revisa el concepto y las condiciones del enunciado para distinguir la alternativa elegida de la respuesta correcta.",
+          "incorrect_options": {
+            "B": "Los procesos de gestión del servicio responden a otro ámbito. Pueden usar medidas de calidad, pero no definen el propósito de la familia SQuaRE.",
+            "C": "Gestionar la seguridad organizativa es el objeto de marcos específicos de seguridad. Que la calidad considere seguridad no convierte SQuaRE en ese sistema de gestión.",
+            "D": "Cronograma, presupuesto y contratación son decisiones de dirección del proyecto. SQuaRE estructura la calidad del sistema o software que se especifica y evalúa."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.13; sección 6.1. SQuaRE y modelos de calidad",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "**Base A1 correcta:** 103, versión 31.1 actualizada 24/02/2026. Se elimina la vieja derivación hacia A1 050. **Complemento oficial:** ISO/IEC 25010:2023 es la edición vigente del modelo de calidad de producto y define nueve características.\n\nLa familia **SQuaRE (ISO/IEC 25000)** organiza requisitos y evaluación de calidad. Para estudiar no es necesario memorizar todas las partes, pero sí entender la cadena: definir modelo/requisitos → seleccionar medidas → evaluar → aceptar/mejorar.",
+          "evidence_sha256": "57649cc1b0c65e6ba289eec54325fa4182977d4ede3880f8a0ae6eb642452f7a",
+          "record_sha256": "1612ebb61fed7d213432d9c0dad07c6e9399b80b839d867a58c5e02a1e3b43ad",
+          "review_id": "AI-GSI-B3-T13-013",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "ISO/IEC 25000: Systems and software Quality Requirements and Evaluation — Guide to SQuaRE",
+              "url": "https://www.iso.org/standard/64764.html",
+              "locator": "Abstract: finalidad, contenido, modelos de referencia y relación de documentos de la familia SQuaRE",
+              "version": "ISO/IEC 25000:2014, edición 2; ficha confirma revisión en 2026",
+              "checked_at": "2026-10-26"
+            },
+            {
+              "title": "ISO/IEC 25020: Systems and software Quality Requirements and Evaluation — Quality measurement framework",
+              "url": "https://www.iso.org/standard/72117.html",
+              "locator": "Abstract: modelo de referencia, tipos de medidas y selección, construcción, planificación y uso de medidas de calidad",
+              "version": "ISO/IEC 25020:2019, edición 2; ficha confirma revisión en 2025",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-005"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.13; sección 6.1. SQuaRE y modelos de calidad",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Conservar la identificación conceptual de SQuaRE y confrontarla con ámbitos próximos de servicio, seguridad y gestión de proyectos."
+      ],
+      "references": [
+        {
+          "title": "ISO/IEC 25000: Systems and software Quality Requirements and Evaluation — Guide to SQuaRE",
+          "url": "https://www.iso.org/standard/64764.html",
+          "locator": "Abstract: finalidad, contenido, modelos de referencia y relación de documentos de la familia SQuaRE",
+          "version": "ISO/IEC 25000:2014, edición 2; ficha confirma revisión en 2026",
+          "checked_at": "2026-10-26"
+        },
+        {
+          "title": "ISO/IEC 25020: Systems and software Quality Requirements and Evaluation — Quality measurement framework",
+          "url": "https://www.iso.org/standard/72117.html",
+          "locator": "Abstract: modelo de referencia, tipos de medidas y selección, construcción, planificación y uso de medidas de calidad",
+          "version": "ISO/IEC 25020:2019, edición 2; ficha confirma revisión en 2025",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T14-001",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "02766b2a7f7496bf0df4c4953720a957bc8f4d3dcd54c1a79f1817084f77d306",
+      "content_sha256": "3702d92400b2879f963ee04fdeb9ecca29a5e02e54a344eca9bbccba35ebe3e3",
+      "before": {
+        "id": "AI-GSI-B3-T14-001",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T14",
+        "subtopic": "Accesibilidad",
+        "exam": null,
+        "statement": "¿Cuándo debe incorporarse accesibilidad?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Solo tras el primer despliegue"
+          },
+          {
+            "id": "B",
+            "text": "Solo durante una auditoría externa"
+          },
+          {
+            "id": "C",
+            "text": "Desde la concepción y requisitos"
+          },
+          {
+            "id": "D",
+            "text": "Únicamente después de una queja"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "La accesibilidad es parte del diseño, no una adaptación final aislada.",
+          "incorrect": "La accesibilidad es parte del diseño, no una adaptación final aislada."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.14; sección 1. Accesibilidad",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Diseñar para que personas con distintas capacidades puedan percibir, operar, entender e interactuar. No es una “adaptación al final”.",
+          "evidence_sha256": "7ec1315cff0e328a092f8a62bf9f13e39112f34fb8cd9ff48b906cc677e48214",
+          "record_sha256": "aeb2bedd06ab935d23af41a3876f8f6d3b1c664c074c73a1261b28b3c3c25342",
+          "review_id": "AI-GSI-B3-T14-001",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.14; sección 1. Accesibilidad",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T14-001",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T14",
+        "subtopic": "Accesibilidad",
+        "exam": null,
+        "statement": "¿Cuándo debe incorporarse la accesibilidad al desarrollo de un servicio digital?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Al estabilizar la interfaz, para evitar que las pruebas accesibles condicionen el diseño inicial."
+          },
+          {
+            "id": "B",
+            "text": "Al cerrar la construcción, tratando los criterios accesibles como comprobaciones finales."
+          },
+          {
+            "id": "C",
+            "text": "Desde la concepción y los requisitos, y de forma continua durante diseño, pruebas y evolución."
+          },
+          {
+            "id": "D",
+            "text": "Tras publicar una versión, utilizando las incidencias de usuarios como entrada inicial al diseño."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "La accesibilidad debe orientar requisitos y decisiones desde el comienzo y evaluarse durante la evolución del servicio, incluyendo a usuarios con discapacidad. Así pueden detectarse barreras en tareas y diseño antes de consolidarlas; una auditoría final complementa ese trabajo.",
+          "incorrect": "Revisa el concepto y las condiciones del enunciado para distinguir la alternativa elegida de la respuesta correcta.",
+          "incorrect_options": {
+            "A": "Esperar a una interfaz estable puede consolidar barreras de interacción o estructura. La evaluación temprana debe poder influir en el diseño.",
+            "B": "Una comprobación final llega tarde para decisiones de requisitos, arquitectura o componentes que afectan a la accesibilidad.",
+            "D": "Las incidencias aportan información después del lanzamiento, pero no justifican omitir planificación y validación accesibles antes de publicar."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.14; sección 1. Accesibilidad",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Diseñar para que personas con distintas capacidades puedan percibir, operar, entender e interactuar. No es una “adaptación al final”.",
+          "evidence_sha256": "7ec1315cff0e328a092f8a62bf9f13e39112f34fb8cd9ff48b906cc677e48214",
+          "record_sha256": "aeb2bedd06ab935d23af41a3876f8f6d3b1c664c074c73a1261b28b3c3c25342",
+          "review_id": "AI-GSI-B3-T14-001",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "W3C WAI: Involving Users in Web Projects for Better, Easier Accessibility",
+              "url": "https://www.w3.org/WAI/planning/involving-users/",
+              "locator": "How to Involve Users throughout Your Project; Including Users to Understand the Issues; Including Users in Implementation",
+              "version": "Guía web consultada el 26-10-2026",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-005"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.14; sección 1. Accesibilidad",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Conservar el enunciado directo y el inicio temprano, con alternativas que representan momentos reales pero insuficientes de incorporación."
+      ],
+      "references": [
+        {
+          "title": "W3C WAI: Involving Users in Web Projects for Better, Easier Accessibility",
+          "url": "https://www.w3.org/WAI/planning/involving-users/",
+          "locator": "How to Involve Users throughout Your Project; Including Users to Understand the Issues; Including Users in Implementation",
+          "version": "Guía web consultada el 26-10-2026",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T14-009",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "ddcf28ec982420fa0aa881e9af6fd930a9c92b2a36a4b7e292fcc064c98ca33c",
+      "content_sha256": "4e654af32a942137ee0fe363d7f165eb61e15c29cf6499ab71d9e41349025119",
+      "before": {
+        "id": "AI-GSI-B3-T14-009",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T14",
+        "subtopic": "Usabilidad",
+        "exam": null,
+        "statement": "¿Qué dimensiones definen usabilidad en contexto?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Únicamente satisfacción sin eficacia de tareas"
+          },
+          {
+            "id": "B",
+            "text": "Solo rapidez de carga"
+          },
+          {
+            "id": "C",
+            "text": "Solo conformidad técnica WCAG"
+          },
+          {
+            "id": "D",
+            "text": "Eficacia, eficiencia y satisfacción"
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "La usabilidad valora conseguir tareas, recursos necesarios y satisfacción en un contexto.",
+          "incorrect": "La usabilidad valora conseguir tareas, recursos necesarios y satisfacción en un contexto."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.14; sección 5. Usabilidad",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Eficacia, eficiencia y satisfacción en contexto. Heurísticas, pruebas con usuarios, análisis de tareas, consistencia, feedback, prevención/recuperación de errores.",
+          "evidence_sha256": "da9547f38bff47daef56fb6842ca7051b60ec54555e7f165653fa409f3adc9da",
+          "record_sha256": "48c0d971ac2bd9a68e32c7573341920301e0392132919e85569ee325c9724a8c",
+          "review_id": "AI-GSI-B3-T14-009",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.14; sección 5. Usabilidad",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T14-009",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T14",
+        "subtopic": "Usabilidad",
+        "exam": null,
+        "statement": "¿Qué dimensiones definen la usabilidad para usuarios, objetivos y contexto de uso especificados?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Disponibilidad, fiabilidad y capacidad de recuperación."
+          },
+          {
+            "id": "B",
+            "text": "Aprendizaje, atractivo visual y uniformidad gráfica."
+          },
+          {
+            "id": "C",
+            "text": "Tiempo de respuesta, rendimiento y escalabilidad."
+          },
+          {
+            "id": "D",
+            "text": "Eficacia, eficiencia y satisfacción."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "La usabilidad considera si los usuarios logran sus objetivos, qué recursos emplean y cómo valoran la experiencia de uso en el contexto definido. Conseguir la tarea, hacerlo con poco esfuerzo y quedar satisfecho son dimensiones relacionadas, pero no equivalentes.",
+          "incorrect": "Revisa el concepto y las condiciones del enunciado para distinguir la alternativa elegida de la respuesta correcta.",
+          "incorrect_options": {
+            "A": "Son cualidades relacionadas con continuidad y recuperación del servicio. No forman la definición de usabilidad aunque puedan afectar al uso.",
+            "B": "Aprendizaje y apariencia pueden influir en la interacción, pero ese conjunto omite la definición basada en resultados, recursos y satisfacción.",
+            "C": "Son aspectos de rendimiento y capacidad técnica. Un sistema rápido puede seguir impidiendo que el usuario complete correctamente la tarea."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.14; sección 5. Usabilidad",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Eficacia, eficiencia y satisfacción en contexto. Heurísticas, pruebas con usuarios, análisis de tareas, consistencia, feedback, prevención/recuperación de errores.",
+          "evidence_sha256": "da9547f38bff47daef56fb6842ca7051b60ec54555e7f165653fa409f3adc9da",
+          "record_sha256": "48c0d971ac2bd9a68e32c7573341920301e0392132919e85569ee325c9724a8c",
+          "review_id": "AI-GSI-B3-T14-009",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "ISO 9241-115: Guidance on conceptual design, user-system interaction design, user interface design and navigation design",
+              "url": "https://www.iso.org/obp/ui?_escaped_fragment_=iso%3Astd%3Aiso%3A9241%3A-115%3Aed-1%3Av1%3Aen",
+              "locator": "§3.3.1 Context of use; §3.4.3 Usability, que reproduce ISO 9241-11:2018 §3.1.1",
+              "version": "ISO 9241-115:2024; vista pública de términos",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-005"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.14; sección 5. Usabilidad",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Conservar las tres dimensiones y explicitar el contexto requerido, comparándolas con otros atributos de calidad y diseño sin caricaturizarlos."
+      ],
+      "references": [
+        {
+          "title": "ISO 9241-115: Guidance on conceptual design, user-system interaction design, user interface design and navigation design",
+          "url": "https://www.iso.org/obp/ui?_escaped_fragment_=iso%3Astd%3Aiso%3A9241%3A-115%3Aed-1%3Av1%3Aen",
+          "locator": "§3.3.1 Context of use; §3.4.3 Usability, que reproduce ISO 9241-11:2018 §3.1.1",
+          "version": "ISO 9241-115:2024; vista pública de términos",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B3-T14-010",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "6611f08e518464b8ea406e68f694c22ed8d138da492e72b5fb5f816cc8dd6b5a",
+      "content_sha256": "6182ad007cd9af877afe36d7d48009ca1c91a8bd9b7f6119f55120e3bbf22d22",
+      "before": {
+        "id": "AI-GSI-B3-T14-010",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T14",
+        "subtopic": "UX",
+        "exam": null,
+        "statement": "¿Qué abarca UX más allá de la estética?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Únicamente tipografía y color"
+          },
+          {
+            "id": "B",
+            "text": "Experiencia antes, durante y después, incluida confianza y utilidad"
+          },
+          {
+            "id": "C",
+            "text": "Solo diseño visual de pantallas"
+          },
+          {
+            "id": "D",
+            "text": "Solo organización estética de componentes"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "UX incluye percepción y experiencia global, no solo apariencia de la interfaz.",
+          "incorrect": "UX incluye percepción y experiencia global, no solo apariencia de la interfaz."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.14; sección 6. UX",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Experiencia global antes/durante/después. Incluye utilidad, usabilidad, accesibilidad, confianza y percepción. UX ≠ diseño visual.",
+          "evidence_sha256": "64d8e39c5b0c60e041ce3ccf513691ed93a93540d2e8787a60256a07442dd8b5",
+          "record_sha256": "8035a22a48004dbe2d5bc4b2ed96c5aa60ca690d897ee1a00731cac3064420e6",
+          "review_id": "AI-GSI-B3-T14-010",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.14; sección 6. UX",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B3-T14-010",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B3",
+        "topic_id": "B3-T14",
+        "subtopic": "UX",
+        "exam": null,
+        "statement": "¿Qué abarca la experiencia de usuario (UX) más allá de la estética de una interfaz?",
+        "options": [
+          {
+            "id": "A",
+            "text": "La composición gráfica, la tipografía y los colores empleados en cada pantalla."
+          },
+          {
+            "id": "B",
+            "text": "Percepciones y respuestas antes, durante y después del uso, incluidas utilidad y confianza."
+          },
+          {
+            "id": "C",
+            "text": "Éxito y duración de las tareas como descripción completa de la experiencia."
+          },
+          {
+            "id": "D",
+            "text": "Coherencia de menús y componentes como descripción completa de la experiencia."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "La UX incluye percepciones y respuestas asociadas al uso y a su anticipación, influidas por funcionalidad, expectativas, contexto y experiencias previas. La utilidad percibida y la confianza pueden formar parte de ella; una interfaz atractiva no las garantiza.",
+          "incorrect": "Revisa el concepto y las condiciones del enunciado para distinguir la alternativa elegida de la respuesta correcta.",
+          "incorrect_options": {
+            "A": "La composición visual influye en la experiencia, pero no cubre expectativas, comportamiento del servicio, ayuda ni valoración posterior.",
+            "C": "Completar tareas y medir tiempo informa sobre eficacia y eficiencia. Esos datos no describen por sí solos todas las percepciones y respuestas de la UX.",
+            "D": "La coherencia de componentes es una decisión de interfaz que puede ayudar al uso. No engloba la experiencia anticipada ni sus factores funcionales y contextuales."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.14; sección 6. UX",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE III — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (15 temas)",
+          "evidence": "Experiencia global antes/durante/después. Incluye utilidad, usabilidad, accesibilidad, confianza y percepción. UX ≠ diseño visual.",
+          "evidence_sha256": "64d8e39c5b0c60e041ce3ccf513691ed93a93540d2e8787a60256a07442dd8b5",
+          "record_sha256": "8035a22a48004dbe2d5bc4b2ed96c5aa60ca690d897ee1a00731cac3064420e6",
+          "review_id": "AI-GSI-B3-T14-010",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "ISO 9241-115: Guidance on conceptual design, user-system interaction design, user interface design and navigation design",
+              "url": "https://www.iso.org/obp/ui?_escaped_fragment_=iso%3Astd%3Aiso%3A9241%3A-115%3Aed-1%3Av1%3Aen",
+              "locator": "§3.4.4 User experience, notas 1 y 2: percepciones, respuestas, antes/durante/después y factores del sistema y del usuario",
+              "version": "ISO 9241-115:2024; vista pública de términos",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-005"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B3-V21",
+          "document_id": "DOC-GSI-B3-V21",
+          "drive_id": "1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec",
+          "url": "https://docs.google.com/document/d/1eUTbZtV2Jj1Y8P_pjOP7Tk86chx1r9lPyLwuz3vBCec/edit",
+          "locator": "III.14; sección 6. UX",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Conservar el alcance global y temporal de UX y evitar reducir usabilidad a apariencia; contrastar métricas de tareas y sistema visual con experiencia completa."
+      ],
+      "references": [
+        {
+          "title": "ISO 9241-115: Guidance on conceptual design, user-system interaction design, user interface design and navigation design",
+          "url": "https://www.iso.org/obp/ui?_escaped_fragment_=iso%3Astd%3Aiso%3A9241%3A-115%3Aed-1%3Av1%3Aen",
+          "locator": "§3.4.4 User experience, notas 1 y 2: percepciones, respuestas, antes/durante/después y factores del sistema y del usuario",
+          "version": "ISO 9241-115:2024; vista pública de términos",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T01-001",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "b079a9363a557224d91d5e93ac68e325b0079a35587c5267ecffc5cf5eb63902",
+      "content_sha256": "a24e9743e3be42869a8d009af6826b5d820fb6750c3c75c09a3f711d88290dde",
+      "before": {
+        "id": "AI-GSI-B4-T01-001",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T01",
+        "subtopic": "Alcance y objetivos de la administración",
+        "exam": null,
+        "statement": "¿Qué objetivo resume la administración del sistema operativo?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Solo adquirir licencias"
+          },
+          {
+            "id": "B",
+            "text": "Solo completar la instalación inicial"
+          },
+          {
+            "id": "C",
+            "text": "Cambiar hardware en cada incidencia"
+          },
+          {
+            "id": "D",
+            "text": "Mantener una plataforma segura, disponible y recuperable durante su ciclo"
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Administrar comprende operación, control y recuperación continuados.",
+          "incorrect": "Administrar comprende operación, control y recuperación continuados."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.01; sección 1. Alcance y objetivos de la administración",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Administrar un sistema operativo no es solo instalarlo: significa mantener durante todo su ciclo una plataforma **disponible, segura, reproducible, monitorizada y recuperable**. Las actividades nucleares son instalación y arranque, configuración, identidad y permisos, procesos y servicios, almacenamiento, red, actualización, logging, automatización, rendimiento, hardening y recuperación.\n\nEl **software de base** comprende los componentes que soportan la ejecución de aplicaciones: kernel y servicios de sistema, controladores, runtimes, shells, utilidades, bibliotecas, agentes, servidores de infraestructura y middleware básico. La frontera con “aplicación” depende de la arquitectura, pero operativamente interesa quién lo parchea, configura, monitoriza y respalda.",
+          "evidence_sha256": "2e4e869dd3ee9c3479129043d786d325fdfef69241cc58bd1b2193c0f22c346f",
+          "record_sha256": "154bbbe42ec4465e278c95c6087063afd8cc9c3801c2d281b28804a70c8eb79b",
+          "review_id": "AI-GSI-B4-T01-001",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.01; sección 1. Alcance y objetivos de la administración",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T01-001",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T01",
+        "subtopic": "Alcance y objetivos de la administración",
+        "exam": null,
+        "statement": "¿Qué objetivo resume la administración de un sistema operativo durante su vida en servicio?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Completar la instalación y entregar la configuración inicial como estado definitivo."
+          },
+          {
+            "id": "B",
+            "text": "Maximizar la utilización de recursos dando prioridad a ocupación frente a continuidad."
+          },
+          {
+            "id": "C",
+            "text": "Restablecer la imagen inicial ante incidencias, sin gestionar los cambios acumulados."
+          },
+          {
+            "id": "D",
+            "text": "Mantener una plataforma segura, disponible y recuperable durante su ciclo operativo."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "La administración incluye operación, actualizaciones, configuración, vigilancia y recuperación a lo largo del servicio. Instalación y respuesta a incidencias son partes de ese trabajo; la configuración debe seguir respondiendo a requisitos y cambios, sin perder capacidad de restauración.",
+          "incorrect": "Revisa el concepto y las condiciones del enunciado para distinguir la alternativa elegida de la respuesta correcta.",
+          "incorrect_options": {
+            "A": "Una instalación correcta no elimina vulnerabilidades, cambios ni necesidades de mantenimiento que aparecen durante la operación.",
+            "B": "Ocupar recursos no es el fin del servicio. Saturarlos puede reducir disponibilidad y margen para fallos o picos de demanda.",
+            "C": "Una imagen inicial puede quedar desactualizada o perder configuración y datos necesarios. Recuperar exige gestionar versiones, copias y cambios válidos."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.01; sección 1. Alcance y objetivos de la administración",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Administrar un sistema operativo no es solo instalarlo: significa mantener durante todo su ciclo una plataforma **disponible, segura, reproducible, monitorizada y recuperable**. Las actividades nucleares son instalación y arranque, configuración, identidad y permisos, procesos y servicios, almacenamiento, red, actualización, logging, automatización, rendimiento, hardening y recuperación.\n\nEl **software de base** comprende los componentes que soportan la ejecución de aplicaciones: kernel y servicios de sistema, controladores, runtimes, shells, utilidades, bibliotecas, agentes, servidores de infraestructura y middleware básico. La frontera con “aplicación” depende de la arquitectura, pero operativamente interesa quién lo parchea, configura, monitoriza y respalda.",
+          "evidence_sha256": "2e4e869dd3ee9c3479129043d786d325fdfef69241cc58bd1b2193c0f22c346f",
+          "record_sha256": "154bbbe42ec4465e278c95c6087063afd8cc9c3801c2d281b28804a70c8eb79b",
+          "review_id": "AI-GSI-B4-T01-001",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "NIST SP 800-123: Guide to General Server Security",
+              "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-123.pdf",
+              "locator": "§4 Securing the Server Operating System; §6 Maintaining the Security of the Server; §§6.1 Logging y 6.2 Server Backup Procedures",
+              "version": "Julio de 2008; guía histórica de principios operativos, no catálogo actual de mecanismos",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-005"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.01; sección 1. Alcance y objetivos de la administración",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Conservar operación segura, disponible y recuperable como objetivo e introducir errores plausibles de visión limitada a instalación, utilización o imagen inicial."
+      ],
+      "references": [
+        {
+          "title": "NIST SP 800-123: Guide to General Server Security",
+          "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-123.pdf",
+          "locator": "§4 Securing the Server Operating System; §6 Maintaining the Security of the Server; §§6.1 Logging y 6.2 Server Backup Procedures",
+          "version": "Julio de 2008; guía histórica de principios operativos, no catálogo actual de mecanismos",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T01-010",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "edd8c97ed2b9f951a3248eebc59a087c38c71c59b14feedfd0b6829e41c4339c",
+      "content_sha256": "502715744e09e1c3b9ec4e32e12fd3089372dc4234703d1c3a848fb70f3a5dc1",
+      "before": {
+        "id": "AI-GSI-B4-T01-010",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T01",
+        "subtopic": "Procesos, servicios y tareas",
+        "exam": null,
+        "statement": "¿Qué información operativa necesita un servicio?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Solo la cuenta propietaria sin observabilidad ni recuperación"
+          },
+          {
+            "id": "B",
+            "text": "Propietario, cuenta, arranque, puertos, logs y recuperación"
+          },
+          {
+            "id": "C",
+            "text": "Solo nombre y versión del binario"
+          },
+          {
+            "id": "D",
+            "text": "Únicamente el comando de arranque sin dependencias"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "La administración requiere contexto para arrancar, observar y recuperar el servicio.",
+          "incorrect": "La administración requiere contexto para arrancar, observar y recuperar el servicio."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.01; sección 4. Procesos, servicios y tareas",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "El administrador gestiona procesos, hilos, prioridades, límites, dependencias y servicios. Un servicio debe tener propietario, cuenta, método de arranque, puertos, logs, health checks y procedimiento de recuperación. Las tareas programadas permiten mantenimiento periódico, pero deben registrar resultado y evitar credenciales embebidas.\n\nUna incidencia de “servicio caído” exige distinguir proceso no ejecutándose, dependencia fallida, puerto ocupado, DNS/red, permisos, certificado, almacenamiento lleno o saturación. Esa lógica de diagnóstico es más valiosa que un comando aislado.",
+          "evidence_sha256": "6bafa8cdccc7ffd6e7e4557ed5be63237e2f2fdef51339670f03207fb7d6325a",
+          "record_sha256": "de5bd3caadd6f51861124bf9ba8a812c035bf63e65090955c36bf6ffc97f8932",
+          "review_id": "AI-GSI-B4-T01-010",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.01; sección 4. Procesos, servicios y tareas",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T01-010",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T01",
+        "subtopic": "Procesos, servicios y tareas",
+        "exam": null,
+        "statement": "¿Qué información operativa debe documentarse para poder arrancar, supervisar y recuperar un servicio?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Cuenta, nombre del binario y fecha de alta, remitiendo el diagnóstico a sus creadores."
+          },
+          {
+            "id": "B",
+            "text": "Responsable, cuenta, arranque, dependencias, puertos, registros y procedimiento de recuperación."
+          },
+          {
+            "id": "C",
+            "text": "Repositorio, historial de cambios y lista de entregas, como descripción operativa."
+          },
+          {
+            "id": "D",
+            "text": "Comando de inicio y configuración de red, dando por demostrada la recuperación al arrancar."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "La operación necesita saber quién responde por el servicio, con qué identidad y dependencias se ejecuta, cómo observarlo y cómo recuperarlo. Los campos concretos dependen de la plataforma; iniciar un proceso no demuestra que el servicio esté sano ni que pueda restaurarse.",
+          "incorrect": "Revisa el concepto y las condiciones del enunciado para distinguir la alternativa elegida de la respuesta correcta.",
+          "incorrect_options": {
+            "A": "Identidad y binario son necesarios, pero remitir el diagnóstico a sus creadores deja sin procedimientos reproducibles al personal de operación.",
+            "C": "La trazabilidad del código no documenta necesariamente cuentas, dependencias, registros o recuperación del servicio desplegado.",
+            "D": "Arrancar y configurar red no prueban funcionamiento ni restauración. Faltan observación, responsabilidades y respuesta a fallos."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.01; sección 4. Procesos, servicios y tareas",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "El administrador gestiona procesos, hilos, prioridades, límites, dependencias y servicios. Un servicio debe tener propietario, cuenta, método de arranque, puertos, logs, health checks y procedimiento de recuperación. Las tareas programadas permiten mantenimiento periódico, pero deben registrar resultado y evitar credenciales embebidas.\n\nUna incidencia de “servicio caído” exige distinguir proceso no ejecutándose, dependencia fallida, puerto ocupado, DNS/red, permisos, certificado, almacenamiento lleno o saturación. Esa lógica de diagnóstico es más valiosa que un comando aislado.",
+          "evidence_sha256": "6bafa8cdccc7ffd6e7e4557ed5be63237e2f2fdef51339670f03207fb7d6325a",
+          "record_sha256": "de5bd3caadd6f51861124bf9ba8a812c035bf63e65090955c36bf6ffc97f8932",
+          "review_id": "AI-GSI-B4-T01-010",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "systemd: systemd.service",
+              "url": "https://www.freedesktop.org/software/systemd/man/latest/systemd.service.html",
+              "locator": "Description; Automatic Dependencies; ExecStart=; Restart= y RestartSec=",
+              "version": "Manual web systemd 262 consultado el 26-10-2026",
+              "checked_at": "2026-10-26"
+            },
+            {
+              "title": "systemd: systemd.exec",
+              "url": "https://www.freedesktop.org/software/systemd/man/latest/systemd.exec.html",
+              "locator": "User=; StandardOutput=; StandardError=; Process Exit Codes, tablas 8–10; advertencia sobre secretos en Environment=",
+              "version": "Manual web systemd 262 consultado el 26-10-2026",
+              "checked_at": "2026-10-26"
+            },
+            {
+              "title": "NIST SP 800-123: Guide to General Server Security",
+              "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-123.pdf",
+              "locator": "§4 Securing the Server Operating System; §6 Maintaining the Security of the Server; §§6.1 Logging y 6.2 Server Backup Procedures",
+              "version": "Julio de 2008; guía histórica de principios operativos, no catálogo actual de mecanismos",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-005"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.01; sección 4. Procesos, servicios y tareas",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Conservar los datos operativos y añadir dependencias, distinguiendo documentación de desarrollo y procedimientos de servicio; systemd es un ejemplo, no un formato universal."
+      ],
+      "references": [
+        {
+          "title": "systemd: systemd.service",
+          "url": "https://www.freedesktop.org/software/systemd/man/latest/systemd.service.html",
+          "locator": "Description; Automatic Dependencies; ExecStart=; Restart= y RestartSec=",
+          "version": "Manual web systemd 262 consultado el 26-10-2026",
+          "checked_at": "2026-10-26"
+        },
+        {
+          "title": "systemd: systemd.exec",
+          "url": "https://www.freedesktop.org/software/systemd/man/latest/systemd.exec.html",
+          "locator": "User=; StandardOutput=; StandardError=; Process Exit Codes, tablas 8–10; advertencia sobre secretos en Environment=",
+          "version": "Manual web systemd 262 consultado el 26-10-2026",
+          "checked_at": "2026-10-26"
+        },
+        {
+          "title": "NIST SP 800-123: Guide to General Server Security",
+          "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-123.pdf",
+          "locator": "§4 Securing the Server Operating System; §6 Maintaining the Security of the Server; §§6.1 Logging y 6.2 Server Backup Procedures",
+          "version": "Julio de 2008; guía histórica de principios operativos, no catálogo actual de mecanismos",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T01-012",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "5a68969de0298fcf56b69af1d36c9cfb13caf945eff6ff28bdfb5a816e719c42",
+      "content_sha256": "51ff53a08eac206188acc014fa5fe9ee5dc56991ad2c5e0a3bc1b43ae5ec238f",
+      "before": {
+        "id": "AI-GSI-B4-T01-012",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T01",
+        "subtopic": "Procesos, servicios y tareas",
+        "exam": null,
+        "statement": "¿Qué deben registrar las tareas programadas?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Credenciales en claro"
+          },
+          {
+            "id": "B",
+            "text": "Nada, porque siempre funcionan"
+          },
+          {
+            "id": "C",
+            "text": "Solo su nombre sin estado"
+          },
+          {
+            "id": "D",
+            "text": "Resultado de ejecución y errores relevantes"
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Los jobs deben ser observables y evitar secretos embebidos.",
+          "incorrect": "Los jobs deben ser observables y evitar secretos embebidos."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.01; sección 4. Procesos, servicios y tareas",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "El administrador gestiona procesos, hilos, prioridades, límites, dependencias y servicios. Un servicio debe tener propietario, cuenta, método de arranque, puertos, logs, health checks y procedimiento de recuperación. Las tareas programadas permiten mantenimiento periódico, pero deben registrar resultado y evitar credenciales embebidas.\n\nUna incidencia de “servicio caído” exige distinguir proceso no ejecutándose, dependencia fallida, puerto ocupado, DNS/red, permisos, certificado, almacenamiento lleno o saturación. Esa lógica de diagnóstico es más valiosa que un comando aislado.",
+          "evidence_sha256": "6bafa8cdccc7ffd6e7e4557ed5be63237e2f2fdef51339670f03207fb7d6325a",
+          "record_sha256": "0844c67d7a2b98a95b8138ba931880bcdd96aa9834bbaeb1ef2fc77a17de4b30",
+          "review_id": "AI-GSI-B4-T01-012",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.01; sección 4. Procesos, servicios y tareas",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T01-012",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T01",
+        "subtopic": "Procesos, servicios y tareas",
+        "exam": null,
+        "statement": "¿Qué debe registrar una tarea programada para poder comprobar su ejecución y diagnosticar fallos?",
+        "options": [
+          {
+            "id": "A",
+            "text": "La hora prevista y el nombre de la tarea, dando el vencimiento por prueba de ejecución."
+          },
+          {
+            "id": "B",
+            "text": "El último mensaje emitido, tomando su existencia como confirmación de éxito del trabajo."
+          },
+          {
+            "id": "C",
+            "text": "Los parámetros y las credenciales utilizadas, para repetir la ejecución desde el registro."
+          },
+          {
+            "id": "D",
+            "text": "Inicio y fin, estado o código de salida y errores relevantes, sin exponer secretos."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "El registro debe permitir distinguir planificación, inicio, finalización y resultado, conservando errores útiles para investigar. La salida de la aplicación puede requerir comprobaciones adicionales: un mensaje o un código cero no garantizan por sí solos que el objetivo funcional se haya cumplido.",
+          "incorrect": "Revisa el concepto y las condiciones del enunciado para distinguir la alternativa elegida de la respuesta correcta.",
+          "incorrect_options": {
+            "A": "Una fecha planificada no acredita que el planificador lanzara la tarea ni que esta terminara. Se necesita evidencia de ejecución y resultado.",
+            "B": "Emitir un mensaje no equivale a completar el trabajo. También deben registrarse estado final y errores, interpretándolos según el contrato de la tarea.",
+            "C": "Los secretos no deben volcarse en registros. La repetición debe usar mecanismos de credenciales protegidos y registrar contexto sin exponerlos."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.01; sección 4. Procesos, servicios y tareas",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "El administrador gestiona procesos, hilos, prioridades, límites, dependencias y servicios. Un servicio debe tener propietario, cuenta, método de arranque, puertos, logs, health checks y procedimiento de recuperación. Las tareas programadas permiten mantenimiento periódico, pero deben registrar resultado y evitar credenciales embebidas.\n\nUna incidencia de “servicio caído” exige distinguir proceso no ejecutándose, dependencia fallida, puerto ocupado, DNS/red, permisos, certificado, almacenamiento lleno o saturación. Esa lógica de diagnóstico es más valiosa que un comando aislado.",
+          "evidence_sha256": "6bafa8cdccc7ffd6e7e4557ed5be63237e2f2fdef51339670f03207fb7d6325a",
+          "record_sha256": "0844c67d7a2b98a95b8138ba931880bcdd96aa9834bbaeb1ef2fc77a17de4b30",
+          "review_id": "AI-GSI-B4-T01-012",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "systemd: systemd.exec",
+              "url": "https://www.freedesktop.org/software/systemd/man/latest/systemd.exec.html",
+              "locator": "User=; StandardOutput=; StandardError=; Process Exit Codes, tablas 8–10; advertencia sobre secretos en Environment=",
+              "version": "Manual web systemd 262 consultado el 26-10-2026",
+              "checked_at": "2026-10-26"
+            },
+            {
+              "title": "NIST SP 800-123: Guide to General Server Security",
+              "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-123.pdf",
+              "locator": "§4 Securing the Server Operating System; §6 Maintaining the Security of the Server; §§6.1 Logging y 6.2 Server Backup Procedures",
+              "version": "Julio de 2008; guía histórica de principios operativos, no catálogo actual de mecanismos",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-005"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.01; sección 4. Procesos, servicios y tareas",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Conservar observabilidad y protección de secretos y distinguir disparo del planificador, salida textual y resultado; no atribuir registro completo automático a todo planificador."
+      ],
+      "references": [
+        {
+          "title": "systemd: systemd.exec",
+          "url": "https://www.freedesktop.org/software/systemd/man/latest/systemd.exec.html",
+          "locator": "User=; StandardOutput=; StandardError=; Process Exit Codes, tablas 8–10; advertencia sobre secretos en Environment=",
+          "version": "Manual web systemd 262 consultado el 26-10-2026",
+          "checked_at": "2026-10-26"
+        },
+        {
+          "title": "NIST SP 800-123: Guide to General Server Security",
+          "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-123.pdf",
+          "locator": "§4 Securing the Server Operating System; §6 Maintaining the Security of the Server; §§6.1 Logging y 6.2 Server Backup Procedures",
+          "version": "Julio de 2008; guía histórica de principios operativos, no catálogo actual de mecanismos",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T01-014",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "6d18c10bb646af3d74d640bfa5595a52273a2e52c8a32473b1da9babd5e9e5d2",
+      "content_sha256": "47e051a620b6c0e9d6b1f30b4f3c656a5371e230a117a90f4f0ed3606d54d207",
+      "before": {
+        "id": "AI-GSI-B4-T01-014",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T01",
+        "subtopic": "Almacenamiento, ficheros y cuotas",
+        "exam": null,
+        "statement": "¿Qué debe vigilarse además del espacio en ciertos sistemas de archivos?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Únicamente ancho de banda de red"
+          },
+          {
+            "id": "B",
+            "text": "Solo número de sesiones activas"
+          },
+          {
+            "id": "C",
+            "text": "Inodos o metadatos equivalentes"
+          },
+          {
+            "id": "D",
+            "text": "Solo porcentaje de CPU"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Puede agotarse capacidad de metadatos aunque queden bytes disponibles.",
+          "incorrect": "Puede agotarse capacidad de metadatos aunque queden bytes disponibles."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.01; sección 5. Almacenamiento, ficheros y cuotas",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "La administración incluye particiones/volúmenes, montaje, sistemas de ficheros, espacio libre, inodos o metadatos equivalentes, permisos, cuotas, snapshots cuando existan y políticas de limpieza. El sistema debe alertar antes de agotar capacidad; quedarse sin espacio puede impedir escribir logs, bases de datos o actualizaciones.",
+          "evidence_sha256": "c78fbc15371c7f95d34442bdcd26b6d45560c29293f63e5c99a917122ea40af4",
+          "record_sha256": "48555146fcb198ffca3d32bc0616ec471b6e38f2842548e45796cf1e62042fda",
+          "review_id": "AI-GSI-B4-T01-014",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.01; sección 5. Almacenamiento, ficheros y cuotas",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T01-014",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T01",
+        "subtopic": "Almacenamiento, ficheros y cuotas",
+        "exam": null,
+        "statement": "En un volumen ext4 quedan bloques libres, pero no se pueden crear nuevos archivos tras generar millones de ficheros pequeños. ¿Qué capacidad conviene comprobar además de los bytes disponibles?",
+        "options": [
+          {
+            "id": "A",
+            "text": "La tasa de transferencia del dispositivo."
+          },
+          {
+            "id": "B",
+            "text": "El porcentaje de páginas de memoria caché."
+          },
+          {
+            "id": "C",
+            "text": "El número de inodos libres del volumen."
+          },
+          {
+            "id": "D",
+            "text": "El límite de procesos del usuario."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Cada archivo necesita un inodo y la reserva de inodos puede agotarse antes que los bloques de datos. En ext4 debe vigilarse también esa capacidad; df -i permite consultarla. El síntoma orienta la comprobación, sin excluir por sí solo cuotas, permisos u otras causas.",
+          "incorrect": "Revisa el concepto y las condiciones del enunciado para distinguir la alternativa elegida de la respuesta correcta.",
+          "incorrect_options": {
+            "A": "La tasa de transferencia describe rendimiento, no la disponibilidad de entradas de metadatos para crear archivos nuevos.",
+            "B": "La caché de memoria afecta al acceso y al rendimiento, pero no crea nuevos inodos disponibles en el volumen.",
+            "D": "El límite de procesos controla ejecución concurrente. No mide la capacidad de metadatos que puede agotarse al crear muchos archivos."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.01; sección 5. Almacenamiento, ficheros y cuotas",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "La administración incluye particiones/volúmenes, montaje, sistemas de ficheros, espacio libre, inodos o metadatos equivalentes, permisos, cuotas, snapshots cuando existan y políticas de limpieza. El sistema debe alertar antes de agotar capacidad; quedarse sin espacio puede impedir escribir logs, bases de datos o actualizaciones.",
+          "evidence_sha256": "c78fbc15371c7f95d34442bdcd26b6d45560c29293f63e5c99a917122ea40af4",
+          "record_sha256": "48555146fcb198ffca3d32bc0616ec471b6e38f2842548e45796cf1e62042fda",
+          "review_id": "AI-GSI-B4-T01-014",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "The Linux Kernel: ext4, Index Nodes",
+              "url": "https://www.kernel.org/doc/html/latest/filesystems/ext4/inodes.html",
+              "locator": "§4.1 Index Nodes: inodos por archivo y tabla dimensionada mediante s_inodes_per_group",
+              "version": "Documentación web ext4 consultada el 26-10-2026",
+              "checked_at": "2026-10-26"
+            },
+            {
+              "title": "GNU Coreutils: df invocation",
+              "url": "https://www.gnu.org/s/coreutils/manual/html_node/df-invocation.html",
+              "locator": "§14.1, opción -i / --inodes: uso de inodos frente a bloques; campos itotal, iused e iavail",
+              "version": "Manual web GNU Coreutils 9.11; contenido primario indexado contrastado el 26-10-2026",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-005"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.01; sección 5. Almacenamiento, ficheros y cuotas",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Concretar ext4 y muchos archivos pequeños para evaluar la diferencia entre bloques e inodos sin presentar el diagnóstico como exclusivo ni extenderlo a todos los sistemas de archivos."
+      ],
+      "references": [
+        {
+          "title": "The Linux Kernel: ext4, Index Nodes",
+          "url": "https://www.kernel.org/doc/html/latest/filesystems/ext4/inodes.html",
+          "locator": "§4.1 Index Nodes: inodos por archivo y tabla dimensionada mediante s_inodes_per_group",
+          "version": "Documentación web ext4 consultada el 26-10-2026",
+          "checked_at": "2026-10-26"
+        },
+        {
+          "title": "GNU Coreutils: df invocation",
+          "url": "https://www.gnu.org/s/coreutils/manual/html_node/df-invocation.html",
+          "locator": "§14.1, opción -i / --inodes: uso de inodos frente a bloques; campos itotal, iused e iavail",
+          "version": "Manual web GNU Coreutils 9.11; contenido primario indexado contrastado el 26-10-2026",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T02-002",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "53aa45894113e76efa03b640fc7c4529b62701b20ae16eeb8b2e0a2ca0e362f3",
+      "content_sha256": "98f5e67453e3fe242925cb5e9cb1af1ac70a53a43a9e016f0e1f9250f8e53819",
+      "before": {
+        "id": "AI-GSI-B4-T02-002",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T02",
+        "subtopic": "Funciones del DBA y arquitectura operativa",
+        "exam": null,
+        "statement": "¿Qué responsabilidad corresponde al DBA además de instalar?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Solo administrar privilegios e ignorar recuperación"
+          },
+          {
+            "id": "B",
+            "text": "Delegar toda capacidad en la configuración por defecto"
+          },
+          {
+            "id": "C",
+            "text": "Capacidad, seguridad, rendimiento y recuperación"
+          },
+          {
+            "id": "D",
+            "text": "Únicamente instalar la versión inicial"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "El DBA convierte el motor en un servicio mantenido y fiable.",
+          "incorrect": "El DBA convierte el motor en un servicio mantenido y fiable."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.02; sección 1. Funciones del DBA y arquitectura operativa",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "La administración de un SGBD convierte el motor de base de datos en un servicio fiable. Incluye instalación y parametrización, instancias, catálogos/esquemas, almacenamiento, memoria, conexiones, seguridad, transacciones, rendimiento, copias, recuperación, replicación, alta disponibilidad, auditoría, parcheo y capacidad.\n\nConviene distinguir **base de datos** (datos/estructuras) de **instancia** (procesos y memoria que prestan servicio, según motor). Algunos productos usan terminología distinta; el concepto operativo es identificar procesos, memoria, ficheros y listeners/endpoints.",
+          "evidence_sha256": "fa29a7fa257556145111079c53948997a0c1201bca2d81bd007934c36bcf8733",
+          "record_sha256": "6029446adbf1df86fd276a37597047df3e0873f0352974fc9c81f067086700eb",
+          "review_id": "AI-GSI-B4-T02-002",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.02; sección 1. Funciones del DBA y arquitectura operativa",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T02-002",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T02",
+        "subtopic": "Funciones del DBA y arquitectura operativa",
+        "exam": null,
+        "statement": "¿Qué responsabilidad corresponde a la administración de bases de datos además de instalar el SGBD?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Administrar permisos, confiando en los valores iniciales para capacidad y recuperación."
+          },
+          {
+            "id": "B",
+            "text": "Optimizar consultas, tomando su rendimiento por prueba de seguridad y recuperabilidad."
+          },
+          {
+            "id": "C",
+            "text": "Gestionar capacidad, seguridad, rendimiento y recuperación durante la operación del servicio."
+          },
+          {
+            "id": "D",
+            "text": "Actualizar el motor, delegando en el soporte la verificación de copias y restauraciones."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Administrar el SGBD exige mantener un servicio seguro y recuperable con capacidad y rendimiento suficientes. Son responsabilidades complementarias: instalar, actualizar u optimizar consultas no sustituye gestionar privilegios, crecimiento y procedimientos de copia y restauración.",
+          "incorrect": "Revisa el concepto y las condiciones del enunciado para distinguir la alternativa elegida de la respuesta correcta.",
+          "incorrect_options": {
+            "A": "Gestionar accesos no garantiza espacio suficiente ni copias recuperables. Los valores iniciales no acreditan adecuación continuada a la carga.",
+            "B": "Una consulta rápida puede ejecutarse sobre un sistema mal protegido o sin recuperación probada. El rendimiento no acredita esos otros objetivos.",
+            "D": "El soporte y las actualizaciones son útiles, pero no verifican que las copias del entorno concreto puedan restaurarse."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.02; sección 1. Funciones del DBA y arquitectura operativa",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "La administración de un SGBD convierte el motor de base de datos en un servicio fiable. Incluye instalación y parametrización, instancias, catálogos/esquemas, almacenamiento, memoria, conexiones, seguridad, transacciones, rendimiento, copias, recuperación, replicación, alta disponibilidad, auditoría, parcheo y capacidad.\n\nConviene distinguir **base de datos** (datos/estructuras) de **instancia** (procesos y memoria que prestan servicio, según motor). Algunos productos usan terminología distinta; el concepto operativo es identificar procesos, memoria, ficheros y listeners/endpoints.",
+          "evidence_sha256": "fa29a7fa257556145111079c53948997a0c1201bca2d81bd007934c36bcf8733",
+          "record_sha256": "6029446adbf1df86fd276a37597047df3e0873f0352974fc9c81f067086700eb",
+          "review_id": "AI-GSI-B4-T02-002",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "PostgreSQL: Server Administration",
+              "url": "https://www.postgresql.org/docs/18/admin.html",
+              "locator": "Introducción; capítulos 19 Server Configuration, 21 Database Roles, 24 Routine Database Maintenance Tasks, 25 Backup and Restore y 27 Monitoring Database Activity",
+              "version": "PostgreSQL 18; documentación consultada el 26-10-2026",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-005"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.02; sección 1. Funciones del DBA y arquitectura operativa",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Conservar el alcance operativo del DBA y contraponer subconjuntos reales de su trabajo; no atribuir toda la seguridad organizativa a una única persona."
+      ],
+      "references": [
+        {
+          "title": "PostgreSQL: Server Administration",
+          "url": "https://www.postgresql.org/docs/18/admin.html",
+          "locator": "Introducción; capítulos 19 Server Configuration, 21 Database Roles, 24 Routine Database Maintenance Tasks, 25 Backup and Restore y 27 Monitoring Database Activity",
+          "version": "PostgreSQL 18; documentación consultada el 26-10-2026",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T02-003",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "9bbcdef5c25be48a955394df9ff9837585bd2f489d5b4a4f99157270d4a48bfd",
+      "content_sha256": "9ca3f742e660eba5f6645f0ef5e10621bb6f4e7e81b06fa21f3c2591fd837cfe",
+      "before": {
+        "id": "AI-GSI-B4-T02-003",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T02",
+        "subtopic": "Almacenamiento y memoria",
+        "exam": null,
+        "statement": "¿Qué espacios deben vigilarse en un SGBD?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Datos, índices, temporales y logs"
+          },
+          {
+            "id": "B",
+            "text": "Solo las copias del manual"
+          },
+          {
+            "id": "C",
+            "text": "Solo el ejecutable"
+          },
+          {
+            "id": "D",
+            "text": "Únicamente perfiles del navegador"
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Crecimiento y latencia de distintos espacios afectan al servicio.",
+          "incorrect": "Crecimiento y latencia de distintos espacios afectan al servicio."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.02; sección 2. Almacenamiento y memoria",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "El motor utiliza ficheros/volúmenes para datos, índices, temporales y logs de transacciones. Algunos SGBD agrupan espacio mediante tablespaces/filegroups o conceptos equivalentes. La administración debe vigilar crecimiento, espacio libre, IOPS, latencia y distribución.\n\nMemoria: caché/buffer pool, estructuras de ejecución y caches de planes. Dar más memoria sin medir puede desplazar el problema. El objetivo es minimizar E/S innecesaria manteniendo equilibrio con el SO y otras cargas.",
+          "evidence_sha256": "1c1f033f78171fa0e2f85344ec4217d682c781a75dff8c0012d7864278f07e64",
+          "record_sha256": "e56a654389e2ad1bd39fd6b882f335a53984cf65d32dd68eb88e2b203dc06e39",
+          "review_id": "AI-GSI-B4-T02-003",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.02; sección 2. Almacenamiento y memoria",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T02-003",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T02",
+        "subtopic": "Almacenamiento y memoria",
+        "exam": null,
+        "statement": "¿Qué espacios deben vigilarse al administrar un SGBD para evitar agotamiento durante su operación?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Los ocupados por datos, índices, temporales y registros de transacciones."
+          },
+          {
+            "id": "B",
+            "text": "Los ocupados por tablas de usuario, tomando su tamaño como el consumo total del servicio."
+          },
+          {
+            "id": "C",
+            "text": "Los ocupados por el catálogo y los binarios, tomando la instalación como tamaño estable."
+          },
+          {
+            "id": "D",
+            "text": "Los ocupados por copias históricas, suponiendo constante el espacio del motor en ejecución."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Datos, índices, temporales y registros transaccionales tienen patrones de crecimiento distintos y pueden agotar sus volúmenes. También deben vigilarse las copias y otros registros según el despliegue; la lista no impone un disco separado por cada tipo ni autoriza borrar archivos internos.",
+          "incorrect": "Revisa el concepto y las condiciones del enunciado para distinguir la alternativa elegida de la respuesta correcta.",
+          "incorrect_options": {
+            "B": "El tamaño de las tablas no incluye necesariamente índices, temporales ni WAL. Una operación puede llenar otro espacio aunque las tablas apenas crezcan.",
+            "C": "Catálogo y binarios no representan el crecimiento de datos ni el espacio que necesitan consultas, índices y registro transaccional.",
+            "D": "Vigilar retención de copias es necesario, pero el motor activo también consume espacio variable y puede detenerse si lo agota."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.02; sección 2. Almacenamiento y memoria",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "El motor utiliza ficheros/volúmenes para datos, índices, temporales y logs de transacciones. Algunos SGBD agrupan espacio mediante tablespaces/filegroups o conceptos equivalentes. La administración debe vigilar crecimiento, espacio libre, IOPS, latencia y distribución.\n\nMemoria: caché/buffer pool, estructuras de ejecución y caches de planes. Dar más memoria sin medir puede desplazar el problema. El objetivo es minimizar E/S innecesaria manteniendo equilibrio con el SO y otras cargas.",
+          "evidence_sha256": "1c1f033f78171fa0e2f85344ec4217d682c781a75dff8c0012d7864278f07e64",
+          "record_sha256": "e56a654389e2ad1bd39fd6b882f335a53984cf65d32dd68eb88e2b203dc06e39",
+          "review_id": "AI-GSI-B4-T02-003",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "PostgreSQL: Monitoring Disk Usage",
+              "url": "https://www.postgresql.org/docs/18/diskusage.html",
+              "locator": "§27.6.1 Determining Disk Usage; §27.6.2 Disk Full Failure, incluida falta de espacio para WAL",
+              "version": "PostgreSQL 18",
+              "checked_at": "2026-10-26"
+            },
+            {
+              "title": "PostgreSQL: Database File Layout",
+              "url": "https://www.postgresql.org/docs/18/storage-file-layout.html",
+              "locator": "§66.1: archivos de tablas e índices, pg_wal y temporales pgsql_tmp",
+              "version": "PostgreSQL 18",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-005"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.02; sección 2. Almacenamiento y memoria",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Conservar las cuatro áreas operativas y usar distracciones basadas en observación incompleta del espacio; distinguir WAL transaccional de logs de diagnóstico."
+      ],
+      "references": [
+        {
+          "title": "PostgreSQL: Monitoring Disk Usage",
+          "url": "https://www.postgresql.org/docs/18/diskusage.html",
+          "locator": "§27.6.1 Determining Disk Usage; §27.6.2 Disk Full Failure, incluida falta de espacio para WAL",
+          "version": "PostgreSQL 18",
+          "checked_at": "2026-10-26"
+        },
+        {
+          "title": "PostgreSQL: Database File Layout",
+          "url": "https://www.postgresql.org/docs/18/storage-file-layout.html",
+          "locator": "§66.1: archivos de tablas e índices, pg_wal y temporales pgsql_tmp",
+          "version": "PostgreSQL 18",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T02-015",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "220152f3c3ea38fe744de43e4de70475f77a00bfb902b2a6091356b8c82a955a",
+      "content_sha256": "12f79a59b49b3a7c2c93a17be8d84222f08b5f08a638003bae6cd2f1086a52fa",
+      "before": {
+        "id": "AI-GSI-B4-T02-015",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T02",
+        "subtopic": "Backup, logs y recuperación",
+        "exam": null,
+        "statement": "¿Qué mecanismo puede permitir PITR?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Únicamente una exportación sin historial de cambios"
+          },
+          {
+            "id": "B",
+            "text": "Una captura de estructura sin datos"
+          },
+          {
+            "id": "C",
+            "text": "Logs de transacciones o WAL con una política compatible"
+          },
+          {
+            "id": "D",
+            "text": "Solo la última réplica sin puntos anteriores"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "La recuperación a un punto requiere copias y logs adecuados al motor.",
+          "incorrect": "La recuperación a un punto requiere copias y logs adecuados al motor."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.02; sección 6. Backup, logs y recuperación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Una estrategia puede combinar copia física y lógica. Las copias físicas permiten restaurar estructuras del motor; las lógicas exportan objetos/datos y son útiles para portabilidad o recuperaciones granulares. Los logs de transacciones/WAL permiten **point-in-time recovery (PITR)** cuando el motor y la política lo soportan.\n\nLa cadena correcta es backup + retención + copia fuera del fallo común + pruebas de restore + runbook. Una réplica no sustituye al backup: puede replicar borrado, corrupción o error lógico.",
+          "evidence_sha256": "6bef15047d4a60f6d0860d8276af7631855722f68d44afc2bdc2123f0cdf8a57",
+          "record_sha256": "87ca931a0a57e808cdb35dea4169145ca126017c7de7dc1888470726b0d0f22e",
+          "review_id": "AI-GSI-B4-T02-015",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.02; sección 6. Backup, logs y recuperación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T02-015",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T02",
+        "subtopic": "Backup, logs y recuperación",
+        "exam": null,
+        "statement": "Tras borrar datos por error en PostgreSQL, se quiere recuperar el estado inmediatamente anterior. ¿Qué preparación permite realizar PITR mediante archivado continuo?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Un volcado lógico y el último WAL, aunque falten segmentos intermedios."
+          },
+          {
+            "id": "B",
+            "text": "Una réplica que ya reprodujo el borrado, sin conservar un estado anterior."
+          },
+          {
+            "id": "C",
+            "text": "Una copia base válida y la secuencia continua de WAL necesaria hasta el punto elegido."
+          },
+          {
+            "id": "D",
+            "text": "Un volcado del esquema y los WAL, sin una copia física inicial de los datos."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "PITR restaura una copia base válida y reproduce los WAL archivados hasta el objetivo elegido antes del borrado. Hace falta una secuencia continua desde el inicio requerido por la copia; disponer de registros aislados o de una réplica ya afectada no proporciona ese estado anterior.",
+          "incorrect": "Revisa el concepto y las condiciones del enunciado para distinguir la alternativa elegida de la respuesta correcta.",
+          "incorrect_options": {
+            "A": "Un volcado lógico de pg_dump no es una copia base para reproducir WAL. Además, los huecos en la secuencia impiden la recuperación continua hasta el objetivo.",
+            "B": "La réplica descrita ya contiene el borrado. La replicación del estado actual no sustituye conservar una base y un historial recuperable.",
+            "D": "El esquema define estructura, pero no aporta los archivos físicos de datos requeridos por este mecanismo de reproducción de WAL."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.02; sección 6. Backup, logs y recuperación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Una estrategia puede combinar copia física y lógica. Las copias físicas permiten restaurar estructuras del motor; las lógicas exportan objetos/datos y son útiles para portabilidad o recuperaciones granulares. Los logs de transacciones/WAL permiten **point-in-time recovery (PITR)** cuando el motor y la política lo soportan.\n\nLa cadena correcta es backup + retención + copia fuera del fallo común + pruebas de restore + runbook. Una réplica no sustituye al backup: puede replicar borrado, corrupción o error lógico.",
+          "evidence_sha256": "6bef15047d4a60f6d0860d8276af7631855722f68d44afc2bdc2123f0cdf8a57",
+          "record_sha256": "87ca931a0a57e808cdb35dea4169145ca126017c7de7dc1888470726b0d0f22e",
+          "review_id": "AI-GSI-B4-T02-015",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "PostgreSQL: Continuous Archiving and Point-in-Time Recovery",
+              "url": "https://www.postgresql.org/docs/18/continuous-archiving.html",
+              "locator": "§25.3: copia base y secuencia continua de WAL; §25.3.5 Recovering Using a Continuous Archive Backup; nota sobre pg_dump",
+              "version": "PostgreSQL 18",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-005"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.02; sección 6. Backup, logs y recuperación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Mantener logs/WAL y política compatible como concepto, explicitando copia base y continuidad para que no parezca que WAL aislado permite recuperar cualquier estado."
+      ],
+      "references": [
+        {
+          "title": "PostgreSQL: Continuous Archiving and Point-in-Time Recovery",
+          "url": "https://www.postgresql.org/docs/18/continuous-archiving.html",
+          "locator": "§25.3: copia base y secuencia continua de WAL; §25.3.5 Recovering Using a Continuous Archive Backup; nota sobre pg_dump",
+          "version": "PostgreSQL 18",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T03-006",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "47fd292a473c4407f20dda5f40f1e255e166e5268140de9eed9c1b8279bd4f3b",
+      "content_sha256": "9b3b3eb0feb508031d583a951086afebf6383f74e719ba3f05b8c51c7ab0d294",
+      "before": {
+        "id": "AI-GSI-B4-T03-006",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T03",
+        "subtopic": "Incidente, problema, petición y cambio",
+        "exam": null,
+        "statement": "¿Qué factores suelen combinarse para priorizar incidentes?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Solo cantidad de palabras del ticket"
+          },
+          {
+            "id": "B",
+            "text": "Solo orden de llegada"
+          },
+          {
+            "id": "C",
+            "text": "Impacto y urgencia"
+          },
+          {
+            "id": "D",
+            "text": "Solo antigüedad del usuario"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "La prioridad debe reflejar efecto y necesidad temporal de actuación.",
+          "incorrect": "La prioridad debe reflejar efecto y necesidad temporal de actuación."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.03; sección 2. Incidente, problema, petición y cambio",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Un **incidente** es una interrupción o degradación no planificada; su objetivo es restaurar servicio. Un **problema** busca causa raíz y prevenir recurrencia. Una petición de servicio es demanda estándar; un cambio modifica de forma controlada un CI/servicio.\n\nPrioridad suele combinar impacto y urgencia. El flujo: detectar/registrar → categorizar/priorizar → diagnóstico inicial → escalar → resolver/recuperar → validar → cerrar. Incidentes mayores requieren canal de mando, comunicaciones periódicas y revisión posterior.",
+          "evidence_sha256": "1eb71af437e0a81f338009df685c22f6b547e9faacbd558764be23ad61fb63a0",
+          "record_sha256": "e7e7e312980bee285b5c720e31fb7ee9c20664624bbd36a7563b9f3ba66e0dd7",
+          "review_id": "AI-GSI-B4-T03-006",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.03; sección 2. Incidente, problema, petición y cambio",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T03-006",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T03",
+        "subtopic": "Incidente, problema, petición y cambio",
+        "exam": null,
+        "statement": "¿Qué factores suelen combinarse para asignar prioridad a un incidente de servicio?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Antigüedad del aviso y posición del solicitante en el organigrama."
+          },
+          {
+            "id": "B",
+            "text": "Complejidad técnica prevista y disponibilidad del especialista asignado."
+          },
+          {
+            "id": "C",
+            "text": "Impacto sobre el servicio y urgencia temporal de la actuación."
+          },
+          {
+            "id": "D",
+            "text": "Número de mensajes recibidos y duración estimada de la reparación."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "El impacto expresa el efecto sobre el servicio o negocio y la urgencia, la necesidad temporal de actuar. La política acordada suele combinarlos para priorizar; el esfuerzo de reparación, la presión del solicitante o la disponibilidad condicionan la gestión, pero no sustituyen esa valoración.",
+          "incorrect": "Revisa el concepto y las condiciones del enunciado para distinguir la alternativa elegida de la respuesta correcta.",
+          "incorrect_options": {
+            "A": "Antigüedad y jerarquía pueden influir en comunicación o escalado, pero no describen el efecto del incidente y el tiempo disponible para evitar sus consecuencias.",
+            "B": "La complejidad y los recursos ayudan a organizar la resolución. Un incidente fácil o con especialista disponible no es necesariamente el más prioritario.",
+            "D": "Muchos mensajes no garantizan mayor impacto y el tiempo de reparación no mide por sí mismo la urgencia del servicio afectado."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.03; sección 2. Incidente, problema, petición y cambio",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Un **incidente** es una interrupción o degradación no planificada; su objetivo es restaurar servicio. Un **problema** busca causa raíz y prevenir recurrencia. Una petición de servicio es demanda estándar; un cambio modifica de forma controlada un CI/servicio.\n\nPrioridad suele combinar impacto y urgencia. El flujo: detectar/registrar → categorizar/priorizar → diagnóstico inicial → escalar → resolver/recuperar → validar → cerrar. Incidentes mayores requieren canal de mando, comunicaciones periódicas y revisión posterior.",
+          "evidence_sha256": "1eb71af437e0a81f338009df685c22f6b547e9faacbd558764be23ad61fb63a0",
+          "record_sha256": "e7e7e312980bee285b5c720e31fb7ee9c20664624bbd36a7563b9f3ba66e0dd7",
+          "review_id": "AI-GSI-B4-T03-006",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Atlassian: How impact and urgency are used to calculate priority",
+              "url": "https://support.atlassian.com/jira-service-management-cloud/docs/how-impact-and-urgency-are-used-to-calculate-priority/",
+              "locator": "Definiciones Impact, Urgency y Priority; relación con la matriz de prioridad",
+              "version": "Jira Service Management Cloud; guía web consultada el 26-10-2026",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-005"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.03; sección 2. Incidente, problema, petición y cambio",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Conservar impacto y urgencia y comparar con criterios de asignación, escalado y esfuerzo que pueden confundirse con prioridad; no imponer una matriz universal."
+      ],
+      "references": [
+        {
+          "title": "Atlassian: How impact and urgency are used to calculate priority",
+          "url": "https://support.atlassian.com/jira-service-management-cloud/docs/how-impact-and-urgency-are-used-to-calculate-priority/",
+          "locator": "Definiciones Impact, Urgency y Priority; relación con la matriz de prioridad",
+          "version": "Jira Service Management Cloud; guía web consultada el 26-10-2026",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T03-014",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "614dd4a5d7d2bfbc36bd6c329c8125493f3900cd48ea893386527015292d52a7",
+      "content_sha256": "63d24bfc0796f5ab24259d3b4f39dd667b3f3c692a5a641eeebb8d5f2bc58bdd",
+      "before": {
+        "id": "AI-GSI-B4-T03-014",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T03",
+        "subtopic": "Tipos de copia",
+        "exam": null,
+        "statement": "¿Qué condiciona elegir tipos de copia?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Solo el espacio libre actual sin prever retención"
+          },
+          {
+            "id": "B",
+            "text": "Solo el tamaño del backup sin considerar restore"
+          },
+          {
+            "id": "C",
+            "text": "Únicamente velocidad de copia"
+          },
+          {
+            "id": "D",
+            "text": "Ventana, almacenamiento, tráfico y tiempo de restauración"
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "La política debe equilibrar operación de copia y recuperación.",
+          "incorrect": "La política debe equilibrar operación de copia y recuperación."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.03; sección 4. Tipos de copia",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "**Completa**: copia todo el conjunto. **Incremental**: cambios desde la última copia de cualquier tipo de la cadena. **Diferencial**: cambios desde la última completa. **Sintética completa**: reconstruye una completa en el repositorio combinando copias previas sin releer todo el origen.\n\nLa elección equilibra ventana de copia, almacenamiento, tráfico y tiempo de restauración. Las bases de datos requieren mecanismos consistentes con transacciones.",
+          "evidence_sha256": "862a95ff4b3e80331af3a7435e9683dcb8d390c44a9e5d6129e4ea1a23eb3726",
+          "record_sha256": "ee08424460d392ad29f9c3050017beb4e614038897de3c1fd691ce677a33927b",
+          "review_id": "AI-GSI-B4-T03-014",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.03; sección 4. Tipos de copia",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T03-014",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T03",
+        "subtopic": "Tipos de copia",
+        "exam": null,
+        "statement": "¿Qué debe equilibrarse al elegir una política de copias completas, incrementales o diferenciales?",
+        "options": [
+          {
+            "id": "A",
+            "text": "La menor duración de copia, dando por equivalente el trabajo posterior de restauración."
+          },
+          {
+            "id": "B",
+            "text": "El menor volumen almacenado, dando por independiente la recuperación de la cadena conservada."
+          },
+          {
+            "id": "C",
+            "text": "La mayor frecuencia posible, dando por garantizados así los objetivos de recuperación."
+          },
+          {
+            "id": "D",
+            "text": "Ventana de copia, almacenamiento, tráfico y tiempo y condiciones de restauración."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "La política debe considerar el coste de producir y conservar las copias y el de restaurarlas con sus dependencias. Una copia más pequeña o rápida puede exigir más pasos al recuperar; la elección debe contrastarse con pérdida de datos y tiempo de recuperación admisibles, y probarse.",
+          "incorrect": "Revisa el concepto y las condiciones del enunciado para distinguir la alternativa elegida de la respuesta correcta.",
+          "incorrect_options": {
+            "A": "Reducir la duración de copia no asegura una restauración igual de rápida. La combinación elegida puede requerir aplicar varios conjuntos y registros.",
+            "B": "Ahorrar almacenamiento puede aumentar dependencias de la cadena. Si falta una pieza necesaria, el ahorro no garantiza recuperar el punto previsto.",
+            "C": "La frecuencia mejora la disponibilidad de puntos de copia si estos son válidos, pero no demuestra restauración correcta ni cumplimiento del tiempo objetivo."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.03; sección 4. Tipos de copia",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "**Completa**: copia todo el conjunto. **Incremental**: cambios desde la última copia de cualquier tipo de la cadena. **Diferencial**: cambios desde la última completa. **Sintética completa**: reconstruye una completa en el repositorio combinando copias previas sin releer todo el origen.\n\nLa elección equilibra ventana de copia, almacenamiento, tráfico y tiempo de restauración. Las bases de datos requieren mecanismos consistentes con transacciones.",
+          "evidence_sha256": "862a95ff4b3e80331af3a7435e9683dcb8d390c44a9e5d6129e4ea1a23eb3726",
+          "record_sha256": "ee08424460d392ad29f9c3050017beb4e614038897de3c1fd691ce677a33927b",
+          "review_id": "AI-GSI-B4-T03-014",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "NIST SP 800-123: Guide to General Server Security",
+              "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-123.pdf",
+              "locator": "§6.2.1 Server Data Backup Policies; §6.2.2 Server Backup Types: completas, incrementales y diferenciales; §6.2.3 Maintain a Test Server",
+              "version": "Julio de 2008; principios de compromiso entre copia y restauración",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-005"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.03; sección 4. Tipos de copia",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Conservar el equilibrio copia/restauración e introducir errores reales de optimización de una sola variable; evitar recomendar un tipo universal."
+      ],
+      "references": [
+        {
+          "title": "NIST SP 800-123: Guide to General Server Security",
+          "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-123.pdf",
+          "locator": "§6.2.1 Server Data Backup Policies; §6.2.2 Server Backup Types: completas, incrementales y diferenciales; §6.2.3 Maintain a Test Server",
+          "version": "Julio de 2008; principios de compromiso entre copia y restauración",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T03-017",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "77f0b8afe7f76e09880ca7973047aeb2dcc6e1c302804fe225b66c3808991f4d",
+      "content_sha256": "222222953ef9b53815ff66b4458ab3ab7114cf7d750c70e95790167127dabe4c",
+      "before": {
+        "id": "AI-GSI-B4-T03-017",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T03",
+        "subtopic": "Retención, rotación y restauración",
+        "exam": null,
+        "statement": "¿Qué debe verificar una restauración además de lectura de ficheros?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Solo éxito del trabajo de backup"
+          },
+          {
+            "id": "B",
+            "text": "Solo existencia de archivos"
+          },
+          {
+            "id": "C",
+            "text": "Únicamente tamaño de la copia"
+          },
+          {
+            "id": "D",
+            "text": "Integridad funcional del servicio y sus dependencias"
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Recuperar archivos no demuestra que aplicación, configuración y datos funcionen juntos.",
+          "incorrect": "Recuperar archivos no demuestra que aplicación, configuración y datos funcionen juntos."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.03; sección 6. Retención, rotación y restauración",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Definir frecuencia, retención diaria/semanal/mensual según necesidad legal y operativa, versionado y expiración. Restaurar puede requerir infraestructura, SO, aplicación, configuración, datos y dependencias. La prueba debe comprobar integridad funcional, no solo que el fichero se lee.",
+          "evidence_sha256": "e6c353ed2f4bfdcbb343c363de49fa0dfccf04e6a17ad53c0945f16e624facd5",
+          "record_sha256": "af5d09d464377908aadf513029ef827196781127b4b2f8512c0dcac7ee42cb4f",
+          "review_id": "AI-GSI-B4-T03-017",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.03; sección 6. Retención, rotación y restauración",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T03-017",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T03",
+        "subtopic": "Retención, rotación y restauración",
+        "exam": null,
+        "statement": "En una prueba de restauración se han recuperado todos los archivos y sus hashes coinciden. ¿Qué falta comprobar antes de dar por recuperado el servicio?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Que el catálogo de copias conserve el estado de éxito del trabajo que las generó."
+          },
+          {
+            "id": "B",
+            "text": "Que el tamaño restaurado coincida con el registrado, usando ese dato como aceptación final."
+          },
+          {
+            "id": "C",
+            "text": "Que el proceso principal pueda iniciarse, dando su presencia por prueba de todas las funciones."
+          },
+          {
+            "id": "D",
+            "text": "Que las funciones del servicio y sus dependencias operen con datos y configuración coherentes."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "La integridad de archivos es necesaria, pero no acredita que funcionen aplicación, datos, configuración y dependencias. Deben ejecutarse comprobaciones funcionales representativas y contrastar objetivos de recuperación; un proceso iniciado puede seguir sin prestar el servicio esperado.",
+          "incorrect": "Revisa el concepto y las condiciones del enunciado para distinguir la alternativa elegida de la respuesta correcta.",
+          "incorrect_options": {
+            "A": "El éxito del trabajo de copia es evidencia de una etapa previa. No prueba que la restauración produzca un servicio utilizable.",
+            "B": "Coincidir en tamaño aporta menos que la integridad ya comprobada y no demuestra acceso a datos, configuración correcta ni transacciones de negocio.",
+            "C": "Un proceso puede estar vivo y fallar al acceder a una base de datos, autenticación u otra dependencia. Hace falta validar funciones de servicio."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.03; sección 6. Retención, rotación y restauración",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Definir frecuencia, retención diaria/semanal/mensual según necesidad legal y operativa, versionado y expiración. Restaurar puede requerir infraestructura, SO, aplicación, configuración, datos y dependencias. La prueba debe comprobar integridad funcional, no solo que el fichero se lee.",
+          "evidence_sha256": "e6c353ed2f4bfdcbb343c363de49fa0dfccf04e6a17ad53c0945f16e624facd5",
+          "record_sha256": "af5d09d464377908aadf513029ef827196781127b4b2f8512c0dcac7ee42cb4f",
+          "review_id": "AI-GSI-B4-T03-017",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "AWS: Recovery strategies to meet data residency requirements",
+              "url": "https://aws.amazon.com/blogs/architecture/recovery-strategies-to-meet-data-residency-requirements/",
+              "locator": "Testing: prueba de extremo a extremo, integridad, arranque de cómputo/base de datos y tráfico sintético",
+              "version": "Artículo web consultado el 26-10-2026; se usa el principio de validación funcional, no una estrategia territorial concreta",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-005"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.03; sección 6. Retención, rotación y restauración",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Aplicar la distinción entre restaurar archivos y recuperar servicio a una aceptación concreta con integridad ya verificada; no confundir arranque con salud funcional."
+      ],
+      "references": [
+        {
+          "title": "AWS: Recovery strategies to meet data residency requirements",
+          "url": "https://aws.amazon.com/blogs/architecture/recovery-strategies-to-meet-data-residency-requirements/",
+          "locator": "Testing: prueba de extremo a extremo, integridad, arranque de cómputo/base de datos y tráfico sintético",
+          "version": "Artículo web consultado el 26-10-2026; se usa el principio de validación funcional, no una estrategia territorial concreta",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T04-006",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "95f8be6322ecd4007647b39cb161724dfe3de3ca32fcb9cffb5e7f03bb4f288c",
+      "content_sha256": "b1832ab9c754f26caa3557e402f04464124afe1088b360b810c33f45ecda84de",
+      "before": {
+        "id": "AI-GSI-B4-T04-006",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T04",
+        "subtopic": "Gestión de cambios",
+        "exam": null,
+        "statement": "¿Qué debe examinarse antes de autorizar un cambio relevante?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Solo duración prevista sin dependencias"
+          },
+          {
+            "id": "B",
+            "text": "Únicamente urgencia declarada sin impacto"
+          },
+          {
+            "id": "C",
+            "text": "Impacto, riesgo y dependencias"
+          },
+          {
+            "id": "D",
+            "text": "Solo facilidad de ejecutar el comando"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "La decisión necesita comprender efectos sobre el servicio y su recuperación.",
+          "incorrect": "La decisión necesita comprender efectos sobre el servicio y su recuperación."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.04; sección 2. Gestión de cambios",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Flujo: solicitud/RFC → impacto, riesgo, dependencias y plan → autorización → calendario → ejecución → validación → cierre/revisión. Cambios estándar/preautorizados son repetitivos y de bajo riesgo; normales pasan evaluación ordinaria; emergencias aceleran controles, pero requieren trazabilidad y revisión posterior.\n\nTodo cambio relevante necesita ventana, responsable, plan de prueba, comunicaciones y rollback/backout. El CAB es un mecanismo de asesoramiento/decisión en ciertos modelos, no una reunión obligatoria para cualquier cambio trivial.",
+          "evidence_sha256": "63e473e2e4d65d301d85428e1d9dd1ee59464d41fa86f3ecbc4bcbd8c8a31645",
+          "record_sha256": "1f3331f64aa6ce60b4468c1a0adf160878916fbc725f8c71288a8cf22719947a",
+          "review_id": "AI-GSI-B4-T04-006",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.04; sección 2. Gestión de cambios",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T04-006",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T04",
+        "subtopic": "Gestión de cambios",
+        "exam": null,
+        "statement": "¿Qué debe examinarse antes de autorizar un cambio relevante sobre un servicio?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Duración y destreza del ejecutor, tomadas como medida del riesgo del servicio."
+          },
+          {
+            "id": "B",
+            "text": "Urgencia y fecha comprometida, dejando las dependencias para después de autorizar."
+          },
+          {
+            "id": "C",
+            "text": "Impacto, riesgos, dependencias y condiciones para verificar o recuperar el servicio."
+          },
+          {
+            "id": "D",
+            "text": "Facilidad de revertir el comando, como garantía de recuperar los datos y servicios."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Autorizar requiere valorar los efectos previstos sobre servicio, seguridad y componentes relacionados, los riesgos y cómo comprobar o recuperar el estado esperado. La profundidad del análisis y la vía de autorización deben ajustarse al cambio; urgencia o facilidad técnica no eliminan esas necesidades.",
+          "incorrect": "Revisa el concepto y las condiciones del enunciado para distinguir la alternativa elegida de la respuesta correcta.",
+          "incorrect_options": {
+            "A": "Duración y experiencia influyen en la ejecución, pero no revelan por sí mismas efectos sobre usuarios, datos o componentes dependientes.",
+            "B": "La urgencia puede exigir un cauce de emergencia, pero no hace desaparecer el impacto ni las dependencias que deben gestionarse.",
+            "D": "Invertir un comando no garantiza deshacer efectos sobre datos o consumidores. La recuperación necesita condiciones y procedimientos comprobables."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.04; sección 2. Gestión de cambios",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Flujo: solicitud/RFC → impacto, riesgo, dependencias y plan → autorización → calendario → ejecución → validación → cierre/revisión. Cambios estándar/preautorizados son repetitivos y de bajo riesgo; normales pasan evaluación ordinaria; emergencias aceleran controles, pero requieren trazabilidad y revisión posterior.\n\nTodo cambio relevante necesita ventana, responsable, plan de prueba, comunicaciones y rollback/backout. El CAB es un mecanismo de asesoramiento/decisión en ciertos modelos, no una reunión obligatoria para cualquier cambio trivial.",
+          "evidence_sha256": "63e473e2e4d65d301d85428e1d9dd1ee59464d41fa86f3ecbc4bcbd8c8a31645",
+          "record_sha256": "1f3331f64aa6ce60b4468c1a0adf160878916fbc725f8c71288a8cf22719947a",
+          "review_id": "AI-GSI-B4-T04-006",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "NIST SP 800-128: Guide for Security-Focused Configuration Management of Information Systems",
+              "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-128.pdf",
+              "locator": "§3.3.2 Implement Configuration Change Control Process, pp.36–37; §3.3.3 Conduct Security Impact Analysis, pp.38–39",
+              "version": "Agosto de 2011, actualizaciones del 10-10-2019",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-005"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.04; sección 2. Gestión de cambios",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Conservar impacto, riesgo y dependencias y relacionarlos con validación y recuperación; no imponer aprobación manual por comité a todos los cambios."
+      ],
+      "references": [
+        {
+          "title": "NIST SP 800-128: Guide for Security-Focused Configuration Management of Information Systems",
+          "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-128.pdf",
+          "locator": "§3.3.2 Implement Configuration Change Control Process, pp.36–37; §3.3.3 Conduct Security Impact Analysis, pp.38–39",
+          "version": "Agosto de 2011, actualizaciones del 10-10-2019",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T04-018",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "59935f49d56f96d263bd07541c9da85004b15eacf625ac302f0de7eb20e96384",
+      "content_sha256": "33f253a12779d151c2b7b652fb8e30591b7d10e36e2aece15ec8bd9d6f35ba99",
+      "before": {
+        "id": "AI-GSI-B4-T04-018",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T04",
+        "subtopic": "Gestión de capacidad",
+        "exam": null,
+        "statement": "¿Qué datos alimentan un plan de capacidad?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Crecimiento, estacionalidad, perfiles horarios y SLO"
+          },
+          {
+            "id": "B",
+            "text": "Solo utilización media actual"
+          },
+          {
+            "id": "C",
+            "text": "Únicamente inventario de CPU sin demanda"
+          },
+          {
+            "id": "D",
+            "text": "Un margen fijo universal para cualquier carga"
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "La capacidad traduce demanda prevista en recursos y margen.",
+          "incorrect": "La capacidad traduce demanda prevista en recursos y margen."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.04; sección 7. Gestión de capacidad",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Capacidad traduce demanda futura en recursos y decisiones. Se parte de demanda, perfil horario, crecimiento, estacionalidad, headroom, límites y SLO. Técnicas: tendencias, percentiles, modelos de carga, benchmarks y pruebas. Diferenciar capacity management de autoscaling: el segundo reacciona/ajusta, pero sigue necesitando límites y planificación.",
+          "evidence_sha256": "37f2caeec38ad57e30acf3062323539bf3353e9a1c0d27301bc2fcefcc84102f",
+          "record_sha256": "f7a380ed62536d2e17836e83acef4f8447b6aa9fc1f0e0fc9596f5fe9a20b045",
+          "review_id": "AI-GSI-B4-T04-018",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.04; sección 7. Gestión de capacidad",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T04-018",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T04",
+        "subtopic": "Gestión de capacidad",
+        "exam": null,
+        "statement": "Un servicio mantiene su consumo medio mensual, pero espera picos mayores en campaña y debe cumplir sus SLO. ¿Qué datos deben alimentar el plan de capacidad?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Previsión de crecimiento y estacionalidad, perfiles por franja, SLO y capacidad probada."
+          },
+          {
+            "id": "B",
+            "text": "Promedio mensual y recurso actualmente más ocupado, extrapolando una demanda uniforme."
+          },
+          {
+            "id": "C",
+            "text": "Inventario de CPU y memoria y capacidad nominal, sin contrastarlos con la mezcla de peticiones."
+          },
+          {
+            "id": "D",
+            "text": "Máximo histórico y margen porcentual fijo, suponiendo que bastan para cualquier carga futura."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "La capacidad debe responder a demanda prevista y distribución temporal, objetivos de servicio y rendimiento observado bajo cargas representativas. Los promedios pueden ocultar picos; pruebas y observación permiten revisar supuestos, cuellos de botella y margen ante fallos, sin una reserva universal.",
+          "incorrect": "Revisa el concepto y las condiciones del enunciado para distinguir la alternativa elegida de la respuesta correcta.",
+          "incorrect_options": {
+            "B": "Un promedio igual puede ocultar una campaña mucho más concentrada. La extrapolación uniforme ignora el cambio que plantea el caso.",
+            "C": "Los recursos instalados no indican cuántas peticiones se atienden cumpliendo SLO. La mezcla de trabajo y sus cuellos de botella deben medirse.",
+            "D": "El máximo pasado no incorpora necesariamente crecimiento ni cambios de carga. Un porcentaje fijo no demuestra cumplimiento de los SLO futuros."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.04; sección 7. Gestión de capacidad",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Capacidad traduce demanda futura en recursos y decisiones. Se parte de demanda, perfil horario, crecimiento, estacionalidad, headroom, límites y SLO. Técnicas: tendencias, percentiles, modelos de carga, benchmarks y pruebas. Diferenciar capacity management de autoscaling: el segundo reacciona/ajusta, pero sigue necesitando límites y planificación.",
+          "evidence_sha256": "37f2caeec38ad57e30acf3062323539bf3353e9a1c0d27301bc2fcefcc84102f",
+          "record_sha256": "f7a380ed62536d2e17836e83acef4f8447b6aa9fc1f0e0fc9596f5fe9a20b045",
+          "review_id": "AI-GSI-B4-T04-018",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Google SRE: A Collection of Best Practices for Production Services",
+              "url": "https://sre.google/sre-book/service-best-practices/",
+              "locator": "Capacity Planning: previsión frente a demanda real, pruebas de carga, picos y capacidad ante indisponibilidad",
+              "version": "SRE Book, apéndice B, edición web consultada el 26-10-2026; ejemplos de Google no son márgenes universales",
+              "checked_at": "2026-10-26"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-005"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.04; sección 7. Gestión de capacidad",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-26"
+      },
+      "reasons": [
+        "Conservar crecimiento, estacionalidad, perfiles y SLO y aplicar el plan a picos ocultos por la media; usar pruebas para traducir recursos en capacidad."
+      ],
+      "references": [
+        {
+          "title": "Google SRE: A Collection of Best Practices for Production Services",
+          "url": "https://sre.google/sre-book/service-best-practices/",
+          "locator": "Capacity Planning: previsión frente a demanda real, pruebas de carga, picos y capacidad ante indisponibilidad",
+          "version": "SRE Book, apéndice B, edición web consultada el 26-10-2026; ejemplos de Google no son márgenes universales",
+          "checked_at": "2026-10-26"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    }
+  ]
+}

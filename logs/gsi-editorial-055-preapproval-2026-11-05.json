@@ -1,0 +1,672 @@
+{
+  "batch_id": "GSI-EDITORIAL-055",
+  "batch_sha256": "989299c7fdc7e026d7c0020a9920e4d5cc973a1cf2b47e298b65dd16ea80c99d",
+  "verified_at": "2026-11-05T11:06:32.536552+00:00",
+  "status": "awaiting_owner_approval",
+  "questions": 20,
+  "simulated_ai_changes": 20,
+  "applied": 0,
+  "new_approvals": 0,
+  "questions_with_keys_and_option_ids_preserved": 20,
+  "individual_distractor_explanations": 60,
+  "sources": {
+    "https://www.postgresql.org/docs/18/explicit-locking.html": {
+      "title": "PostgreSQL 18: Explicit Locking",
+      "locators": [
+        "13.3.4 Deadlocks: aborto de víctima y reintento de transacciones; 13.3.1 efectos de rollback"
+      ],
+      "rechecked_at": "2026-11-05"
+    },
+    "https://xlinux.nist.gov/dads/HTML/abstractDataType.html": {
+      "title": "NIST DADS: abstract data type",
+      "locators": [
+        "Definition; especificación de valores/operaciones y axiomas de pila"
+      ],
+      "rechecked_at": "2026-11-05"
+    },
+    "https://xlinux.nist.gov/dads/HTML/bigOnotation.html": {
+      "title": "NIST DADS: big-O notation",
+      "locators": [
+        "Formal Definition; Note: cota superior frente a Θ y cotas no ajustadas"
+      ],
+      "rechecked_at": "2026-11-05"
+    },
+    "https://xlinux.nist.gov/dads/HTML/stack.html": {
+      "title": "NIST DADS: stack",
+      "locators": [
+        "Definition y Formal Definition: LIFO, push, pop y top"
+      ],
+      "rechecked_at": "2026-11-05",
+      "note": "Una primera recuperación devolvió UnexpectedStatusCode. La consulta posterior recuperó los axiomas y la identificación LIFO de la misma entrada."
+    },
+    "https://xlinux.nist.gov/dads/HTML/queue.html": {
+      "title": "NIST DADS: queue",
+      "locators": [
+        "Definition y Formal Definition: FIFO, enqueue y dequeue"
+      ],
+      "rechecked_at": "2026-11-05"
+    },
+    "https://www.robots.ox.ac.uk/~vedaldi/assets/teach/2025/b16/notes/3-elementary-data-structures.html": {
+      "title": "Andrea Vedaldi, Oxford: B16 Algorithms and Data Structures 1",
+      "locators": [
+        "Capítulo 3, §3.2 Arrays: acceso, cálculo de dirección, modelo de memoria y desplazamientos al insertar"
+      ],
+      "rechecked_at": "2026-11-05"
+    },
+    "https://xlinux.nist.gov/dads/HTML/collision.html": {
+      "title": "NIST DADS: collision",
+      "locators": [
+        "Definition y Note"
+      ],
+      "rechecked_at": "2026-11-05",
+      "note": "En la página consultada, la definición distingue explícitamente claves diferentes con el mismo resultado. El localizador histórico menciona además una nota que la entrada actual no muestra. La definición basta para sostener la clave."
+    },
+    "https://xlinux.nist.gov/dads/HTML/collisionres.html": {
+      "title": "NIST DADS: collision resolution scheme",
+      "locators": [
+        "Definition: direccionamiento abierto, encadenamiento y área de desbordamiento"
+      ],
+      "rechecked_at": "2026-11-05"
+    },
+    "https://docs.python.org/3.14/library/heapq.html": {
+      "title": "Python: heapq, Heap queue algorithm",
+      "locators": [
+        "Introducción, invariante min-heap; Priority Queue Implementation Notes; Theory: restauración logarítmica"
+      ],
+      "rechecked_at": "2026-11-05"
+    },
+    "https://xlinux.nist.gov/dads/HTML/binarySearch.html": {
+      "title": "NIST DADS: binary search",
+      "locators": [
+        "Definition y Note: array ordenado, división del intervalo y comparación frente a recorrido en lista enlazada"
+      ],
+      "rechecked_at": "2026-11-05"
+    },
+    "https://www.ocw.mit.edu/courses/6-006-introduction-to-algorithms-fall-2011/1208e162775f6f5cedfbb9f2b694ede0_MIT6_006F11_lec13.pdf": {
+      "title": "MIT 6.006: Lecture 13, Graphs I, Breadth First Search",
+      "locators": [
+        "Páginas impresas 4–6: niveles desde s, algoritmo y Shortest Paths por número de aristas"
+      ],
+      "rechecked_at": "2026-11-05",
+      "document": {
+        "path": "tmp/pdfs/gsi-editorial-055-mit-bfs.pdf",
+        "sha256": "d10f747d886f4fa930d5cef470af7421a74877587276d45cbf2aa7e9fc43cd0c",
+        "pdf_pages": 7,
+        "pages_read": [
+          4,
+          5,
+          6
+        ],
+        "pages_visually_checked": [
+          5
+        ]
+      }
+    },
+    "https://xlinux.nist.gov/dads/HTML/dijkstraalgo.html": {
+      "title": "NIST DADS: Dijkstra's algorithm",
+      "locators": [
+        "Definition: caminos desde un origen y pesos no negativos; Note: implementación de prioridad"
+      ],
+      "rechecked_at": "2026-11-05"
+    },
+    "https://xlinux.nist.gov/dads/HTML/divideAndConquer.html": {
+      "title": "NIST DADS: divide and conquer",
+      "locators": [
+        "Definition y ejemplos merge sort/quicksort: dividir, resolver recursivamente y combinar"
+      ],
+      "rechecked_at": "2026-11-05"
+    },
+    "https://xlinux.nist.gov/dads/HTML/dynamicprog.html": {
+      "title": "NIST DADS: dynamic programming",
+      "locators": [
+        "Definition: reutilizar soluciones de subproblemas; referencia al principio de optimalidad"
+      ],
+      "rechecked_at": "2026-11-05"
+    },
+    "https://xlinux.nist.gov/dads/HTML/greedyalgo.html": {
+      "title": "NIST DADS: greedy algorithm",
+      "locators": [
+        "Definition y Note: elección local, garantía global según problema, ejemplos MST"
+      ],
+      "rechecked_at": "2026-11-05"
+    },
+    "https://xlinux.nist.gov/dads/HTML/principle.html": {
+      "title": "NIST DADS: principle of optimality",
+      "locators": [
+        "Definition: componentes óptimos en ciertos problemas de optimización"
+      ],
+      "rechecked_at": "2026-11-05"
+    },
+    "https://xlinux.nist.gov/dads/HTML/branchNbound.html": {
+      "title": "NIST DADS: branch and bound",
+      "locators": [
+        "Definition y Note: incumbente, cotas y descarte de ramas que no pueden mejorar"
+      ],
+      "rechecked_at": "2026-11-05"
+    },
+    "https://www.microfocus.com/documentation/reuze/60d/fhorgs.htm": {
+      "title": "Micro Focus: File Organizations",
+      "locators": [
+        "Chapter 2: Overview y tabla de acceso; Sequential Files; Relative Files; Indexed Files e Indexed File Access"
+      ],
+      "rechecked_at": "2026-11-05",
+      "note": "La documentación distingue organización secuencial, relativa e indexada en su entorno COBOL. Se usa para el caso descrito, que carece de mecanismos de localización, y no para generalizar sobre cualquier fichero o API de acceso."
+    },
+    "https://xlinux.nist.gov/dads/HTML/stable.html": {
+      "title": "NIST DADS: stable",
+      "locators": [
+        "Definition y ejemplo de claves iguales: conservación de orden relativo"
+      ],
+      "rechecked_at": "2026-11-05"
+    },
+    "https://xlinux.nist.gov/dads/HTML/quicksort.html": {
+      "title": "NIST DADS: quicksort",
+      "locators": [
+        "Definition y Note: peor caso Θ(n²), comportamiento habitual y variantes con pivotes garantizados"
+      ],
+      "rechecked_at": "2026-11-05"
+    },
+    "https://developers.google.com/machine-learning/crash-course/overfitting/overfitting": {
+      "title": "Google Machine Learning Crash Course: Overfitting",
+      "locators": [
+        "Definición; Fitting, overfitting, and underfitting; Detecting overfitting; Generalization conditions"
+      ],
+      "rechecked_at": "2026-11-05"
+    },
+    "https://xlinux.nist.gov/dads/HTML/bellmanford.html": {
+      "title": "NIST DADS: Bellman-Ford algorithm",
+      "locators": [
+        "Definition: relajaciones, pesos negativos y detección de ciclos negativos; coste O(VE)"
+      ],
+      "rechecked_at": "2026-11-05"
+    }
+  },
+  "per_question": [
+    {
+      "id": "AI-GSI-B3-T04-018",
+      "key": "C",
+      "base_sha256": "921d884cb8d1848683b97c7e7cad7faf1a6becd4ca7eb2077afebad4066bd6ac",
+      "proposed_sha256": "0dc9139e3c75627cd7b4edf4ccf4b689709f767c17ed19bb8a2b429a1c0f900c",
+      "sources": [
+        "https://www.postgresql.org/docs/18/explicit-locking.html"
+      ]
+    },
+    {
+      "id": "AI-GSI-B3-T05-001",
+      "key": "D",
+      "base_sha256": "7fed32099da0c8212b1f7f69508490a78a711e83a07662f5e363f4d08cc0936d",
+      "proposed_sha256": "d41c935fcd077e69fc7696147871cb3def0f38fbfa18c0784ca22b1e6d41565e",
+      "sources": [
+        "https://xlinux.nist.gov/dads/HTML/abstractDataType.html"
+      ]
+    },
+    {
+      "id": "AI-GSI-B3-T05-002",
+      "key": "C",
+      "base_sha256": "dae965d1b842c948a8c3d37b186b9bdfebc96fa879bc60f38c2db349b7e9f5de",
+      "proposed_sha256": "fd52233ae2462b5a92e2a5cf8abbe936f13768d5d174835635c5bd26988e5012",
+      "sources": [
+        "https://xlinux.nist.gov/dads/HTML/bigOnotation.html"
+      ]
+    },
+    {
+      "id": "AI-GSI-B3-T05-003",
+      "key": "C",
+      "base_sha256": "e816bc4287bb41c6baf31046ad3d29ef526a15ef078e56199ffcc916109aa94e",
+      "proposed_sha256": "a8769d09618d3258365e35ce4dcc57c67901d3ea0f3412d58cf5f638abf9b6c2",
+      "sources": [
+        "https://xlinux.nist.gov/dads/HTML/stack.html",
+        "https://xlinux.nist.gov/dads/HTML/abstractDataType.html"
+      ]
+    },
+    {
+      "id": "AI-GSI-B3-T05-004",
+      "key": "C",
+      "base_sha256": "0c99c56a642b83ac5abcba54775be1809db79eed15f7de8d9fdea312b024a08e",
+      "proposed_sha256": "f593412200e9cf01205d9356163cd565868fd06c6365f79ce30f4ee9d38fd01c",
+      "sources": [
+        "https://xlinux.nist.gov/dads/HTML/queue.html",
+        "https://xlinux.nist.gov/dads/HTML/stack.html"
+      ]
+    },
+    {
+      "id": "AI-GSI-B3-T05-005",
+      "key": "D",
+      "base_sha256": "433ff5e88754d0e804c6df10966639d2276cd0e2cb68dc8fdaa12355af4c04f5",
+      "proposed_sha256": "dc9daca9b194885a38d959480115f1f4431f32d91d7d86da0f3bacf3866b4264",
+      "sources": [
+        "https://www.robots.ox.ac.uk/~vedaldi/assets/teach/2025/b16/notes/3-elementary-data-structures.html"
+      ]
+    },
+    {
+      "id": "AI-GSI-B3-T05-007",
+      "key": "D",
+      "base_sha256": "d374740372f33ef9361134e489f42e406065f81a1a4f32f227ed237db7c1ec5f",
+      "proposed_sha256": "613b9bfb5671b657796a556fc5834f42663b870df76d42e79ca4538111490eea",
+      "sources": [
+        "https://xlinux.nist.gov/dads/HTML/collision.html",
+        "https://xlinux.nist.gov/dads/HTML/collisionres.html"
+      ]
+    },
+    {
+      "id": "AI-GSI-B3-T05-008",
+      "key": "A",
+      "base_sha256": "cfa828ec86c0e37cece75c2a09b24ddbdde7eaec2071ca552725d92f141705ef",
+      "proposed_sha256": "f2946541396352f572f2653be94ae1100b2123329241abcad6f43a8413db477e",
+      "sources": [
+        "https://docs.python.org/3.14/library/heapq.html"
+      ]
+    },
+    {
+      "id": "AI-GSI-B3-T05-009",
+      "key": "B",
+      "base_sha256": "e56f40139c7405c2191ae511cfc46441e6f01e78400fa5bc5b79c5424f953266",
+      "proposed_sha256": "4fdd4664dfffad78c2a3e36d13eb3547106d2e470ea2e2ec5afd96a9d5780e04",
+      "sources": [
+        "https://xlinux.nist.gov/dads/HTML/binarySearch.html"
+      ]
+    },
+    {
+      "id": "AI-GSI-B3-T05-010",
+      "key": "A",
+      "base_sha256": "af7b0e5a7c87958597737a869030fb4cb64d637285de44c38084f60a2ddd116f",
+      "proposed_sha256": "0a4883aad3d44bbf7d00d10a478d3fec2df20864b8b230988437f8c5eda6410f",
+      "sources": [
+        "https://www.ocw.mit.edu/courses/6-006-introduction-to-algorithms-fall-2011/1208e162775f6f5cedfbb9f2b694ede0_MIT6_006F11_lec13.pdf"
+      ]
+    },
+    {
+      "id": "AI-GSI-B3-T05-011",
+      "key": "D",
+      "base_sha256": "0866128fb30b8cbce2d69047fb6d9cf777e3941c186f77cc2b3ba20bed4d20ff",
+      "proposed_sha256": "08421b5d5702603ef78099733107964c0fd09d9312386b2de685f3e12e771a69",
+      "sources": [
+        "https://xlinux.nist.gov/dads/HTML/dijkstraalgo.html"
+      ]
+    },
+    {
+      "id": "AI-GSI-B3-T05-013",
+      "key": "D",
+      "base_sha256": "4a296ea125e15181454d878d4667b634c0a99c963a988bad63daf755ce4880a7",
+      "proposed_sha256": "78caec6d4b218ef908dbe679940c4e34f0f9af4f0a1dc9159d4e5b219f81c024",
+      "sources": [
+        "https://xlinux.nist.gov/dads/HTML/divideAndConquer.html",
+        "https://xlinux.nist.gov/dads/HTML/dynamicprog.html",
+        "https://xlinux.nist.gov/dads/HTML/greedyalgo.html"
+      ]
+    },
+    {
+      "id": "AI-GSI-B3-T05-014",
+      "key": "D",
+      "base_sha256": "e59b4eb32f5834927251e9ba98ba2ba313d912921649acba059e639ba2578914",
+      "proposed_sha256": "6818409bd9d03289d1f96f5e3228666ec151c7369f1ad6f865764d1527ed0728",
+      "sources": [
+        "https://xlinux.nist.gov/dads/HTML/dynamicprog.html",
+        "https://xlinux.nist.gov/dads/HTML/principle.html"
+      ]
+    },
+    {
+      "id": "AI-GSI-B3-T05-015",
+      "key": "D",
+      "base_sha256": "7a462b31e8174173878c90d41fe31493f0df4e315cc02e9e75852f8b7f5deaf6",
+      "proposed_sha256": "0c6504f441d778af380b5060dd286466f56958bd0e45d27b9ca4e2e4fe3791f7",
+      "sources": [
+        "https://xlinux.nist.gov/dads/HTML/greedyalgo.html"
+      ]
+    },
+    {
+      "id": "AI-GSI-B3-T05-016",
+      "key": "A",
+      "base_sha256": "b28748a127dcb78e09062902091ed38cd1f1af584bd358fa7aa1eea389f11e75",
+      "proposed_sha256": "ba5b3518c43c4428260445cc04c98b3d5158602e9656fb3a7e6746016b0115d6",
+      "sources": [
+        "https://xlinux.nist.gov/dads/HTML/branchNbound.html"
+      ]
+    },
+    {
+      "id": "AI-GSI-B3-T05-017",
+      "key": "D",
+      "base_sha256": "0aa6d1c792d3e9aae98d539bca1070177112b9f15b62b16c1b5dd4ce21929f0d",
+      "proposed_sha256": "5865e195522dd8db011d59c159dc8026ec3c5d97c056cd653966a1fd97e51ba3",
+      "sources": [
+        "https://www.microfocus.com/documentation/reuze/60d/fhorgs.htm"
+      ]
+    },
+    {
+      "id": "AI-GSI-B3-T05-018",
+      "key": "C",
+      "base_sha256": "4cf3affa440a30cdfd5d756fb04d07f90c2ecbaeea76c143519fe5d88ed55bc6",
+      "proposed_sha256": "c476bbc576cf80f2102e57d385311b292dd9628e791b92e8ee8ce5693ca0124c",
+      "sources": [
+        "https://xlinux.nist.gov/dads/HTML/stable.html"
+      ]
+    },
+    {
+      "id": "AI-GSI-B3-T05-019",
+      "key": "C",
+      "base_sha256": "cca09b0dc85b7d18b507baed020dbfad711cbfb3f8177badbe0951c1892c5a4a",
+      "proposed_sha256": "4af1d34c3a80f3afa5188edcf9945b8555675c8c3e925e37796e3b9a1c2aa33d",
+      "sources": [
+        "https://xlinux.nist.gov/dads/HTML/quicksort.html",
+        "https://xlinux.nist.gov/dads/HTML/bigOnotation.html"
+      ]
+    },
+    {
+      "id": "AI-GSI-B3-T05-020",
+      "key": "C",
+      "base_sha256": "43496478cc2268fc16c09f4767cf76304dd75dd0d9a846dab1d5ca6bf898c457",
+      "proposed_sha256": "d3bd653d8b53432367fb5ce9f4d24fd4ec8929a5685c2747b23d054ae07bfaea",
+      "sources": [
+        "https://developers.google.com/machine-learning/crash-course/overfitting/overfitting"
+      ]
+    },
+    {
+      "id": "AI-GSI-B3-T05-012",
+      "key": "D",
+      "base_sha256": "25b789f02bc99a66f74aab2877aeb498699fc88782a3303fee1c77b882b723e5",
+      "proposed_sha256": "7211b402e92f710824ce68d58a7186682790d761ee5269a25753eb9c0ab08d41",
+      "sources": [
+        "https://xlinux.nist.gov/dads/HTML/bellmanford.html",
+        "https://xlinux.nist.gov/dads/HTML/dijkstraalgo.html",
+        "https://www.ocw.mit.edu/courses/6-006-introduction-to-algorithms-fall-2011/1208e162775f6f5cedfbb9f2b694ede0_MIT6_006F11_lec13.pdf"
+      ]
+    }
+  ],
+  "semantic_checks": {
+    "big_o_upper_bound_does_not_imply_exact_linear_growth": true,
+    "array_known_index_address_formula_under_ram_assumptions": true,
+    "lifo_and_fifo_sequences": true,
+    "distinct_keys_hash_collision": true,
+    "heap_exposes_extreme_and_restores_order": true,
+    "bfs_minimum_edges_and_dfs_first_path_counterexample": true,
+    "dijkstra_negative_dag_counterexample_and_zero_weights": true,
+    "bellman_ford_negative_edges_and_reachable_cycle_detection": true,
+    "greedy_coin_counterexample_and_reused_optimal_subproblems": true,
+    "valid_minimization_bound_cannot_improve_incumbent": true,
+    "stable_sort_preserves_input_order_for_equal_keys": true,
+    "extreme_quicksort_partition_sum_is_quadratic": true
+  },
+  "semantic_details": {
+    "big_o": {
+      "counterexample": "T(n)=1: para todo entero n≥1 se cumple 0≤1≤n; O(n) con c=1,n₀=1. No pertenece a Θ(n) porque 1/n→0. Así O(n) no obliga a crecimiento exactamente lineal.",
+      "scope": "Argumento algebraico, no inferencia universal desde muestras finitas."
+    },
+    "array": {
+      "formula": "dirección=base+índice·tamaño",
+      "fixed_operations": [
+        "multiplicar",
+        "sumar"
+      ],
+      "assumptions": "Índice válido conocido, elementos de tamaño fijo, operaciones RAM unitarias. No medición de latencia física."
+    },
+    "orders": {
+      "inserted": [
+        "A",
+        "B",
+        "C"
+      ],
+      "lifo": [
+        "C",
+        "B",
+        "A"
+      ],
+      "fifo": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    "hash": {
+      "keys": [
+        10,
+        17
+      ],
+      "modulus": 7,
+      "locations": [
+        3,
+        3
+      ],
+      "different_keys": true
+    },
+    "heap": {
+      "inserted": [
+        9,
+        2,
+        5,
+        1
+      ],
+      "extracted": [
+        1,
+        2,
+        5,
+        9
+      ],
+      "scope": "Modelo min-heap de biblioteca estándar; no certifica FIFO entre empates o cualquier implementación."
+    },
+    "bfs": {
+      "graph": {
+        "S": [
+          "A",
+          "B"
+        ],
+        "A": [
+          "C"
+        ],
+        "B": [
+          "T"
+        ],
+        "C": [
+          "T"
+        ],
+        "T": []
+      },
+      "paths": [
+        [
+          "S",
+          "A",
+          "C",
+          "T"
+        ],
+        [
+          "S",
+          "B",
+          "T"
+        ]
+      ],
+      "bfs_distance": 2,
+      "depth_first_first_path_edges": 3
+    },
+    "dijkstra": {
+      "vertices": [
+        "S",
+        "A",
+        "B"
+      ],
+      "dag_edges": [
+        [
+          "S",
+          "A",
+          2
+        ],
+        [
+          "S",
+          "B",
+          5
+        ],
+        [
+          "B",
+          "A",
+          -4
+        ]
+      ],
+      "closed_version_wrong_distance_A": 2,
+      "bellman_ford_correct_distance_A": 1,
+      "aggregate_weight": 3,
+      "reachable_negative_cycle": false,
+      "zero_weight_case_distances": {
+        "S": 0,
+        "A": 0,
+        "B": 1
+      },
+      "scope": "Versión estándar con cierre definitivo; una sola instancia refuta la garantía sobre todos los grafos negativos. No afirma que todo grafo con una arista negativa haga fallar cualquier variante."
+    },
+    "bellman_ford": {
+      "negative_edge_example_distance_A": 1,
+      "reachable_negative_cycle_detected": true,
+      "unreachable_negative_cycle_not_reported": true,
+      "scope": "Distancias finitas no se afirman para destinos alcanzables desde un ciclo negativo alcanzable."
+    },
+    "coins": {
+      "denominations": [
+        1,
+        3,
+        4
+      ],
+      "amount": 6,
+      "greedy": [
+        4,
+        1,
+        1
+      ],
+      "greedy_count": 3,
+      "optimal": [
+        3,
+        3
+      ],
+      "optimal_count": 2,
+      "states_evaluated_once": {
+        "6": 1,
+        "5": 1,
+        "4": 1,
+        "3": 1,
+        "2": 1,
+        "1": 1,
+        "0": 1
+      },
+      "scope": "Enumeración dinámica exacta para esta instancia. El contraejemplo niega garantía universal de la regla mayor-primero, sin negar otros algoritmos voraces correctos."
+    },
+    "bound": {
+      "incumbent": 40,
+      "lower_bound": 45,
+      "illustrative_feasible_completions": [
+        45,
+        46,
+        49
+      ],
+      "argument": "Para cualquier x≥45 se cumple x>40; una cota válida basta para descartar mejora. Enumerar estos valores es ilustrativo, no prueba de validez para una rama arbitraria. Empates y búsqueda de todos los óptimos requieren política explícita."
+    },
+    "stable": {
+      "input": [
+        [
+          2,
+          "primero2"
+        ],
+        [
+          1,
+          "primero1"
+        ],
+        [
+          2,
+          "segundo2"
+        ],
+        [
+          1,
+          "segundo1"
+        ]
+      ],
+      "stable_output": [
+        [
+          1,
+          "primero1"
+        ],
+        [
+          1,
+          "segundo1"
+        ],
+        [
+          2,
+          "primero2"
+        ],
+        [
+          2,
+          "segundo2"
+        ]
+      ],
+      "sorted_but_unstable": [
+        [
+          1,
+          "segundo1"
+        ],
+        [
+          1,
+          "primero1"
+        ],
+        [
+          2,
+          "primero2"
+        ],
+        [
+          2,
+          "segundo2"
+        ]
+      ]
+    },
+    "quicksort": {
+      "recurrence": "C(n)=C(n−1)+(n−1), C(1)=0",
+      "closed_form": "n(n−1)/2",
+      "algebraic_bounds": "n²/4≤n(n−1)/2≤n²/2 para n≥2",
+      "counts": {
+        "1": 0,
+        "2": 1,
+        "4": 6,
+        "8": 28,
+        "16": 120,
+        "32": 496,
+        "64": 2016
+      },
+      "scope": "Recuento del modelo de partición extrema y argumento algebraico; no cronometraje ni promesa sobre todas las variantes."
+    }
+  },
+  "unchanged_file_sha256": {
+    "data/questions-ai.json": "07775eed29f024de16e2fb2bcb16072a306300363a872b03ae373c82c7fac4bd",
+    "data/questions-manual.json": "608d81e43838e6812923a52284c7a632679a4380e9c570f0e72ff9c57f00f00b",
+    "data/questions-official.json": "bddf132ba2333d848982263593905206a87e8548179ee7443a8699385c984b9e",
+    "data/gsi-editorial-revisions.json": "72280f76ae11e5a760574840de6f789c09efb52595131c878b006f1e5f09baf3",
+    "content/question-reviews/lote-054.json": "6a72e694284bd698150cfedc5b40e84300a933b95db269a973fdd99625a49483",
+    "content/question-reviews/lote-055.json": "e10be6ef9c7a3107f0db11f39741432c923013a26a30e18300dfc851b00c99c7",
+    "docs/GSI_REVISION_LOTE_055.md": "02d15896e08507852c3a747e79220d8d8ab177c7bbb6801cb3cd8f9d4a4637e8",
+    "logs/gsi-editorial-055-preparation.json": "1036119eea2e1cdec5f1a1eb8a497424a6d45d37c87ff34081d498ee164bb3f6"
+  },
+  "quality_before": {
+    "questions": 20,
+    "absolute_wording_cluster": 0,
+    "correct_unique_longest": 4,
+    "duplicate_options": 0,
+    "first_longest_correct": 4,
+    "identical_feedback": 20,
+    "length_ratio_1_5_to_2": 1,
+    "length_ratio_at_least_2": 0,
+    "longest_ties": 0,
+    "short_correct_feedback": 18,
+    "first_longest_accuracy": 20.0
+  },
+  "quality_proposed": {
+    "questions": 20,
+    "absolute_wording_cluster": 0,
+    "correct_unique_longest": 3,
+    "duplicate_options": 0,
+    "first_longest_correct": 3,
+    "identical_feedback": 0,
+    "length_ratio_1_5_to_2": 0,
+    "length_ratio_at_least_2": 0,
+    "longest_ties": 3,
+    "short_correct_feedback": 0,
+    "first_longest_accuracy": 15.0
+  },
+  "plan_progress": {
+    "total": 1762,
+    "reviewed": 40,
+    "pending": 1722,
+    "editorial_complete": false
+  }
+}

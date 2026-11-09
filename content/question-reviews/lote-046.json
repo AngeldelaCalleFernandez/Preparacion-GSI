@@ -1,0 +1,3648 @@
+{
+  "version": 1,
+  "id": "GSI-EDITORIAL-046",
+  "prepared_at": "2026-10-28",
+  "baseline_commit": "e3e20ab879518c899806a70575eead28b3b35e6f",
+  "items": [
+    {
+      "id": "MAN-GSI-P16-157",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "57d59c6a77201a39565aad24c6c1f7ed26e9caae9e4a3f9caf3f362b02754f60",
+      "content_sha256": "d191a060cc71f436014aa6b3effa6a166a78c981f64f28b801cc3b292240a64f",
+      "before": {
+        "id": "MAN-GSI-P16-157",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué práctica reduce el riesgo de introducir una licencia incompatible en CI/CD?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Desactivar los gestores de paquetes para que cada dependencia se copie manualmente sin que el pipeline pueda identificar su licencia."
+          },
+          {
+            "id": "B",
+            "text": "Eliminar los ficheros `LICENSE` durante la construcción para evitar que los avisos de terceros formen parte de los artefactos publicados."
+          },
+          {
+            "id": "C",
+            "text": "Permitir cualquier dependencia sin revisión porque las licencias declaradas por un repositorio público son compatibles entre sí por defecto."
+          },
+          {
+            "id": "D",
+            "text": "Escaneo de dependencias/licencias y políticas automáticas con revisión humana para excepciones."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Los controles automatizados ayudan, pero necesitan políticas y excepciones gobernadas.",
+          "incorrect": "Según el solucionario: Los controles automatizados ayudan, pero necesitan políticas y excepciones gobernadas."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 16 — LICENCIAS, PROTECCIÓN JURÍDICA Y DRM — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 157; índice nativo 16161",
+          "question_source_id": "SRC-GSI-P16-CUADERNO",
+          "question_document_id": "DOC-GSI-P16-CUADERNO",
+          "question_locator": "Pregunta 157; índice nativo 57060",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "drive_id": "115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 157; índice nativo 16161",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-16",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P16-157",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué práctica reduce el riesgo de introducir una licencia incompatible en CI/CD?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Analizar vulnerabilidades sin revisar las licencias detectadas en dependencias."
+          },
+          {
+            "id": "B",
+            "text": "Conservar las licencias declaradas sin evaluar su compatibilidad con la entrega."
+          },
+          {
+            "id": "C",
+            "text": "Revisar las dependencias directas sin detectar cambios en las transitivas."
+          },
+          {
+            "id": "D",
+            "text": "Escanear licencias con políticas y revisión humana de excepciones."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "El análisis automatizado puede detectar componentes, cambios y posibles incumplimientos y aplicar políticas, con revisión de hallazgos y excepciones. No convierte una etiqueta detectada en conclusión jurídica infalible. OpenChain requiere proceso de obligaciones y revisión; NIST PS.3.2 y PW.4 aportan procedencia y seguimiento de componentes. La compatibilidad debe evaluarse para el uso, combinación y distribución concretos.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "El análisis de vulnerabilidades no resuelve condiciones de licencia o compatibilidad; seguridad y derechos son dimensiones complementarias.",
+            "B": "Registrar la declaración es evidencia útil, pero no prueba que sea correcta ni compatible con el caso de uso y la entrega.",
+            "C": "Las transitivas y sus cambios pueden introducir condiciones relevantes; limitarse a las directas no cubre lo realmente incorporado."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 16 — LICENCIAS, PROTECCIÓN JURÍDICA Y DRM — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 157; índice nativo 16161",
+          "question_source_id": "SRC-GSI-P16-CUADERNO",
+          "question_document_id": "DOC-GSI-P16-CUADERNO",
+          "question_locator": "Pregunta 157; índice nativo 57060",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "OpenChain: License Compliance Specification 2.1",
+              "url": "https://github.com/OpenChain-Project/License-Compliance-Specification/blob/master/Official/en/2.1/openchainspec-2.1.md",
+              "locator": "3.1.1 Policy; 3.1.5 License obligations; 3.2.2.5 revisión y remediación de incumplimientos; 3.3.1 Bill of materials; 3.3.2 License compliance; 3.4 artefactos",
+              "version": "Versión oficial OpenChain 2.1, equivalente funcional a ISO/IEC 5230:2020 según el propio documento; no se atribuye certificación a esta aplicación ni carácter legal universal",
+              "checked_at": "2026-10-28"
+            },
+            {
+              "title": "NIST: SP 800-218, Secure Software Development Framework 1.1",
+              "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf",
+              "locator": "Tabla 1: PS.3.1 y PS.3.2, página impresa 10; PW.4.1, página 12; PW.4.4, página 13; RV.1.1, página 16",
+              "version": "Final, febrero de 2022, DOI 10.6028/NIST.SP.800-218. Catálogo NIST comprobado: revisión 1, versión 1.2 de 17-12-2025, aún Draft; no se presenta como final",
+              "checked_at": "2026-10-28"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-046"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "drive_id": "115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 157; índice nativo 16161",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-16",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-28"
+      },
+      "reasons": [
+        "Conservar prevención en CI/CD y clave D; cuatro controles parciales o completos del mismo ámbito, evitando distractores de destrucción de avisos."
+      ],
+      "references": [
+        {
+          "title": "OpenChain: License Compliance Specification 2.1",
+          "url": "https://github.com/OpenChain-Project/License-Compliance-Specification/blob/master/Official/en/2.1/openchainspec-2.1.md",
+          "locator": "3.1.1 Policy; 3.1.5 License obligations; 3.2.2.5 revisión y remediación de incumplimientos; 3.3.1 Bill of materials; 3.3.2 License compliance; 3.4 artefactos",
+          "version": "Versión oficial OpenChain 2.1, equivalente funcional a ISO/IEC 5230:2020 según el propio documento; no se atribuye certificación a esta aplicación ni carácter legal universal",
+          "checked_at": "2026-10-28"
+        },
+        {
+          "title": "NIST: SP 800-218, Secure Software Development Framework 1.1",
+          "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf",
+          "locator": "Tabla 1: PS.3.1 y PS.3.2, página impresa 10; PW.4.1, página 12; PW.4.4, página 13; RV.1.1, página 16",
+          "version": "Final, febrero de 2022, DOI 10.6028/NIST.SP.800-218. Catálogo NIST comprobado: revisión 1, versión 1.2 de 17-12-2025, aún Draft; no se presenta como final",
+          "checked_at": "2026-10-28"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P16-158",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "12a89391651495144b2dc9f29b343c049c9fe2b85674a058aae5645f00da85b1",
+      "content_sha256": "7e810805de78629df413ba3c8b6f710596f52d199dfb7b576b1f98f7d2b01f7c",
+      "before": {
+        "id": "MAN-GSI-P16-158",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué pregunta contractual es clave si se usa un SaaS con fuerte dependencia del proveedor?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Qué descuento ofrece el proveedor durante la primera renovación, sin concretar formato, asistencia o plazo para recuperar los datos."
+          },
+          {
+            "id": "B",
+            "text": "Cuántos colores, temas y logotipos admite el panel, aunque la personalización no reduzca dependencia ni facilite migración."
+          },
+          {
+            "id": "C",
+            "text": "¿Cómo exportamos datos/configuración, cuánto dura la transición y qué ocurre si el servicio cesa?"
+          },
+          {
+            "id": "D",
+            "text": "En qué ciudad se encuentra la sede social, sin cláusulas sobre cese, portabilidad, transición o eliminación posterior de información."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "La salida debe diseñarse antes de contratar para evitar lock-in.",
+          "incorrect": "Según el solucionario: La salida debe diseñarse antes de contratar para evitar lock-in."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 16 — LICENCIAS, PROTECCIÓN JURÍDICA Y DRM — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 158; índice nativo 16257",
+          "question_source_id": "SRC-GSI-P16-CUADERNO",
+          "question_document_id": "DOC-GSI-P16-CUADERNO",
+          "question_locator": "Pregunta 158; índice nativo 57431",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "drive_id": "115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 158; índice nativo 16257",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-16",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P16-158",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué pregunta contractual es clave si se usa un SaaS con fuerte dependencia del proveedor?",
+        "options": [
+          {
+            "id": "A",
+            "text": "¿Qué rebaja ofrece la renovación como garantía de facilidad de cambio?"
+          },
+          {
+            "id": "B",
+            "text": "¿Qué personalización del panel sustituye las previsiones de migración?"
+          },
+          {
+            "id": "C",
+            "text": "¿Cómo salen datos y configuración, y cómo se cubre transición o cese?"
+          },
+          {
+            "id": "D",
+            "text": "¿Qué historial comercial acredita por sí solo la capacidad de salida?"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "La salida debe concretar exportación utilizable, alcance de configuración, plazos, asistencia y condiciones de continuidad o cese. No basta con que haya un botón de descarga: debe probarse el uso en destino y los medios y derechos de transición. OSOR recomienda planificar salida, soporte y costes; se emplea como criterio de gestión, sin convertirlo en una cláusula universal de cualquier SaaS.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Un descuento puede influir en costes, pero no acredita capacidad de exportar o sustituir proveedor.",
+            "B": "Personalizar la interfaz no define formatos, dependencias ni transición operativa; no sustituye previsiones de migración.",
+            "D": "El historial del proveedor no demuestra por sí solo que los datos y la operación puedan recuperarse ante fin del servicio."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 16 — LICENCIAS, PROTECCIÓN JURÍDICA Y DRM — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 158; índice nativo 16257",
+          "question_source_id": "SRC-GSI-P16-CUADERNO",
+          "question_document_id": "DOC-GSI-P16-CUADERNO",
+          "question_locator": "Pregunta 158; índice nativo 57431",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Comisión Europea, OSOR: Public procurement of open source software",
+              "url": "https://interoperable-europe.ec.europa.eu/collection/open-source-observatory-osor/public-procurement-open-source-software",
+              "locator": "Quality and vendor criteria: total cost of ownership, support, upgrades and exit costs; Buyer checklist: needs, resources, vendor neutrality, exit and long-term support",
+              "version": "Guía web de contratación y planificación consultada el 28-10-2026; criterios de gestión, sin convertirlos en cláusulas legales universales o mandato de elegir una licencia",
+              "checked_at": "2026-10-28"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-046"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "drive_id": "115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 158; índice nativo 16257",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-16",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-28"
+      },
+      "reasons": [
+        "Conservar pregunta contractual de salida SaaS y clave C; cuatro preguntas paralelas, con contexto de proveedor dependiente."
+      ],
+      "references": [
+        {
+          "title": "Comisión Europea, OSOR: Public procurement of open source software",
+          "url": "https://interoperable-europe.ec.europa.eu/collection/open-source-observatory-osor/public-procurement-open-source-software",
+          "locator": "Quality and vendor criteria: total cost of ownership, support, upgrades and exit costs; Buyer checklist: needs, resources, vendor neutrality, exit and long-term support",
+          "version": "Guía web de contratación y planificación consultada el 28-10-2026; criterios de gestión, sin convertirlos en cláusulas legales universales o mandato de elegir una licencia",
+          "checked_at": "2026-10-28"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P16-159",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "dd2fe7db53052829899436439eff6301f0f50882d19db6848b538f39cedc43bf",
+      "content_sha256": "b4686e2282dfb7dc93882d5cec2e5069b5ef3bad1aa784882a77ff4ac0d74d3e",
+      "before": {
+        "id": "MAN-GSI-P16-159",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Un sistema crítico requiere activación online permanente. ¿Qué combinación de controles es más sensata?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Plan offline/contingencia, cláusulas de continuidad, monitorización de dependencia y prueba periódica de recuperación/migración."
+          },
+          {
+            "id": "B",
+            "text": "Confiar únicamente en el SLA del proveedor y prescindir de una alternativa probada mientras se cumplan sus métricas."
+          },
+          {
+            "id": "C",
+            "text": "Conservar copias de los binarios sin prever licencias, claves, documentación ni continuidad contractual de la activación."
+          },
+          {
+            "id": "D",
+            "text": "Mantener conectividad redundante, pero sin monitorizar la dependencia ni ensayar recuperación, migración o salida."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Los riesgos técnicos y contractuales deben tratarse conjuntamente.",
+          "incorrect": "Según el solucionario: Los riesgos técnicos y contractuales deben tratarse conjuntamente."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 16 — LICENCIAS, PROTECCIÓN JURÍDICA Y DRM — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 159; índice nativo 16331",
+          "question_source_id": "SRC-GSI-P16-CUADERNO",
+          "question_document_id": "DOC-GSI-P16-CUADERNO",
+          "question_locator": "Pregunta 159; índice nativo 57800",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "drive_id": "115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 159; índice nativo 16331",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-16",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P16-159",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Un sistema crítico requiere activación online permanente. ¿Qué combinación de controles es más sensata?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Plan offline/contingencia, cláusulas de continuidad, monitorización de dependencia y prueba periódica de recuperación/migración."
+          },
+          {
+            "id": "B",
+            "text": "Confiar únicamente en el SLA del proveedor y prescindir de una alternativa probada mientras se cumplan sus métricas."
+          },
+          {
+            "id": "C",
+            "text": "Conservar copias de los binarios sin prever licencias, claves, documentación ni continuidad contractual de la activación."
+          },
+          {
+            "id": "D",
+            "text": "Mantener conectividad redundante, pero sin monitorizar la dependencia ni ensayar recuperación, migración o salida."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "La dependencia permanente necesita tratamiento técnico y contractual: monitorización, recuperación ensayada y una contingencia autorizada y viable, que puede incluir transición a otra solución. No se presupone que todo producto admita un modo offline sin rediseño o acuerdo. La documentación de PlayReady ilustra adquisición y licencias locales, no una receta para cualquier activación. Un compromiso de disponibilidad no sustituye pruebas de salida.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "Un SLA mide o compromete servicio, pero no garantiza capacidad de operar o migrar cuando falla o termina la dependencia.",
+            "C": "Los binarios conservados pueden seguir necesitando licencias, claves y derechos o servicios que falten; no bastan para recuperar operación.",
+            "D": "Redundar conectividad reduce fallos de acceso a red, pero no cubre desaparición del servicio, problemas de licencia o falta de una salida probada."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 16 — LICENCIAS, PROTECCIÓN JURÍDICA Y DRM — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 159; índice nativo 16331",
+          "question_source_id": "SRC-GSI-P16-CUADERNO",
+          "question_document_id": "DOC-GSI-P16-CUADERNO",
+          "question_locator": "Pregunta 159; índice nativo 57800",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Microsoft Learn: PlayReady — License Acquisition",
+              "url": "https://learn.microsoft.com/en-us/playready/overview/license-acquisition",
+              "locator": "Server and Client interactions; Proactive, Reactive license acquisition; pasos 5–11 de adquisición; licencias, derechos y condiciones",
+              "version": "Artículo actualizado 07-11-2018; documentación de un sistema concreto, no comportamiento obligatorio de cualquier DRM",
+              "checked_at": "2026-10-28"
+            },
+            {
+              "title": "Comisión Europea, OSOR: Public procurement of open source software",
+              "url": "https://interoperable-europe.ec.europa.eu/collection/open-source-observatory-osor/public-procurement-open-source-software",
+              "locator": "Quality and vendor criteria: total cost of ownership, support, upgrades and exit costs; Buyer checklist: needs, resources, vendor neutrality, exit and long-term support",
+              "version": "Guía web de contratación y planificación consultada el 28-10-2026; criterios de gestión, sin convertirlos en cláusulas legales universales o mandato de elegir una licencia",
+              "checked_at": "2026-10-28"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-046"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "drive_id": "115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 159; índice nativo 16331",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-16",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-28"
+      },
+      "reasons": [
+        "Conservar íntegro el microcaso de activación permanente y clave A; precisar que contingencia debe ser autorizada, viable y probada."
+      ],
+      "references": [
+        {
+          "title": "Microsoft Learn: PlayReady — License Acquisition",
+          "url": "https://learn.microsoft.com/en-us/playready/overview/license-acquisition",
+          "locator": "Server and Client interactions; Proactive, Reactive license acquisition; pasos 5–11 de adquisición; licencias, derechos y condiciones",
+          "version": "Artículo actualizado 07-11-2018; documentación de un sistema concreto, no comportamiento obligatorio de cualquier DRM",
+          "checked_at": "2026-10-28"
+        },
+        {
+          "title": "Comisión Europea, OSOR: Public procurement of open source software",
+          "url": "https://interoperable-europe.ec.europa.eu/collection/open-source-observatory-osor/public-procurement-open-source-software",
+          "locator": "Quality and vendor criteria: total cost of ownership, support, upgrades and exit costs; Buyer checklist: needs, resources, vendor neutrality, exit and long-term support",
+          "version": "Guía web de contratación y planificación consultada el 28-10-2026; criterios de gestión, sin convertirlos en cláusulas legales universales o mandato de elegir una licencia",
+          "checked_at": "2026-10-28"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P16-160",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "432cdaaa3d98b105a8c7616f9d0465f8fed182ffdbf1ee01dd544feadfe8de04",
+      "content_sha256": "829f9c0ac9a27af232d18ccfc8c601e6b92fea1047189468022e2f8cfa1ba47d",
+      "before": {
+        "id": "MAN-GSI-P16-160",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Caso final: se quiere reutilizar software en varias AAPP, incorporar dependencias OSS y garantizar continuidad. ¿Qué enfoque es el más completo?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Elegir una licencia permisiva para el proyecto sin inventariar dependencias, titulares ni obligaciones heredadas."
+          },
+          {
+            "id": "B",
+            "text": "Inventariar/SBOM, seleccionar licencia y comprobar compatibilidad, fijar derechos y entregables, revisar seguridad/soporte y diseñar reversibilidad."
+          },
+          {
+            "id": "C",
+            "text": "Publicar el repositorio completo sin revisar licencias de terceros, secretos, seguridad o derechos sobre cada componente."
+          },
+          {
+            "id": "D",
+            "text": "Implantar controles DRM para impedir copias y utilizarlos como sustituto de contrato, soporte y plan de reversibilidad."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "La respuesta integra todos los planos del tema II.14.",
+          "incorrect": "Según el solucionario: La respuesta integra todos los planos del tema II.14."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 16 — LICENCIAS, PROTECCIÓN JURÍDICA Y DRM — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 160; índice nativo 16407",
+          "question_source_id": "SRC-GSI-P16-CUADERNO",
+          "question_document_id": "DOC-GSI-P16-CUADERNO",
+          "question_locator": "Pregunta 160; índice nativo 58206",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "drive_id": "115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 160; índice nativo 16407",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-16",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P16-160",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Se quiere reutilizar software en varias AAPP, incorporar dependencias OSS y garantizar continuidad. ¿Qué enfoque es el más completo?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Elegir una licencia permisiva para el proyecto sin inventariar dependencias, titulares ni obligaciones heredadas."
+          },
+          {
+            "id": "B",
+            "text": "Inventariar/SBOM, seleccionar licencia y comprobar compatibilidad, fijar derechos y entregables, revisar seguridad/soporte y diseñar reversibilidad."
+          },
+          {
+            "id": "C",
+            "text": "Publicar el repositorio completo sin revisar licencias de terceros, secretos, seguridad o derechos sobre cada componente."
+          },
+          {
+            "id": "D",
+            "text": "Implantar controles DRM para impedir copias y utilizarlos como sustituto de contrato, soporte y plan de reversibilidad."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "La reutilización entre Administraciones requiere conocer componentes y obligaciones, disponer de derechos y entregables suficientes, comprobar seguridad y soporte y planificar salida. El ENI regula condiciones de licenciamiento y reutilización en su ámbito; no borra derechos de terceros ni garantiza que una licencia elegida para código propio pueda sustituir las de todas las dependencias. Inventario y gobernanza aportan una base trazable, sin certificar calidad por sí solos.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Escoger una licencia del proyecto no demuestra titularidad o permiso para relicenciar dependencias ni resuelve obligaciones heredadas.",
+            "C": "Publicar todo sin revisión puede revelar información no destinada a publicación o distribuir código sin facultades o condiciones suficientes.",
+            "D": "Un control de copias no sustituye derechos contractuales, mantenimiento o reversibilidad; puede añadir una dependencia técnica."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 16 — LICENCIAS, PROTECCIÓN JURÍDICA Y DRM — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 160; índice nativo 16407",
+          "question_source_id": "SRC-GSI-P16-CUADERNO",
+          "question_document_id": "DOC-GSI-P16-CUADERNO",
+          "question_locator": "Pregunta 160; índice nativo 58206",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "BOE: Real Decreto 4/2010, Esquema Nacional de Interoperabilidad",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2010-1331",
+              "locator": "16 condiciones de licenciamiento aplicables; 17 directorios y documentación/condiciones de reutilización",
+              "version": "Consolidación informativa consultada, actualización global publicada 06-11-2024; artículos 16/17 modificados con publicación 31-03-2021. Se distinguen objeto contractual y derechos de terceros",
+              "checked_at": "2026-10-28"
+            },
+            {
+              "title": "OpenChain: License Compliance Specification 2.1",
+              "url": "https://github.com/OpenChain-Project/License-Compliance-Specification/blob/master/Official/en/2.1/openchainspec-2.1.md",
+              "locator": "3.1.1 Policy; 3.1.5 License obligations; 3.2.2.5 revisión y remediación de incumplimientos; 3.3.1 Bill of materials; 3.3.2 License compliance; 3.4 artefactos",
+              "version": "Versión oficial OpenChain 2.1, equivalente funcional a ISO/IEC 5230:2020 según el propio documento; no se atribuye certificación a esta aplicación ni carácter legal universal",
+              "checked_at": "2026-10-28"
+            },
+            {
+              "title": "NIST: SP 800-218, Secure Software Development Framework 1.1",
+              "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf",
+              "locator": "Tabla 1: PS.3.1 y PS.3.2, página impresa 10; PW.4.1, página 12; PW.4.4, página 13; RV.1.1, página 16",
+              "version": "Final, febrero de 2022, DOI 10.6028/NIST.SP.800-218. Catálogo NIST comprobado: revisión 1, versión 1.2 de 17-12-2025, aún Draft; no se presenta como final",
+              "checked_at": "2026-10-28"
+            },
+            {
+              "title": "Comisión Europea, OSOR: Public procurement of open source software",
+              "url": "https://interoperable-europe.ec.europa.eu/collection/open-source-observatory-osor/public-procurement-open-source-software",
+              "locator": "Quality and vendor criteria: total cost of ownership, support, upgrades and exit costs; Buyer checklist: needs, resources, vendor neutrality, exit and long-term support",
+              "version": "Guía web de contratación y planificación consultada el 28-10-2026; criterios de gestión, sin convertirlos en cláusulas legales universales o mandato de elegir una licencia",
+              "checked_at": "2026-10-28"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-046"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "drive_id": "115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 160; índice nativo 16407",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-16",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-28"
+      },
+      "reasons": [
+        "Conservar caso integrado de reutilización AAPP y clave B; eliminar «Caso final» y concretar que elegir licencia no sustituye derechos de terceros."
+      ],
+      "references": [
+        {
+          "title": "BOE: Real Decreto 4/2010, Esquema Nacional de Interoperabilidad",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2010-1331",
+          "locator": "16 condiciones de licenciamiento aplicables; 17 directorios y documentación/condiciones de reutilización",
+          "version": "Consolidación informativa consultada, actualización global publicada 06-11-2024; artículos 16/17 modificados con publicación 31-03-2021. Se distinguen objeto contractual y derechos de terceros",
+          "checked_at": "2026-10-28"
+        },
+        {
+          "title": "OpenChain: License Compliance Specification 2.1",
+          "url": "https://github.com/OpenChain-Project/License-Compliance-Specification/blob/master/Official/en/2.1/openchainspec-2.1.md",
+          "locator": "3.1.1 Policy; 3.1.5 License obligations; 3.2.2.5 revisión y remediación de incumplimientos; 3.3.1 Bill of materials; 3.3.2 License compliance; 3.4 artefactos",
+          "version": "Versión oficial OpenChain 2.1, equivalente funcional a ISO/IEC 5230:2020 según el propio documento; no se atribuye certificación a esta aplicación ni carácter legal universal",
+          "checked_at": "2026-10-28"
+        },
+        {
+          "title": "NIST: SP 800-218, Secure Software Development Framework 1.1",
+          "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf",
+          "locator": "Tabla 1: PS.3.1 y PS.3.2, página impresa 10; PW.4.1, página 12; PW.4.4, página 13; RV.1.1, página 16",
+          "version": "Final, febrero de 2022, DOI 10.6028/NIST.SP.800-218. Catálogo NIST comprobado: revisión 1, versión 1.2 de 17-12-2025, aún Draft; no se presenta como final",
+          "checked_at": "2026-10-28"
+        },
+        {
+          "title": "Comisión Europea, OSOR: Public procurement of open source software",
+          "url": "https://interoperable-europe.ec.europa.eu/collection/open-source-observatory-osor/public-procurement-open-source-software",
+          "locator": "Quality and vendor criteria: total cost of ownership, support, upgrades and exit costs; Buyer checklist: needs, resources, vendor neutrality, exit and long-term support",
+          "version": "Guía web de contratación y planificación consultada el 28-10-2026; criterios de gestión, sin convertirlos en cláusulas legales universales o mandato de elegir una licencia",
+          "checked_at": "2026-10-28"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P16-001",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "609f2431179ea22fddefd7e5b263d25951982f22f1831e7e4192ca2ddf47e6ac",
+      "content_sha256": "9319b289b43c4e5dfca2297949fe8a852b3832b113b05e018505506b5a71daa4",
+      "before": {
+        "id": "MAN-GSI-P16-001",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué caracteriza mejor al software propietario?",
+        "options": [
+          {
+            "id": "A",
+            "text": "El titular conserva los derechos y concede facultades de uso según la licencia y la ley."
+          },
+          {
+            "id": "B",
+            "text": "Ser necesariamente de pago, aunque el titular pueda distribuirlo gratuitamente manteniendo restricciones y reservándose los derechos."
+          },
+          {
+            "id": "C",
+            "text": "No poder distribuirse nunca sin precio, porque la gratuidad transforma de forma automática cualquier programa en software libre."
+          },
+          {
+            "id": "D",
+            "text": "Impedir siempre cualquier copia de seguridad, incluso cuando la licencia o la legislación aplicable permiten realizarla al usuario legítimo."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Propietario describe el régimen de derechos/licencia, no el precio ni una prohibición absoluta de todos los actos.",
+          "incorrect": "Según el solucionario: Propietario describe el régimen de derechos/licencia, no el precio ni una prohibición absoluta de todos los actos."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 16 — LICENCIAS, PROTECCIÓN JURÍDICA Y DRM — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 1; índice nativo 2776",
+          "question_source_id": "SRC-GSI-P16-CUADERNO",
+          "question_document_id": "DOC-GSI-P16-CUADERNO",
+          "question_locator": "Pregunta 1; índice nativo 1824",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "drive_id": "115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 1; índice nativo 2776",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-16",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P16-001",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué caracteriza al software propietario frente al software libre?",
+        "options": [
+          {
+            "id": "A",
+            "text": "No concede al usuario el conjunto de libertades que define el software libre."
+          },
+          {
+            "id": "B",
+            "text": "Se define por cobrar al usuario por cada copia, con independencia de sus derechos."
+          },
+          {
+            "id": "C",
+            "text": "Se define por ocultar el fuente, aunque conceda las cuatro libertades al usuario."
+          },
+          {
+            "id": "D",
+            "text": "Se define por conservar copyright, aunque conceda todas las libertades de uso."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "En la distinción empleada, propietario o no libre no concede adecuadamente el conjunto de libertades de ejecutar, estudiar, modificar y redistribuir que define el software libre. Precio, acceso material al fuente y conservación de copyright no bastan por sí solos para clasificar. El titular puede conservar copyright y ofrecer una licencia libre; el software propietario también puede distribuirse gratis.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "Puede cobrarse por software libre y distribuirse propietario sin precio; cobrar por copia no define las libertades concedidas.",
+            "C": "El acceso al fuente es condición para estudiar y modificar, pero ocultarlo no es una definición autónoma compatible a la vez con conceder realmente todas esas libertades.",
+            "D": "Conservar copyright es compatible con licenciar libremente; no diferencia por sí mismo el régimen propietario del libre."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 16 — LICENCIAS, PROTECCIÓN JURÍDICA Y DRM — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 1; índice nativo 2776",
+          "question_source_id": "SRC-GSI-P16-CUADERNO",
+          "question_document_id": "DOC-GSI-P16-CUADERNO",
+          "question_locator": "Pregunta 1; índice nativo 1824",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "FSF/GNU: The Free Software Definition",
+              "url": "https://www.gnu.org/philosophy/free-sw.en.html",
+              "locator": "The four essential freedoms; The freedom to run the program as you wish; The freedom to redistribute if you wish: basic requirements",
+              "version": "Definición viva consultada mediante texto primario indexado el 28-10-2026; aperturas GNU/FSF devolvieron timeout. No se inventa fecha de revisión o número de versión de la página",
+              "checked_at": "2026-10-28"
+            },
+            {
+              "title": "BOE: TRLPI, Real Decreto Legislativo 1/1996",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1996-8930",
+              "locator": "1 nacimiento por creación; 96.2 originalidad y 96.3–4 expresión frente a ideas; 97.4 programa laboral fuente/objeto; 99 explotación; 100 límites; 101 inscripción voluntaria",
+              "version": "Texto consolidado consultado, actualización global publicada 30-03-2022; consolidación informativa distinta de publicación oficial",
+              "checked_at": "2026-10-28"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-046"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "drive_id": "115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 1; índice nativo 2776",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-16",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-28"
+      },
+      "reasons": [
+        "Conservar régimen propietario frente a precio y clave A; hacer definitoria la correcta, ya que conservar derechos también ocurre bajo licencias libres."
+      ],
+      "references": [
+        {
+          "title": "FSF/GNU: The Free Software Definition",
+          "url": "https://www.gnu.org/philosophy/free-sw.en.html",
+          "locator": "The four essential freedoms; The freedom to run the program as you wish; The freedom to redistribute if you wish: basic requirements",
+          "version": "Definición viva consultada mediante texto primario indexado el 28-10-2026; aperturas GNU/FSF devolvieron timeout. No se inventa fecha de revisión o número de versión de la página",
+          "checked_at": "2026-10-28"
+        },
+        {
+          "title": "BOE: TRLPI, Real Decreto Legislativo 1/1996",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1996-8930",
+          "locator": "1 nacimiento por creación; 96.2 originalidad y 96.3–4 expresión frente a ideas; 97.4 programa laboral fuente/objeto; 99 explotación; 100 límites; 101 inscripción voluntaria",
+          "version": "Texto consolidado consultado, actualización global publicada 30-03-2022; consolidación informativa distinta de publicación oficial",
+          "checked_at": "2026-10-28"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P16-003",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "cad579beecaa26418c318f59d1dc1d9212de18ad88542c954e68c93da28e9b97",
+      "content_sha256": "9421d36d05507068d51e1d3b4e130efd52505bd660dd7701722fcbccaf05ccb8",
+      "before": {
+        "id": "MAN-GSI-P16-003",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Según la definición de la FSF, la libertad 0 consiste en:",
+        "options": [
+          {
+            "id": "A",
+            "text": "Acceder gratuitamente al código fuente."
+          },
+          {
+            "id": "B",
+            "text": "Ejecutar el programa como se desee, para cualquier propósito."
+          },
+          {
+            "id": "C",
+            "text": "Redistribuir únicamente copias sin modificar."
+          },
+          {
+            "id": "D",
+            "text": "Publicar siempre cualquier modificación privada."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "La libertad 0 es la libertad de ejecutar; no depende del precio ni obliga a publicar modificaciones privadas.",
+          "incorrect": "Según el solucionario: La libertad 0 es la libertad de ejecutar; no depende del precio ni obliga a publicar modificaciones privadas."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 16 — LICENCIAS, PROTECCIÓN JURÍDICA Y DRM — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 3; índice nativo 3000",
+          "question_source_id": "SRC-GSI-P16-CUADERNO",
+          "question_document_id": "DOC-GSI-P16-CUADERNO",
+          "question_locator": "Pregunta 3; índice nativo 2486",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "drive_id": "115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 3; índice nativo 3000",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-16",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P16-003",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Según la definición de la FSF, la libertad 0 consiste en:",
+        "options": [
+          {
+            "id": "A",
+            "text": "Acceder gratuitamente al código fuente."
+          },
+          {
+            "id": "B",
+            "text": "Ejecutar el programa como se desee, para cualquier propósito."
+          },
+          {
+            "id": "C",
+            "text": "Redistribuir únicamente copias sin modificar."
+          },
+          {
+            "id": "D",
+            "text": "Publicar siempre cualquier modificación privada."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "La libertad 0 de la FSF permite ejecutar el programa como se desee y para cualquier propósito. No se identifica con precio cero ni con acceso material al fuente: este es necesario para las libertades de estudio/modificación y distribución de versiones modificadas. La numeración se mantiene para distinguir el contenido de cada libertad, sin imponer publicación de cambios privados.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Acceder al fuente no es ejecutar para cualquier propósito, y la gratuidad no define la libertad 0 ni el conjunto de software libre.",
+            "C": "Redistribuir copias corresponde a otra libertad; no define la ejecución para el propósito elegido por el usuario.",
+            "D": "La FSF permite modificar y usar privadamente sin comunicar los cambios; publicar cada modificación privada no define libertad 0."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 16 — LICENCIAS, PROTECCIÓN JURÍDICA Y DRM — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 3; índice nativo 3000",
+          "question_source_id": "SRC-GSI-P16-CUADERNO",
+          "question_document_id": "DOC-GSI-P16-CUADERNO",
+          "question_locator": "Pregunta 3; índice nativo 2486",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "FSF/GNU: The Free Software Definition",
+              "url": "https://www.gnu.org/philosophy/free-sw.en.html",
+              "locator": "The four essential freedoms; The freedom to run the program as you wish; The freedom to redistribute if you wish: basic requirements",
+              "version": "Definición viva consultada mediante texto primario indexado el 28-10-2026; aperturas GNU/FSF devolvieron timeout. No se inventa fecha de revisión o número de versión de la página",
+              "checked_at": "2026-10-28"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-046"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "drive_id": "115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 3; índice nativo 3000",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-16",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-28"
+      },
+      "reasons": [
+        "Conservar íntegra la libertad 0 y clave B; explicar cada confusión entre ejecución, fuente, redistribución y publicación privada."
+      ],
+      "references": [
+        {
+          "title": "FSF/GNU: The Free Software Definition",
+          "url": "https://www.gnu.org/philosophy/free-sw.en.html",
+          "locator": "The four essential freedoms; The freedom to run the program as you wish; The freedom to redistribute if you wish: basic requirements",
+          "version": "Definición viva consultada mediante texto primario indexado el 28-10-2026; aperturas GNU/FSF devolvieron timeout. No se inventa fecha de revisión o número de versión de la página",
+          "checked_at": "2026-10-28"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P16-006",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "48fc4a5dc76ab6abe1249b60a7989f7266bbc1f30eeeef9828a22051a105695d",
+      "content_sha256": "a26fd69fd67d591e137abd648c4bc43684cb5a9bf0b55574b7cc0b9c72bb498e",
+      "before": {
+        "id": "MAN-GSI-P16-006",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué libertad se refiere específicamente a distribuir versiones modificadas?",
+        "options": [
+          {
+            "id": "A",
+            "text": "La libertad 0."
+          },
+          {
+            "id": "B",
+            "text": "La libertad 1 únicamente."
+          },
+          {
+            "id": "C",
+            "text": "La libertad 2 exclusivamente."
+          },
+          {
+            "id": "D",
+            "text": "La libertad 3."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "La libertad 3 permite distribuir versiones modificadas y exige acceso al código fuente para ser real.",
+          "incorrect": "Según el solucionario: La libertad 3 permite distribuir versiones modificadas y exige acceso al código fuente para ser real."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 16 — LICENCIAS, PROTECCIÓN JURÍDICA Y DRM — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 6; índice nativo 3304",
+          "question_source_id": "SRC-GSI-P16-CUADERNO",
+          "question_document_id": "DOC-GSI-P16-CUADERNO",
+          "question_locator": "Pregunta 6; índice nativo 3390",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "drive_id": "115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 6; índice nativo 3304",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-16",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P16-006",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué libertad se refiere específicamente a distribuir versiones modificadas?",
+        "options": [
+          {
+            "id": "A",
+            "text": "La libertad 0."
+          },
+          {
+            "id": "B",
+            "text": "La libertad 1."
+          },
+          {
+            "id": "C",
+            "text": "La libertad 2."
+          },
+          {
+            "id": "D",
+            "text": "La libertad 3."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "La libertad 3 es distribuir copias de versiones modificadas a otras personas. Para que sea efectiva se requiere acceso al código fuente en la forma apropiada para modificar. Se distingue del derecho a estudiar y cambiar para uso propio y del de redistribuir copias sin modificar; no obliga a publicar cualquier cambio privado.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "La libertad 0 trata de ejecutar para cualquier propósito; no es la libertad específicamente referida a distribuir versiones modificadas.",
+            "B": "La libertad 1 permite estudiar y modificar el programa; distribuir esas versiones a otras personas es el objeto específico de libertad 3.",
+            "C": "La libertad 2 se refiere a redistribuir copias; la libertad 3 explicita distribución de las versiones modificadas."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 16 — LICENCIAS, PROTECCIÓN JURÍDICA Y DRM — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 6; índice nativo 3304",
+          "question_source_id": "SRC-GSI-P16-CUADERNO",
+          "question_document_id": "DOC-GSI-P16-CUADERNO",
+          "question_locator": "Pregunta 6; índice nativo 3390",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "FSF/GNU: The Free Software Definition",
+              "url": "https://www.gnu.org/philosophy/free-sw.en.html",
+              "locator": "The four essential freedoms; The freedom to run the program as you wish; The freedom to redistribute if you wish: basic requirements",
+              "version": "Definición viva consultada mediante texto primario indexado el 28-10-2026; aperturas GNU/FSF devolvieron timeout. No se inventa fecha de revisión o número de versión de la página",
+              "checked_at": "2026-10-28"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-046"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "drive_id": "115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 6; índice nativo 3304",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-16",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-28"
+      },
+      "reasons": [
+        "Conservar libertad 3 y clave D; cuatro denominaciones paralelas sin «únicamente» o «exclusivamente» en opciones concretas."
+      ],
+      "references": [
+        {
+          "title": "FSF/GNU: The Free Software Definition",
+          "url": "https://www.gnu.org/philosophy/free-sw.en.html",
+          "locator": "The four essential freedoms; The freedom to run the program as you wish; The freedom to redistribute if you wish: basic requirements",
+          "version": "Definición viva consultada mediante texto primario indexado el 28-10-2026; aperturas GNU/FSF devolvieron timeout. No se inventa fecha de revisión o número de versión de la página",
+          "checked_at": "2026-10-28"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P16-009",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "3d96f5d66330643a3135f3d6c40afb500fa4cae7a45974688a43b8b4e2b5757e",
+      "content_sha256": "63b13cb133e84f1958b20a106389b6c39a9179e2ca8324cc110282c36680edad",
+      "before": {
+        "id": "MAN-GSI-P16-009",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Cuál de estas condiciones es coherente con la Open Source Definition?",
+        "options": [
+          {
+            "id": "A",
+            "text": "La licencia puede prohibir todo uso comercial."
+          },
+          {
+            "id": "B",
+            "text": "La licencia puede exigir una tasa por cada redistribución."
+          },
+          {
+            "id": "C",
+            "text": "La licencia no debe discriminar a personas, grupos o campos de actividad."
+          },
+          {
+            "id": "D",
+            "text": "El código fuente puede omitirse siempre sin forma de obtenerlo."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Las licencias open source no pueden discriminar por persona o campo de actividad y deben permitir redistribución conforme a la OSD.",
+          "incorrect": "Según el solucionario: Las licencias open source no pueden discriminar por persona o campo de actividad y deben permitir redistribución conforme a la OSD."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 16 — LICENCIAS, PROTECCIÓN JURÍDICA Y DRM — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 9; índice nativo 3602",
+          "question_source_id": "SRC-GSI-P16-CUADERNO",
+          "question_document_id": "DOC-GSI-P16-CUADERNO",
+          "question_locator": "Pregunta 9; índice nativo 4314",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "drive_id": "115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 9; índice nativo 3602",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-16",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P16-009",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Cuál de estas condiciones es coherente con la Open Source Definition?",
+        "options": [
+          {
+            "id": "A",
+            "text": "La licencia puede prohibir todo uso comercial."
+          },
+          {
+            "id": "B",
+            "text": "La licencia puede exigir una tasa por cada redistribución."
+          },
+          {
+            "id": "C",
+            "text": "La licencia no debe discriminar a personas, grupos o campos de actividad."
+          },
+          {
+            "id": "D",
+            "text": "El código fuente puede omitirse siempre sin forma de obtenerlo."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Los puntos 5 y 6 de la OSD exigen no discriminar personas, grupos o campos de actividad. Eso incluye permitir uso comercial, sin confundirlo con que todas las copias deban ser gratuitas. El punto 1 no permite una regalía exigida por la licencia por redistribuir y el 2 requiere fuente o una vía apropiada para obtenerlo.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "La prohibición general de uso comercial discrimina un campo de actividad y no satisface el punto 6.",
+            "B": "La OSD no permite que la licencia exija una regalía por la redistribución; es distinto de que alguien cobre por entregar una copia o un servicio.",
+            "D": "El punto 2 requiere incluir el fuente o una vía bien anunciada para obtenerlo en las condiciones previstas; no admite su omisión sin alternativa."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 16 — LICENCIAS, PROTECCIÓN JURÍDICA Y DRM — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 9; índice nativo 3602",
+          "question_source_id": "SRC-GSI-P16-CUADERNO",
+          "question_document_id": "DOC-GSI-P16-CUADERNO",
+          "question_locator": "Pregunta 9; índice nativo 4314",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "OSI: The Open Source Definition",
+              "url": "https://opensource.org/osd",
+              "locator": "1 Free Redistribution; 2 Source Code; 3 Derived Works; 5 No Discrimination Against Persons or Groups; 6 No Discrimination Against Fields of Endeavor",
+              "version": "OSD versión 1.9, fecha interna 22-03-2007; página modificada 16-02-2024, distinta de fecha de consulta",
+              "checked_at": "2026-10-28"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-046"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "drive_id": "115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 9; índice nativo 3602",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-16",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-28"
+      },
+      "reasons": [
+        "Conservar íntegra la condición de no discriminación y clave C; distinguir tasas impuestas por licencia y precio por entregar copias."
+      ],
+      "references": [
+        {
+          "title": "OSI: The Open Source Definition",
+          "url": "https://opensource.org/osd",
+          "locator": "1 Free Redistribution; 2 Source Code; 3 Derived Works; 5 No Discrimination Against Persons or Groups; 6 No Discrimination Against Fields of Endeavor",
+          "version": "OSD versión 1.9, fecha interna 22-03-2007; página modificada 16-02-2024, distinta de fecha de consulta",
+          "checked_at": "2026-10-28"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P16-015",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "5ff986a261c0dbd86b6112fa6d2a5815334e6d64a0c85f2ec956d1509f5ee822",
+      "content_sha256": "ce0f6c8cecb14bd4aeec0d9fd1632bd7eda61db328cee6fe0eed41e61ad6a847",
+      "before": {
+        "id": "MAN-GSI-P16-015",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué afirmación sobre modificaciones privadas es más correcta en términos generales de software libre?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Toda modificación debe subirse a Internet en 24 horas."
+          },
+          {
+            "id": "B",
+            "text": "Solo las licencias permisivas permiten modificar en privado."
+          },
+          {
+            "id": "C",
+            "text": "Una licencia libre no convierte automáticamente toda modificación privada en una publicación obligatoria."
+          },
+          {
+            "id": "D",
+            "text": "La libertad 1 prohíbe usar una versión modificada internamente."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Las obligaciones de compartir suelen activarse por hechos previstos en la licencia, por ejemplo distribución; no por el mero acto privado de modificar en todos los casos.",
+          "incorrect": "Según el solucionario: Las obligaciones de compartir suelen activarse por hechos previstos en la licencia, por ejemplo distribución; no por el mero acto privado de modificar en todos los casos."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 16 — LICENCIAS, PROTECCIÓN JURÍDICA Y DRM — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 15; índice nativo 4127",
+          "question_source_id": "SRC-GSI-P16-CUADERNO",
+          "question_document_id": "DOC-GSI-P16-CUADERNO",
+          "question_locator": "Pregunta 15; índice nativo 6415",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "drive_id": "115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 15; índice nativo 4127",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-16",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P16-015",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Sobre modificaciones privadas en software libre, ¿qué afirmación es correcta?",
+        "options": [
+          {
+            "id": "A",
+            "text": "El copyleft exige publicar cada cambio aunque no se distribuya."
+          },
+          {
+            "id": "B",
+            "text": "La modificación privada solo queda permitida en licencias permisivas."
+          },
+          {
+            "id": "C",
+            "text": "Modificar privadamente no implica por sí solo publicar el resultado."
+          },
+          {
+            "id": "D",
+            "text": "La libertad de modificar excluye usar internamente la versión cambiada."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "El software libre permite modificar y usar privadamente sin comunicar los cambios. Las obligaciones deben leerse según hechos previstos en cada licencia, como entregar copias o, en AGPL bajo su supuesto, interacción remota con una versión modificada. No se convierte cualquier uso ofrecido a terceros en modificación estrictamente privada ni se presume que todas las obligaciones se agoten en distribución.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "El copyleft no exige por su mera etiqueta publicar todo cambio privado; GPLv3 sección 2 permite modificar sin transmitir con las condiciones allí descritas.",
+            "B": "La libertad de modificar para uso propio también existe bajo licencias libres con copyleft, no solo bajo las permisivas.",
+            "D": "La libertad 1 incluye poder utilizar la versión cambiada en el propio trabajo; no se limita a escribir cambios que no se puedan ejecutar."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 16 — LICENCIAS, PROTECCIÓN JURÍDICA Y DRM — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 15; índice nativo 4127",
+          "question_source_id": "SRC-GSI-P16-CUADERNO",
+          "question_document_id": "DOC-GSI-P16-CUADERNO",
+          "question_locator": "Pregunta 15; índice nativo 6415",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "FSF/GNU: The Free Software Definition",
+              "url": "https://www.gnu.org/philosophy/free-sw.en.html",
+              "locator": "The four essential freedoms; The freedom to run the program as you wish; The freedom to redistribute if you wish: basic requirements",
+              "version": "Definición viva consultada mediante texto primario indexado el 28-10-2026; aperturas GNU/FSF devolvieron timeout. No se inventa fecha de revisión o número de versión de la página",
+              "checked_at": "2026-10-28"
+            },
+            {
+              "title": "OSI: GNU General Public License version 3",
+              "url": "https://opensource.org/license/gpl-3.0",
+              "locator": "0 Definitions: propagate/convey; 2 Basic Permissions; 4 y 5 distribución; 5 aggregate; 6 Corresponding Source; 13 AGPL combination",
+              "version": "GPL versión 3, 29-06-2007; texto completo del registro oficial OSI, leído directamente tras timeout en GNU",
+              "checked_at": "2026-10-28"
+            },
+            {
+              "title": "OSI: GNU Affero General Public License version 3",
+              "url": "https://opensource.org/license/agpl-3.0",
+              "locator": "0 Definitions; 2 Basic Permissions; 5 aggregate y obras independientes; 13 Remote Network Interaction; Use with the GNU GPL",
+              "version": "AGPL versión 3, 19-11-2007; texto completo del registro oficial OSI, leído directamente tras timeout en GNU",
+              "checked_at": "2026-10-28"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-046"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "drive_id": "115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 15; índice nativo 4127",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-16",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-28"
+      },
+      "reasons": [
+        "Conservar ausencia de publicación automática por modificar en privado y clave C; cuatro criterios comparables y matiz de hechos de licencia distintos de mera modificación."
+      ],
+      "references": [
+        {
+          "title": "FSF/GNU: The Free Software Definition",
+          "url": "https://www.gnu.org/philosophy/free-sw.en.html",
+          "locator": "The four essential freedoms; The freedom to run the program as you wish; The freedom to redistribute if you wish: basic requirements",
+          "version": "Definición viva consultada mediante texto primario indexado el 28-10-2026; aperturas GNU/FSF devolvieron timeout. No se inventa fecha de revisión o número de versión de la página",
+          "checked_at": "2026-10-28"
+        },
+        {
+          "title": "OSI: GNU General Public License version 3",
+          "url": "https://opensource.org/license/gpl-3.0",
+          "locator": "0 Definitions: propagate/convey; 2 Basic Permissions; 4 y 5 distribución; 5 aggregate; 6 Corresponding Source; 13 AGPL combination",
+          "version": "GPL versión 3, 29-06-2007; texto completo del registro oficial OSI, leído directamente tras timeout en GNU",
+          "checked_at": "2026-10-28"
+        },
+        {
+          "title": "OSI: GNU Affero General Public License version 3",
+          "url": "https://opensource.org/license/agpl-3.0",
+          "locator": "0 Definitions; 2 Basic Permissions; 5 aggregate y obras independientes; 13 Remote Network Interaction; Use with the GNU GPL",
+          "version": "AGPL versión 3, 19-11-2007; texto completo del registro oficial OSI, leído directamente tras timeout en GNU",
+          "checked_at": "2026-10-28"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P16-021",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "9b3ab3558d97666db5825d11494441d17968b14f3a0143db591d04cf36bde36e",
+      "content_sha256": "dda5f9c3c70f3b97c62a9fd81fb7eb1e625ee9f61ae2d2f242da06f71960cf5c",
+      "before": {
+        "id": "MAN-GSI-P16-021",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué rasgo general caracteriza a una licencia permisiva?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Obligar siempre a publicar bajo la misma licencia todo el código de la aplicación final, incluso los componentes independientes y propietarios."
+          },
+          {
+            "id": "B",
+            "text": "Permite reutilización amplia con obligaciones relativamente reducidas, incluso dentro de software propietario según sus términos."
+          },
+          {
+            "id": "C",
+            "text": "Prohibir cualquier distribución comercial o cobro por servicios, aunque se conserven los avisos y se cumplan las restantes condiciones."
+          },
+          {
+            "id": "D",
+            "text": "Equivaler a una renuncia completa a todos los derechos y permitir retirar autoría, avisos o condiciones del código redistribuido."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Las permisivas conservan copyright y condiciones, pero no imponen el copyleft fuerte típico de GPL.",
+          "incorrect": "Según el solucionario: Las permisivas conservan copyright y condiciones, pero no imponen el copyleft fuerte típico de GPL."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 16 — LICENCIAS, PROTECCIÓN JURÍDICA Y DRM — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 21; índice nativo 4771",
+          "question_source_id": "SRC-GSI-P16-CUADERNO",
+          "question_document_id": "DOC-GSI-P16-CUADERNO",
+          "question_locator": "Pregunta 21; índice nativo 8583",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "drive_id": "115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 21; índice nativo 4771",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-16",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P16-021",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué rasgo general caracteriza a una licencia permisiva como MIT o Apache-2.0?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Exige copyleft del conjunto que incluye módulos independientes del componente."
+          },
+          {
+            "id": "B",
+            "text": "Permite reutilizar con obligaciones limitadas, incluso en productos propietarios."
+          },
+          {
+            "id": "C",
+            "text": "Prohíbe distribuir el componente a cambio de un precio por la copia."
+          },
+          {
+            "id": "D",
+            "text": "Elimina copyright y permite retirar los avisos al redistribuir el componente."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Una licencia permisiva suele conceder amplios permisos sin imponer copyleft al conjunto de la obra derivada, manteniendo condiciones concretas. MIT y Apache-2.0 permiten usos comerciales y combinación en productos propietarios si se respetan sus términos. No equivalen a dominio público ni a ausencia de obligaciones; tampoco se infiere que cualquier combinación con otra licencia resulte compatible.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Esa imposición general de copyleft no caracteriza a las permisivas; además, las relaciones entre partes independientes y obra combinada deben examinarse concretamente.",
+            "C": "MIT y Apache permiten explotación y distribución comerciales en sus términos; no prohíben cobrar por la copia por ser permisivas.",
+            "D": "Conservan copyright y avisos o condiciones aplicables; la amplitud de permisos no autoriza borrarlos sin atender al texto."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 16 — LICENCIAS, PROTECCIÓN JURÍDICA Y DRM — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 21; índice nativo 4771",
+          "question_source_id": "SRC-GSI-P16-CUADERNO",
+          "question_document_id": "DOC-GSI-P16-CUADERNO",
+          "question_locator": "Pregunta 21; índice nativo 8583",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "OSI: The MIT License",
+              "url": "https://opensource.org/license/mit",
+              "locator": "Concesión de permisos; condición de conservar copyright y permiso en copias o partes sustanciales; ausencia de garantía",
+              "version": "Identificador MIT, versión N/A según OSI; texto de licencia, no dominio público",
+              "checked_at": "2026-10-28"
+            },
+            {
+              "title": "ASF: Apache License 2.0",
+              "url": "https://www.apache.org/licenses/LICENSE-2.0",
+              "locator": "2 Copyright License; 3 Patent License: reivindicaciones licenciables del contribuyente necesariamente infringidas por su contribución sola o combinada con la obra; terminación por litigio indicado; 4 avisos",
+              "version": "Versión 2.0, enero de 2004; texto inglés autoritativo según ASF. Concesión expresa delimitada, sin concluir ausencia de todo derecho implícito bajo otras licencias",
+              "checked_at": "2026-10-28"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-046"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "drive_id": "115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 21; índice nativo 4771",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-16",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-28"
+      },
+      "reasons": [
+        "Conservar reutilización permisiva y clave B; separar copyleft, comercio y dominio público con opciones próximas y comparables."
+      ],
+      "references": [
+        {
+          "title": "OSI: The MIT License",
+          "url": "https://opensource.org/license/mit",
+          "locator": "Concesión de permisos; condición de conservar copyright y permiso en copias o partes sustanciales; ausencia de garantía",
+          "version": "Identificador MIT, versión N/A según OSI; texto de licencia, no dominio público",
+          "checked_at": "2026-10-28"
+        },
+        {
+          "title": "ASF: Apache License 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0",
+          "locator": "2 Copyright License; 3 Patent License: reivindicaciones licenciables del contribuyente necesariamente infringidas por su contribución sola o combinada con la obra; terminación por litigio indicado; 4 avisos",
+          "version": "Versión 2.0, enero de 2004; texto inglés autoritativo según ASF. Concesión expresa delimitada, sin concluir ausencia de todo derecho implícito bajo otras licencias",
+          "checked_at": "2026-10-28"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P16-031",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "5b60b20e78798f4c5950da3ec0313a7d8234edb2afeabf0e9ec60d04de0085fb",
+      "content_sha256": "77fdece13a6049e9311e116d1d9833fd04d7954e8568bf5d6dbb1de59aff698a",
+      "before": {
+        "id": "MAN-GSI-P16-031",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Si una dependencia está bajo Apache-2.0, ¿qué no debería asumirse?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Que todas las patentes del mundo quedan licenciadas sin límites."
+          },
+          {
+            "id": "B",
+            "text": "Que existe una sección específica de patente."
+          },
+          {
+            "id": "C",
+            "text": "Que hay condiciones de redistribución."
+          },
+          {
+            "id": "D",
+            "text": "Que conviene conservar avisos aplicables."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "La concesión de patentes está delimitada por los términos y contribuciones contempladas en la licencia.",
+          "incorrect": "Según el solucionario: La concesión de patentes está delimitada por los términos y contribuciones contempladas en la licencia."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 16 — LICENCIAS, PROTECCIÓN JURÍDICA Y DRM — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 31; índice nativo 5571",
+          "question_source_id": "SRC-GSI-P16-CUADERNO",
+          "question_document_id": "DOC-GSI-P16-CUADERNO",
+          "question_locator": "Pregunta 31; índice nativo 11705",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "drive_id": "115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 31; índice nativo 5571",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-16",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P16-031",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Respecto a la sección 3 de Apache-2.0, ¿qué inferencia es incorrecta?",
+        "options": [
+          {
+            "id": "A",
+            "text": "La concesión cubre patentes de terceros ajenos a las contribuciones."
+          },
+          {
+            "id": "B",
+            "text": "La concesión exige que el contribuyente pueda licenciar las reivindicaciones."
+          },
+          {
+            "id": "C",
+            "text": "El alcance vincula reivindicaciones a la contribución sola o con la obra."
+          },
+          {
+            "id": "D",
+            "text": "El litigio descrito puede terminar la concesión de patentes para esa obra."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "La sección 3 Apache-2.0 delimita la concesión a reivindicaciones licenciables por el contribuyente que resulten necesariamente infringidas por su contribución sola o por su combinación con la obra a la que se aportó. No licencia las patentes de cualquier tercero ni concede propiedad sobre ellas. La sección incluye terminación por el litigio de patentes que describe; no se extiende esa terminación a cualquier reclamación jurídica.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "Que el contribuyente pueda licenciar esas reivindicaciones es una condición del texto; no es la inferencia incorrecta.",
+            "C": "El vínculo con la contribución sola o combinada con la obra está previsto, con el requisito de infracción necesaria; no equivale a cualquier patente relacionada lejanamente.",
+            "D": "La licencia contempla terminación de las concesiones para esa obra al interponer el litigio de patentes descrito; no es la afirmación incorrecta."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 16 — LICENCIAS, PROTECCIÓN JURÍDICA Y DRM — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 31; índice nativo 5571",
+          "question_source_id": "SRC-GSI-P16-CUADERNO",
+          "question_document_id": "DOC-GSI-P16-CUADERNO",
+          "question_locator": "Pregunta 31; índice nativo 11705",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "ASF: Apache License 2.0",
+              "url": "https://www.apache.org/licenses/LICENSE-2.0",
+              "locator": "2 Copyright License; 3 Patent License: reivindicaciones licenciables del contribuyente necesariamente infringidas por su contribución sola o combinada con la obra; terminación por litigio indicado; 4 avisos",
+              "version": "Versión 2.0, enero de 2004; texto inglés autoritativo según ASF. Concesión expresa delimitada, sin concluir ausencia de todo derecho implícito bajo otras licencias",
+              "checked_at": "2026-10-28"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-046"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "drive_id": "115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 31; índice nativo 5571",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-16",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-28"
+      },
+      "reasons": [
+        "Conservar alcance limitado de patentes y clave A; reemplazar «todas las patentes del mundo» por cuatro inferencias concretas de la sección 3."
+      ],
+      "references": [
+        {
+          "title": "ASF: Apache License 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0",
+          "locator": "2 Copyright License; 3 Patent License: reivindicaciones licenciables del contribuyente necesariamente infringidas por su contribución sola o combinada con la obra; terminación por litigio indicado; 4 avisos",
+          "version": "Versión 2.0, enero de 2004; texto inglés autoritativo según ASF. Concesión expresa delimitada, sin concluir ausencia de todo derecho implícito bajo otras licencias",
+          "checked_at": "2026-10-28"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P16-044",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "4129058611de0353bc38bedee2d5bae6bee6f57d6ac37188dbfca2077fe02980",
+      "content_sha256": "7cce10017ce97fba4be2f6b3696dffe5153e081a220f9787444f8f3da2b2f302",
+      "before": {
+        "id": "MAN-GSI-P16-044",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué diferencia conceptual conviene recordar entre GPL y AGPL?",
+        "options": [
+          {
+            "id": "A",
+            "text": "AGPL sustituye el copyleft fuerte por condiciones permisivas cuando el software se ofrece como servicio."
+          },
+          {
+            "id": "B",
+            "text": "AGPL añade una obligación específica para usuarios que interactúan remotamente por red con versiones modificadas en los supuestos de la licencia."
+          },
+          {
+            "id": "C",
+            "text": "GPL exige entregar el código por el uso privado de una copia, mientras AGPL excluye los servicios accesibles por red."
+          },
+          {
+            "id": "D",
+            "text": "AGPL se limita a bibliotecas enlazadas dinámicamente, mientras GPL se aplica a aplicaciones de escritorio."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "AGPL fue diseñada para cubrir el escenario de software interactivo ejecutado como servicio en red.",
+          "incorrect": "Según el solucionario: AGPL fue diseñada para cubrir el escenario de software interactivo ejecutado como servicio en red."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 16 — LICENCIAS, PROTECCIÓN JURÍDICA Y DRM — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 44; índice nativo 6739",
+          "question_source_id": "SRC-GSI-P16-CUADERNO",
+          "question_document_id": "DOC-GSI-P16-CUADERNO",
+          "question_locator": "Pregunta 44; índice nativo 16050",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "drive_id": "115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 44; índice nativo 6739",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-16",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P16-044",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué diferencia conceptual conviene recordar entre GPL y AGPL?",
+        "options": [
+          {
+            "id": "A",
+            "text": "AGPL sustituye el copyleft fuerte por condiciones permisivas cuando el software se ofrece como servicio."
+          },
+          {
+            "id": "B",
+            "text": "AGPL añade una obligación específica para usuarios que interactúan remotamente por red con versiones modificadas en los supuestos de la licencia."
+          },
+          {
+            "id": "C",
+            "text": "GPL exige entregar el código por el uso privado de una copia, mientras AGPL excluye los servicios accesibles por red."
+          },
+          {
+            "id": "D",
+            "text": "AGPL se limita a bibliotecas enlazadas dinámicamente, mientras GPL se aplica a aplicaciones de escritorio."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "AGPLv3 sección 13 exige que, al modificar el programa y si la versión soporta interacción remota por red, se ofrezca de forma destacada a esos usuarios obtener el fuente correspondiente por red sin cargo. GPLv3 define que mera interacción sin transferencia de copia no es conveying. La distinción no elimina obligaciones de distribución de cualquiera de las dos ni extiende automáticamente AGPL a todo software vecino.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "AGPL conserva copyleft; la interacción por red no lo transforma en condiciones permisivas.",
+            "C": "GPLv3 permite uso privado sin transmitir con sus condiciones, y AGPL sí contempla la interacción remota del supuesto de sección 13; la alternativa invierte ambos criterios.",
+            "D": "La distinción no es bibliotecas frente a escritorio: esa caracterización confunde AGPL/GPL con otras categorías y no describe la obligación remota."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 16 — LICENCIAS, PROTECCIÓN JURÍDICA Y DRM — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 44; índice nativo 6739",
+          "question_source_id": "SRC-GSI-P16-CUADERNO",
+          "question_document_id": "DOC-GSI-P16-CUADERNO",
+          "question_locator": "Pregunta 44; índice nativo 16050",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "OSI: GNU General Public License version 3",
+              "url": "https://opensource.org/license/gpl-3.0",
+              "locator": "0 Definitions: propagate/convey; 2 Basic Permissions; 4 y 5 distribución; 5 aggregate; 6 Corresponding Source; 13 AGPL combination",
+              "version": "GPL versión 3, 29-06-2007; texto completo del registro oficial OSI, leído directamente tras timeout en GNU",
+              "checked_at": "2026-10-28"
+            },
+            {
+              "title": "OSI: GNU Affero General Public License version 3",
+              "url": "https://opensource.org/license/agpl-3.0",
+              "locator": "0 Definitions; 2 Basic Permissions; 5 aggregate y obras independientes; 13 Remote Network Interaction; Use with the GNU GPL",
+              "version": "AGPL versión 3, 19-11-2007; texto completo del registro oficial OSI, leído directamente tras timeout en GNU",
+              "checked_at": "2026-10-28"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-046"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "drive_id": "115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 44; índice nativo 6739",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-16",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-28"
+      },
+      "reasons": [
+        "Conservar íntegra la diferencia GPL/AGPL y clave B; precisar modificación, usuarios remotos, fuente correspondiente y oferta destacada."
+      ],
+      "references": [
+        {
+          "title": "OSI: GNU General Public License version 3",
+          "url": "https://opensource.org/license/gpl-3.0",
+          "locator": "0 Definitions: propagate/convey; 2 Basic Permissions; 4 y 5 distribución; 5 aggregate; 6 Corresponding Source; 13 AGPL combination",
+          "version": "GPL versión 3, 29-06-2007; texto completo del registro oficial OSI, leído directamente tras timeout en GNU",
+          "checked_at": "2026-10-28"
+        },
+        {
+          "title": "OSI: GNU Affero General Public License version 3",
+          "url": "https://opensource.org/license/agpl-3.0",
+          "locator": "0 Definitions; 2 Basic Permissions; 5 aggregate y obras independientes; 13 Remote Network Interaction; Use with the GNU GPL",
+          "version": "AGPL versión 3, 19-11-2007; texto completo del registro oficial OSI, leído directamente tras timeout en GNU",
+          "checked_at": "2026-10-28"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P16-049",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "07f690f8536ec69e82c3d36e02292a0fe6bcb22237f6f95853655789a24bd99d",
+      "content_sha256": "05be0b74c3519f2f4feb98503ca9540454de365540d395327f539bb6c67c7c4d",
+      "before": {
+        "id": "MAN-GSI-P16-049",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué hecho es especialmente relevante al analizar obligaciones GPL?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Cómo se combina el código y si existe distribución/conveying de la obra resultante."
+          },
+          {
+            "id": "B",
+            "text": "El color del logotipo."
+          },
+          {
+            "id": "C",
+            "text": "El precio de adquisición exclusivamente."
+          },
+          {
+            "id": "D",
+            "text": "El sistema operativo del desarrollador exclusivamente."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "El análisis depende de la relación entre componentes y del acto de distribución, no de etiquetas comerciales.",
+          "incorrect": "Según el solucionario: El análisis depende de la relación entre componentes y del acto de distribución, no de etiquetas comerciales."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 16 — LICENCIAS, PROTECCIÓN JURÍDICA Y DRM — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 49; índice nativo 7139",
+          "question_source_id": "SRC-GSI-P16-CUADERNO",
+          "question_document_id": "DOC-GSI-P16-CUADERNO",
+          "question_locator": "Pregunta 49; índice nativo 17794",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "drive_id": "115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 49; índice nativo 7139",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-16",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P16-049",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué hecho es especialmente relevante al analizar obligaciones GPL?",
+        "options": [
+          {
+            "id": "A",
+            "text": "La combinación entre componentes y los actos que entregan copias a terceros."
+          },
+          {
+            "id": "B",
+            "text": "La publicación de una vulnerabilidad como activador general de copyleft."
+          },
+          {
+            "id": "C",
+            "text": "La posibilidad de consultar el repositorio como sustituto de revisar la entrega."
+          },
+          {
+            "id": "D",
+            "text": "El tipo de máquina de despliegue como criterio que determina toda obligación."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Deben examinarse la relación entre componentes, qué obra o combinación se entrega y si hay conveying, además de condiciones concretas de la licencia. GPLv3 distingue una obra cubierta de un agregado con programas separados e independientes. Acceso al repositorio, precio o infraestructura no resuelven por sí solos el análisis; tampoco se afirma que cualquier enlace implique o excluya una obra derivada en todo caso.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "Publicar un aviso de vulnerabilidad no es un activador general de copyleft de GPL; el análisis atiende a actos y relaciones previstos en la licencia.",
+            "C": "Que un repositorio sea consultable no identifica por sí solo qué copia se entregó ni demuestra cumplimiento de todos los requisitos aplicables.",
+            "D": "La máquina o plataforma puede aportar contexto, pero no determina por sí misma la relación de obras o la entrega de copias."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 16 — LICENCIAS, PROTECCIÓN JURÍDICA Y DRM — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 49; índice nativo 7139",
+          "question_source_id": "SRC-GSI-P16-CUADERNO",
+          "question_document_id": "DOC-GSI-P16-CUADERNO",
+          "question_locator": "Pregunta 49; índice nativo 17794",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "OSI: GNU General Public License version 3",
+              "url": "https://opensource.org/license/gpl-3.0",
+              "locator": "0 Definitions: propagate/convey; 2 Basic Permissions; 4 y 5 distribución; 5 aggregate; 6 Corresponding Source; 13 AGPL combination",
+              "version": "GPL versión 3, 29-06-2007; texto completo del registro oficial OSI, leído directamente tras timeout en GNU",
+              "checked_at": "2026-10-28"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-046"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "drive_id": "115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 49; índice nativo 7139",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-16",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-28"
+      },
+      "reasons": [
+        "Conservar combinación y distribución como hechos relevantes GPL y clave A; sustituir distractores ajenos por inferencias de gobernanza cercanas."
+      ],
+      "references": [
+        {
+          "title": "OSI: GNU General Public License version 3",
+          "url": "https://opensource.org/license/gpl-3.0",
+          "locator": "0 Definitions: propagate/convey; 2 Basic Permissions; 4 y 5 distribución; 5 aggregate; 6 Corresponding Source; 13 AGPL combination",
+          "version": "GPL versión 3, 29-06-2007; texto completo del registro oficial OSI, leído directamente tras timeout en GNU",
+          "checked_at": "2026-10-28"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P16-050",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "7ed2e382a726a622342178da0ed45e511e83e961f55134760ea35a699fd2be30",
+      "content_sha256": "82ce6c42965286d459ee73fbbb4829fe625812ee5c8d4dee6605e9db9d34f67c",
+      "before": {
+        "id": "MAN-GSI-P16-050",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Cuál de estas afirmaciones sobre AGPL es correcta?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Convierte todo el hardware del servidor en software libre."
+          },
+          {
+            "id": "B",
+            "text": "Solo se aplica si el programa es gratuito."
+          },
+          {
+            "id": "C",
+            "text": "No significa que cualquier software del mismo servidor pase automáticamente a AGPL."
+          },
+          {
+            "id": "D",
+            "text": "No permite modificar el programa."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "La obligación se aplica a la obra cubierta y a combinaciones según los términos, no indiscriminadamente a todo lo que comparte infraestructura.",
+          "incorrect": "Según el solucionario: La obligación se aplica a la obra cubierta y a combinaciones según los términos, no indiscriminadamente a todo lo que comparte infraestructura."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 16 — LICENCIAS, PROTECCIÓN JURÍDICA Y DRM — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 50; índice nativo 7257",
+          "question_source_id": "SRC-GSI-P16-CUADERNO",
+          "question_document_id": "DOC-GSI-P16-CUADERNO",
+          "question_locator": "Pregunta 50; índice nativo 18132",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "drive_id": "115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 50; índice nativo 7257",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-16",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P16-050",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "En un servidor conviven un programa AGPL y otro separado e independiente, sin formar una obra combinada. ¿Qué conclusión es correcta?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Compartir servidor somete a AGPL los dos programas por su ubicación."
+          },
+          {
+            "id": "B",
+            "text": "El precio del servicio decide si el programa independiente queda bajo AGPL."
+          },
+          {
+            "id": "C",
+            "text": "La ubicación común no somete por sí sola el otro programa a AGPL."
+          },
+          {
+            "id": "D",
+            "text": "La comunicación de procesos elimina las condiciones del programa AGPL."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Compartir infraestructura no aplica por sí solo AGPL a otro programa separado e independiente que no forma una obra combinada con el cubierto. La sección 5 trata agregados y la 13 la interacción remota de versiones modificadas. Si cambian los hechos de integración debe revisarse la relación real; no se usa la separación de procesos como regla universal que resuelva cualquier combinación.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "La ubicación no equivale por sí misma a obra combinada ni elimina la independencia declarada en el supuesto.",
+            "B": "Cobrar o no por el servicio no sustituye el análisis de derechos, obras e interacción definido por la licencia.",
+            "D": "Una comunicación no extingue por sí sola las condiciones del programa cubierto. Tampoco basta invocar procesos distintos para resolver toda cuestión de integración."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 16 — LICENCIAS, PROTECCIÓN JURÍDICA Y DRM — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 50; índice nativo 7257",
+          "question_source_id": "SRC-GSI-P16-CUADERNO",
+          "question_document_id": "DOC-GSI-P16-CUADERNO",
+          "question_locator": "Pregunta 50; índice nativo 18132",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "OSI: GNU Affero General Public License version 3",
+              "url": "https://opensource.org/license/agpl-3.0",
+              "locator": "0 Definitions; 2 Basic Permissions; 5 aggregate y obras independientes; 13 Remote Network Interaction; Use with the GNU GPL",
+              "version": "AGPL versión 3, 19-11-2007; texto completo del registro oficial OSI, leído directamente tras timeout en GNU",
+              "checked_at": "2026-10-28"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-046"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "drive_id": "115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 50; índice nativo 7257",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-16",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-28"
+      },
+      "reasons": [
+        "Conservar que AGPL no se extiende indiscriminadamente al servidor y clave C; microcaso delimita programa separado e independiente, sin imponer reglas universales de enlace."
+      ],
+      "references": [
+        {
+          "title": "OSI: GNU Affero General Public License version 3",
+          "url": "https://opensource.org/license/agpl-3.0",
+          "locator": "0 Definitions; 2 Basic Permissions; 5 aggregate y obras independientes; 13 Remote Network Interaction; Use with the GNU GPL",
+          "version": "AGPL versión 3, 19-11-2007; texto completo del registro oficial OSI, leído directamente tras timeout en GNU",
+          "checked_at": "2026-10-28"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P16-077",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "fa0ac7beb4d01171f4aabc54b6fec9293c1768d548a69aad54bd532a175ed605",
+      "content_sha256": "84d94be5390e6ea7460c1c412618c662c8fa0582d2a1323c18cfaf18294e7342",
+      "before": {
+        "id": "MAN-GSI-P16-077",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué afirmación sobre el código original EUPL al usar una cláusula de compatibilidad es más prudente?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Desaparecer automáticamente la licencia original al aplicar la cláusula, dejando el código previo sin las condiciones que lo cubrían."
+          },
+          {
+            "id": "B",
+            "text": "Pasar todo el código a dominio público, sin copyright, atribución ni obligaciones, por combinarse con una licencia declarada compatible."
+          },
+          {
+            "id": "C",
+            "text": "Eliminar las obligaciones de facilitar código fuente respecto del componente original, aunque la EUPL siga cubriéndolo en la combinación."
+          },
+          {
+            "id": "D",
+            "text": "La compatibilidad no implica que el código original deje mágicamente de estar cubierto por EUPL."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "La compatibilidad opera sobre la obra combinada según términos; no borra la licencia del componente original.",
+          "incorrect": "Según el solucionario: La compatibilidad opera sobre la obra combinada según términos; no borra la licencia del componente original."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 16 — LICENCIAS, PROTECCIÓN JURÍDICA Y DRM — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 77; índice nativo 9463",
+          "question_source_id": "SRC-GSI-P16-CUADERNO",
+          "question_document_id": "DOC-GSI-P16-CUADERNO",
+          "question_locator": "Pregunta 77; índice nativo 27275",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "drive_id": "115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 77; índice nativo 9463",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-16",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P16-077",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Al aplicar legítimamente la cláusula de compatibilidad EUPL 1.2, ¿qué afirmación es correcta?",
+        "options": [
+          {
+            "id": "A",
+            "text": "La licencia compatible borra la procedencia y el copyright del código original."
+          },
+          {
+            "id": "B",
+            "text": "El mecanismo convierte el código original en dominio público al combinarlo."
+          },
+          {
+            "id": "C",
+            "text": "La cláusula permite relicenciar una copia aislada solo por preferencia del receptor."
+          },
+          {
+            "id": "D",
+            "text": "La obra combinada puede usar la compatible sin borrar la licencia de origen."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "La cláusula EUPL 1.2 permite distribuir o comunicar determinadas obras derivadas basadas en la obra y otra bajo una licencia del apéndice, con prevalencia de obligaciones compatibles cuando colisionan. La FAQ distingue la obra combinada del código recibido, que conserva cobertura de origen. No es permiso para cambiar una copia aislada por preferencia ni para retirar autoría, avisos o suministro de fuente que siga siendo exigible.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Compatibilidad no elimina procedencia ni copyright; deben conservarse los avisos y obligaciones que correspondan.",
+            "B": "La combinación no convierte automáticamente el código en dominio público ni extingue sus derechos y condiciones.",
+            "C": "La cláusula tiene requisitos de obra derivada y licencia compatible; la FAQ descarta usarla solo para relicenciar una copia original aislada."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 16 — LICENCIAS, PROTECCIÓN JURÍDICA Y DRM — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 77; índice nativo 9463",
+          "question_source_id": "SRC-GSI-P16-CUADERNO",
+          "question_document_id": "DOC-GSI-P16-CUADERNO",
+          "question_locator": "Pregunta 77; índice nativo 27275",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Comisión Europea: EUPL 1.2, texto español",
+              "url": "https://interoperable-europe.ec.europa.eu/sites/default/files/inline-files/EUPL%20v1_2%20ES.txt",
+              "locator": "1 definiciones; 5 copyleft, cláusula de compatibilidad, conflictos y suministro de fuente; 6 secuencia de autoría; apéndice de licencias compatibles",
+              "version": "EUPL 1.2, DOUE L128 de 19-05-2017; texto oficial español, sin inferir compatibilidad universal entre cualquier par de licencias",
+              "checked_at": "2026-10-28"
+            },
+            {
+              "title": "Comisión Europea: EUPL FAQs",
+              "url": "https://interoperable-europe.ec.europa.eu/collection/eupl/faqs",
+              "locator": "Licence Compatibility: What is licence compatibility?; Is the use of a compatible licence a re-licensing?; Could the use of a compatible licence reduce the reciprocity?",
+              "version": "Guía web interpretativa consultada el 28-10-2026; no sustituye texto de licencia ni resuelve universalmente si cualquier enlace crea obra derivada",
+              "checked_at": "2026-10-28"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-046"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "drive_id": "115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 77; índice nativo 9463",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-16",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-28"
+      },
+      "reasons": [
+        "Conservar licencia original frente a compatibilidad EUPL y clave D; quitar «mágicamente» y delimitar obra combinada, copia aislada y obligaciones en conflicto."
+      ],
+      "references": [
+        {
+          "title": "Comisión Europea: EUPL 1.2, texto español",
+          "url": "https://interoperable-europe.ec.europa.eu/sites/default/files/inline-files/EUPL%20v1_2%20ES.txt",
+          "locator": "1 definiciones; 5 copyleft, cláusula de compatibilidad, conflictos y suministro de fuente; 6 secuencia de autoría; apéndice de licencias compatibles",
+          "version": "EUPL 1.2, DOUE L128 de 19-05-2017; texto oficial español, sin inferir compatibilidad universal entre cualquier par de licencias",
+          "checked_at": "2026-10-28"
+        },
+        {
+          "title": "Comisión Europea: EUPL FAQs",
+          "url": "https://interoperable-europe.ec.europa.eu/collection/eupl/faqs",
+          "locator": "Licence Compatibility: What is licence compatibility?; Is the use of a compatible licence a re-licensing?; Could the use of a compatible licence reduce the reciprocity?",
+          "version": "Guía web interpretativa consultada el 28-10-2026; no sustituye texto de licencia ni resuelve universalmente si cualquier enlace crea obra derivada",
+          "checked_at": "2026-10-28"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P16-087",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "45bb98c4abef08d6c3b1b8d5cbdd016b2b5d9a5b4202026b6345a3cc9beae05e",
+      "content_sha256": "2b6711f88134b880007d8517ba9e3c16879e8dec22dbcb0affe57c3ff54e74b6",
+      "before": {
+        "id": "MAN-GSI-P16-087",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué afirmación sobre el registro de un programa es correcta?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Puede inscribirse en el Registro de la Propiedad Intelectual, pero la protección no se plantea como dependiente de un registro constitutivo obligatorio."
+          },
+          {
+            "id": "B",
+            "text": "La inscripción es constitutiva: sin ella no existe copyright ni puede ejercerse ningún derecho sobre el programa original."
+          },
+          {
+            "id": "C",
+            "text": "Registrar el programa concede automáticamente una patente sobre sus algoritmos sin examen de novedad o actividad inventiva."
+          },
+          {
+            "id": "D",
+            "text": "Solo puede inscribirse el ejecutable final y quedan excluidos código fuente, versiones sucesivas y documentación asociada."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "El artículo 101 permite la inscripción; la protección deriva del régimen de autor y la originalidad.",
+          "incorrect": "Según el solucionario: El artículo 101 permite la inscripción; la protección deriva del régimen de autor y la originalidad."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 16 — LICENCIAS, PROTECCIÓN JURÍDICA Y DRM — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 87; índice nativo 10409",
+          "question_source_id": "SRC-GSI-P16-CUADERNO",
+          "question_document_id": "DOC-GSI-P16-CUADERNO",
+          "question_locator": "Pregunta 87; índice nativo 31000",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "drive_id": "115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 87; índice nativo 10409",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-16",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P16-087",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Sobre el registro de un programa de ordenador, ¿qué afirmación es correcta?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Puede inscribirse, pero los derechos no nacen por una inscripción obligatoria."
+          },
+          {
+            "id": "B",
+            "text": "Debe inscribirse para que la creación original reciba protección de autor."
+          },
+          {
+            "id": "C",
+            "text": "La inscripción concede también una patente sobre el algoritmo registrado."
+          },
+          {
+            "id": "D",
+            "text": "La inscripción transforma en exclusiva una licencia de uso no exclusiva."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "El artículo 101 permite inscribir derechos sobre programas y sus versiones o derivados. La protección de autor se relaciona con creación y originalidad, conforme a artículos 1 y 96, sin exigir una inscripción constitutiva general. El registro no equivale a patente ni cambia por sí solo el alcance de una licencia o cesión.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "La ley permite inscripción, pero no supedita con carácter general el nacimiento del derecho de autor a ese trámite.",
+            "C": "Registro de propiedad intelectual y patente tienen objetos y procedimientos distintos; inscribir no concede automáticamente una patente.",
+            "D": "La inscripción no sustituye las condiciones de licencia o cesión ni transforma por sí sola derechos no exclusivos en exclusivos."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 16 — LICENCIAS, PROTECCIÓN JURÍDICA Y DRM — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 87; índice nativo 10409",
+          "question_source_id": "SRC-GSI-P16-CUADERNO",
+          "question_document_id": "DOC-GSI-P16-CUADERNO",
+          "question_locator": "Pregunta 87; índice nativo 31000",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "BOE: TRLPI, Real Decreto Legislativo 1/1996",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1996-8930",
+              "locator": "1 nacimiento por creación; 96.2 originalidad y 96.3–4 expresión frente a ideas; 97.4 programa laboral fuente/objeto; 99 explotación; 100 límites; 101 inscripción voluntaria",
+              "version": "Texto consolidado consultado, actualización global publicada 30-03-2022; consolidación informativa distinta de publicación oficial",
+              "checked_at": "2026-10-28"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-046"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "drive_id": "115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 87; índice nativo 10409",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-16",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-28"
+      },
+      "reasons": [
+        "Conservar inscripción no constitutiva y clave A; cuatro consecuencias jurídicas próximas y sin una correcta desproporcionadamente larga."
+      ],
+      "references": [
+        {
+          "title": "BOE: TRLPI, Real Decreto Legislativo 1/1996",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1996-8930",
+          "locator": "1 nacimiento por creación; 96.2 originalidad y 96.3–4 expresión frente a ideas; 97.4 programa laboral fuente/objeto; 99 explotación; 100 límites; 101 inscripción voluntaria",
+          "version": "Texto consolidado consultado, actualización global publicada 30-03-2022; consolidación informativa distinta de publicación oficial",
+          "checked_at": "2026-10-28"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P16-088",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "4418551d0f16a1859f85546ef499453640c556042fd8e68a53a0565b345e0cae",
+      "content_sha256": "f350f04d39cb563e38eb6764c90047d6590c52d19677a181e709882315bf438b",
+      "before": {
+        "id": "MAN-GSI-P16-088",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Un empleado crea un programa dentro de las funciones que le han sido confiadas. Salvo pacto en contrario, el TRLPI atribuye los derechos de explotación:",
+        "options": [
+          {
+            "id": "A",
+            "text": "Al empleado en exclusiva por ser autor material, aunque el programa se cree dentro de sus funciones y no exista pacto distinto."
+          },
+          {
+            "id": "B",
+            "text": "Al Registro de la Propiedad Intelectual desde la inscripción, que pasa a explotar el programa en nombre de ambas partes."
+          },
+          {
+            "id": "C",
+            "text": "Al empresario, tanto respecto del programa fuente como del programa objeto, en el supuesto legal descrito."
+          },
+          {
+            "id": "D",
+            "text": "Al cliente final que utilice primero el programa, aunque no sea empleador ni exista cesión contractual de los derechos."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "El artículo 97.4 establece esa regla para programas creados por trabajador asalariado en sus funciones/instrucciones.",
+          "incorrect": "Según el solucionario: El artículo 97.4 establece esa regla para programas creados por trabajador asalariado en sus funciones/instrucciones."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 16 — LICENCIAS, PROTECCIÓN JURÍDICA Y DRM — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 88; índice nativo 10518",
+          "question_source_id": "SRC-GSI-P16-CUADERNO",
+          "question_document_id": "DOC-GSI-P16-CUADERNO",
+          "question_locator": "Pregunta 88; índice nativo 31435",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "drive_id": "115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 88; índice nativo 10518",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-16",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P16-088",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Un empleado crea un programa dentro de las funciones que le han sido confiadas. Salvo pacto en contrario, el TRLPI atribuye los derechos de explotación:",
+        "options": [
+          {
+            "id": "A",
+            "text": "Al empleado en exclusiva por ser autor material, aunque el programa se cree dentro de sus funciones y no exista pacto distinto."
+          },
+          {
+            "id": "B",
+            "text": "Al Registro de la Propiedad Intelectual desde la inscripción, que pasa a explotar el programa en nombre de ambas partes."
+          },
+          {
+            "id": "C",
+            "text": "Al empresario, tanto respecto del programa fuente como del programa objeto, en el supuesto legal descrito."
+          },
+          {
+            "id": "D",
+            "text": "Al cliente final que utilice primero el programa, aunque no sea empleador ni exista cesión contractual de los derechos."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "El artículo 97.4 atribuye al empresario, salvo pacto en contrario, los derechos de explotación del programa creado por trabajador asalariado en el ejercicio de funciones confiadas o siguiendo instrucciones del empresario, tanto fuente como objeto. Es un supuesto delimitado: no se extiende a cualquier persona contratista o cualquier creación ajena a esas funciones, ni equivale a decidir aquí todos los derechos morales.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "La condición de autor material no altera por sí sola la atribución legal de explotación al empresario en el supuesto laboral descrito y sin pacto distinto.",
+            "B": "El registro no pasa a explotar el programa por la inscripción; no es el destinatario de la regla del artículo 97.4.",
+            "D": "El primer uso por un cliente no acredita cesión o condición de empleador ni sustituye la atribución legal del supuesto."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 16 — LICENCIAS, PROTECCIÓN JURÍDICA Y DRM — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 88; índice nativo 10518",
+          "question_source_id": "SRC-GSI-P16-CUADERNO",
+          "question_document_id": "DOC-GSI-P16-CUADERNO",
+          "question_locator": "Pregunta 88; índice nativo 31435",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "BOE: TRLPI, Real Decreto Legislativo 1/1996",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1996-8930",
+              "locator": "1 nacimiento por creación; 96.2 originalidad y 96.3–4 expresión frente a ideas; 97.4 programa laboral fuente/objeto; 99 explotación; 100 límites; 101 inscripción voluntaria",
+              "version": "Texto consolidado consultado, actualización global publicada 30-03-2022; consolidación informativa distinta de publicación oficial",
+              "checked_at": "2026-10-28"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-046"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "drive_id": "115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 88; índice nativo 10518",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-16",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-28"
+      },
+      "reasons": [
+        "Conservar íntegro el supuesto laboral y clave C; delimitar trabajador asalariado, funciones/instrucciones, pacto y derechos de explotación."
+      ],
+      "references": [
+        {
+          "title": "BOE: TRLPI, Real Decreto Legislativo 1/1996",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1996-8930",
+          "locator": "1 nacimiento por creación; 96.2 originalidad y 96.3–4 expresión frente a ideas; 97.4 programa laboral fuente/objeto; 99 explotación; 100 límites; 101 inscripción voluntaria",
+          "version": "Texto consolidado consultado, actualización global publicada 30-03-2022; consolidación informativa distinta de publicación oficial",
+          "checked_at": "2026-10-28"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P16-090",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "dab5ab1c5d65b09360a8b5f208f763f7c4a9916f7d669ce8d4cb052576a3e75c",
+      "content_sha256": "47005157f12717a6a44307b003a209728ff622e54b112010ebfa5e130f97309d",
+      "before": {
+        "id": "MAN-GSI-P16-090",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué distinción es correcta entre código fuente y código objeto?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Ambos son formas del programa; el régimen legal puede abarcar las distintas formas de expresión."
+          },
+          {
+            "id": "B",
+            "text": "Proteger mediante derechos de autor únicamente el código objeto ejecutable, mientras el código fuente queda fuera del régimen del programa."
+          },
+          {
+            "id": "C",
+            "text": "Excluir siempre de protección el código fuente por ser legible y modificable, incluso cuando expresa de forma original un programa de ordenador."
+          },
+          {
+            "id": "D",
+            "text": "Considerar el código objeto una idea abstracta sin forma de expresión, aunque sea la representación compilada de instrucciones del programa."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "El artículo 96 protege cualquier forma de expresión y el 97 menciona fuente y objeto en el supuesto laboral.",
+          "incorrect": "Según el solucionario: El artículo 96 protege cualquier forma de expresión y el 97 menciona fuente y objeto en el supuesto laboral."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 16 — LICENCIAS, PROTECCIÓN JURÍDICA Y DRM — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 90; índice nativo 10744",
+          "question_source_id": "SRC-GSI-P16-CUADERNO",
+          "question_document_id": "DOC-GSI-P16-CUADERNO",
+          "question_locator": "Pregunta 90; índice nativo 32351",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "drive_id": "115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 90; índice nativo 10744",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-16",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P16-090",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué distinción entre código fuente y código objeto es correcta desde el régimen de autor del programa?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Fuente y objeto son formas de expresión susceptibles de protección del programa."
+          },
+          {
+            "id": "B",
+            "text": "El objeto es expresión protegible y el fuente solo una idea por ser legible."
+          },
+          {
+            "id": "C",
+            "text": "El fuente es expresión protegible y el objeto pierde esa condición al compilarse."
+          },
+          {
+            "id": "D",
+            "text": "Cada forma necesita una inscripción constitutiva distinta para recibir protección."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "La protección del programa original alcanza cualquier forma de expresión conforme al artículo 96.3. Fuente y objeto no se excluyen por ser legibles o compilados; el artículo 97.4 menciona ambos en el supuesto laboral. No se reserva la idea abstracta como tal ni se convierte toda secuencia de código en obra protegida sin examinar originalidad.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "Ser legible no convierte el fuente en mera idea abstracta; puede expresar originalmente el programa y estar protegido.",
+            "C": "Compilar no convierte por ese solo hecho el objeto en algo sin expresión protegible; la ley contempla distintas formas del programa.",
+            "D": "La protección no exige con carácter general registros constitutivos separados para fuente y objeto; inscripción y nacimiento del derecho son planos distintos."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 16 — LICENCIAS, PROTECCIÓN JURÍDICA Y DRM — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 90; índice nativo 10744",
+          "question_source_id": "SRC-GSI-P16-CUADERNO",
+          "question_document_id": "DOC-GSI-P16-CUADERNO",
+          "question_locator": "Pregunta 90; índice nativo 32351",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "BOE: TRLPI, Real Decreto Legislativo 1/1996",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1996-8930",
+              "locator": "1 nacimiento por creación; 96.2 originalidad y 96.3–4 expresión frente a ideas; 97.4 programa laboral fuente/objeto; 99 explotación; 100 límites; 101 inscripción voluntaria",
+              "version": "Texto consolidado consultado, actualización global publicada 30-03-2022; consolidación informativa distinta de publicación oficial",
+              "checked_at": "2026-10-28"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-046"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "drive_id": "115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 90; índice nativo 10744",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-16",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-28"
+      },
+      "reasons": [
+        "Conservar fuente/objeto como formas del programa y clave A; alternativas sobre expresión, compilación y registro, sin prolongarlas con absolutos repetidos."
+      ],
+      "references": [
+        {
+          "title": "BOE: TRLPI, Real Decreto Legislativo 1/1996",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1996-8930",
+          "locator": "1 nacimiento por creación; 96.2 originalidad y 96.3–4 expresión frente a ideas; 97.4 programa laboral fuente/objeto; 99 explotación; 100 límites; 101 inscripción voluntaria",
+          "version": "Texto consolidado consultado, actualización global publicada 30-03-2022; consolidación informativa distinta de publicación oficial",
+          "checked_at": "2026-10-28"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P16-136",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "ab999ad910c8fc3e125ecfc3276a4690cdf0e3230ef6224d3b91e34a252f3301",
+      "content_sha256": "5ed861f92b99e5bace14bdddfcd079ba548fe53465c7fdbbf0ff955a9b1e1eb9",
+      "before": {
+        "id": "MAN-GSI-P16-136",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué error es frecuente con DRM?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Distinguir las capacidades impuestas por la medida técnica de los permisos y límites derivados de licencia y ley."
+          },
+          {
+            "id": "B",
+            "text": "Revisar el contrato, la licencia y la normativa aplicable antes de concluir si un uso concreto está autorizado."
+          },
+          {
+            "id": "C",
+            "text": "Pensar que si una acción está técnicamente permitida por el software, necesariamente está jurídicamente autorizada."
+          },
+          {
+            "id": "D",
+            "text": "Evaluar si el mecanismo afecta a accesibilidad, interoperabilidad, conservación y ejercicio de excepciones legítimas."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Capacidad técnica y permiso jurídico no coinciden necesariamente; tampoco la prohibición técnica resuelve todos los derechos.",
+          "incorrect": "Según el solucionario: Capacidad técnica y permiso jurídico no coinciden necesariamente; tampoco la prohibición técnica resuelve todos los derechos."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 16 — LICENCIAS, PROTECCIÓN JURÍDICA Y DRM — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 136; índice nativo 14348",
+          "question_source_id": "SRC-GSI-P16-CUADERNO",
+          "question_document_id": "DOC-GSI-P16-CUADERNO",
+          "question_locator": "Pregunta 136; índice nativo 49601",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "drive_id": "115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 136; índice nativo 14348",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-16",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P16-136",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué error es frecuente con DRM?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Distinguir las capacidades impuestas por la medida técnica de los permisos y límites derivados de licencia y ley."
+          },
+          {
+            "id": "B",
+            "text": "Revisar el contrato, la licencia y la normativa aplicable antes de concluir si un uso concreto está autorizado."
+          },
+          {
+            "id": "C",
+            "text": "Pensar que si una acción está técnicamente permitida por el software, necesariamente está jurídicamente autorizada."
+          },
+          {
+            "id": "D",
+            "text": "Evaluar si el mecanismo afecta a accesibilidad, interoperabilidad, conservación y ejercicio de excepciones legítimas."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Que el software deje realizar una acción no demuestra autorización jurídica para ella. Deben comprobarse licencia, derechos y límites legales, junto a funcionamiento real y efectos del control. La inversa también importa: un derecho no elimina automáticamente una barrera técnica. PlayReady ejemplifica objetos técnicos con claves y políticas, distintos del contrato o título jurídico; no se generaliza su implementación a cualquier producto.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Separar capacidad técnica y permiso jurídico es una distinción correcta, no el error preguntado.",
+            "B": "Examinar contrato, licencia y ley es pertinente antes de concluir autorización; no presupone que el funcionamiento técnico decida derechos.",
+            "D": "Evaluar efectos en usuarios, integración y acceso futuro es pertinente; no confunde por sí mismo posibilidad técnica y autorización."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 16 — LICENCIAS, PROTECCIÓN JURÍDICA Y DRM — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 136; índice nativo 14348",
+          "question_source_id": "SRC-GSI-P16-CUADERNO",
+          "question_document_id": "DOC-GSI-P16-CUADERNO",
+          "question_locator": "Pregunta 136; índice nativo 49601",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "Microsoft Learn: PlayReady — License Acquisition",
+              "url": "https://learn.microsoft.com/en-us/playready/overview/license-acquisition",
+              "locator": "Server and Client interactions; Proactive, Reactive license acquisition; pasos 5–11 de adquisición; licencias, derechos y condiciones",
+              "version": "Artículo actualizado 07-11-2018; documentación de un sistema concreto, no comportamiento obligatorio de cualquier DRM",
+              "checked_at": "2026-10-28"
+            },
+            {
+              "title": "BOE: TRLPI, Real Decreto Legislativo 1/1996",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1996-8930",
+              "locator": "1 nacimiento por creación; 96.2 originalidad y 96.3–4 expresión frente a ideas; 97.4 programa laboral fuente/objeto; 99 explotación; 100 límites; 101 inscripción voluntaria",
+              "version": "Texto consolidado consultado, actualización global publicada 30-03-2022; consolidación informativa distinta de publicación oficial",
+              "checked_at": "2026-10-28"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-046"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P16-SOL",
+          "document_id": "DOC-GSI-P16-SOL",
+          "drive_id": "115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg",
+          "url": "https://docs.google.com/document/d/115JMWl6xYxtTkE8l7X-LreznEVNw9KZFazFVcFMG6yg/edit",
+          "locator": "Pregunta 136; índice nativo 14348",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-24"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-16",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-28"
+      },
+      "reasons": [
+        "Conservar íntegra la inferencia errónea sobre permiso técnico y clave C; explicar cada práctica válida sin referencias a letras visibles."
+      ],
+      "references": [
+        {
+          "title": "Microsoft Learn: PlayReady — License Acquisition",
+          "url": "https://learn.microsoft.com/en-us/playready/overview/license-acquisition",
+          "locator": "Server and Client interactions; Proactive, Reactive license acquisition; pasos 5–11 de adquisición; licencias, derechos y condiciones",
+          "version": "Artículo actualizado 07-11-2018; documentación de un sistema concreto, no comportamiento obligatorio de cualquier DRM",
+          "checked_at": "2026-10-28"
+        },
+        {
+          "title": "BOE: TRLPI, Real Decreto Legislativo 1/1996",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1996-8930",
+          "locator": "1 nacimiento por creación; 96.2 originalidad y 96.3–4 expresión frente a ideas; 97.4 programa laboral fuente/objeto; 99 explotación; 100 límites; 101 inscripción voluntaria",
+          "version": "Texto consolidado consultado, actualización global publicada 30-03-2022; consolidación informativa distinta de publicación oficial",
+          "checked_at": "2026-10-28"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B2-T15-002",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "d1efcc5e6585adda089c76508ccef16f0a2a6969afeca6afea4dfebba3478666",
+      "content_sha256": "2c3dec36d8e9912114e795cba6cb9bbfb63523ff56667ebaece79602d20f487e",
+      "before": {
+        "id": "AI-GSI-B2-T15-002",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T15",
+        "subtopic": "Asignación de pesos",
+        "exam": null,
+        "statement": "¿Qué técnica utiliza rondas de expertos con realimentación para aproximar consenso?",
+        "options": [
+          {
+            "id": "A",
+            "text": "TOPSIS"
+          },
+          {
+            "id": "B",
+            "text": "Camino crítico"
+          },
+          {
+            "id": "C",
+            "text": "Delphi"
+          },
+          {
+            "id": "D",
+            "text": "AHP exclusivamente"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Delphi organiza rondas; AHP utiliza jerarquías y comparaciones por pares.",
+          "incorrect": "Delphi organiza rondas; AHP utiliza jerarquías y comparaciones por pares."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.15; sección 4. Asignación de pesos",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "A1 040 incluye Delphi, AHP/Saaty, utilidades relativas y entropía. Para GSI:\n\n* **Delphi**: rondas de expertos con realimentación para aproximar consenso.\n* **AHP**: comparaciones por pares y jerarquía de criterios; permite analizar consistencia.\n* **Entropía**: enfoque más objetivo basado en capacidad discriminante de datos, según método.\n* **Ponderación directa**: simple y transparente si se documenta.",
+          "evidence_sha256": "735f4c42845df8c4cf398f6445c38f371d4c4c0e35c61ae56037176a8c15ea11",
+          "record_sha256": "12bf6bcdd5eabc468538da9b3eac7733278dbf180eaed0f67c26a5b1f39b50cf",
+          "review_id": "AI-GSI-B2-T15-002",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.15; sección 4. Asignación de pesos",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B2-T15-002",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B2",
+        "topic_id": "B2-T15",
+        "subtopic": "Asignación de pesos",
+        "exam": null,
+        "statement": "¿Qué técnica aproxima el consenso de expertos mediante cuestionarios sucesivos con realimentación controlada entre rondas?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Técnica de grupo nominal"
+          },
+          {
+            "id": "B",
+            "text": "Camino crítico"
+          },
+          {
+            "id": "C",
+            "text": "Delphi"
+          },
+          {
+            "id": "D",
+            "text": "AHP"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Delphi utiliza consultas sucesivas de expertos con realimentación controlada entre rondas para acercar o esclarecer sus opiniones. El resumen del estudio original de Dalkey y Helmer describe esa estructura de cuestionarios. Buscar consenso no garantiza alcanzarlo ni demuestra por sí solo que la opinión sea correcta. AHP también emplea juicios expertos, pero los organiza en comparaciones por pares para derivar prioridades.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "La técnica de grupo nominal estructura generación de ideas, registro, discusión y priorización en grupo; no es la serie de cuestionarios con realimentación controlada entre rondas descrita.",
+            "B": "El camino crítico analiza la red de actividades y duración del proyecto; no es un procedimiento de consulta sucesiva de expertos para aproximar opiniones.",
+            "D": "AHP deriva prioridades mediante comparaciones por pares y su síntesis; no se define por la secuencia de rondas de cuestionarios con realimentación descrita."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.15; sección 4. Asignación de pesos",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE II — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "A1 040 incluye Delphi, AHP/Saaty, utilidades relativas y entropía. Para GSI:\n\n* **Delphi**: rondas de expertos con realimentación para aproximar consenso.\n* **AHP**: comparaciones por pares y jerarquía de criterios; permite analizar consistencia.\n* **Entropía**: enfoque más objetivo basado en capacidad discriminante de datos, según método.\n* **Ponderación directa**: simple y transparente si se documenta.",
+          "evidence_sha256": "735f4c42845df8c4cf398f6445c38f371d4c4c0e35c61ae56037176a8c15ea11",
+          "record_sha256": "12bf6bcdd5eabc468538da9b3eac7733278dbf180eaed0f67c26a5b1f39b50cf",
+          "review_id": "AI-GSI-B2-T15-002",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Dalkey y Helmer: An Experimental Application of the DELPHI Method to the Use of Experts",
+              "url": "https://pubsonline.informs.org/doi/abs/10.1287/mnsc.9.3.458?journalCode=mnsc",
+              "locator": "Abstract: series of questionnaires interspersed with controlled opinion feedback; identificación de autores, fecha y artículo",
+              "version": "Management Science 9(3), 458–467, 01-04-1963; DOI 10.1287/mnsc.9.3.458. Resumen del editor leído directamente; no se atribuye lectura de texto completo inaccesible",
+              "checked_at": "2026-10-28"
+            },
+            {
+              "title": "CDC: Gaining Consensus Among Stakeholders Through the Nominal Group Technique",
+              "url": "https://www.cdc.gov/healthy-youth/php/program-evaluation/pdf/brief7.pdf",
+              "locator": "Página 1: Defining the Nominal Group Technique; The Four Step Process to Conduct NGT",
+              "version": "Evaluation Briefs No.7, actualizado agosto de 2018; cabecera C296013-E November 16, 2018. URL antigua devolvió 404; texto en URL vigente accesible",
+              "checked_at": "2026-10-28"
+            },
+            {
+              "title": "NASA: PP&C Glossary",
+              "url": "https://www.nasa.gov/ocfo/ppc-corner/ppc-glossary/",
+              "locator": "Critical Path (Deterministic); Critical Path Method (CPM)",
+              "version": "Glosario web de planificación y control consultado el 28-10-2026, sin versión documental cerrada indicada; CPM es planificación por red, no consulta sucesiva de expertos",
+              "checked_at": "2026-10-28"
+            },
+            {
+              "title": "Thomas L. Saaty: Decision making with the analytic hierarchy process",
+              "url": "https://doi.org/10.1504/IJSSCI.2008.017590",
+              "locator": "Abstract del editor: teoría de medición mediante comparaciones por pares y prioridades; autor, fecha, revista y DOI",
+              "version": "International Journal of Services Sciences 1(1), 83–98, publicado online 18-03-2008. Resumen primario indexado; apertura directa DOI devolvió 403, sin declarar lectura del artículo completo",
+              "checked_at": "2026-10-28"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-046"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B2-V21",
+          "document_id": "DOC-GSI-B2-V21",
+          "drive_id": "12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk",
+          "url": "https://docs.google.com/document/d/12jkpwzH8m5VoljIVPRi_Ofvqr7I_VBpVNGV0wmHfOFk/edit",
+          "locator": "II.15; sección 4. Asignación de pesos",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-28"
+      },
+      "reasons": [
+        "Conservar identificación de Delphi y clave C; precisar cuestionarios/realimentación y sustituir TOPSIS por una técnica próxima de consenso, eliminando «exclusivamente» de AHP."
+      ],
+      "references": [
+        {
+          "title": "Dalkey y Helmer: An Experimental Application of the DELPHI Method to the Use of Experts",
+          "url": "https://pubsonline.informs.org/doi/abs/10.1287/mnsc.9.3.458?journalCode=mnsc",
+          "locator": "Abstract: series of questionnaires interspersed with controlled opinion feedback; identificación de autores, fecha y artículo",
+          "version": "Management Science 9(3), 458–467, 01-04-1963; DOI 10.1287/mnsc.9.3.458. Resumen del editor leído directamente; no se atribuye lectura de texto completo inaccesible",
+          "checked_at": "2026-10-28"
+        },
+        {
+          "title": "CDC: Gaining Consensus Among Stakeholders Through the Nominal Group Technique",
+          "url": "https://www.cdc.gov/healthy-youth/php/program-evaluation/pdf/brief7.pdf",
+          "locator": "Página 1: Defining the Nominal Group Technique; The Four Step Process to Conduct NGT",
+          "version": "Evaluation Briefs No.7, actualizado agosto de 2018; cabecera C296013-E November 16, 2018. URL antigua devolvió 404; texto en URL vigente accesible",
+          "checked_at": "2026-10-28"
+        },
+        {
+          "title": "NASA: PP&C Glossary",
+          "url": "https://www.nasa.gov/ocfo/ppc-corner/ppc-glossary/",
+          "locator": "Critical Path (Deterministic); Critical Path Method (CPM)",
+          "version": "Glosario web de planificación y control consultado el 28-10-2026, sin versión documental cerrada indicada; CPM es planificación por red, no consulta sucesiva de expertos",
+          "checked_at": "2026-10-28"
+        },
+        {
+          "title": "Thomas L. Saaty: Decision making with the analytic hierarchy process",
+          "url": "https://doi.org/10.1504/IJSSCI.2008.017590",
+          "locator": "Abstract del editor: teoría de medición mediante comparaciones por pares y prioridades; autor, fecha, revista y DOI",
+          "version": "International Journal of Services Sciences 1(1), 83–98, publicado online 18-03-2008. Resumen primario indexado; apertura directa DOI devolvió 403, sin declarar lectura del artículo completo",
+          "checked_at": "2026-10-28"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    }
+  ]
+}

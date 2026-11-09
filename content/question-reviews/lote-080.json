@@ -1,0 +1,3754 @@
+{
+  "version": 1,
+  "id": "GSI-EDITORIAL-080",
+  "prepared_at": "2026-11-04",
+  "baseline_commit": "e3e20ab879518c899806a70575eead28b3b35e6f",
+  "items": [
+    {
+      "id": "AI-GSI-B4-T12-017",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "055a0a92960ec6a00aa8f0ba909b1964290d1dbb24275839846b227ae7d68fa3",
+      "content_sha256": "499694dda8bb8f786c2aa4d8dc4fa15c4ebaf5be67268b035fdb460ac784c412",
+      "before": {
+        "id": "AI-GSI-B4-T12-017",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T12",
+        "subtopic": "VPN",
+        "exam": null,
+        "statement": "¿Qué diferencia VPN site-to-site y acceso remoto?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Ambas solo conectan impresoras locales"
+          },
+          {
+            "id": "B",
+            "text": "Acceso remoto prohíbe autenticación"
+          },
+          {
+            "id": "C",
+            "text": "Site-to-site elimina políticas"
+          },
+          {
+            "id": "D",
+            "text": "La primera conecta redes; la segunda usuarios o dispositivos"
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "El tipo de conexión condiciona identidad, rutas y recursos autorizados.",
+          "incorrect": "El tipo de conexión condiciona identidad, rutas y recursos autorizados."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 7. VPN",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "VPN site-to-site conecta redes; acceso remoto conecta usuario/dispositivo. Puede basarse en IPsec o TLS/tecnologías asociadas. Debe autenticar fuerte, limitar rutas/recursos, registrar y evaluar endpoint. Split tunneling reduce carga pero cambia riesgo; decidir por política.",
+          "evidence_sha256": "2d431e59e6977d26a8ebf0fb65d08a75c999391be837f16f821329ec181d7108",
+          "record_sha256": "b26ddb7c970922023d1b8955bb98b35a309896c5743e70af68b8625a6af82387",
+          "review_id": "AI-GSI-B4-T12-017",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 7. VPN",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T12-017",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T12",
+        "subtopic": "VPN",
+        "exam": null,
+        "statement": "¿Qué diferencia VPN site-to-site y acceso remoto?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Site-to-site identifica usuarios; acceso remoto une redes."
+          },
+          {
+            "id": "B",
+            "text": "Site-to-site exige TLS; acceso remoto exige usar IPsec."
+          },
+          {
+            "id": "C",
+            "text": "Site-to-site conecta equipos de una misma red de área local."
+          },
+          {
+            "id": "D",
+            "text": "Site-to-site enlaza redes; acceso remoto incorpora clientes."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Una VPN entre sedes enlaza redes mediante pasarelas; el acceso remoto establece acceso de un cliente, usuario o dispositivo a recursos autorizados. Es una distinción del despliegue, no una regla que asigne obligatoriamente un protocolo a cada tipo. Ambos necesitan autenticación, permisos y rutas adecuados.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Invierte el criterio habitual: las pasarelas enlazan redes y el cliente remoto obtiene acceso según su identidad y políticas.",
+            "B": "El tipo de VPN no impone esa pareja de protocolos; hay accesos remotos basados en TLS o IPsec.",
+            "C": "Conectar equipos dentro de una LAN no define el enlace VPN entre redes que caracteriza site-to-site."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 7. VPN",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "VPN site-to-site conecta redes; acceso remoto conecta usuario/dispositivo. Puede basarse en IPsec o TLS/tecnologías asociadas. Debe autenticar fuerte, limitar rutas/recursos, registrar y evaluar endpoint. Split tunneling reduce carga pero cambia riesgo; decidir por política.",
+          "evidence_sha256": "2d431e59e6977d26a8ebf0fb65d08a75c999391be837f16f821329ec181d7108",
+          "record_sha256": "b26ddb7c970922023d1b8955bb98b35a309896c5743e70af68b8625a6af82387",
+          "review_id": "AI-GSI-B4-T12-017",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Cisco Security Cloud Control: VPN types",
+              "url": "https://docs.manage.security.cisco.com/cdfmc/c_vpn-types.html",
+              "locator": "Supported VPN connection types: Remote Access VPNs y Site-to-site VPNs",
+              "version": "HTML comprobado el 04-11-2026. Distinción entre cliente remoto y pasarelas entre redes; restricciones de producto, clientes y protocolos enumerados no se generalizan.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-080"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 7. VPN",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar redes frente a cliente remoto y clave D; separar topología de tecnología y políticas."
+      ],
+      "references": [
+        {
+          "title": "Cisco Security Cloud Control: VPN types",
+          "url": "https://docs.manage.security.cisco.com/cdfmc/c_vpn-types.html",
+          "locator": "Supported VPN connection types: Remote Access VPNs y Site-to-site VPNs",
+          "version": "HTML comprobado el 04-11-2026. Distinción entre cliente remoto y pasarelas entre redes; restricciones de producto, clientes y protocolos enumerados no se generalizan.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T12-018",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "c2fdbd5935cc6c3b1f92b4ac4af598ac6143070f465fbefa944e63d107713939",
+      "content_sha256": "5675f692e4607b4770057a38161bea550aaf5567257ec1fbd6ff9629714f6057",
+      "before": {
+        "id": "AI-GSI-B4-T12-018",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T12",
+        "subtopic": "VPN",
+        "exam": null,
+        "statement": "¿Qué decisión requiere split tunneling?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Suponer que cifra todo tráfico automáticamente"
+          },
+          {
+            "id": "B",
+            "text": "Evaluar carga y cambios de riesgo según política"
+          },
+          {
+            "id": "C",
+            "text": "Aceptarlo siempre sin análisis"
+          },
+          {
+            "id": "D",
+            "text": "Eliminar controles del endpoint"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Dividir rutas puede aliviar carga y modificar exposición.",
+          "incorrect": "Dividir rutas puede aliviar carga y modificar exposición."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 7. VPN",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "VPN site-to-site conecta redes; acceso remoto conecta usuario/dispositivo. Puede basarse en IPsec o TLS/tecnologías asociadas. Debe autenticar fuerte, limitar rutas/recursos, registrar y evaluar endpoint. Split tunneling reduce carga pero cambia riesgo; decidir por política.",
+          "evidence_sha256": "2d431e59e6977d26a8ebf0fb65d08a75c999391be837f16f821329ec181d7108",
+          "record_sha256": "71a0bc434fdae61abac7672a3f2bcfb28ce956700456faf3b6755ee41a4bd490",
+          "review_id": "AI-GSI-B4-T12-018",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 7. VPN",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T12-018",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T12",
+        "subtopic": "VPN",
+        "exam": null,
+        "statement": "Se propone enviar la intranet por VPN y el resto por la conexión local. ¿Cómo debe valorarse ese split tunneling?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Considerar que la VPN inspecciona también las salidas directas."
+          },
+          {
+            "id": "B",
+            "text": "Evaluar capacidad, rutas y riesgo antes de aprobar la política."
+          },
+          {
+            "id": "C",
+            "text": "Decidir el reparto a partir de la longitud de la clave VPN."
+          },
+          {
+            "id": "D",
+            "text": "Equiparar la salida directa a pasar por el filtro corporativo."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "En split tunneling, parte del tráfico utiliza la VPN y otra parte sale por la conexión local según las rutas o reglas aplicables. Puede aliviar carga del concentrador, pero cambia visibilidad y controles del tráfico directo. La política debe valorar capacidad, destino, estado del equipo y riesgos; no basta con tener un túnel cifrado.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "El tráfico que sale directamente no atraviesa por ello los controles del concentrador VPN; necesita protección y supervisión adecuadas.",
+            "C": "La longitud de clave afecta al mecanismo criptográfico, pero no determina qué rutas deben usar la VPN o qué riesgo tiene la salida directa.",
+            "D": "Salir por la conexión local puede evitar controles corporativos de red; no equivale a haber pasado por ellos."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 7. VPN",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "VPN site-to-site conecta redes; acceso remoto conecta usuario/dispositivo. Puede basarse en IPsec o TLS/tecnologías asociadas. Debe autenticar fuerte, limitar rutas/recursos, registrar y evaluar endpoint. Split tunneling reduce carga pero cambia riesgo; decidir por política.",
+          "evidence_sha256": "2d431e59e6977d26a8ebf0fb65d08a75c999391be837f16f821329ec181d7108",
+          "record_sha256": "71a0bc434fdae61abac7672a3f2bcfb28ce956700456faf3b6755ee41a4bd490",
+          "review_id": "AI-GSI-B4-T12-018",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Microsoft Learn: VPN routing decisions",
+              "url": "https://learn.microsoft.com/en-us/windows/security/operating-system-security/network-security/vpn/vpn-routing",
+              "locator": "Introducción; Split tunnel configuration y Force tunnel configuration",
+              "version": "Actualización 28-01-2025, HTML comprobado el 04-11-2026. Rutas, capacidad y expectativas de seguridad; no se usa la frase simplificada de que toda ruta pasa siempre por VPN en force tunnel: existen rutas específicas.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-080"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 7. VPN",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar evaluación carga/riesgo y clave B; caso con rutas corporativas por VPN y resto por salida local."
+      ],
+      "references": [
+        {
+          "title": "Microsoft Learn: VPN routing decisions",
+          "url": "https://learn.microsoft.com/en-us/windows/security/operating-system-security/network-security/vpn/vpn-routing",
+          "locator": "Introducción; Split tunnel configuration y Force tunnel configuration",
+          "version": "Actualización 28-01-2025, HTML comprobado el 04-11-2026. Rutas, capacidad y expectativas de seguridad; no se usa la frase simplificada de que toda ruta pasa siempre por VPN en force tunnel: existen rutas específicas.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T12-019",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "ae0077663dbe51b9cce76da677725f2933b831e161807508eb2415ceec7e3162",
+      "content_sha256": "bd3b3c73dc0950044da4a06799465dc24627e57afe5333a64b4ee42402c00e2d",
+      "before": {
+        "id": "AI-GSI-B4-T12-019",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T12",
+        "subtopic": "Puesto de usuario",
+        "exam": null,
+        "statement": "Un endpoint ya comprometido entra por VPN. ¿Qué conclusión es correcta?",
+        "options": [
+          {
+            "id": "A",
+            "text": "La VPN no lo convierte en un puesto seguro"
+          },
+          {
+            "id": "B",
+            "text": "Ya no necesita EDR"
+          },
+          {
+            "id": "C",
+            "text": "La VPN elimina automáticamente el malware"
+          },
+          {
+            "id": "D",
+            "text": "Se le deben dar todos los permisos"
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "El canal protegido no corrige el estado de seguridad del dispositivo.",
+          "incorrect": "El canal protegido no corrige el estado de seguridad del dispositivo."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 8. Puesto de usuario",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Hardening, parcheo, EDR/antimalware, cifrado de disco, firewall local, control de aplicaciones, mínimo privilegio, navegador seguro, bloqueo, MFA, protección de credenciales, MDM/UEM en móviles y copias de datos cuando corresponda. Una VPN no protege un endpoint ya comprometido.",
+          "evidence_sha256": "d5f3b3cb59b06286785300bd0ce2145cbfa9436382d3994d2de6233d88c2e214",
+          "record_sha256": "aac7a87ac28c682dd9ed7abee770d065c156afd10dc05b7ed2d8e8671b5d45b0",
+          "review_id": "AI-GSI-B4-T12-019",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 8. Puesto de usuario",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T12-019",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T12",
+        "subtopic": "Puesto de usuario",
+        "exam": null,
+        "statement": "Un endpoint ya comprometido entra por VPN. ¿Qué conclusión es correcta?",
+        "options": [
+          {
+            "id": "A",
+            "text": "El malware puede actuar desde el equipo pese al canal protegido."
+          },
+          {
+            "id": "B",
+            "text": "La autenticación VPN acredita que el equipo carece de malware."
+          },
+          {
+            "id": "C",
+            "text": "El cifrado del túnel aísla el proceso malicioso de los recursos."
+          },
+          {
+            "id": "D",
+            "text": "La pasarela VPN sanea el equipo al aceptar sus credenciales."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "La VPN protege el canal según su configuración, pero no elimina malware ni demuestra la integridad del dispositivo que la usa. Un proceso malicioso puede aprovechar credenciales o accesos disponibles en ese equipo. Deben evaluarse su estado, controles de endpoint y permisos; una autenticación correcta no es una prueba de equipo sano.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "Autenticar una identidad o dispositivo no certifica que sus procesos y archivos estén libres de compromiso.",
+            "C": "El cifrado protege datos en tránsito; no separa por sí mismo el malware local de los recursos que puede alcanzar.",
+            "D": "Aceptar credenciales establece acceso, no ejecuta automáticamente una limpieza o reconstrucción del puesto."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 8. Puesto de usuario",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Hardening, parcheo, EDR/antimalware, cifrado de disco, firewall local, control de aplicaciones, mínimo privilegio, navegador seguro, bloqueo, MFA, protección de credenciales, MDM/UEM en móviles y copias de datos cuando corresponda. Una VPN no protege un endpoint ya comprometido.",
+          "evidence_sha256": "d5f3b3cb59b06286785300bd0ce2145cbfa9436382d3994d2de6233d88c2e214",
+          "record_sha256": "aac7a87ac28c682dd9ed7abee770d065c156afd10dc05b7ed2d8e8671b5d45b0",
+          "review_id": "AI-GSI-B4-T12-019",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Cisco Security Cloud Control: VPN types",
+              "url": "https://docs.manage.security.cisco.com/cdfmc/c_vpn-types.html",
+              "locator": "Supported VPN connection types: Remote Access VPNs y Site-to-site VPNs",
+              "version": "HTML comprobado el 04-11-2026. Distinción entre cliente remoto y pasarelas entre redes; restricciones de producto, clientes y protocolos enumerados no se generalizan.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "NCSC: Preventing Lateral Movement",
+              "url": "https://www.ncsc.gov.uk/guidance/preventing-lateral-movement",
+              "locator": "§3 Protect high privilege accounts; §4 Least privilege; §5 Lock down devices y §6 segmentación",
+              "version": "HTML comprobado el 04-11-2026. Controles sobre equipo e identidad independientes de proteger el canal; sin garantía de saneamiento por acceso VPN o cumplimiento normativo español.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "Microsoft Learn: Microsoft Defender for Endpoint",
+              "url": "https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint",
+              "locator": "Defender for Endpoint capabilities: detección/respuesta, reducción de superficie y gestión de vulnerabilidades",
+              "version": "Documentación HTML comprobada el 04-11-2026. Ejemplo de alcance del EDR, sin exigir producto concreto ni asumir detección infalible.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-080"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 8. Puesto de usuario",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar microcaso original y clave A; distinguir protección del canal y estado del extremo."
+      ],
+      "references": [
+        {
+          "title": "Cisco Security Cloud Control: VPN types",
+          "url": "https://docs.manage.security.cisco.com/cdfmc/c_vpn-types.html",
+          "locator": "Supported VPN connection types: Remote Access VPNs y Site-to-site VPNs",
+          "version": "HTML comprobado el 04-11-2026. Distinción entre cliente remoto y pasarelas entre redes; restricciones de producto, clientes y protocolos enumerados no se generalizan.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "NCSC: Preventing Lateral Movement",
+          "url": "https://www.ncsc.gov.uk/guidance/preventing-lateral-movement",
+          "locator": "§3 Protect high privilege accounts; §4 Least privilege; §5 Lock down devices y §6 segmentación",
+          "version": "HTML comprobado el 04-11-2026. Controles sobre equipo e identidad independientes de proteger el canal; sin garantía de saneamiento por acceso VPN o cumplimiento normativo español.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "Microsoft Learn: Microsoft Defender for Endpoint",
+          "url": "https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint",
+          "locator": "Defender for Endpoint capabilities: detección/respuesta, reducción de superficie y gestión de vulnerabilidades",
+          "version": "Documentación HTML comprobada el 04-11-2026. Ejemplo de alcance del EDR, sin exigir producto concreto ni asumir detección infalible.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T12-020",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "08e4701e9d74a156d9378150bf6fcbeef2edb3d76773091d3b08bc225e05df53",
+      "content_sha256": "1127c99f49b7b1204261607e62ef4b1529c01cca1de3c53ceacc81d14a3fc0a1",
+      "before": {
+        "id": "AI-GSI-B4-T12-020",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T12",
+        "subtopic": "Puesto de usuario",
+        "exam": null,
+        "statement": "¿Qué combinación protege el puesto de usuario?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Desactivar firewall local"
+          },
+          {
+            "id": "B",
+            "text": "Parcheo, EDR, cifrado de disco y mínimo privilegio"
+          },
+          {
+            "id": "C",
+            "text": "Compartir credenciales"
+          },
+          {
+            "id": "D",
+            "text": "Solo acceso permanente como administrador"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Endpoint, identidad y red deben protegerse de forma coordinada.",
+          "incorrect": "Endpoint, identidad y red deben protegerse de forma coordinada."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 8. Puesto de usuario",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Hardening, parcheo, EDR/antimalware, cifrado de disco, firewall local, control de aplicaciones, mínimo privilegio, navegador seguro, bloqueo, MFA, protección de credenciales, MDM/UEM en móviles y copias de datos cuando corresponda. Una VPN no protege un endpoint ya comprometido.",
+          "evidence_sha256": "d5f3b3cb59b06286785300bd0ce2145cbfa9436382d3994d2de6233d88c2e214",
+          "record_sha256": "6c1c74117c92816c5cd65c88a8947259b02bc22d09bd111abb6fbfce21f5487a",
+          "review_id": "AI-GSI-B4-T12-020",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 8. Puesto de usuario",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T12-020",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T12",
+        "subtopic": "Puesto de usuario",
+        "exam": null,
+        "statement": "¿Qué combinación protege el puesto de usuario?",
+        "options": [
+          {
+            "id": "A",
+            "text": "VPN, cifrado de disco y uso diario de administrador"
+          },
+          {
+            "id": "B",
+            "text": "Parcheo, EDR, cifrado de disco y mínimo privilegio"
+          },
+          {
+            "id": "C",
+            "text": "MFA, copias de seguridad y aplazamiento de parches"
+          },
+          {
+            "id": "D",
+            "text": "Firewall perimetral, proxy y retirada del EDR local"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "El parcheo reduce exposición a fallos conocidos, el EDR aporta detección y respuesta, el cifrado de disco protege datos almacenados y el mínimo privilegio limita acciones e impacto. Son controles complementarios. Ninguno garantiza ausencia de compromiso, y proteger el perímetro o el inicio de sesión no sustituye mantener y supervisar el propio puesto.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "La VPN y el cifrado de disco son útiles, pero trabajar habitualmente como administrador amplía el impacto del malware y de errores.",
+            "C": "MFA y copias aportan protección y recuperación, pero no corrigen las vulnerabilidades que permanecen al aplazar parches.",
+            "D": "Los controles de red pueden no observar actividad local o fuera del perímetro; retirar el EDR elimina esa capacidad de detección y respuesta."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 8. Puesto de usuario",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Hardening, parcheo, EDR/antimalware, cifrado de disco, firewall local, control de aplicaciones, mínimo privilegio, navegador seguro, bloqueo, MFA, protección de credenciales, MDM/UEM en móviles y copias de datos cuando corresponda. Una VPN no protege un endpoint ya comprometido.",
+          "evidence_sha256": "d5f3b3cb59b06286785300bd0ce2145cbfa9436382d3994d2de6233d88c2e214",
+          "record_sha256": "6c1c74117c92816c5cd65c88a8947259b02bc22d09bd111abb6fbfce21f5487a",
+          "review_id": "AI-GSI-B4-T12-020",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "NCSC: Preventing Lateral Movement",
+              "url": "https://www.ncsc.gov.uk/guidance/preventing-lateral-movement",
+              "locator": "§3 Protect high privilege accounts; §4 Least privilege; §5 Lock down devices y §6 segmentación",
+              "version": "HTML comprobado el 04-11-2026. Controles sobre equipo e identidad independientes de proteger el canal; sin garantía de saneamiento por acceso VPN o cumplimiento normativo español.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "Microsoft Learn: Microsoft Defender for Endpoint",
+              "url": "https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint",
+              "locator": "Defender for Endpoint capabilities: detección/respuesta, reducción de superficie y gestión de vulnerabilidades",
+              "version": "Documentación HTML comprobada el 04-11-2026. Ejemplo de alcance del EDR, sin exigir producto concreto ni asumir detección infalible.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "Microsoft Learn: BitLocker overview",
+              "url": "https://learn.microsoft.com/en-us/windows/security/operating-system-security/data-protection/bitlocker/",
+              "locator": "Introducción: cifrado de volúmenes ante pérdida, robo o retirada; BitLocker and TPM",
+              "version": "HTML comprobado el 04-11-2026. Protección de datos almacenados, no saneamiento de malware en una sesión ya desbloqueada; no se trasladan requisitos de plataforma a todo cifrado de disco.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-080"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 8. Puesto de usuario",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar enunciado, alternativa correcta bien formulada y clave B; mejorar las tres combinaciones distractoras."
+      ],
+      "references": [
+        {
+          "title": "NCSC: Preventing Lateral Movement",
+          "url": "https://www.ncsc.gov.uk/guidance/preventing-lateral-movement",
+          "locator": "§3 Protect high privilege accounts; §4 Least privilege; §5 Lock down devices y §6 segmentación",
+          "version": "HTML comprobado el 04-11-2026. Controles sobre equipo e identidad independientes de proteger el canal; sin garantía de saneamiento por acceso VPN o cumplimiento normativo español.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "Microsoft Learn: Microsoft Defender for Endpoint",
+          "url": "https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint",
+          "locator": "Defender for Endpoint capabilities: detección/respuesta, reducción de superficie y gestión de vulnerabilidades",
+          "version": "Documentación HTML comprobada el 04-11-2026. Ejemplo de alcance del EDR, sin exigir producto concreto ni asumir detección infalible.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "Microsoft Learn: BitLocker overview",
+          "url": "https://learn.microsoft.com/en-us/windows/security/operating-system-security/data-protection/bitlocker/",
+          "locator": "Introducción: cifrado de volúmenes ante pérdida, robo o retirada; BitLocker and TPM",
+          "version": "HTML comprobado el 04-11-2026. Protección de datos almacenados, no saneamiento de malware en una sesión ya desbloqueada; no se trasladan requisitos de plataforma a todo cifrado de disco.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T13-001",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "1f8eec39b258cf0a28026c8ca29fb4006b4957dbc55688332abc72c07422553e",
+      "content_sha256": "30b3bd426d75a55c0bced9134dc00a7e2b4acaca0c81d5813a3f39f7a50e2bdb",
+      "before": {
+        "id": "AI-GSI-B4-T13-001",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T13",
+        "subtopic": "Internet como red de redes",
+        "exam": null,
+        "statement": "¿Qué define un sistema autónomo en Internet?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Un navegador sin conexión"
+          },
+          {
+            "id": "B",
+            "text": "Una cuenta de usuario"
+          },
+          {
+            "id": "C",
+            "text": "Un único servidor web obligatoriamente"
+          },
+          {
+            "id": "D",
+            "text": "Una red o conjunto con política de routing común e identificada por ASN"
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Los AS se interconectan y aplican políticas de encaminamiento.",
+          "incorrect": "Los AS se interconectan y aplican políticas de encaminamiento."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 1. Internet como red de redes",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Internet interconecta sistemas autónomos (AS) mediante IP. Un AS aplica política de routing común y se identifica con ASN. Operadores ofrecen tránsito; redes pueden hacer peering en IXP. BGP distribuye prefijos entre AS. La resiliencia depende de diversidad de rutas, DNS, proveedores y servicios, no de un único “backbone central”.",
+          "evidence_sha256": "7084b269b30f60ca5c1346761ba3a477d5ba62dbf088ee4c4eadc166d02ec4b6",
+          "record_sha256": "cce44af015744eaa8e9c05c667bbb4a6990f8b42cae1738bb1713b1343ca8e5c",
+          "review_id": "AI-GSI-B4-T13-001",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 1. Internet como red de redes",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T13-001",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T13",
+        "subtopic": "Internet como red de redes",
+        "exam": null,
+        "statement": "¿Qué define un sistema autónomo en Internet?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Un conjunto de hosts que comparte prefijo dentro de una VLAN."
+          },
+          {
+            "id": "B",
+            "text": "El conjunto de dominios atendidos por un servidor DNS común."
+          },
+          {
+            "id": "C",
+            "text": "Una sesión BGP que intercambia rutas entre dos encaminadores."
+          },
+          {
+            "id": "D",
+            "text": "Un conjunto de redes con política de routing definida y ASN."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Un sistema autónomo es una unidad de política de encaminamiento, formada por uno o más prefijos IP bajo una política definida, e identificada mediante un ASN. No se deduce de una subred, un dominio DNS o una sesión BGP individual. Un operador puede gestionar varios AS y un AS puede integrar múltiples redes.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Compartir un prefijo y una VLAN describe un ámbito local; no define la unidad de política de encaminamiento entre AS.",
+            "B": "La administración de nombres DNS es independiente de la agrupación de redes bajo una política de routing.",
+            "C": "Una sesión BGP es una relación de intercambio entre pares; un AS puede tener muchas sesiones y rutas."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 1. Internet como red de redes",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Internet interconecta sistemas autónomos (AS) mediante IP. Un AS aplica política de routing común y se identifica con ASN. Operadores ofrecen tránsito; redes pueden hacer peering en IXP. BGP distribuye prefijos entre AS. La resiliencia depende de diversidad de rutas, DNS, proveedores y servicios, no de un único “backbone central”.",
+          "evidence_sha256": "7084b269b30f60ca5c1346761ba3a477d5ba62dbf088ee4c4eadc166d02ec4b6",
+          "record_sha256": "cce44af015744eaa8e9c05c667bbb4a6990f8b42cae1738bb1713b1343ca8e5c",
+          "review_id": "AI-GSI-B4-T13-001",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "IETF: RFC1930, Guidelines for creation, selection, and registration of an Autonomous System",
+              "url": "https://www.rfc-editor.org/rfc/rfc1930.html",
+              "locator": "§3 Definitions: conjunto de prefijos con política de encaminamiento definida y ASN; §4 errores comunes",
+              "version": "BCP6, marzo de 1996, apartados HTML comprobados el 04-11-2026. Solo definición y unidad de política; se excluyen predicciones IDRP, limitación histórica a ASN16 bits y recetas antiguas de asignación.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-080"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 1. Internet como red de redes",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar AS/política/ASN y clave D; contrastar prefijo local, dominio de nombres y sesión."
+      ],
+      "references": [
+        {
+          "title": "IETF: RFC1930, Guidelines for creation, selection, and registration of an Autonomous System",
+          "url": "https://www.rfc-editor.org/rfc/rfc1930.html",
+          "locator": "§3 Definitions: conjunto de prefijos con política de encaminamiento definida y ASN; §4 errores comunes",
+          "version": "BCP6, marzo de 1996, apartados HTML comprobados el 04-11-2026. Solo definición y unidad de política; se excluyen predicciones IDRP, limitación histórica a ASN16 bits y recetas antiguas de asignación.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T13-002",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "142f4db8d9d1ca91df378fd20f7a186d96874c1d7f817f37df2a3465c3de3977",
+      "content_sha256": "51a84600fec86ddebbd7f2d4372bf904d0eadb72ade79b07f817b26d56805b59",
+      "before": {
+        "id": "AI-GSI-B4-T13-002",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T13",
+        "subtopic": "Internet como red de redes",
+        "exam": null,
+        "statement": "¿Qué papel tiene un IXP?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Sustituir todos los DNS"
+          },
+          {
+            "id": "B",
+            "text": "Emitir documentos de identidad"
+          },
+          {
+            "id": "C",
+            "text": "Facilitar interconexión o peering entre redes"
+          },
+          {
+            "id": "D",
+            "text": "Almacenar todas las páginas de Internet"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Los puntos de intercambio facilitan acuerdos de interconexión.",
+          "incorrect": "Los puntos de intercambio facilitan acuerdos de interconexión."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 1. Internet como red de redes",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Internet interconecta sistemas autónomos (AS) mediante IP. Un AS aplica política de routing común y se identifica con ASN. Operadores ofrecen tránsito; redes pueden hacer peering en IXP. BGP distribuye prefijos entre AS. La resiliencia depende de diversidad de rutas, DNS, proveedores y servicios, no de un único “backbone central”.",
+          "evidence_sha256": "7084b269b30f60ca5c1346761ba3a477d5ba62dbf088ee4c4eadc166d02ec4b6",
+          "record_sha256": "0b4a22a2515da98e99597968e0fe65cf0e999c064692ff158aefb236af23a137",
+          "review_id": "AI-GSI-B4-T13-002",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 1. Internet como red de redes",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T13-002",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T13",
+        "subtopic": "Internet como red de redes",
+        "exam": null,
+        "statement": "¿Qué papel tiene un IXP?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Prestar tránsito completo en cada relación de peering establecida."
+          },
+          {
+            "id": "B",
+            "text": "Elegir de forma central las rutas de todos los miembros conectados."
+          },
+          {
+            "id": "C",
+            "text": "Ofrecer infraestructura para intercambiar tráfico entre redes."
+          },
+          {
+            "id": "D",
+            "text": "Reemplazar los acuerdos entre redes por una única tabla de rutas."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Un IXP aporta infraestructura de interconexión para que redes participantes intercambien tráfico, por ejemplo mediante peering. La conectividad física no garantiza acuerdos con todos los miembros ni tránsito completo hacia Internet. Las redes conservan sus políticas; los servicios de ayuda al intercambio de rutas no convierten al IXP en un controlador universal.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Peering y tránsito son relaciones diferentes: conectarse a un punto de intercambio no concede alcance completo por cada red vecina.",
+            "B": "Cada red conserva decisiones y políticas de routing; la infraestructura compartida no impone centralmente sus rutas.",
+            "D": "El medio de intercambio no sustituye acuerdos y políticas por una tabla universal aplicable a todos los participantes."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 1. Internet como red de redes",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Internet interconecta sistemas autónomos (AS) mediante IP. Un AS aplica política de routing común y se identifica con ASN. Operadores ofrecen tránsito; redes pueden hacer peering en IXP. BGP distribuye prefijos entre AS. La resiliencia depende de diversidad de rutas, DNS, proveedores y servicios, no de un único “backbone central”.",
+          "evidence_sha256": "7084b269b30f60ca5c1346761ba3a477d5ba62dbf088ee4c4eadc166d02ec4b6",
+          "record_sha256": "0b4a22a2515da98e99597968e0fe65cf0e999c064692ff158aefb236af23a137",
+          "review_id": "AI-GSI-B4-T13-002",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "AMS-IX: What is the Internet and how peering relates to that?",
+              "url": "https://www.ams-ix.net/ams/stories/what-is-the-internet-and-how-peering-relates-to-that",
+              "locator": "Peering y formas de peering: intercambio voluntario entre redes e internet exchanges",
+              "version": "Artículo del operador, HTML comprobado el 04-11-2026. Infraestructura compartida no implica tránsito universal, gratuidad universal o control central de todas las rutas; cifras comerciales no usadas.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-080"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 1. Internet como red de redes",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar IXP/interconexión y clave C; diferenciar infraestructura, peering, tránsito y política."
+      ],
+      "references": [
+        {
+          "title": "AMS-IX: What is the Internet and how peering relates to that?",
+          "url": "https://www.ams-ix.net/ams/stories/what-is-the-internet-and-how-peering-relates-to-that",
+          "locator": "Peering y formas de peering: intercambio voluntario entre redes e internet exchanges",
+          "version": "Artículo del operador, HTML comprobado el 04-11-2026. Infraestructura compartida no implica tránsito universal, gratuidad universal o control central de todas las rutas; cifras comerciales no usadas.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T13-003",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "de311dbb02bf05f5bc925a58b2aa32ec1c53e1683e8a6443e39e0d056a46276b",
+      "content_sha256": "a54ff5e22f2489595ea1cb03112ba8f6b56fc66a69d862e5fe1175940908bdf0",
+      "before": {
+        "id": "AI-GSI-B4-T13-003",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T13",
+        "subtopic": "Internet como red de redes",
+        "exam": null,
+        "statement": "¿Qué afirmación describe la resiliencia de Internet?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Depende de un único backbone central universal"
+          },
+          {
+            "id": "B",
+            "text": "Elimina toda dependencia de proveedores"
+          },
+          {
+            "id": "C",
+            "text": "La garantiza cualquier conexión individual"
+          },
+          {
+            "id": "D",
+            "text": "Depende de diversidad de rutas y servicios distribuidos"
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Internet es una red de redes, con riesgos y dependencias distribuidos.",
+          "incorrect": "Internet es una red de redes, con riesgos y dependencias distribuidos."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 1. Internet como red de redes",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Internet interconecta sistemas autónomos (AS) mediante IP. Un AS aplica política de routing común y se identifica con ASN. Operadores ofrecen tránsito; redes pueden hacer peering en IXP. BGP distribuye prefijos entre AS. La resiliencia depende de diversidad de rutas, DNS, proveedores y servicios, no de un único “backbone central”.",
+          "evidence_sha256": "7084b269b30f60ca5c1346761ba3a477d5ba62dbf088ee4c4eadc166d02ec4b6",
+          "record_sha256": "957c974aa1906c1ccf91a3f67f86befa917ba1097686c8516f3fac336e704631",
+          "review_id": "AI-GSI-B4-T13-003",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 1. Internet como red de redes",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T13-003",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T13",
+        "subtopic": "Internet como red de redes",
+        "exam": null,
+        "statement": "Un portal dispone de dos accesos a Internet, pero depende de un único servicio DNS. ¿Qué enfoque mejora su resiliencia?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Aumentar la velocidad contratada de los dos accesos existentes."
+          },
+          {
+            "id": "B",
+            "text": "Usar dos contratos manteniendo todas las dependencias actuales."
+          },
+          {
+            "id": "C",
+            "text": "Confiar en que BGP resuelva también la caída del servicio DNS."
+          },
+          {
+            "id": "D",
+            "text": "Diversificar rutas y dependencias críticas para prestar el servicio."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "La continuidad depende del conjunto de recursos necesarios, no solo de tener varios enlaces. Si la resolución DNS conserva un punto de fallo, puede impedir llegar al servicio aunque sus rutas sigan disponibles. Se deben identificar dependencias y fallos comunes, diversificar lo necesario y probar recuperación; redundancia nominal no garantiza resiliencia.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Más capacidad no elimina la dependencia del DNS ni crea alternativas ante su indisponibilidad.",
+            "B": "Dos contratos no prueban independencia técnica; conservar el mismo punto de fallo mantiene la exposición descrita.",
+            "C": "BGP distribuye alcance de rutas; no sustituye el servicio de resolución de nombres que ha fallado."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 1. Internet como red de redes",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Internet interconecta sistemas autónomos (AS) mediante IP. Un AS aplica política de routing común y se identifica con ASN. Operadores ofrecen tránsito; redes pueden hacer peering en IXP. BGP distribuye prefijos entre AS. La resiliencia depende de diversidad de rutas, DNS, proveedores y servicios, no de un único “backbone central”.",
+          "evidence_sha256": "7084b269b30f60ca5c1346761ba3a477d5ba62dbf088ee4c4eadc166d02ec4b6",
+          "record_sha256": "957c974aa1906c1ccf91a3f67f86befa917ba1097686c8516f3fac336e704631",
+          "review_id": "AI-GSI-B4-T13-003",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "NCSC: CAF, Principle B5 Resilient networks and systems",
+              "url": "https://www.ncsc.gov.uk/collection/cyber-assessment-framework/caf-objective-b/principle-b5-resilient-networks-and-systems",
+              "locator": "B5.b Design for resilience: dependencias, recursos y limitaciones geográficas; caminos físicos y proveedores alternativos",
+              "version": "Guía HTML comprobada el 04-11-2026. Aplicación conceptual a dependencias de servicio; no obligación normativa AGE ni garantía de disponibilidad por contratar dos enlaces.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-080"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 1. Internet como red de redes",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar diversidad de rutas/servicios y clave D; caso con dos accesos y un único servicio DNS."
+      ],
+      "references": [
+        {
+          "title": "NCSC: CAF, Principle B5 Resilient networks and systems",
+          "url": "https://www.ncsc.gov.uk/collection/cyber-assessment-framework/caf-objective-b/principle-b5-resilient-networks-and-systems",
+          "locator": "B5.b Design for resilience: dependencias, recursos y limitaciones geográficas; caminos físicos y proveedores alternativos",
+          "version": "Guía HTML comprobada el 04-11-2026. Aplicación conceptual a dependencias de servicio; no obligación normativa AGE ni garantía de disponibilidad por contratar dos enlaces.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T13-004",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "e45cb68f23c60884b93841d81835d15c78e7c935e1b15f9fe5027a94a85f1766",
+      "content_sha256": "743ae28ead6f78b1a3db761d83cd26fac0ca17fa5fc85b0aac1ae14983ac343a",
+      "before": {
+        "id": "AI-GSI-B4-T13-004",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T13",
+        "subtopic": "Direccionamiento, NAT e IPv6",
+        "exam": null,
+        "statement": "¿Qué significa dual stack en transición IP?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Dos contraseñas para un usuario"
+          },
+          {
+            "id": "B",
+            "text": "Coexistencia de IPv4 e IPv6"
+          },
+          {
+            "id": "C",
+            "text": "Dos discos en espejo"
+          },
+          {
+            "id": "D",
+            "text": "Un único protocolo sin IPv4"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "La coexistencia permite operar con ambas familias durante transición.",
+          "incorrect": "La coexistencia permite operar con ambas familias durante transición."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 2. Direccionamiento, NAT e IPv6",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "IPv4 usa espacio limitado y NAT se ha extendido para conservar direcciones; IPv6 aporta 128 bits y autoconfiguración/ND, entre otras capacidades. Dual stack permite transición. NAT no es un control de seguridad equivalente a firewall y puede complicar extremo-a-extremo.",
+          "evidence_sha256": "9cddf031732f5ca7367eb0c66c1313f33e451c70ce6a9340115dd5a103fe6597",
+          "record_sha256": "9748e37136ab68926878ea9043f306a7a47c44a977816e730fe2951a9d0e6775",
+          "review_id": "AI-GSI-B4-T13-004",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 2. Direccionamiento, NAT e IPv6",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T13-004",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T13",
+        "subtopic": "Direccionamiento, NAT e IPv6",
+        "exam": null,
+        "statement": "¿Qué significa dual stack en transición IP?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Encapsular paquetes IPv6 dentro de un transporte IPv4."
+          },
+          {
+            "id": "B",
+            "text": "Mantener implementaciones IPv4 e IPv6 en el mismo nodo."
+          },
+          {
+            "id": "C",
+            "text": "Traducir entre direcciones y cabeceras IPv4 e IPv6."
+          },
+          {
+            "id": "D",
+            "text": "Usar dos prefijos IPv6 sin disponer de pila IPv4."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Dual stack permite al nodo enviar y recibir paquetes de IPv4 e IPv6 mediante las dos implementaciones. La comunicación concreta depende de direcciones, DNS, rutas y disponibilidad de cada familia. No implica por sí mismo traducir entre ellas o encapsular una dentro de otra; esos son mecanismos de transición distintos.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Transportar paquetes de una familia dentro de otra es un túnel; no define tener operativas ambas pilas en el nodo.",
+            "C": "La traducción adapta entre familias; dual stack implementa ambas sin requerir esa transformación para cada comunicación.",
+            "D": "Disponer de varios prefijos de la misma familia sigue siendo solo IPv6, no coexistencia de las dos pilas."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 2. Direccionamiento, NAT e IPv6",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "IPv4 usa espacio limitado y NAT se ha extendido para conservar direcciones; IPv6 aporta 128 bits y autoconfiguración/ND, entre otras capacidades. Dual stack permite transición. NAT no es un control de seguridad equivalente a firewall y puede complicar extremo-a-extremo.",
+          "evidence_sha256": "9cddf031732f5ca7367eb0c66c1313f33e451c70ce6a9340115dd5a103fe6597",
+          "record_sha256": "9748e37136ab68926878ea9043f306a7a47c44a977816e730fe2951a9d0e6775",
+          "review_id": "AI-GSI-B4-T13-004",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "IETF: RFC4213, Basic Transition Mechanisms for IPv6 Hosts and Routers",
+              "url": "https://www.rfc-editor.org/rfc/rfc4213.html",
+              "locator": "§2 Dual IP Layer Operation: implementaciones IPv4 e IPv6; §2.1/2.2 direccionamiento y DNS; distinción con túneles §3",
+              "version": "Octubre de 2005, HTML comprobado el 04-11-2026. Coexistencia no equivale a traducción, encapsulado o conectividad garantizada con cualquier familia.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-080"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 2. Direccionamiento, NAT e IPv6",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar coexistencia IPv4/IPv6 y clave B; distractores de mecanismos de transición próximos."
+      ],
+      "references": [
+        {
+          "title": "IETF: RFC4213, Basic Transition Mechanisms for IPv6 Hosts and Routers",
+          "url": "https://www.rfc-editor.org/rfc/rfc4213.html",
+          "locator": "§2 Dual IP Layer Operation: implementaciones IPv4 e IPv6; §2.1/2.2 direccionamiento y DNS; distinción con túneles §3",
+          "version": "Octubre de 2005, HTML comprobado el 04-11-2026. Coexistencia no equivale a traducción, encapsulado o conectividad garantizada con cualquier familia.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T13-005",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "36856df6bdbd7f8b86885b931276bc378a313ed7c3fc14e46016ec6db3ac9612",
+      "content_sha256": "c4d604e5f8e24ba9a2941aa0dff270f01a17182db7a54859503a32aa57a61082",
+      "before": {
+        "id": "AI-GSI-B4-T13-005",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T13",
+        "subtopic": "Direccionamiento, NAT e IPv6",
+        "exam": null,
+        "statement": "¿Qué limitación puede introducir NAT?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Sustituir las políticas de filtrado de un firewall"
+          },
+          {
+            "id": "B",
+            "text": "Complicar comunicación extremo a extremo"
+          },
+          {
+            "id": "C",
+            "text": "Aportar por sí solo autenticación criptográfica de los extremos"
+          },
+          {
+            "id": "D",
+            "text": "Mantener todas las direcciones de los extremos sin traducción"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Traducir direcciones conserva espacio, pero cambia conectividad y no es seguridad completa.",
+          "incorrect": "Traducir direcciones conserva espacio, pero cambia conectividad y no es seguridad completa."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 2. Direccionamiento, NAT e IPv6",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "IPv4 usa espacio limitado y NAT se ha extendido para conservar direcciones; IPv6 aporta 128 bits y autoconfiguración/ND, entre otras capacidades. Dual stack permite transición. NAT no es un control de seguridad equivalente a firewall y puede complicar extremo-a-extremo.",
+          "evidence_sha256": "9cddf031732f5ca7367eb0c66c1313f33e451c70ce6a9340115dd5a103fe6597",
+          "record_sha256": "6b324789291881d68c7d6fd977b57b54902213b5c0213e08cb7e9ead1258732a",
+          "review_id": "AI-GSI-B4-T13-005",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 2. Direccionamiento, NAT e IPv6",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T13-005",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T13",
+        "subtopic": "Direccionamiento, NAT e IPv6",
+        "exam": null,
+        "statement": "¿Qué limitación puede introducir NAT?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Autenticar criptográficamente a los extremos."
+          },
+          {
+            "id": "B",
+            "text": "Complicar comunicación extremo a extremo"
+          },
+          {
+            "id": "C",
+            "text": "Reemplazar políticas de filtrado de tráfico."
+          },
+          {
+            "id": "D",
+            "text": "Conservar el direccionamiento sin traducción."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "NAT modifica direccionamiento y, en NAPT, puertos. Esto puede dificultar iniciar comunicaciones hacia el interior, incorporar direcciones en aplicaciones o mantener transparencia entre extremos, y requerir mecanismos adicionales. La traducción no es autenticación criptográfica ni una política de seguridad completa; sus efectos dependen del tipo de NAT y del tráfico.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Cambiar una dirección no demuestra criptográficamente quién es el interlocutor ni protege por sí mismo el contenido.",
+            "C": "La traducción y el control de acceso son funciones distintas; siguen siendo necesarias reglas acordes con los servicios permitidos.",
+            "D": "La función de NAT es precisamente traducir campos de direccionamiento; conservarlos todos intactos no describe ese mecanismo."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 2. Direccionamiento, NAT e IPv6",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "IPv4 usa espacio limitado y NAT se ha extendido para conservar direcciones; IPv6 aporta 128 bits y autoconfiguración/ND, entre otras capacidades. Dual stack permite transición. NAT no es un control de seguridad equivalente a firewall y puede complicar extremo-a-extremo.",
+          "evidence_sha256": "9cddf031732f5ca7367eb0c66c1313f33e451c70ce6a9340115dd5a103fe6597",
+          "record_sha256": "6b324789291881d68c7d6fd977b57b54902213b5c0213e08cb7e9ead1258732a",
+          "review_id": "AI-GSI-B4-T13-005",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "IETF: RFC4864, Local Network Protection for IPv6",
+              "url": "https://www.rfc-editor.org/rfc/rfc4864.html",
+              "locator": "§1 Introduction; §2.2 Simple Gateway: restricciones en aplicaciones, pares y servidores internos; §4.2 transparencia",
+              "version": "Informational, mayo de 2007, HTML comprobado el 04-11-2026. Separar traducción, estado y política. No se usa la afirmación histórica de IPsec obligatorio como requisito actual universal ni garantías de trazabilidad.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "IETF: RFC3022, Traditional NAT",
+              "url": "https://www.rfc-editor.org/rfc/rfc3022.html",
+              "locator": "§1 introducción y alcance Basic NAT/NAPT; §6.0/6.1 limitaciones, privacidad y diagnóstico",
+              "version": "Informational, enero de 2001, HTML comprobado el 04-11-2026. Una consulta devolvió UnexpectedStatusCode y otra lectura posterior mostró cuerpo §6. Se usan conceptos, no limitaciones históricas de implementación como universales actuales.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-080"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 2. Direccionamiento, NAT e IPv6",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar enunciado y correcta precisa, clave B; contextualizar NAT/NAPT sin garantías de seguridad."
+      ],
+      "references": [
+        {
+          "title": "IETF: RFC4864, Local Network Protection for IPv6",
+          "url": "https://www.rfc-editor.org/rfc/rfc4864.html",
+          "locator": "§1 Introduction; §2.2 Simple Gateway: restricciones en aplicaciones, pares y servidores internos; §4.2 transparencia",
+          "version": "Informational, mayo de 2007, HTML comprobado el 04-11-2026. Separar traducción, estado y política. No se usa la afirmación histórica de IPsec obligatorio como requisito actual universal ni garantías de trazabilidad.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "IETF: RFC3022, Traditional NAT",
+          "url": "https://www.rfc-editor.org/rfc/rfc3022.html",
+          "locator": "§1 introducción y alcance Basic NAT/NAPT; §6.0/6.1 limitaciones, privacidad y diagnóstico",
+          "version": "Informational, enero de 2001, HTML comprobado el 04-11-2026. Una consulta devolvió UnexpectedStatusCode y otra lectura posterior mostró cuerpo §6. Se usan conceptos, no limitaciones históricas de implementación como universales actuales.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T13-006",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "ee197ed31b68061953adcc0e0435a274ed8f25905d330eb33be5d7704e26fa01",
+      "content_sha256": "f5e21c608da9c1f782a0584ec4a4bc1c9d3bb6d5222afef4b01990777b2a674b",
+      "before": {
+        "id": "AI-GSI-B4-T13-006",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T13",
+        "subtopic": "DNS, CDN y servicios",
+        "exam": null,
+        "statement": "¿Cómo se organiza DNS?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Como una tabla única universal sin réplicas"
+          },
+          {
+            "id": "B",
+            "text": "Solo dentro de un navegador"
+          },
+          {
+            "id": "C",
+            "text": "Mediante rutas BGP como registros de nombres"
+          },
+          {
+            "id": "D",
+            "text": "Jerárquicamente, con delegaciones y caché"
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Resolvers y servidores autoritativos cooperan con información cacheada.",
+          "incorrect": "Resolvers y servidores autoritativos cooperan con información cacheada."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 3. DNS, CDN y servicios",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "DNS es jerárquico/distribuido: resolvers consultan servidores autoritativos siguiendo delegaciones y caché. CDN acerca contenido/servicios a usuarios y reduce latencia/carga del origen. Servicios clásicos: HTTP(S), SMTP/IMAP, DNS, SSH, NTP, transferencia y APIs.",
+          "evidence_sha256": "2c7b9eefb8a69a8477fd33391dec4d2bf6820d010fe1b24fa3b33a010620ae08",
+          "record_sha256": "d02c76ee81dd414b7f0a6bfee00b4b42c667f1d2ebd9e95bf9f866929a44f14e",
+          "review_id": "AI-GSI-B4-T13-006",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 3. DNS, CDN y servicios",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T13-006",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T13",
+        "subtopic": "DNS, CDN y servicios",
+        "exam": null,
+        "statement": "¿Cómo se organiza DNS?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Como una tabla completa replicada en cada servidor de nombres."
+          },
+          {
+            "id": "B",
+            "text": "Como una consulta que debe recorrer siempre todos los niveles."
+          },
+          {
+            "id": "C",
+            "text": "Como una relación plana entre direcciones y nombres de dominio."
+          },
+          {
+            "id": "D",
+            "text": "Como un espacio jerárquico con zonas, delegaciones y caché."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "DNS distribuye un espacio jerárquico de nombres en zonas con autoridad delegada. Los resolvers pueden reutilizar información almacenada en caché conforme a su vigencia, por lo que no toda consulta recorre desde la raíz. La caché reduce consultas, pero no transforma al resolver en autoridad del espacio completo ni garantiza actualización instantánea.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Cada servidor mantiene los datos y funciones que le corresponden; no necesita replicar íntegramente toda la base DNS.",
+            "B": "La información local o cacheada válida puede resolver una consulta sin repetir un recorrido completo por la jerarquía.",
+            "C": "La jerarquía, las zonas y las delegaciones son esenciales; una relación plana de nombres y direcciones no describe su organización."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 3. DNS, CDN y servicios",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "DNS es jerárquico/distribuido: resolvers consultan servidores autoritativos siguiendo delegaciones y caché. CDN acerca contenido/servicios a usuarios y reduce latencia/carga del origen. Servicios clásicos: HTTP(S), SMTP/IMAP, DNS, SSH, NTP, transferencia y APIs.",
+          "evidence_sha256": "2c7b9eefb8a69a8477fd33391dec4d2bf6820d010fe1b24fa3b33a010620ae08",
+          "record_sha256": "d02c76ee81dd414b7f0a6bfee00b4b42c667f1d2ebd9e95bf9f866929a44f14e",
+          "review_id": "AI-GSI-B4-T13-006",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "IETF: RFC1034, Domain Names, Concepts and Facilities",
+              "url": "https://www.rfc-editor.org/rfc/rfc1034.html",
+              "locator": "§3.6 Resource Records/TTL; §4.2 división en zonas y delegación; §5.3.1/5.3.3 resolvers y consulta de información local",
+              "version": "Noviembre de 1987, HTML comprobado el 04-11-2026. Arquitectura y caché; no se generalizan reglas antiguas de caché negativa, reemplazadas por especificaciones posteriores.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-080"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 3. DNS, CDN y servicios",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar organización jerárquica y clave D; distinguir autoridad, caché y recorrido de resolución."
+      ],
+      "references": [
+        {
+          "title": "IETF: RFC1034, Domain Names, Concepts and Facilities",
+          "url": "https://www.rfc-editor.org/rfc/rfc1034.html",
+          "locator": "§3.6 Resource Records/TTL; §4.2 división en zonas y delegación; §5.3.1/5.3.3 resolvers y consulta de información local",
+          "version": "Noviembre de 1987, HTML comprobado el 04-11-2026. Arquitectura y caché; no se generalizan reglas antiguas de caché negativa, reemplazadas por especificaciones posteriores.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T13-007",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "06473d69b549b5c22a3dcb4772e6958415805a8662f6ff348bdb18f5c67b98f5",
+      "content_sha256": "37922f61b00949301040055344f130f42851672af3873518ec6e2f2bdc47f6d0",
+      "before": {
+        "id": "AI-GSI-B4-T13-007",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T13",
+        "subtopic": "DNS, CDN y servicios",
+        "exam": null,
+        "statement": "¿Qué beneficio ofrece una CDN?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Garantizar latencia nula"
+          },
+          {
+            "id": "B",
+            "text": "Sustituir toda base de datos"
+          },
+          {
+            "id": "C",
+            "text": "Acercar contenido y reducir carga del origen"
+          },
+          {
+            "id": "D",
+            "text": "Eliminar toda autenticación del origen"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "La distribución aproxima recursos sin resolver por sí sola toda la arquitectura.",
+          "incorrect": "La distribución aproxima recursos sin resolver por sí sola toda la arquitectura."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 3. DNS, CDN y servicios",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "DNS es jerárquico/distribuido: resolvers consultan servidores autoritativos siguiendo delegaciones y caché. CDN acerca contenido/servicios a usuarios y reduce latencia/carga del origen. Servicios clásicos: HTTP(S), SMTP/IMAP, DNS, SSH, NTP, transferencia y APIs.",
+          "evidence_sha256": "2c7b9eefb8a69a8477fd33391dec4d2bf6820d010fe1b24fa3b33a010620ae08",
+          "record_sha256": "fecfc653716d104cdd7a52c9dfffc1286ca7e78b96425422ee72bf1640eadee6",
+          "review_id": "AI-GSI-B4-T13-007",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 3. DNS, CDN y servicios",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T13-007",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T13",
+        "subtopic": "DNS, CDN y servicios",
+        "exam": null,
+        "statement": "Un portal publica imágenes y hojas de estilo cacheables y sufre un pico de lecturas. ¿Qué beneficio puede aportar una CDN?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Procesar las consultas de base de datos en cada caché de la red."
+          },
+          {
+            "id": "B",
+            "text": "Enviar cada lectura estática al origen para mantener todas las copias."
+          },
+          {
+            "id": "C",
+            "text": "Servir copias próximas y reducir peticiones al servidor de origen."
+          },
+          {
+            "id": "D",
+            "text": "Repartir sesiones del origen sin almacenar contenido en los bordes."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Una CDN puede mantener copias de recursos cacheables en ubicaciones próximas a usuarios, reduciendo tráfico y trabajo del origen cuando hay aciertos de caché. Hay que gestionar vigencia, invalidación y acceso al contenido. Una ausencia o caducidad puede requerir consultar al origen; la distribución no equivale a replicar toda lógica o datos privados.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Una caché de distribución no ejecuta por ello la lógica de consultas y transacciones de la base de datos de la aplicación.",
+            "B": "Si cada lectura necesita volver al origen se pierde el ahorro de atender recursos desde una copia válida próxima.",
+            "D": "Balancear sesiones entre servidores es otra función; no describe el beneficio de almacenar y servir copias distribuidas."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 3. DNS, CDN y servicios",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "DNS es jerárquico/distribuido: resolvers consultan servidores autoritativos siguiendo delegaciones y caché. CDN acerca contenido/servicios a usuarios y reduce latencia/carga del origen. Servicios clásicos: HTTP(S), SMTP/IMAP, DNS, SSH, NTP, transferencia y APIs.",
+          "evidence_sha256": "2c7b9eefb8a69a8477fd33391dec4d2bf6820d010fe1b24fa3b33a010620ae08",
+          "record_sha256": "fecfc653716d104cdd7a52c9dfffc1286ca7e78b96425422ee72bf1640eadee6",
+          "review_id": "AI-GSI-B4-T13-007",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Cloudflare: Cache documentation",
+              "url": "https://developers.cloudflare.com/cache/",
+              "locator": "Overview: copias de contenido en centros distribuidos, proximidad al usuario y reducción de carga del origen",
+              "version": "Actualización 16-04-2026, HTML comprobado el 04-11-2026. Ejemplo del proveedor, sin promesas de latencia nula, caché de todo contenido o recomendación de contratación.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-080"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 3. DNS, CDN y servicios",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar proximidad y descarga del origen, clave C; caso de recursos públicos estáticos ante pico de lecturas."
+      ],
+      "references": [
+        {
+          "title": "Cloudflare: Cache documentation",
+          "url": "https://developers.cloudflare.com/cache/",
+          "locator": "Overview: copias de contenido en centros distribuidos, proximidad al usuario y reducción de carga del origen",
+          "version": "Actualización 16-04-2026, HTML comprobado el 04-11-2026. Ejemplo del proveedor, sin promesas de latencia nula, caché de todo contenido o recomendación de contratación.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T13-009",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "84d226c7e8da05942fec3ebfb5bf341281bd275c78a0ba7e9ca5c2fd212ee737",
+      "content_sha256": "6641a4a5568e6cb99f94db0fd337ffb505b221a626027c5a1bc4d925a9138851",
+      "before": {
+        "id": "AI-GSI-B4-T13-009",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T13",
+        "subtopic": "HTTP/2, HTTP/3 y QUIC",
+        "exam": null,
+        "statement": "¿Sobre qué transporte multiplexa flujos HTTP/2 según el tema?",
+        "options": [
+          {
+            "id": "A",
+            "text": "ICMP"
+          },
+          {
+            "id": "B",
+            "text": "TCP"
+          },
+          {
+            "id": "C",
+            "text": "ARP"
+          },
+          {
+            "id": "D",
+            "text": "UDP sin QUIC"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "HTTP/2 utiliza framing binario y multiplexación sobre TCP.",
+          "incorrect": "HTTP/2 utiliza framing binario y multiplexación sobre TCP."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 4. HTTP/2, HTTP/3 y QUIC",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "HTTP/2 multiplexa flujos sobre una conexión TCP con framing binario. HTTP/3 (RFC 9114) transporta semántica HTTP sobre QUIC. QUIC v1 (RFC 9000) usa UDP como sustrato, integra seguridad mediante TLS y ofrece streams, control de flujo y establecimiento de baja latencia. HTTP/3 reduce bloqueo entre streams causado por pérdidas a nivel TCP, aunque no elimina congestión ni pérdida física.",
+          "evidence_sha256": "d3f8ef88bc79c166338ecf027ea0dabb8becbe7f11d6817fd8c111cc7c64610c",
+          "record_sha256": "718c8eb26ece11ed0491de790c9d527596746132f05a55c036057674bbcca0bb",
+          "review_id": "AI-GSI-B4-T13-009",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 4. HTTP/2, HTTP/3 y QUIC",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T13-009",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T13",
+        "subtopic": "HTTP/2, HTTP/3 y QUIC",
+        "exam": null,
+        "statement": "¿Sobre qué transporte multiplexa flujos HTTP/2?",
+        "options": [
+          {
+            "id": "A",
+            "text": "UDP"
+          },
+          {
+            "id": "B",
+            "text": "TCP"
+          },
+          {
+            "id": "C",
+            "text": "SCTP"
+          },
+          {
+            "id": "D",
+            "text": "DCCP"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "HTTP/2 multiplexa intercambios HTTP mediante tramas y flujos sobre una conexión TCP. La multiplexación de aplicación no elimina que TCP entregue un flujo de bytes ordenado: una pérdida puede retrasar datos de varios flujos HTTP. No debe confundirse con HTTP/3 sobre QUIC, cuyo sustrato es UDP.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "UDP es el sustrato de QUIC usado por HTTP/3; no es el transporte definido para HTTP/2 en RFC9113.",
+            "C": "SCTP es otro protocolo de transporte con soporte de flujos, pero HTTP/2 se especifica sobre TCP.",
+            "D": "DCCP no es el transporte definido para HTTP/2; su multiplexación HTTP se construye sobre la conexión TCP."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 4. HTTP/2, HTTP/3 y QUIC",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "HTTP/2 multiplexa flujos sobre una conexión TCP con framing binario. HTTP/3 (RFC 9114) transporta semántica HTTP sobre QUIC. QUIC v1 (RFC 9000) usa UDP como sustrato, integra seguridad mediante TLS y ofrece streams, control de flujo y establecimiento de baja latencia. HTTP/3 reduce bloqueo entre streams causado por pérdidas a nivel TCP, aunque no elimina congestión ni pérdida física.",
+          "evidence_sha256": "d3f8ef88bc79c166338ecf027ea0dabb8becbe7f11d6817fd8c111cc7c64610c",
+          "record_sha256": "718c8eb26ece11ed0491de790c9d527596746132f05a55c036057674bbcca0bb",
+          "review_id": "AI-GSI-B4-T13-009",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "IETF: RFC9113, HTTP/2",
+              "url": "https://www.rfc-editor.org/rfc/rfc9113.html",
+              "locator": "§2 HTTP/2 Protocol Overview: conexión TCP y múltiples intercambios; §1 motivación",
+              "version": "Junio de 2022, HTML comprobado el 04-11-2026. Sustituye RFC7540/8740; multiplexación HTTP no elimina ordenación y bloqueo de entrega del transporte TCP.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-080"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 4. HTTP/2, HTTP/3 y QUIC",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar transporte TCP y clave B; alternativas de transporte comparables y sin frases que delaten la clave."
+      ],
+      "references": [
+        {
+          "title": "IETF: RFC9113, HTTP/2",
+          "url": "https://www.rfc-editor.org/rfc/rfc9113.html",
+          "locator": "§2 HTTP/2 Protocol Overview: conexión TCP y múltiples intercambios; §1 motivación",
+          "version": "Junio de 2022, HTML comprobado el 04-11-2026. Sustituye RFC7540/8740; multiplexación HTTP no elimina ordenación y bloqueo de entrega del transporte TCP.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T13-010",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "71883eed43f4d1f7dff6b71b784930720b49bdf9f657a6116a275f901295c553",
+      "content_sha256": "0f007fc9ed9de327b7c3762f32aeabee806617d3ef919ed751068ae7fa47a353",
+      "before": {
+        "id": "AI-GSI-B4-T13-010",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T13",
+        "subtopic": "HTTP/2, HTTP/3 y QUIC",
+        "exam": null,
+        "statement": "¿Sobre qué protocolo transporta HTTP/3 la semántica HTTP?",
+        "options": [
+          {
+            "id": "A",
+            "text": "SNMP"
+          },
+          {
+            "id": "B",
+            "text": "QUIC"
+          },
+          {
+            "id": "C",
+            "text": "SMTP"
+          },
+          {
+            "id": "D",
+            "text": "FTP"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "HTTP/3 se apoya en QUIC, que utiliza UDP como sustrato.",
+          "incorrect": "HTTP/3 se apoya en QUIC, que utiliza UDP como sustrato."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 4. HTTP/2, HTTP/3 y QUIC",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "HTTP/2 multiplexa flujos sobre una conexión TCP con framing binario. HTTP/3 (RFC 9114) transporta semántica HTTP sobre QUIC. QUIC v1 (RFC 9000) usa UDP como sustrato, integra seguridad mediante TLS y ofrece streams, control de flujo y establecimiento de baja latencia. HTTP/3 reduce bloqueo entre streams causado por pérdidas a nivel TCP, aunque no elimina congestión ni pérdida física.",
+          "evidence_sha256": "d3f8ef88bc79c166338ecf027ea0dabb8becbe7f11d6817fd8c111cc7c64610c",
+          "record_sha256": "45ad2fc958952a851d15f793b30bbe734d9552f6cbadcdf8d3a6645a9d18e432",
+          "review_id": "AI-GSI-B4-T13-010",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 4. HTTP/2, HTTP/3 y QUIC",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T13-010",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T13",
+        "subtopic": "HTTP/2, HTTP/3 y QUIC",
+        "exam": null,
+        "statement": "¿Sobre qué protocolo transporta HTTP/3 la semántica HTTP?",
+        "options": [
+          {
+            "id": "A",
+            "text": "TLS"
+          },
+          {
+            "id": "B",
+            "text": "QUIC"
+          },
+          {
+            "id": "C",
+            "text": "TCP"
+          },
+          {
+            "id": "D",
+            "text": "UDP"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "HTTP/3 define la correspondencia de la semántica HTTP sobre QUIC, que proporciona conexiones y flujos. QUICv1 se encapsula en UDP e integra seguridad con TLS. Estas funciones pertenecen a capas diferentes: ni enviar HTTP directamente en UDP ni añadir TLS a TCP constituye por sí solo HTTP/3.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "TLS participa en la seguridad de QUIC, pero no es el protocolo de flujos sobre el que HTTP/3 define su correspondencia.",
+            "C": "TCP es el transporte empleado por HTTP/2; HTTP/3 usa los flujos de QUIC.",
+            "D": "UDP transporta los paquetes QUIC; omitir QUIC confunde el sustrato de datagramas con el protocolo que usa HTTP/3."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 4. HTTP/2, HTTP/3 y QUIC",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "HTTP/2 multiplexa flujos sobre una conexión TCP con framing binario. HTTP/3 (RFC 9114) transporta semántica HTTP sobre QUIC. QUIC v1 (RFC 9000) usa UDP como sustrato, integra seguridad mediante TLS y ofrece streams, control de flujo y establecimiento de baja latencia. HTTP/3 reduce bloqueo entre streams causado por pérdidas a nivel TCP, aunque no elimina congestión ni pérdida física.",
+          "evidence_sha256": "d3f8ef88bc79c166338ecf027ea0dabb8becbe7f11d6817fd8c111cc7c64610c",
+          "record_sha256": "45ad2fc958952a851d15f793b30bbe734d9552f6cbadcdf8d3a6645a9d18e432",
+          "review_id": "AI-GSI-B4-T13-010",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "IETF: RFC9114, HTTP/3",
+              "url": "https://www.rfc-editor.org/rfc/rfc9114.html",
+              "locator": "Abstract; §1.2 Delegation to QUIC; §2 Protocol Overview: semántica HTTP sobre QUIC",
+              "version": "Junio de 2022, HTML comprobado el 04-11-2026. QUIC es la capa usada por HTTP/3; UDP es su sustrato y TLS aporta seguridad integrada. No se afirma desaparición de toda espera entre flujos.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "IETF: RFC9000, QUIC, A UDP-Based Multiplexed and Secure Transport",
+              "url": "https://www.rfc-editor.org/rfc/rfc9000.html",
+              "locator": "Abstract; §1.2 Terms and Definitions: paquetes QUIC encapsulados en datagramas UDP y paquetes IP, streams",
+              "version": "Mayo de 2021, HTML comprobado el 04-11-2026. QUICv1; la fiabilidad de flujos no deriva de UDP, sino del protocolo superior. Sin ejecutar conexiones o medir rendimiento.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-080"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 4. HTTP/2, HTTP/3 y QUIC",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar enunciado y QUIC, clave B; distinguir capas próximas de la pila."
+      ],
+      "references": [
+        {
+          "title": "IETF: RFC9114, HTTP/3",
+          "url": "https://www.rfc-editor.org/rfc/rfc9114.html",
+          "locator": "Abstract; §1.2 Delegation to QUIC; §2 Protocol Overview: semántica HTTP sobre QUIC",
+          "version": "Junio de 2022, HTML comprobado el 04-11-2026. QUIC es la capa usada por HTTP/3; UDP es su sustrato y TLS aporta seguridad integrada. No se afirma desaparición de toda espera entre flujos.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "IETF: RFC9000, QUIC, A UDP-Based Multiplexed and Secure Transport",
+          "url": "https://www.rfc-editor.org/rfc/rfc9000.html",
+          "locator": "Abstract; §1.2 Terms and Definitions: paquetes QUIC encapsulados en datagramas UDP y paquetes IP, streams",
+          "version": "Mayo de 2021, HTML comprobado el 04-11-2026. QUICv1; la fiabilidad de flujos no deriva de UDP, sino del protocolo superior. Sin ejecutar conexiones o medir rendimiento.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T13-011",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "32290ccc167a2044bffca8e5a8d21dd7866099c413142b02babfe699ebcb689c",
+      "content_sha256": "40fbceaa3f5a6eb70e738e75678a45d860caed2d949440c8cda9b560c9cc09bf",
+      "before": {
+        "id": "AI-GSI-B4-T13-011",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T13",
+        "subtopic": "HTTP/2, HTTP/3 y QUIC",
+        "exam": null,
+        "statement": "¿Qué utiliza QUIC v1 como sustrato de transporte?",
+        "options": [
+          {
+            "id": "A",
+            "text": "ARP"
+          },
+          {
+            "id": "B",
+            "text": "UDP"
+          },
+          {
+            "id": "C",
+            "text": "TCP obligatoriamente"
+          },
+          {
+            "id": "D",
+            "text": "Ethernet sin IP"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "QUIC añade streams y mecanismos de seguridad y control sobre UDP.",
+          "incorrect": "QUIC añade streams y mecanismos de seguridad y control sobre UDP."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 4. HTTP/2, HTTP/3 y QUIC",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "HTTP/2 multiplexa flujos sobre una conexión TCP con framing binario. HTTP/3 (RFC 9114) transporta semántica HTTP sobre QUIC. QUIC v1 (RFC 9000) usa UDP como sustrato, integra seguridad mediante TLS y ofrece streams, control de flujo y establecimiento de baja latencia. HTTP/3 reduce bloqueo entre streams causado por pérdidas a nivel TCP, aunque no elimina congestión ni pérdida física.",
+          "evidence_sha256": "d3f8ef88bc79c166338ecf027ea0dabb8becbe7f11d6817fd8c111cc7c64610c",
+          "record_sha256": "762975cf0be56a4d65a2535a94e11ee203b7b2ea2e56165b1d3508e3a002bcff",
+          "review_id": "AI-GSI-B4-T13-011",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 4. HTTP/2, HTTP/3 y QUIC",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T13-011",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T13",
+        "subtopic": "HTTP/2, HTTP/3 y QUIC",
+        "exam": null,
+        "statement": "¿Qué utiliza QUIC v1 como sustrato de transporte?",
+        "options": [
+          {
+            "id": "A",
+            "text": "TCP"
+          },
+          {
+            "id": "B",
+            "text": "UDP"
+          },
+          {
+            "id": "C",
+            "text": "SCTP"
+          },
+          {
+            "id": "D",
+            "text": "DCCP"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "QUICv1 encapsula sus paquetes en datagramas UDP, que a su vez viajan sobre IP. QUIC añade conexiones, control de flujo, recuperación de pérdidas y flujos ordenados; UDP no aporta por sí solo esas garantías. Uno o varios paquetes QUIC pueden compartir un datagrama UDP según las reglas del protocolo.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "QUICv1 no necesita una conexión TCP subyacente; implementa sus propios mecanismos sobre datagramas UDP.",
+            "C": "Aunque SCTP ofrece otras funciones de transporte, no es el sustrato especificado para QUICv1 en RFC9000.",
+            "D": "DCCP es otro protocolo de transporte, pero la encapsulación definida para QUICv1 utiliza UDP."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 4. HTTP/2, HTTP/3 y QUIC",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "HTTP/2 multiplexa flujos sobre una conexión TCP con framing binario. HTTP/3 (RFC 9114) transporta semántica HTTP sobre QUIC. QUIC v1 (RFC 9000) usa UDP como sustrato, integra seguridad mediante TLS y ofrece streams, control de flujo y establecimiento de baja latencia. HTTP/3 reduce bloqueo entre streams causado por pérdidas a nivel TCP, aunque no elimina congestión ni pérdida física.",
+          "evidence_sha256": "d3f8ef88bc79c166338ecf027ea0dabb8becbe7f11d6817fd8c111cc7c64610c",
+          "record_sha256": "762975cf0be56a4d65a2535a94e11ee203b7b2ea2e56165b1d3508e3a002bcff",
+          "review_id": "AI-GSI-B4-T13-011",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "IETF: RFC9000, QUIC, A UDP-Based Multiplexed and Secure Transport",
+              "url": "https://www.rfc-editor.org/rfc/rfc9000.html",
+              "locator": "Abstract; §1.2 Terms and Definitions: paquetes QUIC encapsulados en datagramas UDP y paquetes IP, streams",
+              "version": "Mayo de 2021, HTML comprobado el 04-11-2026. QUICv1; la fiabilidad de flujos no deriva de UDP, sino del protocolo superior. Sin ejecutar conexiones o medir rendimiento.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-080"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 4. HTTP/2, HTTP/3 y QUIC",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar sustrato UDP y clave B; otros transportes de Internet como distractores, sin calificadores absolutos."
+      ],
+      "references": [
+        {
+          "title": "IETF: RFC9000, QUIC, A UDP-Based Multiplexed and Secure Transport",
+          "url": "https://www.rfc-editor.org/rfc/rfc9000.html",
+          "locator": "Abstract; §1.2 Terms and Definitions: paquetes QUIC encapsulados en datagramas UDP y paquetes IP, streams",
+          "version": "Mayo de 2021, HTML comprobado el 04-11-2026. QUICv1; la fiabilidad de flujos no deriva de UDP, sino del protocolo superior. Sin ejecutar conexiones o medir rendimiento.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T13-013",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "6b5d9bea72a1b6ee7d62f52f1d942d915ee6f6189e25b13d55a9d4c1d7cd4ab0",
+      "content_sha256": "086471b5d4a91f7c07fdd3318eb147b3235c8b162b5638cb7fe88ea74dbaf1a3",
+      "before": {
+        "id": "AI-GSI-B4-T13-013",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T13",
+        "subtopic": "Servicios y perspectivas",
+        "exam": null,
+        "statement": "¿Cómo deben estudiarse tendencias de Internet para un servicio público?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Como predicciones comerciales seguras"
+          },
+          {
+            "id": "B",
+            "text": "Como decisiones arquitectónicas con resiliencia y dependencia de terceros"
+          },
+          {
+            "id": "C",
+            "text": "Ignorando soberanía y operación"
+          },
+          {
+            "id": "D",
+            "text": "Como obligación de usar toda novedad"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Las tendencias se valoran por necesidades y riesgos del servicio.",
+          "incorrect": "Las tendencias se valoran por necesidades y riesgos del servicio."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 5. Servicios y perspectivas",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Evolución: cifrado por defecto, CDN/edge, cloud, APIs, IPv6, automatización de red, HTTP/3/QUIC y mayor observabilidad. Las tendencias deben estudiarse como arquitectura, no como predicción comercial. La soberanía, resiliencia y dependencia de terceros importan en servicios públicos.",
+          "evidence_sha256": "6851e6ced61cd80f08b37a0caa0ad6df1b5dbb0c71ee9829826e5f978a887d0f",
+          "record_sha256": "b13e48a320cd6bc838b8df2e6c4b4506c314602393f3a1b94b33d06edb7bc1dc",
+          "review_id": "AI-GSI-B4-T13-013",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 5. Servicios y perspectivas",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T13-013",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T13",
+        "subtopic": "Servicios y perspectivas",
+        "exam": null,
+        "statement": "¿Cómo deben estudiarse tendencias de Internet para un servicio público?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Priorizar adopción y novedades sobre operación probada."
+          },
+          {
+            "id": "B",
+            "text": "Contrastar requisitos, resiliencia y dependencias externas."
+          },
+          {
+            "id": "C",
+            "text": "Tomar el ahorro inicial como medida de madurez técnica."
+          },
+          {
+            "id": "D",
+            "text": "Usar la cuota de mercado para inferir portabilidad futura."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Las tendencias se evalúan por lo que aportan a los requisitos del servicio, su operación, resiliencia y dependencia de proveedores. Conviene conocer costes y opciones de salida, sin asumir que toda dependencia sea inaceptable. Popularidad o ahorro inicial no demuestran madurez, sostenibilidad o portabilidad; hacen falta evidencias y un análisis del ciclo de vida.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "La adopción amplia no demuestra que una novedad cubra necesidades operativas o riesgos concretos del servicio.",
+            "C": "Un coste inicial reducido no mide por sí mismo madurez ni incluye mantenimiento, recuperación o cambio de proveedor.",
+            "D": "El éxito comercial no acredita formatos portables, interfaces compatibles ni una salida practicable del proveedor."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 5. Servicios y perspectivas",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Evolución: cifrado por defecto, CDN/edge, cloud, APIs, IPv6, automatización de red, HTTP/3/QUIC y mayor observabilidad. Las tendencias deben estudiarse como arquitectura, no como predicción comercial. La soberanía, resiliencia y dependencia de terceros importan en servicios públicos.",
+          "evidence_sha256": "6851e6ced61cd80f08b37a0caa0ad6df1b5dbb0c71ee9829826e5f978a887d0f",
+          "record_sha256": "b13e48a320cd6bc838b8df2e6c4b4506c314602393f3a1b94b33d06edb7bc1dc",
+          "review_id": "AI-GSI-B4-T13-013",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "GDS/CDDO: Managing technical lock-in in the cloud",
+              "url": "https://www.gov.uk/guidance/managing-technical-lock-in-in-the-cloud",
+              "locator": "Understand your technical lock-in; Balancing risk and opportunity in the cloud; Manage your technical lock-in",
+              "version": "Actualización 03-09-2026, HTML comprobado el 04-11-2026. Valor, dependencia y costes de cambio se ponderan; orientación británica, sin trasladar Cloud First u obligaciones de contratación a AGE.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "NCSC: CAF, Principle B5 Resilient networks and systems",
+              "url": "https://www.ncsc.gov.uk/collection/cyber-assessment-framework/caf-objective-b/principle-b5-resilient-networks-and-systems",
+              "locator": "B5.b Design for resilience: dependencias, recursos y limitaciones geográficas; caminos físicos y proveedores alternativos",
+              "version": "Guía HTML comprobada el 04-11-2026. Aplicación conceptual a dependencias de servicio; no obligación normativa AGE ni garantía de disponibilidad por contratar dos enlaces.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-080"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 5. Servicios y perspectivas",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar evaluación arquitectónica y clave B; ponderar valor, dependencia y operación sin convertir una guía británica en norma AGE."
+      ],
+      "references": [
+        {
+          "title": "GDS/CDDO: Managing technical lock-in in the cloud",
+          "url": "https://www.gov.uk/guidance/managing-technical-lock-in-in-the-cloud",
+          "locator": "Understand your technical lock-in; Balancing risk and opportunity in the cloud; Manage your technical lock-in",
+          "version": "Actualización 03-09-2026, HTML comprobado el 04-11-2026. Valor, dependencia y costes de cambio se ponderan; orientación británica, sin trasladar Cloud First u obligaciones de contratación a AGE.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "NCSC: CAF, Principle B5 Resilient networks and systems",
+          "url": "https://www.ncsc.gov.uk/collection/cyber-assessment-framework/caf-objective-b/principle-b5-resilient-networks-and-systems",
+          "locator": "B5.b Design for resilience: dependencias, recursos y limitaciones geográficas; caminos físicos y proveedores alternativos",
+          "version": "Guía HTML comprobada el 04-11-2026. Aplicación conceptual a dependencias de servicio; no obligación normativa AGE ni garantía de disponibilidad por contratar dos enlaces.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T13-014",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "4b26d708bace3226eae1003b7904edcbcdb102cab392d1a68f955048571c8739",
+      "content_sha256": "7b54829de3dd5472ae8b146d4e4cd8ed1f16b8be425f2459d006b8e473703e94",
+      "before": {
+        "id": "AI-GSI-B4-T13-014",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T13",
+        "subtopic": "Arquitectura IoT",
+        "exam": null,
+        "statement": "¿Qué secuencia refleja una arquitectura IoT?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Sensor conectado directamente a cualquier aplicación sin capas ni plataforma"
+          },
+          {
+            "id": "B",
+            "text": "Dispositivo y almacenamiento como arquitectura completa obligatoria"
+          },
+          {
+            "id": "C",
+            "text": "Solo conectividad, excluyendo procesamiento y consumo"
+          },
+          {
+            "id": "D",
+            "text": "Dispositivo, conectividad, edge, plataforma y aplicación"
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "IoT conecta sensores o actuadores con procesamiento y consumo de información.",
+          "incorrect": "IoT conecta sensores o actuadores con procesamiento y consumo de información."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 6. Arquitectura IoT",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Capas prácticas: dispositivo/sensor-actuador → conectividad → gateway/edge → plataforma/broker → almacenamiento/procesamiento → aplicación. El edge reduce latencia/tráfico y puede funcionar ante desconexión; cloud aporta escala y servicios centrales.",
+          "evidence_sha256": "825516043d1a5e448e63531c85f0d1e1973f2a633e2b2a3a3bce5846ac1dc21e",
+          "record_sha256": "3b741df5ac2d9527ef2d650a34173cfe90466501e41eaa3ca7ca66bd7839082c",
+          "review_id": "AI-GSI-B4-T13-014",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 6. Arquitectura IoT",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T13-014",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T13",
+        "subtopic": "Arquitectura IoT",
+        "exam": null,
+        "statement": "¿Qué secuencia funcional representa el envío de telemetría en una arquitectura IoT con pasarela edge y una aplicación central que consume los datos de la plataforma?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Dispositivo, plataforma, conectividad, edge y aplicación."
+          },
+          {
+            "id": "B",
+            "text": "Dispositivo, conectividad, plataforma, aplicación y edge."
+          },
+          {
+            "id": "C",
+            "text": "Dispositivo, edge, aplicación, conectividad y plataforma."
+          },
+          {
+            "id": "D",
+            "text": "Dispositivo, conectividad, edge, plataforma y aplicación."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "En el modelo descrito, la telemetría nace en el dispositivo, atraviesa conectividad hacia el edge y llega a servicios de plataforma que la ponen a disposición de la aplicación. Es una vista funcional de ese flujo, no una cadena obligatoria para todo IoT: puede haber conexión directa a servicios centrales y flujos inversos de órdenes.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Sitúa la plataforma antes de la conectividad que lleva la telemetría desde el dispositivo en el modelo descrito.",
+            "B": "Desplaza el edge detrás de plataforma y aplicación; aquí se ha definido procesamiento intermedio antes de los servicios centrales.",
+            "C": "Coloca el consumo de aplicación antes de la conectividad y la plataforma del flujo de telemetría planteado."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 6. Arquitectura IoT",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Capas prácticas: dispositivo/sensor-actuador → conectividad → gateway/edge → plataforma/broker → almacenamiento/procesamiento → aplicación. El edge reduce latencia/tráfico y puede funcionar ante desconexión; cloud aporta escala y servicios centrales.",
+          "evidence_sha256": "825516043d1a5e448e63531c85f0d1e1973f2a633e2b2a3a3bce5846ac1dc21e",
+          "record_sha256": "3b741df5ac2d9527ef2d650a34173cfe90466501e41eaa3ca7ca66bd7839082c",
+          "review_id": "AI-GSI-B4-T13-014",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Microsoft Learn: IoT device development",
+              "url": "https://learn.microsoft.com/en-us/azure/iot/iot-overview-device-development",
+              "locator": "Introducción: dispositivos, pasarelas, soluciones cloud-connected y edge-connected; conectores y telemetría",
+              "version": "HTML comprobado el 04-11-2026. Arquitecturas de referencia, no cadena universal ni obligación de usar cada componente o un proveedor determinado.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-080"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 6. Arquitectura IoT",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar capas de arquitectura IoT y clave D; acotar flujo de telemetría con edge explícito, sin arquitectura universal."
+      ],
+      "references": [
+        {
+          "title": "Microsoft Learn: IoT device development",
+          "url": "https://learn.microsoft.com/en-us/azure/iot/iot-overview-device-development",
+          "locator": "Introducción: dispositivos, pasarelas, soluciones cloud-connected y edge-connected; conectores y telemetría",
+          "version": "HTML comprobado el 04-11-2026. Arquitecturas de referencia, no cadena universal ni obligación de usar cada componente o un proveedor determinado.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T13-015",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "0c5a3829f1d529d03de359705e7c81650ab6f7d69b31db7176dfc50b48bac799",
+      "content_sha256": "f48acccba2e11913d9f99ad9d22c226c0c34cea8c3ab0b014ab00548b59ac5a0",
+      "before": {
+        "id": "AI-GSI-B4-T13-015",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T13",
+        "subtopic": "Arquitectura IoT",
+        "exam": null,
+        "statement": "¿Qué ventaja puede aportar procesamiento edge?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Reducir latencia o tráfico y operar ante desconexión"
+          },
+          {
+            "id": "B",
+            "text": "Eliminar toda necesidad de seguridad"
+          },
+          {
+            "id": "C",
+            "text": "Sustituir toda plataforma central siempre"
+          },
+          {
+            "id": "D",
+            "text": "Crear conectividad física donde no existe"
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "El edge acerca funciones al dispositivo según requisitos.",
+          "incorrect": "El edge acerca funciones al dispositivo según requisitos."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 6. Arquitectura IoT",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Capas prácticas: dispositivo/sensor-actuador → conectividad → gateway/edge → plataforma/broker → almacenamiento/procesamiento → aplicación. El edge reduce latencia/tráfico y puede funcionar ante desconexión; cloud aporta escala y servicios centrales.",
+          "evidence_sha256": "825516043d1a5e448e63531c85f0d1e1973f2a633e2b2a3a3bce5846ac1dc21e",
+          "record_sha256": "6d4586415ee6a3e561a20d309e6deee48cf5e783fb9bd39eace74a03b2f1bbdc",
+          "review_id": "AI-GSI-B4-T13-015",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 6. Arquitectura IoT",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T13-015",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T13",
+        "subtopic": "Arquitectura IoT",
+        "exam": null,
+        "statement": "Un sensor debe reaccionar localmente y conservar lecturas durante cortes de Internet. ¿Qué ventaja puede aportar un diseño edge?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Procesar cerca del sensor y almacenar datos para envío posterior."
+          },
+          {
+            "id": "B",
+            "text": "Trasladar cada decisión al servicio central para su validación."
+          },
+          {
+            "id": "C",
+            "text": "Aumentar la frecuencia de envío directo hacia el servicio remoto."
+          },
+          {
+            "id": "D",
+            "text": "Mantener cada lectura pendiente de confirmación desde la nube."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "El procesamiento edge puede tomar decisiones locales, filtrar datos y mantener una cola para enviarlos al recuperar conectividad. Requiere diseño previo: recursos, estado local, almacenamiento, caducidad y reconciliación. No crea una conexión física ni asegura conservar toda lectura indefinidamente; las capacidades offline dependen de la implementación y de sus límites.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "Si cada decisión exige validación central, la desconexión mantiene esa dependencia y no permite la autonomía local buscada.",
+            "C": "Enviar más a menudo no garantiza llegar al servicio cuando el enlace está caído y puede aumentar consumo sin utilidad.",
+            "D": "Exigir confirmación remota para cada lectura impide continuar por sí mismo durante la interrupción de conectividad."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 6. Arquitectura IoT",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Capas prácticas: dispositivo/sensor-actuador → conectividad → gateway/edge → plataforma/broker → almacenamiento/procesamiento → aplicación. El edge reduce latencia/tráfico y puede funcionar ante desconexión; cloud aporta escala y servicios centrales.",
+          "evidence_sha256": "825516043d1a5e448e63531c85f0d1e1973f2a633e2b2a3a3bce5846ac1dc21e",
+          "record_sha256": "6d4586415ee6a3e561a20d309e6deee48cf5e783fb9bd39eace74a03b2f1bbdc",
+          "review_id": "AI-GSI-B4-T13-015",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Microsoft Learn: IoT device development",
+              "url": "https://learn.microsoft.com/en-us/azure/iot/iot-overview-device-development",
+              "locator": "Introducción: dispositivos, pasarelas, soluciones cloud-connected y edge-connected; conectores y telemetría",
+              "version": "HTML comprobado el 04-11-2026. Arquitecturas de referencia, no cadena universal ni obligación de usar cada componente o un proveedor determinado.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "Microsoft Learn: Operate Azure IoT Edge devices offline",
+              "url": "https://learn.microsoft.com/en-us/azure/iot-edge/offline-capabilities",
+              "locator": "How it works; Restrictions and limits; Optional offline settings y Time to live",
+              "version": "Documentación aplicable a IoT Edge1.6, HTML comprobado el 04-11-2026. Ejemplo condicionado por sincronización inicial, almacenamiento y TTL; no operación offline automática de todo despliegue edge.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-080"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 6. Arquitectura IoT",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar reducción de latencia/tráfico y posibilidad offline, clave A; caso donde control local y cola toleran cortes."
+      ],
+      "references": [
+        {
+          "title": "Microsoft Learn: IoT device development",
+          "url": "https://learn.microsoft.com/en-us/azure/iot/iot-overview-device-development",
+          "locator": "Introducción: dispositivos, pasarelas, soluciones cloud-connected y edge-connected; conectores y telemetría",
+          "version": "HTML comprobado el 04-11-2026. Arquitecturas de referencia, no cadena universal ni obligación de usar cada componente o un proveedor determinado.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "Microsoft Learn: Operate Azure IoT Edge devices offline",
+          "url": "https://learn.microsoft.com/en-us/azure/iot-edge/offline-capabilities",
+          "locator": "How it works; Restrictions and limits; Optional offline settings y Time to live",
+          "version": "Documentación aplicable a IoT Edge1.6, HTML comprobado el 04-11-2026. Ejemplo condicionado por sincronización inicial, almacenamiento y TTL; no operación offline automática de todo despliegue edge.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T13-016",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "772b965fce8753f49725b85dd868c1eed796fe8d73811c5bf1831f55628e78dc",
+      "content_sha256": "5ae2b0773c1aee28c5b8f4a157b46465df1eac1190a28f50bda93ee07b1c8cef",
+      "before": {
+        "id": "AI-GSI-B4-T13-016",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T13",
+        "subtopic": "Protocolos IoT",
+        "exam": null,
+        "statement": "¿Qué patrón utiliza habitualmente MQTT?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Encaminamiento por estado de enlace"
+          },
+          {
+            "id": "B",
+            "text": "Transferencia de discos físicos"
+          },
+          {
+            "id": "C",
+            "text": "Publicación y suscripción mediante broker"
+          },
+          {
+            "id": "D",
+            "text": "Solo consultas SQL"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "MQTT es ligero y frecuente en telemetría basada en pub/sub.",
+          "incorrect": "MQTT es ligero y frecuente en telemetría basada en pub/sub."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 7. Protocolos IoT",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "MQTT usa patrón publish/subscribe mediante broker, ligero y común en telemetría. CoAP es protocolo RESTful ligero sobre UDP para dispositivos restringidos. HTTP sigue siendo viable en dispositivos más capaces. Redes de acceso pueden incluir Wi-Fi, Ethernet, celular, LPWAN u otras según alcance/energía/coste.",
+          "evidence_sha256": "b1e3607c9845f2e9b75a1e9851db9ec33f9fe6e8803dc46e53105d58add8e89f",
+          "record_sha256": "2064636961f9d957daec90eb2762f3f010a1ac2406de0b05a5d74c26c2c67503",
+          "review_id": "AI-GSI-B4-T13-016",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 7. Protocolos IoT",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T13-016",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T13",
+        "subtopic": "Protocolos IoT",
+        "exam": null,
+        "statement": "¿Qué patrón utiliza habitualmente MQTT?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Petición directa a cada receptor sin servidor intermediario."
+          },
+          {
+            "id": "B",
+            "text": "Una cola global que entrega cada mensaje a un solo receptor."
+          },
+          {
+            "id": "C",
+            "text": "Publicación y suscripción mediante un servidor broker."
+          },
+          {
+            "id": "D",
+            "text": "Difusión IP a todos los dispositivos de la misma subred."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "MQTT usa publicación y suscripción: los clientes publican mensajes con un topic y el servidor broker los distribuye conforme a las suscripciones. Esto desacopla emisores y receptores. No obliga a difusión IP ni a una única cola global; las suscripciones compartidas o las funciones request/response no cambian esa base de intercambio.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "El servidor MQTT intermedia el intercambio; una petición directa a cada receptor sin él no describe el patrón base.",
+            "B": "La distribución depende de topics y suscripciones; no de una cola global que entregue todos los mensajes a un único consumidor.",
+            "D": "El broker envía según suscripciones de clientes; no equivale a difundir paquetes a todos los hosts de una subred."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 7. Protocolos IoT",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "MQTT usa patrón publish/subscribe mediante broker, ligero y común en telemetría. CoAP es protocolo RESTful ligero sobre UDP para dispositivos restringidos. HTTP sigue siendo viable en dispositivos más capaces. Redes de acceso pueden incluir Wi-Fi, Ethernet, celular, LPWAN u otras según alcance/energía/coste.",
+          "evidence_sha256": "b1e3607c9845f2e9b75a1e9851db9ec33f9fe6e8803dc46e53105d58add8e89f",
+          "record_sha256": "2064636961f9d957daec90eb2762f3f010a1ac2406de0b05a5d74c26c2c67503",
+          "review_id": "AI-GSI-B4-T13-016",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "OASIS: MQTT Version5.0",
+              "url": "https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html",
+              "locator": "Abstract; §1.2 Terminology: Client, Server, Subscription; servidor intermediario de publicaciones y suscripciones",
+              "version": "OASIS Standard de 07-03-2019, HTML comprobado el 04-11-2026. Se usa texto HTML público, sin abrir DOCX/PDF; request/response y suscripciones compartidas no se niegan como funciones posibles.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-080"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 7. Protocolos IoT",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar pub/sub con broker y clave C; distinguirlo de RPC directo, cola global y difusión sin negar funciones de MQTT5."
+      ],
+      "references": [
+        {
+          "title": "OASIS: MQTT Version5.0",
+          "url": "https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html",
+          "locator": "Abstract; §1.2 Terminology: Client, Server, Subscription; servidor intermediario de publicaciones y suscripciones",
+          "version": "OASIS Standard de 07-03-2019, HTML comprobado el 04-11-2026. Se usa texto HTML público, sin abrir DOCX/PDF; request/response y suscripciones compartidas no se niegan como funciones posibles.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T13-017",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "c80f45965d2843cce44f4f9f46b49edff3e7c26f49e9bbcc6aa66bcc9e293f67",
+      "content_sha256": "1562c5a72e6db1df3bfc67ce307aa38913149ba63c1c7eb32af44f8ab7bb25f8",
+      "before": {
+        "id": "AI-GSI-B4-T13-017",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T13",
+        "subtopic": "Protocolos IoT",
+        "exam": null,
+        "statement": "¿Qué caracteriza a CoAP en el tema?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Un compilador de firmware"
+          },
+          {
+            "id": "B",
+            "text": "Un servidor de correo"
+          },
+          {
+            "id": "C",
+            "text": "Un sistema de archivos distribuido"
+          },
+          {
+            "id": "D",
+            "text": "Protocolo RESTful ligero sobre UDP para dispositivos restringidos"
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "CoAP adapta interacción de recursos a dispositivos y redes limitadas.",
+          "incorrect": "CoAP adapta interacción de recursos a dispositivos y redes limitadas."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 7. Protocolos IoT",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "MQTT usa patrón publish/subscribe mediante broker, ligero y común en telemetría. CoAP es protocolo RESTful ligero sobre UDP para dispositivos restringidos. HTTP sigue siendo viable en dispositivos más capaces. Redes de acceso pueden incluir Wi-Fi, Ethernet, celular, LPWAN u otras según alcance/energía/coste.",
+          "evidence_sha256": "b1e3607c9845f2e9b75a1e9851db9ec33f9fe6e8803dc46e53105d58add8e89f",
+          "record_sha256": "05078a96ba53844fb2d6b804bd7fd0a35d658407feed10fffe26749c86ccefd0",
+          "review_id": "AI-GSI-B4-T13-017",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 7. Protocolos IoT",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T13-017",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T13",
+        "subtopic": "Protocolos IoT",
+        "exam": null,
+        "statement": "¿Qué caracteriza al modelo base de CoAP descrito en RFC7252?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Mensajería por topics y suscripciones gestionadas por un broker."
+          },
+          {
+            "id": "B",
+            "text": "Entrega de peticiones web mediante flujos HTTP sobre QUIC."
+          },
+          {
+            "id": "C",
+            "text": "Invocaciones de objetos distribuidos mediante un registro remoto."
+          },
+          {
+            "id": "D",
+            "text": "Interacción con recursos para nodos limitados mediante UDP."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "El modelo base de CoAP en RFC7252 adapta peticiones y respuestas sobre recursos a nodos y redes limitados, usando mensajes UDP. Incluye mecanismos propios, como mensajes confirmables, y no hereda fiabilidad de UDP. Hay especificaciones para otros transportes y extensiones; el alcance de esta pregunta es el modelo base citado.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Describe el patrón base de MQTT con broker; no el modelo de peticiones y respuestas sobre recursos de CoAP.",
+            "B": "Los flujos HTTP sobre QUIC corresponden a HTTP/3; no a los mensajes CoAP definidos en RFC7252.",
+            "C": "La invocación de objetos mediante registro remoto no es el modelo de recursos, métodos y mensajes definido para CoAP."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 7. Protocolos IoT",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "MQTT usa patrón publish/subscribe mediante broker, ligero y común en telemetría. CoAP es protocolo RESTful ligero sobre UDP para dispositivos restringidos. HTTP sigue siendo viable en dispositivos más capaces. Redes de acceso pueden incluir Wi-Fi, Ethernet, celular, LPWAN u otras según alcance/energía/coste.",
+          "evidence_sha256": "b1e3607c9845f2e9b75a1e9851db9ec33f9fe6e8803dc46e53105d58add8e89f",
+          "record_sha256": "05078a96ba53844fb2d6b804bd7fd0a35d658407feed10fffe26749c86ccefd0",
+          "review_id": "AI-GSI-B4-T13-017",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "IETF: RFC7252, The Constrained Application Protocol",
+              "url": "https://www.rfc-editor.org/rfc/rfc7252.html",
+              "locator": "Abstract; §2.1 Messaging Model sobre UDP; §4 Message Specifications: datagramas y otros transportes fuera de alcance",
+              "version": "Junio de 2014, HTML comprobado el 04-11-2026. Modelo base de recursos y peticiones/respuestas; no se afirma que toda variante CoAP use UDP ni se recomiendan suites históricas de seguridad.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-080"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 7. Protocolos IoT",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar CoAP restringido/recursos/UDP y clave D; delimitar especificación base y evitar exclusividad universal de transporte."
+      ],
+      "references": [
+        {
+          "title": "IETF: RFC7252, The Constrained Application Protocol",
+          "url": "https://www.rfc-editor.org/rfc/rfc7252.html",
+          "locator": "Abstract; §2.1 Messaging Model sobre UDP; §4 Message Specifications: datagramas y otros transportes fuera de alcance",
+          "version": "Junio de 2014, HTML comprobado el 04-11-2026. Modelo base de recursos y peticiones/respuestas; no se afirma que toda variante CoAP use UDP ni se recomiendan suites históricas de seguridad.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T13-018",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "cb98ec4f0c51e367127a9452099b5f2f79f447f615b5476060f92b78900f3d11",
+      "content_sha256": "c245e658ac494a94b1c30672af2e9e8a1aec81a3b96a8fe0fa0e411133264d56",
+      "before": {
+        "id": "AI-GSI-B4-T13-018",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T13",
+        "subtopic": "Protocolos IoT",
+        "exam": null,
+        "statement": "¿Qué debe guiar la elección de conectividad IoT?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Alcance, energía, coste y requisitos"
+          },
+          {
+            "id": "B",
+            "text": "Una radio única obligatoria para cualquier entorno"
+          },
+          {
+            "id": "C",
+            "text": "Excluir enlaces cableados por definición de IoT"
+          },
+          {
+            "id": "D",
+            "text": "Solo ancho de banda máximo"
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Wi-Fi, celular, LPWAN o cable responden a compromisos distintos.",
+          "incorrect": "Wi-Fi, celular, LPWAN o cable responden a compromisos distintos."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 7. Protocolos IoT",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "MQTT usa patrón publish/subscribe mediante broker, ligero y común en telemetría. CoAP es protocolo RESTful ligero sobre UDP para dispositivos restringidos. HTTP sigue siendo viable en dispositivos más capaces. Redes de acceso pueden incluir Wi-Fi, Ethernet, celular, LPWAN u otras según alcance/energía/coste.",
+          "evidence_sha256": "b1e3607c9845f2e9b75a1e9851db9ec33f9fe6e8803dc46e53105d58add8e89f",
+          "record_sha256": "25444cbb461830c560f12a6fc1a5a465784ee44e757f4d47145fb03b6477e5cd",
+          "review_id": "AI-GSI-B4-T13-018",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 7. Protocolos IoT",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T13-018",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T13",
+        "subtopic": "Protocolos IoT",
+        "exam": null,
+        "statement": "Se despliegan sensores a batería que envían lecturas pequeñas desde ubicaciones dispersas. ¿Qué debe guiar la elección de conectividad IoT?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Cobertura, consumo, coste y requisitos de las comunicaciones."
+          },
+          {
+            "id": "B",
+            "text": "La tasa máxima anunciada, aunque el consumo reduzca autonomía."
+          },
+          {
+            "id": "C",
+            "text": "La menor cuota de datos, aunque no haya cobertura en el lugar."
+          },
+          {
+            "id": "D",
+            "text": "La radio ya instalada, aunque no cumpla alcance o disponibilidad."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "La conectividad se elige contrastando requisitos de alcance, energía, volumen, latencia, fiabilidad y coste total. Un sensor de batería no tiene las mismas necesidades que una cámara con alimentación. Deben verificarse cobertura y condiciones reales; no hay una tecnología ganadora para todos los casos y el cable también puede formar parte de IoT.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "La mayor tasa nominal puede ser innecesaria para lecturas pequeñas y consumir una energía incompatible con la autonomía requerida.",
+            "C": "Una tarifa baja no permite prestar el servicio donde la tecnología carece de cobertura utilizable.",
+            "D": "Reutilizar infraestructura puede ahorrar costes, pero no compensa incumplir requisitos de alcance o disponibilidad."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 7. Protocolos IoT",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "MQTT usa patrón publish/subscribe mediante broker, ligero y común en telemetría. CoAP es protocolo RESTful ligero sobre UDP para dispositivos restringidos. HTTP sigue siendo viable en dispositivos más capaces. Redes de acceso pueden incluir Wi-Fi, Ethernet, celular, LPWAN u otras según alcance/energía/coste.",
+          "evidence_sha256": "b1e3607c9845f2e9b75a1e9851db9ec33f9fe6e8803dc46e53105d58add8e89f",
+          "record_sha256": "25444cbb461830c560f12a6fc1a5a465784ee44e757f4d47145fb03b6477e5cd",
+          "review_id": "AI-GSI-B4-T13-018",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "SUSE: Understanding IoT Connectivity, Types, Challenges and Use Cases",
+              "url": "https://www.suse.com/blog/iot-connectivity/",
+              "locator": "Factors that affect IoT connectivity: Bandwidth, Power consumption, Range/coverage y Reliability; Considerations: Cost y Energy efficiency",
+              "version": "Artículo explicativo del proveedor, HTML comprobado el 04-11-2026. Solo criterios de decisión; se excluyen tabla comparativa simplificada y promesas de Ethernet sin interferencia, ancho ilimitado o seguridad automática. No norma técnica.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "Microsoft Learn: IoT device development",
+              "url": "https://learn.microsoft.com/en-us/azure/iot/iot-overview-device-development",
+              "locator": "Introducción: dispositivos, pasarelas, soluciones cloud-connected y edge-connected; conectores y telemetría",
+              "version": "HTML comprobado el 04-11-2026. Arquitecturas de referencia, no cadena universal ni obligación de usar cada componente o un proveedor determinado.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-080"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 7. Protocolos IoT",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar selección por requisitos y clave A; caso de lecturas pequeñas con batería en emplazamientos dispersos."
+      ],
+      "references": [
+        {
+          "title": "SUSE: Understanding IoT Connectivity, Types, Challenges and Use Cases",
+          "url": "https://www.suse.com/blog/iot-connectivity/",
+          "locator": "Factors that affect IoT connectivity: Bandwidth, Power consumption, Range/coverage y Reliability; Considerations: Cost y Energy efficiency",
+          "version": "Artículo explicativo del proveedor, HTML comprobado el 04-11-2026. Solo criterios de decisión; se excluyen tabla comparativa simplificada y promesas de Ethernet sin interferencia, ancho ilimitado o seguridad automática. No norma técnica.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "Microsoft Learn: IoT device development",
+          "url": "https://learn.microsoft.com/en-us/azure/iot/iot-overview-device-development",
+          "locator": "Introducción: dispositivos, pasarelas, soluciones cloud-connected y edge-connected; conectores y telemetría",
+          "version": "HTML comprobado el 04-11-2026. Arquitecturas de referencia, no cadena universal ni obligación de usar cada componente o un proveedor determinado.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,3684 @@
+{
+  "version": 1,
+  "id": "GSI-EDITORIAL-079",
+  "prepared_at": "2026-11-04",
+  "baseline_commit": "e3e20ab879518c899806a70575eead28b3b35e6f",
+  "items": [
+    {
+      "id": "AI-GSI-B4-T11-013",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "7c76ec8acf9bba826ff381f5d08b75a52e1b97c7a31837cf7bcd88f87907d9f7",
+      "content_sha256": "a859638299f73e84cf891a394a1621cc3ae9b902ff93df89fd76295fde12e83f",
+      "before": {
+        "id": "AI-GSI-B4-T11-013",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T11",
+        "subtopic": "Acceso al medio",
+        "exam": null,
+        "statement": "¿Qué aporta WMM/802.11e?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Cifrado del firmware"
+          },
+          {
+            "id": "B",
+            "text": "Almacenamiento de documentos"
+          },
+          {
+            "id": "C",
+            "text": "Asignación de direcciones públicas"
+          },
+          {
+            "id": "D",
+            "text": "Priorización por categorías de tráfico"
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "La calidad de servicio diferencia categorías de acceso al medio.",
+          "incorrect": "La calidad de servicio diferencia categorías de acceso al medio."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.11; sección 4. Acceso al medio",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Wi‑Fi usa CSMA/CA, no CSMA/CD: escucha, contención aleatoria y acknowledgements; RTS/CTS puede mitigar nodos ocultos. QoS 802.11e/WMM prioriza categorías. OFDMA añade programación más eficiente en ax/be.",
+          "evidence_sha256": "85f48d67db684a2c4a24cf5e6e80af29e6a32245a6e5106d23935b1e38baed73",
+          "record_sha256": "400316e923d62dfa846d1a63ea5ac4108674ad2f9d94ea3d32a6b100cb455261",
+          "review_id": "AI-GSI-B4-T11-013",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.11; sección 4. Acceso al medio",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T11-013",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T11",
+        "subtopic": "Acceso al medio",
+        "exam": null,
+        "statement": "¿Qué aporta WMM/802.11e?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Reserva un caudal fijo para cada categoría de acceso."
+          },
+          {
+            "id": "B",
+            "text": "Reparte el tiempo de transmisión por igual entre categorías."
+          },
+          {
+            "id": "C",
+            "text": "Asigna a cada categoría un canal radio físico independiente."
+          },
+          {
+            "id": "D",
+            "text": "Diferencia la prioridad de acceso al medio según categorías."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "WMM emplea cuatro categorías de acceso: voz, vídeo, mejor esfuerzo y fondo. EDCA diferencia sus parámetros de contención para favorecer tráfico prioritario. Ese trato es relativo: no reserva por sí solo un caudal fijo ni elimina la competencia por el canal.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Priorizar la contención no es reservar capacidad fija: el resultado depende también de carga y condiciones radio.",
+            "B": "La diferenciación modifica las oportunidades de acceso, no establece un reparto igual entre categorías.",
+            "C": "Las categorías son colas de acceso al medio compartido, no canales de frecuencia separados."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.11; sección 4. Acceso al medio",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Wi‑Fi usa CSMA/CA, no CSMA/CD: escucha, contención aleatoria y acknowledgements; RTS/CTS puede mitigar nodos ocultos. QoS 802.11e/WMM prioriza categorías. OFDMA añade programación más eficiente en ax/be.",
+          "evidence_sha256": "85f48d67db684a2c4a24cf5e6e80af29e6a32245a6e5106d23935b1e38baed73",
+          "record_sha256": "400316e923d62dfa846d1a63ea5ac4108674ad2f9d94ea3d32a6b100cb455261",
+          "review_id": "AI-GSI-B4-T11-013",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Cisco: Unified Wireless QoS Tech Note",
+              "url": "https://www.cisco.com/c/en/us/support/docs/wireless-mobility/voice-over-wireless-lan-vowlan/116056-technote-qos-00.html",
+              "locator": "WMM: cuatro Access Classes y EDCA, prioridad mediante contención diferenciada",
+              "version": "Guía histórica HTML comprobada el 04-11-2026. WMM es un subconjunto de 802.11e. No se generalizan parámetros numéricos, máximos PHY ni la frase de que DSCP siempre sobrevive al trayecto.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-079"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.11; sección 4. Acceso al medio",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar priorización WMM y clave D; distinguirla de reserva, equidad temporal y separación física."
+      ],
+      "references": [
+        {
+          "title": "Cisco: Unified Wireless QoS Tech Note",
+          "url": "https://www.cisco.com/c/en/us/support/docs/wireless-mobility/voice-over-wireless-lan-vowlan/116056-technote-qos-00.html",
+          "locator": "WMM: cuatro Access Classes y EDCA, prioridad mediante contención diferenciada",
+          "version": "Guía histórica HTML comprobada el 04-11-2026. WMM es un subconjunto de 802.11e. No se generalizan parámetros numéricos, máximos PHY ni la frase de que DSCP siempre sobrevive al trayecto.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T11-014",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "9574dca7b69f26dfc633de765743a5cb80d696b2e881f5a43e5cb14307c3c22c",
+      "content_sha256": "f1b366fea3c9cb69393c42d893c570dd08a502027da779d6646e015e835e6f60",
+      "before": {
+        "id": "AI-GSI-B4-T11-014",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T11",
+        "subtopic": "Modos y arquitectura",
+        "exam": null,
+        "statement": "¿Qué representa un BSS en infraestructura?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Conjunto básico alrededor de un AP"
+          },
+          {
+            "id": "B",
+            "text": "Una única cuenta administrativa"
+          },
+          {
+            "id": "C",
+            "text": "Un dispositivo de almacenamiento"
+          },
+          {
+            "id": "D",
+            "text": "Todos los sistemas autónomos de Internet"
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "ESS agrupa varios BSS para una red más amplia.",
+          "incorrect": "ESS agrupa varios BSS para una red más amplia."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.11; sección 5. Modos y arquitectura",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "BSS = conjunto básico alrededor de AP; ESS agrupa BSS con misma red/roaming. Ad-hoc/IBSS carece de AP central (histórico/limitado); mesh interconecta nodos inalámbricamente. En enterprise, control puede ser local, controlador o cloud; la función importa más que el formato.",
+          "evidence_sha256": "d86a2f1a8a2260221fdd503b41a7d2444a8d76367933ec35218c67b225c2fd89",
+          "record_sha256": "2b710b78a660e451b4250972f632211264e869ac7ed1b43a13d99422cca65549",
+          "review_id": "AI-GSI-B4-T11-014",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.11; sección 5. Modos y arquitectura",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T11-014",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T11",
+        "subtopic": "Modos y arquitectura",
+        "exam": null,
+        "statement": "¿Qué representa un BSS en infraestructura?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Un AP y las estaciones asociadas a ese servicio básico."
+          },
+          {
+            "id": "B",
+            "text": "Los BSS conectados mediante el sistema de distribución."
+          },
+          {
+            "id": "C",
+            "text": "Las estaciones ad-hoc que se comunican sin un AP central."
+          },
+          {
+            "id": "D",
+            "text": "Las redes que anuncian el mismo nombre aunque estén aisladas."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "En infraestructura, un BSS comprende el AP que presta ese servicio básico y las estaciones asociadas. Varios BSS conectados por un sistema de distribución pueden formar un ESS. Un mismo equipo físico puede ofrecer varios BSS; compartir un nombre SSID no demuestra pertenecer al mismo ESS.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "La agregación de varios BSS mediante distribución describe un ESS, no cada conjunto básico individual.",
+            "C": "La organización sin AP corresponde a un IBSS ad-hoc; el enunciado especifica infraestructura.",
+            "D": "El nombre anunciado no prueba una infraestructura común: redes aisladas pueden usar el mismo SSID."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.11; sección 5. Modos y arquitectura",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "BSS = conjunto básico alrededor de AP; ESS agrupa BSS con misma red/roaming. Ad-hoc/IBSS carece de AP central (histórico/limitado); mesh interconecta nodos inalámbricamente. En enterprise, control puede ser local, controlador o cloud; la función importa más que el formato.",
+          "evidence_sha256": "d86a2f1a8a2260221fdd503b41a7d2444a8d76367933ec35218c67b225c2fd89",
+          "record_sha256": "2b710b78a660e451b4250972f632211264e869ac7ed1b43a13d99422cca65549",
+          "review_id": "AI-GSI-B4-T11-014",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Cisco: What Is a Wi-Fi Network?",
+              "url": "https://www.cisco.com/site/us/en/learn/topics/networking/what-is-a-wi-fi-network.html",
+              "locator": "Elements of Wi-Fi network architecture: BSS, Distribution system y Access point",
+              "version": "HTML comprobado el 04-11-2026. Solo arquitectura BSS/ESS/IBSS; se excluyen afirmaciones anticuadas sobre seguridad WPA2, prestaciones y recomendaciones comerciales de otros apartados.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-079"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.11; sección 5. Modos y arquitectura",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar BSS de infraestructura y clave A; contrastar BSS/ESS/IBSS/nombre sin equiparar BSS a toda una carcasa física."
+      ],
+      "references": [
+        {
+          "title": "Cisco: What Is a Wi-Fi Network?",
+          "url": "https://www.cisco.com/site/us/en/learn/topics/networking/what-is-a-wi-fi-network.html",
+          "locator": "Elements of Wi-Fi network architecture: BSS, Distribution system y Access point",
+          "version": "HTML comprobado el 04-11-2026. Solo arquitectura BSS/ESS/IBSS; se excluyen afirmaciones anticuadas sobre seguridad WPA2, prestaciones y recomendaciones comerciales de otros apartados.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T11-015",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "184e5b7b6708ebc07d72bd77672059d12e6a4b0e0a4e206905886afe4fad3eb2",
+      "content_sha256": "0951bc5b0f1a12a8d0d5b7014b3cd559a3c72fa66248c9e32b39b1b901a49748",
+      "before": {
+        "id": "AI-GSI-B4-T11-015",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T11",
+        "subtopic": "Modos y arquitectura",
+        "exam": null,
+        "statement": "¿Qué caracteriza al modo ad-hoc/IBSS?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Control obligatorio por un único AP"
+          },
+          {
+            "id": "B",
+            "text": "Necesidad de MPLS"
+          },
+          {
+            "id": "C",
+            "text": "Uso exclusivo de cable"
+          },
+          {
+            "id": "D",
+            "text": "Ausencia de AP central"
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "El modo ad-hoc es una organización sin punto de acceso central.",
+          "incorrect": "El modo ad-hoc es una organización sin punto de acceso central."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.11; sección 5. Modos y arquitectura",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "BSS = conjunto básico alrededor de AP; ESS agrupa BSS con misma red/roaming. Ad-hoc/IBSS carece de AP central (histórico/limitado); mesh interconecta nodos inalámbricamente. En enterprise, control puede ser local, controlador o cloud; la función importa más que el formato.",
+          "evidence_sha256": "d86a2f1a8a2260221fdd503b41a7d2444a8d76367933ec35218c67b225c2fd89",
+          "record_sha256": "cb1eb988fdf40f56385a199d82f8941ef2481631976495a0384e648209459d4b",
+          "review_id": "AI-GSI-B4-T11-015",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.11; sección 5. Modos y arquitectura",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T11-015",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T11",
+        "subtopic": "Modos y arquitectura",
+        "exam": null,
+        "statement": "¿Qué caracteriza al modo ad-hoc/IBSS?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Los clientes se asocian a un AP que coordina el servicio."
+          },
+          {
+            "id": "B",
+            "text": "Varios BSS se unen mediante un sistema de distribución."
+          },
+          {
+            "id": "C",
+            "text": "Un AP raíz conecta por radio a otros AP de la misma red."
+          },
+          {
+            "id": "D",
+            "text": "Las estaciones forman un BSS independiente sin AP central."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Un IBSS es un conjunto básico independiente en modo ad-hoc: sus estaciones se comunican sin asociarse a un punto de acceso central. No debe confundirse con un ESS, con un enlace entre AP o con cualquier solución entre dispositivos; Wi-Fi Direct tiene una organización diferente.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "La asociación de clientes a un AP describe infraestructura, no la organización independiente del IBSS.",
+            "B": "Conectar conjuntos básicos mediante distribución caracteriza un ESS, no el IBSS sin AP.",
+            "C": "Un enlace radio entre AP sigue siendo una organización con puntos de acceso; no define un IBSS."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.11; sección 5. Modos y arquitectura",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "BSS = conjunto básico alrededor de AP; ESS agrupa BSS con misma red/roaming. Ad-hoc/IBSS carece de AP central (histórico/limitado); mesh interconecta nodos inalámbricamente. En enterprise, control puede ser local, controlador o cloud; la función importa más que el formato.",
+          "evidence_sha256": "d86a2f1a8a2260221fdd503b41a7d2444a8d76367933ec35218c67b225c2fd89",
+          "record_sha256": "cb1eb988fdf40f56385a199d82f8941ef2481631976495a0384e648209459d4b",
+          "review_id": "AI-GSI-B4-T11-015",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Cisco: What Is a Wi-Fi Network?",
+              "url": "https://www.cisco.com/site/us/en/learn/topics/networking/what-is-a-wi-fi-network.html",
+              "locator": "Elements of Wi-Fi network architecture: BSS, Distribution system y Access point",
+              "version": "HTML comprobado el 04-11-2026. Solo arquitectura BSS/ESS/IBSS; se excluyen afirmaciones anticuadas sobre seguridad WPA2, prestaciones y recomendaciones comerciales de otros apartados.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-079"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.11; sección 5. Modos y arquitectura",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar ausencia de AP y clave D; distractores de topologías próximas, sin igualar ad-hoc a todo enlace entre pares."
+      ],
+      "references": [
+        {
+          "title": "Cisco: What Is a Wi-Fi Network?",
+          "url": "https://www.cisco.com/site/us/en/learn/topics/networking/what-is-a-wi-fi-network.html",
+          "locator": "Elements of Wi-Fi network architecture: BSS, Distribution system y Access point",
+          "version": "HTML comprobado el 04-11-2026. Solo arquitectura BSS/ESS/IBSS; se excluyen afirmaciones anticuadas sobre seguridad WPA2, prestaciones y recomendaciones comerciales de otros apartados.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T11-016",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "bfeaea6a3b6ed83d4404111db7bbb5cdb6683a126e3036b4354a2eeea02ddbf0",
+      "content_sha256": "8071c5b43c0578bffcc2ac3eb64f69aa63f9c68c259b098012fb85e5482f5a18",
+      "before": {
+        "id": "AI-GSI-B4-T11-016",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T11",
+        "subtopic": "Roaming y planificación RF",
+        "exam": null,
+        "statement": "¿Quién decide gran parte del roaming Wi-Fi?",
+        "options": [
+          {
+            "id": "A",
+            "text": "El cliente, con ayudas de la red"
+          },
+          {
+            "id": "B",
+            "text": "El switch de alimentación"
+          },
+          {
+            "id": "C",
+            "text": "La autoridad de certificación"
+          },
+          {
+            "id": "D",
+            "text": "Siempre exclusivamente el servidor DNS"
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "802.11k/v/r pueden ayudar, pero el cliente tiene un papel importante.",
+          "incorrect": "802.11k/v/r pueden ayudar, pero el cliente tiene un papel importante."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.11; sección 6. Roaming y planificación RF",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "El cliente decide gran parte del roaming. 802.11k/v/r pueden ayudar con vecinos, steering y transición rápida. Diseño requiere site survey, potencia, canales, solapamiento, densidad, capacidad y fuentes de interferencia. “Señal fuerte” no equivale a buena WLAN si todos comparten aire saturado.",
+          "evidence_sha256": "5310a3cbdf23aa1bb0b13cce74136db224b07354600585557b3a0d6386fac202",
+          "record_sha256": "ff119c4af72e81520863c40cf3dbbd0fa77b0e5c69b71026e8426a28268e8b88",
+          "review_id": "AI-GSI-B4-T11-016",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.11; sección 6. Roaming y planificación RF",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T11-016",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T11",
+        "subtopic": "Roaming y planificación RF",
+        "exam": null,
+        "statement": "¿Quién decide gran parte del roaming Wi-Fi?",
+        "options": [
+          {
+            "id": "A",
+            "text": "El cliente elige el BSS de destino con ayudas de la red."
+          },
+          {
+            "id": "B",
+            "text": "El controlador sustituye la elección del cliente en 802.11v."
+          },
+          {
+            "id": "C",
+            "text": "El servidor AAA selecciona el AP al validar credenciales."
+          },
+          {
+            "id": "D",
+            "text": "El informe 802.11k ordena asociarse a un vecino concreto."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "La decisión de buscar y seleccionar otro BSS recae en gran medida en el cliente. La red puede ayudar: 802.11k informa de vecinos, 802.11v sugiere transiciones y 802.11r agiliza el cambio de contexto de seguridad. La compatibilidad y las políticas influyen; la ayuda no garantiza roaming sin interrupción.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "802.11v aporta recomendaciones de transición; no sustituye universalmente la lógica de selección del cliente.",
+            "C": "AAA autentica y autoriza según el despliegue; validar credenciales no es escoger el AP radio de destino.",
+            "D": "Un informe de vecinos informa de candidatos; no es una orden de asociación obligatoria a uno de ellos."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.11; sección 6. Roaming y planificación RF",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "El cliente decide gran parte del roaming. 802.11k/v/r pueden ayudar con vecinos, steering y transición rápida. Diseño requiere site survey, potencia, canales, solapamiento, densidad, capacidad y fuentes de interferencia. “Señal fuerte” no equivale a buena WLAN si todos comparten aire saturado.",
+          "evidence_sha256": "5310a3cbdf23aa1bb0b13cce74136db224b07354600585557b3a0d6386fac202",
+          "record_sha256": "ff119c4af72e81520863c40cf3dbbd0fa77b0e5c69b71026e8426a28268e8b88",
+          "review_id": "AI-GSI-B4-T11-016",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Cisco: Enterprise Best Practices for iOS, iPadOS, and MacOS Devices on Cisco Wireless LAN",
+              "url": "https://www.cisco.com/c/en/us/products/collateral/wireless/access-points/enterprise-best-practices-ios-ipados-wp.html",
+              "locator": "Roaming optimization: 802.11k neighbor reports, 802.11r Fast Transition y 802.11v network-assisted roaming",
+              "version": "HTML comprobado el 04-11-2026. Ayudas compatibles con cliente e infraestructura; sugerencia de BSS no equivale a decisión impuesta ni garantiza continuidad. No se aplican recetas o umbrales de producto.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-079"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.11; sección 6. Roaming y planificación RF",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar decisión del cliente y clave A; precisar funciones k/v/r y evitar exclusividad absoluta."
+      ],
+      "references": [
+        {
+          "title": "Cisco: Enterprise Best Practices for iOS, iPadOS, and MacOS Devices on Cisco Wireless LAN",
+          "url": "https://www.cisco.com/c/en/us/products/collateral/wireless/access-points/enterprise-best-practices-ios-ipados-wp.html",
+          "locator": "Roaming optimization: 802.11k neighbor reports, 802.11r Fast Transition y 802.11v network-assisted roaming",
+          "version": "HTML comprobado el 04-11-2026. Ayudas compatibles con cliente e infraestructura; sugerencia de BSS no equivale a decisión impuesta ni garantiza continuidad. No se aplican recetas o umbrales de producto.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T11-017",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "a949a4050381956fc079b2af1e093901371f7af9a6ea9c373304d6e60b91a352",
+      "content_sha256": "9f384b1e447a9ce32a7c745ca274a1a4584e5a8a33aefc9bff4b2f51f8c09570",
+      "before": {
+        "id": "AI-GSI-B4-T11-017",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T11",
+        "subtopic": "Roaming y planificación RF",
+        "exam": null,
+        "statement": "Se recibe señal intensa pero hay muchos usuarios y retransmisiones. ¿Qué conclusión es razonable?",
+        "options": [
+          {
+            "id": "A",
+            "text": "La WLAN puede estar saturada pese a buena señal"
+          },
+          {
+            "id": "B",
+            "text": "Solo puede fallar el navegador"
+          },
+          {
+            "id": "C",
+            "text": "No hace falta estudiar utilización de aire"
+          },
+          {
+            "id": "D",
+            "text": "La señal fuerte garantiza calidad completa"
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Cobertura y capacidad son dimensiones distintas del diseño radio.",
+          "incorrect": "Cobertura y capacidad son dimensiones distintas del diseño radio."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.11; sección 6. Roaming y planificación RF",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "El cliente decide gran parte del roaming. 802.11k/v/r pueden ayudar con vecinos, steering y transición rápida. Diseño requiere site survey, potencia, canales, solapamiento, densidad, capacidad y fuentes de interferencia. “Señal fuerte” no equivale a buena WLAN si todos comparten aire saturado.",
+          "evidence_sha256": "5310a3cbdf23aa1bb0b13cce74136db224b07354600585557b3a0d6386fac202",
+          "record_sha256": "395d04b56a1fcdb31ce748a0cd04f99bac2ee4b8f268561b5aec59359dd2ab7c",
+          "review_id": "AI-GSI-B4-T11-017",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.11; sección 6. Roaming y planificación RF",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T11-017",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T11",
+        "subtopic": "Roaming y planificación RF",
+        "exam": null,
+        "statement": "Se recibe señal intensa pero hay muchos usuarios y retransmisiones. ¿Qué conclusión es razonable?",
+        "options": [
+          {
+            "id": "A",
+            "text": "La WLAN puede estar saturada pese a recibir buena señal."
+          },
+          {
+            "id": "B",
+            "text": "La intensidad recibida permite descartar contención radio."
+          },
+          {
+            "id": "C",
+            "text": "Las retransmisiones prueban que falta cobertura del AP."
+          },
+          {
+            "id": "D",
+            "text": "Aumentar potencia basta para resolver la carga del canal."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Una señal intensa no demuestra que haya tiempo de aire disponible para todos los usuarios. La contención, las interferencias y las retransmisiones pueden reducir capacidad útil aun con buena cobertura. Se deben medir utilización, ruido y tráfico; estos indicios permiten sospechar saturación, pero no confirmar una causa única.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "La intensidad describe señal recibida, no la cantidad de estaciones que compiten por el tiempo de aire.",
+            "C": "Las retransmisiones tienen varias causas; con estos datos no se demuestra que el problema sea falta de cobertura.",
+            "D": "Elevar potencia no crea tiempo de aire y puede ampliar interferencias; hace falta diagnosticar la causa de la carga."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.11; sección 6. Roaming y planificación RF",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "El cliente decide gran parte del roaming. 802.11k/v/r pueden ayudar con vecinos, steering y transición rápida. Diseño requiere site survey, potencia, canales, solapamiento, densidad, capacidad y fuentes de interferencia. “Señal fuerte” no equivale a buena WLAN si todos comparten aire saturado.",
+          "evidence_sha256": "5310a3cbdf23aa1bb0b13cce74136db224b07354600585557b3a0d6386fac202",
+          "record_sha256": "395d04b56a1fcdb31ce748a0cd04f99bac2ee4b8f268561b5aec59359dd2ab7c",
+          "review_id": "AI-GSI-B4-T11-017",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Cisco: Wireless High Client Density Design Guide",
+              "url": "https://www.cisco.com/c/en/us/td/docs/wireless/controller/technotes/8-7/b_wireless_high_client_density_design_guide.html",
+              "locator": "Data Rates and Cell Size: SNR, sensibilidad y consumo de airtime; distribución de clientes",
+              "version": "Guía 8.7 histórica HTML comprobada el 04-11-2026. Cobertura y capacidad distintas; no se deduce una causa única de retransmisiones ni se universalizan cifras de sensibilidad o densidad.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-079"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.11; sección 6. Roaming y planificación RF",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar microcaso original y clave A; separar cobertura, capacidad e hipótesis de causa."
+      ],
+      "references": [
+        {
+          "title": "Cisco: Wireless High Client Density Design Guide",
+          "url": "https://www.cisco.com/c/en/us/td/docs/wireless/controller/technotes/8-7/b_wireless_high_client_density_design_guide.html",
+          "locator": "Data Rates and Cell Size: SNR, sensibilidad y consumo de airtime; distribución de clientes",
+          "version": "Guía 8.7 histórica HTML comprobada el 04-11-2026. Cobertura y capacidad distintas; no se deduce una causa única de retransmisiones ni se universalizan cifras de sensibilidad o densidad.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T11-019",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "36cd61f81c065f1d2444a11fc64885db47d10dd4c3912d8b59612add1f31c262",
+      "content_sha256": "175ee44852bfc342700a6e96cf6db226b6fc1202723c0506cb0a03a130a12380",
+      "before": {
+        "id": "AI-GSI-B4-T11-019",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T11",
+        "subtopic": "Seguridad",
+        "exam": null,
+        "statement": "¿Qué control aporta seguridad robusta frente a ocultar SSID?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Cambiar el nombre de red cada día"
+          },
+          {
+            "id": "B",
+            "text": "Autenticación adecuada, como 802.1X/EAP, y políticas"
+          },
+          {
+            "id": "C",
+            "text": "Solo filtrar MAC como garantía total"
+          },
+          {
+            "id": "D",
+            "text": "Bajar brillo de los AP"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Ocultar SSID o filtrar MAC no constituye por sí solo seguridad sólida.",
+          "incorrect": "Ocultar SSID o filtrar MAC no constituye por sí solo seguridad sólida."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.11; sección 7. Seguridad",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "WEP y WPA antiguos son obsoletos/inseguros. WPA2 usa AES-CCMP en configuraciones modernas; WPA3 mejora autenticación y protección. En empresa: 802.1X/EAP con RADIUS, certificados cuando proceda, segmentación y NAC. Redes de invitados aisladas; IoT separado. Ocultar SSID o filtrar MAC no constituye seguridad robusta.\n\nDatos y trampas de test\n\n* Wi-Fi usa CSMA/CA, no CSMA/CD.\n* SSID oculto ≠ seguridad.\n* 2,4 GHz suele tener más alcance, pero menos espectro.\n* Wi-Fi 6 = 802.11ax; Wi-Fi 7 = 802.11be.\n* 6 GHz depende de regulación y equipo.\n* Canal más ancho ≠ siempre mejor en alta densidad.\n* WPA3/802.1X son preferibles en empresa; WEP está obsoleto.\n* MLO es rasgo clave de Wi-Fi 7.\n\nAplicación al supuesto práctico\n\nDiseña cobertura y capacidad mediante survey: número/ubicación de AP, canales/potencia, PoE y uplinks. Separa SSID corporativo, invitados e IoT; usa 802.1X/RADIUS, NAC, VLAN/VRF y políticas. Incluye redundancia del plano de control y monitorización de SNR, utilización, retransmisiones y roaming.",
+          "evidence_sha256": "888842e35d008567a457946c26b614fae45375ce6a9c023eb05a40f2f3422fb8",
+          "record_sha256": "f968917ea2160a00ddab2185f509c4e78d45843c44b425cc52fb4ce9abdc2017",
+          "review_id": "AI-GSI-B4-T11-019",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.11; sección 7. Seguridad",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T11-019",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T11",
+        "subtopic": "Seguridad",
+        "exam": null,
+        "statement": "¿Qué control permite autenticar el acceso a una WLAN empresarial más allá de ocultar el SSID?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Ocultar el SSID y permitir únicamente las MAC registradas."
+          },
+          {
+            "id": "B",
+            "text": "Usar 802.1X/EAP bien configurado con políticas de acceso."
+          },
+          {
+            "id": "C",
+            "text": "Separar nombres SSID sin autenticar a usuarios o equipos."
+          },
+          {
+            "id": "D",
+            "text": "Restringir la cobertura reduciendo la potencia de los AP."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Un despliegue empresarial de 802.1X/EAP permite autenticar mediante un método adecuado y aplicar autorización. Necesita configuración coherente de clientes, autenticador y servidor, incluida la comprobación de identidad del servidor cuando corresponda. Ocultar el nombre o confiar solo en una MAC no ofrece esa prueba criptográfica de identidad.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "El nombre oculto y una MAC permitida no aportan autenticación criptográfica; las direcciones pueden suplantarse.",
+            "C": "Los nombres distinguen servicios anunciados; por sí solos no autentican a quien solicita acceso.",
+            "D": "Limitar cobertura puede reducir exposición física, pero no comprueba la identidad de quien logra recibir la señal."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.11; sección 7. Seguridad",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "WEP y WPA antiguos son obsoletos/inseguros. WPA2 usa AES-CCMP en configuraciones modernas; WPA3 mejora autenticación y protección. En empresa: 802.1X/EAP con RADIUS, certificados cuando proceda, segmentación y NAC. Redes de invitados aisladas; IoT separado. Ocultar SSID o filtrar MAC no constituye seguridad robusta.\n\nDatos y trampas de test\n\n* Wi-Fi usa CSMA/CA, no CSMA/CD.\n* SSID oculto ≠ seguridad.\n* 2,4 GHz suele tener más alcance, pero menos espectro.\n* Wi-Fi 6 = 802.11ax; Wi-Fi 7 = 802.11be.\n* 6 GHz depende de regulación y equipo.\n* Canal más ancho ≠ siempre mejor en alta densidad.\n* WPA3/802.1X son preferibles en empresa; WEP está obsoleto.\n* MLO es rasgo clave de Wi-Fi 7.\n\nAplicación al supuesto práctico\n\nDiseña cobertura y capacidad mediante survey: número/ubicación de AP, canales/potencia, PoE y uplinks. Separa SSID corporativo, invitados e IoT; usa 802.1X/RADIUS, NAC, VLAN/VRF y políticas. Incluye redundancia del plano de control y monitorización de SNR, utilización, retransmisiones y roaming.",
+          "evidence_sha256": "888842e35d008567a457946c26b614fae45375ce6a9c023eb05a40f2f3422fb8",
+          "record_sha256": "f968917ea2160a00ddab2185f509c4e78d45843c44b425cc52fb4ce9abdc2017",
+          "review_id": "AI-GSI-B4-T11-019",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "HPE Aruba: About 802.1X Authentication",
+              "url": "https://arubanetworking.hpe.com/techdocs/ClearPass/6.11/PolicyManager/Content/Deploy/802.1X%20Authentication/8021X_About.htm",
+              "locator": "802.1X Authentication Components: supplicant, authenticator, authentication server y métodos EAP",
+              "version": "ClearPass 6.11, HTML comprobado el 04-11-2026. Marco de autenticación y autorización; no garantiza seguridad de cualquier método/configuración ni prescribe un producto.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "Cisco: What Is a Wi-Fi Network?",
+              "url": "https://www.cisco.com/site/us/en/learn/topics/networking/what-is-a-wi-fi-network.html",
+              "locator": "Elements of Wi-Fi network architecture: BSS, Distribution system y Access point",
+              "version": "HTML comprobado el 04-11-2026. Solo arquitectura BSS/ESS/IBSS; se excluyen afirmaciones anticuadas sobre seguridad WPA2, prestaciones y recomendaciones comerciales de otros apartados.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-079"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.11; sección 7. Seguridad",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar autenticación y políticas, clave B; explicitar configuración y no atribuir robustez automática a cualquier EAP."
+      ],
+      "references": [
+        {
+          "title": "HPE Aruba: About 802.1X Authentication",
+          "url": "https://arubanetworking.hpe.com/techdocs/ClearPass/6.11/PolicyManager/Content/Deploy/802.1X%20Authentication/8021X_About.htm",
+          "locator": "802.1X Authentication Components: supplicant, authenticator, authentication server y métodos EAP",
+          "version": "ClearPass 6.11, HTML comprobado el 04-11-2026. Marco de autenticación y autorización; no garantiza seguridad de cualquier método/configuración ni prescribe un producto.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "Cisco: What Is a Wi-Fi Network?",
+          "url": "https://www.cisco.com/site/us/en/learn/topics/networking/what-is-a-wi-fi-network.html",
+          "locator": "Elements of Wi-Fi network architecture: BSS, Distribution system y Access point",
+          "version": "HTML comprobado el 04-11-2026. Solo arquitectura BSS/ESS/IBSS; se excluyen afirmaciones anticuadas sobre seguridad WPA2, prestaciones y recomendaciones comerciales de otros apartados.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T11-020",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "26eb1cf63457bf684b219d736012a91a162265f636eb54dea845550602daaac0",
+      "content_sha256": "3edcc28afe4c260d5ffde4b53c0d10e6d6a93dcdc0b070af31d3a10e99859e07",
+      "before": {
+        "id": "AI-GSI-B4-T11-020",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T11",
+        "subtopic": "Seguridad",
+        "exam": null,
+        "statement": "¿Cómo conviene tratar invitados e IoT en una WLAN corporativa?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Desactivar registro"
+          },
+          {
+            "id": "B",
+            "text": "Compartir credenciales administrativas"
+          },
+          {
+            "id": "C",
+            "text": "Darles todos los accesos internos por defecto"
+          },
+          {
+            "id": "D",
+            "text": "Separarlos y aplicar políticas según necesidad"
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Segmentación e identidad reducen exposición entre perfiles de uso.",
+          "incorrect": "Segmentación e identidad reducen exposición entre perfiles de uso."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.11; sección 7. Seguridad",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "WEP y WPA antiguos son obsoletos/inseguros. WPA2 usa AES-CCMP en configuraciones modernas; WPA3 mejora autenticación y protección. En empresa: 802.1X/EAP con RADIUS, certificados cuando proceda, segmentación y NAC. Redes de invitados aisladas; IoT separado. Ocultar SSID o filtrar MAC no constituye seguridad robusta.\n\nDatos y trampas de test\n\n* Wi-Fi usa CSMA/CA, no CSMA/CD.\n* SSID oculto ≠ seguridad.\n* 2,4 GHz suele tener más alcance, pero menos espectro.\n* Wi-Fi 6 = 802.11ax; Wi-Fi 7 = 802.11be.\n* 6 GHz depende de regulación y equipo.\n* Canal más ancho ≠ siempre mejor en alta densidad.\n* WPA3/802.1X son preferibles en empresa; WEP está obsoleto.\n* MLO es rasgo clave de Wi-Fi 7.\n\nAplicación al supuesto práctico\n\nDiseña cobertura y capacidad mediante survey: número/ubicación de AP, canales/potencia, PoE y uplinks. Separa SSID corporativo, invitados e IoT; usa 802.1X/RADIUS, NAC, VLAN/VRF y políticas. Incluye redundancia del plano de control y monitorización de SNR, utilización, retransmisiones y roaming.",
+          "evidence_sha256": "888842e35d008567a457946c26b614fae45375ce6a9c023eb05a40f2f3422fb8",
+          "record_sha256": "a57583e86e0a9c94ab91b7fafda1825fbe77d7b8fd4d4f68b876794a515b3eca",
+          "review_id": "AI-GSI-B4-T11-020",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.11; sección 7. Seguridad",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T11-020",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T11",
+        "subtopic": "Seguridad",
+        "exam": null,
+        "statement": "Una oficina incorpora Wi-Fi para visitantes y sensores IoT. ¿Qué diseño limita su exposición a los recursos corporativos?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Crear SSID distintos y mantener entre ellos acceso interno abierto."
+          },
+          {
+            "id": "B",
+            "text": "Compartir la identidad corporativa para simplificar sus permisos."
+          },
+          {
+            "id": "C",
+            "text": "Situarlos en la red de gestión para centralizar su supervisión."
+          },
+          {
+            "id": "D",
+            "text": "Separar sus segmentos y permitir solo los flujos que necesitan."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Los perfiles de invitados e IoT requieren segmentos y reglas acordes con sus necesidades, evitando acceso interno indiscriminado. El aislamiento debe hacerse efectivo en los flujos y acompañarse de controles de identidad compatibles. Un SSID distinto no basta si los segmentos siguen comunicándose sin restricciones.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Distinguir nombres no limita alcance si se conserva comunicación interna abierta entre esos perfiles y los recursos.",
+            "B": "Compartir identidad dificulta atribución y aplica privilegios corporativos a perfiles con necesidades diferentes.",
+            "C": "La red de gestión contiene funciones sensibles; supervisar un equipo no justifica darle acceso a ese plano."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.11; sección 7. Seguridad",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "WEP y WPA antiguos son obsoletos/inseguros. WPA2 usa AES-CCMP en configuraciones modernas; WPA3 mejora autenticación y protección. En empresa: 802.1X/EAP con RADIUS, certificados cuando proceda, segmentación y NAC. Redes de invitados aisladas; IoT separado. Ocultar SSID o filtrar MAC no constituye seguridad robusta.\n\nDatos y trampas de test\n\n* Wi-Fi usa CSMA/CA, no CSMA/CD.\n* SSID oculto ≠ seguridad.\n* 2,4 GHz suele tener más alcance, pero menos espectro.\n* Wi-Fi 6 = 802.11ax; Wi-Fi 7 = 802.11be.\n* 6 GHz depende de regulación y equipo.\n* Canal más ancho ≠ siempre mejor en alta densidad.\n* WPA3/802.1X son preferibles en empresa; WEP está obsoleto.\n* MLO es rasgo clave de Wi-Fi 7.\n\nAplicación al supuesto práctico\n\nDiseña cobertura y capacidad mediante survey: número/ubicación de AP, canales/potencia, PoE y uplinks. Separa SSID corporativo, invitados e IoT; usa 802.1X/RADIUS, NAC, VLAN/VRF y políticas. Incluye redundancia del plano de control y monitorización de SNR, utilización, retransmisiones y roaming.",
+          "evidence_sha256": "888842e35d008567a457946c26b614fae45375ce6a9c023eb05a40f2f3422fb8",
+          "record_sha256": "a57583e86e0a9c94ab91b7fafda1825fbe77d7b8fd4d4f68b876794a515b3eca",
+          "review_id": "AI-GSI-B4-T11-020",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "NCSC: Preventing Lateral Movement",
+              "url": "https://www.ncsc.gov.uk/guidance/preventing-lateral-movement",
+              "locator": "§6 Segregate networks as sets: separar sistemas sin necesidad de comunicación y limitar acceso",
+              "version": "Guía HTML comprobada el 04-11-2026. Reducción del alcance de compromiso, no eliminación de vulnerabilidades; aplicación conceptual, sin carácter normativo para AGE.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-079"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.11; sección 7. Seguridad",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar segmentación por necesidad y clave D; contextualizar invitados y sensores con necesidades distintas."
+      ],
+      "references": [
+        {
+          "title": "NCSC: Preventing Lateral Movement",
+          "url": "https://www.ncsc.gov.uk/guidance/preventing-lateral-movement",
+          "locator": "§6 Segregate networks as sets: separar sistemas sin necesidad de comunicación y limitar acceso",
+          "version": "Guía HTML comprobada el 04-11-2026. Reducción del alcance de compromiso, no eliminación de vulnerabilidades; aplicación conceptual, sin carácter normativo para AGE.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T11-001",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "5fd20b794a3643fda4abf17cee2fd676515a9ab05709ca7d7a02b8146f0ddc78",
+      "content_sha256": "65bf1001a6f5ccdbe3c80869fcbf5455ae486ba5d002875f6097d268c5e2bdae",
+      "before": {
+        "id": "AI-GSI-B4-T11-001",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T11",
+        "subtopic": "IEEE 802.11 y generaciones",
+        "exam": null,
+        "statement": "¿Qué estándar corresponde a Wi-Fi 6?",
+        "options": [
+          {
+            "id": "A",
+            "text": "IEEE 802.11ax"
+          },
+          {
+            "id": "B",
+            "text": "IEEE 802.11ac"
+          },
+          {
+            "id": "C",
+            "text": "IEEE 802.3"
+          },
+          {
+            "id": "D",
+            "text": "IEEE 802.11n"
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "El mapa del tema relaciona ax con Wi-Fi 6, ac con 5 y n con 4.",
+          "incorrect": "El mapa del tema relaciona ax con Wi-Fi 6, ac con 5 y n con 4."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.11; sección 1. IEEE 802.11 y generaciones",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "802.11 define WLAN. Mapa útil: 802.11n → Wi-Fi 4; 802.11ac → Wi-Fi 5; 802.11ax → Wi-Fi 6 (6E al usar 6 GHz donde está permitido); 802.11be → Wi-Fi 7. Las denominaciones Wi-Fi son de industria/certificación; el estándar IEEE define PHY/MAC.",
+          "evidence_sha256": "7726c4a4c153db6c254ee1b6afb53a731054a12319d233c2afaf893d2b767645",
+          "record_sha256": "68da25a4ce88d31f99a435ea375ffb21cdba7ef72d8bc2b76612ab9824e9894f",
+          "review_id": "AI-GSI-B4-T11-001",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.11; sección 1. IEEE 802.11 y generaciones",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T11-001",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T11",
+        "subtopic": "IEEE 802.11 y generaciones",
+        "exam": null,
+        "statement": "¿Qué estándar corresponde a Wi-Fi 6?",
+        "options": [
+          {
+            "id": "A",
+            "text": "IEEE 802.11ax"
+          },
+          {
+            "id": "B",
+            "text": "IEEE 802.11ac"
+          },
+          {
+            "id": "C",
+            "text": "IEEE 802.11be"
+          },
+          {
+            "id": "D",
+            "text": "IEEE 802.11n"
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Wi-Fi 6 identifica la generación basada en IEEE 802.11ax. Wi-Fi 5 se asocia a 802.11ac, Wi-Fi 4 a 802.11n y Wi-Fi 7 a 802.11be. El nombre generacional facilita reconocer capacidades; no garantiza que todos los equipos incorporen cada función opcional.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "802.11ac corresponde a Wi-Fi 5, la generación anterior a la basada en 802.11ax.",
+            "C": "802.11be corresponde a Wi-Fi 7; no es la enmienda asociada a Wi-Fi 6.",
+            "D": "802.11n se identifica como Wi-Fi 4, anterior a 802.11ac y 802.11ax."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.11; sección 1. IEEE 802.11 y generaciones",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "802.11 define WLAN. Mapa útil: 802.11n → Wi-Fi 4; 802.11ac → Wi-Fi 5; 802.11ax → Wi-Fi 6 (6E al usar 6 GHz donde está permitido); 802.11be → Wi-Fi 7. Las denominaciones Wi-Fi son de industria/certificación; el estándar IEEE define PHY/MAC.",
+          "evidence_sha256": "7726c4a4c153db6c254ee1b6afb53a731054a12319d233c2afaf893d2b767645",
+          "record_sha256": "68da25a4ce88d31f99a435ea375ffb21cdba7ef72d8bc2b76612ab9824e9894f",
+          "review_id": "AI-GSI-B4-T11-001",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "Cisco: What Is 802.11ac?",
+              "url": "https://www.cisco.com/site/us/en/learn/topics/networking/what-is-802-11ac.html",
+              "locator": "Introducción: Wi-Fi 5 corresponde a 802.11ac; Wi-Fi 6 a 802.11ax; What is 802.11n?",
+              "version": "HTML comprobado el 04-11-2026. Solo correspondencia de generaciones; no se usan cifras de throughput, fórmulas de QAM o afirmación de conmutación de bandas de otros apartados.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "IEEE: 802.11 Working Group",
+              "url": "https://www.ieee802.org/11/",
+              "locator": "Recent standards approvals: IEEE802.11be-2024, Wi-Fi7",
+              "version": "Página pública comprobada el 04-11-2026. Identificación de generación; no lectura del texto completo ni confusión entre edición y fecha de publicación.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-079"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.11; sección 1. IEEE 802.11 y generaciones",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar enunciado generacional y clave A; sustituir distractor Ethernet por otra generación Wi-Fi y mantener formas compactas."
+      ],
+      "references": [
+        {
+          "title": "Cisco: What Is 802.11ac?",
+          "url": "https://www.cisco.com/site/us/en/learn/topics/networking/what-is-802-11ac.html",
+          "locator": "Introducción: Wi-Fi 5 corresponde a 802.11ac; Wi-Fi 6 a 802.11ax; What is 802.11n?",
+          "version": "HTML comprobado el 04-11-2026. Solo correspondencia de generaciones; no se usan cifras de throughput, fórmulas de QAM o afirmación de conmutación de bandas de otros apartados.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "IEEE: 802.11 Working Group",
+          "url": "https://www.ieee802.org/11/",
+          "locator": "Recent standards approvals: IEEE802.11be-2024, Wi-Fi7",
+          "version": "Página pública comprobada el 04-11-2026. Identificación de generación; no lectura del texto completo ni confusión entre edición y fecha de publicación.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T12-003",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "44f339a091e8a159f02279f295920e0a1a1d6ead115d4a7192bd0a444637a75c",
+      "content_sha256": "d22a0018c424e0b76950f0624f2339134a6ac005f7afda66f5924d6f5a81699f",
+      "before": {
+        "id": "AI-GSI-B4-T12-003",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T12",
+        "subtopic": "Perímetro, DMZ y segmentación",
+        "exam": null,
+        "statement": "¿Para qué se utiliza una DMZ?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Evitar todo filtrado"
+          },
+          {
+            "id": "B",
+            "text": "Alojar servicios expuestos separados de redes internas"
+          },
+          {
+            "id": "C",
+            "text": "Eliminar la necesidad de routing"
+          },
+          {
+            "id": "D",
+            "text": "Guardar todas las contraseñas públicas"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "La DMZ delimita exposición y flujos hacia zonas internas.",
+          "incorrect": "La DMZ delimita exposición y flujos hacia zonas internas."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 2. Perímetro, DMZ y segmentación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "DMZ aloja servicios expuestos separándolos de redes internas. Firewall **stateless** filtra por reglas de paquete; **stateful** sigue estado de conexión; NGFW añade identificación de aplicaciones/usuarios y otras funciones. Proxy intermedia tráfico; WAF protege aplicaciones web HTTP; IDS detecta, IPS puede bloquear. La segmentación limita movimiento lateral.",
+          "evidence_sha256": "b119170fa959772599076babaa06e5571ef2d562045b9603473fb217f361437c",
+          "record_sha256": "be9db78d7398b9b7d7856b17fee3179bf547081ff008f9ed30fcb6ffddec1ce6",
+          "review_id": "AI-GSI-B4-T12-003",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 2. Perímetro, DMZ y segmentación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T12-003",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T12",
+        "subtopic": "Perímetro, DMZ y segmentación",
+        "exam": null,
+        "statement": "Una organización publica una aplicación web y quiere limitar el impacto sobre su LAN si el servidor resulta comprometido. ¿Qué aporta una DMZ?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Colocar el servicio en la LAN interna y redirigir su puerto público."
+          },
+          {
+            "id": "B",
+            "text": "Alojar el servicio en un segmento separado con flujos controlados."
+          },
+          {
+            "id": "C",
+            "text": "Publicarlo en la red de gestión para heredar sus accesos internos."
+          },
+          {
+            "id": "D",
+            "text": "Situarlo en una VLAN separada con encaminamiento interno abierto."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Una DMZ permite exponer el servicio en una zona diferenciada y aplicar reglas a sus comunicaciones con Internet y con la red interna. Su utilidad depende de controlar esos flujos. Separar una VLAN sin restricciones, redirigir un puerto o usar la red de gestión no proporciona la misma contención.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "La redirección de puertos permite llegar al servicio, pero no separa el servidor del segmento interno que podría comprometer.",
+            "C": "La red de gestión es un ámbito sensible; publicar allí el servicio amplía exposición en lugar de crear una zona perimetral.",
+            "D": "La separación lógica pierde capacidad de contención si se deja acceso interno abierto por routing."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 2. Perímetro, DMZ y segmentación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "DMZ aloja servicios expuestos separándolos de redes internas. Firewall **stateless** filtra por reglas de paquete; **stateful** sigue estado de conexión; NGFW añade identificación de aplicaciones/usuarios y otras funciones. Proxy intermedia tráfico; WAF protege aplicaciones web HTTP; IDS detecta, IPS puede bloquear. La segmentación limita movimiento lateral.",
+          "evidence_sha256": "b119170fa959772599076babaa06e5571ef2d562045b9603473fb217f361437c",
+          "record_sha256": "be9db78d7398b9b7d7856b17fee3179bf547081ff008f9ed30fcb6ffddec1ce6",
+          "review_id": "AI-GSI-B4-T12-003",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "NIST CSRC: demilitarized zone (DMZ)",
+              "url": "https://csrc.nist.gov/glossary/term/demilitarized_zone",
+              "locator": "Definitions: SP800-41 Rev.1/SP800-82r3, segmento perimetral y filtrado entre DMZ y zona protegida",
+              "version": "Glosario HTML comprobado el 04-11-2026. Definiciones con documentos identificados; no lectura íntegra de esos documentos ni obligación de dos equipos físicos.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-079"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 2. Perímetro, DMZ y segmentación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar finalidad de DMZ y clave B; caso de publicación sin asumir dos firewalls físicos."
+      ],
+      "references": [
+        {
+          "title": "NIST CSRC: demilitarized zone (DMZ)",
+          "url": "https://csrc.nist.gov/glossary/term/demilitarized_zone",
+          "locator": "Definitions: SP800-41 Rev.1/SP800-82r3, segmento perimetral y filtrado entre DMZ y zona protegida",
+          "version": "Glosario HTML comprobado el 04-11-2026. Definiciones con documentos identificados; no lectura íntegra de esos documentos ni obligación de dos equipos físicos.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T12-004",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "0cab73118e4ff6a0e1cbfa4c5250dd52a83d768155e1733090c45e05d8721a82",
+      "content_sha256": "e724f9707c78e43d8c848ae58e2d661a19ec1436d999f41d9306d4d1432b0690",
+      "before": {
+        "id": "AI-GSI-B4-T12-004",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T12",
+        "subtopic": "Perímetro, DMZ y segmentación",
+        "exam": null,
+        "statement": "¿Qué diferencia un firewall stateful?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Solo observa nombres de archivos"
+          },
+          {
+            "id": "B",
+            "text": "Cifra siempre todas las aplicaciones"
+          },
+          {
+            "id": "C",
+            "text": "Sigue el estado de conexiones"
+          },
+          {
+            "id": "D",
+            "text": "Carece de reglas"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "El seguimiento de estado complementa condiciones de filtrado de paquetes.",
+          "incorrect": "El seguimiento de estado complementa condiciones de filtrado de paquetes."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 2. Perímetro, DMZ y segmentación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "DMZ aloja servicios expuestos separándolos de redes internas. Firewall **stateless** filtra por reglas de paquete; **stateful** sigue estado de conexión; NGFW añade identificación de aplicaciones/usuarios y otras funciones. Proxy intermedia tráfico; WAF protege aplicaciones web HTTP; IDS detecta, IPS puede bloquear. La segmentación limita movimiento lateral.",
+          "evidence_sha256": "b119170fa959772599076babaa06e5571ef2d562045b9603473fb217f361437c",
+          "record_sha256": "3e4c99bcf382ccf6e7488bba713f0e18a5f6abae6b3ad3e9ecbc96db04b2ebf5",
+          "review_id": "AI-GSI-B4-T12-004",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 2. Perímetro, DMZ y segmentación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T12-004",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T12",
+        "subtopic": "Perímetro, DMZ y segmentación",
+        "exam": null,
+        "statement": "¿Qué diferencia un firewall stateful?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Decide el paso de cada paquete sin contexto de conexión."
+          },
+          {
+            "id": "B",
+            "text": "Autoriza el tráfico por la traducción de direcciones usada."
+          },
+          {
+            "id": "C",
+            "text": "Contrasta paquetes con el estado de conexiones seguido."
+          },
+          {
+            "id": "D",
+            "text": "Valida la lógica de negocio de cada solicitud recibida."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Un firewall con inspección de estado mantiene contexto de conexiones y lo usa junto a sus reglas para evaluar paquetes. Así puede detectar tráfico que no encaja con el estado esperado. No se reduce a NAT ni implica conocer toda lógica de aplicación o descifrar automáticamente las comunicaciones protegidas.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Evaluar paquetes sin contexto de conexión caracteriza filtrado sin estado, frente al seguimiento descrito.",
+            "B": "NAT transforma direccionamiento; la existencia de una traducción no define el mecanismo de inspección de estado.",
+            "D": "Validar operaciones de negocio requiere controles de aplicación; no se deriva del seguimiento de conexiones."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 2. Perímetro, DMZ y segmentación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "DMZ aloja servicios expuestos separándolos de redes internas. Firewall **stateless** filtra por reglas de paquete; **stateful** sigue estado de conexión; NGFW añade identificación de aplicaciones/usuarios y otras funciones. Proxy intermedia tráfico; WAF protege aplicaciones web HTTP; IDS detecta, IPS puede bloquear. La segmentación limita movimiento lateral.",
+          "evidence_sha256": "b119170fa959772599076babaa06e5571ef2d562045b9603473fb217f361437c",
+          "record_sha256": "3e4c99bcf382ccf6e7488bba713f0e18a5f6abae6b3ad3e9ecbc96db04b2ebf5",
+          "review_id": "AI-GSI-B4-T12-004",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "NIST CSRC: Stateful Inspection",
+              "url": "https://csrc.nist.gov/glossary/term/stateful_inspection",
+              "locator": "Definitions, definición atribuida a SP800-41 Rev.1: seguimiento de estado y tráfico que se desvía del esperado",
+              "version": "Glosario HTML comprobado el 04-11-2026. Estado de conexiones complementa reglas; no inspección completa automática de contenido cifrado.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-079"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 2. Perímetro, DMZ y segmentación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar seguimiento de estado y clave C; contrastar filtrado estático, NAT y validación de aplicación."
+      ],
+      "references": [
+        {
+          "title": "NIST CSRC: Stateful Inspection",
+          "url": "https://csrc.nist.gov/glossary/term/stateful_inspection",
+          "locator": "Definitions, definición atribuida a SP800-41 Rev.1: seguimiento de estado y tráfico que se desvía del esperado",
+          "version": "Glosario HTML comprobado el 04-11-2026. Estado de conexiones complementa reglas; no inspección completa automática de contenido cifrado.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T12-005",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "9467ce1196d1421607b4cd2ce24c26581ffbb5ae7506414213164b8ddc62684b",
+      "content_sha256": "40ced4b2fbade9486dbd0c189c7aa2647297f4eaa56b31b8c9832922d3e20cad",
+      "before": {
+        "id": "AI-GSI-B4-T12-005",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T12",
+        "subtopic": "Perímetro, DMZ y segmentación",
+        "exam": null,
+        "statement": "¿Qué efecto busca la segmentación sobre un compromiso?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Limitar movimiento lateral"
+          },
+          {
+            "id": "B",
+            "text": "Garantizar que no habrá vulnerabilidades"
+          },
+          {
+            "id": "C",
+            "text": "Crear ancho de banda infinito"
+          },
+          {
+            "id": "D",
+            "text": "Eliminar autenticación"
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Separar zonas y flujos reduce propagación y alcance de accesos.",
+          "incorrect": "Separar zonas y flujos reduce propagación y alcance de accesos."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 2. Perímetro, DMZ y segmentación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "DMZ aloja servicios expuestos separándolos de redes internas. Firewall **stateless** filtra por reglas de paquete; **stateful** sigue estado de conexión; NGFW añade identificación de aplicaciones/usuarios y otras funciones. Proxy intermedia tráfico; WAF protege aplicaciones web HTTP; IDS detecta, IPS puede bloquear. La segmentación limita movimiento lateral.",
+          "evidence_sha256": "b119170fa959772599076babaa06e5571ef2d562045b9603473fb217f361437c",
+          "record_sha256": "e08fb07b20f52dc451dc139b222640abea01aa4f398aac06ee3840f46a2402d4",
+          "review_id": "AI-GSI-B4-T12-005",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 2. Perímetro, DMZ y segmentación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T12-005",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T12",
+        "subtopic": "Perímetro, DMZ y segmentación",
+        "exam": null,
+        "statement": "Un atacante controla un puesto de trabajo. ¿Qué efecto busca una segmentación que restringe sus flujos hacia servidores de otros segmentos?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Dificulta que el acceso inicial alcance otros segmentos."
+          },
+          {
+            "id": "B",
+            "text": "Elimina las vulnerabilidades presentes en el equipo afectado."
+          },
+          {
+            "id": "C",
+            "text": "Hace innecesaria la autorización de usuarios internos."
+          },
+          {
+            "id": "D",
+            "text": "Permite confiar en todo tráfico tras cruzar el perímetro."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "La segmentación con reglas limita las comunicaciones que un equipo comprometido puede iniciar hacia otras zonas, reduciendo oportunidades de movimiento lateral. No elimina el fallo inicial ni garantiza contención absoluta: importa que los flujos necesarios estén definidos y que identidad, actualización y supervisión sigan funcionando.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "Separar redes no corrige el software vulnerable ni expulsa al atacante del equipo que ya controla.",
+            "C": "El acceso a un segmento no sustituye comprobar qué acciones puede realizar cada identidad sobre los recursos.",
+            "D": "Un origen interno puede estar comprometido; atravesar el perímetro no convierte el tráfico en fiable."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 2. Perímetro, DMZ y segmentación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "DMZ aloja servicios expuestos separándolos de redes internas. Firewall **stateless** filtra por reglas de paquete; **stateful** sigue estado de conexión; NGFW añade identificación de aplicaciones/usuarios y otras funciones. Proxy intermedia tráfico; WAF protege aplicaciones web HTTP; IDS detecta, IPS puede bloquear. La segmentación limita movimiento lateral.",
+          "evidence_sha256": "b119170fa959772599076babaa06e5571ef2d562045b9603473fb217f361437c",
+          "record_sha256": "e08fb07b20f52dc451dc139b222640abea01aa4f398aac06ee3840f46a2402d4",
+          "review_id": "AI-GSI-B4-T12-005",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "NCSC: Preventing Lateral Movement",
+              "url": "https://www.ncsc.gov.uk/guidance/preventing-lateral-movement",
+              "locator": "§6 Segregate networks as sets: separar sistemas sin necesidad de comunicación y limitar acceso",
+              "version": "Guía HTML comprobada el 04-11-2026. Reducción del alcance de compromiso, no eliminación de vulnerabilidades; aplicación conceptual, sin carácter normativo para AGE.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-079"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 2. Perímetro, DMZ y segmentación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar reducción de movimiento lateral y clave A; caso de compromiso inicial sin promesa de invulnerabilidad."
+      ],
+      "references": [
+        {
+          "title": "NCSC: Preventing Lateral Movement",
+          "url": "https://www.ncsc.gov.uk/guidance/preventing-lateral-movement",
+          "locator": "§6 Segregate networks as sets: separar sistemas sin necesidad de comunicación y limitar acceso",
+          "version": "Guía HTML comprobada el 04-11-2026. Reducción del alcance de compromiso, no eliminación de vulnerabilidades; aplicación conceptual, sin carácter normativo para AGE.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T12-006",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "4e24166af0dce1841274460a26ed7d853a1ab4e22c25a6039600411379cbbb4b",
+      "content_sha256": "a3049128d95e91271b70879220c13a406e8ad4cd511f516a1867cd036f1cac7b",
+      "before": {
+        "id": "AI-GSI-B4-T12-006",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T12",
+        "subtopic": "Perímetro, DMZ y segmentación",
+        "exam": null,
+        "statement": "¿Qué función cumple un proxy?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Reemplazar toda base de datos"
+          },
+          {
+            "id": "B",
+            "text": "Solo suministrar energía"
+          },
+          {
+            "id": "C",
+            "text": "Intermediar tráfico"
+          },
+          {
+            "id": "D",
+            "text": "Crear una identidad legal automáticamente"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "La intermediación permite políticas según tipo y diseño del proxy.",
+          "incorrect": "La intermediación permite políticas según tipo y diseño del proxy."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 2. Perímetro, DMZ y segmentación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "DMZ aloja servicios expuestos separándolos de redes internas. Firewall **stateless** filtra por reglas de paquete; **stateful** sigue estado de conexión; NGFW añade identificación de aplicaciones/usuarios y otras funciones. Proxy intermedia tráfico; WAF protege aplicaciones web HTTP; IDS detecta, IPS puede bloquear. La segmentación limita movimiento lateral.",
+          "evidence_sha256": "b119170fa959772599076babaa06e5571ef2d562045b9603473fb217f361437c",
+          "record_sha256": "662764adf8fc0c791de821022fa9fba74295f9cd2ceacc9fb971aab0411e71d5",
+          "review_id": "AI-GSI-B4-T12-006",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 2. Perímetro, DMZ y segmentación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T12-006",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T12",
+        "subtopic": "Perímetro, DMZ y segmentación",
+        "exam": null,
+        "statement": "¿Qué función caracteriza a un proxy HTTP explícito utilizado por un cliente?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Anunciar al cliente la ruta IP preferida hacia el servidor."
+          },
+          {
+            "id": "B",
+            "text": "Traducir direcciones IP sin procesar solicitudes HTTP."
+          },
+          {
+            "id": "C",
+            "text": "Recibir solicitudes del cliente y reenviarlas al servicio."
+          },
+          {
+            "id": "D",
+            "text": "Resolver el nombre del servidor antes de cada conexión."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Un proxy HTTP explícito actúa como intermediario elegido por el cliente: recibe solicitudes e intenta atenderlas o reenviarlas hacia el servicio. Puede aplicar políticas o usar caché según diseño. Esa función es distinta de resolver nombres, anunciar rutas o traducir direcciones; tampoco supone descifrar siempre TLS.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Anunciar caminos es una función de routing; no describe recibir y reenviar mensajes HTTP como intermediario.",
+            "B": "Traducir direcciones es NAT; un proxy HTTP interviene en el intercambio de solicitudes y respuestas.",
+            "D": "DNS resuelve nombres a información de destino; no es el intermediario que procesa las solicitudes HTTP."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 2. Perímetro, DMZ y segmentación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "DMZ aloja servicios expuestos separándolos de redes internas. Firewall **stateless** filtra por reglas de paquete; **stateful** sigue estado de conexión; NGFW añade identificación de aplicaciones/usuarios y otras funciones. Proxy intermedia tráfico; WAF protege aplicaciones web HTTP; IDS detecta, IPS puede bloquear. La segmentación limita movimiento lateral.",
+          "evidence_sha256": "b119170fa959772599076babaa06e5571ef2d562045b9603473fb217f361437c",
+          "record_sha256": "662764adf8fc0c791de821022fa9fba74295f9cd2ceacc9fb971aab0411e71d5",
+          "review_id": "AI-GSI-B4-T12-006",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "IETF: RFC9110, HTTP Semantics",
+              "url": "https://www.rfc-editor.org/rfc/rfc9110.html",
+              "locator": "§3.7 Intermediaries: proxy, gateway/reverse proxy y tunnel; §7.6 Message Forwarding",
+              "version": "Junio de 2022, HTML comprobado el 04-11-2026. El caso conceptual se limita a proxy HTTP explícito elegido por cliente; no todo intermediario descifra TLS o almacena caché.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-079"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 2. Perímetro, DMZ y segmentación",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar intermediación y clave C; precisar proxy HTTP explícito y distractores de funciones próximas de red."
+      ],
+      "references": [
+        {
+          "title": "IETF: RFC9110, HTTP Semantics",
+          "url": "https://www.rfc-editor.org/rfc/rfc9110.html",
+          "locator": "§3.7 Intermediaries: proxy, gateway/reverse proxy y tunnel; §7.6 Message Forwarding",
+          "version": "Junio de 2022, HTML comprobado el 04-11-2026. El caso conceptual se limita a proxy HTTP explícito elegido por cliente; no todo intermediario descifra TLS o almacena caché.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T12-007",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "fffdec6cf643f86bedd22d55a5c3b5aa73d44d83a090c1ecd9ddd677adb01479",
+      "content_sha256": "522fe866e7cf3a3b724977eed74a87ab4ec3921db61e68f55e4b23378398d144",
+      "before": {
+        "id": "AI-GSI-B4-T12-007",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T12",
+        "subtopic": "AAA, NAC y administración",
+        "exam": null,
+        "statement": "¿Qué significa AAA?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Aplicación, algoritmo y array"
+          },
+          {
+            "id": "B",
+            "text": "Archivo, agregación y análisis exclusivamente"
+          },
+          {
+            "id": "C",
+            "text": "Antena, amplificación y ancho de banda"
+          },
+          {
+            "id": "D",
+            "text": "Autenticación, autorización y contabilidad o registro"
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "AAA distingue identidad, permisos y trazabilidad o contabilización.",
+          "incorrect": "AAA distingue identidad, permisos y trazabilidad o contabilización."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 3. AAA, NAC y administración",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "AAA = Authentication, Authorization, Accounting. RADIUS se usa ampliamente para acceso de red/802.1X; TACACS+ es frecuente en administración de dispositivos. 802.1X separa supplicant, authenticator y servidor AAA. NAC aplica identidad/postura y políticas.\n\nLa administración debe usar MFA, RBAC, cuentas nominativas, bastión/PAM, protocolos seguros, red de gestión y logs. Deshabilitar Telnet/HTTP inseguros cuando existan alternativas.",
+          "evidence_sha256": "e04bf0a3fb16be1ad00943915ea926e44e1a29fb87a66d52a6ec1e3351411691",
+          "record_sha256": "3a572513d6392719aa01905dbcf3d894341b62f371c606805a4fcf09ff7c5dd0",
+          "review_id": "AI-GSI-B4-T12-007",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 3. AAA, NAC y administración",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T12-007",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T12",
+        "subtopic": "AAA, NAC y administración",
+        "exam": null,
+        "statement": "¿Qué significa AAA?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Autenticación, autorización y asignación de direcciones."
+          },
+          {
+            "id": "B",
+            "text": "Autenticación, auditoría y actualización de credenciales."
+          },
+          {
+            "id": "C",
+            "text": "Autorización, análisis y anonimización de conexiones."
+          },
+          {
+            "id": "D",
+            "text": "Autenticación, autorización y registro de la actividad."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "AAA separa comprobar identidad, decidir acciones permitidas y registrar actividad o consumo: authentication, authorization y accounting. El detalle del registro depende del despliegue. Autenticar no concede por sí solo todos los permisos; contabilizar no equivale a capturar íntegramente una sesión ni garantiza no repudio.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Asignar direcciones es una función como DHCP; accounting se refiere a actividad o consumo, no a direccionamiento.",
+            "B": "Actualizar credenciales es una tarea de gestión; además esta lista omite la autorización de acciones.",
+            "C": "Analizar o anonimizar conexiones no sustituye la autenticación y el accounting que forman parte de AAA."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 3. AAA, NAC y administración",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "AAA = Authentication, Authorization, Accounting. RADIUS se usa ampliamente para acceso de red/802.1X; TACACS+ es frecuente en administración de dispositivos. 802.1X separa supplicant, authenticator y servidor AAA. NAC aplica identidad/postura y políticas.\n\nLa administración debe usar MFA, RBAC, cuentas nominativas, bastión/PAM, protocolos seguros, red de gestión y logs. Deshabilitar Telnet/HTTP inseguros cuando existan alternativas.",
+          "evidence_sha256": "e04bf0a3fb16be1ad00943915ea926e44e1a29fb87a66d52a6ec1e3351411691",
+          "record_sha256": "3a572513d6392719aa01905dbcf3d894341b62f371c606805a4fcf09ff7c5dd0",
+          "review_id": "AI-GSI-B4-T12-007",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "IETF: RFC8907, TACACS+",
+              "url": "https://www.rfc-editor.org/rfc/rfc8907.html",
+              "locator": "§1 Introduction: AAA, Device Administration y separación de autenticación/autorización/accounting; §10 limitaciones de seguridad",
+              "version": "Informational, septiembre de 2020, HTML comprobado el 04-11-2026. No se atribuye exclusividad de administración a TACACS+ ni cifrado moderno a su ofuscación histórica.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-079"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 3. AAA, NAC y administración",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar significado de AAA y clave D; alternativas paralelas y distinción de identidad, permisos y registro."
+      ],
+      "references": [
+        {
+          "title": "IETF: RFC8907, TACACS+",
+          "url": "https://www.rfc-editor.org/rfc/rfc8907.html",
+          "locator": "§1 Introduction: AAA, Device Administration y separación de autenticación/autorización/accounting; §10 limitaciones de seguridad",
+          "version": "Informational, septiembre de 2020, HTML comprobado el 04-11-2026. No se atribuye exclusividad de administración a TACACS+ ni cifrado moderno a su ofuscación histórica.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T12-008",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "74957cf1d4a6cc6c469e94bd180c4a12fba5fc97e680da8748483c78e99732d2",
+      "content_sha256": "1265941963fda93b5bd9c80ea27d48f5797fb36fa43c395b3e6faace8d9482a5",
+      "before": {
+        "id": "AI-GSI-B4-T12-008",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T12",
+        "subtopic": "AAA, NAC y administración",
+        "exam": null,
+        "statement": "¿Qué protocolo se asocia frecuentemente a administración de dispositivos?",
+        "options": [
+          {
+            "id": "A",
+            "text": "HDFS"
+          },
+          {
+            "id": "B",
+            "text": "CoAP"
+          },
+          {
+            "id": "C",
+            "text": "TACACS+"
+          },
+          {
+            "id": "D",
+            "text": "SMTP"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "TACACS+ es frecuente en administración; RADIUS se utiliza ampliamente en acceso de red.",
+          "incorrect": "TACACS+ es frecuente en administración; RADIUS se utiliza ampliamente en acceso de red."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 3. AAA, NAC y administración",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "AAA = Authentication, Authorization, Accounting. RADIUS se usa ampliamente para acceso de red/802.1X; TACACS+ es frecuente en administración de dispositivos. 802.1X separa supplicant, authenticator y servidor AAA. NAC aplica identidad/postura y políticas.\n\nLa administración debe usar MFA, RBAC, cuentas nominativas, bastión/PAM, protocolos seguros, red de gestión y logs. Deshabilitar Telnet/HTTP inseguros cuando existan alternativas.",
+          "evidence_sha256": "e04bf0a3fb16be1ad00943915ea926e44e1a29fb87a66d52a6ec1e3351411691",
+          "record_sha256": "d3a9c6c5892bac84f6db28cf11b7dd5306e8d793925130b967f1676b40a4dff3",
+          "review_id": "AI-GSI-B4-T12-008",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 3. AAA, NAC y administración",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T12-008",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T12",
+        "subtopic": "AAA, NAC y administración",
+        "exam": null,
+        "statement": "¿Qué protocolo AAA dispone de intercambios propios y separados de autenticación, autorización y accounting para administrar dispositivos?",
+        "options": [
+          {
+            "id": "A",
+            "text": "SSH"
+          },
+          {
+            "id": "B",
+            "text": "RADIUS"
+          },
+          {
+            "id": "C",
+            "text": "TACACS+"
+          },
+          {
+            "id": "D",
+            "text": "SNMP"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "TACACS+ separa autenticación, autorización y accounting en intercambios propios; ese diseño resulta útil para administrar dispositivos y autorizar o registrar comandos. RADIUS también puede usarse en administración, por lo que el uso frecuente no bastaría para distinguirlos. La especificación citada es informativa y advierte limitaciones de seguridad.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "SSH protege sesiones y puede transportar administración interactiva, pero no es la suite AAA separada descrita en RFC8907.",
+            "B": "RADIUS puede prestar AAA y acceso administrativo, pero no es el protocolo de intercambios separados definido en RFC8907.",
+            "D": "SNMP gestiona y supervisa información de dispositivos; no es la suite AAA de autenticación, autorización y accounting indicada."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 3. AAA, NAC y administración",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "AAA = Authentication, Authorization, Accounting. RADIUS se usa ampliamente para acceso de red/802.1X; TACACS+ es frecuente en administración de dispositivos. 802.1X separa supplicant, authenticator y servidor AAA. NAC aplica identidad/postura y políticas.\n\nLa administración debe usar MFA, RBAC, cuentas nominativas, bastión/PAM, protocolos seguros, red de gestión y logs. Deshabilitar Telnet/HTTP inseguros cuando existan alternativas.",
+          "evidence_sha256": "e04bf0a3fb16be1ad00943915ea926e44e1a29fb87a66d52a6ec1e3351411691",
+          "record_sha256": "d3a9c6c5892bac84f6db28cf11b7dd5306e8d793925130b967f1676b40a4dff3",
+          "review_id": "AI-GSI-B4-T12-008",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "IETF: RFC8907, TACACS+",
+              "url": "https://www.rfc-editor.org/rfc/rfc8907.html",
+              "locator": "§1 Introduction: AAA, Device Administration y separación de autenticación/autorización/accounting; §10 limitaciones de seguridad",
+              "version": "Informational, septiembre de 2020, HTML comprobado el 04-11-2026. No se atribuye exclusividad de administración a TACACS+ ni cifrado moderno a su ofuscación histórica.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-079"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 3. AAA, NAC y administración",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar protocolo de AAA administrativo y clave C; eliminar ambigüedad de uso frecuente frente a RADIUS/SSH."
+      ],
+      "references": [
+        {
+          "title": "IETF: RFC8907, TACACS+",
+          "url": "https://www.rfc-editor.org/rfc/rfc8907.html",
+          "locator": "§1 Introduction: AAA, Device Administration y separación de autenticación/autorización/accounting; §10 limitaciones de seguridad",
+          "version": "Informational, septiembre de 2020, HTML comprobado el 04-11-2026. No se atribuye exclusividad de administración a TACACS+ ni cifrado moderno a su ofuscación histórica.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T12-009",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "9761d00782a0179ee2a89bbced1fbbab6f25e301f36c97c632c1c0e16a7c52e5",
+      "content_sha256": "c5c31841666e63067dbf79768b3feaf6aff34cc60b67e142e06083c855b48322",
+      "before": {
+        "id": "AI-GSI-B4-T12-009",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T12",
+        "subtopic": "AAA, NAC y administración",
+        "exam": null,
+        "statement": "¿Qué práctica protege accesos administrativos privilegiados?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Una cuenta compartida pública"
+          },
+          {
+            "id": "B",
+            "text": "Cuentas nominativas, MFA y bastión o PAM"
+          },
+          {
+            "id": "C",
+            "text": "Desactivar logs"
+          },
+          {
+            "id": "D",
+            "text": "Telnet sin protección como opción preferida"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "La administración requiere identidad, límites de privilegio y canales seguros.",
+          "incorrect": "La administración requiere identidad, límites de privilegio y canales seguros."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 3. AAA, NAC y administración",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "AAA = Authentication, Authorization, Accounting. RADIUS se usa ampliamente para acceso de red/802.1X; TACACS+ es frecuente en administración de dispositivos. 802.1X separa supplicant, authenticator y servidor AAA. NAC aplica identidad/postura y políticas.\n\nLa administración debe usar MFA, RBAC, cuentas nominativas, bastión/PAM, protocolos seguros, red de gestión y logs. Deshabilitar Telnet/HTTP inseguros cuando existan alternativas.",
+          "evidence_sha256": "e04bf0a3fb16be1ad00943915ea926e44e1a29fb87a66d52a6ec1e3351411691",
+          "record_sha256": "f59d32598f2218d32b50fd76c993c5aa63429397ff437e77169791a2bdf5487e",
+          "review_id": "AI-GSI-B4-T12-009",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 3. AAA, NAC y administración",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T12-009",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T12",
+        "subtopic": "AAA, NAC y administración",
+        "exam": null,
+        "statement": "Un equipo debe administrar servidores sensibles y atribuir cada actuación a una persona. ¿Qué práctica refuerza ese control?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Compartir una cuenta privilegiada y registrar su contraseña de uso."
+          },
+          {
+            "id": "B",
+            "text": "Usar cuentas individuales, MFA y acceso controlado mediante PAM."
+          },
+          {
+            "id": "C",
+            "text": "Usar cuentas individuales con privilegios globales permanentes."
+          },
+          {
+            "id": "D",
+            "text": "Centralizar una contraseña común detrás de un bastión de acceso."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Las cuentas individuales permiten atribuir acciones, MFA refuerza la autenticación y un PAM o bastión bien configurado controla y audita accesos privilegiados. Deben limitarse los permisos y su duración según la tarea. Ninguna herramienta garantiza seguridad por su nombre: importan configuración, custodia de credenciales y revisión de registros.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Con una identidad compartida se dificulta atribuir cada acción; registrar la contraseña no demuestra quién realizó una operación.",
+            "C": "La identidad individual ayuda, pero el privilegio global permanente amplía el impacto de un compromiso y no respeta la necesidad de la tarea.",
+            "D": "El bastión aporta un punto de control, pero una credencial común no resuelve por sí sola atribución ni autenticación reforzada."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 3. AAA, NAC y administración",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "AAA = Authentication, Authorization, Accounting. RADIUS se usa ampliamente para acceso de red/802.1X; TACACS+ es frecuente en administración de dispositivos. 802.1X separa supplicant, authenticator y servidor AAA. NAC aplica identidad/postura y políticas.\n\nLa administración debe usar MFA, RBAC, cuentas nominativas, bastión/PAM, protocolos seguros, red de gestión y logs. Deshabilitar Telnet/HTTP inseguros cuando existan alternativas.",
+          "evidence_sha256": "e04bf0a3fb16be1ad00943915ea926e44e1a29fb87a66d52a6ec1e3351411691",
+          "record_sha256": "f59d32598f2218d32b50fd76c993c5aa63429397ff437e77169791a2bdf5487e",
+          "review_id": "AI-GSI-B4-T12-009",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "GSA: Privileged Identity Playbook",
+              "url": "https://www.idmanagement.gov/playbooks/pam/",
+              "locator": "Privileged Credential Management: identidad individual, MFA y estaciones dedicadas/bastion; Tools: control granular y auditoría",
+              "version": "Versión1.2 de 29-12-2022, HTML comprobado el 04-11-2026. Principios de control; no se trasladan obligaciones estadounidenses, AAL3 universal ni referencias normativas antiguas como vigentes en AGE.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-079"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 3. AAA, NAC y administración",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar identidad/MFA/PAM y clave B; escenario de atribución y control sin tratar un producto como garantía."
+      ],
+      "references": [
+        {
+          "title": "GSA: Privileged Identity Playbook",
+          "url": "https://www.idmanagement.gov/playbooks/pam/",
+          "locator": "Privileged Credential Management: identidad individual, MFA y estaciones dedicadas/bastion; Tools: control granular y auditoría",
+          "version": "Versión1.2 de 29-12-2022, HTML comprobado el 04-11-2026. Principios de control; no se trasladan obligaciones estadounidenses, AAL3 universal ni referencias normativas antiguas como vigentes en AGE.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T12-010",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "00d43440be65fa6ac72728e9f982097cfd703ea16e60f3ba48d70150fecc59c8",
+      "content_sha256": "ae8236c355dd3c27460de29b5376d1e7de9f601c96174098177112cc12a32efe",
+      "before": {
+        "id": "AI-GSI-B4-T12-010",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T12",
+        "subtopic": "Criptografía",
+        "exam": null,
+        "statement": "¿Qué propiedad del cifrado simétrico favorece grandes volúmenes?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Publicar la clave para descifrar"
+          },
+          {
+            "id": "B",
+            "text": "Eficiencia usando una clave compartida"
+          },
+          {
+            "id": "C",
+            "text": "Ausencia de gestión de claves"
+          },
+          {
+            "id": "D",
+            "text": "Necesidad de un certificado por cada byte"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "La eficiencia no elimina necesidad de proteger y distribuir adecuadamente claves.",
+          "incorrect": "La eficiencia no elimina necesidad de proteger y distribuir adecuadamente claves."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 4. Criptografía",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Simétrica (AES): misma clave, eficiente para volumen. Asimétrica (RSA/ECC): par pública/privada, útil para firma/intercambio/autenticación. Hash (SHA-2/SHA-3): huella unidireccional, no cifra. HMAC combina hash y secreto para autenticidad/integridad.\n\nLa seguridad depende de algoritmos, tamaños, modos, generación/almacenamiento de claves y protocolo. “Usar criptografía” sin gestión de claves no resuelve el riesgo.",
+          "evidence_sha256": "24f3fe4362ae846fc0e6318909f9914cb4896ca5c747683a7d5dc6ffed1bca7c",
+          "record_sha256": "dbb4adfa1c7b74197a2ffb7e96b7f27d397cf49ddcce0528f33c16d71a7ab7e0",
+          "review_id": "AI-GSI-B4-T12-010",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 4. Criptografía",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T12-010",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T12",
+        "subtopic": "Criptografía",
+        "exam": null,
+        "statement": "¿Qué propiedad del cifrado simétrico favorece grandes volúmenes?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Verifica firmas usando una clave pública distinta por bloque."
+          },
+          {
+            "id": "B",
+            "text": "Procesa los datos con eficiencia mediante una clave secreta."
+          },
+          {
+            "id": "C",
+            "text": "Evita distribuir material de clave entre los interlocutores."
+          },
+          {
+            "id": "D",
+            "text": "Separa claves públicas de cifrado y privadas de descifrado."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "El cifrado simétrico resulta eficiente para proteger volúmenes grandes usando material secreto compartido entre partes autorizadas. Es habitual combinarlo con mecanismos de establecimiento o transporte de claves. Esa eficiencia no elimina la necesidad de custodiar, distribuir y renovar claves, ni permite deducir un rendimiento fijo sin medir la implementación.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Verificar firmas con clave pública es una operación asimétrica distinta del cifrado simétrico de datos.",
+            "C": "El secreto compartido debe establecerse de forma segura; el cifrado simétrico no elimina esa necesidad.",
+            "D": "La pareja pública/privada describe criptografía asimétrica; en cifrado simétrico las operaciones usan la clave secreta compartida."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 4. Criptografía",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Simétrica (AES): misma clave, eficiente para volumen. Asimétrica (RSA/ECC): par pública/privada, útil para firma/intercambio/autenticación. Hash (SHA-2/SHA-3): huella unidireccional, no cifra. HMAC combina hash y secreto para autenticidad/integridad.\n\nLa seguridad depende de algoritmos, tamaños, modos, generación/almacenamiento de claves y protocolo. “Usar criptografía” sin gestión de claves no resuelve el riesgo.",
+          "evidence_sha256": "24f3fe4362ae846fc0e6318909f9914cb4896ca5c747683a7d5dc6ffed1bca7c",
+          "record_sha256": "dbb4adfa1c7b74197a2ffb7e96b7f27d397cf49ddcce0528f33c16d71a7ab7e0",
+          "review_id": "AI-GSI-B4-T12-010",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "NIST CSRC: symmetric key algorithm",
+              "url": "https://csrc.nist.gov/glossary/term/symmetric_key_algorithm",
+              "locator": "Definitions: material secreto compartido y misma clave para operaciones complementarias",
+              "version": "Glosario HTML comprobado el 04-11-2026. Definición de cifrado simétrico, sin equiparar a firma o distribución de clave pública.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "Microsoft Learn: Cryptographic keys",
+              "url": "https://learn.microsoft.com/en-us/windows/apps/develop/security/cryptographic-keys",
+              "locator": "Symmetric keys; Asymmetric keys: coste comparativo y ejemplo de cifrado híbrido de mensaje y clave",
+              "version": "Documentación Windows Apps, HTML comprobado el 04-11-2026, cuerpo accesible pese al aviso de autorización de plantilla. No se recomiendan RC4/ECB ni todos los algoritmos históricos enumerados.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-079"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 4. Criptografía",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar eficiencia con secreto compartido y clave B; evitar equivalencia entre eficiencia y ausencia de gestión."
+      ],
+      "references": [
+        {
+          "title": "NIST CSRC: symmetric key algorithm",
+          "url": "https://csrc.nist.gov/glossary/term/symmetric_key_algorithm",
+          "locator": "Definitions: material secreto compartido y misma clave para operaciones complementarias",
+          "version": "Glosario HTML comprobado el 04-11-2026. Definición de cifrado simétrico, sin equiparar a firma o distribución de clave pública.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "Microsoft Learn: Cryptographic keys",
+          "url": "https://learn.microsoft.com/en-us/windows/apps/develop/security/cryptographic-keys",
+          "locator": "Symmetric keys; Asymmetric keys: coste comparativo y ejemplo de cifrado híbrido de mensaje y clave",
+          "version": "Documentación Windows Apps, HTML comprobado el 04-11-2026, cuerpo accesible pese al aviso de autorización de plantilla. No se recomiendan RC4/ECB ni todos los algoritmos históricos enumerados.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T12-011",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "145ce453ce3aa058ad73876c62d0c5125c56865beff4c51ec904d3c9477d5a0b",
+      "content_sha256": "f2c305a5573fe9ad1c3e588030e73c452da6722408df39bebaaadbffaf4fd07f",
+      "before": {
+        "id": "AI-GSI-B4-T12-011",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T12",
+        "subtopic": "Criptografía",
+        "exam": null,
+        "statement": "¿Por qué no basta con afirmar que un sistema usa criptografía?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Porque cifrar nunca es útil"
+          },
+          {
+            "id": "B",
+            "text": "Porque criptografía sustituye configuración"
+          },
+          {
+            "id": "C",
+            "text": "Porque toda clave es pública"
+          },
+          {
+            "id": "D",
+            "text": "Importan algoritmos, modos, claves y protocolo"
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "La seguridad depende de implementación y ciclo de vida de claves.",
+          "incorrect": "La seguridad depende de implementación y ciclo de vida de claves."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 4. Criptografía",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Simétrica (AES): misma clave, eficiente para volumen. Asimétrica (RSA/ECC): par pública/privada, útil para firma/intercambio/autenticación. Hash (SHA-2/SHA-3): huella unidireccional, no cifra. HMAC combina hash y secreto para autenticidad/integridad.\n\nLa seguridad depende de algoritmos, tamaños, modos, generación/almacenamiento de claves y protocolo. “Usar criptografía” sin gestión de claves no resuelve el riesgo.",
+          "evidence_sha256": "24f3fe4362ae846fc0e6318909f9914cb4896ca5c747683a7d5dc6ffed1bca7c",
+          "record_sha256": "9b46d32c21f34b0304665367a507f733a150f5115790a0e9a0f159adeef650c9",
+          "review_id": "AI-GSI-B4-T12-011",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 4. Criptografía",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T12-011",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T12",
+        "subtopic": "Criptografía",
+        "exam": null,
+        "statement": "¿Por qué no basta con afirmar que un sistema usa criptografía?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Porque el tamaño de clave basta para comparar su seguridad."
+          },
+          {
+            "id": "B",
+            "text": "Porque el nombre del algoritmo acredita su uso correcto."
+          },
+          {
+            "id": "C",
+            "text": "Porque cifrar datos acredita también su integridad y origen."
+          },
+          {
+            "id": "D",
+            "text": "Porque importan diseño, parámetros, claves y protocolo usado."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "La seguridad depende de cómo se integran algoritmos, modos, parámetros y claves en un protocolo y una implementación. Una clave expuesta o una configuración inadecuada puede anular la protección esperada. Se revisa todo el ciclo de vida; la mera presencia de cifrado no demuestra autenticación, integridad o resistencia del sistema completo.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "La longitud de clave es un factor, pero no resuelve exposición del secreto, errores de protocolo o modos inseguros.",
+            "B": "Elegir un algoritmo reconocido no demuestra que se hayan empleado bien parámetros, claves y controles de implementación.",
+            "C": "Confidencialidad no implica automáticamente integridad y origen autenticado; hay que comprobar las propiedades del mecanismo concreto."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 4. Criptografía",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Simétrica (AES): misma clave, eficiente para volumen. Asimétrica (RSA/ECC): par pública/privada, útil para firma/intercambio/autenticación. Hash (SHA-2/SHA-3): huella unidireccional, no cifra. HMAC combina hash y secreto para autenticidad/integridad.\n\nLa seguridad depende de algoritmos, tamaños, modos, generación/almacenamiento de claves y protocolo. “Usar criptografía” sin gestión de claves no resuelve el riesgo.",
+          "evidence_sha256": "24f3fe4362ae846fc0e6318909f9914cb4896ca5c747683a7d5dc6ffed1bca7c",
+          "record_sha256": "9b46d32c21f34b0304665367a507f733a150f5115790a0e9a0f159adeef650c9",
+          "review_id": "AI-GSI-B4-T12-011",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "NIST: Key Management FAQs",
+              "url": "https://csrc.nist.gov/Projects/key-management/faqs",
+              "locator": "Cryptographic Key Management: What is CKM? y Why is CKM important?",
+              "version": "HTML comprobado el 04-11-2026. Ciclo de generación, almacenamiento, distribución, uso y destrucción, algoritmos y protocolos. No se atribuye vigencia a todas las ediciones enlazadas.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-079"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 4. Criptografía",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar evaluación integral de criptografía y clave D; precisar propiedades sin recomendaciones de algoritmos antiguos."
+      ],
+      "references": [
+        {
+          "title": "NIST: Key Management FAQs",
+          "url": "https://csrc.nist.gov/Projects/key-management/faqs",
+          "locator": "Cryptographic Key Management: What is CKM? y Why is CKM important?",
+          "version": "HTML comprobado el 04-11-2026. Ciclo de generación, almacenamiento, distribución, uso y destrucción, algoritmos y protocolos. No se atribuye vigencia a todas las ediciones enlazadas.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T12-013",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "32cebc335aebc2a4ae4897eb08899ea3c83ce6c8c103ce1c739ecce772b5b75d",
+      "content_sha256": "7f94952e04e4cafa1de3428b89e52c653ab5166ed61d4557311622ebb9bad337",
+      "before": {
+        "id": "AI-GSI-B4-T12-013",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T12",
+        "subtopic": "PKI, certificados y firma digital",
+        "exam": null,
+        "statement": "¿Con qué se verifica una firma digital del firmante?",
+        "options": [
+          {
+            "id": "A",
+            "text": "La clave privada del destinatario"
+          },
+          {
+            "id": "B",
+            "text": "Su clave pública o certificado"
+          },
+          {
+            "id": "C",
+            "text": "Una dirección MAC"
+          },
+          {
+            "id": "D",
+            "text": "Su contraseña de inicio de sesión obligatoriamente"
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "Generar usa la privada del firmante; verificar usa su pública y controles de confianza.",
+          "incorrect": "Generar usa la privada del firmante; verificar usa su pública y controles de confianza."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 5. PKI, certificados y firma digital",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Una PKI gestiona CA, certificados, claves, políticas, revocación/estado (CRL/OCSP) y ciclo de vida. En firma digital, el firmante genera una firma con su clave privada sobre el hash/estructura definida; se verifica con la pública/certificado. Aporta autenticidad e integridad y puede sustentar no repudio en el marco jurídico/procedimental adecuado.",
+          "evidence_sha256": "9df130afb47a729abd5692da230811671ef4e272bf2d202c98db789fa626eb3b",
+          "record_sha256": "5b466faa0fea2bbe9870f9feb5f7cc2b6390c518fd12077c2adb2c676c84cc2e",
+          "review_id": "AI-GSI-B4-T12-013",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 5. PKI, certificados y firma digital",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T12-013",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T12",
+        "subtopic": "PKI, certificados y firma digital",
+        "exam": null,
+        "statement": "Se recibe un documento firmado y el certificado del firmante. ¿Con qué clave se comprueba la firma del documento, además de validar la identidad y confianza?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Con la clave pública del receptor del documento."
+          },
+          {
+            "id": "B",
+            "text": "Con la clave pública vinculada al firmante esperado."
+          },
+          {
+            "id": "C",
+            "text": "Con la clave privada que conserva el firmante."
+          },
+          {
+            "id": "D",
+            "text": "Con la clave pública de la autoridad emisora."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "La firma del documento se verifica con la clave pública correspondiente a la clave privada del firmante. Además hay que comprobar su vinculación con la identidad esperada. Si se usa un certificado, se revisan cadena de confianza, usos y vigencia aplicables; la clave de la autoridad verifica el certificado, no directamente esa firma del documento.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "La firma se corresponde con la clave privada del firmante, no con una pareja de claves del receptor.",
+            "C": "La clave privada se utiliza para generar la firma y debe mantenerse secreta; no se entrega al verificador.",
+            "D": "La autoridad firma el certificado; su clave pública verifica esa emisión, mientras la firma del documento se comprueba con la del firmante."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 5. PKI, certificados y firma digital",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Una PKI gestiona CA, certificados, claves, políticas, revocación/estado (CRL/OCSP) y ciclo de vida. En firma digital, el firmante genera una firma con su clave privada sobre el hash/estructura definida; se verifica con la pública/certificado. Aporta autenticidad e integridad y puede sustentar no repudio en el marco jurídico/procedimental adecuado.",
+          "evidence_sha256": "9df130afb47a729abd5692da230811671ef4e272bf2d202c98db789fa626eb3b",
+          "record_sha256": "5b466faa0fea2bbe9870f9feb5f7cc2b6390c518fd12077c2adb2c676c84cc2e",
+          "review_id": "AI-GSI-B4-T12-013",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "IETF: RFC5280, Internet X.509 Public Key Infrastructure Certificate and CRL Profile",
+              "url": "https://www.rfc-editor.org/rfc/rfc5280.html",
+              "locator": "§4.1.2.7 Subject Public Key Info; §4.2.1.3 Key Usage/digitalSignature; §6 Certification Path Validation",
+              "version": "Mayo de 2008, apartados HTML comprobados el 04-11-2026. Clave pública del sujeto para verificar; cadena vincula identidad/clave. No valoración legal eIDAS o recomendación de algoritmos históricos.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-079"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 5. PKI, certificados y firma digital",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar verificación con pública del firmante y clave B; contextualizar validación del documento frente al certificado."
+      ],
+      "references": [
+        {
+          "title": "IETF: RFC5280, Internet X.509 Public Key Infrastructure Certificate and CRL Profile",
+          "url": "https://www.rfc-editor.org/rfc/rfc5280.html",
+          "locator": "§4.1.2.7 Subject Public Key Info; §4.2.1.3 Key Usage/digitalSignature; §6 Certification Path Validation",
+          "version": "Mayo de 2008, apartados HTML comprobados el 04-11-2026. Clave pública del sujeto para verificar; cadena vincula identidad/clave. No valoración legal eIDAS o recomendación de algoritmos históricos.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T12-014",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "c67e7b494f812a30b3b15b505ee63638bae0c466221d943cd6f8f1f622d9884a",
+      "content_sha256": "657129bb26857609aa00ac78299c262df26db0406723847d11a3c6e208fd71cf",
+      "before": {
+        "id": "AI-GSI-B4-T12-014",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T12",
+        "subtopic": "TLS, SSH e IPsec",
+        "exam": null,
+        "statement": "¿Qué protocolo protege administración remota en el tema?",
+        "options": [
+          {
+            "id": "A",
+            "text": "SSH"
+          },
+          {
+            "id": "B",
+            "text": "HTTP sin TLS"
+          },
+          {
+            "id": "C",
+            "text": "ARP"
+          },
+          {
+            "id": "D",
+            "text": "Telnet sin protección"
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "SSH proporciona canal seguro para administración, frente a alternativas sin protección.",
+          "incorrect": "SSH proporciona canal seguro para administración, frente a alternativas sin protección."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 6. TLS, SSH e IPsec",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "TLS protege protocolos de aplicación. En julio de 2026, RFC 9846 volvió a especificar TLS 1.3 y **obsoletó RFC 8446**; para examen importa TLS 1.3 y sus propiedades modernas (AEAD, handshake y eliminación de algoritmos legados), no memorizar cada cambio editorial.\n\nSSH protege administración remota; IPsec protege tráfico IP mediante arquitectura de seguridad con AH/ESP (en la práctica ESP es central) y modos transporte/túnel. No confundir TLS con IPsec: operan en capas y escenarios diferentes.",
+          "evidence_sha256": "39b9741bcf026cf6123901f28961821061c1336d8dd96ff77b952be960737eb7",
+          "record_sha256": "59daf8a059cc96e839c24a8fa9a319f4661bcaecf11b7a80a721c7a90a3af9c7",
+          "review_id": "AI-GSI-B4-T12-014",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 6. TLS, SSH e IPsec",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T12-014",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T12",
+        "subtopic": "TLS, SSH e IPsec",
+        "exam": null,
+        "statement": "¿Qué protocolo está diseñado para una consola de shell remota con canal protegido y autenticación?",
+        "options": [
+          {
+            "id": "A",
+            "text": "SSH"
+          },
+          {
+            "id": "B",
+            "text": "Telnet"
+          },
+          {
+            "id": "C",
+            "text": "SNMP"
+          },
+          {
+            "id": "D",
+            "text": "RADIUS"
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "SSH está diseñado para acceso remoto seguro y otros servicios sobre una red no confiable. Distingue protección del transporte, autenticación del usuario y canales de conexión. Para administrar hay que comprobar la identidad del servidor y aplicar autenticación y permisos adecuados; no basta con aceptar cualquier clave de host sin verificarla.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "Telnet básico no proporciona por sí mismo el canal cifrado y autenticado que se busca para la consola remota.",
+            "C": "SNMP permite gestión y supervisión, pero no es el protocolo de sesión de shell interactiva solicitado.",
+            "D": "RADIUS proporciona servicios de autenticación, autorización y accounting; no transporta una consola interactiva como SSH."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 6. TLS, SSH e IPsec",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "TLS protege protocolos de aplicación. En julio de 2026, RFC 9846 volvió a especificar TLS 1.3 y **obsoletó RFC 8446**; para examen importa TLS 1.3 y sus propiedades modernas (AEAD, handshake y eliminación de algoritmos legados), no memorizar cada cambio editorial.\n\nSSH protege administración remota; IPsec protege tráfico IP mediante arquitectura de seguridad con AH/ESP (en la práctica ESP es central) y modos transporte/túnel. No confundir TLS con IPsec: operan en capas y escenarios diferentes.",
+          "evidence_sha256": "39b9741bcf026cf6123901f28961821061c1336d8dd96ff77b952be960737eb7",
+          "record_sha256": "59daf8a059cc96e839c24a8fa9a319f4661bcaecf11b7a80a721c7a90a3af9c7",
+          "review_id": "AI-GSI-B4-T12-014",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "IETF: RFC4251, SSH Protocol Architecture",
+              "url": "https://www.rfc-editor.org/rfc/rfc4251.html",
+              "locator": "§1 Introduction: secure remote login, servidor/canal, autenticación de usuario y canales; §4.1 Host Keys",
+              "version": "Enero de 2006, HTML comprobado el 04-11-2026. Arquitectura SSH, no recomendación de cifrados antiguos. Autenticación del servidor y del usuario con políticas adecuadas.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-079"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 6. TLS, SSH e IPsec",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar SSH y clave A; acotar consola de shell para distinguir otros protocolos de administración seguros."
+      ],
+      "references": [
+        {
+          "title": "IETF: RFC4251, SSH Protocol Architecture",
+          "url": "https://www.rfc-editor.org/rfc/rfc4251.html",
+          "locator": "§1 Introduction: secure remote login, servidor/canal, autenticación de usuario y canales; §4.1 Host Keys",
+          "version": "Enero de 2006, HTML comprobado el 04-11-2026. Arquitectura SSH, no recomendación de cifrados antiguos. Autenticación del servidor y del usuario con políticas adecuadas.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T12-016",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "538a2c5ea333c0139a39197ae475dc581b917cc790723a81a9333e99959f2532",
+      "content_sha256": "833d073bd31bb9cc7cdd871c677fe31189e40528b083ddc052c27f720ac46512",
+      "before": {
+        "id": "AI-GSI-B4-T12-016",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T12",
+        "subtopic": "TLS, SSH e IPsec",
+        "exam": null,
+        "statement": "¿Qué distinción es correcta entre TLS e IPsec?",
+        "options": [
+          {
+            "id": "A",
+            "text": "IPsec es un formato de firma PDF"
+          },
+          {
+            "id": "B",
+            "text": "Son sinónimos exactos"
+          },
+          {
+            "id": "C",
+            "text": "TLS solo gestiona discos"
+          },
+          {
+            "id": "D",
+            "text": "Actúan en capas y escenarios distintos"
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Ambos protegen comunicaciones, pero con arquitecturas diferentes.",
+          "incorrect": "Ambos protegen comunicaciones, pero con arquitecturas diferentes."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 6. TLS, SSH e IPsec",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "TLS protege protocolos de aplicación. En julio de 2026, RFC 9846 volvió a especificar TLS 1.3 y **obsoletó RFC 8446**; para examen importa TLS 1.3 y sus propiedades modernas (AEAD, handshake y eliminación de algoritmos legados), no memorizar cada cambio editorial.\n\nSSH protege administración remota; IPsec protege tráfico IP mediante arquitectura de seguridad con AH/ESP (en la práctica ESP es central) y modos transporte/túnel. No confundir TLS con IPsec: operan en capas y escenarios diferentes.",
+          "evidence_sha256": "39b9741bcf026cf6123901f28961821061c1336d8dd96ff77b952be960737eb7",
+          "record_sha256": "178c9d9289634737d676da95d3212520e4c7f5b2024cc60720332df034e467a7",
+          "review_id": "AI-GSI-B4-T12-016",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 6. TLS, SSH e IPsec",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T12-016",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T12",
+        "subtopic": "TLS, SSH e IPsec",
+        "exam": null,
+        "statement": "¿Qué distinción es correcta entre TLS e IPsec?",
+        "options": [
+          {
+            "id": "A",
+            "text": "TLS protege toda la capa IP; IPsec solo los mensajes HTTP."
+          },
+          {
+            "id": "B",
+            "text": "TLS e IPsec cubren el mismo tráfico con los mismos extremos."
+          },
+          {
+            "id": "C",
+            "text": "TLS requiere un túnel entre redes; IPsec una sesión de navegador."
+          },
+          {
+            "id": "D",
+            "text": "TLS protege un canal entre pares; IPsec actúa en la capa IP."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "TLS protege un canal para protocolos superiores entre los pares que lo terminan, mientras IPsec aplica protección en la capa IP según extremos y políticas. Pueden usarse en escenarios distintos o combinarse. No todo TLS es web ni toda configuración IPsec aporta cifrado; hay que identificar qué tráfico y qué extremos quedan protegidos.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Invierte los alcances: IPsec opera en IP y TLS puede servir a diversos protocolos superiores, no a toda la capa IP.",
+            "B": "Los límites de protección y los extremos dependen del despliegue; usar uno no hace idéntica su cobertura a la del otro.",
+            "C": "TLS no exige un túnel entre redes e IPsec no depende de una sesión de navegador; son restricciones inventadas."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 6. TLS, SSH e IPsec",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "TLS protege protocolos de aplicación. En julio de 2026, RFC 9846 volvió a especificar TLS 1.3 y **obsoletó RFC 8446**; para examen importa TLS 1.3 y sus propiedades modernas (AEAD, handshake y eliminación de algoritmos legados), no memorizar cada cambio editorial.\n\nSSH protege administración remota; IPsec protege tráfico IP mediante arquitectura de seguridad con AH/ESP (en la práctica ESP es central) y modos transporte/túnel. No confundir TLS con IPsec: operan en capas y escenarios diferentes.",
+          "evidence_sha256": "39b9741bcf026cf6123901f28961821061c1336d8dd96ff77b952be960737eb7",
+          "record_sha256": "178c9d9289634737d676da95d3212520e4c7f5b2024cc60720332df034e467a7",
+          "review_id": "AI-GSI-B4-T12-016",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "IETF: RFC8446, TLS1.3",
+              "url": "https://www.rfc-editor.org/rfc/rfc8446.html",
+              "locator": "§1 Introduction: canal entre pares sobre flujo fiable ordenado, handshake/record y protocolos superiores",
+              "version": "Agosto de 2018, HTML comprobado el 04-11-2026. TLS no se limita a HTTP ni exige siempre certificados: admite PSK. Se usa alcance del canal, no equivalencia con protección de toda la red.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "IETF: RFC4301, Security Architecture for IP",
+              "url": "https://www.rfc-editor.org/rfc/rfc4301.html",
+              "locator": "§2.1 Goals/Objectives: servicios en capa IP; AH/ESP y selección por política",
+              "version": "Diciembre de 2005, HTML comprobado el 04-11-2026. Alcance de IPsec según extremos y política. No se afirma que todo uso cifre ni que sustituya seguridad de aplicación.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-079"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.12; sección 6. TLS, SSH e IPsec",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar capas y escenarios distintos y clave D; precisar límites sin prometer cifrado universal."
+      ],
+      "references": [
+        {
+          "title": "IETF: RFC8446, TLS1.3",
+          "url": "https://www.rfc-editor.org/rfc/rfc8446.html",
+          "locator": "§1 Introduction: canal entre pares sobre flujo fiable ordenado, handshake/record y protocolos superiores",
+          "version": "Agosto de 2018, HTML comprobado el 04-11-2026. TLS no se limita a HTTP ni exige siempre certificados: admite PSK. Se usa alcance del canal, no equivalencia con protección de toda la red.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "IETF: RFC4301, Security Architecture for IP",
+          "url": "https://www.rfc-editor.org/rfc/rfc4301.html",
+          "locator": "§2.1 Goals/Objectives: servicios en capa IP; AH/ESP y selección por política",
+          "version": "Diciembre de 2005, HTML comprobado el 04-11-2026. Alcance de IPsec según extremos y política. No se afirma que todo uso cifre ni que sustituya seguridad de aplicación.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    }
+  ]
+}

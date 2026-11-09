@@ -1,0 +1,795 @@
+{
+  "batch_id": "GSI-EDITORIAL-022",
+  "batch_sha256": "bd9206bdd1057b8968b6e21830e10ecb84a0ce258cee19693726ab8c86596475",
+  "prepared_at": "2026-10-27",
+  "preparation": "agent_source_checked_pending_owner_review",
+  "source_checked_by": "Asistente preparador; no revisión humana independiente",
+  "accepted": 0,
+  "applied": 0,
+  "withdrawn": 0,
+  "scope": "Posiciones 421–440 de review_order: seis manuales B2-T01 y catorce B2-T02; sin IA ni oficiales.",
+  "protected_files_sha256": {
+    "data/questions-manual.json": "dc6bb78be015ede11e8a703bdde58a272352e7030fe9db25cbe9a91c041402e0",
+    "data/questions-ai.json": "07775eed29f024de16e2fb2bcb16072a306300363a872b03ae373c82c7fac4bd",
+    "data/questions-official.json": "bddf132ba2333d848982263593905206a87e8548179ee7443a8699385c984b9e",
+    "data/gsi-editorial-reviews.json": "36cacf9e11fd87baab9d370071a4de28e9d61f6a0325dc3ccc0cbf0af683f508",
+    "data/gsi-editorial-revisions.json": "d3c65f03f977c66f3fd92ee6cafe8fbdc82982722dd300aa93990454a5339ffd",
+    "content/question-reviews/baseline.json": "7a77fcaa60f6fea1ae57ee102c15659590f7e1d1a653f1650aa49127164679e8",
+    "content/question-reviews/lote-001.json": "0ea1cf9fabdf01c5580251e2a43a2d53ce9dbd40673b0d5d59e2ea5700fcc4c2",
+    "content/question-reviews/approvals/GSI-EDITORIAL-001.json": "1a86325719d413716edb4461974d8a9b691d2457ce010eb534d6d21397c90f47",
+    "content/question-reviews/lote-002.json": "926617d637d790cb5e933b0d081f5975f951d8dfbc7097d56e3315b64cdef26c",
+    "docs/GSI_REVISION_LOTE_002.md": "607431e86c46d6761ce209052f5b2e6ffdc8a510603617ee40b95c616da257d8",
+    "docs/GSI_PREPARACION_LOTE_002.md": "0226c79a3dd9fc9e8a8558bdd2142a2e22b3311cd815a38a32870c25ad894c0c",
+    "logs/gsi-editorial-002-preparation.json": "8e286fe32fb1e713a40ba4cbdacebcdfed11cced549150ec52c221c0e5265d0f",
+    "content/question-reviews/lote-003.json": "f7c8a2c03040254a508efe3f6699fe6d2aa892db4542d072ac6dcbd9cf1710cd",
+    "docs/GSI_REVISION_LOTE_003.md": "fa2253831e6c1c538ad3fbe0363ff5711472c1cd4b90f5acd1c847f680d9c054",
+    "docs/GSI_PREPARACION_LOTE_003.md": "bb77b94a434497d38361e713f750915abcc5008dc5879f267db23d318d41475c",
+    "logs/gsi-editorial-003-preparation.json": "16287e65b5a60139f817e55010eb22aa34bd22fd67b921f11acef079c6f75544",
+    "content/question-reviews/lote-004.json": "86f9242d1fb667660dfd12812e1752605aee6f0ec92213618bd37d3ef768e88c",
+    "docs/GSI_REVISION_LOTE_004.md": "03030bb383ae6ca44e004bb07e0c848c4c689e573b4318b60f42dffd74ab40d8",
+    "docs/GSI_PREPARACION_LOTE_004.md": "1ad8e7f429df30d20be3f80084d0056ac19f29cd5c68b3cb654189b847e78fda",
+    "logs/gsi-editorial-004-preparation.json": "6c64627999892ad29dd736e4115c12ddb4d37ef65743c6e2c41524630dbf6e89",
+    "content/question-reviews/lote-005.json": "97af1418ccfeb95f77389dbf7828212ff26389e91a5f8c78d08f6805e5de1d99",
+    "docs/GSI_REVISION_LOTE_005.md": "21fcd0a1c1deb7ffab6661e7274b7e044a988f97715b0a81e2f68c2a5bfacf8a",
+    "docs/GSI_PREPARACION_LOTE_005.md": "3962d2dbc042f253c8b3c5c4ea5fd2731f8d25d5492a9a85822032468a1c1b67",
+    "logs/gsi-editorial-005-preparation.json": "9b4829cacc42f39c7f0b670896add41cd5c27ae1b69f002583504e7f909bfe05",
+    "content/question-reviews/lote-006.json": "d8f5df7e32d2c22fca6b097b385f19f0ab4b3a4761a681af413ec6a30c2ac334",
+    "docs/GSI_REVISION_LOTE_006.md": "a4cc8bed9b5ca874c048c00449724ad15c716aaf096280a67236019ee5f3de92",
+    "docs/GSI_PREPARACION_LOTE_006.md": "266c24e5d28a6988f08f41b733372c635949e3318ede5ea19f71a8f7add774c9",
+    "logs/gsi-editorial-006-preparation.json": "3a0a9c6e7491761c38dc080fd5adb299c2b73f15ca8e6ef6f2a30975b12ac822",
+    "content/question-reviews/lote-007.json": "fc478894e82ef47d4e46ff73183f5ca165d658548fa8773091ea90c341b41651",
+    "docs/GSI_REVISION_LOTE_007.md": "9a7b600fba1a3f51711c8b1d6f231fb68fef22d12f338a9dbe1770006fa61154",
+    "docs/GSI_PREPARACION_LOTE_007.md": "9df437583473e6c2b673e4c833ccdd500c32b3b2a99636b83fcbc3131b690fc1",
+    "logs/gsi-editorial-007-preparation.json": "9ea1d6d040880944be504511f49741b836fb1ec9b3201a09b0ecd3ff7dd1cf77",
+    "content/question-reviews/lote-008.json": "e9cf463a2a2e6151c8f587fb5bac1608825c0499e3a1a1e73bbb7f60b116f16e",
+    "docs/GSI_REVISION_LOTE_008.md": "400e57e6c598790a1258ad3bc2986f56be428b9b95ab2972995d901db5908edc",
+    "docs/GSI_PREPARACION_LOTE_008.md": "ea541aca767054421997ea94ef2756161199f1ee6452014d5f8f2c34d0ebe0fd",
+    "logs/gsi-editorial-008-preparation.json": "6ba6764f924853f2a4f87cb8f3eed24cb7d6cdd3dbedafda42d7187d98a14be1",
+    "content/question-reviews/lote-009.json": "46baf74a4c6e71df09ed42cc5ee024359e238b1e276d49971a4007fa30334e55",
+    "docs/GSI_REVISION_LOTE_009.md": "b50ccbe861284912e73a3557cf0d7ed2530aecb89d2a919939749c1ad04037ad",
+    "docs/GSI_PREPARACION_LOTE_009.md": "43c8c0200996ae8f19e9087c6bacf7c795f65c887af206be91447aee18afceb2",
+    "logs/gsi-editorial-009-preparation.json": "8f2acd0b666b3e980214dd7ff0204b731fb6123bc8939eee8cec930cd6cc6132",
+    "content/question-reviews/lote-010.json": "85140d588b46ac9dfcc3f210989482ef420daa43ebd8a9a64baf2d1241873d88",
+    "docs/GSI_REVISION_LOTE_010.md": "66cd1592a9d926256a6d3fdb0d6e819d0d6b897c9ba621fbb40c81824ec5810d",
+    "docs/GSI_PREPARACION_LOTE_010.md": "53d52b44670d254c37ae3e3df8c8dc0819031e17812e23c8db6559cbc5e36ba5",
+    "logs/gsi-editorial-010-preparation.json": "17528992f557104c75f0de8ea11f18a7f902523ea0836f0076617b94a8199e30",
+    "content/question-reviews/lote-011.json": "e4b66674eeb525ac0ae4f9e1f5a91cb303586e904c59cc1aae68a13af34a7431",
+    "docs/GSI_REVISION_LOTE_011.md": "ef8301563a6c03268bb439843c20b255a07da9841a121ff82f68acdc264e9678",
+    "docs/GSI_PREPARACION_LOTE_011.md": "77e2ea8f61a987fe06c6943eda5f692be32f61417496e4f06623067295b0146a",
+    "logs/gsi-editorial-011-preparation.json": "288ba0d906d2852e9e42a2db20d4a94f4c1bb8684d9491d61e06abd5535e674c",
+    "content/question-reviews/lote-012.json": "d9392c96bfe49c40951d65b93c8a49e469dffadd972f03af97fc79e41374f9fd",
+    "docs/GSI_REVISION_LOTE_012.md": "67e43d453c8a95afda91b257cee34b254b7325cfdeb3de7cd8268f7fb65d0a4c",
+    "docs/GSI_PREPARACION_LOTE_012.md": "cdcc6dcd868d9723710c762f209a637f6d280bfaa6f2b5ae7b64a9efff7b3fa5",
+    "logs/gsi-editorial-012-preparation.json": "7be095f9ee89237f01516c4cdb5ae0dcd9aa86c2edc320553e674abdd7d711a2",
+    "content/question-reviews/lote-013.json": "44603f1b6cb58de0b1956eee39138caa24491685042a64e99b558bb7f1e9796d",
+    "docs/GSI_REVISION_LOTE_013.md": "a6578d60b9ecd28ab08e261580aca81660ce9b13ac66e0f979e3cc9113009421",
+    "docs/GSI_PREPARACION_LOTE_013.md": "7226c8766c6167168641050096c834145231f230d2da5ea8810207937697ea66",
+    "logs/gsi-editorial-013-preparation.json": "d77c7aaafd922284904a7e6f71884ae5c5a65d271f52a06030a65e955eb45b82",
+    "content/question-reviews/lote-014.json": "fdba4d09bd0630addc548cba05131e500a7f92b4d5be740b611d6e8dd6ba6bff",
+    "docs/GSI_REVISION_LOTE_014.md": "d6593b0f96ce0ce5dbcb2ed82ef4fa29eedfa3c4d5f4766b3889422ff26ee1f7",
+    "docs/GSI_PREPARACION_LOTE_014.md": "39a820abc4ead7ae2a9a02d7b4a0f6505050363cd5c43faf16cc11d2c2f22c78",
+    "logs/gsi-editorial-014-preparation.json": "25e25483af189b978b93a4b304a31c3bd587f4ca73be135f6cf8b54d307f402a",
+    "content/question-reviews/lote-015.json": "24056d4b6f8c0ef87c0a6ce6f0a695eaa99bb74dc274ed000cf878d6a95aecaf",
+    "docs/GSI_REVISION_LOTE_015.md": "b49c181f1a1faa9fe21460dc8185fc2fe0587f10887e6d7b7172b65621bf8d60",
+    "docs/GSI_PREPARACION_LOTE_015.md": "20538ba0c64b41d38ac39d001eff97715a9e51d13ae59bbe4cbcaaf581c6e31d",
+    "logs/gsi-editorial-015-preparation.json": "5ec8e6d20d12830239f2794c46e66f663b6e89f8c0f4581c3d9fd4676ce80ee0",
+    "content/question-reviews/lote-016.json": "c6c1ceaa502ea93463ca4bbeb6048f766e3622aab5416ed55d56579ac1652774",
+    "docs/GSI_REVISION_LOTE_016.md": "0f1389ba4ec549ddbc19ae5e8ae34b4cde0e59793ef2947b7d11d5b75fba9d43",
+    "docs/GSI_PREPARACION_LOTE_016.md": "02dc28069dfe437fad6e964f99658f2814068f92afc7e19f610be304a43dfc00",
+    "logs/gsi-editorial-016-preparation.json": "dcd395fb9d8925737ea2433043486a081b29f2eb8ffab3ac9d42fe3221bad52b",
+    "content/question-reviews/lote-017.json": "f90bb24e79c9b4e5b03b3a5f37d4a68a1b5aab5a7d0728544a65c485542e8eb3",
+    "docs/GSI_REVISION_LOTE_017.md": "9a93a35f624affc869489e9b0e1993096c8b12594c486d00c76b8b1d4089f114",
+    "docs/GSI_PREPARACION_LOTE_017.md": "4bf7684dd71cb2fcbc36d4f229981139d9b0d59c8943d0cd35ad365d6c909f14",
+    "logs/gsi-editorial-017-preparation.json": "f883e6134f54a11cf709584e1628492798e35381e551eb79251b257434f13c2d",
+    "content/question-reviews/lote-018.json": "addf6131368132c8dd6b9d45c109c1f882c0ab13c6813e7d133a93d02e68f68d",
+    "docs/GSI_REVISION_LOTE_018.md": "a30ae15b89d756e962078ec172e807a5f6526102c87b21f18a66debaea9cf789",
+    "docs/GSI_PREPARACION_LOTE_018.md": "6af8474ca98d854215f7416ea32a7f86b3152fead3af53ea5ac3ad21a3276686",
+    "logs/gsi-editorial-018-preparation.json": "38bca8ef15f9550f54bb28876058d4017a4427c40fd89f8bc450736a493ffdfb",
+    "content/question-reviews/lote-019.json": "0792831a2f4344fa2cdecb6fd59a34ea7227ee394773c73d7a286e6a8751ad36",
+    "docs/GSI_REVISION_LOTE_019.md": "5591a63d1c712c652959916deda77e3b8e4c3aca5dd971f417955a3b3cde636a",
+    "docs/GSI_PREPARACION_LOTE_019.md": "7ba935158c76f051eb0c2c7214d53e9a841ee82540e707d68df2e9d2f7bdc42d",
+    "logs/gsi-editorial-019-preparation.json": "95fa9ccd1998c4798b06e607272de7b07664f1b0b14c806d92a5a9e635027251",
+    "content/question-reviews/lote-020.json": "244e1c6d14935d5c43d6523cce731b8c09200ce506e5e0b36d4d509b695210f1",
+    "docs/GSI_REVISION_LOTE_020.md": "9a1b012b3243dabc0cc3d912cce8fd57849c8da48c2fe42175c04bab33887372",
+    "docs/GSI_PREPARACION_LOTE_020.md": "109bcce7ad9c8f0eab73eba5a19efa7e4c15e3d35beda4f2781e515622f95872",
+    "logs/gsi-editorial-020-preparation.json": "79371509ec32c6ca5ab4d985a2ed5dbe364998ae3f03f36d3e2ef9c616e3b4ce",
+    "content/question-reviews/lote-021.json": "2ae4db2f1dc87f1a51cf1ea2f70d14a55c31071c1ab1a89675622d7e168da9c6",
+    "docs/GSI_REVISION_LOTE_021.md": "46b500f8ff8fa3c3d261261406df7dc5feaf68355a2e9a203fb0c3331d6781b8",
+    "docs/GSI_PREPARACION_LOTE_021.md": "1e0990a2d71ded65bcaef758592ca47137d20f28eb1d5573c0c105d4f59cf2f2",
+    "logs/gsi-editorial-021-preparation.json": "b7e84be2bc3fc554e195a17e6096d2eb6aababec4c7dd25dfec142d2744fa65e"
+  },
+  "derived_reports_semantic_sha256_before": {
+    "data/gsi-coverage-report.json": "9b6d74885aa08f8b65414fea1da9b81ce404d1ababda44bdadc5ce62c4805122",
+    "logs/gsi-final-validation.json": "c4bbf19c86da33a5f9421b0e139b805a186b47be6eb10769b27721f32c89b44e",
+    "logs/gsi-legacy-review.json": "095b19d32c83b748ec3f5e78c1f64fcbdac5589d7581c32690558be5f31b38ff"
+  },
+  "before": {
+    "questions": 20,
+    "absolute_wording_cluster": 0,
+    "correct_unique_longest": 12,
+    "duplicate_options": 0,
+    "first_longest_correct": 12,
+    "identical_feedback": 0,
+    "length_ratio_1_5_to_2": 5,
+    "length_ratio_at_least_2": 1,
+    "longest_ties": 0,
+    "short_correct_feedback": 14,
+    "first_longest_accuracy": 60.0
+  },
+  "proposed_after": {
+    "questions": 20,
+    "absolute_wording_cluster": 0,
+    "correct_unique_longest": 6,
+    "duplicate_options": 0,
+    "first_longest_correct": 7,
+    "identical_feedback": 0,
+    "length_ratio_1_5_to_2": 0,
+    "length_ratio_at_least_2": 0,
+    "longest_ties": 2,
+    "short_correct_feedback": 0,
+    "first_longest_accuracy": 35.0
+  },
+  "questions": [
+    {
+      "id": "MAN-GSI-P17-016",
+      "bank": "manual",
+      "mode": "conceptual",
+      "decision": "pending_review",
+      "concept_retained": true,
+      "key_retained": true,
+      "statement_and_options_retained": false,
+      "source_status": "primary_sources_opened",
+      "reason": "Conservar anchura y direccionamiento, clave B; acotar al ejemplo x86/x64 y distinguir límites efectivos, tipos y rendimiento."
+    },
+    {
+      "id": "MAN-GSI-P17-018",
+      "bank": "manual",
+      "mode": "application",
+      "decision": "pending_review",
+      "concept_retained": true,
+      "key_retained": true,
+      "statement_and_options_retained": false,
+      "source_status": "primary_sources_opened",
+      "reason": "Conservar microcaso NUMA y clave C; sustituir distractores ajenos por caché, paginación y acceso uniforme."
+    },
+    {
+      "id": "MAN-GSI-P17-046",
+      "bank": "manual",
+      "mode": "conceptual",
+      "decision": "pending_review",
+      "concept_retained": true,
+      "key_retained": true,
+      "statement_and_options_retained": false,
+      "source_status": "primary_sources_opened",
+      "reason": "Conservar comparación HA/tolerancia y clave B; hacer explícitos alcance y solapamiento, sin una separación absoluta de etiquetas."
+    },
+    {
+      "id": "MAN-GSI-P17-050",
+      "bank": "manual",
+      "mode": "conceptual",
+      "decision": "pending_review",
+      "concept_retained": true,
+      "key_retained": true,
+      "statement_and_options_retained": false,
+      "source_status": "primary_sources_opened",
+      "reason": "Conservar tipo 1 y clave D; comparar capas y matizar partición de gestión, sin confundir interfaz Windows con tipo 2."
+    },
+    {
+      "id": "MAN-GSI-P17-057",
+      "bank": "manual",
+      "mode": "conceptual",
+      "decision": "pending_review",
+      "concept_retained": true,
+      "key_retained": true,
+      "statement_and_options_retained": false,
+      "source_status": "primary_sources_opened",
+      "reason": "Conservar balanceo y clave D; comparar escalado, replicación y observabilidad, sin distractores ajenos."
+    },
+    {
+      "id": "MAN-GSI-P17-058",
+      "bank": "manual",
+      "mode": "application",
+      "decision": "pending_review",
+      "concept_retained": true,
+      "key_retained": true,
+      "statement_and_options_retained": false,
+      "source_status": "primary_sources_opened",
+      "reason": "Conservar estrategia fiable de failover y clave A; contextualizar servicio con estado y distinguir requisitos completos de medios parciales."
+    },
+    {
+      "id": "MAN-GSI-P17-081",
+      "bank": "manual",
+      "mode": "conceptual",
+      "decision": "pending_review",
+      "concept_retained": true,
+      "key_retained": true,
+      "statement_and_options_retained": false,
+      "source_status": "primary_sources_opened",
+      "reason": "Conservar función general y clave D; comparar responsabilidades de software reales y evitar firewall como único papel."
+    },
+    {
+      "id": "MAN-GSI-P17-082",
+      "bank": "manual",
+      "mode": "conceptual",
+      "decision": "pending_review",
+      "concept_retained": true,
+      "key_retained": true,
+      "statement_and_options_retained": false,
+      "source_status": "primary_sources_opened",
+      "reason": "Conservar proceso y clave B; contrastar programa, hilo y CPU lógica, distinguiendo instancia activa de estado running."
+    },
+    {
+      "id": "MAN-GSI-P17-083",
+      "bank": "manual",
+      "mode": "conceptual",
+      "decision": "pending_review",
+      "concept_retained": true,
+      "key_retained": true,
+      "statement_and_options_retained": false,
+      "source_status": "primary_sources_opened",
+      "reason": "Conservar hilo y clave C; precisar software, contexto propio y pila en espacio compartido."
+    },
+    {
+      "id": "MAN-GSI-P17-084",
+      "bank": "manual",
+      "mode": "conceptual",
+      "decision": "pending_review",
+      "concept_retained": true,
+      "key_retained": true,
+      "statement_and_options_retained": false,
+      "source_status": "primary_sources_opened",
+      "reason": "Conservar comparación proceso/hilo y clave C; distinguir aislamiento por defecto, IPC y contexto propio."
+    },
+    {
+      "id": "MAN-GSI-P17-085",
+      "bank": "manual",
+      "mode": "application",
+      "decision": "pending_review",
+      "concept_retained": true,
+      "key_retained": true,
+      "statement_and_options_retained": false,
+      "source_status": "primary_sources_opened",
+      "reason": "Conservar estado ready y clave A; microcaso que distingue esperar CPU de esperar un evento."
+    },
+    {
+      "id": "MAN-GSI-P17-086",
+      "bank": "manual",
+      "mode": "conceptual",
+      "decision": "pending_review",
+      "concept_retained": true,
+      "key_retained": true,
+      "statement_and_options_retained": true,
+      "source_status": "primary_sources_opened",
+      "reason": "Conservar literalmente enunciado y alternativas ya próximas al concepto; completar política frente a mecanismo y claves sin reescritura innecesaria."
+    },
+    {
+      "id": "MAN-GSI-P17-087",
+      "bank": "manual",
+      "mode": "conceptual",
+      "decision": "pending_review",
+      "concept_retained": true,
+      "key_retained": true,
+      "statement_and_options_retained": false,
+      "source_status": "primary_sources_opened",
+      "reason": "Conservar FCFS y clave C; precisar cola y variante clásica, con políticas vecinas como distractores."
+    },
+    {
+      "id": "MAN-GSI-P17-088",
+      "bank": "manual",
+      "mode": "conceptual",
+      "decision": "pending_review",
+      "concept_retained": true,
+      "key_retained": true,
+      "statement_and_options_retained": false,
+      "source_status": "primary_sources_opened",
+      "reason": "Conservar RR y clave A; matizar límite de turno y bloqueo anticipado, sin exigir consumir siempre todo el quantum."
+    },
+    {
+      "id": "MAN-GSI-P17-089",
+      "bank": "manual",
+      "mode": "application",
+      "decision": "pending_review",
+      "concept_retained": true,
+      "key_retained": true,
+      "statement_and_options_retained": false,
+      "source_status": "primary_sources_opened",
+      "reason": "Conservar riesgo de prioridades y clave B; microcaso de tarea preparada con contraste entre cuatro problemas de progreso."
+    },
+    {
+      "id": "MAN-GSI-P17-090",
+      "bank": "manual",
+      "mode": "conceptual",
+      "decision": "pending_review",
+      "concept_retained": true,
+      "key_retained": true,
+      "statement_and_options_retained": true,
+      "source_status": "primary_sources_opened",
+      "reason": "Conservar literalmente formulación y comparación de cuatro políticas; completar supuestos, estimación y diferencia con la variante expropiativa."
+    },
+    {
+      "id": "MAN-GSI-P17-091",
+      "bank": "manual",
+      "mode": "conceptual",
+      "decision": "pending_review",
+      "concept_retained": true,
+      "key_retained": true,
+      "statement_and_options_retained": false,
+      "source_status": "primary_sources_opened",
+      "reason": "Conservar cambio de contexto y clave B; separar cambio de modo, creación de proceso y traducción de memoria."
+    },
+    {
+      "id": "MAN-GSI-P17-092",
+      "bank": "manual",
+      "mode": "conceptual",
+      "decision": "pending_review",
+      "concept_retained": true,
+      "key_retained": true,
+      "statement_and_options_retained": false,
+      "source_status": "primary_sources_opened",
+      "reason": "Conservar concurrencia/paralelismo y clave C; alternativas breves comparables, sin exigir distribución ni múltiples núcleos para toda concurrencia."
+    },
+    {
+      "id": "MAN-GSI-P17-093",
+      "bank": "manual",
+      "mode": "application",
+      "decision": "pending_review",
+      "concept_retained": true,
+      "key_retained": true,
+      "statement_and_options_retained": false,
+      "source_status": "primary_sources_opened",
+      "reason": "Conservar carrera y clave A; microcaso con intercalado explícito y sin suposiciones ocultas sobre atomicidad del lenguaje."
+    },
+    {
+      "id": "MAN-GSI-P17-094",
+      "bank": "manual",
+      "mode": "conceptual",
+      "decision": "pending_review",
+      "concept_retained": true,
+      "key_retained": true,
+      "statement_and_options_retained": false,
+      "source_status": "primary_sources_opened",
+      "reason": "Conservar exclusión mutua y clave D; precisar capacidad tres para no confundir el distractor con un semáforo binario utilizable como exclusión."
+    }
+  ],
+  "findings_after": [],
+  "additional_length_review": {
+    "first_shortest_correct": 4,
+    "questions": 20,
+    "interpretation": "Señal descriptiva; no se alteran claves ni se rellena contenido para ajustar una distribución."
+  },
+  "calibration": "not_performed",
+  "source_notes": [
+    "Consulta real 27-10-2026. Se abrieron los cuerpos primarios citados. Dos referencias conservan el contraste directo del mismo día del lote 020: Oracle VirtualBox 7.2 y Microsoft Business continuity. No se inventa una nueva lectura independiente.",
+    "x86/x64 es un ejemplo concreto: anchura natural, ABI y direccionamiento no fijan todos los bits implementados ni tamaño de todo tipo, RAM física o rendimiento. NUMA distingue memoria remota de paginación a disco y caché.",
+    "HA y tolerancia a fallos tienen alcance definido y terminología solapada: no se promete continuidad ante todos los fallos ni exclusión entre categorías. AWS respalda capacidad operativa redundante; Microsoft aporta continuidad y técnicas. IBM PowerHA devolvió 403 y no se cita como leído.",
+    "Oracle VirtualBox 7.2 distingue tipo 1 y tipo 2. Hyper-V muestra que una partición de gestión con Windows no convierte al hipervisor sobre hardware en aplicación alojada. No se universalizan restricciones de plataforma.",
+    "AWS ELB distingue distribución, health checks y Auto Scaling; no se copia garantía absoluta de que solo se enrute a sanos en cualquier condición. DR de Microsoft respalda criterios, dependencias, estado, pruebas y retorno si procede, sin confundir todo failover con desastre regional.",
+    "OSTEP: PDFs de autores con versión 1.10 impresa, capítulos y páginas de cada referencia. Copyright mixto no se usa como fecha de publicación. Estados, FIFO, RR y SJF son modelos didácticos; no se afirma que un SO actual implemente exactamente uno de ellos.",
+    "Procesos: ejecución como instancia no equivale a estado running. Hilos comparten espacio virtual y tienen contexto propio; sus pilas lógicamente propias están en ese espacio y no aportan aislamiento de memoria. Procesos pueden compartir memoria explícitamente.",
+    "SJF: supuestos de disponibilidad y duración conocidos, estimación de ráfagas y distinción de STCF/SRTF; no óptimo universal ni equidad automática. RR puede ceder antes del quantum. Prioridades y boost se acotan; no se trasladan niveles Windows a todo SO.",
+    "Entrada al núcleo y cambio de tarea se distinguen. Concurrencia puede ser intercalada; disponer de hilos no garantiza simultaneidad. El microcaso de carrera especifica lectura/escritura separadas y no atribuye semántica universal a un lenguaje.",
+    "Oracle Java Tutorials expresa JDK 8 y antigüedad: se usan fundamentos de procesos, intercalado y progreso, sin recomendación de versión o API. La apertura de POSIX 2024 pthread_mutex_lock devolvió 403 y no se usa como respaldo leído; OSTEP y Microsoft abiertos respaldan exclusión sin generalizar recursión o equidad.",
+    "Se conservan literalmente enunciado y alternativas de 086 y 090. Quince conceptuales y cinco aplicaciones justificadas, sin cuota por lote. Rúbrica del preparador pendiente del propietario; no calibración ni nueva aceptación."
+  ],
+  "source_access_limits": [
+    "IBM PowerHA: apertura directa 403; no incorporada a referencias.",
+    "POSIX pthread_mutex_lock 2024: apertura directa 403; no incorporada a referencias.",
+    "Dos rutas AWS ensayadas no accesibles; se usa la página exacta Fault tolerance and fault isolation abierta.",
+    "Páginas Microsoft muestran aviso genérico de autorización pero devuelven cuerpo público legible; no se accedió a cuentas."
+  ],
+  "proposal_refinements": [
+    {
+      "previous_batch_sha256": "15cb04bfa455927d59974b3b45950b872f0c007cd9249b274979370f27af3123",
+      "changed_ids": [
+        "MAN-GSI-P17-058",
+        "MAN-GSI-P17-086",
+        "MAN-GSI-P17-091"
+      ],
+      "reason": "Localizadores exactos: Practice with regular drills en Microsoft y páginas separadas de 6.2/6.3 de OSTEP; no cambia contenido de pregunta, claves ni base."
+    }
+  ],
+  "validation": {
+    "batch_hash_matches": true,
+    "schema_cli_simulation_exit_code": 0,
+    "editorial_tests": 17,
+    "json_files": 44,
+    "schemas": 21,
+    "question_structure_count": 1964,
+    "integrity_checks": 19251,
+    "documentation_pass": true,
+    "references_pass": true,
+    "reference_catalog_markdown_count": 37,
+    "new_report_local_links_verified": [
+      {
+        "file": "docs/GSI_PREPARACION_LOTE_022.md",
+        "target": "GSI_REVISION_LOTE_022.md"
+      },
+      {
+        "file": "docs/GSI_PREPARACION_LOTE_022.md",
+        "target": "../content/question-reviews/lote-022.json"
+      },
+      {
+        "file": "docs/GSI_PREPARACION_LOTE_022.md",
+        "target": "../logs/gsi-editorial-022-preparation.json"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_REVISION_PILOTO_001.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_REVISION_PILOTO_001.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_APLICACION_LOTE_001.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_CALIDAD_PREGUNTAS.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "../content/question-reviews/baseline.json"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "../logs/gsi-editorial-progress.json"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_REVISION_LOTE_002.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_REVISION_LOTE_003.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_REVISION_LOTE_004.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_REVISION_LOTE_005.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_REVISION_LOTE_006.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_REVISION_LOTE_007.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_REVISION_LOTE_008.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_REVISION_LOTE_009.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_REVISION_LOTE_010.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_REVISION_LOTE_011.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_REVISION_LOTE_012.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_REVISION_LOTE_013.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_REVISION_LOTE_014.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_REVISION_LOTE_015.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_REVISION_LOTE_016.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_REVISION_LOTE_017.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_REVISION_LOTE_018.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_REVISION_LOTE_019.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_REVISION_LOTE_020.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_REVISION_LOTE_021.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_REVISION_LOTE_022.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_PREPARACION_LOTE_002.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_PREPARACION_LOTE_003.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_PREPARACION_LOTE_004.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_PREPARACION_LOTE_005.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_PREPARACION_LOTE_006.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_PREPARACION_LOTE_007.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_PREPARACION_LOTE_008.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_PREPARACION_LOTE_009.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_PREPARACION_LOTE_010.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_PREPARACION_LOTE_011.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_PREPARACION_LOTE_012.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_PREPARACION_LOTE_013.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_PREPARACION_LOTE_014.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_PREPARACION_LOTE_015.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_PREPARACION_LOTE_016.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_PREPARACION_LOTE_017.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_PREPARACION_LOTE_018.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_PREPARACION_LOTE_019.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_PREPARACION_LOTE_020.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_PREPARACION_LOTE_021.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_PREPARACION_LOTE_022.md"
+      }
+    ],
+    "protected_files_unchanged": {
+      "data/questions-manual.json": true,
+      "data/questions-ai.json": true,
+      "data/questions-official.json": true,
+      "data/gsi-editorial-reviews.json": true,
+      "data/gsi-editorial-revisions.json": true,
+      "content/question-reviews/baseline.json": true,
+      "content/question-reviews/lote-001.json": true,
+      "content/question-reviews/approvals/GSI-EDITORIAL-001.json": true,
+      "content/question-reviews/lote-002.json": true,
+      "docs/GSI_REVISION_LOTE_002.md": true,
+      "docs/GSI_PREPARACION_LOTE_002.md": true,
+      "logs/gsi-editorial-002-preparation.json": true,
+      "content/question-reviews/lote-003.json": true,
+      "docs/GSI_REVISION_LOTE_003.md": true,
+      "docs/GSI_PREPARACION_LOTE_003.md": true,
+      "logs/gsi-editorial-003-preparation.json": true,
+      "content/question-reviews/lote-004.json": true,
+      "docs/GSI_REVISION_LOTE_004.md": true,
+      "docs/GSI_PREPARACION_LOTE_004.md": true,
+      "logs/gsi-editorial-004-preparation.json": true,
+      "content/question-reviews/lote-005.json": true,
+      "docs/GSI_REVISION_LOTE_005.md": true,
+      "docs/GSI_PREPARACION_LOTE_005.md": true,
+      "logs/gsi-editorial-005-preparation.json": true,
+      "content/question-reviews/lote-006.json": true,
+      "docs/GSI_REVISION_LOTE_006.md": true,
+      "docs/GSI_PREPARACION_LOTE_006.md": true,
+      "logs/gsi-editorial-006-preparation.json": true,
+      "content/question-reviews/lote-007.json": true,
+      "docs/GSI_REVISION_LOTE_007.md": true,
+      "docs/GSI_PREPARACION_LOTE_007.md": true,
+      "logs/gsi-editorial-007-preparation.json": true,
+      "content/question-reviews/lote-008.json": true,
+      "docs/GSI_REVISION_LOTE_008.md": true,
+      "docs/GSI_PREPARACION_LOTE_008.md": true,
+      "logs/gsi-editorial-008-preparation.json": true,
+      "content/question-reviews/lote-009.json": true,
+      "docs/GSI_REVISION_LOTE_009.md": true,
+      "docs/GSI_PREPARACION_LOTE_009.md": true,
+      "logs/gsi-editorial-009-preparation.json": true,
+      "content/question-reviews/lote-010.json": true,
+      "docs/GSI_REVISION_LOTE_010.md": true,
+      "docs/GSI_PREPARACION_LOTE_010.md": true,
+      "logs/gsi-editorial-010-preparation.json": true,
+      "content/question-reviews/lote-011.json": true,
+      "docs/GSI_REVISION_LOTE_011.md": true,
+      "docs/GSI_PREPARACION_LOTE_011.md": true,
+      "logs/gsi-editorial-011-preparation.json": true,
+      "content/question-reviews/lote-012.json": true,
+      "docs/GSI_REVISION_LOTE_012.md": true,
+      "docs/GSI_PREPARACION_LOTE_012.md": true,
+      "logs/gsi-editorial-012-preparation.json": true,
+      "content/question-reviews/lote-013.json": true,
+      "docs/GSI_REVISION_LOTE_013.md": true,
+      "docs/GSI_PREPARACION_LOTE_013.md": true,
+      "logs/gsi-editorial-013-preparation.json": true,
+      "content/question-reviews/lote-014.json": true,
+      "docs/GSI_REVISION_LOTE_014.md": true,
+      "docs/GSI_PREPARACION_LOTE_014.md": true,
+      "logs/gsi-editorial-014-preparation.json": true,
+      "content/question-reviews/lote-015.json": true,
+      "docs/GSI_REVISION_LOTE_015.md": true,
+      "docs/GSI_PREPARACION_LOTE_015.md": true,
+      "logs/gsi-editorial-015-preparation.json": true,
+      "content/question-reviews/lote-016.json": true,
+      "docs/GSI_REVISION_LOTE_016.md": true,
+      "docs/GSI_PREPARACION_LOTE_016.md": true,
+      "logs/gsi-editorial-016-preparation.json": true,
+      "content/question-reviews/lote-017.json": true,
+      "docs/GSI_REVISION_LOTE_017.md": true,
+      "docs/GSI_PREPARACION_LOTE_017.md": true,
+      "logs/gsi-editorial-017-preparation.json": true,
+      "content/question-reviews/lote-018.json": true,
+      "docs/GSI_REVISION_LOTE_018.md": true,
+      "docs/GSI_PREPARACION_LOTE_018.md": true,
+      "logs/gsi-editorial-018-preparation.json": true,
+      "content/question-reviews/lote-019.json": true,
+      "docs/GSI_REVISION_LOTE_019.md": true,
+      "docs/GSI_PREPARACION_LOTE_019.md": true,
+      "logs/gsi-editorial-019-preparation.json": true,
+      "content/question-reviews/lote-020.json": true,
+      "docs/GSI_REVISION_LOTE_020.md": true,
+      "docs/GSI_PREPARACION_LOTE_020.md": true,
+      "logs/gsi-editorial-020-preparation.json": true,
+      "content/question-reviews/lote-021.json": true,
+      "docs/GSI_REVISION_LOTE_021.md": true,
+      "docs/GSI_PREPARACION_LOTE_021.md": true,
+      "logs/gsi-editorial-021-preparation.json": true
+    },
+    "simulated_changed_ids_by_bank": {
+      "manual": [
+        "MAN-GSI-P17-016",
+        "MAN-GSI-P17-018",
+        "MAN-GSI-P17-046",
+        "MAN-GSI-P17-050",
+        "MAN-GSI-P17-057",
+        "MAN-GSI-P17-058",
+        "MAN-GSI-P17-081",
+        "MAN-GSI-P17-082",
+        "MAN-GSI-P17-083",
+        "MAN-GSI-P17-084",
+        "MAN-GSI-P17-085",
+        "MAN-GSI-P17-086",
+        "MAN-GSI-P17-087",
+        "MAN-GSI-P17-088",
+        "MAN-GSI-P17-089",
+        "MAN-GSI-P17-090",
+        "MAN-GSI-P17-091",
+        "MAN-GSI-P17-092",
+        "MAN-GSI-P17-093",
+        "MAN-GSI-P17-094"
+      ],
+      "ai": [],
+      "official": []
+    },
+    "all_ids_and_keys_preserved": true,
+    "all_60_distractor_explanations_present": true,
+    "render_reproducible": true,
+    "statement_and_options_retained": [
+      "MAN-GSI-P17-086",
+      "MAN-GSI-P17-090"
+    ],
+    "original_provenance_and_source_fields_preserved": true,
+    "missing_approval_rejected": true,
+    "pilot_approval_rejected_for_new_batch": true,
+    "approvals_002_to_022_absent": true,
+    "active_banks_content_identical_to_HEAD": true,
+    "official_bank_bytes_identical_to_HEAD": true,
+    "official_bank_bytes_identical_to_audit": true,
+    "active_bank_bytes_unchanged_since_preparation": true,
+    "accepted_batches_in_ledger": 1,
+    "reviewed": 20,
+    "proposed": 420,
+    "pending_acceptance": 1742,
+    "unproposed": 1322,
+    "original_ai_findings_with_proposal": 128,
+    "original_ai_findings_accepted": 15,
+    "original_ai_findings_pending_acceptance": 113,
+    "modes": {
+      "conceptual": 15,
+      "application": 5
+    },
+    "topics": {
+      "B2-T01": 6,
+      "B2-T02": 14
+    },
+    "distinct_primary_source_urls": 23,
+    "source_direct_opened_urls": 23,
+    "source_checks_from_same_day_previous_batch": 2,
+    "source_access_limits_documented": true,
+    "architecture_effective_widths_and_numa_locality_precised": true,
+    "ha_ft_scope_and_overlap_precised": true,
+    "type_1_management_partition_not_equated_to_hosted_type_2": true,
+    "load_balancing_scaling_and_replication_distinguished": true,
+    "failover_state_dependencies_drills_and_conditional_failback": true,
+    "process_instance_and_running_state_distinguished": true,
+    "thread_stacks_within_shared_address_space": true,
+    "explicit_process_shared_memory_possible": true,
+    "classic_ready_state_and_scheduling_models_scoped": true,
+    "sjf_assumptions_and_srtf_distinction": true,
+    "rr_quantum_is_limit_not_mandatory_consumption": true,
+    "priority_starvation_distinguished_from_deadlock_livelock_inversion": true,
+    "mode_switch_not_necessarily_task_switch": true,
+    "concurrency_not_parallelism": true,
+    "race_case_explicit_interleaving_not_language_atomicity_claim": true,
+    "mutex_not_general_fairness_or_deadlock_guarantee": true,
+    "historical_manual_source_fields_preserved": true,
+    "derived_reports_unchanged_from_preparation": {
+      "data/gsi-coverage-report.json": true,
+      "logs/gsi-final-validation.json": true,
+      "logs/gsi-legacy-review.json": true
+    },
+    "derived_reports_differ_from_HEAD_only_in_existing_validation_date": true,
+    "publication_status": "not_published",
+    "merge_status": "not_merged",
+    "editorial_complete": false,
+    "full_http_suite_rerun": false,
+    "full_http_suite_reason": "Sin cambios de código o bancos activos; no se atribuye suite HTTP del piloto a propuestas inactivas.",
+    "diff_check_pass": true,
+    "new_files_whitespace_pass": true
+  },
+  "execution_notes": [
+    "Todos los validadores del proyecto ejecutados para este lote terminaron con código 0. Fuentes con acceso fallido se documentan aparte y no se citan como leídas. No se ejecutó suite HTTP completa ni se aplicaron propuestas.",
+    "El primer intento del helper temporal de refinamiento omitió el argumento collections de materialize y terminó con TypeError antes de escribir. Se corrigió la llamada con banks(); el refinamiento y la simulación pasaron. No hubo escrituras parciales de la propuesta en ese intento.",
+    "El generador temporal de informe emitió SyntaxWarning por escapes de rutas PowerShell en literales Python; produjo las rutas literales correctas y terminó con código 0. Se corrigieron a cadenas raw en el helper para evitar la advertencia futura. Los artefactos se comprobaron sin alterar preguntas."
+  ]
+}

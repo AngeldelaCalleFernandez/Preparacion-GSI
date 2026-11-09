@@ -1,5 +1,6 @@
 import { describeQuestionSource } from "./data-service.js?gsi2";
 import { feedbackFor } from "./question-feedback.js";
+import { appendProvisionalReviewNotice } from "./question-review-status.js";
 import {
   createQuestionReference,
   getTemporalState,
@@ -343,6 +344,7 @@ export function initReinforcement(data) {
     questionNode.append(createElement("p", "pill", `${originLabel(question.origin)} · ${question.block_id} · ${question.topic_id}`));
     if (describeOfficialQuestion(question)) questionNode.append(createElement("p", "form-help", describeOfficialQuestion(question)));
     questionNode.append(createElement("p", "question-statement", question.statement));
+    appendProvisionalReviewNotice(questionNode, question);
     if (!response) {
       activeSession.questionStartedAtByQuestionId ||= {};
       if (!activeSession.questionStartedAtByQuestionId[responseKey]) {

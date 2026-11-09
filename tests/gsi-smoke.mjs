@@ -7,6 +7,8 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const { chromium } = await import(process.env.PLAYWRIGHT_MODULE ? pathToFileURL(process.env.PLAYWRIGHT_MODULE).href : "playwright");
 const browserChannel = process.env.PLAYWRIGHT_CHANNEL || "chrome";
+const allEditorial = process.env.GSI_SMOKE_ALL_EDITORIAL === "1";
+const artifacts = path.join(root, allEditorial ? "tmp/gsi/editorial" : "tmp/gsi");
 const mime = { ".html": "text/html", ".js": "text/javascript", ".json": "application/json", ".css": "text/css", ".md": "text/plain" };
 const server = http.createServer(async (request, response) => {
   try {
@@ -38,10 +40,11 @@ try {
     await page.waitForFunction(() => document.querySelector("#home-topic-count").textContent === "57", null, { timeout: 15000 });
     assert.equal(await page.locator("#app-status").innerText(), "");
     assert.match(await page.title(), /Preparación GSI/);
+    assert.match(await page.locator('#gsi-provisional-release').innerText(), /Versión provisional de estudio[\s\S]*auditoría editorial independiente[\s\S]*MAN-GSI-P17-026/);
     assert.equal(requestedUrls.some((url) => /questions-(official|manual|ai)\.json/.test(url)), false, "La portada no debe descargar los bancos de preguntas.");
   });
-  await fs.mkdir(path.join(root, "tmp/gsi"), { recursive: true });
-  await page.screenshot({ path: path.join(root, "tmp/gsi/home-desktop.png"), fullPage: true });
+  await fs.mkdir(artifacts, { recursive: true });
+  await page.screenshot({ path: path.join(artifacts, "home-desktop.png"), fullPage: true });
   const syllabus = JSON.parse(await fs.readFile(path.join(root, "data/syllabus.json"), "utf8"));
   await check("currency controls are visible and labelled", async () => {
     await page.goto(`${base}#temario/B2-T13`);
@@ -68,7 +71,7 @@ try {
     assert.equal(await checks.count(), 6);
     for (let index = 0; index < 6; index += 1) await checks.nth(index).check();
     assert.match(await page.locator('#study-plan-readiness-result').innerText(), /cerrar provisionalmente/);
-    await page.screenshot({ path: path.join(root, "tmp/gsi/study-plan-desktop.png"), fullPage: true });
+    await page.screenshot({ path: path.join(artifacts, "study-plan-desktop.png"), fullPage: true });
   });
   await check("study checklist: 57 empty topics, recommendations, filters and persistence", async () => {
     await page.goto(`${base}#progreso`);
@@ -110,7 +113,7 @@ try {
     assert.equal(await page.locator('#study-firstPass-iii-12').isChecked(), true);
     assert.equal(await page.locator('#study-next-iii-12').inputValue(), '2026-10-01');
     assert.equal(await page.locator('#study-notes-iii-12').inputValue(), 'Repasar esquemas y preguntas falladas.');
-    await page.screenshot({ path: path.join(root, 'tmp/gsi/study-progress-desktop.png'), fullPage: true });
+    await page.screenshot({ path: path.join(artifacts, 'study-progress-desktop.png'), fullPage: true });
   });
   for (const block of syllabus.blocks) for (const topic of block.topics) {
     await check(`topic ${topic.id}`, async () => {
@@ -123,7 +126,7 @@ try {
     await page.setViewportSize({ width: 390, height: 844 }); await page.goto(`${base}#temario/B2-T05`);
     await page.locator('.topic-content[data-topic-id="B2-T05"]').waitFor();
     assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 2), true);
-    await page.screenshot({ path: path.join(root, "tmp/gsi/topic-mobile.png"), fullPage: true });
+    await page.screenshot({ path: path.join(artifacts, "topic-mobile.png"), fullPage: true });
     await page.setViewportSize({ width: 1365, height: 900 });
   });
   await check("training and persistent response", async () => {
@@ -233,7 +236,7 @@ try {
     await page.goto(`${base}#estadisticas`);
     await page.evaluate(()=>localStorage.setItem("tai.phase3.training.v1","historical untouched"));
     const downloadPromise=page.waitForEvent("download"); await page.locator("#progress-export").click(); const download=await downloadPromise;
-    const backupPath=path.join(root,"tmp/gsi/smoke-progress.json");await download.saveAs(backupPath);
+    const backupPath=path.join(artifacts, "smoke-progress.json");await download.saveAs(backupPath);
     const backup=JSON.parse(await fs.readFile(backupPath,"utf8"));assert.equal(backup.oppositionId,"OPP-GSI");
     const studyEntry=Object.entries(backup.entries).find(([key])=>key.endsWith('.study-progress.v2'))?.[1];assert.equal(studyEntry.payload.topics['III.12'].notes,'Repasar esquemas y preguntas falladas.');
     await Promise.all([page.waitForNavigation(),page.locator("#progress-reset").click()]);await page.waitForFunction(()=>document.querySelector("#home-topic-count")?.textContent==="57");
@@ -260,9 +263,9 @@ try {
     await page.goto(`${base}#plan`);await page.locator('[data-view="plan"]').waitFor({state:"visible"});
     await page.locator('#study-plan-phases details').nth(2).click();
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2),true,'plan expanded');
-    await page.screenshot({path:path.join(root,"tmp/gsi/study-plan-mobile.png"),fullPage:true});
+    await page.screenshot({path:path.join(artifacts, "study-plan-mobile.png"),fullPage:true});
     await page.goto(`${base}#temario/B2-T07`);await page.locator('.topic-content[data-topic-id="B2-T07"]').waitFor();assert.match(await page.locator("#topic-detail").innerText(),/1.37 ya publicado/);
-    await page.screenshot({path:path.join(root,"tmp/gsi/topic-mobile-viewport.png")});
+    await page.screenshot({path:path.join(artifacts, "topic-mobile-viewport.png")});
     await page.locator('a[data-route="inicio"]').focus();
     await Promise.all([page.waitForURL(/#inicio$/),page.keyboard.press("Enter")]);
     await page.setViewportSize({width:1365,height:900});
@@ -278,7 +281,7 @@ try {
     assert.match(await page.locator('[data-exam-id="GSI-INAP-2025"]').innerText(),/provisional/);
     await page.setViewportSize({width:390,height:844});
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2),true);
-    await page.screenshot({path:path.join(root,'tmp/gsi/official-mobile.png'),fullPage:true});
+    await page.screenshot({path:path.join(artifacts, 'official-mobile.png'),fullPage:true});
     await page.setViewportSize({width:1365,height:900});
   });
   await check("training shuffle preserves visible letters, recovery, preference and failed summary", async () => {
@@ -324,9 +327,9 @@ try {
     await page.getByRole('button',{name:'Repetir solo las falladas',exact:true}).click();
     await page.setViewportSize({width:390,height:844});
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2),true);
-    await page.screenshot({path:path.join(root,'tmp/gsi/training-shuffle-mobile.png'),fullPage:true});
+    await page.screenshot({path:path.join(artifacts, 'training-shuffle-mobile.png'),fullPage:true});
     await page.setViewportSize({width:1365,height:900});
-    await page.screenshot({path:path.join(root,'tmp/gsi/training-shuffle-desktop.png'),fullPage:true});
+    await page.screenshot({path:path.join(artifacts, 'training-shuffle-desktop.png'),fullPage:true});
   });
   await check("training mixes selected blocks and topics, reports failures and repeats them", async () => {
     await page.locator('#training-origin').selectOption('');
@@ -355,7 +358,7 @@ try {
     assert.match(await page.locator("#training-session").innerText(),/2 falladas/);
     assert.equal(await page.locator(".training-result-failed").count(),2);
     assert.equal(await page.locator(".training-result-breakdown li").count(),2);
-    await page.screenshot({path:path.join(root,"tmp/gsi/training-results.png"),fullPage:true});
+    await page.screenshot({path:path.join(artifacts, "training-results.png"),fullPage:true});
     await page.getByRole("button",{name:"Repetir solo las falladas",exact:true}).click();
     assert.match(await page.locator("#training-session .question-progress").innerText(),/de 2/);
     const retryStatement=await page.locator("#training-session .question-statement").innerText();
@@ -407,54 +410,120 @@ try {
     await page.locator('#review-next').click();assert.notEqual(await page.locator('#review-content').innerText(),first);
     await page.locator('#review-topic').selectOption('');await page.locator('#review-search').fill('AI-GSI-B1-T03-001');
     assert.equal(await page.locator('#review-question option').count(),1);
+    await page.locator('#review-origin').selectOption('manual');
+    await page.locator('#review-search').fill('MAN-GSI-P17-026');
+    assert.equal(await page.locator('#review-question option').count(),1);
+    assert.match(await page.locator('#review-content .provisional-question-notice').innerText(), /posible ambigüedad/);
     await page.setViewportSize({width:390,height:844});
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2),true);
     assert.equal(await page.evaluate(()=>JSON.stringify(Object.entries(localStorage))),before);
   });
   const editorialLedger = JSON.parse(await fs.readFile(path.join(root, 'data/gsi-editorial-revisions.json'), 'utf8'));
-  const appliedPilot = editorialLedger.batches.find((entry) => entry.batch.id === 'GSI-EDITORIAL-001');
-  if (appliedPilot) await check("approved pilot: 20 live questions, individual feedback, statistics and reinforcement", async () => {
-    const pilotContext = await browser.newContext({viewport:{width:1365,height:900}});
-    const page = await pilotContext.newPage();
-    page.on('pageerror',error=>consoleErrors.push(error.message));
-    page.on('response',response=>{if(response.status()>=400)broken.push(`${response.status()} ${response.url()}`);});
-    try {
-    const questions = appliedPilot.batch.items.map((item) => ({ ...bank.find((q) => q.id === item.id), collection: item.bank, isDemo: false }));
-    assert.equal(questions.length,20);
-    assert.ok(questions.every(q=>q.is_active && q.validation_status==='validated'));
-    await page.goto(`${base}#entrenamiento`);
-    await page.waitForFunction(()=>document.querySelector('#training-availability')?.textContent.includes('pregunta'));
-    const sessionId = `browser-editorial-pilot-${Date.now()}`;
-    const saved = await page.evaluate(async ({questions,sessionId}) => {
-      const { saveActiveTrainingSession } = await import('./assets/js/analytics-storage.js?gsi4');
-      const { createTrainingOptionOrders, questionVersion, trainingQuestionKey } = await import('./assets/js/training-options.js');
-      return saveActiveTrainingSession(false,{sessionId,isDemo:false,startedAt:new Date().toISOString(),lastActivityAt:new Date().toISOString(),configuredQuestions:questions.length,questionRefs:questions.map(q=>({id:q.id,collection:q.collection})),currentIndex:0,responsesByQuestionKey:{},questionStartedAtByQuestionKey:{},shuffleOptions:true,optionOrderByQuestionKey:createTrainingOptionOrders(questions,true),questionVersionsByQuestionKey:Object.fromEntries(questions.map(q=>[trainingQuestionKey(q),questionVersion(q)]))});
-    },{questions,sessionId});
-    assert.equal(saved.saved,true);
-    await page.reload();
-    await page.locator('#training-session .option-button').first().waitFor({state:'visible'});
-    for (const [index,q] of questions.entries()) {
-      assert.equal(await page.locator('#training-session .question-statement').innerText(),q.statement);
-      const wrong=q.options.filter(o=>o.id!==q.correct_option)[index%3].id;
-      await page.locator(`#training-session .option-button[data-option-id="${wrong}"]`).click();
-      assert.ok((await page.locator('.answer-panel').innerText()).includes(q.feedback.incorrect_options[wrong]));
-      const correctLetter=await page.locator(`#training-session .option-button[data-option-id="${q.correct_option}"] .option-letter`).innerText();
-      assert.ok((await page.locator('.answer-panel').innerText()).includes(`La opción correcta es ${correctLetter}:`));
-      await page.getByRole('button',{name:index===questions.length-1?'Finalizar entrenamiento':'Siguiente pregunta',exact:true}).click();
+  const editorialBatches = editorialLedger.batches.map(({ batch }) => batch);
+  const bankById = new Map(bank.map((question) => [question.id, question]));
+  const latestRevisionById = new Map();
+  for (const batch of editorialBatches) {
+    for (const item of batch.items) {
+      latestRevisionById.set(item.id, item);
+      latestRevisionById.set(item.after.id, item);
     }
-    assert.equal(await page.locator('.training-result-failed').count(),20);
-    const records=await page.evaluate(({sessionId,keys})=>{
-      const payload=(suffix)=>JSON.parse(Object.entries(localStorage).find(([key])=>key.endsWith(suffix))[1]).payload;
-      return {attempts:payload('analytics.real.v2').attempts.filter(a=>a.sessionId===sessionId).length,allInReinforcement:keys.every(key=>Boolean(payload('reinforcement.real.v2').records[key]))};
-    },{sessionId,keys:questions.map(q=>`${q.collection}:${q.id}`)});
-    assert.equal(records.attempts,20);
-    assert.equal(records.allInReinforcement,true);
-    for(const route of ['estadisticas','refuerzo']){
-      await page.goto(`${base}#${route}`);
-      await page.locator(`[data-view="${route}"]`).waitFor({state:'visible'});
+  }
+  async function checkEditorialBatch(batch) {
+    const activeRevisions = batch.items.filter((item) =>
+      latestRevisionById.get(item.after.id) === item && item.after.is_active && item.after.validation_status === 'validated');
+    if (!activeRevisions.length) return;
+    await check(`approved batch ${batch.id}: all feedback, statistics and reinforcement`, async () => {
+      const batchContext = await browser.newContext({ viewport: { width: 390, height: 844 } });
+      const batchPage = await batchContext.newPage();
+      batchPage.on('pageerror', (error) => consoleErrors.push(error.message));
+      batchPage.on('response', (response) => { if (response.status() >= 400) broken.push(`${response.status()} ${response.url()}`); });
+      try {
+        const questions = activeRevisions.map((item) => {
+          const published = bankById.get(item.after.id);
+          assert.deepEqual(published, item.after, `${item.after.id}: the bank must match the approved version`);
+          return { ...published, collection: item.bank, isDemo: false };
+        });
+        const sessionIds = [];
+        await batchPage.goto(`${base}#entrenamiento`);
+        await batchPage.waitForFunction(() => document.querySelector('#training-availability')?.textContent.includes('pregunta'));
+        const training = batchPage.locator('#training-session');
+        for (const pass of [0, 1, 2, 3]) {
+          const sessionId = `browser-editorial-${batch.id}-${pass}`;
+          sessionIds.push(sessionId);
+          const saved = await batchPage.evaluate(async ({ questions, sessionId }) => {
+            const { saveActiveTrainingSession } = await import('./assets/js/analytics-storage.js?gsi4');
+            const { createTrainingOptionOrders, questionVersion, trainingQuestionKey } = await import('./assets/js/training-options.js');
+            const startedAt = new Date().toISOString();
+            return saveActiveTrainingSession(false, {
+              sessionId, isDemo: false, startedAt, lastActivityAt: startedAt,
+              configuredQuestions: questions.length,
+              questionRefs: questions.map(({ id, collection }) => ({ id, collection })),
+              currentIndex: 0, responsesByQuestionKey: {}, questionStartedAtByQuestionKey: {},
+              shuffleOptions: true, optionOrderByQuestionKey: createTrainingOptionOrders(questions, true),
+              questionVersionsByQuestionKey: Object.fromEntries(questions.map((q) => [trainingQuestionKey(q), questionVersion(q)])),
+            });
+          }, { questions, sessionId });
+          assert.equal(saved.saved, true);
+          await batchPage.reload();
+          await training.locator('.option-button').first().waitFor({ state: 'visible' });
+
+          for (const [index, q] of questions.entries()) {
+            assert.equal(await training.locator('.question-statement').textContent(), q.statement, q.id);
+            if (q.id === 'MAN-GSI-P17-026') {
+              assert.match(await training.locator('.provisional-question-notice').innerText(), /La clave mostrada es provisional/);
+            }
+            const button = (id) => training.locator(`.option-button[data-option-id="${id}"]`);
+            for (const option of q.options) {
+              assert.equal(await button(option.id).locator('span').nth(1).textContent(), option.text, `${q.id} ${option.id}`);
+            }
+            const correct = q.options.find((option) => option.id === q.correct_option);
+            const isCorrect = pass === 0;
+            const selected = isCorrect ? correct : q.options.filter((option) => option.id !== correct.id)[pass - 1];
+            const letter = await button(correct.id).locator('.option-letter').textContent();
+            await button(selected.id).click();
+            const panel = training.locator('.answer-panel');
+            const feedback = isCorrect ? q.feedback.correct : q.feedback.incorrect_options[selected.id];
+            assert.equal(await panel.locator('h2').textContent(), isCorrect ? 'Respuesta correcta' : 'Respuesta incorrecta', q.id);
+            assert.equal(await panel.locator('p').nth(0).textContent(), `La opción correcta es ${letter}: ${correct.text}`, q.id);
+            assert.equal(await panel.locator('p').nth(1).textContent(), feedback, `${q.id} ${selected.id}`);
+            if (pass === 1 && index === 0) {
+              await batchPage.reload();
+              await panel.waitFor({ state: 'visible' });
+              assert.equal(await panel.locator('p').nth(1).textContent(), feedback);
+            }
+            const name = index === questions.length - 1 ? 'Finalizar entrenamiento' : 'Siguiente pregunta';
+            await batchPage.getByRole('button', { name, exact: true }).click();
+          }
+          assert.equal(await batchPage.locator('.training-result-failed').count(), pass === 0 ? 0 : questions.length);
+        }
+
+        const records = await batchPage.evaluate(({ sessionIds, keys }) => {
+          const payload = (suffix) => JSON.parse(Object.entries(localStorage).find(([key]) => key.endsWith(suffix))[1]).payload;
+          const attempts = payload('analytics.real.v2').attempts;
+          const reinforcement = payload('reinforcement.real.v2').records;
+          return {
+            attemptsBySession: sessionIds.map((id) => attempts.filter((attempt) => attempt.sessionId === id).length),
+            allInReinforcement: keys.every((key) => Boolean(reinforcement[key])),
+          };
+        }, { sessionIds, keys: questions.map((q) => `${q.collection}:${q.id}`) });
+        assert.deepEqual(records.attemptsBySession, sessionIds.map(() => questions.length));
+        assert.equal(records.allInReinforcement, true);
+        for (const route of ['estadisticas', 'refuerzo']) {
+          await batchPage.goto(`${base}#${route}`);
+          await batchPage.locator(`[data-view="${route}"]`).waitFor({ state: 'visible' });
+        }
+      } finally {
+        await batchContext.close();
+      }
+    });
+  }
+  const selectedBatches = allEditorial ? editorialBatches : editorialBatches.slice(-1);
+  const workerCount = allEditorial ? 4 : 1;
+  await Promise.all(Array.from({ length: workerCount }, async (_, worker) => {
+    for (let index = worker; index < selectedBatches.length; index += workerCount) {
+      await checkEditorialBatch(selectedBatches[index]);
     }
-    } finally { await pilotContext.close(); }
-  });
+  }));
   await check("basic accessibility across main views", async () => {
     const routes = ["inicio", "temario/B1-T01", "plan", "progreso", "entrenamiento", "examen", "practica", "refuerzo", "estadisticas"];
     for (const route of routes) {
@@ -492,7 +561,8 @@ try {
   await check("no console errors or broken HTTP routes", () => { assert.deepEqual(consoleErrors, []); assert.deepEqual(broken, []); });
 } finally {
   await fs.mkdir(path.join(root, "logs"), { recursive: true });
-  await fs.writeFile(path.join(root, "logs/gsi-browser-smoke.json"), JSON.stringify({ date: new Date().toISOString(), browserChannel, basePath: "/gsi-test/", checks, failures, consoleErrors, broken }, null, 2));
+  const reportName = allEditorial ? "gsi-browser-smoke-editorial.json" : "gsi-browser-smoke.json";
+  await fs.writeFile(path.join(root, "logs", reportName), JSON.stringify({ date: new Date().toISOString(), browserChannel, basePath: "/gsi-test/", checks, failures, consoleErrors, broken }, null, 2));
   await browser.close(); await new Promise((resolve) => server.close(resolve));
 }
 if (failures.length) process.exitCode = 1;

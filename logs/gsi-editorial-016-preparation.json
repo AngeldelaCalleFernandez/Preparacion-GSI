@@ -1,0 +1,678 @@
+{
+  "batch_id": "GSI-EDITORIAL-016",
+  "batch_sha256": "885e5a6ae923de47b6fd2267095cfe113cd9ca3fb039eb5021204439cd2218eb",
+  "prepared_at": "2026-10-27",
+  "preparation": "agent_source_checked_pending_owner_review",
+  "source_checked_by": "Asistente preparador; no revisión humana independiente",
+  "accepted": 0,
+  "applied": 0,
+  "withdrawn": 0,
+  "scope": "Posiciones 301–320 de review_order; cinco manuales de B1-T08 y 15 IA de B1-T09, ajenas a las 128 incidencias originales.",
+  "protected_files_sha256": {
+    "data/questions-manual.json": "dc6bb78be015ede11e8a703bdde58a272352e7030fe9db25cbe9a91c041402e0",
+    "data/questions-ai.json": "07775eed29f024de16e2fb2bcb16072a306300363a872b03ae373c82c7fac4bd",
+    "data/questions-official.json": "bddf132ba2333d848982263593905206a87e8548179ee7443a8699385c984b9e",
+    "data/gsi-editorial-reviews.json": "36cacf9e11fd87baab9d370071a4de28e9d61f6a0325dc3ccc0cbf0af683f508",
+    "data/gsi-editorial-revisions.json": "d3c65f03f977c66f3fd92ee6cafe8fbdc82982722dd300aa93990454a5339ffd",
+    "content/question-reviews/baseline.json": "7a77fcaa60f6fea1ae57ee102c15659590f7e1d1a653f1650aa49127164679e8",
+    "content/question-reviews/lote-001.json": "0ea1cf9fabdf01c5580251e2a43a2d53ce9dbd40673b0d5d59e2ea5700fcc4c2",
+    "content/question-reviews/approvals/GSI-EDITORIAL-001.json": "1a86325719d413716edb4461974d8a9b691d2457ce010eb534d6d21397c90f47",
+    "content/question-reviews/lote-002.json": "926617d637d790cb5e933b0d081f5975f951d8dfbc7097d56e3315b64cdef26c",
+    "docs/GSI_REVISION_LOTE_002.md": "607431e86c46d6761ce209052f5b2e6ffdc8a510603617ee40b95c616da257d8",
+    "docs/GSI_PREPARACION_LOTE_002.md": "0226c79a3dd9fc9e8a8558bdd2142a2e22b3311cd815a38a32870c25ad894c0c",
+    "logs/gsi-editorial-002-preparation.json": "8e286fe32fb1e713a40ba4cbdacebcdfed11cced549150ec52c221c0e5265d0f",
+    "content/question-reviews/lote-003.json": "f7c8a2c03040254a508efe3f6699fe6d2aa892db4542d072ac6dcbd9cf1710cd",
+    "docs/GSI_REVISION_LOTE_003.md": "fa2253831e6c1c538ad3fbe0363ff5711472c1cd4b90f5acd1c847f680d9c054",
+    "docs/GSI_PREPARACION_LOTE_003.md": "bb77b94a434497d38361e713f750915abcc5008dc5879f267db23d318d41475c",
+    "logs/gsi-editorial-003-preparation.json": "16287e65b5a60139f817e55010eb22aa34bd22fd67b921f11acef079c6f75544",
+    "content/question-reviews/lote-004.json": "86f9242d1fb667660dfd12812e1752605aee6f0ec92213618bd37d3ef768e88c",
+    "docs/GSI_REVISION_LOTE_004.md": "03030bb383ae6ca44e004bb07e0c848c4c689e573b4318b60f42dffd74ab40d8",
+    "docs/GSI_PREPARACION_LOTE_004.md": "1ad8e7f429df30d20be3f80084d0056ac19f29cd5c68b3cb654189b847e78fda",
+    "logs/gsi-editorial-004-preparation.json": "6c64627999892ad29dd736e4115c12ddb4d37ef65743c6e2c41524630dbf6e89",
+    "content/question-reviews/lote-005.json": "97af1418ccfeb95f77389dbf7828212ff26389e91a5f8c78d08f6805e5de1d99",
+    "docs/GSI_REVISION_LOTE_005.md": "21fcd0a1c1deb7ffab6661e7274b7e044a988f97715b0a81e2f68c2a5bfacf8a",
+    "docs/GSI_PREPARACION_LOTE_005.md": "3962d2dbc042f253c8b3c5c4ea5fd2731f8d25d5492a9a85822032468a1c1b67",
+    "logs/gsi-editorial-005-preparation.json": "9b4829cacc42f39c7f0b670896add41cd5c27ae1b69f002583504e7f909bfe05",
+    "content/question-reviews/lote-006.json": "d8f5df7e32d2c22fca6b097b385f19f0ab4b3a4761a681af413ec6a30c2ac334",
+    "docs/GSI_REVISION_LOTE_006.md": "a4cc8bed9b5ca874c048c00449724ad15c716aaf096280a67236019ee5f3de92",
+    "docs/GSI_PREPARACION_LOTE_006.md": "266c24e5d28a6988f08f41b733372c635949e3318ede5ea19f71a8f7add774c9",
+    "logs/gsi-editorial-006-preparation.json": "3a0a9c6e7491761c38dc080fd5adb299c2b73f15ca8e6ef6f2a30975b12ac822",
+    "content/question-reviews/lote-007.json": "fc478894e82ef47d4e46ff73183f5ca165d658548fa8773091ea90c341b41651",
+    "docs/GSI_REVISION_LOTE_007.md": "9a7b600fba1a3f51711c8b1d6f231fb68fef22d12f338a9dbe1770006fa61154",
+    "docs/GSI_PREPARACION_LOTE_007.md": "9df437583473e6c2b673e4c833ccdd500c32b3b2a99636b83fcbc3131b690fc1",
+    "logs/gsi-editorial-007-preparation.json": "9ea1d6d040880944be504511f49741b836fb1ec9b3201a09b0ecd3ff7dd1cf77",
+    "content/question-reviews/lote-008.json": "e9cf463a2a2e6151c8f587fb5bac1608825c0499e3a1a1e73bbb7f60b116f16e",
+    "docs/GSI_REVISION_LOTE_008.md": "400e57e6c598790a1258ad3bc2986f56be428b9b95ab2972995d901db5908edc",
+    "docs/GSI_PREPARACION_LOTE_008.md": "ea541aca767054421997ea94ef2756161199f1ee6452014d5f8f2c34d0ebe0fd",
+    "logs/gsi-editorial-008-preparation.json": "6ba6764f924853f2a4f87cb8f3eed24cb7d6cdd3dbedafda42d7187d98a14be1",
+    "content/question-reviews/lote-009.json": "46baf74a4c6e71df09ed42cc5ee024359e238b1e276d49971a4007fa30334e55",
+    "docs/GSI_REVISION_LOTE_009.md": "b50ccbe861284912e73a3557cf0d7ed2530aecb89d2a919939749c1ad04037ad",
+    "docs/GSI_PREPARACION_LOTE_009.md": "43c8c0200996ae8f19e9087c6bacf7c795f65c887af206be91447aee18afceb2",
+    "logs/gsi-editorial-009-preparation.json": "8f2acd0b666b3e980214dd7ff0204b731fb6123bc8939eee8cec930cd6cc6132",
+    "content/question-reviews/lote-010.json": "85140d588b46ac9dfcc3f210989482ef420daa43ebd8a9a64baf2d1241873d88",
+    "docs/GSI_REVISION_LOTE_010.md": "66cd1592a9d926256a6d3fdb0d6e819d0d6b897c9ba621fbb40c81824ec5810d",
+    "docs/GSI_PREPARACION_LOTE_010.md": "53d52b44670d254c37ae3e3df8c8dc0819031e17812e23c8db6559cbc5e36ba5",
+    "logs/gsi-editorial-010-preparation.json": "17528992f557104c75f0de8ea11f18a7f902523ea0836f0076617b94a8199e30",
+    "content/question-reviews/lote-011.json": "e4b66674eeb525ac0ae4f9e1f5a91cb303586e904c59cc1aae68a13af34a7431",
+    "docs/GSI_REVISION_LOTE_011.md": "ef8301563a6c03268bb439843c20b255a07da9841a121ff82f68acdc264e9678",
+    "docs/GSI_PREPARACION_LOTE_011.md": "77e2ea8f61a987fe06c6943eda5f692be32f61417496e4f06623067295b0146a",
+    "logs/gsi-editorial-011-preparation.json": "288ba0d906d2852e9e42a2db20d4a94f4c1bb8684d9491d61e06abd5535e674c",
+    "content/question-reviews/lote-012.json": "d9392c96bfe49c40951d65b93c8a49e469dffadd972f03af97fc79e41374f9fd",
+    "docs/GSI_REVISION_LOTE_012.md": "67e43d453c8a95afda91b257cee34b254b7325cfdeb3de7cd8268f7fb65d0a4c",
+    "docs/GSI_PREPARACION_LOTE_012.md": "cdcc6dcd868d9723710c762f209a637f6d280bfaa6f2b5ae7b64a9efff7b3fa5",
+    "logs/gsi-editorial-012-preparation.json": "7be095f9ee89237f01516c4cdb5ae0dcd9aa86c2edc320553e674abdd7d711a2",
+    "content/question-reviews/lote-013.json": "44603f1b6cb58de0b1956eee39138caa24491685042a64e99b558bb7f1e9796d",
+    "docs/GSI_REVISION_LOTE_013.md": "a6578d60b9ecd28ab08e261580aca81660ce9b13ac66e0f979e3cc9113009421",
+    "docs/GSI_PREPARACION_LOTE_013.md": "7226c8766c6167168641050096c834145231f230d2da5ea8810207937697ea66",
+    "logs/gsi-editorial-013-preparation.json": "d77c7aaafd922284904a7e6f71884ae5c5a65d271f52a06030a65e955eb45b82",
+    "content/question-reviews/lote-014.json": "fdba4d09bd0630addc548cba05131e500a7f92b4d5be740b611d6e8dd6ba6bff",
+    "docs/GSI_REVISION_LOTE_014.md": "d6593b0f96ce0ce5dbcb2ed82ef4fa29eedfa3c4d5f4766b3889422ff26ee1f7",
+    "docs/GSI_PREPARACION_LOTE_014.md": "39a820abc4ead7ae2a9a02d7b4a0f6505050363cd5c43faf16cc11d2c2f22c78",
+    "logs/gsi-editorial-014-preparation.json": "25e25483af189b978b93a4b304a31c3bd587f4ca73be135f6cf8b54d307f402a",
+    "content/question-reviews/lote-015.json": "24056d4b6f8c0ef87c0a6ce6f0a695eaa99bb74dc274ed000cf878d6a95aecaf",
+    "docs/GSI_REVISION_LOTE_015.md": "b49c181f1a1faa9fe21460dc8185fc2fe0587f10887e6d7b7172b65621bf8d60",
+    "docs/GSI_PREPARACION_LOTE_015.md": "20538ba0c64b41d38ac39d001eff97715a9e51d13ae59bbe4cbcaaf581c6e31d",
+    "logs/gsi-editorial-015-preparation.json": "5ec8e6d20d12830239f2794c46e66f663b6e89f8c0f4581c3d9fd4676ce80ee0"
+  },
+  "derived_reports_semantic_sha256_before": {
+    "data/gsi-coverage-report.json": "9b6d74885aa08f8b65414fea1da9b81ce404d1ababda44bdadc5ce62c4805122",
+    "logs/gsi-final-validation.json": "c4bbf19c86da33a5f9421b0e139b805a186b47be6eb10769b27721f32c89b44e",
+    "logs/gsi-legacy-review.json": "095b19d32c83b748ec3f5e78c1f64fcbdac5589d7581c32690558be5f31b38ff"
+  },
+  "before": {
+    "questions": 20,
+    "absolute_wording_cluster": 0,
+    "correct_unique_longest": 8,
+    "duplicate_options": 0,
+    "first_longest_correct": 8,
+    "identical_feedback": 15,
+    "length_ratio_1_5_to_2": 3,
+    "length_ratio_at_least_2": 0,
+    "longest_ties": 1,
+    "short_correct_feedback": 14,
+    "first_longest_accuracy": 40.0
+  },
+  "proposed_after": {
+    "questions": 20,
+    "absolute_wording_cluster": 0,
+    "correct_unique_longest": 7,
+    "duplicate_options": 0,
+    "first_longest_correct": 7,
+    "identical_feedback": 0,
+    "length_ratio_1_5_to_2": 0,
+    "length_ratio_at_least_2": 0,
+    "longest_ties": 3,
+    "short_correct_feedback": 0,
+    "first_longest_accuracy": 35.0
+  },
+  "questions": [
+    {
+      "id": "MAN-GSI-P14-153",
+      "bank": "manual",
+      "mode": "application",
+      "decision": "pending_review",
+      "concept_retained": true,
+      "key_retained": true,
+      "statement_and_options_retained": false,
+      "source_status": "primary_sources_opened",
+      "reason": "Conservar caso de persona jurídica y clave A; sustituir umbral de plantilla por confusiones plausibles de representación, lucro y naturaleza privada, precisando subsanación sin rechazo automático."
+    },
+    {
+      "id": "MAN-GSI-P14-103",
+      "bank": "manual",
+      "mode": "conceptual",
+      "decision": "pending_review",
+      "concept_retained": true,
+      "key_retained": true,
+      "statement_and_options_retained": true,
+      "source_status": "primary_sources_opened",
+      "reason": "Conservar pregunta y cuatro plazos con condiciones ya comparables; sustituir alusión al V2.1 por fuente legal y explicación individual de límite, supletoriedad y excepciones."
+    },
+    {
+      "id": "MAN-GSI-P14-108",
+      "bank": "manual",
+      "mode": "conceptual",
+      "decision": "pending_review",
+      "concept_retained": true,
+      "key_retained": true,
+      "statement_and_options_retained": true,
+      "source_status": "primary_sources_opened",
+      "reason": "Conservar pregunta y alternativas sobre objetos próximos; completar recurribilidad y órgano, distinguiendo carácter presunto de fin de vía y recurso contra disposición general."
+    },
+    {
+      "id": "MAN-GSI-P14-121",
+      "bank": "manual",
+      "mode": "application",
+      "decision": "pending_review",
+      "concept_retained": true,
+      "key_retained": true,
+      "statement_and_options_retained": false,
+      "source_status": "primary_sources_opened",
+      "reason": "Conservar voluntariedad frente a coordinación y clave A; usar acuerdo didáctico con competencias propias y reemplazar siempre, supresión del reparto y solo locales por figuras cercanas."
+    },
+    {
+      "id": "MAN-GSI-P14-159",
+      "bank": "manual",
+      "mode": "conceptual",
+      "decision": "pending_review",
+      "concept_retained": true,
+      "key_retained": true,
+      "statement_and_options_retained": false,
+      "source_status": "primary_sources_opened",
+      "reason": "Conservar objeto y plazo de reposición y clave C; comparar cuatro combinaciones próximas con forma equivalente, evitando correcta desproporcionada y reiteración indefinida evidente."
+    },
+    {
+      "id": "AI-GSI-B1-T09-001",
+      "bank": "ai",
+      "mode": "application",
+      "decision": "pending_review",
+      "concept_retained": true,
+      "key_retained": true,
+      "statement_and_options_retained": false,
+      "source_status": "primary_sources_opened",
+      "reason": "Conservar caso y distinción portal/sede y clave A; comparar enlaces, transporte y dominio como indicios insuficientes, retirando expediente como distractor lejano."
+    },
+    {
+      "id": "AI-GSI-B1-T09-002",
+      "bank": "ai",
+      "mode": "conceptual",
+      "decision": "pending_review",
+      "concept_retained": true,
+      "key_retained": true,
+      "statement_and_options_retained": false,
+      "source_status": "primary_sources_opened",
+      "reason": "Conservar función central de acceso y clave B; comparar cuatro funciones reales del entorno administrativo en vez de categoría ENS, revocación y conservación universal."
+    },
+    {
+      "id": "AI-GSI-B1-T09-003",
+      "bank": "ai",
+      "mode": "application",
+      "decision": "pending_review",
+      "concept_retained": true,
+      "key_retained": true,
+      "statement_and_options_retained": false,
+      "source_status": "primary_sources_opened",
+      "reason": "Conservar presentación, asiento, recibo y clave A; comparar registro con expediente, archivo y notificación, eliminando distractores ajenos a la tramitación."
+    },
+    {
+      "id": "AI-GSI-B1-T09-005",
+      "bank": "ai",
+      "mode": "application",
+      "decision": "pending_review",
+      "concept_retained": true,
+      "key_retained": true,
+      "statement_and_options_retained": false,
+      "source_status": "primary_sources_opened",
+      "reason": "Conservar expediente frente a agrupación y clave B; precisar que ZIP puede ser transporte válido, y comparar orden simple, seguridad de contenedor y respaldo con garantías de expediente."
+    },
+    {
+      "id": "AI-GSI-B1-T09-007",
+      "bank": "ai",
+      "mode": "application",
+      "decision": "pending_review",
+      "concept_retained": true,
+      "key_retained": true,
+      "statement_and_options_retained": false,
+      "source_status": "primary_sources_opened",
+      "reason": "Conservar planificación de conservación y clave D; contextualizar obsolescencia y distinguir rotación de copias, inaccesibilidad diferida y espacio de calendario documental."
+    },
+    {
+      "id": "AI-GSI-B1-T09-008",
+      "bank": "ai",
+      "mode": "application",
+      "decision": "pending_review",
+      "concept_retained": true,
+      "key_retained": true,
+      "statement_and_options_retained": false,
+      "source_status": "primary_sources_opened",
+      "reason": "Conservar límites de apertura y clave D; aplicar a decisión de publicación comparando licencia, anonimato supuesto y acceso previo, sin deducir prohibición universal de toda información con datos personales."
+    },
+    {
+      "id": "AI-GSI-B1-T09-009",
+      "bank": "ai",
+      "mode": "conceptual",
+      "decision": "pending_review",
+      "concept_retained": true,
+      "key_retained": true,
+      "statement_and_options_retained": false,
+      "source_status": "primary_sources_opened",
+      "reason": "Conservar cinco dimensiones y clave D; comparar cinco conceptos en cada opción, con sustituciones próximas de seguridad en vez de coste y temperatura o principios jurídicos."
+    },
+    {
+      "id": "AI-GSI-B1-T09-011",
+      "bank": "ai",
+      "mode": "conceptual",
+      "decision": "pending_review",
+      "concept_retained": true,
+      "key_retained": true,
+      "statement_and_options_retained": false,
+      "source_status": "primary_sources_opened",
+      "reason": "Conservar vigilancia y reevaluación y clave C; pedir conceptos expresamente clasificados como principios para no considerar errónea cualquier actividad coherente, y sustituir decisiones evidentemente negligentes por controles reales."
+    },
+    {
+      "id": "AI-GSI-B1-T09-012",
+      "bank": "ai",
+      "mode": "conceptual",
+      "decision": "pending_review",
+      "concept_retained": true,
+      "key_retained": true,
+      "statement_and_options_retained": false,
+      "source_status": "primary_sources_opened",
+      "reason": "Conservar reconocimiento de rol ENS y clave A; precisar enumeración legal y usar roles organizativos reales próximos sin sustitutos universales, explicando funciones y excepciones."
+    },
+    {
+      "id": "AI-GSI-B1-T09-014",
+      "bank": "ai",
+      "mode": "conceptual",
+      "decision": "pending_review",
+      "concept_retained": true,
+      "key_retained": true,
+      "statement_and_options_retained": false,
+      "source_status": "primary_sources_opened",
+      "reason": "Conservar tres grupos y clave B; sustituir fases de software y firma exclusiva por medidas y familias reales de niveles inferiores del anexo."
+    },
+    {
+      "id": "AI-GSI-B1-T09-016",
+      "bank": "ai",
+      "mode": "application",
+      "decision": "pending_review",
+      "concept_retained": true,
+      "key_retained": true,
+      "statement_and_options_retained": false,
+      "source_status": "primary_sources_opened",
+      "reason": "Conservar cambio sustancial y auditoría extraordinaria, clave B; delimitar MEDIA y repercusión normativa, comparando revisión, espera y autoevaluación en vez de exclusión del ENS o EIPD sustitutiva."
+    },
+    {
+      "id": "AI-GSI-B1-T09-017",
+      "bank": "ai",
+      "mode": "application",
+      "decision": "pending_review",
+      "concept_retained": true,
+      "key_retained": true,
+      "statement_and_options_retained": false,
+      "source_status": "primary_sources_opened",
+      "reason": "Conservar aprendizaje tras respuesta y clave C; sustituir referencia a apuntes y acciones obviamente destructivas por actividades válidas de otras fases para evaluar su finalidad."
+    },
+    {
+      "id": "AI-GSI-B1-T09-019",
+      "bank": "ai",
+      "mode": "conceptual",
+      "decision": "pending_review",
+      "concept_retained": true,
+      "key_retained": true,
+      "statement_and_options_retained": false,
+      "source_status": "primary_sources_opened",
+      "reason": "Conservar función de desarrollo ENI y clave A; comparar marcos administrativos próximos sin derogar automáticamente ENS ni sustituir leyes, explicando su coordinación."
+    },
+    {
+      "id": "AI-GSI-B1-T09-013",
+      "bank": "ai",
+      "mode": "conceptual",
+      "decision": "pending_review",
+      "concept_retained": true,
+      "key_retained": true,
+      "statement_and_options_retained": false,
+      "source_status": "primary_sources_opened",
+      "reason": "Conservar categorías ENS y clave D; sustituir división territorial por niveles de dimensión para evaluar una confusión próxima, conservando otras clasificaciones y explicando regla del mayor impacto."
+    },
+    {
+      "id": "AI-GSI-B1-T09-015",
+      "bank": "ai",
+      "mode": "conceptual",
+      "decision": "pending_review",
+      "concept_retained": true,
+      "key_retained": true,
+      "statement_and_options_retained": false,
+      "source_status": "primary_sources_opened",
+      "reason": "Conservar relación de medidas y clave A; comparar declaración, categorización, inventario e informe de auditoría, sustituyendo lista de opositores y otros distractores lejanos."
+    }
+  ],
+  "findings_after": [],
+  "calibration": "not_performed",
+  "source_notes": [
+    "Consulta real de fuentes primarias el 27-10-2026. Las consolidaciones BOE son informativas, no publicaciones oficiales; la publicación DOUE del RGPD no se presenta como consolidación. Las fechas de actualización no implican reforma de cada artículo citado.",
+    "LPAC: persona jurídica no depende de plantilla, lucro o abogado. Límite general de seis meses no es plazo supletorio de tres; alzada y reposición distinguen objeto y tiempo de resolución.",
+    "Cooperación respeta competencias y exige aceptación expresa de compromisos; voluntaria no significa jerarquía creada o cesión de titularidad. Se evita reducir coordinación a cualquier actuación común.",
+    "Portal, sede y PAGe se distinguen sin negar que compartan interfaz o enlaces. El PAGe tiene sede; no se le atribuye régimen de un único registro, expediente o archivo por centralizar acceso. No se afirma una adscripción ministerial actual.",
+    "ZIP puede transportar expediente conforme; el contenedor no acredita ni impide por sí solo ordenación, índice autenticado, metadatos y garantías. El asiento y recibo de entrada no resuelven por sí solos un procedimiento.",
+    "Conservación no es solo copia de seguridad ni espacio libre: valoración, calendario, metadatos y procedimientos ante obsolescencia. La NTI de 2012 contiene remisiones históricas a Ley 30/1992 y RD 3/2010; no se aplican como régimen vigente y se contrasta ENS 311/2022 y LPAC.",
+    "Datos abiertos no equivalen a permiso universal; licencia o consulta previa no eliminan exclusiones. Quitar nombres no garantiza anonimato. No se clasifica un conjunto real ni se determina un plazo documental concreto.",
+    "ENS: dimensiones, niveles por dimensión y categoría del sistema son conceptos distintos. Categoría global no cambia por sí sola todos los niveles ni resulta de media aritmética. Principios se preguntan como lista normativa, sin negar utilidad a continuidad, auditoría o capacidad.",
+    "Roles ENS se verifican en artículo 11.1 y funciones en 13.2; diferenciación no se convierte en prohibición absoluta de excepciones justificadas del 13.3. Otros roles organizativos no desaparecen por no integrar esa enumeración.",
+    "Auditoría extraordinaria: el caso explicita categoría MEDIA y cambio sustancial con posible repercusión en medidas. No se extiende sin matices el régimen de auditoría a autoevaluación BÁSICA. La extraordinaria reinicia referencia para siguiente ordinaria.",
+    "Declaración de Aplicabilidad no prueba implantación efectiva ni sustituye riesgos, categoría, inventario o auditoría. Se conservan justificación y correspondencia de compensatorias y firma del responsable de seguridad.",
+    "Dos preguntas conservan enunciado y opciones. Hay 11 conceptuales y nueve de aplicación, varias ya contextualizadas en origen; no se imponen cuotas. Rúbrica del preparador pendiente de aceptación humana y sin calibración estadística."
+  ],
+  "preparation_refinements": [
+    {
+      "previous_unapproved_batch_sha256": "edab522278b53fdd16ae3d5be2a4ce1040061301bc24a92431bcc09f23de9284",
+      "checked_at": "2026-10-27",
+      "ids": [
+        "MAN-GSI-P14-153",
+        "MAN-GSI-P14-121",
+        "AI-GSI-B1-T09-017"
+      ],
+      "reason": "Explicitar que lucro se plantea como condición de obligación, no mera condición suficiente; evitar repetición de voluntariamente en el caso de cooperación; distinguir aprendizaje de cualquier reparación inmediata. No se cambian claves ni versiones de partida."
+    },
+    {
+      "previous_unapproved_batch_sha256": "d4bc6710d7c12a66304ac81f1ef94951994264d4ed968cbfb43df21fecb53cbd",
+      "checked_at": "2026-10-27",
+      "ids": [
+        "AI-GSI-B1-T09-016"
+      ],
+      "reason": "Corregir localizador de categorías auditadas y autoevaluación BÁSICA: artículo 38.1 ENS; el 38.2 se refiere a publicidad. Clave, contenido evaluado y versión de partida conservados."
+    }
+  ],
+  "validation": {
+    "batch_hash_matches": true,
+    "schema_cli_simulation_exit_code": 0,
+    "editorial_tests": 17,
+    "json_files": 38,
+    "schemas": 21,
+    "question_structure_count": 1964,
+    "integrity_checks": 19251,
+    "documentation_pass": true,
+    "references_pass": true,
+    "reference_catalog_markdown_count": 37,
+    "new_report_local_links_verified": [
+      {
+        "file": "docs/GSI_PREPARACION_LOTE_016.md",
+        "target": "GSI_REVISION_LOTE_016.md"
+      },
+      {
+        "file": "docs/GSI_PREPARACION_LOTE_016.md",
+        "target": "../content/question-reviews/lote-016.json"
+      },
+      {
+        "file": "docs/GSI_PREPARACION_LOTE_016.md",
+        "target": "../logs/gsi-editorial-016-preparation.json"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_REVISION_PILOTO_001.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_REVISION_PILOTO_001.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_APLICACION_LOTE_001.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_CALIDAD_PREGUNTAS.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "../content/question-reviews/baseline.json"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "../logs/gsi-editorial-progress.json"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_REVISION_LOTE_002.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_REVISION_LOTE_003.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_REVISION_LOTE_004.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_REVISION_LOTE_005.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_REVISION_LOTE_006.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_REVISION_LOTE_007.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_REVISION_LOTE_008.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_REVISION_LOTE_009.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_REVISION_LOTE_010.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_REVISION_LOTE_011.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_REVISION_LOTE_012.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_REVISION_LOTE_013.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_REVISION_LOTE_014.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_REVISION_LOTE_015.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_REVISION_LOTE_016.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_PREPARACION_LOTE_002.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_PREPARACION_LOTE_003.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_PREPARACION_LOTE_004.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_PREPARACION_LOTE_005.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_PREPARACION_LOTE_006.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_PREPARACION_LOTE_007.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_PREPARACION_LOTE_008.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_PREPARACION_LOTE_009.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_PREPARACION_LOTE_010.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_PREPARACION_LOTE_011.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_PREPARACION_LOTE_012.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_PREPARACION_LOTE_013.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_PREPARACION_LOTE_014.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_PREPARACION_LOTE_015.md"
+      },
+      {
+        "file": "docs/GSI_MEJORA_TESTS.md",
+        "target": "GSI_PREPARACION_LOTE_016.md"
+      }
+    ],
+    "protected_files_unchanged": {
+      "data/questions-manual.json": true,
+      "data/questions-ai.json": true,
+      "data/questions-official.json": true,
+      "data/gsi-editorial-reviews.json": true,
+      "data/gsi-editorial-revisions.json": true,
+      "content/question-reviews/baseline.json": true,
+      "content/question-reviews/lote-001.json": true,
+      "content/question-reviews/approvals/GSI-EDITORIAL-001.json": true,
+      "content/question-reviews/lote-002.json": true,
+      "docs/GSI_REVISION_LOTE_002.md": true,
+      "docs/GSI_PREPARACION_LOTE_002.md": true,
+      "logs/gsi-editorial-002-preparation.json": true,
+      "content/question-reviews/lote-003.json": true,
+      "docs/GSI_REVISION_LOTE_003.md": true,
+      "docs/GSI_PREPARACION_LOTE_003.md": true,
+      "logs/gsi-editorial-003-preparation.json": true,
+      "content/question-reviews/lote-004.json": true,
+      "docs/GSI_REVISION_LOTE_004.md": true,
+      "docs/GSI_PREPARACION_LOTE_004.md": true,
+      "logs/gsi-editorial-004-preparation.json": true,
+      "content/question-reviews/lote-005.json": true,
+      "docs/GSI_REVISION_LOTE_005.md": true,
+      "docs/GSI_PREPARACION_LOTE_005.md": true,
+      "logs/gsi-editorial-005-preparation.json": true,
+      "content/question-reviews/lote-006.json": true,
+      "docs/GSI_REVISION_LOTE_006.md": true,
+      "docs/GSI_PREPARACION_LOTE_006.md": true,
+      "logs/gsi-editorial-006-preparation.json": true,
+      "content/question-reviews/lote-007.json": true,
+      "docs/GSI_REVISION_LOTE_007.md": true,
+      "docs/GSI_PREPARACION_LOTE_007.md": true,
+      "logs/gsi-editorial-007-preparation.json": true,
+      "content/question-reviews/lote-008.json": true,
+      "docs/GSI_REVISION_LOTE_008.md": true,
+      "docs/GSI_PREPARACION_LOTE_008.md": true,
+      "logs/gsi-editorial-008-preparation.json": true,
+      "content/question-reviews/lote-009.json": true,
+      "docs/GSI_REVISION_LOTE_009.md": true,
+      "docs/GSI_PREPARACION_LOTE_009.md": true,
+      "logs/gsi-editorial-009-preparation.json": true,
+      "content/question-reviews/lote-010.json": true,
+      "docs/GSI_REVISION_LOTE_010.md": true,
+      "docs/GSI_PREPARACION_LOTE_010.md": true,
+      "logs/gsi-editorial-010-preparation.json": true,
+      "content/question-reviews/lote-011.json": true,
+      "docs/GSI_REVISION_LOTE_011.md": true,
+      "docs/GSI_PREPARACION_LOTE_011.md": true,
+      "logs/gsi-editorial-011-preparation.json": true,
+      "content/question-reviews/lote-012.json": true,
+      "docs/GSI_REVISION_LOTE_012.md": true,
+      "docs/GSI_PREPARACION_LOTE_012.md": true,
+      "logs/gsi-editorial-012-preparation.json": true,
+      "content/question-reviews/lote-013.json": true,
+      "docs/GSI_REVISION_LOTE_013.md": true,
+      "docs/GSI_PREPARACION_LOTE_013.md": true,
+      "logs/gsi-editorial-013-preparation.json": true,
+      "content/question-reviews/lote-014.json": true,
+      "docs/GSI_REVISION_LOTE_014.md": true,
+      "docs/GSI_PREPARACION_LOTE_014.md": true,
+      "logs/gsi-editorial-014-preparation.json": true,
+      "content/question-reviews/lote-015.json": true,
+      "docs/GSI_REVISION_LOTE_015.md": true,
+      "docs/GSI_PREPARACION_LOTE_015.md": true,
+      "logs/gsi-editorial-015-preparation.json": true
+    },
+    "simulated_changed_ids_by_bank": {
+      "manual": [
+        "MAN-GSI-P14-103",
+        "MAN-GSI-P14-108",
+        "MAN-GSI-P14-121",
+        "MAN-GSI-P14-153",
+        "MAN-GSI-P14-159"
+      ],
+      "ai": [
+        "AI-GSI-B1-T09-001",
+        "AI-GSI-B1-T09-002",
+        "AI-GSI-B1-T09-003",
+        "AI-GSI-B1-T09-005",
+        "AI-GSI-B1-T09-007",
+        "AI-GSI-B1-T09-008",
+        "AI-GSI-B1-T09-009",
+        "AI-GSI-B1-T09-011",
+        "AI-GSI-B1-T09-012",
+        "AI-GSI-B1-T09-013",
+        "AI-GSI-B1-T09-014",
+        "AI-GSI-B1-T09-015",
+        "AI-GSI-B1-T09-016",
+        "AI-GSI-B1-T09-017",
+        "AI-GSI-B1-T09-019"
+      ],
+      "official": []
+    },
+    "all_ids_and_keys_preserved": true,
+    "all_60_distractor_explanations_present": true,
+    "render_reproducible": true,
+    "statement_and_options_retained": [
+      "MAN-GSI-P14-103",
+      "MAN-GSI-P14-108"
+    ],
+    "original_provenance_and_source_fields_preserved": true,
+    "missing_approval_rejected": true,
+    "pilot_approval_rejected_for_new_batch": true,
+    "approvals_002_to_016_absent": true,
+    "active_banks_content_identical_to_HEAD": true,
+    "official_bank_bytes_identical_to_HEAD": true,
+    "official_bank_bytes_identical_to_audit": true,
+    "active_bank_bytes_unchanged_since_preparation": true,
+    "accepted_batches_in_ledger": 1,
+    "reviewed": 20,
+    "proposed": 300,
+    "pending_acceptance": 1742,
+    "unproposed": 1442,
+    "original_ai_findings_with_proposal": 128,
+    "original_ai_findings_accepted": 15,
+    "original_ai_findings_pending_acceptance": 113,
+    "modes": {
+      "conceptual": 11,
+      "application": 9
+    },
+    "topics": {
+      "B1-T08": 5,
+      "B1-T09": 15
+    },
+    "distinct_primary_source_urls": 8,
+    "ens_audit_category_and_article_38_1_locator_verified": true,
+    "zip_container_distinguished_from_procedural_guarantees": true,
+    "profit_condition_distractor_disambiguated": true,
+    "historical_manual_source_fields_and_ai_evidence_preserved": true,
+    "derived_reports_unchanged_from_preparation": {
+      "data/gsi-coverage-report.json": true,
+      "logs/gsi-final-validation.json": true,
+      "logs/gsi-legacy-review.json": true
+    },
+    "derived_reports_differ_from_HEAD_only_in_existing_validation_date": true,
+    "publication_status": "not_published",
+    "merge_status": "not_merged",
+    "editorial_complete": false,
+    "full_http_suite_rerun": false,
+    "full_http_suite_reason": "Sin cambios de código ni bancos activos; la suite completa del piloto no se atribuye a estas propuestas.",
+    "diff_check_pass": true,
+    "new_files_whitespace_pass": true
+  }
+}

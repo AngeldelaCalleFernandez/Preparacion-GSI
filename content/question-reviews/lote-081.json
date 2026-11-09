@@ -1,0 +1,3798 @@
+{
+  "version": 1,
+  "id": "GSI-EDITORIAL-081",
+  "prepared_at": "2026-11-04",
+  "baseline_commit": "e3e20ab879518c899806a70575eead28b3b35e6f",
+  "items": [
+    {
+      "id": "AI-GSI-B4-T13-019",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "9bfeb0347f7bd47cf25634f9159b9231ebd4fba430cd3329ef18ab20fce48d84",
+      "content_sha256": "1c6184f5f27a9401002f1e53e2bc4a5cc1456e2c2dd1258729f9e497a9ca0405",
+      "before": {
+        "id": "AI-GSI-B4-T13-019",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T13",
+        "subtopic": "Seguridad y ciclo de vida IoT",
+        "exam": null,
+        "statement": "¿Qué riesgo tiene un dispositivo IoT sin capacidad de actualización?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Mantener deuda de seguridad durante su vida útil"
+          },
+          {
+            "id": "B",
+            "text": "No necesitar inventario"
+          },
+          {
+            "id": "C",
+            "text": "Garantizar estabilidad y seguridad absolutas"
+          },
+          {
+            "id": "D",
+            "text": "Eliminar vulnerabilidades futuras"
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "El ciclo de soporte y actualización es parte esencial de la seguridad.",
+          "incorrect": "El ciclo de soporte y actualización es parte esencial de la seguridad."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 8. Seguridad y ciclo de vida IoT",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Identidad única, credenciales no por defecto, secure boot cuando aplique, firmware firmado/OTA, segmentación, mínimos servicios, inventario, logs, cifrado, privacidad y fin de soporte. Dispositivo que no puede actualizarse es una deuda de seguridad durante años.\n\nDatos y trampas de test\n\n* Internet ≠ Web.\n* BGP conecta/intercambia rutas entre AS; DNS resuelve nombres.\n* NAT ≠ firewall.\n* HTTP/3 usa QUIC; QUIC v1 se define en RFC 9000.\n* HTTP/3 = RFC 9114.\n* DNS es jerárquico y cacheado.\n* MQTT suele usar broker y pub/sub; CoAP es REST ligero sobre UDP.\n* IoT requiere actualización e identidad, no solo conectividad.\n\nAplicación al supuesto práctico\n\nDiseña Internet de un servicio público con doble conectividad, DNS autoritativo/resolución, CDN/WAF si procede, protección DDoS, IPv6 planificado, TLS, monitorización y rutas. Para IoT: red separada, identidad/certificados, broker, OTA firmado, inventario, gateway/edge y ciclo de vida.",
+          "evidence_sha256": "f76308b606810b6d97a4e8ca0e93ecfc77a1d130711ab4dc64a25443ed601046",
+          "record_sha256": "069be02c2db0866aaa0c1b427eec7a19683e7a3f6f7ade2bd7693967b32b9561",
+          "review_id": "AI-GSI-B4-T13-019",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 8. Seguridad y ciclo de vida IoT",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T13-019",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T13",
+        "subtopic": "Seguridad y ciclo de vida IoT",
+        "exam": null,
+        "statement": "Un dispositivo IoT seguirá en uso varios años, pero no admite actualización de firmware. ¿Qué riesgo debe contemplar su responsable?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Puede conservar vulnerabilidades sin una vía normal de parcheo."
+          },
+          {
+            "id": "B",
+            "text": "Reduce el riesgo porque mantiene intacta la versión de fábrica."
+          },
+          {
+            "id": "C",
+            "text": "Permite sustituir el soporte del fabricante por un inventario."
+          },
+          {
+            "id": "D",
+            "text": "Hace que segmentar la red corrija los defectos del firmware."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Sin una vía de actualización, una vulnerabilidad descubierta puede seguir presente durante la vida útil. Deben evaluarse soporte, exposición, medidas compensatorias y sustitución o retirada. No demuestra que el equipo ya esté explotado; tampoco un inventario o una red segmentada reparan por sí mismos el software defectuoso.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "Conservar la versión original no elimina defectos que se descubran después ni incorpora sus correcciones.",
+            "C": "El inventario ayuda a gestionar riesgo y sustitución, pero no proporciona parches ni mantenimiento del software.",
+            "D": "La segmentación puede limitar alcance de ataques, pero no modifica el firmware para corregir una vulnerabilidad."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 8. Seguridad y ciclo de vida IoT",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Identidad única, credenciales no por defecto, secure boot cuando aplique, firmware firmado/OTA, segmentación, mínimos servicios, inventario, logs, cifrado, privacidad y fin de soporte. Dispositivo que no puede actualizarse es una deuda de seguridad durante años.\n\nDatos y trampas de test\n\n* Internet ≠ Web.\n* BGP conecta/intercambia rutas entre AS; DNS resuelve nombres.\n* NAT ≠ firewall.\n* HTTP/3 usa QUIC; QUIC v1 se define en RFC 9000.\n* HTTP/3 = RFC 9114.\n* DNS es jerárquico y cacheado.\n* MQTT suele usar broker y pub/sub; CoAP es REST ligero sobre UDP.\n* IoT requiere actualización e identidad, no solo conectividad.\n\nAplicación al supuesto práctico\n\nDiseña Internet de un servicio público con doble conectividad, DNS autoritativo/resolución, CDN/WAF si procede, protección DDoS, IPv6 planificado, TLS, monitorización y rutas. Para IoT: red separada, identidad/certificados, broker, OTA firmado, inventario, gateway/edge y ciclo de vida.",
+          "evidence_sha256": "f76308b606810b6d97a4e8ca0e93ecfc77a1d130711ab4dc64a25443ed601046",
+          "record_sha256": "069be02c2db0866aaa0c1b427eec7a19683e7a3f6f7ade2bd7693967b32b9561",
+          "review_id": "AI-GSI-B4-T13-019",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "NIST: IoT Device Cybersecurity Requirement Catalog, Software Update",
+              "url": "https://pages.nist.gov/IoT-Device-Cybersecurity-Requirement-Catalogs/technical/update/",
+              "locator": "Update Capabilities y Update Application Support: instalación autorizada y verificación del origen",
+              "version": "Catálogo público HTML comprobado el 04-11-2026. No se interpreta un checksum sin autenticación como prueba suficiente de origen; se distingue actualización verificada de actualización infalible.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "NIST: Information Dissemination, Manufacturer/Supporting Entity",
+              "url": "https://pages.nist.gov/IoT-Device-Cybersecurity-Requirement-Catalogs/nontechnical/manufacturer/information/",
+              "locator": "§2 Support lifecycle: vulnerabilidades, mitigaciones, cambios de componentes y decisiones de fin de vida",
+              "version": "HTML comprobado el 04-11-2026. Necesidad de información y soporte durante vida útil; sin imponer periodos universales o obligaciones normativas AGE.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "NCSC: Provide updates, securely",
+              "url": "https://www.ncsc.gov.uk/collection/device-security-principles-for-manufacturers/provide-updates-securely",
+              "locator": "Introducción; Guideline1.1, publicación de periodo mínimo de actualizaciones y riesgos fuera de soporte",
+              "version": "HTML comprobado el 04-11-2026. Actualizaciones y procedencia verificadas; un dispositivo no actualizable requiere evaluación y controles compensatorios, no declaración automática de explotación.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-081"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 8. Seguridad y ciclo de vida IoT",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar riesgo de deuda de seguridad y clave A; caso con dispositivo no actualizable y soporte agotado."
+      ],
+      "references": [
+        {
+          "title": "NIST: IoT Device Cybersecurity Requirement Catalog, Software Update",
+          "url": "https://pages.nist.gov/IoT-Device-Cybersecurity-Requirement-Catalogs/technical/update/",
+          "locator": "Update Capabilities y Update Application Support: instalación autorizada y verificación del origen",
+          "version": "Catálogo público HTML comprobado el 04-11-2026. No se interpreta un checksum sin autenticación como prueba suficiente de origen; se distingue actualización verificada de actualización infalible.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "NIST: Information Dissemination, Manufacturer/Supporting Entity",
+          "url": "https://pages.nist.gov/IoT-Device-Cybersecurity-Requirement-Catalogs/nontechnical/manufacturer/information/",
+          "locator": "§2 Support lifecycle: vulnerabilidades, mitigaciones, cambios de componentes y decisiones de fin de vida",
+          "version": "HTML comprobado el 04-11-2026. Necesidad de información y soporte durante vida útil; sin imponer periodos universales o obligaciones normativas AGE.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "NCSC: Provide updates, securely",
+          "url": "https://www.ncsc.gov.uk/collection/device-security-principles-for-manufacturers/provide-updates-securely",
+          "locator": "Introducción; Guideline1.1, publicación de periodo mínimo de actualizaciones y riesgos fuera de soporte",
+          "version": "HTML comprobado el 04-11-2026. Actualizaciones y procedencia verificadas; un dispositivo no actualizable requiere evaluación y controles compensatorios, no declaración automática de explotación.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "AI-GSI-B4-T13-020",
+      "bank": "ai",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "0e3cd6828ab7160e654bf765d5e471120a19d09943e30c95b9f5fd10b04d6d1d",
+      "content_sha256": "2a17e2755b9260bb41d418555c30eeb9e006f0e61ae05b19e79fe2ee78f6e6c0",
+      "before": {
+        "id": "AI-GSI-B4-T13-020",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T13",
+        "subtopic": "Seguridad y ciclo de vida IoT",
+        "exam": null,
+        "statement": "¿Qué controles pertenecen al ciclo de vida seguro de IoT?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Servicios innecesarios abiertos"
+          },
+          {
+            "id": "B",
+            "text": "Credenciales por defecto compartidas"
+          },
+          {
+            "id": "C",
+            "text": "Identidad única, firmware firmado, segmentación y gestión de soporte"
+          },
+          {
+            "id": "D",
+            "text": "Ausencia de inventario"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Seguridad exige identidad, actualización, mínimos servicios y fin de vida planificado.",
+          "incorrect": "Seguridad exige identidad, actualización, mínimos servicios y fin de vida planificado."
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 8. Seguridad y ciclo de vida IoT",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Identidad única, credenciales no por defecto, secure boot cuando aplique, firmware firmado/OTA, segmentación, mínimos servicios, inventario, logs, cifrado, privacidad y fin de soporte. Dispositivo que no puede actualizarse es una deuda de seguridad durante años.\n\nDatos y trampas de test\n\n* Internet ≠ Web.\n* BGP conecta/intercambia rutas entre AS; DNS resuelve nombres.\n* NAT ≠ firewall.\n* HTTP/3 usa QUIC; QUIC v1 se define en RFC 9000.\n* HTTP/3 = RFC 9114.\n* DNS es jerárquico y cacheado.\n* MQTT suele usar broker y pub/sub; CoAP es REST ligero sobre UDP.\n* IoT requiere actualización e identidad, no solo conectividad.\n\nAplicación al supuesto práctico\n\nDiseña Internet de un servicio público con doble conectividad, DNS autoritativo/resolución, CDN/WAF si procede, protección DDoS, IPv6 planificado, TLS, monitorización y rutas. Para IoT: red separada, identidad/certificados, broker, OTA firmado, inventario, gateway/edge y ciclo de vida.",
+          "evidence_sha256": "f76308b606810b6d97a4e8ca0e93ecfc77a1d130711ab4dc64a25443ed601046",
+          "record_sha256": "347104356a3aebba78bebcdbb127caad94d1608f6127ef0d4cdf360bcbe36035",
+          "review_id": "AI-GSI-B4-T13-020",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado."
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 8. Seguridad y ciclo de vida IoT",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-16"
+      },
+      "after": {
+        "id": "AI-GSI-B4-T13-020",
+        "opposition_id": "OPP-GSI",
+        "origin": "ai",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T13",
+        "subtopic": "Seguridad y ciclo de vida IoT",
+        "exam": null,
+        "statement": "¿Qué controles pertenecen al ciclo de vida seguro de IoT?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Identidad propia, firmware remoto sin verificar y soporte activo."
+          },
+          {
+            "id": "B",
+            "text": "Inventario y contraseña común en toda la familia de dispositivos."
+          },
+          {
+            "id": "C",
+            "text": "Identidad propia, firmware verificado, segmentación y soporte."
+          },
+          {
+            "id": "D",
+            "text": "Cifrado de tráfico y continuidad con firmware fuera de soporte."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Un ciclo seguro combina identidad gestionable por dispositivo, verificación y autorización de actualizaciones, límites de comunicación y soporte planificado hasta la retirada. La firma permite comprobar origen e integridad del firmware cuando se valida correctamente, sin garantizar que carezca de fallos. La identidad única tampoco sustituye credenciales y permisos adecuados.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "El origen y la integridad de una actualización deben comprobarse; recibirla de forma remota no basta para confiar en ella.",
+            "B": "Inventariar no compensa una credencial compartida que amplía el impacto de exposición y dificulta control individual.",
+            "D": "Cifrar el canal no corrige las vulnerabilidades del firmware ni elimina la necesidad de gestionar el fin del soporte."
+          }
+        },
+        "source": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 8. Seguridad y ciclo de vida IoT",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21",
+          "title": "GSI_A2 — BLOQUE IV — APUNTES COMPLETOS V2.1 REVISADOS — ESTUDIO (16 temas)",
+          "evidence": "Identidad única, credenciales no por defecto, secure boot cuando aplique, firmware firmado/OTA, segmentación, mínimos servicios, inventario, logs, cifrado, privacidad y fin de soporte. Dispositivo que no puede actualizarse es una deuda de seguridad durante años.\n\nDatos y trampas de test\n\n* Internet ≠ Web.\n* BGP conecta/intercambia rutas entre AS; DNS resuelve nombres.\n* NAT ≠ firewall.\n* HTTP/3 usa QUIC; QUIC v1 se define en RFC 9000.\n* HTTP/3 = RFC 9114.\n* DNS es jerárquico y cacheado.\n* MQTT suele usar broker y pub/sub; CoAP es REST ligero sobre UDP.\n* IoT requiere actualización e identidad, no solo conectividad.\n\nAplicación al supuesto práctico\n\nDiseña Internet de un servicio público con doble conectividad, DNS autoritativo/resolución, CDN/WAF si procede, protección DDoS, IPv6 planificado, TLS, monitorización y rutas. Para IoT: red separada, identidad/certificados, broker, OTA firmado, inventario, gateway/edge y ciclo de vida.",
+          "evidence_sha256": "f76308b606810b6d97a4e8ca0e93ecfc77a1d130711ab4dc64a25443ed601046",
+          "record_sha256": "347104356a3aebba78bebcdbb127caad94d1608f6127ef0d4cdf360bcbe36035",
+          "review_id": "AI-GSI-B4-T13-020",
+          "review_method": "Revisión existente confirmada por el propietario en la conversación del 15/09/2026: «los test estan revisados». Se registra su declaración para esta versión exacta del lote; no se atribuye a una nueva revisión automática ni se certifica un método no comunicado.",
+          "editorial_references": [
+            {
+              "title": "NIST: Device Identification",
+              "url": "https://pages.nist.gov/IoT-Device-Cybersecurity-Requirement-Catalogs/technical/identity/",
+              "locator": "Identifier Management Support y Actions Based on Device Identity",
+              "version": "HTML comprobado el 04-11-2026. Identificador único facilita inventario y políticas, pero no acredita por sí solo autenticación criptográfica.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "NIST: IoT Device Cybersecurity Requirement Catalog, Software Update",
+              "url": "https://pages.nist.gov/IoT-Device-Cybersecurity-Requirement-Catalogs/technical/update/",
+              "locator": "Update Capabilities y Update Application Support: instalación autorizada y verificación del origen",
+              "version": "Catálogo público HTML comprobado el 04-11-2026. No se interpreta un checksum sin autenticación como prueba suficiente de origen; se distingue actualización verificada de actualización infalible.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "NIST: Information Dissemination, Manufacturer/Supporting Entity",
+              "url": "https://pages.nist.gov/IoT-Device-Cybersecurity-Requirement-Catalogs/nontechnical/manufacturer/information/",
+              "locator": "§2 Support lifecycle: vulnerabilidades, mitigaciones, cambios de componentes y decisiones de fin de vida",
+              "version": "HTML comprobado el 04-11-2026. Necesidad de información y soporte durante vida útil; sin imponer periodos universales o obligaciones normativas AGE.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "NCSC: Preventing Lateral Movement",
+              "url": "https://www.ncsc.gov.uk/guidance/preventing-lateral-movement",
+              "locator": "§6 Segregate networks as sets: separar sistemas y limitar flujos necesarios",
+              "version": "HTML comprobado el 04-11-2026. Segmentación efectiva reduce alcance; no sanea firmware ni garantiza ausencia de ataques.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-081"
+        },
+        "provenance": {
+          "type": "generated",
+          "source_id": "SRC-GSI-B4-V21",
+          "document_id": "DOC-GSI-B4-V21",
+          "drive_id": "1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os",
+          "url": "https://docs.google.com/document/d/1FMunz530TBBQnal_ttMprrZVGQ19wLAFksnJgEpd1os/edit",
+          "locator": "IV.13; sección 8. Seguridad y ciclo de vida IoT",
+          "version": "V2.1",
+          "reviewed_at": "2026-08-21"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "fuente-v21",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar controles durante vida útil y clave C; paquetes plausibles con una carencia concreta cada uno."
+      ],
+      "references": [
+        {
+          "title": "NIST: Device Identification",
+          "url": "https://pages.nist.gov/IoT-Device-Cybersecurity-Requirement-Catalogs/technical/identity/",
+          "locator": "Identifier Management Support y Actions Based on Device Identity",
+          "version": "HTML comprobado el 04-11-2026. Identificador único facilita inventario y políticas, pero no acredita por sí solo autenticación criptográfica.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "NIST: IoT Device Cybersecurity Requirement Catalog, Software Update",
+          "url": "https://pages.nist.gov/IoT-Device-Cybersecurity-Requirement-Catalogs/technical/update/",
+          "locator": "Update Capabilities y Update Application Support: instalación autorizada y verificación del origen",
+          "version": "Catálogo público HTML comprobado el 04-11-2026. No se interpreta un checksum sin autenticación como prueba suficiente de origen; se distingue actualización verificada de actualización infalible.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "NIST: Information Dissemination, Manufacturer/Supporting Entity",
+          "url": "https://pages.nist.gov/IoT-Device-Cybersecurity-Requirement-Catalogs/nontechnical/manufacturer/information/",
+          "locator": "§2 Support lifecycle: vulnerabilidades, mitigaciones, cambios de componentes y decisiones de fin de vida",
+          "version": "HTML comprobado el 04-11-2026. Necesidad de información y soporte durante vida útil; sin imponer periodos universales o obligaciones normativas AGE.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "NCSC: Preventing Lateral Movement",
+          "url": "https://www.ncsc.gov.uk/guidance/preventing-lateral-movement",
+          "locator": "§6 Segregate networks as sets: separar sistemas y limitar flujos necesarios",
+          "version": "HTML comprobado el 04-11-2026. Segmentación efectiva reduce alcance; no sanea firmware ni garantiza ausencia de ataques.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P19-006",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "bcf2d743354923bcba18d380a71aae249a6d67102f51b32cadd3c0dd1f5ff344",
+      "content_sha256": "eaa00973bb586878733942fc2e6489411dec2f83a65da8dd8d5aa0ae6f9370f0",
+      "before": {
+        "id": "MAN-GSI-P19-006",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué función clásica desempeña I-CSCF?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Servir como punto de entrada/interrogación hacia un dominio IMS y ayudar a localizar la función de servicio adecuada."
+          },
+          {
+            "id": "B",
+            "text": "Transportar obligatoriamente todos los paquetes RTP de los usuarios y transcodificar los medios antes de entregarlos al dominio de destino."
+          },
+          {
+            "id": "C",
+            "text": "Gestionar el conmutador Ethernet de acceso, asignando puertos físicos y VLAN a cada terminal que intenta registrarse en el núcleo IMS."
+          },
+          {
+            "id": "D",
+            "text": "Mezclar los flujos de audio y vídeo como una MCU y generar una composición audiovisual única para todos los participantes de la sesión."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "I-CSCF participa en entrada y consulta/routing hacia el S-CSCF correspondiente.",
+          "incorrect": "Según el solucionario: I-CSCF participa en entrada y consulta/routing hacia el S-CSCF correspondiente."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 6; índice nativo 2656",
+          "question_source_id": "SRC-GSI-P19-CUADERNO",
+          "question_document_id": "DOC-GSI-P19-CUADERNO",
+          "question_locator": "Pregunta 6; índice nativo 3854",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "drive_id": "1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 6; índice nativo 2656",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-19",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P19-006",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué función clásica desempeña I-CSCF?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Interrogar datos del dominio y encaminar hacia el S-CSCF adecuado."
+          },
+          {
+            "id": "B",
+            "text": "Ser el primer proxy con el que contacta el terminal en el acceso."
+          },
+          {
+            "id": "C",
+            "text": "Mantener el control de servicio y de sesión del abonado registrado."
+          },
+          {
+            "id": "D",
+            "text": "Procesar y mezclar los flujos de medios recibidos por el dominio."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "El I-CSCF desempeña un papel de interrogación y encaminamiento: consulta información del dominio para seleccionar o localizar el S-CSCF adecuado y reenviarle señalización. Es una función lógica de control. Puede haber varias instancias y funciones de borde adicionales; no se afirma que sea el primer equipo físico atravesado por todo paquete.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "El primer punto de contacto IMS del terminal corresponde al P-CSCF; no identifica el papel del I-CSCF.",
+            "C": "El control de sesión y la interacción con servicios del usuario son funciones del S-CSCF.",
+            "D": "Mezclar medios corresponde a funciones de recursos multimedia, no a interrogar y encaminar señalización hacia un S-CSCF."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 6; índice nativo 2656",
+          "question_source_id": "SRC-GSI-P19-CUADERNO",
+          "question_document_id": "DOC-GSI-P19-CUADERNO",
+          "question_locator": "Pregunta 6; índice nativo 3854",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "ETSI/3GPP: TS 123 228, IP Multimedia Subsystem, Stage2",
+              "url": "https://www.etsi.org/deliver/etsi_ts/123200_123299/123228/18.11.00_60/ts_123228v181100p.pdf",
+              "locator": "§4.0/figura 4.0 y4.1, pp.27–28; §4.6.1–4.6.3, pp.49–51; anexo Y.0/figura Y.0-1, p.327; PDF28–29/50–52/328",
+              "version": "V18.11.0, enero de 2026, Release 18, apartados comprobados el 04-11-2026. No lectura íntegra de 390 páginas ni afirmación de ser la última edición. Figuras y notas sobre control de borde y colocación de funciones revisadas visualmente.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "IETF: RFC 4457, SIP P-User-Database Header",
+              "url": "https://www.rfc-editor.org/rfc/rfc4457.html",
+              "locator": "§1 IMS usa SIP; §2.1 REGISTER por P-CSCF, I-CSCF/HSS y S-CSCF",
+              "version": "Informational, abril de 2006, HTML comprobado el 04-11-2026. Ejemplo clásico de funciones y encaminamiento; no se universaliza ausencia de control de borde o una única HSS.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-081"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "drive_id": "1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 6; índice nativo 2656",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-19",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar entrada/interrogación y clave A; papeles IMS próximos y nota de control de borde."
+      ],
+      "references": [
+        {
+          "title": "ETSI/3GPP: TS 123 228, IP Multimedia Subsystem, Stage2",
+          "url": "https://www.etsi.org/deliver/etsi_ts/123200_123299/123228/18.11.00_60/ts_123228v181100p.pdf",
+          "locator": "§4.0/figura 4.0 y4.1, pp.27–28; §4.6.1–4.6.3, pp.49–51; anexo Y.0/figura Y.0-1, p.327; PDF28–29/50–52/328",
+          "version": "V18.11.0, enero de 2026, Release 18, apartados comprobados el 04-11-2026. No lectura íntegra de 390 páginas ni afirmación de ser la última edición. Figuras y notas sobre control de borde y colocación de funciones revisadas visualmente.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "IETF: RFC 4457, SIP P-User-Database Header",
+          "url": "https://www.rfc-editor.org/rfc/rfc4457.html",
+          "locator": "§1 IMS usa SIP; §2.1 REGISTER por P-CSCF, I-CSCF/HSS y S-CSCF",
+          "version": "Informational, abril de 2006, HTML comprobado el 04-11-2026. Ejemplo clásico de funciones y encaminamiento; no se universaliza ausencia de control de borde o una única HSS.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P19-009",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "b679af4ac3cb7632cf17d92302a660fabf16e5aa0e68010b9c42c615fad49420",
+      "content_sha256": "4a1afa746ee28c40bda75a671252e8ac1b50a80056e99563f3b039ceae2c0467",
+      "before": {
+        "id": "MAN-GSI-P19-009",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué afirmación es correcta sobre IMS y 5G?",
+        "options": [
+          {
+            "id": "A",
+            "text": "IMS queda limitado a redes LTE y se elimina por completo al desplegar 5G Standalone."
+          },
+          {
+            "id": "B",
+            "text": "IMS forma parte del plano de usuario del 5G Core y sustituye a UPF en el transporte de paquetes."
+          },
+          {
+            "id": "C",
+            "text": "IMS es el mecanismo de acceso radio que negocia recursos entre el terminal y la gNodeB."
+          },
+          {
+            "id": "D",
+            "text": "IMS continúa siendo relevante para servicios multimedia/voz; la arquitectura móvil evoluciona, pero no convierte IMS en un concepto obsoleto."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "3GPP sigue manteniendo especificaciones IMS para LTE/5G y generaciones posteriores.",
+          "incorrect": "Según el solucionario: 3GPP sigue manteniendo especificaciones IMS para LTE/5G y generaciones posteriores."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 9; índice nativo 2970",
+          "question_source_id": "SRC-GSI-P19-CUADERNO",
+          "question_document_id": "DOC-GSI-P19-CUADERNO",
+          "question_locator": "Pregunta 9; índice nativo 4768",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "drive_id": "1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 9; índice nativo 2970",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-19",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-23"
+      },
+      "after": {
+        "id": "MAN-GSI-P19-009",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Un operador evoluciona el acceso de una oferta de voz multimedia IMS hacia 5GS. ¿Qué relación entre ambas arquitecturas es correcta?",
+        "options": [
+          {
+            "id": "A",
+            "text": "El acceso 5GS reemplaza la señalización IMS por reenvío en la UPF."
+          },
+          {
+            "id": "B",
+            "text": "El P-CSCF pasa a ser la función de gestión de las sesiones PDU."
+          },
+          {
+            "id": "C",
+            "text": "IMS asume la planificación de recursos radio del terminal en la gNB."
+          },
+          {
+            "id": "D",
+            "text": "El acceso 5GS puede proporcionar conectividad para los servicios IMS."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "IMS sigue siendo una arquitectura para control y servicios multimedia sobre conectividad IP, que puede aportar 5GS. El anexo Y de la edición consultada describe expresamente ese acceso. No reemplaza funciones del núcleo 5G o de la radio, ni implica que toda red 5G ofrezca todos los servicios IMS o los active sin configuración.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "La UPF proporciona tratamiento del plano de usuario; reenviar paquetes no sustituye el control de servicios IMS.",
+            "B": "P-CSCF es una función de control IMS, distinta de la gestión de sesiones PDU del 5G Core.",
+            "C": "La planificación radio pertenece al acceso; IMS utiliza conectividad y no se convierte en el planificador de la gNB."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 9; índice nativo 2970",
+          "question_source_id": "SRC-GSI-P19-CUADERNO",
+          "question_document_id": "DOC-GSI-P19-CUADERNO",
+          "question_locator": "Pregunta 9; índice nativo 4768",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "ETSI/3GPP: TS 123 228, IP Multimedia Subsystem, Stage2",
+              "url": "https://www.etsi.org/deliver/etsi_ts/123200_123299/123228/18.11.00_60/ts_123228v181100p.pdf",
+              "locator": "§4.0/figura 4.0 y4.1, pp.27–28; §4.6.1–4.6.3, pp.49–51; anexo Y.0/figura Y.0-1, p.327; PDF28–29/50–52/328",
+              "version": "V18.11.0, enero de 2026, Release 18, apartados comprobados el 04-11-2026. No lectura íntegra de 390 páginas ni afirmación de ser la última edición. Figuras y notas sobre control de borde y colocación de funciones revisadas visualmente.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-081"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "drive_id": "1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 9; índice nativo 2970",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-19",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar relevancia de IMS con 5G y clave D; evolución de acceso sin confundir funciones de control y transporte."
+      ],
+      "references": [
+        {
+          "title": "ETSI/3GPP: TS 123 228, IP Multimedia Subsystem, Stage2",
+          "url": "https://www.etsi.org/deliver/etsi_ts/123200_123299/123228/18.11.00_60/ts_123228v181100p.pdf",
+          "locator": "§4.0/figura 4.0 y4.1, pp.27–28; §4.6.1–4.6.3, pp.49–51; anexo Y.0/figura Y.0-1, p.327; PDF28–29/50–52/328",
+          "version": "V18.11.0, enero de 2026, Release 18, apartados comprobados el 04-11-2026. No lectura íntegra de 390 páginas ni afirmación de ser la última edición. Figuras y notas sobre control de borde y colocación de funciones revisadas visualmente.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P19-010",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "f82056858eb2ea2ea6e6b7e5a4a055fbe6c6df996edbd347729981972c66d23b",
+      "content_sha256": "9d1014896211f68199a43d90b3227b7c7adf83bb32fbb4d74c8c4231fcf3efee",
+      "before": {
+        "id": "MAN-GSI-P19-010",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué relación hay entre IMS y SIP?",
+        "options": [
+          {
+            "id": "A",
+            "text": "IMS usa SIP como base de control de sesiones, con perfiles y procedimientos definidos por 3GPP."
+          },
+          {
+            "id": "B",
+            "text": "SIP transporta las muestras de audio y vídeo de IMS después del establecimiento, sustituyendo a RTP en el plano de medios."
+          },
+          {
+            "id": "C",
+            "text": "IMS elimina SIP y utiliza exclusivamente SNMP para registrar abonados, negociar sesiones y ejecutar servicios multimedia."
+          },
+          {
+            "id": "D",
+            "text": "SIP solo se utiliza en PBX empresariales y no forma parte de los perfiles o procedimientos normalizados por 3GPP para IMS."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "3GPP TS 24.229 define control IMS basado en SIP/SDP.",
+          "incorrect": "Según el solucionario: 3GPP TS 24.229 define control IMS basado en SIP/SDP."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 10; índice nativo 3061",
+          "question_source_id": "SRC-GSI-P19-CUADERNO",
+          "question_document_id": "DOC-GSI-P19-CUADERNO",
+          "question_locator": "Pregunta 10; índice nativo 5099",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "drive_id": "1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 10; índice nativo 3061",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-19",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P19-010",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué relación hay entre IMS y SIP?",
+        "options": [
+          {
+            "id": "A",
+            "text": "SIP aporta control de sesión dentro de los perfiles y procedimientos IMS."
+          },
+          {
+            "id": "B",
+            "text": "SIP transporta las muestras multimedia generadas durante una sesión IMS."
+          },
+          {
+            "id": "C",
+            "text": "SIP describe codecs y puertos como formato del cuerpo de cada sesión."
+          },
+          {
+            "id": "D",
+            "text": "SIP almacena los perfiles permanentes de abonado del dominio del operador."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "IMS adopta SIP para señalización y control de sesiones, integrándolo con sus funciones y procedimientos. Las descripciones de medios pueden expresarse en SDP y el transporte multimedia emplea mecanismos como RTP. Usar SIP no convierte por sí mismo una instalación en IMS: SIP también se utiliza en otras arquitecturas.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "Las muestras de audio o vídeo se transportan por protocolos de medios, como RTP; no son la función de señalización SIP.",
+            "C": "SDP es el formato descriptivo de parámetros de medios; SIP puede transportarlo, pero no se identifica con él.",
+            "D": "El repositorio de datos de abonado es otra función de arquitectura; SIP no es una base de datos permanente de perfiles."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 10; índice nativo 3061",
+          "question_source_id": "SRC-GSI-P19-CUADERNO",
+          "question_document_id": "DOC-GSI-P19-CUADERNO",
+          "question_locator": "Pregunta 10; índice nativo 5099",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "IETF: RFC 4457, SIP P-User-Database Header",
+              "url": "https://www.rfc-editor.org/rfc/rfc4457.html",
+              "locator": "§1 IMS usa SIP; §2.1 REGISTER por P-CSCF, I-CSCF/HSS y S-CSCF",
+              "version": "Informational, abril de 2006, HTML comprobado el 04-11-2026. Ejemplo clásico de funciones y encaminamiento; no se universaliza ausencia de control de borde o una única HSS.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "IETF: RFC3261, Session Initiation Protocol",
+              "url": "https://www.rfc-editor.org/rfc/rfc3261.html",
+              "locator": "§1–3 control y ejemplo de llamada; §9 CANCEL; §10 registro; §11 OPTIONS; §13 INVITE; §15.1 BYE",
+              "version": "Junio de 2002, apartados HTML comprobados el 04-11-2026. Métodos base y papeles lógicos; no catálogo completo de extensiones ni recomendación de mecanismos criptográficos históricos.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "IETF: RFC8866, Session Description Protocol",
+              "url": "https://www.rfc-editor.org/rfc/rfc8866.html",
+              "locator": "§1 descripción sin protocolo de transporte; §3.1 SIP y offer/answer; §2 Media Description",
+              "version": "Enero de 2021, HTML comprobado el 04-11-2026. Sustituye RFC4566. Describir parámetros no es transportar audio ni negociar de forma autónoma sin procedimientos de oferta/respuesta.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "ETSI/3GPP: TS 123 228, IP Multimedia Subsystem, Stage2",
+              "url": "https://www.etsi.org/deliver/etsi_ts/123200_123299/123228/18.11.00_60/ts_123228v181100p.pdf",
+              "locator": "§4.0/figura 4.0 y4.1, pp.27–28; §4.6.1–4.6.3, pp.49–51; anexo Y.0/figura Y.0-1, p.327; PDF28–29/50–52/328",
+              "version": "V18.11.0, enero de 2026, Release 18, apartados comprobados el 04-11-2026. No lectura íntegra de 390 páginas ni afirmación de ser la última edición. Figuras y notas sobre control de borde y colocación de funciones revisadas visualmente.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-081"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "drive_id": "1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 10; índice nativo 3061",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-19",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar SIP como control IMS y clave A; diferenciar control, descripción, transporte y datos de abonado."
+      ],
+      "references": [
+        {
+          "title": "IETF: RFC 4457, SIP P-User-Database Header",
+          "url": "https://www.rfc-editor.org/rfc/rfc4457.html",
+          "locator": "§1 IMS usa SIP; §2.1 REGISTER por P-CSCF, I-CSCF/HSS y S-CSCF",
+          "version": "Informational, abril de 2006, HTML comprobado el 04-11-2026. Ejemplo clásico de funciones y encaminamiento; no se universaliza ausencia de control de borde o una única HSS.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "IETF: RFC3261, Session Initiation Protocol",
+          "url": "https://www.rfc-editor.org/rfc/rfc3261.html",
+          "locator": "§1–3 control y ejemplo de llamada; §9 CANCEL; §10 registro; §11 OPTIONS; §13 INVITE; §15.1 BYE",
+          "version": "Junio de 2002, apartados HTML comprobados el 04-11-2026. Métodos base y papeles lógicos; no catálogo completo de extensiones ni recomendación de mecanismos criptográficos históricos.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "IETF: RFC8866, Session Description Protocol",
+          "url": "https://www.rfc-editor.org/rfc/rfc8866.html",
+          "locator": "§1 descripción sin protocolo de transporte; §3.1 SIP y offer/answer; §2 Media Description",
+          "version": "Enero de 2021, HTML comprobado el 04-11-2026. Sustituye RFC4566. Describir parámetros no es transportar audio ni negociar de forma autónoma sin procedimientos de oferta/respuesta.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "ETSI/3GPP: TS 123 228, IP Multimedia Subsystem, Stage2",
+          "url": "https://www.etsi.org/deliver/etsi_ts/123200_123299/123228/18.11.00_60/ts_123228v181100p.pdf",
+          "locator": "§4.0/figura 4.0 y4.1, pp.27–28; §4.6.1–4.6.3, pp.49–51; anexo Y.0/figura Y.0-1, p.327; PDF28–29/50–52/328",
+          "version": "V18.11.0, enero de 2026, Release 18, apartados comprobados el 04-11-2026. No lectura íntegra de 390 páginas ni afirmación de ser la última edición. Figuras y notas sobre control de borde y colocación de funciones revisadas visualmente.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P19-011",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "c3cf0813c39e1859e1917268f1ffcbcdb9cf659d7e9baf982fbfbd47cbdaeedd",
+      "content_sha256": "fbd704251cca830bc10a7d3d1367a1901f16d654e480fa523bf22e96d6330c77",
+      "before": {
+        "id": "MAN-GSI-P19-011",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué relación hay entre IMS y SDP?",
+        "options": [
+          {
+            "id": "A",
+            "text": "SDP gestiona el registro y la autenticación de abonados dentro del núcleo IMS."
+          },
+          {
+            "id": "B",
+            "text": "SDP transporta los flujos de audio y vídeo entre los extremos de una sesión IMS."
+          },
+          {
+            "id": "C",
+            "text": "SDP sustituye a SIP para establecer, modificar y terminar sesiones multimedia."
+          },
+          {
+            "id": "D",
+            "text": "SDP describe parámetros de medios/sesión que se intercambian dentro de la señalización, mientras IMS/SIP controla la sesión."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "SDP describe medios, codecs y direcciones/puertos; no transporta audio/vídeo.",
+          "incorrect": "Según el solucionario: SDP describe medios, codecs y direcciones/puertos; no transporta audio/vídeo."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 11; índice nativo 3122",
+          "question_source_id": "SRC-GSI-P19-CUADERNO",
+          "question_document_id": "DOC-GSI-P19-CUADERNO",
+          "question_locator": "Pregunta 11; índice nativo 5410",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "drive_id": "1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 11; índice nativo 3122",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-19",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-10-23"
+      },
+      "after": {
+        "id": "MAN-GSI-P19-011",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué relación hay entre IMS y SDP?",
+        "options": [
+          {
+            "id": "A",
+            "text": "SDP gestiona el registro y la autenticación de abonados dentro del núcleo IMS."
+          },
+          {
+            "id": "B",
+            "text": "SDP transporta los flujos de audio y vídeo entre los extremos de una sesión IMS."
+          },
+          {
+            "id": "C",
+            "text": "SDP sustituye a SIP para establecer, modificar y terminar sesiones multimedia."
+          },
+          {
+            "id": "D",
+            "text": "SDP describe parámetros de medios intercambiados dentro de la señalización."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "SDP expresa información de sesión y medios, como tipos, formatos, direcciones y puertos. En SIP puede formar parte del cuerpo de mensajes utilizados por un procedimiento de oferta y respuesta. El formato no transporta las muestras ni gestiona por sí solo registro, autenticación o ciclo de control de una sesión.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Registro y autenticación requieren los procedimientos y funciones de control correspondientes; no los ejecuta el formato descriptivo SDP.",
+            "B": "Las descripciones indican cómo participar en los medios, pero sus líneas de texto no son el flujo de audio o vídeo.",
+            "C": "SIP controla la sesión y puede llevar SDP; el formato SDP no reemplaza los métodos y procedimientos SIP."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 11; índice nativo 3122",
+          "question_source_id": "SRC-GSI-P19-CUADERNO",
+          "question_document_id": "DOC-GSI-P19-CUADERNO",
+          "question_locator": "Pregunta 11; índice nativo 5410",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "IETF: RFC8866, Session Description Protocol",
+              "url": "https://www.rfc-editor.org/rfc/rfc8866.html",
+              "locator": "§1 descripción sin protocolo de transporte; §3.1 SIP y offer/answer; §2 Media Description",
+              "version": "Enero de 2021, HTML comprobado el 04-11-2026. Sustituye RFC4566. Describir parámetros no es transportar audio ni negociar de forma autónoma sin procedimientos de oferta/respuesta.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "IETF: RFC3264, An Offer/Answer Model with SDP",
+              "url": "https://www.rfc-editor.org/rfc/rfc3264.html",
+              "locator": "Abstract y §1: modelo de oferta/respuesta usando descripciones SDP",
+              "version": "Junio de 2002, HTML comprobado el 04-11-2026. Marco de negociación, distinto del formato descriptivo y de los paquetes de medios.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "IETF: RFC3550, RTP",
+              "url": "https://www.rfc-editor.org/rfc/rfc3550.html",
+              "locator": "§1 Introduction: secuencia, tiempo y falta de garantía QoS; §6 RTCP, feedback de distribución",
+              "version": "Julio de 2003, HTML comprobado el 04-11-2026. RTP transporta datos en tiempo real sin garantía por sí mismo de entrega, retardo o cifrado; RTCP informa, no transporta las muestras.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-081"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "drive_id": "1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 11; índice nativo 3122",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-19",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar enunciado y tres distractores próximos; ajustar correcta D y explicar oferta/respuesta frente a formato."
+      ],
+      "references": [
+        {
+          "title": "IETF: RFC8866, Session Description Protocol",
+          "url": "https://www.rfc-editor.org/rfc/rfc8866.html",
+          "locator": "§1 descripción sin protocolo de transporte; §3.1 SIP y offer/answer; §2 Media Description",
+          "version": "Enero de 2021, HTML comprobado el 04-11-2026. Sustituye RFC4566. Describir parámetros no es transportar audio ni negociar de forma autónoma sin procedimientos de oferta/respuesta.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "IETF: RFC3264, An Offer/Answer Model with SDP",
+          "url": "https://www.rfc-editor.org/rfc/rfc3264.html",
+          "locator": "Abstract y §1: modelo de oferta/respuesta usando descripciones SDP",
+          "version": "Junio de 2002, HTML comprobado el 04-11-2026. Marco de negociación, distinto del formato descriptivo y de los paquetes de medios.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "IETF: RFC3550, RTP",
+          "url": "https://www.rfc-editor.org/rfc/rfc3550.html",
+          "locator": "§1 Introduction: secuencia, tiempo y falta de garantía QoS; §6 RTCP, feedback de distribución",
+          "version": "Julio de 2003, HTML comprobado el 04-11-2026. RTP transporta datos en tiempo real sin garantía por sí mismo de entrega, retardo o cifrado; RTCP informa, no transporta las muestras.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P19-012",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "9b4fe0055cfa946b0e4585c9c6ca05c66aef02c07fd9ea6313162c7a3fbd263b",
+      "content_sha256": "d139ca29c3a33e2ba832bd786f82115254c241b753c34a27cf2c2a2cf3363644",
+      "before": {
+        "id": "MAN-GSI-P19-012",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿VoIP necesita obligatoriamente IMS?",
+        "options": [
+          {
+            "id": "A",
+            "text": "La voz IP requiere IMS cuando utiliza SIP, porque SIP solo puede desplegarse dentro de esa arquitectura móvil."
+          },
+          {
+            "id": "B",
+            "text": "Cualquier servicio de voz sobre una red IP forma parte del 5G Core aunque se preste desde una plataforma independiente."
+          },
+          {
+            "id": "C",
+            "text": "WebRTC necesita registrar cada navegador en IMS antes de establecer audio entre participantes mediante Internet."
+          },
+          {
+            "id": "D",
+            "text": "No. Puede existir VoIP basada en SIP u otras arquitecturas sin desplegar IMS."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "IMS es una arquitectura específica; VoIP es un concepto más amplio.",
+          "incorrect": "Según el solucionario: IMS es una arquitectura específica; VoIP es un concepto más amplio."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 12; índice nativo 3208",
+          "question_source_id": "SRC-GSI-P19-CUADERNO",
+          "question_document_id": "DOC-GSI-P19-CUADERNO",
+          "question_locator": "Pregunta 12; índice nativo 5693",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "drive_id": "1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 12; índice nativo 3208",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-19",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P19-012",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Una entidad presta voz sobre IP con una centralita y terminales SIP, sin desplegar funciones IMS. ¿Cómo se clasifica esa solución?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Es IMS porque cualquier llamada que utiliza SIP pertenece a esa arquitectura."
+          },
+          {
+            "id": "B",
+            "text": "Es telefonía del 5G Core porque toda voz sobre IP requiere funciones móviles."
+          },
+          {
+            "id": "C",
+            "text": "Es IMS si la centralita y los terminales utilizan el mismo formato SDP."
+          },
+          {
+            "id": "D",
+            "text": "Es VoIP aunque no incorpore la arquitectura de control y servicios IMS."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "VoIP designa voz transportada mediante redes IP, y puede implementarse mediante una centralita y terminales SIP sin un subsistema IMS. IMS es una arquitectura específica que puede proporcionar servicios de vozIP. Compartir protocolos o usar SDP no demuestra que estén presentes sus funciones lógicas y procedimientos.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "SIP es un protocolo general de señalización y puede emplearse fuera de IMS; no determina por sí solo la arquitectura completa.",
+            "B": "La vozIP puede funcionar sobre redes y plataformas ajenas al núcleo móvil5G; no requiere todas sus funciones.",
+            "C": "SDP también se utiliza en otros entornos; un formato de descripción común no implica desplegar IMS."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 12; índice nativo 3208",
+          "question_source_id": "SRC-GSI-P19-CUADERNO",
+          "question_document_id": "DOC-GSI-P19-CUADERNO",
+          "question_locator": "Pregunta 12; índice nativo 5693",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "IETF: RFC3261, Session Initiation Protocol",
+              "url": "https://www.rfc-editor.org/rfc/rfc3261.html",
+              "locator": "§1–3 control y ejemplo de llamada; §9 CANCEL; §10 registro; §11 OPTIONS; §13 INVITE; §15.1 BYE",
+              "version": "Junio de 2002, apartados HTML comprobados el 04-11-2026. Métodos base y papeles lógicos; no catálogo completo de extensiones ni recomendación de mecanismos criptográficos históricos.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "IETF: RFC8866, Session Description Protocol",
+              "url": "https://www.rfc-editor.org/rfc/rfc8866.html",
+              "locator": "§1 descripción sin protocolo de transporte; §3.1 SIP y offer/answer; §2 Media Description",
+              "version": "Enero de 2021, HTML comprobado el 04-11-2026. Sustituye RFC4566. Describir parámetros no es transportar audio ni negociar de forma autónoma sin procedimientos de oferta/respuesta.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "ETSI/3GPP: TS 123 228, IP Multimedia Subsystem, Stage2",
+              "url": "https://www.etsi.org/deliver/etsi_ts/123200_123299/123228/18.11.00_60/ts_123228v181100p.pdf",
+              "locator": "§4.0/figura 4.0 y4.1, pp.27–28; §4.6.1–4.6.3, pp.49–51; anexo Y.0/figura Y.0-1, p.327; PDF28–29/50–52/328",
+              "version": "V18.11.0, enero de 2026, Release 18, apartados comprobados el 04-11-2026. No lectura íntegra de 390 páginas ni afirmación de ser la última edición. Figuras y notas sobre control de borde y colocación de funciones revisadas visualmente.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-081"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "drive_id": "1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 12; índice nativo 3208",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-19",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar VoIP más amplio que IMS y clave D; caso de centralita SIP sin subsistema móvil."
+      ],
+      "references": [
+        {
+          "title": "IETF: RFC3261, Session Initiation Protocol",
+          "url": "https://www.rfc-editor.org/rfc/rfc3261.html",
+          "locator": "§1–3 control y ejemplo de llamada; §9 CANCEL; §10 registro; §11 OPTIONS; §13 INVITE; §15.1 BYE",
+          "version": "Junio de 2002, apartados HTML comprobados el 04-11-2026. Métodos base y papeles lógicos; no catálogo completo de extensiones ni recomendación de mecanismos criptográficos históricos.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "IETF: RFC8866, Session Description Protocol",
+          "url": "https://www.rfc-editor.org/rfc/rfc8866.html",
+          "locator": "§1 descripción sin protocolo de transporte; §3.1 SIP y offer/answer; §2 Media Description",
+          "version": "Enero de 2021, HTML comprobado el 04-11-2026. Sustituye RFC4566. Describir parámetros no es transportar audio ni negociar de forma autónoma sin procedimientos de oferta/respuesta.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "ETSI/3GPP: TS 123 228, IP Multimedia Subsystem, Stage2",
+          "url": "https://www.etsi.org/deliver/etsi_ts/123200_123299/123228/18.11.00_60/ts_123228v181100p.pdf",
+          "locator": "§4.0/figura 4.0 y4.1, pp.27–28; §4.6.1–4.6.3, pp.49–51; anexo Y.0/figura Y.0-1, p.327; PDF28–29/50–52/328",
+          "version": "V18.11.0, enero de 2026, Release 18, apartados comprobados el 04-11-2026. No lectura íntegra de 390 páginas ni afirmación de ser la última edición. Figuras y notas sobre control de borde y colocación de funciones revisadas visualmente.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P19-013",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "3fc7ee460bf59794ee438bcc5debe3fffb92a469b57a78ccc8363dfc60b73cf0",
+      "content_sha256": "4bb1b0ed9152f2734f796bf92958c0b7dfe1c533e439e36887ab24ce53ab883e",
+      "before": {
+        "id": "MAN-GSI-P19-013",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Cuál es la relación más correcta entre NGN e IMS?",
+        "options": [
+          {
+            "id": "A",
+            "text": "NGN es un concepto amplio de red convergente; IMS es una arquitectura concreta de control/servicios multimedia IP dentro de ese contexto."
+          },
+          {
+            "id": "B",
+            "text": "IMS es el concepto general de cualquier red convergente y NGN es un codec concreto utilizado para comprimir multimedia."
+          },
+          {
+            "id": "C",
+            "text": "NGN designa la base de datos de abonados de 3GPP, mientras IMS identifica exclusivamente la red física de acceso."
+          },
+          {
+            "id": "D",
+            "text": "Son arquitecturas mutuamente excluyentes: desplegar control IMS impide aplicar principios o servicios propios de NGN."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "NGN expresa principios de convergencia; IMS materializa control multimedia IP en el ecosistema 3GPP.",
+          "incorrect": "Según el solucionario: NGN expresa principios de convergencia; IMS materializa control multimedia IP en el ecosistema 3GPP."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 13; índice nativo 3284",
+          "question_source_id": "SRC-GSI-P19-CUADERNO",
+          "question_document_id": "DOC-GSI-P19-CUADERNO",
+          "question_locator": "Pregunta 13; índice nativo 5939",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "drive_id": "1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 13; índice nativo 3284",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-19",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P19-013",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Cuál es la relación más correcta entre NGN e IMS?",
+        "options": [
+          {
+            "id": "A",
+            "text": "NGN es el marco amplio de convergencia; IMS concreta control multimedia IP."
+          },
+          {
+            "id": "B",
+            "text": "NGN es la red física de acceso; IMS define la tecnología de ese enlace."
+          },
+          {
+            "id": "C",
+            "text": "NGN equivale al núcleo 5G; IMS es el mecanismo de selección de sus UPF."
+          },
+          {
+            "id": "D",
+            "text": "NGN transporta señalización SIP; IMS transporta exclusivamente los medios."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "NGN expresa principios de redes por paquetes, separación de servicios y transporte y convergencia. IMS concreta una arquitectura de control y servicios multimedia IP en ese contexto. No son sinónimos ni se distinguen como señalización frente a medios: sus ámbitos y niveles de descripción son diferentes.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "NGN no se reduce a un enlace físico ni IMS define una única tecnología de acceso.",
+            "C": "El concepto NGN no equivale al5G Core y seleccionar funciones de plano de usuario no define IMS.",
+            "D": "La relación no consiste en repartir protocolos de señalización y medios entre dos redes con esos nombres."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 13; índice nativo 3284",
+          "question_source_id": "SRC-GSI-P19-CUADERNO",
+          "question_document_id": "DOC-GSI-P19-CUADERNO",
+          "question_locator": "Pregunta 13; índice nativo 5939",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "ITU: Next Generation Networks, WTPF2009",
+              "url": "https://www.itu.int/osg/csd/wtpf/wtpf2009/ngn.html",
+              "locator": "A few words on NGN: definición Y.2001 y características de separación, convergencia y movilidad",
+              "version": "Página histórica actualizada 30-07-2008, HTML comprobado el 04-11-2026. Principios estables, sin adoptar predicciones de despliegue, interpretar acceso independiente como ausencia de políticas o garantizar continuidad automática.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "ETSI/3GPP: TS 123 228, IP Multimedia Subsystem, Stage2",
+              "url": "https://www.etsi.org/deliver/etsi_ts/123200_123299/123228/18.11.00_60/ts_123228v181100p.pdf",
+              "locator": "§4.0/figura 4.0 y4.1, pp.27–28; §4.6.1–4.6.3, pp.49–51; anexo Y.0/figura Y.0-1, p.327; PDF28–29/50–52/328",
+              "version": "V18.11.0, enero de 2026, Release 18, apartados comprobados el 04-11-2026. No lectura íntegra de 390 páginas ni afirmación de ser la última edición. Figuras y notas sobre control de borde y colocación de funciones revisadas visualmente.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-081"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "drive_id": "1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 13; índice nativo 3284",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-19",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar relación marco/arquitectura y clave A; evitar distractores sobre codecs o exclusión mutua."
+      ],
+      "references": [
+        {
+          "title": "ITU: Next Generation Networks, WTPF2009",
+          "url": "https://www.itu.int/osg/csd/wtpf/wtpf2009/ngn.html",
+          "locator": "A few words on NGN: definición Y.2001 y características de separación, convergencia y movilidad",
+          "version": "Página histórica actualizada 30-07-2008, HTML comprobado el 04-11-2026. Principios estables, sin adoptar predicciones de despliegue, interpretar acceso independiente como ausencia de políticas o garantizar continuidad automática.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "ETSI/3GPP: TS 123 228, IP Multimedia Subsystem, Stage2",
+          "url": "https://www.etsi.org/deliver/etsi_ts/123200_123299/123228/18.11.00_60/ts_123228v181100p.pdf",
+          "locator": "§4.0/figura 4.0 y4.1, pp.27–28; §4.6.1–4.6.3, pp.49–51; anexo Y.0/figura Y.0-1, p.327; PDF28–29/50–52/328",
+          "version": "V18.11.0, enero de 2026, Release 18, apartados comprobados el 04-11-2026. No lectura íntegra de 390 páginas ni afirmación de ser la última edición. Figuras y notas sobre control de borde y colocación de funciones revisadas visualmente.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P19-014",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "57f7427de7801623a2d3599b151512e58c83ab71ab40b782dbef67a29113f304",
+      "content_sha256": "00274e39cac851026158b901b92cc3e9d72d8ff565e59d4a2cc2661a254f55ae",
+      "before": {
+        "id": "MAN-GSI-P19-014",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué objetivo tiene desacoplar acceso y servicios en IMS/NGN?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Vincular cada servicio a una tecnología de acceso concreta para que no pueda utilizarse desde otras redes o dispositivos."
+          },
+          {
+            "id": "B",
+            "text": "Eliminar autenticación, autorización y políticas porque separar acceso y servicio hace innecesario identificar al abonado."
+          },
+          {
+            "id": "C",
+            "text": "Permitir que servicios e identidad se mantengan de forma más independiente de la tecnología de acceso."
+          },
+          {
+            "id": "D",
+            "text": "Impedir la movilidad entre accesos, manteniendo la sesión únicamente mientras el terminal permanezca en la red inicial."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "El desacoplamiento facilita convergencia fijo-móvil y reutilización de servicios.",
+          "incorrect": "Según el solucionario: El desacoplamiento facilita convergencia fijo-móvil y reutilización de servicios."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 14; índice nativo 3393",
+          "question_source_id": "SRC-GSI-P19-CUADERNO",
+          "question_document_id": "DOC-GSI-P19-CUADERNO",
+          "question_locator": "Pregunta 14; índice nativo 6316",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "drive_id": "1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 14; índice nativo 3393",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-19",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P19-014",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué objetivo tiene desacoplar acceso y servicios en IMS/NGN?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Recrear una identidad de servicio por cada tecnología de acceso utilizada."
+          },
+          {
+            "id": "B",
+            "text": "Hacer que la tecnología radio determine directamente todos los servicios."
+          },
+          {
+            "id": "C",
+            "text": "Permitir que servicios e identidad dependan menos de la tecnología de acceso."
+          },
+          {
+            "id": "D",
+            "text": "Sustituir el control de sesión por la conectividad que ofrece el transporte."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "Desacoplar acceso y servicios favorece reutilizar funciones de servicio e identidad sobre distintas conectividades, facilitando convergencia fijo-móvil. Es independencia funcional relativa: siguen siendo necesarias conectividad, autenticación, autorización, políticas y mecanismos de continuidad adecuados. La separación no garantiza por sí sola una llamada ininterrumpida al cambiar de red.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Vincular una identidad de servicio nueva a cada acceso mantiene el acoplamiento que se pretende reducir.",
+            "B": "Que la radio determine íntegramente el servicio contradice separar funciones de servicio y tecnología de transporte.",
+            "D": "Disponer de un transporte no reemplaza señalización, identidad o control necesarios para prestar servicios multimedia."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 14; índice nativo 3393",
+          "question_source_id": "SRC-GSI-P19-CUADERNO",
+          "question_document_id": "DOC-GSI-P19-CUADERNO",
+          "question_locator": "Pregunta 14; índice nativo 6316",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "ITU: Next Generation Networks, WTPF2009",
+              "url": "https://www.itu.int/osg/csd/wtpf/wtpf2009/ngn.html",
+              "locator": "A few words on NGN: definición Y.2001 y características de separación, convergencia y movilidad",
+              "version": "Página histórica actualizada 30-07-2008, HTML comprobado el 04-11-2026. Principios estables, sin adoptar predicciones de despliegue, interpretar acceso independiente como ausencia de políticas o garantizar continuidad automática.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "ETSI/3GPP: TS 123 228, IP Multimedia Subsystem, Stage2",
+              "url": "https://www.etsi.org/deliver/etsi_ts/123200_123299/123228/18.11.00_60/ts_123228v181100p.pdf",
+              "locator": "§4.0/figura 4.0 y4.1, pp.27–28; §4.6.1–4.6.3, pp.49–51; anexo Y.0/figura Y.0-1, p.327; PDF28–29/50–52/328",
+              "version": "V18.11.0, enero de 2026, Release 18, apartados comprobados el 04-11-2026. No lectura íntegra de 390 páginas ni afirmación de ser la última edición. Figuras y notas sobre control de borde y colocación de funciones revisadas visualmente.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-081"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "drive_id": "1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 14; índice nativo 3393",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-19",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar independencia funcional y clave C; precisar condiciones sin prometer movilidad automática."
+      ],
+      "references": [
+        {
+          "title": "ITU: Next Generation Networks, WTPF2009",
+          "url": "https://www.itu.int/osg/csd/wtpf/wtpf2009/ngn.html",
+          "locator": "A few words on NGN: definición Y.2001 y características de separación, convergencia y movilidad",
+          "version": "Página histórica actualizada 30-07-2008, HTML comprobado el 04-11-2026. Principios estables, sin adoptar predicciones de despliegue, interpretar acceso independiente como ausencia de políticas o garantizar continuidad automática.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "ETSI/3GPP: TS 123 228, IP Multimedia Subsystem, Stage2",
+          "url": "https://www.etsi.org/deliver/etsi_ts/123200_123299/123228/18.11.00_60/ts_123228v181100p.pdf",
+          "locator": "§4.0/figura 4.0 y4.1, pp.27–28; §4.6.1–4.6.3, pp.49–51; anexo Y.0/figura Y.0-1, p.327; PDF28–29/50–52/328",
+          "version": "V18.11.0, enero de 2026, Release 18, apartados comprobados el 04-11-2026. No lectura íntegra de 390 páginas ni afirmación de ser la última edición. Figuras y notas sobre control de borde y colocación de funciones revisadas visualmente.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P19-015",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "e7dc218ea60832a1916bdadae1912100b3f2502210b2edc16b34d015be244d70",
+      "content_sha256": "e87c63be1ac2181cbf53c2f74ddda80c84978d790f3a1bb547a0e67a417672a4",
+      "before": {
+        "id": "MAN-GSI-P19-015",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué debe dominarse para GSI sobre P-CSCF/I-CSCF/S-CSCF?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Las direcciones, versiones y códigos de fabricante de cada nodo desplegado por los operadores en sus redes comerciales."
+          },
+          {
+            "id": "B",
+            "text": "Que P-CSCF, I-CSCF y S-CSCF son nombres intercambiables para un mismo proxy sin responsabilidades diferenciadas."
+          },
+          {
+            "id": "C",
+            "text": "La función conceptual de cada entidad y el flujo de control, no memorizar cada interfaz de cada release."
+          },
+          {
+            "id": "D",
+            "text": "Los algoritmos de compresión de audio y vídeo de cada entidad, aunque estas funciones pertenezcan al plano de control IMS."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "El temario prioriza arquitectura estable sobre catálogos o releases concretas.",
+          "incorrect": "Según el solucionario: El temario prioriza arquitectura estable sobre catálogos o releases concretas."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 15; índice nativo 3483",
+          "question_source_id": "SRC-GSI-P19-CUADERNO",
+          "question_document_id": "DOC-GSI-P19-CUADERNO",
+          "question_locator": "Pregunta 15; índice nativo 6663",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "drive_id": "1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 15; índice nativo 3483",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-19",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P19-015",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué enfoque permite interpretar correctamente P-CSCF, I-CSCF y S-CSCF en un flujo de señalización IMS?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Deducir su papel lógico a partir del fabricante que los comercializa."
+          },
+          {
+            "id": "B",
+            "text": "Tratar sus nombres como equivalentes porque todos manejan mensajes SIP."
+          },
+          {
+            "id": "C",
+            "text": "Distinguir sus funciones lógicas y el recorrido de la señalización."
+          },
+          {
+            "id": "D",
+            "text": "Clasificarlos por el codec de los medios que transporta cada uno."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "P-CSCF, I-CSCF y S-CSCF tienen responsabilidades diferenciadas dentro del control IMS: contacto del terminal, interrogación/encaminamiento y servicio de sesión, respectivamente. Entender esas funciones permite interpretar un flujo sin confundirlas con transporte de medios o productos. Su despliegue físico puede variar; el programa no autoriza a deducir qué detalle aparecerá en un examen.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "El fabricante no determina el papel lógico normalizado; distintos productos pueden implementar la misma función.",
+            "B": "Compartir el uso de SIP no hace intercambiables sus responsabilidades de contacto, interrogación y servicio.",
+            "D": "Estas funciones se distinguen por control de señalización, no por un catálogo de codecs que cada una deba transportar."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 15; índice nativo 3483",
+          "question_source_id": "SRC-GSI-P19-CUADERNO",
+          "question_document_id": "DOC-GSI-P19-CUADERNO",
+          "question_locator": "Pregunta 15; índice nativo 6663",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "ETSI/3GPP: TS 123 228, IP Multimedia Subsystem, Stage2",
+              "url": "https://www.etsi.org/deliver/etsi_ts/123200_123299/123228/18.11.00_60/ts_123228v181100p.pdf",
+              "locator": "§4.0/figura 4.0 y4.1, pp.27–28; §4.6.1–4.6.3, pp.49–51; anexo Y.0/figura Y.0-1, p.327; PDF28–29/50–52/328",
+              "version": "V18.11.0, enero de 2026, Release 18, apartados comprobados el 04-11-2026. No lectura íntegra de 390 páginas ni afirmación de ser la última edición. Figuras y notas sobre control de borde y colocación de funciones revisadas visualmente.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "IETF: RFC 4457, SIP P-User-Database Header",
+              "url": "https://www.rfc-editor.org/rfc/rfc4457.html",
+              "locator": "§1 IMS usa SIP; §2.1 REGISTER por P-CSCF, I-CSCF/HSS y S-CSCF",
+              "version": "Informational, abril de 2006, HTML comprobado el 04-11-2026. Ejemplo clásico de funciones y encaminamiento; no se universaliza ausencia de control de borde o una única HSS.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "BOE: Resolución 18-12-2025, convocatoria GSI",
+              "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2025-26262",
+              "locator": "Anexo IX, programa ingreso libre, bloque IV, tema 14: NGN/IMS, VoIP/ToIP, comunicaciones unificadas y convergencia fijo-móvil",
+              "version": "Texto original publicado 22-12-2025, apartado HTML comprobado el 04-11-2026. Solo delimita materia: no respalda predicciones sobre frecuencia de examen o qué interfaces no estudiar.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-081"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "drive_id": "1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 15; índice nativo 3483",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-19",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar distinción conceptual P/I/S y clave C; eliminar afirmación no respaldada sobre qué interfaces no estudiar para GSI."
+      ],
+      "references": [
+        {
+          "title": "ETSI/3GPP: TS 123 228, IP Multimedia Subsystem, Stage2",
+          "url": "https://www.etsi.org/deliver/etsi_ts/123200_123299/123228/18.11.00_60/ts_123228v181100p.pdf",
+          "locator": "§4.0/figura 4.0 y4.1, pp.27–28; §4.6.1–4.6.3, pp.49–51; anexo Y.0/figura Y.0-1, p.327; PDF28–29/50–52/328",
+          "version": "V18.11.0, enero de 2026, Release 18, apartados comprobados el 04-11-2026. No lectura íntegra de 390 páginas ni afirmación de ser la última edición. Figuras y notas sobre control de borde y colocación de funciones revisadas visualmente.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "IETF: RFC 4457, SIP P-User-Database Header",
+          "url": "https://www.rfc-editor.org/rfc/rfc4457.html",
+          "locator": "§1 IMS usa SIP; §2.1 REGISTER por P-CSCF, I-CSCF/HSS y S-CSCF",
+          "version": "Informational, abril de 2006, HTML comprobado el 04-11-2026. Ejemplo clásico de funciones y encaminamiento; no se universaliza ausencia de control de borde o una única HSS.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "BOE: Resolución 18-12-2025, convocatoria GSI",
+          "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2025-26262",
+          "locator": "Anexo IX, programa ingreso libre, bloque IV, tema 14: NGN/IMS, VoIP/ToIP, comunicaciones unificadas y convergencia fijo-móvil",
+          "version": "Texto original publicado 22-12-2025, apartado HTML comprobado el 04-11-2026. Solo delimita materia: no respalda predicciones sobre frecuencia de examen o qué interfaces no estudiar.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P19-016",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "48b6855ff3b15fd01e8c6eb7cde379a29a06648d08cd5f27e6a521c16fdf340a",
+      "content_sha256": "62a2dc3d57dac8a84a3cf65265549b73d1091d277466c9845f8de0a6a1dcc032",
+      "before": {
+        "id": "MAN-GSI-P19-016",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué aporta el control de políticas/QoS en una arquitectura convergente?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Crear capacidad física adicional en cada enlace con solo marcar o clasificar paquetes, sin ampliar ni gestionar los recursos existentes."
+          },
+          {
+            "id": "B",
+            "text": "Eliminar toda congestión aunque la demanda supere de forma sostenida la capacidad disponible en los enlaces atravesados."
+          },
+          {
+            "id": "C",
+            "text": "Sustituir identidad y autorización porque la prioridad asignada a un flujo demuestra que el usuario está legitimado para generarlo."
+          },
+          {
+            "id": "D",
+            "text": "Permitir tratamiento diferenciado y coherente para servicios sensibles como voz y vídeo."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "QoS administra recursos/congestión y debe integrarse con la política de servicio.",
+          "incorrect": "Según el solucionario: QoS administra recursos/congestión y debe integrarse con la política de servicio."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 16; índice nativo 3570",
+          "question_source_id": "SRC-GSI-P19-CUADERNO",
+          "question_document_id": "DOC-GSI-P19-CUADERNO",
+          "question_locator": "Pregunta 16; índice nativo 7003",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "drive_id": "1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 16; índice nativo 3570",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-19",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P19-016",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué aporta el control de políticas/QoS en una arquitectura convergente?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Aumentar el ancho de banda físico disponible mediante marcado de paquetes."
+          },
+          {
+            "id": "B",
+            "text": "Hacer equivalentes la prioridad del flujo y los permisos de su identidad."
+          },
+          {
+            "id": "C",
+            "text": "Obtener calidad de servicio por el hecho de negociar medios mediante SIP."
+          },
+          {
+            "id": "D",
+            "text": "Permitir tratamiento diferenciado coherente con la política de cada servicio."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "La política y la QoS permiten clasificar flujos y gestionar su tratamiento conforme a los requisitos del servicio y los recursos disponibles. La voz y el vídeo pueden necesitar control de retardo, pérdida o variación temporal. Ni marcar paquetes ni señalizar una sesión crea capacidad física o garantiza calidad en todos los tramos.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "El marcado clasifica para un tratamiento; no amplía por sí mismo la capacidad de enlaces y equipos.",
+            "B": "Asignar prioridad no prueba que el usuario tenga permiso: identidad y autorización siguen siendo necesarias.",
+            "C": "Negociar una sesión no acredita que la red haya admitido y aplicado un tratamiento adecuado a sus medios."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 16; índice nativo 3570",
+          "question_source_id": "SRC-GSI-P19-CUADERNO",
+          "question_document_id": "DOC-GSI-P19-CUADERNO",
+          "question_locator": "Pregunta 16; índice nativo 7003",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "IETF: RFC2475, Architecture for Differentiated Services",
+              "url": "https://www.rfc-editor.org/rfc/rfc2475.html",
+              "locator": "§1.1 Overview; §2.5 Network Resource Allocation: clasificación, acondicionamiento y reparto de recursos",
+              "version": "Informational, diciembre de 1998, HTML comprobado el 04-11-2026. Ejemplo de QoS; no se equipara todo control IMS a DiffServ ni se crea capacidad física mediante marcado.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "ETSI/3GPP: TS 123 228, IP Multimedia Subsystem, Stage2",
+              "url": "https://www.etsi.org/deliver/etsi_ts/123200_123299/123228/18.11.00_60/ts_123228v181100p.pdf",
+              "locator": "§4.0/figura 4.0 y4.1, pp.27–28; §4.6.1–4.6.3, pp.49–51; anexo Y.0/figura Y.0-1, p.327; PDF28–29/50–52/328",
+              "version": "V18.11.0, enero de 2026, Release 18, apartados comprobados el 04-11-2026. No lectura íntegra de 390 páginas ni afirmación de ser la última edición. Figuras y notas sobre control de borde y colocación de funciones revisadas visualmente.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-081"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "drive_id": "1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 16; índice nativo 3570",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-19",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar tratamiento diferenciado y clave D; distinguir recursos, autorización y señalización."
+      ],
+      "references": [
+        {
+          "title": "IETF: RFC2475, Architecture for Differentiated Services",
+          "url": "https://www.rfc-editor.org/rfc/rfc2475.html",
+          "locator": "§1.1 Overview; §2.5 Network Resource Allocation: clasificación, acondicionamiento y reparto de recursos",
+          "version": "Informational, diciembre de 1998, HTML comprobado el 04-11-2026. Ejemplo de QoS; no se equipara todo control IMS a DiffServ ni se crea capacidad física mediante marcado.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "ETSI/3GPP: TS 123 228, IP Multimedia Subsystem, Stage2",
+          "url": "https://www.etsi.org/deliver/etsi_ts/123200_123299/123228/18.11.00_60/ts_123228v181100p.pdf",
+          "locator": "§4.0/figura 4.0 y4.1, pp.27–28; §4.6.1–4.6.3, pp.49–51; anexo Y.0/figura Y.0-1, p.327; PDF28–29/50–52/328",
+          "version": "V18.11.0, enero de 2026, Release 18, apartados comprobados el 04-11-2026. No lectura íntegra de 390 páginas ni afirmación de ser la última edición. Figuras y notas sobre control de borde y colocación de funciones revisadas visualmente.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P19-017",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "5e922fd180882731b4e60377f89f3417fdc3d6fa3d611322f249738caa08115a",
+      "content_sha256": "102c5c107fd189c1ae58ca7a26c940de16a62463267c47b215845bc48a6fa3a4",
+      "before": {
+        "id": "MAN-GSI-P19-017",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué significa convergencia de servicios en este contexto?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Mantener voz, vídeo y mensajería en infraestructuras independientes, con directorios e identidades separados para cada servicio."
+          },
+          {
+            "id": "B",
+            "text": "Concentrar enlaces sobre el mismo cableado sin integrar funciones, control, presencia ni experiencia de usuario."
+          },
+          {
+            "id": "C",
+            "text": "Integrar voz, vídeo, mensajería, presencia y otros servicios sobre plataformas e identidades comunes."
+          },
+          {
+            "id": "D",
+            "text": "Sustituir todos los protocolos de señalización por un único codec que transporte indistintamente cualquier servicio."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "La convergencia es funcional y arquitectónica, no solo física.",
+          "incorrect": "Según el solucionario: La convergencia es funcional y arquitectónica, no solo física."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 17; índice nativo 3660",
+          "question_source_id": "SRC-GSI-P19-CUADERNO",
+          "question_document_id": "DOC-GSI-P19-CUADERNO",
+          "question_locator": "Pregunta 17; índice nativo 7333",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "drive_id": "1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 17; índice nativo 3660",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-19",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P19-017",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué significa convergencia de servicios en este contexto?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Separar las identidades y las plataformas que prestan voz, vídeo y mensajería."
+          },
+          {
+            "id": "B",
+            "text": "Compartir cableado y enlaces manteniendo independientes control y aplicaciones."
+          },
+          {
+            "id": "C",
+            "text": "Integrar voz, vídeo, mensajería y presencia sobre plataformas e identidades comunes."
+          },
+          {
+            "id": "D",
+            "text": "Unificar la numeración de terminales manteniendo aisladas las aplicaciones."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "La convergencia de servicios integra funciones y experiencia de comunicación, por ejemplo identidad, presencia, voz y vídeo, sobre componentes comunes. Compartir soportes físicos o un esquema de numeración puede ayudar, pero no constituye por sí solo esa integración. El diseño debe resolver interoperabilidad, políticas y disponibilidad de los servicios implicados.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Mantener plataformas e identidades separadas no aporta la integración funcional que caracteriza esta convergencia.",
+            "B": "Compartir el soporte físico sin integrar servicios y control es convergencia de infraestructura, no la integración funcional preguntada.",
+            "D": "Una numeración común no hace cooperar automáticamente mensajería, presencia, voz y vídeo entre aplicaciones aisladas."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 17; índice nativo 3660",
+          "question_source_id": "SRC-GSI-P19-CUADERNO",
+          "question_document_id": "DOC-GSI-P19-CUADERNO",
+          "question_locator": "Pregunta 17; índice nativo 7333",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "ITU: Next Generation Networks, WTPF2009",
+              "url": "https://www.itu.int/osg/csd/wtpf/wtpf2009/ngn.html",
+              "locator": "A few words on NGN: definición Y.2001 y características de separación, convergencia y movilidad",
+              "version": "Página histórica actualizada 30-07-2008, HTML comprobado el 04-11-2026. Principios estables, sin adoptar predicciones de despliegue, interpretar acceso independiente como ausencia de políticas o garantizar continuidad automática.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "ETSI/3GPP: TS 123 228, IP Multimedia Subsystem, Stage2",
+              "url": "https://www.etsi.org/deliver/etsi_ts/123200_123299/123228/18.11.00_60/ts_123228v181100p.pdf",
+              "locator": "§4.0/figura 4.0 y4.1, pp.27–28; §4.6.1–4.6.3, pp.49–51; anexo Y.0/figura Y.0-1, p.327; PDF28–29/50–52/328",
+              "version": "V18.11.0, enero de 2026, Release 18, apartados comprobados el 04-11-2026. No lectura íntegra de 390 páginas ni afirmación de ser la última edición. Figuras y notas sobre control de borde y colocación de funciones revisadas visualmente.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-081"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "drive_id": "1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 17; índice nativo 3660",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-19",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar integración funcional y clave C; diferenciar convergencia de servicios, física y de numeración."
+      ],
+      "references": [
+        {
+          "title": "ITU: Next Generation Networks, WTPF2009",
+          "url": "https://www.itu.int/osg/csd/wtpf/wtpf2009/ngn.html",
+          "locator": "A few words on NGN: definición Y.2001 y características de separación, convergencia y movilidad",
+          "version": "Página histórica actualizada 30-07-2008, HTML comprobado el 04-11-2026. Principios estables, sin adoptar predicciones de despliegue, interpretar acceso independiente como ausencia de políticas o garantizar continuidad automática.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "ETSI/3GPP: TS 123 228, IP Multimedia Subsystem, Stage2",
+          "url": "https://www.etsi.org/deliver/etsi_ts/123200_123299/123228/18.11.00_60/ts_123228v181100p.pdf",
+          "locator": "§4.0/figura 4.0 y4.1, pp.27–28; §4.6.1–4.6.3, pp.49–51; anexo Y.0/figura Y.0-1, p.327; PDF28–29/50–52/328",
+          "version": "V18.11.0, enero de 2026, Release 18, apartados comprobados el 04-11-2026. No lectura íntegra de 390 páginas ni afirmación de ser la última edición. Figuras y notas sobre control de borde y colocación de funciones revisadas visualmente.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P19-018",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "44b283eb9b2f11030852fb524d1732d2fcd8e7fc34db8cc834d98038b9a8d96d",
+      "content_sha256": "011cbb259eb2285fa4c954bf3c7bb30b08d628d7fef6e8992b89a0949240e412",
+      "before": {
+        "id": "MAN-GSI-P19-018",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué riesgo tendría interpretar IMS como “un único servidor”?",
+        "options": [
+          {
+            "id": "A",
+            "text": "No existiría riesgo, porque las funciones IMS se ejecutarían en un único appliance indivisible definido así por 3GPP."
+          },
+          {
+            "id": "B",
+            "text": "Ignorar que es una arquitectura distribuida con varias funciones de control, datos de abonado y servicios."
+          },
+          {
+            "id": "C",
+            "text": "El riesgo se limitaría a la capacidad, sin consecuencias para redundancia, seguridad, encaminamiento o interoperabilidad entre funciones."
+          },
+          {
+            "id": "D",
+            "text": "Permitiría sustituir todas las entidades IMS por una PBX, ya que ambas arquitecturas definen exactamente las mismas funciones."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "IMS define funciones lógicas y relaciones, no un producto monolítico obligatorio.",
+          "incorrect": "Según el solucionario: IMS define funciones lógicas y relaciones, no un producto monolítico obligatorio."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 18; índice nativo 3731",
+          "question_source_id": "SRC-GSI-P19-CUADERNO",
+          "question_document_id": "DOC-GSI-P19-CUADERNO",
+          "question_locator": "Pregunta 18; índice nativo 7671",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "drive_id": "1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 18; índice nativo 3731",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-19",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P19-018",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Un inventario representa IMS como «un servidor» y no identifica sus funciones internas. ¿Qué riesgo introduce en el análisis de arquitectura?",
+        "options": [
+          {
+            "id": "A",
+            "text": "El inventario demuestra que las funciones comparten el mismo fallo físico."
+          },
+          {
+            "id": "B",
+            "text": "Se pueden omitir dependencias entre funciones y sus necesidades de resiliencia."
+          },
+          {
+            "id": "C",
+            "text": "El número de servidores basta para deducir la arquitectura de señalización."
+          },
+          {
+            "id": "D",
+            "text": "Se puede evaluar interoperabilidad a partir de la marca del equipo inventariado."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "IMS se describe mediante funciones lógicas y relaciones, que pueden distribuirse, agruparse o replicarse en el despliegue. Reducir su inventario a un servidor sin identificar esas funciones puede ocultar dependencias, puntos de fallo y límites de seguridad. Tampoco se debe inferir que cada función exige obligatoriamente una máquina física independiente.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Una etiqueta de inventario no demuestra dónde se ejecuta cada función ni qué componentes físicos o fallos comparten.",
+            "C": "Contar servidores no identifica el recorrido de mensajes ni las funciones de control y datos que intervienen.",
+            "D": "La marca no basta para conocer interfaces, perfiles o comportamiento interoperable entre funciones y dominios."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 18; índice nativo 3731",
+          "question_source_id": "SRC-GSI-P19-CUADERNO",
+          "question_document_id": "DOC-GSI-P19-CUADERNO",
+          "question_locator": "Pregunta 18; índice nativo 7671",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "ETSI/3GPP: TS 123 228, IP Multimedia Subsystem, Stage2",
+              "url": "https://www.etsi.org/deliver/etsi_ts/123200_123299/123228/18.11.00_60/ts_123228v181100p.pdf",
+              "locator": "§4.0/figura 4.0 y4.1, pp.27–28; §4.6.1–4.6.3, pp.49–51; anexo Y.0/figura Y.0-1, p.327; PDF28–29/50–52/328",
+              "version": "V18.11.0, enero de 2026, Release 18, apartados comprobados el 04-11-2026. No lectura íntegra de 390 páginas ni afirmación de ser la última edición. Figuras y notas sobre control de borde y colocación de funciones revisadas visualmente.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-081"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "drive_id": "1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 18; índice nativo 3731",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-19",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar riesgo de visión monolítica y clave B; caso de inventario que omite funciones lógicas."
+      ],
+      "references": [
+        {
+          "title": "ETSI/3GPP: TS 123 228, IP Multimedia Subsystem, Stage2",
+          "url": "https://www.etsi.org/deliver/etsi_ts/123200_123299/123228/18.11.00_60/ts_123228v181100p.pdf",
+          "locator": "§4.0/figura 4.0 y4.1, pp.27–28; §4.6.1–4.6.3, pp.49–51; anexo Y.0/figura Y.0-1, p.327; PDF28–29/50–52/328",
+          "version": "V18.11.0, enero de 2026, Release 18, apartados comprobados el 04-11-2026. No lectura íntegra de 390 páginas ni afirmación de ser la última edición. Figuras y notas sobre control de borde y colocación de funciones revisadas visualmente.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P19-019",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "3520d6821403bf68997492f1aa3a1fd851ff1263015278e09197d6317f5a49e2",
+      "content_sha256": "3d8c857f9bff97c833bf3424d9674913e506e2372825b001d5ed124001556e12",
+      "before": {
+        "id": "MAN-GSI-P19-019",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "En un diagrama de IMS, ¿qué capa conviene separar visualmente?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Agrupar los elementos únicamente por fabricante y tecnología de acceso, sin mostrar control de sesión ni datos de abonado."
+          },
+          {
+            "id": "B",
+            "text": "Unir señalización y medios en una única capa y situar las funciones de abonado dentro de la red de acceso radio."
+          },
+          {
+            "id": "C",
+            "text": "Representar solo racks, enlaces físicos y subredes IP, aunque se pierdan las funciones y dependencias propias de IMS."
+          },
+          {
+            "id": "D",
+            "text": "Acceso/transporte, control de sesión y servicios/datos de abonado."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Separar capas ayuda a razonar arquitectura, seguridad y dependencias.",
+          "incorrect": "Según el solucionario: Separar capas ayuda a razonar arquitectura, seguridad y dependencias."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 19; índice nativo 3821",
+          "question_source_id": "SRC-GSI-P19-CUADERNO",
+          "question_document_id": "DOC-GSI-P19-CUADERNO",
+          "question_locator": "Pregunta 19; índice nativo 8010",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "drive_id": "1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 19; índice nativo 3821",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-19",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P19-019",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "En un diagrama IMS, ¿qué ámbitos funcionales conviene diferenciar para analizar sus dependencias?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Acceso con los perfiles de abonado y señalización con todos los medios."
+          },
+          {
+            "id": "B",
+            "text": "Funciones agrupadas por fabricante aunque mezclen transporte y control."
+          },
+          {
+            "id": "C",
+            "text": "Control de sesión con el encaminamiento IP, omitiendo el plano de servicios."
+          },
+          {
+            "id": "D",
+            "text": "Acceso/transporte, control de sesión y servicios/datos de abonado."
+          }
+        ],
+        "correct_option": "D",
+        "feedback": {
+          "correct": "Separar esos ámbitos ayuda a identificar conectividad, señalización, lógica de servicio y datos de abonado, y a analizar sus dependencias. Es una vista funcional útil, no una obligación de dibujar exactamente tres cajas físicas. El diagrama debe conservar relaciones entre funciones y distinguir señalización del tratamiento de medios.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Agrupar perfiles de abonado con acceso y unir señalización a todos los medios mezcla responsabilidades distintas.",
+            "B": "El fabricante puede ser un dato de despliegue, pero agrupar solo por marca oculta límites y relaciones funcionales.",
+            "C": "Omitir servicios y confundir routingIP con control de sesión impide representar responsabilidades importantes de IMS."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 19; índice nativo 3821",
+          "question_source_id": "SRC-GSI-P19-CUADERNO",
+          "question_document_id": "DOC-GSI-P19-CUADERNO",
+          "question_locator": "Pregunta 19; índice nativo 8010",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "ETSI/3GPP: TS 123 228, IP Multimedia Subsystem, Stage2",
+              "url": "https://www.etsi.org/deliver/etsi_ts/123200_123299/123228/18.11.00_60/ts_123228v181100p.pdf",
+              "locator": "§4.0/figura 4.0 y4.1, pp.27–28; §4.6.1–4.6.3, pp.49–51; anexo Y.0/figura Y.0-1, p.327; PDF28–29/50–52/328",
+              "version": "V18.11.0, enero de 2026, Release 18, apartados comprobados el 04-11-2026. No lectura íntegra de 390 páginas ni afirmación de ser la última edición. Figuras y notas sobre control de borde y colocación de funciones revisadas visualmente.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "ITU: Next Generation Networks, WTPF2009",
+              "url": "https://www.itu.int/osg/csd/wtpf/wtpf2009/ngn.html",
+              "locator": "A few words on NGN: definición Y.2001 y características de separación, convergencia y movilidad",
+              "version": "Página histórica actualizada 30-07-2008, HTML comprobado el 04-11-2026. Principios estables, sin adoptar predicciones de despliegue, interpretar acceso independiente como ausencia de políticas o garantizar continuidad automática.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-081"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "drive_id": "1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 19; índice nativo 3821",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-19",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar separación de ámbitos y clave D; formular en plural y distinguir vista funcional de emplazamiento físico."
+      ],
+      "references": [
+        {
+          "title": "ETSI/3GPP: TS 123 228, IP Multimedia Subsystem, Stage2",
+          "url": "https://www.etsi.org/deliver/etsi_ts/123200_123299/123228/18.11.00_60/ts_123228v181100p.pdf",
+          "locator": "§4.0/figura 4.0 y4.1, pp.27–28; §4.6.1–4.6.3, pp.49–51; anexo Y.0/figura Y.0-1, p.327; PDF28–29/50–52/328",
+          "version": "V18.11.0, enero de 2026, Release 18, apartados comprobados el 04-11-2026. No lectura íntegra de 390 páginas ni afirmación de ser la última edición. Figuras y notas sobre control de borde y colocación de funciones revisadas visualmente.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "ITU: Next Generation Networks, WTPF2009",
+          "url": "https://www.itu.int/osg/csd/wtpf/wtpf2009/ngn.html",
+          "locator": "A few words on NGN: definición Y.2001 y características de separación, convergencia y movilidad",
+          "version": "Página histórica actualizada 30-07-2008, HTML comprobado el 04-11-2026. Principios estables, sin adoptar predicciones de despliegue, interpretar acceso independiente como ausencia de políticas o garantizar continuidad automática.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P19-020",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "c1b173dacc0deb7073d06054701e14db9cd9d7fd1db334217bdf59fa1f0ea2ca",
+      "content_sha256": "7d6e726bd3cf05615d4cf7a7964ca89f6959b6f45c76dc015b78b50728c80cba",
+      "before": {
+        "id": "MAN-GSI-P19-020",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Un organismo quiere conservar identidad y servicios de comunicaciones al cambiar entre accesos fijo y móvil. ¿Qué principio es más relevante?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Usar exclusivamente telefonía analógica."
+          },
+          {
+            "id": "B",
+            "text": "Desactivar movilidad."
+          },
+          {
+            "id": "C",
+            "text": "Convergencia fijo-móvil con servicios desacoplados del acceso y control de sesión/identidad coherente."
+          },
+          {
+            "id": "D",
+            "text": "Asignar una VLAN diferente a cada llamada como única medida."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "La convergencia busca continuidad de identidad y servicios entre accesos.",
+          "incorrect": "Según el solucionario: La convergencia busca continuidad de identidad y servicios entre accesos."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 20; índice nativo 3899",
+          "question_source_id": "SRC-GSI-P19-CUADERNO",
+          "question_document_id": "DOC-GSI-P19-CUADERNO",
+          "question_locator": "Pregunta 20; índice nativo 8269",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "drive_id": "1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 20; índice nativo 3899",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-19",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P19-020",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Un organismo quiere conservar identidad y servicios de comunicaciones al cambiar entre accesos fijo y móvil. ¿Qué principio es más relevante?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Anclar la identidad de servicio al puerto físico de cada red de acceso."
+          },
+          {
+            "id": "B",
+            "text": "Crear un perfil de comunicaciones independiente para cada tecnología radio."
+          },
+          {
+            "id": "C",
+            "text": "Desacoplar servicios del acceso y mantener control e identidad coherentes."
+          },
+          {
+            "id": "D",
+            "text": "Resolver el cambio de acceso asignando otra VLAN a cada sesión de voz."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "La convergencia fijo-móvil busca conservar una experiencia e identidad de servicio coherentes sobre distintas conectividades. Desacoplar servicios y acceso favorece ese objetivo, pero hacen falta mecanismos de movilidad, autenticación y continuidad compatibles. No se garantiza ausencia de cortes por declarar convergencia ni por cambiar una configuración de red local.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Vincular la identidad al puerto concreto dificulta conservarla al cambiar de red o tecnología de acceso.",
+            "B": "Perfiles independientes por tecnología mantienen una fragmentación que el objetivo de servicio intenta reducir.",
+            "D": "Una VLAN organiza conectividad local; no resuelve por sí sola continuidad de identidad y control entre accesos fijo y móvil."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 20; índice nativo 3899",
+          "question_source_id": "SRC-GSI-P19-CUADERNO",
+          "question_document_id": "DOC-GSI-P19-CUADERNO",
+          "question_locator": "Pregunta 20; índice nativo 8269",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "ITU: Next Generation Networks, WTPF2009",
+              "url": "https://www.itu.int/osg/csd/wtpf/wtpf2009/ngn.html",
+              "locator": "A few words on NGN: definición Y.2001 y características de separación, convergencia y movilidad",
+              "version": "Página histórica actualizada 30-07-2008, HTML comprobado el 04-11-2026. Principios estables, sin adoptar predicciones de despliegue, interpretar acceso independiente como ausencia de políticas o garantizar continuidad automática.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "ETSI/3GPP: TS 123 228, IP Multimedia Subsystem, Stage2",
+              "url": "https://www.etsi.org/deliver/etsi_ts/123200_123299/123228/18.11.00_60/ts_123228v181100p.pdf",
+              "locator": "§4.0/figura 4.0 y4.1, pp.27–28; §4.6.1–4.6.3, pp.49–51; anexo Y.0/figura Y.0-1, p.327; PDF28–29/50–52/328",
+              "version": "V18.11.0, enero de 2026, Release 18, apartados comprobados el 04-11-2026. No lectura íntegra de 390 páginas ni afirmación de ser la última edición. Figuras y notas sobre control de borde y colocación de funciones revisadas visualmente.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-081"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "drive_id": "1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 20; índice nativo 3899",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-19",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar microcaso original y clave C; independencia de servicios con condiciones reales de continuidad."
+      ],
+      "references": [
+        {
+          "title": "ITU: Next Generation Networks, WTPF2009",
+          "url": "https://www.itu.int/osg/csd/wtpf/wtpf2009/ngn.html",
+          "locator": "A few words on NGN: definición Y.2001 y características de separación, convergencia y movilidad",
+          "version": "Página histórica actualizada 30-07-2008, HTML comprobado el 04-11-2026. Principios estables, sin adoptar predicciones de despliegue, interpretar acceso independiente como ausencia de políticas o garantizar continuidad automática.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "ETSI/3GPP: TS 123 228, IP Multimedia Subsystem, Stage2",
+          "url": "https://www.etsi.org/deliver/etsi_ts/123200_123299/123228/18.11.00_60/ts_123228v181100p.pdf",
+          "locator": "§4.0/figura 4.0 y4.1, pp.27–28; §4.6.1–4.6.3, pp.49–51; anexo Y.0/figura Y.0-1, p.327; PDF28–29/50–52/328",
+          "version": "V18.11.0, enero de 2026, Release 18, apartados comprobados el 04-11-2026. No lectura íntegra de 390 páginas ni afirmación de ser la última edición. Figuras y notas sobre control de borde y colocación de funciones revisadas visualmente.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P19-021",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "bf8c5d78bf1635e16ed597aad208e55ebe884ba0d6c633807533da011c91f70f",
+      "content_sha256": "45945627e85fd26e72032a4ee5a70d82b037360a10ec0a7d354aa5a877bab4ad",
+      "before": {
+        "id": "MAN-GSI-P19-021",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Cuál es la función principal de SIP?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Transportar muestras de audio y vídeo en tiempo real con números de secuencia y marcas temporales mediante RTP."
+          },
+          {
+            "id": "B",
+            "text": "Señalizar y controlar el establecimiento, modificación y terminación de sesiones multimedia."
+          },
+          {
+            "id": "C",
+            "text": "Describir codecs, direcciones, puertos y otros parámetros de una sesión multimedia mediante un cuerpo SDP."
+          },
+          {
+            "id": "D",
+            "text": "Informar sobre pérdida, jitter y estadísticas de recepción de los flujos multimedia mediante mensajes RTCP."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "RFC 3261 define SIP como protocolo de control/señalización de sesiones.",
+          "incorrect": "Según el solucionario: RFC 3261 define SIP como protocolo de control/señalización de sesiones."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 21; índice nativo 4023",
+          "question_source_id": "SRC-GSI-P19-CUADERNO",
+          "question_document_id": "DOC-GSI-P19-CUADERNO",
+          "question_locator": "Pregunta 21; índice nativo 8747",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "drive_id": "1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 21; índice nativo 4023",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-19",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P19-021",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Cuál es la función principal de SIP?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Transportar muestras de audio y vídeo en tiempo real con números de secuencia y marcas temporales mediante RTP."
+          },
+          {
+            "id": "B",
+            "text": "Señalizar y controlar el establecimiento, modificación y terminación de sesiones multimedia."
+          },
+          {
+            "id": "C",
+            "text": "Describir codecs, direcciones, puertos y otros parámetros de una sesión multimedia mediante un cuerpo SDP."
+          },
+          {
+            "id": "D",
+            "text": "Informar sobre pérdida, jitter y estadísticas de recepción de los flujos multimedia mediante mensajes RTCP."
+          }
+        ],
+        "correct_option": "B",
+        "feedback": {
+          "correct": "SIP señaliza y controla creación, modificación y terminación de sesiones. Puede llevar descripciones SDP, mientras protocolos de medios como RTP transportan las muestras y RTCP aporta información de recepción. Diferenciar esas funciones ayuda a diagnosticar una llamada: señalización correcta no demuestra que los medios lleguen o tengan calidad adecuada.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "Transportar muestras con secuencias y marcas temporales describe RTP; no es la función principal del protocolo SIP.",
+            "C": "Describir codecs y destinos de medios es el papel del formato SDP, aunque esa descripción viaje en un mensaje SIP.",
+            "D": "Los informes de recepción sobre pérdida y variación temporal corresponden a RTCP, no al control de establecimiento de SIP."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 21; índice nativo 4023",
+          "question_source_id": "SRC-GSI-P19-CUADERNO",
+          "question_document_id": "DOC-GSI-P19-CUADERNO",
+          "question_locator": "Pregunta 21; índice nativo 8747",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "IETF: RFC3261, Session Initiation Protocol",
+              "url": "https://www.rfc-editor.org/rfc/rfc3261.html",
+              "locator": "§1–3 control y ejemplo de llamada; §9 CANCEL; §10 registro; §11 OPTIONS; §13 INVITE; §15.1 BYE",
+              "version": "Junio de 2002, apartados HTML comprobados el 04-11-2026. Métodos base y papeles lógicos; no catálogo completo de extensiones ni recomendación de mecanismos criptográficos históricos.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "IETF: RFC8866, Session Description Protocol",
+              "url": "https://www.rfc-editor.org/rfc/rfc8866.html",
+              "locator": "§1 descripción sin protocolo de transporte; §3.1 SIP y offer/answer; §2 Media Description",
+              "version": "Enero de 2021, HTML comprobado el 04-11-2026. Sustituye RFC4566. Describir parámetros no es transportar audio ni negociar de forma autónoma sin procedimientos de oferta/respuesta.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "IETF: RFC3550, RTP",
+              "url": "https://www.rfc-editor.org/rfc/rfc3550.html",
+              "locator": "§1 Introduction: secuencia, tiempo y falta de garantía QoS; §6 RTCP, feedback de distribución",
+              "version": "Julio de 2003, HTML comprobado el 04-11-2026. RTP transporta datos en tiempo real sin garantía por sí mismo de entrega, retardo o cifrado; RTCP informa, no transporta las muestras.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-081"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "drive_id": "1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 21; índice nativo 4023",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-19",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar íntegros enunciado y cuatro alternativas bien construidas, clave B; completar explicación y feedback individual."
+      ],
+      "references": [
+        {
+          "title": "IETF: RFC3261, Session Initiation Protocol",
+          "url": "https://www.rfc-editor.org/rfc/rfc3261.html",
+          "locator": "§1–3 control y ejemplo de llamada; §9 CANCEL; §10 registro; §11 OPTIONS; §13 INVITE; §15.1 BYE",
+          "version": "Junio de 2002, apartados HTML comprobados el 04-11-2026. Métodos base y papeles lógicos; no catálogo completo de extensiones ni recomendación de mecanismos criptográficos históricos.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "IETF: RFC8866, Session Description Protocol",
+          "url": "https://www.rfc-editor.org/rfc/rfc8866.html",
+          "locator": "§1 descripción sin protocolo de transporte; §3.1 SIP y offer/answer; §2 Media Description",
+          "version": "Enero de 2021, HTML comprobado el 04-11-2026. Sustituye RFC4566. Describir parámetros no es transportar audio ni negociar de forma autónoma sin procedimientos de oferta/respuesta.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "IETF: RFC3550, RTP",
+          "url": "https://www.rfc-editor.org/rfc/rfc3550.html",
+          "locator": "§1 Introduction: secuencia, tiempo y falta de garantía QoS; §6 RTCP, feedback de distribución",
+          "version": "Julio de 2003, HTML comprobado el 04-11-2026. RTP transporta datos en tiempo real sin garantía por sí mismo de entrega, retardo o cifrado; RTCP informa, no transporta las muestras.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P19-022",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "0be75933acf27f7f45cb10d8139b6dad292f0d36cf655d85a2ea266eca041877",
+      "content_sha256": "72cb751efdcd2b87108cd5ba7592b8f26ba2fbfcffa55203c3e94a27c8897ed2",
+      "before": {
+        "id": "MAN-GSI-P19-022",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué método SIP se asocia típicamente al inicio de una sesión?",
+        "options": [
+          {
+            "id": "A",
+            "text": "INVITE."
+          },
+          {
+            "id": "B",
+            "text": "GET."
+          },
+          {
+            "id": "C",
+            "text": "PUBLISH de SNMP."
+          },
+          {
+            "id": "D",
+            "text": "MOUNT."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "INVITE solicita establecer una sesión y suele incluir o negociar descripción de medios.",
+          "incorrect": "Según el solucionario: INVITE solicita establecer una sesión y suele incluir o negociar descripción de medios."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 22; índice nativo 4103",
+          "question_source_id": "SRC-GSI-P19-CUADERNO",
+          "question_document_id": "DOC-GSI-P19-CUADERNO",
+          "question_locator": "Pregunta 22; índice nativo 9038",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "drive_id": "1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 22; índice nativo 4103",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-19",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P19-022",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué método SIP se asocia típicamente al inicio de una sesión?",
+        "options": [
+          {
+            "id": "A",
+            "text": "INVITE"
+          },
+          {
+            "id": "B",
+            "text": "REGISTER"
+          },
+          {
+            "id": "C",
+            "text": "OPTIONS"
+          },
+          {
+            "id": "D",
+            "text": "ACK"
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "INVITE solicita establecer una sesión entre participantes y puede intervenir en el intercambio de descripciones de medios. Un INVITE dentro de un diálogo también puede modificar una sesión ya existente. No se debe confundir iniciar la sesión con registrar contactos, consultar capacidades o confirmar una respuesta a una invitación.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "REGISTER gestiona asociaciones de una identidad SIP con contactos; no es el método para iniciar la sesión multimedia.",
+            "C": "OPTIONS consulta capacidades sin establecer la sesión multimedia con el interlocutor al que consulta.",
+            "D": "ACK confirma la respuesta final de una transacción INVITE según sus reglas; no sustituye la solicitud inicial de establecimiento."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 22; índice nativo 4103",
+          "question_source_id": "SRC-GSI-P19-CUADERNO",
+          "question_document_id": "DOC-GSI-P19-CUADERNO",
+          "question_locator": "Pregunta 22; índice nativo 9038",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "IETF: RFC3261, Session Initiation Protocol",
+              "url": "https://www.rfc-editor.org/rfc/rfc3261.html",
+              "locator": "§1–3 control y ejemplo de llamada; §9 CANCEL; §10 registro; §11 OPTIONS; §13 INVITE; §15.1 BYE",
+              "version": "Junio de 2002, apartados HTML comprobados el 04-11-2026. Métodos base y papeles lógicos; no catálogo completo de extensiones ni recomendación de mecanismos criptográficos históricos.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-081"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "drive_id": "1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 22; índice nativo 4103",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-19",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar inicio mediante INVITE y clave A; distractores que sí son métodos SIP y explicación de reinvitación."
+      ],
+      "references": [
+        {
+          "title": "IETF: RFC3261, Session Initiation Protocol",
+          "url": "https://www.rfc-editor.org/rfc/rfc3261.html",
+          "locator": "§1–3 control y ejemplo de llamada; §9 CANCEL; §10 registro; §11 OPTIONS; §13 INVITE; §15.1 BYE",
+          "version": "Junio de 2002, apartados HTML comprobados el 04-11-2026. Métodos base y papeles lógicos; no catálogo completo de extensiones ni recomendación de mecanismos criptográficos históricos.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P19-023",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "f7d9bc0611f6d6e5a56b7770a930aa29fc9e705f6bde2c766f623f5cbc652edc",
+      "content_sha256": "b2288b458c876633df481b4552c1e9d224257c46c79c15b9979ddb8e48d641ca",
+      "before": {
+        "id": "MAN-GSI-P19-023",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué método SIP se usa para terminar normalmente un diálogo/sesión establecida?",
+        "options": [
+          {
+            "id": "A",
+            "text": "ARP."
+          },
+          {
+            "id": "B",
+            "text": "COMMIT."
+          },
+          {
+            "id": "C",
+            "text": "BYE."
+          },
+          {
+            "id": "D",
+            "text": "PING como método SIP estándar de cierre."
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "BYE termina una sesión SIP establecida.",
+          "incorrect": "Según el solucionario: BYE termina una sesión SIP establecida."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 23; índice nativo 4199",
+          "question_source_id": "SRC-GSI-P19-CUADERNO",
+          "question_document_id": "DOC-GSI-P19-CUADERNO",
+          "question_locator": "Pregunta 23; índice nativo 9205",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "drive_id": "1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 23; índice nativo 4199",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-19",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P19-023",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "Una llamada SIP ya ha completado INVITE, 200OK y ACK. Un extremo quiere terminar normalmente la sesión. ¿Qué método utiliza?",
+        "options": [
+          {
+            "id": "A",
+            "text": "ACK"
+          },
+          {
+            "id": "B",
+            "text": "CANCEL"
+          },
+          {
+            "id": "C",
+            "text": "BYE"
+          },
+          {
+            "id": "D",
+            "text": "REGISTER"
+          }
+        ],
+        "correct_option": "C",
+        "feedback": {
+          "correct": "En una sesión establecida, BYE solicita su terminación dentro del diálogo correspondiente. CANCEL sirve para cancelar una solicitud todavía pendiente y no deshace un INVITE al que ya se ha enviado respuesta final. ACK confirma el resultado de INVITE y REGISTER gestiona contactos; ninguna de esas funciones sustituye el cierre normal planteado.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "A": "ACK confirma la respuesta final del INVITE; enviar otra confirmación no solicita terminar la sesión establecida.",
+            "B": "CANCEL no tiene efecto sobre un INVITE que ya recibió respuesta final; el caso plantea la sesión completada.",
+            "D": "REGISTER modifica o consulta contactos de una identidad; no termina por ello la sesión que ya está establecida."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 23; índice nativo 4199",
+          "question_source_id": "SRC-GSI-P19-CUADERNO",
+          "question_document_id": "DOC-GSI-P19-CUADERNO",
+          "question_locator": "Pregunta 23; índice nativo 9205",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "IETF: RFC3261, Session Initiation Protocol",
+              "url": "https://www.rfc-editor.org/rfc/rfc3261.html",
+              "locator": "§1–3 control y ejemplo de llamada; §9 CANCEL; §10 registro; §11 OPTIONS; §13 INVITE; §15.1 BYE",
+              "version": "Junio de 2002, apartados HTML comprobados el 04-11-2026. Métodos base y papeles lógicos; no catálogo completo de extensiones ni recomendación de mecanismos criptográficos históricos.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-081"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "drive_id": "1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 23; índice nativo 4199",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-19",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar terminación normal BYE y clave C; acotar INVITE/200OK/ACK completos para distinguir CANCEL."
+      ],
+      "references": [
+        {
+          "title": "IETF: RFC3261, Session Initiation Protocol",
+          "url": "https://www.rfc-editor.org/rfc/rfc3261.html",
+          "locator": "§1–3 control y ejemplo de llamada; §9 CANCEL; §10 registro; §11 OPTIONS; §13 INVITE; §15.1 BYE",
+          "version": "Junio de 2002, apartados HTML comprobados el 04-11-2026. Métodos base y papeles lógicos; no catálogo completo de extensiones ni recomendación de mecanismos criptográficos históricos.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P19-024",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "9cb557330e20644e1e5956d2a5db78daf465881c4b42351bcc025cb89c34cbab",
+      "content_sha256": "4ab990c3a54399f3f773cb85f2544bb32ab772a95efcc8b16e94497a76190e2e",
+      "before": {
+        "id": "MAN-GSI-P19-024",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué método SIP se relaciona con el registro de la ubicación/contacto de un usuario?",
+        "options": [
+          {
+            "id": "A",
+            "text": "REGISTER."
+          },
+          {
+            "id": "B",
+            "text": "DELETE."
+          },
+          {
+            "id": "C",
+            "text": "TRACE de IP."
+          },
+          {
+            "id": "D",
+            "text": "SUBNET."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "REGISTER permite asociar una identidad SIP con contactos/localizaciones actuales.",
+          "incorrect": "Según el solucionario: REGISTER permite asociar una identidad SIP con contactos/localizaciones actuales."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 24; índice nativo 4247",
+          "question_source_id": "SRC-GSI-P19-CUADERNO",
+          "question_document_id": "DOC-GSI-P19-CUADERNO",
+          "question_locator": "Pregunta 24; índice nativo 9411",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "drive_id": "1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 24; índice nativo 4247",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-19",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P19-024",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué método SIP se relaciona con el registro de la ubicación/contacto de un usuario?",
+        "options": [
+          {
+            "id": "A",
+            "text": "REGISTER"
+          },
+          {
+            "id": "B",
+            "text": "INVITE"
+          },
+          {
+            "id": "C",
+            "text": "OPTIONS"
+          },
+          {
+            "id": "D",
+            "text": "ACK"
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "REGISTER permite gestionar asociaciones entre una identidad SIP de registro y sus contactos, que ayudan a localizar al usuario para encaminar solicitudes. Las asociaciones tienen vigencia y pueden renovarse, consultarse o retirarse según el mensaje. Registrar contactos no equivale a iniciar una llamada ni a transportar sus medios.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "INVITE solicita establecer o modificar una sesión; no es el método de gestión de asociaciones de registro.",
+            "C": "OPTIONS consulta capacidades de un destino o servidor, sin crear por ello las asociaciones de contactos de registro.",
+            "D": "ACK pertenece a la confirmación de una transacción INVITE y no publica la localización actual de la identidad."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 24; índice nativo 4247",
+          "question_source_id": "SRC-GSI-P19-CUADERNO",
+          "question_document_id": "DOC-GSI-P19-CUADERNO",
+          "question_locator": "Pregunta 24; índice nativo 9411",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "IETF: RFC3261, Session Initiation Protocol",
+              "url": "https://www.rfc-editor.org/rfc/rfc3261.html",
+              "locator": "§1–3 control y ejemplo de llamada; §9 CANCEL; §10 registro; §11 OPTIONS; §13 INVITE; §15.1 BYE",
+              "version": "Junio de 2002, apartados HTML comprobados el 04-11-2026. Métodos base y papeles lógicos; no catálogo completo de extensiones ni recomendación de mecanismos criptográficos históricos.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-081"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "drive_id": "1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 24; índice nativo 4247",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-19",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar registro de contactos y clave A; cuatro métodos válidos, sin confundir dirección de registro y contacto."
+      ],
+      "references": [
+        {
+          "title": "IETF: RFC3261, Session Initiation Protocol",
+          "url": "https://www.rfc-editor.org/rfc/rfc3261.html",
+          "locator": "§1–3 control y ejemplo de llamada; §9 CANCEL; §10 registro; §11 OPTIONS; §13 INVITE; §15.1 BYE",
+          "version": "Junio de 2002, apartados HTML comprobados el 04-11-2026. Métodos base y papeles lógicos; no catálogo completo de extensiones ni recomendación de mecanismos criptográficos históricos.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    },
+    {
+      "id": "MAN-GSI-P19-026",
+      "bank": "manual",
+      "action": "revise",
+      "decision": "pending_review",
+      "base_sha256": "97f33f1e18d6d00778907eafd0797d2890e0cb4666c49550aa4b9d8575740a9f",
+      "content_sha256": "ab2456d10050ff6107174676210471960a7abed032d78e76f7288e19dbe37ca6",
+      "before": {
+        "id": "MAN-GSI-P19-026",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué diferencia esencial existe entre SIP y RTP?",
+        "options": [
+          {
+            "id": "A",
+            "text": "SIP señaliza/controla sesiones; RTP transporta medios en tiempo real."
+          },
+          {
+            "id": "B",
+            "text": "Ambos son codecs."
+          },
+          {
+            "id": "C",
+            "text": "RTP registra usuarios y SIP lleva audio."
+          },
+          {
+            "id": "D",
+            "text": "SIP es un protocolo de almacenamiento."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "Es una de las distinciones más rentables del tema.",
+          "incorrect": "Según el solucionario: Es una de las distinciones más rentables del tema."
+        },
+        "source": {
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 26; índice nativo 4470",
+          "question_source_id": "SRC-GSI-P19-CUADERNO",
+          "question_document_id": "DOC-GSI-P19-CUADERNO",
+          "question_locator": "Pregunta 26; índice nativo 9814",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación."
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "drive_id": "1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 26; índice nativo 4470",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-19",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-09-14"
+      },
+      "after": {
+        "id": "MAN-GSI-P19-026",
+        "opposition_id": "OPP-GSI",
+        "origin": "manual",
+        "official_status": "not_official",
+        "validation_status": "validated",
+        "block_id": "B4",
+        "topic_id": "B4-T14",
+        "subtopic": "",
+        "exam": null,
+        "statement": "¿Qué diferencia esencial existe entre SIP y RTP?",
+        "options": [
+          {
+            "id": "A",
+            "text": "SIP señaliza/controla sesiones; RTP transporta medios en tiempo real."
+          },
+          {
+            "id": "B",
+            "text": "SIP describe codecs; RTP registra los contactos actuales de usuarios."
+          },
+          {
+            "id": "C",
+            "text": "SIP y RTP transportan muestras y se distinguen por el puerto usado."
+          },
+          {
+            "id": "D",
+            "text": "SIP transporta muestras; RTP establece y termina la sesión multimedia."
+          }
+        ],
+        "correct_option": "A",
+        "feedback": {
+          "correct": "SIP controla el ciclo de una sesión, mientras RTP transporta datos de medios con información como secuencia y tiempo. SDP describe parámetros que pueden intercambiarse en la señalización y RTCP ofrece feedback de recepción. Son papeles complementarios: usar RTP no garantiza entrega, calidad de servicio o cifrado por sí mismo.",
+          "incorrect": "Contrasta el mecanismo, su alcance y las condiciones descritas en la alternativa elegida.",
+          "incorrect_options": {
+            "B": "El formato SDP describe codecs, y el registro de contactos usa mecanismos de señalización; no es la función de RTP.",
+            "C": "La diferencia es funcional y de formato, no una mera selección de puerto entre dos protocolos que hagan lo mismo.",
+            "D": "Invierte los papeles: SIP controla la sesión y RTP lleva los medios, no el establecimiento o cierre de la llamada."
+          }
+        },
+        "source": {
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "title": "GSI A2 — PRÁCTICA ACTIVA 19 — NGN, IMS, MOVILIDAD, UEM Y VIDEOCONFERENCIA — SOLUCIONARIO COMENTADO",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 26; índice nativo 4470",
+          "question_source_id": "SRC-GSI-P19-CUADERNO",
+          "question_document_id": "DOC-GSI-P19-CUADERNO",
+          "question_locator": "Pregunta 26; índice nativo 9814",
+          "review_method": "Cotejo de cuatro alternativas y clave comentada existente; dificultad orientativa asignada en la importación.",
+          "editorial_references": [
+            {
+              "title": "IETF: RFC3261, Session Initiation Protocol",
+              "url": "https://www.rfc-editor.org/rfc/rfc3261.html",
+              "locator": "§1–3 control y ejemplo de llamada; §9 CANCEL; §10 registro; §11 OPTIONS; §13 INVITE; §15.1 BYE",
+              "version": "Junio de 2002, apartados HTML comprobados el 04-11-2026. Métodos base y papeles lógicos; no catálogo completo de extensiones ni recomendación de mecanismos criptográficos históricos.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "IETF: RFC3550, RTP",
+              "url": "https://www.rfc-editor.org/rfc/rfc3550.html",
+              "locator": "§1 Introduction: secuencia, tiempo y falta de garantía QoS; §6 RTCP, feedback de distribución",
+              "version": "Julio de 2003, HTML comprobado el 04-11-2026. RTP transporta datos en tiempo real sin garantía por sí mismo de entrega, retardo o cifrado; RTCP informa, no transporta las muestras.",
+              "checked_at": "2026-11-04"
+            },
+            {
+              "title": "IETF: RFC8866, Session Description Protocol",
+              "url": "https://www.rfc-editor.org/rfc/rfc8866.html",
+              "locator": "§1 descripción sin protocolo de transporte; §3.1 SIP y offer/answer; §2 Media Description",
+              "version": "Enero de 2021, HTML comprobado el 04-11-2026. Sustituye RFC4566. Describir parámetros no es transportar audio ni negociar de forma autónoma sin procedimientos de oferta/respuesta.",
+              "checked_at": "2026-11-04"
+            }
+          ],
+          "editorial_revision_id": "GSI-EDITORIAL-081"
+        },
+        "provenance": {
+          "type": "curated",
+          "source_id": "SRC-GSI-P19-SOL",
+          "document_id": "DOC-GSI-P19-SOL",
+          "drive_id": "1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0",
+          "url": "https://docs.google.com/document/d/1yb2ThQCJwmD_HP9j1agE4W7n5EiunCLjBn3K_2otUy0/edit",
+          "locator": "Pregunta 26; índice nativo 4470",
+          "version": "Práctica activa, agosto 2026",
+          "reviewed_at": "2026-08-25"
+        },
+        "difficulty": "medium",
+        "tags": [
+          "practica-19",
+          "dificultad-orientativa"
+        ],
+        "is_active": true,
+        "created_at": "2026-09-14",
+        "updated_at": "2026-11-04"
+      },
+      "reasons": [
+        "Conservar enunciado, alternativa correcta precisa y clave A; completar distinciones y sustituir feedback de estrategia de examen."
+      ],
+      "references": [
+        {
+          "title": "IETF: RFC3261, Session Initiation Protocol",
+          "url": "https://www.rfc-editor.org/rfc/rfc3261.html",
+          "locator": "§1–3 control y ejemplo de llamada; §9 CANCEL; §10 registro; §11 OPTIONS; §13 INVITE; §15.1 BYE",
+          "version": "Junio de 2002, apartados HTML comprobados el 04-11-2026. Métodos base y papeles lógicos; no catálogo completo de extensiones ni recomendación de mecanismos criptográficos históricos.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "IETF: RFC3550, RTP",
+          "url": "https://www.rfc-editor.org/rfc/rfc3550.html",
+          "locator": "§1 Introduction: secuencia, tiempo y falta de garantía QoS; §6 RTCP, feedback de distribución",
+          "version": "Julio de 2003, HTML comprobado el 04-11-2026. RTP transporta datos en tiempo real sin garantía por sí mismo de entrega, retardo o cifrado; RTCP informa, no transporta las muestras.",
+          "checked_at": "2026-11-04"
+        },
+        {
+          "title": "IETF: RFC8866, Session Description Protocol",
+          "url": "https://www.rfc-editor.org/rfc/rfc8866.html",
+          "locator": "§1 descripción sin protocolo de transporte; §3.1 SIP y offer/answer; §2 Media Description",
+          "version": "Enero de 2021, HTML comprobado el 04-11-2026. Sustituye RFC4566. Describir parámetros no es transportar audio ni negociar de forma autónoma sin procedimientos de oferta/respuesta.",
+          "checked_at": "2026-11-04"
+        }
+      ],
+      "rubric": {
+        "unique_answer": true,
+        "plausible_distractors": true,
+        "parallel_options": true,
+        "complete_feedback": true,
+        "primary_evidence": true,
+        "current_context": true
+      }
+    }
+  ]
+}
